@@ -41,7 +41,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DocumentId. 
         /// <para>
-        /// The unique identifier of the document.
+        /// The identifier of the document.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

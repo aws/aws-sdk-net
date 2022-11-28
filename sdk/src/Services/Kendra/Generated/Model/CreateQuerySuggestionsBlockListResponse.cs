@@ -38,7 +38,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier of the created block list.
+        /// The identifier of the created block list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

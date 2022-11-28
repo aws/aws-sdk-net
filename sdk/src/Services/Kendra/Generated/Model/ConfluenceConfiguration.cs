@@ -211,15 +211,13 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user
         /// name and password required to connect to the Confluence instance. If you use Confluence
-        /// Cloud, you use a generated API token as the password. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
-        /// a Confluence data source</a>.
+        /// Cloud, you use a generated API token as the password.
         /// </para>
         ///  
         /// <para>
         /// You can also provide authentication credentials in the form of a personal access token.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication
-        /// for a Confluence data source</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+        /// a Confluence data source</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1284)]

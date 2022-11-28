@@ -106,6 +106,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.FeedbackToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Format", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -116,6 +122,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ScoreAttributesUnmarshaller.Instance;
                     unmarshalledObject.ScoreAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TableExcerpt", targetDepth))
+                {
+                    var unmarshaller = TableExcerptUnmarshaller.Instance;
+                    unmarshalledObject.TableExcerpt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Type", targetDepth))

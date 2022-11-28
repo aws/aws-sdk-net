@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// 
+    /// The request was denied due to request throttling. Please reduce the number of requests
+    /// and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

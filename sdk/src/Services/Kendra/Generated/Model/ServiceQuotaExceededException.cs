@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// 
+    /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+    /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+    /// Support</a> to inquire about an increase of limits.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

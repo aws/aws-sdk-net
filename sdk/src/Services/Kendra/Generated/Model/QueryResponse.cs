@@ -62,8 +62,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property QueryId. 
         /// <para>
-        /// The unique identifier for the search. You use <code>QueryId</code> to identify the
-        /// search when using the feedback API.
+        /// The identifier for the search. You use <code>QueryId</code> to identify the search
+        /// when using the feedback API.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]

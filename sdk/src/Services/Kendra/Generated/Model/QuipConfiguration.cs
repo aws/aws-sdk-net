@@ -241,8 +241,8 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication
-        /// for a Quip data source</a>.
+        /// accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using
+        /// a Quip data source</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

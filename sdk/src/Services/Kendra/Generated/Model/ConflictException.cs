@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// 
+    /// A conflict occurred with the request. Please fix any inconsistences with your resources
+    /// and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

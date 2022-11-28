@@ -83,7 +83,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property StringListValue. 
         /// <para>
-        /// A list of strings. 
+        /// A list of strings. The default maximum length or number of strings is 10.
         /// </para>
         /// </summary>
         public List<string> StringListValue

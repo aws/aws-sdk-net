@@ -279,8 +279,8 @@ namespace Amazon.Kendra.Model
         ///  </li> <li> 
         /// <para>
         /// jiraCredentials—The Jira API token. For more information on creating an API token
-        /// in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
-        /// Authentication for a Jira data source</a>.
+        /// in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">
+        /// Using a Jira data source</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

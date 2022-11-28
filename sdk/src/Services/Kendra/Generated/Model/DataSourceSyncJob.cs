@@ -122,7 +122,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ExecutionId. 
         /// <para>
-        /// A unique identifier for the synchronization job.
+        /// A identifier for the synchronization job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

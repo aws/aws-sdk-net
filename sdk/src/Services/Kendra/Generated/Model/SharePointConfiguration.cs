@@ -254,8 +254,8 @@ namespace Amazon.Kendra.Model
         ///  
         /// <para>
         /// You can also provide OAuth authentication credentials of user name, password, client
-        /// ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
-        /// for a SharePoint data source</a>.
+        /// ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+        /// a SharePoint data source</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1284)]

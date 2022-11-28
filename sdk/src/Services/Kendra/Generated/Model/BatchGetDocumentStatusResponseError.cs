@@ -40,7 +40,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DocumentId. 
         /// <para>
-        /// The unique identifier of the document whose status could not be retrieved.
+        /// The identifier of the document whose status could not be retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

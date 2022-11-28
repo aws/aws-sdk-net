@@ -59,7 +59,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ResultId. 
         /// <para>
-        /// The unique identifier of the search result that was clicked.
+        /// The identifier of the search result that was clicked.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=73)]

@@ -80,7 +80,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier of the FAQ.
+        /// The identifier of the FAQ.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

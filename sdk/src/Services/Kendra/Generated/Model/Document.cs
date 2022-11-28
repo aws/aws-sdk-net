@@ -175,7 +175,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// A unique identifier of the document in the index.
+        /// A identifier of the document in the index.
         /// </para>
         ///  
         /// <para>

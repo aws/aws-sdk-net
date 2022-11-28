@@ -246,8 +246,8 @@ namespace Amazon.Kendra.Model
         ///  </li> </ul> 
         /// <para>
         /// You create an application in Box to generate the keys or credentials required for
-        /// the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-        /// for a Box data source</a>.
+        /// the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using
+        /// a Box data source</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1284)]

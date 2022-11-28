@@ -2363,6 +2363,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.TableCell.Value</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>

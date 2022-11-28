@@ -40,7 +40,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of data sources to return.
+        /// The maximum number of indices to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -61,7 +61,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// If the previous response was incomplete (because there is more data to retrieve),
         /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of indexes (<code>DataSourceSummaryItems</code>). 
+        /// token to retrieve the next set of indexes. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

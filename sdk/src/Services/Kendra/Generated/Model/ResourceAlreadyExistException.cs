@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// 
+    /// The resource you want to use already exists. Please check you have provided the correct
+    /// resource and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

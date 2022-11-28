@@ -39,7 +39,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique UUID (universally unique identifier) of a single query suggestion.
+        /// The UUID (universally unique identifier) of a single query suggestion.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=73)]
@@ -58,7 +58,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value for the unique UUID (universally unique identifier) of a single query suggestion.
+        /// The value for the UUID (universally unique identifier) of a single query suggestion.
         /// </para>
         ///  
         /// <para>

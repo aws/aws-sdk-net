@@ -47,8 +47,10 @@ namespace Amazon.Kendra.Model
         private TextWithHighlights _documentTitle;
         private string _documentURI;
         private string _feedbackToken;
+        private QueryResultFormat _format;
         private string _id;
         private ScoreAttributes _scoreAttributes;
+        private TableExcerpt _tableExcerpt;
         private QueryResultType _type;
 
         /// <summary>
@@ -111,7 +113,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DocumentId. 
         /// <para>
-        /// The unique identifier for the document.
+        /// The identifier for the document.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -169,8 +171,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property FeedbackToken. 
         /// <para>
         /// A token that identifies a particular result from a particular query. Use this token
-        /// to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
-        /// Submitting feedback </a>.
+        /// to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting
+        /// feedback </a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -187,9 +189,30 @@ namespace Amazon.Kendra.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// If the <code>Type</code> of document within the response is <code>ANSWER</code>, then
+        /// it is either a <code>TABLE</code> answer or <code>TEXT</code> answer. If it's a table
+        /// answer, a table excerpt is returned in <code>TableExcerpt</code>. If it's a text answer,
+        /// a text excerpt is returned in <code>DocumentExcerpt</code>.
+        /// </para>
+        /// </summary>
+        public QueryResultFormat Format
+        {
+            get { return this._format; }
+            set { this._format = value; }
+        }
+
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
+        {
+            return this._format != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier for the query result.
+        /// The identifier for the query result.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=73)]
@@ -233,9 +256,28 @@ namespace Amazon.Kendra.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TableExcerpt. 
+        /// <para>
+        /// An excerpt from a table within a document.
+        /// </para>
+        /// </summary>
+        public TableExcerpt TableExcerpt
+        {
+            get { return this._tableExcerpt; }
+            set { this._tableExcerpt = value; }
+        }
+
+        // Check to see if TableExcerpt property is set
+        internal bool IsSetTableExcerpt()
+        {
+            return this._tableExcerpt != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of document. 
+        /// The type of document within the response. For example, a response could include a
+        /// question-answer that's relevant to the query.
         /// </para>
         /// </summary>
         public QueryResultType Type

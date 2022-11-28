@@ -277,22 +277,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the AssociateEntitiesToExperience service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceAlreadyExistException">
-        /// 
+        /// The resource you want to use already exists. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociateEntitiesToExperience">REST API Reference for AssociateEntitiesToExperience Operation</seealso>
         public virtual AssociateEntitiesToExperienceResponse AssociateEntitiesToExperience(AssociateEntitiesToExperienceRequest request)
@@ -319,22 +326,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the AssociateEntitiesToExperience service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceAlreadyExistException">
-        /// 
+        /// The resource you want to use already exists. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociateEntitiesToExperience">REST API Reference for AssociateEntitiesToExperience Operation</seealso>
         public virtual Task<AssociateEntitiesToExperienceResponse> AssociateEntitiesToExperienceAsync(AssociateEntitiesToExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -362,22 +376,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the AssociatePersonasToEntities service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceAlreadyExistException">
-        /// 
+        /// The resource you want to use already exists. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociatePersonasToEntities">REST API Reference for AssociatePersonasToEntities Operation</seealso>
         public virtual AssociatePersonasToEntitiesResponse AssociatePersonasToEntities(AssociatePersonasToEntitiesRequest request)
@@ -404,22 +425,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the AssociatePersonasToEntities service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceAlreadyExistException">
-        /// 
+        /// The resource you want to use already exists. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociatePersonasToEntities">REST API Reference for AssociatePersonasToEntities Operation</seealso>
         public virtual Task<AssociatePersonasToEntitiesResponse> AssociatePersonasToEntitiesAsync(AssociatePersonasToEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -451,22 +479,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the BatchDeleteDocument service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchDeleteDocument">REST API Reference for BatchDeleteDocument Operation</seealso>
         public virtual BatchDeleteDocumentResponse BatchDeleteDocument(BatchDeleteDocumentRequest request)
@@ -497,22 +532,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the BatchDeleteDocument service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchDeleteDocument">REST API Reference for BatchDeleteDocument Operation</seealso>
         public virtual Task<BatchDeleteDocumentResponse> BatchDeleteDocumentAsync(BatchDeleteDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -551,22 +593,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the BatchGetDocumentStatus service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchGetDocumentStatus">REST API Reference for BatchGetDocumentStatus Operation</seealso>
         public virtual BatchGetDocumentStatusResponse BatchGetDocumentStatus(BatchGetDocumentStatusRequest request)
@@ -604,22 +653,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the BatchGetDocumentStatus service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchGetDocumentStatus">REST API Reference for BatchGetDocumentStatus Operation</seealso>
         public virtual Task<BatchGetDocumentStatusResponse> BatchGetDocumentStatusAsync(BatchGetDocumentStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -662,25 +718,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the BatchPutDocument service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchPutDocument">REST API Reference for BatchPutDocument Operation</seealso>
         public virtual BatchPutDocumentResponse BatchPutDocument(BatchPutDocumentRequest request)
@@ -722,25 +787,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the BatchPutDocument service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchPutDocument">REST API Reference for BatchPutDocument Operation</seealso>
         public virtual Task<BatchPutDocumentResponse> BatchPutDocumentAsync(BatchPutDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -778,22 +852,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ClearQuerySuggestions service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClearQuerySuggestions">REST API Reference for ClearQuerySuggestions Operation</seealso>
         public virtual ClearQuerySuggestionsResponse ClearQuerySuggestions(ClearQuerySuggestionsRequest request)
@@ -830,22 +911,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ClearQuerySuggestions service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClearQuerySuggestions">REST API Reference for ClearQuerySuggestions Operation</seealso>
         public virtual Task<ClearQuerySuggestionsResponse> ClearQuerySuggestionsAsync(ClearQuerySuggestionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -894,25 +982,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the CreateAccessControlConfiguration service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateAccessControlConfiguration">REST API Reference for CreateAccessControlConfiguration Operation</seealso>
         public virtual CreateAccessControlConfigurationResponse CreateAccessControlConfiguration(CreateAccessControlConfigurationRequest request)
@@ -960,25 +1057,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the CreateAccessControlConfiguration service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateAccessControlConfiguration">REST API Reference for CreateAccessControlConfiguration Operation</seealso>
         public virtual Task<CreateAccessControlConfigurationResponse> CreateAccessControlConfigurationAsync(CreateAccessControlConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1026,28 +1132,38 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the CreateDataSource service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceAlreadyExistException">
-        /// 
+        /// The resource you want to use already exists. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateDataSource">REST API Reference for CreateDataSource Operation</seealso>
         public virtual CreateDataSourceResponse CreateDataSource(CreateDataSourceRequest request)
@@ -1094,28 +1210,38 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the CreateDataSource service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceAlreadyExistException">
-        /// 
+        /// The resource you want to use already exists. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateDataSource">REST API Reference for CreateDataSource Operation</seealso>
         public virtual Task<CreateDataSourceResponse> CreateDataSourceAsync(CreateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1142,25 +1268,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the CreateExperience service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateExperience">REST API Reference for CreateExperience Operation</seealso>
         public virtual CreateExperienceResponse CreateExperience(CreateExperienceRequest request)
@@ -1186,25 +1321,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the CreateExperience service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateExperience">REST API Reference for CreateExperience Operation</seealso>
         public virtual Task<CreateExperienceResponse> CreateExperienceAsync(CreateExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1238,25 +1382,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the CreateFaq service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateFaq">REST API Reference for CreateFaq Operation</seealso>
         public virtual CreateFaqResponse CreateFaq(CreateFaqRequest request)
@@ -1289,25 +1442,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the CreateFaq service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateFaq">REST API Reference for CreateFaq Operation</seealso>
         public virtual Task<CreateFaqResponse> CreateFaqAsync(CreateFaqRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1347,25 +1509,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the CreateIndex service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceAlreadyExistException">
-        /// 
+        /// The resource you want to use already exists. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
         public virtual CreateIndexResponse CreateIndex(CreateIndexRequest request)
@@ -1404,25 +1575,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the CreateIndex service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceAlreadyExistException">
-        /// 
+        /// The resource you want to use already exists. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
         public virtual Task<CreateIndexResponse> CreateIndexAsync(CreateIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1473,25 +1653,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the CreateQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateQuerySuggestionsBlockList">REST API Reference for CreateQuerySuggestionsBlockList Operation</seealso>
         public virtual CreateQuerySuggestionsBlockListResponse CreateQuerySuggestionsBlockList(CreateQuerySuggestionsBlockListRequest request)
@@ -1541,25 +1730,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the CreateQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateQuerySuggestionsBlockList">REST API Reference for CreateQuerySuggestionsBlockList Operation</seealso>
         public virtual Task<CreateQuerySuggestionsBlockListResponse> CreateQuerySuggestionsBlockListAsync(CreateQuerySuggestionsBlockListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1590,25 +1788,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the CreateThesaurus service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateThesaurus">REST API Reference for CreateThesaurus Operation</seealso>
         public virtual CreateThesaurusResponse CreateThesaurus(CreateThesaurusRequest request)
@@ -1638,25 +1845,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the CreateThesaurus service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateThesaurus">REST API Reference for CreateThesaurus Operation</seealso>
         public virtual Task<CreateThesaurusResponse> CreateThesaurusAsync(CreateThesaurusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1683,22 +1899,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DeleteAccessControlConfiguration service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteAccessControlConfiguration">REST API Reference for DeleteAccessControlConfiguration Operation</seealso>
         public virtual DeleteAccessControlConfigurationResponse DeleteAccessControlConfiguration(DeleteAccessControlConfigurationRequest request)
@@ -1724,22 +1947,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DeleteAccessControlConfiguration service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteAccessControlConfiguration">REST API Reference for DeleteAccessControlConfiguration Operation</seealso>
         public virtual Task<DeleteAccessControlConfigurationResponse> DeleteAccessControlConfigurationAsync(DeleteAccessControlConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1767,22 +1997,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DeleteDataSource service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         public virtual DeleteDataSourceResponse DeleteDataSource(DeleteDataSourceRequest request)
@@ -1809,22 +2046,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DeleteDataSource service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         public virtual Task<DeleteDataSourceResponse> DeleteDataSourceAsync(DeleteDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1850,22 +2094,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DeleteExperience service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteExperience">REST API Reference for DeleteExperience Operation</seealso>
         public virtual DeleteExperienceResponse DeleteExperience(DeleteExperienceRequest request)
@@ -1890,22 +2141,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DeleteExperience service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteExperience">REST API Reference for DeleteExperience Operation</seealso>
         public virtual Task<DeleteExperienceResponse> DeleteExperienceAsync(DeleteExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1929,22 +2187,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DeleteFaq service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteFaq">REST API Reference for DeleteFaq Operation</seealso>
         public virtual DeleteFaqResponse DeleteFaq(DeleteFaqRequest request)
@@ -1967,22 +2232,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DeleteFaq service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteFaq">REST API Reference for DeleteFaq Operation</seealso>
         public virtual Task<DeleteFaqResponse> DeleteFaqAsync(DeleteFaqRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2008,22 +2280,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DeleteIndex service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
         public virtual DeleteIndexResponse DeleteIndex(DeleteIndexRequest request)
@@ -2048,22 +2327,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DeleteIndex service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
         public virtual Task<DeleteIndexResponse> DeleteIndexAsync(DeleteIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2108,22 +2394,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DeletePrincipalMapping service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeletePrincipalMapping">REST API Reference for DeletePrincipalMapping Operation</seealso>
         public virtual DeletePrincipalMappingResponse DeletePrincipalMapping(DeletePrincipalMappingRequest request)
@@ -2167,22 +2460,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DeletePrincipalMapping service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeletePrincipalMapping">REST API Reference for DeletePrincipalMapping Operation</seealso>
         public virtual Task<DeletePrincipalMappingResponse> DeletePrincipalMappingAsync(DeletePrincipalMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2217,22 +2517,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DeleteQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteQuerySuggestionsBlockList">REST API Reference for DeleteQuerySuggestionsBlockList Operation</seealso>
         public virtual DeleteQuerySuggestionsBlockListResponse DeleteQuerySuggestionsBlockList(DeleteQuerySuggestionsBlockListRequest request)
@@ -2266,22 +2573,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DeleteQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteQuerySuggestionsBlockList">REST API Reference for DeleteQuerySuggestionsBlockList Operation</seealso>
         public virtual Task<DeleteQuerySuggestionsBlockListResponse> DeleteQuerySuggestionsBlockListAsync(DeleteQuerySuggestionsBlockListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2305,22 +2619,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DeleteThesaurus service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus">REST API Reference for DeleteThesaurus Operation</seealso>
         public virtual DeleteThesaurusResponse DeleteThesaurus(DeleteThesaurusRequest request)
@@ -2343,22 +2664,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DeleteThesaurus service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus">REST API Reference for DeleteThesaurus Operation</seealso>
         public virtual Task<DeleteThesaurusResponse> DeleteThesaurusAsync(DeleteThesaurusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2385,19 +2713,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DescribeAccessControlConfiguration service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeAccessControlConfiguration">REST API Reference for DescribeAccessControlConfiguration Operation</seealso>
         public virtual DescribeAccessControlConfigurationResponse DescribeAccessControlConfiguration(DescribeAccessControlConfigurationRequest request)
@@ -2423,19 +2757,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DescribeAccessControlConfiguration service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeAccessControlConfiguration">REST API Reference for DescribeAccessControlConfiguration Operation</seealso>
         public virtual Task<DescribeAccessControlConfigurationResponse> DescribeAccessControlConfigurationAsync(DescribeAccessControlConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2459,19 +2799,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DescribeDataSource service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeDataSource">REST API Reference for DescribeDataSource Operation</seealso>
         public virtual DescribeDataSourceResponse DescribeDataSource(DescribeDataSourceRequest request)
@@ -2494,19 +2840,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DescribeDataSource service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeDataSource">REST API Reference for DescribeDataSource Operation</seealso>
         public virtual Task<DescribeDataSourceResponse> DescribeDataSourceAsync(DescribeDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2532,19 +2884,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DescribeExperience service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeExperience">REST API Reference for DescribeExperience Operation</seealso>
         public virtual DescribeExperienceResponse DescribeExperience(DescribeExperienceRequest request)
@@ -2569,19 +2927,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DescribeExperience service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeExperience">REST API Reference for DescribeExperience Operation</seealso>
         public virtual Task<DescribeExperienceResponse> DescribeExperienceAsync(DescribeExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2605,19 +2969,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DescribeFaq service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeFaq">REST API Reference for DescribeFaq Operation</seealso>
         public virtual DescribeFaqResponse DescribeFaq(DescribeFaqRequest request)
@@ -2640,19 +3010,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DescribeFaq service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeFaq">REST API Reference for DescribeFaq Operation</seealso>
         public virtual Task<DescribeFaqResponse> DescribeFaqAsync(DescribeFaqRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2676,19 +3052,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DescribeIndex service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeIndex">REST API Reference for DescribeIndex Operation</seealso>
         public virtual DescribeIndexResponse DescribeIndex(DescribeIndexRequest request)
@@ -2711,19 +3093,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DescribeIndex service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeIndex">REST API Reference for DescribeIndex Operation</seealso>
         public virtual Task<DescribeIndexResponse> DescribeIndexAsync(DescribeIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2757,19 +3145,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DescribePrincipalMapping service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribePrincipalMapping">REST API Reference for DescribePrincipalMapping Operation</seealso>
         public virtual DescribePrincipalMappingResponse DescribePrincipalMapping(DescribePrincipalMappingRequest request)
@@ -2802,19 +3196,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DescribePrincipalMapping service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribePrincipalMapping">REST API Reference for DescribePrincipalMapping Operation</seealso>
         public virtual Task<DescribePrincipalMappingResponse> DescribePrincipalMappingAsync(DescribePrincipalMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2848,19 +3248,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DescribeQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsBlockList">REST API Reference for DescribeQuerySuggestionsBlockList Operation</seealso>
         public virtual DescribeQuerySuggestionsBlockListResponse DescribeQuerySuggestionsBlockList(DescribeQuerySuggestionsBlockListRequest request)
@@ -2893,19 +3299,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DescribeQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsBlockList">REST API Reference for DescribeQuerySuggestionsBlockList Operation</seealso>
         public virtual Task<DescribeQuerySuggestionsBlockListResponse> DescribeQuerySuggestionsBlockListAsync(DescribeQuerySuggestionsBlockListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2939,19 +3351,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DescribeQuerySuggestionsConfig service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsConfig">REST API Reference for DescribeQuerySuggestionsConfig Operation</seealso>
         public virtual DescribeQuerySuggestionsConfigResponse DescribeQuerySuggestionsConfig(DescribeQuerySuggestionsConfigRequest request)
@@ -2984,19 +3402,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DescribeQuerySuggestionsConfig service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsConfig">REST API Reference for DescribeQuerySuggestionsConfig Operation</seealso>
         public virtual Task<DescribeQuerySuggestionsConfigResponse> DescribeQuerySuggestionsConfigAsync(DescribeQuerySuggestionsConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3020,19 +3444,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DescribeThesaurus service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus">REST API Reference for DescribeThesaurus Operation</seealso>
         public virtual DescribeThesaurusResponse DescribeThesaurus(DescribeThesaurusRequest request)
@@ -3055,19 +3485,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DescribeThesaurus service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus">REST API Reference for DescribeThesaurus Operation</seealso>
         public virtual Task<DescribeThesaurusResponse> DescribeThesaurusAsync(DescribeThesaurusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3095,19 +3531,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DisassociateEntitiesFromExperience service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociateEntitiesFromExperience">REST API Reference for DisassociateEntitiesFromExperience Operation</seealso>
         public virtual DisassociateEntitiesFromExperienceResponse DisassociateEntitiesFromExperience(DisassociateEntitiesFromExperienceRequest request)
@@ -3134,19 +3576,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DisassociateEntitiesFromExperience service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociateEntitiesFromExperience">REST API Reference for DisassociateEntitiesFromExperience Operation</seealso>
         public virtual Task<DisassociateEntitiesFromExperienceResponse> DisassociateEntitiesFromExperienceAsync(DisassociateEntitiesFromExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3174,19 +3622,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DisassociatePersonasFromEntities service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociatePersonasFromEntities">REST API Reference for DisassociatePersonasFromEntities Operation</seealso>
         public virtual DisassociatePersonasFromEntitiesResponse DisassociatePersonasFromEntities(DisassociatePersonasFromEntitiesRequest request)
@@ -3213,19 +3667,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the DisassociatePersonasFromEntities service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociatePersonasFromEntities">REST API Reference for DisassociatePersonasFromEntities Operation</seealso>
         public virtual Task<DisassociatePersonasFromEntitiesResponse> DisassociatePersonasFromEntitiesAsync(DisassociatePersonasFromEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3255,25 +3715,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the GetQuerySuggestions service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetQuerySuggestions">REST API Reference for GetQuerySuggestions Operation</seealso>
         public virtual GetQuerySuggestionsResponse GetQuerySuggestions(GetQuerySuggestionsRequest request)
@@ -3302,25 +3771,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the GetQuerySuggestions service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetQuerySuggestions">REST API Reference for GetQuerySuggestions Operation</seealso>
         public virtual Task<GetQuerySuggestionsResponse> GetQuerySuggestionsAsync(GetQuerySuggestionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3345,16 +3823,20 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the GetSnapshots service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InvalidRequestException">
-        /// The input to the request is not valid.
+        /// The input to the request is not valid. Please provide the correct input and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetSnapshots">REST API Reference for GetSnapshots Operation</seealso>
         public virtual GetSnapshotsResponse GetSnapshots(GetSnapshotsRequest request)
@@ -3378,16 +3860,20 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the GetSnapshots service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InvalidRequestException">
-        /// The input to the request is not valid.
+        /// The input to the request is not valid. Please provide the correct input and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetSnapshots">REST API Reference for GetSnapshots Operation</seealso>
         public virtual Task<GetSnapshotsResponse> GetSnapshotsAsync(GetSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3413,19 +3899,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListAccessControlConfigurations service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListAccessControlConfigurations">REST API Reference for ListAccessControlConfigurations Operation</seealso>
         public virtual ListAccessControlConfigurationsResponse ListAccessControlConfigurations(ListAccessControlConfigurationsRequest request)
@@ -3450,19 +3942,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListAccessControlConfigurations service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListAccessControlConfigurations">REST API Reference for ListAccessControlConfigurations Operation</seealso>
         public virtual Task<ListAccessControlConfigurationsResponse> ListAccessControlConfigurationsAsync(ListAccessControlConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3486,19 +3984,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListDataSources service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
         public virtual ListDataSourcesResponse ListDataSources(ListDataSourcesRequest request)
@@ -3521,19 +4025,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListDataSources service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
         public virtual Task<ListDataSourcesResponse> ListDataSourcesAsync(ListDataSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3557,22 +4067,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListDataSourceSyncJobs service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListDataSourceSyncJobs">REST API Reference for ListDataSourceSyncJobs Operation</seealso>
         public virtual ListDataSourceSyncJobsResponse ListDataSourceSyncJobs(ListDataSourceSyncJobsRequest request)
@@ -3595,22 +4112,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListDataSourceSyncJobs service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListDataSourceSyncJobs">REST API Reference for ListDataSourceSyncJobs Operation</seealso>
         public virtual Task<ListDataSourceSyncJobsResponse> ListDataSourceSyncJobsAsync(ListDataSourceSyncJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3634,19 +4158,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListEntityPersonas service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListEntityPersonas">REST API Reference for ListEntityPersonas Operation</seealso>
         public virtual ListEntityPersonasResponse ListEntityPersonas(ListEntityPersonasRequest request)
@@ -3669,19 +4199,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListEntityPersonas service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListEntityPersonas">REST API Reference for ListEntityPersonas Operation</seealso>
         public virtual Task<ListEntityPersonasResponse> ListEntityPersonasAsync(ListEntityPersonasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3709,19 +4245,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListExperienceEntities service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperienceEntities">REST API Reference for ListExperienceEntities Operation</seealso>
         public virtual ListExperienceEntitiesResponse ListExperienceEntities(ListExperienceEntitiesRequest request)
@@ -3748,19 +4290,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListExperienceEntities service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperienceEntities">REST API Reference for ListExperienceEntities Operation</seealso>
         public virtual Task<ListExperienceEntitiesResponse> ListExperienceEntitiesAsync(ListExperienceEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3787,19 +4335,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListExperiences service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperiences">REST API Reference for ListExperiences Operation</seealso>
         public virtual ListExperiencesResponse ListExperiences(ListExperiencesRequest request)
@@ -3825,19 +4379,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListExperiences service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperiences">REST API Reference for ListExperiences Operation</seealso>
         public virtual Task<ListExperiencesResponse> ListExperiencesAsync(ListExperiencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3861,19 +4421,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListFaqs service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListFaqs">REST API Reference for ListFaqs Operation</seealso>
         public virtual ListFaqsResponse ListFaqs(ListFaqsRequest request)
@@ -3896,19 +4462,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListFaqs service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListFaqs">REST API Reference for ListFaqs Operation</seealso>
         public virtual Task<ListFaqsResponse> ListFaqsAsync(ListFaqsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3939,22 +4511,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListGroupsOlderThanOrderingId service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListGroupsOlderThanOrderingId">REST API Reference for ListGroupsOlderThanOrderingId Operation</seealso>
         public virtual ListGroupsOlderThanOrderingIdResponse ListGroupsOlderThanOrderingId(ListGroupsOlderThanOrderingIdRequest request)
@@ -3984,22 +4563,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListGroupsOlderThanOrderingId service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListGroupsOlderThanOrderingId">REST API Reference for ListGroupsOlderThanOrderingId Operation</seealso>
         public virtual Task<ListGroupsOlderThanOrderingIdResponse> ListGroupsOlderThanOrderingIdAsync(ListGroupsOlderThanOrderingIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4023,16 +4609,21 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListIndices service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListIndices">REST API Reference for ListIndices Operation</seealso>
         public virtual ListIndicesResponse ListIndices(ListIndicesRequest request)
@@ -4055,16 +4646,21 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListIndices service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListIndices">REST API Reference for ListIndices Operation</seealso>
         public virtual Task<ListIndicesResponse> ListIndicesAsync(ListIndicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4099,19 +4695,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListQuerySuggestionsBlockLists service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListQuerySuggestionsBlockLists">REST API Reference for ListQuerySuggestionsBlockLists Operation</seealso>
         public virtual ListQuerySuggestionsBlockListsResponse ListQuerySuggestionsBlockLists(ListQuerySuggestionsBlockListsRequest request)
@@ -4145,19 +4747,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListQuerySuggestionsBlockLists service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListQuerySuggestionsBlockLists">REST API Reference for ListQuerySuggestionsBlockLists Operation</seealso>
         public virtual Task<ListQuerySuggestionsBlockListsResponse> ListQuerySuggestionsBlockListsAsync(ListQuerySuggestionsBlockListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4182,19 +4790,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceUnavailableException">
-        /// 
+        /// The resource you want to use isn't available. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -4218,19 +4832,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceUnavailableException">
-        /// 
+        /// The resource you want to use isn't available. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4254,19 +4874,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListThesauri service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri">REST API Reference for ListThesauri Operation</seealso>
         public virtual ListThesauriResponse ListThesauri(ListThesauriRequest request)
@@ -4289,19 +4915,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the ListThesauri service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri">REST API Reference for ListThesauri Operation</seealso>
         public virtual Task<ListThesauriResponse> ListThesauriAsync(ListThesauriRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4351,25 +4983,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the PutPrincipalMapping service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/PutPrincipalMapping">REST API Reference for PutPrincipalMapping Operation</seealso>
         public virtual PutPrincipalMappingResponse PutPrincipalMapping(PutPrincipalMappingRequest request)
@@ -4418,25 +5059,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the PutPrincipalMapping service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/PutPrincipalMapping">REST API Reference for PutPrincipalMapping Operation</seealso>
         public virtual Task<PutPrincipalMappingResponse> PutPrincipalMappingAsync(PutPrincipalMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4493,25 +5143,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the Query service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Query">REST API Reference for Query Operation</seealso>
         public virtual QueryResponse Query(QueryRequest request)
@@ -4567,25 +5226,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the Query service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Query">REST API Reference for Query Operation</seealso>
         public virtual Task<QueryResponse> QueryAsync(QueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4611,25 +5279,33 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the StartDataSourceSyncJob service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceInUseException">
-        /// 
+        /// The resource you want to use is currently in use. Please check you have provided the
+        /// correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/StartDataSourceSyncJob">REST API Reference for StartDataSourceSyncJob Operation</seealso>
         public virtual StartDataSourceSyncJobResponse StartDataSourceSyncJob(StartDataSourceSyncJobRequest request)
@@ -4654,25 +5330,33 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the StartDataSourceSyncJob service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceInUseException">
-        /// 
+        /// The resource you want to use is currently in use. Please check you have provided the
+        /// correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/StartDataSourceSyncJob">REST API Reference for StartDataSourceSyncJob Operation</seealso>
         public virtual Task<StartDataSourceSyncJobResponse> StartDataSourceSyncJobAsync(StartDataSourceSyncJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4697,19 +5381,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the StopDataSourceSyncJob service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/StopDataSourceSyncJob">REST API Reference for StopDataSourceSyncJob Operation</seealso>
         public virtual StopDataSourceSyncJobResponse StopDataSourceSyncJob(StopDataSourceSyncJobRequest request)
@@ -4733,19 +5423,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the StopDataSourceSyncJob service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/StopDataSourceSyncJob">REST API Reference for StopDataSourceSyncJob Operation</seealso>
         public virtual Task<StopDataSourceSyncJobResponse> StopDataSourceSyncJobAsync(StopDataSourceSyncJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4776,22 +5472,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the SubmitFeedback service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceUnavailableException">
-        /// 
+        /// The resource you want to use isn't available. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SubmitFeedback">REST API Reference for SubmitFeedback Operation</seealso>
         public virtual SubmitFeedbackResponse SubmitFeedback(SubmitFeedbackRequest request)
@@ -4821,22 +5524,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the SubmitFeedback service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceUnavailableException">
-        /// 
+        /// The resource you want to use isn't available. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SubmitFeedback">REST API Reference for SubmitFeedback Operation</seealso>
         public virtual Task<SubmitFeedbackResponse> SubmitFeedbackAsync(SubmitFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4861,19 +5571,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the TagResource service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceUnavailableException">
-        /// 
+        /// The resource you want to use isn't available. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -4897,19 +5613,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the TagResource service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceUnavailableException">
-        /// 
+        /// The resource you want to use isn't available. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4933,19 +5655,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceUnavailableException">
-        /// 
+        /// The resource you want to use isn't available. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -4968,19 +5696,25 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceUnavailableException">
-        /// 
+        /// The resource you want to use isn't available. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5029,25 +5763,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the UpdateAccessControlConfiguration service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateAccessControlConfiguration">REST API Reference for UpdateAccessControlConfiguration Operation</seealso>
         public virtual UpdateAccessControlConfigurationResponse UpdateAccessControlConfiguration(UpdateAccessControlConfigurationRequest request)
@@ -5095,25 +5838,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the UpdateAccessControlConfiguration service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateAccessControlConfiguration">REST API Reference for UpdateAccessControlConfiguration Operation</seealso>
         public virtual Task<UpdateAccessControlConfigurationResponse> UpdateAccessControlConfigurationAsync(UpdateAccessControlConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5137,22 +5889,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the UpdateDataSource service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         public virtual UpdateDataSourceResponse UpdateDataSource(UpdateDataSourceRequest request)
@@ -5175,22 +5934,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the UpdateDataSource service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         public virtual Task<UpdateDataSourceResponse> UpdateDataSourceAsync(UpdateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5216,22 +5982,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the UpdateExperience service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateExperience">REST API Reference for UpdateExperience Operation</seealso>
         public virtual UpdateExperienceResponse UpdateExperience(UpdateExperienceRequest request)
@@ -5256,22 +6029,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the UpdateExperience service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateExperience">REST API Reference for UpdateExperience Operation</seealso>
         public virtual Task<UpdateExperienceResponse> UpdateExperienceAsync(UpdateExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5295,25 +6075,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the UpdateIndex service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateIndex">REST API Reference for UpdateIndex Operation</seealso>
         public virtual UpdateIndexResponse UpdateIndex(UpdateIndexRequest request)
@@ -5336,25 +6125,34 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the UpdateIndex service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
+        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateIndex">REST API Reference for UpdateIndex Operation</seealso>
         public virtual Task<UpdateIndexResponse> UpdateIndexAsync(UpdateIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5400,22 +6198,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the UpdateQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsBlockList">REST API Reference for UpdateQuerySuggestionsBlockList Operation</seealso>
         public virtual UpdateQuerySuggestionsBlockListResponse UpdateQuerySuggestionsBlockList(UpdateQuerySuggestionsBlockListRequest request)
@@ -5460,22 +6265,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the UpdateQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsBlockList">REST API Reference for UpdateQuerySuggestionsBlockList Operation</seealso>
         public virtual Task<UpdateQuerySuggestionsBlockListResponse> UpdateQuerySuggestionsBlockListAsync(UpdateQuerySuggestionsBlockListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5525,22 +6337,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the UpdateQuerySuggestionsConfig service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsConfig">REST API Reference for UpdateQuerySuggestionsConfig Operation</seealso>
         public virtual UpdateQuerySuggestionsConfigResponse UpdateQuerySuggestionsConfig(UpdateQuerySuggestionsConfigRequest request)
@@ -5589,22 +6408,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the UpdateQuerySuggestionsConfig service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsConfig">REST API Reference for UpdateQuerySuggestionsConfig Operation</seealso>
         public virtual Task<UpdateQuerySuggestionsConfigResponse> UpdateQuerySuggestionsConfigAsync(UpdateQuerySuggestionsConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5628,22 +6454,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the UpdateThesaurus service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateThesaurus">REST API Reference for UpdateThesaurus Operation</seealso>
         public virtual UpdateThesaurusResponse UpdateThesaurus(UpdateThesaurusRequest request)
@@ -5666,22 +6499,29 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the UpdateThesaurus service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
-        /// 
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ConflictException">
-        /// 
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
-        /// 
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+        /// Support</a> for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
-        /// 
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
-        /// 
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateThesaurus">REST API Reference for UpdateThesaurus Operation</seealso>
         public virtual Task<UpdateThesaurusResponse> UpdateThesaurusAsync(UpdateThesaurusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

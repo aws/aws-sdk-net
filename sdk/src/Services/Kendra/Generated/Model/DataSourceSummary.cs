@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Summary information for an Amazon Kendra data source. Returned in a call to the <code>DescribeDataSource</code>
-    /// API.
+    /// Summary information for a Amazon Kendra data source.
     /// </summary>
     public partial class DataSourceSummary
     {
@@ -63,7 +62,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier for the data source.
+        /// The identifier for the data source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

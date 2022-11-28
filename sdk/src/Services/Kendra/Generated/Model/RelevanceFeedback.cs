@@ -59,8 +59,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ResultId. 
         /// <para>
-        /// The unique identifier of the search result that the user provided relevance feedback
-        /// for.
+        /// The identifier of the search result that the user provided relevance feedback for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=73)]

@@ -81,7 +81,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DocumentIdColumnName. 
         /// <para>
-        /// The column that provides the document's unique identifier.
+        /// The column that provides the document's identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

@@ -62,7 +62,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Edition. 
         /// <para>
-        /// Indicates whether the index is a enterprise edition index or a developer edition index.
+        /// Indicates whether the index is a Enterprise Edition index or a Developer Edition index.
         /// 
         /// </para>
         /// </summary>
@@ -81,8 +81,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// A unique identifier for the index. Use this to identify the index when you are using
-        /// APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>,
+        /// A identifier for the index. Use this to identify the index when you are using APIs
+        /// such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>,
         /// and <code>DeleteIndex</code>.
         /// </para>
         /// </summary>
@@ -102,7 +102,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The identifier of the index.
+        /// The name of the index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

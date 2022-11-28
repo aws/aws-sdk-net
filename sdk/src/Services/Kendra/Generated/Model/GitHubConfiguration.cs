@@ -464,9 +464,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// githubToken—The access token created in GitHub. For more information on creating a
-        /// token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-        /// for a GitHub data source</a>.
+        /// personalToken—The access token created in GitHub. For more information on creating
+        /// a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using
+        /// a GitHub data source</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

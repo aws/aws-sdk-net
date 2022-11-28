@@ -29,29 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// This is the response object from the CreateFaq operation.
+    /// Information about a row in a table excerpt.
     /// </summary>
-    public partial class CreateFaqResponse : AmazonWebServiceResponse
+    public partial class TableRow
     {
-        private string _id;
+        private List<TableCell> _cells = new List<TableCell>();
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property Cells. 
         /// <para>
-        /// The identifier of the FAQ.
+        /// A list of table cells in a row.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public string Id
+        public List<TableCell> Cells
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._cells; }
+            set { this._cells = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if Cells property is set
+        internal bool IsSetCells()
         {
-            return this._id != null;
+            return this._cells != null && this._cells.Count > 0; 
         }
 
     }
