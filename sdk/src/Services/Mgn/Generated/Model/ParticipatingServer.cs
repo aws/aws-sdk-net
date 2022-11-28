@@ -41,7 +41,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property LaunchedEc2InstanceID. 
         /// <para>
-        /// Participating server Source Server ID.
+        /// Participating server's launched ec2 instance ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
@@ -78,7 +78,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property PostLaunchActionsStatus. 
         /// <para>
-        /// Participating server Source Server ID.
+        /// Participating server's Post Launch Actions Status.
         /// </para>
         /// </summary>
         public PostLaunchActionsStatus PostLaunchActionsStatus

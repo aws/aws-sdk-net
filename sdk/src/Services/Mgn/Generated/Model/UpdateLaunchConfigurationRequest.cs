@@ -37,8 +37,10 @@ namespace Amazon.Mgn.Model
         private BootMode _bootMode;
         private bool? _copyPrivateIp;
         private bool? _copyTags;
+        private bool? _enableMapAutoTagging;
         private LaunchDisposition _launchDisposition;
         private Licensing _licensing;
+        private string _mapAutoTaggingMpeID;
         private string _name;
         private PostLaunchActions _postLaunchActions;
         private string _sourceServerID;
@@ -99,6 +101,24 @@ namespace Amazon.Mgn.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableMapAutoTagging. 
+        /// <para>
+        /// Enable map auto tagging.
+        /// </para>
+        /// </summary>
+        public bool EnableMapAutoTagging
+        {
+            get { return this._enableMapAutoTagging.GetValueOrDefault(); }
+            set { this._enableMapAutoTagging = value; }
+        }
+
+        // Check to see if EnableMapAutoTagging property is set
+        internal bool IsSetEnableMapAutoTagging()
+        {
+            return this._enableMapAutoTagging.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LaunchDisposition. 
         /// <para>
         /// Update Launch configuration launch disposition request.
@@ -132,6 +152,25 @@ namespace Amazon.Mgn.Model
         internal bool IsSetLicensing()
         {
             return this._licensing != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapAutoTaggingMpeID. 
+        /// <para>
+        /// Launch configuration map auto tagging MPE ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string MapAutoTaggingMpeID
+        {
+            get { return this._mapAutoTaggingMpeID; }
+            set { this._mapAutoTaggingMpeID = value; }
+        }
+
+        // Check to see if MapAutoTaggingMpeID property is set
+        internal bool IsSetMapAutoTaggingMpeID()
+        {
+            return this._mapAutoTaggingMpeID != null;
         }
 
         /// <summary>

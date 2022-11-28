@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Mgn.Model
 {
     /// <summary>
-    /// Server participating in Job.
+    /// Post Launch Actions to executed on the Test or Cutover instance.
     /// </summary>
     public partial class PostLaunchActions
     {
@@ -42,7 +42,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogGroupName. 
         /// <para>
-        /// Server participating in Job.
+        /// AWS Systems Manager Command's CloudWatch log group name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -61,7 +61,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property Deployment. 
         /// <para>
-        /// Server participating in Job.
+        /// Deployment type in which AWS Systems Manager Documents will be executed.
         /// </para>
         /// </summary>
         public PostLaunchActionsDeploymentType Deployment
@@ -79,7 +79,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property S3LogBucket. 
         /// <para>
-        /// Server participating in Job.
+        /// AWS Systems Manager Command's logs S3 log bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=63)]
@@ -98,7 +98,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property S3OutputKeyPrefix. 
         /// <para>
-        /// Server participating in Job.
+        /// AWS Systems Manager Command's logs S3 output key prefix.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -117,7 +117,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property SsmDocuments. 
         /// <para>
-        /// Server participating in Job.
+        /// AWS Systems Manager Documents.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]

@@ -33,10 +33,30 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class DescribeSourceServersRequestFilters
     {
+        private List<string> _applicationiDs = new List<string>();
         private bool? _isArchived;
         private List<string> _lifeCycleStates = new List<string>();
         private List<string> _replicationTypes = new List<string>();
         private List<string> _sourceServerIDs = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property ApplicationIDs. 
+        /// <para>
+        /// Request to filter Source Servers list by application IDs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<string> ApplicationIDs
+        {
+            get { return this._applicationiDs; }
+            set { this._applicationiDs = value; }
+        }
+
+        // Check to see if ApplicationIDs property is set
+        internal bool IsSetApplicationIDs()
+        {
+            return this._applicationiDs != null && this._applicationiDs.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property IsArchived. 

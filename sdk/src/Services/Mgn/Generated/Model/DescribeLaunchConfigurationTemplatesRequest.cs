@@ -30,7 +30,8 @@ namespace Amazon.Mgn.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLaunchConfigurationTemplates operation.
-    /// Creates a new ReplicationConfigurationTemplate.
+    /// Lists all Launch Configuration Templates, filtered by Launch Configuration Template
+    /// IDs
     /// </summary>
     public partial class DescribeLaunchConfigurationTemplatesRequest : AmazonMgnRequest
     {
@@ -41,7 +42,8 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationTemplateIDs. 
         /// <para>
-        /// Request to disconnect Source Server from service by Server ID.
+        /// Request to filter Launch Configuration Templates list by Launch Configuration Template
+        /// ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -60,10 +62,10 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Request to disconnect Source Server from service by Server ID.
+        /// Maximum results to be returned in DescribeLaunchConfigurationTemplates.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -79,7 +81,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Request to disconnect Source Server from service by Server ID.
+        /// Next pagination token returned from DescribeLaunchConfigurationTemplates.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Mgn.Model
 {
     /// <summary>
-    /// Job type.
+    /// Launch Status of the Job Post Launch Actions.
     /// </summary>
     public partial class JobPostLaunchActionsLaunchStatus
     {
@@ -42,7 +42,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property ExecutionID. 
         /// <para>
-        /// Job type.
+        /// AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -61,7 +61,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property ExecutionStatus. 
         /// <para>
-        /// Job type.
+        /// AWS Systems Manager Document's execution status.
         /// </para>
         /// </summary>
         public PostLaunchActionExecutionStatus ExecutionStatus
@@ -79,7 +79,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// Job type.
+        /// AWS Systems Manager Document's failure reason.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -98,7 +98,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property SsmDocument. 
         /// <para>
-        /// Job type.
+        /// AWS Systems Manager's Document of the of the Job Post Launch Actions.
         /// </para>
         /// </summary>
         public SsmDocument SsmDocument
@@ -116,7 +116,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property SsmDocumentType. 
         /// <para>
-        /// Job type.
+        /// AWS Systems Manager Document type.
         /// </para>
         /// </summary>
         public SsmDocumentType SsmDocumentType

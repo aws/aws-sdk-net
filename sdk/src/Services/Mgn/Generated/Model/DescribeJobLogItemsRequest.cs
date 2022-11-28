@@ -63,7 +63,7 @@ namespace Amazon.Mgn.Model
         /// Request to describe Job log item maximum results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

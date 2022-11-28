@@ -1,10 +1,116 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.ArchiveApplicationRequest.ApplicationID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ArchiveApplicationResponse.ApplicationID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ArchiveApplicationResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ArchiveApplicationResponse.CreationDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ArchiveApplicationResponse.Description</property>
+    <min>0</min>
+    <max>600</max>
+    <pattern>^[^\x00]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ArchiveApplicationResponse.LastModifiedDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ArchiveApplicationResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\s\x00]( *[^\s\x00])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ArchiveApplicationResponse.WaveID</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^wave-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ArchiveWaveRequest.WaveID</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^wave-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ArchiveWaveResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ArchiveWaveResponse.CreationDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ArchiveWaveResponse.Description</property>
+    <min>0</min>
+    <max>600</max>
+    <pattern>^[^\x00]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ArchiveWaveResponse.LastModifiedDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ArchiveWaveResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\s\x00]( *[^\s\x00])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ArchiveWaveResponse.WaveID</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^wave-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.AssociateApplicationsRequest.WaveID</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^wave-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.AssociateSourceServersRequest.ApplicationID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.ChangeServerLifeCycleStateRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ChangeServerLifeCycleStateResponse.ApplicationID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.ChangeServerLifeCycleStateResponse.Arn</property>
@@ -24,15 +130,92 @@
     <pattern>^vcc-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateApplicationRequest.Description</property>
+    <min>0</min>
+    <max>600</max>
+    <pattern>^[^\x00]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateApplicationRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\s\x00]( *[^\s\x00])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateApplicationResponse.ApplicationID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateApplicationResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateApplicationResponse.CreationDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateApplicationResponse.Description</property>
+    <min>0</min>
+    <max>600</max>
+    <pattern>^[^\x00]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateApplicationResponse.LastModifiedDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateApplicationResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\s\x00]( *[^\s\x00])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateApplicationResponse.WaveID</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^wave-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateLaunchConfigurationTemplateRequest.MapAutoTaggingMpeID</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateLaunchConfigurationTemplateRequest.SmallVolumeMaxSize</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.CreateLaunchConfigurationTemplateResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateLaunchConfigurationTemplateResponse.Ec2LaunchTemplateID</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^lt-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.CreateLaunchConfigurationTemplateResponse.LaunchConfigurationTemplateID</property>
     <min>21</min>
     <max>21</max>
     <pattern>^lct-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateLaunchConfigurationTemplateResponse.MapAutoTaggingMpeID</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateLaunchConfigurationTemplateResponse.SmallVolumeMaxSize</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.CreateReplicationConfigurationTemplateRequest.BandwidthThrottling</property>
@@ -86,6 +269,59 @@
     <pattern>^subnet-[0-9a-fA-F]{8,}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateWaveRequest.Description</property>
+    <min>0</min>
+    <max>600</max>
+    <pattern>^[^\x00]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateWaveRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\s\x00]( *[^\s\x00])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateWaveResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateWaveResponse.CreationDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateWaveResponse.Description</property>
+    <min>0</min>
+    <max>600</max>
+    <pattern>^[^\x00]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateWaveResponse.LastModifiedDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateWaveResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\s\x00]( *[^\s\x00])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateWaveResponse.WaveID</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^wave-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.DeleteApplicationRequest.ApplicationID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.DeleteJobRequest.JobID</property>
     <min>24</min>
     <max>24</max>
@@ -116,6 +352,12 @@
     <pattern>^vcc-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.DeleteWaveRequest.WaveID</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^wave-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.DescribeJobLogItemsRequest.JobID</property>
     <min>24</min>
     <max>24</max>
@@ -124,6 +366,7 @@
   <property-value-rule>
     <property>Amazon.Mgn.Model.DescribeJobLogItemsRequest.MaxResults</property>
     <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.DescribeJobLogItemsRequest.NextToken</property>
@@ -138,6 +381,7 @@
   <property-value-rule>
     <property>Amazon.Mgn.Model.DescribeJobsRequest.MaxResults</property>
     <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.DescribeJobsRequest.NextToken</property>
@@ -152,6 +396,7 @@
   <property-value-rule>
     <property>Amazon.Mgn.Model.DescribeLaunchConfigurationTemplatesRequest.MaxResults</property>
     <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.DescribeLaunchConfigurationTemplatesRequest.NextToken</property>
@@ -166,6 +411,7 @@
   <property-value-rule>
     <property>Amazon.Mgn.Model.DescribeReplicationConfigurationTemplatesRequest.MaxResults</property>
     <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.DescribeReplicationConfigurationTemplatesRequest.NextToken</property>
@@ -180,6 +426,7 @@
   <property-value-rule>
     <property>Amazon.Mgn.Model.DescribeSourceServersRequest.MaxResults</property>
     <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.DescribeSourceServersRequest.NextToken</property>
@@ -194,6 +441,7 @@
   <property-value-rule>
     <property>Amazon.Mgn.Model.DescribeVcenterClientsRequest.MaxResults</property>
     <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.DescribeVcenterClientsRequest.NextToken</property>
@@ -206,10 +454,28 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.DisassociateApplicationsRequest.WaveID</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^wave-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.DisassociateSourceServersRequest.ApplicationID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.DisconnectFromServiceRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.DisconnectFromServiceResponse.ApplicationID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.DisconnectFromServiceResponse.Arn</property>
@@ -233,6 +499,12 @@
     <min>19</min>
     <max>19</max>
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.FinalizeCutoverResponse.ApplicationID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.FinalizeCutoverResponse.Arn</property>
@@ -259,6 +531,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.GetLaunchConfigurationResponse.Ec2LaunchTemplateID</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.GetLaunchConfigurationResponse.MapAutoTaggingMpeID</property>
     <min>0</min>
     <max>256</max>
   </property-value-rule>
@@ -311,8 +588,80 @@
     <pattern>^subnet-[0-9a-fA-F]{8,}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.ListApplicationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ListApplicationsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ListApplicationsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ListSourceServerActionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ListSourceServerActionsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ListSourceServerActionsRequest.SourceServerID</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ListSourceServerActionsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ListTemplateActionsRequest.LaunchConfigurationTemplateID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^lct-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ListTemplateActionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ListTemplateActionsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ListTemplateActionsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ListWavesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ListWavesRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ListWavesResponse.NextToken</property>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -320,6 +669,12 @@
     <min>19</min>
     <max>19</max>
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.MarkAsArchivedResponse.ApplicationID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.MarkAsArchivedResponse.Arn</property>
@@ -339,10 +694,178 @@
     <pattern>^vcc-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.PutSourceServerActionRequest.ActionID</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-zA-Z]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutSourceServerActionRequest.ActionName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\s\x00]( *[^\s\x00])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutSourceServerActionRequest.DocumentIdentifier</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutSourceServerActionRequest.DocumentVersion</property>
+    <pattern>^(\$DEFAULT|\$LATEST|[0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutSourceServerActionRequest.Order</property>
+    <min>1001</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutSourceServerActionRequest.SourceServerID</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutSourceServerActionRequest.TimeoutSeconds</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutSourceServerActionResponse.ActionID</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-zA-Z]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutSourceServerActionResponse.ActionName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\s\x00]( *[^\s\x00])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutSourceServerActionResponse.DocumentIdentifier</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutSourceServerActionResponse.DocumentVersion</property>
+    <pattern>^(\$DEFAULT|\$LATEST|[0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutSourceServerActionResponse.Order</property>
+    <min>1001</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutSourceServerActionResponse.TimeoutSeconds</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutTemplateActionRequest.ActionID</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-zA-Z]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutTemplateActionRequest.ActionName</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutTemplateActionRequest.DocumentIdentifier</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutTemplateActionRequest.DocumentVersion</property>
+    <pattern>^(\$DEFAULT|\$LATEST|[0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutTemplateActionRequest.LaunchConfigurationTemplateID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^lct-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutTemplateActionRequest.OperatingSystem</property>
+    <pattern>^(linux|windows)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutTemplateActionRequest.Order</property>
+    <min>1001</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutTemplateActionRequest.TimeoutSeconds</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutTemplateActionResponse.ActionID</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-zA-Z]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutTemplateActionResponse.ActionName</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutTemplateActionResponse.DocumentIdentifier</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutTemplateActionResponse.DocumentVersion</property>
+    <pattern>^(\$DEFAULT|\$LATEST|[0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutTemplateActionResponse.OperatingSystem</property>
+    <pattern>^(linux|windows)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutTemplateActionResponse.Order</property>
+    <min>1001</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PutTemplateActionResponse.TimeoutSeconds</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.RemoveSourceServerActionRequest.ActionID</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-zA-Z]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.RemoveSourceServerActionRequest.SourceServerID</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.RemoveTemplateActionRequest.ActionID</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-zA-Z]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.RemoveTemplateActionRequest.LaunchConfigurationTemplateID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^lct-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.RetryDataReplicationRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.RetryDataReplicationResponse.ApplicationID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.RetryDataReplicationResponse.Arn</property>
@@ -368,6 +891,12 @@
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.StartReplicationResponse.ApplicationID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.StartReplicationResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
@@ -390,9 +919,161 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.UnarchiveApplicationRequest.ApplicationID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UnarchiveApplicationResponse.ApplicationID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UnarchiveApplicationResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UnarchiveApplicationResponse.CreationDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UnarchiveApplicationResponse.Description</property>
+    <min>0</min>
+    <max>600</max>
+    <pattern>^[^\x00]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UnarchiveApplicationResponse.LastModifiedDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UnarchiveApplicationResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\s\x00]( *[^\s\x00])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UnarchiveApplicationResponse.WaveID</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^wave-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UnarchiveWaveRequest.WaveID</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^wave-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UnarchiveWaveResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UnarchiveWaveResponse.CreationDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UnarchiveWaveResponse.Description</property>
+    <min>0</min>
+    <max>600</max>
+    <pattern>^[^\x00]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UnarchiveWaveResponse.LastModifiedDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UnarchiveWaveResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\s\x00]( *[^\s\x00])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UnarchiveWaveResponse.WaveID</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^wave-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.UntagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateApplicationRequest.ApplicationID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateApplicationRequest.Description</property>
+    <min>0</min>
+    <max>600</max>
+    <pattern>^[^\x00]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateApplicationRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\s\x00]( *[^\s\x00])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateApplicationResponse.ApplicationID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateApplicationResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateApplicationResponse.CreationDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateApplicationResponse.Description</property>
+    <min>0</min>
+    <max>600</max>
+    <pattern>^[^\x00]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateApplicationResponse.LastModifiedDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateApplicationResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\s\x00]( *[^\s\x00])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateApplicationResponse.WaveID</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^wave-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateLaunchConfigurationRequest.MapAutoTaggingMpeID</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.UpdateLaunchConfigurationRequest.Name</property>
@@ -407,6 +1088,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.UpdateLaunchConfigurationResponse.Ec2LaunchTemplateID</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateLaunchConfigurationResponse.MapAutoTaggingMpeID</property>
     <min>0</min>
     <max>256</max>
   </property-value-rule>
@@ -428,15 +1114,39 @@
     <pattern>^lct-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateLaunchConfigurationTemplateRequest.MapAutoTaggingMpeID</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateLaunchConfigurationTemplateRequest.SmallVolumeMaxSize</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.UpdateLaunchConfigurationTemplateResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateLaunchConfigurationTemplateResponse.Ec2LaunchTemplateID</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^lt-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.UpdateLaunchConfigurationTemplateResponse.LaunchConfigurationTemplateID</property>
     <min>21</min>
     <max>21</max>
     <pattern>^lct-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateLaunchConfigurationTemplateResponse.MapAutoTaggingMpeID</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateLaunchConfigurationTemplateResponse.SmallVolumeMaxSize</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.UpdateReplicationConfigurationRequest.BandwidthThrottling</property>
@@ -569,6 +1279,12 @@
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateSourceServerReplicationTypeResponse.ApplicationID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.UpdateSourceServerReplicationTypeResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
@@ -586,9 +1302,72 @@
     <pattern>^vcc-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateWaveRequest.Description</property>
+    <min>0</min>
+    <max>600</max>
+    <pattern>^[^\x00]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateWaveRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\s\x00]( *[^\s\x00])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateWaveRequest.WaveID</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^wave-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateWaveResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateWaveResponse.CreationDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateWaveResponse.Description</property>
+    <min>0</min>
+    <max>600</max>
+    <pattern>^[^\x00]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateWaveResponse.LastModifiedDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateWaveResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\s\x00]( *[^\s\x00])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateWaveResponse.WaveID</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^wave-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.AccessDeniedException.Code</property>
     <min>0</min>
     <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ApplicationAggregatedStatus.LastUpdateDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ApplicationAggregatedStatus.TotalSourceServers</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.ConflictException.Code</property>
@@ -813,6 +1592,14 @@
     <min>24</min>
     <max>24</max>
     <pattern>^mgnjob-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.LaunchTemplateDiskConf.Iops</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.LaunchTemplateDiskConf.Throughput</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.LifeCycle.AddedToServiceDateTime</property>
@@ -1088,5 +1875,21 @@
     <property>Amazon.Mgn.Model.VcenterClient.VcenterUUID</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.WaveAggregatedStatus.LastUpdateDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.WaveAggregatedStatus.ReplicationStartedDateTime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.WaveAggregatedStatus.TotalApplications</property>
+    <min>0</min>
   </property-value-rule>
 </property-value-rules>

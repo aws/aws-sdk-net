@@ -43,7 +43,7 @@ namespace Amazon.Mgn.Model
         /// Maximum results to be returned in DescribeVcenterClients.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

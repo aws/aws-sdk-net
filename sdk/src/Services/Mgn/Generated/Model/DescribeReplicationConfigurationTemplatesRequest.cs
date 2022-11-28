@@ -44,7 +44,7 @@ namespace Amazon.Mgn.Model
         /// Request to describe Replication Configuration template by max results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -25,6 +25,114 @@ namespace Amazon.Mgn
 {
 
     /// <summary>
+    /// Constants used for properties of type ApplicationHealthStatus.
+    /// </summary>
+    public class ApplicationHealthStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for ApplicationHealthStatus
+        /// </summary>
+        public static readonly ApplicationHealthStatus ERROR = new ApplicationHealthStatus("ERROR");
+        /// <summary>
+        /// Constant HEALTHY for ApplicationHealthStatus
+        /// </summary>
+        public static readonly ApplicationHealthStatus HEALTHY = new ApplicationHealthStatus("HEALTHY");
+        /// <summary>
+        /// Constant LAGGING for ApplicationHealthStatus
+        /// </summary>
+        public static readonly ApplicationHealthStatus LAGGING = new ApplicationHealthStatus("LAGGING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationHealthStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationHealthStatus FindValue(string value)
+        {
+            return FindValue<ApplicationHealthStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationHealthStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ApplicationProgressStatus.
+    /// </summary>
+    public class ApplicationProgressStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ApplicationProgressStatus
+        /// </summary>
+        public static readonly ApplicationProgressStatus COMPLETED = new ApplicationProgressStatus("COMPLETED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ApplicationProgressStatus
+        /// </summary>
+        public static readonly ApplicationProgressStatus IN_PROGRESS = new ApplicationProgressStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_STARTED for ApplicationProgressStatus
+        /// </summary>
+        public static readonly ApplicationProgressStatus NOT_STARTED = new ApplicationProgressStatus("NOT_STARTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationProgressStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationProgressStatus FindValue(string value)
+        {
+            return FindValue<ApplicationProgressStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationProgressStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BootMode.
     /// </summary>
     public class BootMode : ConstantClass
@@ -1056,6 +1164,10 @@ namespace Amazon.Mgn
         /// Constant TEST_AND_CUTOVER for PostLaunchActionsDeploymentType
         /// </summary>
         public static readonly PostLaunchActionsDeploymentType TEST_AND_CUTOVER = new PostLaunchActionsDeploymentType("TEST_AND_CUTOVER");
+        /// <summary>
+        /// Constant TEST_ONLY for PostLaunchActionsDeploymentType
+        /// </summary>
+        public static readonly PostLaunchActionsDeploymentType TEST_ONLY = new PostLaunchActionsDeploymentType("TEST_ONLY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1568,6 +1680,184 @@ namespace Amazon.Mgn
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VolumeType.
+    /// </summary>
+    public class VolumeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Gp2 for VolumeType
+        /// </summary>
+        public static readonly VolumeType Gp2 = new VolumeType("gp2");
+        /// <summary>
+        /// Constant Gp3 for VolumeType
+        /// </summary>
+        public static readonly VolumeType Gp3 = new VolumeType("gp3");
+        /// <summary>
+        /// Constant Io1 for VolumeType
+        /// </summary>
+        public static readonly VolumeType Io1 = new VolumeType("io1");
+        /// <summary>
+        /// Constant Io2 for VolumeType
+        /// </summary>
+        public static readonly VolumeType Io2 = new VolumeType("io2");
+        /// <summary>
+        /// Constant Sc1 for VolumeType
+        /// </summary>
+        public static readonly VolumeType Sc1 = new VolumeType("sc1");
+        /// <summary>
+        /// Constant St1 for VolumeType
+        /// </summary>
+        public static readonly VolumeType St1 = new VolumeType("st1");
+        /// <summary>
+        /// Constant Standard for VolumeType
+        /// </summary>
+        public static readonly VolumeType Standard = new VolumeType("standard");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VolumeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VolumeType FindValue(string value)
+        {
+            return FindValue<VolumeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VolumeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WaveHealthStatus.
+    /// </summary>
+    public class WaveHealthStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for WaveHealthStatus
+        /// </summary>
+        public static readonly WaveHealthStatus ERROR = new WaveHealthStatus("ERROR");
+        /// <summary>
+        /// Constant HEALTHY for WaveHealthStatus
+        /// </summary>
+        public static readonly WaveHealthStatus HEALTHY = new WaveHealthStatus("HEALTHY");
+        /// <summary>
+        /// Constant LAGGING for WaveHealthStatus
+        /// </summary>
+        public static readonly WaveHealthStatus LAGGING = new WaveHealthStatus("LAGGING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WaveHealthStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WaveHealthStatus FindValue(string value)
+        {
+            return FindValue<WaveHealthStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WaveHealthStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WaveProgressStatus.
+    /// </summary>
+    public class WaveProgressStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for WaveProgressStatus
+        /// </summary>
+        public static readonly WaveProgressStatus COMPLETED = new WaveProgressStatus("COMPLETED");
+        /// <summary>
+        /// Constant IN_PROGRESS for WaveProgressStatus
+        /// </summary>
+        public static readonly WaveProgressStatus IN_PROGRESS = new WaveProgressStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_STARTED for WaveProgressStatus
+        /// </summary>
+        public static readonly WaveProgressStatus NOT_STARTED = new WaveProgressStatus("NOT_STARTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WaveProgressStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WaveProgressStatus FindValue(string value)
+        {
+            return FindValue<WaveProgressStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WaveProgressStatus(string value)
         {
             return FindValue(value);
         }

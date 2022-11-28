@@ -57,10 +57,70 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("associatePublicIpAddress", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.AssociatePublicIpAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("bootMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.BootMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("copyPrivateIp", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.CopyPrivateIp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("copyTags", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.CopyTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ec2LaunchTemplateID", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Ec2LaunchTemplateID = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("enableMapAutoTagging", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.EnableMapAutoTagging = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("largeVolumeConf", targetDepth))
+                {
+                    var unmarshaller = LaunchTemplateDiskConfUnmarshaller.Instance;
+                    response.LargeVolumeConf = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("launchConfigurationTemplateID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LaunchConfigurationTemplateID = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("launchDisposition", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LaunchDisposition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("licensing", targetDepth))
+                {
+                    var unmarshaller = LicensingUnmarshaller.Instance;
+                    response.Licensing = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mapAutoTaggingMpeID", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MapAutoTaggingMpeID = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("postLaunchActions", targetDepth))
@@ -69,10 +129,28 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     response.PostLaunchActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("smallVolumeConf", targetDepth))
+                {
+                    var unmarshaller = LaunchTemplateDiskConfUnmarshaller.Instance;
+                    response.SmallVolumeConf = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("smallVolumeMaxSize", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.SmallVolumeMaxSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("targetInstanceTypeRightSizingMethod", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TargetInstanceTypeRightSizingMethod = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

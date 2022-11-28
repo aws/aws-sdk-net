@@ -75,6 +75,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     response.Ec2LaunchTemplateID = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("enableMapAutoTagging", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.EnableMapAutoTagging = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("launchDisposition", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -85,6 +91,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = LicensingUnmarshaller.Instance;
                     response.Licensing = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mapAutoTaggingMpeID", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MapAutoTaggingMpeID = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))

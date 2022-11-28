@@ -83,6 +83,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CopyTags);
                 }
 
+                if(publicRequest.IsSetEnableMapAutoTagging())
+                {
+                    context.Writer.WritePropertyName("enableMapAutoTagging");
+                    context.Writer.Write(publicRequest.EnableMapAutoTagging);
+                }
+
                 if(publicRequest.IsSetLaunchDisposition())
                 {
                     context.Writer.WritePropertyName("launchDisposition");
@@ -98,6 +104,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.Licensing, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMapAutoTaggingMpeID())
+                {
+                    context.Writer.WritePropertyName("mapAutoTaggingMpeID");
+                    context.Writer.Write(publicRequest.MapAutoTaggingMpeID);
                 }
 
                 if(publicRequest.IsSetName())

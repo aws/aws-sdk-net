@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Mgn.Model
 {
     /// <summary>
-    /// Server participating in Job.
+    /// Status of the Post Launch Actions running on the Test or Cutover instance.
     /// </summary>
     public partial class PostLaunchActionsStatus
     {
@@ -39,7 +39,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property PostLaunchActionsLaunchStatusList. 
         /// <para>
-        /// Server participating in Job.
+        /// List of Post Launch Action status.
         /// </para>
         /// </summary>
         public List<JobPostLaunchActionsLaunchStatus> PostLaunchActionsLaunchStatusList
@@ -57,7 +57,8 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property SsmAgentDiscoveryDatetime. 
         /// <para>
-        /// Server participating in Job.
+        /// Time where the AWS Systems Manager was detected as running on the Test or Cutover
+        /// instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=32)]

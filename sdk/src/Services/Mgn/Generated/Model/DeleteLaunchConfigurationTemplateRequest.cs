@@ -30,7 +30,7 @@ namespace Amazon.Mgn.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLaunchConfigurationTemplate operation.
-    /// Creates a new ReplicationConfigurationTemplate.
+    /// Deletes a single Launch Configuration Template by ID.
     /// </summary>
     public partial class DeleteLaunchConfigurationTemplateRequest : AmazonMgnRequest
     {

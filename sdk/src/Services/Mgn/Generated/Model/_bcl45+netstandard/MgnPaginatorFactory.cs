@@ -82,5 +82,37 @@ namespace Amazon.Mgn.Model
         {
             return new DescribeVcenterClientsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListApplications operation
+        ///</summary>
+        public IListApplicationsPaginator ListApplications(ListApplicationsRequest request) 
+        {
+            return new ListApplicationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSourceServerActions operation
+        ///</summary>
+        public IListSourceServerActionsPaginator ListSourceServerActions(ListSourceServerActionsRequest request) 
+        {
+            return new ListSourceServerActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTemplateActions operation
+        ///</summary>
+        public IListTemplateActionsPaginator ListTemplateActions(ListTemplateActionsRequest request) 
+        {
+            return new ListTemplateActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWaves operation
+        ///</summary>
+        public IListWavesPaginator ListWaves(ListWavesRequest request) 
+        {
+            return new ListWavesPaginator(this.client, request);
+        }
     }
 }

@@ -267,6 +267,194 @@ namespace Amazon.Mgn
         #endregion
 
 
+        #region  ArchiveApplication
+
+        internal virtual ArchiveApplicationResponse ArchiveApplication(ArchiveApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ArchiveApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ArchiveApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<ArchiveApplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Archive application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ArchiveApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ArchiveApplication service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveApplication">REST API Reference for ArchiveApplication Operation</seealso>
+        public virtual Task<ArchiveApplicationResponse> ArchiveApplicationAsync(ArchiveApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ArchiveApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ArchiveApplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ArchiveApplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ArchiveWave
+
+        internal virtual ArchiveWaveResponse ArchiveWave(ArchiveWaveRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ArchiveWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ArchiveWaveResponseUnmarshaller.Instance;
+
+            return Invoke<ArchiveWaveResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Archive wave.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ArchiveWave service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ArchiveWave service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveWave">REST API Reference for ArchiveWave Operation</seealso>
+        public virtual Task<ArchiveWaveResponse> ArchiveWaveAsync(ArchiveWaveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ArchiveWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ArchiveWaveResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ArchiveWaveResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateApplications
+
+        internal virtual AssociateApplicationsResponse AssociateApplications(AssociateApplicationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateApplicationsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateApplicationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associate applications to wave.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApplications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateApplications service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateApplications">REST API Reference for AssociateApplications Operation</seealso>
+        public virtual Task<AssociateApplicationsResponse> AssociateApplicationsAsync(AssociateApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateApplicationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateApplicationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateSourceServers
+
+        internal virtual AssociateSourceServersResponse AssociateSourceServers(AssociateSourceServersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSourceServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSourceServersResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSourceServersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associate source servers to application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceServers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateSourceServers service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateSourceServers">REST API Reference for AssociateSourceServers Operation</seealso>
+        public virtual Task<AssociateSourceServersResponse> AssociateSourceServersAsync(AssociateSourceServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSourceServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSourceServersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateSourceServersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ChangeServerLifeCycleState
 
         internal virtual ChangeServerLifeCycleStateResponse ChangeServerLifeCycleState(ChangeServerLifeCycleStateRequest request)
@@ -317,6 +505,50 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  CreateApplication
+
+        internal virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateApplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateApplication service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
+        public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateLaunchConfigurationTemplate
 
         internal virtual CreateLaunchConfigurationTemplateResponse CreateLaunchConfigurationTemplate(CreateLaunchConfigurationTemplateRequest request)
@@ -331,7 +563,7 @@ namespace Amazon.Mgn
 
 
         /// <summary>
-        /// Creates a new ReplicationConfigurationTemplate.
+        /// Creates a new Launch Configuration Template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchConfigurationTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -403,6 +635,94 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  CreateWave
+
+        internal virtual CreateWaveResponse CreateWave(CreateWaveRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWaveResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWaveResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create wave.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWave service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWave service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateWave">REST API Reference for CreateWave Operation</seealso>
+        public virtual Task<CreateWaveResponse> CreateWaveAsync(CreateWaveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWaveResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateWaveResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteApplication
+
+        internal virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteApplication service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        public virtual Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteJob
 
         internal virtual DeleteJobResponse DeleteJob(DeleteJobRequest request)
@@ -461,7 +781,7 @@ namespace Amazon.Mgn
 
 
         /// <summary>
-        /// Creates a new ReplicationConfigurationTemplate.
+        /// Deletes a single Launch Configuration Template by ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLaunchConfigurationTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -622,6 +942,50 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  DeleteWave
+
+        internal virtual DeleteWaveResponse DeleteWave(DeleteWaveRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWaveResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWaveResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete wave.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWave service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWave service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteWave">REST API Reference for DeleteWave Operation</seealso>
+        public virtual Task<DeleteWaveResponse> DeleteWaveAsync(DeleteWaveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWaveResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteWaveResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeJobLogItems
 
         internal virtual DescribeJobLogItemsResponse DescribeJobLogItems(DescribeJobLogItemsRequest request)
@@ -721,7 +1085,8 @@ namespace Amazon.Mgn
 
 
         /// <summary>
-        /// Creates a new ReplicationConfigurationTemplate.
+        /// Lists all Launch Configuration Templates, filtered by Launch Configuration Template
+        /// IDs
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLaunchConfigurationTemplates service method.</param>
         /// <param name="cancellationToken">
@@ -872,6 +1237,94 @@ namespace Amazon.Mgn
             options.ResponseUnmarshaller = DescribeVcenterClientsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeVcenterClientsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateApplications
+
+        internal virtual DisassociateApplicationsResponse DisassociateApplications(DisassociateApplicationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateApplicationsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateApplicationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociate applications from wave.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApplications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateApplications service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateApplications">REST API Reference for DisassociateApplications Operation</seealso>
+        public virtual Task<DisassociateApplicationsResponse> DisassociateApplicationsAsync(DisassociateApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateApplicationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateApplicationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateSourceServers
+
+        internal virtual DisassociateSourceServersResponse DisassociateSourceServers(DisassociateSourceServersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSourceServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSourceServersResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSourceServersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociate source servers from application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSourceServers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateSourceServers service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateSourceServers">REST API Reference for DisassociateSourceServers Operation</seealso>
+        public virtual Task<DisassociateSourceServersResponse> DisassociateSourceServersAsync(DisassociateSourceServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSourceServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSourceServersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateSourceServersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1105,6 +1558,83 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  ListApplications
+
+        internal virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListApplicationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves all applications or multiple applications by ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListApplications service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListApplications">REST API Reference for ListApplications Operation</seealso>
+        public virtual Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSourceServerActions
+
+        internal virtual ListSourceServerActionsResponse ListSourceServerActions(ListSourceServerActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSourceServerActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSourceServerActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSourceServerActionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List source server post migration custom actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceServerActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSourceServerActions service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListSourceServerActions">REST API Reference for ListSourceServerActions Operation</seealso>
+        public virtual Task<ListSourceServerActionsResponse> ListSourceServerActionsAsync(ListSourceServerActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSourceServerActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSourceServerActionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSourceServerActionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -1155,6 +1685,83 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  ListTemplateActions
+
+        internal virtual ListTemplateActionsResponse ListTemplateActions(ListTemplateActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTemplateActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTemplateActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTemplateActionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List template post migration custom actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTemplateActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTemplateActions service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListTemplateActions">REST API Reference for ListTemplateActions Operation</seealso>
+        public virtual Task<ListTemplateActionsResponse> ListTemplateActionsAsync(ListTemplateActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTemplateActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTemplateActionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTemplateActionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListWaves
+
+        internal virtual ListWavesResponse ListWaves(ListWavesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWavesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWavesResponseUnmarshaller.Instance;
+
+            return Invoke<ListWavesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves all waves or multiple waves by ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWaves service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWaves service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListWaves">REST API Reference for ListWaves Operation</seealso>
+        public virtual Task<ListWavesResponse> ListWavesAsync(ListWavesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWavesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWavesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWavesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  MarkAsArchived
 
         internal virtual MarkAsArchivedResponse MarkAsArchived(MarkAsArchivedRequest request)
@@ -1197,6 +1804,186 @@ namespace Amazon.Mgn
             options.ResponseUnmarshaller = MarkAsArchivedResponseUnmarshaller.Instance;
 
             return InvokeAsync<MarkAsArchivedResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutSourceServerAction
+
+        internal virtual PutSourceServerActionResponse PutSourceServerAction(PutSourceServerActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSourceServerActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSourceServerActionResponseUnmarshaller.Instance;
+
+            return Invoke<PutSourceServerActionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Put source server post migration custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSourceServerAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutSourceServerAction service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutSourceServerAction">REST API Reference for PutSourceServerAction Operation</seealso>
+        public virtual Task<PutSourceServerActionResponse> PutSourceServerActionAsync(PutSourceServerActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSourceServerActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSourceServerActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutSourceServerActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutTemplateAction
+
+        internal virtual PutTemplateActionResponse PutTemplateAction(PutTemplateActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTemplateActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTemplateActionResponseUnmarshaller.Instance;
+
+            return Invoke<PutTemplateActionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Put template post migration custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTemplateAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutTemplateAction service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutTemplateAction">REST API Reference for PutTemplateAction Operation</seealso>
+        public virtual Task<PutTemplateActionResponse> PutTemplateActionAsync(PutTemplateActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTemplateActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTemplateActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutTemplateActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveSourceServerAction
+
+        internal virtual RemoveSourceServerActionResponse RemoveSourceServerAction(RemoveSourceServerActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveSourceServerActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveSourceServerActionResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveSourceServerActionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Remove source server post migration custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveSourceServerAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveSourceServerAction service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveSourceServerAction">REST API Reference for RemoveSourceServerAction Operation</seealso>
+        public virtual Task<RemoveSourceServerActionResponse> RemoveSourceServerActionAsync(RemoveSourceServerActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveSourceServerActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveSourceServerActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveSourceServerActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveTemplateAction
+
+        internal virtual RemoveTemplateActionResponse RemoveTemplateAction(RemoveTemplateActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTemplateActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTemplateActionResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveTemplateActionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Remove template post migration custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTemplateAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveTemplateAction service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveTemplateAction">REST API Reference for RemoveTemplateAction Operation</seealso>
+        public virtual Task<RemoveTemplateActionResponse> RemoveTemplateActionAsync(RemoveTemplateActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTemplateActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTemplateActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveTemplateActionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1488,6 +2275,92 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  UnarchiveApplication
+
+        internal virtual UnarchiveApplicationResponse UnarchiveApplication(UnarchiveApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnarchiveApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnarchiveApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<UnarchiveApplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Unarchive application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnarchiveApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UnarchiveApplication service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveApplication">REST API Reference for UnarchiveApplication Operation</seealso>
+        public virtual Task<UnarchiveApplicationResponse> UnarchiveApplicationAsync(UnarchiveApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnarchiveApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnarchiveApplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UnarchiveApplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UnarchiveWave
+
+        internal virtual UnarchiveWaveResponse UnarchiveWave(UnarchiveWaveRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnarchiveWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnarchiveWaveResponseUnmarshaller.Instance;
+
+            return Invoke<UnarchiveWaveResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Unarchive wave.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnarchiveWave service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UnarchiveWave service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveWave">REST API Reference for UnarchiveWave Operation</seealso>
+        public virtual Task<UnarchiveWaveResponse> UnarchiveWaveAsync(UnarchiveWaveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnarchiveWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnarchiveWaveResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UnarchiveWaveResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UntagResource
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -1535,6 +2408,50 @@ namespace Amazon.Mgn
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateApplication
+
+        internal virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateApplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateApplication service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
+        public virtual Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1600,7 +2517,7 @@ namespace Amazon.Mgn
 
 
         /// <summary>
-        /// Creates a new ReplicationConfigurationTemplate.
+        /// Updates an existing Launch Configuration Template by ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLaunchConfigurationTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -1772,6 +2689,50 @@ namespace Amazon.Mgn
             options.ResponseUnmarshaller = UpdateSourceServerReplicationTypeResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSourceServerReplicationTypeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateWave
+
+        internal virtual UpdateWaveResponse UpdateWave(UpdateWaveRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWaveResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWaveResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update wave.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWave service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWave service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateWave">REST API Reference for UpdateWave Operation</seealso>
+        public virtual Task<UpdateWaveResponse> UpdateWaveAsync(UpdateWaveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWaveResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateWaveResponse>(request, options, cancellationToken);
         }
 
         #endregion

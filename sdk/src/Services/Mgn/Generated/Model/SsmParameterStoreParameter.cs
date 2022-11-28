@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Mgn.Model
 {
     /// <summary>
-    /// Source server replication type.
+    /// AWS Systems Manager Parameter Store parameter.
     /// </summary>
     public partial class SsmParameterStoreParameter
     {
@@ -39,7 +39,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property ParameterName. 
         /// <para>
-        /// Source server replication type.
+        /// AWS Systems Manager Parameter Store parameter name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
@@ -58,7 +58,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property ParameterType. 
         /// <para>
-        /// Source server replication type.
+        /// AWS Systems Manager Parameter Store parameter type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

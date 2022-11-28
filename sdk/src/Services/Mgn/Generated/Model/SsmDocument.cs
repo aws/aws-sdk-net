@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Mgn.Model
 {
     /// <summary>
-    /// Source server replication type.
+    /// AWS Systems Manager Document.
     /// </summary>
     public partial class SsmDocument
     {
@@ -42,7 +42,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property ActionName. 
         /// <para>
-        /// Source server replication type.
+        /// User-friendly name for the AWS Systems Manager Document.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
@@ -61,7 +61,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property MustSucceedForCutover. 
         /// <para>
-        /// Source server replication type.
+        /// If true, Cutover will not be enabled if the document has failed.
         /// </para>
         /// </summary>
         public bool MustSucceedForCutover
@@ -79,10 +79,10 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// Source server replication type.
+        /// AWS Systems Manager Document parameters.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10)]
+        [AWSProperty(Min=0, Max=20)]
         public Dictionary<string, List<SsmParameterStoreParameter>> Parameters
         {
             get { return this._parameters; }
@@ -98,7 +98,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property SsmDocumentName. 
         /// <para>
-        /// Source server replication type.
+        /// AWS Systems Manager Document name or full ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=172)]
@@ -117,7 +117,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property TimeoutSeconds. 
         /// <para>
-        /// Source server replication type.
+        /// AWS Systems Manager Document timeout seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

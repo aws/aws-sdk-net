@@ -62,7 +62,7 @@ namespace Amazon.Mgn.Model
         /// Request to filter Source Servers list by maximum results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

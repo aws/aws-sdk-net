@@ -65,6 +65,70 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAssociatePublicIpAddress())
+                {
+                    context.Writer.WritePropertyName("associatePublicIpAddress");
+                    context.Writer.Write(publicRequest.AssociatePublicIpAddress);
+                }
+
+                if(publicRequest.IsSetBootMode())
+                {
+                    context.Writer.WritePropertyName("bootMode");
+                    context.Writer.Write(publicRequest.BootMode);
+                }
+
+                if(publicRequest.IsSetCopyPrivateIp())
+                {
+                    context.Writer.WritePropertyName("copyPrivateIp");
+                    context.Writer.Write(publicRequest.CopyPrivateIp);
+                }
+
+                if(publicRequest.IsSetCopyTags())
+                {
+                    context.Writer.WritePropertyName("copyTags");
+                    context.Writer.Write(publicRequest.CopyTags);
+                }
+
+                if(publicRequest.IsSetEnableMapAutoTagging())
+                {
+                    context.Writer.WritePropertyName("enableMapAutoTagging");
+                    context.Writer.Write(publicRequest.EnableMapAutoTagging);
+                }
+
+                if(publicRequest.IsSetLargeVolumeConf())
+                {
+                    context.Writer.WritePropertyName("largeVolumeConf");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LaunchTemplateDiskConfMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LargeVolumeConf, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetLaunchDisposition())
+                {
+                    context.Writer.WritePropertyName("launchDisposition");
+                    context.Writer.Write(publicRequest.LaunchDisposition);
+                }
+
+                if(publicRequest.IsSetLicensing())
+                {
+                    context.Writer.WritePropertyName("licensing");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LicensingMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Licensing, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMapAutoTaggingMpeID())
+                {
+                    context.Writer.WritePropertyName("mapAutoTaggingMpeID");
+                    context.Writer.Write(publicRequest.MapAutoTaggingMpeID);
+                }
+
                 if(publicRequest.IsSetPostLaunchActions())
                 {
                     context.Writer.WritePropertyName("postLaunchActions");
@@ -74,6 +138,23 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.PostLaunchActions, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSmallVolumeConf())
+                {
+                    context.Writer.WritePropertyName("smallVolumeConf");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LaunchTemplateDiskConfMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SmallVolumeConf, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSmallVolumeMaxSize())
+                {
+                    context.Writer.WritePropertyName("smallVolumeMaxSize");
+                    context.Writer.Write(publicRequest.SmallVolumeMaxSize);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -88,6 +169,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestTagsValue);
                     }
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetTargetInstanceTypeRightSizingMethod())
+                {
+                    context.Writer.WritePropertyName("targetInstanceTypeRightSizingMethod");
+                    context.Writer.Write(publicRequest.TargetInstanceTypeRightSizingMethod);
                 }
 
                 writer.WriteObjectEnd();

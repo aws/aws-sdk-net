@@ -39,7 +39,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// Request to disconnect Source Server from service by Server ID.
+        /// List of items returned by DescribeLaunchConfigurationTemplates.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -58,7 +58,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Request to disconnect Source Server from service by Server ID.
+        /// Next pagination token returned from DescribeLaunchConfigurationTemplates.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

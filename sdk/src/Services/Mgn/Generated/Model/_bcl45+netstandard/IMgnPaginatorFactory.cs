@@ -54,5 +54,25 @@ namespace Amazon.Mgn.Model
         /// Paginator for DescribeVcenterClients operation
         ///</summary>
         IDescribeVcenterClientsPaginator DescribeVcenterClients(DescribeVcenterClientsRequest request);
+
+        /// <summary>
+        /// Paginator for ListApplications operation
+        ///</summary>
+        IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSourceServerActions operation
+        ///</summary>
+        IListSourceServerActionsPaginator ListSourceServerActions(ListSourceServerActionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTemplateActions operation
+        ///</summary>
+        IListTemplateActionsPaginator ListTemplateActions(ListTemplateActionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListWaves operation
+        ///</summary>
+        IListWavesPaginator ListWaves(ListWavesRequest request);
     }
 }

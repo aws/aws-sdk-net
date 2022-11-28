@@ -33,6 +33,7 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class FinalizeCutoverResponse : AmazonWebServiceResponse
     {
+        private string _applicationid;
         private string _arn;
         private DataReplicationInfo _dataReplicationInfo;
         private bool? _isArchived;
@@ -43,6 +44,25 @@ namespace Amazon.Mgn.Model
         private string _sourceServerID;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _vcenterClientID;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationID. 
+        /// <para>
+        /// Source server application ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=21, Max=21)]
+        public string ApplicationID
+        {
+            get { return this._applicationid; }
+            set { this._applicationid = value; }
+        }
+
+        // Check to see if ApplicationID property is set
+        internal bool IsSetApplicationID()
+        {
+            return this._applicationid != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 

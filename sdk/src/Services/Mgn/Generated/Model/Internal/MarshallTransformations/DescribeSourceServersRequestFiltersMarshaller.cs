@@ -45,6 +45,17 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DescribeSourceServersRequestFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetApplicationIDs())
+            {
+                context.Writer.WritePropertyName("applicationIDs");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectApplicationIDsListValue in requestObject.ApplicationIDs)
+                {
+                        context.Writer.Write(requestObjectApplicationIDsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetIsArchived())
             {
                 context.Writer.WritePropertyName("isArchived");
