@@ -35,6 +35,7 @@ namespace Amazon.CloudWatchLogs.Model
     {
         private string _arn;
         private DateTime? _creationTime;
+        private DataProtectionStatus _dataProtectionStatus;
         private string _kmsKeyId;
         private string _logGroupName;
         private int? _metricFilterCount;
@@ -80,9 +81,28 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DataProtectionStatus. 
+        /// <para>
+        /// Displays whether this log group has a protection policy, or whether it had one in
+        /// the past. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.
+        /// </para>
+        /// </summary>
+        public DataProtectionStatus DataProtectionStatus
+        {
+            get { return this._dataProtectionStatus; }
+            set { this._dataProtectionStatus = value; }
+        }
+
+        // Check to see if DataProtectionStatus property is set
+        internal bool IsSetDataProtectionStatus()
+        {
+            return this._dataProtectionStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+        /// The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

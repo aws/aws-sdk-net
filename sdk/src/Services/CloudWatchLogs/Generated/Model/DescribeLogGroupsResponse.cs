@@ -44,7 +44,7 @@ namespace Amazon.CloudWatchLogs.Model
         ///  
         /// <para>
         /// If the <code>retentionInDays</code> value is not included for a log group, then that
-        /// log group is set to have its events never expire.
+        /// log group's events do not expire.
         /// </para>
         /// </summary>
         public List<LogGroup> LogGroups

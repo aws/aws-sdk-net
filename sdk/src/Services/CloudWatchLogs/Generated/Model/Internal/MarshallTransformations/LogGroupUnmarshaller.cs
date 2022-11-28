@@ -76,6 +76,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dataProtectionStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataProtectionStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("kmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

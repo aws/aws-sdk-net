@@ -40,8 +40,9 @@ namespace Amazon.CloudWatchLogs
     ///
     /// You can use Amazon CloudWatch Logs to monitor, store, and access your log files from
     /// EC2 instances, CloudTrail, and other sources. You can then retrieve the associated
-    /// log data from CloudWatch Logs using the CloudWatch console, CloudWatch Logs commands
-    /// in the Amazon Web Services CLI, CloudWatch Logs API, or CloudWatch Logs SDK.
+    /// log data from CloudWatch Logs using the CloudWatch console. Alternatively, you can
+    /// use CloudWatch Logs commands in the Amazon Web Services CLI, CloudWatch Logs API,
+    /// or CloudWatch Logs SDK.
     /// 
     ///  
     /// <para>
@@ -49,15 +50,16 @@ namespace Amazon.CloudWatchLogs
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Monitor logs from EC2 instances in real-time</b>: You can use CloudWatch Logs
+    ///  <b>Monitor logs from EC2 instances in real time</b>: You can use CloudWatch Logs
     /// to monitor applications and systems using log data. For example, CloudWatch Logs can
-    /// track the number of errors that occur in your application logs and send you a notification
-    /// whenever the rate of errors exceeds a threshold that you specify. CloudWatch Logs
-    /// uses your log data for monitoring so no code changes are required. For example, you
-    /// can monitor application logs for specific literal terms (such as "NullReferenceException")
-    /// or count the number of occurrences of a literal term at a particular position in log
-    /// data (such as "404" status codes in an Apache access log). When the term you are searching
-    /// for is found, CloudWatch Logs reports the data to a CloudWatch metric that you specify.
+    /// track the number of errors that occur in your application logs. Then, it can send
+    /// you a notification whenever the rate of errors exceeds a threshold that you specify.
+    /// CloudWatch Logs uses your log data for monitoring so no code changes are required.
+    /// For example, you can monitor application logs for specific literal terms (such as
+    /// "NullReferenceException"). You can also count the number of occurrences of a literal
+    /// term at a particular position in log data (such as "404" status codes in an Apache
+    /// access log). When the term you are searching for is found, CloudWatch Logs reports
+    /// the data to a CloudWatch metric that you specify.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -68,10 +70,10 @@ namespace Amazon.CloudWatchLogs
     ///  </li> <li> 
     /// <para>
     ///  <b>Archive log data</b>: You can use CloudWatch Logs to store your log data in highly
-    /// durable storage. You can change the log retention setting so that any log events older
-    /// than this setting are automatically deleted. The CloudWatch Logs agent makes it easy
-    /// to quickly send both rotated and non-rotated log data off of a host and into the log
-    /// service. You can then access the raw log data when you need it.
+    /// durable storage. You can change the log retention setting so that any log events earlier
+    /// than this setting are automatically deleted. The CloudWatch Logs agent helps to quickly
+    /// send both rotated and non-rotated log data off of a host and into the log service.
+    /// You can then access the raw log data when you need it.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -316,21 +318,20 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Associates the specified Key Management Service customer master key (CMK) with the
-        /// specified log group.
+        /// Associates the specified KMS key with the specified log group.
         /// 
         ///  
         /// <para>
-        /// Associating an KMS CMK with a log group overrides any existing associations between
-        /// the log group and a CMK. After a CMK is associated with a log group, all newly ingested
-        /// data for the log group is encrypted using the CMK. This association is stored as long
-        /// as the data encrypted with the CMK is still within CloudWatch Logs. This enables CloudWatch
-        /// Logs to decrypt this data whenever it is requested.
+        /// Associating a KMS key with a log group overrides any existing associations between
+        /// the log group and a KMS key. After a KMS key is associated with a log group, all newly
+        /// ingested data for the log group is encrypted using the KMS key. This association is
+        /// stored as long as the data encrypted with the KMS keyis still within CloudWatch Logs.
+        /// This enables CloudWatch Logs to decrypt this data whenever it is requested.
         /// </para>
         ///  <important> 
         /// <para>
-        /// CloudWatch Logs supports only symmetric CMKs. Do not use an associate an asymmetric
-        /// CMK with your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// CloudWatch Logs supports only symmetric KMS keys. Do not use an associate an asymmetric
+        /// KMS key with your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
         /// Symmetric and Asymmetric Keys</a>.
         /// </para>
         ///  </important> 
@@ -339,8 +340,9 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// If you attempt to associate a CMK with a log group but the CMK does not exist or the
-        /// CMK is disabled, you receive an <code>InvalidParameterException</code> error. 
+        /// If you attempt to associate a KMS key with a log group but the KMS key does not exist
+        /// or the KMS key is disabled, you receive an <code>InvalidParameterException</code>
+        /// error. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateKmsKey service method.</param>
@@ -438,14 +440,14 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Creates an export task, which allows you to efficiently export data from a log group
-        /// to an Amazon S3 bucket. When you perform a <code>CreateExportTask</code> operation,
-        /// you must use credentials that have permission to write to the S3 bucket that you specify
+        /// Creates an export task so that you can efficiently export data from a log group to
+        /// an Amazon S3 bucket. When you perform a <code>CreateExportTask</code> operation, you
+        /// must use credentials that have permission to write to the S3 bucket that you specify
         /// as the destination.
         /// 
         ///  
         /// <para>
-        /// Exporting log data to Amazon S3 buckets that are encrypted by KMS is supported. Exporting
+        /// Exporting log data to S3 buckets that are encrypted by KMS is supported. Exporting
         /// log data to Amazon S3 buckets that have S3 Object Lock enabled with a retention period
         /// is also supported.
         /// </para>
@@ -464,13 +466,13 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// You can export logs from multiple log groups or multiple time ranges to the same S3
-        /// bucket. To separate out log data for each export task, you can specify a prefix to
-        /// be used as the Amazon S3 key prefix for all exported objects.
+        /// bucket. To separate log data for each export task, specify a prefix to be used as
+        /// the Amazon S3 key prefix for all exported objects.
         /// </para>
         ///  <note> 
         /// <para>
         /// Time-based sorting on chunks of log data inside an exported file is not guaranteed.
-        /// You can sort the exported log fild data by using Linux utilities.
+        /// You can sort the exported log field data by using Linux utilities.
         /// </para>
         ///  </note>
         /// </summary>
@@ -533,7 +535,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Log group names must be unique within a region for an Amazon Web Services account.
+        /// Log group names must be unique within a Region for an Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -546,27 +548,27 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When you create a log group, by default the log events in the log group never expire.
+        /// When you create a log group, by default the log events in the log group do not expire.
         /// To set a retention policy so that events expire and are deleted after a specified
         /// time, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutRetentionPolicy.html">PutRetentionPolicy</a>.
         /// </para>
         ///  
         /// <para>
-        /// If you associate a Key Management Service customer master key (CMK) with the log group,
-        /// ingested data is encrypted using the CMK. This association is stored as long as the
-        /// data encrypted with the CMK is still within CloudWatch Logs. This enables CloudWatch
-        /// Logs to decrypt this data whenever it is requested.
+        /// If you associate an KMS key with the log group, ingested data is encrypted using the
+        /// KMS key. This association is stored as long as the data encrypted with the KMS key
+        /// is still within CloudWatch Logs. This enables CloudWatch Logs to decrypt this data
+        /// whenever it is requested.
         /// </para>
         ///  
         /// <para>
-        /// If you attempt to associate a CMK with the log group but the CMK does not exist or
-        /// the CMK is disabled, you receive an <code>InvalidParameterException</code> error.
-        /// 
+        /// If you attempt to associate a KMS key with the log group but the KMS keydoes not exist
+        /// or the KMS key is disabled, you receive an <code>InvalidParameterException</code>
+        /// error. 
         /// </para>
         ///  <important> 
         /// <para>
-        /// CloudWatch Logs supports only symmetric CMKs. Do not associate an asymmetric CMK with
-        /// your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// CloudWatch Logs supports only symmetric KMS keys. Do not associate an asymmetric KMS
+        /// key with your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
         /// Symmetric and Asymmetric Keys</a>.
         /// </para>
         ///  </important>
@@ -642,7 +644,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The ':' (colon) and '*' (asterisk) characters are not allowed.
+        /// Don't use ':' (colon) or '*' (asterisk) characters.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -672,6 +674,57 @@ namespace Amazon.CloudWatchLogs
             options.ResponseUnmarshaller = CreateLogStreamResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateLogStreamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDataProtectionPolicy
+
+        internal virtual DeleteDataProtectionPolicyResponse DeleteDataProtectionPolicy(DeleteDataProtectionPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataProtectionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataProtectionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataProtectionPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the data protection policy from the specified log group. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about data protection policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataProtectionPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataProtectionPolicy service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDataProtectionPolicy">REST API Reference for DeleteDataProtectionPolicy Operation</seealso>
+        public virtual Task<DeleteDataProtectionPolicyResponse> DeleteDataProtectionPolicyAsync(DeleteDataProtectionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataProtectionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataProtectionPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDataProtectionPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1169,6 +1222,13 @@ namespace Amazon.CloudWatchLogs
         /// control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
         /// access to Amazon Web Services resources using tags</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// If you are using CloudWatch cross-account observability, you can use this operation
+        /// in a monitoring account and view data from the linked source accounts. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1201,6 +1261,13 @@ namespace Amazon.CloudWatchLogs
         /// </code> condition key to control access. For more information about using tags to
         /// control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
         /// access to Amazon Web Services resources using tags</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using CloudWatch cross-account observability, you can use this operation
+        /// in a monitoring account and view data from the linked source accounts. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLogGroups service method.</param>
@@ -1248,6 +1315,13 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// This operation has a limit of five transactions per second, after which transactions
         /// are throttled.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using CloudWatch cross-account observability, you can use this operation
+        /// in a monitoring account and view data from the linked source accounts. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLogStreams service method.</param>
@@ -1336,9 +1410,9 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns a list of CloudWatch Logs Insights queries that are scheduled, executing,
-        /// or have been executed recently in this account. You can request all queries or limit
-        /// it to queries of a specific log group or queries with a certain status.
+        /// Returns a list of CloudWatch Logs Insights queries that are scheduled, running, or
+        /// have been run recently in this account. You can request all queries or limit it to
+        /// queries of a specific log group or queries with a certain status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeQueries service method.</param>
         /// <param name="cancellationToken">
@@ -1512,15 +1586,14 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Disassociates the associated Key Management Service customer master key (CMK) from
-        /// the specified log group.
+        /// Disassociates the associated KMS key from the specified log group.
         /// 
         ///  
         /// <para>
-        /// After the KMS CMK is disassociated from the log group, CloudWatch Logs stops encrypting
+        /// After the KMS key is disassociated from the log group, CloudWatch Logs stops encrypting
         /// newly ingested data for the log group. All previously ingested data remains encrypted,
-        /// and CloudWatch Logs requires permissions for the CMK whenever the encrypted data is
-        /// requested.
+        /// and CloudWatch Logs requires permissions for the KMS key whenever the encrypted data
+        /// is requested.
         /// </para>
         ///  
         /// <para>
@@ -1581,15 +1654,22 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// By default, this operation returns as many log events as can fit in 1 MB (up to 10,000
-        /// log events) or all the events found within the time range that you specify. If the
-        /// results include a token, then there are more log events available, and you can get
-        /// additional results by specifying the token in a subsequent call. This operation can
-        /// return empty results while there are more log events available through the token.
+        /// log events) or all the events found within the specified time range. If the results
+        /// include a token, that means there are more log events available. You can get additional
+        /// results by specifying the token in a subsequent call. This operation can return empty
+        /// results while there are more log events available through the token.
         /// </para>
         ///  
         /// <para>
         /// The returned log events are sorted by event timestamp, the timestamp when the event
         /// was ingested by CloudWatch Logs, and the ID of the <code>PutLogEvents</code> request.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using CloudWatch cross-account observability, you can use this operation
+        /// in a monitoring account and view data from the linked source accounts. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FilterLogEvents service method.</param>
@@ -1619,6 +1699,52 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  GetDataProtectionPolicy
+
+        internal virtual GetDataProtectionPolicyResponse GetDataProtectionPolicy(GetDataProtectionPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataProtectionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataProtectionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataProtectionPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about a log group data protection policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataProtectionPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataProtectionPolicy service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetDataProtectionPolicy">REST API Reference for GetDataProtectionPolicy Operation</seealso>
+        public virtual Task<GetDataProtectionPolicyResponse> GetDataProtectionPolicyAsync(GetDataProtectionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataProtectionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataProtectionPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDataProtectionPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetLogEvents
 
         internal virtual GetLogEventsResponse GetLogEvents(GetLogEventsRequest request)
@@ -1642,6 +1768,13 @@ namespace Amazon.CloudWatchLogs
         /// of 1MB (up to 10,000 log events). You can get additional log events by specifying
         /// one of the tokens in a subsequent call. This operation can return empty results while
         /// there are more log events available through the token.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using CloudWatch cross-account observability, you can use this operation
+        /// in a monitoring account and view data from the linked source accounts. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLogEvents service method.</param>
@@ -1686,20 +1819,27 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Returns a list of the fields that are included in log events in the specified log
-        /// group, along with the percentage of log events that contain each field. The search
-        /// is limited to a time period that you specify.
+        /// group. Includes the percentage of log events that contain each field. The search is
+        /// limited to a time period that you specify.
         /// 
         ///  
         /// <para>
-        /// In the results, fields that start with @ are fields generated by CloudWatch Logs.
-        /// For example, <code>@timestamp</code> is the timestamp of each log event. For more
-        /// information about the fields that are generated by CloudWatch logs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported
+        /// In the results, fields that start with <code>@</code> are fields generated by CloudWatch
+        /// Logs. For example, <code>@timestamp</code> is the timestamp of each log event. For
+        /// more information about the fields that are generated by CloudWatch logs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported
         /// Logs and Discovered Fields</a>.
         /// </para>
         ///  
         /// <para>
         /// The response results are sorted by the frequency percentage, starting with the highest
         /// percentage.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using CloudWatch cross-account observability, you can use this operation
+        /// in a monitoring account and view data from the linked source accounts. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLogGroupFields service method.</param>
@@ -1810,7 +1950,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        ///  <code>GetQueryResults</code> does not start a query execution. To run a query, use
+        ///  <code>GetQueryResults</code> does not start running a query. To run a query, use
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.
         /// </para>
         ///  
@@ -1819,6 +1959,13 @@ namespace Amazon.CloudWatchLogs
         /// this operation returns only partial results. If you see a value of <code>Scheduled</code>
         /// or <code>Running</code> for the status, you can retry the operation later to see the
         /// final results. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using CloudWatch cross-account observability, you can use this operation
+        /// in a monitoring account to start queries in linked source accounts. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueryResults service method.</param>
@@ -1943,6 +2090,81 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  PutDataProtectionPolicy
+
+        internal virtual PutDataProtectionPolicyResponse PutDataProtectionPolicy(PutDataProtectionPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDataProtectionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDataProtectionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutDataProtectionPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a data protection policy for the specified log group. A data protection policy
+        /// can help safeguard sensitive data that's ingested by the log group by auditing and
+        /// masking the sensitive log data.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Sensitive data is detected and masked when it is ingested into the log group. When
+        /// you set a data protection policy, log events ingested into the log group before that
+        /// time are not masked.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// By default, when a user views a log event that includes masked data, the sensitive
+        /// data is replaced by asterisks. A user who has the <code>logs:Unmask</code> permission
+        /// can use a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html">FilterLogEvents</a>
+        /// operation with the <code>unmask</code> parameter set to <code>true</code> to view
+        /// the unmasked log events. Users with the <code>logs:Unmask</code> can also view unmasked
+        /// data in the CloudWatch Logs console by running a CloudWatch Logs Insights query with
+        /// the <code>unmask</code> query command.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, including a list of types of data that can be audited and masked,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Protect
+        /// sensitive log data with masking</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDataProtectionPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutDataProtectionPolicy service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
+        /// You have reached the maximum number of resources that can be created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDataProtectionPolicy">REST API Reference for PutDataProtectionPolicy Operation</seealso>
+        public virtual Task<PutDataProtectionPolicyResponse> PutDataProtectionPolicyAsync(PutDataProtectionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDataProtectionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDataProtectionPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutDataProtectionPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutDestination
 
         internal virtual PutDestinationResponse PutDestination(PutDestinationRequest request)
@@ -1962,9 +2184,9 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// A destination encapsulates a physical resource (such as an Amazon Kinesis stream)
-        /// and enables you to subscribe to a real-time stream of log events for a different account,
-        /// ingested using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.
+        /// A destination encapsulates a physical resource (such as an Amazon Kinesis stream).
+        /// With a destination, you can subscribe to a real-time stream of log events for a different
+        /// account, ingested using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.
         /// </para>
         ///  
         /// <para>
@@ -2101,16 +2323,17 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// None of the log events in the batch can be older than 14 days or older than the retention
-        /// period of the log group.
+        /// None of the log events in the batch can be more than 14 days in the past. Also, none
+        /// of the log events can be from earlier than the retention period of the log group.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// The log events in the batch must be in chronological order by their timestamp. The
-        /// timestamp is the time the event occurred, expressed as the number of milliseconds
-        /// after Jan 1, 1970 00:00:00 UTC. (In Amazon Web Services Tools for PowerShell and the
-        /// Amazon Web Services SDK for .NET, the timestamp is specified in .NET format: yyyy-mm-ddThh:mm:ss.
-        /// For example, 2017-09-15T13:45:30.) 
+        /// timestamp is the time that the event occurred, expressed as the number of milliseconds
+        /// after <code>Jan 1, 1970 00:00:00 UTC</code>. (In Amazon Web Services Tools for PowerShell
+        /// and the Amazon Web Services SDK for .NET, the timestamp is specified in .NET format:
+        /// <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2017-09-15T13:45:30</code>.)
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2123,13 +2346,13 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// There is a quota of 5 requests per second per log stream. Additional requests are
+        /// There is a quota of five requests per second per log stream. Additional requests are
         /// throttled. This quota can't be changed.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most
-        /// likely cause is an invalid Amazon Web Services access key ID or secret key. 
+        /// likely cause is a non-valid Amazon Web Services access key ID or secret key. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLogEvents service method.</param>
@@ -2155,7 +2378,8 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.UnrecognizedClientException">
-        /// The most likely cause is an invalid Amazon Web Services access key ID or secret key.
+        /// The most likely cause is an Amazon Web Services access key ID or secret key that's
+        /// not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents">REST API Reference for PutLogEvents Operation</seealso>
         public virtual Task<PutLogEventsResponse> PutLogEventsAsync(PutLogEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2184,7 +2408,7 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Creates or updates a metric filter and associates it with the specified log group.
-        /// Metric filters allow you to configure rules to extract metric data from log events
+        /// With metric filters, you can configure rules to extract metric data from log events
         /// ingested through <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.
         /// 
         ///  
@@ -2205,9 +2429,9 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// To help prevent accidental high charges, Amazon disables a metric filter if it generates
-        /// 1000 different name/value pairs for the dimensions that you have specified within
-        /// a certain amount of time.
+        /// CloudWatch Logs disables a metric filter if it generates 1,000 different name/value
+        /// pairs for your specified dimensions within a certain amount of time. This helps to
+        /// prevent accidental high charges.
         /// </para>
         ///  
         /// <para>
@@ -2274,8 +2498,8 @@ namespace Amazon.CloudWatchLogs
         /// To update a query definition, specify its <code>queryDefinitionId</code> in your request.
         /// The values of <code>name</code>, <code>queryString</code>, and <code>logGroupNames</code>
         /// are changed to the values that you specify in your update operation. No current values
-        /// are retained from the current query definition. For example, if you update a current
-        /// query definition that includes log groups, and you don't specify the <code>logGroupNames</code>
+        /// are retained from the current query definition. For example, imagine updating a current
+        /// query definition that includes log groups. If you don't specify the <code>logGroupNames</code>
         /// parameter in your update operation, the query definition changes to contain no log
         /// groups.
         /// </para>
@@ -2374,7 +2598,7 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Sets the retention of the specified log group. A retention policy allows you to configure
+        /// Sets the retention of the specified log group. With a retention policy, you can configure
         /// the number of days for which to retain log events in the specified log group.
         /// 
         ///  <note> 
@@ -2385,12 +2609,13 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// This means that if you change a log group to have a longer retention setting when
-        /// it contains log events that are past the expiration date, but haven’t been actually
-        /// deleted, those log events will take up to 72 hours to be deleted after the new retention
-        /// date is reached. To make sure that log data is deleted permanently, keep a log group
-        /// at its lower retention setting until 72 hours has passed after the end of the previous
-        /// retention period, or you have confirmed that the older log events are deleted. 
+        /// To illustrate, imagine that you change a log group to have a longer retention setting
+        /// when it contains log events that are past the expiration date, but haven’t been deleted.
+        /// Those log events will take up to 72 hours to be deleted after the new retention date
+        /// is reached. To make sure that log data is deleted permanently, keep a log group at
+        /// its lower retention setting until 72 hours after the previous retention period ends.
+        /// Alternatively, wait to change the retention setting until you confirm that the earlier
+        /// log events are deleted. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -2439,10 +2664,10 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Creates or updates a subscription filter and associates it with the specified log
-        /// group. Subscription filters allow you to subscribe to a real-time stream of log events
+        /// group. With subscription filters, you can subscribe to a real-time stream of log events
         /// ingested through <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>
         /// and have them delivered to a specific destination. When log events are sent to the
-        /// receiving service, they are Base64 encoded and compressed with the gzip format.
+        /// receiving service, they are Base64 encoded and compressed with the GZIP format.
         /// 
         ///  
         /// <para>
@@ -2450,7 +2675,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// An Amazon Kinesis stream belonging to the same account as the subscription filter,
+        /// An Amazon Kinesis data stream belonging to the same account as the subscription filter,
         /// for same-account delivery.
         /// </para>
         ///  </li> <li> 
@@ -2459,8 +2684,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An Amazon Kinesis Firehose delivery stream that belongs to the same account as the
-        /// subscription filter, for same-account delivery.
+        /// An Amazon Kinesis Data Firehose delivery stream that belongs to the same account as
+        /// the subscription filter, for same-account delivery.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2536,12 +2761,20 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// Queries time out after 15 minutes of execution. If your queries are timing out, reduce
+        /// Queries time out after 15 minutes of runtime. If your queries are timing out, reduce
         /// the time range being searched or partition your query into a number of queries.
         /// </para>
         ///  
         /// <para>
-        ///  You are limited to 20 concurrent CloudWatch Logs insights queries, including queries
+        /// If you are using CloudWatch cross-account observability, you can use this operation
+        /// in a monitoring account to start a query in a linked source account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>. For a cross-account <code>StartQuery</code> operation,
+        /// the query definition must be defined in the monitoring account.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can have up to 20 concurrent CloudWatch Logs insights queries, including queries
         /// that have been added to dashboards. 
         /// </para>
         /// </summary>

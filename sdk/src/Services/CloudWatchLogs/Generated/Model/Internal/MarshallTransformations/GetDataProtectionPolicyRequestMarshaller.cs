@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetLogRecord Request Marshaller
+    /// GetDataProtectionPolicy Request Marshaller
     /// </summary>       
-    public class GetLogRecordRequestMarshaller : IMarshaller<IRequest, GetLogRecordRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetDataProtectionPolicyRequestMarshaller : IMarshaller<IRequest, GetDataProtectionPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetLogRecordRequest)input);
+            return this.Marshall((GetDataProtectionPolicyRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetLogRecordRequest publicRequest)
+        public IRequest Marshall(GetDataProtectionPolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchLogs");
-            string target = "Logs_20140328.GetLogRecord";
+            string target = "Logs_20140328.GetDataProtectionPolicy";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-03-28";
@@ -67,16 +67,10 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLogRecordPointer())
+                if(publicRequest.IsSetLogGroupIdentifier())
                 {
-                    context.Writer.WritePropertyName("logRecordPointer");
-                    context.Writer.Write(publicRequest.LogRecordPointer);
-                }
-
-                if(publicRequest.IsSetUnmask())
-                {
-                    context.Writer.WritePropertyName("unmask");
-                    context.Writer.Write(publicRequest.Unmask);
+                    context.Writer.WritePropertyName("logGroupIdentifier");
+                    context.Writer.Write(publicRequest.LogGroupIdentifier);
                 }
 
                 writer.WriteObjectEnd();
@@ -87,9 +81,9 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetLogRecordRequestMarshaller _instance = new GetLogRecordRequestMarshaller();        
+        private static GetDataProtectionPolicyRequestMarshaller _instance = new GetDataProtectionPolicyRequestMarshaller();        
 
-        internal static GetLogRecordRequestMarshaller GetInstance()
+        internal static GetDataProtectionPolicyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -97,7 +91,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetLogRecordRequestMarshaller Instance
+        public static GetDataProtectionPolicyRequestMarshaller Instance
         {
             get
             {

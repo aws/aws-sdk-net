@@ -35,9 +35,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// A destination encapsulates a physical resource (such as an Amazon Kinesis stream)
-    /// and enables you to subscribe to a real-time stream of log events for a different account,
-    /// ingested using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.
+    /// A destination encapsulates a physical resource (such as an Amazon Kinesis stream).
+    /// With a destination, you can subscribe to a real-time stream of log events for a different
+    /// account, ingested using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.
     /// </para>
     ///  
     /// <para>

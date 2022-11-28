@@ -40,15 +40,22 @@ namespace Amazon.CloudWatchLogs.Model
     ///  
     /// <para>
     /// By default, this operation returns as many log events as can fit in 1 MB (up to 10,000
-    /// log events) or all the events found within the time range that you specify. If the
-    /// results include a token, then there are more log events available, and you can get
-    /// additional results by specifying the token in a subsequent call. This operation can
-    /// return empty results while there are more log events available through the token.
+    /// log events) or all the events found within the specified time range. If the results
+    /// include a token, that means there are more log events available. You can get additional
+    /// results by specifying the token in a subsequent call. This operation can return empty
+    /// results while there are more log events available through the token.
     /// </para>
     ///  
     /// <para>
     /// The returned log events are sorted by event timestamp, the timestamp when the event
     /// was ingested by CloudWatch Logs, and the ID of the <code>PutLogEvents</code> request.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you are using CloudWatch cross-account observability, you can use this operation
+    /// in a monitoring account and view data from the linked source accounts. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+    /// cross-account observability</a>.
     /// </para>
     /// </summary>
     public partial class FilterLogEventsRequest : AmazonCloudWatchLogsRequest
@@ -57,17 +64,20 @@ namespace Amazon.CloudWatchLogs.Model
         private string _filterPattern;
         private bool? _interleaved;
         private int? _limit;
+        private string _logGroupIdentifier;
         private string _logGroupName;
         private string _logStreamNamePrefix;
         private List<string> _logStreamNames = new List<string>();
         private string _nextToken;
         private long? _startTime;
+        private bool? _unmask;
 
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
-        /// 00:00:00 UTC. Events with a timestamp later than this time are not returned.
+        /// The end of the time range, expressed as the number of milliseconds after <code>Jan
+        /// 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not
+        /// returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -110,16 +120,16 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Interleaved. 
         /// <para>
-        /// If the value is true, the operation makes a best effort to provide responses that
-        /// contain events from multiple log streams within the log group, interleaved in a single
-        /// response. If the value is false, all the matched log events in the first log stream
-        /// are searched first, then those in the next log stream, and so on. The default is false.
+        /// If the value is true, the operation attempts to provide responses that contain events
+        /// from multiple log streams within the log group, interleaved in a single response.
+        /// If the value is false, all the matched log events in the first log stream are searched
+        /// first, then those in the next log stream, and so on.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value
-        /// is assumed to be true. The response from this operation always interleaves events
-        /// from multiple log streams within a log group.
+        ///  <b>Important</b> As of June 17, 2019, this parameter is ignored and the value is
+        /// assumed to be true. The response from this operation always interleaves events from
+        /// multiple log streams within a log group.
         /// </para>
         /// </summary>
         [Obsolete("Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group.")]
@@ -155,10 +165,42 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogGroupIdentifier. 
+        /// <para>
+        /// Specify either the name or ARN of the log group to view log events from. If the log
+        /// group is in a source account and you are using a monitoring account, you must use
+        /// the log group ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>,
+        /// the action returns an <code>InvalidParameterException</code> error.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string LogGroupIdentifier
+        {
+            get { return this._logGroupIdentifier; }
+            set { this._logGroupIdentifier = value; }
+        }
+
+        // Check to see if LogGroupIdentifier property is set
+        internal bool IsSetLogGroupIdentifier()
+        {
+            return this._logGroupIdentifier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
         /// The name of the log group to search.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>,
+        /// the action returns an <code>InvalidParameterException</code> error. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
         public string LogGroupName
@@ -247,8 +289,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start of the time range, expressed as the number of milliseconds after Jan 1,
-        /// 1970 00:00:00 UTC. Events with a timestamp before this time are not returned.
+        /// The start of the time range, expressed as the number of milliseconds after <code>Jan
+        /// 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -262,6 +304,30 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Unmask. 
+        /// <para>
+        /// Specify <code>true</code> to display the log event fields with all sensitive data
+        /// unmasked and visible. The default is <code>false</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation with this parameter, you must be signed into an account with
+        /// the <code>logs:Unmask</code> permission.
+        /// </para>
+        /// </summary>
+        public bool Unmask
+        {
+            get { return this._unmask.GetValueOrDefault(); }
+            set { this._unmask = value; }
+        }
+
+        // Check to see if Unmask property is set
+        internal bool IsSetUnmask()
+        {
+            return this._unmask.HasValue; 
         }
 
     }

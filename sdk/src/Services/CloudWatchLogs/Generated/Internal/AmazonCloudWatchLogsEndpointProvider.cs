@@ -40,6 +40,8 @@ namespace Amazon.CloudWatchLogs.Internal
             if (parameters == null) 
                 throw new ArgumentNullException("parameters");
 
+            if (parameters["Region"] == null)
+                throw new AmazonClientException("Region parameter must be set for endpoint resolution");
             if (parameters["UseDualStack"] == null)
                 throw new AmazonClientException("UseDualStack parameter must be set for endpoint resolution");
             if (parameters["UseFIPS"] == null)
@@ -78,13 +80,13 @@ namespace Amazon.CloudWatchLogs.Internal
                 {
                     if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
                     {
-                        if (Equals(refs["Region"], "us-gov-west-1"))
-                        {
-                            return new Endpoint("https://logs.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
                         if (Equals(refs["Region"], "us-gov-east-1"))
                         {
                             return new Endpoint("https://logs.us-gov-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        if (Equals(refs["Region"], "us-gov-west-1"))
+                        {
+                            return new Endpoint("https://logs.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         return new Endpoint(Interpolate(@"https://logs-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }

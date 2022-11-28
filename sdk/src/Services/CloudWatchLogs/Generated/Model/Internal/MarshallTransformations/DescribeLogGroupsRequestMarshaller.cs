@@ -67,10 +67,33 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccountIdentifiers())
+                {
+                    context.Writer.WritePropertyName("accountIdentifiers");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAccountIdentifiersListValue in publicRequest.AccountIdentifiers)
+                    {
+                            context.Writer.Write(publicRequestAccountIdentifiersListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetIncludeLinkedAccounts())
+                {
+                    context.Writer.WritePropertyName("includeLinkedAccounts");
+                    context.Writer.Write(publicRequest.IncludeLinkedAccounts);
+                }
+
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("limit");
                     context.Writer.Write(publicRequest.Limit);
+                }
+
+                if(publicRequest.IsSetLogGroupNamePattern())
+                {
+                    context.Writer.WritePropertyName("logGroupNamePattern");
+                    context.Writer.Write(publicRequest.LogGroupNamePattern);
                 }
 
                 if(publicRequest.IsSetLogGroupNamePrefix())

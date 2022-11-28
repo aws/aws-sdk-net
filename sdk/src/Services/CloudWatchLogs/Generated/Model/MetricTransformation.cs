@@ -74,9 +74,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// To help prevent accidental high charges, Amazon disables a metric filter if it generates
-        /// 1000 different name/value pairs for the dimensions that you have specified within
-        /// a certain amount of time.
+        /// CloudWatch Logs disables a metric filter if it generates 1000 different name/value
+        /// pairs for your specified dimensions within a certain amount of time. This helps to
+        /// prevent accidental high charges.
         /// </para>
         ///  
         /// <para>

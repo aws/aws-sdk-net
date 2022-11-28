@@ -54,7 +54,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The ':' (colon) and '*' (asterisk) characters are not allowed.
+    /// Don't use ':' (colon) or '*' (asterisk) characters.
     /// </para>
     ///  </li> </ul>
     /// </summary>

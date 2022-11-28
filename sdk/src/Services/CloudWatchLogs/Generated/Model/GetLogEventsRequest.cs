@@ -40,16 +40,25 @@ namespace Amazon.CloudWatchLogs.Model
     /// one of the tokens in a subsequent call. This operation can return empty results while
     /// there are more log events available through the token.
     /// </para>
+    ///  
+    /// <para>
+    /// If you are using CloudWatch cross-account observability, you can use this operation
+    /// in a monitoring account and view data from the linked source accounts. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+    /// cross-account observability</a>.
+    /// </para>
     /// </summary>
     public partial class GetLogEventsRequest : AmazonCloudWatchLogsRequest
     {
         private DateTime? _endTime;
         private int? _limit;
+        private string _logGroupIdentifier;
         private string _logGroupName;
         private string _logStreamName;
         private string _nextToken;
         private bool? _startFromHead;
         private DateTime? _startTime;
+        private bool? _unmask;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -59,7 +68,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates GetLogEventsRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">The name of the log group.</param>
+        /// <param name="logGroupName">The name of the log group. <note>  If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.  </note></param>
         /// <param name="logStreamName">The name of the log stream.</param>
         public GetLogEventsRequest(string logGroupName, string logStreamName)
         {
@@ -70,8 +79,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
-        /// 00:00:00 UTC. Events with a timestamp equal to or later than this time are not included.
+        /// The end of the time range, expressed as the number of milliseconds after <code>Jan
+        /// 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to or later than this time
+        /// are not included.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -90,8 +100,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of log events returned. If you don't specify a value, the maximum
-        /// is as many log events as can fit in a response size of 1 MB, up to 10,000 log events.
+        /// The maximum number of log events returned. If you don't specify a limit, the default
+        /// is as many log events as can fit in a response size of 1 MB (up to 10,000 log events).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
@@ -108,10 +118,42 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogGroupIdentifier. 
+        /// <para>
+        /// Specify either the name or ARN of the log group to view events from. If the log group
+        /// is in a source account and you are using a monitoring account, you must use the log
+        /// group ARN.
+        /// </para>
+        ///  
+        /// <para>
+        ///  If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>,
+        /// the action returns an <code>InvalidParameterException</code> error.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string LogGroupIdentifier
+        {
+            get { return this._logGroupIdentifier; }
+            set { this._logGroupIdentifier = value; }
+        }
+
+        // Check to see if LogGroupIdentifier property is set
+        internal bool IsSetLogGroupIdentifier()
+        {
+            return this._logGroupIdentifier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
         /// The name of the log group.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>,
+        /// the action returns an <code>InvalidParameterException</code> error. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
         public string LogGroupName
@@ -192,9 +234,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start of the time range, expressed as the number of milliseconds after Jan 1,
-        /// 1970 00:00:00 UTC. Events with a timestamp equal to this time or later than this time
-        /// are included. Events with a timestamp earlier than this time are not included.
+        /// The start of the time range, expressed as the number of milliseconds after <code>Jan
+        /// 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than
+        /// this time are included. Events with a timestamp earlier than this time are not included.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -208,6 +250,30 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Unmask. 
+        /// <para>
+        /// Specify <code>true</code> to display the log event fields with all sensitive data
+        /// unmasked and visible. The default is <code>false</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation with this parameter, you must be signed into an account with
+        /// the <code>logs:Unmask</code> permission.
+        /// </para>
+        /// </summary>
+        public bool Unmask
+        {
+            get { return this._unmask.GetValueOrDefault(); }
+            set { this._unmask = value; }
+        }
+
+        // Check to see if Unmask property is set
+        internal bool IsSetUnmask()
+        {
+            return this._unmask.HasValue; 
         }
 
     }

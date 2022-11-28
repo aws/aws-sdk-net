@@ -79,6 +79,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Limit);
                 }
 
+                if(publicRequest.IsSetLogGroupIdentifier())
+                {
+                    context.Writer.WritePropertyName("logGroupIdentifier");
+                    context.Writer.Write(publicRequest.LogGroupIdentifier);
+                }
+
                 if(publicRequest.IsSetLogGroupName())
                 {
                     context.Writer.WritePropertyName("logGroupName");
@@ -107,6 +113,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("startTime");
                     context.Writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequest.StartTime));
+                }
+
+                if(publicRequest.IsSetUnmask())
+                {
+                    context.Writer.WritePropertyName("unmask");
+                    context.Writer.Write(publicRequest.Unmask);
                 }
 
                 writer.WriteObjectEnd();

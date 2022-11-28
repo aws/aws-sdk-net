@@ -40,12 +40,20 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// Queries time out after 15 minutes of execution. If your queries are timing out, reduce
+    /// Queries time out after 15 minutes of runtime. If your queries are timing out, reduce
     /// the time range being searched or partition your query into a number of queries.
     /// </para>
     ///  
     /// <para>
-    ///  You are limited to 20 concurrent CloudWatch Logs insights queries, including queries
+    /// If you are using CloudWatch cross-account observability, you can use this operation
+    /// in a monitoring account to start a query in a linked source account. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+    /// cross-account observability</a>. For a cross-account <code>StartQuery</code> operation,
+    /// the query definition must be defined in the monitoring account.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can have up to 20 concurrent CloudWatch Logs insights queries, including queries
     /// that have been added to dashboards. 
     /// </para>
     /// </summary>
@@ -53,6 +61,7 @@ namespace Amazon.CloudWatchLogs.Model
     {
         private long? _endTime;
         private int? _limit;
+        private List<string> _logGroupIdentifiers = new List<string>();
         private string _logGroupName;
         private List<string> _logGroupNames = new List<string>();
         private string _queryString;
@@ -62,8 +71,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property EndTime. 
         /// <para>
         /// The end of the time range to query. The range is inclusive, so the specified end time
-        /// is included in the query. Specified as epoch time, the number of seconds since January
-        /// 1, 1970, 00:00:00 UTC.
+        /// is included in the query. Specified as epoch time, the number of seconds since <code>January
+        /// 1, 1970, 00:00:00 UTC</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -101,15 +110,52 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogGroupIdentifiers. 
+        /// <para>
+        /// The list of log groups to query. You can include up to 50 log groups.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify them by the log group name or ARN. If a log group that you're querying
+        /// is in a source account and you're using a monitoring account, you must specify the
+        /// ARN of the log group here. The query definition must also be defined in the monitoring
+        /// account.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an ARN, the ARN can't end with an asterisk (*).
+        /// </para>
+        ///  
+        /// <para>
+        /// A <code>StartQuery</code> operation must include exactly one of the following parameters:
+        /// <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public List<string> LogGroupIdentifiers
+        {
+            get { return this._logGroupIdentifiers; }
+            set { this._logGroupIdentifiers = value; }
+        }
+
+        // Check to see if LogGroupIdentifiers property is set
+        internal bool IsSetLogGroupIdentifiers()
+        {
+            return this._logGroupIdentifiers != null && this._logGroupIdentifiers.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
         /// The log group on which to perform the query.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a
-        /// <code>logGroupName</code> parameter, but not both.
+        /// A <code>StartQuery</code> operation must include exactly one of the following parameters:
+        /// <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+        /// 
         /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
         public string LogGroupName
@@ -127,13 +173,15 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupNames. 
         /// <para>
-        /// The list of log groups to be queried. You can include up to 20 log groups.
+        /// The list of log groups to be queried. You can include up to 50 log groups.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a
-        /// <code>logGroupName</code> parameter, but not both.
+        /// A <code>StartQuery</code> operation must include exactly one of the following parameters:
+        /// <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+        /// 
         /// </para>
+        ///  </note>
         /// </summary>
         public List<string> LogGroupNames
         {
@@ -172,7 +220,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// The beginning of the time range to query. The range is inclusive, so the specified
         /// start time is included in the query. Specified as epoch time, the number of seconds
-        /// since January 1, 1970, 00:00:00 UTC.
+        /// since <code>January 1, 1970, 00:00:00 UTC</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

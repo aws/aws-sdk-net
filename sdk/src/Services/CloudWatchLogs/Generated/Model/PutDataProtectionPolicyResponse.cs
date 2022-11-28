@@ -29,19 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// A policy enabling one or more entities to put logs to a log group in this account.
+    /// This is the response object from the PutDataProtectionPolicy operation.
     /// </summary>
-    public partial class ResourcePolicy
+    public partial class PutDataProtectionPolicyResponse : AmazonWebServiceResponse
     {
         private long? _lastUpdatedTime;
+        private string _logGroupIdentifier;
         private string _policyDocument;
-        private string _policyName;
 
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// Timestamp showing when this policy was last updated, expressed as the number of milliseconds
-        /// after <code>Jan 1, 1970 00:00:00 UTC</code>.
+        /// The date and time that this policy was most recently updated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -58,12 +57,30 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PolicyDocument. 
+        /// Gets and sets the property LogGroupIdentifier. 
         /// <para>
-        /// The details of the policy.
+        /// The log group name or ARN that you specified in your request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5120)]
+        [AWSProperty(Min=1, Max=2048)]
+        public string LogGroupIdentifier
+        {
+            get { return this._logGroupIdentifier; }
+            set { this._logGroupIdentifier = value; }
+        }
+
+        // Check to see if LogGroupIdentifier property is set
+        internal bool IsSetLogGroupIdentifier()
+        {
+            return this._logGroupIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyDocument. 
+        /// <para>
+        /// The data protection policy used for this log group.
+        /// </para>
+        /// </summary>
         public string PolicyDocument
         {
             get { return this._policyDocument; }
@@ -74,24 +91,6 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetPolicyDocument()
         {
             return this._policyDocument != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property PolicyName. 
-        /// <para>
-        /// The name of the resource policy.
-        /// </para>
-        /// </summary>
-        public string PolicyName
-        {
-            get { return this._policyName; }
-            set { this._policyName = value; }
-        }
-
-        // Check to see if PolicyName property is set
-        internal bool IsSetPolicyName()
-        {
-            return this._policyName != null;
         }
 
     }

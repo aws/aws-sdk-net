@@ -31,7 +31,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Container for the parameters to the PutMetricFilter operation.
     /// Creates or updates a metric filter and associates it with the specified log group.
-    /// Metric filters allow you to configure rules to extract metric data from log events
+    /// With metric filters, you can configure rules to extract metric data from log events
     /// ingested through <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.
     /// 
     ///  
@@ -52,9 +52,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// To help prevent accidental high charges, Amazon disables a metric filter if it generates
-    /// 1000 different name/value pairs for the dimensions that you have specified within
-    /// a certain amount of time.
+    /// CloudWatch Logs disables a metric filter if it generates 1,000 different name/value
+    /// pairs for your specified dimensions within a certain amount of time. This helps to
+    /// prevent accidental high charges.
     /// </para>
     ///  
     /// <para>

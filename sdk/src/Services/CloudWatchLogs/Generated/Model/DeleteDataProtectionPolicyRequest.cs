@@ -29,42 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisassociateKmsKey operation.
-    /// Disassociates the associated KMS key from the specified log group.
+    /// Container for the parameters to the DeleteDataProtectionPolicy operation.
+    /// Deletes the data protection policy from the specified log group. 
     /// 
     ///  
     /// <para>
-    /// After the KMS key is disassociated from the log group, CloudWatch Logs stops encrypting
-    /// newly ingested data for the log group. All previously ingested data remains encrypted,
-    /// and CloudWatch Logs requires permissions for the KMS key whenever the encrypted data
-    /// is requested.
-    /// </para>
-    ///  
-    /// <para>
-    /// Note that it can take up to 5 minutes for this operation to take effect.
+    /// For more information about data protection policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.
     /// </para>
     /// </summary>
-    public partial class DisassociateKmsKeyRequest : AmazonCloudWatchLogsRequest
+    public partial class DeleteDataProtectionPolicyRequest : AmazonCloudWatchLogsRequest
     {
-        private string _logGroupName;
+        private string _logGroupIdentifier;
 
         /// <summary>
-        /// Gets and sets the property LogGroupName. 
+        /// Gets and sets the property LogGroupIdentifier. 
         /// <para>
-        /// The name of the log group.
+        /// The name or ARN of the log group that you want to delete the data protection policy
+        /// for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
-        public string LogGroupName
+        [AWSProperty(Required=true, Min=1, Max=2048)]
+        public string LogGroupIdentifier
         {
-            get { return this._logGroupName; }
-            set { this._logGroupName = value; }
+            get { return this._logGroupIdentifier; }
+            set { this._logGroupIdentifier = value; }
         }
 
-        // Check to see if LogGroupName property is set
-        internal bool IsSetLogGroupName()
+        // Check to see if LogGroupIdentifier property is set
+        internal bool IsSetLogGroupIdentifier()
         {
-            return this._logGroupName != null;
+            return this._logGroupIdentifier != null;
         }
 
     }

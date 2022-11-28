@@ -30,14 +30,14 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateExportTask operation.
-    /// Creates an export task, which allows you to efficiently export data from a log group
-    /// to an Amazon S3 bucket. When you perform a <code>CreateExportTask</code> operation,
-    /// you must use credentials that have permission to write to the S3 bucket that you specify
+    /// Creates an export task so that you can efficiently export data from a log group to
+    /// an Amazon S3 bucket. When you perform a <code>CreateExportTask</code> operation, you
+    /// must use credentials that have permission to write to the S3 bucket that you specify
     /// as the destination.
     /// 
     ///  
     /// <para>
-    /// Exporting log data to Amazon S3 buckets that are encrypted by KMS is supported. Exporting
+    /// Exporting log data to S3 buckets that are encrypted by KMS is supported. Exporting
     /// log data to Amazon S3 buckets that have S3 Object Lock enabled with a retention period
     /// is also supported.
     /// </para>
@@ -56,13 +56,13 @@ namespace Amazon.CloudWatchLogs.Model
     ///  
     /// <para>
     /// You can export logs from multiple log groups or multiple time ranges to the same S3
-    /// bucket. To separate out log data for each export task, you can specify a prefix to
-    /// be used as the Amazon S3 key prefix for all exported objects.
+    /// bucket. To separate log data for each export task, specify a prefix to be used as
+    /// the Amazon S3 key prefix for all exported objects.
     /// </para>
     ///  <note> 
     /// <para>
     /// Time-based sorting on chunks of log data inside an exported file is not guaranteed.
-    /// You can sort the exported log fild data by using Linux utilities.
+    /// You can sort the exported log field data by using Linux utilities.
     /// </para>
     ///  </note>
     /// </summary>
@@ -80,7 +80,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property Destination. 
         /// <para>
         /// The name of S3 bucket for the exported log data. The bucket must be in the same Amazon
-        /// Web Services region.
+        /// Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -119,8 +119,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property From. 
         /// <para>
         /// The start time of the range for the request, expressed as the number of milliseconds
-        /// after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are
-        /// not exported.
+        /// after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp earlier than
+        /// this time are not exported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -198,8 +198,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property To. 
         /// <para>
         /// The end time of the range for the request, expressed as the number of milliseconds
-        /// after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
-        /// exported.
+        /// after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this
+        /// time are not exported.
         /// </para>
         ///  
         /// <para>

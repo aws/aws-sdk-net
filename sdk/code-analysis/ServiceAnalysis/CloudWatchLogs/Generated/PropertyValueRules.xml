@@ -73,6 +73,12 @@
     <pattern>[^:*]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DeleteDataProtectionPolicyRequest.LogGroupIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w#+=/:,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DeleteDestinationRequest.DestinationName</property>
     <min>1</min>
     <max>512</max>
@@ -174,6 +180,12 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeLogGroupsRequest.LogGroupNamePattern</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DescribeLogGroupsRequest.LogGroupNamePrefix</property>
     <min>1</min>
     <max>512</max>
@@ -191,6 +203,12 @@
     <property>Amazon.CloudWatchLogs.Model.DescribeLogStreamsRequest.Limit</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeLogStreamsRequest.LogGroupIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w#+=/:,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DescribeLogStreamsRequest.LogGroupName</property>
@@ -344,6 +362,12 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.FilterLogEventsRequest.LogGroupIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w#+=/:,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.FilterLogEventsRequest.LogGroupName</property>
     <min>1</min>
     <max>512</max>
@@ -368,6 +392,22 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetDataProtectionPolicyRequest.LogGroupIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w#+=/:,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetDataProtectionPolicyResponse.LastUpdatedTime</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetDataProtectionPolicyResponse.LogGroupIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w#+=/:,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetLogEventsRequest.EndTime</property>
     <min>0</min>
   </property-value-rule>
@@ -375,6 +415,12 @@
     <property>Amazon.CloudWatchLogs.Model.GetLogEventsRequest.Limit</property>
     <min>1</min>
     <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetLogEventsRequest.LogGroupIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w#+=/:,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetLogEventsRequest.LogGroupName</property>
@@ -405,6 +451,12 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetLogGroupFieldsRequest.LogGroupIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w#+=/:,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetLogGroupFieldsRequest.LogGroupName</property>
     <min>1</min>
     <max>512</max>
@@ -430,6 +482,22 @@
     <min>1</min>
     <max>512</max>
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutDataProtectionPolicyRequest.LogGroupIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w#+=/:,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutDataProtectionPolicyResponse.LastUpdatedTime</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutDataProtectionPolicyResponse.LogGroupIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w#+=/:,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutDestinationRequest.DestinationName</property>

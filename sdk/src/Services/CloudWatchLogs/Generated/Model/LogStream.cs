@@ -64,8 +64,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The creation time of the stream, expressed as the number of milliseconds after Jan
-        /// 1, 1970 00:00:00 UTC.
+        /// The creation time of the stream, expressed as the number of milliseconds after <code>Jan
+        /// 1, 1970 00:00:00 UTC</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -84,8 +84,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property FirstEventTimestamp. 
         /// <para>
-        /// The time of the first event, expressed as the number of milliseconds after Jan 1,
-        /// 1970 00:00:00 UTC.
+        /// The time of the first event, expressed as the number of milliseconds after <code>Jan
+        /// 1, 1970 00:00:00 UTC</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -105,9 +105,10 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property LastEventTimestamp. 
         /// <para>
         /// The time of the most recent log event in the log stream in CloudWatch Logs. This number
-        /// is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code>
-        /// value updates on an eventual consistency basis. It typically updates in less than
-        /// an hour from ingestion, but in rare situations might take longer.
+        /// is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+        /// The <code>lastEventTime</code> value updates on an eventual consistency basis. It
+        /// typically updates in less than an hour from ingestion, but in rare situations might
+        /// take longer.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -126,8 +127,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LastIngestionTime. 
         /// <para>
-        /// The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-        /// UTC.
+        /// The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970
+        /// 00:00:00 UTC</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -169,9 +170,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Important:</b> On June 17, 2019, this parameter was deprecated for log streams,
-        /// and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code>
-        /// parameter for log groups is not affected.
+        ///  <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for
+        /// log streams, and is always reported as zero. This change applies only to log streams.
+        /// The <code>storedBytes</code> parameter for log groups is not affected.
         /// </para>
         /// </summary>
         [Obsolete("Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected.")]

@@ -41,7 +41,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>GetQueryResults</code> does not start a query execution. To run a query, use
+    ///  <code>GetQueryResults</code> does not start running a query. To run a query, use
     /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.
     /// </para>
     ///  
@@ -50,6 +50,13 @@ namespace Amazon.CloudWatchLogs.Model
     /// this operation returns only partial results. If you see a value of <code>Scheduled</code>
     /// or <code>Running</code> for the status, you can retry the operation later to see the
     /// final results. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If you are using CloudWatch cross-account observability, you can use this operation
+    /// in a monitoring account to start queries in linked source accounts. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+    /// cross-account observability</a>.
     /// </para>
     /// </summary>
     public partial class GetQueryResultsRequest : AmazonCloudWatchLogsRequest

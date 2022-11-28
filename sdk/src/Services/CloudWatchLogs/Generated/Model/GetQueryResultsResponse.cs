@@ -90,9 +90,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// Queries time out after 15 minutes of execution. To avoid having your queries time
-        /// out, reduce the time range being searched or partition your query into a number of
-        /// queries.
+        /// Queries time out after 15 minutes of runtime. To avoid having your queries time out,
+        /// reduce the time range being searched or partition your query into a number of queries.
         /// </para>
         /// </summary>
         public QueryStatus Status
