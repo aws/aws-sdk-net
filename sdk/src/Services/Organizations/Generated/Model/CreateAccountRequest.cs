@@ -39,7 +39,7 @@ namespace Amazon.Organizations.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Use the <code>Id</code> member of the <code>CreateAccountStatus</code> response element
+    /// Use the <code>Id</code> value of the <code>CreateAccountStatus</code> response element
     /// from this operation to provide as a parameter to the <a>DescribeCreateAccountStatus</a>
     /// operation.
     /// </para>
@@ -248,10 +248,6 @@ namespace Amazon.Organizations.Model
 
         /// <summary>
         /// Gets and sets the property RoleName. 
-        /// <para>
-        /// (Optional)
-        /// </para>
-        ///  
         /// <para>
         /// The name of an IAM role that Organizations automatically preconfigures in the new
         /// member account. This role trusts the management account, allowing users in the management

@@ -35,8 +35,8 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    /// This operation can be called only by the following principals when they also have
-    /// the relevant IAM permissions:
+    /// You can only call this operation by the following principals when they also have the
+    /// relevant IAM permissions:
     /// </para>
     ///  <ul> <li> 
     /// <para>

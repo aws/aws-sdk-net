@@ -36,8 +36,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new OrganizationsEndpointParameters();
             parameters["Region"] = "aws-cn-global";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonOrganizationsEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://organizations.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -51,8 +51,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new OrganizationsEndpointParameters();
             parameters["Region"] = "aws-global";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonOrganizationsEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://organizations.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -66,8 +66,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new OrganizationsEndpointParameters();
             parameters["Region"] = "aws-us-gov-global";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonOrganizationsEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://organizations.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
@@ -81,8 +81,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new OrganizationsEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonOrganizationsEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -98,8 +98,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new OrganizationsEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonOrganizationsEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -114,8 +114,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new OrganizationsEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonOrganizationsEndpointProvider().ResolveEndpoint(parameters);
         }

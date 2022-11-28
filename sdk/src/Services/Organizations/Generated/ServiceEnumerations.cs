@@ -518,6 +518,10 @@ namespace Amazon.Organizations
         /// Constant UNKNOWN_BUSINESS_VALIDATION for CreateAccountFailureReason
         /// </summary>
         public static readonly CreateAccountFailureReason UNKNOWN_BUSINESS_VALIDATION = new CreateAccountFailureReason("UNKNOWN_BUSINESS_VALIDATION");
+        /// <summary>
+        /// Constant UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED for CreateAccountFailureReason
+        /// </summary>
+        public static readonly CreateAccountFailureReason UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED = new CreateAccountFailureReason("UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1043,6 +1047,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly InvalidInputExceptionReason INVALID_PATTERN_TARGET_ID = new InvalidInputExceptionReason("INVALID_PATTERN_TARGET_ID");
         /// <summary>
+        /// Constant INVALID_RESOURCE_POLICY_JSON for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason INVALID_RESOURCE_POLICY_JSON = new InvalidInputExceptionReason("INVALID_RESOURCE_POLICY_JSON");
+        /// <summary>
         /// Constant INVALID_ROLE_NAME for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason INVALID_ROLE_NAME = new InvalidInputExceptionReason("INVALID_ROLE_NAME");
@@ -1090,6 +1098,18 @@ namespace Amazon.Organizations
         /// Constant UNRECOGNIZED_SERVICE_PRINCIPAL for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason UNRECOGNIZED_SERVICE_PRINCIPAL = new InvalidInputExceptionReason("UNRECOGNIZED_SERVICE_PRINCIPAL");
+        /// <summary>
+        /// Constant UNSUPPORTED_ACTION_IN_RESOURCE_POLICY for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason UNSUPPORTED_ACTION_IN_RESOURCE_POLICY = new InvalidInputExceptionReason("UNSUPPORTED_ACTION_IN_RESOURCE_POLICY");
+        /// <summary>
+        /// Constant UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY = new InvalidInputExceptionReason("UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY");
+        /// <summary>
+        /// Constant UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY = new InvalidInputExceptionReason("UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
