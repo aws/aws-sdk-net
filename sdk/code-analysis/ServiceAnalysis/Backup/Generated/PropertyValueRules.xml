@@ -123,6 +123,9 @@
     <property>Amazon.Backup.Model.DisassociateRecoveryPointRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.DisassociateRecoveryPointFromParentRequest.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.GetBackupVaultAccessPolicyRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
@@ -195,6 +198,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.ListLegalHoldsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.ListProtectedResourcesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -207,6 +215,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListRecoveryPointsByBackupVaultRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListRecoveryPointsByLegalHoldRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>

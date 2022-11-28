@@ -37,6 +37,8 @@ namespace Amazon.Backup.Model
         private string _backupVaultName;
         private DateTime? _creationDate;
         private string _encryptionKeyArn;
+        private bool? _isParent;
+        private string _parentRecoveryPointArn;
         private string _recoveryPointArn;
         private RecoveryPointStatus _status;
         private string _statusMessage;
@@ -117,6 +119,42 @@ namespace Amazon.Backup.Model
         internal bool IsSetEncryptionKeyArn()
         {
             return this._encryptionKeyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsParent. 
+        /// <para>
+        /// This is a boolean value indicating this is a parent (composite) recovery point.
+        /// </para>
+        /// </summary>
+        public bool IsParent
+        {
+            get { return this._isParent.GetValueOrDefault(); }
+            set { this._isParent = value; }
+        }
+
+        // Check to see if IsParent property is set
+        internal bool IsSetIsParent()
+        {
+            return this._isParent.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentRecoveryPointArn. 
+        /// <para>
+        /// This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.
+        /// </para>
+        /// </summary>
+        public string ParentRecoveryPointArn
+        {
+            get { return this._parentRecoveryPointArn; }
+            set { this._parentRecoveryPointArn = value; }
+        }
+
+        // Check to see if ParentRecoveryPointArn property is set
+        internal bool IsSetParentRecoveryPointArn()
+        {
+            return this._parentRecoveryPointArn != null;
         }
 
         /// <summary>

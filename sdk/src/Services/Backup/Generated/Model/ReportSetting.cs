@@ -33,9 +33,30 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class ReportSetting
     {
+        private List<string> _accounts = new List<string>();
         private List<string> _frameworkArns = new List<string>();
         private int? _numberOfFrameworks;
+        private List<string> _organizationUnits = new List<string>();
+        private List<string> _regions = new List<string>();
         private string _reportTemplate;
+
+        /// <summary>
+        /// Gets and sets the property Accounts. 
+        /// <para>
+        /// These are the accounts to be included in the report.
+        /// </para>
+        /// </summary>
+        public List<string> Accounts
+        {
+            get { return this._accounts; }
+            set { this._accounts = value; }
+        }
+
+        // Check to see if Accounts property is set
+        internal bool IsSetAccounts()
+        {
+            return this._accounts != null && this._accounts.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property FrameworkArns. 
@@ -71,6 +92,42 @@ namespace Amazon.Backup.Model
         internal bool IsSetNumberOfFrameworks()
         {
             return this._numberOfFrameworks.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationUnits. 
+        /// <para>
+        /// These are the Organizational Units to be included in the report.
+        /// </para>
+        /// </summary>
+        public List<string> OrganizationUnits
+        {
+            get { return this._organizationUnits; }
+            set { this._organizationUnits = value; }
+        }
+
+        // Check to see if OrganizationUnits property is set
+        internal bool IsSetOrganizationUnits()
+        {
+            return this._organizationUnits != null && this._organizationUnits.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Regions. 
+        /// <para>
+        /// These are the Regions to be included in the report.
+        /// </para>
+        /// </summary>
+        public List<string> Regions
+        {
+            get { return this._regions; }
+            set { this._regions = value; }
+        }
+
+        // Check to see if Regions property is set
+        internal bool IsSetRegions()
+        {
+            return this._regions != null && this._regions.Count > 0; 
         }
 
         /// <summary>

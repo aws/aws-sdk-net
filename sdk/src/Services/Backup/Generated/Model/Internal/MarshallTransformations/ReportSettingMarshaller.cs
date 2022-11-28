@@ -45,6 +45,17 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ReportSetting requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAccounts())
+            {
+                context.Writer.WritePropertyName("Accounts");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAccountsListValue in requestObject.Accounts)
+                {
+                        context.Writer.Write(requestObjectAccountsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetFrameworkArns())
             {
                 context.Writer.WritePropertyName("FrameworkArns");
@@ -60,6 +71,28 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("NumberOfFrameworks");
                 context.Writer.Write(requestObject.NumberOfFrameworks);
+            }
+
+            if(requestObject.IsSetOrganizationUnits())
+            {
+                context.Writer.WritePropertyName("OrganizationUnits");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectOrganizationUnitsListValue in requestObject.OrganizationUnits)
+                {
+                        context.Writer.Write(requestObjectOrganizationUnitsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetRegions())
+            {
+                context.Writer.WritePropertyName("Regions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRegionsListValue in requestObject.Regions)
+                {
+                        context.Writer.Write(requestObjectRegionsListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetReportTemplate())

@@ -71,6 +71,9 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetByCreatedBefore())
                 request.Parameters.Add("createdBefore", StringUtils.FromDateTimeToISO8601(publicRequest.ByCreatedBefore));
             
+            if (publicRequest.IsSetByParentRecoveryPointArn())
+                request.Parameters.Add("parentRecoveryPointArn", StringUtils.FromString(publicRequest.ByParentRecoveryPointArn));
+            
             if (publicRequest.IsSetByResourceArn())
                 request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ByResourceArn));
             

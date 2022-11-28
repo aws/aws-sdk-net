@@ -76,10 +76,22 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.BackupSizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ChildJobsInState", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance);
+                    unmarshalledObject.ChildJobsInState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CompletionDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.CompletionDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CompositeMemberIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CompositeMemberIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CopyJobId", targetDepth))
@@ -116,6 +128,24 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IamRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IsParent", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsParent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NumberOfChildJobs", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfChildJobs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ParentJobId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParentJobId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ResourceArn", targetDepth))

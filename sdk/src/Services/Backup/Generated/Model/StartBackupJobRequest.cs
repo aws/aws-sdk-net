@@ -228,7 +228,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property StartWindowMinutes. 
         /// <para>
         /// A value in minutes after a backup is scheduled before a job will be canceled if it
-        /// doesn't start successfully. This value is optional, and the default is 8 hours.
+        /// doesn't start successfully. This value is optional, and the default is 8 hours. If
+        /// this value is included, it must be at least 60 minutes to avoid errors.
         /// </para>
         /// </summary>
         public long StartWindowMinutes

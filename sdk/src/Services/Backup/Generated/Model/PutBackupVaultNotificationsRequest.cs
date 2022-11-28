@@ -73,7 +73,9 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// Ignore the list below because it includes deprecated events. Refer to the list above.
+        /// The list below shows items that are deprecated events (for reference) and are no longer
+        /// in use. They are no longer supported and will not return statuses or notifications.
+        /// Refer to the list above for current supported events.
         /// </para>
         ///  </note>
         /// </summary>

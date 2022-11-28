@@ -99,6 +99,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.BytesTransferred = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ChildJobsInState", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance);
+                    response.ChildJobsInState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CompletionDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -127,6 +133,24 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IamRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IsParent", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IsParent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NumberOfChildJobs", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.NumberOfChildJobs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ParentJobId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ParentJobId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PercentDone", targetDepth))

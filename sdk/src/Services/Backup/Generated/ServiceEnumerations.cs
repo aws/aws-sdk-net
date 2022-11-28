@@ -55,6 +55,10 @@ namespace Amazon.Backup
         /// </summary>
         public static readonly BackupJobState FAILED = new BackupJobState("FAILED");
         /// <summary>
+        /// Constant PARTIAL for BackupJobState
+        /// </summary>
+        public static readonly BackupJobState PARTIAL = new BackupJobState("PARTIAL");
+        /// <summary>
         /// Constant PENDING for BackupJobState
         /// </summary>
         public static readonly BackupJobState PENDING = new BackupJobState("PENDING");
@@ -273,6 +277,10 @@ namespace Amazon.Backup
         /// </summary>
         public static readonly CopyJobState FAILED = new CopyJobState("FAILED");
         /// <summary>
+        /// Constant PARTIAL for CopyJobState
+        /// </summary>
+        public static readonly CopyJobState PARTIAL = new CopyJobState("PARTIAL");
+        /// <summary>
         /// Constant RUNNING for CopyJobState
         /// </summary>
         public static readonly CopyJobState RUNNING = new CopyJobState("RUNNING");
@@ -306,6 +314,64 @@ namespace Amazon.Backup
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CopyJobState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LegalHoldStatus.
+    /// </summary>
+    public class LegalHoldStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for LegalHoldStatus
+        /// </summary>
+        public static readonly LegalHoldStatus ACTIVE = new LegalHoldStatus("ACTIVE");
+        /// <summary>
+        /// Constant CANCELED for LegalHoldStatus
+        /// </summary>
+        public static readonly LegalHoldStatus CANCELED = new LegalHoldStatus("CANCELED");
+        /// <summary>
+        /// Constant CANCELING for LegalHoldStatus
+        /// </summary>
+        public static readonly LegalHoldStatus CANCELING = new LegalHoldStatus("CANCELING");
+        /// <summary>
+        /// Constant CREATING for LegalHoldStatus
+        /// </summary>
+        public static readonly LegalHoldStatus CREATING = new LegalHoldStatus("CREATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LegalHoldStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LegalHoldStatus FindValue(string value)
+        {
+            return FindValue<LegalHoldStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LegalHoldStatus(string value)
         {
             return FindValue(value);
         }

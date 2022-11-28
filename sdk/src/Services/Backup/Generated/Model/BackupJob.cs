@@ -46,6 +46,8 @@ namespace Amazon.Backup.Model
         private DateTime? _creationDate;
         private DateTime? _expectedCompletionDate;
         private string _iamRoleArn;
+        private bool? _isParent;
+        private string _parentJobId;
         private string _percentDone;
         private string _recoveryPointArn;
         private string _resourceArn;
@@ -312,6 +314,43 @@ namespace Amazon.Backup.Model
         internal bool IsSetIamRoleArn()
         {
             return this._iamRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsParent. 
+        /// <para>
+        /// This is a boolean value indicating this is a parent (composite) backup job.
+        /// </para>
+        /// </summary>
+        public bool IsParent
+        {
+            get { return this._isParent.GetValueOrDefault(); }
+            set { this._isParent = value; }
+        }
+
+        // Check to see if IsParent property is set
+        internal bool IsSetIsParent()
+        {
+            return this._isParent.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentJobId. 
+        /// <para>
+        /// This uniquely identifies a request to Backup to back up a resource. The return will
+        /// be the parent (composite) job ID.
+        /// </para>
+        /// </summary>
+        public string ParentJobId
+        {
+            get { return this._parentJobId; }
+            set { this._parentJobId = value; }
+        }
+
+        // Check to see if ParentJobId property is set
+        internal bool IsSetParentJobId()
+        {
+            return this._parentJobId != null;
         }
 
         /// <summary>

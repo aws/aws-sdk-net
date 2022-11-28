@@ -35,6 +35,7 @@ namespace Amazon.Backup.Model
     {
         private string _copyJobId;
         private DateTime? _creationDate;
+        private bool? _isParent;
 
         /// <summary>
         /// Gets and sets the property CopyJobId. 
@@ -73,6 +74,24 @@ namespace Amazon.Backup.Model
         internal bool IsSetCreationDate()
         {
             return this._creationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsParent. 
+        /// <para>
+        /// This is a returned boolean value indicating this is a parent (composite) copy job.
+        /// </para>
+        /// </summary>
+        public bool IsParent
+        {
+            get { return this._isParent.GetValueOrDefault(); }
+            set { this._isParent = value; }
+        }
+
+        // Check to see if IsParent property is set
+        internal bool IsSetIsParent()
+        {
+            return this._isParent.HasValue; 
         }
 
     }

@@ -63,6 +63,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsParent", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IsParent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

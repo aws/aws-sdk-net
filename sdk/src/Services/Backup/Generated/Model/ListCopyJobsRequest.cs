@@ -40,6 +40,7 @@ namespace Amazon.Backup.Model
         private DateTime? _byCreatedAfter;
         private DateTime? _byCreatedBefore;
         private string _byDestinationVaultArn;
+        private string _byParentJobId;
         private string _byResourceArn;
         private string _byResourceType;
         private CopyJobState _byState;
@@ -157,6 +158,24 @@ namespace Amazon.Backup.Model
         internal bool IsSetByDestinationVaultArn()
         {
             return this._byDestinationVaultArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ByParentJobId. 
+        /// <para>
+        /// This is a filter to list child (nested) jobs based on parent job ID.
+        /// </para>
+        /// </summary>
+        public string ByParentJobId
+        {
+            get { return this._byParentJobId; }
+            set { this._byParentJobId = value; }
+        }
+
+        // Check to see if ByParentJobId property is set
+        internal bool IsSetByParentJobId()
+        {
+            return this._byParentJobId != null;
         }
 
         /// <summary>

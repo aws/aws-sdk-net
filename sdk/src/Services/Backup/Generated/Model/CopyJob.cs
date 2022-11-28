@@ -35,13 +35,18 @@ namespace Amazon.Backup.Model
     {
         private string _accountId;
         private long? _backupSizeInBytes;
+        private Dictionary<string, long> _childJobsInState = new Dictionary<string, long>();
         private DateTime? _completionDate;
+        private string _compositeMemberIdentifier;
         private string _copyJobId;
         private RecoveryPointCreator _createdBy;
         private DateTime? _creationDate;
         private string _destinationBackupVaultArn;
         private string _destinationRecoveryPointArn;
         private string _iamRoleArn;
+        private bool? _isParent;
+        private long? _numberOfChildJobs;
+        private string _parentJobId;
         private string _resourceArn;
         private string _resourceType;
         private string _sourceBackupVaultArn;
@@ -86,6 +91,24 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChildJobsInState. 
+        /// <para>
+        /// This returns the statistics of the included child (nested) copy jobs.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, long> ChildJobsInState
+        {
+            get { return this._childJobsInState; }
+            set { this._childJobsInState = value; }
+        }
+
+        // Check to see if ChildJobsInState property is set
+        internal bool IsSetChildJobsInState()
+        {
+            return this._childJobsInState != null && this._childJobsInState.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property CompletionDate. 
         /// <para>
         /// The date and time a copy job is completed, in Unix format and Coordinated Universal
@@ -104,6 +127,27 @@ namespace Amazon.Backup.Model
         internal bool IsSetCompletionDate()
         {
             return this._completionDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompositeMemberIdentifier. 
+        /// <para>
+        /// This is the identifier of a resource within a composite group, such as nested (child)
+        /// recovery point belonging to a composite (parent) stack. The ID is transferred from
+        /// the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+        /// logical ID</a> within a stack.
+        /// </para>
+        /// </summary>
+        public string CompositeMemberIdentifier
+        {
+            get { return this._compositeMemberIdentifier; }
+            set { this._compositeMemberIdentifier = value; }
+        }
+
+        // Check to see if CompositeMemberIdentifier property is set
+        internal bool IsSetCompositeMemberIdentifier()
+        {
+            return this._compositeMemberIdentifier != null;
         }
 
         /// <summary>
@@ -213,6 +257,61 @@ namespace Amazon.Backup.Model
         internal bool IsSetIamRoleArn()
         {
             return this._iamRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsParent. 
+        /// <para>
+        /// This is a boolean value indicating this is a parent (composite) copy job.
+        /// </para>
+        /// </summary>
+        public bool IsParent
+        {
+            get { return this._isParent.GetValueOrDefault(); }
+            set { this._isParent = value; }
+        }
+
+        // Check to see if IsParent property is set
+        internal bool IsSetIsParent()
+        {
+            return this._isParent.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfChildJobs. 
+        /// <para>
+        /// This is the number of child (nested) copy jobs.
+        /// </para>
+        /// </summary>
+        public long NumberOfChildJobs
+        {
+            get { return this._numberOfChildJobs.GetValueOrDefault(); }
+            set { this._numberOfChildJobs = value; }
+        }
+
+        // Check to see if NumberOfChildJobs property is set
+        internal bool IsSetNumberOfChildJobs()
+        {
+            return this._numberOfChildJobs.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentJobId. 
+        /// <para>
+        /// This uniquely identifies a request to Backup to copy a resource. The return will be
+        /// the parent (composite) job ID.
+        /// </para>
+        /// </summary>
+        public string ParentJobId
+        {
+            get { return this._parentJobId; }
+            set { this._parentJobId = value; }
+        }
+
+        // Check to see if ParentJobId property is set
+        internal bool IsSetParentJobId()
+        {
+            return this._parentJobId != null;
         }
 
         /// <summary>

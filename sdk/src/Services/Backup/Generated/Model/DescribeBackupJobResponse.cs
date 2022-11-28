@@ -41,11 +41,15 @@ namespace Amazon.Backup.Model
         private string _backupVaultArn;
         private string _backupVaultName;
         private long? _bytesTransferred;
+        private Dictionary<string, long> _childJobsInState = new Dictionary<string, long>();
         private DateTime? _completionDate;
         private RecoveryPointCreator _createdBy;
         private DateTime? _creationDate;
         private DateTime? _expectedCompletionDate;
         private string _iamRoleArn;
+        private bool? _isParent;
+        private long? _numberOfChildJobs;
+        private string _parentJobId;
         private string _percentDone;
         private string _recoveryPointArn;
         private string _resourceArn;
@@ -206,6 +210,24 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChildJobsInState. 
+        /// <para>
+        /// This returns the statistics of the included child (nested) backup jobs.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, long> ChildJobsInState
+        {
+            get { return this._childJobsInState; }
+            set { this._childJobsInState = value; }
+        }
+
+        // Check to see if ChildJobsInState property is set
+        internal bool IsSetChildJobsInState()
+        {
+            return this._childJobsInState != null && this._childJobsInState.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property CompletionDate. 
         /// <para>
         /// The date and time that a job to create a backup job is completed, in Unix format and
@@ -305,6 +327,60 @@ namespace Amazon.Backup.Model
         internal bool IsSetIamRoleArn()
         {
             return this._iamRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsParent. 
+        /// <para>
+        /// This returns the boolean value that a backup job is a parent (composite) job.
+        /// </para>
+        /// </summary>
+        public bool IsParent
+        {
+            get { return this._isParent.GetValueOrDefault(); }
+            set { this._isParent = value; }
+        }
+
+        // Check to see if IsParent property is set
+        internal bool IsSetIsParent()
+        {
+            return this._isParent.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfChildJobs. 
+        /// <para>
+        /// This returns the number of child (nested) backup jobs.
+        /// </para>
+        /// </summary>
+        public long NumberOfChildJobs
+        {
+            get { return this._numberOfChildJobs.GetValueOrDefault(); }
+            set { this._numberOfChildJobs = value; }
+        }
+
+        // Check to see if NumberOfChildJobs property is set
+        internal bool IsSetNumberOfChildJobs()
+        {
+            return this._numberOfChildJobs.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentJobId. 
+        /// <para>
+        /// This returns the parent (composite) resource backup job ID.
+        /// </para>
+        /// </summary>
+        public string ParentJobId
+        {
+            get { return this._parentJobId; }
+            set { this._parentJobId = value; }
+        }
+
+        // Check to see if ParentJobId property is set
+        internal bool IsSetParentJobId()
+        {
+            return this._parentJobId != null;
         }
 
         /// <summary>

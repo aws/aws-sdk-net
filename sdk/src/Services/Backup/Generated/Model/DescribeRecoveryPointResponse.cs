@@ -38,13 +38,16 @@ namespace Amazon.Backup.Model
         private string _backupVaultName;
         private CalculatedLifecycle _calculatedLifecycle;
         private DateTime? _completionDate;
+        private string _compositeMemberIdentifier;
         private RecoveryPointCreator _createdBy;
         private DateTime? _creationDate;
         private string _encryptionKeyArn;
         private string _iamRoleArn;
         private bool? _isEncrypted;
+        private bool? _isParent;
         private DateTime? _lastRestoreTime;
         private Lifecycle _lifecycle;
+        private string _parentRecoveryPointArn;
         private string _recoveryPointArn;
         private string _resourceArn;
         private string _resourceType;
@@ -150,6 +153,27 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CompositeMemberIdentifier. 
+        /// <para>
+        /// This is the identifier of a resource within a composite group, such as nested (child)
+        /// recovery point belonging to a composite (parent) stack. The ID is transferred from
+        /// the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+        /// logical ID</a> within a stack.
+        /// </para>
+        /// </summary>
+        public string CompositeMemberIdentifier
+        {
+            get { return this._compositeMemberIdentifier; }
+            set { this._compositeMemberIdentifier = value; }
+        }
+
+        // Check to see if CompositeMemberIdentifier property is set
+        internal bool IsSetCompositeMemberIdentifier()
+        {
+            return this._compositeMemberIdentifier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
         /// Contains identifying information about the creation of a recovery point, including
@@ -247,6 +271,24 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsParent. 
+        /// <para>
+        /// This returns the boolean value that a recovery point is a parent (composite) job.
+        /// </para>
+        /// </summary>
+        public bool IsParent
+        {
+            get { return this._isParent.GetValueOrDefault(); }
+            set { this._isParent = value; }
+        }
+
+        // Check to see if IsParent property is set
+        internal bool IsSetIsParent()
+        {
+            return this._isParent.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastRestoreTime. 
         /// <para>
         /// The date and time that a recovery point was last restored, in Unix format and Coordinated
@@ -299,6 +341,25 @@ namespace Amazon.Backup.Model
         internal bool IsSetLifecycle()
         {
             return this._lifecycle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentRecoveryPointArn. 
+        /// <para>
+        /// This is an ARN that uniquely identifies a parent (composite) recovery point; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+        /// </para>
+        /// </summary>
+        public string ParentRecoveryPointArn
+        {
+            get { return this._parentRecoveryPointArn; }
+            set { this._parentRecoveryPointArn = value; }
+        }
+
+        // Check to see if ParentRecoveryPointArn property is set
+        internal bool IsSetParentRecoveryPointArn()
+        {
+            return this._parentRecoveryPointArn != null;
         }
 
         /// <summary>
@@ -399,6 +460,20 @@ namespace Amazon.Backup.Model
         /// delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups">
         /// Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of
         /// <i>Getting started</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>STOPPED</code> status occurs on a continuous backup where a user has taken
+        /// some action that causes the continuous backup to be disabled. This can be caused by
+        /// the removal of permissions, turning off versioning, turning off events being sent
+        /// to EventBridge, or disabling the EventBridge rules that are put in place by Backup.
+        /// </para>
+        ///  
+        /// <para>
+        /// To resolve <code>STOPPED</code> status, ensure that all requested permissions are
+        /// in place and that versioning is enabled on the S3 bucket. Once these conditions are
+        /// met, the next instance of a backup rule running will result in a new continuous recovery
+        /// point being created. The recovery points with STOPPED status do not need to be deleted.
         /// </para>
         /// </summary>
         public RecoveryPointStatus Status
