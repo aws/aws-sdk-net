@@ -29,35 +29,45 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Textract.Model
 {
     /// <summary>
-    /// The Amazon S3 bucket that contains the document to be processed. It's used by asynchronous
-    /// operations.
-    /// 
-    ///  
-    /// <para>
-    /// The input document can be an image file in JPEG or PNG format. It can also be a file
-    /// in PDF format.
-    /// </para>
+    /// Information regarding a detected signature on a page.
     /// </summary>
-    public partial class DocumentLocation
+    public partial class SignatureDetection
     {
-        private S3Object _s3Object;
+        private float? _confidence;
+        private Geometry _geometry;
 
         /// <summary>
-        /// Gets and sets the property S3Object. 
+        /// Gets and sets the property Confidence. 
         /// <para>
-        /// The Amazon S3 bucket that contains the input document.
+        /// The confidence, from 0 to 100, in the predicted values for a detected signature.
         /// </para>
         /// </summary>
-        public S3Object S3Object
+        [AWSProperty(Min=0, Max=100)]
+        public float Confidence
         {
-            get { return this._s3Object; }
-            set { this._s3Object = value; }
+            get { return this._confidence.GetValueOrDefault(); }
+            set { this._confidence = value; }
         }
 
-        // Check to see if S3Object property is set
-        internal bool IsSetS3Object()
+        // Check to see if Confidence property is set
+        internal bool IsSetConfidence()
         {
-            return this._s3Object != null;
+            return this._confidence.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Geometry.
+        /// </summary>
+        public Geometry Geometry
+        {
+            get { return this._geometry; }
+            set { this._geometry = value; }
+        }
+
+        // Check to see if Geometry property is set
+        internal bool IsSetGeometry()
+        {
+            return this._geometry != null;
         }
 
     }

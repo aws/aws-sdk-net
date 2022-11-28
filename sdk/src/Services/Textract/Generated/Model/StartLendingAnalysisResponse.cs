@@ -29,35 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Textract.Model
 {
     /// <summary>
-    /// The Amazon S3 bucket that contains the document to be processed. It's used by asynchronous
-    /// operations.
-    /// 
-    ///  
-    /// <para>
-    /// The input document can be an image file in JPEG or PNG format. It can also be a file
-    /// in PDF format.
-    /// </para>
+    /// This is the response object from the StartLendingAnalysis operation.
     /// </summary>
-    public partial class DocumentLocation
+    public partial class StartLendingAnalysisResponse : AmazonWebServiceResponse
     {
-        private S3Object _s3Object;
+        private string _jobId;
 
         /// <summary>
-        /// Gets and sets the property S3Object. 
+        /// Gets and sets the property JobId. 
         /// <para>
-        /// The Amazon S3 bucket that contains the input document.
+        /// A unique identifier for the lending or text-detection job. The <code>JobId</code>
+        /// is returned from <code>StartLendingAnalysis</code>. A <code>JobId</code> value is
+        /// only valid for 7 days.
         /// </para>
         /// </summary>
-        public S3Object S3Object
+        [AWSProperty(Min=1, Max=64)]
+        public string JobId
         {
-            get { return this._s3Object; }
-            set { this._s3Object = value; }
+            get { return this._jobId; }
+            set { this._jobId = value; }
         }
 
-        // Check to see if S3Object property is set
-        internal bool IsSetS3Object()
+        // Check to see if JobId property is set
+        internal bool IsSetJobId()
         {
-            return this._s3Object != null;
+            return this._jobId != null;
         }
 
     }

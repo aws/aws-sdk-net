@@ -67,6 +67,34 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Textract.Model.GetLendingAnalysisRequest.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.GetLendingAnalysisRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.GetLendingAnalysisRequest.NextToken</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.GetLendingAnalysisResponse.NextToken</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.GetLendingAnalysisSummaryRequest.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Textract.Model.StartDocumentAnalysisRequest.ClientRequestToken</property>
     <min>1</min>
     <max>64</max>
@@ -139,6 +167,30 @@
     <pattern>^[a-zA-Z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Textract.Model.StartLendingAnalysisRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.StartLendingAnalysisRequest.JobTag</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.StartLendingAnalysisRequest.KMSKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.StartLendingAnalysisResponse.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Textract.Model.AnalyzeIDDetections.Confidence</property>
     <min>0</min>
     <max>100</max>
@@ -173,9 +225,17 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Textract.Model.DetectedSignature.Page</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Textract.Model.Document.Bytes</property>
     <min>1</min>
     <max>10485760</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.DocumentGroup.Type</property>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Textract.Model.DocumentMetadata.Pages</property>
@@ -227,6 +287,15 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Textract.Model.LendingDetection.Confidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.LendingResult.Page</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Textract.Model.LineItemGroup.LineItemGroupIndex</property>
     <min>0</min>
   </property-value-rule>
@@ -252,6 +321,15 @@
     <property>Amazon.Textract.Model.OutputConfig.S3Prefix</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.Prediction.Confidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.Prediction.Value</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -283,5 +361,18 @@
     <min>1</min>
     <max>1024</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.SignatureDetection.Confidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.SplitDocument.Index</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.UndetectedSignature.Page</property>
+    <min>0</min>
   </property-value-rule>
 </property-value-rules>

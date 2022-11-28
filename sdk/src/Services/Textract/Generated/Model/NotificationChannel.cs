@@ -30,7 +30,7 @@ namespace Amazon.Textract.Model
 {
     /// <summary>
     /// The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract
-    /// publishes the completion status of an asynchronous document operation, such as <a>StartDocumentTextDetection</a>.
+    /// publishes the completion status of an asynchronous document operation.
     /// </summary>
     public partial class NotificationChannel
     {

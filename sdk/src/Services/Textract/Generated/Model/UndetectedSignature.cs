@@ -29,35 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Textract.Model
 {
     /// <summary>
-    /// The Amazon S3 bucket that contains the document to be processed. It's used by asynchronous
-    /// operations.
-    /// 
-    ///  
-    /// <para>
-    /// The input document can be an image file in JPEG or PNG format. It can also be a file
-    /// in PDF format.
-    /// </para>
+    /// A structure containing information about an undetected signature on a page where it
+    /// was expected but not found.
     /// </summary>
-    public partial class DocumentLocation
+    public partial class UndetectedSignature
     {
-        private S3Object _s3Object;
+        private int? _page;
 
         /// <summary>
-        /// Gets and sets the property S3Object. 
+        /// Gets and sets the property Page. 
         /// <para>
-        /// The Amazon S3 bucket that contains the input document.
+        /// The page where a signature was expected but not found.
         /// </para>
         /// </summary>
-        public S3Object S3Object
+        [AWSProperty(Min=0)]
+        public int Page
         {
-            get { return this._s3Object; }
-            set { this._s3Object = value; }
+            get { return this._page.GetValueOrDefault(); }
+            set { this._page = value; }
         }
 
-        // Check to see if S3Object property is set
-        internal bool IsSetS3Object()
+        // Check to see if Page property is set
+        internal bool IsSetPage()
         {
-            return this._s3Object != null;
+            return this._page.HasValue; 
         }
 
     }
