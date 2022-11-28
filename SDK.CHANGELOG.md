@@ -1,3 +1,40 @@
+### 3.7.425.0 (2022-11-28 03:22 UTC)
+* Backup (3.7.101.0)
+	* AWS Backup introduces support for legal hold and application stack backups. AWS Backup Audit Manager introduces support for cross-Region, cross-account reports.
+* CloudWatch (3.7.101.0)
+	* Adds cross-account support to the GetMetricData API. Adds cross-account support to the ListMetrics API through the usage of the IncludeLinkedAccounts flag and the new OwningAccounts field.
+* CloudWatchLogs (3.7.102.0)
+	* Updates to support CloudWatch Logs data protection and CloudWatch cross-account observability
+* Drs (3.7.101.0)
+	* Non breaking changes to existing APIs, and additional APIs added to support in-AWS failing back using AWS Elastic Disaster Recovery.
+* ECS (3.7.102.0)
+	* This release adds support for ECS Service Connect, a new capability that simplifies writing and operating resilient distributed applications. This release updates the TaskDefinition, Cluster, Service mutation APIs with Service connect constructs and also adds a new ListServicesByNamespace API.
+* ElasticFileSystem (3.7.101.0)
+	* This release adds elastic as a new ThroughputMode value for EFS file systems and adds AFTER_1_DAY as a value for TransitionToIARules.
+* IoT (3.7.103.0)
+	* Job scheduling enables the scheduled rollout of a Job with start and end times and a customizable end behavior when end time is reached. This is available for continuous and snapshot jobs. Added support for MQTT5 properties to AWS IoT TopicRule Republish Action.
+* IotData (3.7.101.0)
+	* This release adds support for MQTT5 properties to AWS IoT HTTP Publish API.
+* IoTWireless (3.7.101.0)
+	* This release includes a new feature for customers to calculate the position of their devices by adding three new APIs: UpdateResourcePosition, GetResourcePosition, and GetPositionEstimate.
+* Kendra (3.7.101.0)
+	* Amazon Kendra now supports preview of table information from HTML tables in the search results. The most relevant cells with their corresponding rows, columns are displayed as a preview in the search result. The most relevant table cell or cells are also highlighted in table preview.
+* Mgn (3.7.101.0)
+	* This release adds support for Application and Wave management. We also now support custom post-launch actions.
+* OAM (3.7.100.0)
+	* Amazon CloudWatch Observability Access Manager is a new service that allows configuration of the CloudWatch cross-account observability feature.
+* Organizations (3.7.101.0)
+	* This release introduces delegated administrator for AWS Organizations, a new feature to help you delegate the management of your Organizations policies, enabling you to govern your AWS organization in a decentralized way. You can now allow member accounts to manage Organizations policies.
+* RDS (3.7.105.0)
+	* This release enables new Aurora and RDS feature called Blue/Green Deployments that makes updates to databases safer, simpler and faster.
+* Textract (3.7.104.0)
+	* This release adds support for classifying and splitting lending documents by type, and extracting information by using the Analyze Lending APIs. This release also includes support for summarized information of the processed lending document package, in addition to per document results.
+* TranscribeService (3.7.101.0)
+	* This release adds support for 'inputType' for post-call and real-time (streaming) Call Analytics within Amazon Transcribe.
+* Core 3.7.100.23
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.424.0 (2022-11-23 19:31 UTC)
 * ManagedGrafana (3.7.101.0)
 	* This release includes support for configuring a Grafana workspace to connect to a datasource within a VPC as well as new APIs for configuring Grafana settings.
