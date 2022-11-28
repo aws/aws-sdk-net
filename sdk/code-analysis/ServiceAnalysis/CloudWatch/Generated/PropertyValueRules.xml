@@ -174,6 +174,11 @@
     <pattern>[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ListMetricsRequest.OwningAccount</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.ListMetricStreamsRequest.MaxResults</property>
     <min>1</min>
     <max>500</max>

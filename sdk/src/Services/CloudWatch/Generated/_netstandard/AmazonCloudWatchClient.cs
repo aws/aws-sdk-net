@@ -321,7 +321,7 @@ namespace Amazon.CloudWatch
         /// To get out of such a situation, you must break the cycle by changing the rule of one
         /// of the composite alarms in the cycle to remove a dependency that creates the cycle.
         /// The simplest change to make to break a cycle is to change the <code>AlarmRule</code>
-        /// of one of the alarms to <code>False</code>. 
+        /// of one of the alarms to <code>false</code>. 
         /// </para>
         ///  
         /// <para>
@@ -1595,7 +1595,7 @@ namespace Amazon.CloudWatch
         /// <summary>
         /// List the specified metrics. You can use the returned metrics with <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
-        /// to obtain statistical data.
+        /// to get statistical data.
         /// 
         ///  
         /// <para>
@@ -1604,9 +1604,16 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// After you create a metric, allow up to 15 minutes before the metric appears. You can
-        /// see statistics about the metric sooner by using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        /// After you create a metric, allow up to 15 minutes for the metric to appear. To see
+        /// metric statistics sooner, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using CloudWatch cross-account observability, you can use this operation
+        /// in a monitoring account and view metrics from the linked source accounts. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>.
         /// </para>
         ///  
         /// <para>
@@ -1637,7 +1644,7 @@ namespace Amazon.CloudWatch
         /// <summary>
         /// List the specified metrics. You can use the returned metrics with <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
-        /// to obtain statistical data.
+        /// to get statistical data.
         /// 
         ///  
         /// <para>
@@ -1646,9 +1653,16 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// After you create a metric, allow up to 15 minutes before the metric appears. You can
-        /// see statistics about the metric sooner by using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        /// After you create a metric, allow up to 15 minutes for the metric to appear. To see
+        /// metric statistics sooner, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using CloudWatch cross-account observability, you can use this operation
+        /// in a monitoring account and view metrics from the linked source accounts. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>.
         /// </para>
         ///  
         /// <para>
@@ -1878,7 +1892,7 @@ namespace Amazon.CloudWatch
         /// To get out of such a situation, you must break the cycle by changing the rule of one
         /// of the composite alarms in the cycle to remove a dependency that creates the cycle.
         /// The simplest change to make to break a cycle is to change the <code>AlarmRule</code>
-        /// of one of the alarms to <code>False</code>. 
+        /// of one of the alarms to <code>false</code>. 
         /// </para>
         ///  
         /// <para>
@@ -2324,7 +2338,7 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Creates or updates a metric stream. Metric streams can automatically stream CloudWatch
-        /// metrics to Amazon Web Services destinations including Amazon S3 and to many third-party
+        /// metrics to Amazon Web Services destinations, including Amazon S3, and to many third-party
         /// solutions.
         /// 
         ///  
@@ -2334,7 +2348,7 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// To create a metric stream, you must be logged on to an account that has the <code>iam:PassRole</code>
+        /// To create a metric stream, you must be signed in to an account that has the <code>iam:PassRole</code>
         /// permission and either the <code>CloudWatchFullAccess</code> policy or the <code>cloudwatch:PutMetricStream</code>
         /// permission.
         /// </para>
@@ -2360,8 +2374,8 @@ namespace Amazon.CloudWatch
         /// By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>,
         /// and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can
         /// use the <code>StatisticsConfigurations</code> parameter to have the metric stream
-        /// also send additional statistics in the stream. Streaming additional statistics incurs
-        /// additional costs. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
+        /// send additional statistics in the stream. Streaming additional statistics incurs additional
+        /// costs. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
         /// CloudWatch Pricing</a>. 
         /// </para>
         ///  

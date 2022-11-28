@@ -105,7 +105,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property FirehoseArn. 
         /// <para>
-        /// The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric
+        /// The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric
         /// stream.
         /// </para>
         /// </summary>

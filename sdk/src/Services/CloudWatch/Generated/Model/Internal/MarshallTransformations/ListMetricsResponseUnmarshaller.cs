@@ -94,6 +94,13 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         response.NextToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("OwningAccounts/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.OwningAccounts.Add(item);
+                        continue;
+                    }
                 } 
            }
 

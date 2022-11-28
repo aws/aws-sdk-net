@@ -47,6 +47,12 @@ namespace Amazon.CloudWatch.Model
         public IPaginatedEnumerable<Metric> Metrics => 
             new PaginatedResultKeyResponse<ListMetricsResponse, Metric>(this, (i) => i.Metrics);
 
+        /// <summary>
+        /// Enumerable containing all of the OwningAccounts
+        /// </summary>
+        public IPaginatedEnumerable<string> OwningAccounts => 
+            new PaginatedResultKeyResponse<ListMetricsResponse, string>(this, (i) => i.OwningAccounts);
+
         internal ListMetricsPaginator(IAmazonCloudWatch client, ListMetricsRequest request)
         {
             this._client = client;

@@ -31,7 +31,7 @@ namespace Amazon.CloudWatch.Model
     /// <summary>
     /// Container for the parameters to the PutMetricStream operation.
     /// Creates or updates a metric stream. Metric streams can automatically stream CloudWatch
-    /// metrics to Amazon Web Services destinations including Amazon S3 and to many third-party
+    /// metrics to Amazon Web Services destinations, including Amazon S3, and to many third-party
     /// solutions.
     /// 
     ///  
@@ -41,7 +41,7 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  
     /// <para>
-    /// To create a metric stream, you must be logged on to an account that has the <code>iam:PassRole</code>
+    /// To create a metric stream, you must be signed in to an account that has the <code>iam:PassRole</code>
     /// permission and either the <code>CloudWatchFullAccess</code> policy or the <code>cloudwatch:PutMetricStream</code>
     /// permission.
     /// </para>
@@ -67,8 +67,8 @@ namespace Amazon.CloudWatch.Model
     /// By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>,
     /// and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can
     /// use the <code>StatisticsConfigurations</code> parameter to have the metric stream
-    /// also send additional statistics in the stream. Streaming additional statistics incurs
-    /// additional costs. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
+    /// send additional statistics in the stream. Streaming additional statistics incurs additional
+    /// costs. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
     /// CloudWatch Pricing</a>. 
     /// </para>
     ///  
@@ -116,9 +116,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property FirehoseArn. 
         /// <para>
-        /// The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream.
-        /// This Amazon Kinesis Firehose delivery stream must already exist and must be in the
-        /// same account as the metric stream.
+        /// The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric
+        /// stream. This Amazon Kinesis Data Firehose delivery stream must already exist and must
+        /// be in the same account as the metric stream.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -211,9 +211,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Firehose
-        /// resources. This IAM role must already exist and must be in the same account as the
-        /// metric stream. This IAM role must include the following permissions:
+        /// The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data
+        /// Firehose resources. This IAM role must already exist and must be in the same account
+        /// as the metric stream. This IAM role must include the following permissions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -254,7 +254,7 @@ namespace Amazon.CloudWatch.Model
         /// is <code>json</code>, you can stream any additional statistic that is supported by
         /// CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
         /// CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>,
-        /// you can stream percentile statistics such as p95, p99.9 and so on.
+        /// you can stream percentile statistics such as p95, p99.9, and so on.
         /// </para>
         /// </summary>
         public List<MetricStreamStatisticsConfiguration> StatisticsConfigurations

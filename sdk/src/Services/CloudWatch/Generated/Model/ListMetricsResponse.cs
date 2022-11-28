@@ -35,6 +35,7 @@ namespace Amazon.CloudWatch.Model
     {
         private List<Metric> _metrics = new List<Metric>();
         private string _nextToken;
+        private List<string> _owningAccounts = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Metrics. 
@@ -70,6 +71,30 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwningAccounts. 
+        /// <para>
+        /// If you are using this operation in a monitoring account, this array contains the account
+        /// IDs of the source accounts where the metrics in the returned data are from.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is a 1:1 mapping between each metric that is returned and the ID of the
+        /// owning account.
+        /// </para>
+        /// </summary>
+        public List<string> OwningAccounts
+        {
+            get { return this._owningAccounts; }
+            set { this._owningAccounts = value; }
+        }
+
+        // Check to see if OwningAccounts property is set
+        internal bool IsSetOwningAccounts()
+        {
+            return this._owningAccounts != null && this._owningAccounts.Count > 0; 
         }
 
     }

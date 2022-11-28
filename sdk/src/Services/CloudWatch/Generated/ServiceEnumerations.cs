@@ -779,6 +779,10 @@ namespace Amazon.CloudWatch
         /// </summary>
         public static readonly StatusCode Complete = new StatusCode("Complete");
         /// <summary>
+        /// Constant Forbidden for StatusCode
+        /// </summary>
+        public static readonly StatusCode Forbidden = new StatusCode("Forbidden");
+        /// <summary>
         /// Constant InternalError for StatusCode
         /// </summary>
         public static readonly StatusCode InternalError = new StatusCode("InternalError");

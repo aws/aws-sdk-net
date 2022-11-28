@@ -48,7 +48,7 @@ namespace Amazon.CloudWatch.Model
     /// structures in the array. The 20 structures can include as many as 10 structures that
     /// contain a <code>MetricStat</code> parameter to retrieve a metric, and as many as 10
     /// structures that contain the <code>Expression</code> parameter to perform a math expression.
-    /// Of those <code>Expression</code> structures, one must have <code>True</code> as the
+    /// Of those <code>Expression</code> structures, one must have <code>true</code> as the
     /// value for <code>ReturnData</code>. The result of this expression is the value the
     /// alarm watches.
     /// </para>
@@ -78,12 +78,17 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The ID of the account where the metrics are located, if this is a cross-account alarm.
+        /// The ID of the account where the metrics are located.
         /// </para>
         ///  
         /// <para>
-        /// Use this field only for <code>PutMetricAlarm</code> operations. It is not used in
-        /// <code>GetMetricData</code> operations.
+        /// If you are performing a <code>GetMetricData</code> operation in a monitoring account,
+        /// use this to specify which account to retrieve this metric from.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are performing a <code>PutMetricAlarm</code> operation, use this to specify
+        /// which account contains the metric that the alarm is watching.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -239,11 +244,11 @@ namespace Amazon.CloudWatch.Model
         /// When used in <code>GetMetricData</code>, this option indicates whether to return the
         /// timestamps and raw data values of this metric. If you are performing this call just
         /// to do math expressions and do not also need the raw data returned, you can specify
-        /// <code>False</code>. If you omit this, the default of <code>True</code> is used.
+        /// <code>false</code>. If you omit this, the default of <code>true</code> is used.
         /// </para>
         ///  
         /// <para>
-        /// When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression
+        /// When used in <code>PutMetricAlarm</code>, specify <code>true</code> for the one expression
         /// result to use as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code>
         /// operation, specify <code>ReturnData</code> as False.
         /// </para>
