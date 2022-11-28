@@ -94,6 +94,24 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     unmarshalledObject.RecoveryInstanceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("replicationDirection", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReplicationDirection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("reversedDirectionSourceServerArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReversedDirectionSourceServerArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceCloudProperties", targetDepth))
+                {
+                    var unmarshaller = SourceCloudPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.SourceCloudProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sourceProperties", targetDepth))
                 {
                     var unmarshaller = SourcePropertiesUnmarshaller.Instance;

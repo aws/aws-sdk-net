@@ -40,6 +40,7 @@ namespace Amazon.Drs.Model
         private RecoveryInstanceFailback _failback;
         private bool? _isDrill;
         private string _jobid;
+        private OriginEnvironment _originEnvironment;
         private string _pointInTimeSnapshotDateTime;
         private string _recoveryInstanceID;
         private RecoveryInstanceProperties _recoveryInstanceProperties;
@@ -173,6 +174,25 @@ namespace Amazon.Drs.Model
         internal bool IsSetJobID()
         {
             return this._jobid != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginEnvironment. 
+        /// <para>
+        /// Environment (On Premises / AWS) of the instance that the recovery instance originated
+        /// from. 
+        /// </para>
+        /// </summary>
+        public OriginEnvironment OriginEnvironment
+        {
+            get { return this._originEnvironment; }
+            set { this._originEnvironment = value; }
+        }
+
+        // Check to see if OriginEnvironment property is set
+        internal bool IsSetOriginEnvironment()
+        {
+            return this._originEnvironment != null;
         }
 
         /// <summary>

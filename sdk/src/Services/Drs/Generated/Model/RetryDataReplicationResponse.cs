@@ -38,6 +38,9 @@ namespace Amazon.Drs.Model
         private LastLaunchResult _lastLaunchResult;
         private LifeCycle _lifeCycle;
         private string _recoveryInstanceId;
+        private ReplicationDirection _replicationDirection;
+        private string _reversedDirectionSourceServerArn;
+        private SourceCloudProperties _sourceCloudProperties;
         private SourceProperties _sourceProperties;
         private string _sourceServerID;
         private StagingArea _stagingArea;
@@ -133,6 +136,62 @@ namespace Amazon.Drs.Model
         internal bool IsSetRecoveryInstanceId()
         {
             return this._recoveryInstanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationDirection. 
+        /// <para>
+        /// Replication direction of the Source Server.
+        /// </para>
+        /// </summary>
+        public ReplicationDirection ReplicationDirection
+        {
+            get { return this._replicationDirection; }
+            set { this._replicationDirection = value; }
+        }
+
+        // Check to see if ReplicationDirection property is set
+        internal bool IsSetReplicationDirection()
+        {
+            return this._replicationDirection != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReversedDirectionSourceServerArn. 
+        /// <para>
+        /// For EC2-originated Source Servers which have been failed over and then failed back,
+        /// this value will mean the ARN of the Source Server on the opposite replication direction.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ReversedDirectionSourceServerArn
+        {
+            get { return this._reversedDirectionSourceServerArn; }
+            set { this._reversedDirectionSourceServerArn = value; }
+        }
+
+        // Check to see if ReversedDirectionSourceServerArn property is set
+        internal bool IsSetReversedDirectionSourceServerArn()
+        {
+            return this._reversedDirectionSourceServerArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceCloudProperties. 
+        /// <para>
+        /// Source cloud properties of the Source Server.
+        /// </para>
+        /// </summary>
+        public SourceCloudProperties SourceCloudProperties
+        {
+            get { return this._sourceCloudProperties; }
+            set { this._sourceCloudProperties = value; }
+        }
+
+        // Check to see if SourceCloudProperties property is set
+        internal bool IsSetSourceCloudProperties()
+        {
+            return this._sourceCloudProperties != null;
         }
 
         /// <summary>

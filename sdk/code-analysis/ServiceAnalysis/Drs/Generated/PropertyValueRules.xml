@@ -205,6 +205,12 @@
     <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Drs.Model.DisconnectSourceServerResponse.ReversedDirectionSourceServerArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(?:[0-9a-zA-Z_-]+:){3}([0-9]{12,}):source-server/(s-[0-9a-zA-Z]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Drs.Model.DisconnectSourceServerResponse.SourceServerID</property>
     <min>19</min>
     <max>19</max>
@@ -352,7 +358,31 @@
     <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Drs.Model.RetryDataReplicationResponse.ReversedDirectionSourceServerArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(?:[0-9a-zA-Z_-]+:){3}([0-9]{12,}):source-server/(s-[0-9a-zA-Z]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Drs.Model.RetryDataReplicationResponse.SourceServerID</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ReverseReplicationRequest.RecoveryInstanceID</property>
+    <min>10</min>
+    <max>19</max>
+    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ReverseReplicationResponse.ReversedDirectionSourceServerArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(?:[0-9a-zA-Z_-]+:){3}([0-9]{12,}):source-server/(s-[0-9a-zA-Z]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.StartReplicationRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
@@ -362,6 +392,12 @@
     <min>10</min>
     <max>19</max>
     <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.StopReplicationRequest.SourceServerID</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.TagResourceRequest.ResourceArn</property>
@@ -1048,6 +1084,24 @@
     <property>Amazon.Drs.Model.ServiceQuotaExceededException.ServiceCode</property>
     <min>0</min>
     <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.SourceCloudProperties.OriginAccountID</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12,}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.SourceCloudProperties.OriginAvailabilityZone</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.SourceCloudProperties.OriginRegion</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceProperties.LastUpdatedDateTime</property>

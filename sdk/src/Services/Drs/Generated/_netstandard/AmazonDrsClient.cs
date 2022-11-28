@@ -1374,6 +1374,65 @@ namespace Amazon.Drs
 
         #endregion
         
+        #region  ReverseReplication
+
+        internal virtual ReverseReplicationResponse ReverseReplication(ReverseReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReverseReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReverseReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<ReverseReplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Start replication to origin / target region - applies only to protected instances
+        /// that originated in EC2. For recovery instances on target region - starts replication
+        /// back to origin region. For failback instances on origin region - starts replication
+        /// to target region to re-protect them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReverseReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ReverseReplication service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ReverseReplication">REST API Reference for ReverseReplication Operation</seealso>
+        public virtual Task<ReverseReplicationResponse> ReverseReplicationAsync(ReverseReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReverseReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReverseReplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ReverseReplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartFailbackLaunch
 
         internal virtual StartFailbackLaunchResponse StartFailbackLaunch(StartFailbackLaunchRequest request)
@@ -1480,6 +1539,57 @@ namespace Amazon.Drs
 
         #endregion
         
+        #region  StartReplication
+
+        internal virtual StartReplicationResponse StartReplication(StartReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StartReplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts replication for a stopped Source Server. This action would make the Source
+        /// Server protected again and restart billing for it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartReplication service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartReplication">REST API Reference for StartReplication Operation</seealso>
+        public virtual Task<StartReplicationResponse> StartReplicationAsync(StartReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartReplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopFailback
 
         internal virtual StopFailbackResponse StopFailback(StopFailbackRequest request)
@@ -1523,6 +1633,57 @@ namespace Amazon.Drs
             options.ResponseUnmarshaller = StopFailbackResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopFailbackResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopReplication
+
+        internal virtual StopReplicationResponse StopReplication(StopReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StopReplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops replication for a Source Server. This action would make the Source Server unprotected,
+        /// delete its existing snapshots and stop billing for it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopReplication service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopReplication">REST API Reference for StopReplication Operation</seealso>
+        public virtual Task<StopReplicationResponse> StopReplicationAsync(StopReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopReplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopReplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion

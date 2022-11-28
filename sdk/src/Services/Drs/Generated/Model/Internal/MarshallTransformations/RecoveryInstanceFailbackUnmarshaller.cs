@@ -100,6 +100,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     unmarshalledObject.FailbackJobID = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("failbackLaunchType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FailbackLaunchType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("failbackToOriginalServer", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

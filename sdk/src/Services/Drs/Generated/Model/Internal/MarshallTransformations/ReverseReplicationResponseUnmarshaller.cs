@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DisconnectSourceServer operation
+    /// Response Unmarshaller for ReverseReplication operation
     /// </summary>  
-    public class DisconnectSourceServerResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ReverseReplicationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,82 +45,16 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DisconnectSourceServerResponse response = new DisconnectSourceServerResponse();
+            ReverseReplicationResponse response = new ReverseReplicationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("dataReplicationInfo", targetDepth))
-                {
-                    var unmarshaller = DataReplicationInfoUnmarshaller.Instance;
-                    response.DataReplicationInfo = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastLaunchResult", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.LastLaunchResult = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lifeCycle", targetDepth))
-                {
-                    var unmarshaller = LifeCycleUnmarshaller.Instance;
-                    response.LifeCycle = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("recoveryInstanceId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RecoveryInstanceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("replicationDirection", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ReplicationDirection = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("reversedDirectionSourceServerArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReversedDirectionSourceServerArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceCloudProperties", targetDepth))
-                {
-                    var unmarshaller = SourceCloudPropertiesUnmarshaller.Instance;
-                    response.SourceCloudProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceProperties", targetDepth))
-                {
-                    var unmarshaller = SourcePropertiesUnmarshaller.Instance;
-                    response.SourceProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceServerID", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SourceServerID = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stagingArea", targetDepth))
-                {
-                    var unmarshaller = StagingAreaUnmarshaller.Instance;
-                    response.StagingArea = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -146,6 +80,10 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                {
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
                 {
                     return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -166,13 +104,17 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 {
                     return UninitializedAccountExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonDrsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DisconnectSourceServerResponseUnmarshaller _instance = new DisconnectSourceServerResponseUnmarshaller();        
+        private static ReverseReplicationResponseUnmarshaller _instance = new ReverseReplicationResponseUnmarshaller();        
 
-        internal static DisconnectSourceServerResponseUnmarshaller GetInstance()
+        internal static ReverseReplicationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -180,7 +122,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DisconnectSourceServerResponseUnmarshaller Instance
+        public static ReverseReplicationResponseUnmarshaller Instance
         {
             get
             {
