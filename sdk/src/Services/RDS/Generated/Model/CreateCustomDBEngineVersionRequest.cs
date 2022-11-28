@@ -176,10 +176,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The name of your CEV. The name format is <code>19.<i>customized_string</i> </code>.
-        /// For example, a valid name is <code>19.my_cev1</code>. This setting is required for
-        /// RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code>
-        /// and <code>EngineVersion</code> is unique per customer per Region.
+        /// The name of your CEV. The name format is 19.<i>customized_string</i>. For example,
+        /// a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom
+        /// for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and
+        /// <code>EngineVersion</code> is unique per customer per Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=60)]

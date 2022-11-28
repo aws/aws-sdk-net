@@ -30,6 +30,12 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Metadata assigned to an Amazon RDS resource consisting of a key-value pair.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+    /// Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> 
+    /// </para>
     /// </summary>
     public partial class Tag
     {

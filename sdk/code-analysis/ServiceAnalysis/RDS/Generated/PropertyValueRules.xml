@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.RDS.Model.CreateBlueGreenDeploymentRequest.BlueGreenDeploymentName</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.CreateBlueGreenDeploymentRequest.Source</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.CreateBlueGreenDeploymentRequest.TargetDBClusterParameterGroupName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z](?!.*--)[0-9A-Za-z-]*[^-]|^default(?!.*--)(?!.*\.\.)[0-9A-Za-z-.]*[^-]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.CreateBlueGreenDeploymentRequest.TargetDBParameterGroupName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z](?!.*--)[0-9A-Za-z-]*[^-]|^default(?!.*--)(?!.*\.\.)[0-9A-Za-z-.]*[^-]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.CreateBlueGreenDeploymentRequest.TargetEngineVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z-_.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RDS.Model.CreateCustomDBEngineVersionRequest.DatabaseInstallationFilesS3BucketName</property>
     <min>3</min>
     <max>63</max>
@@ -61,6 +91,12 @@
     <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RDS.Model.DeleteBlueGreenDeploymentRequest.BlueGreenDeploymentIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RDS.Model.DeleteCustomDBEngineVersionRequest.Engine</property>
     <min>1</min>
     <max>35</max>
@@ -83,6 +119,17 @@
     <min>1</min>
     <max>63</max>
     <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.DescribeBlueGreenDeploymentsRequest.BlueGreenDeploymentIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.DescribeBlueGreenDeploymentsRequest.MaxRecords</property>
+    <min>20</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DescribeDBProxiesRequest.MaxRecords</property>
@@ -174,5 +221,51 @@
     <min>1</min>
     <max>63</max>
     <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.SwitchoverBlueGreenDeploymentRequest.BlueGreenDeploymentIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.SwitchoverBlueGreenDeploymentRequest.SwitchoverTimeout</property>
+    <min>30</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.BlueGreenDeployment.BlueGreenDeploymentIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.BlueGreenDeployment.BlueGreenDeploymentName</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.BlueGreenDeployment.Source</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.BlueGreenDeployment.Target</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.SwitchoverDetail.SourceMember</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.SwitchoverDetail.TargetMember</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[A-Za-z][0-9A-Za-z-:._]*</pattern>
   </property-value-rule>
 </property-value-rules>
