@@ -578,6 +578,9 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
+        /// The specified namespace wasn't found.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.PlatformTaskDefinitionIncompatibilityException">
         /// The specified platform version doesn't satisfy the required capabilities of the task
         /// definition.
@@ -662,6 +665,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
+        /// The specified namespace wasn't found.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.PlatformTaskDefinitionIncompatibilityException">
         /// The specified platform version doesn't satisfy the required capabilities of the task
@@ -1915,7 +1921,7 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// If you use a condition key in your IAM policy to refine the conditions for the policy
-        /// statement, for example limit the actions to a specific cluster, you recevie an <code>AccessDeniedException</code>
+        /// statement, for example limit the actions to a specific cluster, you receive an <code>AccessDeniedException</code>
         /// when there is a mismatch between the condition key value and the corresponding parameter
         /// value.
         /// </para>
@@ -2423,6 +2429,79 @@ namespace Amazon.ECS
         public virtual ListServicesResponse EndListServices(IAsyncResult asyncResult)
         {
             return EndInvoke<ListServicesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListServicesByNamespace
+
+        /// <summary>
+        /// This operation lists all of the services that are associated with a Cloud Map namespace.
+        /// This list might include services in different clusters. In contrast, <code>ListServices</code>
+        /// can only list services in one cluster at a time. If you need to filter the list of
+        /// services in a single cluster by various parameters, use <code>ListServices</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+        /// Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServicesByNamespace service method.</param>
+        /// 
+        /// <returns>The response from the ListServicesByNamespace service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
+        /// The specified namespace wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServicesByNamespace">REST API Reference for ListServicesByNamespace Operation</seealso>
+        public virtual ListServicesByNamespaceResponse ListServicesByNamespace(ListServicesByNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServicesByNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServicesByNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<ListServicesByNamespaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServicesByNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServicesByNamespace operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServicesByNamespace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServicesByNamespace">REST API Reference for ListServicesByNamespace Operation</seealso>
+        public virtual IAsyncResult BeginListServicesByNamespace(ListServicesByNamespaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServicesByNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServicesByNamespaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListServicesByNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListServicesByNamespace.</param>
+        /// 
+        /// <returns>Returns a  ListServicesByNamespaceResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServicesByNamespace">REST API Reference for ListServicesByNamespace Operation</seealso>
+        public virtual ListServicesByNamespaceResponse EndListServicesByNamespace(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListServicesByNamespaceResponse>(asyncResult);
         }
 
         #endregion
@@ -3883,6 +3962,12 @@ namespace Amazon.ECS
         /// the Amazon ECS container agent</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Agent updates with the <code>UpdateContainerAgent</code> API operation do not apply
+        /// to Windows container instances. We recommend that you launch new container instances
+        /// to update the agent version in your Windows clusters.
+        /// </para>
         ///  </note> 
         /// <para>
         /// The <code>UpdateContainerAgent</code> API requires an Amazon ECS-optimized AMI or
@@ -4277,6 +4362,9 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
+        /// The specified namespace wasn't found.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.PlatformTaskDefinitionIncompatibilityException">
         /// The specified platform version doesn't satisfy the required capabilities of the task
         /// definition.
@@ -4458,20 +4546,21 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// To learn more about Amazon ECS task protection, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-scale-in-protection.html">Task
-        /// scale-in protection</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// scale-in protection</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i>
+        /// </i>.
         /// </para>
         ///  <note> 
         /// <para>
         /// This operation is only supported for tasks belonging to an Amazon ECS service. Invoking
         /// this operation for a standalone task will result in an <code>TASK_NOT_VALID</code>
-        /// failure. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html.html">API
+        /// failure. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API
         /// failure reasons</a>.
         /// </para>
         ///  </note> <important> 
         /// <para>
         /// If you prefer to set task protection from within the container, we recommend using
-        /// the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-endpoint.html">Amazon
-        /// ECS container agent endpoint</a>.
+        /// the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-scale-in-protection-endpoint.html">Task
+        /// scale-in protection endpoint</a>.
         /// </para>
         ///  </important>
         /// </summary>

@@ -106,7 +106,7 @@ namespace Amazon.ECS.Model
         /// The value of the attribute. The <code>value</code> must contain between 1 and 128
         /// characters. It can contain letters (uppercase and lowercase), numbers, hyphens (-),
         /// underscores (_), periods (.), at signs (@), forward slashes (/), back slashes (\),
-        /// colons (:), or spaces. The value can't can't start or end with a space.
+        /// colons (:), or spaces. The value can't start or end with a space.
         /// </para>
         /// </summary>
         public string Value

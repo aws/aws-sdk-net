@@ -67,8 +67,8 @@ namespace Amazon.ECS.Model
     ///  </li> </ul> 
     /// <para>
     /// The following describes the possible <code>healthStatus</code> values for a task.
-    /// The container health check status of nonessential containers do not have an effect
-    /// on the health status of a task.
+    /// The container health check status of nonessential containers only affects the health
+    /// status of a task if no essential containers have health checks defined.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -83,7 +83,8 @@ namespace Amazon.ECS.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>UNKNOWN</code>-The essential containers within the task are still having their
-    /// health checks evaluated or there are no container health checks defined.
+    /// health checks evaluated or there are only nonessential containers with health checks
+    /// defined.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -92,7 +93,15 @@ namespace Amazon.ECS.Model
     /// the task reports as unhealthy then the task will be stopped and the service scheduler
     /// will replace it.
     /// </para>
-    ///  
+    ///  <important> 
+    /// <para>
+    /// For tasks that are a part of a service and the service uses the <code>ECS</code> rolling
+    /// deployment type, the deployment is paused while the new tasks have the <code>UNKNOWN</code>
+    /// task health check status. For example, tasks that define health checks for nonessential
+    /// containers when no essential containers have health checks will have the <code>UNKNOWN</code>
+    /// health check status indefinitely which prevents the deployment from completing.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// The following are notes about container health check support:
     /// </para>

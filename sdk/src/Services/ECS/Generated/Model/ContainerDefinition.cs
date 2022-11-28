@@ -1282,9 +1282,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Ulimits. 
         /// <para>
-        /// A list of <code>ulimits</code> to set in the container. If a ulimit value is specified
-        /// in a task definition, it overrides the default values set by Docker. This parameter
-        /// maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+        /// A list of <code>ulimits</code> to set in the container. If a <code>ulimit</code> value
+        /// is specified in a task definition, it overrides the default values set by Docker.
+        /// This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type.

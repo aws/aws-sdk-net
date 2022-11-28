@@ -49,7 +49,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property HardLimit. 
         /// <para>
-        /// The hard limit for the ulimit type.
+        /// The hard limit for the <code>ulimit</code> type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -87,7 +87,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property SoftLimit. 
         /// <para>
-        /// The soft limit for the ulimit type.
+        /// The soft limit for the <code>ulimit</code> type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -79,7 +79,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The maximum number of Amazon EC2 instances that Amazon ECS will scale out at one time.
         /// The scale in process is not affected by this parameter. If this parameter is omitted,
-        /// the default value of <code>10000</code> is used.
+        /// the default value of <code>1</code> is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]

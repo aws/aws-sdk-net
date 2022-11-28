@@ -158,6 +158,7 @@ namespace Amazon.ECS.Model
         private PropagateTags _propagateTags;
         private string _role;
         private SchedulingStrategy _schedulingStrategy;
+        private ServiceConnectConfiguration _serviceConnectConfiguration;
         private string _serviceName;
         private List<ServiceRegistry> _serviceRegistries = new List<ServiceRegistry>();
         private List<Tag> _tags = new List<Tag>();
@@ -345,8 +346,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code>
-        /// in the task definition healtch check parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health
+        /// If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code>
+        /// in the task definition health check parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health
         /// check</a>.
         /// </para>
         ///  
@@ -675,6 +676,34 @@ namespace Amazon.ECS.Model
         internal bool IsSetSchedulingStrategy()
         {
             return this._schedulingStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceConnectConfiguration. 
+        /// <para>
+        /// The configuration for this service to discover and connect to services, and be discovered
+        /// by, and connected from, other services within a namespace.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tasks that run in a namespace can use short names to connect to services in the namespace.
+        /// Tasks can connect to services across all of the clusters in the namespace. Tasks connect
+        /// through a managed proxy container that collects logs and metrics for increased visibility.
+        /// Only the tasks that Amazon ECS services create are supported with Service Connect.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+        /// Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public ServiceConnectConfiguration ServiceConnectConfiguration
+        {
+            get { return this._serviceConnectConfiguration; }
+            set { this._serviceConnectConfiguration = value; }
+        }
+
+        // Check to see if ServiceConnectConfiguration property is set
+        internal bool IsSetServiceConnectConfiguration()
+        {
+            return this._serviceConnectConfiguration != null;
         }
 
         /// <summary>

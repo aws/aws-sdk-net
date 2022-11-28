@@ -62,7 +62,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cpu. 
         /// <para>
-        /// The cpu override for the task.
+        /// The CPU override for the task.
         /// </para>
         /// </summary>
         public string Cpu

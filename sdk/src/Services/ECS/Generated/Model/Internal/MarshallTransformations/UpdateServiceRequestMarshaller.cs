@@ -207,6 +207,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Service);
                 }
 
+                if(publicRequest.IsSetServiceConnectConfiguration())
+                {
+                    context.Writer.WritePropertyName("serviceConnectConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ServiceConnectConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ServiceConnectConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetServiceRegistries())
                 {
                     context.Writer.WritePropertyName("serviceRegistries");

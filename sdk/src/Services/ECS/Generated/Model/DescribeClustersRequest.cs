@@ -65,7 +65,7 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// If <code>ATTACHMENTS</code> is specified, the attachments for the container instances
-        /// or tasks within the cluster are included.
+        /// or tasks within the cluster are included, for example the capacity providers.
         /// </para>
         ///  
         /// <para>

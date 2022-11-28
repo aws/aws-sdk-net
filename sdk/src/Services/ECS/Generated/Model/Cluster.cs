@@ -47,6 +47,7 @@ namespace Amazon.ECS.Model
         private int? _pendingTasksCount;
         private int? _registeredContainerInstancesCount;
         private int? _runningTasksCount;
+        private ClusterServiceConnectDefaults _serviceConnectDefaults;
         private List<ClusterSetting> _settings = new List<ClusterSetting>();
         private List<KeyValuePair> _statistics = new List<KeyValuePair>();
         private string _status;
@@ -269,6 +270,39 @@ namespace Amazon.ECS.Model
         internal bool IsSetRunningTasksCount()
         {
             return this._runningTasksCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceConnectDefaults. 
+        /// <para>
+        /// Use this parameter to set a default Service Connect namespace. After you set a default
+        /// Service Connect namespace, any new services with Service Connect turned on that are
+        /// created in the cluster are added as client services in the namespace. This setting
+        /// only applies to new services that set the <code>enabled</code> parameter to <code>true</code>
+        /// in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each
+        /// service individually in the <code>ServiceConnectConfiguration</code> to override this
+        /// default parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tasks that run in a namespace can use short names to connect to services in the namespace.
+        /// Tasks can connect to services across all of the clusters in the namespace. Tasks connect
+        /// through a managed proxy container that collects logs and metrics for increased visibility.
+        /// Only the tasks that Amazon ECS services create are supported with Service Connect.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+        /// Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public ClusterServiceConnectDefaults ServiceConnectDefaults
+        {
+            get { return this._serviceConnectDefaults; }
+            set { this._serviceConnectDefaults = value; }
+        }
+
+        // Check to see if ServiceConnectDefaults property is set
+        internal bool IsSetServiceConnectDefaults()
+        {
+            return this._serviceConnectDefaults != null;
         }
 
         /// <summary>

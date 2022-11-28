@@ -111,6 +111,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetServiceConnectDefaults())
+                {
+                    context.Writer.WritePropertyName("serviceConnectDefaults");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ClusterServiceConnectDefaultsRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ServiceConnectDefaults, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSettings())
                 {
                     context.Writer.WritePropertyName("settings");

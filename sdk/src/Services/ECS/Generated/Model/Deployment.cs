@@ -47,6 +47,8 @@ namespace Amazon.ECS.Model
         private DeploymentRolloutState _rolloutState;
         private string _rolloutStateReason;
         private int? _runningCount;
+        private ServiceConnectConfiguration _serviceConnectConfiguration;
+        private List<ServiceConnectServiceResource> _serviceConnectResources = new List<ServiceConnectServiceResource>();
         private string _status;
         private string _taskDefinition;
         private DateTime? _updatedAt;
@@ -315,6 +317,59 @@ namespace Amazon.ECS.Model
         internal bool IsSetRunningCount()
         {
             return this._runningCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceConnectConfiguration. 
+        /// <para>
+        /// The details of the Service Connect configuration that's used by this deployment. Compare
+        /// the configuration between multiple deployments when troubleshooting issues with new
+        /// deployments.
+        /// </para>
+        ///  
+        /// <para>
+        /// The configuration for this service to discover and connect to services, and be discovered
+        /// by, and connected from, other services within a namespace.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tasks that run in a namespace can use short names to connect to services in the namespace.
+        /// Tasks can connect to services across all of the clusters in the namespace. Tasks connect
+        /// through a managed proxy container that collects logs and metrics for increased visibility.
+        /// Only the tasks that Amazon ECS services create are supported with Service Connect.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+        /// Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public ServiceConnectConfiguration ServiceConnectConfiguration
+        {
+            get { return this._serviceConnectConfiguration; }
+            set { this._serviceConnectConfiguration = value; }
+        }
+
+        // Check to see if ServiceConnectConfiguration property is set
+        internal bool IsSetServiceConnectConfiguration()
+        {
+            return this._serviceConnectConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceConnectResources. 
+        /// <para>
+        /// The list of Service Connect resources that are associated with this deployment. Each
+        /// list entry maps a discovery name to a Cloud Map service name.
+        /// </para>
+        /// </summary>
+        public List<ServiceConnectServiceResource> ServiceConnectResources
+        {
+            get { return this._serviceConnectResources; }
+            set { this._serviceConnectResources = value; }
+        }
+
+        // Check to see if ServiceConnectResources property is set
+        internal bool IsSetServiceConnectResources()
+        {
+            return this._serviceConnectResources != null && this._serviceConnectResources.Count > 0; 
         }
 
         /// <summary>

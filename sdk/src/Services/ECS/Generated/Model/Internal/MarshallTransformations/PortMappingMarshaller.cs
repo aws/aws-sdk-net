@@ -45,6 +45,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PortMapping requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAppProtocol())
+            {
+                context.Writer.WritePropertyName("appProtocol");
+                context.Writer.Write(requestObject.AppProtocol);
+            }
+
             if(requestObject.IsSetContainerPort())
             {
                 context.Writer.WritePropertyName("containerPort");
@@ -55,6 +61,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("hostPort");
                 context.Writer.Write(requestObject.HostPort);
+            }
+
+            if(requestObject.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.Write(requestObject.Name);
             }
 
             if(requestObject.IsSetProtocol())

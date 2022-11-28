@@ -52,9 +52,48 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class PortMapping
     {
+        private ApplicationProtocol _appProtocol;
         private int? _containerPort;
         private int? _hostPort;
+        private string _name;
         private TransportProtocol _protocol;
+
+        /// <summary>
+        /// Gets and sets the property AppProtocol. 
+        /// <para>
+        /// The application protocol that's used for the port mapping. This parameter only applies
+        /// to Service Connect. We recommend that you set this parameter to be consistent with
+        /// the protocol that your application uses. If you set this parameter, Amazon ECS adds
+        /// protocol-specific connection handling to the Service Connect proxy. If you set this
+        /// parameter, Amazon ECS adds protocol-specific telemetry in the Amazon ECS console and
+        /// CloudWatch.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't set a value for this parameter, then TCP is used. However, Amazon ECS
+        /// doesn't add protocol-specific telemetry for TCP.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tasks that run in a namespace can use short names to connect to services in the namespace.
+        /// Tasks can connect to services across all of the clusters in the namespace. Tasks connect
+        /// through a managed proxy container that collects logs and metrics for increased visibility.
+        /// Only the tasks that Amazon ECS services create are supported with Service Connect.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+        /// Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public ApplicationProtocol AppProtocol
+        {
+            get { return this._appProtocol; }
+            set { this._appProtocol = value; }
+        }
+
+        // Check to see if AppProtocol property is set
+        internal bool IsSetAppProtocol()
+        {
+            return this._appProtocol != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContainerPort. 
@@ -138,6 +177,32 @@ namespace Amazon.ECS.Model
         internal bool IsSetHostPort()
         {
             return this._hostPort.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name that's used for the port mapping. This parameter only applies to Service
+        /// Connect. This parameter is the name that you use in the <code>serviceConnectConfiguration</code>
+        /// of a service. Up to 64 characters are allowed. The characters can include lowercase
+        /// letters, numbers, underscores (_), and hyphens (-). A hyphen can't be the first character.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+        /// Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
         /// <summary>
