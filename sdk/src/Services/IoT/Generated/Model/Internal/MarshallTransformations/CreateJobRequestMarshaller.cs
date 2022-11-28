@@ -156,6 +156,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSchedulingConfig())
+                {
+                    context.Writer.WritePropertyName("schedulingConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SchedulingConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SchedulingConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

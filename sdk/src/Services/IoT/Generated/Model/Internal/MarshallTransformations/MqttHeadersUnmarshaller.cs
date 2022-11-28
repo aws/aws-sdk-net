@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RepublishAction Object
+    /// Response Unmarshaller for MqttHeaders Object
     /// </summary>  
-    public class RepublishActionUnmarshaller : IUnmarshaller<RepublishAction, XmlUnmarshallerContext>, IUnmarshaller<RepublishAction, JsonUnmarshallerContext>
+    public class MqttHeadersUnmarshaller : IUnmarshaller<MqttHeaders, XmlUnmarshallerContext>, IUnmarshaller<MqttHeaders, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RepublishAction IUnmarshaller<RepublishAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MqttHeaders IUnmarshaller<MqttHeaders, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,51 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RepublishAction Unmarshall(JsonUnmarshallerContext context)
+        public MqttHeaders Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RepublishAction unmarshalledObject = new RepublishAction();
+            MqttHeaders unmarshalledObject = new MqttHeaders();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("headers", targetDepth))
-                {
-                    var unmarshaller = MqttHeadersUnmarshaller.Instance;
-                    unmarshalledObject.Headers = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("qos", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Qos = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("contentType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContentType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("topic", targetDepth))
+                if (context.TestExpression("correlationData", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Topic = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CorrelationData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("messageExpiry", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MessageExpiry = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("payloadFormatIndicator", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PayloadFormatIndicator = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("responseTopic", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResponseTopic = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("userProperties", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<UserProperty, UserPropertyUnmarshaller>(UserPropertyUnmarshaller.Instance);
+                    unmarshalledObject.UserProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +106,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static RepublishActionUnmarshaller _instance = new RepublishActionUnmarshaller();        
+        private static MqttHeadersUnmarshaller _instance = new MqttHeadersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RepublishActionUnmarshaller Instance
+        public static MqttHeadersUnmarshaller Instance
         {
             get
             {

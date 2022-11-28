@@ -51,6 +51,7 @@ namespace Amazon.IoT.Model
         private string _namespaceId;
         private PresignedUrlConfig _presignedUrlConfig;
         private string _reasonCode;
+        private SchedulingConfig _schedulingConfig;
         private JobStatus _status;
         private List<string> _targets = new List<string>();
         private TargetSelection _targetSelection;
@@ -362,7 +363,6 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
         public string NamespaceId
         {
             get { return this._namespaceId; }
@@ -410,6 +410,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetReasonCode()
         {
             return this._reasonCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchedulingConfig. 
+        /// <para>
+        /// The configuration that allows you to schedule a job for a future date and time in
+        /// addition to specifying the end behavior for each job execution.
+        /// </para>
+        /// </summary>
+        public SchedulingConfig SchedulingConfig
+        {
+            get { return this._schedulingConfig; }
+            set { this._schedulingConfig = value; }
+        }
+
+        // Check to see if SchedulingConfig property is set
+        internal bool IsSetSchedulingConfig()
+        {
+            return this._schedulingConfig != null;
         }
 
         /// <summary>

@@ -43,8 +43,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.AssociateTargetsWithJobRequest.NamespaceId</property>
-    <min>1</min>
-    <max>64</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -387,8 +385,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateJobRequest.NamespaceId</property>
-    <min>1</min>
-    <max>64</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -806,8 +802,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DeleteJobRequest.NamespaceId</property>
-    <min>1</min>
-    <max>64</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -818,8 +812,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DeleteJobExecutionRequest.NamespaceId</property>
-    <min>1</min>
-    <max>64</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1832,8 +1824,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListJobExecutionsForThingRequest.NamespaceId</property>
-    <min>1</min>
-    <max>64</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1849,8 +1839,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListJobsRequest.NamespaceId</property>
-    <min>1</min>
-    <max>64</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2649,8 +2637,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.UpdateJobRequest.NamespaceId</property>
-    <min>1</min>
-    <max>64</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -3257,8 +3243,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.Job.NamespaceId</property>
-    <min>1</min>
-    <max>64</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -3379,6 +3363,31 @@
     <min>1</min>
     <max>65535</max>
     <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.MqttHeaders.ContentType</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.MqttHeaders.CorrelationData</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.MqttHeaders.MessageExpiry</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.MqttHeaders.PayloadFormatIndicator</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.MqttHeaders.ResponseTopic</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.OpenSearchAction.Endpoint</property>
@@ -3610,6 +3619,16 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.SchedulingConfig.EndTime</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.SchedulingConfig.StartTime</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.SecurityProfileIdentifier.Name</property>
     <min>1</min>
     <max>128</max>
@@ -3781,6 +3800,16 @@
     <property>Amazon.IoT.Model.TransferData.TransferMessage</property>
     <max>128</max>
     <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UserProperty.Key</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UserProperty.Value</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ValidationError.ErrorMessage</property>

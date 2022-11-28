@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RepublishAction Object
+    /// Response Unmarshaller for SchedulingConfig Object
     /// </summary>  
-    public class RepublishActionUnmarshaller : IUnmarshaller<RepublishAction, XmlUnmarshallerContext>, IUnmarshaller<RepublishAction, JsonUnmarshallerContext>
+    public class SchedulingConfigUnmarshaller : IUnmarshaller<SchedulingConfig, XmlUnmarshallerContext>, IUnmarshaller<SchedulingConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RepublishAction IUnmarshaller<RepublishAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SchedulingConfig IUnmarshaller<SchedulingConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RepublishAction Unmarshall(JsonUnmarshallerContext context)
+        public SchedulingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RepublishAction unmarshalledObject = new RepublishAction();
+            SchedulingConfig unmarshalledObject = new SchedulingConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("headers", targetDepth))
-                {
-                    var unmarshaller = MqttHeadersUnmarshaller.Instance;
-                    unmarshalledObject.Headers = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("qos", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Qos = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("endBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndBehavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("topic", targetDepth))
+                if (context.TestExpression("endTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Topic = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startTime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static RepublishActionUnmarshaller _instance = new RepublishActionUnmarshaller();        
+        private static SchedulingConfigUnmarshaller _instance = new SchedulingConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RepublishActionUnmarshaller Instance
+        public static SchedulingConfigUnmarshaller Instance
         {
             get
             {

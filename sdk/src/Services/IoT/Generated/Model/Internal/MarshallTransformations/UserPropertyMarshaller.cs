@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RepublishAction Marshaller
+    /// UserProperty Marshaller
     /// </summary>
-    public class RepublishActionMarshaller : IRequestMarshaller<RepublishAction, JsonMarshallerContext> 
+    public class UserPropertyMarshaller : IRequestMarshaller<UserProperty, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,18 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RepublishAction requestObject, JsonMarshallerContext context)
+        public void Marshall(UserProperty requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetHeaders())
+            if(requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("headers");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = MqttHeadersMarshaller.Instance;
-                marshaller.Marshall(requestObject.Headers, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("key");
+                context.Writer.Write(requestObject.Key);
             }
 
-            if(requestObject.IsSetQos())
+            if(requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("qos");
-                context.Writer.Write(requestObject.Qos);
-            }
-
-            if(requestObject.IsSetRoleArn())
-            {
-                context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
-            }
-
-            if(requestObject.IsSetTopic())
-            {
-                context.Writer.WritePropertyName("topic");
-                context.Writer.Write(requestObject.Topic);
+                context.Writer.WritePropertyName("value");
+                context.Writer.Write(requestObject.Value);
             }
 
         }
@@ -79,7 +62,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RepublishActionMarshaller Instance = new RepublishActionMarshaller();
+        public readonly static UserPropertyMarshaller Instance = new UserPropertyMarshaller();
 
     }
 }

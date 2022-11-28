@@ -592,8 +592,7 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Attaches the specified principal to the specified thing. A principal can be X.509
-        /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
-        /// identities.
+        /// certificates, Amazon Cognito identities or federated identities.
         /// 
         ///  
         /// <para>
@@ -628,8 +627,7 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Attaches the specified principal to the specified thing. A principal can be X.509
-        /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
-        /// identities.
+        /// certificates, Amazon Cognito identities or federated identities.
         /// 
         ///  
         /// <para>

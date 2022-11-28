@@ -33,9 +33,29 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class RepublishAction
     {
+        private MqttHeaders _headers;
         private int? _qos;
         private string _roleArn;
         private string _topic;
+
+        /// <summary>
+        /// Gets and sets the property Headers. 
+        /// <para>
+        /// MQTT Version 5.0 headers information. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">
+        /// MQTT</a> from the Amazon Web Services IoT Core Developer Guide.
+        /// </para>
+        /// </summary>
+        public MqttHeaders Headers
+        {
+            get { return this._headers; }
+            set { this._headers = value; }
+        }
+
+        // Check to see if Headers property is set
+        internal bool IsSetHeaders()
+        {
+            return this._headers != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Qos. 

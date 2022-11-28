@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RepublishAction Marshaller
+    /// SchedulingConfig Marshaller
     /// </summary>
-    public class RepublishActionMarshaller : IRequestMarshaller<RepublishAction, JsonMarshallerContext> 
+    public class SchedulingConfigMarshaller : IRequestMarshaller<SchedulingConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,24 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RepublishAction requestObject, JsonMarshallerContext context)
+        public void Marshall(SchedulingConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetHeaders())
+            if(requestObject.IsSetEndBehavior())
             {
-                context.Writer.WritePropertyName("headers");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = MqttHeadersMarshaller.Instance;
-                marshaller.Marshall(requestObject.Headers, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("endBehavior");
+                context.Writer.Write(requestObject.EndBehavior);
             }
 
-            if(requestObject.IsSetQos())
+            if(requestObject.IsSetEndTime())
             {
-                context.Writer.WritePropertyName("qos");
-                context.Writer.Write(requestObject.Qos);
+                context.Writer.WritePropertyName("endTime");
+                context.Writer.Write(requestObject.EndTime);
             }
 
-            if(requestObject.IsSetRoleArn())
+            if(requestObject.IsSetStartTime())
             {
-                context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
-            }
-
-            if(requestObject.IsSetTopic())
-            {
-                context.Writer.WritePropertyName("topic");
-                context.Writer.Write(requestObject.Topic);
+                context.Writer.WritePropertyName("startTime");
+                context.Writer.Write(requestObject.StartTime);
             }
 
         }
@@ -79,7 +68,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RepublishActionMarshaller Instance = new RepublishActionMarshaller();
+        public readonly static SchedulingConfigMarshaller Instance = new SchedulingConfigMarshaller();
 
     }
 }
