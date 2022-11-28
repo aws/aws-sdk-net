@@ -554,6 +554,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This is the initial SDK release for AWS Network Manager.
 * [AWSSDK.NimbleStudio](https://www.nuget.org/packages/AWSSDK.NimbleStudio/)
 	* Amazon Nimble Studio is a virtual studio service that empowers visual effects, animation, and interactive content teams to create content securely within a scalable, private cloud service.
+* [AWSSDK.OAM](https://www.nuget.org/packages/AWSSDK.OAM/)
+	* Amazon CloudWatch Observability Access Manager is a new service that allows configuration of the CloudWatch cross-account observability feature.
 * [AWSSDK.OpenSearchService](https://www.nuget.org/packages/AWSSDK.OpenSearchService/)
 	* Updated Configuration APIs for Amazon OpenSearch Service (successor to Amazon Elasticsearch Service)
 * [AWSSDK.OpsWorks](https://www.nuget.org/packages/AWSSDK.OpsWorks/)
