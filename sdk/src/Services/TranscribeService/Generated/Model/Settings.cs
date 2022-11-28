@@ -30,8 +30,8 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Allows additional optional settings in your request, including channel identification,
-    /// alternative transcriptions, and speaker labeling; allows you to apply custom vocabularies
-    /// to your transcription job.
+    /// alternative transcriptions, and speaker partitioning. You can use that to apply custom
+    /// vocabularies to your transcription job.
     /// </summary>
     public partial class Settings
     {
@@ -115,12 +115,12 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MaxSpeakerLabels. 
         /// <para>
-        /// Specify the maximum number of speakers you want to identify in your media.
+        /// Specify the maximum number of speakers you want to partition in your media.
         /// </para>
         ///  
         /// <para>
         /// Note that if your media contains more speakers than the specified number, multiple
-        /// speakers will be identified as a single speaker.
+        /// speakers are treated as a single speaker.
         /// </para>
         ///  
         /// <para>
@@ -180,8 +180,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ShowSpeakerLabels. 
         /// <para>
-        /// Enables speaker identification (diarization) in your transcription output. Speaker
-        /// identification labels the speech from individual speakers in your media file.
+        /// Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning
+        /// labels the speech from individual speakers in your media file.
         /// </para>
         ///  
         /// <para>
@@ -195,7 +195,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
+        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning
         /// speakers (diarization)</a>.
         /// </para>
         /// </summary>
@@ -214,7 +214,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyFilterMethod. 
         /// <para>
-        /// Specify how you want your vocabulary filter applied to your transcript.
+        /// Specify how you want your custom vocabulary filter applied to your transcript.
         /// </para>
         ///  
         /// <para>

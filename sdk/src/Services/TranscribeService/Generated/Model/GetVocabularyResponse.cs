@@ -43,8 +43,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property DownloadUri. 
         /// <para>
-        /// The S3 location where the vocabulary is stored; use this URI to view or download the
-        /// vocabulary.
+        /// The S3 location where the custom vocabulary is stored; use this URI to view or download
+        /// the custom vocabulary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
@@ -64,7 +64,8 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property FailureReason. 
         /// <para>
         /// If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code>
-        /// contains information about why the vocabulary request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+        /// contains information about why the custom vocabulary request failed. See also: <a
+        /// href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
         /// Errors</a>.
         /// </para>
         /// </summary>
@@ -101,7 +102,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time the specified vocabulary was last modified.
+        /// The date and time the specified custom vocabulary was last modified.
         /// </para>
         ///  
         /// <para>
@@ -145,7 +146,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property VocabularyState. 
         /// <para>
         /// The processing state of your custom vocabulary. If the state is <code>READY</code>,
-        /// you can use the vocabulary in a <code>StartTranscriptionJob</code> request.
+        /// you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.
         /// </para>
         /// </summary>
         public VocabularyState VocabularyState

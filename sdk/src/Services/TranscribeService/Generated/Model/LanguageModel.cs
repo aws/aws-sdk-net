@@ -132,9 +132,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code used to create your custom language model. Each language model must
-        /// contain terms in only one language, and the language you select for your model must
-        /// match the language of your training and tuning data.
+        /// The language code used to create your custom language model. Each custom language
+        /// model must contain terms in only one language, and the language you select for your
+        /// custom language model must match the language of your training and tuning data.
         /// </para>
         ///  
         /// <para>
@@ -159,7 +159,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time the specified language model was last modified.
+        /// The date and time the specified custom language model was last modified.
         /// </para>
         ///  
         /// <para>
@@ -231,7 +231,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>false</code>, your language model is using the most up-to-date base model.
+        /// If <code>false</code>, your custom language model is using the most up-to-date base
+        /// model.
         /// </para>
         ///  
         /// <para>

@@ -41,8 +41,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property DownloadUri. 
         /// <para>
-        /// The Amazon S3 location where the vocabulary filter is stored; use this URI to view
-        /// or download the vocabulary filter.
+        /// The Amazon S3 location where the custom vocabulary filter is stored; use this URI
+        /// to view or download the custom vocabulary filter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
@@ -61,7 +61,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code you selected for your vocabulary filter.
+        /// The language code you selected for your custom vocabulary filter.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -79,7 +79,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time the specified vocabulary filter was last modified.
+        /// The date and time the specified custom vocabulary filter was last modified.
         /// </para>
         ///  
         /// <para>

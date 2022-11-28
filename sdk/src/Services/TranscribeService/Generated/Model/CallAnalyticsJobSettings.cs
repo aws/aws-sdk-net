@@ -30,8 +30,8 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Provides additional optional settings for your request, including content redaction,
-    /// automatic language identification; allows you to apply custom language models, vocabulary
-    /// filters, and custom vocabularies.
+    /// automatic language identification; allows you to apply custom language models, custom
+    /// vocabulary filters, and custom vocabularies.
     /// </summary>
     public partial class CallAnalyticsJobSettings
     {
@@ -61,38 +61,40 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageIdSettings. 
         /// <para>
-        /// If using automatic language identification (<code>IdentifyLanguage</code>) in your
-        /// request and you want to apply a custom language model, a custom vocabulary, or a custom
-        /// vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters
-        /// (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).
+        /// If using automatic language identification in your request and you want to apply a
+        /// custom language model, a custom vocabulary, or a custom vocabulary filter, include
+        /// <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
+        /// <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).
         /// </para>
         ///  
         /// <para>
-        /// You can specify two or more language codes that represent the languages you think
-        /// may be present in your media; including more than five is not recommended. Each language
+        ///  <code>LanguageIdSettings</code> supports two to five language codes. Each language
         /// code you include can have an associated custom language model, custom vocabulary,
-        /// and custom vocabulary filter. The languages you specify must match the languages of
-        /// the specified custom language models, custom vocabularies, and custom vocabulary filters.
+        /// and custom vocabulary filter. The language codes that you specify must match the languages
+        /// of the associated custom language models, custom vocabularies, and custom vocabulary
+        /// filters.
         /// </para>
         ///  
         /// <para>
-        /// To include language options using <code>IdentifyLanguage</code> <b>without</b> including
-        /// a custom language model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code>
-        /// instead of <code>LanguageIdSettings</code>. Including language options can improve
-        /// the accuracy of automatic language identification.
+        /// It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code>
+        /// to ensure that the correct language dialect is identified. For example, if you specify
+        /// a custom vocabulary that is in <code>en-US</code> but Amazon Transcribe determines
+        /// that the language spoken in your media is <code>en-AU</code>, your custom vocabulary
+        /// <i>is not</i> applied to your transcription. If you include <code>LanguageOptions</code>
+        /// and include <code>en-US</code> as the only English language dialect, your custom vocabulary
+        /// <i>is</i> applied to your transcription.
         /// </para>
         ///  
         /// <para>
-        /// If you want to include a custom language model with your request but <b>do not</b>
-        /// want to use automatic language identification, use instead the <code/> parameter with
-        /// the <code>LanguageModelName</code> sub-parameter.
+        /// If you want to include a custom language model, custom vocabulary, or custom vocabulary
+        /// filter with your request but <b>do not</b> want to use automatic language identification,
+        /// use instead the <code/> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code>,
+        /// or <code>VocabularyFilterName</code> sub-parameters.
         /// </para>
         ///  
         /// <para>
-        /// If you want to include a custom vocabulary or a custom vocabulary filter (or both)
-        /// with your request but <b>do not</b> want to use automatic language identification,
-        /// use instead the <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code>
-        /// (or both) sub-parameter.
+        /// For a list of languages supported with Call Analytics, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+        /// languages and language-specific features</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -112,13 +114,14 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property LanguageModelName. 
         /// <para>
         /// The name of the custom language model you want to use when processing your Call Analytics
-        /// job. Note that language model names are case sensitive.
+        /// job. Note that custom language model names are case sensitive.
         /// </para>
         ///  
         /// <para>
-        /// The language of the specified language model must match the language code you specify
-        /// in your transcription request. If the languages don't match, the language model isn't
-        /// applied. There are no errors or warnings associated with a language mismatch.
+        /// The language of the specified custom language model must match the language code that
+        /// you specify in your transcription request. If the languages don't match, the custom
+        /// language model isn't applied. There are no errors or warnings associated with a language
+        /// mismatch.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -138,7 +141,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property LanguageOptions. 
         /// <para>
         /// You can specify two or more language codes that represent the languages you think
-        /// may be present in your media; including more than five is not recommended. If you're
+        /// may be present in your media. Including more than five is not recommended. If you're
         /// unsure what languages are present, do not include this parameter.
         /// </para>
         ///  
@@ -149,6 +152,11 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// For a list of languages supported with Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
         /// languages</a> table.
+        /// </para>
+        ///  
+        /// <para>
+        /// To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file
+        /// must be encoded at a sample rate of 16,000 Hz or higher.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -167,7 +175,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyFilterMethod. 
         /// <para>
-        /// Specify how you want your vocabulary filter applied to your transcript.
+        /// Specify how you want your custom vocabulary filter applied to your transcript.
         /// </para>
         ///  
         /// <para>
@@ -198,7 +206,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property VocabularyFilterName. 
         /// <para>
         /// The name of the custom vocabulary filter you want to include in your Call Analytics
-        /// transcription request. Vocabulary filter names are case sensitive.
+        /// transcription request. Custom vocabulary filter names are case sensitive.
         /// </para>
         ///  
         /// <para>
@@ -223,7 +231,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property VocabularyName. 
         /// <para>
         /// The name of the custom vocabulary you want to include in your Call Analytics transcription
-        /// request. Vocabulary names are case sensitive.
+        /// request. Custom vocabulary names are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

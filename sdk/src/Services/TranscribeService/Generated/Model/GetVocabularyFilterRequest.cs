@@ -34,13 +34,6 @@ namespace Amazon.TranscribeService.Model
     /// 
     ///  
     /// <para>
-    /// To view the status of the specified vocabulary filter, check the <code>VocabularyState</code>
-    /// field. If the status is <code>READY</code>, your vocabulary is available to use. If
-    /// the status is <code>FAILED</code>, <code>FailureReason</code> provides details on
-    /// why your vocabulary filter failed.
-    /// </para>
-    ///  
-    /// <para>
     /// To get a list of your custom vocabulary filters, use the operation.
     /// </para>
     /// </summary>
@@ -51,8 +44,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyFilterName. 
         /// <para>
-        /// The name of the custom vocabulary filter you want information about. Vocabulary filter
-        /// names are case sensitive.
+        /// The name of the custom vocabulary filter you want information about. Custom vocabulary
+        /// filter names are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

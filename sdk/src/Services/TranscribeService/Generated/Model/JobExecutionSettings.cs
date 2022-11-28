@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Allows you to control how your transcription job is processed. Currently, the only
-    /// <code>JobExecutionSettings</code> modification you can choose is enabling job queueing
-    /// using the <code>AllowDeferredExecution</code> sub-parameter.
+    /// Makes it possible to control how your transcription job is processed. Currently, the
+    /// only <code>JobExecutionSettings</code> modification you can choose is enabling job
+    /// queueing using the <code>AllowDeferredExecution</code> sub-parameter.
     /// 
     ///  
     /// <para>
@@ -47,9 +47,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property AllowDeferredExecution. 
         /// <para>
-        /// Allows you to enable job queuing when your concurrent request limit is exceeded. When
-        /// <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job
-        /// requests are placed in a queue until the number of jobs falls below the concurrent
+        /// Makes it possible to enable job queuing when your concurrent request limit is exceeded.
+        /// When <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription
+        /// job requests are placed in a queue until the number of jobs falls below the concurrent
         /// request limit. If <code>AllowDeferredExecution</code> is set to <code>false</code>
         /// and the number of transcription job requests exceed the concurrent request limit,
         /// you get a <code>LimitExceededException</code> error.
@@ -80,8 +80,9 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon
-        /// S3 bucket that contains your input files. If the role you specify doesn’t have the
-        /// appropriate permissions to access the specified Amazon S3 location, your request fails.
+        /// S3 bucket that contains your input files. If the role that you specify doesn’t have
+        /// the appropriate permissions to access the specified Amazon S3 location, your request
+        /// fails.
         /// </para>
         ///  
         /// <para>

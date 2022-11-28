@@ -32,7 +32,7 @@ namespace Amazon.TranscribeService.Model
     /// Container for the parameters to the UpdateVocabulary operation.
     /// Updates an existing custom vocabulary with new values. This operation overwrites all
     /// existing information with your new values; you cannot append new terms onto an existing
-    /// vocabulary.
+    /// custom vocabulary.
     /// </summary>
     public partial class UpdateVocabularyRequest : AmazonTranscribeServiceRequest
     {
@@ -45,13 +45,14 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property LanguageCode. 
         /// <para>
         /// The language code that represents the language of the entries in the custom vocabulary
-        /// you want to update. Each vocabulary must contain terms in only one language.
+        /// you want to update. Each custom vocabulary must contain terms in only one language.
         /// </para>
         ///  
         /// <para>
         /// A custom vocabulary can only be used to transcribe files in the same language as the
-        /// vocabulary. For example, if you create a vocabulary using US English (<code>en-US</code>),
-        /// you can only apply this vocabulary to files that contain English audio.
+        /// custom vocabulary. For example, if you create a custom vocabulary using US English
+        /// (<code>en-US</code>), you can only apply this custom vocabulary to files that contain
+        /// English audio.
         /// </para>
         ///  
         /// <para>
@@ -76,10 +77,10 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Phrases. 
         /// <para>
-        /// Use this parameter if you want to update your vocabulary by including all desired
+        /// Use this parameter if you want to update your custom vocabulary by including all desired
         /// terms, as comma-separated values, within your request. The other option for updating
-        /// your vocabulary is to save your entries in a text file and upload them to an Amazon
-        /// S3 bucket, then specify the location of your file using the <code>VocabularyFileUri</code>
+        /// your custom vocabulary is to save your entries in a text file and upload them to an
+        /// Amazon S3 bucket, then specify the location of your file using the <code>VocabularyFileUri</code>
         /// parameter.
         /// </para>
         ///  
@@ -90,8 +91,8 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// Each language has a character set that contains all allowed characters for that specific
-        /// language. If you use unsupported characters, your vocabulary filter request fails.
-        /// Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+        /// language. If you use unsupported characters, your custom vocabulary filter request
+        /// fails. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
         /// Sets for Custom Vocabularies</a> to get the character set for your language.
         /// </para>
         /// </summary>
@@ -141,7 +142,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the custom vocabulary you want to update. Vocabulary names are case sensitive.
+        /// The name of the custom vocabulary you want to update. Custom vocabulary names are
+        /// case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

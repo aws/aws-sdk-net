@@ -58,8 +58,8 @@ namespace Amazon.TranscribeService.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule
-    /// criteria</a> for examples.
+    /// See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule
+    /// criteria for batch categories</a> for usage examples.
     /// </para>
     /// </summary>
     public partial class SentimentFilter
@@ -73,8 +73,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property AbsoluteTimeRange. 
         /// <para>
-        /// Allows you to specify a time range (in milliseconds) in your audio, during which you
-        /// want to search for the specified sentiments. See for more detail.
+        /// Makes it possible to specify a time range (in milliseconds) in your audio, during
+        /// which you want to search for the specified sentiments. See for more detail.
         /// </para>
         /// </summary>
         public AbsoluteTimeRange AbsoluteTimeRange
@@ -92,8 +92,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Negate. 
         /// <para>
-        /// Set to <code>TRUE</code> to flag the sentiments you didn't include in your request.
-        /// Set to <code>FALSE</code> to flag the sentiments you specified in your request.
+        /// Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request.
+        /// Set to <code>FALSE</code> to flag the sentiments that you specified in your request.
         /// </para>
         /// </summary>
         public bool Negate
@@ -111,8 +111,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ParticipantRole. 
         /// <para>
-        /// Specify the participant you want to flag. Omitting this parameter is equivalent to
-        /// specifying both participants.
+        /// Specify the participant that you want to flag. Omitting this parameter is equivalent
+        /// to specifying both participants.
         /// </para>
         /// </summary>
         public ParticipantRole ParticipantRole
@@ -130,8 +130,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property RelativeTimeRange. 
         /// <para>
-        /// Allows you to specify a time range (in percentage) in your media file, during which
-        /// you want to search for the specified sentiments. See for more detail.
+        /// Makes it possible to specify a time range (in percentage) in your media file, during
+        /// which you want to search for the specified sentiments. See for more detail.
         /// </para>
         /// </summary>
         public RelativeTimeRange RelativeTimeRange
@@ -149,10 +149,10 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Sentiments. 
         /// <para>
-        /// Specify the sentiments you want to flag.
+        /// Specify the sentiments that you want to flag.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=1)]
         public List<string> Sentiments
         {
             get { return this._sentiments; }

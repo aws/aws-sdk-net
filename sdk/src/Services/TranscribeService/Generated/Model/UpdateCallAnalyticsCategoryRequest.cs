@@ -42,6 +42,7 @@ namespace Amazon.TranscribeService.Model
     public partial class UpdateCallAnalyticsCategoryRequest : AmazonTranscribeServiceRequest
     {
         private string _categoryName;
+        private InputType _inputType;
         private List<Rule> _rules = new List<Rule>();
 
         /// <summary>
@@ -62,6 +63,27 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetCategoryName()
         {
             return this._categoryName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputType. 
+        /// <para>
+        /// Choose whether you want to update a streaming or a batch Call Analytics category.
+        /// The input type you specify must match the input type specified when the category was
+        /// created. For example, if you created a category with the <code>POST_CALL</code> input
+        /// type, you must use <code>POST_CALL</code> as the input type when updating this category.
+        /// </para>
+        /// </summary>
+        public InputType InputType
+        {
+            get { return this._inputType; }
+            set { this._inputType = value; }
+        }
+
+        // Check to see if InputType property is set
+        internal bool IsSetInputType()
+        {
+            return this._inputType != null;
         }
 
         /// <summary>

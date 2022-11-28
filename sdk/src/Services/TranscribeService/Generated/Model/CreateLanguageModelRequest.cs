@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model
     /// 
     ///  
     /// <para>
-    /// When creating a new language model, you must specify:
+    /// When creating a new custom language model, you must specify:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -53,11 +53,7 @@ namespace Amazon.TranscribeService.Model
     /// <para>
     /// A unique name for your model
     /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom
-    /// language models</a>.
-    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateLanguageModelRequest : AmazonTranscribeServiceRequest
     {
@@ -127,22 +123,23 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code that represents the language of your model. Each language model
-        /// must contain terms in only one language, and the language you select for your model
-        /// must match the language of your training and tuning data.
+        /// The language code that represents the language of your model. Each custom language
+        /// model must contain terms in only one language, and the language you select for your
+        /// custom language model must match the language of your training and tuning data.
         /// </para>
         ///  
         /// <para>
         /// For a list of supported languages and their associated language codes, refer to the
         /// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-        /// languages</a> table. Note that U.S. English (<code>en-US</code>) is the only language
+        /// languages</a> table. Note that US English (<code>en-US</code>) is the only language
         /// supported with Amazon Transcribe Medical.
         /// </para>
         ///  
         /// <para>
         /// A custom language model can only be used to transcribe files in the same language
-        /// as the model. For example, if you create a language model using US English (<code>en-US</code>),
-        /// you can only apply this model to files that contain English audio.
+        /// as the model. For example, if you create a custom language model using US English
+        /// (<code>en-US</code>), you can only apply this model to files that contain English
+        /// audio.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -166,8 +163,9 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// This name is case sensitive, cannot contain spaces, and must be unique within an Amazon
-        /// Web Services account. If you try to create a new language model with the same name
-        /// as an existing language model, you get a <code>ConflictException</code> error.
+        /// Web Services account. If you try to create a new custom language model with the same
+        /// name as an existing custom language model, you get a <code>ConflictException</code>
+        /// error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

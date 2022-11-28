@@ -48,8 +48,9 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon
-        /// S3 bucket that contains your input files. If the role you specify doesn’t have the
-        /// appropriate permissions to access the specified Amazon S3 location, your request fails.
+        /// S3 bucket that contains your input files. If the role that you specify doesn’t have
+        /// the appropriate permissions to access the specified Amazon S3 location, your request
+        /// fails.
         /// </para>
         ///  
         /// <para>

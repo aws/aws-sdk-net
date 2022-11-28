@@ -43,8 +43,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property DownloadUri. 
         /// <para>
-        /// The S3 location where the specified medical vocabulary is stored; use this URI to
-        /// view or download the vocabulary.
+        /// The S3 location where the specified custom medical vocabulary is stored; use this
+        /// URI to view or download the custom vocabulary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
@@ -64,8 +64,8 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property FailureReason. 
         /// <para>
         /// If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code>
-        /// contains information about why the medical vocabulary request failed. See also: <a
-        /// href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+        /// contains information about why the custom medical vocabulary request failed. See also:
+        /// <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
         /// Errors</a>.
         /// </para>
         /// </summary>
@@ -84,7 +84,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code you selected for your medical vocabulary. US English (<code>en-US</code>)
+        /// The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>)
         /// is the only language supported with Amazon Transcribe Medical.
         /// </para>
         /// </summary>
@@ -147,7 +147,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property VocabularyState. 
         /// <para>
         /// The processing state of your custom medical vocabulary. If the state is <code>READY</code>,
-        /// you can use the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+        /// you can use the custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
         /// </para>
         /// </summary>
         public VocabularyState VocabularyState

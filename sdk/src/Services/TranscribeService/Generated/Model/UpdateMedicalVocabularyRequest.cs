@@ -32,7 +32,7 @@ namespace Amazon.TranscribeService.Model
     /// Container for the parameters to the UpdateMedicalVocabulary operation.
     /// Updates an existing custom medical vocabulary with new values. This operation overwrites
     /// all existing information with your new values; you cannot append new terms onto an
-    /// existing vocabulary.
+    /// existing custom vocabulary.
     /// </summary>
     public partial class UpdateMedicalVocabularyRequest : AmazonTranscribeServiceRequest
     {
@@ -90,8 +90,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the custom medical vocabulary you want to update. Vocabulary names are
-        /// case sensitive.
+        /// The name of the custom medical vocabulary you want to update. Custom medical vocabulary
+        /// names are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

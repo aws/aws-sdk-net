@@ -34,22 +34,22 @@ namespace Amazon.TranscribeService.Model
     /// 
     ///  
     /// <para>
-    /// When creating a new vocabulary, you can either upload a text file that contains your
-    /// new entries, phrases, and terms into an Amazon S3 bucket and include the URI in your
-    /// request, or you can include a list of terms directly in your request using the <code>Phrases</code>
-    /// flag.
+    /// When creating a new custom vocabulary, you can either upload a text file that contains
+    /// your new entries, phrases, and terms into an Amazon S3 bucket and include the URI
+    /// in your request. Or you can include a list of terms directly in your request using
+    /// the <code>Phrases</code> flag.
     /// </para>
     ///  
     /// <para>
     /// Each language has a character set that contains all allowed characters for that specific
-    /// language. If you use unsupported characters, your vocabulary request fails. Refer
-    /// to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+    /// language. If you use unsupported characters, your custom vocabulary request fails.
+    /// Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
     /// Sets for Custom Vocabularies</a> to get the character set for your language.
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating
-    /// a custom vocabulary</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
+    /// vocabularies</a>.
     /// </para>
     /// </summary>
     public partial class CreateVocabularyRequest : AmazonTranscribeServiceRequest
@@ -64,13 +64,14 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property LanguageCode. 
         /// <para>
         /// The language code that represents the language of the entries in your custom vocabulary.
-        /// Each vocabulary must contain terms in only one language.
+        /// Each custom vocabulary must contain terms in only one language.
         /// </para>
         ///  
         /// <para>
         /// A custom vocabulary can only be used to transcribe files in the same language as the
-        /// vocabulary. For example, if you create a vocabulary using US English (<code>en-US</code>),
-        /// you can only apply this vocabulary to files that contain English audio.
+        /// custom vocabulary. For example, if you create a custom vocabulary using US English
+        /// (<code>en-US</code>), you can only apply this custom vocabulary to files that contain
+        /// English audio.
         /// </para>
         ///  
         /// <para>
@@ -95,10 +96,10 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Phrases. 
         /// <para>
-        /// Use this parameter if you want to create your vocabulary by including all desired
+        /// Use this parameter if you want to create your custom vocabulary by including all desired
         /// terms, as comma-separated values, within your request. The other option for creating
-        /// your vocabulary is to save your entries in a text file and upload them to an Amazon
-        /// S3 bucket, then specify the location of your file using the <code>VocabularyFileUri</code>
+        /// your custom vocabulary is to save your entries in a text file and upload them to an
+        /// Amazon S3 bucket, then specify the location of your file using the <code>VocabularyFileUri</code>
         /// parameter.
         /// </para>
         ///  
@@ -109,8 +110,8 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// Each language has a character set that contains all allowed characters for that specific
-        /// language. If you use unsupported characters, your vocabulary filter request fails.
-        /// Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+        /// language. If you use unsupported characters, your custom vocabulary filter request
+        /// fails. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
         /// Sets for Custom Vocabularies</a> to get the character set for your language.
         /// </para>
         /// </summary>
@@ -130,7 +131,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Adds one or more custom tags, each in the form of a key:value pair, to a new custom
-        /// vocabulary at the time you create this new vocabulary.
+        /// vocabulary at the time you create this new custom vocabulary.
         /// </para>
         ///  
         /// <para>
@@ -190,8 +191,8 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// This name is case sensitive, cannot contain spaces, and must be unique within an Amazon
-        /// Web Services account. If you try to create a new vocabulary with the same name as
-        /// an existing vocabulary, you get a <code>ConflictException</code> error.
+        /// Web Services account. If you try to create a new custom vocabulary with the same name
+        /// as an existing custom vocabulary, you get a <code>ConflictException</code> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

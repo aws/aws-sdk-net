@@ -36,6 +36,7 @@ namespace Amazon.TranscribeService.Model
     {
         private string _categoryName;
         private DateTime? _createTime;
+        private InputType _inputType;
         private DateTime? _lastUpdateTime;
         private List<Rule> _rules = new List<Rule>();
 
@@ -81,6 +82,26 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetCreateTime()
         {
             return this._createTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputType. 
+        /// <para>
+        /// The input type associated with the specified category. <code>POST_CALL</code> refers
+        /// to a category that is applied to batch transcriptions; <code>REAL_TIME</code> refers
+        /// to a category that is applied to streaming transcriptions.
+        /// </para>
+        /// </summary>
+        public InputType InputType
+        {
+            get { return this._inputType; }
+            set { this._inputType = value; }
+        }
+
+        // Check to see if InputType property is set
+        internal bool IsSetInputType()
+        {
+            return this._inputType != null;
         }
 
         /// <summary>

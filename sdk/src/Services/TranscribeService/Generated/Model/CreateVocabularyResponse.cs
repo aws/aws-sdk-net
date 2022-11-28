@@ -43,7 +43,8 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property FailureReason. 
         /// <para>
         /// If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code>
-        /// contains information about why the vocabulary request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+        /// contains information about why the custom vocabulary request failed. See also: <a
+        /// href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
         /// Errors</a>.
         /// </para>
         /// </summary>
@@ -124,7 +125,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property VocabularyState. 
         /// <para>
         /// The processing state of your custom vocabulary. If the state is <code>READY</code>,
-        /// you can use the vocabulary in a <code>StartTranscriptionJob</code> request.
+        /// you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.
         /// </para>
         /// </summary>
         public VocabularyState VocabularyState

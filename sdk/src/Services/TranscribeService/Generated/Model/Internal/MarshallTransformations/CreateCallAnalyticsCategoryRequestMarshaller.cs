@@ -73,6 +73,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CategoryName);
                 }
 
+                if(publicRequest.IsSetInputType())
+                {
+                    context.Writer.WritePropertyName("InputType");
+                    context.Writer.Write(publicRequest.InputType);
+                }
+
                 if(publicRequest.IsSetRules())
                 {
                     context.Writer.WritePropertyName("Rules");

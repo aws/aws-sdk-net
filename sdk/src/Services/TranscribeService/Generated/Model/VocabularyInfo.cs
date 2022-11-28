@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Provides information about a custom vocabulary, including the language of the vocabulary,
-    /// when it was last modified, its name, and the processing state.
+    /// Provides information about a custom vocabulary, including the language of the custom
+    /// vocabulary, when it was last modified, its name, and the processing state.
     /// </summary>
     public partial class VocabularyInfo
     {
@@ -42,14 +42,15 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code used to create your custom vocabulary. Each vocabulary must contain
-        /// terms in only one language.
+        /// The language code used to create your custom vocabulary. Each custom vocabulary must
+        /// contain terms in only one language.
         /// </para>
         ///  
         /// <para>
         /// A custom vocabulary can only be used to transcribe files in the same language as the
-        /// vocabulary. For example, if you create a vocabulary using US English (<code>en-US</code>),
-        /// you can only apply this vocabulary to files that contain English audio.
+        /// custom vocabulary. For example, if you create a custom vocabulary using US English
+        /// (<code>en-US</code>), you can only apply this custom vocabulary to files that contain
+        /// English audio.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -67,7 +68,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time the specified vocabulary was last modified.
+        /// The date and time the specified custom vocabulary was last modified.
         /// </para>
         ///  
         /// <para>
@@ -112,7 +113,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property VocabularyState. 
         /// <para>
         /// The processing state of your custom vocabulary. If the state is <code>READY</code>,
-        /// you can use the vocabulary in a <code>StartTranscriptionJob</code> request.
+        /// you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.
         /// </para>
         /// </summary>
         public VocabularyState VocabularyState

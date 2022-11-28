@@ -47,13 +47,14 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property LanguageModelName. 
         /// <para>
         /// The name of the custom language model you want to use when processing your transcription
-        /// job. Note that language model names are case sensitive.
+        /// job. Note that custom language model names are case sensitive.
         /// </para>
         ///  
         /// <para>
-        /// The language of the specified language model must match the language code you specify
-        /// in your transcription request. If the languages don't match, the language model isn't
-        /// applied. There are no errors or warnings associated with a language mismatch.
+        /// The language of the specified custom language model must match the language code that
+        /// you specify in your transcription request. If the languages don't match, the custom
+        /// language model isn't applied. There are no errors or warnings associated with a language
+        /// mismatch.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

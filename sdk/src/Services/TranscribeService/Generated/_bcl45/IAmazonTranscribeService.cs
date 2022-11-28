@@ -69,9 +69,18 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// All categories are automatically applied to your Call Analytics jobs. Note that in
-        /// order to apply your categories to your jobs, you must create them before submitting
-        /// your job request, as categories cannot be applied retroactively.
+        /// All categories are automatically applied to your Call Analytics transcriptions. Note
+        /// that in order to apply categories to your transcriptions, you must create them before
+        /// submitting your transcription request, as categories cannot be applied retroactively.
+        /// </para>
+        ///  
+        /// <para>
+        /// When creating a new category, you can use the <code>InputType</code> parameter to
+        /// label the category as a batch category (<code>POST_CALL</code>) or a streaming category
+        /// (<code>REAL_TIME</code>). Batch categories can only be applied to batch transcriptions
+        /// and streaming categories can only be applied to streaming transcriptions. If you do
+        /// not include <code>InputType</code>, your category is created as a batch category by
+        /// default.
         /// </para>
         ///  
         /// <para>
@@ -84,24 +93,10 @@ namespace Amazon.TranscribeService
         /// </para>
         ///  
         /// <para>
-        /// To learn more about:
+        /// To learn more about Call Analytics categories, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating
+        /// categories for batch transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
+        /// categories for streaming transcriptions</a>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Call Analytics categories, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
-        /// categories</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Using rules, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule
-        /// criteria</a> and refer to the data type
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Call Analytics, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing
-        /// call center audio with Call Analytics</a> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCallAnalyticsCategory service method.</param>
         /// 
@@ -133,9 +128,18 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// All categories are automatically applied to your Call Analytics jobs. Note that in
-        /// order to apply your categories to your jobs, you must create them before submitting
-        /// your job request, as categories cannot be applied retroactively.
+        /// All categories are automatically applied to your Call Analytics transcriptions. Note
+        /// that in order to apply categories to your transcriptions, you must create them before
+        /// submitting your transcription request, as categories cannot be applied retroactively.
+        /// </para>
+        ///  
+        /// <para>
+        /// When creating a new category, you can use the <code>InputType</code> parameter to
+        /// label the category as a batch category (<code>POST_CALL</code>) or a streaming category
+        /// (<code>REAL_TIME</code>). Batch categories can only be applied to batch transcriptions
+        /// and streaming categories can only be applied to streaming transcriptions. If you do
+        /// not include <code>InputType</code>, your category is created as a batch category by
+        /// default.
         /// </para>
         ///  
         /// <para>
@@ -148,24 +152,10 @@ namespace Amazon.TranscribeService
         /// </para>
         ///  
         /// <para>
-        /// To learn more about:
+        /// To learn more about Call Analytics categories, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating
+        /// categories for batch transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
+        /// categories for streaming transcriptions</a>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Call Analytics categories, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
-        /// categories</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Using rules, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule
-        /// criteria</a> and refer to the data type
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Call Analytics, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing
-        /// call center audio with Call Analytics</a> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCallAnalyticsCategory service method.</param>
         /// <param name="cancellationToken">
@@ -203,7 +193,7 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// When creating a new language model, you must specify:
+        /// When creating a new custom language model, you must specify:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -222,11 +212,7 @@ namespace Amazon.TranscribeService
         /// <para>
         /// A unique name for your model
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom
-        /// language models</a>.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLanguageModel service method.</param>
         /// 
@@ -258,7 +244,7 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// When creating a new language model, you must specify:
+        /// When creating a new custom language model, you must specify:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -277,11 +263,7 @@ namespace Amazon.TranscribeService
         /// <para>
         /// A unique name for your model
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom
-        /// language models</a>.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLanguageModel service method.</param>
         /// <param name="cancellationToken">
@@ -319,23 +301,23 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// Prior to creating a new medical vocabulary, you must first upload a text file that
-        /// contains your new entries, phrases, and terms into an Amazon S3 bucket. Note that
-        /// this differs from , where you can include a list of terms within your request using
-        /// the <code>Phrases</code> flag; <code>CreateMedicalVocabulary</code> does not support
-        /// the <code>Phrases</code> flag.
+        /// Before creating a new custom medical vocabulary, you must first upload a text file
+        /// that contains your new entries, phrases, and terms into an Amazon S3 bucket. Note
+        /// that this differs from , where you can include a list of terms within your request
+        /// using the <code>Phrases</code> flag; <code>CreateMedicalVocabulary</code> does not
+        /// support the <code>Phrases</code> flag.
         /// </para>
         ///  
         /// <para>
         /// Each language has a character set that contains all allowed characters for that specific
-        /// language. If you use unsupported characters, your vocabulary request fails. Refer
-        /// to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+        /// language. If you use unsupported characters, your custom vocabulary request fails.
+        /// Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
         /// Sets for Custom Vocabularies</a> to get the character set for your language.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating
-        /// a custom vocabulary</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
+        /// vocabularies</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMedicalVocabulary service method.</param>
@@ -368,23 +350,23 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// Prior to creating a new medical vocabulary, you must first upload a text file that
-        /// contains your new entries, phrases, and terms into an Amazon S3 bucket. Note that
-        /// this differs from , where you can include a list of terms within your request using
-        /// the <code>Phrases</code> flag; <code>CreateMedicalVocabulary</code> does not support
-        /// the <code>Phrases</code> flag.
+        /// Before creating a new custom medical vocabulary, you must first upload a text file
+        /// that contains your new entries, phrases, and terms into an Amazon S3 bucket. Note
+        /// that this differs from , where you can include a list of terms within your request
+        /// using the <code>Phrases</code> flag; <code>CreateMedicalVocabulary</code> does not
+        /// support the <code>Phrases</code> flag.
         /// </para>
         ///  
         /// <para>
         /// Each language has a character set that contains all allowed characters for that specific
-        /// language. If you use unsupported characters, your vocabulary request fails. Refer
-        /// to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+        /// language. If you use unsupported characters, your custom vocabulary request fails.
+        /// Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
         /// Sets for Custom Vocabularies</a> to get the character set for your language.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating
-        /// a custom vocabulary</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
+        /// vocabularies</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMedicalVocabulary service method.</param>
@@ -423,22 +405,22 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// When creating a new vocabulary, you can either upload a text file that contains your
-        /// new entries, phrases, and terms into an Amazon S3 bucket and include the URI in your
-        /// request, or you can include a list of terms directly in your request using the <code>Phrases</code>
-        /// flag.
+        /// When creating a new custom vocabulary, you can either upload a text file that contains
+        /// your new entries, phrases, and terms into an Amazon S3 bucket and include the URI
+        /// in your request. Or you can include a list of terms directly in your request using
+        /// the <code>Phrases</code> flag.
         /// </para>
         ///  
         /// <para>
         /// Each language has a character set that contains all allowed characters for that specific
-        /// language. If you use unsupported characters, your vocabulary request fails. Refer
-        /// to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+        /// language. If you use unsupported characters, your custom vocabulary request fails.
+        /// Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
         /// Sets for Custom Vocabularies</a> to get the character set for your language.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating
-        /// a custom vocabulary</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
+        /// vocabularies</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVocabulary service method.</param>
@@ -471,22 +453,22 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// When creating a new vocabulary, you can either upload a text file that contains your
-        /// new entries, phrases, and terms into an Amazon S3 bucket and include the URI in your
-        /// request, or you can include a list of terms directly in your request using the <code>Phrases</code>
-        /// flag.
+        /// When creating a new custom vocabulary, you can either upload a text file that contains
+        /// your new entries, phrases, and terms into an Amazon S3 bucket and include the URI
+        /// in your request. Or you can include a list of terms directly in your request using
+        /// the <code>Phrases</code> flag.
         /// </para>
         ///  
         /// <para>
         /// Each language has a character set that contains all allowed characters for that specific
-        /// language. If you use unsupported characters, your vocabulary request fails. Refer
-        /// to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+        /// language. If you use unsupported characters, your custom vocabulary request fails.
+        /// Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
         /// Sets for Custom Vocabularies</a> to get the character set for your language.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating
-        /// a custom vocabulary</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
+        /// vocabularies</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVocabulary service method.</param>
@@ -525,20 +507,21 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// You can use vocabulary filters to mask, delete, or flag specific words from your transcript.
-        /// Vocabulary filters are commonly used to mask profanity in transcripts.
+        /// You can use custom vocabulary filters to mask, delete, or flag specific words from
+        /// your transcript. Custom vocabulary filters are commonly used to mask profanity in
+        /// transcripts.
         /// </para>
         ///  
         /// <para>
         /// Each language has a character set that contains all allowed characters for that specific
-        /// language. If you use unsupported characters, your vocabulary filter request fails.
-        /// Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+        /// language. If you use unsupported characters, your custom vocabulary filter request
+        /// fails. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
         /// Sets for Custom Vocabularies</a> to get the character set for your language.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using
-        /// vocabulary filtering with unwanted words</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Vocabulary
+        /// filtering</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVocabularyFilter service method.</param>
@@ -571,20 +554,21 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// You can use vocabulary filters to mask, delete, or flag specific words from your transcript.
-        /// Vocabulary filters are commonly used to mask profanity in transcripts.
+        /// You can use custom vocabulary filters to mask, delete, or flag specific words from
+        /// your transcript. Custom vocabulary filters are commonly used to mask profanity in
+        /// transcripts.
         /// </para>
         ///  
         /// <para>
         /// Each language has a character set that contains all allowed characters for that specific
-        /// language. If you use unsupported characters, your vocabulary filter request fails.
-        /// Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+        /// language. If you use unsupported characters, your custom vocabulary filter request
+        /// fails. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
         /// Sets for Custom Vocabularies</a> to get the character set for your language.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using
-        /// vocabulary filtering with unwanted words</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Vocabulary
+        /// filtering</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVocabularyFilter service method.</param>
@@ -742,8 +726,8 @@ namespace Amazon.TranscribeService
 
         /// <summary>
         /// Deletes a custom language model. To use this operation, specify the name of the language
-        /// model you want to delete using <code>ModelName</code>. Language model names are case
-        /// sensitive.
+        /// model you want to delete using <code>ModelName</code>. custom language model names
+        /// are case sensitive.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLanguageModel service method.</param>
         /// 
@@ -768,8 +752,8 @@ namespace Amazon.TranscribeService
 
         /// <summary>
         /// Deletes a custom language model. To use this operation, specify the name of the language
-        /// model you want to delete using <code>ModelName</code>. Language model names are case
-        /// sensitive.
+        /// model you want to delete using <code>ModelName</code>. custom language model names
+        /// are case sensitive.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLanguageModel service method.</param>
         /// <param name="cancellationToken">
@@ -858,8 +842,8 @@ namespace Amazon.TranscribeService
 
         /// <summary>
         /// Deletes a custom medical vocabulary. To use this operation, specify the name of the
-        /// vocabulary you want to delete using <code>VocabularyName</code>. Vocabulary names
-        /// are case sensitive.
+        /// custom vocabulary you want to delete using <code>VocabularyName</code>. Custom vocabulary
+        /// names are case sensitive.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMedicalVocabulary service method.</param>
         /// 
@@ -888,8 +872,8 @@ namespace Amazon.TranscribeService
 
         /// <summary>
         /// Deletes a custom medical vocabulary. To use this operation, specify the name of the
-        /// vocabulary you want to delete using <code>VocabularyName</code>. Vocabulary names
-        /// are case sensitive.
+        /// custom vocabulary you want to delete using <code>VocabularyName</code>. Custom vocabulary
+        /// names are case sensitive.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMedicalVocabulary service method.</param>
         /// <param name="cancellationToken">
@@ -979,8 +963,9 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a custom vocabulary. To use this operation, specify the name of the vocabulary
-        /// you want to delete using <code>VocabularyName</code>. Vocabulary names are case sensitive.
+        /// Deletes a custom vocabulary. To use this operation, specify the name of the custom
+        /// vocabulary you want to delete using <code>VocabularyName</code>. Custom vocabulary
+        /// names are case sensitive.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVocabulary service method.</param>
         /// 
@@ -1008,8 +993,9 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a custom vocabulary. To use this operation, specify the name of the vocabulary
-        /// you want to delete using <code>VocabularyName</code>. Vocabulary names are case sensitive.
+        /// Deletes a custom vocabulary. To use this operation, specify the name of the custom
+        /// vocabulary you want to delete using <code>VocabularyName</code>. Custom vocabulary
+        /// names are case sensitive.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVocabulary service method.</param>
         /// <param name="cancellationToken">
@@ -1043,9 +1029,9 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a vocabulary filter. To use this operation, specify the name of the vocabulary
-        /// filter you want to delete using <code>VocabularyFilterName</code>. Vocabulary filter
-        /// names are case sensitive.
+        /// Deletes a custom vocabulary filter. To use this operation, specify the name of the
+        /// custom vocabulary filter you want to delete using <code>VocabularyFilterName</code>.
+        /// Custom vocabulary filter names are case sensitive.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVocabularyFilter service method.</param>
         /// 
@@ -1073,9 +1059,9 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a vocabulary filter. To use this operation, specify the name of the vocabulary
-        /// filter you want to delete using <code>VocabularyFilterName</code>. Vocabulary filter
-        /// names are case sensitive.
+        /// Deletes a custom vocabulary filter. To use this operation, specify the name of the
+        /// custom vocabulary filter you want to delete using <code>VocabularyFilterName</code>.
+        /// Custom vocabulary filter names are case sensitive.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVocabularyFilter service method.</param>
         /// <param name="cancellationToken">
@@ -1113,19 +1099,15 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// This operation also shows if the base language model you used to create your custom
-        /// language model has been updated. If Amazon Transcribe has updated the base model,
-        /// you can create a new custom language model using the updated base model.
+        /// This operation also shows if the base language model that you used to create your
+        /// custom language model has been updated. If Amazon Transcribe has updated the base
+        /// model, you can create a new custom language model using the updated base model.
         /// </para>
         ///  
         /// <para>
         /// If you tried to create a new custom language model and the request wasn't successful,
         /// you can use <code>DescribeLanguageModel</code> to help identify the reason for this
         /// failure.
-        /// </para>
-        ///  
-        /// <para>
-        /// To get a list of your custom language models, use the operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLanguageModel service method.</param>
@@ -1158,19 +1140,15 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// This operation also shows if the base language model you used to create your custom
-        /// language model has been updated. If Amazon Transcribe has updated the base model,
-        /// you can create a new custom language model using the updated base model.
+        /// This operation also shows if the base language model that you used to create your
+        /// custom language model has been updated. If Amazon Transcribe has updated the base
+        /// model, you can create a new custom language model using the updated base model.
         /// </para>
         ///  
         /// <para>
         /// If you tried to create a new custom language model and the request wasn't successful,
         /// you can use <code>DescribeLanguageModel</code> to help identify the reason for this
         /// failure.
-        /// </para>
-        ///  
-        /// <para>
-        /// To get a list of your custom language models, use the operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLanguageModel service method.</param>
@@ -1388,7 +1366,7 @@ namespace Amazon.TranscribeService
         ///  
         /// <para>
         /// To view the status of the specified medical transcription job, check the <code>TranscriptionJobStatus</code>
-        /// field. If the status is <code>COMPLETED</code>, the job is finished and you can find
+        /// field. If the status is <code>COMPLETED</code>, the job is finished. You can find
         /// the results at the location specified in <code>TranscriptFileUri</code>. If the status
         /// is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription
         /// job failed.
@@ -1429,7 +1407,7 @@ namespace Amazon.TranscribeService
         ///  
         /// <para>
         /// To view the status of the specified medical transcription job, check the <code>TranscriptionJobStatus</code>
-        /// field. If the status is <code>COMPLETED</code>, the job is finished and you can find
+        /// field. If the status is <code>COMPLETED</code>, the job is finished. You can find
         /// the results at the location specified in <code>TranscriptFileUri</code>. If the status
         /// is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription
         /// job failed.
@@ -1475,10 +1453,10 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// To view the status of the specified medical vocabulary, check the <code>VocabularyState</code>
-        /// field. If the status is <code>READY</code>, your vocabulary is available to use. If
-        /// the status is <code>FAILED</code>, <code>FailureReason</code> provides details on
-        /// why your vocabulary failed.
+        /// To view the status of the specified custom medical vocabulary, check the <code>VocabularyState</code>
+        /// field. If the status is <code>READY</code>, your custom vocabulary is available to
+        /// use. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details
+        /// on why your vocabulary failed.
         /// </para>
         ///  
         /// <para>
@@ -1515,10 +1493,10 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// To view the status of the specified medical vocabulary, check the <code>VocabularyState</code>
-        /// field. If the status is <code>READY</code>, your vocabulary is available to use. If
-        /// the status is <code>FAILED</code>, <code>FailureReason</code> provides details on
-        /// why your vocabulary failed.
+        /// To view the status of the specified custom medical vocabulary, check the <code>VocabularyState</code>
+        /// field. If the status is <code>READY</code>, your custom vocabulary is available to
+        /// use. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details
+        /// on why your vocabulary failed.
         /// </para>
         ///  
         /// <para>
@@ -1562,7 +1540,7 @@ namespace Amazon.TranscribeService
         ///  
         /// <para>
         /// To view the status of the specified transcription job, check the <code>TranscriptionJobStatus</code>
-        /// field. If the status is <code>COMPLETED</code>, the job is finished and you can find
+        /// field. If the status is <code>COMPLETED</code>, the job is finished. You can find
         /// the results at the location specified in <code>TranscriptFileUri</code>. If the status
         /// is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription
         /// job failed.
@@ -1608,7 +1586,7 @@ namespace Amazon.TranscribeService
         ///  
         /// <para>
         /// To view the status of the specified transcription job, check the <code>TranscriptionJobStatus</code>
-        /// field. If the status is <code>COMPLETED</code>, the job is finished and you can find
+        /// field. If the status is <code>COMPLETED</code>, the job is finished. You can find
         /// the results at the location specified in <code>TranscriptFileUri</code>. If the status
         /// is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription
         /// job failed.
@@ -1659,10 +1637,10 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// To view the status of the specified vocabulary, check the <code>VocabularyState</code>
-        /// field. If the status is <code>READY</code>, your vocabulary is available to use. If
-        /// the status is <code>FAILED</code>, <code>FailureReason</code> provides details on
-        /// why your vocabulary failed.
+        /// To view the status of the specified custom vocabulary, check the <code>VocabularyState</code>
+        /// field. If the status is <code>READY</code>, your custom vocabulary is available to
+        /// use. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details
+        /// on why your custom vocabulary failed.
         /// </para>
         ///  
         /// <para>
@@ -1699,10 +1677,10 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// To view the status of the specified vocabulary, check the <code>VocabularyState</code>
-        /// field. If the status is <code>READY</code>, your vocabulary is available to use. If
-        /// the status is <code>FAILED</code>, <code>FailureReason</code> provides details on
-        /// why your vocabulary failed.
+        /// To view the status of the specified custom vocabulary, check the <code>VocabularyState</code>
+        /// field. If the status is <code>READY</code>, your custom vocabulary is available to
+        /// use. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details
+        /// on why your custom vocabulary failed.
         /// </para>
         ///  
         /// <para>
@@ -1745,13 +1723,6 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// To view the status of the specified vocabulary filter, check the <code>VocabularyState</code>
-        /// field. If the status is <code>READY</code>, your vocabulary is available to use. If
-        /// the status is <code>FAILED</code>, <code>FailureReason</code> provides details on
-        /// why your vocabulary filter failed.
-        /// </para>
-        ///  
-        /// <para>
         /// To get a list of your custom vocabulary filters, use the operation.
         /// </para>
         /// </summary>
@@ -1783,13 +1754,6 @@ namespace Amazon.TranscribeService
         /// <summary>
         /// Provides information about the specified custom vocabulary filter.
         /// 
-        ///  
-        /// <para>
-        /// To view the status of the specified vocabulary filter, check the <code>VocabularyState</code>
-        /// field. If the status is <code>READY</code>, your vocabulary is available to use. If
-        /// the status is <code>FAILED</code>, <code>FailureReason</code> provides details on
-        /// why your vocabulary filter failed.
-        /// </para>
         ///  
         /// <para>
         /// To get a list of your custom vocabulary filters, use the operation.
@@ -1960,7 +1924,7 @@ namespace Amazon.TranscribeService
 
         /// <summary>
         /// Provides a list of custom language models that match the specified criteria. If no
-        /// criteria are specified, all language models are returned.
+        /// criteria are specified, all custom language models are returned.
         /// 
         ///  
         /// <para>
@@ -1990,7 +1954,7 @@ namespace Amazon.TranscribeService
 
         /// <summary>
         /// Provides a list of custom language models that match the specified criteria. If no
-        /// criteria are specified, all language models are returned.
+        /// criteria are specified, all custom language models are returned.
         /// 
         ///  
         /// <para>
@@ -2436,9 +2400,9 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// In addition to many of the standard transcription features, Call Analytics provides
-        /// you with call characteristics, call summarization, speaker sentiment, and optional
-        /// redaction of your text transcript and your audio file. You can also apply custom categories
+        /// In addition to many standard transcription features, Call Analytics provides you with
+        /// call characteristics, call summarization, speaker sentiment, and optional redaction
+        /// of your text transcript and your audio file. You can also apply custom categories
         /// to flag specified conditions. To learn more about these features and insights, refer
         /// to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing
         /// call center audio with Call Analytics</a>.
@@ -2448,8 +2412,9 @@ namespace Amazon.TranscribeService
         /// If you want to apply categories to your Call Analytics job, you must create them before
         /// submitting your job request. Categories cannot be retroactively applied to a job.
         /// To create a new category, use the operation. To learn more about Call Analytics categories,
-        /// see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
-        /// categories</a>.
+        /// see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating
+        /// categories for batch transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
+        /// categories for streaming transcriptions</a>.
         /// </para>
         ///  
         /// <para>
@@ -2471,8 +2436,8 @@ namespace Amazon.TranscribeService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CallAnalyticsJobName</code>: A custom name you create for your transcription
-        /// job that is unique within your Amazon Web Services account.
+        ///  <code>CallAnalyticsJobName</code>: A custom name that you create for your transcription
+        /// job that's unique within your Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2525,9 +2490,9 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// In addition to many of the standard transcription features, Call Analytics provides
-        /// you with call characteristics, call summarization, speaker sentiment, and optional
-        /// redaction of your text transcript and your audio file. You can also apply custom categories
+        /// In addition to many standard transcription features, Call Analytics provides you with
+        /// call characteristics, call summarization, speaker sentiment, and optional redaction
+        /// of your text transcript and your audio file. You can also apply custom categories
         /// to flag specified conditions. To learn more about these features and insights, refer
         /// to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing
         /// call center audio with Call Analytics</a>.
@@ -2537,8 +2502,9 @@ namespace Amazon.TranscribeService
         /// If you want to apply categories to your Call Analytics job, you must create them before
         /// submitting your job request. Categories cannot be retroactively applied to a job.
         /// To create a new category, use the operation. To learn more about Call Analytics categories,
-        /// see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
-        /// categories</a>.
+        /// see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating
+        /// categories for batch transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
+        /// categories for streaming transcriptions</a>.
         /// </para>
         ///  
         /// <para>
@@ -2560,8 +2526,8 @@ namespace Amazon.TranscribeService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CallAnalyticsJobName</code>: A custom name you create for your transcription
-        /// job that is unique within your Amazon Web Services account.
+        ///  <code>CallAnalyticsJobName</code>: A custom name that you create for your transcription
+        /// job that's unique within your Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2620,9 +2586,9 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// In addition to many of the standard transcription features, Amazon Transcribe Medical
-        /// provides you with a robust medical vocabulary and, optionally, content identification,
-        /// which adds flags to personal health information (PHI). To learn more about these features,
+        /// In addition to many standard transcription features, Amazon Transcribe Medical provides
+        /// you with a robust medical vocabulary and, optionally, content identification, which
+        /// adds flags to personal health information (PHI). To learn more about these features,
         /// refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works-med.html">How
         /// Amazon Transcribe Medical works</a>.
         /// </para>
@@ -2705,9 +2671,9 @@ namespace Amazon.TranscribeService
         /// 
         ///  
         /// <para>
-        /// In addition to many of the standard transcription features, Amazon Transcribe Medical
-        /// provides you with a robust medical vocabulary and, optionally, content identification,
-        /// which adds flags to personal health information (PHI). To learn more about these features,
+        /// In addition to many standard transcription features, Amazon Transcribe Medical provides
+        /// you with a robust medical vocabulary and, optionally, content identification, which
+        /// adds flags to personal health information (PHI). To learn more about these features,
         /// refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works-med.html">How
         /// Amazon Transcribe Medical works</a>.
         /// </para>
@@ -3185,7 +3151,7 @@ namespace Amazon.TranscribeService
         /// <summary>
         /// Updates an existing custom medical vocabulary with new values. This operation overwrites
         /// all existing information with your new values; you cannot append new terms onto an
-        /// existing vocabulary.
+        /// existing custom vocabulary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMedicalVocabulary service method.</param>
         /// 
@@ -3219,7 +3185,7 @@ namespace Amazon.TranscribeService
         /// <summary>
         /// Updates an existing custom medical vocabulary with new values. This operation overwrites
         /// all existing information with your new values; you cannot append new terms onto an
-        /// existing vocabulary.
+        /// existing custom vocabulary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMedicalVocabulary service method.</param>
         /// <param name="cancellationToken">
@@ -3259,7 +3225,7 @@ namespace Amazon.TranscribeService
         /// <summary>
         /// Updates an existing custom vocabulary with new values. This operation overwrites all
         /// existing information with your new values; you cannot append new terms onto an existing
-        /// vocabulary.
+        /// custom vocabulary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVocabulary service method.</param>
         /// 
@@ -3293,7 +3259,7 @@ namespace Amazon.TranscribeService
         /// <summary>
         /// Updates an existing custom vocabulary with new values. This operation overwrites all
         /// existing information with your new values; you cannot append new terms onto an existing
-        /// vocabulary.
+        /// custom vocabulary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVocabulary service method.</param>
         /// <param name="cancellationToken">
@@ -3333,7 +3299,7 @@ namespace Amazon.TranscribeService
         /// <summary>
         /// Updates an existing custom vocabulary filter with a new list of words. The new list
         /// you provide overwrites all previous entries; you cannot append new terms onto an existing
-        /// vocabulary filter.
+        /// custom vocabulary filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVocabularyFilter service method.</param>
         /// 
@@ -3363,7 +3329,7 @@ namespace Amazon.TranscribeService
         /// <summary>
         /// Updates an existing custom vocabulary filter with a new list of words. The new list
         /// you provide overwrites all previous entries; you cannot append new terms onto an existing
-        /// vocabulary filter.
+        /// custom vocabulary filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVocabularyFilter service method.</param>
         /// <param name="cancellationToken">

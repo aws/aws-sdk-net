@@ -86,9 +86,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ContentIdentificationType. 
         /// <para>
-        /// Labels all personal health information (PHI) identified in your transcript. For more
-        /// information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying
-        /// personal health information (PHI) in a transcription</a>.
+        /// Indicates whether content identification was enabled for your transcription request.
         /// </para>
         /// </summary>
         public MedicalContentIdentificationType ContentIdentificationType
@@ -163,7 +161,7 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample
-        /// rate must be between 16,000 and 48,000 Hertz.
+        /// rate must be between 16,000 and 48,000 hertz.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -264,7 +262,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MediaSampleRateHertz. 
         /// <para>
-        /// The sample rate, in Hertz, of the audio track in your input media file.
+        /// The sample rate, in hertz, of the audio track in your input media file.
         /// </para>
         /// </summary>
         [AWSProperty(Min=16000, Max=48000)]
@@ -303,9 +301,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Specify additional optional settings in your request, including channel identification,
-        /// alternative transcriptions, and speaker labeling; allows you to apply custom vocabularies
-        /// to your medical transcription job.
+        /// Provides information on any additional settings that were included in your request.
+        /// Additional settings include channel identification, alternative transcriptions, speaker
+        /// partitioning, custom vocabularies, and custom vocabulary filters.
         /// </para>
         /// </summary>
         public MedicalTranscriptionSetting Settings

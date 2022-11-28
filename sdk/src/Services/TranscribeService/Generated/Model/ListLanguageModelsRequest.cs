@@ -31,7 +31,7 @@ namespace Amazon.TranscribeService.Model
     /// <summary>
     /// Container for the parameters to the ListLanguageModels operation.
     /// Provides a list of custom language models that match the specified criteria. If no
-    /// criteria are specified, all language models are returned.
+    /// criteria are specified, all custom language models are returned.
     /// 
     ///  
     /// <para>
@@ -49,8 +49,8 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of custom language models to return in each page of results. If
-        /// there are fewer results than the value you specify, only the actual results are returned.
-        /// If you don't specify a value, a default of 5 is used.
+        /// there are fewer results than the value that you specify, only the actual results are
+        /// returned. If you don't specify a value, a default of 5 is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

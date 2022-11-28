@@ -43,10 +43,10 @@ namespace Amazon.TranscribeService.Model
     ///  
     /// <para>
     /// You can use also <code>First</code> to search from the start of the audio until the
-    /// time you specify, or <code>Last</code> to search from the time you specify until the
-    /// end of the audio. For example, setting <code>First</code> to 50000 only searches for
-    /// your specified criteria in the audio contained between the start of the media file
-    /// to the 50,000 millisecond mark. You can use <code>First</code> and <code>Last</code>
+    /// time that you specify, or <code>Last</code> to search from the time that you specify
+    /// until the end of the audio. For example, setting <code>First</code> to 50000 only
+    /// searches for your specified criteria in the audio contained between the start of the
+    /// media file to the 50,000 millisecond mark. You can use <code>First</code> and <code>Last</code>
     /// independently of each other.
     /// </para>
     ///  
@@ -85,8 +85,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property First. 
         /// <para>
-        /// The time, in milliseconds, from the start of your media file until the value you specify
-        /// in which Amazon Transcribe searches for your specified criteria.
+        /// The time, in milliseconds, from the start of your media file until the specified value.
+        /// Amazon Transcribe searches for your specified criteria in this time segment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=14400000)]
@@ -105,8 +105,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Last. 
         /// <para>
-        /// The time, in milliseconds, from the value you specify until the end of your media
-        /// file in which Amazon Transcribe searches for your specified criteria.
+        /// The time, in milliseconds, from the specified value until the end of your media file.
+        /// Amazon Transcribe searches for your specified criteria in this time segment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=14400000)]

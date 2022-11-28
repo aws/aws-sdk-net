@@ -116,10 +116,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ChannelDefinitions. 
         /// <para>
-        /// Allows you to specify which speaker is on which channel in your Call Analytics job
-        /// request. For example, if your agent is the first participant to speak, you would set
-        /// <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code>
-        /// to <code>AGENT</code> (to indicate that it's the agent speaking).
+        /// Indicates which speaker is on which channel.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=2)]
@@ -186,19 +183,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon
-        /// S3 bucket that contains your input files. If the role you specify doesn’t have the
-        /// appropriate permissions to access the specified Amazon S3 location, your request fails.
-        /// </para>
-        ///  
-        /// <para>
-        /// IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>.
-        /// For example: <code>arn:aws:iam::111122223333:role/Admin</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
-        /// ARNs</a>.
+        /// The Amazon Resource Name (ARN) you included in your request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -250,7 +235,7 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample
-        /// rate must be between 8,000 and 48,000 Hertz.
+        /// rate must be between 8,000 and 48,000 hertz.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -347,7 +332,11 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Media.
+        /// Gets and sets the property Media. 
+        /// <para>
+        /// Provides the Amazon S3 location of the media file you used in your Call Analytics
+        /// request.
+        /// </para>
         /// </summary>
         public Media Media
         {
@@ -382,7 +371,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MediaSampleRateHertz. 
         /// <para>
-        /// The sample rate, in Hertz, of the audio track in your input media file.
+        /// The sample rate, in hertz, of the audio track in your input media file.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8000, Max=48000)]
@@ -401,9 +390,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Allows additional optional settings in your request, including content redaction;
-        /// allows you to apply custom language models, vocabulary filters, and custom vocabularies
-        /// to your Call Analytics job.
+        /// Provides information on any additional settings that were included in your request.
+        /// Additional settings include content redaction and language identification settings.
         /// </para>
         /// </summary>
         public CallAnalyticsJobSettings Settings

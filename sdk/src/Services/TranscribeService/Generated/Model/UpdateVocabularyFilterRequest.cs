@@ -32,7 +32,7 @@ namespace Amazon.TranscribeService.Model
     /// Container for the parameters to the UpdateVocabularyFilter operation.
     /// Updates an existing custom vocabulary filter with a new list of words. The new list
     /// you provide overwrites all previous entries; you cannot append new terms onto an existing
-    /// vocabulary filter.
+    /// custom vocabulary filter.
     /// </summary>
     public partial class UpdateVocabularyFilterRequest : AmazonTranscribeServiceRequest
     {
@@ -74,8 +74,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyFilterName. 
         /// <para>
-        /// The name of the custom vocabulary filter you want to update. Vocabulary filter names
-        /// are case sensitive.
+        /// The name of the custom vocabulary filter you want to update. Custom vocabulary filter
+        /// names are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -94,10 +94,10 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Words. 
         /// <para>
-        /// Use this parameter if you want to update your vocabulary filter by including all desired
-        /// terms, as comma-separated values, within your request. The other option for updating
-        /// your vocabulary filter is to save your entries in a text file and upload them to an
-        /// Amazon S3 bucket, then specify the location of your file using the <code>VocabularyFilterFileUri</code>
+        /// Use this parameter if you want to update your custom vocabulary filter by including
+        /// all desired terms, as comma-separated values, within your request. The other option
+        /// for updating your vocabulary filter is to save your entries in a text file and upload
+        /// them to an Amazon S3 bucket, then specify the location of your file using the <code>VocabularyFilterFileUri</code>
         /// parameter.
         /// </para>
         ///  
@@ -108,8 +108,8 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// Each language has a character set that contains all allowed characters for that specific
-        /// language. If you use unsupported characters, your vocabulary filter request fails.
-        /// Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+        /// language. If you use unsupported characters, your custom vocabulary filter request
+        /// fails. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
         /// Sets for Custom Vocabularies</a> to get the character set for your language.
         /// </para>
         /// </summary>

@@ -50,8 +50,9 @@ namespace Amazon.TranscribeService.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule
-    /// criteria</a> for examples.
+    /// See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule
+    /// criteria for batch categories</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html#tca-rules-stream">Rule
+    /// criteria for streaming categories</a> for usage examples.
     /// </para>
     /// </summary>
     public partial class TranscriptFilter
@@ -66,8 +67,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property AbsoluteTimeRange. 
         /// <para>
-        /// Allows you to specify a time range (in milliseconds) in your audio, during which you
-        /// want to search for the specified key words or phrases. See for more detail.
+        /// Makes it possible to specify a time range (in milliseconds) in your audio, during
+        /// which you want to search for the specified key words or phrases. See for more detail.
         /// </para>
         /// </summary>
         public AbsoluteTimeRange AbsoluteTimeRange
@@ -85,9 +86,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Negate. 
         /// <para>
-        /// Set to <code>TRUE</code> to flag the absence of the phrase you specified in your request.
-        /// Set to <code>FALSE</code> to flag the presence of the phrase you specified in your
-        /// request.
+        /// Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your
+        /// request. Set to <code>FALSE</code> to flag the presence of the phrase that you specified
+        /// in your request.
         /// </para>
         /// </summary>
         public bool Negate
@@ -105,8 +106,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ParticipantRole. 
         /// <para>
-        /// Specify the participant you want to flag. Omitting this parameter is equivalent to
-        /// specifying both participants.
+        /// Specify the participant that you want to flag. Omitting this parameter is equivalent
+        /// to specifying both participants.
         /// </para>
         /// </summary>
         public ParticipantRole ParticipantRole
@@ -124,8 +125,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property RelativeTimeRange. 
         /// <para>
-        /// Allows you to specify a time range (in percentage) in your media file, during which
-        /// you want to search for the specified key words or phrases. See for more detail.
+        /// Makes it possible to specify a time range (in percentage) in your media file, during
+        /// which you want to search for the specified key words or phrases. See for more detail.
         /// </para>
         /// </summary>
         public RelativeTimeRange RelativeTimeRange
@@ -143,7 +144,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// Specify the phrases you want to flag.
+        /// Specify the phrases that you want to flag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -162,9 +163,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptFilterType. 
         /// <para>
-        /// Flag the presence or absence of an exact match to the phrases you specify. For example,
-        /// if you specify the phrase "speak to a manager" as your <code>Targets</code> value,
-        /// only that exact phrase is flagged.
+        /// Flag the presence or absence of an exact match to the phrases that you specify. For
+        /// example, if you specify the phrase "speak to a manager" as your <code>Targets</code>
+        /// value, only that exact phrase is flagged.
         /// </para>
         ///  
         /// <para>

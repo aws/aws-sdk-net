@@ -54,8 +54,8 @@ namespace Amazon.TranscribeService.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule
-    /// criteria</a> for usage examples.
+    /// See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule
+    /// criteria for batch categories</a> for usage examples.
     /// </para>
     /// </summary>
     public partial class InterruptionFilter
@@ -69,8 +69,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property AbsoluteTimeRange. 
         /// <para>
-        /// Allows you to specify a time range (in milliseconds) in your audio, during which you
-        /// want to search for an interruption. See for more detail.
+        /// Makes it possible to specify a time range (in milliseconds) in your audio, during
+        /// which you want to search for an interruption. See for more detail.
         /// </para>
         /// </summary>
         public AbsoluteTimeRange AbsoluteTimeRange
@@ -107,8 +107,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ParticipantRole. 
         /// <para>
-        /// Specify the interrupter you want to flag. Omitting this parameter is equivalent to
-        /// specifying both participants.
+        /// Specify the interrupter that you want to flag. Omitting this parameter is equivalent
+        /// to specifying both participants.
         /// </para>
         /// </summary>
         public ParticipantRole ParticipantRole
@@ -126,8 +126,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property RelativeTimeRange. 
         /// <para>
-        /// Allows you to specify a time range (in percentage) in your media file, during which
-        /// you want to search for an interruption. See for more detail.
+        /// Makes it possible to specify a time range (in percentage) in your media file, during
+        /// which you want to search for an interruption. See for more detail.
         /// </para>
         /// </summary>
         public RelativeTimeRange RelativeTimeRange
@@ -146,7 +146,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property Threshold. 
         /// <para>
         /// Specify the duration of the interruptions in milliseconds. For example, you can flag
-        /// speech that contains more than 10000 milliseconds of interruptions.
+        /// speech that contains more than 10,000 milliseconds of interruptions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=14400000)]

@@ -40,7 +40,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code you selected for your vocabulary filter.
+        /// The language code you selected for your custom vocabulary filter.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -58,7 +58,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time the specified vocabulary filter was last updated.
+        /// The date and time the specified custom vocabulary filter was last updated.
         /// </para>
         ///  
         /// <para>

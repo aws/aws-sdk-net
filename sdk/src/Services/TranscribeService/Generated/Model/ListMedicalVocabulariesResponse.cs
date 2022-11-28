@@ -64,7 +64,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// Lists all custom medical vocabularies that have the status specified in your request.
-        /// Vocabularies are ordered by creation date, with the newest vocabulary first.
+        /// Custom vocabularies are ordered by creation date, with the newest vocabulary first.
         /// </para>
         /// </summary>
         public VocabularyState Status

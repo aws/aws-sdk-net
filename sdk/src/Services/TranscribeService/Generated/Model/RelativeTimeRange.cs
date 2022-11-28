@@ -41,10 +41,10 @@ namespace Amazon.TranscribeService.Model
     ///  
     /// <para>
     /// You can use also <code>First</code> to search from the start of the media file until
-    /// the time you specify, or <code>Last</code> to search from the time you specify until
-    /// the end of the media file. For example, setting <code>First</code> to 10 only searches
-    /// for your specified criteria in the audio contained in the first 10 percent of the
-    /// media file.
+    /// the time that you specify. Or use <code>Last</code> to search from the time that you
+    /// specify until the end of the media file. For example, setting <code>First</code> to
+    /// 10 only searches for your specified criteria in the audio contained in the first 10
+    /// percent of the media file.
     /// </para>
     ///  
     /// <para>
@@ -82,8 +82,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property First. 
         /// <para>
-        /// The time, in percentage, from the start of your media file until the value you specify
-        /// in which Amazon Transcribe searches for your specified criteria.
+        /// The time, in percentage, from the start of your media file until the specified value.
+        /// Amazon Transcribe searches for your specified criteria in this time segment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -102,8 +102,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Last. 
         /// <para>
-        /// The time, in percentage, from the value you specify until the end of your media file
-        /// in which Amazon Transcribe searches for your specified criteria.
+        /// The time, in percentage, from the specified value until the end of your media file.
+        /// Amazon Transcribe searches for your specified criteria in this time segment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

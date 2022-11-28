@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Provides information about a vocabulary filter, including the language of the filter,
-    /// when it was last modified, and its name.
+    /// Provides information about a custom vocabulary filter, including the language of the
+    /// filter, when it was last modified, and its name.
     /// </summary>
     public partial class VocabularyFilterInfo
     {
@@ -42,13 +42,14 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property LanguageCode. 
         /// <para>
         /// The language code that represents the language of the entries in your vocabulary filter.
-        /// Each vocabulary filter must contain terms in only one language.
+        /// Each custom vocabulary filter must contain terms in only one language.
         /// </para>
         ///  
         /// <para>
-        /// A vocabulary filter can only be used to transcribe files in the same language as the
-        /// filter. For example, if you create a vocabulary filter using US English (<code>en-US</code>),
-        /// you can only apply this filter to files that contain English audio.
+        /// A custom vocabulary filter can only be used to transcribe files in the same language
+        /// as the filter. For example, if you create a custom vocabulary filter using US English
+        /// (<code>en-US</code>), you can only apply this filter to files that contain English
+        /// audio.
         /// </para>
         ///  
         /// <para>
@@ -72,7 +73,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time the specified vocabulary filter was last modified.
+        /// The date and time the specified custom vocabulary filter was last modified.
         /// </para>
         ///  
         /// <para>

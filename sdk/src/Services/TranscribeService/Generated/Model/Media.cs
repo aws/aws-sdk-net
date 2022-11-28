@@ -30,6 +30,13 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Describes the Amazon S3 location of the media file you want to use in your request.
+    /// 
+    ///  
+    /// <para>
+    /// For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a>
+    /// parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media
+    /// formats</a> section in the Amazon S3 Developer Guide.
+    /// </para>
     /// </summary>
     public partial class Media
     {
@@ -88,7 +95,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  <important> 
         /// <para>
-        ///  <code>RedactedMediaFileUri</code> is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>)
+        ///  <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to a
+        /// redacted transcript. It is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>)
         /// transcription requests.
         /// </para>
         ///  </important>

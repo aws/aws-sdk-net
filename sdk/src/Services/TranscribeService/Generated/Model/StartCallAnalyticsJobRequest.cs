@@ -35,9 +35,9 @@ namespace Amazon.TranscribeService.Model
     /// 
     ///  
     /// <para>
-    /// In addition to many of the standard transcription features, Call Analytics provides
-    /// you with call characteristics, call summarization, speaker sentiment, and optional
-    /// redaction of your text transcript and your audio file. You can also apply custom categories
+    /// In addition to many standard transcription features, Call Analytics provides you with
+    /// call characteristics, call summarization, speaker sentiment, and optional redaction
+    /// of your text transcript and your audio file. You can also apply custom categories
     /// to flag specified conditions. To learn more about these features and insights, refer
     /// to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing
     /// call center audio with Call Analytics</a>.
@@ -47,8 +47,9 @@ namespace Amazon.TranscribeService.Model
     /// If you want to apply categories to your Call Analytics job, you must create them before
     /// submitting your job request. Categories cannot be retroactively applied to a job.
     /// To create a new category, use the operation. To learn more about Call Analytics categories,
-    /// see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
-    /// categories</a>.
+    /// see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating
+    /// categories for batch transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
+    /// categories for streaming transcriptions</a>.
     /// </para>
     ///  
     /// <para>
@@ -70,8 +71,8 @@ namespace Amazon.TranscribeService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CallAnalyticsJobName</code>: A custom name you create for your transcription
-    /// job that is unique within your Amazon Web Services account.
+    ///  <code>CallAnalyticsJobName</code>: A custom name that you create for your transcription
+    /// job that's unique within your Amazon Web Services account.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -131,8 +132,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ChannelDefinitions. 
         /// <para>
-        /// Allows you to specify which speaker is on which channel. For example, if your agent
-        /// is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code>
+        /// Makes it possible to specify which speaker is on which channel. For example, if your
+        /// agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code>
         /// (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code>
         /// (to indicate that it's the agent speaking).
         /// </para>
@@ -154,8 +155,9 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon
-        /// S3 bucket that contains your input files. If the role you specify doesn’t have the
-        /// appropriate permissions to access the specified Amazon S3 location, your request fails.
+        /// S3 bucket that contains your input files. If the role that you specify doesn’t have
+        /// the appropriate permissions to access the specified Amazon S3 location, your request
+        /// fails.
         /// </para>
         ///  
         /// <para>
@@ -182,7 +184,11 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Media.
+        /// Gets and sets the property Media. 
+        /// <para>
+        /// Describes the Amazon S3 location of the media file you want to use in your Call Analytics
+        /// request.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Media Media

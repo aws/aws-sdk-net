@@ -98,7 +98,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ContentRedaction. 
         /// <para>
-        /// Redacts or flags specified personally identifiable information (PII) in your transcript.
+        /// Indicates whether redaction was enabled in your transcript.
         /// </para>
         /// </summary>
         public ContentRedaction ContentRedaction
@@ -173,7 +173,7 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample
-        /// rate must be between 8,000 and 48,000 Hertz.
+        /// rate must be between 8,000 and 48,000 hertz.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -283,8 +283,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property JobExecutionSettings. 
         /// <para>
-        /// Provides information about how your transcription job is being processed. This parameter
-        /// shows if your request is queued and what data access role is being used.
+        /// Provides information about how your transcription job was processed. This parameter
+        /// shows if your request was queued and what data access role was used.
         /// </para>
         /// </summary>
         public JobExecutionSettings JobExecutionSettings
@@ -302,15 +302,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code used to create your transcription job. For a list of supported languages
-        /// and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-        /// languages</a> table.
-        /// </para>
-        ///  
-        /// <para>
-        /// Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>,
-        /// or <code>IdentifyMultipleLanguages</code> in your request. If you include more than
-        /// one of these parameters, your transcription job fails.
+        /// The language code used to create your transcription job. This parameter is used with
+        /// single-language identification. For multi-language identification requests, refer
+        /// to the plural version of this parameter, <code>LanguageCodes</code>.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -332,12 +326,6 @@ namespace Amazon.TranscribeService.Model
         /// multi-language identification. For single-language identification requests, refer
         /// to the singular version of this parameter, <code>LanguageCode</code>.
         /// </para>
-        ///  
-        /// <para>
-        /// For a list of supported languages and their associated language codes, refer to the
-        /// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-        /// languages</a> table.
-        /// </para>
         /// </summary>
         public List<LanguageCodeItem> LanguageCodes
         {
@@ -354,38 +342,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageIdSettings. 
         /// <para>
-        /// If using automatic language identification (<code>IdentifyLanguage</code>) in your
-        /// request and you want to apply a custom language model, a custom vocabulary, or a custom
-        /// vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters
-        /// (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).
-        /// </para>
-        ///  
-        /// <para>
-        /// You can specify two or more language codes that represent the languages you think
-        /// may be present in your media; including more than five is not recommended. Each language
-        /// code you include can have an associated custom language model, custom vocabulary,
-        /// and custom vocabulary filter. The languages you specify must match the languages of
-        /// the specified custom language models, custom vocabularies, and custom vocabulary filters.
-        /// </para>
-        ///  
-        /// <para>
-        /// To include language options using <code>IdentifyLanguage</code> <b>without</b> including
-        /// a custom language model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code>
-        /// instead of <code>LanguageIdSettings</code>. Including language options can improve
-        /// the accuracy of automatic language identification.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you want to include a custom language model with your request but <b>do not</b>
-        /// want to use automatic language identification, use instead the <code/> parameter with
-        /// the <code>LanguageModelName</code> sub-parameter.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you want to include a custom vocabulary or a custom vocabulary filter (or both)
-        /// with your request but <b>do not</b> want to use automatic language identification,
-        /// use instead the <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code>
-        /// (or both) sub-parameter.
+        /// Provides the name and language of all custom language models, custom vocabularies,
+        /// and custom vocabulary filters that you included in your request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -404,24 +362,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageOptions. 
         /// <para>
-        /// You can specify two or more language codes that represent the languages you think
-        /// may be present in your media; including more than five is not recommended. If you're
-        /// unsure what languages are present, do not include this parameter.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you include <code>LanguageOptions</code> in your request, you must also include
-        /// <code>IdentifyLanguage</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-        /// languages</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file
-        /// must be encoded at a sample rate of 16,000 Hz or higher.
+        /// Provides the language codes you specified in your request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -440,7 +381,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Media. 
         /// <para>
-        /// Describes the Amazon S3 location of the media file you want to use in your request.
+        /// Provides the Amazon S3 location of the media file you used in your request.
         /// </para>
         /// </summary>
         public Media Media
@@ -476,7 +417,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MediaSampleRateHertz. 
         /// <para>
-        /// The sample rate, in Hertz, of the audio track in your input media file.
+        /// The sample rate, in hertz, of the audio track in your input media file.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8000, Max=48000)]
@@ -495,9 +436,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ModelSettings. 
         /// <para>
-        /// The custom language model you want to include with your transcription job. If you
-        /// include <code>ModelSettings</code> in your request, you must include the <code>LanguageModelName</code>
-        /// sub-parameter.
+        /// Provides information on the custom language model you included in your request.
         /// </para>
         /// </summary>
         public ModelSettings ModelSettings
@@ -515,24 +454,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Specify additional optional settings in your request, including channel identification,
-        /// alternative transcriptions, speaker labeling; allows you to apply custom vocabularies
-        /// and vocabulary filters.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you want to include a custom vocabulary or a custom vocabulary filter (or both)
-        /// with your request but <b>do not</b> want to use automatic language identification,
-        /// use <code>Settings</code> with the <code>VocabularyName</code> or <code>VocabularyFilterName</code>
-        /// (or both) sub-parameter.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you're using automatic language identification with your request and want to include
-        /// a custom language model, a custom vocabulary, or a custom vocabulary filter, do not
-        /// use the <code>Settings</code> parameter; use instead the <code/> parameter with the
-        /// <code>LanguageModelName</code>, <code>VocabularyName</code> or <code>VocabularyFilterName</code>
-        /// sub-parameters.
+        /// Provides information on any additional settings that were included in your request.
+        /// Additional settings include channel identification, alternative transcriptions, speaker
+        /// partitioning, custom vocabularies, and custom vocabulary filters.
         /// </para>
         /// </summary>
         public Settings Settings
@@ -574,7 +498,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Subtitles. 
         /// <para>
-        /// Generate subtitles for your media file with your transcription request.
+        /// Indicates whether subtitles were generated with your transcription.
         /// </para>
         /// </summary>
         public SubtitlesOutput Subtitles
@@ -592,13 +516,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Adds one or more custom tags, each in the form of a key:value pair, to a new transcription
-        /// job at the time you start this new job.
-        /// </para>
-        ///  
-        /// <para>
-        /// To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
-        /// resources</a>.
+        /// The tags, each in the form of a key:value pair, assigned to the specified transcription
+        /// job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

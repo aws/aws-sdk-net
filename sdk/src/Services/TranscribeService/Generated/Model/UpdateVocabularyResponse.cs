@@ -59,7 +59,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time the specified vocabulary was last updated.
+        /// The date and time the specified custom vocabulary was last updated.
         /// </para>
         ///  
         /// <para>
@@ -103,7 +103,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property VocabularyState. 
         /// <para>
         /// The processing state of your custom vocabulary. If the state is <code>READY</code>,
-        /// you can use the vocabulary in a <code>StartTranscriptionJob</code> request.
+        /// you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.
         /// </para>
         /// </summary>
         public VocabularyState VocabularyState
