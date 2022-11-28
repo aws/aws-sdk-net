@@ -81,6 +81,10 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
                 {
                     return MethodNotAllowedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
+                {
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedException"))
                 {
                     return UnauthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

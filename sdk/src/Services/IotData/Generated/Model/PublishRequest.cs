@@ -50,10 +50,76 @@ namespace Amazon.IotData.Model
     /// </summary>
     public partial class PublishRequest : AmazonIotDataRequest
     {
+        private string _contentType;
+        private string _correlationData;
+        private long? _messageExpiry;
         private MemoryStream _payload;
+        private PayloadFormatIndicator _payloadFormatIndicator;
         private int? _qos;
+        private string _responseTopic;
         private bool? _retain;
         private string _topic;
+        private string _userProperties;
+
+        /// <summary>
+        /// Gets and sets the property ContentType. 
+        /// <para>
+        /// A UTF-8 encoded string that describes the content of the publishing message.
+        /// </para>
+        /// </summary>
+        public string ContentType
+        {
+            get { return this._contentType; }
+            set { this._contentType = value; }
+        }
+
+        // Check to see if ContentType property is set
+        internal bool IsSetContentType()
+        {
+            return this._contentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CorrelationData. 
+        /// <para>
+        /// The base64-encoded binary data used by the sender of the request message to identify
+        /// which request the response message is for when it's received. <code>correlationData</code>
+        /// is an HTTP header value in the API.
+        /// </para>
+        /// </summary>
+        public string CorrelationData
+        {
+            get { return this._correlationData; }
+            set { this._correlationData = value; }
+        }
+
+        // Check to see if CorrelationData property is set
+        internal bool IsSetCorrelationData()
+        {
+            return this._correlationData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageExpiry. 
+        /// <para>
+        /// A user-defined integer value that represents the message expiry interval in seconds.
+        /// If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon
+        /// Web Services IoT Core message broker and protocol limits and quotas </a> from the
+        /// Amazon Web Services Reference Guide.
+        /// </para>
+        /// </summary>
+        public long MessageExpiry
+        {
+            get { return this._messageExpiry.GetValueOrDefault(); }
+            set { this._messageExpiry = value; }
+        }
+
+        // Check to see if MessageExpiry property is set
+        internal bool IsSetMessageExpiry()
+        {
+            return this._messageExpiry.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Payload. 
@@ -79,9 +145,28 @@ namespace Amazon.IotData.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PayloadFormatIndicator. 
+        /// <para>
+        /// An <code>Enum</code> string value that indicates whether the payload is formatted
+        /// as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.
+        /// </para>
+        /// </summary>
+        public PayloadFormatIndicator PayloadFormatIndicator
+        {
+            get { return this._payloadFormatIndicator; }
+            set { this._payloadFormatIndicator = value; }
+        }
+
+        // Check to see if PayloadFormatIndicator property is set
+        internal bool IsSetPayloadFormatIndicator()
+        {
+            return this._payloadFormatIndicator != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Qos. 
         /// <para>
-        /// The Quality of Service (QoS) level.
+        /// The Quality of Service (QoS) level. The default QoS level is 0.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -95,6 +180,26 @@ namespace Amazon.IotData.Model
         internal bool IsSetQos()
         {
             return this._qos.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponseTopic. 
+        /// <para>
+        /// A UTF-8 encoded string that's used as the topic name for a response message. The response
+        /// topic is used to describe the topic which the receiver should publish to as part of
+        /// the request-response flow. The topic must not contain wildcard characters.
+        /// </para>
+        /// </summary>
+        public string ResponseTopic
+        {
+            get { return this._responseTopic; }
+            set { this._responseTopic = value; }
+        }
+
+        // Check to see if ResponseTopic property is set
+        internal bool IsSetResponseTopic()
+        {
+            return this._responseTopic != null;
         }
 
         /// <summary>
@@ -146,6 +251,36 @@ namespace Amazon.IotData.Model
         internal bool IsSetTopic()
         {
             return this._topic != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserProperties. 
+        /// <para>
+        /// A JSON string that contains an array of JSON objects. If you don’t use Amazon Web
+        /// Services SDK or CLI, you must encode the JSON string to base64 format before adding
+        /// it to the HTTP header. <code>userProperties</code> is an HTTP header value in the
+        /// API.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following example <code>userProperties</code> parameter is a JSON string which
+        /// represents two User Properties. Note that it needs to be base64-encoded:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> 
+        /// </para>
+        /// </summary>
+        public string UserProperties
+        {
+            get { return this._userProperties; }
+            set { this._userProperties = value; }
+        }
+
+        // Check to see if UserProperties property is set
+        internal bool IsSetUserProperties()
+        {
+            return this._userProperties != null;
         }
 
     }

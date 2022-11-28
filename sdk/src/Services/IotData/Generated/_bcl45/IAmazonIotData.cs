@@ -585,6 +585,9 @@ namespace Amazon.IotData
         /// <exception cref="Amazon.IotData.Model.MethodNotAllowedException">
         /// The specified combination of HTTP verb and URI is not supported.
         /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
         /// <exception cref="Amazon.IotData.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
@@ -626,6 +629,9 @@ namespace Amazon.IotData
         /// </exception>
         /// <exception cref="Amazon.IotData.Model.MethodNotAllowedException">
         /// The specified combination of HTTP verb and URI is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ThrottlingException">
+        /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IotData.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.

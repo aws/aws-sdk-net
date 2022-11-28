@@ -63,8 +63,17 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
                 throw new AmazonIotDataException("Request object does not have required field Topic set");
             request.AddPathResource("{topic}", StringUtils.FromString(publicRequest.Topic));
             
+            if (publicRequest.IsSetContentType())
+                request.Parameters.Add("contentType", StringUtils.FromString(publicRequest.ContentType));
+            
+            if (publicRequest.IsSetMessageExpiry())
+                request.Parameters.Add("messageExpiry", StringUtils.FromLong(publicRequest.MessageExpiry));
+            
             if (publicRequest.IsSetQos())
                 request.Parameters.Add("qos", StringUtils.FromInt(publicRequest.Qos));
+            
+            if (publicRequest.IsSetResponseTopic())
+                request.Parameters.Add("responseTopic", StringUtils.FromString(publicRequest.ResponseTopic));
             
             if (publicRequest.IsSetRetain())
                 request.Parameters.Add("retain", StringUtils.FromBool(publicRequest.Retain));
@@ -76,6 +85,21 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
             if (request.ContentStream != null && request.ContentStream.Length == 0)
             {
                 request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
+            }
+        
+            if (publicRequest.IsSetCorrelationData()) 
+            {
+                request.Headers["x-amz-mqtt5-correlation-data"] = publicRequest.CorrelationData;
+            }
+        
+            if (publicRequest.IsSetPayloadFormatIndicator()) 
+            {
+                request.Headers["x-amz-mqtt5-payload-format-indicator"] = publicRequest.PayloadFormatIndicator;
+            }
+        
+            if (publicRequest.IsSetUserProperties()) 
+            {
+                request.Headers["x-amz-mqtt5-user-properties"] = Convert.ToBase64String(Encoding.UTF8.GetBytes(publicRequest.UserProperties));
             }
             request.UseQueryString = true;
 
