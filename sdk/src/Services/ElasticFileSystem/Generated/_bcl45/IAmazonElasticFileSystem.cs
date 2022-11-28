@@ -64,7 +64,14 @@ namespace Amazon.ElasticFileSystem
         /// To learn more, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
         /// a file system using EFS access points</a>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If multiple requests to create access points on the same file system are sent in quick
+        /// succession, and the file system is near the limit of 120 access points, you may experience
+        /// a throttling response for these requests. This is to ensure that the file system does
+        /// not exceed the stated access point limit.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// This operation requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code>
         /// action.
@@ -97,7 +104,8 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.ThrottlingException">
         /// Returned when the <code>CreateAccessPoint</code> API action is called too quickly
-        /// and the number of Access Points in the account is nearing the limit of 120.
+        /// and the number of Access Points on the file system is nearing the <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region">limit
+        /// of 120</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint">REST API Reference for CreateAccessPoint Operation</seealso>
         CreateAccessPointResponse CreateAccessPoint(CreateAccessPointRequest request);
@@ -114,7 +122,14 @@ namespace Amazon.ElasticFileSystem
         /// To learn more, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
         /// a file system using EFS access points</a>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If multiple requests to create access points on the same file system are sent in quick
+        /// succession, and the file system is near the limit of 120 access points, you may experience
+        /// a throttling response for these requests. This is to ensure that the file system does
+        /// not exceed the stated access point limit.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// This operation requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code>
         /// action.
@@ -150,7 +165,8 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.ThrottlingException">
         /// Returned when the <code>CreateAccessPoint</code> API action is called too quickly
-        /// and the number of Access Points in the account is nearing the limit of 120.
+        /// and the number of Access Points on the file system is nearing the <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region">limit
+        /// of 120</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint">REST API Reference for CreateAccessPoint Operation</seealso>
         Task<CreateAccessPointResponse> CreateAccessPointAsync(CreateAccessPointRequest request, CancellationToken cancellationToken = default(CancellationToken));

@@ -367,6 +367,10 @@ namespace Amazon.ElasticFileSystem
         /// </summary>
         public static readonly ThroughputMode Bursting = new ThroughputMode("bursting");
         /// <summary>
+        /// Constant Elastic for ThroughputMode
+        /// </summary>
+        public static readonly ThroughputMode Elastic = new ThroughputMode("elastic");
+        /// <summary>
         /// Constant Provisioned for ThroughputMode
         /// </summary>
         public static readonly ThroughputMode Provisioned = new ThroughputMode("provisioned");
@@ -412,6 +416,10 @@ namespace Amazon.ElasticFileSystem
     public class TransitionToIARules : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AFTER_1_DAY for TransitionToIARules
+        /// </summary>
+        public static readonly TransitionToIARules AFTER_1_DAY = new TransitionToIARules("AFTER_1_DAY");
         /// <summary>
         /// Constant AFTER_14_DAYS for TransitionToIARules
         /// </summary>
