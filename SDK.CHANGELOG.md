@@ -1,3 +1,22 @@
+### 3.7.427.0 (2022-11-29 19:23 UTC)
+* EC2 (3.7.111.0)
+	* This release adds support for AWS Verified Access and the Hpc6id Amazon EC2 compute optimized instance type, which features 3rd generation Intel Xeon Scalable processors.
+* KeyManagementService (3.7.101.0)
+	* AWS KMS introduces the External Key Store (XKS), a new feature for customers who want to protect their data with encryption keys stored in an external key management system under their control.
+* KinesisFirehose (3.7.101.0)
+	* Allow support for the Serverless offering for Amazon OpenSearch Service as a Kinesis Data Firehose delivery destination.
+* Omics (3.7.100.0)
+	* Amazon Omics is a new, purpose-built service that can be used by healthcare and life science organizations to store, query, and analyze omics data. The insights from that data can be used to accelerate scientific discoveries and improve healthcare.
+* OpenSearchServerless (3.7.100.0)
+	* Publish SDK for Amazon OpenSearch Serverless
+* SecurityLake (3.7.100.0)
+	* Amazon Security Lake automatically centralizes security data from cloud, on-premises, and custom sources into a purpose-built data lake stored in your account. Security Lake makes it easier to analyze security data, so you can improve the protection of your workloads, applications, and data
+* SimSpaceWeaver (3.7.100.0)
+	* AWS SimSpace Weaver is a new service that helps customers build spatial simulations at new levels of scale - resulting in virtual worlds with millions of dynamic entities. See the AWS SimSpace Weaver developer guide for more details on how to get started. https://docs.aws.amazon.com/simspaceweaver
+* Core 3.7.100.25
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.426.0 (2022-11-29 06:03 UTC)
 * ARCZonalShift (3.7.100.0)
 	* Amazon Route 53 Application Recovery Controller Zonal Shift is a new service that makes it easy to shift traffic away from an Availability Zone in a Region. See the developer guide for more information: https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route53-recovery.html
