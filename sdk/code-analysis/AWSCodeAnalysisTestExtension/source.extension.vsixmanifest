@@ -603,6 +603,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SimpleSystemsManagement.CodeAnalysis" Path="|AWSSDK.SimpleSystemsManagement.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SimpleWorkflow.CodeAnalysis" Path="|AWSSDK.SimpleWorkflow.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SimpleWorkflow.CodeAnalysis" Path="|AWSSDK.SimpleWorkflow.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SimSpaceWeaver.CodeAnalysis" Path="|AWSSDK.SimSpaceWeaver.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SimSpaceWeaver.CodeAnalysis" Path="|AWSSDK.SimSpaceWeaver.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Snowball.CodeAnalysis" Path="|AWSSDK.Snowball.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Snowball.CodeAnalysis" Path="|AWSSDK.Snowball.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SnowDeviceManagement.CodeAnalysis" Path="|AWSSDK.SnowDeviceManagement.CodeAnalysis|"/>

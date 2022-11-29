@@ -692,6 +692,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.
 * [AWSSDK.SimpleWorkflow](https://www.nuget.org/packages/AWSSDK.SimpleWorkflow/)
 	* Amazon SWF helps developers build, run, and scale background jobs that have parallel or sequential steps. You can think of Amazon SWF as a fully-managed state tracker and task coordinator in the Cloud.
+* [AWSSDK.SimSpaceWeaver](https://www.nuget.org/packages/AWSSDK.SimSpaceWeaver/)
+	* AWS SimSpace Weaver is a new service that helps customers build spatial simulations at new levels of scale - resulting in virtual worlds with millions of dynamic entities. See the AWS SimSpace Weaver developer guide for more details on how to get started. https://docs.aws.amazon.com/simspaceweaver
 * [AWSSDK.Snowball](https://www.nuget.org/packages/AWSSDK.Snowball/)
 	* Amazon Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large amounts of data into and out of the AWS cloud
 * [AWSSDK.SnowDeviceManagement](https://www.nuget.org/packages/AWSSDK.SnowDeviceManagement/)

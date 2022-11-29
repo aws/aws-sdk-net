@@ -1228,6 +1228,10 @@
       <Project>{A4E059F3-7571-4CF5-9724-89DD23D7FA5A}</Project>
       <Name>AWSSDK.SimpleWorkflow.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SimSpaceWeaver/AWSSDK.SimSpaceWeaver.CodeAnalysis.csproj">
+      <Project>{9E3DB7A3-DB0A-4293-8723-8D86B0D2E1C3}</Project>
+      <Name>AWSSDK.SimSpaceWeaver.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Snowball/AWSSDK.Snowball.CodeAnalysis.csproj">
       <Project>{54A63ED2-11F0-4F76-8F5B-B7016E94AF86}</Project>
       <Name>AWSSDK.Snowball.CodeAnalysis</Name>
