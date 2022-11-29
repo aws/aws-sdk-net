@@ -1,3 +1,36 @@
+### 3.7.426.0 (2022-11-29 06:03 UTC)
+* ARCZonalShift (3.7.100.0)
+	* Amazon Route 53 Application Recovery Controller Zonal Shift is a new service that makes it easy to shift traffic away from an Availability Zone in a Region. See the developer guide for more information: https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route53-recovery.html
+* ComputeOptimizer (3.7.101.0)
+	* Adds support for a new recommendation preference that makes it possible for customers to optimize their EC2 recommendations by utilizing an external metrics ingestion service to provide metrics.
+* ConfigService (3.7.101.0)
+	* With this release, you can use AWS Config to evaluate your resources for compliance with Config rules before they are created or updated. Using Config rules in proactive mode enables you to test and build compliant resource templates or check resource configurations at the time they are provisioned.
+* EC2 (3.7.110.0)
+	* Introduces ENA Express, which uses AWS SRD and dynamic routing to increase throughput and minimize latency, adds support for trust relationships between Reachability Analyzer and AWS Organizations to enable cross-account analysis, and adds support for Infrastructure Performance metric subscriptions.
+* EKS (3.7.102.0)
+	* Adds support for additional EKS add-ons metadata and filtering fields
+* FSx (3.7.101.0)
+	* This release adds support for 4GB/s / 160K PIOPS FSx for ONTAP file systems and 10GB/s / 350K PIOPS FSx for OpenZFS file systems (Single_AZ_2). For FSx for ONTAP, this also adds support for DP volumes, snapshot policy, copy tags to backups, and Multi-AZ route table updates.
+* Glue (3.7.103.0)
+	* This release allows the creation of Custom Visual Transforms (Dynamic Transforms) to be created via AWS Glue CLI/SDK.
+* Inspector2 (3.7.101.0)
+	* This release adds support for Inspector to scan AWS Lambda.
+* Lambda (3.7.102.0)
+	* Adds support for Lambda SnapStart, which helps improve the startup performance of functions. Customers can now manage SnapStart based functions via CreateFunction and UpdateFunctionConfiguration APIs
+* LicenseManagerUserSubscriptions (3.7.101.0)
+	* AWS now offers fully-compliant, Amazon-provided licenses for Microsoft Office Professional Plus 2021 Amazon Machine Images (AMIs) on Amazon EC2. These AMIs are now available on the Amazon EC2 console and on AWS Marketplace to launch instances on-demand without any long-term licensing commitments.
+* Macie2 (3.7.101.0)
+	* Added support for configuring Macie to continually sample objects from S3 buckets and inspect them for sensitive data. Results appear in statistics, findings, and other data that Macie provides.
+* QuickSight (3.7.102.0)
+	* This release adds new Describe APIs and updates Create and Update APIs to support the data model for Dashboards, Analyses, and Templates.
+* S3Control (3.7.103.0)
+	* Added two new APIs to support Amazon S3 Multi-Region Access Point failover controls: GetMultiRegionAccessPointRoutes and SubmitMultiRegionAccessPointRoutes. The failover control APIs are supported in the following Regions: us-east-1, us-west-2, eu-west-1, ap-southeast-2, and ap-northeast-1.
+* SecurityHub (3.7.102.0)
+	* Adding StandardsManagedBy field to DescribeStandards API response
+* Core 3.7.100.24
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.425.0 (2022-11-28 03:22 UTC)
 * Backup (3.7.101.0)
 	* AWS Backup introduces support for legal hold and application stack backups. AWS Backup Audit Manager introduces support for cross-Region, cross-account reports.
