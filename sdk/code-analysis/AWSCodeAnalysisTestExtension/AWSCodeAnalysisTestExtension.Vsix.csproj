@@ -1172,6 +1172,10 @@
       <Project>{4DCAEAD8-9B44-4D60-A9B1-0D5177EA2377}</Project>
       <Name>AWSSDK.SecurityHub.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SecurityLake/AWSSDK.SecurityLake.CodeAnalysis.csproj">
+      <Project>{14BDCC58-12D7-4C84-BBEC-253DDCA5A480}</Project>
+      <Name>AWSSDK.SecurityLake.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SecurityToken/AWSSDK.SecurityToken.CodeAnalysis.csproj">
       <Project>{6E01838B-1011-4819-88AF-853B11E43F20}</Project>
       <Name>AWSSDK.SecurityToken.CodeAnalysis</Name>
