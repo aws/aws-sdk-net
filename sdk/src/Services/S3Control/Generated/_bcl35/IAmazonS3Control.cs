@@ -2676,6 +2676,78 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  GetMultiRegionAccessPointRoutes
+
+
+        /// <summary>
+        /// Returns the routing configuration for a Multi-Region Access Point, indicating which
+        /// Regions are active or passive.
+        /// 
+        ///  
+        /// <para>
+        /// To obtain routing control changes and failover requests, use the Amazon S3 failover
+        /// control infrastructure endpoints in these five Amazon Web Services Regions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>us-east-1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>us-west-2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ap-southeast-2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ap-northeast-1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>eu-west-1</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Your Amazon S3 bucket does not need to be in these five Regions.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPointRoutes service method.</param>
+        /// 
+        /// <returns>The response from the GetMultiRegionAccessPointRoutes service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointRoutes">REST API Reference for GetMultiRegionAccessPointRoutes Operation</seealso>
+        GetMultiRegionAccessPointRoutesResponse GetMultiRegionAccessPointRoutes(GetMultiRegionAccessPointRoutesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMultiRegionAccessPointRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPointRoutes operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMultiRegionAccessPointRoutes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointRoutes">REST API Reference for GetMultiRegionAccessPointRoutes Operation</seealso>
+        IAsyncResult BeginGetMultiRegionAccessPointRoutes(GetMultiRegionAccessPointRoutesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMultiRegionAccessPointRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMultiRegionAccessPointRoutes.</param>
+        /// 
+        /// <returns>Returns a  GetMultiRegionAccessPointRoutesResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointRoutes">REST API Reference for GetMultiRegionAccessPointRoutes Operation</seealso>
+        GetMultiRegionAccessPointRoutesResponse EndGetMultiRegionAccessPointRoutes(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetPublicAccessBlock
 
 
@@ -4200,6 +4272,94 @@ namespace Amazon.S3Control
         /// <returns>Returns a  PutStorageLensConfigurationTaggingResult from S3Control.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutStorageLensConfigurationTagging">REST API Reference for PutStorageLensConfigurationTagging Operation</seealso>
         PutStorageLensConfigurationTaggingResponse EndPutStorageLensConfigurationTagging(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SubmitMultiRegionAccessPointRoutes
+
+
+        /// <summary>
+        /// Submits an updated route configuration for a Multi-Region Access Point. This API operation
+        /// updates the routing status for the specified Regions from active to passive, or from
+        /// passive to active. A value of <code>0</code> indicates a passive status, which means
+        /// that traffic won't be routed to the specified Region. A value of <code>100</code>
+        /// indicates an active status, which means that traffic will be routed to the specified
+        /// Region. At least one Region must be active at all times.
+        /// 
+        ///  
+        /// <para>
+        /// When the routing configuration is changed, any in-progress operations (uploads, copies,
+        /// deletes, and so on) to formerly active Regions will continue to run to their final
+        /// completion state (success or failure). The routing configurations of any Regions that
+        /// aren’t specified remain unchanged.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Updated routing configurations might not be immediately applied. It can take up to
+        /// 2 minutes for your changes to take effect.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To submit routing control changes and failover requests, use the Amazon S3 failover
+        /// control infrastructure endpoints in these five Amazon Web Services Regions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>us-east-1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>us-west-2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ap-southeast-2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ap-northeast-1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>eu-west-1</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Your Amazon S3 bucket does not need to be in these five Regions.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubmitMultiRegionAccessPointRoutes service method.</param>
+        /// 
+        /// <returns>The response from the SubmitMultiRegionAccessPointRoutes service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/SubmitMultiRegionAccessPointRoutes">REST API Reference for SubmitMultiRegionAccessPointRoutes Operation</seealso>
+        SubmitMultiRegionAccessPointRoutesResponse SubmitMultiRegionAccessPointRoutes(SubmitMultiRegionAccessPointRoutesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SubmitMultiRegionAccessPointRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SubmitMultiRegionAccessPointRoutes operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSubmitMultiRegionAccessPointRoutes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/SubmitMultiRegionAccessPointRoutes">REST API Reference for SubmitMultiRegionAccessPointRoutes Operation</seealso>
+        IAsyncResult BeginSubmitMultiRegionAccessPointRoutes(SubmitMultiRegionAccessPointRoutesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SubmitMultiRegionAccessPointRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSubmitMultiRegionAccessPointRoutes.</param>
+        /// 
+        /// <returns>Returns a  SubmitMultiRegionAccessPointRoutesResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/SubmitMultiRegionAccessPointRoutes">REST API Reference for SubmitMultiRegionAccessPointRoutes Operation</seealso>
+        SubmitMultiRegionAccessPointRoutesResponse EndSubmitMultiRegionAccessPointRoutes(IAsyncResult asyncResult);
 
         #endregion
         

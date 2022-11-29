@@ -300,6 +300,12 @@ namespace Amazon.S3Control.Internal
                 result.AccountId = request.AccountId;
                 return result;
             }
+            if (requestContext.RequestName == "GetMultiRegionAccessPointRoutesRequest") {
+                result.RequiresAccountId = true;
+                var request = (GetMultiRegionAccessPointRoutesRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
             if (requestContext.RequestName == "GetPublicAccessBlockRequest") {
                 result.RequiresAccountId = true;
                 var request = (GetPublicAccessBlockRequest)requestContext.OriginalRequest;
@@ -423,6 +429,12 @@ namespace Amazon.S3Control.Internal
             if (requestContext.RequestName == "PutStorageLensConfigurationTaggingRequest") {
                 result.RequiresAccountId = true;
                 var request = (PutStorageLensConfigurationTaggingRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "SubmitMultiRegionAccessPointRoutesRequest") {
+                result.RequiresAccountId = true;
+                var request = (SubmitMultiRegionAccessPointRoutesRequest)requestContext.OriginalRequest;
                 result.AccountId = request.AccountId;
                 return result;
             }

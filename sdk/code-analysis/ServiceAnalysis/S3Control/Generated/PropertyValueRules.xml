@@ -454,6 +454,21 @@
     <pattern>^[a-z0-9][-a-z0-9]{1,48}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.GetMultiRegionAccessPointRoutesRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetMultiRegionAccessPointRoutesRequest.Mrap</property>
+    <max>200</max>
+    <pattern>^[a-zA-Z0-9\:.-]{3,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetMultiRegionAccessPointRoutesResponse.Mrap</property>
+    <max>200</max>
+    <pattern>^[a-zA-Z0-9\:.-]{3,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.GetPublicAccessBlockRequest.AccountId</property>
     <max>64</max>
     <pattern>^\d{12}$</pattern>
@@ -719,6 +734,16 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.SubmitMultiRegionAccessPointRoutesRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.SubmitMultiRegionAccessPointRoutesRequest.Mrap</property>
+    <max>200</max>
+    <pattern>^[a-zA-Z0-9\:.-]{3,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.UpdateJobPriorityRequest.AccountId</property>
     <max>64</max>
     <pattern>^\d{12}$</pattern>
@@ -968,6 +993,21 @@
     <property>Amazon.S3Control.Model.MultiRegionAccessPointReport.Name</property>
     <max>50</max>
     <pattern>^[a-z0-9][-a-z0-9]{1,48}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.MultiRegionAccessPointRoute.Bucket</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.MultiRegionAccessPointRoute.Region</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.MultiRegionAccessPointRoute.TrafficDialPercentage</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.ObjectLambdaAccessPoint.Name</property>

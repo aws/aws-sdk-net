@@ -3434,6 +3434,98 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  GetMultiRegionAccessPointRoutes
+
+
+        /// <summary>
+        /// Returns the routing configuration for a Multi-Region Access Point, indicating which
+        /// Regions are active or passive.
+        /// 
+        ///  
+        /// <para>
+        /// To obtain routing control changes and failover requests, use the Amazon S3 failover
+        /// control infrastructure endpoints in these five Amazon Web Services Regions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>us-east-1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>us-west-2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ap-southeast-2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ap-northeast-1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>eu-west-1</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Your Amazon S3 bucket does not need to be in these five Regions.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPointRoutes service method.</param>
+        /// 
+        /// <returns>The response from the GetMultiRegionAccessPointRoutes service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointRoutes">REST API Reference for GetMultiRegionAccessPointRoutes Operation</seealso>
+        GetMultiRegionAccessPointRoutesResponse GetMultiRegionAccessPointRoutes(GetMultiRegionAccessPointRoutesRequest request);
+
+
+
+        /// <summary>
+        /// Returns the routing configuration for a Multi-Region Access Point, indicating which
+        /// Regions are active or passive.
+        /// 
+        ///  
+        /// <para>
+        /// To obtain routing control changes and failover requests, use the Amazon S3 failover
+        /// control infrastructure endpoints in these five Amazon Web Services Regions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>us-east-1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>us-west-2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ap-southeast-2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ap-northeast-1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>eu-west-1</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Your Amazon S3 bucket does not need to be in these five Regions.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPointRoutes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMultiRegionAccessPointRoutes service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointRoutes">REST API Reference for GetMultiRegionAccessPointRoutes Operation</seealso>
+        Task<GetMultiRegionAccessPointRoutesResponse> GetMultiRegionAccessPointRoutesAsync(GetMultiRegionAccessPointRoutesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetPublicAccessBlock
 
 
@@ -5393,6 +5485,130 @@ namespace Amazon.S3Control
         /// <returns>The response from the PutStorageLensConfigurationTagging service method, as returned by S3Control.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutStorageLensConfigurationTagging">REST API Reference for PutStorageLensConfigurationTagging Operation</seealso>
         Task<PutStorageLensConfigurationTaggingResponse> PutStorageLensConfigurationTaggingAsync(PutStorageLensConfigurationTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SubmitMultiRegionAccessPointRoutes
+
+
+        /// <summary>
+        /// Submits an updated route configuration for a Multi-Region Access Point. This API operation
+        /// updates the routing status for the specified Regions from active to passive, or from
+        /// passive to active. A value of <code>0</code> indicates a passive status, which means
+        /// that traffic won't be routed to the specified Region. A value of <code>100</code>
+        /// indicates an active status, which means that traffic will be routed to the specified
+        /// Region. At least one Region must be active at all times.
+        /// 
+        ///  
+        /// <para>
+        /// When the routing configuration is changed, any in-progress operations (uploads, copies,
+        /// deletes, and so on) to formerly active Regions will continue to run to their final
+        /// completion state (success or failure). The routing configurations of any Regions that
+        /// aren’t specified remain unchanged.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Updated routing configurations might not be immediately applied. It can take up to
+        /// 2 minutes for your changes to take effect.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To submit routing control changes and failover requests, use the Amazon S3 failover
+        /// control infrastructure endpoints in these five Amazon Web Services Regions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>us-east-1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>us-west-2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ap-southeast-2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ap-northeast-1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>eu-west-1</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Your Amazon S3 bucket does not need to be in these five Regions.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubmitMultiRegionAccessPointRoutes service method.</param>
+        /// 
+        /// <returns>The response from the SubmitMultiRegionAccessPointRoutes service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/SubmitMultiRegionAccessPointRoutes">REST API Reference for SubmitMultiRegionAccessPointRoutes Operation</seealso>
+        SubmitMultiRegionAccessPointRoutesResponse SubmitMultiRegionAccessPointRoutes(SubmitMultiRegionAccessPointRoutesRequest request);
+
+
+
+        /// <summary>
+        /// Submits an updated route configuration for a Multi-Region Access Point. This API operation
+        /// updates the routing status for the specified Regions from active to passive, or from
+        /// passive to active. A value of <code>0</code> indicates a passive status, which means
+        /// that traffic won't be routed to the specified Region. A value of <code>100</code>
+        /// indicates an active status, which means that traffic will be routed to the specified
+        /// Region. At least one Region must be active at all times.
+        /// 
+        ///  
+        /// <para>
+        /// When the routing configuration is changed, any in-progress operations (uploads, copies,
+        /// deletes, and so on) to formerly active Regions will continue to run to their final
+        /// completion state (success or failure). The routing configurations of any Regions that
+        /// aren’t specified remain unchanged.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Updated routing configurations might not be immediately applied. It can take up to
+        /// 2 minutes for your changes to take effect.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To submit routing control changes and failover requests, use the Amazon S3 failover
+        /// control infrastructure endpoints in these five Amazon Web Services Regions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>us-east-1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>us-west-2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ap-southeast-2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ap-northeast-1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>eu-west-1</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Your Amazon S3 bucket does not need to be in these five Regions.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubmitMultiRegionAccessPointRoutes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SubmitMultiRegionAccessPointRoutes service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/SubmitMultiRegionAccessPointRoutes">REST API Reference for SubmitMultiRegionAccessPointRoutes Operation</seealso>
+        Task<SubmitMultiRegionAccessPointRoutesResponse> SubmitMultiRegionAccessPointRoutesAsync(SubmitMultiRegionAccessPointRoutesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

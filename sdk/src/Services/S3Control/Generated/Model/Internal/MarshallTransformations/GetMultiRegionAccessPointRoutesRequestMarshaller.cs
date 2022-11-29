@@ -33,9 +33,9 @@ using System.Xml;
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetMultiRegionAccessPointPolicyStatus Request Marshaller
+    /// GetMultiRegionAccessPointRoutes Request Marshaller
     /// </summary>       
-    public class GetMultiRegionAccessPointPolicyStatusRequestMarshaller : IMarshaller<IRequest, GetMultiRegionAccessPointPolicyStatusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetMultiRegionAccessPointRoutesRequestMarshaller : IMarshaller<IRequest, GetMultiRegionAccessPointRoutesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetMultiRegionAccessPointPolicyStatusRequest)input);
+            return this.Marshall((GetMultiRegionAccessPointRoutesRequest)input);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetMultiRegionAccessPointPolicyStatusRequest publicRequest)
+        public IRequest Marshall(GetMultiRegionAccessPointRoutesRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
             request.HttpMethod = "GET";
@@ -61,17 +61,17 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 request.Headers["x-amz-account-id"] = publicRequest.AccountId;
             }
-            if (!publicRequest.IsSetName())
-                throw new AmazonS3ControlException("Request object does not have required field Name set");
-            request.AddPathResource("{name+}", StringUtils.FromString(publicRequest.Name.TrimStart('/')));
-            request.ResourcePath = "/v20180820/mrap/instances/{name+}/policystatus";
+            if (!publicRequest.IsSetMrap())
+                throw new AmazonS3ControlException("Request object does not have required field Mrap set");
+            request.AddPathResource("{mrap+}", StringUtils.FromString(publicRequest.Mrap.TrimStart('/')));
+            request.ResourcePath = "/v20180820/mrap/instances/{mrap+}/routes";
 
 
             return request;
         }
-        private static GetMultiRegionAccessPointPolicyStatusRequestMarshaller _instance = new GetMultiRegionAccessPointPolicyStatusRequestMarshaller();        
+        private static GetMultiRegionAccessPointRoutesRequestMarshaller _instance = new GetMultiRegionAccessPointRoutesRequestMarshaller();        
 
-        internal static GetMultiRegionAccessPointPolicyStatusRequestMarshaller GetInstance()
+        internal static GetMultiRegionAccessPointRoutesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -79,7 +79,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetMultiRegionAccessPointPolicyStatusRequestMarshaller Instance
+        public static GetMultiRegionAccessPointRoutesRequestMarshaller Instance
         {
             get
             {
