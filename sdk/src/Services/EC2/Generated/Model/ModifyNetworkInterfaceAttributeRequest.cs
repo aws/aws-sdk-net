@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
     {
         private NetworkInterfaceAttachmentChanges _attachment;
         private string _description;
+        private EnaSrdSpecification _enaSrdSpecification;
         private List<string> _groups = new List<string>();
         private string _networkInterfaceId;
         private bool? _sourceDestCheck;
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Attachment. 
         /// <para>
-        /// Information about the interface attachment. If modifying the 'delete on termination'
+        /// Information about the interface attachment. If modifying the <code>delete on termination</code>
         /// attribute, you must specify the ID of the interface attachment.
         /// </para>
         /// </summary>
@@ -77,6 +78,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnaSrdSpecification. 
+        /// <para>
+        /// Updates the ENA Express configuration for the network interface that’s attached to
+        /// the instance.
+        /// </para>
+        /// </summary>
+        public EnaSrdSpecification EnaSrdSpecification
+        {
+            get { return this._enaSrdSpecification; }
+            set { this._enaSrdSpecification = value; }
+        }
+
+        // Check to see if EnaSrdSpecification property is set
+        internal bool IsSetEnaSrdSpecification()
+        {
+            return this._enaSrdSpecification != null;
         }
 
         /// <summary>

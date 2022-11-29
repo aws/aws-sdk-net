@@ -35,10 +35,26 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class StartNetworkInsightsAnalysisRequest : AmazonEC2Request
     {
+        private List<string> _additionalAccounts = new List<string>();
         private string _clientToken;
         private List<string> _filterInArns = new List<string>();
         private string _networkInsightsPathId;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+
+        /// <summary>
+        /// Gets and sets the property AdditionalAccounts.
+        /// </summary>
+        public List<string> AdditionalAccounts
+        {
+            get { return this._additionalAccounts; }
+            set { this._additionalAccounts = value; }
+        }
+
+        // Check to see if AdditionalAccounts property is set
+        internal bool IsSetAdditionalAccounts()
+        {
+            return this._additionalAccounts != null && this._additionalAccounts.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 

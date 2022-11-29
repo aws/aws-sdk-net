@@ -131,8 +131,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpreadLevel. 
         /// <para>
-        ///  The spread level for the placement group. <i>Only</i> Outpost placement groups can
-        /// be spread across hosts. 
+        /// The spread level for the placement group. <i>Only</i> Outpost placement groups can
+        /// be spread across hosts.
         /// </para>
         /// </summary>
         public SpreadLevel SpreadLevel

@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class AttachNetworkInterfaceRequest : AmazonEC2Request
     {
         private int? _deviceIndex;
+        private EnaSrdSpecification _enaSrdSpecification;
         private string _instanceId;
         private int? _networkCardIndex;
         private string _networkInterfaceId;
@@ -56,6 +57,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetDeviceIndex()
         {
             return this._deviceIndex.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnaSrdSpecification. 
+        /// <para>
+        /// Configures ENA Express for the network interface that this action attaches to the
+        /// instance.
+        /// </para>
+        /// </summary>
+        public EnaSrdSpecification EnaSrdSpecification
+        {
+            get { return this._enaSrdSpecification; }
+            set { this._enaSrdSpecification = value; }
+        }
+
+        // Check to see if EnaSrdSpecification property is set
+        internal bool IsSetEnaSrdSpecification()
+        {
+            return this._enaSrdSpecification != null;
         }
 
         /// <summary>

@@ -4764,7 +4764,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
         /// a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -10476,6 +10476,46 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeAwsNetworkPerformanceMetricSubscriptions
+
+
+        /// <summary>
+        /// Describes the curent Infrastructure Performance metric subscriptions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAwsNetworkPerformanceMetricSubscriptions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAwsNetworkPerformanceMetricSubscriptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions">REST API Reference for DescribeAwsNetworkPerformanceMetricSubscriptions Operation</seealso>
+        DescribeAwsNetworkPerformanceMetricSubscriptionsResponse DescribeAwsNetworkPerformanceMetricSubscriptions(DescribeAwsNetworkPerformanceMetricSubscriptionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAwsNetworkPerformanceMetricSubscriptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAwsNetworkPerformanceMetricSubscriptions operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAwsNetworkPerformanceMetricSubscriptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions">REST API Reference for DescribeAwsNetworkPerformanceMetricSubscriptions Operation</seealso>
+        IAsyncResult BeginDescribeAwsNetworkPerformanceMetricSubscriptions(DescribeAwsNetworkPerformanceMetricSubscriptionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAwsNetworkPerformanceMetricSubscriptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAwsNetworkPerformanceMetricSubscriptions.</param>
+        /// 
+        /// <returns>Returns a  DescribeAwsNetworkPerformanceMetricSubscriptionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions">REST API Reference for DescribeAwsNetworkPerformanceMetricSubscriptions Operation</seealso>
+        DescribeAwsNetworkPerformanceMetricSubscriptionsResponse EndDescribeAwsNetworkPerformanceMetricSubscriptions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeBundleTasks
 
 
@@ -14071,7 +14111,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes a root volume replacement task. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+        /// Describes a root volume replacement task. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
         /// a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplaceRootVolumeTasks service method.</param>
@@ -17384,6 +17424,46 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableAwsNetworkPerformanceMetricSubscription
+
+
+        /// <summary>
+        /// Disables Infrastructure Performance metric subscriptions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableAwsNetworkPerformanceMetricSubscription service method.</param>
+        /// 
+        /// <returns>The response from the DisableAwsNetworkPerformanceMetricSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAwsNetworkPerformanceMetricSubscription">REST API Reference for DisableAwsNetworkPerformanceMetricSubscription Operation</seealso>
+        DisableAwsNetworkPerformanceMetricSubscriptionResponse DisableAwsNetworkPerformanceMetricSubscription(DisableAwsNetworkPerformanceMetricSubscriptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableAwsNetworkPerformanceMetricSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableAwsNetworkPerformanceMetricSubscription operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableAwsNetworkPerformanceMetricSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAwsNetworkPerformanceMetricSubscription">REST API Reference for DisableAwsNetworkPerformanceMetricSubscription Operation</seealso>
+        IAsyncResult BeginDisableAwsNetworkPerformanceMetricSubscription(DisableAwsNetworkPerformanceMetricSubscriptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableAwsNetworkPerformanceMetricSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableAwsNetworkPerformanceMetricSubscription.</param>
+        /// 
+        /// <returns>Returns a  DisableAwsNetworkPerformanceMetricSubscriptionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAwsNetworkPerformanceMetricSubscription">REST API Reference for DisableAwsNetworkPerformanceMetricSubscription Operation</seealso>
+        DisableAwsNetworkPerformanceMetricSubscriptionResponse EndDisableAwsNetworkPerformanceMetricSubscription(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableEbsEncryptionByDefault
 
 
@@ -18447,6 +18527,46 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  EnableAwsNetworkPerformanceMetricSubscription
+
+
+        /// <summary>
+        /// Enables Infrastructure Performance subscriptions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableAwsNetworkPerformanceMetricSubscription service method.</param>
+        /// 
+        /// <returns>The response from the EnableAwsNetworkPerformanceMetricSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAwsNetworkPerformanceMetricSubscription">REST API Reference for EnableAwsNetworkPerformanceMetricSubscription Operation</seealso>
+        EnableAwsNetworkPerformanceMetricSubscriptionResponse EnableAwsNetworkPerformanceMetricSubscription(EnableAwsNetworkPerformanceMetricSubscriptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableAwsNetworkPerformanceMetricSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableAwsNetworkPerformanceMetricSubscription operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableAwsNetworkPerformanceMetricSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAwsNetworkPerformanceMetricSubscription">REST API Reference for EnableAwsNetworkPerformanceMetricSubscription Operation</seealso>
+        IAsyncResult BeginEnableAwsNetworkPerformanceMetricSubscription(EnableAwsNetworkPerformanceMetricSubscriptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableAwsNetworkPerformanceMetricSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableAwsNetworkPerformanceMetricSubscription.</param>
+        /// 
+        /// <returns>Returns a  EnableAwsNetworkPerformanceMetricSubscriptionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAwsNetworkPerformanceMetricSubscription">REST API Reference for EnableAwsNetworkPerformanceMetricSubscription Operation</seealso>
+        EnableAwsNetworkPerformanceMetricSubscriptionResponse EndEnableAwsNetworkPerformanceMetricSubscription(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  EnableEbsEncryptionByDefault
 
 
@@ -18701,6 +18821,46 @@ namespace Amazon.EC2
         /// <returns>Returns a  EnableIpamOrganizationAdminAccountResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamOrganizationAdminAccount">REST API Reference for EnableIpamOrganizationAdminAccount Operation</seealso>
         EnableIpamOrganizationAdminAccountResponse EndEnableIpamOrganizationAdminAccount(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableReachabilityAnalyzerOrganizationSharing
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableReachabilityAnalyzerOrganizationSharing service method.</param>
+        /// 
+        /// <returns>The response from the EnableReachabilityAnalyzerOrganizationSharing service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing">REST API Reference for EnableReachabilityAnalyzerOrganizationSharing Operation</seealso>
+        EnableReachabilityAnalyzerOrganizationSharingResponse EnableReachabilityAnalyzerOrganizationSharing(EnableReachabilityAnalyzerOrganizationSharingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableReachabilityAnalyzerOrganizationSharing operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableReachabilityAnalyzerOrganizationSharing operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableReachabilityAnalyzerOrganizationSharing
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing">REST API Reference for EnableReachabilityAnalyzerOrganizationSharing Operation</seealso>
+        IAsyncResult BeginEnableReachabilityAnalyzerOrganizationSharing(EnableReachabilityAnalyzerOrganizationSharingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableReachabilityAnalyzerOrganizationSharing operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableReachabilityAnalyzerOrganizationSharing.</param>
+        /// 
+        /// <returns>Returns a  EnableReachabilityAnalyzerOrganizationSharingResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing">REST API Reference for EnableReachabilityAnalyzerOrganizationSharing Operation</seealso>
+        EnableReachabilityAnalyzerOrganizationSharingResponse EndEnableReachabilityAnalyzerOrganizationSharing(IAsyncResult asyncResult);
 
         #endregion
         
@@ -19238,6 +19398,46 @@ namespace Amazon.EC2
         /// <returns>Returns a  GetAssociatedIpv6PoolCidrsResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedIpv6PoolCidrs">REST API Reference for GetAssociatedIpv6PoolCidrs Operation</seealso>
         GetAssociatedIpv6PoolCidrsResponse EndGetAssociatedIpv6PoolCidrs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAwsNetworkPerformanceData
+
+
+        /// <summary>
+        /// Gets network performance data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAwsNetworkPerformanceData service method.</param>
+        /// 
+        /// <returns>The response from the GetAwsNetworkPerformanceData service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAwsNetworkPerformanceData">REST API Reference for GetAwsNetworkPerformanceData Operation</seealso>
+        GetAwsNetworkPerformanceDataResponse GetAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAwsNetworkPerformanceData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAwsNetworkPerformanceData operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAwsNetworkPerformanceData
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAwsNetworkPerformanceData">REST API Reference for GetAwsNetworkPerformanceData Operation</seealso>
+        IAsyncResult BeginGetAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAwsNetworkPerformanceData operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAwsNetworkPerformanceData.</param>
+        /// 
+        /// <returns>Returns a  GetAwsNetworkPerformanceDataResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAwsNetworkPerformanceData">REST API Reference for GetAwsNetworkPerformanceData Operation</seealso>
+        GetAwsNetworkPerformanceDataResponse EndGetAwsNetworkPerformanceData(IAsyncResult asyncResult);
 
         #endregion
         

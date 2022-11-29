@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model
         IDescribeAddressTransfersPaginator DescribeAddressTransfers(DescribeAddressTransfersRequest request);
 
         /// <summary>
+        /// Paginator for DescribeAwsNetworkPerformanceMetricSubscriptions operation
+        ///</summary>
+        IDescribeAwsNetworkPerformanceMetricSubscriptionsPaginator DescribeAwsNetworkPerformanceMetricSubscriptions(DescribeAwsNetworkPerformanceMetricSubscriptionsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeByoipCidrs operation
         ///</summary>
         IDescribeByoipCidrsPaginator DescribeByoipCidrs(DescribeByoipCidrsRequest request);
@@ -534,6 +539,11 @@ namespace Amazon.EC2.Model
         /// Paginator for GetAssociatedIpv6PoolCidrs operation
         ///</summary>
         IGetAssociatedIpv6PoolCidrsPaginator GetAssociatedIpv6PoolCidrs(GetAssociatedIpv6PoolCidrsRequest request);
+
+        /// <summary>
+        /// Paginator for GetAwsNetworkPerformanceData operation
+        ///</summary>
+        IGetAwsNetworkPerformanceDataPaginator GetAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest request);
 
         /// <summary>
         /// Paginator for GetGroupsForCapacityReservation operation

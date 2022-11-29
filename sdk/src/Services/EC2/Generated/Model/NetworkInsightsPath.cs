@@ -35,12 +35,14 @@ namespace Amazon.EC2.Model
     {
         private DateTime? _createdDate;
         private string _destination;
+        private string _destinationArn;
         private string _destinationIp;
         private int? _destinationPort;
         private string _networkInsightsPathArn;
         private string _networkInsightsPathId;
         private Protocol _protocol;
         private string _source;
+        private string _sourceArn;
         private string _sourceIp;
         private List<Tag> _tags = new List<Tag>();
 
@@ -78,6 +80,22 @@ namespace Amazon.EC2.Model
         internal bool IsSetDestination()
         {
             return this._destination != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationArn.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1283)]
+        public string DestinationArn
+        {
+            get { return this._destinationArn; }
+            set { this._destinationArn = value; }
+        }
+
+        // Check to see if DestinationArn property is set
+        internal bool IsSetDestinationArn()
+        {
+            return this._destinationArn != null;
         }
 
         /// <summary>
@@ -189,6 +207,22 @@ namespace Amazon.EC2.Model
         internal bool IsSetSource()
         {
             return this._source != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceArn.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1283)]
+        public string SourceArn
+        {
+            get { return this._sourceArn; }
+            set { this._sourceArn = value; }
+        }
+
+        // Check to see if SourceArn property is set
+        internal bool IsSetSourceArn()
+        {
+            return this._sourceArn != null;
         }
 
         /// <summary>

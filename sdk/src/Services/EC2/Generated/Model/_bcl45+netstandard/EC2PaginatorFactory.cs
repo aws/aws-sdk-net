@@ -52,6 +52,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeAwsNetworkPerformanceMetricSubscriptions operation
+        ///</summary>
+        public IDescribeAwsNetworkPerformanceMetricSubscriptionsPaginator DescribeAwsNetworkPerformanceMetricSubscriptions(DescribeAwsNetworkPerformanceMetricSubscriptionsRequest request) 
+        {
+            return new DescribeAwsNetworkPerformanceMetricSubscriptionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeByoipCidrs operation
         ///</summary>
         public IDescribeByoipCidrsPaginator DescribeByoipCidrs(DescribeByoipCidrsRequest request) 
@@ -849,6 +857,14 @@ namespace Amazon.EC2.Model
         public IGetAssociatedIpv6PoolCidrsPaginator GetAssociatedIpv6PoolCidrs(GetAssociatedIpv6PoolCidrsRequest request) 
         {
             return new GetAssociatedIpv6PoolCidrsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetAwsNetworkPerformanceData operation
+        ///</summary>
+        public IGetAwsNetworkPerformanceDataPaginator GetAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest request) 
+        {
+            return new GetAwsNetworkPerformanceDataPaginator(this.client, request);
         }
 
         /// <summary>

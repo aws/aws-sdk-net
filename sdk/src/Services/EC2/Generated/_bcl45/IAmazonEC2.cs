@@ -4816,7 +4816,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
         /// a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -4836,7 +4836,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
         /// a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -10135,6 +10135,34 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeAwsNetworkPerformanceMetricSubscriptions
+
+
+        /// <summary>
+        /// Describes the curent Infrastructure Performance metric subscriptions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAwsNetworkPerformanceMetricSubscriptions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAwsNetworkPerformanceMetricSubscriptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions">REST API Reference for DescribeAwsNetworkPerformanceMetricSubscriptions Operation</seealso>
+        DescribeAwsNetworkPerformanceMetricSubscriptionsResponse DescribeAwsNetworkPerformanceMetricSubscriptions(DescribeAwsNetworkPerformanceMetricSubscriptionsRequest request);
+
+
+
+        /// <summary>
+        /// Describes the curent Infrastructure Performance metric subscriptions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAwsNetworkPerformanceMetricSubscriptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAwsNetworkPerformanceMetricSubscriptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions">REST API Reference for DescribeAwsNetworkPerformanceMetricSubscriptions Operation</seealso>
+        Task<DescribeAwsNetworkPerformanceMetricSubscriptionsResponse> DescribeAwsNetworkPerformanceMetricSubscriptionsAsync(DescribeAwsNetworkPerformanceMetricSubscriptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeBundleTasks
 
 
@@ -13491,7 +13519,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes a root volume replacement task. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+        /// Describes a root volume replacement task. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
         /// a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplaceRootVolumeTasks service method.</param>
@@ -13503,7 +13531,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes a root volume replacement task. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+        /// Describes a root volume replacement task. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
         /// a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplaceRootVolumeTasks service method.</param>
@@ -17039,6 +17067,34 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableAwsNetworkPerformanceMetricSubscription
+
+
+        /// <summary>
+        /// Disables Infrastructure Performance metric subscriptions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableAwsNetworkPerformanceMetricSubscription service method.</param>
+        /// 
+        /// <returns>The response from the DisableAwsNetworkPerformanceMetricSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAwsNetworkPerformanceMetricSubscription">REST API Reference for DisableAwsNetworkPerformanceMetricSubscription Operation</seealso>
+        DisableAwsNetworkPerformanceMetricSubscriptionResponse DisableAwsNetworkPerformanceMetricSubscription(DisableAwsNetworkPerformanceMetricSubscriptionRequest request);
+
+
+
+        /// <summary>
+        /// Disables Infrastructure Performance metric subscriptions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableAwsNetworkPerformanceMetricSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableAwsNetworkPerformanceMetricSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAwsNetworkPerformanceMetricSubscription">REST API Reference for DisableAwsNetworkPerformanceMetricSubscription Operation</seealso>
+        Task<DisableAwsNetworkPerformanceMetricSubscriptionResponse> DisableAwsNetworkPerformanceMetricSubscriptionAsync(DisableAwsNetworkPerformanceMetricSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisableEbsEncryptionByDefault
 
 
@@ -17969,6 +18025,34 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  EnableAwsNetworkPerformanceMetricSubscription
+
+
+        /// <summary>
+        /// Enables Infrastructure Performance subscriptions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableAwsNetworkPerformanceMetricSubscription service method.</param>
+        /// 
+        /// <returns>The response from the EnableAwsNetworkPerformanceMetricSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAwsNetworkPerformanceMetricSubscription">REST API Reference for EnableAwsNetworkPerformanceMetricSubscription Operation</seealso>
+        EnableAwsNetworkPerformanceMetricSubscriptionResponse EnableAwsNetworkPerformanceMetricSubscription(EnableAwsNetworkPerformanceMetricSubscriptionRequest request);
+
+
+
+        /// <summary>
+        /// Enables Infrastructure Performance subscriptions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableAwsNetworkPerformanceMetricSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableAwsNetworkPerformanceMetricSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAwsNetworkPerformanceMetricSubscription">REST API Reference for EnableAwsNetworkPerformanceMetricSubscription Operation</seealso>
+        Task<EnableAwsNetworkPerformanceMetricSubscriptionResponse> EnableAwsNetworkPerformanceMetricSubscriptionAsync(EnableAwsNetworkPerformanceMetricSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  EnableEbsEncryptionByDefault
 
 
@@ -18220,6 +18304,34 @@ namespace Amazon.EC2
         /// <returns>The response from the EnableIpamOrganizationAdminAccount service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamOrganizationAdminAccount">REST API Reference for EnableIpamOrganizationAdminAccount Operation</seealso>
         Task<EnableIpamOrganizationAdminAccountResponse> EnableIpamOrganizationAdminAccountAsync(EnableIpamOrganizationAdminAccountRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  EnableReachabilityAnalyzerOrganizationSharing
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableReachabilityAnalyzerOrganizationSharing service method.</param>
+        /// 
+        /// <returns>The response from the EnableReachabilityAnalyzerOrganizationSharing service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing">REST API Reference for EnableReachabilityAnalyzerOrganizationSharing Operation</seealso>
+        EnableReachabilityAnalyzerOrganizationSharingResponse EnableReachabilityAnalyzerOrganizationSharing(EnableReachabilityAnalyzerOrganizationSharingRequest request);
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableReachabilityAnalyzerOrganizationSharing service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableReachabilityAnalyzerOrganizationSharing service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing">REST API Reference for EnableReachabilityAnalyzerOrganizationSharing Operation</seealso>
+        Task<EnableReachabilityAnalyzerOrganizationSharingResponse> EnableReachabilityAnalyzerOrganizationSharingAsync(EnableReachabilityAnalyzerOrganizationSharingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -18670,6 +18782,34 @@ namespace Amazon.EC2
         /// <returns>The response from the GetAssociatedIpv6PoolCidrs service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedIpv6PoolCidrs">REST API Reference for GetAssociatedIpv6PoolCidrs Operation</seealso>
         Task<GetAssociatedIpv6PoolCidrsResponse> GetAssociatedIpv6PoolCidrsAsync(GetAssociatedIpv6PoolCidrsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAwsNetworkPerformanceData
+
+
+        /// <summary>
+        /// Gets network performance data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAwsNetworkPerformanceData service method.</param>
+        /// 
+        /// <returns>The response from the GetAwsNetworkPerformanceData service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAwsNetworkPerformanceData">REST API Reference for GetAwsNetworkPerformanceData Operation</seealso>
+        GetAwsNetworkPerformanceDataResponse GetAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest request);
+
+
+
+        /// <summary>
+        /// Gets network performance data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAwsNetworkPerformanceData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAwsNetworkPerformanceData service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAwsNetworkPerformanceData">REST API Reference for GetAwsNetworkPerformanceData Operation</seealso>
+        Task<GetAwsNetworkPerformanceDataResponse> GetAwsNetworkPerformanceDataAsync(GetAwsNetworkPerformanceDataRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

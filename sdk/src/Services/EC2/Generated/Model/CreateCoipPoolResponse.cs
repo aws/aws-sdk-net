@@ -36,7 +36,10 @@ namespace Amazon.EC2.Model
         private CoipPool _coipPool;
 
         /// <summary>
-        /// Gets and sets the property CoipPool.
+        /// Gets and sets the property CoipPool. 
+        /// <para>
+        /// Information about the CoIP address pool.
+        /// </para>
         /// </summary>
         public CoipPool CoipPool
         {

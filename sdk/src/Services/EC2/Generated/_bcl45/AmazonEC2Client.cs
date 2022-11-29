@@ -6219,7 +6219,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
         /// a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -6245,7 +6245,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
         /// a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -13092,6 +13092,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeAwsNetworkPerformanceMetricSubscriptions
+
+
+        /// <summary>
+        /// Describes the curent Infrastructure Performance metric subscriptions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAwsNetworkPerformanceMetricSubscriptions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAwsNetworkPerformanceMetricSubscriptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions">REST API Reference for DescribeAwsNetworkPerformanceMetricSubscriptions Operation</seealso>
+        public virtual DescribeAwsNetworkPerformanceMetricSubscriptionsResponse DescribeAwsNetworkPerformanceMetricSubscriptions(DescribeAwsNetworkPerformanceMetricSubscriptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAwsNetworkPerformanceMetricSubscriptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAwsNetworkPerformanceMetricSubscriptionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAwsNetworkPerformanceMetricSubscriptionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the curent Infrastructure Performance metric subscriptions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAwsNetworkPerformanceMetricSubscriptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAwsNetworkPerformanceMetricSubscriptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions">REST API Reference for DescribeAwsNetworkPerformanceMetricSubscriptions Operation</seealso>
+        public virtual Task<DescribeAwsNetworkPerformanceMetricSubscriptionsResponse> DescribeAwsNetworkPerformanceMetricSubscriptionsAsync(DescribeAwsNetworkPerformanceMetricSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAwsNetworkPerformanceMetricSubscriptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAwsNetworkPerformanceMetricSubscriptionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAwsNetworkPerformanceMetricSubscriptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeBundleTasks
 
 
@@ -17493,7 +17534,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes a root volume replacement task. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+        /// Describes a root volume replacement task. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
         /// a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplaceRootVolumeTasks service method.</param>
@@ -17511,7 +17552,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes a root volume replacement task. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+        /// Describes a root volume replacement task. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
         /// a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplaceRootVolumeTasks service method.</param>
@@ -21924,6 +21965,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableAwsNetworkPerformanceMetricSubscription
+
+
+        /// <summary>
+        /// Disables Infrastructure Performance metric subscriptions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableAwsNetworkPerformanceMetricSubscription service method.</param>
+        /// 
+        /// <returns>The response from the DisableAwsNetworkPerformanceMetricSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAwsNetworkPerformanceMetricSubscription">REST API Reference for DisableAwsNetworkPerformanceMetricSubscription Operation</seealso>
+        public virtual DisableAwsNetworkPerformanceMetricSubscriptionResponse DisableAwsNetworkPerformanceMetricSubscription(DisableAwsNetworkPerformanceMetricSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableAwsNetworkPerformanceMetricSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableAwsNetworkPerformanceMetricSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<DisableAwsNetworkPerformanceMetricSubscriptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disables Infrastructure Performance metric subscriptions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableAwsNetworkPerformanceMetricSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableAwsNetworkPerformanceMetricSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAwsNetworkPerformanceMetricSubscription">REST API Reference for DisableAwsNetworkPerformanceMetricSubscription Operation</seealso>
+        public virtual Task<DisableAwsNetworkPerformanceMetricSubscriptionResponse> DisableAwsNetworkPerformanceMetricSubscriptionAsync(DisableAwsNetworkPerformanceMetricSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableAwsNetworkPerformanceMetricSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableAwsNetworkPerformanceMetricSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisableAwsNetworkPerformanceMetricSubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisableEbsEncryptionByDefault
 
 
@@ -23153,6 +23235,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  EnableAwsNetworkPerformanceMetricSubscription
+
+
+        /// <summary>
+        /// Enables Infrastructure Performance subscriptions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableAwsNetworkPerformanceMetricSubscription service method.</param>
+        /// 
+        /// <returns>The response from the EnableAwsNetworkPerformanceMetricSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAwsNetworkPerformanceMetricSubscription">REST API Reference for EnableAwsNetworkPerformanceMetricSubscription Operation</seealso>
+        public virtual EnableAwsNetworkPerformanceMetricSubscriptionResponse EnableAwsNetworkPerformanceMetricSubscription(EnableAwsNetworkPerformanceMetricSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableAwsNetworkPerformanceMetricSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableAwsNetworkPerformanceMetricSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<EnableAwsNetworkPerformanceMetricSubscriptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Enables Infrastructure Performance subscriptions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableAwsNetworkPerformanceMetricSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableAwsNetworkPerformanceMetricSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAwsNetworkPerformanceMetricSubscription">REST API Reference for EnableAwsNetworkPerformanceMetricSubscription Operation</seealso>
+        public virtual Task<EnableAwsNetworkPerformanceMetricSubscriptionResponse> EnableAwsNetworkPerformanceMetricSubscriptionAsync(EnableAwsNetworkPerformanceMetricSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableAwsNetworkPerformanceMetricSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableAwsNetworkPerformanceMetricSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<EnableAwsNetworkPerformanceMetricSubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  EnableEbsEncryptionByDefault
 
 
@@ -23468,6 +23591,47 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = EnableIpamOrganizationAdminAccountResponseUnmarshaller.Instance;
             
             return InvokeAsync<EnableIpamOrganizationAdminAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableReachabilityAnalyzerOrganizationSharing
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableReachabilityAnalyzerOrganizationSharing service method.</param>
+        /// 
+        /// <returns>The response from the EnableReachabilityAnalyzerOrganizationSharing service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing">REST API Reference for EnableReachabilityAnalyzerOrganizationSharing Operation</seealso>
+        public virtual EnableReachabilityAnalyzerOrganizationSharingResponse EnableReachabilityAnalyzerOrganizationSharing(EnableReachabilityAnalyzerOrganizationSharingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableReachabilityAnalyzerOrganizationSharingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableReachabilityAnalyzerOrganizationSharingResponseUnmarshaller.Instance;
+
+            return Invoke<EnableReachabilityAnalyzerOrganizationSharingResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableReachabilityAnalyzerOrganizationSharing service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableReachabilityAnalyzerOrganizationSharing service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing">REST API Reference for EnableReachabilityAnalyzerOrganizationSharing Operation</seealso>
+        public virtual Task<EnableReachabilityAnalyzerOrganizationSharingResponse> EnableReachabilityAnalyzerOrganizationSharingAsync(EnableReachabilityAnalyzerOrganizationSharingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableReachabilityAnalyzerOrganizationSharingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableReachabilityAnalyzerOrganizationSharingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<EnableReachabilityAnalyzerOrganizationSharingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -24074,6 +24238,47 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = GetAssociatedIpv6PoolCidrsResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetAssociatedIpv6PoolCidrsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAwsNetworkPerformanceData
+
+
+        /// <summary>
+        /// Gets network performance data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAwsNetworkPerformanceData service method.</param>
+        /// 
+        /// <returns>The response from the GetAwsNetworkPerformanceData service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAwsNetworkPerformanceData">REST API Reference for GetAwsNetworkPerformanceData Operation</seealso>
+        public virtual GetAwsNetworkPerformanceDataResponse GetAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAwsNetworkPerformanceDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAwsNetworkPerformanceDataResponseUnmarshaller.Instance;
+
+            return Invoke<GetAwsNetworkPerformanceDataResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets network performance data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAwsNetworkPerformanceData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAwsNetworkPerformanceData service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAwsNetworkPerformanceData">REST API Reference for GetAwsNetworkPerformanceData Operation</seealso>
+        public virtual Task<GetAwsNetworkPerformanceDataResponse> GetAwsNetworkPerformanceDataAsync(GetAwsNetworkPerformanceDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAwsNetworkPerformanceDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAwsNetworkPerformanceDataResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAwsNetworkPerformanceDataResponse>(request, options, cancellationToken);
         }
 
         #endregion

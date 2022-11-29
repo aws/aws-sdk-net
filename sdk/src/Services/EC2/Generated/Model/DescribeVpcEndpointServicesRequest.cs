@@ -56,11 +56,17 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>owner</code> - The ID or alias of the Amazon Web Services account that owns
+        /// the service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>service-name</code> - The name of the service.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code>).
+        ///  <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code>
+        /// | <code>GatewayLoadBalancer</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -36,7 +36,10 @@ namespace Amazon.EC2.Model
         private TransitGateway _transitGateway;
 
         /// <summary>
-        /// Gets and sets the property TransitGateway.
+        /// Gets and sets the property TransitGateway. 
+        /// <para>
+        /// Information about the transit gateway.
+        /// </para>
         /// </summary>
         public TransitGateway TransitGateway
         {

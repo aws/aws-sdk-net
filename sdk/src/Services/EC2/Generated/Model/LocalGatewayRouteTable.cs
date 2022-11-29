@@ -171,7 +171,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StateReason.
+        /// Gets and sets the property StateReason. 
+        /// <para>
+        /// Information about the state change.
+        /// </para>
         /// </summary>
         public StateReason StateReason
         {

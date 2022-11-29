@@ -4873,6 +4873,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeAwsNetworkPerformanceMetricSubscriptionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAwsNetworkPerformanceMetricSubscriptions");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAwsNetworkPerformanceMetricSubscriptionsRequest>();
+            var marshaller = new DescribeAwsNetworkPerformanceMetricSubscriptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeAwsNetworkPerformanceMetricSubscriptionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeAwsNetworkPerformanceMetricSubscriptionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeBundleTasksMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeBundleTasks");
@@ -8122,6 +8146,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DisableAwsNetworkPerformanceMetricSubscriptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableAwsNetworkPerformanceMetricSubscription");
+
+            var request = InstantiateClassGenerator.Execute<DisableAwsNetworkPerformanceMetricSubscriptionRequest>();
+            var marshaller = new DisableAwsNetworkPerformanceMetricSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisableAwsNetworkPerformanceMetricSubscriptionResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisableAwsNetworkPerformanceMetricSubscriptionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DisableEbsEncryptionByDefaultMarshallTest()
         {
             var operation = service_model.FindOperation("DisableEbsEncryptionByDefault");
@@ -8659,6 +8707,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void EnableAwsNetworkPerformanceMetricSubscriptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableAwsNetworkPerformanceMetricSubscription");
+
+            var request = InstantiateClassGenerator.Execute<EnableAwsNetworkPerformanceMetricSubscriptionRequest>();
+            var marshaller = new EnableAwsNetworkPerformanceMetricSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = EnableAwsNetworkPerformanceMetricSubscriptionResponseUnmarshaller.Instance.Unmarshall(context)
+                as EnableAwsNetworkPerformanceMetricSubscriptionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void EnableEbsEncryptionByDefaultMarshallTest()
         {
             var operation = service_model.FindOperation("EnableEbsEncryptionByDefault");
@@ -8770,6 +8842,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = EnableIpamOrganizationAdminAccountResponseUnmarshaller.Instance.Unmarshall(context)
                 as EnableIpamOrganizationAdminAccountResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void EnableReachabilityAnalyzerOrganizationSharingMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableReachabilityAnalyzerOrganizationSharing");
+
+            var request = InstantiateClassGenerator.Execute<EnableReachabilityAnalyzerOrganizationSharingRequest>();
+            var marshaller = new EnableReachabilityAnalyzerOrganizationSharingRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = EnableReachabilityAnalyzerOrganizationSharingResponseUnmarshaller.Instance.Unmarshall(context)
+                as EnableReachabilityAnalyzerOrganizationSharingResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -9048,6 +9144,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = GetAssociatedIpv6PoolCidrsResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetAssociatedIpv6PoolCidrsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetAwsNetworkPerformanceDataMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAwsNetworkPerformanceData");
+
+            var request = InstantiateClassGenerator.Execute<GetAwsNetworkPerformanceDataRequest>();
+            var marshaller = new GetAwsNetworkPerformanceDataRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetAwsNetworkPerformanceDataResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetAwsNetworkPerformanceDataResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

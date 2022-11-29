@@ -95,6 +95,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeAwsNetworkPerformanceMetricSubscriptionsRequest.MaxResults</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeByoipCidrsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -881,6 +886,11 @@
     <max>1283</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.NetworkInsightsPath.DestinationArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.NetworkInsightsPath.DestinationIp</property>
     <min>0</min>
     <max>15</max>
@@ -888,6 +898,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.NetworkInsightsPath.NetworkInsightsPathArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.NetworkInsightsPath.SourceArn</property>
     <min>1</min>
     <max>1283</max>
   </property-value-rule>

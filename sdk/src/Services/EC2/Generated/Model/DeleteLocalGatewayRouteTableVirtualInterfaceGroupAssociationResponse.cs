@@ -37,6 +37,10 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the property LocalGatewayRouteTableVirtualInterfaceGroupAssociation.
+        /// 
+        /// <para>
+        /// Information about the association.
+        /// </para>
         /// </summary>
         public LocalGatewayRouteTableVirtualInterfaceGroupAssociation LocalGatewayRouteTableVirtualInterfaceGroupAssociation
         {

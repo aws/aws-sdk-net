@@ -36,7 +36,10 @@ namespace Amazon.EC2.Model
         private LocalGatewayRoute _route;
 
         /// <summary>
-        /// Gets and sets the property Route.
+        /// Gets and sets the property Route. 
+        /// <para>
+        /// Information about the local gateway route table.
+        /// </para>
         /// </summary>
         public LocalGatewayRoute Route
         {

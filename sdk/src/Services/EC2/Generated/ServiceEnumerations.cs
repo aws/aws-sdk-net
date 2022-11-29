@@ -11617,6 +11617,52 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type MetricType.
+    /// </summary>
+    public class MetricType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AggregateLatency for MetricType
+        /// </summary>
+        public static readonly MetricType AggregateLatency = new MetricType("aggregate-latency");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricType FindValue(string value)
+        {
+            return FindValue<MetricType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ModifyAvailabilityZoneOptInStatus.
     /// </summary>
     public class ModifyAvailabilityZoneOptInStatus : ConstantClass
@@ -12596,6 +12642,72 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PaymentOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PeriodType.
+    /// </summary>
+    public class PeriodType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FifteenMinutes for PeriodType
+        /// </summary>
+        public static readonly PeriodType FifteenMinutes = new PeriodType("fifteen-minutes");
+        /// <summary>
+        /// Constant FiveMinutes for PeriodType
+        /// </summary>
+        public static readonly PeriodType FiveMinutes = new PeriodType("five-minutes");
+        /// <summary>
+        /// Constant OneDay for PeriodType
+        /// </summary>
+        public static readonly PeriodType OneDay = new PeriodType("one-day");
+        /// <summary>
+        /// Constant OneHour for PeriodType
+        /// </summary>
+        public static readonly PeriodType OneHour = new PeriodType("one-hour");
+        /// <summary>
+        /// Constant OneWeek for PeriodType
+        /// </summary>
+        public static readonly PeriodType OneWeek = new PeriodType("one-week");
+        /// <summary>
+        /// Constant ThreeHours for PeriodType
+        /// </summary>
+        public static readonly PeriodType ThreeHours = new PeriodType("three-hours");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PeriodType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PeriodType FindValue(string value)
+        {
+            return FindValue<PeriodType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PeriodType(string value)
         {
             return FindValue(value);
         }
@@ -15166,6 +15278,52 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StaticSourcesSupportValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StatisticType.
+    /// </summary>
+    public class StatisticType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant P50 for StatisticType
+        /// </summary>
+        public static readonly StatisticType P50 = new StatisticType("p50");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StatisticType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatisticType FindValue(string value)
+        {
+            return FindValue<StatisticType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatisticType(string value)
         {
             return FindValue(value);
         }

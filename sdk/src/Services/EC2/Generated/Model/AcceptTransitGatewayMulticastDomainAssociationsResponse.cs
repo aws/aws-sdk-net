@@ -36,7 +36,10 @@ namespace Amazon.EC2.Model
         private TransitGatewayMulticastDomainAssociations _associations;
 
         /// <summary>
-        /// Gets and sets the property Associations.
+        /// Gets and sets the property Associations. 
+        /// <para>
+        /// Information about the multicast domain associations.
+        /// </para>
         /// </summary>
         public TransitGatewayMulticastDomainAssociations Associations
         {

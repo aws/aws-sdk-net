@@ -115,7 +115,6 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ValidThreadsPerCore. 
         /// <para>
         /// The valid number of threads per core that can be configured for the instance type.
-        /// 
         /// </para>
         /// </summary>
         public List<int> ValidThreadsPerCore
