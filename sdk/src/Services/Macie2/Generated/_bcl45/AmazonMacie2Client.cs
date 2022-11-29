@@ -38,13 +38,7 @@ namespace Amazon.Macie2
     /// <summary>
     /// Implementation for accessing Macie2
     ///
-    /// Amazon Macie is a fully managed data security and data privacy service that uses machine
-    /// learning and pattern matching to discover and protect your sensitive data in AWS.
-    /// Macie automates the discovery of sensitive data, such as PII and intellectual property,
-    /// to provide you with insight into the data that your organization stores in AWS. Macie
-    /// also provides an inventory of your Amazon S3 buckets, which it continually monitors
-    /// for you. If Macie detects sensitive data or potential data access issues, it generates
-    /// detailed findings for you to review and act upon as necessary.
+    /// Amazon Macie
     /// </summary>
     public partial class AmazonMacie2Client : AmazonServiceClient, IAmazonMacie2
     {
@@ -1683,7 +1677,7 @@ namespace Amazon.Macie2
 
         /// <summary>
         /// Retrieves (queries) statistical data and other information about one or more S3 buckets
-        /// that Amazon Macie monitors and analyzes.
+        /// that Amazon Macie monitors and analyzes for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBuckets service method.</param>
         /// 
@@ -1728,7 +1722,7 @@ namespace Amazon.Macie2
 
         /// <summary>
         /// Retrieves (queries) statistical data and other information about one or more S3 buckets
-        /// that Amazon Macie monitors and analyzes.
+        /// that Amazon Macie monitors and analyzes for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBuckets service method.</param>
         /// <param name="cancellationToken">
@@ -2812,12 +2806,85 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  GetAutomatedDiscoveryConfiguration
+
+
+        /// <summary>
+        /// Retrieves the configuration settings and status of automated sensitive data discovery
+        /// for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedDiscoveryConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomatedDiscoveryConfiguration service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAutomatedDiscoveryConfiguration">REST API Reference for GetAutomatedDiscoveryConfiguration Operation</seealso>
+        public virtual GetAutomatedDiscoveryConfigurationResponse GetAutomatedDiscoveryConfiguration(GetAutomatedDiscoveryConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAutomatedDiscoveryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomatedDiscoveryConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetAutomatedDiscoveryConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the configuration settings and status of automated sensitive data discovery
+        /// for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedDiscoveryConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAutomatedDiscoveryConfiguration service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAutomatedDiscoveryConfiguration">REST API Reference for GetAutomatedDiscoveryConfiguration Operation</seealso>
+        public virtual Task<GetAutomatedDiscoveryConfigurationResponse> GetAutomatedDiscoveryConfigurationAsync(GetAutomatedDiscoveryConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAutomatedDiscoveryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomatedDiscoveryConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAutomatedDiscoveryConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetBucketStatistics
 
 
         /// <summary>
-        /// Retrieves (queries) aggregated statistical data about S3 buckets that Amazon Macie
-        /// monitors and analyzes.
+        /// Retrieves (queries) aggregated statistical data about all the S3 buckets that Amazon
+        /// Macie monitors and analyzes for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketStatistics service method.</param>
         /// 
@@ -2861,8 +2928,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves (queries) aggregated statistical data about S3 buckets that Amazon Macie
-        /// monitors and analyzes.
+        /// Retrieves (queries) aggregated statistical data about all the S3 buckets that Amazon
+        /// Macie monitors and analyzes for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketStatistics service method.</param>
         /// <param name="cancellationToken">
@@ -3000,6 +3067,85 @@ namespace Amazon.Macie2
             options.ResponseUnmarshaller = GetClassificationExportConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetClassificationExportConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetClassificationScope
+
+
+        /// <summary>
+        /// Retrieves the classification scope settings for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClassificationScope service method.</param>
+        /// 
+        /// <returns>The response from the GetClassificationScope service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationScope">REST API Reference for GetClassificationScope Operation</seealso>
+        public virtual GetClassificationScopeResponse GetClassificationScope(GetClassificationScopeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetClassificationScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClassificationScopeResponseUnmarshaller.Instance;
+
+            return Invoke<GetClassificationScopeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the classification scope settings for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClassificationScope service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetClassificationScope service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationScope">REST API Reference for GetClassificationScope Operation</seealso>
+        public virtual Task<GetClassificationScopeResponse> GetClassificationScopeAsync(GetClassificationScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetClassificationScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClassificationScopeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetClassificationScopeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3580,7 +3726,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves the current status and configuration settings for an Amazon Macie account.
+        /// Retrieves the status and configuration settings for an Amazon Macie account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMacieSession service method.</param>
         /// 
@@ -3624,7 +3770,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves the current status and configuration settings for an Amazon Macie account.
+        /// Retrieves the status and configuration settings for an Amazon Macie account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMacieSession service method.</param>
         /// <param name="cancellationToken">
@@ -3867,6 +4013,95 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  GetResourceProfile
+
+
+        /// <summary>
+        /// Retrieves (queries) sensitive data discovery statistics and the sensitivity score
+        /// for an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceProfile service method.</param>
+        /// 
+        /// <returns>The response from the GetResourceProfile service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetResourceProfile">REST API Reference for GetResourceProfile Operation</seealso>
+        public virtual GetResourceProfileResponse GetResourceProfile(GetResourceProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourceProfileResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves (queries) sensitive data discovery statistics and the sensitivity score
+        /// for an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourceProfile service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetResourceProfile">REST API Reference for GetResourceProfile Operation</seealso>
+        public virtual Task<GetResourceProfileResponse> GetResourceProfileAsync(GetResourceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceProfileResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetResourceProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetRevealConfiguration
 
 
@@ -4096,6 +4331,85 @@ namespace Amazon.Macie2
             options.ResponseUnmarshaller = GetSensitiveDataOccurrencesAvailabilityResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetSensitiveDataOccurrencesAvailabilityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSensitivityInspectionTemplate
+
+
+        /// <summary>
+        /// Retrieves the settings for the sensitivity inspection template for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSensitivityInspectionTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetSensitivityInspectionTemplate service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitivityInspectionTemplate">REST API Reference for GetSensitivityInspectionTemplate Operation</seealso>
+        public virtual GetSensitivityInspectionTemplateResponse GetSensitivityInspectionTemplate(GetSensitivityInspectionTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSensitivityInspectionTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSensitivityInspectionTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetSensitivityInspectionTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the settings for the sensitivity inspection template for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSensitivityInspectionTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSensitivityInspectionTemplate service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitivityInspectionTemplate">REST API Reference for GetSensitivityInspectionTemplate Operation</seealso>
+        public virtual Task<GetSensitivityInspectionTemplateResponse> GetSensitivityInspectionTemplateAsync(GetSensitivityInspectionTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSensitivityInspectionTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSensitivityInspectionTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetSensitivityInspectionTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4452,6 +4766,77 @@ namespace Amazon.Macie2
             options.ResponseUnmarshaller = ListClassificationJobsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListClassificationJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListClassificationScopes
+
+
+        /// <summary>
+        /// Retrieves a subset of information about the classification scope for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClassificationScopes service method.</param>
+        /// 
+        /// <returns>The response from the ListClassificationScopes service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationScopes">REST API Reference for ListClassificationScopes Operation</seealso>
+        public virtual ListClassificationScopesResponse ListClassificationScopes(ListClassificationScopesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClassificationScopesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClassificationScopesResponseUnmarshaller.Instance;
+
+            return Invoke<ListClassificationScopesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a subset of information about the classification scope for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClassificationScopes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListClassificationScopes service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationScopes">REST API Reference for ListClassificationScopes Operation</seealso>
+        public virtual Task<ListClassificationScopesResponse> ListClassificationScopesAsync(ListClassificationScopesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClassificationScopesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClassificationScopesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListClassificationScopesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5075,6 +5460,257 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  ListResourceProfileArtifacts
+
+
+        /// <summary>
+        /// Retrieves information about objects that were selected from an S3 bucket for automated
+        /// sensitive data discovery.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceProfileArtifacts service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceProfileArtifacts service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileArtifacts">REST API Reference for ListResourceProfileArtifacts Operation</seealso>
+        public virtual ListResourceProfileArtifactsResponse ListResourceProfileArtifacts(ListResourceProfileArtifactsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceProfileArtifactsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceProfileArtifactsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceProfileArtifactsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about objects that were selected from an S3 bucket for automated
+        /// sensitive data discovery.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceProfileArtifacts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourceProfileArtifacts service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileArtifacts">REST API Reference for ListResourceProfileArtifacts Operation</seealso>
+        public virtual Task<ListResourceProfileArtifactsResponse> ListResourceProfileArtifactsAsync(ListResourceProfileArtifactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceProfileArtifactsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceProfileArtifactsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListResourceProfileArtifactsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListResourceProfileDetections
+
+
+        /// <summary>
+        /// Retrieves information about the types and amount of sensitive data that Amazon Macie
+        /// found in an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceProfileDetections service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceProfileDetections service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileDetections">REST API Reference for ListResourceProfileDetections Operation</seealso>
+        public virtual ListResourceProfileDetectionsResponse ListResourceProfileDetections(ListResourceProfileDetectionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceProfileDetectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceProfileDetectionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceProfileDetectionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about the types and amount of sensitive data that Amazon Macie
+        /// found in an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceProfileDetections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourceProfileDetections service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileDetections">REST API Reference for ListResourceProfileDetections Operation</seealso>
+        public virtual Task<ListResourceProfileDetectionsResponse> ListResourceProfileDetectionsAsync(ListResourceProfileDetectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceProfileDetectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceProfileDetectionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListResourceProfileDetectionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSensitivityInspectionTemplates
+
+
+        /// <summary>
+        /// Retrieves a subset of information about the sensitivity inspection template for an
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSensitivityInspectionTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListSensitivityInspectionTemplates service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListSensitivityInspectionTemplates">REST API Reference for ListSensitivityInspectionTemplates Operation</seealso>
+        public virtual ListSensitivityInspectionTemplatesResponse ListSensitivityInspectionTemplates(ListSensitivityInspectionTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSensitivityInspectionTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSensitivityInspectionTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSensitivityInspectionTemplatesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a subset of information about the sensitivity inspection template for an
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSensitivityInspectionTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSensitivityInspectionTemplates service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListSensitivityInspectionTemplates">REST API Reference for ListSensitivityInspectionTemplates Operation</seealso>
+        public virtual Task<ListSensitivityInspectionTemplatesResponse> ListSensitivityInspectionTemplatesAsync(ListSensitivityInspectionTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSensitivityInspectionTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSensitivityInspectionTemplatesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSensitivityInspectionTemplatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -5661,6 +6297,77 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  UpdateAutomatedDiscoveryConfiguration
+
+
+        /// <summary>
+        /// Enables or disables automated sensitive data discovery for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomatedDiscoveryConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAutomatedDiscoveryConfiguration service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAutomatedDiscoveryConfiguration">REST API Reference for UpdateAutomatedDiscoveryConfiguration Operation</seealso>
+        public virtual UpdateAutomatedDiscoveryConfigurationResponse UpdateAutomatedDiscoveryConfiguration(UpdateAutomatedDiscoveryConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAutomatedDiscoveryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAutomatedDiscoveryConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAutomatedDiscoveryConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Enables or disables automated sensitive data discovery for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomatedDiscoveryConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAutomatedDiscoveryConfiguration service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAutomatedDiscoveryConfiguration">REST API Reference for UpdateAutomatedDiscoveryConfiguration Operation</seealso>
+        public virtual Task<UpdateAutomatedDiscoveryConfigurationResponse> UpdateAutomatedDiscoveryConfigurationAsync(UpdateAutomatedDiscoveryConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAutomatedDiscoveryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAutomatedDiscoveryConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAutomatedDiscoveryConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateClassificationJob
 
 
@@ -5752,6 +6459,85 @@ namespace Amazon.Macie2
             options.ResponseUnmarshaller = UpdateClassificationJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateClassificationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateClassificationScope
+
+
+        /// <summary>
+        /// Updates the classification scope settings for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClassificationScope service method.</param>
+        /// 
+        /// <returns>The response from the UpdateClassificationScope service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationScope">REST API Reference for UpdateClassificationScope Operation</seealso>
+        public virtual UpdateClassificationScopeResponse UpdateClassificationScope(UpdateClassificationScopeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClassificationScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClassificationScopeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClassificationScopeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the classification scope settings for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClassificationScope service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateClassificationScope service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationScope">REST API Reference for UpdateClassificationScope Operation</seealso>
+        public virtual Task<UpdateClassificationScopeResponse> UpdateClassificationScopeAsync(UpdateClassificationScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClassificationScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClassificationScopeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateClassificationScopeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6138,6 +6924,180 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  UpdateResourceProfile
+
+
+        /// <summary>
+        /// Updates the sensitivity score for an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceProfile service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResourceProfile service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfile">REST API Reference for UpdateResourceProfile Operation</seealso>
+        public virtual UpdateResourceProfileResponse UpdateResourceProfile(UpdateResourceProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResourceProfileResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the sensitivity score for an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateResourceProfile service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfile">REST API Reference for UpdateResourceProfile Operation</seealso>
+        public virtual Task<UpdateResourceProfileResponse> UpdateResourceProfileAsync(UpdateResourceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceProfileResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateResourceProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateResourceProfileDetections
+
+
+        /// <summary>
+        /// Updates the sensitivity scoring settings for an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceProfileDetections service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResourceProfileDetections service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfileDetections">REST API Reference for UpdateResourceProfileDetections Operation</seealso>
+        public virtual UpdateResourceProfileDetectionsResponse UpdateResourceProfileDetections(UpdateResourceProfileDetectionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceProfileDetectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceProfileDetectionsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResourceProfileDetectionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the sensitivity scoring settings for an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceProfileDetections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateResourceProfileDetections service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfileDetections">REST API Reference for UpdateResourceProfileDetections Operation</seealso>
+        public virtual Task<UpdateResourceProfileDetectionsResponse> UpdateResourceProfileDetectionsAsync(UpdateResourceProfileDetectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceProfileDetectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceProfileDetectionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateResourceProfileDetectionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateRevealConfiguration
 
 
@@ -6207,6 +7167,85 @@ namespace Amazon.Macie2
             options.ResponseUnmarshaller = UpdateRevealConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateRevealConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateSensitivityInspectionTemplate
+
+
+        /// <summary>
+        /// Updates the settings for the sensitivity inspection template for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSensitivityInspectionTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSensitivityInspectionTemplate service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateSensitivityInspectionTemplate">REST API Reference for UpdateSensitivityInspectionTemplate Operation</seealso>
+        public virtual UpdateSensitivityInspectionTemplateResponse UpdateSensitivityInspectionTemplate(UpdateSensitivityInspectionTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSensitivityInspectionTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSensitivityInspectionTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSensitivityInspectionTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the settings for the sensitivity inspection template for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSensitivityInspectionTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSensitivityInspectionTemplate service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateSensitivityInspectionTemplate">REST API Reference for UpdateSensitivityInspectionTemplate Operation</seealso>
+        public virtual Task<UpdateSensitivityInspectionTemplateResponse> UpdateSensitivityInspectionTemplateAsync(UpdateSensitivityInspectionTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSensitivityInspectionTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSensitivityInspectionTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateSensitivityInspectionTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion

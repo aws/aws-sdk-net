@@ -34,6 +34,7 @@ namespace Amazon.Macie2.Model
     public partial class UsageRecord
     {
         private string _accountId;
+        private DateTime? _automatedDiscoveryFreeTrialStartDate;
         private DateTime? _freeTrialStartDate;
         private List<UsageByAccount> _usage = new List<UsageByAccount>();
 
@@ -56,10 +57,31 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AutomatedDiscoveryFreeTrialStartDate. 
+        /// <para>
+        /// The date and time, in UTC and extended ISO 8601 format, when the free trial of automated
+        /// sensitive data discovery started for the account. If the account is a member account
+        /// in an organization, this value is the same as the value for the organization's Amazon
+        /// Macie administrator account.
+        /// </para>
+        /// </summary>
+        public DateTime AutomatedDiscoveryFreeTrialStartDate
+        {
+            get { return this._automatedDiscoveryFreeTrialStartDate.GetValueOrDefault(); }
+            set { this._automatedDiscoveryFreeTrialStartDate = value; }
+        }
+
+        // Check to see if AutomatedDiscoveryFreeTrialStartDate property is set
+        internal bool IsSetAutomatedDiscoveryFreeTrialStartDate()
+        {
+            return this._automatedDiscoveryFreeTrialStartDate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FreeTrialStartDate. 
         /// <para>
-        /// The date and time, in UTC and extended ISO 8601 format, when the free trial started
-        /// for the account.
+        /// The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free
+        /// trial started for the account.
         /// </para>
         /// </summary>
         public DateTime FreeTrialStartDate

@@ -51,22 +51,25 @@ namespace Amazon.Macie2.Model
         ///  <ul><li>
         /// <para>
         /// FALSE - The bucket policy requires server-side encryption of new objects. PutObject
-        /// requests must include the x-amz-server-side-encryption header and the value for that
-        /// header must be AES256 or aws:kms.
+        /// requests must include a valid server-side encryption header.
         /// </para>
         /// </li> <li>
         /// <para>
         /// TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't
         /// require server-side encryption of new objects. If a bucket policy exists, it doesn't
-        /// require PutObject requests to include the x-amz-server-side-encryption header and
-        /// it doesn't require the value for that header to be AES256 or aws:kms.
+        /// require PutObject requests to include a valid server-side encryption header.
         /// </para>
         /// </li> <li>
         /// <para>
         /// UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side
-        /// encryption of objects.
+        /// encryption of new objects.
         /// </para>
-        /// </li></ul>
+        /// </li></ul> 
+        /// <para>
+        /// Valid server-side encryption headers are: x-amz-server-side-encryption with a value
+        /// of AES256 or aws:kms, and x-amz-server-side-encryption-customer-algorithm with a value
+        /// of AES256.
+        /// </para>
         /// </summary>
         public AllowsUnencryptedObjectUploads AllowsUnencryptedObjectUploads
         {

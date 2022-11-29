@@ -203,6 +203,56 @@ namespace Amazon.Macie2
 
 
     /// <summary>
+    /// Constants used for properties of type AutomatedDiscoveryStatus.
+    /// </summary>
+    public class AutomatedDiscoveryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AutomatedDiscoveryStatus
+        /// </summary>
+        public static readonly AutomatedDiscoveryStatus DISABLED = new AutomatedDiscoveryStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for AutomatedDiscoveryStatus
+        /// </summary>
+        public static readonly AutomatedDiscoveryStatus ENABLED = new AutomatedDiscoveryStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomatedDiscoveryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomatedDiscoveryStatus FindValue(string value)
+        {
+            return FindValue<AutomatedDiscoveryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomatedDiscoveryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AvailabilityCode.
     /// </summary>
     public class AvailabilityCode : ConstantClass
@@ -292,6 +342,60 @@ namespace Amazon.Macie2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BucketMetadataErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClassificationScopeUpdateOperation.
+    /// </summary>
+    public class ClassificationScopeUpdateOperation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADD for ClassificationScopeUpdateOperation
+        /// </summary>
+        public static readonly ClassificationScopeUpdateOperation ADD = new ClassificationScopeUpdateOperation("ADD");
+        /// <summary>
+        /// Constant REMOVE for ClassificationScopeUpdateOperation
+        /// </summary>
+        public static readonly ClassificationScopeUpdateOperation REMOVE = new ClassificationScopeUpdateOperation("REMOVE");
+        /// <summary>
+        /// Constant REPLACE for ClassificationScopeUpdateOperation
+        /// </summary>
+        public static readonly ClassificationScopeUpdateOperation REPLACE = new ClassificationScopeUpdateOperation("REPLACE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClassificationScopeUpdateOperation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClassificationScopeUpdateOperation FindValue(string value)
+        {
+            return FindValue<ClassificationScopeUpdateOperation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClassificationScopeUpdateOperation(string value)
         {
             return FindValue(value);
         }
@@ -392,6 +496,56 @@ namespace Amazon.Macie2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataIdentifierSeverity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataIdentifierType.
+    /// </summary>
+    public class DataIdentifierType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOM for DataIdentifierType
+        /// </summary>
+        public static readonly DataIdentifierType CUSTOM = new DataIdentifierType("CUSTOM");
+        /// <summary>
+        /// Constant MANAGED for DataIdentifierType
+        /// </summary>
+        public static readonly DataIdentifierType MANAGED = new DataIdentifierType("MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataIdentifierType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataIdentifierType FindValue(string value)
+        {
+            return FindValue<DataIdentifierType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataIdentifierType(string value)
         {
             return FindValue(value);
         }
@@ -1649,6 +1803,10 @@ namespace Amazon.Macie2
     {
 
         /// <summary>
+        /// Constant AUTOMATED_SENSITIVE_DATA_DISCOVERY for OriginType
+        /// </summary>
+        public static readonly OriginType AUTOMATED_SENSITIVE_DATA_DISCOVERY = new OriginType("AUTOMATED_SENSITIVE_DATA_DISCOVERY");
+        /// <summary>
         /// Constant SENSITIVE_DATA_DISCOVERY_JOB for OriginType
         /// </summary>
         public static readonly OriginType SENSITIVE_DATA_DISCOVERY_JOB = new OriginType("SENSITIVE_DATA_DISCOVERY_JOB");
@@ -2846,6 +3004,14 @@ namespace Amazon.Macie2
     public class UsageType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AUTOMATED_OBJECT_MONITORING for UsageType
+        /// </summary>
+        public static readonly UsageType AUTOMATED_OBJECT_MONITORING = new UsageType("AUTOMATED_OBJECT_MONITORING");
+        /// <summary>
+        /// Constant AUTOMATED_SENSITIVE_DATA_DISCOVERY for UsageType
+        /// </summary>
+        public static readonly UsageType AUTOMATED_SENSITIVE_DATA_DISCOVERY = new UsageType("AUTOMATED_SENSITIVE_DATA_DISCOVERY");
         /// <summary>
         /// Constant DATA_INVENTORY_EVALUATION for UsageType
         /// </summary>

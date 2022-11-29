@@ -41,7 +41,8 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// The name of the bucket property to sort the results by. This value can be one of the
         /// following properties that Amazon Macie defines as bucket metadata: accountId, bucketName,
-        /// classifiableObjectCount, classifiableSizeInBytes, objectCount, or sizeInBytes.
+        /// classifiableObjectCount, classifiableSizeInBytes, objectCount, sensitivityScore, or
+        /// sizeInBytes.
         /// </para>
         /// </summary>
         public string AttributeName

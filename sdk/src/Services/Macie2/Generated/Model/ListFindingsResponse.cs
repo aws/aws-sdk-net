@@ -40,7 +40,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property FindingIds. 
         /// <para>
         /// An array of strings, where each string is the unique identifier for a finding that
-        /// meets the filter criteria specified in the request.
+        /// matches the filter criteria specified in the request.
         /// </para>
         /// </summary>
         public List<string> FindingIds

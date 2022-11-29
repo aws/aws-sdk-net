@@ -49,9 +49,25 @@
     <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Macie2.Model.GetAutomatedDiscoveryConfigurationResponse.ClassificationScopeId</property>
+    <pattern>^[0-9a-z]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.GetClassificationScopeResponse.Id</property>
+    <pattern>^[0-9a-z]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.GetClassificationScopeResponse.Name</property>
+    <pattern>^[0-9a-zA-Z_\\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Macie2.Model.ListAllowListsRequest.MaxResults</property>
     <min>1</min>
     <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.ListClassificationScopesResponse.NextToken</property>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Macie2.Model.ListFindingsFiltersRequest.MaxResults</property>
@@ -70,6 +86,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Macie2.Model.ListOrganizationAdminAccountsRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.ListResourceProfileDetectionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.ListSensitivityInspectionTemplatesRequest.MaxResults</property>
     <min>1</min>
     <max>25</max>
   </property-value-rule>
@@ -132,6 +158,14 @@
     <min>1</min>
     <max>128</max>
     <pattern>^.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.ClassificationScopeSummary.Id</property>
+    <pattern>^[0-9a-z]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.ClassificationScopeSummary.Name</property>
+    <pattern>^[0-9a-zA-Z_\\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Macie2.Model.DetectedDataDetails.Value</property>

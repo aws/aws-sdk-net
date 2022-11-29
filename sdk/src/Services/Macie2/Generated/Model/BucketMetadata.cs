@@ -31,10 +31,10 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Provides statistical data and other information about an S3 bucket that Amazon Macie
     /// monitors and analyzes for your account. If an error occurs when Macie attempts to
-    /// retrieve and process information about the bucket or the bucket's objects, the value
-    /// for the versioning property is false and the value for most other properties is null.
-    /// Exceptions are accountId, bucketArn, bucketCreatedAt, bucketName, lastUpdated, and
-    /// region. To identify the cause of the error, refer to the errorCode and errorMessage
+    /// retrieve and process metadata from Amazon S3 for the bucket and the bucket's objects,
+    /// the value for the versioning property is false and the value for most other properties
+    /// is null. Key exceptions are accountId, bucketArn, bucketCreatedAt, bucketName, lastUpdated,
+    /// and region. To identify the cause of the error, refer to the errorCode and errorMessage
     /// values.
     /// </summary>
     public partial class BucketMetadata
@@ -49,12 +49,14 @@ namespace Amazon.Macie2.Model
         private BucketMetadataErrorCode _errorCode;
         private string _errorMessage;
         private JobDetails _jobDetails;
+        private DateTime? _lastAutomatedDiscoveryTime;
         private DateTime? _lastUpdated;
         private long? _objectCount;
         private ObjectCountByEncryptionType _objectCountByEncryptionType;
         private BucketPublicAccess _publicAccess;
         private string _region;
         private ReplicationDetails _replicationDetails;
+        private int? _sensitivityScore;
         private BucketServerSideEncryption _serverSideEncryption;
         private SharedAccess _sharedAccess;
         private long? _sizeInBytes;
@@ -91,22 +93,25 @@ namespace Amazon.Macie2.Model
         ///  <ul><li>
         /// <para>
         /// FALSE - The bucket policy requires server-side encryption of new objects. PutObject
-        /// requests must include the x-amz-server-side-encryption header and the value for that
-        /// header must be AES256 or aws:kms.
+        /// requests must include a valid server-side encryption header.
         /// </para>
         /// </li> <li>
         /// <para>
         /// TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't
         /// require server-side encryption of new objects. If a bucket policy exists, it doesn't
-        /// require PutObject requests to include the x-amz-server-side-encryption header and
-        /// it doesn't require the value for that header to be AES256 or aws:kms.
+        /// require PutObject requests to include a valid server-side encryption header.
         /// </para>
         /// </li> <li>
         /// <para>
         /// UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side
         /// encryption of new objects.
         /// </para>
-        /// </li></ul>
+        /// </li></ul> 
+        /// <para>
+        /// Valid server-side encryption headers are: x-amz-server-side-encryption with a value
+        /// of AES256 or aws:kms, and x-amz-server-side-encryption-customer-algorithm with a value
+        /// of AES256.
+        /// </para>
         /// </summary>
         public AllowsUnencryptedObjectUploads AllowsUnencryptedObjectUploads
         {
@@ -141,7 +146,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property BucketCreatedAt. 
         /// <para>
-        /// The date and time, in UTC and extended ISO 8601 format, when the bucket was created.
+        /// The date and time, in UTC and extended ISO 8601 format, when the bucket was created,
+        /// or changes such as edits to the bucket's policy were most recently made to the bucket.
         /// </para>
         /// </summary>
         public DateTime BucketCreatedAt
@@ -282,6 +288,26 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastAutomatedDiscoveryTime. 
+        /// <para>
+        /// The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently
+        /// performed automated sensitive data discovery for the bucket. This value is null if
+        /// automated sensitive data discovery is currently disabled for your account.
+        /// </para>
+        /// </summary>
+        public DateTime LastAutomatedDiscoveryTime
+        {
+            get { return this._lastAutomatedDiscoveryTime.GetValueOrDefault(); }
+            set { this._lastAutomatedDiscoveryTime = value; }
+        }
+
+        // Check to see if LastAutomatedDiscoveryTime property is set
+        internal bool IsSetLastAutomatedDiscoveryTime()
+        {
+            return this._lastAutomatedDiscoveryTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastUpdated. 
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently
@@ -392,6 +418,26 @@ namespace Amazon.Macie2.Model
         internal bool IsSetReplicationDetails()
         {
             return this._replicationDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SensitivityScore. 
+        /// <para>
+        /// The sensitivity score for the bucket, ranging from -1 (no analysis due to an error)
+        /// to 100 (sensitive). This value is null if automated sensitive data discovery is currently
+        /// disabled for your account.
+        /// </para>
+        /// </summary>
+        public int SensitivityScore
+        {
+            get { return this._sensitivityScore.GetValueOrDefault(); }
+            set { this._sensitivityScore = value; }
+        }
+
+        // Check to see if SensitivityScore property is set
+        internal bool IsSetSensitivityScore()
+        {
+            return this._sensitivityScore.HasValue; 
         }
 
         /// <summary>

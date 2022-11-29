@@ -32,8 +32,8 @@ namespace Amazon.Macie2.Model
     /// Provides statistical data and other information about an S3 bucket that Amazon Macie
     /// monitors and analyzes for your account. If an error occurs when Macie attempts to
     /// retrieve and process information about the bucket or the bucket's objects, the value
-    /// for most of these properties is null. Exceptions are accountId and bucketName. To
-    /// identify the cause of the error, refer to the errorCode and errorMessage values.
+    /// for most of these properties is null. Key exceptions are accountId and bucketName.
+    /// To identify the cause of the error, refer to the errorCode and errorMessage values.
     /// </summary>
     public partial class MatchingBucket
     {
@@ -44,8 +44,10 @@ namespace Amazon.Macie2.Model
         private BucketMetadataErrorCode _errorCode;
         private string _errorMessage;
         private JobDetails _jobDetails;
+        private DateTime? _lastAutomatedDiscoveryTime;
         private long? _objectCount;
         private ObjectCountByEncryptionType _objectCountByEncryptionType;
+        private int? _sensitivityScore;
         private long? _sizeInBytes;
         private long? _sizeInBytesCompressed;
         private ObjectLevelStatistics _unclassifiableObjectCount;
@@ -195,6 +197,26 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastAutomatedDiscoveryTime. 
+        /// <para>
+        /// The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently
+        /// performed automated sensitive data discovery for the bucket. This value is null if
+        /// automated sensitive data discovery is currently disabled for your account.
+        /// </para>
+        /// </summary>
+        public DateTime LastAutomatedDiscoveryTime
+        {
+            get { return this._lastAutomatedDiscoveryTime.GetValueOrDefault(); }
+            set { this._lastAutomatedDiscoveryTime = value; }
+        }
+
+        // Check to see if LastAutomatedDiscoveryTime property is set
+        internal bool IsSetLastAutomatedDiscoveryTime()
+        {
+            return this._lastAutomatedDiscoveryTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ObjectCount. 
         /// <para>
         /// The total number of objects in the bucket.
@@ -215,9 +237,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ObjectCountByEncryptionType. 
         /// <para>
-        /// The total number of objects that are in the bucket, grouped by server-side encryption
-        /// type. This includes a grouping that reports the total number of objects that aren't
-        /// encrypted or use client-side encryption.
+        /// The total number of objects in the bucket, grouped by server-side encryption type.
+        /// This includes a grouping that reports the total number of objects that aren't encrypted
+        /// or use client-side encryption.
         /// </para>
         /// </summary>
         public ObjectCountByEncryptionType ObjectCountByEncryptionType
@@ -230,6 +252,26 @@ namespace Amazon.Macie2.Model
         internal bool IsSetObjectCountByEncryptionType()
         {
             return this._objectCountByEncryptionType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SensitivityScore. 
+        /// <para>
+        /// The current sensitivity score for the bucket, ranging from -1 (no analysis due to
+        /// an error) to 100 (sensitive). This value is null if automated sensitive data discovery
+        /// is currently disabled for your account.
+        /// </para>
+        /// </summary>
+        public int SensitivityScore
+        {
+            get { return this._sensitivityScore.GetValueOrDefault(); }
+            set { this._sensitivityScore = value; }
+        }
+
+        // Check to see if SensitivityScore property is set
+        internal bool IsSetSensitivityScore()
+        {
+            return this._sensitivityScore.HasValue; 
         }
 
         /// <summary>

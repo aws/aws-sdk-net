@@ -38,6 +38,7 @@ namespace Amazon.Macie2.Model
         private BucketCountByEncryptionType _bucketCountByEncryptionType;
         private BucketCountPolicyAllowsUnencryptedObjectUploads _bucketCountByObjectEncryptionRequirement;
         private BucketCountBySharedAccessType _bucketCountBySharedAccessType;
+        private BucketStatisticsBySensitivity _bucketStatisticsBySensitivity;
         private long? _classifiableObjectCount;
         private long? _classifiableSizeInBytes;
         private DateTime? _lastUpdated;
@@ -143,6 +144,26 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BucketStatisticsBySensitivity. 
+        /// <para>
+        /// The aggregated sensitive data discovery statistics for the buckets. If automated sensitive
+        /// data discovery is currently disabled for your account, the value for each statistic
+        /// is 0.
+        /// </para>
+        /// </summary>
+        public BucketStatisticsBySensitivity BucketStatisticsBySensitivity
+        {
+            get { return this._bucketStatisticsBySensitivity; }
+            set { this._bucketStatisticsBySensitivity = value; }
+        }
+
+        // Check to see if BucketStatisticsBySensitivity property is set
+        internal bool IsSetBucketStatisticsBySensitivity()
+        {
+            return this._bucketStatisticsBySensitivity != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ClassifiableObjectCount. 
         /// <para>
         /// The total number of objects that Amazon Macie can analyze in the buckets. These objects
@@ -171,10 +192,9 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  
         /// <para>
-        /// If versioning is enabled for any of the buckets, Macie calculates this value based
-        /// on the size of the latest version of each applicable object in those buckets. This
-        /// value doesn't reflect the storage size of all versions of all applicable objects in
-        /// the buckets.
+        /// If versioning is enabled for any of the buckets, this value is based on the size of
+        /// the latest version of each applicable object in the buckets. This value doesn't reflect
+        /// the storage size of all versions of all applicable objects in the buckets.
         /// </para>
         /// </summary>
         public long ClassifiableSizeInBytes
@@ -233,9 +253,9 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  
         /// <para>
-        /// If versioning is enabled for any of the buckets, Amazon Macie calculates this value
-        /// based on the size of the latest version of each object in those buckets. This value
-        /// doesn't reflect the storage size of all versions of the objects in the buckets.
+        /// If versioning is enabled for any of the buckets, this value is based on the size of
+        /// the latest version of each object in the buckets. This value doesn't reflect the storage
+        /// size of all versions of the objects in the buckets.
         /// </para>
         /// </summary>
         public long SizeInBytes
@@ -258,10 +278,9 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  
         /// <para>
-        /// If versioning is enabled for any of the buckets, Amazon Macie calculates this value
-        /// based on the size of the latest version of each applicable object in those buckets.
-        /// This value doesn't reflect the storage size of all versions of the applicable objects
-        /// in the buckets.
+        /// If versioning is enabled for any of the buckets, this value is based on the size of
+        /// the latest version of each applicable object in the buckets. This value doesn't reflect
+        /// the storage size of all versions of the applicable objects in the buckets.
         /// </para>
         /// </summary>
         public long SizeInBytesCompressed

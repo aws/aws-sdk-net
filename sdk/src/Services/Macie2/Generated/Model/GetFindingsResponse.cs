@@ -38,7 +38,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Findings. 
         /// <para>
-        /// An array of objects, one for each finding that meets the criteria specified in the
+        /// An array of objects, one for each finding that matches the criteria specified in the
         /// request.
         /// </para>
         /// </summary>

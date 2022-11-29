@@ -31,7 +31,7 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Container for the parameters to the DescribeBuckets operation.
     /// Retrieves (queries) statistical data and other information about one or more S3 buckets
-    /// that Amazon Macie monitors and analyzes.
+    /// that Amazon Macie monitors and analyzes for an account.
     /// </summary>
     public partial class DescribeBucketsRequest : AmazonMacie2Request
     {

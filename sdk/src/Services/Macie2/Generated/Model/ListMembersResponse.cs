@@ -40,7 +40,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Members. 
         /// <para>
         /// An array of objects, one for each account that's associated with the administrator
-        /// account and meets the criteria specified in the request.
+        /// account and matches the criteria specified in the request.
         /// </para>
         /// </summary>
         public List<Member> Members

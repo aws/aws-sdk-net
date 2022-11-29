@@ -81,6 +81,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     response.BucketCountBySharedAccessType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("bucketStatisticsBySensitivity", targetDepth))
+                {
+                    var unmarshaller = BucketStatisticsBySensitivityUnmarshaller.Instance;
+                    response.BucketStatisticsBySensitivity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("classifiableObjectCount", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
