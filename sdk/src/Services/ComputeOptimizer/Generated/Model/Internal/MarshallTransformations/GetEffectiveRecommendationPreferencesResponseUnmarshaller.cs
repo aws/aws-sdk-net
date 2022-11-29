@@ -57,6 +57,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     response.EnhancedInfrastructureMetrics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("externalMetricsPreference", targetDepth))
+                {
+                    var unmarshaller = ExternalMetricsPreferenceUnmarshaller.Instance;
+                    response.ExternalMetricsPreference = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

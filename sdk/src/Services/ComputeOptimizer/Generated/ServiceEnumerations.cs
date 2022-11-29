@@ -745,6 +745,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableInstanceField EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics = new ExportableInstanceField("EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics");
         /// <summary>
+        /// Constant EffectiveRecommendationPreferencesExternalMetricsSource for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField EffectiveRecommendationPreferencesExternalMetricsSource = new ExportableInstanceField("EffectiveRecommendationPreferencesExternalMetricsSource");
+        /// <summary>
         /// Constant EffectiveRecommendationPreferencesInferredWorkloadTypes for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField EffectiveRecommendationPreferencesInferredWorkloadTypes = new ExportableInstanceField("EffectiveRecommendationPreferencesInferredWorkloadTypes");
@@ -1234,6 +1238,64 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExportableVolumeField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExternalMetricsSource.
+    /// </summary>
+    public class ExternalMetricsSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Datadog for ExternalMetricsSource
+        /// </summary>
+        public static readonly ExternalMetricsSource Datadog = new ExternalMetricsSource("Datadog");
+        /// <summary>
+        /// Constant Dynatrace for ExternalMetricsSource
+        /// </summary>
+        public static readonly ExternalMetricsSource Dynatrace = new ExternalMetricsSource("Dynatrace");
+        /// <summary>
+        /// Constant Instana for ExternalMetricsSource
+        /// </summary>
+        public static readonly ExternalMetricsSource Instana = new ExternalMetricsSource("Instana");
+        /// <summary>
+        /// Constant NewRelic for ExternalMetricsSource
+        /// </summary>
+        public static readonly ExternalMetricsSource NewRelic = new ExternalMetricsSource("NewRelic");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExternalMetricsSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExternalMetricsSource FindValue(string value)
+        {
+            return FindValue<ExternalMetricsSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExternalMetricsSource(string value)
         {
             return FindValue(value);
         }
@@ -2426,6 +2488,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant EnhancedInfrastructureMetrics for RecommendationPreferenceName
         /// </summary>
         public static readonly RecommendationPreferenceName EnhancedInfrastructureMetrics = new RecommendationPreferenceName("EnhancedInfrastructureMetrics");
+        /// <summary>
+        /// Constant ExternalMetricsPreference for RecommendationPreferenceName
+        /// </summary>
+        public static readonly RecommendationPreferenceName ExternalMetricsPreference = new RecommendationPreferenceName("ExternalMetricsPreference");
         /// <summary>
         /// Constant InferredWorkloadTypes for RecommendationPreferenceName
         /// </summary>

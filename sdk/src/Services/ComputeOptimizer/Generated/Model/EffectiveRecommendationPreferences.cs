@@ -35,6 +35,7 @@ namespace Amazon.ComputeOptimizer.Model
     {
         private List<string> _cpuVendorArchitectures = new List<string>();
         private EnhancedInfrastructureMetrics _enhancedInfrastructureMetrics;
+        private ExternalMetricsPreference _externalMetricsPreference;
         private InferredWorkloadTypesPreference _inferredWorkloadTypes;
 
         /// <summary>
@@ -104,6 +105,31 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetEnhancedInfrastructureMetrics()
         {
             return this._enhancedInfrastructureMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalMetricsPreference. 
+        /// <para>
+        ///  An object that describes the external metrics recommendation preference. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If the preference is applied in the latest recommendation refresh, an object with
+        /// a valid <code>source</code> value appears in the response. If the preference isn't
+        /// applied to the recommendations already, then this object doesn't appear in the response.
+        /// 
+        /// </para>
+        /// </summary>
+        public ExternalMetricsPreference ExternalMetricsPreference
+        {
+            get { return this._externalMetricsPreference; }
+            set { this._externalMetricsPreference = value; }
+        }
+
+        // Check to see if ExternalMetricsPreference property is set
+        internal bool IsSetExternalMetricsPreference()
+        {
+            return this._externalMetricsPreference != null;
         }
 
         /// <summary>

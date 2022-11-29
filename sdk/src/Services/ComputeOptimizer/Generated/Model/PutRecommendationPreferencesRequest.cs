@@ -42,6 +42,7 @@ namespace Amazon.ComputeOptimizer.Model
     public partial class PutRecommendationPreferencesRequest : AmazonComputeOptimizerRequest
     {
         private EnhancedInfrastructureMetrics _enhancedInfrastructureMetrics;
+        private ExternalMetricsPreference _externalMetricsPreference;
         private InferredWorkloadTypesPreference _inferredWorkloadTypes;
         private ResourceType _resourceType;
         private Scope _scope;
@@ -73,6 +74,38 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetEnhancedInfrastructureMetrics()
         {
             return this._enhancedInfrastructureMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalMetricsPreference. 
+        /// <para>
+        /// The provider of the external metrics recommendation preference to create or update.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify a valid provider in the <code>source</code> field to activate the preference.
+        /// To delete this preference, see the <a>DeleteRecommendationPreferences</a> action.
+        /// </para>
+        ///  
+        /// <para>
+        /// This preference can only be set for the <code>Ec2Instance</code> resource type.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External
+        /// metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ExternalMetricsPreference ExternalMetricsPreference
+        {
+            get { return this._externalMetricsPreference; }
+            set { this._externalMetricsPreference = value; }
+        }
+
+        // Check to see if ExternalMetricsPreference property is set
+        internal bool IsSetExternalMetricsPreference()
+        {
+            return this._externalMetricsPreference != null;
         }
 
         /// <summary>

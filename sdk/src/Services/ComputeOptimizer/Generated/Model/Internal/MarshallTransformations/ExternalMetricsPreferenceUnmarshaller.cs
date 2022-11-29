@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RecommendationPreferencesDetail Object
+    /// Response Unmarshaller for ExternalMetricsPreference Object
     /// </summary>  
-    public class RecommendationPreferencesDetailUnmarshaller : IUnmarshaller<RecommendationPreferencesDetail, XmlUnmarshallerContext>, IUnmarshaller<RecommendationPreferencesDetail, JsonUnmarshallerContext>
+    public class ExternalMetricsPreferenceUnmarshaller : IUnmarshaller<ExternalMetricsPreference, XmlUnmarshallerContext>, IUnmarshaller<ExternalMetricsPreference, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RecommendationPreferencesDetail IUnmarshaller<RecommendationPreferencesDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ExternalMetricsPreference IUnmarshaller<ExternalMetricsPreference, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RecommendationPreferencesDetail Unmarshall(JsonUnmarshallerContext context)
+        public ExternalMetricsPreference Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RecommendationPreferencesDetail unmarshalledObject = new RecommendationPreferencesDetail();
+            ExternalMetricsPreference unmarshalledObject = new ExternalMetricsPreference();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("enhancedInfrastructureMetrics", targetDepth))
+                if (context.TestExpression("source", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EnhancedInfrastructureMetrics = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("externalMetricsPreference", targetDepth))
-                {
-                    var unmarshaller = ExternalMetricsPreferenceUnmarshaller.Instance;
-                    unmarshalledObject.ExternalMetricsPreference = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inferredWorkloadTypes", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InferredWorkloadTypes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("scope", targetDepth))
-                {
-                    var unmarshaller = ScopeUnmarshaller.Instance;
-                    unmarshalledObject.Scope = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecommendationPreferencesDetailUnmarshaller _instance = new RecommendationPreferencesDetailUnmarshaller();        
+        private static ExternalMetricsPreferenceUnmarshaller _instance = new ExternalMetricsPreferenceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecommendationPreferencesDetailUnmarshaller Instance
+        public static ExternalMetricsPreferenceUnmarshaller Instance
         {
             get
             {

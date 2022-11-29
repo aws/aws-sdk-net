@@ -73,6 +73,17 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EnhancedInfrastructureMetrics);
                 }
 
+                if(publicRequest.IsSetExternalMetricsPreference())
+                {
+                    context.Writer.WritePropertyName("externalMetricsPreference");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExternalMetricsPreferenceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExternalMetricsPreference, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetInferredWorkloadTypes())
                 {
                     context.Writer.WritePropertyName("inferredWorkloadTypes");

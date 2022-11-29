@@ -34,6 +34,7 @@ namespace Amazon.ComputeOptimizer.Model
     public partial class GetEffectiveRecommendationPreferencesResponse : AmazonWebServiceResponse
     {
         private EnhancedInfrastructureMetrics _enhancedInfrastructureMetrics;
+        private ExternalMetricsPreference _externalMetricsPreference;
 
         /// <summary>
         /// Gets and sets the property EnhancedInfrastructureMetrics. 
@@ -71,6 +72,42 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetEnhancedInfrastructureMetrics()
         {
             return this._enhancedInfrastructureMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalMetricsPreference. 
+        /// <para>
+        /// The provider of the external metrics recommendation preference. Considers all applicable
+        /// preferences that you might have set at the account and organization level.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the preference is applied in the latest recommendation refresh, an object with
+        /// a valid <code>source</code> value appears in the response. If the preference isn't
+        /// applied to the recommendations already, then this object doesn't appear in the response.
+        /// </para>
+        ///  
+        /// <para>
+        /// To validate whether the preference is applied to your last generated set of recommendations,
+        /// review the <code>effectiveRecommendationPreferences</code> value in the response of
+        /// the <a>GetEC2InstanceRecommendations</a> actions.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+        /// infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ExternalMetricsPreference ExternalMetricsPreference
+        {
+            get { return this._externalMetricsPreference; }
+            set { this._externalMetricsPreference = value; }
+        }
+
+        // Check to see if ExternalMetricsPreference property is set
+        internal bool IsSetExternalMetricsPreference()
+        {
+            return this._externalMetricsPreference != null;
         }
 
     }
