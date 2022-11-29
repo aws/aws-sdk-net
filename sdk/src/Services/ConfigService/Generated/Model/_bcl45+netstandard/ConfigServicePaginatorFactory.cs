@@ -316,6 +316,14 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
+        /// Paginator for ListResourceEvaluations operation
+        ///</summary>
+        public IListResourceEvaluationsPaginator ListResourceEvaluations(ListResourceEvaluationsRequest request) 
+        {
+            return new ListResourceEvaluationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListStoredQueries operation
         ///</summary>
         public IListStoredQueriesPaginator ListStoredQueries(ListStoredQueriesRequest request) 

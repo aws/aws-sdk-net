@@ -78,6 +78,17 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetFilters())
+                {
+                    context.Writer.WritePropertyName("Filters");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DescribeConfigRulesFiltersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Filters, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("NextToken");

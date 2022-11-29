@@ -29,36 +29,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Specifies the types of Amazon Web Services resource for which Config records configuration
-    /// changes.
+    /// Specifies which Amazon Web Services resource types Config records for configuration
+    /// changes. In the recording group, you specify whether you want to record all supported
+    /// resource types or only specific types of resources.
     /// 
     ///  
     /// <para>
-    /// In the recording group, you specify whether all supported types or specific types
-    /// of resources are recorded.
+    /// By default, Config records the configuration changes for all supported types of <i>regional
+    /// resources</i> that Config discovers in the region in which it is running. Regional
+    /// resources are tied to a region and can be used only in that region. Examples of regional
+    /// resources are EC2 instances and EBS volumes.
     /// </para>
     ///  
     /// <para>
-    /// By default, Config records configuration changes for all supported types of regional
-    /// resources that Config discovers in the region in which it is running. Regional resources
-    /// are tied to a region and can be used only in that region. Examples of regional resources
-    /// are EC2 instances and EBS volumes.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can also have Config record configuration changes for supported types of global
-    /// resources (for example, IAM resources). Global resources are not tied to an individual
-    /// region and can be used in all regions.
+    /// You can also have Config record supported types of <i>global resources</i>. Global
+    /// resources are not tied to a specific region and can be used in all regions. The global
+    /// resource types that Config supports include IAM users, groups, roles, and customer
+    /// managed policies.
     /// </para>
     ///  <important> 
     /// <para>
-    /// The configuration details for any global resource are the same in all regions. If
-    /// you customize Config in multiple regions to record global resources, it will create
-    /// multiple configuration items each time a global resource changes: one configuration
-    /// item for each region. These configuration items will contain identical data. To prevent
-    /// duplicate configuration items, you should consider customizing Config in only one
-    /// region to record global resources, unless you want the configuration items to be available
-    /// in multiple regions.
+    /// Global resource types onboarded to Config recording after February 2022 will only
+    /// be recorded in the service's home region for the commercial partition and Amazon Web
+    /// Services GovCloud (US) West for the GovCloud partition. You can view the Configuration
+    /// Items for these new global resource types only in their home region and Amazon Web
+    /// Services GovCloud (US) West.
+    /// </para>
+    ///  
+    /// <para>
+    /// Supported global resource types onboarded before February 2022 such as <code>AWS::IAM::Group</code>,
+    /// <code>AWS::IAM::Policy</code>, <code>AWS::IAM::Role</code>, <code>AWS::IAM::User</code>
+    /// remain unchanged, and they will continue to deliver Configuration Items in all supported
+    /// regions in Config. The change will only affect new global resource types onboarded
+    /// after February 2022.
+    /// </para>
+    ///  
+    /// <para>
+    /// To record global resource types onboarded after February 2022, enable All Supported
+    /// Resource Types in the home region of the global resource type you want to record.
     /// </para>
     ///  </important> 
     /// <para>
@@ -72,7 +80,8 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
+    /// For more information and a table of the Home Regions for Global Resource Types Onboarded
+    /// after February 2022, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
     /// Which Resources Config Records</a>.
     /// </para>
     /// </summary>

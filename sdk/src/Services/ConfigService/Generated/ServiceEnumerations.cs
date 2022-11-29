@@ -627,6 +627,56 @@ namespace Amazon.ConfigService
 
 
     /// <summary>
+    /// Constants used for properties of type EvaluationMode.
+    /// </summary>
+    public class EvaluationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DETECTIVE for EvaluationMode
+        /// </summary>
+        public static readonly EvaluationMode DETECTIVE = new EvaluationMode("DETECTIVE");
+        /// <summary>
+        /// Constant PROACTIVE for EvaluationMode
+        /// </summary>
+        public static readonly EvaluationMode PROACTIVE = new EvaluationMode("PROACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EvaluationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationMode FindValue(string value)
+        {
+            return FindValue<EvaluationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventSource.
     /// </summary>
     public class EventSource : ConstantClass
@@ -1475,6 +1525,52 @@ namespace Amazon.ConfigService
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceConfigurationSchemaType.
+    /// </summary>
+    public class ResourceConfigurationSchemaType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CFN_RESOURCE_SCHEMA for ResourceConfigurationSchemaType
+        /// </summary>
+        public static readonly ResourceConfigurationSchemaType CFN_RESOURCE_SCHEMA = new ResourceConfigurationSchemaType("CFN_RESOURCE_SCHEMA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceConfigurationSchemaType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceConfigurationSchemaType FindValue(string value)
+        {
+            return FindValue<ResourceConfigurationSchemaType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceConfigurationSchemaType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceCountGroupKey.
     /// </summary>
     public class ResourceCountGroupKey : ConstantClass
@@ -1522,6 +1618,60 @@ namespace Amazon.ConfigService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceCountGroupKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceEvaluationStatus.
+    /// </summary>
+    public class ResourceEvaluationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ResourceEvaluationStatus
+        /// </summary>
+        public static readonly ResourceEvaluationStatus FAILED = new ResourceEvaluationStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ResourceEvaluationStatus
+        /// </summary>
+        public static readonly ResourceEvaluationStatus IN_PROGRESS = new ResourceEvaluationStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for ResourceEvaluationStatus
+        /// </summary>
+        public static readonly ResourceEvaluationStatus SUCCEEDED = new ResourceEvaluationStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceEvaluationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceEvaluationStatus FindValue(string value)
+        {
+            return FindValue<ResourceEvaluationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceEvaluationStatus(string value)
         {
             return FindValue(value);
         }

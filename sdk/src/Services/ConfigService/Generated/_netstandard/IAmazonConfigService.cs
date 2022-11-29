@@ -1336,6 +1336,10 @@ namespace Amazon.ConfigService
         /// The specified next token is invalid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
         /// The Config rule in the request is invalid. Verify that the rule is an Config Custom
         /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
@@ -2529,7 +2533,7 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns the evaluation results for the specified Amazon Web Services resource. The
         /// results indicate which Config rules were used to evaluate the resource, when each
-        /// rule was last used, and whether the resource complies with each rule.
+        /// rule was last invoked, and whether the resource complies with each rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetailsByResource service method.</param>
         /// <param name="cancellationToken">
@@ -3036,6 +3040,31 @@ namespace Amazon.ConfigService
 
         #endregion
                 
+        #region  GetResourceEvaluationSummary
+
+
+
+        /// <summary>
+        /// Returns a summary of resource evaluation for the specified resource evaluation ID
+        /// from the proactive rules that were run. The results indicate which evaluation context
+        /// was used to evaluate the rules, which resource details were evaluated, the evaluation
+        /// mode that was run, and whether the resource details comply with the configuration
+        /// of the proactive rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceEvaluationSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourceEvaluationSummary service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceNotFoundException">
+        /// You have specified a resource that does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceEvaluationSummary">REST API Reference for GetResourceEvaluationSummary Operation</seealso>
+        Task<GetResourceEvaluationSummaryResponse> GetResourceEvaluationSummaryAsync(GetResourceEvaluationSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetStoredQuery
 
 
@@ -3224,6 +3253,36 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         Task<ListDiscoveredResourcesResponse> ListDiscoveredResourcesAsync(ListDiscoveredResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListResourceEvaluations
+
+
+
+        /// <summary>
+        /// Returns a list of proactive resource evaluations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceEvaluations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourceEvaluations service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidTimeRangeException">
+        /// The specified time range is invalid. The earlier time is not chronologically before
+        /// the later time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListResourceEvaluations">REST API Reference for ListResourceEvaluations Operation</seealso>
+        Task<ListResourceEvaluationsResponse> ListResourceEvaluationsAsync(ListResourceEvaluationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -4395,6 +4454,11 @@ namespace Amazon.ConfigService
         /// action to a specific resource. Remediation exceptions blocks auto-remediation until
         /// the exception is cleared.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// To place an exception on an Amazon Web Services resource, ensure remediation is set
+        /// as manual remediation.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRemediationExceptions service method.</param>
@@ -4964,6 +5028,43 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartRemediationExecution">REST API Reference for StartRemediationExecution Operation</seealso>
         Task<StartRemediationExecutionResponse> StartRemediationExecutionAsync(StartRemediationExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartResourceEvaluation
+
+
+
+        /// <summary>
+        /// Runs an on-demand evaluation for the specified resource to determine whether the resource
+        /// details will comply with configured Config rules. You can also use it for evaluation
+        /// purposes. Config recommends using an evaluation context. It runs an execution against
+        /// the resource details with all of the Config rules in your account that match with
+        /// the specified proactive mode and resource type.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Ensure you have the <code>cloudformation:DescribeType</code> role setup to validate
+        /// the resource type schema. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartResourceEvaluation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartResourceEvaluation service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.IdempotentParameterMismatchException">
+        /// Using the same client token with one or more different parameters. Specify a new client
+        /// token with the parameter changes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartResourceEvaluation">REST API Reference for StartResourceEvaluation Operation</seealso>
+        Task<StartResourceEvaluationResponse> StartResourceEvaluationAsync(StartResourceEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -70,6 +70,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConfigRuleName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EvaluationMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EvaluationMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -100,6 +100,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EvaluationModes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EvaluationModeConfiguration, EvaluationModeConfigurationUnmarshaller>(EvaluationModeConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.EvaluationModes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InputParameters", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

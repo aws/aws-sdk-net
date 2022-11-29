@@ -35,6 +35,7 @@ namespace Amazon.ConfigService.Model
     public partial class EvaluationResultQualifier
     {
         private string _configRuleName;
+        private EvaluationMode _evaluationMode;
         private string _resourceId;
         private string _resourceType;
 
@@ -55,6 +56,24 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetConfigRuleName()
         {
             return this._configRuleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationMode. 
+        /// <para>
+        /// The mode of an evaluation. The valid values are Detective or Proactive.
+        /// </para>
+        /// </summary>
+        public EvaluationMode EvaluationMode
+        {
+            get { return this._evaluationMode; }
+            set { this._evaluationMode = value; }
+        }
+
+        // Check to see if EvaluationMode property is set
+        internal bool IsSetEvaluationMode()
+        {
+            return this._evaluationMode != null;
         }
 
         /// <summary>

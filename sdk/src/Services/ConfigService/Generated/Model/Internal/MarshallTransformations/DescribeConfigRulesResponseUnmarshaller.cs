@@ -90,6 +90,10 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 {
                     return InvalidNextTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
+                {
+                    return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchConfigRuleException"))
                 {
                     return NoSuchConfigRuleExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

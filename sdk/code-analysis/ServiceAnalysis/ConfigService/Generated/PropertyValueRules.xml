@@ -336,6 +336,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetComplianceDetailsByResourceRequest.ResourceEvaluationId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.GetComplianceDetailsByResourceRequest.ResourceId</property>
     <min>1</min>
     <max>768</max>
@@ -427,6 +432,16 @@
     <max>768</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetResourceEvaluationSummaryRequest.ResourceEvaluationId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetResourceEvaluationSummaryResponse.ResourceEvaluationId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.GetStoredQueryRequest.QueryName</property>
     <min>1</min>
     <max>64</max>
@@ -450,6 +465,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.ListDiscoveredResourcesRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ListResourceEvaluationsRequest.Limit</property>
     <min>0</min>
     <max>100</max>
   </property-value-rule>
@@ -643,6 +663,21 @@
     <min>1</min>
     <max>128</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.StartResourceEvaluationRequest.ClientToken</property>
+    <min>64</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.StartResourceEvaluationRequest.EvaluationTimeout</property>
+    <min>0</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.StartResourceEvaluationResponse.ResourceEvaluationId</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.StopConfigurationRecorderRequest.ConfigurationRecorderName</property>
@@ -1021,9 +1056,19 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.EvaluationContext.EvaluationContextIdentifier</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.EvaluationResult.Annotation</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.EvaluationResultIdentifier.ResourceEvaluationId</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.EvaluationResultQualifier.ConfigRuleName</property>
@@ -1040,6 +1085,11 @@
     <property>Amazon.ConfigService.Model.EvaluationResultQualifier.ResourceType</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.EvaluationStatus.FailureReason</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.ExternalEvaluation.Annotation</property>
@@ -1338,6 +1388,31 @@
     <property>Amazon.ConfigService.Model.ResourceCountFilters.Region</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ResourceDetails.ResourceConfiguration</property>
+    <min>1</min>
+    <max>51200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ResourceDetails.ResourceId</property>
+    <min>1</min>
+    <max>768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ResourceDetails.ResourceType</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ResourceEvaluation.ResourceEvaluationId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ResourceEvaluationFilters.EvaluationContextIdentifier</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.ResourceFilters.AccountId</property>

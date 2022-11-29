@@ -2423,6 +2423,10 @@ namespace Amazon.ConfigService
         /// The specified next token is invalid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
         /// The Config rule in the request is invalid. Verify that the rule is an Config Custom
         /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
@@ -4515,7 +4519,7 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns the evaluation results for the specified Amazon Web Services resource. The
         /// results indicate which Config rules were used to evaluate the resource, when each
-        /// rule was last used, and whether the resource complies with each rule.
+        /// rule was last invoked, and whether the resource complies with each rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetailsByResource service method.</param>
         /// 
@@ -5420,6 +5424,67 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  GetResourceEvaluationSummary
+
+        /// <summary>
+        /// Returns a summary of resource evaluation for the specified resource evaluation ID
+        /// from the proactive rules that were run. The results indicate which evaluation context
+        /// was used to evaluate the rules, which resource details were evaluated, the evaluation
+        /// mode that was run, and whether the resource details comply with the configuration
+        /// of the proactive rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceEvaluationSummary service method.</param>
+        /// 
+        /// <returns>The response from the GetResourceEvaluationSummary service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceNotFoundException">
+        /// You have specified a resource that does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceEvaluationSummary">REST API Reference for GetResourceEvaluationSummary Operation</seealso>
+        public virtual GetResourceEvaluationSummaryResponse GetResourceEvaluationSummary(GetResourceEvaluationSummaryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceEvaluationSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceEvaluationSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourceEvaluationSummaryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourceEvaluationSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceEvaluationSummary operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourceEvaluationSummary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceEvaluationSummary">REST API Reference for GetResourceEvaluationSummary Operation</seealso>
+        public virtual IAsyncResult BeginGetResourceEvaluationSummary(GetResourceEvaluationSummaryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceEvaluationSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceEvaluationSummaryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourceEvaluationSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourceEvaluationSummary.</param>
+        /// 
+        /// <returns>Returns a  GetResourceEvaluationSummaryResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceEvaluationSummary">REST API Reference for GetResourceEvaluationSummary Operation</seealso>
+        public virtual GetResourceEvaluationSummaryResponse EndGetResourceEvaluationSummary(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResourceEvaluationSummaryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetStoredQuery
 
         /// <summary>
@@ -5751,6 +5816,72 @@ namespace Amazon.ConfigService
         public virtual ListDiscoveredResourcesResponse EndListDiscoveredResources(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDiscoveredResourcesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListResourceEvaluations
+
+        /// <summary>
+        /// Returns a list of proactive resource evaluations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceEvaluations service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceEvaluations service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidTimeRangeException">
+        /// The specified time range is invalid. The earlier time is not chronologically before
+        /// the later time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListResourceEvaluations">REST API Reference for ListResourceEvaluations Operation</seealso>
+        public virtual ListResourceEvaluationsResponse ListResourceEvaluations(ListResourceEvaluationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceEvaluationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceEvaluationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceEvaluationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceEvaluations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceEvaluations operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceEvaluations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListResourceEvaluations">REST API Reference for ListResourceEvaluations Operation</seealso>
+        public virtual IAsyncResult BeginListResourceEvaluations(ListResourceEvaluationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceEvaluationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceEvaluationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceEvaluations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceEvaluations.</param>
+        /// 
+        /// <returns>Returns a  ListResourceEvaluationsResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListResourceEvaluations">REST API Reference for ListResourceEvaluations Operation</seealso>
+        public virtual ListResourceEvaluationsResponse EndListResourceEvaluations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResourceEvaluationsResponse>(asyncResult);
         }
 
         #endregion
@@ -7389,6 +7520,11 @@ namespace Amazon.ConfigService
         /// action to a specific resource. Remediation exceptions blocks auto-remediation until
         /// the exception is cleared.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// To place an exception on an Amazon Web Services resource, ensure remediation is set
+        /// as manual remediation.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRemediationExceptions service method.</param>
@@ -8286,6 +8422,79 @@ namespace Amazon.ConfigService
         public virtual StartRemediationExecutionResponse EndStartRemediationExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<StartRemediationExecutionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartResourceEvaluation
+
+        /// <summary>
+        /// Runs an on-demand evaluation for the specified resource to determine whether the resource
+        /// details will comply with configured Config rules. You can also use it for evaluation
+        /// purposes. Config recommends using an evaluation context. It runs an execution against
+        /// the resource details with all of the Config rules in your account that match with
+        /// the specified proactive mode and resource type.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Ensure you have the <code>cloudformation:DescribeType</code> role setup to validate
+        /// the resource type schema. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartResourceEvaluation service method.</param>
+        /// 
+        /// <returns>The response from the StartResourceEvaluation service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.IdempotentParameterMismatchException">
+        /// Using the same client token with one or more different parameters. Specify a new client
+        /// token with the parameter changes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartResourceEvaluation">REST API Reference for StartResourceEvaluation Operation</seealso>
+        public virtual StartResourceEvaluationResponse StartResourceEvaluation(StartResourceEvaluationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartResourceEvaluationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartResourceEvaluationResponseUnmarshaller.Instance;
+
+            return Invoke<StartResourceEvaluationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartResourceEvaluation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartResourceEvaluation operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartResourceEvaluation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartResourceEvaluation">REST API Reference for StartResourceEvaluation Operation</seealso>
+        public virtual IAsyncResult BeginStartResourceEvaluation(StartResourceEvaluationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartResourceEvaluationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartResourceEvaluationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartResourceEvaluation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartResourceEvaluation.</param>
+        /// 
+        /// <returns>Returns a  StartResourceEvaluationResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartResourceEvaluation">REST API Reference for StartResourceEvaluation Operation</seealso>
+        public virtual StartResourceEvaluationResponse EndStartResourceEvaluation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartResourceEvaluationResponse>(asyncResult);
         }
 
         #endregion

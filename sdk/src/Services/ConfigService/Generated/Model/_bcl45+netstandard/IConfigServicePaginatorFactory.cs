@@ -201,6 +201,11 @@ namespace Amazon.ConfigService.Model
         IListDiscoveredResourcesPaginator ListDiscoveredResources(ListDiscoveredResourcesRequest request);
 
         /// <summary>
+        /// Paginator for ListResourceEvaluations operation
+        ///</summary>
+        IListResourceEvaluationsPaginator ListResourceEvaluations(ListResourceEvaluationsRequest request);
+
+        /// <summary>
         /// Paginator for ListStoredQueries operation
         ///</summary>
         IListStoredQueriesPaginator ListStoredQueries(ListStoredQueriesRequest request);

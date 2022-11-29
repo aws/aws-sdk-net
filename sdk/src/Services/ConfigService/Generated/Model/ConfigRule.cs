@@ -68,6 +68,7 @@ namespace Amazon.ConfigService.Model
         private ConfigRuleState _configRuleState;
         private string _createdBy;
         private string _description;
+        private List<EvaluationModeConfiguration> _evaluationModes = new List<EvaluationModeConfiguration>();
         private string _inputParameters;
         private MaximumExecutionFrequency _maximumExecutionFrequency;
         private Scope _scope;
@@ -210,6 +211,25 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationModes. 
+        /// <para>
+        /// The modes the Config rule can be evaluated in. The valid values are distinct objects.
+        /// By default, the value is Detective evaluation mode only.
+        /// </para>
+        /// </summary>
+        public List<EvaluationModeConfiguration> EvaluationModes
+        {
+            get { return this._evaluationModes; }
+            set { this._evaluationModes = value; }
+        }
+
+        // Check to see if EvaluationModes property is set
+        internal bool IsSetEvaluationModes()
+        {
+            return this._evaluationModes != null && this._evaluationModes.Count > 0; 
         }
 
         /// <summary>

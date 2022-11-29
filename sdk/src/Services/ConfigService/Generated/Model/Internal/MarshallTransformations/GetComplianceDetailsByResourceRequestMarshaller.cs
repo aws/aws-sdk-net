@@ -84,6 +84,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetResourceEvaluationId())
+                {
+                    context.Writer.WritePropertyName("ResourceEvaluationId");
+                    context.Writer.Write(publicRequest.ResourceEvaluationId);
+                }
+
                 if(publicRequest.IsSetResourceId())
                 {
                     context.Writer.WritePropertyName("ResourceId");

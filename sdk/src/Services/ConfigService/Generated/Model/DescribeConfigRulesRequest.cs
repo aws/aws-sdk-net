@@ -35,6 +35,7 @@ namespace Amazon.ConfigService.Model
     public partial class DescribeConfigRulesRequest : AmazonConfigServiceRequest
     {
         private List<string> _configRuleNames = new List<string>();
+        private DescribeConfigRulesFilters _filters;
         private string _nextToken;
 
         /// <summary>
@@ -55,6 +56,25 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetConfigRuleNames()
         {
             return this._configRuleNames != null && this._configRuleNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// Returns a list of Detecive or Proactive Config rules. By default, this API returns
+        /// an unfiltered list.
+        /// </para>
+        /// </summary>
+        public DescribeConfigRulesFilters Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null;
         }
 
         /// <summary>

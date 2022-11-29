@@ -35,6 +35,7 @@ namespace Amazon.ConfigService.Model
     {
         private EvaluationResultQualifier _evaluationResultQualifier;
         private DateTime? _orderingTimestamp;
+        private string _resourceEvaluationId;
 
         /// <summary>
         /// Gets and sets the property EvaluationResultQualifier. 
@@ -74,6 +75,25 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetOrderingTimestamp()
         {
             return this._orderingTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceEvaluationId. 
+        /// <para>
+        /// A Unique ID for an evaluation result.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ResourceEvaluationId
+        {
+            get { return this._resourceEvaluationId; }
+            set { this._resourceEvaluationId = value; }
+        }
+
+        // Check to see if ResourceEvaluationId property is set
+        internal bool IsSetResourceEvaluationId()
+        {
+            return this._resourceEvaluationId != null;
         }
 
     }
