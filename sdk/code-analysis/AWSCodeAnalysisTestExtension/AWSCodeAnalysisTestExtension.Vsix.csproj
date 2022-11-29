@@ -960,6 +960,10 @@
       <Project>{CE46B838-797A-40BD-8460-0858007DE083}</Project>
       <Name>AWSSDK.OAM.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Omics/AWSSDK.Omics.CodeAnalysis.csproj">
+      <Project>{3EF23EDE-F3BE-4A3A-B93F-231BF110DCCB}</Project>
+      <Name>AWSSDK.Omics.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/OpenSearchServerless/AWSSDK.OpenSearchServerless.CodeAnalysis.csproj">
       <Project>{FF9A7531-1188-43FE-9364-C362AF66BA48}</Project>
       <Name>AWSSDK.OpenSearchServerless.CodeAnalysis</Name>
