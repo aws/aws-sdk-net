@@ -64,6 +64,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CopyTagsToBackups", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.CopyTagsToBackups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FlexCacheEndpointType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +98,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.SizeInMegabytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SnapshotPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SnapshotPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StorageEfficiencyEnabled", targetDepth))

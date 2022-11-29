@@ -4520,6 +4520,9 @@ namespace Amazon.FSx
         /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
         /// A generic error indicating a server-side failure.
         /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InvalidNetworkSettingsException">
+        /// One or more network settings specified in the request are invalid.
+        /// </exception>
         /// <exception cref="Amazon.FSx.Model.MissingFileSystemConfigurationException">
         /// A file system configuration is required for this operation.
         /// </exception>
@@ -4691,6 +4694,9 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
         /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InvalidNetworkSettingsException">
+        /// One or more network settings specified in the request are invalid.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.MissingFileSystemConfigurationException">
         /// A file system configuration is required for this operation.

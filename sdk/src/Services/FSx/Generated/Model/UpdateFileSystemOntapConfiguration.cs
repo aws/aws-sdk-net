@@ -33,12 +33,34 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class UpdateFileSystemOntapConfiguration
     {
+        private List<string> _addRouteTableIds = new List<string>();
         private int? _automaticBackupRetentionDays;
         private string _dailyAutomaticBackupStartTime;
         private DiskIopsConfiguration _diskIopsConfiguration;
         private string _fsxAdminPassword;
+        private List<string> _removeRouteTableIds = new List<string>();
         private int? _throughputCapacity;
         private string _weeklyMaintenanceStartTime;
+
+        /// <summary>
+        /// Gets and sets the property AddRouteTableIds. 
+        /// <para>
+        /// (Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate
+        /// (add) with your Amazon FSx for NetApp ONTAP file system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<string> AddRouteTableIds
+        {
+            get { return this._addRouteTableIds; }
+            set { this._addRouteTableIds = value; }
+        }
+
+        // Check to see if AddRouteTableIds property is set
+        internal bool IsSetAddRouteTableIds()
+        {
+            return this._addRouteTableIds != null && this._addRouteTableIds.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AutomaticBackupRetentionDays.
@@ -114,13 +136,34 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RemoveRouteTableIds. 
+        /// <para>
+        /// (Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables
+        /// to disassociate (remove) from your Amazon FSx for NetApp ONTAP file system. You can
+        /// use the API operation to retrieve the list of VPC route table IDs for a file system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<string> RemoveRouteTableIds
+        {
+            get { return this._removeRouteTableIds; }
+            set { this._removeRouteTableIds = value; }
+        }
+
+        // Check to see if RemoveRouteTableIds property is set
+        internal bool IsSetRemoveRouteTableIds()
+        {
+            return this._removeRouteTableIds != null && this._removeRouteTableIds.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ThroughputCapacity. 
         /// <para>
         /// Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes
-        /// per second (MBps). Valid values are 128, 256, 512, 1024, or 2048 MB/s.
+        /// per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=4096)]
+        [AWSProperty(Min=8, Max=100000)]
         public int ThroughputCapacity
         {
             get { return this._throughputCapacity.GetValueOrDefault(); }

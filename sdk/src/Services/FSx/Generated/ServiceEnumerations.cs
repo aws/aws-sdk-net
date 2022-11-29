@@ -113,6 +113,10 @@ namespace Amazon.FSx
         /// </summary>
         public static readonly AdministrativeActionType STORAGE_OPTIMIZATION = new AdministrativeActionType("STORAGE_OPTIMIZATION");
         /// <summary>
+        /// Constant VOLUME_RESTORE for AdministrativeActionType
+        /// </summary>
+        public static readonly AdministrativeActionType VOLUME_RESTORE = new AdministrativeActionType("VOLUME_RESTORE");
+        /// <summary>
         /// Constant VOLUME_UPDATE for AdministrativeActionType
         /// </summary>
         public static readonly AdministrativeActionType VOLUME_UPDATE = new AdministrativeActionType("VOLUME_UPDATE");
@@ -1397,6 +1401,56 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type InputOntapVolumeType.
+    /// </summary>
+    public class InputOntapVolumeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DP for InputOntapVolumeType
+        /// </summary>
+        public static readonly InputOntapVolumeType DP = new InputOntapVolumeType("DP");
+        /// <summary>
+        /// Constant RW for InputOntapVolumeType
+        /// </summary>
+        public static readonly InputOntapVolumeType RW = new InputOntapVolumeType("RW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputOntapVolumeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputOntapVolumeType FindValue(string value)
+        {
+            return FindValue<InputOntapVolumeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputOntapVolumeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LustreAccessAuditLogLevel.
     /// </summary>
     public class LustreAccessAuditLogLevel : ConstantClass
@@ -1776,6 +1830,10 @@ namespace Amazon.FSx
         /// Constant SINGLE_AZ_1 for OpenZFSDeploymentType
         /// </summary>
         public static readonly OpenZFSDeploymentType SINGLE_AZ_1 = new OpenZFSDeploymentType("SINGLE_AZ_1");
+        /// <summary>
+        /// Constant SINGLE_AZ_2 for OpenZFSDeploymentType
+        /// </summary>
+        public static readonly OpenZFSDeploymentType SINGLE_AZ_2 = new OpenZFSDeploymentType("SINGLE_AZ_2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2570,64 +2628,6 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StorageVirtualMachineRootVolumeSecurityStyle(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-
-    /// <summary>
-    /// Constants used for properties of type StorageVirtualMachineSubtype.
-    /// </summary>
-    public class StorageVirtualMachineSubtype : ConstantClass
-    {
-
-        /// <summary>
-        /// Constant DEFAULT for StorageVirtualMachineSubtype
-        /// </summary>
-        public static readonly StorageVirtualMachineSubtype DEFAULT = new StorageVirtualMachineSubtype("DEFAULT");
-        /// <summary>
-        /// Constant DP_DESTINATION for StorageVirtualMachineSubtype
-        /// </summary>
-        public static readonly StorageVirtualMachineSubtype DP_DESTINATION = new StorageVirtualMachineSubtype("DP_DESTINATION");
-        /// <summary>
-        /// Constant SYNC_DESTINATION for StorageVirtualMachineSubtype
-        /// </summary>
-        public static readonly StorageVirtualMachineSubtype SYNC_DESTINATION = new StorageVirtualMachineSubtype("SYNC_DESTINATION");
-        /// <summary>
-        /// Constant SYNC_SOURCE for StorageVirtualMachineSubtype
-        /// </summary>
-        public static readonly StorageVirtualMachineSubtype SYNC_SOURCE = new StorageVirtualMachineSubtype("SYNC_SOURCE");
-
-        /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
-        /// </summary>
-        public StorageVirtualMachineSubtype(string value)
-            : base(value)
-        {
-        }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static StorageVirtualMachineSubtype FindValue(string value)
-        {
-            return FindValue<StorageVirtualMachineSubtype>(value);
-        }
-
-        /// <summary>
-        /// Utility method to convert strings to the constant class.
-        /// </summary>
-        /// <param name="value">The string value to convert to the constant class.</param>
-        /// <returns></returns>
-        public static implicit operator StorageVirtualMachineSubtype(string value)
         {
             return FindValue(value);
         }

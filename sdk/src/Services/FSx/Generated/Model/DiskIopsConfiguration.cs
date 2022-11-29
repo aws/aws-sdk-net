@@ -46,7 +46,7 @@ namespace Amazon.FSx.Model
         /// The total number of SSD IOPS provisioned for the file system.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=160000)]
+        [AWSProperty(Min=0, Max=1000000)]
         public long Iops
         {
             get { return this._iops.GetValueOrDefault(); }

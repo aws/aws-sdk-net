@@ -45,10 +45,22 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateOntapVolumeConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCopyTagsToBackups())
+            {
+                context.Writer.WritePropertyName("CopyTagsToBackups");
+                context.Writer.Write(requestObject.CopyTagsToBackups);
+            }
+
             if(requestObject.IsSetJunctionPath())
             {
                 context.Writer.WritePropertyName("JunctionPath");
                 context.Writer.Write(requestObject.JunctionPath);
+            }
+
+            if(requestObject.IsSetOntapVolumeType())
+            {
+                context.Writer.WritePropertyName("OntapVolumeType");
+                context.Writer.Write(requestObject.OntapVolumeType);
             }
 
             if(requestObject.IsSetSecurityStyle())
@@ -61,6 +73,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("SizeInMegabytes");
                 context.Writer.Write(requestObject.SizeInMegabytes);
+            }
+
+            if(requestObject.IsSetSnapshotPolicy())
+            {
+                context.Writer.WritePropertyName("SnapshotPolicy");
+                context.Writer.Write(requestObject.SnapshotPolicy);
             }
 
             if(requestObject.IsSetStorageEfficiencyEnabled())

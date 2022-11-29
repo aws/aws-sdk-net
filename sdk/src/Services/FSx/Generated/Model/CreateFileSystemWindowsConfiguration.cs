@@ -295,7 +295,7 @@ namespace Amazon.FSx.Model
         /// second (MB/s), in 2 to the <i>n</i>th increments, between 2^3 (8) and 2^11 (2048).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=8, Max=4096)]
+        [AWSProperty(Required=true, Min=8, Max=100000)]
         public int ThroughputCapacity
         {
             get { return this._throughputCapacity.GetValueOrDefault(); }

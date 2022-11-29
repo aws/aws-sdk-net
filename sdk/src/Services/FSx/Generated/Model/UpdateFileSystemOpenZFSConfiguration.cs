@@ -138,11 +138,22 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ThroughputCapacity. 
         /// <para>
-        /// The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).
-        /// Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+        /// The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per
+        /// second&#x2028; (MB/s). Valid values depend on the DeploymentType you choose, as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072,
+        /// or 4096 MB/s.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120,
+        /// 7680, or 10240 MB/s.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=8, Max=4096)]
+        [AWSProperty(Min=8, Max=100000)]
         public int ThroughputCapacity
         {
             get { return this._throughputCapacity.GetValueOrDefault(); }

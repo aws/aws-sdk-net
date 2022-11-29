@@ -58,7 +58,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// The settings used when restoring the specified volume from snapshot. 
+        /// The settings used when restoring the specified volume from snapshot.
         /// </para>
         ///  <ul> <li> 
         /// <para>

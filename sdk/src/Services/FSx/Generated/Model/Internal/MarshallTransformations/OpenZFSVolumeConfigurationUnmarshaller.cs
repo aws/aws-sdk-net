@@ -76,6 +76,18 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataCompressionType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeleteClonedVolumes", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DeleteClonedVolumes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DeleteIntermediateSnaphots", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DeleteIntermediateSnaphots = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NfsExports", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<OpenZFSNfsExport, OpenZFSNfsExportUnmarshaller>(OpenZFSNfsExportUnmarshaller.Instance);
@@ -104,6 +116,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.RecordSizeKiB = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RestoreToSnapshot", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RestoreToSnapshot = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StorageCapacityQuotaGiB", targetDepth))

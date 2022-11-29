@@ -271,7 +271,7 @@ namespace Amazon.FSx.Model
         /// An object specifying how much storage users or groups can use on the volume.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Max=500)]
         public List<OpenZFSUserOrGroupQuota> UserAndGroupQuotas
         {
             get { return this._userAndGroupQuotas; }

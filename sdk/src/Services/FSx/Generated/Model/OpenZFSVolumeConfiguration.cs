@@ -35,11 +35,14 @@ namespace Amazon.FSx.Model
     {
         private bool? _copyTagsToSnapshots;
         private OpenZFSDataCompressionType _dataCompressionType;
+        private bool? _deleteClonedVolumes;
+        private bool? _deleteIntermediateSnaphots;
         private List<OpenZFSNfsExport> _nfsExports = new List<OpenZFSNfsExport>();
         private OpenZFSOriginSnapshotConfiguration _originSnapshot;
         private string _parentVolumeId;
         private bool? _readOnly;
         private int? _recordSizeKiB;
+        private string _restoreToSnapshot;
         private int? _storageCapacityQuotaGiB;
         private int? _storageCapacityReservationGiB;
         private List<OpenZFSUserOrGroupQuota> _userAndGroupQuotas = new List<OpenZFSUserOrGroupQuota>();
@@ -103,6 +106,44 @@ namespace Amazon.FSx.Model
         internal bool IsSetDataCompressionType()
         {
             return this._dataCompressionType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteClonedVolumes. 
+        /// <para>
+        /// A Boolean value indicating whether dependent clone volumes created from intermediate
+        /// snapshots should be deleted when a volume is restored from snapshot.
+        /// </para>
+        /// </summary>
+        public bool DeleteClonedVolumes
+        {
+            get { return this._deleteClonedVolumes.GetValueOrDefault(); }
+            set { this._deleteClonedVolumes = value; }
+        }
+
+        // Check to see if DeleteClonedVolumes property is set
+        internal bool IsSetDeleteClonedVolumes()
+        {
+            return this._deleteClonedVolumes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteIntermediateSnaphots. 
+        /// <para>
+        /// A Boolean value indicating whether snapshots between the current state and the specified
+        /// snapshot should be deleted when a volume is restored from snapshot.
+        /// </para>
+        /// </summary>
+        public bool DeleteIntermediateSnaphots
+        {
+            get { return this._deleteIntermediateSnaphots.GetValueOrDefault(); }
+            set { this._deleteIntermediateSnaphots = value; }
+        }
+
+        // Check to see if DeleteIntermediateSnaphots property is set
+        internal bool IsSetDeleteIntermediateSnaphots()
+        {
+            return this._deleteIntermediateSnaphots.HasValue; 
         }
 
         /// <summary>
@@ -203,6 +244,25 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RestoreToSnapshot. 
+        /// <para>
+        /// Specifies the ID of the snapshot to which the volume was restored.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=11, Max=28)]
+        public string RestoreToSnapshot
+        {
+            get { return this._restoreToSnapshot; }
+            set { this._restoreToSnapshot = value; }
+        }
+
+        // Check to see if RestoreToSnapshot property is set
+        internal bool IsSetRestoreToSnapshot()
+        {
+            return this._restoreToSnapshot != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageCapacityQuotaGiB. 
         /// <para>
         /// The maximum amount of storage in gibibtyes (GiB) that the volume can use from its
@@ -248,7 +308,7 @@ namespace Amazon.FSx.Model
         /// An object specifying how much storage users or groups can use on the volume.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Max=500)]
         public List<OpenZFSUserOrGroupQuota> UserAndGroupQuotas
         {
             get { return this._userAndGroupQuotas; }

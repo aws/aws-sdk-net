@@ -134,7 +134,7 @@ namespace Amazon.FSx.Model
         /// Throughput Capacity</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=4096)]
+        [AWSProperty(Min=8, Max=100000)]
         public int ThroughputCapacity
         {
             get { return this._throughputCapacity.GetValueOrDefault(); }

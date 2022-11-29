@@ -40,6 +40,8 @@ namespace Amazon.FSx.Internal
             if (parameters == null) 
                 throw new ArgumentNullException("parameters");
 
+            if (parameters["Region"] == null)
+                throw new AmazonClientException("Region parameter must be set for endpoint resolution");
             if (parameters["UseDualStack"] == null)
                 throw new AmazonClientException("UseDualStack parameter must be set for endpoint resolution");
             if (parameters["UseFIPS"] == null)
@@ -78,10 +80,6 @@ namespace Amazon.FSx.Internal
                 {
                     if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
                     {
-                        if (Equals(refs["Region"], "prod-us-east-2"))
-                        {
-                            return new Endpoint("https://fsx-fips.us-east-2.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
                         if (Equals(refs["Region"], "prod-ca-central-1"))
                         {
                             return new Endpoint("https://fsx-fips.ca-central-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
@@ -89,6 +87,10 @@ namespace Amazon.FSx.Internal
                         if (Equals(refs["Region"], "prod-us-east-1"))
                         {
                             return new Endpoint("https://fsx-fips.us-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        if (Equals(refs["Region"], "prod-us-east-2"))
+                        {
+                            return new Endpoint("https://fsx-fips.us-east-2.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         if (Equals(refs["Region"], "prod-us-west-1"))
                         {
