@@ -188,6 +188,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDynamicTransform())
+            {
+                context.Writer.WritePropertyName("DynamicTransform");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DynamicTransformMarshaller.Instance;
+                marshaller.Marshall(requestObject.DynamicTransform, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDynamoDBCatalogSource())
             {
                 context.Writer.WritePropertyName("DynamoDBCatalogSource");

@@ -142,6 +142,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.DropNullFields = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DynamicTransform", targetDepth))
+                {
+                    var unmarshaller = DynamicTransformUnmarshaller.Instance;
+                    unmarshalledObject.DynamicTransform = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DynamoDBCatalogSource", targetDepth))
                 {
                     var unmarshaller = DynamoDBCatalogSourceUnmarshaller.Instance;

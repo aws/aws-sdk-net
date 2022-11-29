@@ -47,6 +47,7 @@ namespace Amazon.Glue.Model
         private DropDuplicates _dropDuplicates;
         private DropFields _dropFields;
         private DropNullFields _dropNullFields;
+        private DynamicTransform _dynamicTransform;
         private DynamoDBCatalogSource _dynamoDBCatalogSource;
         private FillMissingValues _fillMissingValues;
         private Filter _filter;
@@ -324,6 +325,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetDropNullFields()
         {
             return this._dropNullFields != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DynamicTransform. 
+        /// <para>
+        /// Specifies a custom visual transform created by a user.
+        /// </para>
+        /// </summary>
+        public DynamicTransform DynamicTransform
+        {
+            get { return this._dynamicTransform; }
+            set { this._dynamicTransform = value; }
+        }
+
+        // Check to see if DynamicTransform property is set
+        internal bool IsSetDynamicTransform()
+        {
+            return this._dynamicTransform != null;
         }
 
         /// <summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies a user-defined schema when a schema cannot be determined by AWS Glue.
+    /// Specifies a user-defined schema when a schema cannot be determined by Glue.
     /// </summary>
     public partial class GlueSchema
     {
