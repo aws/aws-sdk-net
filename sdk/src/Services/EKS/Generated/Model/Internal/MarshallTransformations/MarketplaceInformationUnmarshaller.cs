@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AddonInfo Object
+    /// Response Unmarshaller for MarketplaceInformation Object
     /// </summary>  
-    public class AddonInfoUnmarshaller : IUnmarshaller<AddonInfo, XmlUnmarshallerContext>, IUnmarshaller<AddonInfo, JsonUnmarshallerContext>
+    public class MarketplaceInformationUnmarshaller : IUnmarshaller<MarketplaceInformation, XmlUnmarshallerContext>, IUnmarshaller<MarketplaceInformation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AddonInfo IUnmarshaller<AddonInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MarketplaceInformation IUnmarshaller<MarketplaceInformation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AddonInfo Unmarshall(JsonUnmarshallerContext context)
+        public MarketplaceInformation Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AddonInfo unmarshalledObject = new AddonInfo();
+            MarketplaceInformation unmarshalledObject = new MarketplaceInformation();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("addonName", targetDepth))
+                if (context.TestExpression("productId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AddonName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProductId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("addonVersions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AddonVersionInfo, AddonVersionInfoUnmarshaller>(AddonVersionInfoUnmarshaller.Instance);
-                    unmarshalledObject.AddonVersions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("marketplaceInformation", targetDepth))
-                {
-                    var unmarshaller = MarketplaceInformationUnmarshaller.Instance;
-                    unmarshalledObject.MarketplaceInformation = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("owner", targetDepth))
+                if (context.TestExpression("productUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Owner = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("publisher", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Publisher = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProductUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         }
 
 
-        private static AddonInfoUnmarshaller _instance = new AddonInfoUnmarshaller();        
+        private static MarketplaceInformationUnmarshaller _instance = new MarketplaceInformationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AddonInfoUnmarshaller Instance
+        public static MarketplaceInformationUnmarshaller Instance
         {
             get
             {

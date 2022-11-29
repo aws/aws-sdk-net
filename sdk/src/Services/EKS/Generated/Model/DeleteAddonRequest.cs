@@ -88,7 +88,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// Specifying this option preserves the add-on software on your cluster but Amazon EKS
         /// stops managing any settings for the add-on. If an IAM account is associated with the
-        /// add-on, it is not removed.
+        /// add-on, it isn't removed.
         /// </para>
         /// </summary>
         public bool Preserve

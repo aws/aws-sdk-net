@@ -30,7 +30,9 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAddonVersions operation.
-    /// Describes the Kubernetes versions that the add-on can be used with.
+    /// Describes the versions for an add-on. Information such as the Kubernetes versions
+    /// that you can use the add-on with, the <code>owner</code>, <code>publisher</code>,
+    /// and the <code>type</code> of the add-on are returned.
     /// </summary>
     public partial class DescribeAddonVersionsRequest : AmazonEKSRequest
     {
@@ -38,6 +40,9 @@ namespace Amazon.EKS.Model
         private string _kubernetesVersion;
         private int? _maxResults;
         private string _nextToken;
+        private List<string> _owners = new List<string>();
+        private List<string> _publishers = new List<string>();
+        private List<string> _types = new List<string>();
 
         /// <summary>
         /// Gets and sets the property AddonName. 
@@ -61,7 +66,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property KubernetesVersion. 
         /// <para>
-        /// The Kubernetes versions that the add-on can be used with.
+        /// The Kubernetes versions that you can use the add-on with.
         /// </para>
         /// </summary>
         public string KubernetesVersion
@@ -120,6 +125,63 @@ namespace Amazon.EKS.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Owners. 
+        /// <para>
+        /// The owner of the add-on. For valid <code>owners</code>, don't specify a value for
+        /// this property.
+        /// </para>
+        /// </summary>
+        public List<string> Owners
+        {
+            get { return this._owners; }
+            set { this._owners = value; }
+        }
+
+        // Check to see if Owners property is set
+        internal bool IsSetOwners()
+        {
+            return this._owners != null && this._owners.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Publishers. 
+        /// <para>
+        /// The publisher of the add-on. For valid <code>publishers</code>, don't specify a value
+        /// for this property.
+        /// </para>
+        /// </summary>
+        public List<string> Publishers
+        {
+            get { return this._publishers; }
+            set { this._publishers = value; }
+        }
+
+        // Check to see if Publishers property is set
+        internal bool IsSetPublishers()
+        {
+            return this._publishers != null && this._publishers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Types. 
+        /// <para>
+        /// The type of the add-on. For valid <code>types</code>, don't specify a value for this
+        /// property.
+        /// </para>
+        /// </summary>
+        public List<string> Types
+        {
+            get { return this._types; }
+            set { this._types = value; }
+        }
+
+        // Check to see if Types property is set
+        internal bool IsSetTypes()
+        {
+            return this._types != null && this._types.Count > 0; 
         }
 
     }

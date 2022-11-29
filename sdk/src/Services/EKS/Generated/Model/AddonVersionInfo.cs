@@ -36,6 +36,7 @@ namespace Amazon.EKS.Model
         private string _addonVersion;
         private List<string> _architecture = new List<string>();
         private List<Compatibility> _compatibilities = new List<Compatibility>();
+        private bool? _requiresConfiguration;
 
         /// <summary>
         /// Gets and sets the property AddonVersion. 
@@ -89,6 +90,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetCompatibilities()
         {
             return this._compatibilities != null && this._compatibilities.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequiresConfiguration. 
+        /// <para>
+        /// Whether the add-on requires configuration.
+        /// </para>
+        /// </summary>
+        public bool RequiresConfiguration
+        {
+            get { return this._requiresConfiguration.GetValueOrDefault(); }
+            set { this._requiresConfiguration = value; }
+        }
+
+        // Check to see if RequiresConfiguration property is set
+        internal bool IsSetRequiresConfiguration()
+        {
+            return this._requiresConfiguration.HasValue; 
         }
 
     }

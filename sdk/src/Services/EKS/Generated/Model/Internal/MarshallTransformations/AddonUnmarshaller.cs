@@ -100,10 +100,28 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Health = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("marketplaceInformation", targetDepth))
+                {
+                    var unmarshaller = MarketplaceInformationUnmarshaller.Instance;
+                    unmarshalledObject.MarketplaceInformation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("modifiedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.ModifiedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("owner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Owner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("publisher", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Publisher = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("serviceAccountRoleArn", targetDepth))

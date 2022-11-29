@@ -40,7 +40,10 @@ namespace Amazon.EKS.Model
         private string _clusterName;
         private DateTime? _createdAt;
         private AddonHealth _health;
+        private MarketplaceInformation _marketplaceInformation;
         private DateTime? _modifiedAt;
+        private string _owner;
+        private string _publisher;
         private string _serviceAccountRoleArn;
         private AddonStatus _status;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -155,6 +158,24 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MarketplaceInformation. 
+        /// <para>
+        /// Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.
+        /// </para>
+        /// </summary>
+        public MarketplaceInformation MarketplaceInformation
+        {
+            get { return this._marketplaceInformation; }
+            set { this._marketplaceInformation = value; }
+        }
+
+        // Check to see if MarketplaceInformation property is set
+        internal bool IsSetMarketplaceInformation()
+        {
+            return this._marketplaceInformation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ModifiedAt. 
         /// <para>
         /// The date and time that the add-on was last modified.
@@ -170,6 +191,42 @@ namespace Amazon.EKS.Model
         internal bool IsSetModifiedAt()
         {
             return this._modifiedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Owner. 
+        /// <para>
+        /// The owner of the add-on.
+        /// </para>
+        /// </summary>
+        public string Owner
+        {
+            get { return this._owner; }
+            set { this._owner = value; }
+        }
+
+        // Check to see if Owner property is set
+        internal bool IsSetOwner()
+        {
+            return this._owner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Publisher. 
+        /// <para>
+        /// The publisher of the add-on.
+        /// </para>
+        /// </summary>
+        public string Publisher
+        {
+            get { return this._publisher; }
+            set { this._publisher = value; }
+        }
+
+        // Check to see if Publisher property is set
+        internal bool IsSetPublisher()
+        {
+            return this._publisher != null;
         }
 
         /// <summary>

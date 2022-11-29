@@ -59,7 +59,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property RemoveTaints. 
         /// <para>
-        /// Kubernetes taints to be removed.
+        /// Kubernetes taints to remove.
         /// </para>
         /// </summary>
         public List<Taint> RemoveTaints

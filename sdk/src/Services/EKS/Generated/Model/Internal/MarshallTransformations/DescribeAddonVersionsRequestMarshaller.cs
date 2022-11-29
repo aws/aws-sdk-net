@@ -70,6 +70,15 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetOwners())
+                request.ParameterCollection.Add("owners", publicRequest.Owners);
+            
+            if (publicRequest.IsSetPublishers())
+                request.ParameterCollection.Add("publishers", publicRequest.Publishers);
+            
+            if (publicRequest.IsSetTypes())
+                request.ParameterCollection.Add("types", publicRequest.Types);
             request.ResourcePath = "/addons/supported-versions";
             request.UseQueryString = true;
 

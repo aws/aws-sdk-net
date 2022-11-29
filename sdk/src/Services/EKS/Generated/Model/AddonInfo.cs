@@ -35,6 +35,9 @@ namespace Amazon.EKS.Model
     {
         private string _addonName;
         private List<AddonVersionInfo> _addonVersions = new List<AddonVersionInfo>();
+        private MarketplaceInformation _marketplaceInformation;
+        private string _owner;
+        private string _publisher;
         private string _type;
 
         /// <summary>
@@ -72,6 +75,60 @@ namespace Amazon.EKS.Model
         internal bool IsSetAddonVersions()
         {
             return this._addonVersions != null && this._addonVersions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MarketplaceInformation. 
+        /// <para>
+        /// Information about the add-on from the Amazon Web Services Marketplace.
+        /// </para>
+        /// </summary>
+        public MarketplaceInformation MarketplaceInformation
+        {
+            get { return this._marketplaceInformation; }
+            set { this._marketplaceInformation = value; }
+        }
+
+        // Check to see if MarketplaceInformation property is set
+        internal bool IsSetMarketplaceInformation()
+        {
+            return this._marketplaceInformation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Owner. 
+        /// <para>
+        /// The owner of the add-on.
+        /// </para>
+        /// </summary>
+        public string Owner
+        {
+            get { return this._owner; }
+            set { this._owner = value; }
+        }
+
+        // Check to see if Owner property is set
+        internal bool IsSetOwner()
+        {
+            return this._owner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Publisher. 
+        /// <para>
+        /// The publisher of the add-on.
+        /// </para>
+        /// </summary>
+        public string Publisher
+        {
+            get { return this._publisher; }
+            set { this._publisher = value; }
+        }
+
+        // Check to see if Publisher property is set
+        internal bool IsSetPublisher()
+        {
+            return this._publisher != null;
         }
 
         /// <summary>
