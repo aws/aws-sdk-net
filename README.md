@@ -558,6 +558,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Nimble Studio is a virtual studio service that empowers visual effects, animation, and interactive content teams to create content securely within a scalable, private cloud service.
 * [AWSSDK.OAM](https://www.nuget.org/packages/AWSSDK.OAM/)
 	* Amazon CloudWatch Observability Access Manager is a new service that allows configuration of the CloudWatch cross-account observability feature.
+* [AWSSDK.OpenSearchServerless](https://www.nuget.org/packages/AWSSDK.OpenSearchServerless/)
+	* Publish SDK for Amazon OpenSearch Serverless
 * [AWSSDK.OpenSearchService](https://www.nuget.org/packages/AWSSDK.OpenSearchService/)
 	* Updated Configuration APIs for Amazon OpenSearch Service (successor to Amazon Elasticsearch Service)
 * [AWSSDK.OpsWorks](https://www.nuget.org/packages/AWSSDK.OpsWorks/)
