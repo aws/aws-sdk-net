@@ -220,6 +220,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     unmarshalledObject.SigningProfileVersionArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SnapStart", targetDepth))
+                {
+                    var unmarshaller = SnapStartResponseUnmarshaller.Instance;
+                    unmarshalledObject.SnapStart = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

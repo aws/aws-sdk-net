@@ -481,9 +481,33 @@ namespace Amazon.Lambda
     {
 
         /// <summary>
+        /// Constant DisabledKMSKey for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode DisabledKMSKey = new LastUpdateStatusReasonCode("DisabledKMSKey");
+        /// <summary>
+        /// Constant EFSIOError for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode EFSIOError = new LastUpdateStatusReasonCode("EFSIOError");
+        /// <summary>
+        /// Constant EFSMountConnectivityError for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode EFSMountConnectivityError = new LastUpdateStatusReasonCode("EFSMountConnectivityError");
+        /// <summary>
+        /// Constant EFSMountFailure for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode EFSMountFailure = new LastUpdateStatusReasonCode("EFSMountFailure");
+        /// <summary>
+        /// Constant EFSMountTimeout for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode EFSMountTimeout = new LastUpdateStatusReasonCode("EFSMountTimeout");
+        /// <summary>
         /// Constant EniLimitExceeded for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode EniLimitExceeded = new LastUpdateStatusReasonCode("EniLimitExceeded");
+        /// <summary>
+        /// Constant FunctionError for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode FunctionError = new LastUpdateStatusReasonCode("FunctionError");
         /// <summary>
         /// Constant ImageAccessDenied for LastUpdateStatusReasonCode
         /// </summary>
@@ -509,13 +533,33 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly LastUpdateStatusReasonCode InvalidImage = new LastUpdateStatusReasonCode("InvalidImage");
         /// <summary>
+        /// Constant InvalidRuntime for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode InvalidRuntime = new LastUpdateStatusReasonCode("InvalidRuntime");
+        /// <summary>
         /// Constant InvalidSecurityGroup for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode InvalidSecurityGroup = new LastUpdateStatusReasonCode("InvalidSecurityGroup");
         /// <summary>
+        /// Constant InvalidStateKMSKey for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode InvalidStateKMSKey = new LastUpdateStatusReasonCode("InvalidStateKMSKey");
+        /// <summary>
         /// Constant InvalidSubnet for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode InvalidSubnet = new LastUpdateStatusReasonCode("InvalidSubnet");
+        /// <summary>
+        /// Constant InvalidZipFileException for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode InvalidZipFileException = new LastUpdateStatusReasonCode("InvalidZipFileException");
+        /// <summary>
+        /// Constant KMSKeyAccessDenied for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode KMSKeyAccessDenied = new LastUpdateStatusReasonCode("KMSKeyAccessDenied");
+        /// <summary>
+        /// Constant KMSKeyNotFound for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode KMSKeyNotFound = new LastUpdateStatusReasonCode("KMSKeyNotFound");
         /// <summary>
         /// Constant SubnetOutOfIPAddresses for LastUpdateStatusReasonCode
         /// </summary>
@@ -865,6 +909,106 @@ namespace Amazon.Lambda
 
 
     /// <summary>
+    /// Constants used for properties of type SnapStartApplyOn.
+    /// </summary>
+    public class SnapStartApplyOn : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant None for SnapStartApplyOn
+        /// </summary>
+        public static readonly SnapStartApplyOn None = new SnapStartApplyOn("None");
+        /// <summary>
+        /// Constant PublishedVersions for SnapStartApplyOn
+        /// </summary>
+        public static readonly SnapStartApplyOn PublishedVersions = new SnapStartApplyOn("PublishedVersions");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SnapStartApplyOn(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapStartApplyOn FindValue(string value)
+        {
+            return FindValue<SnapStartApplyOn>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapStartApplyOn(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SnapStartOptimizationStatus.
+    /// </summary>
+    public class SnapStartOptimizationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Off for SnapStartOptimizationStatus
+        /// </summary>
+        public static readonly SnapStartOptimizationStatus Off = new SnapStartOptimizationStatus("Off");
+        /// <summary>
+        /// Constant On for SnapStartOptimizationStatus
+        /// </summary>
+        public static readonly SnapStartOptimizationStatus On = new SnapStartOptimizationStatus("On");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SnapStartOptimizationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapStartOptimizationStatus FindValue(string value)
+        {
+            return FindValue<SnapStartOptimizationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapStartOptimizationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SourceAccessType.
     /// </summary>
     public class SourceAccessType : ConstantClass
@@ -1007,9 +1151,33 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly StateReasonCode Creating = new StateReasonCode("Creating");
         /// <summary>
+        /// Constant DisabledKMSKey for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode DisabledKMSKey = new StateReasonCode("DisabledKMSKey");
+        /// <summary>
+        /// Constant EFSIOError for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode EFSIOError = new StateReasonCode("EFSIOError");
+        /// <summary>
+        /// Constant EFSMountConnectivityError for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode EFSMountConnectivityError = new StateReasonCode("EFSMountConnectivityError");
+        /// <summary>
+        /// Constant EFSMountFailure for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode EFSMountFailure = new StateReasonCode("EFSMountFailure");
+        /// <summary>
+        /// Constant EFSMountTimeout for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode EFSMountTimeout = new StateReasonCode("EFSMountTimeout");
+        /// <summary>
         /// Constant EniLimitExceeded for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode EniLimitExceeded = new StateReasonCode("EniLimitExceeded");
+        /// <summary>
+        /// Constant FunctionError for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode FunctionError = new StateReasonCode("FunctionError");
         /// <summary>
         /// Constant Idle for StateReasonCode
         /// </summary>
@@ -1039,13 +1207,33 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly StateReasonCode InvalidImage = new StateReasonCode("InvalidImage");
         /// <summary>
+        /// Constant InvalidRuntime for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode InvalidRuntime = new StateReasonCode("InvalidRuntime");
+        /// <summary>
         /// Constant InvalidSecurityGroup for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode InvalidSecurityGroup = new StateReasonCode("InvalidSecurityGroup");
         /// <summary>
+        /// Constant InvalidStateKMSKey for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode InvalidStateKMSKey = new StateReasonCode("InvalidStateKMSKey");
+        /// <summary>
         /// Constant InvalidSubnet for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode InvalidSubnet = new StateReasonCode("InvalidSubnet");
+        /// <summary>
+        /// Constant InvalidZipFileException for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode InvalidZipFileException = new StateReasonCode("InvalidZipFileException");
+        /// <summary>
+        /// Constant KMSKeyAccessDenied for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode KMSKeyAccessDenied = new StateReasonCode("KMSKeyAccessDenied");
+        /// <summary>
+        /// Constant KMSKeyNotFound for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode KMSKeyNotFound = new StateReasonCode("KMSKeyNotFound");
         /// <summary>
         /// Constant Restoring for StateReasonCode
         /// </summary>
@@ -1104,6 +1292,10 @@ namespace Amazon.Lambda
         /// Constant ConcurrentInvocationLimitExceeded for ThrottleReason
         /// </summary>
         public static readonly ThrottleReason ConcurrentInvocationLimitExceeded = new ThrottleReason("ConcurrentInvocationLimitExceeded");
+        /// <summary>
+        /// Constant ConcurrentSnapshotCreateLimitExceeded for ThrottleReason
+        /// </summary>
+        public static readonly ThrottleReason ConcurrentSnapshotCreateLimitExceeded = new ThrottleReason("ConcurrentSnapshotCreateLimitExceeded");
         /// <summary>
         /// Constant FunctionInvocationRateLimitExceeded for ThrottleReason
         /// </summary>

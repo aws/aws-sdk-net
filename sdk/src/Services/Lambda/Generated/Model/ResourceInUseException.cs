@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The operation conflicts with the resource's availability. For example, you attempted
-    /// to update an EventSource Mapping in CREATING, or tried to delete a EventSource mapping
-    /// currently in the UPDATING state.
+    /// The operation conflicts with the resource's availability. For example, you tried to
+    /// update an event source mapping in the CREATING state, or you tried to delete an event
+    /// source mapping currently UPDATING.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

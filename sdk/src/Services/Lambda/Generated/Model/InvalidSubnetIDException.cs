@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The Subnet ID provided in the Lambda function VPC configuration is invalid.
+    /// The subnet ID provided in the Lambda function VPC configuration is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

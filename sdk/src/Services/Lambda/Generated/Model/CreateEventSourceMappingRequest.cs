@@ -307,6 +307,10 @@ namespace Amazon.Lambda.Model
         /// <para>
         ///  <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Amazon MQ</b> - The ARN of the broker.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string EventSourceArn
@@ -324,8 +328,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FilterCriteria. 
         /// <para>
-        /// (Streams and Amazon SQS) An object that defines the filter criteria that determine
-        /// whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+        /// An object that defines the filter criteria that determine whether Lambda should process
+        /// an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
         /// event filtering</a>.
         /// </para>
         /// </summary>

@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The request payload exceeded the <code>Invoke</code> request body JSON input limit.
-    /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>.
+    /// The request payload exceeded the <code>Invoke</code> request body JSON input quota.
+    /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+    /// quotas</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

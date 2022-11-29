@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Lambda was unable to decrypt the environment variables because the KMS key used is
-    /// in an invalid state for Decrypt. Check the function's KMS key settings.
+    /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+    /// used is not valid for Decrypt. Check the function's KMS key settings.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The function couldn't make a network connection to the configured file system.
+    /// The Lambda function couldn't make a network connection to the configured file system.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

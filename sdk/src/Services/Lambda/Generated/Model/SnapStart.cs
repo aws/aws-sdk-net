@@ -29,47 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Response to a <code>GetFunctionConfiguration</code> request.
+    /// The function's SnapStart setting. Set <code>ApplyOn</code> to <code>PublishedVersions</code>
+    /// to create a snapshot of the initialized execution environment when you publish a function
+    /// version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing
+    /// startup time with Lambda SnapStart</a>.
     /// </summary>
-    public partial class ImageConfigResponse
+    public partial class SnapStart
     {
-        private ImageConfigError _error;
-        private ImageConfig _imageConfig;
+        private SnapStartApplyOn _applyOn;
 
         /// <summary>
-        /// Gets and sets the property Error. 
+        /// Gets and sets the property ApplyOn. 
         /// <para>
-        /// Error response to <code>GetFunctionConfiguration</code>.
+        /// Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution
+        /// environment when you publish a function version.
         /// </para>
         /// </summary>
-        public ImageConfigError Error
+        public SnapStartApplyOn ApplyOn
         {
-            get { return this._error; }
-            set { this._error = value; }
+            get { return this._applyOn; }
+            set { this._applyOn = value; }
         }
 
-        // Check to see if Error property is set
-        internal bool IsSetError()
+        // Check to see if ApplyOn property is set
+        internal bool IsSetApplyOn()
         {
-            return this._error != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ImageConfig. 
-        /// <para>
-        /// Configuration values that override the container image Dockerfile.
-        /// </para>
-        /// </summary>
-        public ImageConfig ImageConfig
-        {
-            get { return this._imageConfig; }
-            set { this._imageConfig = value; }
-        }
-
-        // Check to see if ImageConfig property is set
-        internal bool IsSetImageConfig()
-        {
-            return this._imageConfig != null;
+            return this._applyOn != null;
         }
 
     }

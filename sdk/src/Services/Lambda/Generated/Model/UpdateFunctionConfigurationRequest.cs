@@ -40,8 +40,8 @@ namespace Amazon.Lambda.Model
     /// it. The <code>LastUpdateStatus</code>, <code>LastUpdateStatusReason</code>, and <code>LastUpdateStatusReasonCode</code>
     /// fields in the response from <a>GetFunctionConfiguration</a> indicate when the update
     /// is complete and the function is processing events with the new configuration. For
-    /// more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
-    /// States</a>.
+    /// more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Lambda
+    /// function states</a>.
     /// </para>
     ///  
     /// <para>
@@ -52,7 +52,7 @@ namespace Amazon.Lambda.Model
     ///  
     /// <para>
     /// To configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke
-    /// permissions to an account or Amazon Web Services service, use <a>AddPermission</a>.
+    /// permissions to an Amazon Web Services account or Amazon Web Service, use <a>AddPermission</a>.
     /// </para>
     /// </summary>
     public partial class UpdateFunctionConfigurationRequest : AmazonLambdaRequest
@@ -71,6 +71,7 @@ namespace Amazon.Lambda.Model
         private string _revisionId;
         private string _role;
         private Runtime _runtime;
+        private SnapStart _snapStart;
         private int? _timeout;
         private TracingConfig _tracingConfig;
         private VpcConfig _vpcConfig;
@@ -78,9 +79,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property DeadLetterConfig. 
         /// <para>
-        /// A dead letter queue configuration that specifies the queue or topic where Lambda sends
-        /// asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead
-        /// Letter Queues</a>.
+        /// A dead-letter queue configuration that specifies the queue or topic where Lambda sends
+        /// asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">Dead-letter
+        /// queues</a>.
         /// </para>
         /// </summary>
         public DeadLetterConfig DeadLetterConfig
@@ -135,8 +136,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property EphemeralStorage. 
         /// <para>
-        /// The size of the function’s /tmp directory in MB. The default value is 512, but can
-        /// be any whole number between 512 and 10240 MB.
+        /// The size of the function's <code>/tmp</code> directory in MB. The default value is
+        /// 512, but can be any whole number between 512 and 10,240 MB.
         /// </para>
         /// </summary>
         public EphemeralStorage EphemeralStorage
@@ -201,15 +202,15 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Function name</b> - <code>my-function</code>.
+        ///  <b>Function name</b> – <code>my-function</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+        ///  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+        ///  <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -233,11 +234,11 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Handler. 
         /// <para>
-        /// The name of the method within your code that Lambda calls to execute your function.
-        /// Handler is required if the deployment package is a .zip file archive. The format includes
+        /// The name of the method within your code that Lambda calls to run your function. Handler
+        /// is required if the deployment package is a .zip file archive. The format includes
         /// the file name. It can also include namespaces and other qualifiers, depending on the
-        /// runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
-        /// Model</a>.
+        /// runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-progmodel.html">Lambda
+        /// programming model</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -276,9 +277,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property KMSKeyArn. 
         /// <para>
-        /// The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to
-        /// encrypt your function's environment variables. If it's not provided, Lambda uses a
-        /// default service key.
+        /// The ARN of the Key Management Service (KMS) key that's used to encrypt your function's
+        /// environment variables. If it's not provided, Lambda uses a default service key.
         /// </para>
         /// </summary>
         public string KMSKeyArn
@@ -338,7 +338,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MemorySize. 
         /// <para>
-        /// The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory
+        /// The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-memory-console">memory
         /// available to the function</a> at runtime. Increasing the function memory also increases
         /// its CPU allocation. The default value is 128 MB. The value can be any multiple of
         /// 1 MB.
@@ -360,7 +360,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RevisionId. 
         /// <para>
-        /// Only update the function if the revision ID matches the ID that's specified. Use this
+        /// Update the function only if the revision ID matches the ID that's specified. Use this
         /// option to avoid modifying a function that has changed since you last read it.
         /// </para>
         /// </summary>
@@ -414,11 +414,30 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SnapStart. 
+        /// <para>
+        /// The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a>
+        /// setting.
+        /// </para>
+        /// </summary>
+        public SnapStart SnapStart
+        {
+            get { return this._snapStart; }
+            set { this._snapStart = value; }
+        }
+
+        // Check to see if SnapStart property is set
+        internal bool IsSetSnapStart()
+        {
+            return this._snapStart != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
         /// The amount of time (in seconds) that Lambda allows a function to run before stopping
-        /// it. The default is 3 seconds. The maximum allowed value is 900 seconds. For additional
-        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
+        /// it. The default is 3 seconds. The maximum allowed value is 900 seconds. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
         /// execution environment</a>.
         /// </para>
         /// </summary>
@@ -459,9 +478,9 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// For network connectivity to Amazon Web Services resources in a VPC, specify a list
         /// of security groups and subnets in the VPC. When you connect a function to a VPC, it
-        /// can only access resources and the internet through that VPC. For more information,
-        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
-        /// Settings</a>.
+        /// can access resources and the internet only through that VPC. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring
+        /// a Lambda function to access resources in a VPC</a>.
         /// </para>
         /// </summary>
         public VpcConfig VpcConfig

@@ -29,43 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The Lambda function couldn't mount the configured file system due to a permission
-    /// or configuration issue.
+    /// Lambda is initializing your function. You can invoke the function when the <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function
+    /// state</a> becomes <code>Active</code>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class EFSMountFailureException : AmazonLambdaException
+    public partial class SnapStartNotReadyException : AmazonLambdaException
     {
         private string _type;
 
         /// <summary>
-        /// Constructs a new EFSMountFailureException with the specified error
+        /// Constructs a new SnapStartNotReadyException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public EFSMountFailureException(string message) 
+        public SnapStartNotReadyException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of EFSMountFailureException
+        /// Construct instance of SnapStartNotReadyException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public EFSMountFailureException(string message, Exception innerException) 
+        public SnapStartNotReadyException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of EFSMountFailureException
+        /// Construct instance of SnapStartNotReadyException
         /// </summary>
         /// <param name="innerException"></param>
-        public EFSMountFailureException(Exception innerException) 
+        public SnapStartNotReadyException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of EFSMountFailureException
+        /// Construct instance of SnapStartNotReadyException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -73,30 +73,30 @@ namespace Amazon.Lambda.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public EFSMountFailureException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public SnapStartNotReadyException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of EFSMountFailureException
+        /// Construct instance of SnapStartNotReadyException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public EFSMountFailureException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public SnapStartNotReadyException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the EFSMountFailureException class with serialized data.
+        /// Constructs a new instance of the SnapStartNotReadyException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected EFSMountFailureException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected SnapStartNotReadyException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
             this.Type = (string)info.GetValue("Type", typeof(string));

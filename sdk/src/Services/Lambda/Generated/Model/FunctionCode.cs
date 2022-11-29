@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The code for the Lambda function. You can specify either an object in Amazon S3, upload
+    /// The code for the Lambda function. You can either specify an object in Amazon S3, upload
     /// a .zip file archive deployment package directly, or specify the URI of a container
     /// image.
     /// </summary>
@@ -122,7 +122,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property ZipFile. 
         /// <para>
         /// The base64-encoded contents of the deployment package. Amazon Web Services SDK and
-        /// Amazon Web Services CLI clients handle the encoding for you.
+        /// CLI clients handle the encoding for you.
         /// </para>
         /// </summary>
         public MemoryStream ZipFile

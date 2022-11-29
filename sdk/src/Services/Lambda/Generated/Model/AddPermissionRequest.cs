@@ -30,28 +30,29 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the AddPermission operation.
-    /// Grants an Amazon Web Services service, account, or organization permission to use
-    /// a function. You can apply the policy at the function level, or specify a qualifier
-    /// to restrict access to a single version or alias. If you use a qualifier, the invoker
-    /// must use the full Amazon Resource Name (ARN) of that version or alias to invoke the
-    /// function. Note: Lambda does not support adding policies to version $LATEST.
+    /// Grants an Amazon Web Service, Amazon Web Services account, or Amazon Web Services
+    /// organization permission to use a function. You can apply the policy at the function
+    /// level, or specify a qualifier to restrict access to a single version or alias. If
+    /// you use a qualifier, the invoker must use the full Amazon Resource Name (ARN) of that
+    /// version or alias to invoke the function. Note: Lambda does not support adding policies
+    /// to version $LATEST.
     /// 
     ///  
     /// <para>
     /// To grant permission to another account, specify the account ID as the <code>Principal</code>.
     /// To grant permission to an organization defined in Organizations, specify the organization
-    /// ID as the <code>PrincipalOrgID</code>. For Amazon Web Services services, the principal
-    /// is a domain-style identifier defined by the service, like <code>s3.amazonaws.com</code>
-    /// or <code>sns.amazonaws.com</code>. For Amazon Web Services services, you can also
-    /// specify the ARN of the associated resource as the <code>SourceArn</code>. If you grant
-    /// permission to a service principal without specifying the source, other accounts could
-    /// potentially configure resources in their account to invoke your Lambda function.
+    /// ID as the <code>PrincipalOrgID</code>. For Amazon Web Services, the principal is a
+    /// domain-style identifier that the service defines, such as <code>s3.amazonaws.com</code>
+    /// or <code>sns.amazonaws.com</code>. For Amazon Web Services, you can also specify the
+    /// ARN of the associated resource as the <code>SourceArn</code>. If you grant permission
+    /// to a service principal without specifying the source, other accounts could potentially
+    /// configure resources in their account to invoke your Lambda function.
     /// </para>
     ///  
     /// <para>
-    /// This action adds a statement to a resource-based permissions policy for the function.
-    /// For more information about function policies, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda
-    /// Function Policies</a>. 
+    /// This operation adds a statement to a resource-based permissions policy for the function.
+    /// For more information about function policies, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Using
+    /// resource-based policies for Lambda</a>.
     /// </para>
     /// </summary>
     public partial class AddPermissionRequest : AmazonLambdaRequest
@@ -91,7 +92,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property EventSourceToken. 
         /// <para>
-        /// For Alexa Smart Home functions, a token that must be supplied by the invoker.
+        /// For Alexa Smart Home functions, a token that the invoker must supply.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -116,16 +117,16 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code>
+        ///  <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code>
         /// (with alias).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+        ///  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+        ///  <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -151,10 +152,10 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property FunctionUrlAuthType. 
         /// <para>
         /// The type of authentication that your function URL uses. Set to <code>AWS_IAM</code>
-        /// if you want to restrict access to authenticated <code>IAM</code> users only. Set to
-        /// <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint.
-        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">
-        /// Security and auth model for Lambda function URLs</a>.
+        /// if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code>
+        /// if you want to bypass IAM authentication to create a public endpoint. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security
+        /// and auth model for Lambda function URLs</a>.
         /// </para>
         /// </summary>
         public FunctionUrlAuthType FunctionUrlAuthType
@@ -172,9 +173,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// The Amazon Web Services service or account that invokes the function. If you specify
-        /// a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can
-        /// invoke the function through that service.
+        /// The Amazon Web Service or Amazon Web Services account that invokes the function. If
+        /// you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to
+        /// limit who can invoke the function through that service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -232,7 +233,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RevisionId. 
         /// <para>
-        /// Only update the policy if the revision ID matches the ID that's specified. Use this
+        /// Update the policy only if the revision ID matches the ID that's specified. Use this
         /// option to avoid modifying a policy that has changed since you last read it.
         /// </para>
         /// </summary>
@@ -251,10 +252,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SourceAccount. 
         /// <para>
-        /// For Amazon S3, the ID of the account that owns the resource. Use this together with
-        /// <code>SourceArn</code> to ensure that the resource is owned by the specified account.
-        /// It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by
-        /// another account.
+        /// For Amazon Web Service, the ID of the Amazon Web Services account that owns the resource.
+        /// Use this together with <code>SourceArn</code> to ensure that the specified account
+        /// owns the resource. It is possible for an Amazon S3 bucket to be deleted by its owner
+        /// and recreated by another account.
         /// </para>
         /// </summary>
         [AWSProperty(Max=12)]
@@ -273,8 +274,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SourceArn. 
         /// <para>
-        /// For Amazon Web Services services, the ARN of the Amazon Web Services resource that
-        /// invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.
+        /// For Amazon Web Services, the ARN of the Amazon Web Services resource that invokes
+        /// the function. For example, an Amazon S3 bucket or Amazon SNS topic.
         /// </para>
         ///  
         /// <para>

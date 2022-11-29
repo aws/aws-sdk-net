@@ -40,7 +40,7 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// The number of concurrent executions that are reserved for this function. For more
         /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing
-        /// Concurrency</a>.
+        /// Lambda reserved concurrency</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

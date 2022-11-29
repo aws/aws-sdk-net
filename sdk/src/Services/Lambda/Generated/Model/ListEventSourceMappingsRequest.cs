@@ -61,6 +61,10 @@ namespace Amazon.Lambda.Model
         /// <para>
         ///  <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Amazon MQ</b> - The ARN of the broker.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string EventSourceArn

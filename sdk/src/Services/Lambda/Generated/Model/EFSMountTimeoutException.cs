@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The function was able to make a network connection to the configured file system,
-    /// but the mount operation timed out.
+    /// The Lambda function made a network connection to the configured file system, but the
+    /// mount operation timed out.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

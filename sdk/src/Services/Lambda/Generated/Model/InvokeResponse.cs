@@ -81,7 +81,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LogResult. 
         /// <para>
-        /// The last 4 KB of the execution log, which is base64 encoded.
+        /// The last 4 KB of the execution log, which is base64-encoded.
         /// </para>
         /// </summary>
         public string LogResult

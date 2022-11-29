@@ -218,6 +218,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Runtime);
                 }
 
+                if(publicRequest.IsSetSnapStart())
+                {
+                    context.Writer.WritePropertyName("SnapStart");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SnapStartMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SnapStart, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

@@ -30,8 +30,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// The VPC security groups and subnets that are attached to a Lambda function. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
-    /// Settings</a>.
+    /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring
+    /// a Lambda function to access resources in a VPC</a>.
     /// </summary>
     public partial class VpcConfig
     {
@@ -41,7 +41,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// A list of VPC security groups IDs.
+        /// A list of VPC security group IDs.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]

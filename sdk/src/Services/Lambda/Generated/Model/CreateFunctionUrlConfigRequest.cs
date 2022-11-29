@@ -44,10 +44,10 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property AuthType. 
         /// <para>
         /// The type of authentication that your function URL uses. Set to <code>AWS_IAM</code>
-        /// if you want to restrict access to authenticated <code>IAM</code> users only. Set to
-        /// <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint.
-        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">
-        /// Security and auth model for Lambda function URLs</a>.
+        /// if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code>
+        /// if you want to bypass IAM authentication to create a public endpoint. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security
+        /// and auth model for Lambda function URLs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -91,15 +91,15 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Function name</b> - <code>my-function</code>.
+        ///  <b>Function name</b> – <code>my-function</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+        ///  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+        ///  <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

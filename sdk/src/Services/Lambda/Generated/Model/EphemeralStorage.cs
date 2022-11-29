@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The size of the function’s /tmp directory in MB. The default value is 512, but can
-    /// be any whole number between 512 and 10240 MB.
+    /// The size of the function's <code>/tmp</code> directory in MB. The default value is
+    /// 512, but it can be any whole number between 512 and 10,240 MB.
     /// </summary>
     public partial class EphemeralStorage
     {
@@ -39,7 +39,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
-        /// The size of the function’s /tmp directory.
+        /// The size of the function's <code>/tmp</code> directory.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=512, Max=10240)]

@@ -36,8 +36,8 @@ namespace Amazon.Lambda.Model
     ///  
     /// <para>
     /// To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
-    /// For Amazon Web Services services and resources that invoke your function directly,
-    /// delete the trigger in the service where you originally configured it.
+    /// For Amazon Web Services and resources that invoke your function directly, delete the
+    /// trigger in the service where you originally configured it.
     /// </para>
     /// </summary>
     public partial class DeleteFunctionRequest : AmazonLambdaRequest
@@ -54,16 +54,16 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code>
+        ///  <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:1</code>
         /// (with version).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+        ///  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+        ///  <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -88,7 +88,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Qualifier. 
         /// <para>
-        /// Specify a version to delete. You can't delete a version that's referenced by an alias.
+        /// Specify a version to delete. You can't delete a version that an alias references.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
