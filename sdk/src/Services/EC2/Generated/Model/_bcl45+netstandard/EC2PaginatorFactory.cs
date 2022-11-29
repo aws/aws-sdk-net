@@ -764,6 +764,46 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeVerifiedAccessEndpoints operation
+        ///</summary>
+        public IDescribeVerifiedAccessEndpointsPaginator DescribeVerifiedAccessEndpoints(DescribeVerifiedAccessEndpointsRequest request) 
+        {
+            return new DescribeVerifiedAccessEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeVerifiedAccessGroups operation
+        ///</summary>
+        public IDescribeVerifiedAccessGroupsPaginator DescribeVerifiedAccessGroups(DescribeVerifiedAccessGroupsRequest request) 
+        {
+            return new DescribeVerifiedAccessGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeVerifiedAccessInstanceLoggingConfigurations operation
+        ///</summary>
+        public IDescribeVerifiedAccessInstanceLoggingConfigurationsPaginator DescribeVerifiedAccessInstanceLoggingConfigurations(DescribeVerifiedAccessInstanceLoggingConfigurationsRequest request) 
+        {
+            return new DescribeVerifiedAccessInstanceLoggingConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeVerifiedAccessInstances operation
+        ///</summary>
+        public IDescribeVerifiedAccessInstancesPaginator DescribeVerifiedAccessInstances(DescribeVerifiedAccessInstancesRequest request) 
+        {
+            return new DescribeVerifiedAccessInstancesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeVerifiedAccessTrustProviders operation
+        ///</summary>
+        public IDescribeVerifiedAccessTrustProvidersPaginator DescribeVerifiedAccessTrustProviders(DescribeVerifiedAccessTrustProvidersRequest request) 
+        {
+            return new DescribeVerifiedAccessTrustProvidersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeVolumes operation
         ///</summary>
         public IDescribeVolumesPaginator DescribeVolumes(DescribeVolumesRequest request) 

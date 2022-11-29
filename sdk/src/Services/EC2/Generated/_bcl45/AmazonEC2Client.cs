@@ -2317,6 +2317,51 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AttachVerifiedAccessTrustProvider
+
+
+        /// <summary>
+        /// A trust provider is a third-party entity that creates, maintains, and manages identity
+        /// information for users and devices. One or more trust providers can be attached to
+        /// an Amazon Web Services Verified Access instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachVerifiedAccessTrustProvider service method.</param>
+        /// 
+        /// <returns>The response from the AttachVerifiedAccessTrustProvider service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVerifiedAccessTrustProvider">REST API Reference for AttachVerifiedAccessTrustProvider Operation</seealso>
+        public virtual AttachVerifiedAccessTrustProviderResponse AttachVerifiedAccessTrustProvider(AttachVerifiedAccessTrustProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+
+            return Invoke<AttachVerifiedAccessTrustProviderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// A trust provider is a third-party entity that creates, maintains, and manages identity
+        /// information for users and devices. One or more trust providers can be attached to
+        /// an Amazon Web Services Verified Access instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachVerifiedAccessTrustProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AttachVerifiedAccessTrustProvider service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVerifiedAccessTrustProvider">REST API Reference for AttachVerifiedAccessTrustProvider Operation</seealso>
+        public virtual Task<AttachVerifiedAccessTrustProviderResponse> AttachVerifiedAccessTrustProviderAsync(AttachVerifiedAccessTrustProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AttachVerifiedAccessTrustProviderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AttachVolume
 
 
@@ -8150,6 +8195,190 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateVerifiedAccessEndpoint
+
+
+        /// <summary>
+        /// An Amazon Web Services Verified Access endpoint is where you define your application
+        /// along with an optional endpoint-level access policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateVerifiedAccessEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessEndpoint">REST API Reference for CreateVerifiedAccessEndpoint Operation</seealso>
+        public virtual CreateVerifiedAccessEndpointResponse CreateVerifiedAccessEndpoint(CreateVerifiedAccessEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVerifiedAccessEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVerifiedAccessEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVerifiedAccessEndpointResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// An Amazon Web Services Verified Access endpoint is where you define your application
+        /// along with an optional endpoint-level access policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVerifiedAccessEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessEndpoint">REST API Reference for CreateVerifiedAccessEndpoint Operation</seealso>
+        public virtual Task<CreateVerifiedAccessEndpointResponse> CreateVerifiedAccessEndpointAsync(CreateVerifiedAccessEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVerifiedAccessEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVerifiedAccessEndpointResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateVerifiedAccessEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateVerifiedAccessGroup
+
+
+        /// <summary>
+        /// An Amazon Web Services Verified Access group is a collection of Amazon Web Services
+        /// Verified Access endpoints who's associated applications have similar security requirements.
+        /// Each instance within an Amazon Web Services Verified Access group shares an Amazon
+        /// Web Services Verified Access policy. For example, you can group all Amazon Web Services
+        /// Verified Access instances associated with “sales” applications together and use one
+        /// common Amazon Web Services Verified Access policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateVerifiedAccessGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessGroup">REST API Reference for CreateVerifiedAccessGroup Operation</seealso>
+        public virtual CreateVerifiedAccessGroupResponse CreateVerifiedAccessGroup(CreateVerifiedAccessGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVerifiedAccessGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVerifiedAccessGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVerifiedAccessGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// An Amazon Web Services Verified Access group is a collection of Amazon Web Services
+        /// Verified Access endpoints who's associated applications have similar security requirements.
+        /// Each instance within an Amazon Web Services Verified Access group shares an Amazon
+        /// Web Services Verified Access policy. For example, you can group all Amazon Web Services
+        /// Verified Access instances associated with “sales” applications together and use one
+        /// common Amazon Web Services Verified Access policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVerifiedAccessGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessGroup">REST API Reference for CreateVerifiedAccessGroup Operation</seealso>
+        public virtual Task<CreateVerifiedAccessGroupResponse> CreateVerifiedAccessGroupAsync(CreateVerifiedAccessGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVerifiedAccessGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVerifiedAccessGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateVerifiedAccessGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateVerifiedAccessInstance
+
+
+        /// <summary>
+        /// An Amazon Web Services Verified Access instance is a regional entity that evaluates
+        /// application requests and grants access only when your security requirements are met.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessInstance service method.</param>
+        /// 
+        /// <returns>The response from the CreateVerifiedAccessInstance service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessInstance">REST API Reference for CreateVerifiedAccessInstance Operation</seealso>
+        public virtual CreateVerifiedAccessInstanceResponse CreateVerifiedAccessInstance(CreateVerifiedAccessInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVerifiedAccessInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVerifiedAccessInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVerifiedAccessInstanceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// An Amazon Web Services Verified Access instance is a regional entity that evaluates
+        /// application requests and grants access only when your security requirements are met.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVerifiedAccessInstance service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessInstance">REST API Reference for CreateVerifiedAccessInstance Operation</seealso>
+        public virtual Task<CreateVerifiedAccessInstanceResponse> CreateVerifiedAccessInstanceAsync(CreateVerifiedAccessInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVerifiedAccessInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVerifiedAccessInstanceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateVerifiedAccessInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateVerifiedAccessTrustProvider
+
+
+        /// <summary>
+        /// A trust provider is a third-party entity that creates, maintains, and manages identity
+        /// information for users and devices. When an application request is made, the identity
+        /// information sent by the trust provider will be evaluated by Amazon Web Services Verified
+        /// Access, before allowing or denying the application request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessTrustProvider service method.</param>
+        /// 
+        /// <returns>The response from the CreateVerifiedAccessTrustProvider service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessTrustProvider">REST API Reference for CreateVerifiedAccessTrustProvider Operation</seealso>
+        public virtual CreateVerifiedAccessTrustProviderResponse CreateVerifiedAccessTrustProvider(CreateVerifiedAccessTrustProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVerifiedAccessTrustProviderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// A trust provider is a third-party entity that creates, maintains, and manages identity
+        /// information for users and devices. When an application request is made, the identity
+        /// information sent by the trust provider will be evaluated by Amazon Web Services Verified
+        /// Access, before allowing or denying the application request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessTrustProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVerifiedAccessTrustProvider service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessTrustProvider">REST API Reference for CreateVerifiedAccessTrustProvider Operation</seealso>
+        public virtual Task<CreateVerifiedAccessTrustProviderResponse> CreateVerifiedAccessTrustProviderAsync(CreateVerifiedAccessTrustProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateVerifiedAccessTrustProviderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateVolume
 
 
@@ -11574,6 +11803,170 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DeleteTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteTransitGatewayVpcAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVerifiedAccessEndpoint
+
+
+        /// <summary>
+        /// Delete an Amazon Web Services Verified Access endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedAccessEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVerifiedAccessEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessEndpoint">REST API Reference for DeleteVerifiedAccessEndpoint Operation</seealso>
+        public virtual DeleteVerifiedAccessEndpointResponse DeleteVerifiedAccessEndpoint(DeleteVerifiedAccessEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVerifiedAccessEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVerifiedAccessEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVerifiedAccessEndpointResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Delete an Amazon Web Services Verified Access endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedAccessEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVerifiedAccessEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessEndpoint">REST API Reference for DeleteVerifiedAccessEndpoint Operation</seealso>
+        public virtual Task<DeleteVerifiedAccessEndpointResponse> DeleteVerifiedAccessEndpointAsync(DeleteVerifiedAccessEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVerifiedAccessEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVerifiedAccessEndpointResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteVerifiedAccessEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVerifiedAccessGroup
+
+
+        /// <summary>
+        /// Delete an Amazon Web Services Verified Access group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedAccessGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVerifiedAccessGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessGroup">REST API Reference for DeleteVerifiedAccessGroup Operation</seealso>
+        public virtual DeleteVerifiedAccessGroupResponse DeleteVerifiedAccessGroup(DeleteVerifiedAccessGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVerifiedAccessGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVerifiedAccessGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVerifiedAccessGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Delete an Amazon Web Services Verified Access group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedAccessGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVerifiedAccessGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessGroup">REST API Reference for DeleteVerifiedAccessGroup Operation</seealso>
+        public virtual Task<DeleteVerifiedAccessGroupResponse> DeleteVerifiedAccessGroupAsync(DeleteVerifiedAccessGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVerifiedAccessGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVerifiedAccessGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteVerifiedAccessGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVerifiedAccessInstance
+
+
+        /// <summary>
+        /// Delete an Amazon Web Services Verified Access instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedAccessInstance service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVerifiedAccessInstance service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessInstance">REST API Reference for DeleteVerifiedAccessInstance Operation</seealso>
+        public virtual DeleteVerifiedAccessInstanceResponse DeleteVerifiedAccessInstance(DeleteVerifiedAccessInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVerifiedAccessInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVerifiedAccessInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVerifiedAccessInstanceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Delete an Amazon Web Services Verified Access instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedAccessInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVerifiedAccessInstance service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessInstance">REST API Reference for DeleteVerifiedAccessInstance Operation</seealso>
+        public virtual Task<DeleteVerifiedAccessInstanceResponse> DeleteVerifiedAccessInstanceAsync(DeleteVerifiedAccessInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVerifiedAccessInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVerifiedAccessInstanceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteVerifiedAccessInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVerifiedAccessTrustProvider
+
+
+        /// <summary>
+        /// Delete an Amazon Web Services Verified Access trust provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedAccessTrustProvider service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVerifiedAccessTrustProvider service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessTrustProvider">REST API Reference for DeleteVerifiedAccessTrustProvider Operation</seealso>
+        public virtual DeleteVerifiedAccessTrustProviderResponse DeleteVerifiedAccessTrustProvider(DeleteVerifiedAccessTrustProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVerifiedAccessTrustProviderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Delete an Amazon Web Services Verified Access trust provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedAccessTrustProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVerifiedAccessTrustProvider service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessTrustProvider">REST API Reference for DeleteVerifiedAccessTrustProvider Operation</seealso>
+        public virtual Task<DeleteVerifiedAccessTrustProviderResponse> DeleteVerifiedAccessTrustProviderAsync(DeleteVerifiedAccessTrustProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteVerifiedAccessTrustProviderResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -20380,6 +20773,213 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeVerifiedAccessEndpoints
+
+
+        /// <summary>
+        /// Describe Amazon Web Services Verified Access endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVerifiedAccessEndpoints service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessEndpoints">REST API Reference for DescribeVerifiedAccessEndpoints Operation</seealso>
+        public virtual DescribeVerifiedAccessEndpointsResponse DescribeVerifiedAccessEndpoints(DescribeVerifiedAccessEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVerifiedAccessEndpointsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describe Amazon Web Services Verified Access endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVerifiedAccessEndpoints service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessEndpoints">REST API Reference for DescribeVerifiedAccessEndpoints Operation</seealso>
+        public virtual Task<DescribeVerifiedAccessEndpointsResponse> DescribeVerifiedAccessEndpointsAsync(DescribeVerifiedAccessEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessEndpointsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeVerifiedAccessEndpointsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVerifiedAccessGroups
+
+
+        /// <summary>
+        /// Describe details of existing Verified Access groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVerifiedAccessGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessGroups">REST API Reference for DescribeVerifiedAccessGroups Operation</seealso>
+        public virtual DescribeVerifiedAccessGroupsResponse DescribeVerifiedAccessGroups(DescribeVerifiedAccessGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVerifiedAccessGroupsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describe details of existing Verified Access groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVerifiedAccessGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessGroups">REST API Reference for DescribeVerifiedAccessGroups Operation</seealso>
+        public virtual Task<DescribeVerifiedAccessGroupsResponse> DescribeVerifiedAccessGroupsAsync(DescribeVerifiedAccessGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeVerifiedAccessGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVerifiedAccessInstanceLoggingConfigurations
+
+
+        /// <summary>
+        /// Describes the current logging configuration for the Amazon Web Services Verified Access
+        /// instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessInstanceLoggingConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVerifiedAccessInstanceLoggingConfigurations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstanceLoggingConfigurations">REST API Reference for DescribeVerifiedAccessInstanceLoggingConfigurations Operation</seealso>
+        public virtual DescribeVerifiedAccessInstanceLoggingConfigurationsResponse DescribeVerifiedAccessInstanceLoggingConfigurations(DescribeVerifiedAccessInstanceLoggingConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessInstanceLoggingConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessInstanceLoggingConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVerifiedAccessInstanceLoggingConfigurationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the current logging configuration for the Amazon Web Services Verified Access
+        /// instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessInstanceLoggingConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVerifiedAccessInstanceLoggingConfigurations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstanceLoggingConfigurations">REST API Reference for DescribeVerifiedAccessInstanceLoggingConfigurations Operation</seealso>
+        public virtual Task<DescribeVerifiedAccessInstanceLoggingConfigurationsResponse> DescribeVerifiedAccessInstanceLoggingConfigurationsAsync(DescribeVerifiedAccessInstanceLoggingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessInstanceLoggingConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessInstanceLoggingConfigurationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeVerifiedAccessInstanceLoggingConfigurationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVerifiedAccessInstances
+
+
+        /// <summary>
+        /// Describe Verified Access instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessInstances service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVerifiedAccessInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstances">REST API Reference for DescribeVerifiedAccessInstances Operation</seealso>
+        public virtual DescribeVerifiedAccessInstancesResponse DescribeVerifiedAccessInstances(DescribeVerifiedAccessInstancesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVerifiedAccessInstancesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describe Verified Access instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessInstances service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVerifiedAccessInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstances">REST API Reference for DescribeVerifiedAccessInstances Operation</seealso>
+        public virtual Task<DescribeVerifiedAccessInstancesResponse> DescribeVerifiedAccessInstancesAsync(DescribeVerifiedAccessInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessInstancesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeVerifiedAccessInstancesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVerifiedAccessTrustProviders
+
+
+        /// <summary>
+        /// Describe details of existing Verified Access trust providers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessTrustProviders service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVerifiedAccessTrustProviders service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessTrustProviders">REST API Reference for DescribeVerifiedAccessTrustProviders Operation</seealso>
+        public virtual DescribeVerifiedAccessTrustProvidersResponse DescribeVerifiedAccessTrustProviders(DescribeVerifiedAccessTrustProvidersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessTrustProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessTrustProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVerifiedAccessTrustProvidersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describe details of existing Verified Access trust providers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessTrustProviders service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVerifiedAccessTrustProviders service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessTrustProviders">REST API Reference for DescribeVerifiedAccessTrustProviders Operation</seealso>
+        public virtual Task<DescribeVerifiedAccessTrustProvidersResponse> DescribeVerifiedAccessTrustProvidersAsync(DescribeVerifiedAccessTrustProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessTrustProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessTrustProvidersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeVerifiedAccessTrustProvidersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeVolumeAttribute
 
 
@@ -21784,6 +22384,47 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DetachNetworkInterfaceResponseUnmarshaller.Instance;
             
             return InvokeAsync<DetachNetworkInterfaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetachVerifiedAccessTrustProvider
+
+
+        /// <summary>
+        /// Detach a trust provider from an Amazon Web Services Verified Access instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachVerifiedAccessTrustProvider service method.</param>
+        /// 
+        /// <returns>The response from the DetachVerifiedAccessTrustProvider service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVerifiedAccessTrustProvider">REST API Reference for DetachVerifiedAccessTrustProvider Operation</seealso>
+        public virtual DetachVerifiedAccessTrustProviderResponse DetachVerifiedAccessTrustProvider(DetachVerifiedAccessTrustProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DetachVerifiedAccessTrustProviderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Detach a trust provider from an Amazon Web Services Verified Access instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachVerifiedAccessTrustProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DetachVerifiedAccessTrustProvider service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVerifiedAccessTrustProvider">REST API Reference for DetachVerifiedAccessTrustProvider Operation</seealso>
+        public virtual Task<DetachVerifiedAccessTrustProviderResponse> DetachVerifiedAccessTrustProviderAsync(DetachVerifiedAccessTrustProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DetachVerifiedAccessTrustProviderResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -25992,6 +26633,88 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetVerifiedAccessEndpointPolicy
+
+
+        /// <summary>
+        /// Get the Verified Access policy associated with the endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVerifiedAccessEndpointPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetVerifiedAccessEndpointPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointPolicy">REST API Reference for GetVerifiedAccessEndpointPolicy Operation</seealso>
+        public virtual GetVerifiedAccessEndpointPolicyResponse GetVerifiedAccessEndpointPolicy(GetVerifiedAccessEndpointPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVerifiedAccessEndpointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVerifiedAccessEndpointPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetVerifiedAccessEndpointPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Get the Verified Access policy associated with the endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVerifiedAccessEndpointPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVerifiedAccessEndpointPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointPolicy">REST API Reference for GetVerifiedAccessEndpointPolicy Operation</seealso>
+        public virtual Task<GetVerifiedAccessEndpointPolicyResponse> GetVerifiedAccessEndpointPolicyAsync(GetVerifiedAccessEndpointPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVerifiedAccessEndpointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVerifiedAccessEndpointPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetVerifiedAccessEndpointPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetVerifiedAccessGroupPolicy
+
+
+        /// <summary>
+        /// Shows the contents of the Verified Access policy associated with the group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVerifiedAccessGroupPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetVerifiedAccessGroupPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessGroupPolicy">REST API Reference for GetVerifiedAccessGroupPolicy Operation</seealso>
+        public virtual GetVerifiedAccessGroupPolicyResponse GetVerifiedAccessGroupPolicy(GetVerifiedAccessGroupPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVerifiedAccessGroupPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVerifiedAccessGroupPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetVerifiedAccessGroupPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Shows the contents of the Verified Access policy associated with the group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVerifiedAccessGroupPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVerifiedAccessGroupPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessGroupPolicy">REST API Reference for GetVerifiedAccessGroupPolicy Operation</seealso>
+        public virtual Task<GetVerifiedAccessGroupPolicyResponse> GetVerifiedAccessGroupPolicyAsync(GetVerifiedAccessGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVerifiedAccessGroupPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVerifiedAccessGroupPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetVerifiedAccessGroupPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetVpnConnectionDeviceSampleConfiguration
 
 
@@ -29134,6 +29857,297 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifyTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
             
             return InvokeAsync<ModifyTransitGatewayVpcAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyVerifiedAccessEndpoint
+
+
+        /// <summary>
+        /// Modifies the configuration of an Amazon Web Services Verified Access endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpoint">REST API Reference for ModifyVerifiedAccessEndpoint Operation</seealso>
+        public virtual ModifyVerifiedAccessEndpointResponse ModifyVerifiedAccessEndpoint(ModifyVerifiedAccessEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVerifiedAccessEndpointResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies the configuration of an Amazon Web Services Verified Access endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpoint">REST API Reference for ModifyVerifiedAccessEndpoint Operation</seealso>
+        public virtual Task<ModifyVerifiedAccessEndpointResponse> ModifyVerifiedAccessEndpointAsync(ModifyVerifiedAccessEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessEndpointResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyVerifiedAccessEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyVerifiedAccessEndpointPolicy
+
+
+        /// <summary>
+        /// Modifies the specified Verified Access endpoint policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessEndpointPolicy service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessEndpointPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpointPolicy">REST API Reference for ModifyVerifiedAccessEndpointPolicy Operation</seealso>
+        public virtual ModifyVerifiedAccessEndpointPolicyResponse ModifyVerifiedAccessEndpointPolicy(ModifyVerifiedAccessEndpointPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessEndpointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessEndpointPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVerifiedAccessEndpointPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies the specified Verified Access endpoint policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessEndpointPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessEndpointPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpointPolicy">REST API Reference for ModifyVerifiedAccessEndpointPolicy Operation</seealso>
+        public virtual Task<ModifyVerifiedAccessEndpointPolicyResponse> ModifyVerifiedAccessEndpointPolicyAsync(ModifyVerifiedAccessEndpointPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessEndpointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessEndpointPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyVerifiedAccessEndpointPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyVerifiedAccessGroup
+
+
+        /// <summary>
+        /// Modifies the specified Verified Access group configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessGroup service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroup">REST API Reference for ModifyVerifiedAccessGroup Operation</seealso>
+        public virtual ModifyVerifiedAccessGroupResponse ModifyVerifiedAccessGroup(ModifyVerifiedAccessGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVerifiedAccessGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies the specified Verified Access group configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroup">REST API Reference for ModifyVerifiedAccessGroup Operation</seealso>
+        public virtual Task<ModifyVerifiedAccessGroupResponse> ModifyVerifiedAccessGroupAsync(ModifyVerifiedAccessGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyVerifiedAccessGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyVerifiedAccessGroupPolicy
+
+
+        /// <summary>
+        /// Modifies the specified Verified Access group policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessGroupPolicy service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessGroupPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroupPolicy">REST API Reference for ModifyVerifiedAccessGroupPolicy Operation</seealso>
+        public virtual ModifyVerifiedAccessGroupPolicyResponse ModifyVerifiedAccessGroupPolicy(ModifyVerifiedAccessGroupPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessGroupPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessGroupPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVerifiedAccessGroupPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies the specified Verified Access group policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessGroupPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessGroupPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroupPolicy">REST API Reference for ModifyVerifiedAccessGroupPolicy Operation</seealso>
+        public virtual Task<ModifyVerifiedAccessGroupPolicyResponse> ModifyVerifiedAccessGroupPolicyAsync(ModifyVerifiedAccessGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessGroupPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessGroupPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyVerifiedAccessGroupPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyVerifiedAccessInstance
+
+
+        /// <summary>
+        /// Modifies the configuration of the specified Verified Access instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessInstance service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessInstance service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstance">REST API Reference for ModifyVerifiedAccessInstance Operation</seealso>
+        public virtual ModifyVerifiedAccessInstanceResponse ModifyVerifiedAccessInstance(ModifyVerifiedAccessInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVerifiedAccessInstanceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies the configuration of the specified Verified Access instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessInstance service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstance">REST API Reference for ModifyVerifiedAccessInstance Operation</seealso>
+        public virtual Task<ModifyVerifiedAccessInstanceResponse> ModifyVerifiedAccessInstanceAsync(ModifyVerifiedAccessInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessInstanceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyVerifiedAccessInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyVerifiedAccessInstanceLoggingConfiguration
+
+
+        /// <summary>
+        /// Modifies the logging configuration for the specified Amazon Web Services Verified
+        /// Access instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessInstanceLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessInstanceLoggingConfiguration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstanceLoggingConfiguration">REST API Reference for ModifyVerifiedAccessInstanceLoggingConfiguration Operation</seealso>
+        public virtual ModifyVerifiedAccessInstanceLoggingConfigurationResponse ModifyVerifiedAccessInstanceLoggingConfiguration(ModifyVerifiedAccessInstanceLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessInstanceLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessInstanceLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVerifiedAccessInstanceLoggingConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies the logging configuration for the specified Amazon Web Services Verified
+        /// Access instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessInstanceLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessInstanceLoggingConfiguration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstanceLoggingConfiguration">REST API Reference for ModifyVerifiedAccessInstanceLoggingConfiguration Operation</seealso>
+        public virtual Task<ModifyVerifiedAccessInstanceLoggingConfigurationResponse> ModifyVerifiedAccessInstanceLoggingConfigurationAsync(ModifyVerifiedAccessInstanceLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessInstanceLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessInstanceLoggingConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyVerifiedAccessInstanceLoggingConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyVerifiedAccessTrustProvider
+
+
+        /// <summary>
+        /// Modifies the configuration of the specified Amazon Web Services Verified Access trust
+        /// provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessTrustProvider service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessTrustProvider service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessTrustProvider">REST API Reference for ModifyVerifiedAccessTrustProvider Operation</seealso>
+        public virtual ModifyVerifiedAccessTrustProviderResponse ModifyVerifiedAccessTrustProvider(ModifyVerifiedAccessTrustProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVerifiedAccessTrustProviderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies the configuration of the specified Amazon Web Services Verified Access trust
+        /// provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessTrustProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessTrustProvider service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessTrustProvider">REST API Reference for ModifyVerifiedAccessTrustProvider Operation</seealso>
+        public virtual Task<ModifyVerifiedAccessTrustProviderResponse> ModifyVerifiedAccessTrustProviderAsync(ModifyVerifiedAccessTrustProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyVerifiedAccessTrustProviderResponse>(request, options, cancellationToken);
         }
 
         #endregion

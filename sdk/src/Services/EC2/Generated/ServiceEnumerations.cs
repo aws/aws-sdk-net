@@ -3547,6 +3547,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type DeviceTrustProviderType.
+    /// </summary>
+    public class DeviceTrustProviderType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Crowdstrike for DeviceTrustProviderType
+        /// </summary>
+        public static readonly DeviceTrustProviderType Crowdstrike = new DeviceTrustProviderType("crowdstrike");
+        /// <summary>
+        /// Constant Jamf for DeviceTrustProviderType
+        /// </summary>
+        public static readonly DeviceTrustProviderType Jamf = new DeviceTrustProviderType("jamf");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeviceTrustProviderType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceTrustProviderType FindValue(string value)
+        {
+            return FindValue<DeviceTrustProviderType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceTrustProviderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeviceType.
     /// </summary>
     public class DeviceType : ConstantClass
@@ -7884,6 +7934,10 @@ namespace Amazon.EC2
         /// Constant Hpc6a48xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Hpc6a48xlarge = new InstanceType("hpc6a.48xlarge");
+        /// <summary>
+        /// Constant Hpc6id32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Hpc6id32xlarge = new InstanceType("hpc6id.32xlarge");
         /// <summary>
         /// Constant Hs18xlarge for InstanceType
         /// </summary>
@@ -14047,6 +14101,26 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType TransitGatewayRouteTableAnnouncement = new ResourceType("transit-gateway-route-table-announcement");
         /// <summary>
+        /// Constant VerifiedAccessEndpoint for ResourceType
+        /// </summary>
+        public static readonly ResourceType VerifiedAccessEndpoint = new ResourceType("verified-access-endpoint");
+        /// <summary>
+        /// Constant VerifiedAccessGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType VerifiedAccessGroup = new ResourceType("verified-access-group");
+        /// <summary>
+        /// Constant VerifiedAccessInstance for ResourceType
+        /// </summary>
+        public static readonly ResourceType VerifiedAccessInstance = new ResourceType("verified-access-instance");
+        /// <summary>
+        /// Constant VerifiedAccessPolicy for ResourceType
+        /// </summary>
+        public static readonly ResourceType VerifiedAccessPolicy = new ResourceType("verified-access-policy");
+        /// <summary>
+        /// Constant VerifiedAccessTrustProvider for ResourceType
+        /// </summary>
+        public static readonly ResourceType VerifiedAccessTrustProvider = new ResourceType("verified-access-trust-provider");
+        /// <summary>
         /// Constant Volume for ResourceType
         /// </summary>
         public static readonly ResourceType Volume = new ResourceType("volume");
@@ -17437,6 +17511,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type TrustProviderType.
+    /// </summary>
+    public class TrustProviderType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Device for TrustProviderType
+        /// </summary>
+        public static readonly TrustProviderType Device = new TrustProviderType("device");
+        /// <summary>
+        /// Constant User for TrustProviderType
+        /// </summary>
+        public static readonly TrustProviderType User = new TrustProviderType("user");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrustProviderType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrustProviderType FindValue(string value)
+        {
+            return FindValue<TrustProviderType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrustProviderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TunnelInsideIpVersion.
     /// </summary>
     public class TunnelInsideIpVersion : ConstantClass
@@ -17646,6 +17770,314 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UsageClassType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UserTrustProviderType.
+    /// </summary>
+    public class UserTrustProviderType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IamIdentityCenter for UserTrustProviderType
+        /// </summary>
+        public static readonly UserTrustProviderType IamIdentityCenter = new UserTrustProviderType("iam-identity-center");
+        /// <summary>
+        /// Constant Oidc for UserTrustProviderType
+        /// </summary>
+        public static readonly UserTrustProviderType Oidc = new UserTrustProviderType("oidc");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserTrustProviderType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserTrustProviderType FindValue(string value)
+        {
+            return FindValue<UserTrustProviderType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserTrustProviderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VerifiedAccessEndpointAttachmentType.
+    /// </summary>
+    public class VerifiedAccessEndpointAttachmentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Vpc for VerifiedAccessEndpointAttachmentType
+        /// </summary>
+        public static readonly VerifiedAccessEndpointAttachmentType Vpc = new VerifiedAccessEndpointAttachmentType("vpc");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VerifiedAccessEndpointAttachmentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerifiedAccessEndpointAttachmentType FindValue(string value)
+        {
+            return FindValue<VerifiedAccessEndpointAttachmentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerifiedAccessEndpointAttachmentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VerifiedAccessEndpointProtocol.
+    /// </summary>
+    public class VerifiedAccessEndpointProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Http for VerifiedAccessEndpointProtocol
+        /// </summary>
+        public static readonly VerifiedAccessEndpointProtocol Http = new VerifiedAccessEndpointProtocol("http");
+        /// <summary>
+        /// Constant Https for VerifiedAccessEndpointProtocol
+        /// </summary>
+        public static readonly VerifiedAccessEndpointProtocol Https = new VerifiedAccessEndpointProtocol("https");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VerifiedAccessEndpointProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerifiedAccessEndpointProtocol FindValue(string value)
+        {
+            return FindValue<VerifiedAccessEndpointProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerifiedAccessEndpointProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VerifiedAccessEndpointStatusCode.
+    /// </summary>
+    public class VerifiedAccessEndpointStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for VerifiedAccessEndpointStatusCode
+        /// </summary>
+        public static readonly VerifiedAccessEndpointStatusCode Active = new VerifiedAccessEndpointStatusCode("active");
+        /// <summary>
+        /// Constant Deleted for VerifiedAccessEndpointStatusCode
+        /// </summary>
+        public static readonly VerifiedAccessEndpointStatusCode Deleted = new VerifiedAccessEndpointStatusCode("deleted");
+        /// <summary>
+        /// Constant Deleting for VerifiedAccessEndpointStatusCode
+        /// </summary>
+        public static readonly VerifiedAccessEndpointStatusCode Deleting = new VerifiedAccessEndpointStatusCode("deleting");
+        /// <summary>
+        /// Constant Pending for VerifiedAccessEndpointStatusCode
+        /// </summary>
+        public static readonly VerifiedAccessEndpointStatusCode Pending = new VerifiedAccessEndpointStatusCode("pending");
+        /// <summary>
+        /// Constant Updating for VerifiedAccessEndpointStatusCode
+        /// </summary>
+        public static readonly VerifiedAccessEndpointStatusCode Updating = new VerifiedAccessEndpointStatusCode("updating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VerifiedAccessEndpointStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerifiedAccessEndpointStatusCode FindValue(string value)
+        {
+            return FindValue<VerifiedAccessEndpointStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerifiedAccessEndpointStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VerifiedAccessEndpointType.
+    /// </summary>
+    public class VerifiedAccessEndpointType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LoadBalancer for VerifiedAccessEndpointType
+        /// </summary>
+        public static readonly VerifiedAccessEndpointType LoadBalancer = new VerifiedAccessEndpointType("load-balancer");
+        /// <summary>
+        /// Constant NetworkInterface for VerifiedAccessEndpointType
+        /// </summary>
+        public static readonly VerifiedAccessEndpointType NetworkInterface = new VerifiedAccessEndpointType("network-interface");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VerifiedAccessEndpointType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerifiedAccessEndpointType FindValue(string value)
+        {
+            return FindValue<VerifiedAccessEndpointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerifiedAccessEndpointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VerifiedAccessLogDeliveryStatusCode.
+    /// </summary>
+    public class VerifiedAccessLogDeliveryStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for VerifiedAccessLogDeliveryStatusCode
+        /// </summary>
+        public static readonly VerifiedAccessLogDeliveryStatusCode Failed = new VerifiedAccessLogDeliveryStatusCode("failed");
+        /// <summary>
+        /// Constant Success for VerifiedAccessLogDeliveryStatusCode
+        /// </summary>
+        public static readonly VerifiedAccessLogDeliveryStatusCode Success = new VerifiedAccessLogDeliveryStatusCode("success");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VerifiedAccessLogDeliveryStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerifiedAccessLogDeliveryStatusCode FindValue(string value)
+        {
+            return FindValue<VerifiedAccessLogDeliveryStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerifiedAccessLogDeliveryStatusCode(string value)
         {
             return FindValue(value);
         }

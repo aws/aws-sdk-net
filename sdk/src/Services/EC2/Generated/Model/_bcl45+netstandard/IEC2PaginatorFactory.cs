@@ -481,6 +481,31 @@ namespace Amazon.EC2.Model
         IDescribeTrunkInterfaceAssociationsPaginator DescribeTrunkInterfaceAssociations(DescribeTrunkInterfaceAssociationsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeVerifiedAccessEndpoints operation
+        ///</summary>
+        IDescribeVerifiedAccessEndpointsPaginator DescribeVerifiedAccessEndpoints(DescribeVerifiedAccessEndpointsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeVerifiedAccessGroups operation
+        ///</summary>
+        IDescribeVerifiedAccessGroupsPaginator DescribeVerifiedAccessGroups(DescribeVerifiedAccessGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeVerifiedAccessInstanceLoggingConfigurations operation
+        ///</summary>
+        IDescribeVerifiedAccessInstanceLoggingConfigurationsPaginator DescribeVerifiedAccessInstanceLoggingConfigurations(DescribeVerifiedAccessInstanceLoggingConfigurationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeVerifiedAccessInstances operation
+        ///</summary>
+        IDescribeVerifiedAccessInstancesPaginator DescribeVerifiedAccessInstances(DescribeVerifiedAccessInstancesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeVerifiedAccessTrustProviders operation
+        ///</summary>
+        IDescribeVerifiedAccessTrustProvidersPaginator DescribeVerifiedAccessTrustProviders(DescribeVerifiedAccessTrustProvidersRequest request);
+
+        /// <summary>
         /// Paginator for DescribeVolumes operation
         ///</summary>
         IDescribeVolumesPaginator DescribeVolumes(DescribeVolumesRequest request);

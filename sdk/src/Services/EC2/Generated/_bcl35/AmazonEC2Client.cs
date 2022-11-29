@@ -2320,6 +2320,62 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AttachVerifiedAccessTrustProvider
+
+        /// <summary>
+        /// A trust provider is a third-party entity that creates, maintains, and manages identity
+        /// information for users and devices. One or more trust providers can be attached to
+        /// an Amazon Web Services Verified Access instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachVerifiedAccessTrustProvider service method.</param>
+        /// 
+        /// <returns>The response from the AttachVerifiedAccessTrustProvider service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVerifiedAccessTrustProvider">REST API Reference for AttachVerifiedAccessTrustProvider Operation</seealso>
+        public virtual AttachVerifiedAccessTrustProviderResponse AttachVerifiedAccessTrustProvider(AttachVerifiedAccessTrustProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+
+            return Invoke<AttachVerifiedAccessTrustProviderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachVerifiedAccessTrustProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachVerifiedAccessTrustProvider operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachVerifiedAccessTrustProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVerifiedAccessTrustProvider">REST API Reference for AttachVerifiedAccessTrustProvider Operation</seealso>
+        public virtual IAsyncResult BeginAttachVerifiedAccessTrustProvider(AttachVerifiedAccessTrustProviderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AttachVerifiedAccessTrustProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachVerifiedAccessTrustProvider.</param>
+        /// 
+        /// <returns>Returns a  AttachVerifiedAccessTrustProviderResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVerifiedAccessTrustProvider">REST API Reference for AttachVerifiedAccessTrustProvider Operation</seealso>
+        public virtual AttachVerifiedAccessTrustProviderResponse EndAttachVerifiedAccessTrustProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AttachVerifiedAccessTrustProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AttachVolume
 
         /// <summary>
@@ -8149,6 +8205,232 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateVerifiedAccessEndpoint
+
+        /// <summary>
+        /// An Amazon Web Services Verified Access endpoint is where you define your application
+        /// along with an optional endpoint-level access policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateVerifiedAccessEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessEndpoint">REST API Reference for CreateVerifiedAccessEndpoint Operation</seealso>
+        public virtual CreateVerifiedAccessEndpointResponse CreateVerifiedAccessEndpoint(CreateVerifiedAccessEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVerifiedAccessEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVerifiedAccessEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVerifiedAccessEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVerifiedAccessEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessEndpoint operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVerifiedAccessEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessEndpoint">REST API Reference for CreateVerifiedAccessEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginCreateVerifiedAccessEndpoint(CreateVerifiedAccessEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVerifiedAccessEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVerifiedAccessEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVerifiedAccessEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVerifiedAccessEndpoint.</param>
+        /// 
+        /// <returns>Returns a  CreateVerifiedAccessEndpointResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessEndpoint">REST API Reference for CreateVerifiedAccessEndpoint Operation</seealso>
+        public virtual CreateVerifiedAccessEndpointResponse EndCreateVerifiedAccessEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateVerifiedAccessEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateVerifiedAccessGroup
+
+        /// <summary>
+        /// An Amazon Web Services Verified Access group is a collection of Amazon Web Services
+        /// Verified Access endpoints who's associated applications have similar security requirements.
+        /// Each instance within an Amazon Web Services Verified Access group shares an Amazon
+        /// Web Services Verified Access policy. For example, you can group all Amazon Web Services
+        /// Verified Access instances associated with “sales” applications together and use one
+        /// common Amazon Web Services Verified Access policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateVerifiedAccessGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessGroup">REST API Reference for CreateVerifiedAccessGroup Operation</seealso>
+        public virtual CreateVerifiedAccessGroupResponse CreateVerifiedAccessGroup(CreateVerifiedAccessGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVerifiedAccessGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVerifiedAccessGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVerifiedAccessGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVerifiedAccessGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessGroup operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVerifiedAccessGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessGroup">REST API Reference for CreateVerifiedAccessGroup Operation</seealso>
+        public virtual IAsyncResult BeginCreateVerifiedAccessGroup(CreateVerifiedAccessGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVerifiedAccessGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVerifiedAccessGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVerifiedAccessGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVerifiedAccessGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateVerifiedAccessGroupResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessGroup">REST API Reference for CreateVerifiedAccessGroup Operation</seealso>
+        public virtual CreateVerifiedAccessGroupResponse EndCreateVerifiedAccessGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateVerifiedAccessGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateVerifiedAccessInstance
+
+        /// <summary>
+        /// An Amazon Web Services Verified Access instance is a regional entity that evaluates
+        /// application requests and grants access only when your security requirements are met.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessInstance service method.</param>
+        /// 
+        /// <returns>The response from the CreateVerifiedAccessInstance service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessInstance">REST API Reference for CreateVerifiedAccessInstance Operation</seealso>
+        public virtual CreateVerifiedAccessInstanceResponse CreateVerifiedAccessInstance(CreateVerifiedAccessInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVerifiedAccessInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVerifiedAccessInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVerifiedAccessInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVerifiedAccessInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessInstance operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVerifiedAccessInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessInstance">REST API Reference for CreateVerifiedAccessInstance Operation</seealso>
+        public virtual IAsyncResult BeginCreateVerifiedAccessInstance(CreateVerifiedAccessInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVerifiedAccessInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVerifiedAccessInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVerifiedAccessInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVerifiedAccessInstance.</param>
+        /// 
+        /// <returns>Returns a  CreateVerifiedAccessInstanceResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessInstance">REST API Reference for CreateVerifiedAccessInstance Operation</seealso>
+        public virtual CreateVerifiedAccessInstanceResponse EndCreateVerifiedAccessInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateVerifiedAccessInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateVerifiedAccessTrustProvider
+
+        /// <summary>
+        /// A trust provider is a third-party entity that creates, maintains, and manages identity
+        /// information for users and devices. When an application request is made, the identity
+        /// information sent by the trust provider will be evaluated by Amazon Web Services Verified
+        /// Access, before allowing or denying the application request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessTrustProvider service method.</param>
+        /// 
+        /// <returns>The response from the CreateVerifiedAccessTrustProvider service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessTrustProvider">REST API Reference for CreateVerifiedAccessTrustProvider Operation</seealso>
+        public virtual CreateVerifiedAccessTrustProviderResponse CreateVerifiedAccessTrustProvider(CreateVerifiedAccessTrustProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVerifiedAccessTrustProviderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVerifiedAccessTrustProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessTrustProvider operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVerifiedAccessTrustProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessTrustProvider">REST API Reference for CreateVerifiedAccessTrustProvider Operation</seealso>
+        public virtual IAsyncResult BeginCreateVerifiedAccessTrustProvider(CreateVerifiedAccessTrustProviderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVerifiedAccessTrustProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVerifiedAccessTrustProvider.</param>
+        /// 
+        /// <returns>Returns a  CreateVerifiedAccessTrustProviderResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessTrustProvider">REST API Reference for CreateVerifiedAccessTrustProvider Operation</seealso>
+        public virtual CreateVerifiedAccessTrustProviderResponse EndCreateVerifiedAccessTrustProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateVerifiedAccessTrustProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateVolume
 
         /// <summary>
@@ -12135,6 +12417,222 @@ namespace Amazon.EC2
         public virtual DeleteTransitGatewayVpcAttachmentResponse EndDeleteTransitGatewayVpcAttachment(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTransitGatewayVpcAttachmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteVerifiedAccessEndpoint
+
+        /// <summary>
+        /// Delete an Amazon Web Services Verified Access endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedAccessEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVerifiedAccessEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessEndpoint">REST API Reference for DeleteVerifiedAccessEndpoint Operation</seealso>
+        public virtual DeleteVerifiedAccessEndpointResponse DeleteVerifiedAccessEndpoint(DeleteVerifiedAccessEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVerifiedAccessEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVerifiedAccessEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVerifiedAccessEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVerifiedAccessEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedAccessEndpoint operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVerifiedAccessEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessEndpoint">REST API Reference for DeleteVerifiedAccessEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginDeleteVerifiedAccessEndpoint(DeleteVerifiedAccessEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVerifiedAccessEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVerifiedAccessEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVerifiedAccessEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVerifiedAccessEndpoint.</param>
+        /// 
+        /// <returns>Returns a  DeleteVerifiedAccessEndpointResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessEndpoint">REST API Reference for DeleteVerifiedAccessEndpoint Operation</seealso>
+        public virtual DeleteVerifiedAccessEndpointResponse EndDeleteVerifiedAccessEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVerifiedAccessEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteVerifiedAccessGroup
+
+        /// <summary>
+        /// Delete an Amazon Web Services Verified Access group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedAccessGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVerifiedAccessGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessGroup">REST API Reference for DeleteVerifiedAccessGroup Operation</seealso>
+        public virtual DeleteVerifiedAccessGroupResponse DeleteVerifiedAccessGroup(DeleteVerifiedAccessGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVerifiedAccessGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVerifiedAccessGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVerifiedAccessGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVerifiedAccessGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedAccessGroup operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVerifiedAccessGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessGroup">REST API Reference for DeleteVerifiedAccessGroup Operation</seealso>
+        public virtual IAsyncResult BeginDeleteVerifiedAccessGroup(DeleteVerifiedAccessGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVerifiedAccessGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVerifiedAccessGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVerifiedAccessGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVerifiedAccessGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteVerifiedAccessGroupResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessGroup">REST API Reference for DeleteVerifiedAccessGroup Operation</seealso>
+        public virtual DeleteVerifiedAccessGroupResponse EndDeleteVerifiedAccessGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVerifiedAccessGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteVerifiedAccessInstance
+
+        /// <summary>
+        /// Delete an Amazon Web Services Verified Access instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedAccessInstance service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVerifiedAccessInstance service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessInstance">REST API Reference for DeleteVerifiedAccessInstance Operation</seealso>
+        public virtual DeleteVerifiedAccessInstanceResponse DeleteVerifiedAccessInstance(DeleteVerifiedAccessInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVerifiedAccessInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVerifiedAccessInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVerifiedAccessInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVerifiedAccessInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedAccessInstance operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVerifiedAccessInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessInstance">REST API Reference for DeleteVerifiedAccessInstance Operation</seealso>
+        public virtual IAsyncResult BeginDeleteVerifiedAccessInstance(DeleteVerifiedAccessInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVerifiedAccessInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVerifiedAccessInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVerifiedAccessInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVerifiedAccessInstance.</param>
+        /// 
+        /// <returns>Returns a  DeleteVerifiedAccessInstanceResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessInstance">REST API Reference for DeleteVerifiedAccessInstance Operation</seealso>
+        public virtual DeleteVerifiedAccessInstanceResponse EndDeleteVerifiedAccessInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVerifiedAccessInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteVerifiedAccessTrustProvider
+
+        /// <summary>
+        /// Delete an Amazon Web Services Verified Access trust provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedAccessTrustProvider service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVerifiedAccessTrustProvider service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessTrustProvider">REST API Reference for DeleteVerifiedAccessTrustProvider Operation</seealso>
+        public virtual DeleteVerifiedAccessTrustProviderResponse DeleteVerifiedAccessTrustProvider(DeleteVerifiedAccessTrustProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVerifiedAccessTrustProviderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVerifiedAccessTrustProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedAccessTrustProvider operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVerifiedAccessTrustProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessTrustProvider">REST API Reference for DeleteVerifiedAccessTrustProvider Operation</seealso>
+        public virtual IAsyncResult BeginDeleteVerifiedAccessTrustProvider(DeleteVerifiedAccessTrustProviderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVerifiedAccessTrustProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVerifiedAccessTrustProvider.</param>
+        /// 
+        /// <returns>Returns a  DeleteVerifiedAccessTrustProviderResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessTrustProvider">REST API Reference for DeleteVerifiedAccessTrustProvider Operation</seealso>
+        public virtual DeleteVerifiedAccessTrustProviderResponse EndDeleteVerifiedAccessTrustProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVerifiedAccessTrustProviderResponse>(asyncResult);
         }
 
         #endregion
@@ -21038,6 +21536,277 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeVerifiedAccessEndpoints
+
+        /// <summary>
+        /// Describe Amazon Web Services Verified Access endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVerifiedAccessEndpoints service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessEndpoints">REST API Reference for DescribeVerifiedAccessEndpoints Operation</seealso>
+        public virtual DescribeVerifiedAccessEndpointsResponse DescribeVerifiedAccessEndpoints(DescribeVerifiedAccessEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVerifiedAccessEndpointsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVerifiedAccessEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessEndpoints operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVerifiedAccessEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessEndpoints">REST API Reference for DescribeVerifiedAccessEndpoints Operation</seealso>
+        public virtual IAsyncResult BeginDescribeVerifiedAccessEndpoints(DescribeVerifiedAccessEndpointsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessEndpointsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVerifiedAccessEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVerifiedAccessEndpoints.</param>
+        /// 
+        /// <returns>Returns a  DescribeVerifiedAccessEndpointsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessEndpoints">REST API Reference for DescribeVerifiedAccessEndpoints Operation</seealso>
+        public virtual DescribeVerifiedAccessEndpointsResponse EndDescribeVerifiedAccessEndpoints(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeVerifiedAccessEndpointsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeVerifiedAccessGroups
+
+        /// <summary>
+        /// Describe details of existing Verified Access groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVerifiedAccessGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessGroups">REST API Reference for DescribeVerifiedAccessGroups Operation</seealso>
+        public virtual DescribeVerifiedAccessGroupsResponse DescribeVerifiedAccessGroups(DescribeVerifiedAccessGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVerifiedAccessGroupsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVerifiedAccessGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessGroups operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVerifiedAccessGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessGroups">REST API Reference for DescribeVerifiedAccessGroups Operation</seealso>
+        public virtual IAsyncResult BeginDescribeVerifiedAccessGroups(DescribeVerifiedAccessGroupsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVerifiedAccessGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVerifiedAccessGroups.</param>
+        /// 
+        /// <returns>Returns a  DescribeVerifiedAccessGroupsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessGroups">REST API Reference for DescribeVerifiedAccessGroups Operation</seealso>
+        public virtual DescribeVerifiedAccessGroupsResponse EndDescribeVerifiedAccessGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeVerifiedAccessGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeVerifiedAccessInstanceLoggingConfigurations
+
+        /// <summary>
+        /// Describes the current logging configuration for the Amazon Web Services Verified Access
+        /// instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessInstanceLoggingConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVerifiedAccessInstanceLoggingConfigurations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstanceLoggingConfigurations">REST API Reference for DescribeVerifiedAccessInstanceLoggingConfigurations Operation</seealso>
+        public virtual DescribeVerifiedAccessInstanceLoggingConfigurationsResponse DescribeVerifiedAccessInstanceLoggingConfigurations(DescribeVerifiedAccessInstanceLoggingConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessInstanceLoggingConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessInstanceLoggingConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVerifiedAccessInstanceLoggingConfigurationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVerifiedAccessInstanceLoggingConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessInstanceLoggingConfigurations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVerifiedAccessInstanceLoggingConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstanceLoggingConfigurations">REST API Reference for DescribeVerifiedAccessInstanceLoggingConfigurations Operation</seealso>
+        public virtual IAsyncResult BeginDescribeVerifiedAccessInstanceLoggingConfigurations(DescribeVerifiedAccessInstanceLoggingConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessInstanceLoggingConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessInstanceLoggingConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVerifiedAccessInstanceLoggingConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVerifiedAccessInstanceLoggingConfigurations.</param>
+        /// 
+        /// <returns>Returns a  DescribeVerifiedAccessInstanceLoggingConfigurationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstanceLoggingConfigurations">REST API Reference for DescribeVerifiedAccessInstanceLoggingConfigurations Operation</seealso>
+        public virtual DescribeVerifiedAccessInstanceLoggingConfigurationsResponse EndDescribeVerifiedAccessInstanceLoggingConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeVerifiedAccessInstanceLoggingConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeVerifiedAccessInstances
+
+        /// <summary>
+        /// Describe Verified Access instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessInstances service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVerifiedAccessInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstances">REST API Reference for DescribeVerifiedAccessInstances Operation</seealso>
+        public virtual DescribeVerifiedAccessInstancesResponse DescribeVerifiedAccessInstances(DescribeVerifiedAccessInstancesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVerifiedAccessInstancesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVerifiedAccessInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessInstances operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVerifiedAccessInstances
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstances">REST API Reference for DescribeVerifiedAccessInstances Operation</seealso>
+        public virtual IAsyncResult BeginDescribeVerifiedAccessInstances(DescribeVerifiedAccessInstancesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVerifiedAccessInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVerifiedAccessInstances.</param>
+        /// 
+        /// <returns>Returns a  DescribeVerifiedAccessInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstances">REST API Reference for DescribeVerifiedAccessInstances Operation</seealso>
+        public virtual DescribeVerifiedAccessInstancesResponse EndDescribeVerifiedAccessInstances(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeVerifiedAccessInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeVerifiedAccessTrustProviders
+
+        /// <summary>
+        /// Describe details of existing Verified Access trust providers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessTrustProviders service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVerifiedAccessTrustProviders service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessTrustProviders">REST API Reference for DescribeVerifiedAccessTrustProviders Operation</seealso>
+        public virtual DescribeVerifiedAccessTrustProvidersResponse DescribeVerifiedAccessTrustProviders(DescribeVerifiedAccessTrustProvidersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessTrustProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessTrustProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVerifiedAccessTrustProvidersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVerifiedAccessTrustProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessTrustProviders operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVerifiedAccessTrustProviders
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessTrustProviders">REST API Reference for DescribeVerifiedAccessTrustProviders Operation</seealso>
+        public virtual IAsyncResult BeginDescribeVerifiedAccessTrustProviders(DescribeVerifiedAccessTrustProvidersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVerifiedAccessTrustProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVerifiedAccessTrustProvidersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVerifiedAccessTrustProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVerifiedAccessTrustProviders.</param>
+        /// 
+        /// <returns>Returns a  DescribeVerifiedAccessTrustProvidersResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessTrustProviders">REST API Reference for DescribeVerifiedAccessTrustProviders Operation</seealso>
+        public virtual DescribeVerifiedAccessTrustProvidersResponse EndDescribeVerifiedAccessTrustProviders(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeVerifiedAccessTrustProvidersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeVolumeAttribute
 
         /// <summary>
@@ -22396,6 +23165,60 @@ namespace Amazon.EC2
         public virtual DetachNetworkInterfaceResponse EndDetachNetworkInterface(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachNetworkInterfaceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DetachVerifiedAccessTrustProvider
+
+        /// <summary>
+        /// Detach a trust provider from an Amazon Web Services Verified Access instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachVerifiedAccessTrustProvider service method.</param>
+        /// 
+        /// <returns>The response from the DetachVerifiedAccessTrustProvider service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVerifiedAccessTrustProvider">REST API Reference for DetachVerifiedAccessTrustProvider Operation</seealso>
+        public virtual DetachVerifiedAccessTrustProviderResponse DetachVerifiedAccessTrustProvider(DetachVerifiedAccessTrustProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DetachVerifiedAccessTrustProviderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachVerifiedAccessTrustProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachVerifiedAccessTrustProvider operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachVerifiedAccessTrustProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVerifiedAccessTrustProvider">REST API Reference for DetachVerifiedAccessTrustProvider Operation</seealso>
+        public virtual IAsyncResult BeginDetachVerifiedAccessTrustProvider(DetachVerifiedAccessTrustProviderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetachVerifiedAccessTrustProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachVerifiedAccessTrustProvider.</param>
+        /// 
+        /// <returns>Returns a  DetachVerifiedAccessTrustProviderResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVerifiedAccessTrustProvider">REST API Reference for DetachVerifiedAccessTrustProvider Operation</seealso>
+        public virtual DetachVerifiedAccessTrustProviderResponse EndDetachVerifiedAccessTrustProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DetachVerifiedAccessTrustProviderResponse>(asyncResult);
         }
 
         #endregion
@@ -27182,6 +28005,114 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetVerifiedAccessEndpointPolicy
+
+        /// <summary>
+        /// Get the Verified Access policy associated with the endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVerifiedAccessEndpointPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetVerifiedAccessEndpointPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointPolicy">REST API Reference for GetVerifiedAccessEndpointPolicy Operation</seealso>
+        public virtual GetVerifiedAccessEndpointPolicyResponse GetVerifiedAccessEndpointPolicy(GetVerifiedAccessEndpointPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVerifiedAccessEndpointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVerifiedAccessEndpointPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetVerifiedAccessEndpointPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVerifiedAccessEndpointPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVerifiedAccessEndpointPolicy operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVerifiedAccessEndpointPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointPolicy">REST API Reference for GetVerifiedAccessEndpointPolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetVerifiedAccessEndpointPolicy(GetVerifiedAccessEndpointPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVerifiedAccessEndpointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVerifiedAccessEndpointPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVerifiedAccessEndpointPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVerifiedAccessEndpointPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetVerifiedAccessEndpointPolicyResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointPolicy">REST API Reference for GetVerifiedAccessEndpointPolicy Operation</seealso>
+        public virtual GetVerifiedAccessEndpointPolicyResponse EndGetVerifiedAccessEndpointPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetVerifiedAccessEndpointPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetVerifiedAccessGroupPolicy
+
+        /// <summary>
+        /// Shows the contents of the Verified Access policy associated with the group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVerifiedAccessGroupPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetVerifiedAccessGroupPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessGroupPolicy">REST API Reference for GetVerifiedAccessGroupPolicy Operation</seealso>
+        public virtual GetVerifiedAccessGroupPolicyResponse GetVerifiedAccessGroupPolicy(GetVerifiedAccessGroupPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVerifiedAccessGroupPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVerifiedAccessGroupPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetVerifiedAccessGroupPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVerifiedAccessGroupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVerifiedAccessGroupPolicy operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVerifiedAccessGroupPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessGroupPolicy">REST API Reference for GetVerifiedAccessGroupPolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetVerifiedAccessGroupPolicy(GetVerifiedAccessGroupPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVerifiedAccessGroupPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVerifiedAccessGroupPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVerifiedAccessGroupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVerifiedAccessGroupPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetVerifiedAccessGroupPolicyResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessGroupPolicy">REST API Reference for GetVerifiedAccessGroupPolicy Operation</seealso>
+        public virtual GetVerifiedAccessGroupPolicyResponse EndGetVerifiedAccessGroupPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetVerifiedAccessGroupPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetVpnConnectionDeviceSampleConfiguration
 
         /// <summary>
@@ -30493,6 +31424,386 @@ namespace Amazon.EC2
         public virtual ModifyTransitGatewayVpcAttachmentResponse EndModifyTransitGatewayVpcAttachment(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyTransitGatewayVpcAttachmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyVerifiedAccessEndpoint
+
+        /// <summary>
+        /// Modifies the configuration of an Amazon Web Services Verified Access endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpoint">REST API Reference for ModifyVerifiedAccessEndpoint Operation</seealso>
+        public virtual ModifyVerifiedAccessEndpointResponse ModifyVerifiedAccessEndpoint(ModifyVerifiedAccessEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVerifiedAccessEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVerifiedAccessEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessEndpoint operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVerifiedAccessEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpoint">REST API Reference for ModifyVerifiedAccessEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginModifyVerifiedAccessEndpoint(ModifyVerifiedAccessEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyVerifiedAccessEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVerifiedAccessEndpoint.</param>
+        /// 
+        /// <returns>Returns a  ModifyVerifiedAccessEndpointResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpoint">REST API Reference for ModifyVerifiedAccessEndpoint Operation</seealso>
+        public virtual ModifyVerifiedAccessEndpointResponse EndModifyVerifiedAccessEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyVerifiedAccessEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyVerifiedAccessEndpointPolicy
+
+        /// <summary>
+        /// Modifies the specified Verified Access endpoint policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessEndpointPolicy service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessEndpointPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpointPolicy">REST API Reference for ModifyVerifiedAccessEndpointPolicy Operation</seealso>
+        public virtual ModifyVerifiedAccessEndpointPolicyResponse ModifyVerifiedAccessEndpointPolicy(ModifyVerifiedAccessEndpointPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessEndpointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessEndpointPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVerifiedAccessEndpointPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVerifiedAccessEndpointPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessEndpointPolicy operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVerifiedAccessEndpointPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpointPolicy">REST API Reference for ModifyVerifiedAccessEndpointPolicy Operation</seealso>
+        public virtual IAsyncResult BeginModifyVerifiedAccessEndpointPolicy(ModifyVerifiedAccessEndpointPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessEndpointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessEndpointPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyVerifiedAccessEndpointPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVerifiedAccessEndpointPolicy.</param>
+        /// 
+        /// <returns>Returns a  ModifyVerifiedAccessEndpointPolicyResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpointPolicy">REST API Reference for ModifyVerifiedAccessEndpointPolicy Operation</seealso>
+        public virtual ModifyVerifiedAccessEndpointPolicyResponse EndModifyVerifiedAccessEndpointPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyVerifiedAccessEndpointPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyVerifiedAccessGroup
+
+        /// <summary>
+        /// Modifies the specified Verified Access group configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessGroup service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroup">REST API Reference for ModifyVerifiedAccessGroup Operation</seealso>
+        public virtual ModifyVerifiedAccessGroupResponse ModifyVerifiedAccessGroup(ModifyVerifiedAccessGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVerifiedAccessGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVerifiedAccessGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessGroup operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVerifiedAccessGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroup">REST API Reference for ModifyVerifiedAccessGroup Operation</seealso>
+        public virtual IAsyncResult BeginModifyVerifiedAccessGroup(ModifyVerifiedAccessGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyVerifiedAccessGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVerifiedAccessGroup.</param>
+        /// 
+        /// <returns>Returns a  ModifyVerifiedAccessGroupResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroup">REST API Reference for ModifyVerifiedAccessGroup Operation</seealso>
+        public virtual ModifyVerifiedAccessGroupResponse EndModifyVerifiedAccessGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyVerifiedAccessGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyVerifiedAccessGroupPolicy
+
+        /// <summary>
+        /// Modifies the specified Verified Access group policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessGroupPolicy service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessGroupPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroupPolicy">REST API Reference for ModifyVerifiedAccessGroupPolicy Operation</seealso>
+        public virtual ModifyVerifiedAccessGroupPolicyResponse ModifyVerifiedAccessGroupPolicy(ModifyVerifiedAccessGroupPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessGroupPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessGroupPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVerifiedAccessGroupPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVerifiedAccessGroupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessGroupPolicy operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVerifiedAccessGroupPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroupPolicy">REST API Reference for ModifyVerifiedAccessGroupPolicy Operation</seealso>
+        public virtual IAsyncResult BeginModifyVerifiedAccessGroupPolicy(ModifyVerifiedAccessGroupPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessGroupPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessGroupPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyVerifiedAccessGroupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVerifiedAccessGroupPolicy.</param>
+        /// 
+        /// <returns>Returns a  ModifyVerifiedAccessGroupPolicyResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroupPolicy">REST API Reference for ModifyVerifiedAccessGroupPolicy Operation</seealso>
+        public virtual ModifyVerifiedAccessGroupPolicyResponse EndModifyVerifiedAccessGroupPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyVerifiedAccessGroupPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyVerifiedAccessInstance
+
+        /// <summary>
+        /// Modifies the configuration of the specified Verified Access instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessInstance service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessInstance service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstance">REST API Reference for ModifyVerifiedAccessInstance Operation</seealso>
+        public virtual ModifyVerifiedAccessInstanceResponse ModifyVerifiedAccessInstance(ModifyVerifiedAccessInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVerifiedAccessInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVerifiedAccessInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessInstance operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVerifiedAccessInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstance">REST API Reference for ModifyVerifiedAccessInstance Operation</seealso>
+        public virtual IAsyncResult BeginModifyVerifiedAccessInstance(ModifyVerifiedAccessInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyVerifiedAccessInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVerifiedAccessInstance.</param>
+        /// 
+        /// <returns>Returns a  ModifyVerifiedAccessInstanceResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstance">REST API Reference for ModifyVerifiedAccessInstance Operation</seealso>
+        public virtual ModifyVerifiedAccessInstanceResponse EndModifyVerifiedAccessInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyVerifiedAccessInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyVerifiedAccessInstanceLoggingConfiguration
+
+        /// <summary>
+        /// Modifies the logging configuration for the specified Amazon Web Services Verified
+        /// Access instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessInstanceLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessInstanceLoggingConfiguration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstanceLoggingConfiguration">REST API Reference for ModifyVerifiedAccessInstanceLoggingConfiguration Operation</seealso>
+        public virtual ModifyVerifiedAccessInstanceLoggingConfigurationResponse ModifyVerifiedAccessInstanceLoggingConfiguration(ModifyVerifiedAccessInstanceLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessInstanceLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessInstanceLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVerifiedAccessInstanceLoggingConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVerifiedAccessInstanceLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessInstanceLoggingConfiguration operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVerifiedAccessInstanceLoggingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstanceLoggingConfiguration">REST API Reference for ModifyVerifiedAccessInstanceLoggingConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginModifyVerifiedAccessInstanceLoggingConfiguration(ModifyVerifiedAccessInstanceLoggingConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessInstanceLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessInstanceLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyVerifiedAccessInstanceLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVerifiedAccessInstanceLoggingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  ModifyVerifiedAccessInstanceLoggingConfigurationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstanceLoggingConfiguration">REST API Reference for ModifyVerifiedAccessInstanceLoggingConfiguration Operation</seealso>
+        public virtual ModifyVerifiedAccessInstanceLoggingConfigurationResponse EndModifyVerifiedAccessInstanceLoggingConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyVerifiedAccessInstanceLoggingConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyVerifiedAccessTrustProvider
+
+        /// <summary>
+        /// Modifies the configuration of the specified Amazon Web Services Verified Access trust
+        /// provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessTrustProvider service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVerifiedAccessTrustProvider service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessTrustProvider">REST API Reference for ModifyVerifiedAccessTrustProvider Operation</seealso>
+        public virtual ModifyVerifiedAccessTrustProviderResponse ModifyVerifiedAccessTrustProvider(ModifyVerifiedAccessTrustProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVerifiedAccessTrustProviderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVerifiedAccessTrustProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessTrustProvider operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVerifiedAccessTrustProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessTrustProvider">REST API Reference for ModifyVerifiedAccessTrustProvider Operation</seealso>
+        public virtual IAsyncResult BeginModifyVerifiedAccessTrustProvider(ModifyVerifiedAccessTrustProviderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVerifiedAccessTrustProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyVerifiedAccessTrustProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVerifiedAccessTrustProvider.</param>
+        /// 
+        /// <returns>Returns a  ModifyVerifiedAccessTrustProviderResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessTrustProvider">REST API Reference for ModifyVerifiedAccessTrustProvider Operation</seealso>
+        public virtual ModifyVerifiedAccessTrustProviderResponse EndModifyVerifiedAccessTrustProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyVerifiedAccessTrustProviderResponse>(asyncResult);
         }
 
         #endregion

@@ -471,6 +471,31 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeVerifiedAccessEndpointsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeVerifiedAccessGroupsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeVerifiedAccessInstanceLoggingConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeVerifiedAccessInstancesRequest.MaxResults</property>
+    <min>5</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeVerifiedAccessTrustProvidersRequest.MaxResults</property>
+    <min>5</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeVpcClassicLinkDnsSupportRequest.MaxResults</property>
     <min>5</min>
     <max>255</max>
@@ -706,6 +731,16 @@
     <max>1283</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.CreateVerifiedAccessEndpointEniOptions.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateVerifiedAccessEndpointLoadBalancerOptions.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.ElasticInferenceAccelerator.Count</property>
     <min>1</min>
   </property-value-rule>
@@ -871,6 +906,16 @@
     <max>1283</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.ModifyVerifiedAccessEndpointEniOptions.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ModifyVerifiedAccessEndpointLoadBalancerOptions.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.NetworkInsightsAccessScope.NetworkInsightsAccessScopeArn</property>
     <min>1</min>
     <max>1283</max>
@@ -915,5 +960,15 @@
   <property-value-rule>
     <property>Amazon.EC2.Model.ReservationFleetInstanceSpecification.Priority</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.VerifiedAccessEndpointEniOptions.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.VerifiedAccessEndpointLoadBalancerOptions.Port</property>
+    <min>1</min>
+    <max>65535</max>
   </property-value-rule>
 </property-value-rules>
