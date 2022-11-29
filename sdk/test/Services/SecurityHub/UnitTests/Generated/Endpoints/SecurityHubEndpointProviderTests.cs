@@ -211,6 +211,66 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("SecurityHub")]
+        [Description("For region me-central-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_mecentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new SecurityHubEndpointParameters();
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "me-central-1";
+            var endpoint = new AmazonSecurityHubEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://securityhub-fips.me-central-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SecurityHub")]
+        [Description("For region me-central-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_mecentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new SecurityHubEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "me-central-1";
+            var endpoint = new AmazonSecurityHubEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://securityhub-fips.me-central-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SecurityHub")]
+        [Description("For region me-central-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_mecentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new SecurityHubEndpointParameters();
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "me-central-1";
+            var endpoint = new AmazonSecurityHubEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://securityhub.me-central-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SecurityHub")]
+        [Description("For region me-central-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_mecentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new SecurityHubEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "me-central-1";
+            var endpoint = new AmazonSecurityHubEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://securityhub.me-central-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SecurityHub")]
         [Description("For region ca-central-1 with FIPS enabled and DualStack enabled")]
         public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Standard Object
+    /// Response Unmarshaller for StandardsManagedBy Object
     /// </summary>  
-    public class StandardUnmarshaller : IUnmarshaller<Standard, XmlUnmarshallerContext>, IUnmarshaller<Standard, JsonUnmarshallerContext>
+    public class StandardsManagedByUnmarshaller : IUnmarshaller<StandardsManagedBy, XmlUnmarshallerContext>, IUnmarshaller<StandardsManagedBy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Standard IUnmarshaller<Standard, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        StandardsManagedBy IUnmarshaller<StandardsManagedBy, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Standard Unmarshall(JsonUnmarshallerContext context)
+        public StandardsManagedBy Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Standard unmarshalledObject = new Standard();
+            StandardsManagedBy unmarshalledObject = new StandardsManagedBy();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Company", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Company = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EnabledByDefault", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EnabledByDefault = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Product", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StandardsArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StandardsArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StandardsManagedBy", targetDepth))
-                {
-                    var unmarshaller = StandardsManagedByUnmarshaller.Instance;
-                    unmarshalledObject.StandardsManagedBy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Product = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static StandardUnmarshaller _instance = new StandardUnmarshaller();        
+        private static StandardsManagedByUnmarshaller _instance = new StandardsManagedByUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StandardUnmarshaller Instance
+        public static StandardsManagedByUnmarshaller Instance
         {
             get
             {
