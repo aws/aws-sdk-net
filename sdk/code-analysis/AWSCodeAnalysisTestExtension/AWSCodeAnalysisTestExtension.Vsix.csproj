@@ -144,6 +144,10 @@
       <Project>{719E2506-84AA-4A01-B4F8-70C9F837C541}</Project>
       <Name>AWSSDK.AppSync.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ARCZonalShift/AWSSDK.ARCZonalShift.CodeAnalysis.csproj">
+      <Project>{D8589588-8495-44A5-A1BD-121492738707}</Project>
+      <Name>AWSSDK.ARCZonalShift.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Athena/AWSSDK.Athena.CodeAnalysis.csproj">
       <Project>{3F35B8E9-41B1-4D5A-8CFA-47B00E4030E3}</Project>
       <Name>AWSSDK.Athena.CodeAnalysis</Name>
