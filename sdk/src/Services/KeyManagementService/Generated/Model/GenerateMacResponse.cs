@@ -59,8 +59,13 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Mac. 
         /// <para>
-        /// The hash-based message authentication code (HMAC) for the given message, key, and
-        /// MAC algorithm.
+        /// The hash-based message authentication code (HMAC) that was generated for the specified
+        /// message, HMAC KMS key, and MAC algorithm.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is the standard, raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC
+        /// 2104</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]

@@ -38,9 +38,9 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// KMS applies the grant constraints only to cryptographic operations that support an
     /// encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric
-    /// encryption KMS key</a>. Grant constraints are not applied to operations that do not
-    /// support an encryption context, such as cryptographic operations with HMAC KMS keys
-    /// or asymmetric KMS keys, and management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.
+    /// KMS key</a>. Grant constraints are not applied to operations that do not support an
+    /// encryption context, such as cryptographic operations with asymmetric KMS keys and
+    /// management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.
     /// </para>
     ///  <important> 
     /// <para>

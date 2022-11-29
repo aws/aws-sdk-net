@@ -47,6 +47,24 @@
     <max>5000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.XksProxyUriEndpoint</property>
+    <min>10</min>
+    <max>128</max>
+    <pattern>^https://[a-zA-Z0-9.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.XksProxyUriPath</property>
+    <min>10</min>
+    <max>128</max>
+    <pattern>^(/[a-zA-Z0-9\/_-]+/kms/xks/v\d{1,2})$|^(/kms/xks/v\d{1,2})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.XksProxyVpcEndpointServiceName</property>
+    <min>20</min>
+    <max>64</max>
+    <pattern>^com\.amazonaws\.vpce\.([a-z]+-){2,3}\d+\.vpce-svc-[0-9a-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreResponse.CustomKeyStoreId</property>
     <min>1</min>
     <max>64</max>
@@ -99,6 +117,12 @@
     <min>1</min>
     <max>131072</max>
     <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.CreateKeyRequest.XksKeyId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.DecryptRequest.CiphertextBlob</property>
@@ -731,6 +755,24 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.XksProxyUriEndpoint</property>
+    <min>10</min>
+    <max>128</max>
+    <pattern>^https://[a-zA-Z0-9.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.XksProxyUriPath</property>
+    <min>10</min>
+    <max>128</max>
+    <pattern>^(/[a-zA-Z0-9\/_-]+/kms/xks/v\d{1,2})$|^(/kms/xks/v\d{1,2})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.XksProxyVpcEndpointServiceName</property>
+    <min>20</min>
+    <max>64</max>
+    <pattern>^com\.amazonaws\.vpce\.([a-z]+-){2,3}\d+\.vpce-svc-[0-9a-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.UpdateKeyDescriptionRequest.Description</property>
     <min>0</min>
     <max>8192</max>
@@ -921,5 +963,47 @@
     <property>Amazon.KeyManagementService.Model.Tag.TagValue</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.XksKeyConfigurationType.Id</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.XksProxyAuthenticationCredentialType.AccessKeyId</property>
+    <min>20</min>
+    <max>30</max>
+    <pattern>^[A-Z2-7]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.XksProxyAuthenticationCredentialType.RawSecretAccessKey</property>
+    <min>43</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9\/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.XksProxyConfigurationType.AccessKeyId</property>
+    <min>20</min>
+    <max>30</max>
+    <pattern>^[A-Z2-7]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.XksProxyConfigurationType.UriEndpoint</property>
+    <min>10</min>
+    <max>128</max>
+    <pattern>^https://[a-zA-Z0-9.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.XksProxyConfigurationType.UriPath</property>
+    <min>10</min>
+    <max>128</max>
+    <pattern>^(/[a-zA-Z0-9\/_-]+/kms/xks/v\d{1,2})$|^(/kms/xks/v\d{1,2})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.XksProxyConfigurationType.VpcEndpointServiceName</property>
+    <min>20</min>
+    <max>64</max>
+    <pattern>^com\.amazonaws\.vpce\.([a-z]+-){2,3}\d+\.vpce-svc-[0-9a-z]+$</pattern>
   </property-value-rule>
 </property-value-rules>

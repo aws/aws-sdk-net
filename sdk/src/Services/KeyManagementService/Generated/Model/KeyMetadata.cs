@@ -33,8 +33,8 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a>
-    /// operations.
+    /// This data type is used as a response element for the <a>CreateKey</a>, <a>DescribeKey</a>,
+    /// and <a>ReplicateKey</a> operations.
     /// </para>
     /// </summary>
     public partial class KeyMetadata
@@ -62,6 +62,7 @@ namespace Amazon.KeyManagementService.Model
         private int? _pendingDeletionWindowInDays;
         private List<string> _signingAlgorithms = new List<string>();
         private DateTime? _validTo;
+        private XksKeyConfigurationType _xksKeyConfiguration;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -106,9 +107,10 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property CloudHsmClusterId. 
         /// <para>
         /// The cluster ID of the CloudHSM cluster that contains the key material for the KMS
-        /// key. When you create a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM
-        /// cluster. This value is present only when the KMS key is created in a custom key store.
+        /// cluster. This field is present only when the KMS key is created in an CloudHSM key
+        /// store.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=24)]
@@ -151,7 +153,7 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same
         /// value. We recommend that you use the <code>KeySpec</code> field in your code. However,
-        /// to avoid breaking changes, KMS will support both fields.
+        /// to avoid breaking changes, KMS supports both fields.
         /// </para>
         /// </summary>
         [Obsolete("This field has been deprecated. Instead, use the KeySpec field.")]
@@ -171,7 +173,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property CustomKeyStoreId. 
         /// <para>
         /// A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a> that contains the KMS key. This value is present only when the KMS key
+        /// key store</a> that contains the KMS key. This field is present only when the KMS key
         /// is created in a custom key store.
         /// </para>
         /// </summary>
@@ -579,6 +581,30 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetValidTo()
         {
             return this._validTo.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property XksKeyConfiguration. 
+        /// <para>
+        /// Information about the external key that is associated with a KMS key in an external
+        /// key store.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External
+        /// key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public XksKeyConfigurationType XksKeyConfiguration
+        {
+            get { return this._xksKeyConfiguration; }
+            set { this._xksKeyConfiguration = value; }
+        }
+
+        // Check to see if XksKeyConfiguration property is set
+        internal bool IsSetXksKeyConfiguration()
+        {
+            return this._xksKeyConfiguration != null;
         }
 
     }

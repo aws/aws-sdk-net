@@ -178,6 +178,10 @@ namespace Amazon.KeyManagementService.Model
         /// is the algorithm used for symmetric encryption KMS keys. If you are using an asymmetric
         /// KMS key, we recommend RSAES_OAEP_SHA_256.
         /// </para>
+        ///  
+        /// <para>
+        /// The SM2PKE algorithm is only available in China Regions.
+        /// </para>
         /// </summary>
         public EncryptionAlgorithmSpec EncryptionAlgorithm
         {

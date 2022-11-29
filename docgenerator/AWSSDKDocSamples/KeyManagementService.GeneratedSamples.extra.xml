@@ -29,12 +29,12 @@
         <value>
             <example>
                 <para>
-                    This example connects an AWS KMS custom key store to its AWS CloudHSM cluster. This operation does not return any data. To verify that the custom key store is connected, use the <code>DescribeCustomKeyStores</code> operation.
+                    This example connects an AWS KMS custom key store to its backing key store. For an AWS CloudHSM key store, it connects the key store to its AWS CloudHSM cluster. For an external key store, it connects the key store to the external key store proxy that communicates with your external key manager. This operation does not return any data. To verify that the custom key store is connected, use the <code>DescribeCustomKeyStores</code> operation.
                 </para>
                 <code
-                    title="To connect a custom key store to its CloudHSM cluster"
+                    title="To connect a custom key store"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-connect-a-custom-key-store-to-its-cloudhsm-cluster-1628626947750" />
+                    region="to-connect-a-custom-key-store-1628626947750" />
             </example>
         </value>
     </doc>
@@ -70,9 +70,47 @@
                     This example creates a custom key store that is associated with an AWS CloudHSM cluster.
                 </para>
                 <code
-                    title="To create an AWS CloudHSM custom key store"
+                    title="To create an AWS CloudHSM key store"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-create-an-aws-cloudhsm-custom-key-store-1628627769469" />
+                    region="to-create-an-aws-cloudhsm-custom-key-store-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.CreateCustomKeyStore(Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.CreateCustomKeyStore(Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.CreateCustomKeyStoreResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates an external key store that uses an Amazon VPC endpoint service to communicate with AWS KMS.
+                </para>
+                <code
+                    title="To create an external key store with VPC endpoint service connectivity"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-create-an-external-custom-key-store-with-vpc-connectivity-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.CreateCustomKeyStore(Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.CreateCustomKeyStore(Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.CreateCustomKeyStoreResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates an external key store with public endpoint connectivity.
+                </para>
+                <code
+                    title="To create an external key store with public endpoint connectivity"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-create-an-external-custom-key-store-with-a-public-endpoint-3" />
             </example>
         </value>
     </doc>
@@ -110,7 +148,7 @@
                 <code
                     title="To create a KMS key"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-create-a-cmk-1478028992966" />
+                    region="to-create-a-cmk-1" />
             </example>
         </value>
     </doc>
@@ -129,7 +167,7 @@
                 <code
                     title="To create an asymmetric RSA KMS key for encryption and decryption"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-create-an-asymmetric-rsa-kms-key-for-encryption-and-decryption-1630533897833" />
+                    region="to-create-an-asymmetric-rsa-kms-key-for-encryption-and-decryption-2" />
             </example>
         </value>
     </doc>
@@ -148,7 +186,26 @@
                 <code
                     title="To create an asymmetric elliptic curve KMS key for signing and verification"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-create-an-asymmetric-elliptic-curve-kms-key-for-signing-and-verification-1630541089401" />
+                    region="to-create-an-asymmetric-elliptic-curve-kms-key-for-signing-and-verification-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.CreateKey(Amazon.KeyManagementService.Model.CreateKeyRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.CreateKey(Amazon.KeyManagementService.Model.CreateKeyRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.CreateKeyRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.CreateKeyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a 384-bit symmetric HMAC KMS key. The GENERATE_VERIFY_MAC key usage value is required even though it's the only valid value for HMAC KMS keys. The key spec and key usage can't be changed after the key is created.
+                </para>
+                <code
+                    title="To create an HMAC KMS key"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-create-an-hmac-kms-key-1630628752841" />
             </example>
         </value>
     </doc>
@@ -167,7 +224,7 @@
                 <code
                     title="To create a multi-Region primary KMS key"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-create-a-multi-region-primary-kms-key-1630599158567" />
+                    region="to-create-a-multi-region-primary-kms-key-4" />
             </example>
         </value>
     </doc>
@@ -181,12 +238,12 @@
         <value>
             <example>
                 <para>
-                    This example creates a KMS key with no key material. When the operation is complete, you can import your own key material into the KMS key. To create this KMS key, set the Origin parameter to EXTERNAL. 
+                    This example creates a KMS key with no key material. When the operation is complete, you can import your own key material into the KMS key. To create this KMS key, set the Origin parameter to EXTERNAL.
                 </para>
                 <code
                     title="To create a KMS key for imported key material"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-create-a-kms-key-for-imported-key-material-1630603607560" />
+                    region="to-create-a-kms-key-for-imported-key-material-5" />
             </example>
         </value>
     </doc>
@@ -200,12 +257,12 @@
         <value>
             <example>
                 <para>
-                    This example creates a KMS key in the specified custom key store. The operation creates the KMS key and its metadata in AWS KMS and the key material in the AWS CloudHSM cluster associated with the custom key store. This example requires the Origin and CustomKeyStoreId parameters.
+                    This example creates a KMS key in the specified AWS CloudHSM key store. The operation creates the KMS key and its metadata in AWS KMS and creates the key material in the AWS CloudHSM cluster associated with the custom key store. This example requires the CustomKeyStoreId  and Origin parameters.
                 </para>
                 <code
-                    title="To create a KMS key in a custom key store"
+                    title="To create a KMS key in an AWS CloudHSM key store"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-create-a-kms-key-in-a-custom-key-store-1630604382908" />
+                    region="to-create-a-kms-key-in-an-aws-cloudhsm-custom-key-store-6" />
             </example>
         </value>
     </doc>
@@ -219,12 +276,12 @@
         <value>
             <example>
                 <para>
-                    This example creates a 384-bit symmetric HMAC KMS key. The GENERATE_VERIFY_MAC key usage value is required even though it's the only valid value for HMAC KMS keys. The key spec and key usage can't be changed after the key is created. 
+                    This example creates a KMS key in the specified external key store. It uses the XksKeyId parameter to associate the KMS key with an existing symmetric encryption key in your external key manager. This CustomKeyStoreId, Origin, and XksKeyId parameters are required in this operation.
                 </para>
                 <code
-                    title="To create an HMAC KMS key"
+                    title="To create a KMS key in an external key store"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-create-an-hmac-kms-key-1630628752841" />
+                    region="to-create-a-kms-key-in-an-external-custom-key-store-7" />
             </example>
         </value>
     </doc>
@@ -276,7 +333,7 @@
         <value>
             <example>
                 <para>
-                    This example deletes a custom key store from AWS KMS. This operation does not delete the AWS CloudHSM cluster that was associated with the CloudHSM cluster. This operation doesn't return any data. To verify that the operation was successful, use the DescribeCustomKeyStores operation.  
+                    This example deletes a custom key store from AWS KMS. This operation does not affect the backing key store, such as a CloudHSM cluster, external key store proxy, or your external key manager. This operation doesn't return any data. To verify that the operation was successful, use the DescribeCustomKeyStores operation.
                 </para>
                 <code
                     title="To delete a custom key store from AWS KMS"
@@ -319,7 +376,7 @@
                 <code
                     title="To get detailed information about custom key stores in the account and Region"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-get-detailed-information-about-custom-key-stores-in-the-account-and-region-1628628556811" />
+                    region="to-get-detailed-information-about-custom-key-stores-in-the-account-and-region-1" />
             </example>
         </value>
     </doc>
@@ -333,12 +390,50 @@
         <value>
             <example>
                 <para>
-                    This example gets detailed information about a particular AWS KMS custom key store that is associate with an AWS CloudHSM cluster. To limit the output to a particular custom key store, provide the custom key store name or ID. 
+                    This example gets detailed information about a particular AWS CloudHSM key store by specifying its friendly name. To limit the output to a particular custom key store, provide either the custom key store name or ID.
                 </para>
                 <code
-                    title="To get detailed information about a custom key store associated with a CloudHSM cluster."
+                    title="To get detailed information about an AWS CloudHSM key store by specifying its friendly name"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-get-detailed-information-about-a-custom-key-store-associated-with-a-cloudhsm-cluster-1628628885843" />
+                    region="to-get-detailed-information-about-a-cloudhsm-custom-key-store-by-name-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.DescribeCustomKeyStores(Amazon.KeyManagementService.Model.DescribeCustomKeyStoresRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.DescribeCustomKeyStores(Amazon.KeyManagementService.Model.DescribeCustomKeyStoresRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.DescribeCustomKeyStoresRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.DescribeCustomKeyStoresResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example gets detailed information about an external key store by specifying its ID.  The example external key store proxy uses public endpoint connectivity.
+                </para>
+                <code
+                    title="To get detailed information about an external key store by specifying its ID"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-get-detailed-information-about-an-external-key-store--3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.DescribeCustomKeyStores(Amazon.KeyManagementService.Model.DescribeCustomKeyStoresRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.DescribeCustomKeyStores(Amazon.KeyManagementService.Model.DescribeCustomKeyStoresRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.DescribeCustomKeyStoresRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.DescribeCustomKeyStoresResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example gets detailed information about a particular external key store by specifying its friendly name. To limit the output to a particular custom key store, provide either the custom key store name or ID. The proxy URI path for this external key store includes an optional prefix. Also, because this example external key store uses VPC endpoint connectivity, the response includes the associated VPC endpoint service name.
+                </para>
+                <code
+                    title="To get detailed information about an external key store VPC endpoint connectivity by specifying its friendly name"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-get-detailed-information-about-an-external-custom-key-store-by-name-4" />
             </example>
         </value>
     </doc>
@@ -357,7 +452,7 @@
                 <code
                     title="To get details about a KMS key"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="get-key-details-1478565820907" />
+                    region="get-key-details-1" />
             </example>
         </value>
     </doc>
@@ -376,7 +471,7 @@
                 <code
                     title="To get details about an RSA asymmetric KMS key"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-get-details-about-an-rsa-asymmetric-kms-key-1637971611761" />
+                    region="to-get-details-about-an-rsa-asymmetric-kms-key-2" />
             </example>
         </value>
     </doc>
@@ -395,7 +490,7 @@
                 <code
                     title="To get details about a multi-Region key"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-get-details-about-a-multi-region-key-1637969624239" />
+                    region="to-get-details-about-a-multi-region-key-3" />
             </example>
         </value>
     </doc>
@@ -409,12 +504,50 @@
         <value>
             <example>
                 <para>
-                    The following example gets the metadata of an HMAC KMS key. 
+                    The following example gets the metadata of an HMAC KMS key.
                 </para>
                 <code
                     title="To get details about an HMAC KMS key"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-get-details-about-an-hmac-kms-key-1637970472619" />
+                    region="to-get-details-about-an-hmac-kms-key-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.DescribeKey(Amazon.KeyManagementService.Model.DescribeKeyRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.DescribeKey(Amazon.KeyManagementService.Model.DescribeKeyRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.DescribeKeyRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.DescribeKeyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets the metadata of a KMS key in an AWS CloudHSM key store.
+                </para>
+                <code
+                    title="To get details about a KMS key in an AWS CloudHSM key store"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-get-details-about-a-kms-key-in-an-AWS-CloudHSM-key-store-5" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.DescribeKey(Amazon.KeyManagementService.Model.DescribeKeyRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.DescribeKey(Amazon.KeyManagementService.Model.DescribeKeyRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.DescribeKeyRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.DescribeKeyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets the metadata of a KMS key in an external key store.
+                </para>
+                <code
+                    title="To get details about a KMS key in an external key store"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-get-details-about-a-kms-key-in-an-external-key-store-6" />
             </example>
         </value>
     </doc>
@@ -466,7 +599,7 @@
         <value>
             <example>
                 <para>
-                    This example disconnects an AWS KMS custom key store from its AWS CloudHSM cluster. This operation doesn't return any data. To verify that the custom key store is disconnected, use the <code>DescribeCustomKeyStores</code> operation.
+                    This example disconnects an AWS KMS custom key store from its backing key store. For an AWS CloudHSM key store, it disconnects the key store from its AWS CloudHSM cluster. For an external key store, it disconnects the key store from the external key store proxy that communicates with your external key manager. This operation doesn't return any data. To verify that the custom key store is disconnected, use the <code>DescribeCustomKeyStores</code> operation.
                 </para>
                 <code
                     title="To disconnect a custom key store from its CloudHSM cluster"
@@ -903,7 +1036,7 @@
         <value>
             <example>
                 <para>
-                    This example creates a multi-Region replica key in us-west-2 of a multi-Region primary key in us-east-1. 
+                    This example creates a multi-Region replica key in us-west-2 of a multi-Region primary key in us-east-1.
                 </para>
                 <code
                     title="To replicate a multi-Region key in a different AWS Region"
@@ -1055,12 +1188,12 @@
         <value>
             <example>
                 <para>
-                    This example tells KMS the password for the kmsuser crypto user in the AWS CloudHSM cluster that is associated with the AWS KMS custom key store. (It does not change the password in the CloudHSM cluster.) This operation does not return any data.
+                    This example tells AWS KMS the password for the kmsuser crypto user in the AWS CloudHSM cluster that is associated with the AWS KMS custom key store. (It does not change the password in the CloudHSM cluster.) This operation does not return any data.
                 </para>
                 <code
-                    title="To edit the password of a custom key store"
+                    title="To edit the password of an AWS CloudHSM key store"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-edit-the-properties-of-a-custom-key-store-1628629851834" />
+                    region="to-edit-the-properties-of-a-custom-key-store-1" />
             </example>
         </value>
     </doc>
@@ -1079,7 +1212,7 @@
                 <code
                     title="To edit the friendly name of a custom key store"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-edit-the-friendly-name-of-a-custom-key-store-1630451340904" />
+                    region="to-edit-the-friendly-name-of-a-custom-key-store-2" />
             </example>
         </value>
     </doc>
@@ -1093,12 +1226,50 @@
         <value>
             <example>
                 <para>
-                    This example changes the cluster that is associated with a custom key store to a related cluster, such as a different backup of the same cluster. This operation does not return any data. To verify that the operation worked, use the DescribeCustomKeyStores operation.
+                    This example changes the AWS CloudHSM cluster that is associated with an AWS CloudHSM key store to a related cluster, such as a different backup of the same cluster. This operation does not return any data. To verify that the operation worked, use the DescribeCustomKeyStores operation.
                 </para>
                 <code
                     title="To associate the custom key store with a different, but related, AWS CloudHSM cluster."
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-associate-the-custom-key-store-with-a-different-but-related-aws-cloudhsm-cluster-1630451842438" />
+                    region="to-associate-the-custom-key-store-with-a-different-but-related-aws-cloudhsm-cluster-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.UpdateCustomKeyStore(Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.UpdateCustomKeyStore(Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.UpdateCustomKeyStoreResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates the proxy URI path for an external key store
+                </para>
+                <code
+                    title="To edit the proxy URI path of an external key store."
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-update-the-xks-proxy-api-path-of-an-external-custom-key-store-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.UpdateCustomKeyStore(Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.UpdateCustomKeyStore(Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.UpdateCustomKeyStoreResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    To change the external key store proxy connectivity option from public endpoint connectivity to VPC endpoint service connectivity, in addition to changing the <code>XksProxyConnectivity</code> value, you must change the <code>XksProxyUriEndpoint</code> value to reflect the private DNS name associated with the VPC endpoint service. You must also add an <code>XksProxyVpcEndpointServiceName</code> value.
+                </para>
+                <code
+                    title="To update the proxy connectivity of an external key store to VPC_ENDPOINT_SERVICE"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-update-the-proxy-connectivity-of-an-external-key-store-to-vpc_endpoint_service-5" />
             </example>
         </value>
     </doc>
@@ -1123,6 +1294,29 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.UpdatePrimaryRegion(Amazon.KeyManagementService.Model.UpdatePrimaryRegionRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.UpdatePrimaryRegion(Amazon.KeyManagementService.Model.UpdatePrimaryRegionRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.UpdatePrimaryRegionRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.UpdatePrimaryRegionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following UpdatePrimaryRegion example changes the multi-Region replica key in the eu-central-1 Region to the primary key. The current primary key in the us-west-1 Region becomes a replica key. 
+
+The KeyId parameter identifies the current primary key in the us-west-1 Region. The PrimaryRegion parameter indicates the Region of the replica key that will become the new primary key.
+
+This operation does not return any output. To verify that primary key is changed, use the DescribeKey operation.
+                </para>
+                <code
+                    title="To update the primary Region of a multi-Region KMS key"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-update-the-primary-region-of-a-multi-region-kms-key-1660249555577" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.Verify(Amazon.KeyManagementService.Model.VerifyRequest)" />
             <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.Verify(Amazon.KeyManagementService.Model.VerifyRequest)" />
             <member name="T:Amazon.KeyManagementService.Model.VerifyRequest" />
@@ -1131,7 +1325,7 @@
         <value>
             <example>
                 <para>
-                    This operation uses the public key in an elliptic curve (ECC) asymmetric key to verify a digital signature within AWS KMS. 
+                    This operation uses the public key in an elliptic curve (ECC) asymmetric key to verify a digital signature within AWS KMS.
                 </para>
                 <code
                     title="To use an asymmetric KMS key to verify a digital signature"

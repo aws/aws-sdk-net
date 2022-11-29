@@ -124,6 +124,38 @@ namespace Amazon.KeyManagementService
         /// Constant USER_NOT_FOUND for ConnectionErrorCodeType
         /// </summary>
         public static readonly ConnectionErrorCodeType USER_NOT_FOUND = new ConnectionErrorCodeType("USER_NOT_FOUND");
+        /// <summary>
+        /// Constant XKS_PROXY_ACCESS_DENIED for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType XKS_PROXY_ACCESS_DENIED = new ConnectionErrorCodeType("XKS_PROXY_ACCESS_DENIED");
+        /// <summary>
+        /// Constant XKS_PROXY_INVALID_CONFIGURATION for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType XKS_PROXY_INVALID_CONFIGURATION = new ConnectionErrorCodeType("XKS_PROXY_INVALID_CONFIGURATION");
+        /// <summary>
+        /// Constant XKS_PROXY_INVALID_RESPONSE for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType XKS_PROXY_INVALID_RESPONSE = new ConnectionErrorCodeType("XKS_PROXY_INVALID_RESPONSE");
+        /// <summary>
+        /// Constant XKS_PROXY_INVALID_TLS_CONFIGURATION for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType XKS_PROXY_INVALID_TLS_CONFIGURATION = new ConnectionErrorCodeType("XKS_PROXY_INVALID_TLS_CONFIGURATION");
+        /// <summary>
+        /// Constant XKS_PROXY_NOT_REACHABLE for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType XKS_PROXY_NOT_REACHABLE = new ConnectionErrorCodeType("XKS_PROXY_NOT_REACHABLE");
+        /// <summary>
+        /// Constant XKS_PROXY_TIMED_OUT for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType XKS_PROXY_TIMED_OUT = new ConnectionErrorCodeType("XKS_PROXY_TIMED_OUT");
+        /// <summary>
+        /// Constant XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION = new ConnectionErrorCodeType("XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION");
+        /// <summary>
+        /// Constant XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND = new ConnectionErrorCodeType("XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -310,6 +342,56 @@ namespace Amazon.KeyManagementService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CustomerMasterKeySpec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CustomKeyStoreType.
+    /// </summary>
+    public class CustomKeyStoreType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_CLOUDHSM for CustomKeyStoreType
+        /// </summary>
+        public static readonly CustomKeyStoreType AWS_CLOUDHSM = new CustomKeyStoreType("AWS_CLOUDHSM");
+        /// <summary>
+        /// Constant EXTERNAL_KEY_STORE for CustomKeyStoreType
+        /// </summary>
+        public static readonly CustomKeyStoreType EXTERNAL_KEY_STORE = new CustomKeyStoreType("EXTERNAL_KEY_STORE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomKeyStoreType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomKeyStoreType FindValue(string value)
+        {
+            return FindValue<CustomKeyStoreType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomKeyStoreType(string value)
         {
             return FindValue(value);
         }
@@ -1102,6 +1184,10 @@ namespace Amazon.KeyManagementService
         /// Constant EXTERNAL for OriginType
         /// </summary>
         public static readonly OriginType EXTERNAL = new OriginType("EXTERNAL");
+        /// <summary>
+        /// Constant EXTERNAL_KEY_STORE for OriginType
+        /// </summary>
+        public static readonly OriginType EXTERNAL_KEY_STORE = new OriginType("EXTERNAL_KEY_STORE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1260,6 +1346,56 @@ namespace Amazon.KeyManagementService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WrappingKeySpec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type XksProxyConnectivityType.
+    /// </summary>
+    public class XksProxyConnectivityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PUBLIC_ENDPOINT for XksProxyConnectivityType
+        /// </summary>
+        public static readonly XksProxyConnectivityType PUBLIC_ENDPOINT = new XksProxyConnectivityType("PUBLIC_ENDPOINT");
+        /// <summary>
+        /// Constant VPC_ENDPOINT_SERVICE for XksProxyConnectivityType
+        /// </summary>
+        public static readonly XksProxyConnectivityType VPC_ENDPOINT_SERVICE = new XksProxyConnectivityType("VPC_ENDPOINT_SERVICE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public XksProxyConnectivityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static XksProxyConnectivityType FindValue(string value)
+        {
+            return FindValue<XksProxyConnectivityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator XksProxyConnectivityType(string value)
         {
             return FindValue(value);
         }

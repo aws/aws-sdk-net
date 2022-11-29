@@ -35,9 +35,9 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-    /// key store feature</a> feature in KMS, which combines the convenience and extensive
-    /// integration of KMS with the isolation and control of a single-tenant key store.
+    ///  This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+    /// key stores</a> feature in KMS, which combines the convenience and extensive integration
+    /// of KMS with the isolation and control of a key store that you own and manage.
     /// </para>
     ///  
     /// <para>
@@ -48,24 +48,31 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// To determine whether the custom key store is connected to its CloudHSM cluster, use
-    /// the <code>ConnectionState</code> element in the response. If an attempt to connect
-    /// the custom key store failed, the <code>ConnectionState</code> value is <code>FAILED</code>
-    /// and the <code>ConnectionErrorCode</code> element in the response indicates the cause
-    /// of the failure. For help interpreting the <code>ConnectionErrorCode</code>, see <a>CustomKeyStoresListEntry</a>.
+    /// To determine whether the custom key store is connected to its CloudHSM cluster or
+    /// external key store proxy, use the <code>ConnectionState</code> element in the response.
+    /// If an attempt to connect the custom key store failed, the <code>ConnectionState</code>
+    /// value is <code>FAILED</code> and the <code>ConnectionErrorCode</code> element in the
+    /// response indicates the cause of the failure. For help interpreting the <code>ConnectionErrorCode</code>,
+    /// see <a>CustomKeyStoresListEntry</a>.
     /// </para>
     ///  
     /// <para>
     /// Custom key stores have a <code>DISCONNECTED</code> connection state if the key store
-    /// has never been connected or you use the <a>DisconnectCustomKeyStore</a> operation
-    /// to disconnect it. If your custom key store state is <code>CONNECTED</code> but you
-    /// are having trouble using it, make sure that its associated CloudHSM cluster is active
-    /// and contains the minimum number of HSMs required for the operation, if any.
+    /// has never been connected or you used the <a>DisconnectCustomKeyStore</a> operation
+    /// to disconnect it. Otherwise, the connection state is CONNECTED. If your custom key
+    /// store connection state is <code>CONNECTED</code> but you are having trouble using
+    /// it, verify that the backing store is active and available. For an CloudHSM key store,
+    /// verify that the associated CloudHSM cluster is active and contains the minimum number
+    /// of HSMs required for the operation, if any. For an external key store, verify that
+    /// the external key store proxy and its associated external key manager are reachable
+    /// and enabled.
     /// </para>
     ///  
     /// <para>
-    ///  For help repairing your custom key store, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
-    /// Custom Key Stores</a> topic in the <i>Key Management Service Developer Guide</i>.
+    ///  For help repairing your CloudHSM key store, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
+    /// CloudHSM key stores</a>. For help repairing your external key store, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/xks-troubleshooting.html">Troubleshooting
+    /// external key stores</a>. Both topics are in the <i>Key Management Service Developer
+    /// Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -118,9 +125,9 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// By default, this operation gets information about all custom key stores in the account
-        /// and Region. To limit the output to a particular custom key store, you can use either
-        /// the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but
-        /// not both.
+        /// and Region. To limit the output to a particular custom key store, provide either the
+        /// <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not
+        /// both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -145,9 +152,9 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// By default, this operation gets information about all custom key stores in the account
-        /// and Region. To limit the output to a particular custom key store, you can use either
-        /// the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but
-        /// not both.
+        /// and Region. To limit the output to a particular custom key store, provide either the
+        /// <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not
+        /// both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

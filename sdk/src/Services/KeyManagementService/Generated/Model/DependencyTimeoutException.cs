@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// The system timed out while trying to fulfill the request. The request can be retried.
+    /// The system timed out while trying to fulfill the request. You can retry the request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

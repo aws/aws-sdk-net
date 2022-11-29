@@ -43,7 +43,7 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// You must specify the key ID of the symmetric encryption KMS key into which you will
-    /// import key material. This KMS key's <code>Origin</code> must be <code>EXTERNAL</code>.
+    /// import key material. The KMS key <code>Origin</code> must be <code>EXTERNAL</code>.
     /// You must also specify the wrapping algorithm and type of wrapping key (public key)
     /// that you will use to encrypt the key material. You cannot perform this operation on
     /// an asymmetric KMS key, an HMAC KMS key, or on any KMS key in a different Amazon Web

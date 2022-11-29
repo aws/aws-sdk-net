@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// The request was rejected because the CloudHSM cluster that is associated with the
-    /// custom key store is not active. Initialize and activate the cluster and try the command
-    /// again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting
+    /// The request was rejected because the CloudHSM cluster associated with the CloudHSM
+    /// key store is not active. Initialize and activate the cluster and try the command again.
+    /// For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting
     /// Started</a> in the <i>CloudHSM User Guide</i>.
     /// </summary>
     #if !NETSTANDARD

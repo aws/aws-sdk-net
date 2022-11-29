@@ -29,14 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// The request was rejected because the trust anchor certificate in the request is not
-    /// the trust anchor certificate for the specified CloudHSM cluster.
+    /// The request was rejected because the trust anchor certificate in the request to create
+    /// an CloudHSM key store is not the trust anchor certificate for the specified CloudHSM
+    /// cluster.
     /// 
     ///  
     /// <para>
     /// When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize
-    /// the cluster</a>, you create the trust anchor certificate and save it in the <code>customerCA.crt</code>
-    /// file.
+    /// the CloudHSM cluster</a>, you create the trust anchor certificate and save it in the
+    /// <code>customerCA.crt</code> file.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

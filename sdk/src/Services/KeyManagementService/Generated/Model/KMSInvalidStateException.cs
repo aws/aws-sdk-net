@@ -34,9 +34,25 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+    /// This exceptions means one of the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The key state of the KMS key is not compatible with the operation. 
+    /// </para>
+    ///  
+    /// <para>
+    /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+    /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
     /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+    /// a general failure with many possible causes. To identify the cause, see the error
+    /// message that accompanies the exception.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

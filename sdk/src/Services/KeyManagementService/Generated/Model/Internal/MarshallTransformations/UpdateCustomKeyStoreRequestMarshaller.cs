@@ -91,6 +91,41 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NewCustomKeyStoreName);
                 }
 
+                if(publicRequest.IsSetXksProxyAuthenticationCredential())
+                {
+                    context.Writer.WritePropertyName("XksProxyAuthenticationCredential");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = XksProxyAuthenticationCredentialTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.XksProxyAuthenticationCredential, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetXksProxyConnectivity())
+                {
+                    context.Writer.WritePropertyName("XksProxyConnectivity");
+                    context.Writer.Write(publicRequest.XksProxyConnectivity);
+                }
+
+                if(publicRequest.IsSetXksProxyUriEndpoint())
+                {
+                    context.Writer.WritePropertyName("XksProxyUriEndpoint");
+                    context.Writer.Write(publicRequest.XksProxyUriEndpoint);
+                }
+
+                if(publicRequest.IsSetXksProxyUriPath())
+                {
+                    context.Writer.WritePropertyName("XksProxyUriPath");
+                    context.Writer.Write(publicRequest.XksProxyUriPath);
+                }
+
+                if(publicRequest.IsSetXksProxyVpcEndpointServiceName())
+                {
+                    context.Writer.WritePropertyName("XksProxyVpcEndpointServiceName");
+                    context.Writer.Write(publicRequest.XksProxyVpcEndpointServiceName);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

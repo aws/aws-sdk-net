@@ -137,6 +137,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetXksKeyId())
+                {
+                    context.Writer.WritePropertyName("XksKeyId");
+                    context.Writer.Write(publicRequest.XksKeyId);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

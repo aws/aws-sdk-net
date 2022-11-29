@@ -202,6 +202,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ValidTo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("XksKeyConfiguration", targetDepth))
+                {
+                    var unmarshaller = XksKeyConfigurationTypeUnmarshaller.Instance;
+                    unmarshalledObject.XksKeyConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

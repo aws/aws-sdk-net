@@ -38,15 +38,15 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// Adding, deleting, or updating an alias can allow or deny permission to the KMS key.
     /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC
-    /// in KMS</a> in the <i>Key Management Service Developer Guide</i>.
+    /// for KMS</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  </note> 
     /// <para>
-    /// The current and new KMS key must be the same type (both symmetric or both asymmetric),
-    /// and they must have the same key usage (<code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>).
-    /// This restriction prevents errors in code that uses aliases. If you must assign an
-    /// alias to a different type of KMS key, use <a>DeleteAlias</a> to delete the old alias
-    /// and <a>CreateAlias</a> to create a new alias.
+    /// The current and new KMS key must be the same type (both symmetric or both asymmetric
+    /// or both HMAC), and they must have the same key usage. This restriction prevents errors
+    /// in code that uses aliases. If you must assign an alias to a different type of KMS
+    /// key, use <a>DeleteAlias</a> to delete the old alias and <a>CreateAlias</a> to create
+    /// a new alias.
     /// </para>
     ///  
     /// <para>
@@ -152,7 +152,8 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// The KMS key must be in the same Amazon Web Services account and Region as the alias.
         /// Also, the new target KMS key must be the same type as the current target KMS key (both
-        /// symmetric or both asymmetric) and they must have the same key usage. 
+        /// symmetric or both asymmetric or both HMAC) and they must have the same key usage.
+        /// 
         /// </para>
         ///  
         /// <para>
