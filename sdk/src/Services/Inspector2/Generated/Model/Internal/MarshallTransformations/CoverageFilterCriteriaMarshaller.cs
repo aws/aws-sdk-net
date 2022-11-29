@@ -109,6 +109,54 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetLambdaFunctionName())
+            {
+                context.Writer.WritePropertyName("lambdaFunctionName");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLambdaFunctionNameListValue in requestObject.LambdaFunctionName)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CoverageStringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLambdaFunctionNameListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetLambdaFunctionRuntime())
+            {
+                context.Writer.WritePropertyName("lambdaFunctionRuntime");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLambdaFunctionRuntimeListValue in requestObject.LambdaFunctionRuntime)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CoverageStringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLambdaFunctionRuntimeListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetLambdaFunctionTags())
+            {
+                context.Writer.WritePropertyName("lambdaFunctionTags");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLambdaFunctionTagsListValue in requestObject.LambdaFunctionTags)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CoverageMapFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLambdaFunctionTagsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetResourceId())
             {
                 context.Writer.WritePropertyName("resourceId");

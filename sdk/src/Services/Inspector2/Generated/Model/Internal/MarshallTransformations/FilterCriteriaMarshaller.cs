@@ -237,6 +237,22 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetExploitAvailable())
+            {
+                context.Writer.WritePropertyName("exploitAvailable");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectExploitAvailableListValue in requestObject.ExploitAvailable)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectExploitAvailableListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetFindingArn())
             {
                 context.Writer.WritePropertyName("findingArn");
@@ -327,6 +343,86 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
                     var marshaller = NumberFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectInspectorScoreListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetLambdaFunctionExecutionRoleArn())
+            {
+                context.Writer.WritePropertyName("lambdaFunctionExecutionRoleArn");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLambdaFunctionExecutionRoleArnListValue in requestObject.LambdaFunctionExecutionRoleArn)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLambdaFunctionExecutionRoleArnListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetLambdaFunctionLastModifiedAt())
+            {
+                context.Writer.WritePropertyName("lambdaFunctionLastModifiedAt");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLambdaFunctionLastModifiedAtListValue in requestObject.LambdaFunctionLastModifiedAt)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DateFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLambdaFunctionLastModifiedAtListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetLambdaFunctionLayers())
+            {
+                context.Writer.WritePropertyName("lambdaFunctionLayers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLambdaFunctionLayersListValue in requestObject.LambdaFunctionLayers)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLambdaFunctionLayersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetLambdaFunctionName())
+            {
+                context.Writer.WritePropertyName("lambdaFunctionName");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLambdaFunctionNameListValue in requestObject.LambdaFunctionName)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLambdaFunctionNameListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetLambdaFunctionRuntime())
+            {
+                context.Writer.WritePropertyName("lambdaFunctionRuntime");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLambdaFunctionRuntimeListValue in requestObject.LambdaFunctionRuntime)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLambdaFunctionRuntimeListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }

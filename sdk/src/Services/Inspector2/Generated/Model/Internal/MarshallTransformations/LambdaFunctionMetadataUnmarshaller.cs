@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResourceDetails Object
+    /// Response Unmarshaller for LambdaFunctionMetadata Object
     /// </summary>  
-    public class ResourceDetailsUnmarshaller : IUnmarshaller<ResourceDetails, XmlUnmarshallerContext>, IUnmarshaller<ResourceDetails, JsonUnmarshallerContext>
+    public class LambdaFunctionMetadataUnmarshaller : IUnmarshaller<LambdaFunctionMetadata, XmlUnmarshallerContext>, IUnmarshaller<LambdaFunctionMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ResourceDetails IUnmarshaller<ResourceDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LambdaFunctionMetadata IUnmarshaller<LambdaFunctionMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,39 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResourceDetails Unmarshall(JsonUnmarshallerContext context)
+        public LambdaFunctionMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ResourceDetails unmarshalledObject = new ResourceDetails();
+            LambdaFunctionMetadata unmarshalledObject = new LambdaFunctionMetadata();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("awsEc2Instance", targetDepth))
+                if (context.TestExpression("functionName", targetDepth))
                 {
-                    var unmarshaller = AwsEc2InstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AwsEc2Instance = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FunctionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("awsEcrContainerImage", targetDepth))
+                if (context.TestExpression("functionTags", targetDepth))
                 {
-                    var unmarshaller = AwsEcrContainerImageDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AwsEcrContainerImage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.FunctionTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("awsLambdaFunction", targetDepth))
+                if (context.TestExpression("layers", targetDepth))
                 {
-                    var unmarshaller = AwsLambdaFunctionDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AwsLambdaFunction = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Layers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("runtime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Runtime = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +94,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResourceDetailsUnmarshaller _instance = new ResourceDetailsUnmarshaller();        
+        private static LambdaFunctionMetadataUnmarshaller _instance = new LambdaFunctionMetadataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceDetailsUnmarshaller Instance
+        public static LambdaFunctionMetadataUnmarshaller Instance
         {
             get
             {

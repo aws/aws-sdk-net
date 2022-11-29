@@ -35,6 +35,8 @@ namespace Amazon.Inspector2.Model
     {
         private string _awsAccountId;
         private string _description;
+        private ExploitabilityDetails _exploitabilityDetails;
+        private ExploitAvailable _exploitAvailable;
         private string _findingArn;
         private DateTime? _firstObservedAt;
         private FixAvailable _fixAvailable;
@@ -87,6 +89,42 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExploitabilityDetails. 
+        /// <para>
+        /// The details of an exploit available for a finding discovered in your environment.
+        /// </para>
+        /// </summary>
+        public ExploitabilityDetails ExploitabilityDetails
+        {
+            get { return this._exploitabilityDetails; }
+            set { this._exploitabilityDetails = value; }
+        }
+
+        // Check to see if ExploitabilityDetails property is set
+        internal bool IsSetExploitabilityDetails()
+        {
+            return this._exploitabilityDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExploitAvailable. 
+        /// <para>
+        /// If a finding discovered in your environment has an exploit available.
+        /// </para>
+        /// </summary>
+        public ExploitAvailable ExploitAvailable
+        {
+            get { return this._exploitAvailable; }
+            set { this._exploitAvailable = value; }
+        }
+
+        // Check to see if ExploitAvailable property is set
+        internal bool IsSetExploitAvailable()
+        {
+            return this._exploitAvailable != null;
         }
 
         /// <summary>

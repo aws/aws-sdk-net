@@ -100,6 +100,18 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImageLayerAggregation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lambdaFunctionAggregation", targetDepth))
+                {
+                    var unmarshaller = LambdaFunctionAggregationResponseUnmarshaller.Instance;
+                    unmarshalledObject.LambdaFunctionAggregation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lambdaLayerAggregation", targetDepth))
+                {
+                    var unmarshaller = LambdaLayerAggregationResponseUnmarshaller.Instance;
+                    unmarshalledObject.LambdaLayerAggregation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("packageAggregation", targetDepth))
                 {
                     var unmarshaller = PackageAggregationResponseUnmarshaller.Instance;

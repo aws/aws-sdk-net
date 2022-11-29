@@ -30,7 +30,7 @@ namespace Amazon.Inspector2.Model
 {
     /// <summary>
     /// An object with details the status of an Amazon Web Services account within your Amazon
-    /// Inspector environment
+    /// Inspector environment.
     /// </summary>
     public partial class AccountState
     {

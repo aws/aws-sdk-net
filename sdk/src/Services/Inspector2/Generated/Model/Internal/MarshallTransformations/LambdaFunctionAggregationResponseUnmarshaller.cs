@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PackageFilter Object
+    /// Response Unmarshaller for LambdaFunctionAggregationResponse Object
     /// </summary>  
-    public class PackageFilterUnmarshaller : IUnmarshaller<PackageFilter, XmlUnmarshallerContext>, IUnmarshaller<PackageFilter, JsonUnmarshallerContext>
+    public class LambdaFunctionAggregationResponseUnmarshaller : IUnmarshaller<LambdaFunctionAggregationResponse, XmlUnmarshallerContext>, IUnmarshaller<LambdaFunctionAggregationResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PackageFilter IUnmarshaller<PackageFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LambdaFunctionAggregationResponse IUnmarshaller<LambdaFunctionAggregationResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,57 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PackageFilter Unmarshall(JsonUnmarshallerContext context)
+        public LambdaFunctionAggregationResponse Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PackageFilter unmarshalledObject = new PackageFilter();
+            LambdaFunctionAggregationResponse unmarshalledObject = new LambdaFunctionAggregationResponse();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("architecture", targetDepth))
+                if (context.TestExpression("accountId", targetDepth))
                 {
-                    var unmarshaller = StringFilterUnmarshaller.Instance;
-                    unmarshalledObject.Architecture = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("epoch", targetDepth))
+                if (context.TestExpression("functionName", targetDepth))
                 {
-                    var unmarshaller = NumberFilterUnmarshaller.Instance;
-                    unmarshalledObject.Epoch = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FunctionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("lambdaTags", targetDepth))
                 {
-                    var unmarshaller = StringFilterUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.LambdaTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("release", targetDepth))
+                if (context.TestExpression("lastModifiedAt", targetDepth))
                 {
-                    var unmarshaller = StringFilterUnmarshaller.Instance;
-                    unmarshalledObject.Release = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sourceLambdaLayerArn", targetDepth))
+                if (context.TestExpression("resourceId", targetDepth))
                 {
-                    var unmarshaller = StringFilterUnmarshaller.Instance;
-                    unmarshalledObject.SourceLambdaLayerArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sourceLayerHash", targetDepth))
+                if (context.TestExpression("runtime", targetDepth))
                 {
-                    var unmarshaller = StringFilterUnmarshaller.Instance;
-                    unmarshalledObject.SourceLayerHash = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Runtime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("version", targetDepth))
+                if (context.TestExpression("severityCounts", targetDepth))
                 {
-                    var unmarshaller = StringFilterUnmarshaller.Instance;
-                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
+                    var unmarshaller = SeverityCountsUnmarshaller.Instance;
+                    unmarshalledObject.SeverityCounts = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +112,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         }
 
 
-        private static PackageFilterUnmarshaller _instance = new PackageFilterUnmarshaller();        
+        private static LambdaFunctionAggregationResponseUnmarshaller _instance = new LambdaFunctionAggregationResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PackageFilterUnmarshaller Instance
+        public static LambdaFunctionAggregationResponseUnmarshaller Instance
         {
             get
             {

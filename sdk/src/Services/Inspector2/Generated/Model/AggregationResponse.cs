@@ -39,6 +39,8 @@ namespace Amazon.Inspector2.Model
         private Ec2InstanceAggregationResponse _ec2InstanceAggregation;
         private FindingTypeAggregationResponse _findingTypeAggregation;
         private ImageLayerAggregationResponse _imageLayerAggregation;
+        private LambdaFunctionAggregationResponse _lambdaFunctionAggregation;
+        private LambdaLayerAggregationResponse _lambdaLayerAggregation;
         private PackageAggregationResponse _packageAggregation;
         private RepositoryAggregationResponse _repositoryAggregation;
         private TitleAggregationResponse _titleAggregation;
@@ -154,6 +156,42 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetImageLayerAggregation()
         {
             return this._imageLayerAggregation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionAggregation. 
+        /// <para>
+        /// An aggregation of findings by AWS Lambda function.
+        /// </para>
+        /// </summary>
+        public LambdaFunctionAggregationResponse LambdaFunctionAggregation
+        {
+            get { return this._lambdaFunctionAggregation; }
+            set { this._lambdaFunctionAggregation = value; }
+        }
+
+        // Check to see if LambdaFunctionAggregation property is set
+        internal bool IsSetLambdaFunctionAggregation()
+        {
+            return this._lambdaFunctionAggregation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaLayerAggregation. 
+        /// <para>
+        /// An aggregation of findings by AWS Lambda layer.
+        /// </para>
+        /// </summary>
+        public LambdaLayerAggregationResponse LambdaLayerAggregation
+        {
+            get { return this._lambdaLayerAggregation; }
+            set { this._lambdaLayerAggregation = value; }
+        }
+
+        // Check to see if LambdaLayerAggregation property is set
+        internal bool IsSetLambdaLayerAggregation()
+        {
+            return this._lambdaLayerAggregation != null;
         }
 
         /// <summary>

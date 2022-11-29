@@ -473,7 +473,7 @@ namespace Amazon.Inspector2
 
 
         /// <summary>
-        /// Describe Amazon Inspector configuration settings for an Amazon Web Services organization
+        /// Describe Amazon Inspector configuration settings for an Amazon Web Services organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfiguration service method.</param>
         /// 
@@ -497,7 +497,7 @@ namespace Amazon.Inspector2
 
 
         /// <summary>
-        /// Describe Amazon Inspector configuration settings for an Amazon Web Services organization
+        /// Describe Amazon Inspector configuration settings for an Amazon Web Services organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfiguration service method.</param>
         /// <param name="cancellationToken">

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
-    /// Details about the ECR automated re-scan duration setting for your environment
+    /// Details about the ECR automated re-scan duration setting for your environment.
     /// </summary>
     public partial class EcrConfiguration
     {

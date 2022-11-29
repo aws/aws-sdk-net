@@ -82,7 +82,7 @@ namespace Amazon.Inspector2.Model
         /// The resource scan types you want to enable.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2)]
+        [AWSProperty(Required=true, Min=1, Max=3)]
         public List<string> ResourceTypes
         {
             get { return this._resourceTypes; }

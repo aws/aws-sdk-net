@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VulnerablePackage Object
+    /// Response Unmarshaller for AwsLambdaFunctionDetails Object
     /// </summary>  
-    public class VulnerablePackageUnmarshaller : IUnmarshaller<VulnerablePackage, XmlUnmarshallerContext>, IUnmarshaller<VulnerablePackage, JsonUnmarshallerContext>
+    public class AwsLambdaFunctionDetailsUnmarshaller : IUnmarshaller<AwsLambdaFunctionDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsLambdaFunctionDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VulnerablePackage IUnmarshaller<VulnerablePackage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AwsLambdaFunctionDetails IUnmarshaller<AwsLambdaFunctionDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,75 +53,63 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VulnerablePackage Unmarshall(JsonUnmarshallerContext context)
+        public AwsLambdaFunctionDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VulnerablePackage unmarshalledObject = new VulnerablePackage();
+            AwsLambdaFunctionDetails unmarshalledObject = new AwsLambdaFunctionDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arch", targetDepth))
+                if (context.TestExpression("architectures", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arch = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Architectures = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("epoch", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Epoch = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("filePath", targetDepth))
+                if (context.TestExpression("codeSha256", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilePath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CodeSha256 = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("fixedInVersion", targetDepth))
+                if (context.TestExpression("executionRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FixedInVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("functionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FunctionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("packageManager", targetDepth))
+                if (context.TestExpression("lastModifiedAt", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PackageManager = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("release", targetDepth))
+                if (context.TestExpression("layers", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Release = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Layers = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("remediation", targetDepth))
+                if (context.TestExpression("packageType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Remediation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PackageType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sourceLambdaLayerArn", targetDepth))
+                if (context.TestExpression("runtime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceLambdaLayerArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceLayerHash", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceLayerHash = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Runtime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("version", targetDepth))
@@ -130,18 +118,24 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("vpcConfig", targetDepth))
+                {
+                    var unmarshaller = LambdaVpcConfigUnmarshaller.Instance;
+                    unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static VulnerablePackageUnmarshaller _instance = new VulnerablePackageUnmarshaller();        
+        private static AwsLambdaFunctionDetailsUnmarshaller _instance = new AwsLambdaFunctionDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VulnerablePackageUnmarshaller Instance
+        public static AwsLambdaFunctionDetailsUnmarshaller Instance
         {
             get
             {

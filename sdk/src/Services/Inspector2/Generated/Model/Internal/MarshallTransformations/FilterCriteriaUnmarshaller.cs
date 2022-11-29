@@ -136,6 +136,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.EcrImageTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("exploitAvailable", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.ExploitAvailable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("findingArn", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
@@ -170,6 +176,36 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<NumberFilter, NumberFilterUnmarshaller>(NumberFilterUnmarshaller.Instance);
                     unmarshalledObject.InspectorScore = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lambdaFunctionExecutionRoleArn", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.LambdaFunctionExecutionRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lambdaFunctionLastModifiedAt", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DateFilter, DateFilterUnmarshaller>(DateFilterUnmarshaller.Instance);
+                    unmarshalledObject.LambdaFunctionLastModifiedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lambdaFunctionLayers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.LambdaFunctionLayers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lambdaFunctionName", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.LambdaFunctionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lambdaFunctionRuntime", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.LambdaFunctionRuntime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastObservedAt", targetDepth))

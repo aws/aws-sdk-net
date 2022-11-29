@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResourceDetails Object
+    /// Response Unmarshaller for LambdaVpcConfig Object
     /// </summary>  
-    public class ResourceDetailsUnmarshaller : IUnmarshaller<ResourceDetails, XmlUnmarshallerContext>, IUnmarshaller<ResourceDetails, JsonUnmarshallerContext>
+    public class LambdaVpcConfigUnmarshaller : IUnmarshaller<LambdaVpcConfig, XmlUnmarshallerContext>, IUnmarshaller<LambdaVpcConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ResourceDetails IUnmarshaller<ResourceDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LambdaVpcConfig IUnmarshaller<LambdaVpcConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResourceDetails Unmarshall(JsonUnmarshallerContext context)
+        public LambdaVpcConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ResourceDetails unmarshalledObject = new ResourceDetails();
+            LambdaVpcConfig unmarshalledObject = new LambdaVpcConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("awsEc2Instance", targetDepth))
+                if (context.TestExpression("securityGroupIds", targetDepth))
                 {
-                    var unmarshaller = AwsEc2InstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AwsEc2Instance = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("awsEcrContainerImage", targetDepth))
+                if (context.TestExpression("subnetIds", targetDepth))
                 {
-                    var unmarshaller = AwsEcrContainerImageDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AwsEcrContainerImage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("awsLambdaFunction", targetDepth))
+                if (context.TestExpression("vpcId", targetDepth))
                 {
-                    var unmarshaller = AwsLambdaFunctionDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AwsLambdaFunction = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResourceDetailsUnmarshaller _instance = new ResourceDetailsUnmarshaller();        
+        private static LambdaVpcConfigUnmarshaller _instance = new LambdaVpcConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceDetailsUnmarshaller Instance
+        public static LambdaVpcConfigUnmarshaller Instance
         {
             get
             {

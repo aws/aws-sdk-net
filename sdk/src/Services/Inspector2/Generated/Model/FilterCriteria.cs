@@ -45,12 +45,18 @@ namespace Amazon.Inspector2.Model
         private List<StringFilter> _ecrImageRegistry = new List<StringFilter>();
         private List<StringFilter> _ecrImageRepositoryName = new List<StringFilter>();
         private List<StringFilter> _ecrImageTags = new List<StringFilter>();
+        private List<StringFilter> _exploitAvailable = new List<StringFilter>();
         private List<StringFilter> _findingArn = new List<StringFilter>();
         private List<StringFilter> _findingStatus = new List<StringFilter>();
         private List<StringFilter> _findingType = new List<StringFilter>();
         private List<DateFilter> _firstObservedAt = new List<DateFilter>();
         private List<StringFilter> _fixAvailable = new List<StringFilter>();
         private List<NumberFilter> _inspectorScore = new List<NumberFilter>();
+        private List<StringFilter> _lambdaFunctionExecutionRoleArn = new List<StringFilter>();
+        private List<DateFilter> _lambdaFunctionLastModifiedAt = new List<DateFilter>();
+        private List<StringFilter> _lambdaFunctionLayers = new List<StringFilter>();
+        private List<StringFilter> _lambdaFunctionName = new List<StringFilter>();
+        private List<StringFilter> _lambdaFunctionRuntime = new List<StringFilter>();
         private List<DateFilter> _lastObservedAt = new List<DateFilter>();
         private List<StringFilter> _networkProtocol = new List<StringFilter>();
         private List<PortRangeFilter> _portRange = new List<PortRangeFilter>();
@@ -295,6 +301,25 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExploitAvailable. 
+        /// <para>
+        /// Filters the list of AWS Lambda findings by the availability of exploits.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> ExploitAvailable
+        {
+            get { return this._exploitAvailable; }
+            set { this._exploitAvailable = value; }
+        }
+
+        // Check to see if ExploitAvailable property is set
+        internal bool IsSetExploitAvailable()
+        {
+            return this._exploitAvailable != null && this._exploitAvailable.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FindingArn. 
         /// <para>
         /// Details on the finding ARNs used to filter findings.
@@ -409,6 +434,105 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetInspectorScore()
         {
             return this._inspectorScore != null && this._inspectorScore.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionExecutionRoleArn. 
+        /// <para>
+        /// Filters the list of AWS Lambda functions by execution role.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> LambdaFunctionExecutionRoleArn
+        {
+            get { return this._lambdaFunctionExecutionRoleArn; }
+            set { this._lambdaFunctionExecutionRoleArn = value; }
+        }
+
+        // Check to see if LambdaFunctionExecutionRoleArn property is set
+        internal bool IsSetLambdaFunctionExecutionRoleArn()
+        {
+            return this._lambdaFunctionExecutionRoleArn != null && this._lambdaFunctionExecutionRoleArn.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionLastModifiedAt. 
+        /// <para>
+        /// Filters the list of AWS Lambda functions by the date and time that a user last updated
+        /// the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// 8601 format</a> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<DateFilter> LambdaFunctionLastModifiedAt
+        {
+            get { return this._lambdaFunctionLastModifiedAt; }
+            set { this._lambdaFunctionLastModifiedAt = value; }
+        }
+
+        // Check to see if LambdaFunctionLastModifiedAt property is set
+        internal bool IsSetLambdaFunctionLastModifiedAt()
+        {
+            return this._lambdaFunctionLastModifiedAt != null && this._lambdaFunctionLastModifiedAt.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionLayers. 
+        /// <para>
+        /// Filters the list of AWS Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+        /// layers</a>. A Lambda function can have up to five layers.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> LambdaFunctionLayers
+        {
+            get { return this._lambdaFunctionLayers; }
+            set { this._lambdaFunctionLayers = value; }
+        }
+
+        // Check to see if LambdaFunctionLayers property is set
+        internal bool IsSetLambdaFunctionLayers()
+        {
+            return this._lambdaFunctionLayers != null && this._lambdaFunctionLayers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionName. 
+        /// <para>
+        /// Filters the list of AWS Lambda functions by the name of the function.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> LambdaFunctionName
+        {
+            get { return this._lambdaFunctionName; }
+            set { this._lambdaFunctionName = value; }
+        }
+
+        // Check to see if LambdaFunctionName property is set
+        internal bool IsSetLambdaFunctionName()
+        {
+            return this._lambdaFunctionName != null && this._lambdaFunctionName.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionRuntime. 
+        /// <para>
+        /// Filters the list of AWS Lambda functions by the runtime environment for the Lambda
+        /// function.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> LambdaFunctionRuntime
+        {
+            get { return this._lambdaFunctionRuntime; }
+            set { this._lambdaFunctionRuntime = value; }
+        }
+
+        // Check to see if LambdaFunctionRuntime property is set
+        internal bool IsSetLambdaFunctionRuntime()
+        {
+            return this._lambdaFunctionRuntime != null && this._lambdaFunctionRuntime.Count > 0; 
         }
 
         /// <summary>

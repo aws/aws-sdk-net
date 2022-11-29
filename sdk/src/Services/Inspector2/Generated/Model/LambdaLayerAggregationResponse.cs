@@ -29,22 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
-    /// A response that contains the results of a finding aggregation by AMI.
+    /// A response that contains the results of an AWS Lambda function layer finding aggregation.
     /// </summary>
-    public partial class AmiAggregationResponse
+    public partial class LambdaLayerAggregationResponse
     {
         private string _accountId;
-        private long? _affectedInstances;
-        private string _ami;
+        private string _functionName;
+        private string _layerArn;
+        private string _resourceId;
         private SeverityCounts _severityCounts;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The Amazon Web Services account ID for the AMI.
+        /// The account ID of the AWS Lambda function layer.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=12, Max=12)]
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -58,47 +59,64 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AffectedInstances. 
+        /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The IDs of Amazon EC2 instances using this AMI.
+        /// The names of the AWS Lambda functions associated with the layers.
         /// </para>
         /// </summary>
-        public long AffectedInstances
+        [AWSProperty(Required=true, Min=1)]
+        public string FunctionName
         {
-            get { return this._affectedInstances.GetValueOrDefault(); }
-            set { this._affectedInstances = value; }
+            get { return this._functionName; }
+            set { this._functionName = value; }
         }
 
-        // Check to see if AffectedInstances property is set
-        internal bool IsSetAffectedInstances()
+        // Check to see if FunctionName property is set
+        internal bool IsSetFunctionName()
         {
-            return this._affectedInstances.HasValue; 
+            return this._functionName != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Ami. 
+        /// Gets and sets the property LayerArn. 
         /// <para>
-        /// The ID of the AMI that findings were aggregated for.
+        /// The Amazon Resource Name (ARN) of the AWS Lambda function layer.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Ami
+        [AWSProperty(Required=true, Min=1)]
+        public string LayerArn
         {
-            get { return this._ami; }
-            set { this._ami = value; }
+            get { return this._layerArn; }
+            set { this._layerArn = value; }
         }
 
-        // Check to see if Ami property is set
-        internal bool IsSetAmi()
+        // Check to see if LayerArn property is set
+        internal bool IsSetLayerArn()
         {
-            return this._ami != null;
+            return this._layerArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property SeverityCounts. 
+        /// Gets and sets the property ResourceId. 
         /// <para>
-        /// An object that contains the count of matched findings per severity.
+        /// The Resource ID of the AWS Lambda function layer.
         /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1)]
+        public string ResourceId
+        {
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
+        }
+
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
+        {
+            return this._resourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SeverityCounts.
         /// </summary>
         public SeverityCounts SeverityCounts
         {

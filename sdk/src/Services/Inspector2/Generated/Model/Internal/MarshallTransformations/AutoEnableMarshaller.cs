@@ -57,6 +57,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Ecr);
             }
 
+            if(requestObject.IsSetLambda())
+            {
+                context.Writer.WritePropertyName("lambda");
+                context.Writer.Write(requestObject.Lambda);
+            }
+
         }
 
         /// <summary>

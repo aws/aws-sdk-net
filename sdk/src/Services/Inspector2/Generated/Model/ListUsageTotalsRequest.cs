@@ -44,7 +44,7 @@ namespace Amazon.Inspector2.Model
         /// The Amazon Web Services account IDs to retrieve usage totals for.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5000)]
+        [AWSProperty(Min=1, Max=7000)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }

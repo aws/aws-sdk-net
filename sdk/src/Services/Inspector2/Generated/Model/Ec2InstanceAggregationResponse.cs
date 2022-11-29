@@ -44,7 +44,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The Amazon Web Services account the Amazon EC2 instance belongs to.
+        /// The Amazon Web Services account for the Amazon EC2 instance.
         /// </para>
         /// </summary>
         public string AccountId

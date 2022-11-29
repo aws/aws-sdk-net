@@ -89,6 +89,17 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSourceLambdaLayerArn())
+            {
+                context.Writer.WritePropertyName("sourceLambdaLayerArn");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = StringFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.SourceLambdaLayerArn, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSourceLayerHash())
             {
                 context.Writer.WritePropertyName("sourceLayerHash");

@@ -39,6 +39,8 @@ namespace Amazon.Inspector2.Model
         private Ec2InstanceAggregation _ec2InstanceAggregation;
         private FindingTypeAggregation _findingTypeAggregation;
         private ImageLayerAggregation _imageLayerAggregation;
+        private LambdaFunctionAggregation _lambdaFunctionAggregation;
+        private LambdaLayerAggregation _lambdaLayerAggregation;
         private PackageAggregation _packageAggregation;
         private RepositoryAggregation _repositoryAggregation;
         private TitleAggregation _titleAggregation;
@@ -153,6 +155,42 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetImageLayerAggregation()
         {
             return this._imageLayerAggregation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionAggregation. 
+        /// <para>
+        /// Returns an object with findings aggregated by AWS Lambda function.
+        /// </para>
+        /// </summary>
+        public LambdaFunctionAggregation LambdaFunctionAggregation
+        {
+            get { return this._lambdaFunctionAggregation; }
+            set { this._lambdaFunctionAggregation = value; }
+        }
+
+        // Check to see if LambdaFunctionAggregation property is set
+        internal bool IsSetLambdaFunctionAggregation()
+        {
+            return this._lambdaFunctionAggregation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaLayerAggregation. 
+        /// <para>
+        /// Returns an object with findings aggregated by AWS Lambda layer.
+        /// </para>
+        /// </summary>
+        public LambdaLayerAggregation LambdaLayerAggregation
+        {
+            get { return this._lambdaLayerAggregation; }
+            set { this._lambdaLayerAggregation = value; }
+        }
+
+        // Check to see if LambdaLayerAggregation property is set
+        internal bool IsSetLambdaLayerAggregation()
+        {
+            return this._lambdaLayerAggregation != null;
         }
 
         /// <summary>

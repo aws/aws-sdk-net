@@ -41,6 +41,7 @@ namespace Amazon.Inspector2.Model
         private PackageManager _packageManager;
         private string _release;
         private string _remediation;
+        private string _sourceLambdaLayerArn;
         private string _sourceLayerHash;
         private string _version;
 
@@ -192,6 +193,24 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetRemediation()
         {
             return this._remediation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceLambdaLayerArn. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.
+        /// </para>
+        /// </summary>
+        public string SourceLambdaLayerArn
+        {
+            get { return this._sourceLambdaLayerArn; }
+            set { this._sourceLambdaLayerArn = value; }
+        }
+
+        // Check to see if SourceLambdaLayerArn property is set
+        internal bool IsSetSourceLambdaLayerArn()
+        {
+            return this._sourceLambdaLayerArn != null;
         }
 
         /// <summary>

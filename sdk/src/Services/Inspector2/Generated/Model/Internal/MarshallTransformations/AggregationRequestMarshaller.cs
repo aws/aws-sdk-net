@@ -111,6 +111,28 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetLambdaFunctionAggregation())
+            {
+                context.Writer.WritePropertyName("lambdaFunctionAggregation");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LambdaFunctionAggregationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LambdaFunctionAggregation, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetLambdaLayerAggregation())
+            {
+                context.Writer.WritePropertyName("lambdaLayerAggregation");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LambdaLayerAggregationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LambdaLayerAggregation, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPackageAggregation())
             {
                 context.Writer.WritePropertyName("packageAggregation");
