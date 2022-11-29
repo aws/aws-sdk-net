@@ -126,6 +126,75 @@
     <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessBufferingHints.IntervalInSeconds</property>
+    <min>60</min>
+    <max>900</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessBufferingHints.SizeInMBs</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessDestinationConfiguration.CollectionEndpoint</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>https:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessDestinationConfiguration.IndexName</property>
+    <min>1</min>
+    <max>80</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessDestinationConfiguration.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessDestinationDescription.CollectionEndpoint</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>https:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessDestinationDescription.IndexName</property>
+    <min>1</min>
+    <max>80</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessDestinationDescription.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessDestinationUpdate.CollectionEndpoint</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>https:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessDestinationUpdate.IndexName</property>
+    <min>1</min>
+    <max>80</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessDestinationUpdate.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.AmazonOpenSearchServerlessRetryOptions.DurationInSeconds</property>
+    <min>0</min>
+    <max>7200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.AmazonopensearchserviceBufferingHints.IntervalInSeconds</property>
     <min>60</min>
     <max>900</max>

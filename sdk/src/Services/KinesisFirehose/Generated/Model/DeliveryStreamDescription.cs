@@ -69,7 +69,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the delivery stream. For more information, see <a
         /// href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

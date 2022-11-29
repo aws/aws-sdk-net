@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model
     /// 
     ///  
     /// <para>
-    /// By default, you can create up to 50 delivery streams per AWS Region.
+    /// By default, you can create up to 50 delivery streams per Amazon Web Services Region.
     /// </para>
     ///  
     /// <para>
@@ -122,6 +122,7 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class CreateDeliveryStreamRequest : AmazonKinesisFirehoseRequest
     {
+        private AmazonOpenSearchServerlessDestinationConfiguration _amazonOpenSearchServerlessDestinationConfiguration;
         private AmazonopensearchserviceDestinationConfiguration _amazonopensearchserviceDestinationConfiguration;
         private DeliveryStreamEncryptionConfigurationInput _deliveryStreamEncryptionConfigurationInput;
         private string _deliveryStreamName;
@@ -136,7 +137,29 @@ namespace Amazon.KinesisFirehose.Model
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property AmazonopensearchserviceDestinationConfiguration.
+        /// Gets and sets the property AmazonOpenSearchServerlessDestinationConfiguration. 
+        /// <para>
+        /// The destination in the Serverless offering for Amazon OpenSearch Service. You can
+        /// specify only one destination.
+        /// </para>
+        /// </summary>
+        public AmazonOpenSearchServerlessDestinationConfiguration AmazonOpenSearchServerlessDestinationConfiguration
+        {
+            get { return this._amazonOpenSearchServerlessDestinationConfiguration; }
+            set { this._amazonOpenSearchServerlessDestinationConfiguration = value; }
+        }
+
+        // Check to see if AmazonOpenSearchServerlessDestinationConfiguration property is set
+        internal bool IsSetAmazonOpenSearchServerlessDestinationConfiguration()
+        {
+            return this._amazonOpenSearchServerlessDestinationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AmazonopensearchserviceDestinationConfiguration. 
+        /// <para>
+        /// The destination in Amazon OpenSearch Service. You can specify only one destination.
+        /// </para>
         /// </summary>
         public AmazonopensearchserviceDestinationConfiguration AmazonopensearchserviceDestinationConfiguration
         {
@@ -172,9 +195,10 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamName. 
         /// <para>
-        /// The name of the delivery stream. This name must be unique per AWS account in the same
-        /// AWS Region. If the delivery streams are in different accounts or different Regions,
-        /// you can have multiple delivery streams with the same name.
+        /// The name of the delivery stream. This name must be unique per Amazon Web Services
+        /// account in the same Amazon Web Services Region. If the delivery streams are in different
+        /// accounts or different Regions, you can have multiple delivery streams with the same
+        /// name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -352,10 +376,12 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A set of tags to assign to the delivery stream. A tag is a key-value pair that you
-        /// can define and assign to AWS resources. Tags are metadata. For example, you can add
-        /// friendly names and descriptions or other types of information that can help you distinguish
-        /// the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.
+        /// can define and assign to Amazon Web Services resources. Tags are metadata. For example,
+        /// you can add friendly names and descriptions or other types of information that can
+        /// help you distinguish the delivery stream. For more information about tags, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+        /// Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User
+        /// Guide.
         /// </para>
         ///  
         /// <para>

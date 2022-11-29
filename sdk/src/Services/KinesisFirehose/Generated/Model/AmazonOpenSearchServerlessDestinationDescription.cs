@@ -29,22 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// The destination description in Amazon OpenSearch Service.
+    /// The destination description in the Serverless offering for Amazon OpenSearch Service.
     /// </summary>
-    public partial class AmazonopensearchserviceDestinationDescription
+    public partial class AmazonOpenSearchServerlessDestinationDescription
     {
-        private AmazonopensearchserviceBufferingHints _bufferingHints;
+        private AmazonOpenSearchServerlessBufferingHints _bufferingHints;
         private CloudWatchLoggingOptions _cloudWatchLoggingOptions;
-        private string _clusterEndpoint;
-        private string _domainARN;
+        private string _collectionEndpoint;
         private string _indexName;
-        private AmazonopensearchserviceIndexRotationPeriod _indexRotationPeriod;
         private ProcessingConfiguration _processingConfiguration;
-        private AmazonopensearchserviceRetryOptions _retryOptions;
+        private AmazonOpenSearchServerlessRetryOptions _retryOptions;
         private string _roleARN;
-        private AmazonopensearchserviceS3BackupMode _s3BackupMode;
+        private AmazonOpenSearchServerlessS3BackupMode _s3BackupMode;
         private S3DestinationDescription _s3DestinationDescription;
-        private string _typeName;
         private VpcConfigurationDescription _vpcConfigurationDescription;
 
         /// <summary>
@@ -53,7 +50,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The buffering options.
         /// </para>
         /// </summary>
-        public AmazonopensearchserviceBufferingHints BufferingHints
+        public AmazonOpenSearchServerlessBufferingHints BufferingHints
         {
             get { return this._bufferingHints; }
             set { this._bufferingHints = value; }
@@ -81,49 +78,29 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClusterEndpoint. 
+        /// Gets and sets the property CollectionEndpoint. 
         /// <para>
-        /// The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses
-        /// either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch
-        /// Service. 
+        /// The endpoint to use when communicating with the collection in the Serverless offering
+        /// for Amazon OpenSearch Service.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
-        public string ClusterEndpoint
+        public string CollectionEndpoint
         {
-            get { return this._clusterEndpoint; }
-            set { this._clusterEndpoint = value; }
+            get { return this._collectionEndpoint; }
+            set { this._collectionEndpoint = value; }
         }
 
-        // Check to see if ClusterEndpoint property is set
-        internal bool IsSetClusterEndpoint()
+        // Check to see if CollectionEndpoint property is set
+        internal bool IsSetCollectionEndpoint()
         {
-            return this._clusterEndpoint != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DomainARN. 
-        /// <para>
-        /// The ARN of the Amazon OpenSearch Service domain.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=512)]
-        public string DomainARN
-        {
-            get { return this._domainARN; }
-            set { this._domainARN = value; }
-        }
-
-        // Check to see if DomainARN property is set
-        internal bool IsSetDomainARN()
-        {
-            return this._domainARN != null;
+            return this._collectionEndpoint != null;
         }
 
         /// <summary>
         /// Gets and sets the property IndexName. 
         /// <para>
-        /// The Amazon OpenSearch Service index name.
+        /// The Serverless offering for Amazon OpenSearch Service index name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=80)]
@@ -137,24 +114,6 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetIndexName()
         {
             return this._indexName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property IndexRotationPeriod. 
-        /// <para>
-        /// The Amazon OpenSearch Service index rotation period
-        /// </para>
-        /// </summary>
-        public AmazonopensearchserviceIndexRotationPeriod IndexRotationPeriod
-        {
-            get { return this._indexRotationPeriod; }
-            set { this._indexRotationPeriod = value; }
-        }
-
-        // Check to see if IndexRotationPeriod property is set
-        internal bool IsSetIndexRotationPeriod()
-        {
-            return this._indexRotationPeriod != null;
         }
 
         /// <summary>
@@ -175,10 +134,10 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RetryOptions. 
         /// <para>
-        /// The Amazon OpenSearch Service retry options.
+        /// The Serverless offering for Amazon OpenSearch Service retry options.
         /// </para>
         /// </summary>
-        public AmazonopensearchserviceRetryOptions RetryOptions
+        public AmazonOpenSearchServerlessRetryOptions RetryOptions
         {
             get { return this._retryOptions; }
             set { this._retryOptions = value; }
@@ -193,7 +152,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Web Services credentials. 
+        /// The Amazon Resource Name (ARN) of the AWS credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -215,7 +174,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The Amazon S3 backup mode.
         /// </para>
         /// </summary>
-        public AmazonopensearchserviceS3BackupMode S3BackupMode
+        public AmazonOpenSearchServerlessS3BackupMode S3BackupMode
         {
             get { return this._s3BackupMode; }
             set { this._s3BackupMode = value; }
@@ -240,27 +199,6 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetS3DestinationDescription()
         {
             return this._s3DestinationDescription != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TypeName. 
-        /// <para>
-        /// The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower
-        /// versions. For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for TypeName.
-        /// 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=100)]
-        public string TypeName
-        {
-            get { return this._typeName; }
-            set { this._typeName = value; }
-        }
-
-        // Check to see if TypeName property is set
-        internal bool IsSetTypeName()
-        {
-            return this._typeName != null;
         }
 
         /// <summary>

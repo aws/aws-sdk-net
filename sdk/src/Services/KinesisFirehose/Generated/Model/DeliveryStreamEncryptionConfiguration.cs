@@ -65,7 +65,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property KeyARN. 
         /// <para>
         /// If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains
-        /// the ARN of the customer managed CMK. If <code>KeyType</code> is <code>AWS_OWNED_CMK</code>,
+        /// the ARN of the customer managed CMK. If <code>KeyType</code> is <code>Amazon Web Services_OWNED_CMK</code>,
         /// <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for <code>KeyARN</code>.
         /// </para>
         /// </summary>
@@ -86,7 +86,8 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property KeyType. 
         /// <para>
         /// Indicates the type of customer master key (CMK) that is used for encryption. The default
-        /// setting is <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+        /// setting is <code>Amazon Web Services_OWNED_CMK</code>. For more information about
+        /// CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
         /// Master Keys (CMKs)</a>.
         /// </para>
         /// </summary>

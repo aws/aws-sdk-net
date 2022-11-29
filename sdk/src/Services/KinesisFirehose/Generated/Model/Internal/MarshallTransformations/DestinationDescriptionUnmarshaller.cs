@@ -64,6 +64,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AmazonOpenSearchServerlessDestinationDescription", targetDepth))
+                {
+                    var unmarshaller = AmazonOpenSearchServerlessDestinationDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.AmazonOpenSearchServerlessDestinationDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AmazonopensearchserviceDestinationDescription", targetDepth))
                 {
                     var unmarshaller = AmazonopensearchserviceDestinationDescriptionUnmarshaller.Instance;

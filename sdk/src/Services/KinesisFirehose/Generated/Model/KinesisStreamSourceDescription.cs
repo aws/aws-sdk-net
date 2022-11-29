@@ -82,8 +82,8 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// The ARN of the role used by the source Kinesis data stream. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
-        /// Identity and Access Management (IAM) ARN Format</a>.
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
+        /// Web Services Identity and Access Management (IAM) ARN Format</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

@@ -51,7 +51,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property BucketARN. 
         /// <para>
         /// The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -146,9 +146,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <para>
         /// The configuration of the dynamic partitioning mechanism that creates smaller data
         /// sets from the streaming data by partitioning it based on partition keys. Currently,
-        /// dynamic partitioning is only supported for Amazon S3 destinations. For more information,
-        /// see <a href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
-        /// 
+        /// dynamic partitioning is only supported for Amazon S3 destinations. 
         /// </para>
         /// </summary>
         public DynamicPartitioningConfiguration DynamicPartitioningConfiguration
@@ -245,9 +243,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
-        /// href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

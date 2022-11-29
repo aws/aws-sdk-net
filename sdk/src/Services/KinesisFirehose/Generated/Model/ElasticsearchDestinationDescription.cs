@@ -108,7 +108,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property DomainARN. 
         /// <para>
         /// The ARN of the Amazon ES domain. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.
         /// </para>
         ///  
         /// <para>
@@ -205,9 +205,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
-        /// href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -263,7 +263,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property TypeName. 
         /// <para>
         /// The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions.
-        /// For Elasticsearch 7.x, there's no value for <code>TypeName</code>.
+        /// For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for <code>TypeName</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
