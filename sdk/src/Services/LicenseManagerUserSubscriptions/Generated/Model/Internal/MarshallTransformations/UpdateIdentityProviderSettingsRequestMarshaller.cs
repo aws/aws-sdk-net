@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RegisterIdentityProvider Request Marshaller
+    /// UpdateIdentityProviderSettings Request Marshaller
     /// </summary>       
-    public class RegisterIdentityProviderRequestMarshaller : IMarshaller<IRequest, RegisterIdentityProviderRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateIdentityProviderSettingsRequestMarshaller : IMarshaller<IRequest, UpdateIdentityProviderSettingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((RegisterIdentityProviderRequest)input);
+            return this.Marshall((UpdateIdentityProviderSettingsRequest)input);
         }
 
         /// <summary>
@@ -52,14 +52,14 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(RegisterIdentityProviderRequest publicRequest)
+        public IRequest Marshall(UpdateIdentityProviderSettingsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LicenseManagerUserSubscriptions");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/identity-provider/RegisterIdentityProvider";
+            request.ResourcePath = "/identity-provider/UpdateIdentityProviderSettings";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -82,13 +82,13 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
                     context.Writer.Write(publicRequest.Product);
                 }
 
-                if(publicRequest.IsSetSettings())
+                if(publicRequest.IsSetUpdateSettings())
                 {
-                    context.Writer.WritePropertyName("Settings");
+                    context.Writer.WritePropertyName("UpdateSettings");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = SettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Settings, context);
+                    var marshaller = UpdateSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UpdateSettings, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -101,9 +101,9 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
 
             return request;
         }
-        private static RegisterIdentityProviderRequestMarshaller _instance = new RegisterIdentityProviderRequestMarshaller();        
+        private static UpdateIdentityProviderSettingsRequestMarshaller _instance = new UpdateIdentityProviderSettingsRequestMarshaller();        
 
-        internal static RegisterIdentityProviderRequestMarshaller GetInstance()
+        internal static UpdateIdentityProviderSettingsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -111,7 +111,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RegisterIdentityProviderRequestMarshaller Instance
+        public static UpdateIdentityProviderSettingsRequestMarshaller Instance
         {
             get
             {

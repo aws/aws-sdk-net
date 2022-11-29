@@ -283,6 +283,15 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
         /// <summary>
         /// Associates the user to an EC2 instance to utilize user-based subscriptions.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Your estimated bill for charges on the number of users and related costs will take
+        /// 48 hours to appear for billing periods that haven't closed (marked as <b>Pending</b>
+        /// billing status) in Amazon Web Services Billing. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/invoice.html">Viewing
+        /// your monthly charges</a> in the <i>Amazon Web Services Billing User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateUser service method.</param>
         /// <param name="cancellationToken">
@@ -731,6 +740,15 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
         /// <summary>
         /// Starts a product subscription for a user with the specified identity provider.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Your estimated bill for charges on the number of users and related costs will take
+        /// 48 hours to appear for billing periods that haven't closed (marked as <b>Pending</b>
+        /// billing status) in Amazon Web Services Billing. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/invoice.html">Viewing
+        /// your monthly charges</a> in the <i>Amazon Web Services Billing User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartProductSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -824,6 +842,52 @@ namespace Amazon.LicenseManagerUserSubscriptions
             options.ResponseUnmarshaller = StopProductSubscriptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopProductSubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateIdentityProviderSettings
+
+        internal virtual UpdateIdentityProviderSettingsResponse UpdateIdentityProviderSettings(UpdateIdentityProviderSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIdentityProviderSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdentityProviderSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIdentityProviderSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates additional product configuration settings for the registered identity provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityProviderSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateIdentityProviderSettings service method, as returned by LicenseManagerUserSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/UpdateIdentityProviderSettings">REST API Reference for UpdateIdentityProviderSettings Operation</seealso>
+        public virtual Task<UpdateIdentityProviderSettingsResponse> UpdateIdentityProviderSettingsAsync(UpdateIdentityProviderSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIdentityProviderSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdentityProviderSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateIdentityProviderSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion

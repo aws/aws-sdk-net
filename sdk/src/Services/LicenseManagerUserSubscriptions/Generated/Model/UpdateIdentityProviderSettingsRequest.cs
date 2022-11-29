@@ -29,48 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManagerUserSubscriptions.Model
 {
     /// <summary>
-    /// Container for the parameters to the StartProductSubscription operation.
-    /// Starts a product subscription for a user with the specified identity provider.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Your estimated bill for charges on the number of users and related costs will take
-    /// 48 hours to appear for billing periods that haven't closed (marked as <b>Pending</b>
-    /// billing status) in Amazon Web Services Billing. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/invoice.html">Viewing
-    /// your monthly charges</a> in the <i>Amazon Web Services Billing User Guide</i>.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the UpdateIdentityProviderSettings operation.
+    /// Updates additional product configuration settings for the registered identity provider.
     /// </summary>
-    public partial class StartProductSubscriptionRequest : AmazonLicenseManagerUserSubscriptionsRequest
+    public partial class UpdateIdentityProviderSettingsRequest : AmazonLicenseManagerUserSubscriptionsRequest
     {
-        private string _domain;
         private IdentityProvider _identityProvider;
         private string _product;
-        private string _username;
+        private UpdateSettings _updateSettings;
 
         /// <summary>
-        /// Gets and sets the property Domain. 
-        /// <para>
-        /// The domain name of the user.
-        /// </para>
-        /// </summary>
-        public string Domain
-        {
-            get { return this._domain; }
-            set { this._domain = value; }
-        }
-
-        // Check to see if Domain property is set
-        internal bool IsSetDomain()
-        {
-            return this._domain != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property IdentityProvider. 
-        /// <para>
-        /// An object that specifies details for the identity provider.
-        /// </para>
+        /// Gets and sets the property IdentityProvider.
         /// </summary>
         [AWSProperty(Required=true)]
         public IdentityProvider IdentityProvider
@@ -105,22 +74,36 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Username. 
+        /// Gets and sets the property UpdateSettings. 
         /// <para>
-        /// The user name from the identity provider of the user.
+        /// Updates the registered identity provider’s product related configuration settings.
+        /// You can update any combination of settings in a single operation such as the:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Subnets which you want to add to provision VPC endpoints.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subnets which you want to remove the VPC endpoints from.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Security group ID which permits traffic to the VPC endpoints.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string Username
+        public UpdateSettings UpdateSettings
         {
-            get { return this._username; }
-            set { this._username = value; }
+            get { return this._updateSettings; }
+            set { this._updateSettings = value; }
         }
 
-        // Check to see if Username property is set
-        internal bool IsSetUsername()
+        // Check to see if UpdateSettings property is set
+        internal bool IsSetUpdateSettings()
         {
-            return this._username != null;
+            return this._updateSettings != null;
         }
 
     }

@@ -36,6 +36,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         private string _failureMessage;
         private IdentityProvider _identityProvider;
         private string _product;
+        private Settings _settings;
         private string _status;
 
         /// <summary>
@@ -92,6 +93,26 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         internal bool IsSetProduct()
         {
             return this._product != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Settings. 
+        /// <para>
+        /// An object that details the registered identity provider’s product related configuration
+        /// settings such as the subnets to provision VPC endpoints.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public Settings Settings
+        {
+            get { return this._settings; }
+            set { this._settings = value; }
+        }
+
+        // Check to see if Settings property is set
+        internal bool IsSetSettings()
+        {
+            return this._settings != null;
         }
 
         /// <summary>

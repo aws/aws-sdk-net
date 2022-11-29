@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for IdentityProviderSummary Object
+    /// Response Unmarshaller for Settings Object
     /// </summary>  
-    public class IdentityProviderSummaryUnmarshaller : IUnmarshaller<IdentityProviderSummary, XmlUnmarshallerContext>, IUnmarshaller<IdentityProviderSummary, JsonUnmarshallerContext>
+    public class SettingsUnmarshaller : IUnmarshaller<Settings, XmlUnmarshallerContext>, IUnmarshaller<Settings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        IdentityProviderSummary IUnmarshaller<IdentityProviderSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Settings IUnmarshaller<Settings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public IdentityProviderSummary Unmarshall(JsonUnmarshallerContext context)
+        public Settings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            IdentityProviderSummary unmarshalledObject = new IdentityProviderSummary();
+            Settings unmarshalledObject = new Settings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FailureMessage", targetDepth))
+                if (context.TestExpression("SecurityGroupId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FailureMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SecurityGroupId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("IdentityProvider", targetDepth))
+                if (context.TestExpression("Subnets", targetDepth))
                 {
-                    var unmarshaller = IdentityProviderUnmarshaller.Instance;
-                    unmarshalledObject.IdentityProvider = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Product", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Product = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Settings", targetDepth))
-                {
-                    var unmarshaller = SettingsUnmarshaller.Instance;
-                    unmarshalledObject.Settings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Subnets = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
         }
 
 
-        private static IdentityProviderSummaryUnmarshaller _instance = new IdentityProviderSummaryUnmarshaller();        
+        private static SettingsUnmarshaller _instance = new SettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static IdentityProviderSummaryUnmarshaller Instance
+        public static SettingsUnmarshaller Instance
         {
             get
             {

@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="utf-16"?>
-<property-value-rules />
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.LicenseManagerUserSubscriptions.Model.Settings.SecurityGroupId</property>
+    <min>5</min>
+    <max>200</max>
+    <pattern>^sg-(([0-9a-z]{8})|([0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManagerUserSubscriptions.Model.UpdateSettings.SecurityGroupId</property>
+    <min>5</min>
+    <max>200</max>
+    <pattern>^sg-(([0-9a-z]{8})|([0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+</property-value-rules>
