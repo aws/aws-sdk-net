@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _message;
         private DashboardErrorType _type;
+        private List<Entity> _violatedEntities = new List<Entity>();
 
         /// <summary>
         /// Gets and sets the property Message. 
@@ -70,6 +71,22 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ViolatedEntities.
+        /// </summary>
+        [AWSProperty(Max=200)]
+        public List<Entity> ViolatedEntities
+        {
+            get { return this._violatedEntities; }
+            set { this._violatedEntities = value; }
+        }
+
+        // Check to see if ViolatedEntities property is set
+        internal bool IsSetViolatedEntities()
+        {
+            return this._violatedEntities != null && this._violatedEntities.Count > 0; 
         }
 
     }

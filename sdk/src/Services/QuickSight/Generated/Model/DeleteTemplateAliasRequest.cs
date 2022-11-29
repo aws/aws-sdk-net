@@ -86,7 +86,7 @@ namespace Amazon.QuickSight.Model
         /// The ID for the template that the specified alias is for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string TemplateId
         {
             get { return this._templateId; }

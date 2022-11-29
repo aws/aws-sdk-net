@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
         private AdHocFilteringOption _adHocFilteringOption;
         private ExportToCSVOption _exportToCSVOption;
         private SheetControlsOption _sheetControlsOption;
+        private DashboardVisualPublishOptions _visualPublishOptions;
 
         /// <summary>
         /// Gets and sets the property AdHocFilteringOption. 
@@ -89,6 +90,21 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSheetControlsOption()
         {
             return this._sheetControlsOption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VisualPublishOptions.
+        /// </summary>
+        public DashboardVisualPublishOptions VisualPublishOptions
+        {
+            get { return this._visualPublishOptions; }
+            set { this._visualPublishOptions = value; }
+        }
+
+        // Check to see if VisualPublishOptions property is set
+        internal bool IsSetVisualPublishOptions()
+        {
+            return this._visualPublishOptions != null;
         }
 
     }

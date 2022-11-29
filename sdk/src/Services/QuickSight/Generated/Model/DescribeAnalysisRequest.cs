@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// The ID of the analysis that you're describing. The ID is part of the URL of the analysis.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string AnalysisId
         {
             get { return this._analysisId; }

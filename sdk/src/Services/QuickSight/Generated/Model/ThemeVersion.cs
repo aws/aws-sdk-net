@@ -67,7 +67,7 @@ namespace Amazon.QuickSight.Model
         /// themes initially inherit from a default Amazon QuickSight theme.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=512)]
         public string BaseThemeId
         {
             get { return this._baseThemeId; }

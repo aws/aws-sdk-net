@@ -132,7 +132,7 @@ namespace Amazon.QuickSight.Model
         /// Web Services account.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=512)]
         public string TemplateId
         {
             get { return this._templateId; }

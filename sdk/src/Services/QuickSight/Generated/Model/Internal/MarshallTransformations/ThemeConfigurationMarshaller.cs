@@ -67,6 +67,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTypography())
+            {
+                context.Writer.WritePropertyName("Typography");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TypographyMarshaller.Instance;
+                marshaller.Marshall(requestObject.Typography, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetUIColorPalette())
             {
                 context.Writer.WritePropertyName("UIColorPalette");

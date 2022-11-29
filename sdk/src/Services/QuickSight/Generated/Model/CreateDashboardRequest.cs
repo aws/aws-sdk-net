@@ -48,6 +48,7 @@ namespace Amazon.QuickSight.Model
         private string _awsAccountId;
         private string _dashboardId;
         private DashboardPublishOptions _dashboardPublishOptions;
+        private DashboardVersionDefinition _definition;
         private string _name;
         private Parameters _parameters;
         private List<ResourcePermission> _permissions = new List<ResourcePermission>();
@@ -81,7 +82,7 @@ namespace Amazon.QuickSight.Model
         /// The ID for the dashboard, also added to the IAM policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string DashboardId
         {
             get { return this._dashboardId; }
@@ -132,6 +133,28 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDashboardPublishOptions()
         {
             return this._dashboardPublishOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Definition. 
+        /// <para>
+        /// The definition of a dashboard.
+        /// </para>
+        ///  
+        /// <para>
+        /// A definition is the data model of all features in a Dashboard, Template, or Analysis.
+        /// </para>
+        /// </summary>
+        public DashboardVersionDefinition Definition
+        {
+            get { return this._definition; }
+            set { this._definition = value; }
+        }
+
+        // Check to see if Definition property is set
+        internal bool IsSetDefinition()
+        {
+            return this._definition != null;
         }
 
         /// <summary>
@@ -218,7 +241,6 @@ namespace Amazon.QuickSight.Model
         /// in each dataset must match its placeholder. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DashboardSourceEntity SourceEntity
         {
             get { return this._sourceEntity; }

@@ -136,7 +136,7 @@ namespace Amazon.QuickSight.Model
         /// The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string DashboardId
         {
             get { return this._dashboardId; }

@@ -82,6 +82,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetDefinition())
+                {
+                    context.Writer.WritePropertyName("Definition");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DashboardVersionDefinitionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Definition, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

@@ -78,6 +78,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetVisualPublishOptions())
+            {
+                context.Writer.WritePropertyName("VisualPublishOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DashboardVisualPublishOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.VisualPublishOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

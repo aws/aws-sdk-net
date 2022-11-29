@@ -48,7 +48,7 @@ namespace Amazon.QuickSight.Model
         /// parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string InitialDashboardId
         {
             get { return this._initialDashboardId; }

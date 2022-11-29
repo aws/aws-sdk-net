@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class UpdateTemplateRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
+        private TemplateVersionDefinition _definition;
         private string _name;
         private TemplateSourceEntity _sourceEntity;
         private string _templateId;
@@ -57,6 +58,28 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAwsAccountId()
         {
             return this._awsAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Definition. 
+        /// <para>
+        /// The definition of a template.
+        /// </para>
+        ///  
+        /// <para>
+        /// A definition is the data model of all features in a Dashboard, Template, or Analysis.
+        /// </para>
+        /// </summary>
+        public TemplateVersionDefinition Definition
+        {
+            get { return this._definition; }
+            set { this._definition = value; }
+        }
+
+        // Check to see if Definition property is set
+        internal bool IsSetDefinition()
+        {
+            return this._definition != null;
         }
 
         /// <summary>
@@ -96,7 +119,6 @@ namespace Amazon.QuickSight.Model
         /// listed in the original. The schema in each dataset must match its placeholder. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public TemplateSourceEntity SourceEntity
         {
             get { return this._sourceEntity; }
@@ -115,7 +137,7 @@ namespace Amazon.QuickSight.Model
         /// The ID for the template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string TemplateId
         {
             get { return this._templateId; }

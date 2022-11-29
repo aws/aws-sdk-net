@@ -67,7 +67,7 @@ namespace Amazon.QuickSight.Model
         /// get the <code>DashboardId</code> with a <code>ListDashboards</code> API operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string DashboardId
         {
             get { return this._dashboardId; }
@@ -88,7 +88,7 @@ namespace Amazon.QuickSight.Model
         /// pane of the visual's on-visual menu of the Amazon QuickSight console.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string SheetId
         {
             get { return this._sheetId; }
@@ -109,7 +109,7 @@ namespace Amazon.QuickSight.Model
         /// of the visual's on-visual menu of the Amazon QuickSight console.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string VisualId
         {
             get { return this._visualId; }
