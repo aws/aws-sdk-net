@@ -103,7 +103,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property DataSetId. 
         /// <para>
-        /// The unique identifier for the data set associated with this revision.
+        /// The unique identifier for the data set associated with the data set revision.
         /// </para>
         /// </summary>
         public string DataSetId

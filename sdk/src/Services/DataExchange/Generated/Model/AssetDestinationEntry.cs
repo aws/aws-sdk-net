@@ -59,7 +59,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The S3 bucket that is the destination for the asset.
+        /// The Amazon S3 bucket that is the destination for the asset.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

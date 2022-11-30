@@ -33,13 +33,33 @@ namespace Amazon.DataExchange.Model
     /// </summary>
     public partial class RequestDetails
     {
+        private CreateS3DataAccessFromS3BucketRequestDetails _createS3DataAccessFromS3Bucket;
         private ExportAssetsToS3RequestDetails _exportAssetsToS3;
         private ExportAssetToSignedUrlRequestDetails _exportAssetToSignedUrl;
         private ExportRevisionsToS3RequestDetails _exportRevisionsToS3;
         private ImportAssetFromApiGatewayApiRequestDetails _importAssetFromApiGatewayApi;
         private ImportAssetFromSignedUrlRequestDetails _importAssetFromSignedUrl;
+        private ImportAssetsFromLakeFormationTagPolicyRequestDetails _importAssetsFromLakeFormationTagPolicy;
         private ImportAssetsFromRedshiftDataSharesRequestDetails _importAssetsFromRedshiftDataShares;
         private ImportAssetsFromS3RequestDetails _importAssetsFromS3;
+
+        /// <summary>
+        /// Gets and sets the property CreateS3DataAccessFromS3Bucket. 
+        /// <para>
+        /// Details of the request to create S3 data access from the Amazon S3 bucket.
+        /// </para>
+        /// </summary>
+        public CreateS3DataAccessFromS3BucketRequestDetails CreateS3DataAccessFromS3Bucket
+        {
+            get { return this._createS3DataAccessFromS3Bucket; }
+            set { this._createS3DataAccessFromS3Bucket = value; }
+        }
+
+        // Check to see if CreateS3DataAccessFromS3Bucket property is set
+        internal bool IsSetCreateS3DataAccessFromS3Bucket()
+        {
+            return this._createS3DataAccessFromS3Bucket != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExportAssetsToS3. 
@@ -132,6 +152,24 @@ namespace Amazon.DataExchange.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImportAssetsFromLakeFormationTagPolicy. 
+        /// <para>
+        /// Request details for the ImportAssetsFromLakeFormationTagPolicy job.
+        /// </para>
+        /// </summary>
+        public ImportAssetsFromLakeFormationTagPolicyRequestDetails ImportAssetsFromLakeFormationTagPolicy
+        {
+            get { return this._importAssetsFromLakeFormationTagPolicy; }
+            set { this._importAssetsFromLakeFormationTagPolicy = value; }
+        }
+
+        // Check to see if ImportAssetsFromLakeFormationTagPolicy property is set
+        internal bool IsSetImportAssetsFromLakeFormationTagPolicy()
+        {
+            return this._importAssetsFromLakeFormationTagPolicy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ImportAssetsFromRedshiftDataShares. 
         /// <para>
         /// Details from an import from Amazon Redshift datashare request.
@@ -152,7 +190,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property ImportAssetsFromS3. 
         /// <para>
-        /// Information about the import asset from API Gateway API request.
+        /// Details about the import asset from API Gateway API request.
         /// </para>
         /// </summary>
         public ImportAssetsFromS3RequestDetails ImportAssetsFromS3

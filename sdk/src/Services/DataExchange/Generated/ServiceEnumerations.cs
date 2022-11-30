@@ -35,9 +35,17 @@ namespace Amazon.DataExchange
         /// </summary>
         public static readonly AssetType API_GATEWAY_API = new AssetType("API_GATEWAY_API");
         /// <summary>
+        /// Constant LAKE_FORMATION_DATA_PERMISSION for AssetType
+        /// </summary>
+        public static readonly AssetType LAKE_FORMATION_DATA_PERMISSION = new AssetType("LAKE_FORMATION_DATA_PERMISSION");
+        /// <summary>
         /// Constant REDSHIFT_DATA_SHARE for AssetType
         /// </summary>
         public static readonly AssetType REDSHIFT_DATA_SHARE = new AssetType("REDSHIFT_DATA_SHARE");
+        /// <summary>
+        /// Constant S3_DATA_ACCESS for AssetType
+        /// </summary>
+        public static readonly AssetType S3_DATA_ACCESS = new AssetType("S3_DATA_ACCESS");
         /// <summary>
         /// Constant S3_SNAPSHOT for AssetType
         /// </summary>
@@ -149,6 +157,52 @@ namespace Amazon.DataExchange
 
 
     /// <summary>
+    /// Constants used for properties of type DatabaseLFTagPolicyPermission.
+    /// </summary>
+    public class DatabaseLFTagPolicyPermission : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DESCRIBE for DatabaseLFTagPolicyPermission
+        /// </summary>
+        public static readonly DatabaseLFTagPolicyPermission DESCRIBE = new DatabaseLFTagPolicyPermission("DESCRIBE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatabaseLFTagPolicyPermission(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatabaseLFTagPolicyPermission FindValue(string value)
+        {
+            return FindValue<DatabaseLFTagPolicyPermission>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatabaseLFTagPolicyPermission(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExceptionCause.
     /// </summary>
     public class ExceptionCause : ConstantClass
@@ -209,6 +263,10 @@ namespace Amazon.DataExchange
         /// </summary>
         public static readonly JobErrorLimitName AmazonRedshiftDatashareAssetsPerRevision = new JobErrorLimitName("Amazon Redshift datashare assets per revision");
         /// <summary>
+        /// Constant AmazonS3DataAccessAssetsPerRevision for JobErrorLimitName
+        /// </summary>
+        public static readonly JobErrorLimitName AmazonS3DataAccessAssetsPerRevision = new JobErrorLimitName("Amazon S3 data access assets per revision");
+        /// <summary>
         /// Constant AssetSizeInGB for JobErrorLimitName
         /// </summary>
         public static readonly JobErrorLimitName AssetSizeInGB = new JobErrorLimitName("Asset size in GB");
@@ -216,6 +274,10 @@ namespace Amazon.DataExchange
         /// Constant AssetsPerRevision for JobErrorLimitName
         /// </summary>
         public static readonly JobErrorLimitName AssetsPerRevision = new JobErrorLimitName("Assets per revision");
+        /// <summary>
+        /// Constant AWSLakeFormationDataPermissionAssetsPerRevision for JobErrorLimitName
+        /// </summary>
+        public static readonly JobErrorLimitName AWSLakeFormationDataPermissionAssetsPerRevision = new JobErrorLimitName("AWS Lake Formation data permission assets per revision");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -307,6 +369,152 @@ namespace Amazon.DataExchange
 
 
     /// <summary>
+    /// Constants used for properties of type LakeFormationDataPermissionType.
+    /// </summary>
+    public class LakeFormationDataPermissionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LFTagPolicy for LakeFormationDataPermissionType
+        /// </summary>
+        public static readonly LakeFormationDataPermissionType LFTagPolicy = new LakeFormationDataPermissionType("LFTagPolicy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LakeFormationDataPermissionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LakeFormationDataPermissionType FindValue(string value)
+        {
+            return FindValue<LakeFormationDataPermissionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LakeFormationDataPermissionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LFPermission.
+    /// </summary>
+    public class LFPermission : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DESCRIBE for LFPermission
+        /// </summary>
+        public static readonly LFPermission DESCRIBE = new LFPermission("DESCRIBE");
+        /// <summary>
+        /// Constant SELECT for LFPermission
+        /// </summary>
+        public static readonly LFPermission SELECT = new LFPermission("SELECT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LFPermission(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LFPermission FindValue(string value)
+        {
+            return FindValue<LFPermission>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LFPermission(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LFResourceType.
+    /// </summary>
+    public class LFResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATABASE for LFResourceType
+        /// </summary>
+        public static readonly LFResourceType DATABASE = new LFResourceType("DATABASE");
+        /// <summary>
+        /// Constant TABLE for LFResourceType
+        /// </summary>
+        public static readonly LFResourceType TABLE = new LFResourceType("TABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LFResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LFResourceType FindValue(string value)
+        {
+            return FindValue<LFResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LFResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LimitName.
     /// </summary>
     public class LimitName : ConstantClass
@@ -324,6 +532,10 @@ namespace Amazon.DataExchange
         /// Constant AmazonRedshiftDatashareAssetsPerRevision for LimitName
         /// </summary>
         public static readonly LimitName AmazonRedshiftDatashareAssetsPerRevision = new LimitName("Amazon Redshift datashare assets per revision");
+        /// <summary>
+        /// Constant AmazonS3DataAccessAssetsPerRevision for LimitName
+        /// </summary>
+        public static readonly LimitName AmazonS3DataAccessAssetsPerRevision = new LimitName("Amazon S3 data access assets per revision");
         /// <summary>
         /// Constant AssetPerExportJobFromAmazonS3 for LimitName
         /// </summary>
@@ -344,6 +556,14 @@ namespace Amazon.DataExchange
         /// Constant AutoExportEventActionsPerDataSet for LimitName
         /// </summary>
         public static readonly LimitName AutoExportEventActionsPerDataSet = new LimitName("Auto export event actions per data set");
+        /// <summary>
+        /// Constant AWSLakeFormationDataPermissionAssetsPerRevision for LimitName
+        /// </summary>
+        public static readonly LimitName AWSLakeFormationDataPermissionAssetsPerRevision = new LimitName("AWS Lake Formation data permission assets per revision");
+        /// <summary>
+        /// Constant ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets for LimitName
+        /// </summary>
+        public static readonly LimitName ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets = new LimitName("Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets");
         /// <summary>
         /// Constant ConcurrentInProgressJobsToExportAssetsToAmazonS3 for LimitName
         /// </summary>
@@ -368,6 +588,10 @@ namespace Amazon.DataExchange
         /// Constant ConcurrentInProgressJobsToImportAssetsFromAnAPIGatewayAPI for LimitName
         /// </summary>
         public static readonly LimitName ConcurrentInProgressJobsToImportAssetsFromAnAPIGatewayAPI = new LimitName("Concurrent in progress jobs to import assets from an API Gateway API");
+        /// <summary>
+        /// Constant ConcurrentInProgressJobsToImportAssetsFromAnAWSLakeFormationTagPolicy for LimitName
+        /// </summary>
+        public static readonly LimitName ConcurrentInProgressJobsToImportAssetsFromAnAWSLakeFormationTagPolicy = new LimitName("Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy");
         /// <summary>
         /// Constant ConcurrentInProgressJobsToImportAssetsFromASignedURL for LimitName
         /// </summary>
@@ -396,6 +620,14 @@ namespace Amazon.DataExchange
         /// Constant RevisionsPerAmazonRedshiftDatashareDataSet for LimitName
         /// </summary>
         public static readonly LimitName RevisionsPerAmazonRedshiftDatashareDataSet = new LimitName("Revisions per Amazon Redshift datashare data set");
+        /// <summary>
+        /// Constant RevisionsPerAmazonS3DataAccessDataSet for LimitName
+        /// </summary>
+        public static readonly LimitName RevisionsPerAmazonS3DataAccessDataSet = new LimitName("Revisions per Amazon S3 data access data set");
+        /// <summary>
+        /// Constant RevisionsPerAWSLakeFormationDataPermissionDataSet for LimitName
+        /// </summary>
+        public static readonly LimitName RevisionsPerAWSLakeFormationDataPermissionDataSet = new LimitName("Revisions per AWS Lake Formation data permission data set");
         /// <summary>
         /// Constant RevisionsPerDataSet for LimitName
         /// </summary>
@@ -711,11 +943,65 @@ namespace Amazon.DataExchange
 
 
     /// <summary>
+    /// Constants used for properties of type TableTagPolicyLFPermission.
+    /// </summary>
+    public class TableTagPolicyLFPermission : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DESCRIBE for TableTagPolicyLFPermission
+        /// </summary>
+        public static readonly TableTagPolicyLFPermission DESCRIBE = new TableTagPolicyLFPermission("DESCRIBE");
+        /// <summary>
+        /// Constant SELECT for TableTagPolicyLFPermission
+        /// </summary>
+        public static readonly TableTagPolicyLFPermission SELECT = new TableTagPolicyLFPermission("SELECT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TableTagPolicyLFPermission(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TableTagPolicyLFPermission FindValue(string value)
+        {
+            return FindValue<TableTagPolicyLFPermission>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TableTagPolicyLFPermission(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Type.
     /// </summary>
     public class Type : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET for Type
+        /// </summary>
+        public static readonly Type CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET = new Type("CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET");
         /// <summary>
         /// Constant EXPORT_ASSET_TO_SIGNED_URL for Type
         /// </summary>
@@ -736,6 +1022,10 @@ namespace Amazon.DataExchange
         /// Constant IMPORT_ASSET_FROM_SIGNED_URL for Type
         /// </summary>
         public static readonly Type IMPORT_ASSET_FROM_SIGNED_URL = new Type("IMPORT_ASSET_FROM_SIGNED_URL");
+        /// <summary>
+        /// Constant IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY for Type
+        /// </summary>
+        public static readonly Type IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY = new Type("IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY");
         /// <summary>
         /// Constant IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES for Type
         /// </summary>

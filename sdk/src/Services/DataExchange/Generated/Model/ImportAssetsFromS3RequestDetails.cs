@@ -40,7 +40,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property AssetSources. 
         /// <para>
-        /// Is a list of S3 bucket and object key pairs.
+        /// Is a list of Amazon S3 bucket and object key pairs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

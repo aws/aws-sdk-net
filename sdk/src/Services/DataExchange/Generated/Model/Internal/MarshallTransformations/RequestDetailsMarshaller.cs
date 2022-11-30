@@ -45,6 +45,17 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RequestDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCreateS3DataAccessFromS3Bucket())
+            {
+                context.Writer.WritePropertyName("CreateS3DataAccessFromS3Bucket");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CreateS3DataAccessFromS3BucketRequestDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CreateS3DataAccessFromS3Bucket, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetExportAssetsToS3())
             {
                 context.Writer.WritePropertyName("ExportAssetsToS3");
@@ -96,6 +107,17 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 
                 var marshaller = ImportAssetFromSignedUrlRequestDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImportAssetFromSignedUrl, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetImportAssetsFromLakeFormationTagPolicy())
+            {
+                context.Writer.WritePropertyName("ImportAssetsFromLakeFormationTagPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ImportAssetsFromLakeFormationTagPolicyRequestDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ImportAssetsFromLakeFormationTagPolicy, context);
 
                 context.Writer.WriteObjectEnd();
             }

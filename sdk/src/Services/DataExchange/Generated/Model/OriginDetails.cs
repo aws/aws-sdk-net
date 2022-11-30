@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// Information about the origin of the data set.
+    /// Details about the origin of the data set.
     /// </summary>
     public partial class OriginDetails
     {

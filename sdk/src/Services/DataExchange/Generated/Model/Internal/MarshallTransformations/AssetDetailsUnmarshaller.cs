@@ -70,10 +70,22 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApiGatewayApiAsset = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LakeFormationDataPermissionAsset", targetDepth))
+                {
+                    var unmarshaller = LakeFormationDataPermissionAssetUnmarshaller.Instance;
+                    unmarshalledObject.LakeFormationDataPermissionAsset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RedshiftDataShareAsset", targetDepth))
                 {
                     var unmarshaller = RedshiftDataShareAssetUnmarshaller.Instance;
                     unmarshalledObject.RedshiftDataShareAsset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3DataAccessAsset", targetDepth))
+                {
+                    var unmarshaller = S3DataAccessAssetUnmarshaller.Instance;
+                    unmarshalledObject.S3DataAccessAsset = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("S3SnapshotAsset", targetDepth))
