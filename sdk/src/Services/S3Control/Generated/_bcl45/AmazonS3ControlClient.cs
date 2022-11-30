@@ -4447,11 +4447,11 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Returns a list of the access points currently associated with the specified bucket.
-        /// You can retrieve up to 1000 access points per call. If the specified bucket has more
-        /// than 1,000 access points (or the number specified in <code>maxResults</code>, whichever
-        /// is less), the response will include a continuation token that you can use to list
-        /// the additional access points.
+        /// Returns a list of the access points owned by the current account associated with the
+        /// specified bucket. You can retrieve up to 1000 access points per call. If the specified
+        /// bucket has more than 1,000 access points (or the number specified in <code>maxResults</code>,
+        /// whichever is less), the response will include a continuation token that you can use
+        /// to list the additional access points.
         /// 
         ///   
         /// <para>
@@ -4499,11 +4499,11 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Returns a list of the access points currently associated with the specified bucket.
-        /// You can retrieve up to 1000 access points per call. If the specified bucket has more
-        /// than 1,000 access points (or the number specified in <code>maxResults</code>, whichever
-        /// is less), the response will include a continuation token that you can use to list
-        /// the additional access points.
+        /// Returns a list of the access points owned by the current account associated with the
+        /// specified bucket. You can retrieve up to 1000 access points per call. If the specified
+        /// bucket has more than 1,000 access points (or the number specified in <code>maxResults</code>,
+        /// whichever is less), the response will include a continuation token that you can use
+        /// to list the additional access points.
         /// 
         ///   
         /// <para>

@@ -73,6 +73,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBucket())
                     xmlWriter.WriteElementString("Bucket", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Bucket));                    
 
+                if(publicRequest.IsSetBucketAccountId())
+                    xmlWriter.WriteElementString("BucketAccountId", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.BucketAccountId));                    
+
                 
                 if (publicRequest.PublicAccessBlockConfiguration != null) 
                 {

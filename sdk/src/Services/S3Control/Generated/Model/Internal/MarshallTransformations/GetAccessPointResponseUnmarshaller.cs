@@ -79,6 +79,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         response.Bucket = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("BucketAccountId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.BucketAccountId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CreationDate", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

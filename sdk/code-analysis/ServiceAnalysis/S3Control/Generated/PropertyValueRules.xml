@@ -11,6 +11,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.CreateAccessPointRequest.BucketAccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.CreateAccessPointRequest.Name</property>
     <min>3</min>
     <max>63</max>
@@ -282,6 +287,11 @@
     <property>Amazon.S3Control.Model.GetAccessPointResponse.Bucket</property>
     <min>3</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointResponse.BucketAccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetAccessPointResponse.Name</property>
@@ -807,6 +817,11 @@
     <property>Amazon.S3Control.Model.AccessPoint.Bucket</property>
     <min>3</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.AccessPoint.BucketAccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.AccessPoint.Name</property>

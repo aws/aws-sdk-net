@@ -71,7 +71,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID for the account that owns the specified access point.
+        /// The Amazon Web Services account ID for the account that owns the specified access
+        /// point.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

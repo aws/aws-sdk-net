@@ -36,6 +36,7 @@ namespace Amazon.S3Control.Model
         private string _accessPointArn;
         private string _alias;
         private string _bucket;
+        private string _bucketAccountId;
         private DateTime? _creationDate;
         private Dictionary<string, string> _endpoints = new Dictionary<string, string>();
         private string _name;
@@ -98,6 +99,26 @@ namespace Amazon.S3Control.Model
         internal bool IsSetBucket()
         {
             return this._bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketAccountId. 
+        /// <para>
+        /// The Amazon Web Services account ID associated with the S3 bucket associated with this
+        /// access point.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=64)]
+        public string BucketAccountId
+        {
+            get { return this._bucketAccountId; }
+            set { this._bucketAccountId = value; }
+        }
+
+        // Check to see if BucketAccountId property is set
+        internal bool IsSetBucketAccountId()
+        {
+            return this._bucketAccountId != null;
         }
 
         /// <summary>

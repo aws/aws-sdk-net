@@ -79,6 +79,7 @@ namespace Amazon.S3Control.Model
     {
         private string _accountId;
         private string _bucket;
+        private string _bucketAccountId;
         private string _name;
         private PublicAccessBlockConfiguration _publicAccessBlockConfiguration;
         private VpcConfiguration _vpcConfiguration;
@@ -86,8 +87,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The Amazon Web Services account ID for the owner of the bucket for which you want
-        /// to create an access point.
+        /// The Amazon Web Services account ID for the account that owns the specified access
+        /// point.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -134,6 +135,26 @@ namespace Amazon.S3Control.Model
         internal bool IsSetBucket()
         {
             return this._bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketAccountId. 
+        /// <para>
+        /// The Amazon Web Services account ID associated with the S3 bucket associated with this
+        /// access point.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=64)]
+        public string BucketAccountId
+        {
+            get { return this._bucketAccountId; }
+            set { this._bucketAccountId = value; }
+        }
+
+        // Check to see if BucketAccountId property is set
+        internal bool IsSetBucketAccountId()
+        {
+            return this._bucketAccountId != null;
         }
 
         /// <summary>
