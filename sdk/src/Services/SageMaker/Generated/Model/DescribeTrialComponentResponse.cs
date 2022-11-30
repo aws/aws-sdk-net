@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         private Dictionary<string, TrialComponentArtifact> _outputArtifacts = new Dictionary<string, TrialComponentArtifact>();
         private Dictionary<string, TrialComponentParameterValue> _parameters = new Dictionary<string, TrialComponentParameterValue>();
         private TrialComponentSource _source;
+        private List<TrialComponentSource> _sources = new List<TrialComponentSource>();
         private DateTime? _startTime;
         private TrialComponentStatus _status;
         private string _trialComponentArn;
@@ -286,6 +287,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSource()
         {
             return this._source != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sources. 
+        /// <para>
+        /// A list of the Amazon Resource Name (ARN) and, if applicable, job type for multiple
+        /// sources of an experiment run.
+        /// </para>
+        /// </summary>
+        public List<TrialComponentSource> Sources
+        {
+            get { return this._sources; }
+            set { this._sources = value; }
+        }
+
+        // Check to see if Sources property is set
+        internal bool IsSetSources()
+        {
+            return this._sources != null && this._sources.Count > 0; 
         }
 
         /// <summary>

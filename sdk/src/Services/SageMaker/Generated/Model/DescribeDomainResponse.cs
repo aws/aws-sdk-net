@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private AppSecurityGroupManagement _appSecurityGroupManagement;
         private AuthMode _authMode;
         private DateTime? _creationTime;
+        private DefaultSpaceSettings _defaultSpaceSettings;
         private UserSettings _defaultUserSettings;
         private string _domainArn;
         private string _domainId;
@@ -137,6 +138,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultSpaceSettings. 
+        /// <para>
+        /// The default settings used to create a space.
+        /// </para>
+        /// </summary>
+        public DefaultSpaceSettings DefaultSpaceSettings
+        {
+            get { return this._defaultSpaceSettings; }
+            set { this._defaultSpaceSettings = value; }
+        }
+
+        // Check to see if DefaultSpaceSettings property is set
+        internal bool IsSetDefaultSpaceSettings()
+        {
+            return this._defaultSpaceSettings != null;
         }
 
         /// <summary>

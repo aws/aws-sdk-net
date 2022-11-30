@@ -51,6 +51,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ExperimentName);
             }
 
+            if(requestObject.IsSetRunName())
+            {
+                context.Writer.WritePropertyName("RunName");
+                context.Writer.Write(requestObject.RunName);
+            }
+
             if(requestObject.IsSetTrialComponentDisplayName())
             {
                 context.Writer.WritePropertyName("TrialComponentDisplayName");

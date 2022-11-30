@@ -67,6 +67,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDefaultSpaceSettings())
+                {
+                    context.Writer.WritePropertyName("DefaultSpaceSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DefaultSpaceSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DefaultSpaceSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDefaultUserSettings())
                 {
                     context.Writer.WritePropertyName("DefaultUserSettings");

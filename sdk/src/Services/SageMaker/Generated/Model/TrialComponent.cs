@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         private Dictionary<string, TrialComponentArtifact> _outputArtifacts = new Dictionary<string, TrialComponentArtifact>();
         private Dictionary<string, TrialComponentParameterValue> _parameters = new Dictionary<string, TrialComponentParameterValue>();
         private List<Parent> _parents = new List<Parent>();
+        private string _runName;
         private TrialComponentSource _source;
         private TrialComponentSourceDetail _sourceDetail;
         private DateTime? _startTime;
@@ -287,6 +288,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetParents()
         {
             return this._parents != null && this._parents.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RunName. 
+        /// <para>
+        /// The name of the experiment run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=120)]
+        public string RunName
+        {
+            get { return this._runName; }
+            set { this._runName = value; }
+        }
+
+        // Check to see if RunName property is set
+        internal bool IsSetRunName()
+        {
+            return this._runName != null;
         }
 
         /// <summary>

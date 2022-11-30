@@ -33,8 +33,29 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class JupyterServerAppSettings
     {
+        private List<CodeRepository> _codeRepositories = new List<CodeRepository>();
         private ResourceSpec _defaultResourceSpec;
         private List<string> _lifecycleConfigArns = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property CodeRepositories. 
+        /// <para>
+        /// A list of Git repositories that SageMaker automatically displays to users for cloning
+        /// in the JupyterServer application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=10)]
+        public List<CodeRepository> CodeRepositories
+        {
+            get { return this._codeRepositories; }
+            set { this._codeRepositories = value; }
+        }
+
+        // Check to see if CodeRepositories property is set
+        internal bool IsSetCodeRepositories()
+        {
+            return this._codeRepositories != null && this._codeRepositories.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DefaultResourceSpec. 

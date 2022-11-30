@@ -43,8 +43,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProfilerConfig. 
         /// <para>
-        /// Configuration information for Debugger system monitoring, framework profiling, and
-        /// storage paths.
+        /// Configuration information for Amazon SageMaker Debugger system monitoring, framework
+        /// profiling, and storage paths.
         /// </para>
         /// </summary>
         public ProfilerConfigForUpdate ProfilerConfig
@@ -62,7 +62,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProfilerRuleConfigurations. 
         /// <para>
-        /// Configuration information for Debugger rules for profiling system and framework metrics.
+        /// Configuration information for Amazon SageMaker Debugger rules for profiling system
+        /// and framework metrics.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]

@@ -85,6 +85,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SessionExpirationDurationInSeconds);
                 }
 
+                if(publicRequest.IsSetSpaceName())
+                {
+                    context.Writer.WritePropertyName("SpaceName");
+                    context.Writer.Write(publicRequest.SpaceName);
+                }
+
                 if(publicRequest.IsSetUserProfileName())
                 {
                     context.Writer.WritePropertyName("UserProfileName");

@@ -99,6 +99,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.ProductionVariants = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ShadowProductionVariants", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ProductionVariant, ProductionVariantUnmarshaller>(ProductionVariantUnmarshaller.Instance);
+                    response.ShadowProductionVariants = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

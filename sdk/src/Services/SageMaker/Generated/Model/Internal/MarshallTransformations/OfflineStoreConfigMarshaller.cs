@@ -73,6 +73,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTableFormat())
+            {
+                context.Writer.WritePropertyName("TableFormat");
+                context.Writer.Write(requestObject.TableFormat);
+            }
+
         }
 
         /// <summary>

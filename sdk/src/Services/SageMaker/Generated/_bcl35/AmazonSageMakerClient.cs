@@ -2063,6 +2063,67 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateHub
+
+        /// <summary>
+        /// Create a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHub service method.</param>
+        /// 
+        /// <returns>The response from the CreateHub service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHub">REST API Reference for CreateHub Operation</seealso>
+        public virtual CreateHubResponse CreateHub(CreateHubRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHubRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHubResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHubResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateHub operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateHub operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHub
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHub">REST API Reference for CreateHub Operation</seealso>
+        public virtual IAsyncResult BeginCreateHub(CreateHubRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHubRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHubResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateHub operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHub.</param>
+        /// 
+        /// <returns>Returns a  CreateHubResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHub">REST API Reference for CreateHub Operation</seealso>
+        public virtual CreateHubResponse EndCreateHub(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateHubResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateHumanTaskUi
 
         /// <summary>
@@ -2333,6 +2394,86 @@ namespace Amazon.SageMaker
         public virtual CreateImageVersionResponse EndCreateImageVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateImageVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateInferenceExperiment
+
+        /// <summary>
+        /// Creates an inference experiment using the configurations specified in the request.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  Use this API to schedule an experiment to compare model variants on a Amazon SageMaker
+        /// inference endpoint. For more information about inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow
+        /// tests</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Amazon SageMaker begins your experiment at the scheduled time and routes traffic
+        /// to your endpoint's model variants based on your specified configuration. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  While the experiment is in progress or after it has concluded, you can view metrics
+        /// that compare your model variants. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests-view-monitor-edit.html">View,
+        /// monitor, and edit shadow tests</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInferenceExperiment service method.</param>
+        /// 
+        /// <returns>The response from the CreateInferenceExperiment service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceExperiment">REST API Reference for CreateInferenceExperiment Operation</seealso>
+        public virtual CreateInferenceExperimentResponse CreateInferenceExperiment(CreateInferenceExperimentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInferenceExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInferenceExperimentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateInferenceExperimentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateInferenceExperiment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateInferenceExperiment operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInferenceExperiment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceExperiment">REST API Reference for CreateInferenceExperiment Operation</seealso>
+        public virtual IAsyncResult BeginCreateInferenceExperiment(CreateInferenceExperimentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInferenceExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInferenceExperimentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateInferenceExperiment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInferenceExperiment.</param>
+        /// 
+        /// <returns>Returns a  CreateInferenceExperimentResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceExperiment">REST API Reference for CreateInferenceExperiment Operation</seealso>
+        public virtual CreateInferenceExperimentResponse EndCreateInferenceExperiment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateInferenceExperimentResponse>(asyncResult);
         }
 
         #endregion
@@ -2666,6 +2807,139 @@ namespace Amazon.SageMaker
         public virtual CreateModelBiasJobDefinitionResponse EndCreateModelBiasJobDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateModelBiasJobDefinitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateModelCard
+
+        /// <summary>
+        /// Creates an Amazon SageMaker Model Card.
+        /// 
+        ///  
+        /// <para>
+        /// For information about how to use model cards, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html">Amazon
+        /// SageMaker Model Card</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelCard service method.</param>
+        /// 
+        /// <returns>The response from the CreateModelCard service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCard">REST API Reference for CreateModelCard Operation</seealso>
+        public virtual CreateModelCardResponse CreateModelCard(CreateModelCardRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelCardRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelCardResponseUnmarshaller.Instance;
+
+            return Invoke<CreateModelCardResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateModelCard operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelCard operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateModelCard
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCard">REST API Reference for CreateModelCard Operation</seealso>
+        public virtual IAsyncResult BeginCreateModelCard(CreateModelCardRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelCardRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelCardResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateModelCard operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateModelCard.</param>
+        /// 
+        /// <returns>Returns a  CreateModelCardResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCard">REST API Reference for CreateModelCard Operation</seealso>
+        public virtual CreateModelCardResponse EndCreateModelCard(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateModelCardResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateModelCardExportJob
+
+        /// <summary>
+        /// Creates an Amazon SageMaker Model Card export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelCardExportJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateModelCardExportJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCardExportJob">REST API Reference for CreateModelCardExportJob Operation</seealso>
+        public virtual CreateModelCardExportJobResponse CreateModelCardExportJob(CreateModelCardExportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelCardExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelCardExportJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateModelCardExportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateModelCardExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelCardExportJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateModelCardExportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCardExportJob">REST API Reference for CreateModelCardExportJob Operation</seealso>
+        public virtual IAsyncResult BeginCreateModelCardExportJob(CreateModelCardExportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelCardExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelCardExportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateModelCardExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateModelCardExportJob.</param>
+        /// 
+        /// <returns>Returns a  CreateModelCardExportJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCardExportJob">REST API Reference for CreateModelCardExportJob Operation</seealso>
+        public virtual CreateModelCardExportJobResponse EndCreateModelCardExportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateModelCardExportJobResponse>(asyncResult);
         }
 
         #endregion
@@ -3543,6 +3817,67 @@ namespace Amazon.SageMaker
         public virtual CreateProjectResponse EndCreateProject(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateProjectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateSpace
+
+        /// <summary>
+        /// Creates a space used for real time collaboration in a Domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSpace service method.</param>
+        /// 
+        /// <returns>The response from the CreateSpace service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateSpace">REST API Reference for CreateSpace Operation</seealso>
+        public virtual CreateSpaceResponse CreateSpace(CreateSpaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSpaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSpaceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSpaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSpace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSpace operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSpace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateSpace">REST API Reference for CreateSpace Operation</seealso>
+        public virtual IAsyncResult BeginCreateSpace(CreateSpaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSpaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSpaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSpace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSpace.</param>
+        /// 
+        /// <returns>Returns a  CreateSpaceResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateSpace">REST API Reference for CreateSpace Operation</seealso>
+        public virtual CreateSpaceResponse EndCreateSpace(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateSpaceResponse>(asyncResult);
         }
 
         #endregion
@@ -5294,6 +5629,126 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteHub
+
+        /// <summary>
+        /// Delete a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHub service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHub service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHub">REST API Reference for DeleteHub Operation</seealso>
+        public virtual DeleteHubResponse DeleteHub(DeleteHubRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHubRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHubResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHubResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteHub operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHub operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHub
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHub">REST API Reference for DeleteHub Operation</seealso>
+        public virtual IAsyncResult BeginDeleteHub(DeleteHubRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHubRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHubResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteHub operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHub.</param>
+        /// 
+        /// <returns>Returns a  DeleteHubResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHub">REST API Reference for DeleteHub Operation</seealso>
+        public virtual DeleteHubResponse EndDeleteHub(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteHubResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteHubContent
+
+        /// <summary>
+        /// Delete the contents of a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHubContent service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHubContent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContent">REST API Reference for DeleteHubContent Operation</seealso>
+        public virtual DeleteHubContentResponse DeleteHubContent(DeleteHubContentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHubContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHubContentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHubContentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteHubContent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHubContent operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHubContent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContent">REST API Reference for DeleteHubContent Operation</seealso>
+        public virtual IAsyncResult BeginDeleteHubContent(DeleteHubContentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHubContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHubContentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteHubContent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHubContent.</param>
+        /// 
+        /// <returns>Returns a  DeleteHubContentResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContent">REST API Reference for DeleteHubContent Operation</seealso>
+        public virtual DeleteHubContentResponse EndDeleteHubContent(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteHubContentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteHumanTaskUi
 
         /// <summary>
@@ -5479,6 +5934,74 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteInferenceExperiment
+
+        /// <summary>
+        /// Deletes an inference experiment.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  This operation does not delete your endpoint, variants, or any underlying resources.
+        /// This operation only deletes the metadata of your experiment. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInferenceExperiment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInferenceExperiment service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceExperiment">REST API Reference for DeleteInferenceExperiment Operation</seealso>
+        public virtual DeleteInferenceExperimentResponse DeleteInferenceExperiment(DeleteInferenceExperimentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInferenceExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInferenceExperimentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInferenceExperimentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInferenceExperiment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInferenceExperiment operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInferenceExperiment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceExperiment">REST API Reference for DeleteInferenceExperiment Operation</seealso>
+        public virtual IAsyncResult BeginDeleteInferenceExperiment(DeleteInferenceExperimentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInferenceExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInferenceExperimentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteInferenceExperiment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInferenceExperiment.</param>
+        /// 
+        /// <returns>Returns a  DeleteInferenceExperimentResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceExperiment">REST API Reference for DeleteInferenceExperiment Operation</seealso>
+        public virtual DeleteInferenceExperimentResponse EndDeleteInferenceExperiment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteInferenceExperimentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteModel
 
         /// <summary>
@@ -5589,6 +6112,67 @@ namespace Amazon.SageMaker
         public virtual DeleteModelBiasJobDefinitionResponse EndDeleteModelBiasJobDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteModelBiasJobDefinitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteModelCard
+
+        /// <summary>
+        /// Deletes an Amazon SageMaker Model Card.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModelCard service method.</param>
+        /// 
+        /// <returns>The response from the DeleteModelCard service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelCard">REST API Reference for DeleteModelCard Operation</seealso>
+        public virtual DeleteModelCardResponse DeleteModelCard(DeleteModelCardRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelCardRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelCardResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteModelCardResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteModelCard operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModelCard operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteModelCard
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelCard">REST API Reference for DeleteModelCard Operation</seealso>
+        public virtual IAsyncResult BeginDeleteModelCard(DeleteModelCardRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelCardRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelCardResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteModelCard operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteModelCard.</param>
+        /// 
+        /// <returns>Returns a  DeleteModelCardResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelCard">REST API Reference for DeleteModelCard Operation</seealso>
+        public virtual DeleteModelCardResponse EndDeleteModelCard(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteModelCardResponse>(asyncResult);
         }
 
         #endregion
@@ -6172,6 +6756,66 @@ namespace Amazon.SageMaker
         public virtual DeleteProjectResponse EndDeleteProject(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteProjectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteSpace
+
+        /// <summary>
+        /// Used to delete a space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSpace service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSpace service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteSpace">REST API Reference for DeleteSpace Operation</seealso>
+        public virtual DeleteSpaceResponse DeleteSpace(DeleteSpaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSpaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSpaceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSpaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSpace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSpace operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSpace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteSpace">REST API Reference for DeleteSpace Operation</seealso>
+        public virtual IAsyncResult BeginDeleteSpace(DeleteSpaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSpaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSpaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSpace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSpace.</param>
+        /// 
+        /// <returns>Returns a  DeleteSpaceResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteSpace">REST API Reference for DeleteSpace Operation</seealso>
+        public virtual DeleteSpaceResponse EndDeleteSpace(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSpaceResponse>(asyncResult);
         }
 
         #endregion
@@ -7864,6 +8508,120 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeHub
+
+        /// <summary>
+        /// Describe a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHub service method.</param>
+        /// 
+        /// <returns>The response from the DescribeHub service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHub">REST API Reference for DescribeHub Operation</seealso>
+        public virtual DescribeHubResponse DescribeHub(DescribeHubRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHubRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHubResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeHubResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHub operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHub operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHub
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHub">REST API Reference for DescribeHub Operation</seealso>
+        public virtual IAsyncResult BeginDescribeHub(DescribeHubRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHubRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHubResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeHub operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHub.</param>
+        /// 
+        /// <returns>Returns a  DescribeHubResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHub">REST API Reference for DescribeHub Operation</seealso>
+        public virtual DescribeHubResponse EndDescribeHub(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeHubResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeHubContent
+
+        /// <summary>
+        /// Describe the content of a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHubContent service method.</param>
+        /// 
+        /// <returns>The response from the DescribeHubContent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHubContent">REST API Reference for DescribeHubContent Operation</seealso>
+        public virtual DescribeHubContentResponse DescribeHubContent(DescribeHubContentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHubContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHubContentResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeHubContentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHubContent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHubContent operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHubContent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHubContent">REST API Reference for DescribeHubContent Operation</seealso>
+        public virtual IAsyncResult BeginDescribeHubContent(DescribeHubContentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHubContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHubContentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeHubContent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHubContent.</param>
+        /// 
+        /// <returns>Returns a  DescribeHubContentResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHubContent">REST API Reference for DescribeHubContent Operation</seealso>
+        public virtual DescribeHubContentResponse EndDescribeHubContent(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeHubContentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeHumanTaskUi
 
         /// <summary>
@@ -8088,6 +8846,63 @@ namespace Amazon.SageMaker
         public virtual DescribeImageVersionResponse EndDescribeImageVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeImageVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeInferenceExperiment
+
+        /// <summary>
+        /// Returns details about an inference experiment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInferenceExperiment service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInferenceExperiment service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceExperiment">REST API Reference for DescribeInferenceExperiment Operation</seealso>
+        public virtual DescribeInferenceExperimentResponse DescribeInferenceExperiment(DescribeInferenceExperimentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInferenceExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInferenceExperimentResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInferenceExperimentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInferenceExperiment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInferenceExperiment operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInferenceExperiment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceExperiment">REST API Reference for DescribeInferenceExperiment Operation</seealso>
+        public virtual IAsyncResult BeginDescribeInferenceExperiment(DescribeInferenceExperimentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInferenceExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInferenceExperimentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInferenceExperiment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInferenceExperiment.</param>
+        /// 
+        /// <returns>Returns a  DescribeInferenceExperimentResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceExperiment">REST API Reference for DescribeInferenceExperiment Operation</seealso>
+        public virtual DescribeInferenceExperimentResponse EndDescribeInferenceExperiment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeInferenceExperimentResponse>(asyncResult);
         }
 
         #endregion
@@ -8373,6 +9188,121 @@ namespace Amazon.SageMaker
         public virtual DescribeModelBiasJobDefinitionResponse EndDescribeModelBiasJobDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeModelBiasJobDefinitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeModelCard
+
+        /// <summary>
+        /// Describes the content, creation time, and security configuration of an Amazon SageMaker
+        /// Model Card.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelCard service method.</param>
+        /// 
+        /// <returns>The response from the DescribeModelCard service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCard">REST API Reference for DescribeModelCard Operation</seealso>
+        public virtual DescribeModelCardResponse DescribeModelCard(DescribeModelCardRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeModelCardRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeModelCardResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeModelCardResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeModelCard operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelCard operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeModelCard
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCard">REST API Reference for DescribeModelCard Operation</seealso>
+        public virtual IAsyncResult BeginDescribeModelCard(DescribeModelCardRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeModelCardRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeModelCardResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeModelCard operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeModelCard.</param>
+        /// 
+        /// <returns>Returns a  DescribeModelCardResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCard">REST API Reference for DescribeModelCard Operation</seealso>
+        public virtual DescribeModelCardResponse EndDescribeModelCard(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeModelCardResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeModelCardExportJob
+
+        /// <summary>
+        /// Describes an Amazon SageMaker Model Card export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelCardExportJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeModelCardExportJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCardExportJob">REST API Reference for DescribeModelCardExportJob Operation</seealso>
+        public virtual DescribeModelCardExportJobResponse DescribeModelCardExportJob(DescribeModelCardExportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeModelCardExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeModelCardExportJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeModelCardExportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeModelCardExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelCardExportJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeModelCardExportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCardExportJob">REST API Reference for DescribeModelCardExportJob Operation</seealso>
+        public virtual IAsyncResult BeginDescribeModelCardExportJob(DescribeModelCardExportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeModelCardExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeModelCardExportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeModelCardExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeModelCardExportJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeModelCardExportJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCardExportJob">REST API Reference for DescribeModelCardExportJob Operation</seealso>
+        public virtual DescribeModelCardExportJobResponse EndDescribeModelCardExportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeModelCardExportJobResponse>(asyncResult);
         }
 
         #endregion
@@ -9055,6 +9985,63 @@ namespace Amazon.SageMaker
         public virtual DescribeProjectResponse EndDescribeProject(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeProjectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeSpace
+
+        /// <summary>
+        /// Describes the space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpace service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSpace service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeSpace">REST API Reference for DescribeSpace Operation</seealso>
+        public virtual DescribeSpaceResponse DescribeSpace(DescribeSpaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSpaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSpaceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSpaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSpace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpace operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSpace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeSpace">REST API Reference for DescribeSpace Operation</seealso>
+        public virtual IAsyncResult BeginDescribeSpace(DescribeSpaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSpaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSpaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSpace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSpace.</param>
+        /// 
+        /// <returns>Returns a  DescribeSpaceResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeSpace">REST API Reference for DescribeSpace Operation</seealso>
+        public virtual DescribeSpaceResponse EndDescribeSpace(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeSpaceResponse>(asyncResult);
         }
 
         #endregion
@@ -10037,6 +11024,70 @@ namespace Amazon.SageMaker
         public virtual GetSearchSuggestionsResponse EndGetSearchSuggestions(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSearchSuggestionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ImportHubContent
+
+        /// <summary>
+        /// Import hub content.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportHubContent service method.</param>
+        /// 
+        /// <returns>The response from the ImportHubContent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ImportHubContent">REST API Reference for ImportHubContent Operation</seealso>
+        public virtual ImportHubContentResponse ImportHubContent(ImportHubContentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportHubContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportHubContentResponseUnmarshaller.Instance;
+
+            return Invoke<ImportHubContentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportHubContent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportHubContent operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportHubContent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ImportHubContent">REST API Reference for ImportHubContent Operation</seealso>
+        public virtual IAsyncResult BeginImportHubContent(ImportHubContentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportHubContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportHubContentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportHubContent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportHubContent.</param>
+        /// 
+        /// <returns>Returns a  ImportHubContentResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ImportHubContent">REST API Reference for ImportHubContent Operation</seealso>
+        public virtual ImportHubContentResponse EndImportHubContent(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ImportHubContentResponse>(asyncResult);
         }
 
         #endregion
@@ -11254,6 +12305,174 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListHubContents
+
+        /// <summary>
+        /// List the contents of a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHubContents service method.</param>
+        /// 
+        /// <returns>The response from the ListHubContents service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContents">REST API Reference for ListHubContents Operation</seealso>
+        public virtual ListHubContentsResponse ListHubContents(ListHubContentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHubContentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHubContentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListHubContentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListHubContents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListHubContents operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHubContents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContents">REST API Reference for ListHubContents Operation</seealso>
+        public virtual IAsyncResult BeginListHubContents(ListHubContentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHubContentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHubContentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListHubContents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListHubContents.</param>
+        /// 
+        /// <returns>Returns a  ListHubContentsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContents">REST API Reference for ListHubContents Operation</seealso>
+        public virtual ListHubContentsResponse EndListHubContents(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListHubContentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListHubContentVersions
+
+        /// <summary>
+        /// List hub content versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHubContentVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListHubContentVersions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContentVersions">REST API Reference for ListHubContentVersions Operation</seealso>
+        public virtual ListHubContentVersionsResponse ListHubContentVersions(ListHubContentVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHubContentVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHubContentVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListHubContentVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListHubContentVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListHubContentVersions operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHubContentVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContentVersions">REST API Reference for ListHubContentVersions Operation</seealso>
+        public virtual IAsyncResult BeginListHubContentVersions(ListHubContentVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHubContentVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHubContentVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListHubContentVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListHubContentVersions.</param>
+        /// 
+        /// <returns>Returns a  ListHubContentVersionsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContentVersions">REST API Reference for ListHubContentVersions Operation</seealso>
+        public virtual ListHubContentVersionsResponse EndListHubContentVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListHubContentVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListHubs
+
+        /// <summary>
+        /// List all existing hubs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHubs service method.</param>
+        /// 
+        /// <returns>The response from the ListHubs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubs">REST API Reference for ListHubs Operation</seealso>
+        public virtual ListHubsResponse ListHubs(ListHubsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHubsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHubsResponseUnmarshaller.Instance;
+
+            return Invoke<ListHubsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListHubs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListHubs operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHubs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubs">REST API Reference for ListHubs Operation</seealso>
+        public virtual IAsyncResult BeginListHubs(ListHubsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHubsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHubsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListHubs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListHubs.</param>
+        /// 
+        /// <returns>Returns a  ListHubsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubs">REST API Reference for ListHubs Operation</seealso>
+        public virtual ListHubsResponse EndListHubs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListHubsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListHumanTaskUis
 
         /// <summary>
@@ -11472,6 +12691,60 @@ namespace Amazon.SageMaker
         public virtual ListImageVersionsResponse EndListImageVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListImageVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListInferenceExperiments
+
+        /// <summary>
+        /// Returns the list of all inference experiments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceExperiments service method.</param>
+        /// 
+        /// <returns>The response from the ListInferenceExperiments service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceExperiments">REST API Reference for ListInferenceExperiments Operation</seealso>
+        public virtual ListInferenceExperimentsResponse ListInferenceExperiments(ListInferenceExperimentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInferenceExperimentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInferenceExperimentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInferenceExperimentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInferenceExperiments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceExperiments operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInferenceExperiments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceExperiments">REST API Reference for ListInferenceExperiments Operation</seealso>
+        public virtual IAsyncResult BeginListInferenceExperiments(ListInferenceExperimentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInferenceExperimentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInferenceExperimentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInferenceExperiments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInferenceExperiments.</param>
+        /// 
+        /// <returns>Returns a  ListInferenceExperimentsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceExperiments">REST API Reference for ListInferenceExperiments Operation</seealso>
+        public virtual ListInferenceExperimentsResponse EndListInferenceExperiments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListInferenceExperimentsResponse>(asyncResult);
         }
 
         #endregion
@@ -11811,6 +13084,171 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListModelCardExportJobs
+
+        /// <summary>
+        /// List the export jobs for the Amazon SageMaker Model Card.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelCardExportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListModelCardExportJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardExportJobs">REST API Reference for ListModelCardExportJobs Operation</seealso>
+        public virtual ListModelCardExportJobsResponse ListModelCardExportJobs(ListModelCardExportJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelCardExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelCardExportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListModelCardExportJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListModelCardExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListModelCardExportJobs operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListModelCardExportJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardExportJobs">REST API Reference for ListModelCardExportJobs Operation</seealso>
+        public virtual IAsyncResult BeginListModelCardExportJobs(ListModelCardExportJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelCardExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelCardExportJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListModelCardExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListModelCardExportJobs.</param>
+        /// 
+        /// <returns>Returns a  ListModelCardExportJobsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardExportJobs">REST API Reference for ListModelCardExportJobs Operation</seealso>
+        public virtual ListModelCardExportJobsResponse EndListModelCardExportJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListModelCardExportJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListModelCards
+
+        /// <summary>
+        /// List existing model cards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelCards service method.</param>
+        /// 
+        /// <returns>The response from the ListModelCards service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCards">REST API Reference for ListModelCards Operation</seealso>
+        public virtual ListModelCardsResponse ListModelCards(ListModelCardsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelCardsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelCardsResponseUnmarshaller.Instance;
+
+            return Invoke<ListModelCardsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListModelCards operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListModelCards operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListModelCards
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCards">REST API Reference for ListModelCards Operation</seealso>
+        public virtual IAsyncResult BeginListModelCards(ListModelCardsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelCardsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelCardsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListModelCards operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListModelCards.</param>
+        /// 
+        /// <returns>Returns a  ListModelCardsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCards">REST API Reference for ListModelCards Operation</seealso>
+        public virtual ListModelCardsResponse EndListModelCards(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListModelCardsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListModelCardVersions
+
+        /// <summary>
+        /// List existing versions of an Amazon SageMaker Model Card.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelCardVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListModelCardVersions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardVersions">REST API Reference for ListModelCardVersions Operation</seealso>
+        public virtual ListModelCardVersionsResponse ListModelCardVersions(ListModelCardVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelCardVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelCardVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListModelCardVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListModelCardVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListModelCardVersions operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListModelCardVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardVersions">REST API Reference for ListModelCardVersions Operation</seealso>
+        public virtual IAsyncResult BeginListModelCardVersions(ListModelCardVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelCardVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelCardVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListModelCardVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListModelCardVersions.</param>
+        /// 
+        /// <returns>Returns a  ListModelCardVersionsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardVersions">REST API Reference for ListModelCardVersions Operation</seealso>
+        public virtual ListModelCardVersionsResponse EndListModelCardVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListModelCardVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListModelExplainabilityJobDefinitions
 
         /// <summary>
@@ -12132,6 +13570,120 @@ namespace Amazon.SageMaker
         public virtual ListModelsResponse EndListModels(IAsyncResult asyncResult)
         {
             return EndInvoke<ListModelsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMonitoringAlertHistory
+
+        /// <summary>
+        /// Gets a list of past alerts in a model monitoring schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitoringAlertHistory service method.</param>
+        /// 
+        /// <returns>The response from the ListMonitoringAlertHistory service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlertHistory">REST API Reference for ListMonitoringAlertHistory Operation</seealso>
+        public virtual ListMonitoringAlertHistoryResponse ListMonitoringAlertHistory(ListMonitoringAlertHistoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMonitoringAlertHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMonitoringAlertHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<ListMonitoringAlertHistoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMonitoringAlertHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitoringAlertHistory operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMonitoringAlertHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlertHistory">REST API Reference for ListMonitoringAlertHistory Operation</seealso>
+        public virtual IAsyncResult BeginListMonitoringAlertHistory(ListMonitoringAlertHistoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMonitoringAlertHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMonitoringAlertHistoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMonitoringAlertHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMonitoringAlertHistory.</param>
+        /// 
+        /// <returns>Returns a  ListMonitoringAlertHistoryResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlertHistory">REST API Reference for ListMonitoringAlertHistory Operation</seealso>
+        public virtual ListMonitoringAlertHistoryResponse EndListMonitoringAlertHistory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMonitoringAlertHistoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMonitoringAlerts
+
+        /// <summary>
+        /// Gets the alerts for a single monitoring schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitoringAlerts service method.</param>
+        /// 
+        /// <returns>The response from the ListMonitoringAlerts service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlerts">REST API Reference for ListMonitoringAlerts Operation</seealso>
+        public virtual ListMonitoringAlertsResponse ListMonitoringAlerts(ListMonitoringAlertsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMonitoringAlertsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMonitoringAlertsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMonitoringAlertsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMonitoringAlerts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitoringAlerts operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMonitoringAlerts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlerts">REST API Reference for ListMonitoringAlerts Operation</seealso>
+        public virtual IAsyncResult BeginListMonitoringAlerts(ListMonitoringAlertsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMonitoringAlertsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMonitoringAlertsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMonitoringAlerts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMonitoringAlerts.</param>
+        /// 
+        /// <returns>Returns a  ListMonitoringAlertsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlerts">REST API Reference for ListMonitoringAlerts Operation</seealso>
+        public virtual ListMonitoringAlertsResponse EndListMonitoringAlerts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMonitoringAlertsResponse>(asyncResult);
         }
 
         #endregion
@@ -12683,6 +14235,60 @@ namespace Amazon.SageMaker
         public virtual ListProjectsResponse EndListProjects(IAsyncResult asyncResult)
         {
             return EndInvoke<ListProjectsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSpaces
+
+        /// <summary>
+        /// Lists spaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSpaces service method.</param>
+        /// 
+        /// <returns>The response from the ListSpaces service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListSpaces">REST API Reference for ListSpaces Operation</seealso>
+        public virtual ListSpacesResponse ListSpaces(ListSpacesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSpacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSpacesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSpacesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSpaces operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSpaces operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSpaces
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListSpaces">REST API Reference for ListSpaces Operation</seealso>
+        public virtual IAsyncResult BeginListSpaces(ListSpacesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSpacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSpacesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSpaces operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSpaces.</param>
+        /// 
+        /// <returns>Returns a  ListSpacesResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListSpaces">REST API Reference for ListSpaces Operation</seealso>
+        public virtual ListSpacesResponse EndListSpaces(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSpacesResponse>(asyncResult);
         }
 
         #endregion
@@ -13945,6 +15551,67 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  StartInferenceExperiment
+
+        /// <summary>
+        /// Starts an inference experiment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartInferenceExperiment service method.</param>
+        /// 
+        /// <returns>The response from the StartInferenceExperiment service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartInferenceExperiment">REST API Reference for StartInferenceExperiment Operation</seealso>
+        public virtual StartInferenceExperimentResponse StartInferenceExperiment(StartInferenceExperimentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartInferenceExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartInferenceExperimentResponseUnmarshaller.Instance;
+
+            return Invoke<StartInferenceExperimentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartInferenceExperiment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartInferenceExperiment operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartInferenceExperiment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartInferenceExperiment">REST API Reference for StartInferenceExperiment Operation</seealso>
+        public virtual IAsyncResult BeginStartInferenceExperiment(StartInferenceExperimentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartInferenceExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartInferenceExperimentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartInferenceExperiment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartInferenceExperiment.</param>
+        /// 
+        /// <returns>Returns a  StartInferenceExperimentResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartInferenceExperiment">REST API Reference for StartInferenceExperiment Operation</seealso>
+        public virtual StartInferenceExperimentResponse EndStartInferenceExperiment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartInferenceExperimentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartMonitoringSchedule
 
         /// <summary>
@@ -14428,6 +16095,67 @@ namespace Amazon.SageMaker
         public virtual StopHyperParameterTuningJobResponse EndStopHyperParameterTuningJob(IAsyncResult asyncResult)
         {
             return EndInvoke<StopHyperParameterTuningJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopInferenceExperiment
+
+        /// <summary>
+        /// Stops an inference experiment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopInferenceExperiment service method.</param>
+        /// 
+        /// <returns>The response from the StopInferenceExperiment service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopInferenceExperiment">REST API Reference for StopInferenceExperiment Operation</seealso>
+        public virtual StopInferenceExperimentResponse StopInferenceExperiment(StopInferenceExperimentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopInferenceExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopInferenceExperimentResponseUnmarshaller.Instance;
+
+            return Invoke<StopInferenceExperimentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopInferenceExperiment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopInferenceExperiment operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopInferenceExperiment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopInferenceExperiment">REST API Reference for StopInferenceExperiment Operation</seealso>
+        public virtual IAsyncResult BeginStopInferenceExperiment(StopInferenceExperimentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopInferenceExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopInferenceExperimentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopInferenceExperiment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopInferenceExperiment.</param>
+        /// 
+        /// <returns>Returns a  StopInferenceExperimentResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopInferenceExperiment">REST API Reference for StopInferenceExperiment Operation</seealso>
+        public virtual StopInferenceExperimentResponse EndStopInferenceExperiment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopInferenceExperimentResponse>(asyncResult);
         }
 
         #endregion
@@ -15737,6 +17465,63 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  UpdateHub
+
+        /// <summary>
+        /// Update a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHub service method.</param>
+        /// 
+        /// <returns>The response from the UpdateHub service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHub">REST API Reference for UpdateHub Operation</seealso>
+        public virtual UpdateHubResponse UpdateHub(UpdateHubRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHubRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHubResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHubResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateHub operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHub operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateHub
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHub">REST API Reference for UpdateHub Operation</seealso>
+        public virtual IAsyncResult BeginUpdateHub(UpdateHubRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHubRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHubResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateHub operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateHub.</param>
+        /// 
+        /// <returns>Returns a  UpdateHubResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHub">REST API Reference for UpdateHub Operation</seealso>
+        public virtual UpdateHubResponse EndUpdateHub(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateHubResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateImage
 
         /// <summary>
@@ -15798,6 +17583,140 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  UpdateInferenceExperiment
+
+        /// <summary>
+        /// Updates an inference experiment that you created. The status of the inference experiment
+        /// has to be either <code>Created</code>, <code>Running</code>. For more information
+        /// on the status of an inference experiment, see <a>DescribeInferenceExperimentResponse$Status</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInferenceExperiment service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInferenceExperiment service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceExperiment">REST API Reference for UpdateInferenceExperiment Operation</seealso>
+        public virtual UpdateInferenceExperimentResponse UpdateInferenceExperiment(UpdateInferenceExperimentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInferenceExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInferenceExperimentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateInferenceExperimentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateInferenceExperiment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInferenceExperiment operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateInferenceExperiment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceExperiment">REST API Reference for UpdateInferenceExperiment Operation</seealso>
+        public virtual IAsyncResult BeginUpdateInferenceExperiment(UpdateInferenceExperimentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInferenceExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInferenceExperimentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateInferenceExperiment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateInferenceExperiment.</param>
+        /// 
+        /// <returns>Returns a  UpdateInferenceExperimentResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceExperiment">REST API Reference for UpdateInferenceExperiment Operation</seealso>
+        public virtual UpdateInferenceExperimentResponse EndUpdateInferenceExperiment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateInferenceExperimentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateModelCard
+
+        /// <summary>
+        /// Update an Amazon SageMaker Model Card.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You cannot update both model card content and model card status in a single call.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateModelCard service method.</param>
+        /// 
+        /// <returns>The response from the UpdateModelCard service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateModelCard">REST API Reference for UpdateModelCard Operation</seealso>
+        public virtual UpdateModelCardResponse UpdateModelCard(UpdateModelCardRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateModelCardRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateModelCardResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateModelCardResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateModelCard operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateModelCard operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateModelCard
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateModelCard">REST API Reference for UpdateModelCard Operation</seealso>
+        public virtual IAsyncResult BeginUpdateModelCard(UpdateModelCardRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateModelCardRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateModelCardResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateModelCard operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateModelCard.</param>
+        /// 
+        /// <returns>Returns a  UpdateModelCardResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateModelCard">REST API Reference for UpdateModelCard Operation</seealso>
+        public virtual UpdateModelCardResponse EndUpdateModelCard(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateModelCardResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateModelPackage
 
         /// <summary>
@@ -15848,6 +17767,67 @@ namespace Amazon.SageMaker
         public virtual UpdateModelPackageResponse EndUpdateModelPackage(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateModelPackageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateMonitoringAlert
+
+        /// <summary>
+        /// Update the parameters of a model monitor alert.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMonitoringAlert service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMonitoringAlert service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMonitoringAlert">REST API Reference for UpdateMonitoringAlert Operation</seealso>
+        public virtual UpdateMonitoringAlertResponse UpdateMonitoringAlert(UpdateMonitoringAlertRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMonitoringAlertRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMonitoringAlertResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMonitoringAlertResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMonitoringAlert operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMonitoringAlert operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMonitoringAlert
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMonitoringAlert">REST API Reference for UpdateMonitoringAlert Operation</seealso>
+        public virtual IAsyncResult BeginUpdateMonitoringAlert(UpdateMonitoringAlertRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMonitoringAlertRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMonitoringAlertResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMonitoringAlert operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMonitoringAlert.</param>
+        /// 
+        /// <returns>Returns a  UpdateMonitoringAlertResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMonitoringAlert">REST API Reference for UpdateMonitoringAlert Operation</seealso>
+        public virtual UpdateMonitoringAlertResponse EndUpdateMonitoringAlert(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateMonitoringAlertResponse>(asyncResult);
         }
 
         #endregion
@@ -16205,6 +18185,70 @@ namespace Amazon.SageMaker
         public virtual UpdateProjectResponse EndUpdateProject(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateProjectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSpace
+
+        /// <summary>
+        /// Updates the settings of a space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSpace service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSpace service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateSpace">REST API Reference for UpdateSpace Operation</seealso>
+        public virtual UpdateSpaceResponse UpdateSpace(UpdateSpaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSpaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSpaceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSpaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSpace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSpace operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSpace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateSpace">REST API Reference for UpdateSpace Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSpace(UpdateSpaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSpaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSpaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSpace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSpace.</param>
+        /// 
+        /// <returns>Returns a  UpdateSpaceResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateSpace">REST API Reference for UpdateSpace Operation</seealso>
+        public virtual UpdateSpaceResponse EndUpdateSpace(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSpaceResponse>(asyncResult);
         }
 
         #endregion

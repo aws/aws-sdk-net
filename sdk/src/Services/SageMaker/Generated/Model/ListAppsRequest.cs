@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private string _nextToken;
         private AppSortKey _sortBy;
         private SortOrder _sortOrder;
+        private string _spaceNameEquals;
         private string _userProfileNameEquals;
 
         /// <summary>
@@ -133,6 +134,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSortOrder()
         {
             return this._sortOrder != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpaceNameEquals. 
+        /// <para>
+        /// A parameter to search by space name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string SpaceNameEquals
+        {
+            get { return this._spaceNameEquals; }
+            set { this._spaceNameEquals = value; }
+        }
+
+        // Check to see if SpaceNameEquals property is set
+        internal bool IsSetSpaceNameEquals()
+        {
+            return this._spaceNameEquals != null;
         }
 
         /// <summary>

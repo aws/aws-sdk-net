@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastHealthCheckTimestamp;
         private DateTime? _lastUserActivityTimestamp;
         private ResourceSpec _resourceSpec;
+        private string _spaceName;
         private AppStatus _status;
         private string _userProfileName;
 
@@ -212,6 +213,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetResourceSpec()
         {
             return this._resourceSpec != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpaceName. 
+        /// <para>
+        /// The name of the space.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string SpaceName
+        {
+            get { return this._spaceName; }
+            set { this._spaceName = value; }
+        }
+
+        // Check to see if SpaceName property is set
+        internal bool IsSetSpaceName()
+        {
+            return this._spaceName != null;
         }
 
         /// <summary>

@@ -47,6 +47,7 @@ namespace Amazon.SageMaker.Model
         private DataCatalogConfig _dataCatalogConfig;
         private bool? _disableGlueTableCreation;
         private S3StorageConfig _s3StorageConfig;
+        private TableFormat _tableFormat;
 
         /// <summary>
         /// Gets and sets the property DataCatalogConfig. 
@@ -103,6 +104,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetS3StorageConfig()
         {
             return this._s3StorageConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TableFormat. 
+        /// <para>
+        /// Format for the offline store feature group. <code>Iceberg</code> is the optimal format
+        /// for feature groups shared between offline and online stores.
+        /// </para>
+        /// </summary>
+        public TableFormat TableFormat
+        {
+            get { return this._tableFormat; }
+            set { this._tableFormat = value; }
+        }
+
+        // Check to see if TableFormat property is set
+        internal bool IsSetTableFormat()
+        {
+            return this._tableFormat != null;
         }
 
     }

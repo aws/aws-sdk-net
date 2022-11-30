@@ -75,6 +75,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DefaultSpaceSettings", targetDepth))
+                {
+                    var unmarshaller = DefaultSpaceSettingsUnmarshaller.Instance;
+                    response.DefaultSpaceSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DefaultUserSettings", targetDepth))
                 {
                     var unmarshaller = UserSettingsUnmarshaller.Instance;

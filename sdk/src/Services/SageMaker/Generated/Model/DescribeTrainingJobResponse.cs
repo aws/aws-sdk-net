@@ -197,7 +197,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DebugRuleConfigurations. 
         /// <para>
-        /// Configuration information for Debugger rules for debugging output tensors.
+        /// Configuration information for Amazon SageMaker Debugger rules for debugging output
+        /// tensors.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -216,7 +217,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DebugRuleEvaluationStatuses. 
         /// <para>
-        /// Evaluation status of Debugger rules for debugging on a training job.
+        /// Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -501,7 +502,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProfilerRuleConfigurations. 
         /// <para>
-        /// Configuration information for Debugger rules for profiling system and framework metrics.
+        /// Configuration information for Amazon SageMaker Debugger rules for profiling system
+        /// and framework metrics.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -520,7 +522,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProfilerRuleEvaluationStatuses. 
         /// <para>
-        /// Evaluation status of Debugger rules for profiling on a training job.
+        /// Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]

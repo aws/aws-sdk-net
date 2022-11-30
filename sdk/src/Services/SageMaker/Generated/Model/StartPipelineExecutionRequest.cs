@@ -124,7 +124,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the pipeline.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string PipelineName
         {
             get { return this._pipelineName; }

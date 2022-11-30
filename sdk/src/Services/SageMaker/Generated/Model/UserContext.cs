@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Information about the user who created or modified an experiment, trial, trial component,
-    /// lineage group, or project.
+    /// lineage group, project, or model card.
     /// </summary>
     public partial class UserContext
     {

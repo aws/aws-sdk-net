@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Amazon Web Services KMS encryption key ID.
+        /// The Key Management Service (KMS) encryption key ID.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

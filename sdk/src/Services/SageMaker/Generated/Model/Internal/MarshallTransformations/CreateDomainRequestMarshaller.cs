@@ -85,6 +85,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AuthMode);
                 }
 
+                if(publicRequest.IsSetDefaultSpaceSettings())
+                {
+                    context.Writer.WritePropertyName("DefaultSpaceSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DefaultSpaceSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DefaultSpaceSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDefaultUserSettings())
                 {
                     context.Writer.WritePropertyName("DefaultUserSettings");

@@ -64,6 +64,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CodeRepositories", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CodeRepository, CodeRepositoryUnmarshaller>(CodeRepositoryUnmarshaller.Instance);
+                    unmarshalledObject.CodeRepositories = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DefaultResourceSpec", targetDepth))
                 {
                     var unmarshaller = ResourceSpecUnmarshaller.Instance;

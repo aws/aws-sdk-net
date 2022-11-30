@@ -47,7 +47,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type to deploy a Debugger custom rule for debugging a training job.
+        /// The instance type to deploy a custom rule for debugging a training job.
         /// </para>
         /// </summary>
         public ProcessingInstanceType InstanceType

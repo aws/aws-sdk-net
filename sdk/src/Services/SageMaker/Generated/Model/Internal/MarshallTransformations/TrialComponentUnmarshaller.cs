@@ -142,6 +142,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.Parents = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RunName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RunName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Source", targetDepth))
                 {
                     var unmarshaller = TrialComponentSourceUnmarshaller.Instance;

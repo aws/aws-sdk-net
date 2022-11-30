@@ -33,6 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class PipelineExecutionStepMetadata
     {
+        private AutoMLJobStepMetadata _autoMLJob;
         private CallbackStepMetadata _callback;
         private ClarifyCheckStepMetadata _clarifyCheck;
         private ConditionStepMetadata _condition;
@@ -46,6 +47,24 @@ namespace Amazon.SageMaker.Model
         private TrainingJobStepMetadata _trainingJob;
         private TransformJobStepMetadata _transformJob;
         private TuningJobStepMetaData _tuningJob;
+
+        /// <summary>
+        /// Gets and sets the property AutoMLJob. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the AutoML job that was run by this step.
+        /// </para>
+        /// </summary>
+        public AutoMLJobStepMetadata AutoMLJob
+        {
+            get { return this._autoMLJob; }
+            set { this._autoMLJob = value; }
+        }
+
+        // Check to see if AutoMLJob property is set
+        internal bool IsSetAutoMLJob()
+        {
+            return this._autoMLJob != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Callback. 
@@ -140,7 +159,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EMR. 
         /// <para>
-        /// The configurations and outcomes of an EMR step execution.
+        /// The configurations and outcomes of an Amazon EMR step execution.
         /// </para>
         /// </summary>
         public EMRStepMetadata EMR
@@ -235,7 +254,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The type of the check conducted,
+        /// The type of the check conducted.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -260,7 +279,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The boolean flags indicating if the drift check is skipped.
+        /// The Boolean flags indicating if the drift check is skipped.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -283,8 +302,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RegisterModel. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the model package the model was registered to by
-        /// this step execution.
+        /// The Amazon Resource Name (ARN) of the model package that the model was registered
+        /// to by this step execution.
         /// </para>
         /// </summary>
         public RegisterModelStepMetadata RegisterModel

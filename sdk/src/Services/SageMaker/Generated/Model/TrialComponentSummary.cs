@@ -208,7 +208,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrialComponentArn. 
         /// <para>
-        /// The ARN of the trial component.
+        /// The Amazon Resource Name (ARN) of the trial component.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

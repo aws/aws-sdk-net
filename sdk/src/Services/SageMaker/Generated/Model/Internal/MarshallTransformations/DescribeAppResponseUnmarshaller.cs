@@ -105,6 +105,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.ResourceSpec = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SpaceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SpaceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private string _appName;
         private AppType _appType;
         private string _domainId;
+        private string _spaceName;
         private string _userProfileName;
 
         /// <summary>
@@ -97,12 +98,31 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SpaceName. 
+        /// <para>
+        /// The name of the space.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string SpaceName
+        {
+            get { return this._spaceName; }
+            set { this._spaceName = value; }
+        }
+
+        // Check to see if SpaceName property is set
+        internal bool IsSetSpaceName()
+        {
+            return this._spaceName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UserProfileName. 
         /// <para>
         /// The user profile name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Max=63)]
         public string UserProfileName
         {
             get { return this._userProfileName; }

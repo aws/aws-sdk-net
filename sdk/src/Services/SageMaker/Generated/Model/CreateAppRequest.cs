@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         private AppType _appType;
         private string _domainId;
         private ResourceSpec _resourceSpec;
+        private string _spaceName;
         private List<Tag> _tags = new List<Tag>();
         private string _userProfileName;
 
@@ -130,6 +131,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SpaceName. 
+        /// <para>
+        /// The name of the space.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string SpaceName
+        {
+            get { return this._spaceName; }
+            set { this._spaceName = value; }
+        }
+
+        // Check to see if SpaceName property is set
+        internal bool IsSetSpaceName()
+        {
+            return this._spaceName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// Each tag consists of a key and an optional value. Tag keys must be unique per resource.
@@ -154,7 +174,7 @@ namespace Amazon.SageMaker.Model
         /// The user profile name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Max=63)]
         public string UserProfileName
         {
             get { return this._userProfileName; }

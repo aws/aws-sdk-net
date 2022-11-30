@@ -45,6 +45,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JupyterServerAppSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCodeRepositories())
+            {
+                context.Writer.WritePropertyName("CodeRepositories");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCodeRepositoriesListValue in requestObject.CodeRepositories)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CodeRepositoryMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCodeRepositoriesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetDefaultResourceSpec())
             {
                 context.Writer.WritePropertyName("DefaultResourceSpec");

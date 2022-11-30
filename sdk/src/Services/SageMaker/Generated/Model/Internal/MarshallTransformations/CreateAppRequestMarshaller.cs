@@ -96,6 +96,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSpaceName())
+                {
+                    context.Writer.WritePropertyName("SpaceName");
+                    context.Writer.Write(publicRequest.SpaceName);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

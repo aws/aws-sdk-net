@@ -244,6 +244,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListInferenceExperiments operation
+        ///</summary>
+        public IListInferenceExperimentsPaginator ListInferenceExperiments(ListInferenceExperimentsRequest request) 
+        {
+            return new ListInferenceExperimentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListInferenceRecommendationsJobs operation
         ///</summary>
         public IListInferenceRecommendationsJobsPaginator ListInferenceRecommendationsJobs(ListInferenceRecommendationsJobsRequest request) 
@@ -292,6 +300,30 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListModelCardExportJobs operation
+        ///</summary>
+        public IListModelCardExportJobsPaginator ListModelCardExportJobs(ListModelCardExportJobsRequest request) 
+        {
+            return new ListModelCardExportJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListModelCards operation
+        ///</summary>
+        public IListModelCardsPaginator ListModelCards(ListModelCardsRequest request) 
+        {
+            return new ListModelCardsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListModelCardVersions operation
+        ///</summary>
+        public IListModelCardVersionsPaginator ListModelCardVersions(ListModelCardVersionsRequest request) 
+        {
+            return new ListModelCardVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListModelExplainabilityJobDefinitions operation
         ///</summary>
         public IListModelExplainabilityJobDefinitionsPaginator ListModelExplainabilityJobDefinitions(ListModelExplainabilityJobDefinitionsRequest request) 
@@ -337,6 +369,22 @@ namespace Amazon.SageMaker.Model
         public IListModelsPaginator ListModels(ListModelsRequest request) 
         {
             return new ListModelsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMonitoringAlertHistory operation
+        ///</summary>
+        public IListMonitoringAlertHistoryPaginator ListMonitoringAlertHistory(ListMonitoringAlertHistoryRequest request) 
+        {
+            return new ListMonitoringAlertHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMonitoringAlerts operation
+        ///</summary>
+        public IListMonitoringAlertsPaginator ListMonitoringAlerts(ListMonitoringAlertsRequest request) 
+        {
+            return new ListMonitoringAlertsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -417,6 +465,14 @@ namespace Amazon.SageMaker.Model
         public IListProjectsPaginator ListProjects(ListProjectsRequest request) 
         {
             return new ListProjectsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSpaces operation
+        ///</summary>
+        public IListSpacesPaginator ListSpaces(ListSpacesRequest request) 
+        {
+            return new ListSpacesPaginator(this.client, request);
         }
 
         /// <summary>

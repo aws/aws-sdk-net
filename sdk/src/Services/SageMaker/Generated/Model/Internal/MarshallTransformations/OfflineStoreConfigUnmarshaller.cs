@@ -82,6 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3StorageConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TableFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TableFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

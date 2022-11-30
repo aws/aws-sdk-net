@@ -98,6 +98,7 @@ namespace Amazon.SageMaker.Model
         private AppNetworkAccessType _appNetworkAccessType;
         private AppSecurityGroupManagement _appSecurityGroupManagement;
         private AuthMode _authMode;
+        private DefaultSpaceSettings _defaultSpaceSettings;
         private UserSettings _defaultUserSettings;
         private string _domainName;
         private DomainSettings _domainSettings;
@@ -173,6 +174,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAuthMode()
         {
             return this._authMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultSpaceSettings. 
+        /// <para>
+        /// The default settings used to create a space.
+        /// </para>
+        /// </summary>
+        public DefaultSpaceSettings DefaultSpaceSettings
+        {
+            get { return this._defaultSpaceSettings; }
+            set { this._defaultSpaceSettings = value; }
+        }
+
+        // Check to see if DefaultSpaceSettings property is set
+        internal bool IsSetDefaultSpaceSettings()
+        {
+            return this._defaultSpaceSettings != null;
         }
 
         /// <summary>

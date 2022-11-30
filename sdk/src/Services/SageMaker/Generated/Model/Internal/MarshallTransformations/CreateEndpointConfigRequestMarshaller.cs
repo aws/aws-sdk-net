@@ -128,6 +128,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetShadowProductionVariants())
+                {
+                    context.Writer.WritePropertyName("ShadowProductionVariants");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestShadowProductionVariantsListValue in publicRequest.ShadowProductionVariants)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProductionVariantMarshaller.Instance;
+                        marshaller.Marshall(publicRequestShadowProductionVariantsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

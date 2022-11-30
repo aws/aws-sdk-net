@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastModifiedTime;
         private PendingDeploymentSummary _pendingDeploymentSummary;
         private List<ProductionVariantSummary> _productionVariants = new List<ProductionVariantSummary>();
+        private List<ProductionVariantSummary> _shadowProductionVariants = new List<ProductionVariantSummary>();
 
         /// <summary>
         /// Gets and sets the property AsyncInferenceConfig. 
@@ -331,6 +332,29 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetProductionVariants()
         {
             return this._productionVariants != null && this._productionVariants.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShadowProductionVariants. 
+        /// <para>
+        ///  Array of <code>ProductionVariant</code> objects. There is one for each model that
+        /// you want to host at this endpoint in shadow mode with production traffic replicated
+        /// from the model specified on <code>ProductionVariants</code>.If you use this field,
+        /// you can only specify one variant for <code>ProductionVariants</code> and one variant
+        /// for <code>ShadowProductionVariants</code>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<ProductionVariantSummary> ShadowProductionVariants
+        {
+            get { return this._shadowProductionVariants; }
+            set { this._shadowProductionVariants = value; }
+        }
+
+        // Check to see if ShadowProductionVariants property is set
+        internal bool IsSetShadowProductionVariants()
+        {
+            return this._shadowProductionVariants != null && this._shadowProductionVariants.Count > 0; 
         }
 
     }

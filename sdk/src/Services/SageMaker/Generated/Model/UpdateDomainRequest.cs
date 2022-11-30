@@ -34,9 +34,28 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateDomainRequest : AmazonSageMakerRequest
     {
+        private DefaultSpaceSettings _defaultSpaceSettings;
         private UserSettings _defaultUserSettings;
         private string _domainId;
         private DomainSettingsForUpdate _domainSettingsForUpdate;
+
+        /// <summary>
+        /// Gets and sets the property DefaultSpaceSettings. 
+        /// <para>
+        /// The default settings used to create a space within the Domain.
+        /// </para>
+        /// </summary>
+        public DefaultSpaceSettings DefaultSpaceSettings
+        {
+            get { return this._defaultSpaceSettings; }
+            set { this._defaultSpaceSettings = value; }
+        }
+
+        // Check to see if DefaultSpaceSettings property is set
+        internal bool IsSetDefaultSpaceSettings()
+        {
+            return this._defaultSpaceSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DefaultUserSettings. 

@@ -1704,6 +1704,48 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateHub
+
+
+        /// <summary>
+        /// Create a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHub service method.</param>
+        /// 
+        /// <returns>The response from the CreateHub service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHub">REST API Reference for CreateHub Operation</seealso>
+        CreateHubResponse CreateHub(CreateHubRequest request);
+
+
+
+        /// <summary>
+        /// Create a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHub service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateHub service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHub">REST API Reference for CreateHub Operation</seealso>
+        Task<CreateHubResponse> CreateHubAsync(CreateHubRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateHumanTaskUi
 
 
@@ -1929,6 +1971,86 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion">REST API Reference for CreateImageVersion Operation</seealso>
         Task<CreateImageVersionResponse> CreateImageVersionAsync(CreateImageVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateInferenceExperiment
+
+
+        /// <summary>
+        /// Creates an inference experiment using the configurations specified in the request.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  Use this API to schedule an experiment to compare model variants on a Amazon SageMaker
+        /// inference endpoint. For more information about inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow
+        /// tests</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Amazon SageMaker begins your experiment at the scheduled time and routes traffic
+        /// to your endpoint's model variants based on your specified configuration. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  While the experiment is in progress or after it has concluded, you can view metrics
+        /// that compare your model variants. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests-view-monitor-edit.html">View,
+        /// monitor, and edit shadow tests</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInferenceExperiment service method.</param>
+        /// 
+        /// <returns>The response from the CreateInferenceExperiment service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceExperiment">REST API Reference for CreateInferenceExperiment Operation</seealso>
+        CreateInferenceExperimentResponse CreateInferenceExperiment(CreateInferenceExperimentRequest request);
+
+
+
+        /// <summary>
+        /// Creates an inference experiment using the configurations specified in the request.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  Use this API to schedule an experiment to compare model variants on a Amazon SageMaker
+        /// inference endpoint. For more information about inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow
+        /// tests</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Amazon SageMaker begins your experiment at the scheduled time and routes traffic
+        /// to your endpoint's model variants based on your specified configuration. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  While the experiment is in progress or after it has concluded, you can view metrics
+        /// that compare your model variants. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests-view-monitor-edit.html">View,
+        /// monitor, and edit shadow tests</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInferenceExperiment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateInferenceExperiment service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceExperiment">REST API Reference for CreateInferenceExperiment Operation</seealso>
+        Task<CreateInferenceExperimentResponse> CreateInferenceExperimentAsync(CreateInferenceExperimentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2275,6 +2397,112 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelBiasJobDefinition">REST API Reference for CreateModelBiasJobDefinition Operation</seealso>
         Task<CreateModelBiasJobDefinitionResponse> CreateModelBiasJobDefinitionAsync(CreateModelBiasJobDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateModelCard
+
+
+        /// <summary>
+        /// Creates an Amazon SageMaker Model Card.
+        /// 
+        ///  
+        /// <para>
+        /// For information about how to use model cards, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html">Amazon
+        /// SageMaker Model Card</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelCard service method.</param>
+        /// 
+        /// <returns>The response from the CreateModelCard service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCard">REST API Reference for CreateModelCard Operation</seealso>
+        CreateModelCardResponse CreateModelCard(CreateModelCardRequest request);
+
+
+
+        /// <summary>
+        /// Creates an Amazon SageMaker Model Card.
+        /// 
+        ///  
+        /// <para>
+        /// For information about how to use model cards, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html">Amazon
+        /// SageMaker Model Card</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelCard service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateModelCard service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCard">REST API Reference for CreateModelCard Operation</seealso>
+        Task<CreateModelCardResponse> CreateModelCardAsync(CreateModelCardRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateModelCardExportJob
+
+
+        /// <summary>
+        /// Creates an Amazon SageMaker Model Card export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelCardExportJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateModelCardExportJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCardExportJob">REST API Reference for CreateModelCardExportJob Operation</seealso>
+        CreateModelCardExportJobResponse CreateModelCardExportJob(CreateModelCardExportJobRequest request);
+
+
+
+        /// <summary>
+        /// Creates an Amazon SageMaker Model Card export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelCardExportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateModelCardExportJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCardExportJob">REST API Reference for CreateModelCardExportJob Operation</seealso>
+        Task<CreateModelCardExportJobResponse> CreateModelCardExportJobAsync(CreateModelCardExportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3069,6 +3297,48 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateProject">REST API Reference for CreateProject Operation</seealso>
         Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateSpace
+
+
+        /// <summary>
+        /// Creates a space used for real time collaboration in a Domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSpace service method.</param>
+        /// 
+        /// <returns>The response from the CreateSpace service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateSpace">REST API Reference for CreateSpace Operation</seealso>
+        CreateSpaceResponse CreateSpace(CreateSpaceRequest request);
+
+
+
+        /// <summary>
+        /// Creates a space used for real time collaboration in a Domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSpace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSpace service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateSpace">REST API Reference for CreateSpace Operation</seealso>
+        Task<CreateSpaceResponse> CreateSpaceAsync(CreateSpaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4486,6 +4756,86 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteHub
+
+
+        /// <summary>
+        /// Delete a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHub service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHub service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHub">REST API Reference for DeleteHub Operation</seealso>
+        DeleteHubResponse DeleteHub(DeleteHubRequest request);
+
+
+
+        /// <summary>
+        /// Delete a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHub service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteHub service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHub">REST API Reference for DeleteHub Operation</seealso>
+        Task<DeleteHubResponse> DeleteHubAsync(DeleteHubRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteHubContent
+
+
+        /// <summary>
+        /// Delete the contents of a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHubContent service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHubContent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContent">REST API Reference for DeleteHubContent Operation</seealso>
+        DeleteHubContentResponse DeleteHubContent(DeleteHubContentRequest request);
+
+
+
+        /// <summary>
+        /// Delete the contents of a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHubContent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteHubContent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContent">REST API Reference for DeleteHubContent Operation</seealso>
+        Task<DeleteHubContentResponse> DeleteHubContentAsync(DeleteHubContentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteHumanTaskUi
 
 
@@ -4616,6 +4966,62 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteInferenceExperiment
+
+
+        /// <summary>
+        /// Deletes an inference experiment.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  This operation does not delete your endpoint, variants, or any underlying resources.
+        /// This operation only deletes the metadata of your experiment. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInferenceExperiment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInferenceExperiment service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceExperiment">REST API Reference for DeleteInferenceExperiment Operation</seealso>
+        DeleteInferenceExperimentResponse DeleteInferenceExperiment(DeleteInferenceExperimentRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an inference experiment.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  This operation does not delete your endpoint, variants, or any underlying resources.
+        /// This operation only deletes the metadata of your experiment. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInferenceExperiment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteInferenceExperiment service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceExperiment">REST API Reference for DeleteInferenceExperiment Operation</seealso>
+        Task<DeleteInferenceExperimentResponse> DeleteInferenceExperimentAsync(DeleteInferenceExperimentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteModel
 
 
@@ -4681,6 +5087,48 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelBiasJobDefinition">REST API Reference for DeleteModelBiasJobDefinition Operation</seealso>
         Task<DeleteModelBiasJobDefinitionResponse> DeleteModelBiasJobDefinitionAsync(DeleteModelBiasJobDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteModelCard
+
+
+        /// <summary>
+        /// Deletes an Amazon SageMaker Model Card.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModelCard service method.</param>
+        /// 
+        /// <returns>The response from the DeleteModelCard service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelCard">REST API Reference for DeleteModelCard Operation</seealso>
+        DeleteModelCardResponse DeleteModelCard(DeleteModelCardRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an Amazon SageMaker Model Card.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModelCard service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteModelCard service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelCard">REST API Reference for DeleteModelCard Operation</seealso>
+        Task<DeleteModelCardResponse> DeleteModelCardAsync(DeleteModelCardRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5047,6 +5495,46 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteSpace
+
+
+        /// <summary>
+        /// Used to delete a space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSpace service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSpace service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteSpace">REST API Reference for DeleteSpace Operation</seealso>
+        DeleteSpaceResponse DeleteSpace(DeleteSpaceRequest request);
+
+
+
+        /// <summary>
+        /// Used to delete a space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSpace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSpace service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteSpace">REST API Reference for DeleteSpace Operation</seealso>
+        Task<DeleteSpaceResponse> DeleteSpaceAsync(DeleteSpaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6106,6 +6594,74 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeHub
+
+
+        /// <summary>
+        /// Describe a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHub service method.</param>
+        /// 
+        /// <returns>The response from the DescribeHub service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHub">REST API Reference for DescribeHub Operation</seealso>
+        DescribeHubResponse DescribeHub(DescribeHubRequest request);
+
+
+
+        /// <summary>
+        /// Describe a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHub service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeHub service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHub">REST API Reference for DescribeHub Operation</seealso>
+        Task<DescribeHubResponse> DescribeHubAsync(DescribeHubRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeHubContent
+
+
+        /// <summary>
+        /// Describe the content of a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHubContent service method.</param>
+        /// 
+        /// <returns>The response from the DescribeHubContent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHubContent">REST API Reference for DescribeHubContent Operation</seealso>
+        DescribeHubContentResponse DescribeHubContent(DescribeHubContentRequest request);
+
+
+
+        /// <summary>
+        /// Describe the content of a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHubContent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeHubContent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHubContent">REST API Reference for DescribeHubContent Operation</seealso>
+        Task<DescribeHubContentResponse> DescribeHubContentAsync(DescribeHubContentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeHumanTaskUi
 
 
@@ -6239,6 +6795,40 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImageVersion">REST API Reference for DescribeImageVersion Operation</seealso>
         Task<DescribeImageVersionResponse> DescribeImageVersionAsync(DescribeImageVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeInferenceExperiment
+
+
+        /// <summary>
+        /// Returns details about an inference experiment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInferenceExperiment service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInferenceExperiment service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceExperiment">REST API Reference for DescribeInferenceExperiment Operation</seealso>
+        DescribeInferenceExperimentResponse DescribeInferenceExperiment(DescribeInferenceExperimentRequest request);
+
+
+
+        /// <summary>
+        /// Returns details about an inference experiment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInferenceExperiment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInferenceExperiment service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceExperiment">REST API Reference for DescribeInferenceExperiment Operation</seealso>
+        Task<DescribeInferenceExperimentResponse> DescribeInferenceExperimentAsync(DescribeInferenceExperimentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6409,6 +6999,76 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelBiasJobDefinition">REST API Reference for DescribeModelBiasJobDefinition Operation</seealso>
         Task<DescribeModelBiasJobDefinitionResponse> DescribeModelBiasJobDefinitionAsync(DescribeModelBiasJobDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeModelCard
+
+
+        /// <summary>
+        /// Describes the content, creation time, and security configuration of an Amazon SageMaker
+        /// Model Card.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelCard service method.</param>
+        /// 
+        /// <returns>The response from the DescribeModelCard service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCard">REST API Reference for DescribeModelCard Operation</seealso>
+        DescribeModelCardResponse DescribeModelCard(DescribeModelCardRequest request);
+
+
+
+        /// <summary>
+        /// Describes the content, creation time, and security configuration of an Amazon SageMaker
+        /// Model Card.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelCard service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeModelCard service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCard">REST API Reference for DescribeModelCard Operation</seealso>
+        Task<DescribeModelCardResponse> DescribeModelCardAsync(DescribeModelCardRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeModelCardExportJob
+
+
+        /// <summary>
+        /// Describes an Amazon SageMaker Model Card export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelCardExportJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeModelCardExportJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCardExportJob">REST API Reference for DescribeModelCardExportJob Operation</seealso>
+        DescribeModelCardExportJobResponse DescribeModelCardExportJob(DescribeModelCardExportJobRequest request);
+
+
+
+        /// <summary>
+        /// Describes an Amazon SageMaker Model Card export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelCardExportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeModelCardExportJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCardExportJob">REST API Reference for DescribeModelCardExportJob Operation</seealso>
+        Task<DescribeModelCardExportJobResponse> DescribeModelCardExportJobAsync(DescribeModelCardExportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6813,6 +7473,40 @@ namespace Amazon.SageMaker
         /// <returns>The response from the DescribeProject service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
         Task<DescribeProjectResponse> DescribeProjectAsync(DescribeProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeSpace
+
+
+        /// <summary>
+        /// Describes the space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpace service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSpace service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeSpace">REST API Reference for DescribeSpace Operation</seealso>
+        DescribeSpaceResponse DescribeSpace(DescribeSpaceRequest request);
+
+
+
+        /// <summary>
+        /// Describes the space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSpace service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeSpace">REST API Reference for DescribeSpace Operation</seealso>
+        Task<DescribeSpaceResponse> DescribeSpaceAsync(DescribeSpaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -7417,6 +8111,54 @@ namespace Amazon.SageMaker
         /// <returns>The response from the GetSearchSuggestions service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetSearchSuggestions">REST API Reference for GetSearchSuggestions Operation</seealso>
         Task<GetSearchSuggestionsResponse> GetSearchSuggestionsAsync(GetSearchSuggestionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ImportHubContent
+
+
+        /// <summary>
+        /// Import hub content.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportHubContent service method.</param>
+        /// 
+        /// <returns>The response from the ImportHubContent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ImportHubContent">REST API Reference for ImportHubContent Operation</seealso>
+        ImportHubContentResponse ImportHubContent(ImportHubContentRequest request);
+
+
+
+        /// <summary>
+        /// Import hub content.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportHubContent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportHubContent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ImportHubContent">REST API Reference for ImportHubContent Operation</seealso>
+        Task<ImportHubContentResponse> ImportHubContentAsync(ImportHubContentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -8086,6 +8828,102 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListHubContents
+
+
+        /// <summary>
+        /// List the contents of a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHubContents service method.</param>
+        /// 
+        /// <returns>The response from the ListHubContents service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContents">REST API Reference for ListHubContents Operation</seealso>
+        ListHubContentsResponse ListHubContents(ListHubContentsRequest request);
+
+
+
+        /// <summary>
+        /// List the contents of a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHubContents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHubContents service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContents">REST API Reference for ListHubContents Operation</seealso>
+        Task<ListHubContentsResponse> ListHubContentsAsync(ListHubContentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListHubContentVersions
+
+
+        /// <summary>
+        /// List hub content versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHubContentVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListHubContentVersions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContentVersions">REST API Reference for ListHubContentVersions Operation</seealso>
+        ListHubContentVersionsResponse ListHubContentVersions(ListHubContentVersionsRequest request);
+
+
+
+        /// <summary>
+        /// List hub content versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHubContentVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHubContentVersions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContentVersions">REST API Reference for ListHubContentVersions Operation</seealso>
+        Task<ListHubContentVersionsResponse> ListHubContentVersionsAsync(ListHubContentVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListHubs
+
+
+        /// <summary>
+        /// List all existing hubs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHubs service method.</param>
+        /// 
+        /// <returns>The response from the ListHubs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubs">REST API Reference for ListHubs Operation</seealso>
+        ListHubsResponse ListHubs(ListHubsRequest request);
+
+
+
+        /// <summary>
+        /// List all existing hubs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHubs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHubs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubs">REST API Reference for ListHubs Operation</seealso>
+        Task<ListHubsResponse> ListHubsAsync(ListHubsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListHumanTaskUis
 
 
@@ -8207,6 +9045,34 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImageVersions">REST API Reference for ListImageVersions Operation</seealso>
         Task<ListImageVersionsResponse> ListImageVersionsAsync(ListImageVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListInferenceExperiments
+
+
+        /// <summary>
+        /// Returns the list of all inference experiments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceExperiments service method.</param>
+        /// 
+        /// <returns>The response from the ListInferenceExperiments service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceExperiments">REST API Reference for ListInferenceExperiments Operation</seealso>
+        ListInferenceExperimentsResponse ListInferenceExperiments(ListInferenceExperimentsRequest request);
+
+
+
+        /// <summary>
+        /// Returns the list of all inference experiments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceExperiments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInferenceExperiments service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceExperiments">REST API Reference for ListInferenceExperiments Operation</seealso>
+        Task<ListInferenceExperimentsResponse> ListInferenceExperimentsAsync(ListInferenceExperimentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -8400,6 +9266,96 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListModelCardExportJobs
+
+
+        /// <summary>
+        /// List the export jobs for the Amazon SageMaker Model Card.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelCardExportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListModelCardExportJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardExportJobs">REST API Reference for ListModelCardExportJobs Operation</seealso>
+        ListModelCardExportJobsResponse ListModelCardExportJobs(ListModelCardExportJobsRequest request);
+
+
+
+        /// <summary>
+        /// List the export jobs for the Amazon SageMaker Model Card.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelCardExportJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListModelCardExportJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardExportJobs">REST API Reference for ListModelCardExportJobs Operation</seealso>
+        Task<ListModelCardExportJobsResponse> ListModelCardExportJobsAsync(ListModelCardExportJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListModelCards
+
+
+        /// <summary>
+        /// List existing model cards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelCards service method.</param>
+        /// 
+        /// <returns>The response from the ListModelCards service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCards">REST API Reference for ListModelCards Operation</seealso>
+        ListModelCardsResponse ListModelCards(ListModelCardsRequest request);
+
+
+
+        /// <summary>
+        /// List existing model cards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelCards service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListModelCards service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCards">REST API Reference for ListModelCards Operation</seealso>
+        Task<ListModelCardsResponse> ListModelCardsAsync(ListModelCardsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListModelCardVersions
+
+
+        /// <summary>
+        /// List existing versions of an Amazon SageMaker Model Card.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelCardVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListModelCardVersions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardVersions">REST API Reference for ListModelCardVersions Operation</seealso>
+        ListModelCardVersionsResponse ListModelCardVersions(ListModelCardVersionsRequest request);
+
+
+
+        /// <summary>
+        /// List existing versions of an Amazon SageMaker Model Card.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelCardVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListModelCardVersions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardVersions">REST API Reference for ListModelCardVersions Operation</seealso>
+        Task<ListModelCardVersionsResponse> ListModelCardVersionsAsync(ListModelCardVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListModelExplainabilityJobDefinitions
 
 
@@ -8567,6 +9523,74 @@ namespace Amazon.SageMaker
         /// <returns>The response from the ListModels service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModels">REST API Reference for ListModels Operation</seealso>
         Task<ListModelsResponse> ListModelsAsync(ListModelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListMonitoringAlertHistory
+
+
+        /// <summary>
+        /// Gets a list of past alerts in a model monitoring schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitoringAlertHistory service method.</param>
+        /// 
+        /// <returns>The response from the ListMonitoringAlertHistory service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlertHistory">REST API Reference for ListMonitoringAlertHistory Operation</seealso>
+        ListMonitoringAlertHistoryResponse ListMonitoringAlertHistory(ListMonitoringAlertHistoryRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of past alerts in a model monitoring schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitoringAlertHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMonitoringAlertHistory service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlertHistory">REST API Reference for ListMonitoringAlertHistory Operation</seealso>
+        Task<ListMonitoringAlertHistoryResponse> ListMonitoringAlertHistoryAsync(ListMonitoringAlertHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListMonitoringAlerts
+
+
+        /// <summary>
+        /// Gets the alerts for a single monitoring schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitoringAlerts service method.</param>
+        /// 
+        /// <returns>The response from the ListMonitoringAlerts service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlerts">REST API Reference for ListMonitoringAlerts Operation</seealso>
+        ListMonitoringAlertsResponse ListMonitoringAlerts(ListMonitoringAlertsRequest request);
+
+
+
+        /// <summary>
+        /// Gets the alerts for a single monitoring schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitoringAlerts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMonitoringAlerts service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlerts">REST API Reference for ListMonitoringAlerts Operation</seealso>
+        Task<ListMonitoringAlertsResponse> ListMonitoringAlertsAsync(ListMonitoringAlertsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -8869,6 +9893,34 @@ namespace Amazon.SageMaker
         /// <returns>The response from the ListProjects service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListProjects">REST API Reference for ListProjects Operation</seealso>
         Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListSpaces
+
+
+        /// <summary>
+        /// Lists spaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSpaces service method.</param>
+        /// 
+        /// <returns>The response from the ListSpaces service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListSpaces">REST API Reference for ListSpaces Operation</seealso>
+        ListSpacesResponse ListSpaces(ListSpacesRequest request);
+
+
+
+        /// <summary>
+        /// Lists spaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSpaces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSpaces service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListSpaces">REST API Reference for ListSpaces Operation</seealso>
+        Task<ListSpacesResponse> ListSpacesAsync(ListSpacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -9708,6 +10760,48 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  StartInferenceExperiment
+
+
+        /// <summary>
+        /// Starts an inference experiment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartInferenceExperiment service method.</param>
+        /// 
+        /// <returns>The response from the StartInferenceExperiment service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartInferenceExperiment">REST API Reference for StartInferenceExperiment Operation</seealso>
+        StartInferenceExperimentResponse StartInferenceExperiment(StartInferenceExperimentRequest request);
+
+
+
+        /// <summary>
+        /// Starts an inference experiment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartInferenceExperiment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartInferenceExperiment service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartInferenceExperiment">REST API Reference for StartInferenceExperiment Operation</seealso>
+        Task<StartInferenceExperimentResponse> StartInferenceExperimentAsync(StartInferenceExperimentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StartMonitoringSchedule
 
 
@@ -10039,6 +11133,48 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopHyperParameterTuningJob">REST API Reference for StopHyperParameterTuningJob Operation</seealso>
         Task<StopHyperParameterTuningJobResponse> StopHyperParameterTuningJobAsync(StopHyperParameterTuningJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopInferenceExperiment
+
+
+        /// <summary>
+        /// Stops an inference experiment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopInferenceExperiment service method.</param>
+        /// 
+        /// <returns>The response from the StopInferenceExperiment service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopInferenceExperiment">REST API Reference for StopInferenceExperiment Operation</seealso>
+        StopInferenceExperimentResponse StopInferenceExperiment(StopInferenceExperimentRequest request);
+
+
+
+        /// <summary>
+        /// Stops an inference experiment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopInferenceExperiment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopInferenceExperiment service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopInferenceExperiment">REST API Reference for StopInferenceExperiment Operation</seealso>
+        Task<StopInferenceExperimentResponse> StopInferenceExperimentAsync(StopInferenceExperimentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -10972,6 +12108,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  UpdateHub
+
+
+        /// <summary>
+        /// Update a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHub service method.</param>
+        /// 
+        /// <returns>The response from the UpdateHub service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHub">REST API Reference for UpdateHub Operation</seealso>
+        UpdateHubResponse UpdateHub(UpdateHubRequest request);
+
+
+
+        /// <summary>
+        /// Update a hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHub service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateHub service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHub">REST API Reference for UpdateHub Operation</seealso>
+        Task<UpdateHubResponse> UpdateHubAsync(UpdateHubRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateImage
 
 
@@ -11014,6 +12184,114 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  UpdateInferenceExperiment
+
+
+        /// <summary>
+        /// Updates an inference experiment that you created. The status of the inference experiment
+        /// has to be either <code>Created</code>, <code>Running</code>. For more information
+        /// on the status of an inference experiment, see <a>DescribeInferenceExperimentResponse$Status</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInferenceExperiment service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInferenceExperiment service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceExperiment">REST API Reference for UpdateInferenceExperiment Operation</seealso>
+        UpdateInferenceExperimentResponse UpdateInferenceExperiment(UpdateInferenceExperimentRequest request);
+
+
+
+        /// <summary>
+        /// Updates an inference experiment that you created. The status of the inference experiment
+        /// has to be either <code>Created</code>, <code>Running</code>. For more information
+        /// on the status of an inference experiment, see <a>DescribeInferenceExperimentResponse$Status</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInferenceExperiment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateInferenceExperiment service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceExperiment">REST API Reference for UpdateInferenceExperiment Operation</seealso>
+        Task<UpdateInferenceExperimentResponse> UpdateInferenceExperimentAsync(UpdateInferenceExperimentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateModelCard
+
+
+        /// <summary>
+        /// Update an Amazon SageMaker Model Card.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You cannot update both model card content and model card status in a single call.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateModelCard service method.</param>
+        /// 
+        /// <returns>The response from the UpdateModelCard service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateModelCard">REST API Reference for UpdateModelCard Operation</seealso>
+        UpdateModelCardResponse UpdateModelCard(UpdateModelCardRequest request);
+
+
+
+        /// <summary>
+        /// Update an Amazon SageMaker Model Card.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You cannot update both model card content and model card status in a single call.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateModelCard service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateModelCard service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateModelCard">REST API Reference for UpdateModelCard Operation</seealso>
+        Task<UpdateModelCardResponse> UpdateModelCardAsync(UpdateModelCardRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateModelPackage
 
 
@@ -11039,6 +12317,48 @@ namespace Amazon.SageMaker
         /// <returns>The response from the UpdateModelPackage service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateModelPackage">REST API Reference for UpdateModelPackage Operation</seealso>
         Task<UpdateModelPackageResponse> UpdateModelPackageAsync(UpdateModelPackageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateMonitoringAlert
+
+
+        /// <summary>
+        /// Update the parameters of a model monitor alert.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMonitoringAlert service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMonitoringAlert service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMonitoringAlert">REST API Reference for UpdateMonitoringAlert Operation</seealso>
+        UpdateMonitoringAlertResponse UpdateMonitoringAlert(UpdateMonitoringAlertRequest request);
+
+
+
+        /// <summary>
+        /// Update the parameters of a model monitor alert.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMonitoringAlert service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMonitoringAlert service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMonitoringAlert">REST API Reference for UpdateMonitoringAlert Operation</seealso>
+        Task<UpdateMonitoringAlertResponse> UpdateMonitoringAlertAsync(UpdateMonitoringAlertRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -11273,6 +12593,54 @@ namespace Amazon.SageMaker
         /// <returns>The response from the UpdateProject service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateSpace
+
+
+        /// <summary>
+        /// Updates the settings of a space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSpace service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSpace service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateSpace">REST API Reference for UpdateSpace Operation</seealso>
+        UpdateSpaceResponse UpdateSpace(UpdateSpaceRequest request);
+
+
+
+        /// <summary>
+        /// Updates the settings of a space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSpace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSpace service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateSpace">REST API Reference for UpdateSpace Operation</seealso>
+        Task<UpdateSpaceResponse> UpdateSpaceAsync(UpdateSpaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -97,6 +97,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SortOrder);
                 }
 
+                if(publicRequest.IsSetSpaceNameEquals())
+                {
+                    context.Writer.WritePropertyName("SpaceNameEquals");
+                    context.Writer.Write(publicRequest.SpaceNameEquals);
+                }
+
                 if(publicRequest.IsSetUserProfileNameEquals())
                 {
                     context.Writer.WritePropertyName("UserProfileNameEquals");
