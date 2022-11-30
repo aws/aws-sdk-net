@@ -45,6 +45,20 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GlueTable requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAdditionalOptions())
+            {
+                context.Writer.WritePropertyName("AdditionalOptions");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectAdditionalOptionsKvp in requestObject.AdditionalOptions)
+                {
+                    context.Writer.WritePropertyName(requestObjectAdditionalOptionsKvp.Key);
+                    var requestObjectAdditionalOptionsValue = requestObjectAdditionalOptionsKvp.Value;
+
+                        context.Writer.Write(requestObjectAdditionalOptionsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCatalogId())
             {
                 context.Writer.WritePropertyName("CatalogId");

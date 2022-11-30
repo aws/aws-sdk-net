@@ -49,6 +49,7 @@ namespace Amazon.Glue.Model
         private DropNullFields _dropNullFields;
         private DynamicTransform _dynamicTransform;
         private DynamoDBCatalogSource _dynamoDBCatalogSource;
+        private EvaluateDataQuality _evaluateDataQuality;
         private FillMissingValues _fillMissingValues;
         private Filter _filter;
         private GovernedCatalogSource _governedCatalogSource;
@@ -358,6 +359,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetDynamoDBCatalogSource()
         {
             return this._dynamoDBCatalogSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluateDataQuality. 
+        /// <para>
+        /// Specifies your data quality evaluation criteria.
+        /// </para>
+        /// </summary>
+        public EvaluateDataQuality EvaluateDataQuality
+        {
+            get { return this._evaluateDataQuality; }
+            set { this._evaluateDataQuality = value; }
+        }
+
+        // Check to see if EvaluateDataQuality property is set
+        internal bool IsSetEvaluateDataQuality()
+        {
+            return this._evaluateDataQuality != null;
         }
 
         /// <summary>

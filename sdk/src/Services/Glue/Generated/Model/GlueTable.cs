@@ -33,10 +33,41 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GlueTable
     {
+        private Dictionary<string, string> _additionalOptions = new Dictionary<string, string>();
         private string _catalogId;
         private string _connectionName;
         private string _databaseName;
         private string _tableName;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalOptions. 
+        /// <para>
+        /// Additional options for the table. Currently there are two keys supported:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>pushDownPredicate</code>: to filter on partitions without having to list and
+        /// read all the files in your dataset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>catalogPartitionPredicate</code>: to use server-side partition pruning using
+        /// partition indexes in the Glue Data Catalog.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public Dictionary<string, string> AdditionalOptions
+        {
+            get { return this._additionalOptions; }
+            set { this._additionalOptions = value; }
+        }
+
+        // Check to see if AdditionalOptions property is set
+        internal bool IsSetAdditionalOptions()
+        {
+            return this._additionalOptions != null && this._additionalOptions.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CatalogId. 

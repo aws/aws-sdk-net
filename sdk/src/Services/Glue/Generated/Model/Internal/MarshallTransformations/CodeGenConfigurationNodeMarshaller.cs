@@ -210,6 +210,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEvaluateDataQuality())
+            {
+                context.Writer.WritePropertyName("EvaluateDataQuality");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EvaluateDataQualityMarshaller.Instance;
+                marshaller.Marshall(requestObject.EvaluateDataQuality, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFillMissingValues())
             {
                 context.Writer.WritePropertyName("FillMissingValues");

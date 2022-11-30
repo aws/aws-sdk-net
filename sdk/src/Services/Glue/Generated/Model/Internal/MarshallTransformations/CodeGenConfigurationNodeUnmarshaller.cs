@@ -154,6 +154,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.DynamoDBCatalogSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EvaluateDataQuality", targetDepth))
+                {
+                    var unmarshaller = EvaluateDataQualityUnmarshaller.Instance;
+                    unmarshalledObject.EvaluateDataQuality = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FillMissingValues", targetDepth))
                 {
                     var unmarshaller = FillMissingValuesUnmarshaller.Instance;

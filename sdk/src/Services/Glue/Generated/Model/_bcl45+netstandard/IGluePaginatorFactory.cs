@@ -146,6 +146,26 @@ namespace Amazon.Glue.Model
         IListCustomEntityTypesPaginator ListCustomEntityTypes(ListCustomEntityTypesRequest request);
 
         /// <summary>
+        /// Paginator for ListDataQualityResults operation
+        ///</summary>
+        IListDataQualityResultsPaginator ListDataQualityResults(ListDataQualityResultsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataQualityRuleRecommendationRuns operation
+        ///</summary>
+        IListDataQualityRuleRecommendationRunsPaginator ListDataQualityRuleRecommendationRuns(ListDataQualityRuleRecommendationRunsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataQualityRulesetEvaluationRuns operation
+        ///</summary>
+        IListDataQualityRulesetEvaluationRunsPaginator ListDataQualityRulesetEvaluationRuns(ListDataQualityRulesetEvaluationRunsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataQualityRulesets operation
+        ///</summary>
+        IListDataQualityRulesetsPaginator ListDataQualityRulesets(ListDataQualityRulesetsRequest request);
+
+        /// <summary>
         /// Paginator for ListDevEndpoints operation
         ///</summary>
         IListDevEndpointsPaginator ListDevEndpoints(ListDevEndpointsRequest request);

@@ -814,6 +814,65 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  BatchGetDataQualityResult
+
+
+        /// <summary>
+        /// Retrieves a list of data quality results for the specified result IDs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDataQualityResult service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetDataQualityResult service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDataQualityResult">REST API Reference for BatchGetDataQualityResult Operation</seealso>
+        public virtual BatchGetDataQualityResultResponse BatchGetDataQualityResult(BatchGetDataQualityResultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetDataQualityResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetDataQualityResultResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetDataQualityResultResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a list of data quality results for the specified result IDs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDataQualityResult service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetDataQualityResult service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDataQualityResult">REST API Reference for BatchGetDataQualityResult Operation</seealso>
+        public virtual Task<BatchGetDataQualityResultResponse> BatchGetDataQualityResultAsync(BatchGetDataQualityResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetDataQualityResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetDataQualityResultResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetDataQualityResultResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetDevEndpoints
 
 
@@ -1283,6 +1342,136 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = BatchUpdatePartitionResponseUnmarshaller.Instance;
             
             return InvokeAsync<BatchUpdatePartitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CancelDataQualityRuleRecommendationRun
+
+
+        /// <summary>
+        /// Cancels the specified recommendation run that was being used to generate rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelDataQualityRuleRecommendationRun service method.</param>
+        /// 
+        /// <returns>The response from the CancelDataQualityRuleRecommendationRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelDataQualityRuleRecommendationRun">REST API Reference for CancelDataQualityRuleRecommendationRun Operation</seealso>
+        public virtual CancelDataQualityRuleRecommendationRunResponse CancelDataQualityRuleRecommendationRun(CancelDataQualityRuleRecommendationRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelDataQualityRuleRecommendationRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelDataQualityRuleRecommendationRunResponseUnmarshaller.Instance;
+
+            return Invoke<CancelDataQualityRuleRecommendationRunResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Cancels the specified recommendation run that was being used to generate rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelDataQualityRuleRecommendationRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelDataQualityRuleRecommendationRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelDataQualityRuleRecommendationRun">REST API Reference for CancelDataQualityRuleRecommendationRun Operation</seealso>
+        public virtual Task<CancelDataQualityRuleRecommendationRunResponse> CancelDataQualityRuleRecommendationRunAsync(CancelDataQualityRuleRecommendationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelDataQualityRuleRecommendationRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelDataQualityRuleRecommendationRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelDataQualityRuleRecommendationRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CancelDataQualityRulesetEvaluationRun
+
+
+        /// <summary>
+        /// Cancels a run where a ruleset is being evaluated against a data source.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelDataQualityRulesetEvaluationRun service method.</param>
+        /// 
+        /// <returns>The response from the CancelDataQualityRulesetEvaluationRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelDataQualityRulesetEvaluationRun">REST API Reference for CancelDataQualityRulesetEvaluationRun Operation</seealso>
+        public virtual CancelDataQualityRulesetEvaluationRunResponse CancelDataQualityRulesetEvaluationRun(CancelDataQualityRulesetEvaluationRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelDataQualityRulesetEvaluationRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelDataQualityRulesetEvaluationRunResponseUnmarshaller.Instance;
+
+            return Invoke<CancelDataQualityRulesetEvaluationRunResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Cancels a run where a ruleset is being evaluated against a data source.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelDataQualityRulesetEvaluationRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelDataQualityRulesetEvaluationRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelDataQualityRulesetEvaluationRun">REST API Reference for CancelDataQualityRulesetEvaluationRun Operation</seealso>
+        public virtual Task<CancelDataQualityRulesetEvaluationRunResponse> CancelDataQualityRulesetEvaluationRunAsync(CancelDataQualityRulesetEvaluationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelDataQualityRulesetEvaluationRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelDataQualityRulesetEvaluationRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelDataQualityRulesetEvaluationRunResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1948,6 +2137,89 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = CreateDatabaseResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateDatabaseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDataQualityRuleset
+
+
+        /// <summary>
+        /// Creates a data quality ruleset with DQDL rules applied to a specified Glue table.
+        /// 
+        ///  
+        /// <para>
+        /// You create the ruleset using the Data Quality Definition Language (DQDL). For more
+        /// information, see the Glue developer guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataQualityRuleset service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataQualityRuleset service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDataQualityRuleset">REST API Reference for CreateDataQualityRuleset Operation</seealso>
+        public virtual CreateDataQualityRulesetResponse CreateDataQualityRuleset(CreateDataQualityRulesetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataQualityRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataQualityRulesetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataQualityRulesetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a data quality ruleset with DQDL rules applied to a specified Glue table.
+        /// 
+        ///  
+        /// <para>
+        /// You create the ruleset using the Data Quality Definition Language (DQDL). For more
+        /// information, see the Glue developer guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataQualityRuleset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataQualityRuleset service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDataQualityRuleset">REST API Reference for CreateDataQualityRuleset Operation</seealso>
+        public virtual Task<CreateDataQualityRulesetResponse> CreateDataQualityRulesetAsync(CreateDataQualityRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataQualityRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataQualityRulesetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDataQualityRulesetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3736,6 +4008,71 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = DeleteDatabaseResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteDatabaseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDataQualityRuleset
+
+
+        /// <summary>
+        /// Deletes a data quality ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataQualityRuleset service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataQualityRuleset service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDataQualityRuleset">REST API Reference for DeleteDataQualityRuleset Operation</seealso>
+        public virtual DeleteDataQualityRulesetResponse DeleteDataQualityRuleset(DeleteDataQualityRulesetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataQualityRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataQualityRulesetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataQualityRulesetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a data quality ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataQualityRuleset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataQualityRuleset service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDataQualityRuleset">REST API Reference for DeleteDataQualityRuleset Operation</seealso>
+        public virtual Task<DeleteDataQualityRulesetResponse> DeleteDataQualityRulesetAsync(DeleteDataQualityRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataQualityRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataQualityRulesetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDataQualityRulesetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6022,6 +6359,266 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = GetDataflowGraphResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetDataflowGraphResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDataQualityResult
+
+
+        /// <summary>
+        /// Retrieves the result of a data quality rule evaluation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityResult service method.</param>
+        /// 
+        /// <returns>The response from the GetDataQualityResult service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityResult">REST API Reference for GetDataQualityResult Operation</seealso>
+        public virtual GetDataQualityResultResponse GetDataQualityResult(GetDataQualityResultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataQualityResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataQualityResultResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataQualityResultResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the result of a data quality rule evaluation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityResult service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataQualityResult service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityResult">REST API Reference for GetDataQualityResult Operation</seealso>
+        public virtual Task<GetDataQualityResultResponse> GetDataQualityResultAsync(GetDataQualityResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataQualityResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataQualityResultResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDataQualityResultResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDataQualityRuleRecommendationRun
+
+
+        /// <summary>
+        /// Gets the specified recommendation run that was used to generate rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityRuleRecommendationRun service method.</param>
+        /// 
+        /// <returns>The response from the GetDataQualityRuleRecommendationRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRuleRecommendationRun">REST API Reference for GetDataQualityRuleRecommendationRun Operation</seealso>
+        public virtual GetDataQualityRuleRecommendationRunResponse GetDataQualityRuleRecommendationRun(GetDataQualityRuleRecommendationRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataQualityRuleRecommendationRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataQualityRuleRecommendationRunResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataQualityRuleRecommendationRunResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the specified recommendation run that was used to generate rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityRuleRecommendationRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataQualityRuleRecommendationRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRuleRecommendationRun">REST API Reference for GetDataQualityRuleRecommendationRun Operation</seealso>
+        public virtual Task<GetDataQualityRuleRecommendationRunResponse> GetDataQualityRuleRecommendationRunAsync(GetDataQualityRuleRecommendationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataQualityRuleRecommendationRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataQualityRuleRecommendationRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDataQualityRuleRecommendationRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDataQualityRuleset
+
+
+        /// <summary>
+        /// Returns an existing ruleset by identifier or name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityRuleset service method.</param>
+        /// 
+        /// <returns>The response from the GetDataQualityRuleset service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRuleset">REST API Reference for GetDataQualityRuleset Operation</seealso>
+        public virtual GetDataQualityRulesetResponse GetDataQualityRuleset(GetDataQualityRulesetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataQualityRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataQualityRulesetResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataQualityRulesetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns an existing ruleset by identifier or name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityRuleset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataQualityRuleset service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRuleset">REST API Reference for GetDataQualityRuleset Operation</seealso>
+        public virtual Task<GetDataQualityRulesetResponse> GetDataQualityRulesetAsync(GetDataQualityRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataQualityRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataQualityRulesetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDataQualityRulesetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDataQualityRulesetEvaluationRun
+
+
+        /// <summary>
+        /// Retrieves a specific run where a ruleset is evaluated against a data source.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityRulesetEvaluationRun service method.</param>
+        /// 
+        /// <returns>The response from the GetDataQualityRulesetEvaluationRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRulesetEvaluationRun">REST API Reference for GetDataQualityRulesetEvaluationRun Operation</seealso>
+        public virtual GetDataQualityRulesetEvaluationRunResponse GetDataQualityRulesetEvaluationRun(GetDataQualityRulesetEvaluationRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataQualityRulesetEvaluationRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataQualityRulesetEvaluationRunResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataQualityRulesetEvaluationRunResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a specific run where a ruleset is evaluated against a data source.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityRulesetEvaluationRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataQualityRulesetEvaluationRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRulesetEvaluationRun">REST API Reference for GetDataQualityRulesetEvaluationRun Operation</seealso>
+        public virtual Task<GetDataQualityRulesetEvaluationRunResponse> GetDataQualityRulesetEvaluationRunAsync(GetDataQualityRulesetEvaluationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataQualityRulesetEvaluationRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataQualityRulesetEvaluationRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDataQualityRulesetEvaluationRunResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -9448,6 +10045,250 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListDataQualityResults
+
+
+        /// <summary>
+        /// Returns all data quality execution results for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityResults service method.</param>
+        /// 
+        /// <returns>The response from the ListDataQualityResults service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityResults">REST API Reference for ListDataQualityResults Operation</seealso>
+        public virtual ListDataQualityResultsResponse ListDataQualityResults(ListDataQualityResultsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataQualityResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataQualityResultsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataQualityResultsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns all data quality execution results for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityResults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataQualityResults service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityResults">REST API Reference for ListDataQualityResults Operation</seealso>
+        public virtual Task<ListDataQualityResultsResponse> ListDataQualityResultsAsync(ListDataQualityResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataQualityResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataQualityResultsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDataQualityResultsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataQualityRuleRecommendationRuns
+
+
+        /// <summary>
+        /// Lists the recommendation runs meeting the filter criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityRuleRecommendationRuns service method.</param>
+        /// 
+        /// <returns>The response from the ListDataQualityRuleRecommendationRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRuleRecommendationRuns">REST API Reference for ListDataQualityRuleRecommendationRuns Operation</seealso>
+        public virtual ListDataQualityRuleRecommendationRunsResponse ListDataQualityRuleRecommendationRuns(ListDataQualityRuleRecommendationRunsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataQualityRuleRecommendationRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataQualityRuleRecommendationRunsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataQualityRuleRecommendationRunsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the recommendation runs meeting the filter criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityRuleRecommendationRuns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataQualityRuleRecommendationRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRuleRecommendationRuns">REST API Reference for ListDataQualityRuleRecommendationRuns Operation</seealso>
+        public virtual Task<ListDataQualityRuleRecommendationRunsResponse> ListDataQualityRuleRecommendationRunsAsync(ListDataQualityRuleRecommendationRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataQualityRuleRecommendationRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataQualityRuleRecommendationRunsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDataQualityRuleRecommendationRunsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataQualityRulesetEvaluationRuns
+
+
+        /// <summary>
+        /// Lists all the runs meeting the filter criteria, where a ruleset is evaluated against
+        /// a data source.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityRulesetEvaluationRuns service method.</param>
+        /// 
+        /// <returns>The response from the ListDataQualityRulesetEvaluationRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRulesetEvaluationRuns">REST API Reference for ListDataQualityRulesetEvaluationRuns Operation</seealso>
+        public virtual ListDataQualityRulesetEvaluationRunsResponse ListDataQualityRulesetEvaluationRuns(ListDataQualityRulesetEvaluationRunsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataQualityRulesetEvaluationRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataQualityRulesetEvaluationRunsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataQualityRulesetEvaluationRunsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all the runs meeting the filter criteria, where a ruleset is evaluated against
+        /// a data source.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityRulesetEvaluationRuns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataQualityRulesetEvaluationRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRulesetEvaluationRuns">REST API Reference for ListDataQualityRulesetEvaluationRuns Operation</seealso>
+        public virtual Task<ListDataQualityRulesetEvaluationRunsResponse> ListDataQualityRulesetEvaluationRunsAsync(ListDataQualityRulesetEvaluationRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataQualityRulesetEvaluationRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataQualityRulesetEvaluationRunsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDataQualityRulesetEvaluationRunsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataQualityRulesets
+
+
+        /// <summary>
+        /// Returns a paginated list of rulesets for the specified list of Glue tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityRulesets service method.</param>
+        /// 
+        /// <returns>The response from the ListDataQualityRulesets service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRulesets">REST API Reference for ListDataQualityRulesets Operation</seealso>
+        public virtual ListDataQualityRulesetsResponse ListDataQualityRulesets(ListDataQualityRulesetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataQualityRulesetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataQualityRulesetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataQualityRulesetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of rulesets for the specified list of Glue tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityRulesets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataQualityRulesets service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRulesets">REST API Reference for ListDataQualityRulesets Operation</seealso>
+        public virtual Task<ListDataQualityRulesetsResponse> ListDataQualityRulesetsAsync(ListDataQualityRulesetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataQualityRulesetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataQualityRulesetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDataQualityRulesetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDevEndpoints
 
 
@@ -11278,6 +12119,154 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  StartDataQualityRuleRecommendationRun
+
+
+        /// <summary>
+        /// Starts a recommendation run that is used to generate rules when you don't know what
+        /// rules to write. Glue Data Quality analyzes the data and comes up with recommendations
+        /// for a potential ruleset. You can then triage the ruleset and modify the generated
+        /// ruleset to your liking.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDataQualityRuleRecommendationRun service method.</param>
+        /// 
+        /// <returns>The response from the StartDataQualityRuleRecommendationRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConflictException">
+        /// The <code>CreatePartitions</code> API was called on a table that has indexes enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartDataQualityRuleRecommendationRun">REST API Reference for StartDataQualityRuleRecommendationRun Operation</seealso>
+        public virtual StartDataQualityRuleRecommendationRunResponse StartDataQualityRuleRecommendationRun(StartDataQualityRuleRecommendationRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDataQualityRuleRecommendationRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDataQualityRuleRecommendationRunResponseUnmarshaller.Instance;
+
+            return Invoke<StartDataQualityRuleRecommendationRunResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a recommendation run that is used to generate rules when you don't know what
+        /// rules to write. Glue Data Quality analyzes the data and comes up with recommendations
+        /// for a potential ruleset. You can then triage the ruleset and modify the generated
+        /// ruleset to your liking.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDataQualityRuleRecommendationRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartDataQualityRuleRecommendationRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConflictException">
+        /// The <code>CreatePartitions</code> API was called on a table that has indexes enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartDataQualityRuleRecommendationRun">REST API Reference for StartDataQualityRuleRecommendationRun Operation</seealso>
+        public virtual Task<StartDataQualityRuleRecommendationRunResponse> StartDataQualityRuleRecommendationRunAsync(StartDataQualityRuleRecommendationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDataQualityRuleRecommendationRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDataQualityRuleRecommendationRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartDataQualityRuleRecommendationRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartDataQualityRulesetEvaluationRun
+
+
+        /// <summary>
+        /// Once you have a ruleset definition (either recommended or your own), you call this
+        /// operation to evaluate the ruleset against a data source (Glue table). The evaluation
+        /// computes results which you can retrieve with the <code>GetDataQualityResult</code>
+        /// API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDataQualityRulesetEvaluationRun service method.</param>
+        /// 
+        /// <returns>The response from the StartDataQualityRulesetEvaluationRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConflictException">
+        /// The <code>CreatePartitions</code> API was called on a table that has indexes enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartDataQualityRulesetEvaluationRun">REST API Reference for StartDataQualityRulesetEvaluationRun Operation</seealso>
+        public virtual StartDataQualityRulesetEvaluationRunResponse StartDataQualityRulesetEvaluationRun(StartDataQualityRulesetEvaluationRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDataQualityRulesetEvaluationRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDataQualityRulesetEvaluationRunResponseUnmarshaller.Instance;
+
+            return Invoke<StartDataQualityRulesetEvaluationRunResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Once you have a ruleset definition (either recommended or your own), you call this
+        /// operation to evaluate the ruleset against a data source (Glue table). The evaluation
+        /// computes results which you can retrieve with the <code>GetDataQualityResult</code>
+        /// API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDataQualityRulesetEvaluationRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartDataQualityRulesetEvaluationRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConflictException">
+        /// The <code>CreatePartitions</code> API was called on a table that has indexes enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartDataQualityRulesetEvaluationRun">REST API Reference for StartDataQualityRulesetEvaluationRun Operation</seealso>
+        public virtual Task<StartDataQualityRulesetEvaluationRunResponse> StartDataQualityRulesetEvaluationRunAsync(StartDataQualityRulesetEvaluationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDataQualityRulesetEvaluationRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDataQualityRulesetEvaluationRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartDataQualityRulesetEvaluationRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartExportLabelsTaskRun
 
 
@@ -13020,6 +14009,89 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = UpdateDatabaseResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateDatabaseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDataQualityRuleset
+
+
+        /// <summary>
+        /// Updates the specified data quality ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataQualityRuleset service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDataQualityRuleset service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IdempotentParameterMismatchException">
+        /// The same unique identifier was associated with two different records.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDataQualityRuleset">REST API Reference for UpdateDataQualityRuleset Operation</seealso>
+        public virtual UpdateDataQualityRulesetResponse UpdateDataQualityRuleset(UpdateDataQualityRulesetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataQualityRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataQualityRulesetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataQualityRulesetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the specified data quality ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataQualityRuleset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataQualityRuleset service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IdempotentParameterMismatchException">
+        /// The same unique identifier was associated with two different records.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDataQualityRuleset">REST API Reference for UpdateDataQualityRuleset Operation</seealso>
+        public virtual Task<UpdateDataQualityRulesetResponse> UpdateDataQualityRulesetAsync(UpdateDataQualityRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataQualityRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataQualityRulesetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateDataQualityRulesetResponse>(request, options, cancellationToken);
         }
 
         #endregion

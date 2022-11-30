@@ -1229,6 +1229,60 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type DataQualityRuleResultStatus.
+    /// </summary>
+    public class DataQualityRuleResultStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for DataQualityRuleResultStatus
+        /// </summary>
+        public static readonly DataQualityRuleResultStatus ERROR = new DataQualityRuleResultStatus("ERROR");
+        /// <summary>
+        /// Constant FAIL for DataQualityRuleResultStatus
+        /// </summary>
+        public static readonly DataQualityRuleResultStatus FAIL = new DataQualityRuleResultStatus("FAIL");
+        /// <summary>
+        /// Constant PASS for DataQualityRuleResultStatus
+        /// </summary>
+        public static readonly DataQualityRuleResultStatus PASS = new DataQualityRuleResultStatus("PASS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataQualityRuleResultStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataQualityRuleResultStatus FindValue(string value)
+        {
+            return FindValue<DataQualityRuleResultStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataQualityRuleResultStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeleteBehavior.
     /// </summary>
     public class DeleteBehavior : ConstantClass
@@ -1276,6 +1330,106 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DeleteBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DQStopJobOnFailureTiming.
+    /// </summary>
+    public class DQStopJobOnFailureTiming : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AfterDataLoad for DQStopJobOnFailureTiming
+        /// </summary>
+        public static readonly DQStopJobOnFailureTiming AfterDataLoad = new DQStopJobOnFailureTiming("AfterDataLoad");
+        /// <summary>
+        /// Constant Immediate for DQStopJobOnFailureTiming
+        /// </summary>
+        public static readonly DQStopJobOnFailureTiming Immediate = new DQStopJobOnFailureTiming("Immediate");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DQStopJobOnFailureTiming(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DQStopJobOnFailureTiming FindValue(string value)
+        {
+            return FindValue<DQStopJobOnFailureTiming>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DQStopJobOnFailureTiming(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DQTransformOutput.
+    /// </summary>
+    public class DQTransformOutput : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EvaluationResults for DQTransformOutput
+        /// </summary>
+        public static readonly DQTransformOutput EvaluationResults = new DQTransformOutput("EvaluationResults");
+        /// <summary>
+        /// Constant PrimaryInput for DQTransformOutput
+        /// </summary>
+        public static readonly DQTransformOutput PrimaryInput = new DQTransformOutput("PrimaryInput");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DQTransformOutput(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DQTransformOutput FindValue(string value)
+        {
+            return FindValue<DQTransformOutput>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DQTransformOutput(string value)
         {
             return FindValue(value);
         }

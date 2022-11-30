@@ -228,6 +228,38 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Paginator for ListDataQualityResults operation
+        ///</summary>
+        public IListDataQualityResultsPaginator ListDataQualityResults(ListDataQualityResultsRequest request) 
+        {
+            return new ListDataQualityResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataQualityRuleRecommendationRuns operation
+        ///</summary>
+        public IListDataQualityRuleRecommendationRunsPaginator ListDataQualityRuleRecommendationRuns(ListDataQualityRuleRecommendationRunsRequest request) 
+        {
+            return new ListDataQualityRuleRecommendationRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataQualityRulesetEvaluationRuns operation
+        ///</summary>
+        public IListDataQualityRulesetEvaluationRunsPaginator ListDataQualityRulesetEvaluationRuns(ListDataQualityRulesetEvaluationRunsRequest request) 
+        {
+            return new ListDataQualityRulesetEvaluationRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataQualityRulesets operation
+        ///</summary>
+        public IListDataQualityRulesetsPaginator ListDataQualityRulesets(ListDataQualityRulesetsRequest request) 
+        {
+            return new ListDataQualityRulesetsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDevEndpoints operation
         ///</summary>
         public IListDevEndpointsPaginator ListDevEndpoints(ListDevEndpointsRequest request) 
