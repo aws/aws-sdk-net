@@ -1,3 +1,24 @@
+### 3.7.428.0 (2022-11-30 19:26 UTC)
+* AccessAnalyzer (3.7.102.0)
+	* This release adds support for S3 cross account access points. IAM Access Analyzer will now produce public or cross account findings when it detects bucket delegation to external account access points.
+* Athena (3.7.102.0)
+	* This release includes support for using Apache Spark in Amazon Athena.
+* DataExchange (3.7.101.0)
+	* This release enables data providers to license direct access to data in their Amazon S3 buckets or AWS Lake Formation data lakes through AWS Data Exchange. Subscribers get read-only access to the data and can use it in downstream AWS services, like Amazon Athena, without creating or managing copies.
+* DocDBElastic (3.7.100.0)
+	* Launched Amazon DocumentDB Elastic Clusters. You can now use the SDK to create, list, update and delete Amazon DocumentDB Elastic Cluster resources
+* Glue (3.7.104.0)
+	* This release adds support for AWS Glue Data Quality, which helps you evaluate and monitor the quality of your data and includes the API for creating, deleting, or updating data quality rulesets, runs and evaluations.
+* S3Control (3.7.104.0)
+	* Amazon S3 now supports cross-account access points. S3 bucket owners can now allow trusted AWS accounts to create access points associated with their bucket.
+* SageMaker (3.7.108.0)
+	* Added Models as part of the Search API. Added Model shadow deployments in realtime inference, and shadow testing in managed inference. Added support for shared spaces, geospatial APIs, Model Cards, AutoMLJobStep in pipelines, Git repositories on user profiles and domains, Model sharing in Jumpstart.
+* SageMakerGeospatial (3.7.100.0)
+	* This release provides Amazon SageMaker geospatial APIs to build, train, deploy and visualize geospatial models.
+* Core 3.7.100.26
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.427.0 (2022-11-29 19:23 UTC)
 * EC2 (3.7.111.0)
 	* This release adds support for AWS Verified Access and the Hpc6id Amazon EC2 compute optimized instance type, which features 3rd generation Intel Xeon Scalable processors.
