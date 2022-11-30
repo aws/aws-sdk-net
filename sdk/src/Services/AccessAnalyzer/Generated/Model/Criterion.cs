@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
-    /// The criteria to use in the filter that defines the archive rule.
+    /// The criteria to use in the filter that defines the archive rule. For more information
+    /// on available filter keys, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM
+    /// Access Analyzer filter keys</a>.
     /// </summary>
     public partial class Criterion
     {

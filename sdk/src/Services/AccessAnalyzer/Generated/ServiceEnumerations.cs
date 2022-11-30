@@ -320,6 +320,10 @@ namespace Amazon.AccessAnalyzer
         /// Constant S3_ACCESS_POINT for FindingSourceType
         /// </summary>
         public static readonly FindingSourceType S3_ACCESS_POINT = new FindingSourceType("S3_ACCESS_POINT");
+        /// <summary>
+        /// Constant S3_ACCESS_POINT_ACCOUNT for FindingSourceType
+        /// </summary>
+        public static readonly FindingSourceType S3_ACCESS_POINT_ACCOUNT = new FindingSourceType("S3_ACCESS_POINT_ACCOUNT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
