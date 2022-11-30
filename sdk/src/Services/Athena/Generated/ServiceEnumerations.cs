@@ -25,6 +25,80 @@ namespace Amazon.Athena
 {
 
     /// <summary>
+    /// Constants used for properties of type CalculationExecutionState.
+    /// </summary>
+    public class CalculationExecutionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELED for CalculationExecutionState
+        /// </summary>
+        public static readonly CalculationExecutionState CANCELED = new CalculationExecutionState("CANCELED");
+        /// <summary>
+        /// Constant CANCELING for CalculationExecutionState
+        /// </summary>
+        public static readonly CalculationExecutionState CANCELING = new CalculationExecutionState("CANCELING");
+        /// <summary>
+        /// Constant COMPLETED for CalculationExecutionState
+        /// </summary>
+        public static readonly CalculationExecutionState COMPLETED = new CalculationExecutionState("COMPLETED");
+        /// <summary>
+        /// Constant CREATED for CalculationExecutionState
+        /// </summary>
+        public static readonly CalculationExecutionState CREATED = new CalculationExecutionState("CREATED");
+        /// <summary>
+        /// Constant CREATING for CalculationExecutionState
+        /// </summary>
+        public static readonly CalculationExecutionState CREATING = new CalculationExecutionState("CREATING");
+        /// <summary>
+        /// Constant FAILED for CalculationExecutionState
+        /// </summary>
+        public static readonly CalculationExecutionState FAILED = new CalculationExecutionState("FAILED");
+        /// <summary>
+        /// Constant QUEUED for CalculationExecutionState
+        /// </summary>
+        public static readonly CalculationExecutionState QUEUED = new CalculationExecutionState("QUEUED");
+        /// <summary>
+        /// Constant RUNNING for CalculationExecutionState
+        /// </summary>
+        public static readonly CalculationExecutionState RUNNING = new CalculationExecutionState("RUNNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CalculationExecutionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CalculationExecutionState FindValue(string value)
+        {
+            return FindValue<CalculationExecutionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CalculationExecutionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ColumnNullable.
     /// </summary>
     public class ColumnNullable : ConstantClass
@@ -187,6 +261,172 @@ namespace Amazon.Athena
 
 
     /// <summary>
+    /// Constants used for properties of type ExecutorState.
+    /// </summary>
+    public class ExecutorState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for ExecutorState
+        /// </summary>
+        public static readonly ExecutorState CREATED = new ExecutorState("CREATED");
+        /// <summary>
+        /// Constant CREATING for ExecutorState
+        /// </summary>
+        public static readonly ExecutorState CREATING = new ExecutorState("CREATING");
+        /// <summary>
+        /// Constant FAILED for ExecutorState
+        /// </summary>
+        public static readonly ExecutorState FAILED = new ExecutorState("FAILED");
+        /// <summary>
+        /// Constant REGISTERED for ExecutorState
+        /// </summary>
+        public static readonly ExecutorState REGISTERED = new ExecutorState("REGISTERED");
+        /// <summary>
+        /// Constant TERMINATED for ExecutorState
+        /// </summary>
+        public static readonly ExecutorState TERMINATED = new ExecutorState("TERMINATED");
+        /// <summary>
+        /// Constant TERMINATING for ExecutorState
+        /// </summary>
+        public static readonly ExecutorState TERMINATING = new ExecutorState("TERMINATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutorState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutorState FindValue(string value)
+        {
+            return FindValue<ExecutorState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutorState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExecutorType.
+    /// </summary>
+    public class ExecutorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COORDINATOR for ExecutorType
+        /// </summary>
+        public static readonly ExecutorType COORDINATOR = new ExecutorType("COORDINATOR");
+        /// <summary>
+        /// Constant GATEWAY for ExecutorType
+        /// </summary>
+        public static readonly ExecutorType GATEWAY = new ExecutorType("GATEWAY");
+        /// <summary>
+        /// Constant WORKER for ExecutorType
+        /// </summary>
+        public static readonly ExecutorType WORKER = new ExecutorType("WORKER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutorType FindValue(string value)
+        {
+            return FindValue<ExecutorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotebookType.
+    /// </summary>
+    public class NotebookType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IPYNB for NotebookType
+        /// </summary>
+        public static readonly NotebookType IPYNB = new NotebookType("IPYNB");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotebookType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotebookType FindValue(string value)
+        {
+            return FindValue<NotebookType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotebookType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type QueryExecutionState.
     /// </summary>
     public class QueryExecutionState : ConstantClass
@@ -288,6 +528,80 @@ namespace Amazon.Athena
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator S3AclOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SessionState.
+    /// </summary>
+    public class SessionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BUSY for SessionState
+        /// </summary>
+        public static readonly SessionState BUSY = new SessionState("BUSY");
+        /// <summary>
+        /// Constant CREATED for SessionState
+        /// </summary>
+        public static readonly SessionState CREATED = new SessionState("CREATED");
+        /// <summary>
+        /// Constant CREATING for SessionState
+        /// </summary>
+        public static readonly SessionState CREATING = new SessionState("CREATING");
+        /// <summary>
+        /// Constant DEGRADED for SessionState
+        /// </summary>
+        public static readonly SessionState DEGRADED = new SessionState("DEGRADED");
+        /// <summary>
+        /// Constant FAILED for SessionState
+        /// </summary>
+        public static readonly SessionState FAILED = new SessionState("FAILED");
+        /// <summary>
+        /// Constant IDLE for SessionState
+        /// </summary>
+        public static readonly SessionState IDLE = new SessionState("IDLE");
+        /// <summary>
+        /// Constant TERMINATED for SessionState
+        /// </summary>
+        public static readonly SessionState TERMINATED = new SessionState("TERMINATED");
+        /// <summary>
+        /// Constant TERMINATING for SessionState
+        /// </summary>
+        public static readonly SessionState TERMINATING = new SessionState("TERMINATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SessionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionState FindValue(string value)
+        {
+            return FindValue<SessionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionState(string value)
         {
             return FindValue(value);
         }

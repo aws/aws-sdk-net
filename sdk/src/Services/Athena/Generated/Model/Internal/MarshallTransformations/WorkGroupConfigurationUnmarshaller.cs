@@ -64,10 +64,22 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AdditionalConfiguration", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AdditionalConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BytesScannedCutoffPerQuery", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
                     unmarshalledObject.BytesScannedCutoffPerQuery = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CustomerContentEncryptionConfiguration", targetDepth))
+                {
+                    var unmarshaller = CustomerContentEncryptionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.CustomerContentEncryptionConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnforceWorkGroupConfiguration", targetDepth))
@@ -80,6 +92,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = EngineVersionUnmarshaller.Instance;
                     unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExecutionRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PublishCloudWatchMetricsEnabled", targetDepth))

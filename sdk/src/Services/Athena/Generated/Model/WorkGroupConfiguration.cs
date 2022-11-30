@@ -39,12 +39,34 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class WorkGroupConfiguration
     {
+        private string _additionalConfiguration;
         private long? _bytesScannedCutoffPerQuery;
+        private CustomerContentEncryptionConfiguration _customerContentEncryptionConfiguration;
         private bool? _enforceWorkGroupConfiguration;
         private EngineVersion _engineVersion;
+        private string _executionRole;
         private bool? _publishCloudWatchMetricsEnabled;
         private bool? _requesterPaysEnabled;
         private ResultConfiguration _resultConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalConfiguration. 
+        /// <para>
+        /// Specifies a user defined JSON string that is passed to the notebook engine.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string AdditionalConfiguration
+        {
+            get { return this._additionalConfiguration; }
+            set { this._additionalConfiguration = value; }
+        }
+
+        // Check to see if AdditionalConfiguration property is set
+        internal bool IsSetAdditionalConfiguration()
+        {
+            return this._additionalConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BytesScannedCutoffPerQuery. 
@@ -64,6 +86,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetBytesScannedCutoffPerQuery()
         {
             return this._bytesScannedCutoffPerQuery.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerContentEncryptionConfiguration. 
+        /// <para>
+        /// Specifies the KMS key that is used to encrypt the user's data stores in Athena.
+        /// </para>
+        /// </summary>
+        public CustomerContentEncryptionConfiguration CustomerContentEncryptionConfiguration
+        {
+            get { return this._customerContentEncryptionConfiguration; }
+            set { this._customerContentEncryptionConfiguration = value; }
+        }
+
+        // Check to see if CustomerContentEncryptionConfiguration property is set
+        internal bool IsSetCustomerContentEncryptionConfiguration()
+        {
+            return this._customerContentEncryptionConfiguration != null;
         }
 
         /// <summary>
@@ -103,6 +143,25 @@ namespace Amazon.Athena.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRole. 
+        /// <para>
+        /// Role used in a notebook session for accessing the user's resources.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ExecutionRole
+        {
+            get { return this._executionRole; }
+            set { this._executionRole = value; }
+        }
+
+        // Check to see if ExecutionRole property is set
+        internal bool IsSetExecutionRole()
+        {
+            return this._executionRole != null;
         }
 
         /// <summary>

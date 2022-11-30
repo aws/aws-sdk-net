@@ -31,6 +31,16 @@ namespace Amazon.Athena.Model
         IGetQueryResultsPaginator GetQueryResults(GetQueryResultsRequest request);
 
         /// <summary>
+        /// Paginator for ListApplicationDPUSizes operation
+        ///</summary>
+        IListApplicationDPUSizesPaginator ListApplicationDPUSizes(ListApplicationDPUSizesRequest request);
+
+        /// <summary>
+        /// Paginator for ListCalculationExecutions operation
+        ///</summary>
+        IListCalculationExecutionsPaginator ListCalculationExecutions(ListCalculationExecutionsRequest request);
+
+        /// <summary>
         /// Paginator for ListDatabases operation
         ///</summary>
         IListDatabasesPaginator ListDatabases(ListDatabasesRequest request);
@@ -46,6 +56,11 @@ namespace Amazon.Athena.Model
         IListEngineVersionsPaginator ListEngineVersions(ListEngineVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListExecutors operation
+        ///</summary>
+        IListExecutorsPaginator ListExecutors(ListExecutorsRequest request);
+
+        /// <summary>
         /// Paginator for ListNamedQueries operation
         ///</summary>
         IListNamedQueriesPaginator ListNamedQueries(ListNamedQueriesRequest request);
@@ -59,6 +74,11 @@ namespace Amazon.Athena.Model
         /// Paginator for ListQueryExecutions operation
         ///</summary>
         IListQueryExecutionsPaginator ListQueryExecutions(ListQueryExecutionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSessions operation
+        ///</summary>
+        IListSessionsPaginator ListSessions(ListSessionsRequest request);
 
         /// <summary>
         /// Paginator for ListTableMetadata operation

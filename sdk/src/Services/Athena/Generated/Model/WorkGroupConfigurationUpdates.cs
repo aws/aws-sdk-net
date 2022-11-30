@@ -37,13 +37,36 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class WorkGroupConfigurationUpdates
     {
+        private string _additionalConfiguration;
         private long? _bytesScannedCutoffPerQuery;
+        private CustomerContentEncryptionConfiguration _customerContentEncryptionConfiguration;
         private bool? _enforceWorkGroupConfiguration;
         private EngineVersion _engineVersion;
+        private string _executionRole;
         private bool? _publishCloudWatchMetricsEnabled;
         private bool? _removeBytesScannedCutoffPerQuery;
+        private bool? _removeCustomerContentEncryptionConfiguration;
         private bool? _requesterPaysEnabled;
         private ResultConfigurationUpdates _resultConfigurationUpdates;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalConfiguration. 
+        /// <para>
+        /// Contains a user defined string in JSON format for a Spark-enabled workgroup.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string AdditionalConfiguration
+        {
+            get { return this._additionalConfiguration; }
+            set { this._additionalConfiguration = value; }
+        }
+
+        // Check to see if AdditionalConfiguration property is set
+        internal bool IsSetAdditionalConfiguration()
+        {
+            return this._additionalConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BytesScannedCutoffPerQuery. 
@@ -63,6 +86,21 @@ namespace Amazon.Athena.Model
         internal bool IsSetBytesScannedCutoffPerQuery()
         {
             return this._bytesScannedCutoffPerQuery.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerContentEncryptionConfiguration.
+        /// </summary>
+        public CustomerContentEncryptionConfiguration CustomerContentEncryptionConfiguration
+        {
+            get { return this._customerContentEncryptionConfiguration; }
+            set { this._customerContentEncryptionConfiguration = value; }
+        }
+
+        // Check to see if CustomerContentEncryptionConfiguration property is set
+        internal bool IsSetCustomerContentEncryptionConfiguration()
+        {
+            return this._customerContentEncryptionConfiguration != null;
         }
 
         /// <summary>
@@ -107,6 +145,25 @@ namespace Amazon.Athena.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExecutionRole. 
+        /// <para>
+        /// Contains the ARN of the execution role for the workgroup
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ExecutionRole
+        {
+            get { return this._executionRole; }
+            set { this._executionRole = value; }
+        }
+
+        // Check to see if ExecutionRole property is set
+        internal bool IsSetExecutionRole()
+        {
+            return this._executionRole != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PublishCloudWatchMetricsEnabled. 
         /// <para>
         /// Indicates whether this workgroup enables publishing metrics to Amazon CloudWatch.
@@ -141,6 +198,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetRemoveBytesScannedCutoffPerQuery()
         {
             return this._removeBytesScannedCutoffPerQuery.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoveCustomerContentEncryptionConfiguration. 
+        /// <para>
+        /// Removes content encryption configuration for a workgroup.
+        /// </para>
+        /// </summary>
+        public bool RemoveCustomerContentEncryptionConfiguration
+        {
+            get { return this._removeCustomerContentEncryptionConfiguration.GetValueOrDefault(); }
+            set { this._removeCustomerContentEncryptionConfiguration = value; }
+        }
+
+        // Check to see if RemoveCustomerContentEncryptionConfiguration property is set
+        internal bool IsSetRemoveCustomerContentEncryptionConfiguration()
+        {
+            return this._removeCustomerContentEncryptionConfiguration.HasValue; 
         }
 
         /// <summary>

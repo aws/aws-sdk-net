@@ -44,6 +44,22 @@ namespace Amazon.Athena.Model
         }
 
         /// <summary>
+        /// Paginator for ListApplicationDPUSizes operation
+        ///</summary>
+        public IListApplicationDPUSizesPaginator ListApplicationDPUSizes(ListApplicationDPUSizesRequest request) 
+        {
+            return new ListApplicationDPUSizesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCalculationExecutions operation
+        ///</summary>
+        public IListCalculationExecutionsPaginator ListCalculationExecutions(ListCalculationExecutionsRequest request) 
+        {
+            return new ListCalculationExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDatabases operation
         ///</summary>
         public IListDatabasesPaginator ListDatabases(ListDatabasesRequest request) 
@@ -68,6 +84,14 @@ namespace Amazon.Athena.Model
         }
 
         /// <summary>
+        /// Paginator for ListExecutors operation
+        ///</summary>
+        public IListExecutorsPaginator ListExecutors(ListExecutorsRequest request) 
+        {
+            return new ListExecutorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListNamedQueries operation
         ///</summary>
         public IListNamedQueriesPaginator ListNamedQueries(ListNamedQueriesRequest request) 
@@ -89,6 +113,14 @@ namespace Amazon.Athena.Model
         public IListQueryExecutionsPaginator ListQueryExecutions(ListQueryExecutionsRequest request) 
         {
             return new ListQueryExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSessions operation
+        ///</summary>
+        public IListSessionsPaginator ListSessions(ListSessionsRequest request) 
+        {
+            return new ListSessionsPaginator(this.client, request);
         }
 
         /// <summary>

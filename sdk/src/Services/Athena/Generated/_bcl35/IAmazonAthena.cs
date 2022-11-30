@@ -320,6 +320,57 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  CreateNotebook
+
+
+        /// <summary>
+        /// Creates an empty <code>ipynb</code> file in the specified Apache Spark enabled workgroup.
+        /// Throws an error if a file in the workgroup with the same name already exists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNotebook service method.</param>
+        /// 
+        /// <returns>The response from the CreateNotebook service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNotebook">REST API Reference for CreateNotebook Operation</seealso>
+        CreateNotebookResponse CreateNotebook(CreateNotebookRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNotebook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNotebook operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNotebook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNotebook">REST API Reference for CreateNotebook Operation</seealso>
+        IAsyncResult BeginCreateNotebook(CreateNotebookRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateNotebook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNotebook.</param>
+        /// 
+        /// <returns>Returns a  CreateNotebookResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNotebook">REST API Reference for CreateNotebook Operation</seealso>
+        CreateNotebookResponse EndCreateNotebook(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreatePreparedStatement
 
 
@@ -367,11 +418,66 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  CreatePresignedNotebookUrl
+
+
+        /// <summary>
+        /// Gets an authentication token and the URL at which the notebook can be accessed. During
+        /// programmatic access, <code>CreatePresignedNotebookUrl</code> must be called every
+        /// 10 minutes to refresh the authentication token.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePresignedNotebookUrl service method.</param>
+        /// 
+        /// <returns>The response from the CreatePresignedNotebookUrl service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePresignedNotebookUrl">REST API Reference for CreatePresignedNotebookUrl Operation</seealso>
+        CreatePresignedNotebookUrlResponse CreatePresignedNotebookUrl(CreatePresignedNotebookUrlRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePresignedNotebookUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePresignedNotebookUrl operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePresignedNotebookUrl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePresignedNotebookUrl">REST API Reference for CreatePresignedNotebookUrl Operation</seealso>
+        IAsyncResult BeginCreatePresignedNotebookUrl(CreatePresignedNotebookUrlRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePresignedNotebookUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePresignedNotebookUrl.</param>
+        /// 
+        /// <returns>Returns a  CreatePresignedNotebookUrlResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePresignedNotebookUrl">REST API Reference for CreatePresignedNotebookUrl Operation</seealso>
+        CreatePresignedNotebookUrlResponse EndCreatePresignedNotebookUrl(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateWorkGroup
 
 
         /// <summary>
-        /// Creates a workgroup with the specified name.
+        /// Creates a workgroup with the specified name. Only one of <code>Configurations</code>
+        /// or <code>Configuration</code> can be specified; <code>Configurations</code> for a
+        /// workgroup with multi engine support (for example, an Apache Spark enabled workgroup)
+        /// or <code>Configuration</code> for an Athena SQL workgroup.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkGroup service method.</param>
         /// 
@@ -515,6 +621,56 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  DeleteNotebook
+
+
+        /// <summary>
+        /// Deletes the specified notebook.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNotebook service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNotebook service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNotebook">REST API Reference for DeleteNotebook Operation</seealso>
+        DeleteNotebookResponse DeleteNotebook(DeleteNotebookRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNotebook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNotebook operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNotebook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNotebook">REST API Reference for DeleteNotebook Operation</seealso>
+        IAsyncResult BeginDeleteNotebook(DeleteNotebookRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteNotebook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNotebook.</param>
+        /// 
+        /// <returns>Returns a  DeleteNotebookResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNotebook">REST API Reference for DeleteNotebook Operation</seealso>
+        DeleteNotebookResponse EndDeleteNotebook(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeletePreparedStatement
 
 
@@ -609,6 +765,202 @@ namespace Amazon.Athena
         /// <returns>Returns a  DeleteWorkGroupResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteWorkGroup">REST API Reference for DeleteWorkGroup Operation</seealso>
         DeleteWorkGroupResponse EndDeleteWorkGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ExportNotebook
+
+
+        /// <summary>
+        /// Exports the specified notebook and its metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportNotebook service method.</param>
+        /// 
+        /// <returns>The response from the ExportNotebook service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ExportNotebook">REST API Reference for ExportNotebook Operation</seealso>
+        ExportNotebookResponse ExportNotebook(ExportNotebookRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportNotebook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportNotebook operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportNotebook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ExportNotebook">REST API Reference for ExportNotebook Operation</seealso>
+        IAsyncResult BeginExportNotebook(ExportNotebookRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportNotebook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportNotebook.</param>
+        /// 
+        /// <returns>Returns a  ExportNotebookResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ExportNotebook">REST API Reference for ExportNotebook Operation</seealso>
+        ExportNotebookResponse EndExportNotebook(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetCalculationExecution
+
+
+        /// <summary>
+        /// Describes a previously submitted calculation execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculationExecution service method.</param>
+        /// 
+        /// <returns>The response from the GetCalculationExecution service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecution">REST API Reference for GetCalculationExecution Operation</seealso>
+        GetCalculationExecutionResponse GetCalculationExecution(GetCalculationExecutionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCalculationExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculationExecution operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCalculationExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecution">REST API Reference for GetCalculationExecution Operation</seealso>
+        IAsyncResult BeginGetCalculationExecution(GetCalculationExecutionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCalculationExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCalculationExecution.</param>
+        /// 
+        /// <returns>Returns a  GetCalculationExecutionResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecution">REST API Reference for GetCalculationExecution Operation</seealso>
+        GetCalculationExecutionResponse EndGetCalculationExecution(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetCalculationExecutionCode
+
+
+        /// <summary>
+        /// Retrieves a pre-signed URL to a copy of the code that was executed for the calculation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculationExecutionCode service method.</param>
+        /// 
+        /// <returns>The response from the GetCalculationExecutionCode service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionCode">REST API Reference for GetCalculationExecutionCode Operation</seealso>
+        GetCalculationExecutionCodeResponse GetCalculationExecutionCode(GetCalculationExecutionCodeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCalculationExecutionCode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculationExecutionCode operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCalculationExecutionCode
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionCode">REST API Reference for GetCalculationExecutionCode Operation</seealso>
+        IAsyncResult BeginGetCalculationExecutionCode(GetCalculationExecutionCodeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCalculationExecutionCode operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCalculationExecutionCode.</param>
+        /// 
+        /// <returns>Returns a  GetCalculationExecutionCodeResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionCode">REST API Reference for GetCalculationExecutionCode Operation</seealso>
+        GetCalculationExecutionCodeResponse EndGetCalculationExecutionCode(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetCalculationExecutionStatus
+
+
+        /// <summary>
+        /// Gets the status of a current calculation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculationExecutionStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetCalculationExecutionStatus service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionStatus">REST API Reference for GetCalculationExecutionStatus Operation</seealso>
+        GetCalculationExecutionStatusResponse GetCalculationExecutionStatus(GetCalculationExecutionStatusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCalculationExecutionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculationExecutionStatus operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCalculationExecutionStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionStatus">REST API Reference for GetCalculationExecutionStatus Operation</seealso>
+        IAsyncResult BeginGetCalculationExecutionStatus(GetCalculationExecutionStatusRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCalculationExecutionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCalculationExecutionStatus.</param>
+        /// 
+        /// <returns>Returns a  GetCalculationExecutionStatusResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionStatus">REST API Reference for GetCalculationExecutionStatus Operation</seealso>
+        GetCalculationExecutionStatusResponse EndGetCalculationExecutionStatus(IAsyncResult asyncResult);
 
         #endregion
         
@@ -758,6 +1110,56 @@ namespace Amazon.Athena
         /// <returns>Returns a  GetNamedQueryResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNamedQuery">REST API Reference for GetNamedQuery Operation</seealso>
         GetNamedQueryResponse EndGetNamedQuery(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetNotebookMetadata
+
+
+        /// <summary>
+        /// Retrieves notebook metadata for the specified notebook ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNotebookMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetNotebookMetadata service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNotebookMetadata">REST API Reference for GetNotebookMetadata Operation</seealso>
+        GetNotebookMetadataResponse GetNotebookMetadata(GetNotebookMetadataRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetNotebookMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetNotebookMetadata operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetNotebookMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNotebookMetadata">REST API Reference for GetNotebookMetadata Operation</seealso>
+        IAsyncResult BeginGetNotebookMetadata(GetNotebookMetadataRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetNotebookMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetNotebookMetadata.</param>
+        /// 
+        /// <returns>Returns a  GetNotebookMetadataResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNotebookMetadata">REST API Reference for GetNotebookMetadata Operation</seealso>
+        GetNotebookMetadataResponse EndGetNotebookMetadata(IAsyncResult asyncResult);
 
         #endregion
         
@@ -980,6 +1382,107 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  GetSession
+
+
+        /// <summary>
+        /// Gets the full details of a previously created session, including the session status
+        /// and configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSession service method.</param>
+        /// 
+        /// <returns>The response from the GetSession service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSession">REST API Reference for GetSession Operation</seealso>
+        GetSessionResponse GetSession(GetSessionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSession operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSession">REST API Reference for GetSession Operation</seealso>
+        IAsyncResult BeginGetSession(GetSessionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSession.</param>
+        /// 
+        /// <returns>Returns a  GetSessionResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSession">REST API Reference for GetSession Operation</seealso>
+        GetSessionResponse EndGetSession(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetSessionStatus
+
+
+        /// <summary>
+        /// Gets the current status of a session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSessionStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetSessionStatus service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSessionStatus">REST API Reference for GetSessionStatus Operation</seealso>
+        GetSessionStatusResponse GetSessionStatus(GetSessionStatusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSessionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSessionStatus operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSessionStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSessionStatus">REST API Reference for GetSessionStatus Operation</seealso>
+        IAsyncResult BeginGetSessionStatus(GetSessionStatusRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSessionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSessionStatus.</param>
+        /// 
+        /// <returns>Returns a  GetSessionStatusResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSessionStatus">REST API Reference for GetSessionStatus Operation</seealso>
+        GetSessionStatusResponse EndGetSessionStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetTableMetadata
 
 
@@ -1078,6 +1581,160 @@ namespace Amazon.Athena
         /// <returns>Returns a  GetWorkGroupResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetWorkGroup">REST API Reference for GetWorkGroup Operation</seealso>
         GetWorkGroupResponse EndGetWorkGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ImportNotebook
+
+
+        /// <summary>
+        /// Imports a single <code>ipynb</code> file to a Spark enabled workgroup. The maximum
+        /// file size that can be imported is 10 megabytes. If an <code>ipynb</code> file with
+        /// the same name already exists in the workgroup, throws an error.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportNotebook service method.</param>
+        /// 
+        /// <returns>The response from the ImportNotebook service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ImportNotebook">REST API Reference for ImportNotebook Operation</seealso>
+        ImportNotebookResponse ImportNotebook(ImportNotebookRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportNotebook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportNotebook operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportNotebook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ImportNotebook">REST API Reference for ImportNotebook Operation</seealso>
+        IAsyncResult BeginImportNotebook(ImportNotebookRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportNotebook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportNotebook.</param>
+        /// 
+        /// <returns>Returns a  ImportNotebookResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ImportNotebook">REST API Reference for ImportNotebook Operation</seealso>
+        ImportNotebookResponse EndImportNotebook(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListApplicationDPUSizes
+
+
+        /// <summary>
+        /// Returns the supported DPU sizes for the supported application runtimes (for example,
+        /// <code>Jupyter 1.0</code>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationDPUSizes service method.</param>
+        /// 
+        /// <returns>The response from the ListApplicationDPUSizes service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListApplicationDPUSizes">REST API Reference for ListApplicationDPUSizes Operation</seealso>
+        ListApplicationDPUSizesResponse ListApplicationDPUSizes(ListApplicationDPUSizesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListApplicationDPUSizes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationDPUSizes operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListApplicationDPUSizes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListApplicationDPUSizes">REST API Reference for ListApplicationDPUSizes Operation</seealso>
+        IAsyncResult BeginListApplicationDPUSizes(ListApplicationDPUSizesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListApplicationDPUSizes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListApplicationDPUSizes.</param>
+        /// 
+        /// <returns>Returns a  ListApplicationDPUSizesResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListApplicationDPUSizes">REST API Reference for ListApplicationDPUSizes Operation</seealso>
+        ListApplicationDPUSizesResponse EndListApplicationDPUSizes(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListCalculationExecutions
+
+
+        /// <summary>
+        /// Lists the calculations that have been submitted to a session in descending order.
+        /// Newer calculations are listed first; older calculations are listed later.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCalculationExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListCalculationExecutions service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCalculationExecutions">REST API Reference for ListCalculationExecutions Operation</seealso>
+        ListCalculationExecutionsResponse ListCalculationExecutions(ListCalculationExecutionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCalculationExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCalculationExecutions operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCalculationExecutions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCalculationExecutions">REST API Reference for ListCalculationExecutions Operation</seealso>
+        IAsyncResult BeginListCalculationExecutions(ListCalculationExecutionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCalculationExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCalculationExecutions.</param>
+        /// 
+        /// <returns>Returns a  ListCalculationExecutionsResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCalculationExecutions">REST API Reference for ListCalculationExecutions Operation</seealso>
+        ListCalculationExecutionsResponse EndListCalculationExecutions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1230,6 +1887,58 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  ListExecutors
+
+
+        /// <summary>
+        /// Lists, in descending order, the executors that have been submitted to a session. Newer
+        /// executors are listed first; older executors are listed later. The result can be optionally
+        /// filtered by state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExecutors service method.</param>
+        /// 
+        /// <returns>The response from the ListExecutors service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListExecutors">REST API Reference for ListExecutors Operation</seealso>
+        ListExecutorsResponse ListExecutors(ListExecutorsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExecutors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExecutors operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExecutors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListExecutors">REST API Reference for ListExecutors Operation</seealso>
+        IAsyncResult BeginListExecutors(ListExecutorsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListExecutors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListExecutors.</param>
+        /// 
+        /// <returns>Returns a  ListExecutorsResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListExecutors">REST API Reference for ListExecutors Operation</seealso>
+        ListExecutorsResponse EndListExecutors(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListNamedQueries
 
 
@@ -1282,6 +1991,108 @@ namespace Amazon.Athena
         /// <returns>Returns a  ListNamedQueriesResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNamedQueries">REST API Reference for ListNamedQueries Operation</seealso>
         ListNamedQueriesResponse EndListNamedQueries(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListNotebookMetadata
+
+
+        /// <summary>
+        /// Displays the notebook files for the specified workgroup in paginated format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebookMetadata service method.</param>
+        /// 
+        /// <returns>The response from the ListNotebookMetadata service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookMetadata">REST API Reference for ListNotebookMetadata Operation</seealso>
+        ListNotebookMetadataResponse ListNotebookMetadata(ListNotebookMetadataRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNotebookMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebookMetadata operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNotebookMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookMetadata">REST API Reference for ListNotebookMetadata Operation</seealso>
+        IAsyncResult BeginListNotebookMetadata(ListNotebookMetadataRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNotebookMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNotebookMetadata.</param>
+        /// 
+        /// <returns>Returns a  ListNotebookMetadataResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookMetadata">REST API Reference for ListNotebookMetadata Operation</seealso>
+        ListNotebookMetadataResponse EndListNotebookMetadata(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListNotebookSessions
+
+
+        /// <summary>
+        /// Lists, in descending order, the sessions that have been created in a notebook that
+        /// are in an active state like <code>CREATING</code>, <code>CREATED</code>, <code>IDLE</code>
+        /// or <code>BUSY</code>. Newer sessions are listed first; older sessions are listed later.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebookSessions service method.</param>
+        /// 
+        /// <returns>The response from the ListNotebookSessions service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookSessions">REST API Reference for ListNotebookSessions Operation</seealso>
+        ListNotebookSessionsResponse ListNotebookSessions(ListNotebookSessionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNotebookSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebookSessions operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNotebookSessions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookSessions">REST API Reference for ListNotebookSessions Operation</seealso>
+        IAsyncResult BeginListNotebookSessions(ListNotebookSessionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNotebookSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNotebookSessions.</param>
+        /// 
+        /// <returns>Returns a  ListNotebookSessionsResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookSessions">REST API Reference for ListNotebookSessions Operation</seealso>
+        ListNotebookSessionsResponse EndListNotebookSessions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1385,6 +2196,58 @@ namespace Amazon.Athena
         /// <returns>Returns a  ListQueryExecutionsResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListQueryExecutions">REST API Reference for ListQueryExecutions Operation</seealso>
         ListQueryExecutionsResponse EndListQueryExecutions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListSessions
+
+
+        /// <summary>
+        /// Lists the sessions in a workgroup that are in an active state like <code>CREATING</code>,
+        /// <code>CREATED</code>, <code>IDLE</code>, or <code>BUSY</code>. Newer sessions are
+        /// listed first; older sessions are listed later.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessions service method.</param>
+        /// 
+        /// <returns>The response from the ListSessions service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListSessions">REST API Reference for ListSessions Operation</seealso>
+        ListSessionsResponse ListSessions(ListSessionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSessions operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSessions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListSessions">REST API Reference for ListSessions Operation</seealso>
+        IAsyncResult BeginListSessions(ListSessionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSessions.</param>
+        /// 
+        /// <returns>Returns a  ListSessionsResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListSessions">REST API Reference for ListSessions Operation</seealso>
+        ListSessionsResponse EndListSessions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1539,6 +2402,57 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  StartCalculationExecution
+
+
+        /// <summary>
+        /// Submits calculations for execution within a session. You can supply the code to run
+        /// as an inline code block within the request or as an Amazon S3 URL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCalculationExecution service method.</param>
+        /// 
+        /// <returns>The response from the StartCalculationExecution service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartCalculationExecution">REST API Reference for StartCalculationExecution Operation</seealso>
+        StartCalculationExecutionResponse StartCalculationExecution(StartCalculationExecutionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartCalculationExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartCalculationExecution operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartCalculationExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartCalculationExecution">REST API Reference for StartCalculationExecution Operation</seealso>
+        IAsyncResult BeginStartCalculationExecution(StartCalculationExecutionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartCalculationExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartCalculationExecution.</param>
+        /// 
+        /// <returns>Returns a  StartCalculationExecutionResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartCalculationExecution">REST API Reference for StartCalculationExecution Operation</seealso>
+        StartCalculationExecutionResponse EndStartCalculationExecution(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartQueryExecution
 
 
@@ -1590,6 +2504,120 @@ namespace Amazon.Athena
         /// <returns>Returns a  StartQueryExecutionResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartQueryExecution">REST API Reference for StartQueryExecution Operation</seealso>
         StartQueryExecutionResponse EndStartQueryExecution(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartSession
+
+
+        /// <summary>
+        /// Creates a session for running calculations within a workgroup. The session is ready
+        /// when it reaches an <code>IDLE</code> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSession service method.</param>
+        /// 
+        /// <returns>The response from the StartSession service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.SessionAlreadyExistsException">
+        /// The specified session already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartSession">REST API Reference for StartSession Operation</seealso>
+        StartSessionResponse StartSession(StartSessionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSession operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartSession">REST API Reference for StartSession Operation</seealso>
+        IAsyncResult BeginStartSession(StartSessionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSession.</param>
+        /// 
+        /// <returns>Returns a  StartSessionResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartSession">REST API Reference for StartSession Operation</seealso>
+        StartSessionResponse EndStartSession(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopCalculationExecution
+
+
+        /// <summary>
+        /// Requests the cancellation of a calculation. A <code>StopCalculationExecution</code>
+        /// call on a calculation that is already in a terminal state (for example, <code>STOPPED</code>,
+        /// <code>FAILED</code>, or <code>COMPLETED</code>) succeeds but has no effect.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Cancelling a calculation is done on a best effort basis. If a calculation cannot be
+        /// cancelled, you can be charged for its completion. If you are concerned about being
+        /// charged for a calculation that cannot be cancelled, consider terminating the session
+        /// in which the calculation is running.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopCalculationExecution service method.</param>
+        /// 
+        /// <returns>The response from the StopCalculationExecution service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopCalculationExecution">REST API Reference for StopCalculationExecution Operation</seealso>
+        StopCalculationExecutionResponse StopCalculationExecution(StopCalculationExecutionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopCalculationExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopCalculationExecution operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopCalculationExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopCalculationExecution">REST API Reference for StopCalculationExecution Operation</seealso>
+        IAsyncResult BeginStopCalculationExecution(StopCalculationExecutionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopCalculationExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopCalculationExecution.</param>
+        /// 
+        /// <returns>Returns a  StopCalculationExecutionResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopCalculationExecution">REST API Reference for StopCalculationExecution Operation</seealso>
+        StopCalculationExecutionResponse EndStopCalculationExecution(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1704,6 +2732,60 @@ namespace Amazon.Athena
         /// <returns>Returns a  TagResourceResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TerminateSession
+
+
+        /// <summary>
+        /// Terminates an active session. A <code>TerminateSession</code> call on a session that
+        /// is already inactive (for example, in a <code>FAILED</code>, <code>TERMINATED</code>
+        /// or <code>TERMINATING</code> state) succeeds but has no effect. Calculations running
+        /// in the session when <code>TerminateSession</code> is called are forcefully stopped,
+        /// but may display as <code>FAILED</code> instead of <code>STOPPED</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateSession service method.</param>
+        /// 
+        /// <returns>The response from the TerminateSession service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
+        TerminateSessionResponse TerminateSession(TerminateSessionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TerminateSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TerminateSession operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTerminateSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
+        IAsyncResult BeginTerminateSession(TerminateSessionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TerminateSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTerminateSession.</param>
+        /// 
+        /// <returns>Returns a  TerminateSessionResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
+        TerminateSessionResponse EndTerminateSession(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1851,6 +2933,106 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  UpdateNotebook
+
+
+        /// <summary>
+        /// Updates the contents of a Spark notebook.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotebook service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNotebook service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebook">REST API Reference for UpdateNotebook Operation</seealso>
+        UpdateNotebookResponse UpdateNotebook(UpdateNotebookRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNotebook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotebook operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNotebook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebook">REST API Reference for UpdateNotebook Operation</seealso>
+        IAsyncResult BeginUpdateNotebook(UpdateNotebookRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateNotebook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNotebook.</param>
+        /// 
+        /// <returns>Returns a  UpdateNotebookResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebook">REST API Reference for UpdateNotebook Operation</seealso>
+        UpdateNotebookResponse EndUpdateNotebook(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateNotebookMetadata
+
+
+        /// <summary>
+        /// Updates the metadata for a notebook.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookMetadata service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNotebookMetadata service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebookMetadata">REST API Reference for UpdateNotebookMetadata Operation</seealso>
+        UpdateNotebookMetadataResponse UpdateNotebookMetadata(UpdateNotebookMetadataRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNotebookMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookMetadata operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNotebookMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebookMetadata">REST API Reference for UpdateNotebookMetadata Operation</seealso>
+        IAsyncResult BeginUpdateNotebookMetadata(UpdateNotebookMetadataRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateNotebookMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNotebookMetadata.</param>
+        /// 
+        /// <returns>Returns a  UpdateNotebookMetadataResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebookMetadata">REST API Reference for UpdateNotebookMetadata Operation</seealso>
+        UpdateNotebookMetadataResponse EndUpdateNotebookMetadata(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdatePreparedStatement
 
 
@@ -1906,6 +3088,10 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Updates the workgroup with the specified name. The workgroup's name cannot be changed.
+        /// Only one of <code>ConfigurationsUpdates</code> or <code>ConfigurationUpdates</code>
+        /// can be specified; <code>ConfigurationsUpdates</code> for a workgroup with multi engine
+        /// support (for example, an Apache Spark enabled workgroup) or <code>ConfigurationUpdates</code>
+        /// for an Athena SQL workgroup.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWorkGroup service method.</param>
         /// 

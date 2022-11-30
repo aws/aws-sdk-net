@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// The Athena engine version for running queries.
+    /// The Athena engine version for running queries, or the PySpark engine version for running
+    /// sessions.
     /// </summary>
     public partial class EngineVersion
     {

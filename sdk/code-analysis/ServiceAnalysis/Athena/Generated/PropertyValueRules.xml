@@ -50,6 +50,27 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.CreateNotebookRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CreateNotebookRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CreateNotebookRequest.WorkGroup</property>
+    <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CreateNotebookResponse.NotebookId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.CreatePreparedStatementRequest.Description</property>
     <min>1</min>
     <max>1024</max>
@@ -68,6 +89,15 @@
   <property-value-rule>
     <property>Amazon.Athena.Model.CreatePreparedStatementRequest.WorkGroup</property>
     <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CreatePresignedNotebookUrlRequest.SessionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CreatePresignedNotebookUrlResponse.AuthToken</property>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.CreateWorkGroupRequest.Description</property>
@@ -90,6 +120,12 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.DeleteNotebookRequest.NotebookId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.DeletePreparedStatementRequest.StatementName</property>
     <min>1</min>
     <max>256</max>
@@ -102,6 +138,56 @@
   <property-value-rule>
     <property>Amazon.Athena.Model.DeleteWorkGroupRequest.WorkGroup</property>
     <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ExportNotebookRequest.NotebookId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ExportNotebookResponse.Payload</property>
+    <min>1</min>
+    <max>15728640</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetCalculationExecutionRequest.CalculationExecutionId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetCalculationExecutionResponse.CalculationExecutionId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetCalculationExecutionResponse.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetCalculationExecutionResponse.SessionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetCalculationExecutionResponse.WorkingDirectory</property>
+    <max>1024</max>
+    <pattern>^(https|s3|S3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetCalculationExecutionCodeRequest.CalculationExecutionId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetCalculationExecutionCodeResponse.CodeBlock</property>
+    <max>68000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetCalculationExecutionStatusRequest.CalculationExecutionId</property>
+    <min>1</min>
+    <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.GetDatabaseRequest.CatalogName</property>
@@ -123,6 +209,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetNotebookMetadataRequest.NotebookId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.GetPreparedStatementRequest.StatementName</property>
@@ -168,6 +260,45 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.GetSessionRequest.SessionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetSessionResponse.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetSessionResponse.EngineVersion</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetSessionResponse.NotebookVersion</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetSessionResponse.SessionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetSessionResponse.WorkGroup</property>
+    <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetSessionStatusRequest.SessionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetSessionStatusResponse.SessionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.GetTableMetadataRequest.CatalogName</property>
     <min>1</min>
     <max>256</max>
@@ -185,6 +316,65 @@
   <property-value-rule>
     <property>Amazon.Athena.Model.GetWorkGroupRequest.WorkGroup</property>
     <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ImportNotebookRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ImportNotebookRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ImportNotebookRequest.Payload</property>
+    <min>1</min>
+    <max>15728640</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ImportNotebookRequest.WorkGroup</property>
+    <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ImportNotebookResponse.NotebookId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListApplicationDPUSizesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListApplicationDPUSizesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListApplicationDPUSizesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListCalculationExecutionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListCalculationExecutionsRequest.NextToken</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListCalculationExecutionsRequest.SessionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListCalculationExecutionsResponse.NextToken</property>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.ListDatabasesRequest.CatalogName</property>
@@ -237,6 +427,29 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.ListExecutorsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListExecutorsRequest.NextToken</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListExecutorsRequest.SessionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListExecutorsResponse.NextToken</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListExecutorsResponse.SessionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.ListNamedQueriesRequest.MaxResults</property>
     <min>0</min>
     <max>50</max>
@@ -252,6 +465,46 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.ListNamedQueriesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListNotebookMetadataRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListNotebookMetadataRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListNotebookMetadataRequest.WorkGroup</property>
+    <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListNotebookMetadataResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListNotebookSessionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListNotebookSessionsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListNotebookSessionsRequest.NotebookId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListNotebookSessionsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>
@@ -292,6 +545,23 @@
     <property>Amazon.Athena.Model.ListQueryExecutionsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListSessionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListSessionsRequest.NextToken</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListSessionsRequest.WorkGroup</property>
+    <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListSessionsResponse.NextToken</property>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.ListTableMetadataRequest.CatalogName</property>
@@ -358,6 +628,30 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.StartCalculationExecutionRequest.ClientRequestToken</property>
+    <min>32</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.StartCalculationExecutionRequest.CodeBlock</property>
+    <max>68000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.StartCalculationExecutionRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.StartCalculationExecutionRequest.SessionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.StartCalculationExecutionResponse.CalculationExecutionId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.StartQueryExecutionRequest.ClientRequestToken</property>
     <min>32</min>
     <max>128</max>
@@ -378,6 +672,40 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.StartSessionRequest.ClientRequestToken</property>
+    <min>32</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.StartSessionRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.StartSessionRequest.NotebookVersion</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.StartSessionRequest.SessionIdleTimeoutInMinutes</property>
+    <min>1</min>
+    <max>480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.StartSessionRequest.WorkGroup</property>
+    <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.StartSessionResponse.SessionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.StopCalculationExecutionRequest.CalculationExecutionId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.StopQueryExecutionRequest.QueryExecutionId</property>
     <min>1</min>
     <max>128</max>
@@ -387,6 +715,11 @@
     <property>Amazon.Athena.Model.TagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.TerminateSessionRequest.SessionId</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.UntagResourceRequest.ResourceARN</property>
@@ -425,6 +758,45 @@
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.UpdateNotebookRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.UpdateNotebookRequest.NotebookId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.UpdateNotebookRequest.Payload</property>
+    <min>1</min>
+    <max>15728640</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.UpdateNotebookRequest.SessionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.UpdateNotebookMetadataRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.UpdateNotebookMetadataRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.UpdateNotebookMetadataRequest.NotebookId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.UpdatePreparedStatementRequest.Description</property>
     <min>1</min>
     <max>1024</max>
@@ -454,6 +826,11 @@
     <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.ApplicationDPUSizes.ApplicationRuntimeId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.AthenaError.ErrorCategory</property>
     <min>1</min>
     <max>3</max>
@@ -462,6 +839,51 @@
     <property>Amazon.Athena.Model.AthenaError.ErrorType</property>
     <min>0</min>
     <max>9999</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CalculationConfiguration.CodeBlock</property>
+    <max>68000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CalculationResult.ResultS3Uri</property>
+    <max>1024</max>
+    <pattern>^(https|s3|S3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CalculationResult.ResultType</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>\w+\/[-+.\w]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CalculationResult.StdErrorS3Uri</property>
+    <max>1024</max>
+    <pattern>^(https|s3|S3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CalculationResult.StdOutS3Uri</property>
+    <max>1024</max>
+    <pattern>^(https|s3|S3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CalculationStatistics.Progress</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CalculationStatus.StateChangeReason</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CalculationSummary.CalculationExecutionId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CalculationSummary.Description</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.Column.Comment</property>
@@ -477,6 +899,12 @@
     <property>Amazon.Athena.Model.Column.Type</property>
     <min>0</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CustomerContentEncryptionConfiguration.KmsKey</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:key/?[a-zA-Z_0-9+=,.@\-_/]+$|^arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:alias/?[a-zA-Z_0-9+=,.@\-_/]+$|^alias/[a-zA-Z0-9/_-]+$|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.Database.Description</property>
@@ -504,6 +932,21 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.EngineConfiguration.CoordinatorDpuSize</property>
+    <min>1</min>
+    <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.EngineConfiguration.DefaultExecutorDpuSize</property>
+    <min>1</min>
+    <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.EngineConfiguration.MaxConcurrentDpus</property>
+    <min>2</min>
+    <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.EngineVersion.EffectiveEngineVersion</property>
     <min>1</min>
     <max>128</max>
@@ -512,6 +955,16 @@
     <property>Amazon.Athena.Model.EngineVersion.SelectedEngineVersion</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ExecutorsSummary.ExecutorId</property>
+    <max>100000</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.FilterDefinition.Name</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.InvalidRequestException.AthenaErrorCode</property>
@@ -547,6 +1000,26 @@
   <property-value-rule>
     <property>Amazon.Athena.Model.NamedQuery.WorkGroup</property>
     <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.NotebookMetadata.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.NotebookMetadata.NotebookId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.NotebookMetadata.WorkGroup</property>
+    <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.NotebookSessionSummary.SessionId</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.PreparedStatement.Description</property>
@@ -622,6 +1095,32 @@
     <max>10080</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.SessionConfiguration.ExecutionRole</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.SessionStatus.StateChangeReason</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.SessionSummary.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.SessionSummary.NotebookVersion</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.SessionSummary.SessionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.TableMetadata.Name</property>
     <min>1</min>
     <max>128</max>
@@ -683,12 +1182,34 @@
     <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.WorkGroupConfiguration.AdditionalConfiguration</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.WorkGroupConfiguration.BytesScannedCutoffPerQuery</property>
     <min>10000000</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.WorkGroupConfiguration.ExecutionRole</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.WorkGroupConfigurationUpdates.AdditionalConfiguration</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.WorkGroupConfigurationUpdates.BytesScannedCutoffPerQuery</property>
     <min>10000000</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.WorkGroupConfigurationUpdates.ExecutionRole</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.WorkGroupSummary.Description</property>
