@@ -456,6 +456,10 @@
       <Project>{2639D3F6-28D8-4397-9102-F62B0DB9F79A}</Project>
       <Name>AWSSDK.DocDB.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/DocDBElastic/AWSSDK.DocDBElastic.CodeAnalysis.csproj">
+      <Project>{0BB0B4D7-ABB2-42F6-8E7A-7A98D9EDF1BE}</Project>
+      <Name>AWSSDK.DocDBElastic.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Drs/AWSSDK.Drs.CodeAnalysis.csproj">
       <Project>{79B56D45-9B73-43E0-A867-851B2ED279B3}</Project>
       <Name>AWSSDK.Drs.CodeAnalysis</Name>

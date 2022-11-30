@@ -306,6 +306,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Data Lifecycle Manager manages lifecycle of your AWS resources.
 * [AWSSDK.DocDB](https://www.nuget.org/packages/AWSSDK.DocDB/)
 	* Amazon DocumentDB is a fast, reliable, and fully managed MongoDB compatible database service.
+* [AWSSDK.DocDBElastic](https://www.nuget.org/packages/AWSSDK.DocDBElastic/)
+	* Launched Amazon DocumentDB Elastic Clusters. You can now use the SDK to create, list, update and delete Amazon DocumentDB Elastic Cluster resources
 * [AWSSDK.Drs](https://www.nuget.org/packages/AWSSDK.Drs/)
 	* Introducing AWS Elastic Disaster Recovery (AWS DRS), a new service that minimizes downtime and data loss with fast, reliable recovery of on-premises and cloud-based applications using affordable storage, minimal compute, and point-in-time recovery.
 * [AWSSDK.DynamoDBv2](https://www.nuget.org/packages/AWSSDK.DynamoDBv2/)
