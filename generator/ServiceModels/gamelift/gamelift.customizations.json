@@ -95,5 +95,11 @@
                 ]
             }
         }
+    },
+    "emitIsSetProperties": {
+        "UpdateGameSessionQueueInput": [
+            "PlayerLatencyPolicies",
+            "Destinations"
+        ]
     }
 }
