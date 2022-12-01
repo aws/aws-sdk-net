@@ -40,10 +40,6 @@ namespace Amazon.GameLift.Model
     /// by <code>CreatorId</code>) has created fewer than game session limit in the specified
     /// time period.
     /// </para>
-    ///  
-    /// <para>
-    /// The resource creation limit policy is included in <a>FleetAttributes</a>.
-    /// </para>
     /// </summary>
     public partial class ResourceCreationLimitPolicy
     {
@@ -53,8 +49,16 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NewGameSessionsPerCreator. 
         /// <para>
-        /// The maximum number of game sessions that an individual can create during the policy
-        /// period. 
+        /// A policy that puts limits on the number of game sessions that a player can create
+        /// within a specified span of time. With this policy, you can control players' ability
+        /// to consume available resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy is evaluated when a player tries to create a new game session. On receiving
+        /// a <code>CreateGameSession</code> request, GameLift checks that the player (identified
+        /// by <code>CreatorId</code>) has created fewer than game session limit in the specified
+        /// time period.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

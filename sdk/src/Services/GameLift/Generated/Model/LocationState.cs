@@ -34,14 +34,40 @@ namespace Amazon.GameLift.Model
     /// of launching the first instance in a new location and preparing it for game hosting,
     /// and then removing all instances and deleting the location from the fleet.
     /// 
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    ///  <b>Related actions</b> 
+    ///  <b>NEW</b> -- A new fleet location has been defined and desired instances is set
+    /// to 1. 
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    ///  <a>CreateFleet</a> | <a>CreateFleetLocations</a> | <a>DeleteFleetLocations</a> 
+    ///  <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the new
+    /// fleet location, creating new instances with the game build or Realtime script and
+    /// starting server processes.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>ACTIVE</b> -- Hosts can now accept game sessions.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating
+    /// the fleet location.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>DELETING</b> -- Hosts are responding to a delete fleet location request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>TERMINATED</b> -- The fleet location no longer exists.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>NOT_FOUND</b> -- The fleet location was not found. This could be because the custom
+    /// location was removed or not created. 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class LocationState
     {

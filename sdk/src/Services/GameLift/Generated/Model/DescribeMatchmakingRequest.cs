@@ -44,9 +44,7 @@ namespace Amazon.GameLift.Model
     /// This operation is not designed to be continually called to track matchmaking ticket
     /// status. This practice can cause you to exceed your API limit, which results in errors.
     /// Instead, as a best practice, set up an Amazon Simple Notification Service to receive
-    /// notifications, and provide the topic ARN in the matchmaking configuration. Continuously
-    /// polling ticket status with <a>DescribeMatchmaking</a> should only be used for games
-    /// in development with low matchmaking usage.
+    /// notifications, and provide the topic ARN in the matchmaking configuration.
     /// </para>
     ///   
     /// <para>
@@ -61,16 +59,6 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
     /// Set Up FlexMatch event notification</a> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>StartMatchmaking</a> | <a>DescribeMatchmaking</a> | <a>StopMatchmaking</a> | <a>AcceptMatch</a>
-    /// | <a>StartMatchBackfill</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
     /// </para>
     /// </summary>
     public partial class DescribeMatchmakingRequest : AmazonGameLiftRequest

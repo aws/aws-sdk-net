@@ -32,15 +32,6 @@ namespace Amazon.GameLift.Model
     /// Log entry describing an event that involves GameLift resources (such as a fleet).
     /// In addition to tracking activity, event codes and messages can provide additional
     /// information for troubleshooting and debugging problems.
-    /// 
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>DescribeFleetEvents</a> 
-    /// </para>
     /// </summary>
     public partial class Event
     {
@@ -178,11 +169,10 @@ namespace Amazon.GameLift.Model
         ///  </li> <li> 
         /// <para>
         /// FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details
-        /// and status information (see <a>DescribeVpcPeeringConnections</a>) provide additional
-        /// detail. A common reason for peering failure is that the two VPCs have overlapping
-        /// CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC
-        /// in your Amazon Web Services account. For more information on VPC peering failures,
-        /// see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
+        /// and status information provide additional detail. A common reason for peering failure
+        /// is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this,
+        /// change the CIDR block for the VPC in your Amazon Web Services account. For more information
+        /// on VPC peering failures, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -200,7 +190,7 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Spot process events:</b> 
+        ///  <b>Server process events:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

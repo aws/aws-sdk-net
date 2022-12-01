@@ -30,7 +30,7 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Player information for use when creating player sessions using a game session placement
-    /// request with <a>StartGameSessionPlacement</a>.
+    /// request.
     /// </summary>
     public partial class DesiredPlayerSession
     {

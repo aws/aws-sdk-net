@@ -37,8 +37,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a>CreateScript</a> | <a>ListScripts</a> | <a>DescribeScript</a> | <a>UpdateScript</a>
-    /// | <a>DeleteScript</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
     /// APIs by task</a> 
     /// </para>
     /// </summary>
@@ -151,7 +150,16 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StorageLocation.
+        /// Gets and sets the property StorageLocation. 
+        /// <para>
+        /// The location of the Amazon S3 bucket where a zipped file containing your Realtime
+        /// scripts is stored. The storage location must specify the Amazon S3 bucket name, the
+        /// zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the
+        /// Amazon S3 storage location. The S3 bucket must be in the same Region where you want
+        /// to create a new script. By default, Amazon GameLift uploads the latest version of
+        /// the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code>
+        /// parameter to specify an earlier version. 
+        /// </para>
         /// </summary>
         public S3Location StorageLocation
         {
@@ -168,8 +176,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version information that is associated with a build or script. Version strings do
-        /// not need to be unique.
+        /// Version information associated with a build or script. Version strings do not need
+        /// to be unique.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -39,9 +39,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a>CreateVpcPeeringAuthorization</a> | <a>DescribeVpcPeeringAuthorizations</a> |
-    /// <a>DeleteVpcPeeringAuthorization</a> | <a>CreateVpcPeeringConnection</a> | <a>DescribeVpcPeeringConnections</a>
-    /// | <a>DeleteVpcPeeringConnection</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
     /// APIs by task</a> 
     /// </para>
     /// </summary>
@@ -58,7 +56,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetArn. 
         /// <para>
-        ///  The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
         /// associated with the GameLift fleet resource for this connection. 
         /// </para>
         /// </summary>
@@ -181,8 +179,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property VpcPeeringConnectionId. 
         /// <para>
         /// A unique identifier that is automatically assigned to the connection record. This
-        /// ID is referenced in VPC peering connection events, and is used when deleting a connection
-        /// with <a>DeleteVpcPeeringConnection</a>. 
+        /// ID is referenced in VPC peering connection events, and is used when deleting a connection.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

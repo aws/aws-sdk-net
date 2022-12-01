@@ -54,10 +54,6 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// Changing the priority order will affect how game sessions are placed.
     /// </para>
-    ///  
-    /// <para>
-    /// Priority configurations are part of a <a>GameSessionQueue</a>.
-    /// </para>
     /// </summary>
     public partial class PriorityConfiguration
     {

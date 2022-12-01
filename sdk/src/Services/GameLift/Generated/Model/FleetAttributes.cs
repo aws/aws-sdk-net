@@ -35,16 +35,14 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <b>Related actions</b> 
     /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateFleet</a> | <a>DescribeFleetAttributes</a> 
-    /// </para>
     /// </summary>
     public partial class FleetAttributes
     {
+        private AnywhereConfiguration _anywhereConfiguration;
         private string _buildArn;
         private string _buildId;
         private CertificateConfiguration _certificateConfiguration;
+        private ComputeType _computeType;
         private DateTime? _creationTime;
         private string _description;
         private string _fleetArn;
@@ -65,6 +63,21 @@ namespace Amazon.GameLift.Model
         private FleetStatus _status;
         private List<string> _stoppedActions = new List<string>();
         private DateTime? _terminationTime;
+
+        /// <summary>
+        /// Gets and sets the property AnywhereConfiguration.
+        /// </summary>
+        public AnywhereConfiguration AnywhereConfiguration
+        {
+            get { return this._anywhereConfiguration; }
+            set { this._anywhereConfiguration = value; }
+        }
+
+        // Check to see if AnywhereConfiguration property is set
+        internal bool IsSetAnywhereConfiguration()
+        {
+            return this._anywhereConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BuildArn. 
@@ -105,10 +118,7 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CertificateConfiguration. 
-        /// <para>
-        /// Indicates whether a TLS/SSL certificate was generated for the fleet. 
-        /// </para>
+        /// Gets and sets the property CertificateConfiguration.
         /// </summary>
         public CertificateConfiguration CertificateConfiguration
         {
@@ -120,6 +130,26 @@ namespace Amazon.GameLift.Model
         internal bool IsSetCertificateConfiguration()
         {
             return this._certificateConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputeType. 
+        /// <para>
+        /// The type of compute resource used to host your game servers. You can use your own
+        /// compute resources with GameLift Anywhere or use Amazon EC2 instances with managed
+        /// GameLift.
+        /// </para>
+        /// </summary>
+        public ComputeType ComputeType
+        {
+            get { return this._computeType; }
+            set { this._computeType = value; }
+        }
+
+        // Check to see if ComputeType property is set
+        internal bool IsSetComputeType()
+        {
+            return this._computeType != null;
         }
 
         /// <summary>
@@ -202,7 +232,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetType. 
         /// <para>
-        /// The kind of instances, On-Demand or Spot, that this fleet uses.
+        /// Indicates whether to use On-Demand or Spot instances for this fleet. By default, this
+        /// property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
+        /// On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet
+        /// is created.
         /// </para>
         /// </summary>
         public FleetType FleetType
@@ -375,11 +408,7 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceCreationLimitPolicy. 
-        /// <para>
-        /// The fleet policy that limits the number of game sessions an individual player can
-        /// create over a span of time.
-        /// </para>
+        /// Gets and sets the property ResourceCreationLimitPolicy.
         /// </summary>
         public ResourceCreationLimitPolicy ResourceCreationLimitPolicy
         {
@@ -437,8 +466,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ServerLaunchParameters. 
         /// <para>
         ///  <b>This parameter is no longer used.</b> Server launch parameters are now defined
-        /// using the fleet's <a>RuntimeConfiguration</a> parameter. Requests that use this parameter
-        /// instead continue to be valid.
+        /// using the fleet's runtime configuration . Requests that use this parameter instead
+        /// continue to be valid.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -458,8 +487,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ServerLaunchPath. 
         /// <para>
         ///  <b>This parameter is no longer used.</b> Server launch paths are now defined using
-        /// the fleet's <a>RuntimeConfiguration</a> parameter. Requests that use this parameter
-        /// instead continue to be valid.
+        /// the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>
+        /// . Requests that use this parameter instead continue to be valid.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -524,8 +553,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property StoppedActions. 
         /// <para>
-        /// A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This
-        /// includes fleet auto-scaling.
+        /// A list of fleet activity that has been suspended using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>
+        /// . This includes fleet auto-scaling.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

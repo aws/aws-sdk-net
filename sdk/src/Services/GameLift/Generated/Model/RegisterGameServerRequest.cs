@@ -45,9 +45,7 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// To register a game server, identify the game server group and instance where the game
     /// server is running, and provide a unique identifier for the game server. You can also
-    /// include connection and game server data. When a game client or service requests a
-    /// game server by calling <a>ClaimGameServer</a>, this information is returned in the
-    /// response.
+    /// include connection and game server data.
     /// </para>
     ///  
     /// <para>
@@ -64,16 +62,6 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift
     /// FleetIQ Guide</a> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>RegisterGameServer</a> | <a>ListGameServers</a> | <a>ClaimGameServer</a> | <a>DescribeGameServer</a>
-    /// | <a>UpdateGameServer</a> | <a>DeregisterGameServer</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
-    /// APIs by task</a> 
     /// </para>
     /// </summary>
     public partial class RegisterGameServerRequest : AmazonGameLiftRequest
@@ -108,8 +96,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameServerData. 
         /// <para>
         /// A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service when it requests information on game servers
-        /// using <a>ListGameServers</a> or <a>ClaimGameServer</a>. 
+        /// is passed to a game client or service when it requests information on game servers.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -128,8 +116,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
-        /// A unique identifier for the game server group where the game server is running. Use
-        /// either the <a>GameServerGroup</a> name or ARN value.
+        /// A unique identifier for the game server group where the game server is running.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

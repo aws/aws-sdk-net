@@ -341,6 +341,110 @@ namespace Amazon.GameLift
 
 
     /// <summary>
+    /// Constants used for properties of type ComputeStatus.
+    /// </summary>
+    public class ComputeStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ComputeStatus
+        /// </summary>
+        public static readonly ComputeStatus ACTIVE = new ComputeStatus("ACTIVE");
+        /// <summary>
+        /// Constant PENDING for ComputeStatus
+        /// </summary>
+        public static readonly ComputeStatus PENDING = new ComputeStatus("PENDING");
+        /// <summary>
+        /// Constant TERMINATING for ComputeStatus
+        /// </summary>
+        public static readonly ComputeStatus TERMINATING = new ComputeStatus("TERMINATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputeStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputeStatus FindValue(string value)
+        {
+            return FindValue<ComputeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputeStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ComputeType.
+    /// </summary>
+    public class ComputeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANYWHERE for ComputeType
+        /// </summary>
+        public static readonly ComputeType ANYWHERE = new ComputeType("ANYWHERE");
+        /// <summary>
+        /// Constant EC2 for ComputeType
+        /// </summary>
+        public static readonly ComputeType EC2 = new ComputeType("EC2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputeType FindValue(string value)
+        {
+            return FindValue<ComputeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EC2InstanceType.
     /// </summary>
     public class EC2InstanceType : ConstantClass
@@ -949,6 +1053,10 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly EventCode INSTANCE_INTERRUPTED = new EventCode("INSTANCE_INTERRUPTED");
         /// <summary>
+        /// Constant INSTANCE_RECYCLED for EventCode
+        /// </summary>
+        public static readonly EventCode INSTANCE_RECYCLED = new EventCode("INSTANCE_RECYCLED");
+        /// <summary>
         /// Constant SERVER_PROCESS_CRASHED for EventCode
         /// </summary>
         public static readonly EventCode SERVER_PROCESS_CRASHED = new EventCode("SERVER_PROCESS_CRASHED");
@@ -1092,6 +1200,10 @@ namespace Amazon.GameLift
         /// Constant NEW for FleetStatus
         /// </summary>
         public static readonly FleetStatus NEW = new FleetStatus("NEW");
+        /// <summary>
+        /// Constant NOT_FOUND for FleetStatus
+        /// </summary>
+        public static readonly FleetStatus NOT_FOUND = new FleetStatus("NOT_FOUND");
         /// <summary>
         /// Constant TERMINATED for FleetStatus
         /// </summary>
@@ -2321,6 +2433,56 @@ namespace Amazon.GameLift
 
 
     /// <summary>
+    /// Constants used for properties of type LocationFilter.
+    /// </summary>
+    public class LocationFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS for LocationFilter
+        /// </summary>
+        public static readonly LocationFilter AWS = new LocationFilter("AWS");
+        /// <summary>
+        /// Constant CUSTOM for LocationFilter
+        /// </summary>
+        public static readonly LocationFilter CUSTOM = new LocationFilter("CUSTOM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LocationFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LocationFilter FindValue(string value)
+        {
+            return FindValue<LocationFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LocationFilter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LocationUpdateStatus.
     /// </summary>
     public class LocationUpdateStatus : ConstantClass
@@ -2466,6 +2628,10 @@ namespace Amazon.GameLift
         /// Constant AvailablePlayerSessions for MetricName
         /// </summary>
         public static readonly MetricName AvailablePlayerSessions = new MetricName("AvailablePlayerSessions");
+        /// <summary>
+        /// Constant ConcurrentActivatableGameSessions for MetricName
+        /// </summary>
+        public static readonly MetricName ConcurrentActivatableGameSessions = new MetricName("ConcurrentActivatableGameSessions");
         /// <summary>
         /// Constant CurrentPlayerSessions for MetricName
         /// </summary>

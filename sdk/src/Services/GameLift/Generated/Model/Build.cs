@@ -33,12 +33,7 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateBuild</a> | <a>ListBuilds</a> | <a>DescribeBuild</a> | <a>UpdateBuild</a>
-    /// | <a>DeleteBuild</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
     /// APIs by task</a> 
     /// </para>
     /// </summary>
@@ -49,6 +44,7 @@ namespace Amazon.GameLift.Model
         private DateTime? _creationTime;
         private string _name;
         private OperatingSystem _operatingSystem;
+        private string _serverSdkVersion;
         private long? _sizeOnDisk;
         private BuildStatus _status;
         private string _version;
@@ -57,8 +53,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property BuildArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a GameLift build resource and uniquely identifies it. ARNs are
-        /// unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+        /// assigned to a GameLift build resource and uniquely identifies it. ARNs are unique
+        /// across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
         /// In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.
         /// </para>
         /// </summary>
@@ -114,8 +110,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A descriptive label that is associated with a build. Build names do not need to be
-        /// unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+        /// A descriptive label associated with a build. Build names do not need to be unique.
+        /// It can be set using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>
+        /// or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.
         /// </para>
         /// </summary>
         public string Name
@@ -147,6 +144,25 @@ namespace Amazon.GameLift.Model
         internal bool IsSetOperatingSystem()
         {
             return this._operatingSystem != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerSdkVersion. 
+        /// <para>
+        /// The GameLift Server SDK version used to develop your game server.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=128)]
+        public string ServerSdkVersion
+        {
+            get { return this._serverSdkVersion; }
+            set { this._serverSdkVersion = value; }
+        }
+
+        // Check to see if ServerSdkVersion property is set
+        internal bool IsSetServerSdkVersion()
+        {
+            return this._serverSdkVersion != null;
         }
 
         /// <summary>
@@ -212,8 +228,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version information that is associated with a build or script. Version strings do
-        /// not need to be unique. This value can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+        /// Version information associated with a build or script. Version strings do not need
+        /// to be unique.
         /// </para>
         /// </summary>
         public string Version

@@ -29,11 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Connection information for a new game session that is created in response to a <a>StartMatchmaking</a>
-    /// request. Once a match is made, the FlexMatch engine creates a new game session for
-    /// it. This information, including the game session endpoint and player sessions for
-    /// each player in the original matchmaking request, is added to the <a>MatchmakingTicket</a>,
-    /// which can be retrieved by calling <a>DescribeMatchmaking</a>.
+    /// Connection information for a new game session that is created in response to a start
+    /// matchmaking request. Once a match is made, the FlexMatch engine creates a new game
+    /// session for it. This information, including the game session endpoint and player sessions
+    /// for each player in the original matchmaking request, is added to the matchmaking ticket.
     /// </summary>
     public partial class GameSessionConnectionInfo
     {
@@ -103,6 +102,7 @@ namespace Amazon.GameLift.Model
         /// both the IP address and port number.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string IpAddress
         {
             get { return this._ipAddress; }

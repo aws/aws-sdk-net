@@ -30,8 +30,7 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// The location in Amazon S3 where build or script files are stored for access by Amazon
-    /// GameLift. This location is specified in <a>CreateBuild</a>, <a>CreateScript</a>, and
-    /// <a>UpdateScript</a> requests.
+    /// GameLift.
     /// </summary>
     public partial class S3Location
     {
@@ -43,12 +42,12 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// An Amazon S3 bucket identifier. This is the name of the S3 bucket.
+        /// An Amazon S3 bucket identifier. Thename of the S3 bucket.
         /// </para>
         ///  <note> 
         /// <para>
-        /// GameLift currently does not support uploading from Amazon S3 buckets with names that
-        /// contain a dot (.).
+        /// GameLift doesn't support uploading from Amazon S3 buckets with names that contain
+        /// a dot (.).
         /// </para>
         ///  </note>
         /// </summary>

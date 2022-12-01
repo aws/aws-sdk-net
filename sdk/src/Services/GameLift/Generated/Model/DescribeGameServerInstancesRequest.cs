@@ -37,9 +37,7 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// Retrieves status information about the Amazon EC2 instances associated with a GameLift
     /// FleetIQ game server group. Use this operation to detect when instances are active
-    /// or not available to host new game servers. If you are looking for instance configuration
-    /// information, call <a>DescribeGameServerGroup</a> or access the corresponding Auto
-    /// Scaling group properties.
+    /// or not available to host new game servers.
     /// </para>
     ///  
     /// <para>
@@ -65,17 +63,6 @@ namespace Amazon.GameLift.Model
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift
     /// FleetIQ Guide</a> 
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a> | <a>DescribeGameServerGroup</a>
-    /// | <a>UpdateGameServerGroup</a> | <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a>
-    /// | <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
-    /// APIs by task</a> 
-    /// </para>
     /// </summary>
     public partial class DescribeGameServerInstancesRequest : AmazonGameLiftRequest
     {
@@ -87,8 +74,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
-        /// A unique identifier for the game server group. Use either the <a>GameServerGroup</a>
-        /// name or ARN value.
+        /// A unique identifier for the game server group. Use either the name or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -128,8 +114,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        ///  The maximum number of results to return. Use this parameter with <code>NextToken</code>
-        /// to get results as a set of sequential pages. 
+        /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
+        /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -148,9 +134,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A token that indicates the start of the next sequential page of results. Use the
-        /// token that is returned with a previous call to this operation. To start at the beginning
-        /// of the result set, do not specify a value. 
+        /// A token that indicates the start of the next sequential page of results. Use the token
+        /// that is returned with a previous call to this operation. To start at the beginning
+        /// of the result set, do not specify a value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

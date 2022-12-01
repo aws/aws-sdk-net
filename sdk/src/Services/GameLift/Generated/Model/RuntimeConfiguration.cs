@@ -39,16 +39,8 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// A GameLift instance is limited to 50 processes running concurrently. To calculate
     /// the total number of processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code>
-    /// parameter for each <a>ServerProcess</a>. Learn more about <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html">
+    /// parameter for each server process. Learn more about <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html">
     /// Running Multiple Processes on a Fleet</a>.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>DescribeRuntimeConfiguration</a> | <a>UpdateRuntimeConfiguration</a> 
     /// </para>
     /// </summary>
     public partial class RuntimeConfiguration

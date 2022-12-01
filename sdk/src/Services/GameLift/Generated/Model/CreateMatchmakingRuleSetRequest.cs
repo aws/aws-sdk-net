@@ -32,8 +32,7 @@ namespace Amazon.GameLift.Model
     /// Container for the parameters to the CreateMatchmakingRuleSet operation.
     /// Creates a new rule set for FlexMatch matchmaking. A rule set describes the type of
     /// match to create, such as the number and size of teams. It also sets the parameters
-    /// for acceptable player matches, such as minimum skill level or character type. A rule
-    /// set is used by a <a>MatchmakingConfiguration</a>. 
+    /// for acceptable player matches, such as minimum skill level or character type.
     /// 
     ///  
     /// <para>
@@ -44,7 +43,8 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// Since matchmaking rule sets cannot be edited, it is a good idea to check the rule
-    /// set syntax using <a>ValidateMatchmakingRuleSet</a> before creating a new rule set.
+    /// set syntax using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ValidateMatchmakingRuleSet.html">ValidateMatchmakingRuleSet</a>
+    /// before creating a new rule set.
     /// </para>
     ///  
     /// <para>
@@ -65,18 +65,7 @@ namespace Amazon.GameLift.Model
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-intro.html">Matchmaking
     /// with FlexMatch</a> 
     /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateMatchmakingConfiguration</a> | <a>DescribeMatchmakingConfigurations</a>
-    /// | <a>UpdateMatchmakingConfiguration</a> | <a>DeleteMatchmakingConfiguration</a> |
-    /// <a>CreateMatchmakingRuleSet</a> | <a>DescribeMatchmakingRuleSets</a> | <a>ValidateMatchmakingRuleSet</a>
-    /// | <a>DeleteMatchmakingRuleSet</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
-    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateMatchmakingRuleSetRequest : AmazonGameLiftRequest
     {
@@ -132,10 +121,6 @@ namespace Amazon.GameLift.Model
         /// key-value pairs. Tagging Amazon Web Services resources are useful for resource management,
         /// access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
         /// Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
-        /// Once the resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>,
-        /// and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-        /// may be lower than stated. See the Amazon Web Services General Reference for actual
-        /// tagging limits.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

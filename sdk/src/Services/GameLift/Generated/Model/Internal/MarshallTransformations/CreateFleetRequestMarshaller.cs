@@ -67,6 +67,17 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAnywhereConfiguration())
+                {
+                    context.Writer.WritePropertyName("AnywhereConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AnywhereConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AnywhereConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetBuildId())
                 {
                     context.Writer.WritePropertyName("BuildId");
@@ -82,6 +93,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.CertificateConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetComputeType())
+                {
+                    context.Writer.WritePropertyName("ComputeType");
+                    context.Writer.Write(publicRequest.ComputeType);
                 }
 
                 if(publicRequest.IsSetDescription())

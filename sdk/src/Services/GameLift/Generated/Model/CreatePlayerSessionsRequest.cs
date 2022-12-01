@@ -33,7 +33,8 @@ namespace Amazon.GameLift.Model
     /// Reserves open slots in a game session for a group of players. New player sessions
     /// can be created in any game session with an open slot that is in <code>ACTIVE</code>
     /// status and has a player creation policy of <code>ACCEPT_ALL</code>. To add a single
-    /// player to a game session, use <a>CreatePlayerSession</a>. 
+    /// player to a game session, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html">CreatePlayerSession</a>
+    /// 
     /// 
     ///  
     /// <para>
@@ -42,7 +43,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// If successful, a slot is reserved in the game session for each player, and new <a>PlayerSession</a>
+    /// If successful, a slot is reserved in the game session for each player, and new <code>PlayerSession</code>
     /// objects are returned with player session IDs. Each player references their player
     /// session ID when sending a connection request to the game session, and the game server
     /// can use it to validate the player reservation with the GameLift service. Player sessions
@@ -54,16 +55,11 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <i>Available in Amazon GameLift Local.</i> 
-    /// </para>
-    ///  
-    /// <para>
     ///  <b>Related actions</b> 
     /// </para>
     ///  
     /// <para>
-    ///  <a>CreatePlayerSession</a> | <a>CreatePlayerSessions</a> | <a>DescribePlayerSessions</a>
-    /// | <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
     /// APIs by task</a> 
     /// </para>
     /// </summary>

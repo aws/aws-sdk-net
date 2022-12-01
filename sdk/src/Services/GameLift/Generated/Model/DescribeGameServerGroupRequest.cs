@@ -43,7 +43,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// To get attributes for a game server group, provide a group name or ARN value. If successful,
-    /// a <a>GameServerGroup</a> object is returned.
+    /// a <code>GameServerGroup</code> object is returned.
     /// </para>
     ///  
     /// <para>
@@ -54,17 +54,6 @@ namespace Amazon.GameLift.Model
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift
     /// FleetIQ Guide</a> 
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a> | <a>DescribeGameServerGroup</a>
-    /// | <a>UpdateGameServerGroup</a> | <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a>
-    /// | <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
-    /// APIs by task</a> 
-    /// </para>
     /// </summary>
     public partial class DescribeGameServerGroupRequest : AmazonGameLiftRequest
     {
@@ -73,8 +62,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
-        /// A unique identifier for the game server group. Use either the <a>GameServerGroup</a>
-        /// name or ARN value.
+        /// A unique identifier for the game server group. Use either the name or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

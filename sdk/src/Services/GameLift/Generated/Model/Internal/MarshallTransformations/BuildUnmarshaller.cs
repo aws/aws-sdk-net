@@ -94,6 +94,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.OperatingSystem = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ServerSdkVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServerSdkVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SizeOnDisk", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

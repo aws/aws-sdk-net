@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Represents the returned data in response to a request operation.
+    /// This is the response object from the DescribeFleetPortSettings operation.
     /// </summary>
     public partial class DescribeFleetPortSettingsResponse : AmazonWebServiceResponse
     {

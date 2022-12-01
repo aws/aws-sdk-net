@@ -75,6 +75,10 @@ namespace Amazon.GameLift.Model
         /// rule set. Example: <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S":
         /// "deathmatch"}}</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// You can provide up to 10 <code>PlayerAttributes</code>.
+        /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> PlayerAttributes
         {

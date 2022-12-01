@@ -30,17 +30,6 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// A remote location where a multi-location fleet can deploy EC2 instances for game hosting.
-    /// 
-    /// 
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html">CreateFleet</a>
-    /// 
-    /// </para>
     /// </summary>
     public partial class LocationConfiguration
     {
@@ -52,7 +41,7 @@ namespace Amazon.GameLift.Model
         /// An Amazon Web Services Region code, such as <code>us-west-2</code>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Location
         {
             get { return this._location; }

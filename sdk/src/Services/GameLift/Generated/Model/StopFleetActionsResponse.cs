@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Represents the input for a request operation.
+    /// This is the response object from the StopFleetActions operation.
     /// </summary>
     public partial class StopFleetActionsResponse : AmazonWebServiceResponse
     {

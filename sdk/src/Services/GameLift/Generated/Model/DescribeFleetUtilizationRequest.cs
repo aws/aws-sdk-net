@@ -33,8 +33,8 @@ namespace Amazon.GameLift.Model
     /// Retrieves utilization statistics for one or more fleets. Utilization data provides
     /// a snapshot of how the fleet's hosting resources are currently being used. For fleets
     /// with remote locations, this operation retrieves data for the fleet's home Region only.
-    /// See <a>DescribeFleetLocationUtilization</a> to get utilization statistics for a fleet's
-    /// remote locations.
+    /// See <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationUtilization.html">DescribeFleetLocationUtilization</a>
+    /// to get utilization statistics for a fleet's remote locations.
     /// 
     ///  
     /// <para>
@@ -56,9 +56,10 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// If successful, a <a>FleetUtilization</a> object is returned for each requested fleet
-    /// ID, unless the fleet identifier is not found. Each fleet utilization object includes
-    /// a <code>Location</code> property, which is set to the fleet's home Region. 
+    /// If successful, a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_FleetUtilization.html">FleetUtilization</a>
+    /// object is returned for each requested fleet ID, unless the fleet identifier is not
+    /// found. Each fleet utilization object includes a <code>Location</code> property, which
+    /// is set to the fleet's home Region. 
     /// </para>
     ///  <note> 
     /// <para>
@@ -80,18 +81,6 @@ namespace Amazon.GameLift.Model
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
     /// Metrics for Fleets</a> 
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>ListFleets</a> | <a>DescribeEC2InstanceLimits</a> | <a>DescribeFleetAttributes</a>
-    /// | <a>DescribeFleetCapacity</a> | <a>DescribeFleetEvents</a> | <a>DescribeFleetLocationAttributes</a>
-    /// | <a>DescribeFleetPortSettings</a> | <a>DescribeFleetUtilization</a> | <a>DescribeRuntimeConfiguration</a>
-    /// | <a>DescribeScalingPolicies</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
-    /// </para>
     /// </summary>
     public partial class DescribeFleetUtilizationRequest : AmazonGameLiftRequest
     {
@@ -102,9 +91,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetIds. 
         /// <para>
-        /// A unique identifier for the fleet(s) to retrieve utilization data for. You can use
-        /// either the fleet ID or ARN value. To retrieve attributes for all current fleets, do
-        /// not include this parameter. 
+        /// A unique identifier for the fleet to retrieve utilization data for. You can use either
+        /// the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include
+        /// this parameter. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

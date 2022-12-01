@@ -44,19 +44,6 @@ namespace Amazon.GameLift.Model
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">
     /// Using Multi-Region Queues</a> 
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html">CreateGameSessionQueue</a>
-    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionQueues.html">DescribeGameSessionQueues</a>
-    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSessionQueue.html">UpdateGameSessionQueue</a>
-    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteGameSessionQueue.html">DeleteGameSessionQueue</a>
-    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
-    /// </para>
     /// </summary>
     public partial class UpdateGameSessionQueueRequest : AmazonGameLiftRequest
     {
@@ -72,8 +59,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CustomEventData. 
         /// <para>
-        ///  Information to be added to all events that are related to this game session queue.
-        /// 
+        /// Information to be added to all events that are related to this game session queue.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]

@@ -31,18 +31,6 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Rule that controls how a fleet is scaled. Scaling policies are uniquely identified
     /// by the combination of name and fleet ID.
-    /// 
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>DescribeFleetCapacity</a> | <a>UpdateFleetCapacity</a> | <a>DescribeEC2InstanceLimits</a>
-    /// | <a>PutScalingPolicy</a> | <a>DescribeScalingPolicies</a> | <a>DeleteScalingPolicy</a>
-    /// | <a>StopFleetActions</a> | <a>StartFleetActions</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
-    /// </para>
     /// </summary>
     public partial class ScalingPolicy
     {
@@ -294,7 +282,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ScalingAdjustmentType. 
         /// <para>
-        /// The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+        /// The type of adjustment to make to a fleet's instance count.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -330,8 +318,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Current status of the scaling policy. The scaling policy can be in force only when
         /// in an <code>ACTIVE</code> status. Scaling policies can be suspended for individual
-        /// fleets (see <a>StopFleetActions</a>; if suspended for a fleet, the policy status does
-        /// not change. View a fleet's stopped actions by calling <a>DescribeFleetCapacity</a>.
+        /// fleets. If the policy is suspended for a fleet, the policy status does not change.
         /// </para>
         ///  <ul> <li> 
         /// <para>

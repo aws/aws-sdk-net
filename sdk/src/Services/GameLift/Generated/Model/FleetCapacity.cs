@@ -91,10 +91,7 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceCounts. 
-        /// <para>
-        /// The current instance count and capacity settings for the fleet location. 
-        /// </para>
+        /// Gets and sets the property InstanceCounts.
         /// </summary>
         public EC2InstanceCounts InstanceCounts
         {

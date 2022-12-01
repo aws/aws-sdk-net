@@ -44,8 +44,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a>CreateAlias</a> | <a>ListAliases</a> | <a>DescribeAlias</a> | <a>UpdateAlias</a>
-    /// | <a>DeleteAlias</a> | <a>ResolveAlias</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
     /// APIs by task</a> 
     /// </para>
     /// </summary>
@@ -136,7 +135,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         ///  <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used
         /// to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException
-        /// with the <a>RoutingStrategy</a> message embedded.
+        /// with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a>
+        /// message embedded.
         /// </para>
         ///  </li> </ul>
         /// </summary>

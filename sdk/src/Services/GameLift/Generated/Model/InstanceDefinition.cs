@@ -33,8 +33,8 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// An allowed instance type for a <a>GameServerGroup</a>. All game server groups must
-    /// have at least two instance types defined for it. GameLift FleetIQ periodically evaluates
+    /// An allowed instance type for a game server group. All game server groups must have
+    /// at least two instance types defined for it. GameLift FleetIQ periodically evaluates
     /// each defined instance type for viability. It then updates the Auto Scaling group with
     /// the list of viable instance types.
     /// </para>

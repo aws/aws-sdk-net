@@ -43,18 +43,6 @@ namespace Amazon.GameLift.Model
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-configuration.html">
     /// Design a FlexMatch matchmaker</a> 
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateMatchmakingConfiguration</a> | <a>DescribeMatchmakingConfigurations</a>
-    /// | <a>UpdateMatchmakingConfiguration</a> | <a>DeleteMatchmakingConfiguration</a> |
-    /// <a>CreateMatchmakingRuleSet</a> | <a>DescribeMatchmakingRuleSets</a> | <a>ValidateMatchmakingRuleSet</a>
-    /// | <a>DeleteMatchmakingRuleSet</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
-    /// </para>
     /// </summary>
     public partial class UpdateMatchmakingConfigurationRequest : AmazonGameLiftRequest
     {
@@ -141,7 +129,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The method that is used to backfill game sessions created with this matchmaking configuration.
         /// Specify MANUAL when your game manages backfill requests manually or does not use the
-        /// match backfill feature. Specify AUTOMATIC to have GameLift create a <a>StartMatchBackfill</a>
+        /// match backfill feature. Specify AUTOMATIC to have GameLift create a match backfill
         /// request whenever a game session has one or more open slots. Learn more about manual
         /// and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill
         /// Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code>
@@ -182,7 +170,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A descriptive label that is associated with matchmaking configuration.
+        /// A description for the matchmaking configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -233,10 +221,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameProperties. 
         /// <para>
         /// A set of custom properties for a game session, formatted as key:value pairs. These
-        /// properties are passed to a game server process in the <a>GameSession</a> object with
-        /// a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-        /// a Game Session</a>). This information is added to the new <a>GameSession</a> object
-        /// that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code>
+        /// properties are passed to a game server process with a request to start a new game
+        /// session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// a Game Session</a>). This information is added to the new <code>GameSession</code>
+        /// object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code>
         /// is set to <code>STANDALONE</code>.
         /// </para>
         /// </summary>
@@ -257,11 +245,11 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionData. 
         /// <para>
         /// A set of custom game session properties, formatted as a single string value. This
-        /// data is passed to a game server process in the <a>GameSession</a> object with a request
-        /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-        /// a Game Session</a>). This information is added to the new <a>GameSession</a> object
-        /// that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code>
-        /// is set to <code>STANDALONE</code>.
+        /// data is passed to a game server process with a request to start a new game session
+        /// (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// a Game Session</a>). This information is added to the game session that is created
+        /// for a successful match. This parameter is not used if <code>FlexMatchMode</code> is
+        /// set to <code>STANDALONE</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

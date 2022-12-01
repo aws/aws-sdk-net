@@ -36,10 +36,6 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <b>Related actions</b> 
     /// </para>
-    ///  
-    /// <para>
-    ///  <a>DescribeInstances</a> 
-    /// </para>
     /// </summary>
     public partial class Instance
     {

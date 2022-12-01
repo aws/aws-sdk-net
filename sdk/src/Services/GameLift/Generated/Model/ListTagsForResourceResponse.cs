@@ -38,7 +38,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The collection of tags that have been assigned to the specified resource. 
+        /// The collection of tags that have been assigned to the specified resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

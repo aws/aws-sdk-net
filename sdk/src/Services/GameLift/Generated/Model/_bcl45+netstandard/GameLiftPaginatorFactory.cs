@@ -164,6 +164,14 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Paginator for ListCompute operation
+        ///</summary>
+        public IListComputePaginator ListCompute(ListComputeRequest request) 
+        {
+            return new ListComputePaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListFleets operation
         ///</summary>
         public IListFleetsPaginator ListFleets(ListFleetsRequest request) 
@@ -185,6 +193,14 @@ namespace Amazon.GameLift.Model
         public IListGameServersPaginator ListGameServers(ListGameServersRequest request) 
         {
             return new ListGameServersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListLocations operation
+        ///</summary>
+        public IListLocationsPaginator ListLocations(ListLocationsRequest request) 
+        {
+            return new ListLocationsPaginator(this.client, request);
         }
 
         /// <summary>

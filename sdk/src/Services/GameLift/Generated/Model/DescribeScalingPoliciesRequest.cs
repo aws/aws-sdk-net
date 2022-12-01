@@ -37,25 +37,12 @@ namespace Amazon.GameLift.Model
     /// To get a fleet's scaling policies, specify the fleet ID. You can filter this request
     /// by policy status, such as to retrieve only active scaling policies. Use the pagination
     /// parameters to retrieve results as a set of sequential pages. If successful, set of
-    /// <a>ScalingPolicy</a> objects is returned for the fleet.
+    /// <code>ScalingPolicy</code> objects is returned for the fleet.
     /// </para>
     ///  
     /// <para>
-    /// A fleet may have all of its scaling policies suspended (<a>StopFleetActions</a>).
-    /// This operation does not affect the status of the scaling policies, which remains ACTIVE.
-    /// To see whether a fleet's scaling policies are in force or suspended, call <a>DescribeFleetAttributes</a>
-    /// and check the stopped actions.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>DescribeFleetCapacity</a> | <a>UpdateFleetCapacity</a> | <a>DescribeEC2InstanceLimits</a>
-    /// | <a>PutScalingPolicy</a> | <a>DescribeScalingPolicies</a> | <a>DeleteScalingPolicy</a>
-    /// | <a>StopFleetActions</a> | <a>StartFleetActions</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
+    /// A fleet may have all of its scaling policies suspended. This operation does not affect
+    /// the status of the scaling policies, which remains ACTIVE.
     /// </para>
     /// </summary>
     public partial class DescribeScalingPoliciesRequest : AmazonGameLiftRequest

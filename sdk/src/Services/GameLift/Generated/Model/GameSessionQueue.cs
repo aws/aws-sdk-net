@@ -31,18 +31,6 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Configuration for a game session placement mechanism that processes requests for new
     /// game sessions. A queue can be used on its own or as part of a matchmaking solution.
-    /// 
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html">CreateGameSessionQueue</a>
-    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionQueues.html">DescribeGameSessionQueues</a>
-    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSessionQueue.html">UpdateGameSessionQueue</a>
-    /// 
-    /// </para>
     /// </summary>
     public partial class GameSessionQueue
     {
@@ -60,7 +48,6 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property CustomEventData. 
         /// <para>
         ///  Information that is added to all events that are related to this game session queue.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]

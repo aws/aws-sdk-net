@@ -33,8 +33,7 @@ namespace Amazon.GameLift.Model
     /// Retrieves the resource capacity settings for one or more fleets. The data returned
     /// includes the current fleet capacity (number of EC2 instances), and settings that can
     /// control how capacity scaling. For fleets with remote locations, this operation retrieves
-    /// data for the fleet's home Region only. See <a>DescribeFleetLocationCapacity</a> to
-    /// get capacity settings for a fleet's remote locations.
+    /// data for the fleet's home Region only.
     /// 
     ///  
     /// <para>
@@ -56,10 +55,10 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// If successful, a <a>FleetCapacity</a> object is returned for each requested fleet
-    /// ID. Each FleetCapacity object includes a <code>Location</code> property, which is
-    /// set to the fleet's home Region. When a list of fleet IDs is provided, attribute objects
-    /// are returned only for fleets that currently exist.
+    /// If successful, a <code>FleetCapacity</code> object is returned for each requested
+    /// fleet ID. Each FleetCapacity object includes a <code>Location</code> property, which
+    /// is set to the fleet's home Region. When a list of fleet IDs is provided, attribute
+    /// objects are returned only for fleets that currently exist.
     /// </para>
     ///  <note> 
     /// <para>
@@ -81,18 +80,6 @@ namespace Amazon.GameLift.Model
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
     /// metrics for fleets</a> 
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>ListFleets</a> | <a>DescribeEC2InstanceLimits</a> | <a>DescribeFleetAttributes</a>
-    /// | <a>DescribeFleetCapacity</a> | <a>DescribeFleetEvents</a> | <a>DescribeFleetLocationAttributes</a>
-    /// | <a>DescribeFleetPortSettings</a> | <a>DescribeFleetUtilization</a> | <a>DescribeRuntimeConfiguration</a>
-    /// | <a>DescribeScalingPolicies</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
-    /// </para>
     /// </summary>
     public partial class DescribeFleetCapacityRequest : AmazonGameLiftRequest
     {
@@ -103,8 +90,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetIds. 
         /// <para>
-        /// A unique identifier for the fleet(s) to retrieve capacity information for. You can
-        /// use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity
+        /// A unique identifier for the fleet to retrieve capacity information for. You can use
+        /// either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity
         /// information for all fleets.
         /// </para>
         /// </summary>

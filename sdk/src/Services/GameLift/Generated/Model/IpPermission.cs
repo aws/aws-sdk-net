@@ -34,15 +34,6 @@ namespace Amazon.GameLift.Model
     /// number combination, which must fall into the fleet's allowed ranges. Fleets with custom
     /// game builds must have permissions explicitly set. For Realtime Servers fleets, GameLift
     /// automatically opens two port ranges, one for TCP messaging and one for UDP.
-    /// 
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>DescribeFleetPortSettings</a> 
-    /// </para>
     /// </summary>
     public partial class IpPermission
     {

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Represents the returned data in response to a request operation.
+    /// This is the response object from the DescribeFleetLocationAttributes operation.
     /// </summary>
     public partial class DescribeFleetLocationAttributesResponse : AmazonWebServiceResponse
     {
@@ -44,7 +44,6 @@ namespace Amazon.GameLift.Model
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
         /// that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are
         /// unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-        /// 
         /// </para>
         /// </summary>
         public string FleetArn
@@ -80,7 +79,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property LocationAttributes. 
         /// <para>
-        ///  Location-specific information on the requested fleet's remote locations. 
+        ///  Location-specific information on the requested fleet's remote locations.
         /// </para>
         /// </summary>
         public List<LocationAttributes> LocationAttributes

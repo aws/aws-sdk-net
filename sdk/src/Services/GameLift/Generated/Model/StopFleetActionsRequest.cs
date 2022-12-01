@@ -58,9 +58,7 @@ namespace Amazon.GameLift.Model
     ///  </li> </ul> 
     /// <para>
     /// If successful, GameLift no longer initiates scaling events except in response to manual
-    /// changes using <a>UpdateFleetCapacity</a>. You can view a fleet's stopped actions using
-    /// <a>DescribeFleetAttributes</a> or <a>DescribeFleetLocationAttributes</a>. Suspended
-    /// activity can be restarted using <a>StartFleetActions</a>.
+    /// changes using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html">UpdateFleetCapacity</a>.
     /// </para>
     ///  
     /// <para>
@@ -70,17 +68,6 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
     /// up GameLift Fleets</a> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateFleet</a> | <a>UpdateFleetCapacity</a> | <a>PutScalingPolicy</a> | <a>DescribeEC2InstanceLimits</a>
-    /// | <a>DescribeFleetAttributes</a> | <a>DescribeFleetLocationAttributes</a> | <a>UpdateFleetAttributes</a>
-    /// | <a>StopFleetActions</a> | <a>DeleteFleet</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
     /// </para>
     /// </summary>
     public partial class StopFleetActionsRequest : AmazonGameLiftRequest

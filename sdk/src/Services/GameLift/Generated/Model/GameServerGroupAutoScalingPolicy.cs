@@ -35,9 +35,9 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// Configuration settings for intelligent automatic scaling that uses target tracking.
     /// These settings are used to add an Auto Scaling policy when creating the corresponding
-    /// Auto Scaling group with <a>CreateGameServerGroup</a>. After the Auto Scaling group
-    /// is created, all updates to Auto Scaling policies, including changing this policy and
-    /// adding or removing other policies, is done directly on the Auto Scaling group. 
+    /// Auto Scaling group. After the Auto Scaling group is created, all updates to Auto Scaling
+    /// policies, including changing this policy and adding or removing other policies, is
+    /// done directly on the Auto Scaling group. 
     /// </para>
     /// </summary>
     public partial class GameServerGroupAutoScalingPolicy

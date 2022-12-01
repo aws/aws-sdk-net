@@ -29,23 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Settings for a target-based scaling policy (see <a>ScalingPolicy</a>. A target-based
-    /// policy tracks a particular fleet metric specifies a target value for the metric. As
-    /// player usage changes, the policy triggers Amazon GameLift to adjust capacity so that
-    /// the metric returns to the target value. The target configuration specifies settings
-    /// as needed for the target based policy, including the target value. 
-    /// 
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>DescribeFleetCapacity</a> | <a>UpdateFleetCapacity</a> | <a>DescribeEC2InstanceLimits</a>
-    /// | <a>PutScalingPolicy</a> | <a>DescribeScalingPolicies</a> | <a>DeleteScalingPolicy</a>
-    /// | <a>StopFleetActions</a> | <a>StartFleetActions</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
-    /// </para>
+    /// Settings for a target-based scaling policy. A target-based policy tracks a particular
+    /// fleet metric specifies a target value for the metric. As player usage changes, the
+    /// policy triggers Amazon GameLift to adjust capacity so that the metric returns to the
+    /// target value. The target configuration specifies settings as needed for the target
+    /// based policy, including the target value.
     /// </summary>
     public partial class TargetConfiguration
     {

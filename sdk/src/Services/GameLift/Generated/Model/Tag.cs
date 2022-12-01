@@ -52,7 +52,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a>TagResource</a> | <a>UntagResource</a> | <a>ListTagsForResource</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
     /// APIs by task</a> 
     /// </para>
     /// </summary>
@@ -64,7 +64,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        ///  The key for a developer-defined key:value pair for tagging an Amazon Web Services
+        /// The key for a developer-defined key:value pair for tagging an Amazon Web Services
         /// resource. 
         /// </para>
         /// </summary>
@@ -84,7 +84,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  The value for a developer-defined key:value pair for tagging an Amazon Web Services
+        /// The value for a developer-defined key:value pair for tagging an Amazon Web Services
         /// resource. 
         /// </para>
         /// </summary>

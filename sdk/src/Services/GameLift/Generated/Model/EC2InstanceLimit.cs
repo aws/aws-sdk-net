@@ -34,15 +34,6 @@ namespace Amazon.GameLift.Model
     /// type, per Amazon Web Services Region or location, for use with GameLift. You can request
     /// an limit increase for your account by using the <b>Service limits</b> page in the
     /// GameLift console.
-    /// 
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
     /// </summary>
     public partial class EC2InstanceLimit
     {

@@ -37,9 +37,8 @@ namespace Amazon.GameLift.Model
     ///  <note> 
     /// <para>
     /// If the fleet being deleted has a VPC peering connection, you first need to get a valid
-    /// authorization (good for 24 hours) by calling <a>CreateVpcPeeringAuthorization</a>.
-    /// You do not need to explicitly delete the VPC peering connection--this is done as part
-    /// of the delete fleet process.
+    /// authorization (good for 24 hours) by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringAuthorization.html">CreateVpcPeeringAuthorization</a>.
+    /// You do not need to explicitly delete the VPC peering connection.
     /// </para>
     ///  </note> 
     /// <para>
@@ -55,18 +54,6 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
     /// up GameLift Fleets</a> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateFleetLocations</a> | <a>UpdateFleetAttributes</a> | <a>UpdateFleetCapacity</a>
-    /// | <a>UpdateFleetPortSettings</a> | <a>UpdateRuntimeConfiguration</a> | <a>StopFleetActions</a>
-    /// | <a>StartFleetActions</a> | <a>PutScalingPolicy</a> | <a>DeleteFleet</a> | <a>DeleteFleetLocations</a>
-    /// | <a>DeleteScalingPolicy</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
     /// </para>
     /// </summary>
     public partial class DeleteFleetRequest : AmazonGameLiftRequest

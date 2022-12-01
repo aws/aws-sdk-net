@@ -43,17 +43,6 @@ namespace Amazon.GameLift.Model
     /// can be temporarily suspended and resumed by calling <code>SuspendGameServerGroup</code>
     /// and <code>ResumeGameServerGroup</code>, respectively. 
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a> | <a>DescribeGameServerGroup</a>
-    /// | <a>UpdateGameServerGroup</a> | <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a>
-    /// | <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
-    /// APIs by task</a> 
-    /// </para>
     /// </summary>
     public partial class GameServerGroup
     {

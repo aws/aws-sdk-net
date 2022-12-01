@@ -72,7 +72,8 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// If successful, a <code>GameSession</code> object is returned for each game session
     /// that matches the request. Search finds game sessions that are in <code>ACTIVE</code>
-    /// status only. To retrieve information on game sessions in other statuses, use <a>DescribeGameSessions</a>.
+    /// status only. To retrieve information on game sessions in other statuses, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html">DescribeGameSessions</a>
+    /// .
     /// </para>
     ///  
     /// <para>
@@ -85,9 +86,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>gameSessionName</b> -- Name assigned to a game session. This value is set when
-    /// requesting a new game session with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>.
-    /// Game session names do not need to be unique to a game session.
+    ///  <b>gameSessionName</b> -- Name assigned to a game session. Game session names do
+    /// not need to be unique to a game session.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -101,8 +101,6 @@ namespace Amazon.GameLift.Model
     ///  </li> <li> 
     /// <para>
     ///  <b>maximumSessions</b> -- Maximum number of player sessions allowed for a game session.
-    /// This value is set when requesting a new game session with <a>CreateGameSession</a>
-    /// or updating with <a>UpdateGameSession</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -130,14 +128,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </note> 
     /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateGameSession</a> | <a>DescribeGameSessions</a> | <a>DescribeGameSessionDetails</a>
-    /// | <a>SearchGameSessions</a> | <a>UpdateGameSession</a> | <a>GetGameSessionLogUrl</a>
-    /// | <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | <a>StopGameSessionPlacement</a>
-    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
     /// APIs by task</a> 
     /// </para>
     /// </summary>
@@ -302,10 +293,6 @@ namespace Amazon.GameLift.Model
         /// A fleet location to search for game sessions. You can specify a fleet's home Region
         /// or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.
         /// 
-        /// </para>
-        ///  
-        /// <para>
-        ///  
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

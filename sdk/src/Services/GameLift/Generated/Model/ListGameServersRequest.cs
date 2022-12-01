@@ -48,16 +48,6 @@ namespace Amazon.GameLift.Model
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift
     /// FleetIQ Guide</a> 
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>RegisterGameServer</a> | <a>ListGameServers</a> | <a>ClaimGameServer</a> | <a>DescribeGameServer</a>
-    /// | <a>UpdateGameServer</a> | <a>DeregisterGameServer</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
-    /// APIs by task</a> 
-    /// </para>
     /// </summary>
     public partial class ListGameServersRequest : AmazonGameLiftRequest
     {
@@ -70,7 +60,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
         /// An identifier for the game server group to retrieve a list of game servers from. Use
-        /// either the <a>GameServerGroup</a> name or ARN value.
+        /// either the name or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

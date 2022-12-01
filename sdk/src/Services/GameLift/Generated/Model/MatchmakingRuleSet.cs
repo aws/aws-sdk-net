@@ -31,8 +31,7 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Set of rule statements, used with FlexMatch, that determine how to build your player
     /// matches. Each rule set describes a type of group to be created and defines the parameters
-    /// for acceptable player matches. Rule sets are used in <a>MatchmakingConfiguration</a>
-    /// objects.
+    /// for acceptable player matches.
     /// 
     ///  
     /// <para>

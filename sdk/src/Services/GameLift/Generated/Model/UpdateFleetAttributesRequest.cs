@@ -51,27 +51,34 @@ namespace Amazon.GameLift.Model
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
     /// up GameLift fleets</a> 
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateFleetLocations</a> | <a>UpdateFleetAttributes</a> | <a>UpdateFleetCapacity</a>
-    /// | <a>UpdateFleetPortSettings</a> | <a>UpdateRuntimeConfiguration</a> | <a>StopFleetActions</a>
-    /// | <a>StartFleetActions</a> | <a>PutScalingPolicy</a> | <a>DeleteFleet</a> | <a>DeleteFleetLocations</a>
-    /// | <a>DeleteScalingPolicy</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
-    /// </para>
     /// </summary>
     public partial class UpdateFleetAttributesRequest : AmazonGameLiftRequest
     {
+        private AnywhereConfiguration _anywhereConfiguration;
         private string _description;
         private string _fleetId;
         private List<string> _metricGroups = new List<string>();
         private string _name;
         private ProtectionPolicy _newGameSessionProtectionPolicy;
         private ResourceCreationLimitPolicy _resourceCreationLimitPolicy;
+
+        /// <summary>
+        /// Gets and sets the property AnywhereConfiguration. 
+        /// <para>
+        /// GameLift Anywhere configuration options.
+        /// </para>
+        /// </summary>
+        public AnywhereConfiguration AnywhereConfiguration
+        {
+            get { return this._anywhereConfiguration; }
+            set { this._anywhereConfiguration = value; }
+        }
+
+        // Check to see if AnywhereConfiguration property is set
+        internal bool IsSetAnywhereConfiguration()
+        {
+            return this._anywhereConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -159,7 +166,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The game session protection policy to apply to all new instances created in this fleet.
         /// Instances that already exist are not affected. You can set protection for individual
-        /// instances using <a>UpdateGameSession</a>.
+        /// instances using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
+        /// .
         /// </para>
         ///  <ul> <li> 
         /// <para>

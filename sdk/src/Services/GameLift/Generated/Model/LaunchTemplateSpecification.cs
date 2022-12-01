@@ -35,8 +35,7 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// An Amazon Elastic Compute Cloud launch template that contains configuration settings
     /// and game server code to be deployed to all instances in a game server group. The launch
-    /// template is specified when creating a new game server group with <a>CreateGameServerGroup</a>.
-    /// 
+    /// template is specified when creating a new game server group. 
     /// </para>
     /// </summary>
     public partial class LaunchTemplateSpecification

@@ -33,11 +33,6 @@ namespace Amazon.GameLift.Model
     /// You can use a filter to temporarily turn off placements for specific locations. For
     /// queues that have multi-location fleets, you can use a filter configuration allow placement
     /// with some, but not all of these locations.
-    /// 
-    ///  
-    /// <para>
-    /// Filter configurations are part of a <a>GameSessionQueue</a>.
-    /// </para>
     /// </summary>
     public partial class FilterConfiguration
     {

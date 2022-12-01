@@ -32,11 +32,6 @@ namespace Amazon.GameLift.Model
     /// Resource capacity settings. Fleet capacity is measured in Amazon EC2 instances. Pending
     /// and terminating counts are non-zero when the fleet capacity is adjusting to a scaling
     /// event or if access to resources is temporarily affected.
-    /// 
-    ///  
-    /// <para>
-    /// EC2 instance counts are part of <a>FleetCapacity</a>.
-    /// </para>
     /// </summary>
     public partial class EC2InstanceCounts
     {

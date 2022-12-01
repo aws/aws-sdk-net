@@ -40,7 +40,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// When using FlexMatch with GameLift managed hosting, you can request a backfill match
-    /// from a client service by calling this operation with a <a>GameSession</a> identifier.
+    /// from a client service by calling this operation with a <code>GameSessions</code> ID.
     /// You also have the option of making backfill requests directly from your game server.
     /// In response to a request, FlexMatch creates player sessions for the new players, updates
     /// the <code>GameSession</code> resource, and sends updated matchmaking data to the game
@@ -86,16 +86,6 @@ namespace Amazon.GameLift.Model
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/gamelift-match.html">
     /// How GameLift FlexMatch works</a> 
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>StartMatchmaking</a> | <a>DescribeMatchmaking</a> | <a>StopMatchmaking</a> | <a>AcceptMatch</a>
-    /// | <a>StartMatchBackfill</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
-    /// </para>
     /// </summary>
     public partial class StartMatchBackfillRequest : AmazonGameLiftRequest
     {
@@ -109,7 +99,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Name of the matchmaker to use for this request. You can use either the configuration
         /// name or ARN value. The ARN of the matchmaker that was used with the original game
-        /// session is listed in the <a>GameSession</a> object, <code>MatchmakerData</code> property.
+        /// session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code>
+        /// property.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -152,9 +143,14 @@ namespace Amazon.GameLift.Model
         /// This information is used by the matchmaker to find new players and add them to the
         /// existing game.
         /// </para>
+        ///  
+        /// <para>
+        /// You can include up to 199 <code>Players</code> in a <code>StartMatchBackfill</code>
+        /// request.
+        /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a>
+        /// PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code>
         /// object, <code>MatchmakerData</code> property, for all players who are currently assigned
         /// to the game session. The matchmaker data is in JSON syntax, formatted as a string.
         /// For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
