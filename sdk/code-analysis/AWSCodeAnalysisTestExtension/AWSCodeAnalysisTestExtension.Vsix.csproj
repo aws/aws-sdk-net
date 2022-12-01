@@ -1028,6 +1028,10 @@
       <Project>{749F9678-8C20-4EDE-8FB9-367849E8866C}</Project>
       <Name>AWSSDK.PinpointSMSVoiceV2.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Pipes/AWSSDK.Pipes.CodeAnalysis.csproj">
+      <Project>{7D033232-D36C-40AD-9F4B-EA2C980E5F88}</Project>
+      <Name>AWSSDK.Pipes.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Polly/AWSSDK.Polly.CodeAnalysis.csproj">
       <Project>{3D893BFD-952F-490E-A950-7F59E6609344}</Project>
       <Name>AWSSDK.Polly.CodeAnalysis</Name>
