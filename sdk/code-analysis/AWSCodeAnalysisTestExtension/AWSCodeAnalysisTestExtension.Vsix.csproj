@@ -308,6 +308,10 @@
       <Project>{A3A9559C-7BF6-4586-B96F-951BA51C8C18}</Project>
       <Name>AWSSDK.CodeBuild.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CodeCatalyst/AWSSDK.CodeCatalyst.CodeAnalysis.csproj">
+      <Project>{DA940715-9EC9-4AC3-8F4F-3D227954CA37}</Project>
+      <Name>AWSSDK.CodeCatalyst.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CodeCommit/AWSSDK.CodeCommit.CodeAnalysis.csproj">
       <Project>{F8376247-8CAA-4214-B4FD-0415DE378611}</Project>
       <Name>AWSSDK.CodeCommit.CodeAnalysis</Name>

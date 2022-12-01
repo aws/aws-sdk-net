@@ -232,6 +232,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Added support for AWS CodeArtifact.
 * [AWSSDK.CodeBuild](https://www.nuget.org/packages/AWSSDK.CodeBuild/)
 	* AWS CodeBuild is a fully-managed build service in the cloud. AWS CodeBuild compiles your source code, runs unit tests, and produces artifacts that are ready to deploy.
+* [AWSSDK.CodeCatalyst](https://www.nuget.org/packages/AWSSDK.CodeCatalyst/)
+	* This release adds operations that support customers using the AWS Toolkits and Amazon CodeCatalyst, a unified software development service that helps developers develop, deploy, and maintain applications in the cloud. For more information, see the documentation.
 * [AWSSDK.CodeCommit](https://www.nuget.org/packages/AWSSDK.CodeCommit/)
 	* AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories.
 * [AWSSDK.CodeDeploy](https://www.nuget.org/packages/AWSSDK.CodeDeploy/)
