@@ -34,6 +34,8 @@ namespace Amazon.StepFunctions.Model
     public partial class ExecutionListItem
     {
         private string _executionArn;
+        private int? _itemCount;
+        private string _mapRunArn;
         private string _name;
         private DateTime? _startDate;
         private string _stateMachineArn;
@@ -57,6 +59,49 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetExecutionArn()
         {
             return this._executionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ItemCount. 
+        /// <para>
+        /// The total number of items processed in a child workflow execution. This field is returned
+        /// only if <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API
+        /// action. If <code>stateMachineArn</code> was specified in <code>ListExecutions</code>,
+        /// the <code>itemCount</code> field isn't returned.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int ItemCount
+        {
+            get { return this._itemCount.GetValueOrDefault(); }
+            set { this._itemCount = value; }
+        }
+
+        // Check to see if ItemCount property is set
+        internal bool IsSetItemCount()
+        {
+            return this._itemCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapRunArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code>
+        /// was specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code>
+        /// was specified in <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
+        public string MapRunArn
+        {
+            get { return this._mapRunArn; }
+            set { this._mapRunArn = value; }
+        }
+
+        // Check to see if MapRunArn property is set
+        internal bool IsSetMapRunArn()
+        {
+            return this._mapRunArn != null;
         }
 
         /// <summary>

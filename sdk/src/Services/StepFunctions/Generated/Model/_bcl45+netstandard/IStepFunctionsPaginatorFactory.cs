@@ -41,6 +41,11 @@ namespace Amazon.StepFunctions.Model
         IListExecutionsPaginator ListExecutions(ListExecutionsRequest request);
 
         /// <summary>
+        /// Paginator for ListMapRuns operation
+        ///</summary>
+        IListMapRunsPaginator ListMapRuns(ListMapRunsRequest request);
+
+        /// <summary>
         /// Paginator for ListStateMachines operation
         ///</summary>
         IListStateMachinesPaginator ListStateMachines(ListStateMachinesRequest request);

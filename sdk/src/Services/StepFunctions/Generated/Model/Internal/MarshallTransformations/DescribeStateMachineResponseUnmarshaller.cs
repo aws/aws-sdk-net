@@ -63,6 +63,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     response.Definition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("label", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Label = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("loggingConfiguration", targetDepth))
                 {
                     var unmarshaller = LoggingConfigurationUnmarshaller.Instance;

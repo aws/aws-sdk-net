@@ -67,6 +67,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetMapRunArn())
+                {
+                    context.Writer.WritePropertyName("mapRunArn");
+                    context.Writer.Write(publicRequest.MapRunArn);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");

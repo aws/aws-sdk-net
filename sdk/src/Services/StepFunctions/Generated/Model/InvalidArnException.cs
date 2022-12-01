@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// The provided Amazon Resource Name (ARN) is invalid.
+    /// The provided Amazon Resource Name (ARN) is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

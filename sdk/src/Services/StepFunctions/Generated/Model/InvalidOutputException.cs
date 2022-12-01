@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// The provided JSON output data is invalid.
+    /// The provided JSON output data is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

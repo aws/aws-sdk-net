@@ -61,6 +61,16 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeExecutionResponse.Cause</property>
+    <min>0</min>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeExecutionResponse.Error</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeExecutionResponse.ExecutionArn</property>
     <min>1</min>
     <max>256</max>
@@ -68,6 +78,11 @@
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeExecutionResponse.Input</property>
     <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeExecutionResponse.MapRunArn</property>
+    <min>1</min>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeExecutionResponse.Name</property>
@@ -87,6 +102,34 @@
     <property>Amazon.StepFunctions.Model.DescribeExecutionResponse.TraceHeader</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeMapRunRequest.MapRunArn</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeMapRunResponse.ExecutionArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeMapRunResponse.MapRunArn</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeMapRunResponse.MaxConcurrency</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeMapRunResponse.ToleratedFailureCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeMapRunResponse.ToleratedFailurePercentage</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeStateMachineRequest.StateMachineArn</property>
@@ -122,6 +165,11 @@
     <property>Amazon.StepFunctions.Model.DescribeStateMachineForExecutionResponse.Definition</property>
     <min>1</min>
     <max>1048576</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeStateMachineForExecutionResponse.MapRunArn</property>
+    <min>1</min>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeStateMachineForExecutionResponse.Name</property>
@@ -193,6 +241,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ListExecutionsRequest.MapRunArn</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.ListExecutionsRequest.MaxResults</property>
     <min>0</min>
     <max>1000</max>
@@ -211,6 +264,26 @@
     <property>Amazon.StepFunctions.Model.ListExecutionsResponse.NextToken</property>
     <min>1</min>
     <max>3096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ListMapRunsRequest.ExecutionArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ListMapRunsRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ListMapRunsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ListMapRunsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ListStateMachinesRequest.MaxResults</property>
@@ -368,6 +441,24 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.UpdateMapRunRequest.MapRunArn</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.UpdateMapRunRequest.MaxConcurrency</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.UpdateMapRunRequest.ToleratedFailureCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.UpdateMapRunRequest.ToleratedFailurePercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.UpdateStateMachineRequest.Definition</property>
     <min>1</min>
     <max>1048576</max>
@@ -478,6 +569,15 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ExecutionListItem.ItemCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ExecutionListItem.MapRunArn</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.ExecutionListItem.Name</property>
     <min>1</min>
     <max>80</max>
@@ -573,6 +673,100 @@
     <max>80</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunExecutionCounts.Aborted</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunExecutionCounts.Failed</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunExecutionCounts.Pending</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunExecutionCounts.ResultsWritten</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunExecutionCounts.Running</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunExecutionCounts.Succeeded</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunExecutionCounts.TimedOut</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunExecutionCounts.Total</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunFailedEventDetails.Cause</property>
+    <min>0</min>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunFailedEventDetails.Error</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunItemCounts.Aborted</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunItemCounts.Failed</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunItemCounts.Pending</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunItemCounts.ResultsWritten</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunItemCounts.Running</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunItemCounts.Succeeded</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunItemCounts.TimedOut</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunItemCounts.Total</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunListItem.ExecutionArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunListItem.MapRunArn</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunListItem.StateMachineArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapRunStartedEventDetails.MapRunArn</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.MapStateStartedEventDetails.Length</property>
     <min>0</min>
   </property-value-rule>
@@ -622,7 +816,7 @@
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.TaskCredentials.RoleArn</property>
     <min>1</min>
-    <max>1600</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.TaskFailedEventDetails.Cause</property>

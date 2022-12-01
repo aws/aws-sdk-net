@@ -51,6 +51,18 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("cause", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Cause = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("error", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Error = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("executionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -67,6 +79,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = CloudWatchEventsExecutionDataDetailsUnmarshaller.Instance;
                     response.InputDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mapRunArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MapRunArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))

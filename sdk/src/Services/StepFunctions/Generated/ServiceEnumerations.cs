@@ -193,6 +193,22 @@ namespace Amazon.StepFunctions
         /// </summary>
         public static readonly HistoryEventType MapIterationSucceeded = new HistoryEventType("MapIterationSucceeded");
         /// <summary>
+        /// Constant MapRunAborted for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType MapRunAborted = new HistoryEventType("MapRunAborted");
+        /// <summary>
+        /// Constant MapRunFailed for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType MapRunFailed = new HistoryEventType("MapRunFailed");
+        /// <summary>
+        /// Constant MapRunStarted for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType MapRunStarted = new HistoryEventType("MapRunStarted");
+        /// <summary>
+        /// Constant MapRunSucceeded for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType MapRunSucceeded = new HistoryEventType("MapRunSucceeded");
+        /// <summary>
         /// Constant MapStateAborted for HistoryEventType
         /// </summary>
         public static readonly HistoryEventType MapStateAborted = new HistoryEventType("MapStateAborted");
@@ -407,6 +423,64 @@ namespace Amazon.StepFunctions
 
 
     /// <summary>
+    /// Constants used for properties of type MapRunStatus.
+    /// </summary>
+    public class MapRunStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ABORTED for MapRunStatus
+        /// </summary>
+        public static readonly MapRunStatus ABORTED = new MapRunStatus("ABORTED");
+        /// <summary>
+        /// Constant FAILED for MapRunStatus
+        /// </summary>
+        public static readonly MapRunStatus FAILED = new MapRunStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for MapRunStatus
+        /// </summary>
+        public static readonly MapRunStatus RUNNING = new MapRunStatus("RUNNING");
+        /// <summary>
+        /// Constant SUCCEEDED for MapRunStatus
+        /// </summary>
+        public static readonly MapRunStatus SUCCEEDED = new MapRunStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MapRunStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MapRunStatus FindValue(string value)
+        {
+            return FindValue<MapRunStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MapRunStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StateMachineStatus.
     /// </summary>
     public class StateMachineStatus : ConstantClass
@@ -554,6 +628,60 @@ namespace Amazon.StepFunctions
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SyncExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ValidationExceptionReason.
+    /// </summary>
+    public class ValidationExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant API_DOES_NOT_SUPPORT_LABELED_ARNS for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason API_DOES_NOT_SUPPORT_LABELED_ARNS = new ValidationExceptionReason("API_DOES_NOT_SUPPORT_LABELED_ARNS");
+        /// <summary>
+        /// Constant CANNOT_UPDATE_COMPLETED_MAP_RUN for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason CANNOT_UPDATE_COMPLETED_MAP_RUN = new ValidationExceptionReason("CANNOT_UPDATE_COMPLETED_MAP_RUN");
+        /// <summary>
+        /// Constant MISSING_REQUIRED_PARAMETER for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason MISSING_REQUIRED_PARAMETER = new ValidationExceptionReason("MISSING_REQUIRED_PARAMETER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValidationExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationExceptionReason FindValue(string value)
+        {
+            return FindValue<ValidationExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationExceptionReason(string value)
         {
             return FindValue(value);
         }

@@ -196,6 +196,18 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     unmarshalledObject.MapIterationSucceededEventDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mapRunFailedEventDetails", targetDepth))
+                {
+                    var unmarshaller = MapRunFailedEventDetailsUnmarshaller.Instance;
+                    unmarshalledObject.MapRunFailedEventDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mapRunStartedEventDetails", targetDepth))
+                {
+                    var unmarshaller = MapRunStartedEventDetailsUnmarshaller.Instance;
+                    unmarshalledObject.MapRunStartedEventDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("mapStateStartedEventDetails", targetDepth))
                 {
                     var unmarshaller = MapStateStartedEventDetailsUnmarshaller.Instance;

@@ -34,7 +34,9 @@ namespace Amazon.StepFunctions.Model
     public partial class DescribeStateMachineForExecutionResponse : AmazonWebServiceResponse
     {
         private string _definition;
+        private string _label;
         private LoggingConfiguration _loggingConfiguration;
+        private string _mapRunArn;
         private string _name;
         private string _roleArn;
         private string _stateMachineArn;
@@ -62,6 +64,26 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Label. 
+        /// <para>
+        /// A user-defined or an auto-generated string that identifies a <code>Map</code> state.
+        /// This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution
+        /// that was started by a Distributed Map state.
+        /// </para>
+        /// </summary>
+        public string Label
+        {
+            get { return this._label; }
+            set { this._label = value; }
+        }
+
+        // Check to see if Label property is set
+        internal bool IsSetLabel()
+        {
+            return this._label != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LoggingConfiguration.
         /// </summary>
         public LoggingConfiguration LoggingConfiguration
@@ -74,6 +96,27 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetLoggingConfiguration()
         {
             return this._loggingConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapRunArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution.
+        /// This field is returned only if the <code>executionArn</code> is a child workflow execution
+        /// that was started by a Distributed Map state.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
+        public string MapRunArn
+        {
+            get { return this._mapRunArn; }
+            set { this._mapRunArn = value; }
+        }
+
+        // Check to see if MapRunArn property is set
+        internal bool IsSetMapRunArn()
+        {
+            return this._mapRunArn != null;
         }
 
         /// <summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// The provided Amazon States Language definition is invalid.
+    /// The provided Amazon States Language definition is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

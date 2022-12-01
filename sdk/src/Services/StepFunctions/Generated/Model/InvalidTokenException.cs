@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// The provided token is invalid.
+    /// The provided token is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

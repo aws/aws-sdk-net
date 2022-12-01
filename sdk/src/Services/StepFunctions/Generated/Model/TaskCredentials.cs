@@ -42,7 +42,7 @@ namespace Amazon.StepFunctions.Model
         /// cross-account access to resources.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1600)]
+        [AWSProperty(Min=1, Max=2000)]
         public string RoleArn
         {
             get { return this._roleArn; }

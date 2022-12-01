@@ -55,6 +55,8 @@ namespace Amazon.StepFunctions.Model
         private MapIterationEventDetails _mapIterationFailedEventDetails;
         private MapIterationEventDetails _mapIterationStartedEventDetails;
         private MapIterationEventDetails _mapIterationSucceededEventDetails;
+        private MapRunFailedEventDetails _mapRunFailedEventDetails;
+        private MapRunStartedEventDetails _mapRunStartedEventDetails;
         private MapStateStartedEventDetails _mapStateStartedEventDetails;
         private long? _previousEventId;
         private StateEnteredEventDetails _stateEnteredEventDetails;
@@ -423,6 +425,44 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetMapIterationSucceededEventDetails()
         {
             return this._mapIterationSucceededEventDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapRunFailedEventDetails. 
+        /// <para>
+        /// Contains error and cause details about a Map Run that failed.
+        /// </para>
+        /// </summary>
+        public MapRunFailedEventDetails MapRunFailedEventDetails
+        {
+            get { return this._mapRunFailedEventDetails; }
+            set { this._mapRunFailedEventDetails = value; }
+        }
+
+        // Check to see if MapRunFailedEventDetails property is set
+        internal bool IsSetMapRunFailedEventDetails()
+        {
+            return this._mapRunFailedEventDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapRunStartedEventDetails. 
+        /// <para>
+        /// Contains details, such as <code>mapRunArn</code>, and the start date and time of a
+        /// Map Run. <code>mapRunArn</code> is the Amazon Resource Name (ARN) of the Map Run that
+        /// was started.
+        /// </para>
+        /// </summary>
+        public MapRunStartedEventDetails MapRunStartedEventDetails
+        {
+            get { return this._mapRunStartedEventDetails; }
+            set { this._mapRunStartedEventDetails = value; }
+        }
+
+        // Check to see if MapRunStartedEventDetails property is set
+        internal bool IsSetMapRunStartedEventDetails()
+        {
+            return this._mapRunStartedEventDetails != null;
         }
 
         /// <summary>

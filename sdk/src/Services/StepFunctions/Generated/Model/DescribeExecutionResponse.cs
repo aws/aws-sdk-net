@@ -33,9 +33,12 @@ namespace Amazon.StepFunctions.Model
     /// </summary>
     public partial class DescribeExecutionResponse : AmazonWebServiceResponse
     {
+        private string _cause;
+        private string _error;
         private string _executionArn;
         private string _input;
         private CloudWatchEventsExecutionDataDetails _inputDetails;
+        private string _mapRunArn;
         private string _name;
         private string _output;
         private CloudWatchEventsExecutionDataDetails _outputDetails;
@@ -44,6 +47,44 @@ namespace Amazon.StepFunctions.Model
         private ExecutionStatus _status;
         private DateTime? _stopDate;
         private string _traceHeader;
+
+        /// <summary>
+        /// Gets and sets the property Cause. 
+        /// <para>
+        /// The cause string if the state machine execution failed.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=32768)]
+        public string Cause
+        {
+            get { return this._cause; }
+            set { this._cause = value; }
+        }
+
+        // Check to see if Cause property is set
+        internal bool IsSetCause()
+        {
+            return this._cause != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Error. 
+        /// <para>
+        /// The error string if the state machine execution failed.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string Error
+        {
+            get { return this._error; }
+            set { this._error = value; }
+        }
+
+        // Check to see if Error property is set
+        internal bool IsSetError()
+        {
+            return this._error != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExecutionArn. 
@@ -97,6 +138,25 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetInputDetails()
         {
             return this._inputDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapRunArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
+        public string MapRunArn
+        {
+            get { return this._mapRunArn; }
+            set { this._mapRunArn = value; }
+        }
+
+        // Check to see if MapRunArn property is set
+        internal bool IsSetMapRunArn()
+        {
+            return this._mapRunArn != null;
         }
 
         /// <summary>
