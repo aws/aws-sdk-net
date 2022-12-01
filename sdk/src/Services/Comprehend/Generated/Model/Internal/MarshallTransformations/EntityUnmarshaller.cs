@@ -70,6 +70,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     unmarshalledObject.BeginOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BlockReferences", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BlockReference, BlockReferenceUnmarshaller>(BlockReferenceUnmarshaller.Instance);
+                    unmarshalledObject.BlockReferences = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EndOffset", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

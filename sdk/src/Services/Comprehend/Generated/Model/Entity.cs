@@ -39,6 +39,7 @@ namespace Amazon.Comprehend.Model
     public partial class Entity
     {
         private int? _beginOffset;
+        private List<BlockReference> _blockReferences = new List<BlockReference>();
         private int? _endOffset;
         private float? _score;
         private string _text;
@@ -49,6 +50,10 @@ namespace Amazon.Comprehend.Model
         /// <para>
         /// The zero-based offset from the beginning of the source text to the first character
         /// in the entity.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is empty for non-text input.
         /// </para>
         /// </summary>
         public int BeginOffset
@@ -64,10 +69,32 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BlockReferences. 
+        /// <para>
+        /// A reference to each block for this entity. This field is empty for plain-text input.
+        /// </para>
+        /// </summary>
+        public List<BlockReference> BlockReferences
+        {
+            get { return this._blockReferences; }
+            set { this._blockReferences = value; }
+        }
+
+        // Check to see if BlockReferences property is set
+        internal bool IsSetBlockReferences()
+        {
+            return this._blockReferences != null && this._blockReferences.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EndOffset. 
         /// <para>
         /// The zero-based offset from the beginning of the source text to the last character
         /// in the entity.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is empty for non-text input.
         /// </para>
         /// </summary>
         public int EndOffset
@@ -122,7 +149,13 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The entity's type.
+        /// The entity type. For entity detection using the built-in model, this field contains
+        /// one of the standard entity types listed below.
+        /// </para>
+        ///  
+        /// <para>
+        /// For custom entity detection, this field contains one of the entity types that you
+        /// specified when you trained your custom model.
         /// </para>
         /// </summary>
         public EntityType Type

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Comprehend.Model.ClassifyDocumentRequest.Bytes</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Comprehend.Model.ClassifyDocumentRequest.EndpointArn</property>
     <max>256</max>
     <pattern>arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:document-classifier-endpoint/[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
@@ -238,6 +242,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Comprehend.Model.DetectDominantLanguageRequest.Text</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.DetectEntitiesRequest.Bytes</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -964,6 +972,22 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Comprehend.Model.Block.Id</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.Block.Text</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.BlockReference.BlockId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.ChildBlock.ChildBlockId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Comprehend.Model.DocumentClass.Name</property>
     <min>1</min>
   </property-value-rule>
@@ -1270,6 +1294,10 @@
     <property>Amazon.Comprehend.Model.EntityTypesListItem.Type</property>
     <max>64</max>
     <pattern>^(?![^\n\r\t,]*\\n|\\r|\\t)[^\n\r\t,]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.ErrorsListItem.ErrorMessage</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Comprehend.Model.EventsDetectionJobFilter.JobName</property>

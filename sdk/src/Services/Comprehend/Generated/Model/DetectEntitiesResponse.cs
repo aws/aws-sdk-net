@@ -33,7 +33,78 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class DetectEntitiesResponse : AmazonWebServiceResponse
     {
+        private List<Block> _blocks = new List<Block>();
+        private DocumentMetadata _documentMetadata;
+        private List<DocumentTypeListItem> _documentType = new List<DocumentTypeListItem>();
         private List<Entity> _entities = new List<Entity>();
+        private List<ErrorsListItem> _errors = new List<ErrorsListItem>();
+
+        /// <summary>
+        /// Gets and sets the property Blocks. 
+        /// <para>
+        /// Information about each block of text in the input document. Blocks are nested. A page
+        /// block contains a block for each line of text, which contains a block for each word.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>Block</code> content for a Word input document does not include a <code>Geometry</code>
+        /// field.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>Block</code> field is not present in the response for plain-text inputs.
+        /// </para>
+        /// </summary>
+        public List<Block> Blocks
+        {
+            get { return this._blocks; }
+            set { this._blocks = value; }
+        }
+
+        // Check to see if Blocks property is set
+        internal bool IsSetBlocks()
+        {
+            return this._blocks != null && this._blocks.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentMetadata. 
+        /// <para>
+        /// Information about the document, discovered during text extraction. This field is present
+        /// in the response only if your request used the <code>Byte</code> parameter. 
+        /// </para>
+        /// </summary>
+        public DocumentMetadata DocumentMetadata
+        {
+            get { return this._documentMetadata; }
+            set { this._documentMetadata = value; }
+        }
+
+        // Check to see if DocumentMetadata property is set
+        internal bool IsSetDocumentMetadata()
+        {
+            return this._documentMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentType. 
+        /// <para>
+        /// The document type for each page in the input document. This field is present in the
+        /// response only if your request used the <code>Byte</code> parameter. 
+        /// </para>
+        /// </summary>
+        public List<DocumentTypeListItem> DocumentType
+        {
+            get { return this._documentType; }
+            set { this._documentType = value; }
+        }
+
+        // Check to see if DocumentType property is set
+        internal bool IsSetDocumentType()
+        {
+            return this._documentType != null && this._documentType.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Entities. 
@@ -60,6 +131,25 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetEntities()
         {
             return this._entities != null && this._entities.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Errors. 
+        /// <para>
+        /// Page-level errors that the system detected while processing the input document. The
+        /// field is empty if the system encountered no errors.
+        /// </para>
+        /// </summary>
+        public List<ErrorsListItem> Errors
+        {
+            get { return this._errors; }
+            set { this._errors = value; }
+        }
+
+        // Check to see if Errors property is set
+        internal bool IsSetErrors()
+        {
+            return this._errors != null && this._errors.Count > 0; 
         }
 
     }

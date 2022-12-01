@@ -36,6 +36,8 @@ namespace Amazon.Comprehend.Model
     #endif
     public partial class InvalidRequestException : AmazonComprehendException
     {
+        private InvalidRequestDetail _detail;
+        private InvalidRequestReason _reason;
 
         /// <summary>
         /// Constructs a new InvalidRequestException with the specified error
@@ -97,6 +99,8 @@ namespace Amazon.Comprehend.Model
         protected InvalidRequestException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Detail = (InvalidRequestDetail)info.GetValue("Detail", typeof(InvalidRequestDetail));
+            this.Reason = (InvalidRequestReason)info.GetValue("Reason", typeof(InvalidRequestReason));
         }
 
         /// <summary>
@@ -117,8 +121,40 @@ namespace Amazon.Comprehend.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Detail", this.Detail);
+            info.AddValue("Reason", this.Reason);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Detail.
+        /// </summary>
+        public InvalidRequestDetail Detail
+        {
+            get { return this._detail; }
+            set { this._detail = value; }
+        }
+
+        // Check to see if Detail property is set
+        internal bool IsSetDetail()
+        {
+            return this._detail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reason.
+        /// </summary>
+        public InvalidRequestReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
 
     }
 }

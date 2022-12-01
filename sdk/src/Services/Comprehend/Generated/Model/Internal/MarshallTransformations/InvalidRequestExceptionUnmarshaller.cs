@@ -64,6 +64,18 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Detail", targetDepth))
+                {
+                    var unmarshaller = InvalidRequestDetailUnmarshaller.Instance;
+                    unmarshalledObject.Detail = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Reason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

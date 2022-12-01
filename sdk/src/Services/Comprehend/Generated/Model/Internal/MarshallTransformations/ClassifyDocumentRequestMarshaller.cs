@@ -67,6 +67,23 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBytes())
+                {
+                    context.Writer.WritePropertyName("Bytes");
+                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Bytes));
+                }
+
+                if(publicRequest.IsSetDocumentReaderConfig())
+                {
+                    context.Writer.WritePropertyName("DocumentReaderConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DocumentReaderConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DocumentReaderConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEndpointArn())
                 {
                     context.Writer.WritePropertyName("EndpointArn");

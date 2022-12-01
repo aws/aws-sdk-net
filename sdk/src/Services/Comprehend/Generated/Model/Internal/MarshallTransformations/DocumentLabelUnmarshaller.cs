@@ -70,6 +70,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Page", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Page = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Score", targetDepth))
                 {
                     var unmarshaller = FloatUnmarshaller.Instance;

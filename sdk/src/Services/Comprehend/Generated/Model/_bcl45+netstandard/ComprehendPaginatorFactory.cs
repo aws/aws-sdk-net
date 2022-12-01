@@ -68,6 +68,14 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Paginator for ListEndpoints operation
+        ///</summary>
+        public IListEndpointsPaginator ListEndpoints(ListEndpointsRequest request) 
+        {
+            return new ListEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEntitiesDetectionJobs operation
         ///</summary>
         public IListEntitiesDetectionJobsPaginator ListEntitiesDetectionJobs(ListEntitiesDetectionJobsRequest request) 
@@ -105,6 +113,14 @@ namespace Amazon.Comprehend.Model
         public IListKeyPhrasesDetectionJobsPaginator ListKeyPhrasesDetectionJobs(ListKeyPhrasesDetectionJobsRequest request) 
         {
             return new ListKeyPhrasesDetectionJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPiiEntitiesDetectionJobs operation
+        ///</summary>
+        public IListPiiEntitiesDetectionJobsPaginator ListPiiEntitiesDetectionJobs(ListPiiEntitiesDetectionJobsRequest request) 
+        {
+            return new ListPiiEntitiesDetectionJobsPaginator(this.client, request);
         }
 
         /// <summary>

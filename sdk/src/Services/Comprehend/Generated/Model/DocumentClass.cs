@@ -34,6 +34,7 @@ namespace Amazon.Comprehend.Model
     public partial class DocumentClass
     {
         private string _name;
+        private int? _page;
         private float? _score;
 
         /// <summary>
@@ -53,6 +54,25 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Page. 
+        /// <para>
+        /// Page number in the input document. This field is present in the response only if your
+        /// request includes the <code>Byte</code> parameter. 
+        /// </para>
+        /// </summary>
+        public int Page
+        {
+            get { return this._page.GetValueOrDefault(); }
+            set { this._page = value; }
+        }
+
+        // Check to see if Page property is set
+        internal bool IsSetPage()
+        {
+            return this._page.HasValue; 
         }
 
         /// <summary>

@@ -46,6 +46,11 @@ namespace Amazon.Comprehend.Model
         IListDominantLanguageDetectionJobsPaginator ListDominantLanguageDetectionJobs(ListDominantLanguageDetectionJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListEndpoints operation
+        ///</summary>
+        IListEndpointsPaginator ListEndpoints(ListEndpointsRequest request);
+
+        /// <summary>
         /// Paginator for ListEntitiesDetectionJobs operation
         ///</summary>
         IListEntitiesDetectionJobsPaginator ListEntitiesDetectionJobs(ListEntitiesDetectionJobsRequest request);
@@ -69,6 +74,11 @@ namespace Amazon.Comprehend.Model
         /// Paginator for ListKeyPhrasesDetectionJobs operation
         ///</summary>
         IListKeyPhrasesDetectionJobsPaginator ListKeyPhrasesDetectionJobs(ListKeyPhrasesDetectionJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPiiEntitiesDetectionJobs operation
+        ///</summary>
+        IListPiiEntitiesDetectionJobsPaginator ListPiiEntitiesDetectionJobs(ListPiiEntitiesDetectionJobsRequest request);
 
         /// <summary>
         /// Paginator for ListSentimentDetectionJobs operation

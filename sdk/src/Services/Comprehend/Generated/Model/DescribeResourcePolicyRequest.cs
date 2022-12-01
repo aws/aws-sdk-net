@@ -40,7 +40,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the policy to describe.
+        /// The Amazon Resource Name (ARN) of the custom model version that has the resource policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// The input properties for an inference job.
+    /// The input properties for an inference job. The document reader config field applies
+    /// only to non-text inputs for custom analysis.
     /// </summary>
     public partial class InputDataConfig
     {
@@ -40,14 +41,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DocumentReaderConfig. 
         /// <para>
-        /// The document reader config field applies only for InputDataConfig of StartEntitiesDetectionJob.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// Use DocumentReaderConfig to provide specifications about how you want your inference
-        /// documents read. Currently it applies for PDF documents in StartEntitiesDetectionJob
-        /// custom inference.
+        /// Provides configuration parameters to override the default actions for extracting text
+        /// from PDF documents and image files.
         /// </para>
         /// </summary>
         public DocumentReaderConfig DocumentReaderConfig
