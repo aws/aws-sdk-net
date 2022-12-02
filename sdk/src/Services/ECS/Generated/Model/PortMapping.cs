@@ -184,8 +184,9 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The name that's used for the port mapping. This parameter only applies to Service
         /// Connect. This parameter is the name that you use in the <code>serviceConnectConfiguration</code>
-        /// of a service. Up to 64 characters are allowed. The characters can include lowercase
-        /// letters, numbers, underscores (_), and hyphens (-). A hyphen can't be the first character.
+        /// of a service. The name can include up to 64 characters. The characters can include
+        /// lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start
+        /// with a hyphen.
         /// </para>
         ///  
         /// <para>

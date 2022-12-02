@@ -111,7 +111,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The list of Service Connect service objects. These are names and aliases (also known
         /// as endpoints) that are used by other Amazon ECS services to connect to this service.
-        /// You can specify up to X (30?) objects per Amazon ECS service.
+        /// 
         /// </para>
         ///  
         /// <para>

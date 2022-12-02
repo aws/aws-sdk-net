@@ -56,15 +56,15 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The <code>dnsName</code> is the name that you use in the applications of client tasks
         /// to connect to this service. The name must be a valid DNS name but doesn't need to
-        /// be fully-qualified. Up to 127 characters are allowed. The characters can include lowercase
-        /// letters, numbers, underscores (_), hyphens (-), and periods (.). A hyphen can't be
-        /// the first character.
+        /// be fully-qualified. The name can include up to 127 characters. The name can include
+        /// lowercase letters, numbers, underscores (_), hyphens (-), and periods (.). The name
+        /// can't start with a hyphen.
         /// </para>
         ///  
         /// <para>
         /// If this parameter isn't specified, the default value of <code>discoveryName.namespace</code>
-        /// is used. If the <code>discoveryName</code> isn't specified, the <code>portName.namespace</code>
-        /// from the task definition is used.
+        /// is used. If the <code>discoveryName</code> isn't specified, the port mapping name
+        /// from the task definition is used in <code>portName.namespace</code>.
         /// </para>
         ///  
         /// <para>
