@@ -785,6 +785,10 @@ namespace Amazon.FMS
     {
 
         /// <summary>
+        /// Constant FORTIGATE_CLOUD_NATIVE_FIREWALL for ThirdPartyFirewall
+        /// </summary>
+        public static readonly ThirdPartyFirewall FORTIGATE_CLOUD_NATIVE_FIREWALL = new ThirdPartyFirewall("FORTIGATE_CLOUD_NATIVE_FIREWALL");
+        /// <summary>
         /// Constant PALO_ALTO_NETWORKS_CLOUD_NGFW for ThirdPartyFirewall
         /// </summary>
         public static readonly ThirdPartyFirewall PALO_ALTO_NETWORKS_CLOUD_NGFW = new ThirdPartyFirewall("PALO_ALTO_NETWORKS_CLOUD_NGFW");
