@@ -38,9 +38,13 @@ namespace Amazon.MediaConvert.Model
         private MpdAudioDuration _audioDuration;
         private MpdCaptionContainerType _captionContainerType;
         private MpdKlvMetadata _klvMetadata;
+        private MpdManifestMetadataSignaling _manifestMetadataSignaling;
         private MpdScte35Esam _scte35Esam;
         private MpdScte35Source _scte35Source;
         private MpdTimedMetadata _timedMetadata;
+        private MpdTimedMetadataBoxVersion _timedMetadataBoxVersion;
+        private string _timedMetadataSchemeIdUri;
+        private string _timedMetadataValue;
 
         /// <summary>
         /// Gets and sets the property AccessibilityCaptionHints. Optional. Choose Include (INCLUDE)
@@ -129,6 +133,27 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManifestMetadataSignaling. To add an InbandEventStream
+        /// element in your output MPD manifest for each type of event message, set Manifest metadata
+        /// signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri
+        /// will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event
+        /// messages, the InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin".
+        /// To leave these elements out of your output MPD manifest, set Manifest metadata signaling
+        /// to Disabled.
+        /// </summary>
+        public MpdManifestMetadataSignaling ManifestMetadataSignaling
+        {
+            get { return this._manifestMetadataSignaling; }
+            set { this._manifestMetadataSignaling = value; }
+        }
+
+        // Check to see if ManifestMetadataSignaling property is set
+        internal bool IsSetManifestMetadataSignaling()
+        {
+            return this._manifestMetadataSignaling != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Scte35Esam. Use this setting only when you specify SCTE-35
         /// markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion
         /// points that you specify in an ESAM XML document. Provide the document in the setting
@@ -181,6 +206,63 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetTimedMetadata()
         {
             return this._timedMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimedMetadataBoxVersion. Specify the event message box
+        /// (eMSG) version for ID3 timed metadata in your output.For more information, see ISO/IEC
+        /// 23009-1:2022 section 5.10.3.3.3 Syntax.Leave blank to use the default value Version
+        /// 0.When you specify Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+        /// </summary>
+        public MpdTimedMetadataBoxVersion TimedMetadataBoxVersion
+        {
+            get { return this._timedMetadataBoxVersion; }
+            set { this._timedMetadataBoxVersion = value; }
+        }
+
+        // Check to see if TimedMetadataBoxVersion property is set
+        internal bool IsSetTimedMetadataBoxVersion()
+        {
+            return this._timedMetadataBoxVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimedMetadataSchemeIdUri. Specify the event message box
+        /// (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output. For more
+        /// informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to
+        /// use the default value: https://aomedia.org/emsg/ID3 When you specify a value for ID3
+        /// metadata scheme ID URI, you must also set ID3 metadata (timedMetadata) to Passthrough.
+        /// </summary>
+        [AWSProperty(Max=1000)]
+        public string TimedMetadataSchemeIdUri
+        {
+            get { return this._timedMetadataSchemeIdUri; }
+            set { this._timedMetadataSchemeIdUri = value; }
+        }
+
+        // Check to see if TimedMetadataSchemeIdUri property is set
+        internal bool IsSetTimedMetadataSchemeIdUri()
+        {
+            return this._timedMetadataSchemeIdUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimedMetadataValue. Specify the event message box (eMSG)
+        /// value for ID3 timed metadata in your output. For more informaiton, see ISO/IEC 23009-1:2022
+        /// section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value, you
+        /// must also set ID3 metadata (timedMetadata) to Passthrough.
+        /// </summary>
+        [AWSProperty(Max=1000)]
+        public string TimedMetadataValue
+        {
+            get { return this._timedMetadataValue; }
+            set { this._timedMetadataValue = value; }
+        }
+
+        // Check to see if TimedMetadataValue property is set
+        internal bool IsSetTimedMetadataValue()
+        {
+            return this._timedMetadataValue != null;
         }
 
     }

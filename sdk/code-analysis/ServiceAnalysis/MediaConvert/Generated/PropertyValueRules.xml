@@ -322,6 +322,14 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmfcSettings.TimedMetadataSchemeIdUri</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmfcSettings.TimedMetadataValue</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.ColorCorrector.Brightness</property>
     <min>1</min>
     <max>100</max>
@@ -1391,6 +1399,14 @@
     <property>Amazon.MediaConvert.Model.Mp4Settings.CttsVersion</property>
     <min>0</min>
     <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.MpdSettings.TimedMetadataSchemeIdUri</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.MpdSettings.TimedMetadataValue</property>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Mpeg2Settings.Bitrate</property>

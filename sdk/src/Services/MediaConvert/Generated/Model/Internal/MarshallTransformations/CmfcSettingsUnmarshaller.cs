@@ -106,6 +106,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.KlvMetadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("manifestMetadataSignaling", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ManifestMetadataSignaling = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scte35Esam", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -122,6 +128,24 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimedMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timedMetadataBoxVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimedMetadataBoxVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timedMetadataSchemeIdUri", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimedMetadataSchemeIdUri = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timedMetadataValue", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimedMetadataValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

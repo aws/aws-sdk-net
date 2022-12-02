@@ -154,6 +154,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MinFinalSegmentLength);
             }
 
+            if(requestObject.IsSetMpdManifestBandwidthType())
+            {
+                context.Writer.WritePropertyName("mpdManifestBandwidthType");
+                context.Writer.Write(requestObject.MpdManifestBandwidthType);
+            }
+
             if(requestObject.IsSetMpdProfile())
             {
                 context.Writer.WritePropertyName("mpdProfile");
@@ -194,6 +200,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("targetDurationCompatibilityMode");
                 context.Writer.Write(requestObject.TargetDurationCompatibilityMode);
+            }
+
+            if(requestObject.IsSetVideoCompositionOffsets())
+            {
+                context.Writer.WritePropertyName("videoCompositionOffsets");
+                context.Writer.Write(requestObject.VideoCompositionOffsets);
             }
 
             if(requestObject.IsSetWriteDashManifest())

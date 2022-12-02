@@ -3815,6 +3815,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type CmafMpdManifestBandwidthType.
+    /// </summary>
+    public class CmafMpdManifestBandwidthType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVERAGE for CmafMpdManifestBandwidthType
+        /// </summary>
+        public static readonly CmafMpdManifestBandwidthType AVERAGE = new CmafMpdManifestBandwidthType("AVERAGE");
+        /// <summary>
+        /// Constant MAX for CmafMpdManifestBandwidthType
+        /// </summary>
+        public static readonly CmafMpdManifestBandwidthType MAX = new CmafMpdManifestBandwidthType("MAX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafMpdManifestBandwidthType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafMpdManifestBandwidthType FindValue(string value)
+        {
+            return FindValue<CmafMpdManifestBandwidthType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafMpdManifestBandwidthType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CmafMpdProfile.
     /// </summary>
     public class CmafMpdProfile : ConstantClass
@@ -4108,6 +4158,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CmafTargetDurationCompatibilityMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmafVideoCompositionOffsets.
+    /// </summary>
+    public class CmafVideoCompositionOffsets : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SIGNED for CmafVideoCompositionOffsets
+        /// </summary>
+        public static readonly CmafVideoCompositionOffsets SIGNED = new CmafVideoCompositionOffsets("SIGNED");
+        /// <summary>
+        /// Constant UNSIGNED for CmafVideoCompositionOffsets
+        /// </summary>
+        public static readonly CmafVideoCompositionOffsets UNSIGNED = new CmafVideoCompositionOffsets("UNSIGNED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafVideoCompositionOffsets(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafVideoCompositionOffsets FindValue(string value)
+        {
+            return FindValue<CmafVideoCompositionOffsets>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafVideoCompositionOffsets(string value)
         {
             return FindValue(value);
         }
@@ -4519,6 +4619,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type CmfcManifestMetadataSignaling.
+    /// </summary>
+    public class CmfcManifestMetadataSignaling : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CmfcManifestMetadataSignaling
+        /// </summary>
+        public static readonly CmfcManifestMetadataSignaling DISABLED = new CmfcManifestMetadataSignaling("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CmfcManifestMetadataSignaling
+        /// </summary>
+        public static readonly CmfcManifestMetadataSignaling ENABLED = new CmfcManifestMetadataSignaling("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmfcManifestMetadataSignaling(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmfcManifestMetadataSignaling FindValue(string value)
+        {
+            return FindValue<CmfcManifestMetadataSignaling>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmfcManifestMetadataSignaling(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CmfcScte35Esam.
     /// </summary>
     public class CmfcScte35Esam : ConstantClass
@@ -4662,6 +4812,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CmfcTimedMetadata(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmfcTimedMetadataBoxVersion.
+    /// </summary>
+    public class CmfcTimedMetadataBoxVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VERSION_0 for CmfcTimedMetadataBoxVersion
+        /// </summary>
+        public static readonly CmfcTimedMetadataBoxVersion VERSION_0 = new CmfcTimedMetadataBoxVersion("VERSION_0");
+        /// <summary>
+        /// Constant VERSION_1 for CmfcTimedMetadataBoxVersion
+        /// </summary>
+        public static readonly CmfcTimedMetadataBoxVersion VERSION_1 = new CmfcTimedMetadataBoxVersion("VERSION_1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmfcTimedMetadataBoxVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmfcTimedMetadataBoxVersion FindValue(string value)
+        {
+            return FindValue<CmfcTimedMetadataBoxVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmfcTimedMetadataBoxVersion(string value)
         {
             return FindValue(value);
         }
@@ -5299,6 +5499,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type DashIsoMpdManifestBandwidthType.
+    /// </summary>
+    public class DashIsoMpdManifestBandwidthType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVERAGE for DashIsoMpdManifestBandwidthType
+        /// </summary>
+        public static readonly DashIsoMpdManifestBandwidthType AVERAGE = new DashIsoMpdManifestBandwidthType("AVERAGE");
+        /// <summary>
+        /// Constant MAX for DashIsoMpdManifestBandwidthType
+        /// </summary>
+        public static readonly DashIsoMpdManifestBandwidthType MAX = new DashIsoMpdManifestBandwidthType("MAX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DashIsoMpdManifestBandwidthType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashIsoMpdManifestBandwidthType FindValue(string value)
+        {
+            return FindValue<DashIsoMpdManifestBandwidthType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashIsoMpdManifestBandwidthType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DashIsoMpdProfile.
     /// </summary>
     public class DashIsoMpdProfile : ConstantClass
@@ -5542,6 +5792,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DashIsoSegmentLengthControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DashIsoVideoCompositionOffsets.
+    /// </summary>
+    public class DashIsoVideoCompositionOffsets : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SIGNED for DashIsoVideoCompositionOffsets
+        /// </summary>
+        public static readonly DashIsoVideoCompositionOffsets SIGNED = new DashIsoVideoCompositionOffsets("SIGNED");
+        /// <summary>
+        /// Constant UNSIGNED for DashIsoVideoCompositionOffsets
+        /// </summary>
+        public static readonly DashIsoVideoCompositionOffsets UNSIGNED = new DashIsoVideoCompositionOffsets("UNSIGNED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DashIsoVideoCompositionOffsets(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashIsoVideoCompositionOffsets FindValue(string value)
+        {
+            return FindValue<DashIsoVideoCompositionOffsets>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashIsoVideoCompositionOffsets(string value)
         {
             return FindValue(value);
         }
@@ -15743,6 +16043,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type MpdManifestMetadataSignaling.
+    /// </summary>
+    public class MpdManifestMetadataSignaling : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for MpdManifestMetadataSignaling
+        /// </summary>
+        public static readonly MpdManifestMetadataSignaling DISABLED = new MpdManifestMetadataSignaling("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for MpdManifestMetadataSignaling
+        /// </summary>
+        public static readonly MpdManifestMetadataSignaling ENABLED = new MpdManifestMetadataSignaling("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MpdManifestMetadataSignaling(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MpdManifestMetadataSignaling FindValue(string value)
+        {
+            return FindValue<MpdManifestMetadataSignaling>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MpdManifestMetadataSignaling(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MpdScte35Esam.
     /// </summary>
     public class MpdScte35Esam : ConstantClass
@@ -15886,6 +16236,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MpdTimedMetadata(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MpdTimedMetadataBoxVersion.
+    /// </summary>
+    public class MpdTimedMetadataBoxVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VERSION_0 for MpdTimedMetadataBoxVersion
+        /// </summary>
+        public static readonly MpdTimedMetadataBoxVersion VERSION_0 = new MpdTimedMetadataBoxVersion("VERSION_0");
+        /// <summary>
+        /// Constant VERSION_1 for MpdTimedMetadataBoxVersion
+        /// </summary>
+        public static readonly MpdTimedMetadataBoxVersion VERSION_1 = new MpdTimedMetadataBoxVersion("VERSION_1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MpdTimedMetadataBoxVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MpdTimedMetadataBoxVersion FindValue(string value)
+        {
+            return FindValue<MpdTimedMetadataBoxVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MpdTimedMetadataBoxVersion(string value)
         {
             return FindValue(value);
         }
