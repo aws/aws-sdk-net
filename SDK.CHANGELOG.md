@@ -1,3 +1,23 @@
+### 3.7.431.0 (2022-12-02 19:25 UTC)
+* AppSync (3.7.102.0)
+	* Fixes the URI for the evaluatecode endpoint to include the /v1 prefix (ie. "/v1/dataplane-evaluatecode").
+* ECS (3.7.102.6)
+	* Documentation updates for Amazon ECS
+* FMS (3.7.103.0)
+	* AWS Firewall Manager now supports Fortigate Cloud Native Firewall as a Service as a third-party policy type.
+* MediaConvert (3.7.102.0)
+	* The AWS Elemental MediaConvert SDK has added support for configurable ID3 eMSG box attributes and the ability to signal them with InbandEventStream tags in DASH and CMAF outputs.
+* MediaLive (3.7.101.0)
+	* Updates to Event Signaling and Management (ESAM) API and documentation.
+* Polly (3.7.103.0)
+	* Add language code for Finnish (fi-FI)
+* Proton (3.7.103.0)
+	* CreateEnvironmentAccountConnection RoleArn input is now optional
+* RedshiftServerless (3.7.101.0)
+	* Add Table Level Restore operations for Amazon Redshift Serverless. Add multi-port support for Amazon Redshift Serverless endpoints. Add Tagging support to Snapshots and Recovery Points in Amazon Redshift Serverless.
+* SimpleNotificationService (3.7.100.29)
+	* This release adds the message payload-filtering feature to the SNS Subscribe, SetSubscriptionAttributes, and GetSubscriptionAttributes API actions
+
 ### 3.7.430.0 (2022-12-02 14:36 UTC)
 * CodeDeploy (3.7.100.28)
 	* Added service customization to generate public IsAutoScalingGroupsSet property for CodeDeploy UpdateDeploymentGroupRequest.
