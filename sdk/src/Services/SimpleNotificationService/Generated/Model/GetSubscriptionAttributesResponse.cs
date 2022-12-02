@@ -63,6 +63,19 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope
+        /// by using one of the following string value types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MessageBody</code> – The filter is applied on the message body.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
         ///  <code>Owner</code> – The Amazon Web Services account ID of the subscription's owner.
         /// </para>
         ///  </li> <li> 

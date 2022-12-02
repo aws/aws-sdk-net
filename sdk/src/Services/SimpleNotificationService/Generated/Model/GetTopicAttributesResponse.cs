@@ -51,6 +51,11 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery
+        /// policy, taking system defaults into account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>Owner</code> – The Amazon Web Services account ID of the topic's owner.
         /// </para>
         ///  </li> <li> 
@@ -58,6 +63,26 @@ namespace Amazon.SimpleNotificationService.Model
         ///  <code>Policy</code> – The JSON serialization of the topic's access control policy.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        ///  <code>SignatureVersion</code> – The version of the Amazon SNS signature used for
+        /// the topic.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// By default, <code>SignatureVersion</code> is set to <b>1</b>. The signature is a Base64-encoded
+        /// <b>SHA1withRSA</b> signature.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a Base64-encoded
+        /// <b>SHA256withRSA</b> signature. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the API response does not include the <code>SignatureVersion</code> attribute,
+        /// it means that the <code>SignatureVersion</code> for the topic has value <b>1</b>.
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         ///  <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for the
         /// topic.
@@ -77,8 +102,11 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery
-        /// policy, taking system defaults into account.
+        ///  <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code>
+        /// is set to <code>PassThrough</code>, and the topic passes through the tracing header
+        /// it receives from an Amazon SNS publisher to its subscriptions. If set to Active, Amazon
+        /// SNS will vend X-Ray segment data to topic owner account if the sampled flag in the
+        /// tracing header is true. This is only supported on standard topics.
         /// </para>
         ///  </li> </ul> 
         /// <para>

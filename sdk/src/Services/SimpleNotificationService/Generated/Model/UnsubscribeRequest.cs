@@ -37,7 +37,13 @@ namespace Amazon.SimpleNotificationService.Model
     /// message is delivered to the endpoint, so that the endpoint owner can easily resubscribe
     /// to the topic if the <code>Unsubscribe</code> request was unintended.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// Amazon SQS queue subscriptions require authentication for deletion. Only the owner
+    /// of the subscription, or the owner of the topic can unsubscribe using the required
+    /// Amazon Web Services signature.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// This action is throttled at 100 transactions per second (TPS).
     /// </para>

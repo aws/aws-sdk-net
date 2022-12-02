@@ -32,6 +32,14 @@ namespace Amazon.SimpleNotificationService.Model
     /// Container for the parameters to the AddPermission operation.
     /// Adds a statement to a topic's access control policy, granting access for the specified
     /// Amazon Web Services accounts to the specified actions.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// To remove the ability to change topic permissions, you must deny permissions to the
+    /// <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetTopicAttributes</code>
+    /// actions in your IAM policy.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AddPermissionRequest : AmazonSimpleNotificationServiceRequest
     {
