@@ -98,7 +98,7 @@ namespace Amazon.MediaLive.Model
         /// on the Placement Opportunity Information System (POIS). MediaLive sends SignalProcessingEvents
         /// here when SCTE-35 messages are read.
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2048)]
         public string PoisEndpoint
         {
             get { return this._poisEndpoint; }

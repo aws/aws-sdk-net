@@ -273,6 +273,10 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.Esam.PoisEndpoint</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.Esam.ZoneIdentity</property>
     <max>256</max>
   </property-value-rule>

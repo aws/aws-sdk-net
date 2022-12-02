@@ -36,9 +36,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new MediaLiveEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonMediaLiveEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -50,9 +50,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new MediaLiveEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonMediaLiveEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://medialive-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
@@ -66,9 +66,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new MediaLiveEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonMediaLiveEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -80,9 +80,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new MediaLiveEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonMediaLiveEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://medialive.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
@@ -95,9 +95,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new MediaLiveEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonMediaLiveEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -112,9 +112,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new MediaLiveEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonMediaLiveEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -128,9 +128,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new MediaLiveEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonMediaLiveEndpointProvider().ResolveEndpoint(parameters);
         }
