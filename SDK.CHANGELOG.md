@@ -1,3 +1,10 @@
+### 3.7.430.0 (2022-12-02 14:36 UTC)
+* CodeDeploy (3.7.100.28)
+	* Added service customization to generate public IsAutoScalingGroupsSet property for CodeDeploy UpdateDeploymentGroupRequest.
+* Core 3.7.101.0
+	* Add aws-query-compatible trait support to parse and return query compatible error codes from response header for services migrating from Query to AWSJSON; Updated Arn.IsArn to use Ordinal string comparison
+	* All services packages updated to require new Core
+
 ### 3.7.429.0 (2022-12-01 19:22 UTC)
 * CodeCatalyst (3.7.100.0)
 	* This release adds operations that support customers using the AWS Toolkits and Amazon CodeCatalyst, a unified software development service that helps developers develop, deploy, and maintain applications in the cloud. For more information, see the documentation.
