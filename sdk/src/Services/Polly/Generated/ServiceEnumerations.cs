@@ -203,6 +203,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly LanguageCode EsUS = new LanguageCode("es-US");
         /// <summary>
+        /// Constant FiFI for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode FiFI = new LanguageCode("fi-FI");
+        /// <summary>
         /// Constant FrCA for LanguageCode
         /// </summary>
         public static readonly LanguageCode FrCA = new LanguageCode("fr-CA");
