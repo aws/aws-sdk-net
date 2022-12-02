@@ -46,6 +46,11 @@ namespace Amazon.RedshiftServerless.Model
         IListSnapshotsPaginator ListSnapshots(ListSnapshotsRequest request);
 
         /// <summary>
+        /// Paginator for ListTableRestoreStatus operation
+        ///</summary>
+        IListTableRestoreStatusPaginator ListTableRestoreStatus(ListTableRestoreStatusRequest request);
+
+        /// <summary>
         /// Paginator for ListUsageLimits operation
         ///</summary>
         IListUsageLimitsPaginator ListUsageLimits(ListUsageLimitsRequest request);

@@ -63,7 +63,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>,
-        /// you can include the returned <code>nextToken</code> in subsequent <code>ListUsageLimits</code>
+        /// you can include the returned <code>nextToken</code> in following <code>ListUsageLimits</code>
         /// operations, which returns results in the next page. 
         /// </para>
         /// </summary>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Workgroup Object
+    /// Response Unmarshaller for TableRestoreStatus Object
     /// </summary>  
-    public class WorkgroupUnmarshaller : IUnmarshaller<Workgroup, XmlUnmarshallerContext>, IUnmarshaller<Workgroup, JsonUnmarshallerContext>
+    public class TableRestoreStatusUnmarshaller : IUnmarshaller<TableRestoreStatus, XmlUnmarshallerContext>, IUnmarshaller<TableRestoreStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Workgroup IUnmarshaller<Workgroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TableRestoreStatus IUnmarshaller<TableRestoreStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Workgroup Unmarshall(JsonUnmarshallerContext context)
+        public TableRestoreStatus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Workgroup unmarshalledObject = new Workgroup();
+            TableRestoreStatus unmarshalledObject = new TableRestoreStatus();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("baseCapacity", targetDepth))
+                if (context.TestExpression("message", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.BaseCapacity = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("configParameters", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ConfigParameter, ConfigParameterUnmarshaller>(ConfigParameterUnmarshaller.Instance);
-                    unmarshalledObject.ConfigParameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("creationDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("endpoint", targetDepth))
-                {
-                    var unmarshaller = EndpointUnmarshaller.Instance;
-                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("enhancedVpcRouting", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EnhancedVpcRouting = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("namespaceName", targetDepth))
@@ -100,22 +76,46 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.NamespaceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("port", targetDepth))
+                if (context.TestExpression("newTableName", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Port = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NewTableName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("publiclyAccessible", targetDepth))
+                if (context.TestExpression("progressInMegaBytes", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.PubliclyAccessible = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ProgressInMegaBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("securityGroupIds", targetDepth))
+                if (context.TestExpression("requestTime", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.RequestTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("snapshotName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SnapshotName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceDatabaseName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceDatabaseName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceSchemaName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceSchemaName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceTableName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceTableName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
@@ -124,22 +124,28 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("subnetIds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("workgroupArn", targetDepth))
+                if (context.TestExpression("tableRestoreRequestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkgroupArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TableRestoreRequestId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("workgroupId", targetDepth))
+                if (context.TestExpression("targetDatabaseName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkgroupId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetDatabaseName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("targetSchemaName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetSchemaName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("totalDataInMegaBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.TotalDataInMegaBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("workgroupName", targetDepth))
@@ -154,12 +160,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         }
 
 
-        private static WorkgroupUnmarshaller _instance = new WorkgroupUnmarshaller();        
+        private static TableRestoreStatusUnmarshaller _instance = new TableRestoreStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static WorkgroupUnmarshaller Instance
+        public static TableRestoreStatusUnmarshaller Instance
         {
             get
             {

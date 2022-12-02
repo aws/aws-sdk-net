@@ -29,41 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListRecoveryPoints operation.
-    /// Returns an array of recovery points.
+    /// Container for the parameters to the ListTableRestoreStatus operation.
+    /// Returns information about an array of <code>TableRestoreStatus</code> objects.
     /// </summary>
-    public partial class ListRecoveryPointsRequest : AmazonRedshiftServerlessRequest
+    public partial class ListTableRestoreStatusRequest : AmazonRedshiftServerlessRequest
     {
-        private DateTime? _endTime;
         private int? _maxResults;
-        private string _namespaceArn;
         private string _namespaceName;
         private string _nextToken;
-        private DateTime? _startTime;
-
-        /// <summary>
-        /// Gets and sets the property EndTime. 
-        /// <para>
-        /// The time when creation of the recovery point finished.
-        /// </para>
-        /// </summary>
-        public DateTime EndTime
-        {
-            get { return this._endTime.GetValueOrDefault(); }
-            set { this._endTime = value; }
-        }
-
-        // Check to see if EndTime property is set
-        internal bool IsSetEndTime()
-        {
-            return this._endTime.HasValue; 
-        }
+        private string _workgroupName;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// An optional parameter that specifies the maximum number of results to return. You
-        /// can use <code>nextToken</code> to display the next page of results.
+        /// can use nextToken to display the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -80,30 +60,12 @@ namespace Amazon.RedshiftServerless.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NamespaceArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the namespace from which to list recovery points.
-        /// </para>
-        /// </summary>
-        public string NamespaceArn
-        {
-            get { return this._namespaceArn; }
-            set { this._namespaceArn = value; }
-        }
-
-        // Check to see if NamespaceArn property is set
-        internal bool IsSetNamespaceArn()
-        {
-            return this._namespaceArn != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property NamespaceName. 
         /// <para>
-        /// The name of the namespace to list recovery points for.
+        /// The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code>
+        /// operations .
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=64)]
         public string NamespaceName
         {
             get { return this._namespaceName; }
@@ -119,11 +81,12 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>,
-        /// you can include the returned <code>nextToken</code> in following <code>ListRecoveryPoints</code>
-        /// operations, which returns results in the next page.
+        /// If your initial <code>ListTableRestoreStatus</code> operation returns a nextToken,
+        /// you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code>
+        /// operations. This will return results on the next page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=8, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -137,21 +100,22 @@ namespace Amazon.RedshiftServerless.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTime. 
+        /// Gets and sets the property WorkgroupName. 
         /// <para>
-        /// The time when the recovery point's creation was initiated.
+        /// The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code>
+        /// operations.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public string WorkgroupName
         {
-            get { return this._startTime.GetValueOrDefault(); }
-            set { this._startTime = value; }
+            get { return this._workgroupName; }
+            set { this._workgroupName = value; }
         }
 
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
+        // Check to see if WorkgroupName property is set
+        internal bool IsSetWorkgroupName()
         {
-            return this._startTime.HasValue; 
+            return this._workgroupName != null;
         }
 
     }

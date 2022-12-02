@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConvertRecoveryPointToSnapshot operation
+    /// Response Unmarshaller for ListTableRestoreStatus operation
     /// </summary>  
-    public class ConvertRecoveryPointToSnapshotResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListTableRestoreStatusResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ConvertRecoveryPointToSnapshotResponse response = new ConvertRecoveryPointToSnapshotResponse();
+            ListTableRestoreStatusResponse response = new ListTableRestoreStatusResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("snapshot", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
-                    var unmarshaller = SnapshotUnmarshaller.Instance;
-                    response.Snapshot = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tableRestoreStatuses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TableRestoreStatus, TableRestoreStatusUnmarshaller>(TableRestoreStatusUnmarshaller.Instance);
+                    response.TableRestoreStatuses = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -80,25 +86,13 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPaginationException"))
                 {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
-                {
-                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidPaginationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
-                {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyTagsException"))
-                {
-                    return TooManyTagsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
@@ -108,9 +102,9 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             return new AmazonRedshiftServerlessException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ConvertRecoveryPointToSnapshotResponseUnmarshaller _instance = new ConvertRecoveryPointToSnapshotResponseUnmarshaller();        
+        private static ListTableRestoreStatusResponseUnmarshaller _instance = new ListTableRestoreStatusResponseUnmarshaller();        
 
-        internal static ConvertRecoveryPointToSnapshotResponseUnmarshaller GetInstance()
+        internal static ListTableRestoreStatusResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -118,7 +112,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConvertRecoveryPointToSnapshotResponseUnmarshaller Instance
+        public static ListTableRestoreStatusResponseUnmarshaller Instance
         {
             get
             {

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ConvertRecoveryPointToSnapshot Request Marshaller
+    /// RestoreTableFromSnapshot Request Marshaller
     /// </summary>       
-    public class ConvertRecoveryPointToSnapshotRequestMarshaller : IMarshaller<IRequest, ConvertRecoveryPointToSnapshotRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class RestoreTableFromSnapshotRequestMarshaller : IMarshaller<IRequest, RestoreTableFromSnapshotRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ConvertRecoveryPointToSnapshotRequest)input);
+            return this.Marshall((RestoreTableFromSnapshotRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ConvertRecoveryPointToSnapshotRequest publicRequest)
+        public IRequest Marshall(RestoreTableFromSnapshotRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RedshiftServerless");
-            string target = "RedshiftServerless.ConvertRecoveryPointToSnapshot";
+            string target = "RedshiftServerless.RestoreTableFromSnapshot";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-04-21";
@@ -67,16 +67,22 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRecoveryPointId())
+                if(publicRequest.IsSetActivateCaseSensitiveIdentifier())
                 {
-                    context.Writer.WritePropertyName("recoveryPointId");
-                    context.Writer.Write(publicRequest.RecoveryPointId);
+                    context.Writer.WritePropertyName("activateCaseSensitiveIdentifier");
+                    context.Writer.Write(publicRequest.ActivateCaseSensitiveIdentifier);
                 }
 
-                if(publicRequest.IsSetRetentionPeriod())
+                if(publicRequest.IsSetNamespaceName())
                 {
-                    context.Writer.WritePropertyName("retentionPeriod");
-                    context.Writer.Write(publicRequest.RetentionPeriod);
+                    context.Writer.WritePropertyName("namespaceName");
+                    context.Writer.Write(publicRequest.NamespaceName);
+                }
+
+                if(publicRequest.IsSetNewTableName())
+                {
+                    context.Writer.WritePropertyName("newTableName");
+                    context.Writer.Write(publicRequest.NewTableName);
                 }
 
                 if(publicRequest.IsSetSnapshotName())
@@ -85,20 +91,40 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SnapshotName);
                 }
 
-                if(publicRequest.IsSetTags())
+                if(publicRequest.IsSetSourceDatabaseName())
                 {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
+                    context.Writer.WritePropertyName("sourceDatabaseName");
+                    context.Writer.Write(publicRequest.SourceDatabaseName);
+                }
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                if(publicRequest.IsSetSourceSchemaName())
+                {
+                    context.Writer.WritePropertyName("sourceSchemaName");
+                    context.Writer.Write(publicRequest.SourceSchemaName);
+                }
 
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                if(publicRequest.IsSetSourceTableName())
+                {
+                    context.Writer.WritePropertyName("sourceTableName");
+                    context.Writer.Write(publicRequest.SourceTableName);
+                }
+
+                if(publicRequest.IsSetTargetDatabaseName())
+                {
+                    context.Writer.WritePropertyName("targetDatabaseName");
+                    context.Writer.Write(publicRequest.TargetDatabaseName);
+                }
+
+                if(publicRequest.IsSetTargetSchemaName())
+                {
+                    context.Writer.WritePropertyName("targetSchemaName");
+                    context.Writer.Write(publicRequest.TargetSchemaName);
+                }
+
+                if(publicRequest.IsSetWorkgroupName())
+                {
+                    context.Writer.WritePropertyName("workgroupName");
+                    context.Writer.Write(publicRequest.WorkgroupName);
                 }
 
                 writer.WriteObjectEnd();
@@ -109,9 +135,9 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ConvertRecoveryPointToSnapshotRequestMarshaller _instance = new ConvertRecoveryPointToSnapshotRequestMarshaller();        
+        private static RestoreTableFromSnapshotRequestMarshaller _instance = new RestoreTableFromSnapshotRequestMarshaller();        
 
-        internal static ConvertRecoveryPointToSnapshotRequestMarshaller GetInstance()
+        internal static RestoreTableFromSnapshotRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -119,7 +145,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConvertRecoveryPointToSnapshotRequestMarshaller Instance
+        public static RestoreTableFromSnapshotRequestMarshaller Instance
         {
             get
             {

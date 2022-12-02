@@ -303,6 +303,9 @@ namespace Amazon.RedshiftServerless
         /// <exception cref="Amazon.RedshiftServerless.Model.ServiceQuotaExceededException">
         /// The service limit was exceeded.
         /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.TooManyTagsException">
+        /// The request exceeded the number of tags allowed for a resource.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
         /// The input failed to satisfy the constraints specified by an AWS service.
         /// </exception>
@@ -511,6 +514,9 @@ namespace Amazon.RedshiftServerless
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ServiceQuotaExceededException">
         /// The service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.TooManyTagsException">
+        /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
         /// The input failed to satisfy the constraints specified by an AWS service.
@@ -1108,11 +1114,11 @@ namespace Amazon.RedshiftServerless
         /// By default, the temporary credentials expire in 900 seconds. You can optionally specify
         /// a duration between 900 seconds (15 minutes) and 3600 seconds (60 minutes).
         /// </para>
-        ///  <pre><code> &lt;p&gt; The Identity and Access Management (IAM) user or role that
-        /// runs GetCredentials must have an IAM policy attached that allows access to all necessary
-        /// actions and resources. &lt;/p&gt; &lt;p&gt; If the &lt;code&gt;DbName&lt;/code&gt;
-        /// parameter is specified, the IAM policy must allow access to the resource dbname for
-        /// the specified database name.&lt;/p&gt; </code></pre>
+        ///  <pre><code> &lt;p&gt;The Identity and Access Management (IAM) user or role that runs
+        /// GetCredentials must have an IAM policy attached that allows access to all necessary
+        /// actions and resources.&lt;/p&gt; &lt;p&gt;If the &lt;code&gt;DbName&lt;/code&gt; parameter
+        /// is specified, the IAM policy must allow access to the resource dbname for the specified
+        /// database name.&lt;/p&gt; </code></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCredentials service method.</param>
         /// 
@@ -1493,6 +1499,66 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  GetTableRestoreStatus
+
+        /// <summary>
+        /// Returns information about a <code>TableRestoreStatus</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableRestoreStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetTableRestoreStatus service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTableRestoreStatus">REST API Reference for GetTableRestoreStatus Operation</seealso>
+        public virtual GetTableRestoreStatusResponse GetTableRestoreStatus(GetTableRestoreStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTableRestoreStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableRestoreStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetTableRestoreStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTableRestoreStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTableRestoreStatus operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTableRestoreStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTableRestoreStatus">REST API Reference for GetTableRestoreStatus Operation</seealso>
+        public virtual IAsyncResult BeginGetTableRestoreStatus(GetTableRestoreStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTableRestoreStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableRestoreStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTableRestoreStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTableRestoreStatus.</param>
+        /// 
+        /// <returns>Returns a  GetTableRestoreStatusResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTableRestoreStatus">REST API Reference for GetTableRestoreStatus Operation</seealso>
+        public virtual GetTableRestoreStatusResponse EndGetTableRestoreStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTableRestoreStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetUsageLimit
 
         /// <summary>
@@ -1867,6 +1933,69 @@ namespace Amazon.RedshiftServerless
         public virtual ListSnapshotsResponse EndListSnapshots(IAsyncResult asyncResult)
         {
             return EndInvoke<ListSnapshotsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTableRestoreStatus
+
+        /// <summary>
+        /// Returns information about an array of <code>TableRestoreStatus</code> objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTableRestoreStatus service method.</param>
+        /// 
+        /// <returns>The response from the ListTableRestoreStatus service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InvalidPaginationException">
+        /// The provided pagination token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTableRestoreStatus">REST API Reference for ListTableRestoreStatus Operation</seealso>
+        public virtual ListTableRestoreStatusResponse ListTableRestoreStatus(ListTableRestoreStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTableRestoreStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTableRestoreStatusResponseUnmarshaller.Instance;
+
+            return Invoke<ListTableRestoreStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTableRestoreStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTableRestoreStatus operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTableRestoreStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTableRestoreStatus">REST API Reference for ListTableRestoreStatus Operation</seealso>
+        public virtual IAsyncResult BeginListTableRestoreStatus(ListTableRestoreStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTableRestoreStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTableRestoreStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTableRestoreStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTableRestoreStatus.</param>
+        /// 
+        /// <returns>Returns a  ListTableRestoreStatusResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTableRestoreStatus">REST API Reference for ListTableRestoreStatus Operation</seealso>
+        public virtual ListTableRestoreStatusResponse EndListTableRestoreStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTableRestoreStatusResponse>(asyncResult);
         }
 
         #endregion
@@ -2267,6 +2396,72 @@ namespace Amazon.RedshiftServerless
         public virtual RestoreFromSnapshotResponse EndRestoreFromSnapshot(IAsyncResult asyncResult)
         {
             return EndInvoke<RestoreFromSnapshotResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RestoreTableFromSnapshot
+
+        /// <summary>
+        /// Restores a table from a snapshot to your Amazon Redshift Serverless instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableFromSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the RestoreTableFromSnapshot service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromSnapshot">REST API Reference for RestoreTableFromSnapshot Operation</seealso>
+        public virtual RestoreTableFromSnapshotResponse RestoreTableFromSnapshot(RestoreTableFromSnapshotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreTableFromSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreTableFromSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreTableFromSnapshotResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreTableFromSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableFromSnapshot operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreTableFromSnapshot
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromSnapshot">REST API Reference for RestoreTableFromSnapshot Operation</seealso>
+        public virtual IAsyncResult BeginRestoreTableFromSnapshot(RestoreTableFromSnapshotRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreTableFromSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreTableFromSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RestoreTableFromSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreTableFromSnapshot.</param>
+        /// 
+        /// <returns>Returns a  RestoreTableFromSnapshotResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromSnapshot">REST API Reference for RestoreTableFromSnapshot Operation</seealso>
+        public virtual RestoreTableFromSnapshotResponse EndRestoreTableFromSnapshot(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RestoreTableFromSnapshotResponse>(asyncResult);
         }
 
         #endregion

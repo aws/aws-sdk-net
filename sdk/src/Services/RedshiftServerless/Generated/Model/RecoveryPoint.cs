@@ -34,11 +34,30 @@ namespace Amazon.RedshiftServerless.Model
     /// </summary>
     public partial class RecoveryPoint
     {
+        private string _namespaceArn;
         private string _namespaceName;
         private DateTime? _recoveryPointCreateTime;
         private string _recoveryPointId;
         private double? _totalSizeInMegaBytes;
         private string _workgroupName;
+
+        /// <summary>
+        /// Gets and sets the property NamespaceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.
+        /// </para>
+        /// </summary>
+        public string NamespaceArn
+        {
+            get { return this._namespaceArn; }
+            set { this._namespaceArn = value; }
+        }
+
+        // Check to see if NamespaceArn property is set
+        internal bool IsSetNamespaceArn()
+        {
+            return this._namespaceArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property NamespaceName. 

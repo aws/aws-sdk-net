@@ -39,6 +39,7 @@ namespace Amazon.RedshiftServerless.Model
         private string _recoveryPointId;
         private int? _retentionPeriod;
         private string _snapshotName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property RecoveryPointId. 
@@ -94,6 +95,26 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetSnapshotName()
         {
             return this._snapshotName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag
+        /// objects</a> to associate with the created snapshot.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

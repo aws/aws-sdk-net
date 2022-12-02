@@ -79,6 +79,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxResults);
                 }
 
+                if(publicRequest.IsSetNamespaceArn())
+                {
+                    context.Writer.WritePropertyName("namespaceArn");
+                    context.Writer.Write(publicRequest.NamespaceArn);
+                }
+
                 if(publicRequest.IsSetNamespaceName())
                 {
                     context.Writer.WritePropertyName("namespaceName");

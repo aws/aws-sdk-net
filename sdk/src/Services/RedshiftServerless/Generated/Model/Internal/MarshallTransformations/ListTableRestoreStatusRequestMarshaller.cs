@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ConvertRecoveryPointToSnapshot Request Marshaller
+    /// ListTableRestoreStatus Request Marshaller
     /// </summary>       
-    public class ConvertRecoveryPointToSnapshotRequestMarshaller : IMarshaller<IRequest, ConvertRecoveryPointToSnapshotRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListTableRestoreStatusRequestMarshaller : IMarshaller<IRequest, ListTableRestoreStatusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ConvertRecoveryPointToSnapshotRequest)input);
+            return this.Marshall((ListTableRestoreStatusRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ConvertRecoveryPointToSnapshotRequest publicRequest)
+        public IRequest Marshall(ListTableRestoreStatusRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RedshiftServerless");
-            string target = "RedshiftServerless.ConvertRecoveryPointToSnapshot";
+            string target = "RedshiftServerless.ListTableRestoreStatus";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-04-21";
@@ -67,38 +67,28 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRecoveryPointId())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("recoveryPointId");
-                    context.Writer.Write(publicRequest.RecoveryPointId);
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetRetentionPeriod())
+                if(publicRequest.IsSetNamespaceName())
                 {
-                    context.Writer.WritePropertyName("retentionPeriod");
-                    context.Writer.Write(publicRequest.RetentionPeriod);
+                    context.Writer.WritePropertyName("namespaceName");
+                    context.Writer.Write(publicRequest.NamespaceName);
                 }
 
-                if(publicRequest.IsSetSnapshotName())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("snapshotName");
-                    context.Writer.Write(publicRequest.SnapshotName);
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetTags())
+                if(publicRequest.IsSetWorkgroupName())
                 {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("workgroupName");
+                    context.Writer.Write(publicRequest.WorkgroupName);
                 }
 
                 writer.WriteObjectEnd();
@@ -109,9 +99,9 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ConvertRecoveryPointToSnapshotRequestMarshaller _instance = new ConvertRecoveryPointToSnapshotRequestMarshaller();        
+        private static ListTableRestoreStatusRequestMarshaller _instance = new ListTableRestoreStatusRequestMarshaller();        
 
-        internal static ConvertRecoveryPointToSnapshotRequestMarshaller GetInstance()
+        internal static ListTableRestoreStatusRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -119,7 +109,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConvertRecoveryPointToSnapshotRequestMarshaller Instance
+        public static ListTableRestoreStatusRequestMarshaller Instance
         {
             get
             {

@@ -86,6 +86,9 @@ namespace Amazon.RedshiftServerless
         /// <exception cref="Amazon.RedshiftServerless.Model.ServiceQuotaExceededException">
         /// The service limit was exceeded.
         /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.TooManyTagsException">
+        /// The request exceeded the number of tags allowed for a resource.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
         /// The input failed to satisfy the constraints specified by an AWS service.
         /// </exception>
@@ -186,6 +189,9 @@ namespace Amazon.RedshiftServerless
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ServiceQuotaExceededException">
         /// The service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.TooManyTagsException">
+        /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
         /// The input failed to satisfy the constraints specified by an AWS service.
@@ -456,11 +462,11 @@ namespace Amazon.RedshiftServerless
         /// By default, the temporary credentials expire in 900 seconds. You can optionally specify
         /// a duration between 900 seconds (15 minutes) and 3600 seconds (60 minutes).
         /// </para>
-        ///  <pre><code> &lt;p&gt; The Identity and Access Management (IAM) user or role that
-        /// runs GetCredentials must have an IAM policy attached that allows access to all necessary
-        /// actions and resources. &lt;/p&gt; &lt;p&gt; If the &lt;code&gt;DbName&lt;/code&gt;
-        /// parameter is specified, the IAM policy must allow access to the resource dbname for
-        /// the specified database name.&lt;/p&gt; </code></pre>
+        ///  <pre><code> &lt;p&gt;The Identity and Access Management (IAM) user or role that runs
+        /// GetCredentials must have an IAM policy attached that allows access to all necessary
+        /// actions and resources.&lt;/p&gt; &lt;p&gt;If the &lt;code&gt;DbName&lt;/code&gt; parameter
+        /// is specified, the IAM policy must allow access to the resource dbname for the specified
+        /// database name.&lt;/p&gt; </code></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCredentials service method.</param>
         /// <param name="cancellationToken">
@@ -623,6 +629,30 @@ namespace Amazon.RedshiftServerless
 
         #endregion
                 
+        #region  GetTableRestoreStatus
+
+
+
+        /// <summary>
+        /// Returns information about a <code>TableRestoreStatus</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableRestoreStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTableRestoreStatus service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTableRestoreStatus">REST API Reference for GetTableRestoreStatus Operation</seealso>
+        Task<GetTableRestoreStatusResponse> GetTableRestoreStatusAsync(GetTableRestoreStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetUsageLimit
 
 
@@ -782,6 +812,33 @@ namespace Amazon.RedshiftServerless
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListSnapshots">REST API Reference for ListSnapshots Operation</seealso>
         Task<ListSnapshotsResponse> ListSnapshotsAsync(ListSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTableRestoreStatus
+
+
+
+        /// <summary>
+        /// Returns information about an array of <code>TableRestoreStatus</code> objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTableRestoreStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTableRestoreStatus service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InvalidPaginationException">
+        /// The provided pagination token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTableRestoreStatus">REST API Reference for ListTableRestoreStatus Operation</seealso>
+        Task<ListTableRestoreStatusResponse> ListTableRestoreStatusAsync(ListTableRestoreStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -966,6 +1023,36 @@ namespace Amazon.RedshiftServerless
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreFromSnapshot">REST API Reference for RestoreFromSnapshot Operation</seealso>
         Task<RestoreFromSnapshotResponse> RestoreFromSnapshotAsync(RestoreFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RestoreTableFromSnapshot
+
+
+
+        /// <summary>
+        /// Restores a table from a snapshot to your Amazon Redshift Serverless instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableFromSnapshot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreTableFromSnapshot service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromSnapshot">REST API Reference for RestoreTableFromSnapshot Operation</seealso>
+        Task<RestoreTableFromSnapshotResponse> RestoreTableFromSnapshotAsync(RestoreTableFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

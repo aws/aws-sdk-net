@@ -101,6 +101,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NamespaceName);
                 }
 
+                if(publicRequest.IsSetPort())
+                {
+                    context.Writer.WritePropertyName("port");
+                    context.Writer.Write(publicRequest.Port);
+                }
+
                 if(publicRequest.IsSetPubliclyAccessible())
                 {
                     context.Writer.WritePropertyName("publiclyAccessible");

@@ -39,6 +39,7 @@ namespace Amazon.RedshiftServerless.Model
         private Endpoint _endpoint;
         private bool? _enhancedVpcRouting;
         private string _namespaceName;
+        private int? _port;
         private bool? _publiclyAccessible;
         private List<string> _securityGroupIds = new List<string>();
         private WorkgroupStatus _status;
@@ -156,6 +157,25 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetNamespaceName()
         {
             return this._namespaceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455
+        /// and 8191-8215. The default is 5439.
+        /// </para>
+        /// </summary>
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
         }
 
         /// <summary>

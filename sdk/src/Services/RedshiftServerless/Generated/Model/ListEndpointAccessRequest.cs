@@ -43,7 +43,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// An optional parameter that specifies the maximum number of results to return. You
-        /// can use <code>nextToken</code> to get the next page of results.
+        /// can use <code>nextToken</code> to display the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -63,7 +63,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>,
-        /// you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointAccess</code>
+        /// you can include the returned <code>nextToken</code> in following <code>ListEndpointAccess</code>
         /// operations, which returns results in the next page.
         /// </para>
         /// </summary>
