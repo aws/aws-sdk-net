@@ -173,7 +173,7 @@ namespace Amazon.Proton.Model
         /// environment account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
