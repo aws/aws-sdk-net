@@ -83,7 +83,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DestinationArn.
+        /// Gets and sets the property DestinationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the destination.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1283)]
         public string DestinationArn
@@ -210,7 +213,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceArn.
+        /// Gets and sets the property SourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the source.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1283)]
         public string SourceArn

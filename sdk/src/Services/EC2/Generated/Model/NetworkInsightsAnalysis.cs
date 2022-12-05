@@ -51,7 +51,10 @@ namespace Amazon.EC2.Model
         private string _warningMessage;
 
         /// <summary>
-        /// Gets and sets the property AdditionalAccounts.
+        /// Gets and sets the property AdditionalAccounts. 
+        /// <para>
+        /// The member accounts that contain resources that the path can traverse.
+        /// </para>
         /// </summary>
         public List<string> AdditionalAccounts
         {
@@ -285,7 +288,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SuggestedAccounts.
+        /// Gets and sets the property SuggestedAccounts. 
+        /// <para>
+        /// Potential intermediate accounts.
+        /// </para>
         /// </summary>
         public List<string> SuggestedAccounts
         {

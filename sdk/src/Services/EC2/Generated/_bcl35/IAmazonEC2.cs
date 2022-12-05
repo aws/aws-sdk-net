@@ -10852,7 +10852,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the curent Infrastructure Performance metric subscriptions.
+        /// Describes the current Infrastructure Performance metric subscriptions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAwsNetworkPerformanceMetricSubscriptions service method.</param>
         /// 
@@ -19441,7 +19441,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// Establishes a trust relationship between Reachability Analyzer and Organizations.
+        /// This operation must be performed by the management account for the organization.
         /// 
+        ///  
+        /// <para>
+        /// After you establish a trust relationship, a user in the management account or a delegated
+        /// administrator account can run a cross-account analysis using resources from the member
+        /// accounts.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableReachabilityAnalyzerOrganizationSharing service method.</param>
         /// 

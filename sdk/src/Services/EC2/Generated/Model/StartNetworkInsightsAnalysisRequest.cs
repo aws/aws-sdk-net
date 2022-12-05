@@ -42,7 +42,10 @@ namespace Amazon.EC2.Model
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
         /// <summary>
-        /// Gets and sets the property AdditionalAccounts.
+        /// Gets and sets the property AdditionalAccounts. 
+        /// <para>
+        /// The member accounts that contain resources that the path can traverse.
+        /// </para>
         /// </summary>
         public List<string> AdditionalAccounts
         {

@@ -36,7 +36,10 @@ namespace Amazon.EC2.Model
         private bool? _returnValue;
 
         /// <summary>
-        /// Gets and sets the property ReturnValue.
+        /// Gets and sets the property ReturnValue. 
+        /// <para>
+        /// Returns <code>true</code> if the request succeeds; otherwise, returns an error.
+        /// </para>
         /// </summary>
         public bool ReturnValue
         {

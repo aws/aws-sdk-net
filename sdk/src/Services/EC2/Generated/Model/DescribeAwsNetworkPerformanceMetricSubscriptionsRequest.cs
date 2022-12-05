@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAwsNetworkPerformanceMetricSubscriptions operation.
-    /// Describes the curent Infrastructure Performance metric subscriptions.
+    /// Describes the current Infrastructure Performance metric subscriptions.
     /// </summary>
     public partial class DescribeAwsNetworkPerformanceMetricSubscriptionsRequest : AmazonEC2Request
     {
