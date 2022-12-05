@@ -30,7 +30,9 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSavingsPlansPurchaseRecommendation operation.
-    /// Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+    /// Retrieves the Savings Plans recommendations for your account. First use <code>StartSavingsPlansPurchaseRecommendationGeneration</code>
+    /// to generate a new set of recommendations, and then use <code>GetSavingsPlansPurchaseRecommendation</code>
+    /// to retrieve them.
     /// </summary>
     public partial class GetSavingsPlansPurchaseRecommendationRequest : AmazonCostExplorerRequest
     {

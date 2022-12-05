@@ -1324,7 +1324,9 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+        /// Retrieves the Savings Plans recommendations for your account. First use <code>StartSavingsPlansPurchaseRecommendationGeneration</code>
+        /// to generate a new set of recommendations, and then use <code>GetSavingsPlansPurchaseRecommendation</code>
+        /// to retrieve them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansPurchaseRecommendation service method.</param>
         /// 
@@ -1341,7 +1343,9 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+        /// Retrieves the Savings Plans recommendations for your account. First use <code>StartSavingsPlansPurchaseRecommendationGeneration</code>
+        /// to generate a new set of recommendations, and then use <code>GetSavingsPlansPurchaseRecommendation</code>
+        /// to retrieve them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansPurchaseRecommendation service method.</param>
         /// <param name="cancellationToken">
@@ -1686,6 +1690,48 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  ListSavingsPlansPurchaseRecommendationGeneration
+
+
+        /// <summary>
+        /// Retrieves a list of your historical recommendation generations within the past 30
+        /// days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSavingsPlansPurchaseRecommendationGeneration service method.</param>
+        /// 
+        /// <returns>The response from the ListSavingsPlansPurchaseRecommendationGeneration service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListSavingsPlansPurchaseRecommendationGeneration">REST API Reference for ListSavingsPlansPurchaseRecommendationGeneration Operation</seealso>
+        ListSavingsPlansPurchaseRecommendationGenerationResponse ListSavingsPlansPurchaseRecommendationGeneration(ListSavingsPlansPurchaseRecommendationGenerationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of your historical recommendation generations within the past 30
+        /// days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSavingsPlansPurchaseRecommendationGeneration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSavingsPlansPurchaseRecommendationGeneration service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListSavingsPlansPurchaseRecommendationGeneration">REST API Reference for ListSavingsPlansPurchaseRecommendationGeneration Operation</seealso>
+        Task<ListSavingsPlansPurchaseRecommendationGenerationResponse> ListSavingsPlansPurchaseRecommendationGenerationAsync(ListSavingsPlansPurchaseRecommendationGenerationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -1759,6 +1805,74 @@ namespace Amazon.CostExplorer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ProvideAnomalyFeedback">REST API Reference for ProvideAnomalyFeedback Operation</seealso>
         Task<ProvideAnomalyFeedbackResponse> ProvideAnomalyFeedbackAsync(ProvideAnomalyFeedbackRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartSavingsPlansPurchaseRecommendationGeneration
+
+
+        /// <summary>
+        /// Requests a Savings Plans recommendation generation. This enables you to calculate
+        /// a fresh set of Savings Plans recommendations that takes your latest usage data and
+        /// current Savings Plans inventory into account. You can refresh Savings Plans recommendations
+        /// up to three times daily for a consolidated billing family.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>StartSavingsPlansPurchaseRecommendationGeneration</code> has no request syntax
+        /// because no input parameters are needed to support this operation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSavingsPlansPurchaseRecommendationGeneration service method.</param>
+        /// 
+        /// <returns>The response from the StartSavingsPlansPurchaseRecommendationGeneration service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.GenerationExistsException">
+        /// A request to generate a recommendation is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ServiceQuotaExceededException">
+        /// You've reached the limit on the number of resources you can create, or exceeded the
+        /// size of an individual resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartSavingsPlansPurchaseRecommendationGeneration">REST API Reference for StartSavingsPlansPurchaseRecommendationGeneration Operation</seealso>
+        StartSavingsPlansPurchaseRecommendationGenerationResponse StartSavingsPlansPurchaseRecommendationGeneration(StartSavingsPlansPurchaseRecommendationGenerationRequest request);
+
+
+
+        /// <summary>
+        /// Requests a Savings Plans recommendation generation. This enables you to calculate
+        /// a fresh set of Savings Plans recommendations that takes your latest usage data and
+        /// current Savings Plans inventory into account. You can refresh Savings Plans recommendations
+        /// up to three times daily for a consolidated billing family.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>StartSavingsPlansPurchaseRecommendationGeneration</code> has no request syntax
+        /// because no input parameters are needed to support this operation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSavingsPlansPurchaseRecommendationGeneration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSavingsPlansPurchaseRecommendationGeneration service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.GenerationExistsException">
+        /// A request to generate a recommendation is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ServiceQuotaExceededException">
+        /// You've reached the limit on the number of resources you can create, or exceeded the
+        /// size of an individual resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartSavingsPlansPurchaseRecommendationGeneration">REST API Reference for StartSavingsPlansPurchaseRecommendationGeneration Operation</seealso>
+        Task<StartSavingsPlansPurchaseRecommendationGenerationResponse> StartSavingsPlansPurchaseRecommendationGenerationAsync(StartSavingsPlansPurchaseRecommendationGenerationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
