@@ -42,7 +42,7 @@ namespace Amazon.Ivschat.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogs. 
         /// <para>
-        /// Name of the Amazon CloudWatch Logs destination where chat activity will be logged.
+        /// An Amazon CloudWatch Logs destination configuration where chat activity will be logged.
         /// </para>
         /// </summary>
         public CloudWatchLogsDestinationConfiguration CloudWatchLogs
@@ -60,7 +60,8 @@ namespace Amazon.Ivschat.Model
         /// <summary>
         /// Gets and sets the property Firehose. 
         /// <para>
-        /// Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged
+        /// An Amazon Kinesis Data Firehose destination configuration where chat activity will
+        /// be logged.
         /// </para>
         /// </summary>
         public FirehoseDestinationConfiguration Firehose
@@ -78,7 +79,7 @@ namespace Amazon.Ivschat.Model
         /// <summary>
         /// Gets and sets the property S3. 
         /// <para>
-        /// Name of the Amazon S3 bucket where chat activity will be logged.
+        /// An Amazon S3 destination configuration where chat activity will be logged.
         /// </para>
         /// </summary>
         public S3DestinationConfiguration S3

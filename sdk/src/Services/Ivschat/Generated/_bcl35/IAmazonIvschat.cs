@@ -559,6 +559,9 @@ namespace Amazon.Ivschat
         /// <exception cref="Amazon.Ivschat.Model.AccessDeniedException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.PendingVerificationException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.Ivschat.Model.ResourceNotFoundException">
         /// 
         /// </exception>
@@ -663,6 +666,9 @@ namespace Amazon.Ivschat
         /// 
         /// <returns>The response from the DisconnectUser service method, as returned by Ivschat.</returns>
         /// <exception cref="Amazon.Ivschat.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.PendingVerificationException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.Ivschat.Model.ResourceNotFoundException">
@@ -961,6 +967,9 @@ namespace Amazon.Ivschat
         /// 
         /// <returns>The response from the SendEvent service method, as returned by Ivschat.</returns>
         /// <exception cref="Amazon.Ivschat.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.PendingVerificationException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.Ivschat.Model.ResourceNotFoundException">
