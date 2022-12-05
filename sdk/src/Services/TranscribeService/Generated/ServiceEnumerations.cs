@@ -139,6 +139,10 @@ namespace Amazon.TranscribeService
     {
 
         /// <summary>
+        /// Constant DeDE for CLMLanguageCode
+        /// </summary>
+        public static readonly CLMLanguageCode DeDE = new CLMLanguageCode("de-DE");
+        /// <summary>
         /// Constant EnAU for CLMLanguageCode
         /// </summary>
         public static readonly CLMLanguageCode EnAU = new CLMLanguageCode("en-AU");
@@ -158,6 +162,10 @@ namespace Amazon.TranscribeService
         /// Constant HiIN for CLMLanguageCode
         /// </summary>
         public static readonly CLMLanguageCode HiIN = new CLMLanguageCode("hi-IN");
+        /// <summary>
+        /// Constant JaJP for CLMLanguageCode
+        /// </summary>
+        public static readonly CLMLanguageCode JaJP = new CLMLanguageCode("ja-JP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
