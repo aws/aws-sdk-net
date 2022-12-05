@@ -1,3 +1,18 @@
+### 3.7.432.0 (2022-12-05 19:24 UTC)
+* CostExplorer (3.7.101.0)
+	* This release introduces two new APIs that offer a 1-click experience to refresh Savings Plans recommendations. The two APIs are StartSavingsPlansPurchaseRecommendationGeneration and ListSavingsPlansPurchaseRecommendationGeneration.
+* EC2 (3.7.112.0)
+	* Documentation updates for EC2.
+* Ivschat (3.7.102.0)
+	* Adds PendingVerification error type to messaging APIs to block the resource usage for accounts identified as being fraudulent.
+* RDS (3.7.106.0)
+	* This release adds the InvalidDBInstanceStateFault to the RestoreDBClusterFromSnapshot operation.
+* TranscribeService (3.7.102.0)
+	* Amazon Transcribe now supports creating custom language models in the following languages: Japanese (ja-JP) and German (de-DE).
+* Core 3.7.101.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.431.0 (2022-12-02 19:25 UTC)
 * AppSync (3.7.102.0)
 	* Fixes the URI for the evaluatecode endpoint to include the /v1 prefix (ie. "/v1/dataplane-evaluatecode").
