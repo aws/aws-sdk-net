@@ -152,6 +152,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return InvalidDBClusterSnapshotStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBInstanceState"))
+                {
+                    return InvalidDBInstanceStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBSnapshotState"))
                 {
                     return InvalidDBSnapshotStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
