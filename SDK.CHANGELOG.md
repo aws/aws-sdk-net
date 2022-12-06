@@ -1,3 +1,18 @@
+### 3.7.433.0 (2022-12-06 20:39 UTC)
+* BillingConductor (3.7.103.0)
+	* This release adds the Tiering Pricing Rule feature.
+* Connect (3.7.106.0)
+	* This release provides APIs that enable you to programmatically manage rules for Contact Lens conversational analytics and third party applications. For more information, see   https://docs.aws.amazon.com/connect/latest/APIReference/rules-api.html
+* DynamoDBv2 (3.7.101.0)
+	* Endpoint Ruleset update: Use http instead of https for the "local" region.
+* RDS (3.7.107.0)
+	* This release adds the BlueGreenDeploymentNotFoundFault to the AddTagsToResource, ListTagsForResource, and RemoveTagsFromResource operations.
+* SageMakerFeatureStoreRuntime (3.7.101.0)
+	* For online + offline Feature Groups, added ability to target PutRecord and DeleteRecord actions to only online store, or only offline store. If target store parameter is not specified, actions will apply to both stores.
+* Core 3.7.101.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.432.0 (2022-12-05 19:24 UTC)
 * CostExplorer (3.7.101.0)
 	* This release introduces two new APIs that offer a 1-click experience to refresh Savings Plans recommendations. The two APIs are StartSavingsPlansPurchaseRecommendationGeneration and ListSavingsPlansPurchaseRecommendationGeneration.

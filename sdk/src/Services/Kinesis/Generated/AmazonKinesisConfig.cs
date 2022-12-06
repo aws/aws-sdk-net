@@ -30,7 +30,7 @@ namespace Amazon.Kinesis
     public partial class AmazonKinesisConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.29");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.30");
 
         private string _userAgent = UserAgentString;
 
