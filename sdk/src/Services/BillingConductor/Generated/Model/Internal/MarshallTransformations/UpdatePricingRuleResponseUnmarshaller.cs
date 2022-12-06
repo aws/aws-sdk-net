@@ -105,6 +105,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                     response.Service = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Tiering", targetDepth))
+                {
+                    var unmarshaller = UpdateTieringInputUnmarshaller.Instance;
+                    response.Tiering = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

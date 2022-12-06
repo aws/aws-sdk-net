@@ -89,6 +89,17 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetTiering())
+                {
+                    context.Writer.WritePropertyName("Tiering");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateTieringInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Tiering, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetType())
                 {
                     context.Writer.WritePropertyName("Type");

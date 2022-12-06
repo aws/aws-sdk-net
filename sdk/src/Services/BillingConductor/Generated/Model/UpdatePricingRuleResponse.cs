@@ -42,6 +42,7 @@ namespace Amazon.BillingConductor.Model
         private string _name;
         private PricingRuleScope _scope;
         private string _service;
+        private UpdateTieringInput _tiering;
         private PricingRuleType _type;
 
         /// <summary>
@@ -212,6 +213,24 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetService()
         {
             return this._service != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tiering. 
+        /// <para>
+        ///  The set of tiering configurations for the pricing rule. 
+        /// </para>
+        /// </summary>
+        public UpdateTieringInput Tiering
+        {
+            get { return this._tiering; }
+            set { this._tiering = value; }
+        }
+
+        // Check to see if Tiering property is set
+        internal bool IsSetTiering()
+        {
+            return this._tiering != null;
         }
 
         /// <summary>

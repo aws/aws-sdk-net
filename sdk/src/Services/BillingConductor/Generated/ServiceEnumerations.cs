@@ -416,6 +416,10 @@ namespace Amazon.BillingConductor
         /// Constant MARKUP for PricingRuleType
         /// </summary>
         public static readonly PricingRuleType MARKUP = new PricingRuleType("MARKUP");
+        /// <summary>
+        /// Constant TIERING for PricingRuleType
+        /// </summary>
+        public static readonly PricingRuleType TIERING = new PricingRuleType("TIERING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -523,6 +527,10 @@ namespace Amazon.BillingConductor
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_CUSTOMLINEITEM_UPDATE = new ValidationExceptionReason("ILLEGAL_CUSTOMLINEITEM_UPDATE");
         /// <summary>
+        /// Constant ILLEGAL_ENDED_BILLINGGROUP for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason ILLEGAL_ENDED_BILLINGGROUP = new ValidationExceptionReason("ILLEGAL_ENDED_BILLINGGROUP");
+        /// <summary>
         /// Constant ILLEGAL_EXPRESSION for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_EXPRESSION = new ValidationExceptionReason("ILLEGAL_EXPRESSION");
@@ -546,6 +554,14 @@ namespace Amazon.BillingConductor
         /// Constant ILLEGAL_SERVICE for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_SERVICE = new ValidationExceptionReason("ILLEGAL_SERVICE");
+        /// <summary>
+        /// Constant ILLEGAL_TIERING_INPUT for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason ILLEGAL_TIERING_INPUT = new ValidationExceptionReason("ILLEGAL_TIERING_INPUT");
+        /// <summary>
+        /// Constant ILLEGAL_TYPE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason ILLEGAL_TYPE = new ValidationExceptionReason("ILLEGAL_TYPE");
         /// <summary>
         /// Constant ILLEGAL_UPDATE_CHARGE_DETAILS for ValidationExceptionReason
         /// </summary>

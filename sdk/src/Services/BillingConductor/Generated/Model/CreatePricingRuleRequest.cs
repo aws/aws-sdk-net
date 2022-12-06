@@ -42,6 +42,7 @@ namespace Amazon.BillingConductor.Model
         private PricingRuleScope _scope;
         private string _service;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private CreateTieringInput _tiering;
         private PricingRuleType _type;
 
         /// <summary>
@@ -108,7 +109,7 @@ namespace Amazon.BillingConductor.Model
         ///  A percentage modifier that's applied on the public pricing rates. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Min=0)]
         public double ModifierPercentage
         {
             get { return this._modifierPercentage.GetValueOrDefault(); }
@@ -198,6 +199,24 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tiering. 
+        /// <para>
+        ///  The set of tiering configurations for the pricing rule. 
+        /// </para>
+        /// </summary>
+        public CreateTieringInput Tiering
+        {
+            get { return this._tiering; }
+            set { this._tiering = value; }
+        }
+
+        // Check to see if Tiering property is set
+        internal bool IsSetTiering()
+        {
+            return this._tiering != null;
         }
 
         /// <summary>
