@@ -40,6 +40,8 @@ namespace Amazon.DynamoDBv2.Internal
             if (parameters == null) 
                 throw new ArgumentNullException("parameters");
 
+            if (parameters["Region"] == null)
+                throw new AmazonClientException("Region parameter must be set for endpoint resolution");
             if (parameters["UseDualStack"] == null)
                 throw new AmazonClientException("UseDualStack parameter must be set for endpoint resolution");
             if (parameters["UseFIPS"] == null)
@@ -54,7 +56,7 @@ namespace Amazon.DynamoDBv2.Internal
             };
             if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
             {
-                if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
+                if (IsSet(refs["Endpoint"]))
                 {
                     if (Equals(refs["UseFIPS"], true))
                     {
@@ -96,7 +98,7 @@ namespace Amazon.DynamoDBv2.Internal
                 }
                 if (Equals(refs["Region"], "local"))
                 {
-                    return new Endpoint("https://localhost:8000", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""dynamodb""}]}", refs), InterpolateJson(@"", refs));
+                    return new Endpoint("http://localhost:8000", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""dynamodb""}]}", refs), InterpolateJson(@"", refs));
                 }
                 return new Endpoint(Interpolate(@"https://dynamodb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
             }
