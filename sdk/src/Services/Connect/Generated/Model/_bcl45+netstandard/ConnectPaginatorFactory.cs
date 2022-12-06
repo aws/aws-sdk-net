@@ -236,6 +236,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListRules operation
+        ///</summary>
+        public IListRulesPaginator ListRules(ListRulesRequest request) 
+        {
+            return new ListRulesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSecurityKeys operation
         ///</summary>
         public IListSecurityKeysPaginator ListSecurityKeys(ListSecurityKeysRequest request) 

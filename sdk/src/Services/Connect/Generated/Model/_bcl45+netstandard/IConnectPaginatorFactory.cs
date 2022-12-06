@@ -151,6 +151,11 @@ namespace Amazon.Connect.Model
         IListRoutingProfilesPaginator ListRoutingProfiles(ListRoutingProfilesRequest request);
 
         /// <summary>
+        /// Paginator for ListRules operation
+        ///</summary>
+        IListRulesPaginator ListRules(ListRulesRequest request);
+
+        /// <summary>
         /// Paginator for ListSecurityKeys operation
         ///</summary>
         IListSecurityKeysPaginator ListSecurityKeys(ListSecurityKeysRequest request);
