@@ -61,7 +61,7 @@ namespace Amazon.Runtime.Internal.Util
             bool hasCredentialsProperties = false;
             properties = null;
 
-            if (!ProfileMarkerRequired)
+            if (!ProfileMarkerRequired && !isSsoSession)
                 hasCredentialsProperties = base.TryGetSection(sectionName, out properties);
 
             if (!hasCredentialsProperties)

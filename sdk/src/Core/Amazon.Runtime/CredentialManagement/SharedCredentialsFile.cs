@@ -685,7 +685,7 @@ namespace Amazon.Runtime.CredentialManagement
         {
             Dictionary<string, string> credentialsProperties = null;
             Dictionary<string, string> configProperties = null;
-            var hasCredentialsProperties = _credentialsFile.TryGetSection(sectionName, out credentialsProperties);
+            var hasCredentialsProperties = _credentialsFile.TryGetSection(sectionName, isSsoSession, out credentialsProperties);
            
             var hasConfigProperties = false;
             if (_configFile != null)
