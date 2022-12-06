@@ -30,16 +30,17 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRecord operation.
-    /// Deletes a <code>Record</code> from a <code>FeatureGroup</code>. A new record will
-    /// show up in the <code>OfflineStore</code> when the <code>DeleteRecord</code> API is
-    /// called. This record will have a value of <code>True</code> in the <code>is_deleted</code>
-    /// column.
+    /// Deletes a <code>Record</code> from a <code>FeatureGroup</code>. When the <code>DeleteRecord</code>
+    /// API is called a new record will be added to the <code>OfflineStore</code> and the
+    /// <code>Record</code> will be removed from the <code>OnlineStore</code>. This record
+    /// will have a value of <code>True</code> in the <code>is_deleted</code> column.
     /// </summary>
     public partial class DeleteRecordRequest : AmazonSageMakerFeatureStoreRuntimeRequest
     {
         private string _eventTime;
         private string _featureGroupName;
         private string _recordIdentifierValueAsString;
+        private List<string> _targetStores = new List<string>();
 
         /// <summary>
         /// Gets and sets the property EventTime. 
@@ -98,6 +99,26 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         internal bool IsSetRecordIdentifierValueAsString()
         {
             return this._recordIdentifierValueAsString != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetStores. 
+        /// <para>
+        /// A list of stores from which you're deleting the record. By default, Feature Store
+        /// deletes the record from all of the stores that you're using for the <code>FeatureGroup</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> TargetStores
+        {
+            get { return this._targetStores; }
+            set { this._targetStores = value; }
+        }
+
+        // Check to see if TargetStores property is set
+        internal bool IsSetTargetStores()
+        {
+            return this._targetStores != null && this._targetStores.Count > 0; 
         }
 
     }

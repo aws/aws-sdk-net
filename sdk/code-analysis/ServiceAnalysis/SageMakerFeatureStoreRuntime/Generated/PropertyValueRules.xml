@@ -9,7 +9,7 @@
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.DeleteRecordRequest.FeatureGroupName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,63}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.DeleteRecordRequest.RecordIdentifierValueAsString</property>
@@ -20,7 +20,7 @@
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.GetRecordRequest.FeatureGroupName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,63}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.GetRecordRequest.RecordIdentifierValueAsString</property>
@@ -31,7 +31,7 @@
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.PutRecordRequest.FeatureGroupName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,63}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordError.ErrorCode</property>
@@ -56,7 +56,7 @@
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordIdentifier.FeatureGroupName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,63}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordResultDetail.FeatureGroupName</property>
@@ -72,7 +72,7 @@
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.FeatureValue.FeatureName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z0-9]([-_]*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.FeatureValue.ValueAsString</property>

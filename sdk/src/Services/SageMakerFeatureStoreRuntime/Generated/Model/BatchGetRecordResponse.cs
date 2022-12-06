@@ -40,7 +40,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// A list of errors that have occured when retrieving a batch of Records.
+        /// A list of errors that have occurred when retrieving a batch of Records.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

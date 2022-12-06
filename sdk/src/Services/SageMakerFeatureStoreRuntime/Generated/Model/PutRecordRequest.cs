@@ -40,6 +40,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
     {
         private string _featureGroupName;
         private List<FeatureValue> _record = new List<FeatureValue>();
+        private List<string> _targetStores = new List<string>();
 
         /// <summary>
         /// Gets and sets the property FeatureGroupName. 
@@ -91,6 +92,26 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         internal bool IsSetRecord()
         {
             return this._record != null && this._record.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetStores. 
+        /// <para>
+        /// A list of stores to which you're adding the record. By default, Feature Store adds
+        /// the record to all of the stores that you're using for the <code>FeatureGroup</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> TargetStores
+        {
+            get { return this._targetStores; }
+            set { this._targetStores = value; }
+        }
+
+        // Check to see if TargetStores property is set
+        internal bool IsSetTargetStores()
+        {
+            return this._targetStores != null && this._targetStores.Count > 0; 
         }
 
     }

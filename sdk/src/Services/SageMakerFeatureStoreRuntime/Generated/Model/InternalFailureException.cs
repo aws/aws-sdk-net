@@ -30,7 +30,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
 {
     /// <summary>
     /// An internal failure occurred. Try your request again. If the problem persists, contact
-    /// AWS customer support.
+    /// Amazon Web Services customer support.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -42,8 +42,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// Gets and sets the property ErrorCode. 
         /// <para>
         /// The error code of an error that has occured when attempting to retrieve a batch of
-        /// Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">
-        /// Errors</a>.
+        /// Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=358400)]

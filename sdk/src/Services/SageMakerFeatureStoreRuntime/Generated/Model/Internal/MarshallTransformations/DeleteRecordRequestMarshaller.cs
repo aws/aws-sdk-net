@@ -67,6 +67,9 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
             
             if (publicRequest.IsSetRecordIdentifierValueAsString())
                 request.Parameters.Add("RecordIdentifierValueAsString", StringUtils.FromString(publicRequest.RecordIdentifierValueAsString));
+            
+            if (publicRequest.IsSetTargetStores())
+                request.ParameterCollection.Add("TargetStores", publicRequest.TargetStores);
             request.ResourcePath = "/FeatureGroup/{FeatureGroupName}";
             request.UseQueryString = true;
 

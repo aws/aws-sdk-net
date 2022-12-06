@@ -84,6 +84,17 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetTargetStores())
+                {
+                    context.Writer.WritePropertyName("TargetStores");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTargetStoresListValue in publicRequest.TargetStores)
+                    {
+                            context.Writer.Write(publicRequestTargetStoresListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

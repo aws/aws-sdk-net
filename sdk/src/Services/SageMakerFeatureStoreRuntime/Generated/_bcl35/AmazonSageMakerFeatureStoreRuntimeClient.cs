@@ -287,7 +287,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         /// </exception>
         /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.InternalFailureException">
         /// An internal failure occurred. Try your request again. If the problem persists, contact
-        /// AWS customer support.
+        /// Amazon Web Services customer support.
         /// </exception>
         /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
@@ -344,10 +344,10 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         #region  DeleteRecord
 
         /// <summary>
-        /// Deletes a <code>Record</code> from a <code>FeatureGroup</code>. A new record will
-        /// show up in the <code>OfflineStore</code> when the <code>DeleteRecord</code> API is
-        /// called. This record will have a value of <code>True</code> in the <code>is_deleted</code>
-        /// column.
+        /// Deletes a <code>Record</code> from a <code>FeatureGroup</code>. When the <code>DeleteRecord</code>
+        /// API is called a new record will be added to the <code>OfflineStore</code> and the
+        /// <code>Record</code> will be removed from the <code>OnlineStore</code>. This record
+        /// will have a value of <code>True</code> in the <code>is_deleted</code> column.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRecord service method.</param>
         /// 
@@ -357,7 +357,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         /// </exception>
         /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.InternalFailureException">
         /// An internal failure occurred. Try your request again. If the problem persists, contact
-        /// AWS customer support.
+        /// Amazon Web Services customer support.
         /// </exception>
         /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
@@ -426,7 +426,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         /// </exception>
         /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.InternalFailureException">
         /// An internal failure occurred. Try your request again. If the problem persists, contact
-        /// AWS customer support.
+        /// Amazon Web Services customer support.
         /// </exception>
         /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.ResourceNotFoundException">
         /// A resource that is required to perform an action was not found.
@@ -500,7 +500,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         /// </exception>
         /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.InternalFailureException">
         /// An internal failure occurred. Try your request again. If the problem persists, contact
-        /// AWS customer support.
+        /// Amazon Web Services customer support.
         /// </exception>
         /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
