@@ -298,6 +298,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
         /// 
         /// <returns>The response from the AddTagsToResource service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentNotFoundException">
+        /// <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green
+        /// deployment.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -337,6 +341,10 @@ namespace Amazon.RDS
         /// </param>
         /// 
         /// <returns>The response from the AddTagsToResource service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentNotFoundException">
+        /// <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green
+        /// deployment.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -6635,6 +6643,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentNotFoundException">
+        /// <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green
+        /// deployment.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -6672,6 +6684,10 @@ namespace Amazon.RDS
         /// </param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentNotFoundException">
+        /// <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green
+        /// deployment.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -8955,6 +8971,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
         /// 
         /// <returns>The response from the RemoveTagsFromResource service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentNotFoundException">
+        /// <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green
+        /// deployment.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -8992,6 +9012,10 @@ namespace Amazon.RDS
         /// </param>
         /// 
         /// <returns>The response from the RemoveTagsFromResource service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentNotFoundException">
+        /// <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green
+        /// deployment.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>

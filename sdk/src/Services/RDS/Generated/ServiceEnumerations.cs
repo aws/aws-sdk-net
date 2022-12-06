@@ -903,6 +903,10 @@ namespace Amazon.RDS
     {
 
         /// <summary>
+        /// Constant BlueGreenDeployment for SourceType
+        /// </summary>
+        public static readonly SourceType BlueGreenDeployment = new SourceType("blue-green-deployment");
+        /// <summary>
         /// Constant CustomEngineVersion for SourceType
         /// </summary>
         public static readonly SourceType CustomEngineVersion = new SourceType("custom-engine-version");
