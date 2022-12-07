@@ -88,6 +88,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetConfigurationValues())
+                {
+                    context.Writer.WritePropertyName("configurationValues");
+                    context.Writer.Write(publicRequest.ConfigurationValues);
+                }
+
                 if(publicRequest.IsSetResolveConflicts())
                 {
                     context.Writer.WritePropertyName("resolveConflicts");

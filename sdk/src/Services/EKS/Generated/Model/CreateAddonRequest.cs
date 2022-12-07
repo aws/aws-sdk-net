@@ -45,6 +45,7 @@ namespace Amazon.EKS.Model
         private string _addonVersion;
         private string _clientRequestToken;
         private string _clusterName;
+        private string _configurationValues;
         private ResolveConflicts _resolveConflicts;
         private string _serviceAccountRoleArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -125,6 +126,26 @@ namespace Amazon.EKS.Model
         internal bool IsSetClusterName()
         {
             return this._clusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationValues. 
+        /// <para>
+        ///  The set of configuration values for the add-on being created. Whatever values provided
+        /// here are validated against the schema from <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
+        /// <code>DescribeAddonConfiguration</code> </a>.
+        /// </para>
+        /// </summary>
+        public string ConfigurationValues
+        {
+            get { return this._configurationValues; }
+            set { this._configurationValues = value; }
+        }
+
+        // Check to see if ConfigurationValues property is set
+        internal bool IsSetConfigurationValues()
+        {
+            return this._configurationValues != null;
         }
 
         /// <summary>

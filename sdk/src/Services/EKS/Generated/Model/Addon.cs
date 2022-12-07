@@ -38,6 +38,7 @@ namespace Amazon.EKS.Model
         private string _addonName;
         private string _addonVersion;
         private string _clusterName;
+        private string _configurationValues;
         private DateTime? _createdAt;
         private AddonHealth _health;
         private MarketplaceInformation _marketplaceInformation;
@@ -119,6 +120,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetClusterName()
         {
             return this._clusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationValues. 
+        /// <para>
+        /// The provided configuration values.
+        /// </para>
+        /// </summary>
+        public string ConfigurationValues
+        {
+            get { return this._configurationValues; }
+            set { this._configurationValues = value; }
+        }
+
+        // Check to see if ConfigurationValues property is set
+        internal bool IsSetConfigurationValues()
+        {
+            return this._configurationValues != null;
         }
 
         /// <summary>
