@@ -1,3 +1,16 @@
+### 3.7.434.0 (2022-12-07 19:48 UTC)
+* CloudFront (3.7.102.0)
+	* Introducing UpdateDistributionWithStagingConfig that can be used to promote the staging configuration to the production.
+* CostExplorer (3.7.102.0)
+	* This release adds the LinkedAccountName field to the GetAnomalies API response under RootCause
+* EKS (3.7.103.0)
+	* Adds support for EKS add-ons configurationValues fields and DescribeAddonConfiguration function
+* KeyManagementService (3.7.101.6)
+	* Updated examples and exceptions for External Key Store (XKS).
+* Core 3.7.101.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.433.0 (2022-12-06 20:39 UTC)
 * BillingConductor (3.7.103.0)
 	* This release adds the Tiering Pricing Rule feature.
