@@ -268,10 +268,6 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property TrustAnchorCertificate. 
         /// <para>
-        /// * CreateCustom
-        /// </para>
-        ///  
-        /// <para>
         /// Specifies the certificate for an CloudHSM key store. This parameter is required for
         /// custom key stores with a <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.
         /// </para>

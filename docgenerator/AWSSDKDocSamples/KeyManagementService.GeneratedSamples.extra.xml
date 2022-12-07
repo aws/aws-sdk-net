@@ -1188,12 +1188,12 @@
         <value>
             <example>
                 <para>
-                    This example tells AWS KMS the password for the kmsuser crypto user in the AWS CloudHSM cluster that is associated with the AWS KMS custom key store. (It does not change the password in the CloudHSM cluster.) This operation does not return any data.
+                    This example changes the friendly name of the AWS KMS custom key store to the name that you specify. This operation does not return any data. To verify that the operation worked, use the DescribeCustomKeyStores operation.
                 </para>
                 <code
-                    title="To edit the password of an AWS CloudHSM key store"
+                    title="To edit the friendly name of a custom key store"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-edit-the-properties-of-a-custom-key-store-1" />
+                    region="to-edit-the-friendly-name-of-a-custom-key-store-1" />
             </example>
         </value>
     </doc>
@@ -1207,12 +1207,12 @@
         <value>
             <example>
                 <para>
-                    This example changes the friendly name of the AWS KMS custom key store to the name that you specify. This operation does not return any data. To verify that the operation worked, use the DescribeCustomKeyStores operation.
+                    This example tells AWS KMS the password for the kmsuser crypto user in the AWS CloudHSM cluster that is associated with the AWS KMS custom key store. (It does not change the password in the CloudHSM cluster.) This operation does not return any data.
                 </para>
                 <code
-                    title="To edit the friendly name of a custom key store"
+                    title="To edit the password of an AWS CloudHSM key store"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-edit-the-friendly-name-of-a-custom-key-store-2" />
+                    region="to-edit-the-properties-of-an-aws-cloudhsm-key-store-2" />
             </example>
         </value>
     </doc>
@@ -1245,12 +1245,31 @@
         <value>
             <example>
                 <para>
+                    To update the proxy authentication credential for your external key store, specify both the <code>RawSecretAccessKey</code> and the <code>AccessKeyId</code>, even if you are changing only one of the values. You can use this feature to fix an invalid credential or to change the credential when the external key store proxy rotates it.
+                </para>
+                <code
+                    title="To update the proxy authentication credential of an external key store"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-update-the-proxy-authentication-credential-of-an-external-key-store-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.UpdateCustomKeyStore(Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.UpdateCustomKeyStore(Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.UpdateCustomKeyStoreResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
                     This example updates the proxy URI path for an external key store
                 </para>
                 <code
                     title="To edit the proxy URI path of an external key store."
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-update-the-xks-proxy-api-path-of-an-external-custom-key-store-4" />
+                    region="to-update-the-xks-proxy-api-path-of-an-external-key-store-5" />
             </example>
         </value>
     </doc>
@@ -1269,7 +1288,7 @@
                 <code
                     title="To update the proxy connectivity of an external key store to VPC_ENDPOINT_SERVICE"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-update-the-proxy-connectivity-of-an-external-key-store-to-vpc_endpoint_service-5" />
+                    region="to-update-the-proxy-connectivity-of-an-external-key-store-to-vpc_endpoint_service-6" />
             </example>
         </value>
     </doc>

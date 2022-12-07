@@ -34,7 +34,7 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// These fields appear in a <a>CreateKey</a> or <a>DescribeKey</a> response only for
+    /// This element appears in a <a>CreateKey</a> or <a>DescribeKey</a> response only for
     /// a KMS key in an external key store.
     /// </para>
     ///  

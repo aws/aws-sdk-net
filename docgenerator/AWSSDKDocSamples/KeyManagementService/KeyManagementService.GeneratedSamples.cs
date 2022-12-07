@@ -82,7 +82,10 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             {
                 CustomKeyStoreName = "ExampleVPCEndpointKeyStore", // A friendly name for the custom key store
                 CustomKeyStoreType = "EXTERNAL_KEY_STORE", // For external key stores, the value must be EXTERNAL_KEY_STORE
-                XksProxyAuthenticationCredential = <data>, // The access key ID and secret access key that KMS uses to authenticate to your external key store proxy
+                XksProxyAuthenticationCredential = new XksProxyAuthenticationCredentialType {
+                    AccessKeyId = "ABCDE12345670EXAMPLE",
+                    RawSecretAccessKey = "DXjSUawnel2fr6SKC7G25CNxTyWKE5PF9XX6H/u9pSo="
+                }, // The access key ID and secret access key that KMS uses to authenticate to your external key store proxy
                 XksProxyConnectivity = "VPC_ENDPOINT_SERVICE", // Indicates how AWS KMS communicates with the external key store proxy
                 XksProxyUriEndpoint = "https://myproxy-private.xks.example.com", // The URI that AWS KMS uses to connect to the external key store proxy
                 XksProxyUriPath = "/example-prefix/kms/xks/v1", // The URI path to the external key store proxy APIs
@@ -103,7 +106,10 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             {
                 CustomKeyStoreName = "ExamplePublicEndpointKeyStore", // A friendly name for the custom key store
                 CustomKeyStoreType = "EXTERNAL_KEY_STORE", // For external key stores, the value must be EXTERNAL_KEY_STORE
-                XksProxyAuthenticationCredential = <data>, // The access key ID and secret access key that KMS uses to authenticate to your external key store proxy
+                XksProxyAuthenticationCredential = new XksProxyAuthenticationCredentialType {
+                    AccessKeyId = "ABCDE12345670EXAMPLE",
+                    RawSecretAccessKey = "DXjSUawnel2fr6SKC7G25CNxTyWKE5PF9XX6H/u9pSo="
+                }, // The access key ID and secret access key that KMS uses to authenticate to your external key store proxy
                 XksProxyConnectivity = "PUBLIC_ENDPOINT", // Indicates how AWS KMS communicates with the external key store proxy
                 XksProxyUriEndpoint = "https://myproxy.xks.example.com", // The URI that AWS KMS uses to connect to the external key store proxy
                 XksProxyUriPath = "/kms/xks/v1" // The URI path to your external key store proxy API
@@ -1091,13 +1097,13 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceUpdateCustomKeyStore()
         {
-            #region to-edit-the-properties-of-a-custom-key-store-1
+            #region to-edit-the-friendly-name-of-a-custom-key-store-1
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest 
             {
                 CustomKeyStoreId = "cks-1234567890abcdef0", // The ID of the custom key store that you are updating.
-                KeyStorePassword = "ExamplePassword" // The password for the kmsuser crypto user in the CloudHSM cluster.
+                NewCustomKeyStoreName = "DevelopmentKeys" // A new friendly name for the custom key store.
             });
 
 
@@ -1106,13 +1112,13 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceUpdateCustomKeyStore()
         {
-            #region to-edit-the-friendly-name-of-a-custom-key-store-2
+            #region to-edit-the-properties-of-an-aws-cloudhsm-key-store-2
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest 
             {
                 CustomKeyStoreId = "cks-1234567890abcdef0", // The ID of the custom key store that you are updating.
-                NewCustomKeyStoreName = "DevelopmentKeys" // A new friendly name for the custom key store.
+                KeyStorePassword = "ExamplePassword" // The password for the kmsuser crypto user in the CloudHSM cluster.
             });
 
 
@@ -1136,7 +1142,25 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceUpdateCustomKeyStore()
         {
-            #region to-update-the-xks-proxy-api-path-of-an-external-custom-key-store-4
+            #region to-update-the-proxy-authentication-credential-of-an-external-key-store-4
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest 
+            {
+                CustomKeyStoreId = "cks-1234567890abcdef0", // Identifies the custom key store
+                XksProxyAuthenticationCredential = new XksProxyAuthenticationCredentialType {
+                    AccessKeyId = "ABCDE12345670EXAMPLE",
+                    RawSecretAccessKey = "DXjSUawnel2fr6SKC7G25CNxTyWKE5PF9XX6H/u9pSo="
+                } // Specifies the values in the proxy authentication credential
+            });
+
+
+            #endregion
+        }
+
+        public void KeyManagementServiceUpdateCustomKeyStore()
+        {
+            #region to-update-the-xks-proxy-api-path-of-an-external-key-store-5
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest 
@@ -1151,7 +1175,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceUpdateCustomKeyStore()
         {
-            #region to-update-the-proxy-connectivity-of-an-external-key-store-to-vpc_endpoint_service-5
+            #region to-update-the-proxy-connectivity-of-an-external-key-store-to-vpc_endpoint_service-6
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest 
