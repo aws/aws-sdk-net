@@ -29,12 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The combination of Amazon Web Service, linked account, Region, and usage type where
-    /// a cost anomaly is observed.
+    /// The combination of Amazon Web Service, linked account, linked account name, Region,
+    /// and usage type where a cost anomaly is observed. The linked account name will only
+    /// be available when the account name can be identified.
     /// </summary>
     public partial class RootCause
     {
         private string _linkedAccount;
+        private string _linkedAccountName;
         private string _region;
         private string _service;
         private string _usageType;
@@ -56,6 +58,25 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetLinkedAccount()
         {
             return this._linkedAccount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkedAccountName. 
+        /// <para>
+        /// The member account name value that's associated with the cost anomaly.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string LinkedAccountName
+        {
+            get { return this._linkedAccountName; }
+            set { this._linkedAccountName = value; }
+        }
+
+        // Check to see if LinkedAccountName property is set
+        internal bool IsSetLinkedAccountName()
+        {
+            return this._linkedAccountName != null;
         }
 
         /// <summary>

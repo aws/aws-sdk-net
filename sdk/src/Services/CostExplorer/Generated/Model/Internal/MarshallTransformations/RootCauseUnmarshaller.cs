@@ -70,6 +70,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.LinkedAccount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LinkedAccountName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LinkedAccountName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Region", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
