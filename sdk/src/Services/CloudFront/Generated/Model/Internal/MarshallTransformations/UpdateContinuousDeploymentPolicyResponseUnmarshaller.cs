@@ -112,6 +112,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return InvalidIfMatchVersionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchContinuousDeploymentPolicy"))
+                {
+                    return NoSuchContinuousDeploymentPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("PreconditionFailed"))
                 {
                     return PreconditionFailedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

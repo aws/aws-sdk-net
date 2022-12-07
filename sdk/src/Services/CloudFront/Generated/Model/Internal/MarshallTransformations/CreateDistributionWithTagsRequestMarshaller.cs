@@ -393,6 +393,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         if(publicRequest.DistributionConfigWithTags.DistributionConfig.IsSetComment())
                             xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.Comment));                 
         
+                        if(publicRequest.DistributionConfigWithTags.DistributionConfig.IsSetContinuousDeploymentPolicyId())
+                            xmlWriter.WriteElementString("ContinuousDeploymentPolicyId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.ContinuousDeploymentPolicyId));                 
+        
                         
                         if (publicRequest.DistributionConfigWithTags.DistributionConfig.CustomErrorResponses != null) 
                         {
@@ -984,6 +987,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             }
                             xmlWriter.WriteEndElement();
                         }
+                        if(publicRequest.DistributionConfigWithTags.DistributionConfig.IsSetStaging())
+                            xmlWriter.WriteElementString("Staging", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfigWithTags.DistributionConfig.Staging));                 
+        
                         
                         if (publicRequest.DistributionConfigWithTags.DistributionConfig.ViewerCertificate != null) 
                         {

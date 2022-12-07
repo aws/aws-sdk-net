@@ -396,6 +396,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     if(publicRequest.DistributionConfig.IsSetComment())
                         xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.Comment));                    
     
+                    if(publicRequest.DistributionConfig.IsSetContinuousDeploymentPolicyId())
+                        xmlWriter.WriteElementString("ContinuousDeploymentPolicyId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.ContinuousDeploymentPolicyId));                    
+    
                     
                     if (publicRequest.DistributionConfig.CustomErrorResponses != null) 
                     {
@@ -987,6 +990,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         }
                         xmlWriter.WriteEndElement();
                     }
+                    if(publicRequest.DistributionConfig.IsSetStaging())
+                        xmlWriter.WriteElementString("Staging", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.Staging));                    
+    
                     
                     if (publicRequest.DistributionConfig.ViewerCertificate != null) 
                     {

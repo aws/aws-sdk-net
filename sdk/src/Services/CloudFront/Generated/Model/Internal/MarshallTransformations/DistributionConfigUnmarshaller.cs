@@ -79,6 +79,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Comment = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ContinuousDeploymentPolicyId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ContinuousDeploymentPolicyId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CustomErrorResponses", targetDepth))
                     {
                         var unmarshaller = CustomErrorResponsesUnmarshaller.Instance;
@@ -143,6 +149,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = RestrictionsUnmarshaller.Instance;
                         unmarshalledObject.Restrictions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Staging", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Staging = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ViewerCertificate", targetDepth))

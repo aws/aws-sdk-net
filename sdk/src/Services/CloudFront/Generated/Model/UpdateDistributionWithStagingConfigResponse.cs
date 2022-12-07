@@ -29,46 +29,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Contains the percentage of traffic to send to a staging distribution.
+    /// This is the response object from the UpdateDistributionWithStagingConfig operation.
     /// </summary>
-    public partial class ContinuousDeploymentSingleWeightConfig
+    public partial class UpdateDistributionWithStagingConfigResponse : AmazonWebServiceResponse
     {
-        private SessionStickinessConfig _sessionStickinessConfig;
-        private float? _weight;
+        private Distribution _distribution;
+        private string _eTag;
 
         /// <summary>
-        /// Gets and sets the property SessionStickinessConfig.
+        /// Gets and sets the property Distribution.
         /// </summary>
-        public SessionStickinessConfig SessionStickinessConfig
+        public Distribution Distribution
         {
-            get { return this._sessionStickinessConfig; }
-            set { this._sessionStickinessConfig = value; }
+            get { return this._distribution; }
+            set { this._distribution = value; }
         }
 
-        // Check to see if SessionStickinessConfig property is set
-        internal bool IsSetSessionStickinessConfig()
+        // Check to see if Distribution property is set
+        internal bool IsSetDistribution()
         {
-            return this._sessionStickinessConfig != null;
+            return this._distribution != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Weight. 
+        /// Gets and sets the property ETag. 
         /// <para>
-        /// The percentage of traffic to send to a staging distribution, expressed as a decimal
-        /// number between 0 and .15.
+        /// The current version of the primary distribution (after it’s updated).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public float Weight
+        public string ETag
         {
-            get { return this._weight.GetValueOrDefault(); }
-            set { this._weight = value; }
+            get { return this._eTag; }
+            set { this._eTag = value; }
         }
 
-        // Check to see if Weight property is set
-        internal bool IsSetWeight()
+        // Check to see if ETag property is set
+        internal bool IsSetETag()
         {
-            return this._weight.HasValue; 
+            return this._eTag != null;
         }
 
     }

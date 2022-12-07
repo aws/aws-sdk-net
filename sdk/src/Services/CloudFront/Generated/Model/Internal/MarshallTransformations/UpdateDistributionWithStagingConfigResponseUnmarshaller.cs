@@ -33,9 +33,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateDistribution operation
+    /// Response Unmarshaller for UpdateDistributionWithStagingConfig operation
     /// </summary>  
-    public class CreateDistributionResponseUnmarshaller : XmlResponseUnmarshaller
+    public class UpdateDistributionWithStagingConfigResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,17 +44,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            CreateDistributionResponse response = new CreateDistributionResponse();
+            UpdateDistributionWithStagingConfigResponse response = new UpdateDistributionWithStagingConfigResponse();
             UnmarshallResult(context,response);
             if (context.ResponseData.IsHeaderPresent("ETag"))
                 response.ETag = context.ResponseData.GetHeaderValue("ETag");
-            if (context.ResponseData.IsHeaderPresent("Location"))
-                response.Location = context.ResponseData.GetHeaderValue("Location");
             
             return response;
         }        
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, CreateDistributionResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, UpdateDistributionWithStagingConfigResponse response)
         {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
@@ -106,21 +104,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return CNAMEAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ContinuousDeploymentPolicyInUse"))
-                {
-                    return ContinuousDeploymentPolicyInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DistributionAlreadyExists"))
-                {
-                    return DistributionAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior"))
                 {
                     return IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("IllegalOriginAccessConfiguration"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("IllegalUpdate"))
                 {
-                    return IllegalOriginAccessConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return IllegalUpdateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InconsistentQuantities"))
                 {
@@ -133,10 +123,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDefaultRootObject"))
                 {
                     return InvalidDefaultRootObjectExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDomainNameForOriginAccessControl"))
-                {
-                    return InvalidDomainNameForOriginAccessControlExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidErrorCode"))
                 {
@@ -158,6 +144,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return InvalidHeadersForS3OriginExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidIfMatchVersion"))
+                {
+                    return InvalidIfMatchVersionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidLambdaFunctionAssociation"))
                 {
                     return InvalidLambdaFunctionAssociationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -178,10 +168,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return InvalidOriginAccessIdentityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOrigin"))
-                {
-                    return InvalidOriginExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOriginKeepaliveTimeout"))
                 {
                     return InvalidOriginKeepaliveTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -189,10 +175,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOriginReadTimeout"))
                 {
                     return InvalidOriginReadTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidProtocolSettings"))
-                {
-                    return InvalidProtocolSettingsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidQueryStringParameters"))
                 {
@@ -230,9 +212,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return NoSuchCachePolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchContinuousDeploymentPolicy"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchDistribution"))
                 {
-                    return NoSuchContinuousDeploymentPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return NoSuchDistributionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchFieldLevelEncryptionConfig"))
                 {
@@ -253,6 +235,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchResponseHeadersPolicy"))
                 {
                     return NoSuchResponseHeadersPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("PreconditionFailed"))
+                {
+                    return PreconditionFailedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("RealtimeLogConfigOwnerMismatch"))
                 {
@@ -286,10 +272,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return TooManyDistributionsAssociatedToKeyGroupExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsAssociatedToOriginAccessControl"))
-                {
-                    return TooManyDistributionsAssociatedToOriginAccessControlExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsAssociatedToOriginRequestPolicy"))
                 {
                     return TooManyDistributionsAssociatedToOriginRequestPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -297,10 +279,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsAssociatedToResponseHeadersPolicy"))
                 {
                     return TooManyDistributionsAssociatedToResponseHeadersPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributions"))
-                {
-                    return TooManyDistributionsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsWithFunctionAssociations"))
                 {
@@ -362,9 +340,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreateDistributionResponseUnmarshaller _instance = new CreateDistributionResponseUnmarshaller();        
+        private static UpdateDistributionWithStagingConfigResponseUnmarshaller _instance = new UpdateDistributionWithStagingConfigResponseUnmarshaller();        
 
-        internal static CreateDistributionResponseUnmarshaller GetInstance()
+        internal static UpdateDistributionWithStagingConfigResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -372,7 +350,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateDistributionResponseUnmarshaller Instance
+        public static UpdateDistributionWithStagingConfigResponseUnmarshaller Instance
         {
             get
             {

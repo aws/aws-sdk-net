@@ -37,6 +37,7 @@ namespace Amazon.CloudFront.Model
         private CacheBehaviors _cacheBehaviors;
         private string _callerReference;
         private string _comment;
+        private string _continuousDeploymentPolicyId;
         private CustomErrorResponses _customErrorResponses;
         private DefaultCacheBehavior _defaultCacheBehavior;
         private string _defaultRootObject;
@@ -48,6 +49,7 @@ namespace Amazon.CloudFront.Model
         private Origins _origins;
         private PriceClass _priceClass;
         private Restrictions _restrictions;
+        private bool? _staging;
         private ViewerCertificate _viewerCertificate;
         private string _webACLId;
 
@@ -153,6 +155,24 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetComment()
         {
             return this._comment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContinuousDeploymentPolicyId. 
+        /// <para>
+        /// The identifier of a continuous deployment policy. For more information, see <code>CreateContinuousDeploymentPolicy</code>.
+        /// </para>
+        /// </summary>
+        public string ContinuousDeploymentPolicyId
+        {
+            get { return this._continuousDeploymentPolicyId; }
+            set { this._continuousDeploymentPolicyId = value; }
+        }
+
+        // Check to see if ContinuousDeploymentPolicyId property is set
+        internal bool IsSetContinuousDeploymentPolicyId()
+        {
+            return this._continuousDeploymentPolicyId != null;
         }
 
         /// <summary>
@@ -480,6 +500,26 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetRestrictions()
         {
             return this._restrictions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Staging. 
+        /// <para>
+        /// A Boolean that indicates whether this is a staging distribution. When this value is
+        /// <code>true</code>, this is a staging distribution. When this value is <code>false</code>,
+        /// this is not a staging distribution.
+        /// </para>
+        /// </summary>
+        public bool Staging
+        {
+            get { return this._staging.GetValueOrDefault(); }
+            set { this._staging = value; }
+        }
+
+        // Check to see if Staging property is set
+        internal bool IsSetStaging()
+        {
+            return this._staging.HasValue; 
         }
 
         /// <summary>

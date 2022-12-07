@@ -50,6 +50,7 @@ namespace Amazon.CloudFront.Model
         private Origins _origins;
         private PriceClass _priceClass;
         private Restrictions _restrictions;
+        private bool? _staging;
         private string _status;
         private ViewerCertificate _viewerCertificate;
         private string _webACLId;
@@ -395,6 +396,25 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetRestrictions()
         {
             return this._restrictions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Staging. 
+        /// <para>
+        /// Whether the primary distribution has a staging distribution enabled.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public bool Staging
+        {
+            get { return this._staging.GetValueOrDefault(); }
+            set { this._staging = value; }
+        }
+
+        // Check to see if Staging property is set
+        internal bool IsSetStaging()
+        {
+            return this._staging.HasValue; 
         }
 
         /// <summary>

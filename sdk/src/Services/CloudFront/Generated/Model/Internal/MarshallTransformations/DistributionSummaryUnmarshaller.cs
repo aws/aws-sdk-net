@@ -157,6 +157,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Restrictions = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Staging", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Staging = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

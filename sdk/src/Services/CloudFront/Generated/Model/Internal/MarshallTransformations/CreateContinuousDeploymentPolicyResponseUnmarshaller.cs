@@ -102,6 +102,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ContinuousDeploymentPolicyAlreadyExists"))
+                {
+                    return ContinuousDeploymentPolicyAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InconsistentQuantities"))
                 {
                     return InconsistentQuantitiesExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -113,6 +117,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("StagingDistributionInUse"))
                 {
                     return StagingDistributionInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyContinuousDeploymentPolicies"))
+                {
+                    return TooManyContinuousDeploymentPoliciesExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

@@ -897,6 +897,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyAlreadyExistsException">
+        /// A continuous deployment policy with this configuration already exists.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
@@ -905,6 +908,10 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StagingDistributionInUseException">
         /// A continuous deployment policy for this staging distribution already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyContinuousDeploymentPoliciesException">
+        /// You have reached the maximum number of continuous deployment policies for this Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateContinuousDeploymentPolicy">REST API Reference for CreateContinuousDeploymentPolicy Operation</seealso>
         CreateContinuousDeploymentPolicyResponse CreateContinuousDeploymentPolicy(CreateContinuousDeploymentPolicyRequest request);
@@ -938,6 +945,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyAlreadyExistsException">
+        /// A continuous deployment policy with this configuration already exists.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
@@ -946,6 +956,10 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StagingDistributionInUseException">
         /// A continuous deployment policy for this staging distribution already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyContinuousDeploymentPoliciesException">
+        /// You have reached the maximum number of continuous deployment policies for this Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateContinuousDeploymentPolicy">REST API Reference for CreateContinuousDeploymentPolicy Operation</seealso>
         Task<CreateContinuousDeploymentPolicyResponse> CreateContinuousDeploymentPolicyAsync(CreateContinuousDeploymentPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -966,6 +980,10 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
         /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
         /// The caller reference you attempted to create the distribution with is associated with
@@ -1067,6 +1085,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
         /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
         /// The specified configuration for field-level encryption doesn't exist.
@@ -1215,6 +1236,10 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
         /// The CNAME specified is already defined for CloudFront.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
         /// The caller reference you attempted to create the distribution with is associated with
         /// another distribution.
@@ -1315,6 +1340,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
         /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
         /// The specified configuration for field-level encryption doesn't exist.
@@ -1463,6 +1491,10 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
         /// The CNAME specified is already defined for CloudFront.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
         /// The caller reference you attempted to create the distribution with is associated with
         /// another distribution.
@@ -1562,6 +1594,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
         /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
         /// The specified configuration for field-level encryption doesn't exist.
@@ -1700,6 +1735,10 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
         /// The CNAME specified is already defined for CloudFront.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
         /// The caller reference you attempted to create the distribution with is associated with
         /// another distribution.
@@ -1799,6 +1838,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
         /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
         /// The specified configuration for field-level encryption doesn't exist.
@@ -3386,11 +3428,18 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition in one or more of the request fields evaluated to <code>false</code>.
@@ -3419,11 +3468,18 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition in one or more of the request fields evaluated to <code>false</code>.
@@ -4954,6 +5010,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn’t exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicy">REST API Reference for GetContinuousDeploymentPolicy Operation</seealso>
         GetContinuousDeploymentPolicyResponse GetContinuousDeploymentPolicy(GetContinuousDeploymentPolicyRequest request);
 
@@ -4972,6 +5031,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn’t exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicy">REST API Reference for GetContinuousDeploymentPolicy Operation</seealso>
         Task<GetContinuousDeploymentPolicyResponse> GetContinuousDeploymentPolicyAsync(GetContinuousDeploymentPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -4989,6 +5051,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn’t exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicyConfig">REST API Reference for GetContinuousDeploymentPolicyConfig Operation</seealso>
         GetContinuousDeploymentPolicyConfigResponse GetContinuousDeploymentPolicyConfig(GetContinuousDeploymentPolicyConfigRequest request);
 
@@ -5005,6 +5070,9 @@ namespace Amazon.CloudFront
         /// <returns>The response from the GetContinuousDeploymentPolicyConfig service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicyConfig">REST API Reference for GetContinuousDeploymentPolicyConfig Operation</seealso>
         Task<GetContinuousDeploymentPolicyConfigResponse> GetContinuousDeploymentPolicyConfigAsync(GetContinuousDeploymentPolicyConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6454,6 +6522,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn’t exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListContinuousDeploymentPolicies">REST API Reference for ListContinuousDeploymentPolicies Operation</seealso>
         ListContinuousDeploymentPoliciesResponse ListContinuousDeploymentPolicies(ListContinuousDeploymentPoliciesRequest request);
 
@@ -6482,6 +6553,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListContinuousDeploymentPolicies">REST API Reference for ListContinuousDeploymentPolicies Operation</seealso>
         Task<ListContinuousDeploymentPoliciesResponse> ListContinuousDeploymentPoliciesAsync(ListContinuousDeploymentPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -8121,6 +8195,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn’t exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
@@ -8178,6 +8255,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition in one or more of the request fields evaluated to <code>false</code>.
@@ -8244,6 +8324,10 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
         /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
         /// The specified configuration for field-level encryption can't be associated with the
@@ -8340,6 +8424,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
         /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
@@ -8523,6 +8610,10 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
         /// The CNAME specified is already defined for CloudFront.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
         /// The specified configuration for field-level encryption can't be associated with the
         /// specified cache behavior.
@@ -8618,6 +8709,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
         /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
@@ -8743,6 +8837,490 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
         Task<UpdateDistributionResponse> UpdateDistributionAsync(UpdateDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateDistributionWithStagingConfig
+
+
+        /// <summary>
+        /// Copies the staging distribution's configuration to its corresponding primary distribution.
+        /// The primary distribution retains its <code>Aliases</code> (also known as alternate
+        /// domain names or CNAMEs) and <code>ContinuousDeploymentPolicyId</code> value, but otherwise
+        /// its configuration is overwritten to match the staging distribution.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this operation in a continuous deployment workflow after you have tested
+        /// configuration changes on the staging distribution. After using a continuous deployment
+        /// policy to move a portion of your domain name’s traffic to the staging distribution
+        /// and verifying that it works as intended, you can use this operation to copy the staging
+        /// distribution’s configuration to the primary distribution. This action will disable
+        /// the continuous deployment policy and move your domain’s traffic back to the primary
+        /// distribution.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDistributionWithStagingConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDistributionWithStagingConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
+        /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
+        /// An invalid error code was specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
+        /// Your request contains forward cookies option which doesn't match with the expectation
+        /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
+        /// has been specified when not allowed or list of cookie names is missing when expected.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
+        /// A CloudFront function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
+        /// The specified geo restriction parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
+        /// The headers specified are not valid for an Amazon S3 origin.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
+        /// The specified Lambda@Edge function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
+        /// The location code specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
+        /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginKeepaliveTimeoutException">
+        /// The keep alive timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginReadTimeoutException">
+        /// The read timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// The query string parameters specified are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
+        /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
+        /// in your request, or omit the <code>RequiredProtocols</code> element from your distribution
+        /// configuration.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
+        /// A response code is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
+        /// The TTL order specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// A viewer certificate specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
+        /// No origin exists with the specified <code>Origin Id</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
+        /// You cannot create more cache behaviors for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
+        /// You cannot create anymore custom SSL/TLS certificates.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
+        /// Your request contains more cookie names in the whitelist than are allowed per cache
+        /// behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToCachePolicyException">
+        /// The maximum number of distributions have been associated with the specified cache
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
+        /// You have reached the maximum number of distributions that are associated with a CloudFront
+        /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
+        /// Processing your request would cause the maximum number of distributions with Lambda@Edge
+        /// function associations per owner to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
+        /// The maximum number of distributions have been associated with the specified Lambda@Edge
+        /// function.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
+        /// You have reached the maximum number of CloudFront function associations for this distribution.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// Your request contains too many headers in forwarded values.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
+        /// Your request contains more Lambda@Edge function associations than are allowed per
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
+        /// Your request contains too many origin custom headers.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginGroupsPerDistributionException">
+        /// Processing your request would cause you to exceed the maximum number of origin groups
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
+        /// You cannot create more origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// Your request contains too many query string parameters.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionWithStagingConfig">REST API Reference for UpdateDistributionWithStagingConfig Operation</seealso>
+        UpdateDistributionWithStagingConfigResponse UpdateDistributionWithStagingConfig(UpdateDistributionWithStagingConfigRequest request);
+
+
+
+        /// <summary>
+        /// Copies the staging distribution's configuration to its corresponding primary distribution.
+        /// The primary distribution retains its <code>Aliases</code> (also known as alternate
+        /// domain names or CNAMEs) and <code>ContinuousDeploymentPolicyId</code> value, but otherwise
+        /// its configuration is overwritten to match the staging distribution.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this operation in a continuous deployment workflow after you have tested
+        /// configuration changes on the staging distribution. After using a continuous deployment
+        /// policy to move a portion of your domain name’s traffic to the staging distribution
+        /// and verifying that it works as intended, you can use this operation to copy the staging
+        /// distribution’s configuration to the primary distribution. This action will disable
+        /// the continuous deployment policy and move your domain’s traffic back to the primary
+        /// distribution.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDistributionWithStagingConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDistributionWithStagingConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
+        /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
+        /// An invalid error code was specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
+        /// Your request contains forward cookies option which doesn't match with the expectation
+        /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
+        /// has been specified when not allowed or list of cookie names is missing when expected.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
+        /// A CloudFront function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
+        /// The specified geo restriction parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
+        /// The headers specified are not valid for an Amazon S3 origin.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
+        /// The specified Lambda@Edge function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
+        /// The location code specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
+        /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginKeepaliveTimeoutException">
+        /// The keep alive timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginReadTimeoutException">
+        /// The read timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// The query string parameters specified are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
+        /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
+        /// in your request, or omit the <code>RequiredProtocols</code> element from your distribution
+        /// configuration.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
+        /// A response code is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
+        /// The TTL order specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// A viewer certificate specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
+        /// No origin exists with the specified <code>Origin Id</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
+        /// You cannot create more cache behaviors for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
+        /// You cannot create anymore custom SSL/TLS certificates.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
+        /// Your request contains more cookie names in the whitelist than are allowed per cache
+        /// behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToCachePolicyException">
+        /// The maximum number of distributions have been associated with the specified cache
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
+        /// You have reached the maximum number of distributions that are associated with a CloudFront
+        /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
+        /// Processing your request would cause the maximum number of distributions with Lambda@Edge
+        /// function associations per owner to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
+        /// The maximum number of distributions have been associated with the specified Lambda@Edge
+        /// function.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
+        /// You have reached the maximum number of CloudFront function associations for this distribution.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// Your request contains too many headers in forwarded values.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
+        /// Your request contains more Lambda@Edge function associations than are allowed per
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
+        /// Your request contains too many origin custom headers.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginGroupsPerDistributionException">
+        /// Processing your request would cause you to exceed the maximum number of origin groups
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
+        /// You cannot create more origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// Your request contains too many query string parameters.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionWithStagingConfig">REST API Reference for UpdateDistributionWithStagingConfig Operation</seealso>
+        Task<UpdateDistributionWithStagingConfigResponse> UpdateDistributionWithStagingConfigAsync(UpdateDistributionWithStagingConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
