@@ -260,6 +260,59 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
         #endregion
         
+        #region  GetLatestAssessmentId
+
+
+        /// <summary>
+        /// Retrieve the latest ID of a specific assessment task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLatestAssessmentId service method.</param>
+        /// 
+        /// <returns>The response from the GetLatestAssessmentId service method, as returned by MigrationHubStrategyRecommendations.</returns>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
+        /// The AWS user account does not have permission to perform the action. Check the AWS
+        /// Identity and Access Management (IAM) policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.ValidationException">
+        /// The request body isn't valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetLatestAssessmentId">REST API Reference for GetLatestAssessmentId Operation</seealso>
+        GetLatestAssessmentIdResponse GetLatestAssessmentId(GetLatestAssessmentIdRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLatestAssessmentId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLatestAssessmentId operation on AmazonMigrationHubStrategyRecommendationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLatestAssessmentId
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetLatestAssessmentId">REST API Reference for GetLatestAssessmentId Operation</seealso>
+        IAsyncResult BeginGetLatestAssessmentId(GetLatestAssessmentIdRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLatestAssessmentId operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLatestAssessmentId.</param>
+        /// 
+        /// <returns>Returns a  GetLatestAssessmentIdResult from MigrationHubStrategyRecommendations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetLatestAssessmentId">REST API Reference for GetLatestAssessmentId Operation</seealso>
+        GetLatestAssessmentIdResponse EndGetLatestAssessmentId(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetPortfolioPreferences
 
 

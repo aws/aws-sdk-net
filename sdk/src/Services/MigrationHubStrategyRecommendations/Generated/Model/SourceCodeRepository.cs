@@ -34,6 +34,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     public partial class SourceCodeRepository
     {
         private string _branch;
+        private string _projectName;
         private string _repository;
         private string _versionControlType;
 
@@ -54,6 +55,25 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         internal bool IsSetBranch()
         {
             return this._branch != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectName. 
+        /// <para>
+        /// The name of the project.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string ProjectName
+        {
+            get { return this._projectName; }
+            set { this._projectName = value; }
+        }
+
+        // Check to see if ProjectName property is set
+        internal bool IsSetProjectName()
+        {
+            return this._projectName != null;
         }
 
         /// <summary>

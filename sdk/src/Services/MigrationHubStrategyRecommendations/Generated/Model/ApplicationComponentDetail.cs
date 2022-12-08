@@ -38,6 +38,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         private AntipatternReportStatus _antipatternReportStatus;
         private string _antipatternReportStatusMessage;
         private AppType _appType;
+        private AppUnitError _appUnitError;
         private string _associatedServerId;
         private DatabaseConfigDetail _databaseConfigDetail;
         private string _id;
@@ -50,6 +51,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         private string _osVersion;
         private RecommendationSet _recommendationSet;
         private ResourceSubType _resourceSubType;
+        private RuntimeAnalysisStatus _runtimeStatus;
+        private string _runtimeStatusMessage;
         private List<SourceCodeRepository> _sourceCodeRepositories = new List<SourceCodeRepository>();
         private string _statusMessage;
 
@@ -143,6 +146,24 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         internal bool IsSetAppType()
         {
             return this._appType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppUnitError. 
+        /// <para>
+        /// The error in the analysis of the source code or database.
+        /// </para>
+        /// </summary>
+        public AppUnitError AppUnitError
+        {
+            get { return this._appUnitError; }
+            set { this._appUnitError = value; }
+        }
+
+        // Check to see if AppUnitError property is set
+        internal bool IsSetAppUnitError()
+        {
+            return this._appUnitError != null;
         }
 
         /// <summary>
@@ -365,6 +386,43 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         internal bool IsSetResourceSubType()
         {
             return this._resourceSubType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimeStatus. 
+        /// <para>
+        /// The status of the application unit.
+        /// </para>
+        /// </summary>
+        public RuntimeAnalysisStatus RuntimeStatus
+        {
+            get { return this._runtimeStatus; }
+            set { this._runtimeStatus = value; }
+        }
+
+        // Check to see if RuntimeStatus property is set
+        internal bool IsSetRuntimeStatus()
+        {
+            return this._runtimeStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimeStatusMessage. 
+        /// <para>
+        /// The status message for the application unit.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string RuntimeStatusMessage
+        {
+            get { return this._runtimeStatusMessage; }
+            set { this._runtimeStatusMessage = value; }
+        }
+
+        // Check to see if RuntimeStatusMessage property is set
+        internal bool IsSetRuntimeStatusMessage()
+        {
+            return this._runtimeStatusMessage != null;
         }
 
         /// <summary>

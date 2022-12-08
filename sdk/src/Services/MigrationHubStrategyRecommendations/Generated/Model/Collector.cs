@@ -36,6 +36,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         private CollectorHealth _collectorHealth;
         private string _collectorId;
         private string _collectorVersion;
+        private ConfigurationSummary _configurationSummary;
         private string _hostName;
         private string _ipAddress;
         private string _lastActivityTimeStamp;
@@ -96,6 +97,24 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         internal bool IsSetCollectorVersion()
         {
             return this._collectorVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationSummary. 
+        /// <para>
+        /// Summary of the collector configuration.
+        /// </para>
+        /// </summary>
+        public ConfigurationSummary ConfigurationSummary
+        {
+            get { return this._configurationSummary; }
+            set { this._configurationSummary = value; }
+        }
+
+        // Check to see if ConfigurationSummary property is set
+        internal bool IsSetConfigurationSummary()
+        {
+            return this._configurationSummary != null;
         }
 
         /// <summary>

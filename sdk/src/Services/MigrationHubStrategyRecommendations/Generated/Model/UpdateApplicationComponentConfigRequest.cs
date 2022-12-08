@@ -35,6 +35,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     public partial class UpdateApplicationComponentConfigRequest : AmazonMigrationHubStrategyRecommendationsRequest
     {
         private string _applicationComponentId;
+        private AppType _appType;
+        private bool? _configureOnly;
         private InclusionStatus _inclusionStatus;
         private string _secretsManagerKey;
         private List<SourceCode> _sourceCodeList = new List<SourceCode>();
@@ -57,6 +59,44 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         internal bool IsSetApplicationComponentId()
         {
             return this._applicationComponentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppType. 
+        /// <para>
+        /// The type of known component.
+        /// </para>
+        /// </summary>
+        public AppType AppType
+        {
+            get { return this._appType; }
+            set { this._appType = value; }
+        }
+
+        // Check to see if AppType property is set
+        internal bool IsSetAppType()
+        {
+            return this._appType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfigureOnly. 
+        /// <para>
+        /// Update the configuration request of an application component. If it is set to true,
+        /// the source code and/or database credentials are updated. If it is set to false, the
+        /// source code and/or database credentials are updated and an analysis is initiated.
+        /// </para>
+        /// </summary>
+        public bool ConfigureOnly
+        {
+            get { return this._configureOnly.GetValueOrDefault(); }
+            set { this._configureOnly = value; }
+        }
+
+        // Check to see if ConfigureOnly property is set
+        internal bool IsSetConfigureOnly()
+        {
+            return this._configureOnly.HasValue; 
         }
 
         /// <summary>

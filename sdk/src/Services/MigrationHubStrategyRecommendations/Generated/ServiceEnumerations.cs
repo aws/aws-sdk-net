@@ -85,6 +85,10 @@ namespace Amazon.MigrationHubStrategyRecommendations
     {
 
         /// <summary>
+        /// Constant ANALYSIS_STATUS for ApplicationComponentCriteria
+        /// </summary>
+        public static readonly ApplicationComponentCriteria ANALYSIS_STATUS = new ApplicationComponentCriteria("ANALYSIS_STATUS");
+        /// <summary>
         /// Constant APP_NAME for ApplicationComponentCriteria
         /// </summary>
         public static readonly ApplicationComponentCriteria APP_NAME = new ApplicationComponentCriteria("APP_NAME");
@@ -96,6 +100,10 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// Constant DESTINATION for ApplicationComponentCriteria
         /// </summary>
         public static readonly ApplicationComponentCriteria DESTINATION = new ApplicationComponentCriteria("DESTINATION");
+        /// <summary>
+        /// Constant ERROR_CATEGORY for ApplicationComponentCriteria
+        /// </summary>
+        public static readonly ApplicationComponentCriteria ERROR_CATEGORY = new ApplicationComponentCriteria("ERROR_CATEGORY");
         /// <summary>
         /// Constant NOT_DEFINED for ApplicationComponentCriteria
         /// </summary>
@@ -145,15 +153,89 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
 
     /// <summary>
+    /// Constants used for properties of type ApplicationMode.
+    /// </summary>
+    public class ApplicationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ApplicationMode
+        /// </summary>
+        public static readonly ApplicationMode ALL = new ApplicationMode("ALL");
+        /// <summary>
+        /// Constant KNOWN for ApplicationMode
+        /// </summary>
+        public static readonly ApplicationMode KNOWN = new ApplicationMode("KNOWN");
+        /// <summary>
+        /// Constant UNKNOWN for ApplicationMode
+        /// </summary>
+        public static readonly ApplicationMode UNKNOWN = new ApplicationMode("UNKNOWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationMode FindValue(string value)
+        {
+            return FindValue<ApplicationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AppType.
     /// </summary>
     public class AppType : ConstantClass
     {
 
         /// <summary>
+        /// Constant Cassandra for AppType
+        /// </summary>
+        public static readonly AppType Cassandra = new AppType("Cassandra");
+        /// <summary>
+        /// Constant DB2 for AppType
+        /// </summary>
+        public static readonly AppType DB2 = new AppType("DB2");
+        /// <summary>
+        /// Constant Dotnet for AppType
+        /// </summary>
+        public static readonly AppType Dotnet = new AppType("Dotnet");
+        /// <summary>
+        /// Constant DotnetCore for AppType
+        /// </summary>
+        public static readonly AppType DotnetCore = new AppType("DotnetCore");
+        /// <summary>
         /// Constant DotNetFramework for AppType
         /// </summary>
         public static readonly AppType DotNetFramework = new AppType("DotNetFramework");
+        /// <summary>
+        /// Constant IBMWebSphere for AppType
+        /// </summary>
+        public static readonly AppType IBMWebSphere = new AppType("IBM WebSphere");
         /// <summary>
         /// Constant IIS for AppType
         /// </summary>
@@ -163,17 +245,61 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// </summary>
         public static readonly AppType Java = new AppType("Java");
         /// <summary>
+        /// Constant JBoss for AppType
+        /// </summary>
+        public static readonly AppType JBoss = new AppType("JBoss");
+        /// <summary>
+        /// Constant MariaDB for AppType
+        /// </summary>
+        public static readonly AppType MariaDB = new AppType("Maria DB");
+        /// <summary>
+        /// Constant MongoDB for AppType
+        /// </summary>
+        public static readonly AppType MongoDB = new AppType("Mongo DB");
+        /// <summary>
+        /// Constant MySQL for AppType
+        /// </summary>
+        public static readonly AppType MySQL = new AppType("MySQL");
+        /// <summary>
         /// Constant Oracle for AppType
         /// </summary>
         public static readonly AppType Oracle = new AppType("Oracle");
+        /// <summary>
+        /// Constant OracleWebLogic for AppType
+        /// </summary>
+        public static readonly AppType OracleWebLogic = new AppType("Oracle WebLogic");
         /// <summary>
         /// Constant Other for AppType
         /// </summary>
         public static readonly AppType Other = new AppType("Other");
         /// <summary>
+        /// Constant PostgreSQLServer for AppType
+        /// </summary>
+        public static readonly AppType PostgreSQLServer = new AppType("PostgreSQLServer");
+        /// <summary>
+        /// Constant Spring for AppType
+        /// </summary>
+        public static readonly AppType Spring = new AppType("Spring");
+        /// <summary>
         /// Constant SQLServer for AppType
         /// </summary>
         public static readonly AppType SQLServer = new AppType("SQLServer");
+        /// <summary>
+        /// Constant Sybase for AppType
+        /// </summary>
+        public static readonly AppType Sybase = new AppType("Sybase");
+        /// <summary>
+        /// Constant Tomcat for AppType
+        /// </summary>
+        public static readonly AppType Tomcat = new AppType("Tomcat");
+        /// <summary>
+        /// Constant Unknown for AppType
+        /// </summary>
+        public static readonly AppType Unknown = new AppType("Unknown");
+        /// <summary>
+        /// Constant VisualBasic for AppType
+        /// </summary>
+        public static readonly AppType VisualBasic = new AppType("Visual Basic");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -204,6 +330,68 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AppType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AppUnitErrorCategory.
+    /// </summary>
+    public class AppUnitErrorCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECTIVITY_ERROR for AppUnitErrorCategory
+        /// </summary>
+        public static readonly AppUnitErrorCategory CONNECTIVITY_ERROR = new AppUnitErrorCategory("CONNECTIVITY_ERROR");
+        /// <summary>
+        /// Constant CREDENTIAL_ERROR for AppUnitErrorCategory
+        /// </summary>
+        public static readonly AppUnitErrorCategory CREDENTIAL_ERROR = new AppUnitErrorCategory("CREDENTIAL_ERROR");
+        /// <summary>
+        /// Constant OTHER_ERROR for AppUnitErrorCategory
+        /// </summary>
+        public static readonly AppUnitErrorCategory OTHER_ERROR = new AppUnitErrorCategory("OTHER_ERROR");
+        /// <summary>
+        /// Constant PERMISSION_ERROR for AppUnitErrorCategory
+        /// </summary>
+        public static readonly AppUnitErrorCategory PERMISSION_ERROR = new AppUnitErrorCategory("PERMISSION_ERROR");
+        /// <summary>
+        /// Constant UNSUPPORTED_ERROR for AppUnitErrorCategory
+        /// </summary>
+        public static readonly AppUnitErrorCategory UNSUPPORTED_ERROR = new AppUnitErrorCategory("UNSUPPORTED_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppUnitErrorCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppUnitErrorCategory FindValue(string value)
+        {
+            return FindValue<AppUnitErrorCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppUnitErrorCategory(string value)
         {
             return FindValue(value);
         }
@@ -262,6 +450,60 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AssessmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AuthType.
+    /// </summary>
+    public class AuthType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CERT for AuthType
+        /// </summary>
+        public static readonly AuthType CERT = new AuthType("CERT");
+        /// <summary>
+        /// Constant NTLM for AuthType
+        /// </summary>
+        public static readonly AuthType NTLM = new AuthType("NTLM");
+        /// <summary>
+        /// Constant SSH for AuthType
+        /// </summary>
+        public static readonly AuthType SSH = new AuthType("SSH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthType FindValue(string value)
+        {
+            return FindValue<AuthType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthType(string value)
         {
             return FindValue(value);
         }
@@ -366,6 +608,64 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CollectorHealth(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Condition.
+    /// </summary>
+    public class Condition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTAINS for Condition
+        /// </summary>
+        public static readonly Condition CONTAINS = new Condition("CONTAINS");
+        /// <summary>
+        /// Constant EQUALS for Condition
+        /// </summary>
+        public static readonly Condition EQUALS = new Condition("EQUALS");
+        /// <summary>
+        /// Constant NOT_CONTAINS for Condition
+        /// </summary>
+        public static readonly Condition NOT_CONTAINS = new Condition("NOT_CONTAINS");
+        /// <summary>
+        /// Constant NOT_EQUALS for Condition
+        /// </summary>
+        public static readonly Condition NOT_EQUALS = new Condition("NOT_EQUALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Condition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Condition FindValue(string value)
+        {
+            return FindValue<Condition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Condition(string value)
         {
             return FindValue(value);
         }
@@ -941,6 +1241,52 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
 
     /// <summary>
+    /// Constants used for properties of type PipelineType.
+    /// </summary>
+    public class PipelineType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AZURE_DEVOPS for PipelineType
+        /// </summary>
+        public static readonly PipelineType AZURE_DEVOPS = new PipelineType("AZURE_DEVOPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PipelineType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PipelineType FindValue(string value)
+        {
+            return FindValue<PipelineType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PipelineType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecommendationReportStatus.
     /// </summary>
     public class RecommendationReportStatus : ConstantClass
@@ -1042,6 +1388,64 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceSubType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuntimeAnalysisStatus.
+    /// </summary>
+    public class RuntimeAnalysisStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANALYSIS_FAILED for RuntimeAnalysisStatus
+        /// </summary>
+        public static readonly RuntimeAnalysisStatus ANALYSIS_FAILED = new RuntimeAnalysisStatus("ANALYSIS_FAILED");
+        /// <summary>
+        /// Constant ANALYSIS_STARTED for RuntimeAnalysisStatus
+        /// </summary>
+        public static readonly RuntimeAnalysisStatus ANALYSIS_STARTED = new RuntimeAnalysisStatus("ANALYSIS_STARTED");
+        /// <summary>
+        /// Constant ANALYSIS_SUCCESS for RuntimeAnalysisStatus
+        /// </summary>
+        public static readonly RuntimeAnalysisStatus ANALYSIS_SUCCESS = new RuntimeAnalysisStatus("ANALYSIS_SUCCESS");
+        /// <summary>
+        /// Constant ANALYSIS_TO_BE_SCHEDULED for RuntimeAnalysisStatus
+        /// </summary>
+        public static readonly RuntimeAnalysisStatus ANALYSIS_TO_BE_SCHEDULED = new RuntimeAnalysisStatus("ANALYSIS_TO_BE_SCHEDULED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuntimeAnalysisStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuntimeAnalysisStatus FindValue(string value)
+        {
+            return FindValue<RuntimeAnalysisStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuntimeAnalysisStatus(string value)
         {
             return FindValue(value);
         }
@@ -1183,9 +1587,17 @@ namespace Amazon.MigrationHubStrategyRecommendations
     {
 
         /// <summary>
+        /// Constant ANALYSIS_STATUS for ServerCriteria
+        /// </summary>
+        public static readonly ServerCriteria ANALYSIS_STATUS = new ServerCriteria("ANALYSIS_STATUS");
+        /// <summary>
         /// Constant DESTINATION for ServerCriteria
         /// </summary>
         public static readonly ServerCriteria DESTINATION = new ServerCriteria("DESTINATION");
+        /// <summary>
+        /// Constant ERROR_CATEGORY for ServerCriteria
+        /// </summary>
+        public static readonly ServerCriteria ERROR_CATEGORY = new ServerCriteria("ERROR_CATEGORY");
         /// <summary>
         /// Constant NOT_DEFINED for ServerCriteria
         /// </summary>
@@ -1232,6 +1644,68 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServerCriteria(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServerErrorCategory.
+    /// </summary>
+    public class ServerErrorCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARCHITECTURE_ERROR for ServerErrorCategory
+        /// </summary>
+        public static readonly ServerErrorCategory ARCHITECTURE_ERROR = new ServerErrorCategory("ARCHITECTURE_ERROR");
+        /// <summary>
+        /// Constant CONNECTIVITY_ERROR for ServerErrorCategory
+        /// </summary>
+        public static readonly ServerErrorCategory CONNECTIVITY_ERROR = new ServerErrorCategory("CONNECTIVITY_ERROR");
+        /// <summary>
+        /// Constant CREDENTIAL_ERROR for ServerErrorCategory
+        /// </summary>
+        public static readonly ServerErrorCategory CREDENTIAL_ERROR = new ServerErrorCategory("CREDENTIAL_ERROR");
+        /// <summary>
+        /// Constant OTHER_ERROR for ServerErrorCategory
+        /// </summary>
+        public static readonly ServerErrorCategory OTHER_ERROR = new ServerErrorCategory("OTHER_ERROR");
+        /// <summary>
+        /// Constant PERMISSION_ERROR for ServerErrorCategory
+        /// </summary>
+        public static readonly ServerErrorCategory PERMISSION_ERROR = new ServerErrorCategory("PERMISSION_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServerErrorCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServerErrorCategory FindValue(string value)
+        {
+            return FindValue<ServerErrorCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServerErrorCategory(string value)
         {
             return FindValue(value);
         }
@@ -1415,6 +1889,10 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// </summary>
         public static readonly SrcCodeOrDbAnalysisStatus ANALYSIS_FAILED = new SrcCodeOrDbAnalysisStatus("ANALYSIS_FAILED");
         /// <summary>
+        /// Constant ANALYSIS_PARTIAL_SUCCESS for SrcCodeOrDbAnalysisStatus
+        /// </summary>
+        public static readonly SrcCodeOrDbAnalysisStatus ANALYSIS_PARTIAL_SUCCESS = new SrcCodeOrDbAnalysisStatus("ANALYSIS_PARTIAL_SUCCESS");
+        /// <summary>
         /// Constant ANALYSIS_STARTED for SrcCodeOrDbAnalysisStatus
         /// </summary>
         public static readonly SrcCodeOrDbAnalysisStatus ANALYSIS_STARTED = new SrcCodeOrDbAnalysisStatus("ANALYSIS_STARTED");
@@ -1426,6 +1904,14 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// Constant ANALYSIS_TO_BE_SCHEDULED for SrcCodeOrDbAnalysisStatus
         /// </summary>
         public static readonly SrcCodeOrDbAnalysisStatus ANALYSIS_TO_BE_SCHEDULED = new SrcCodeOrDbAnalysisStatus("ANALYSIS_TO_BE_SCHEDULED");
+        /// <summary>
+        /// Constant CONFIGURED for SrcCodeOrDbAnalysisStatus
+        /// </summary>
+        public static readonly SrcCodeOrDbAnalysisStatus CONFIGURED = new SrcCodeOrDbAnalysisStatus("CONFIGURED");
+        /// <summary>
+        /// Constant UNCONFIGURED for SrcCodeOrDbAnalysisStatus
+        /// </summary>
+        public static readonly SrcCodeOrDbAnalysisStatus UNCONFIGURED = new SrcCodeOrDbAnalysisStatus("UNCONFIGURED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1542,6 +2028,10 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// Constant NotRecommended for StrategyRecommendation
         /// </summary>
         public static readonly StrategyRecommendation NotRecommended = new StrategyRecommendation("notRecommended");
+        /// <summary>
+        /// Constant Potential for StrategyRecommendation
+        /// </summary>
+        public static readonly StrategyRecommendation Potential = new StrategyRecommendation("potential");
         /// <summary>
         /// Constant Recommended for StrategyRecommendation
         /// </summary>
@@ -1723,6 +2213,10 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// </summary>
         public static readonly TargetDestination AWSFargate = new TargetDestination("AWS Fargate");
         /// <summary>
+        /// Constant BabelfishForAuroraPostgreSQL for TargetDestination
+        /// </summary>
+        public static readonly TargetDestination BabelfishForAuroraPostgreSQL = new TargetDestination("Babelfish for Aurora PostgreSQL");
+        /// <summary>
         /// Constant NoneSpecified for TargetDestination
         /// </summary>
         public static readonly TargetDestination NoneSpecified = new TargetDestination("None specified");
@@ -1851,6 +2345,10 @@ namespace Amazon.MigrationHubStrategyRecommendations
     {
 
         /// <summary>
+        /// Constant AZURE_DEVOPS_GIT for VersionControl
+        /// </summary>
+        public static readonly VersionControl AZURE_DEVOPS_GIT = new VersionControl("AZURE_DEVOPS_GIT");
+        /// <summary>
         /// Constant GITHUB for VersionControl
         /// </summary>
         public static readonly VersionControl GITHUB = new VersionControl("GITHUB");
@@ -1888,6 +2386,60 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VersionControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VersionControlType.
+    /// </summary>
+    public class VersionControlType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AZURE_DEVOPS_GIT for VersionControlType
+        /// </summary>
+        public static readonly VersionControlType AZURE_DEVOPS_GIT = new VersionControlType("AZURE_DEVOPS_GIT");
+        /// <summary>
+        /// Constant GITHUB for VersionControlType
+        /// </summary>
+        public static readonly VersionControlType GITHUB = new VersionControlType("GITHUB");
+        /// <summary>
+        /// Constant GITHUB_ENTERPRISE for VersionControlType
+        /// </summary>
+        public static readonly VersionControlType GITHUB_ENTERPRISE = new VersionControlType("GITHUB_ENTERPRISE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VersionControlType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VersionControlType FindValue(string value)
+        {
+            return FindValue<VersionControlType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VersionControlType(string value)
         {
             return FindValue(value);
         }

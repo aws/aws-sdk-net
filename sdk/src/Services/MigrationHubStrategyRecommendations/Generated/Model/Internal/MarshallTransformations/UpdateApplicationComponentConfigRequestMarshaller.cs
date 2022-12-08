@@ -71,6 +71,18 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                     context.Writer.Write(publicRequest.ApplicationComponentId);
                 }
 
+                if(publicRequest.IsSetAppType())
+                {
+                    context.Writer.WritePropertyName("appType");
+                    context.Writer.Write(publicRequest.AppType);
+                }
+
+                if(publicRequest.IsSetConfigureOnly())
+                {
+                    context.Writer.WritePropertyName("configureOnly");
+                    context.Writer.Write(publicRequest.ConfigureOnly);
+                }
+
                 if(publicRequest.IsSetInclusionStatus())
                 {
                     context.Writer.WritePropertyName("inclusionStatus");

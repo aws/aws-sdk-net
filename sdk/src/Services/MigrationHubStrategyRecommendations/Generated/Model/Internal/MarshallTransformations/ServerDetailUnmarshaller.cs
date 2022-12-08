@@ -124,6 +124,12 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                     unmarshalledObject.RecommendationSet = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("serverError", targetDepth))
+                {
+                    var unmarshaller = ServerErrorUnmarshaller.Instance;
+                    unmarshalledObject.ServerError = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serverType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

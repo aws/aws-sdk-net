@@ -51,6 +51,12 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("assessmentTargets", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AssessmentTarget, AssessmentTargetUnmarshaller>(AssessmentTargetUnmarshaller.Instance);
+                    response.AssessmentTargets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dataCollectionDetails", targetDepth))
                 {
                     var unmarshaller = DataCollectionDetailsUnmarshaller.Instance;

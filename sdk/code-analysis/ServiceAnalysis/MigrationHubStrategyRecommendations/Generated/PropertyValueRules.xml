@@ -67,6 +67,12 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.GetLatestAssessmentIdResponse.Id</property>
+    <min>0</min>
+    <max>52</max>
+    <pattern>[0-9a-z-:]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.GetRecommendationReportDetailsRequest.Id</property>
     <min>0</min>
     <max>52</max>
@@ -271,6 +277,12 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.ApplicationComponentDetail.RuntimeStatusMessage</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.ApplicationComponentDetail.StatusMessage</property>
     <min>0</min>
     <max>1024</max>
@@ -278,6 +290,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.AssessmentSummary.AntipatternReportStatusMessage</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.AssessmentTarget.Name</property>
     <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*</pattern>
@@ -357,6 +375,12 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.DataCollectionDetails.StatusMessage</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.Group.Value</property>
     <min>0</min>
     <max>1024</max>
@@ -399,6 +423,12 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.IPAddressBasedRemoteInfo.IpAddressConfigurationTimeStamp</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.NetworkInfo.InterfaceName</property>
     <min>0</min>
     <max>1024</max>
@@ -429,6 +459,12 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.PipelineInfo.PipelineConfigurationTimeStamp</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.RecommendationReportDetails.S3Bucket</property>
     <min>0</min>
     <max>1024</max>
@@ -438,6 +474,12 @@
     <property>Amazon.MigrationHubStrategyRecommendations.Model.RecommendationReportDetails.StatusMessage</property>
     <min>0</min>
     <max>512</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.RemoteSourceCodeAnalysisServerInfo.RemoteSourceCodeAnalysisServerConfigurationTimestamp</property>
+    <min>0</min>
+    <max>1024</max>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -483,6 +525,12 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.SourceCode.ProjectName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.SourceCode.SourceVersion</property>
     <min>1</min>
     <max>40</max>
@@ -490,6 +538,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.SourceCodeRepository.Branch</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.SourceCodeRepository.ProjectName</property>
     <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*</pattern>
@@ -527,6 +581,18 @@
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.TransformationTool.TranformationToolInstallationLink</property>
     <min>1</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.VcenterBasedRemoteInfo.VcenterConfigurationTimeStamp</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.VersionControlInfo.VersionControlConfigurationTimeStamp</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*</pattern>
   </property-value-rule>

@@ -94,6 +94,12 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                     unmarshalledObject.AppType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("appUnitError", targetDepth))
+                {
+                    var unmarshaller = AppUnitErrorUnmarshaller.Instance;
+                    unmarshalledObject.AppUnitError = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("associatedServerId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -164,6 +170,18 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceSubType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("runtimeStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RuntimeStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("runtimeStatusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RuntimeStatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sourceCodeRepositories", targetDepth))

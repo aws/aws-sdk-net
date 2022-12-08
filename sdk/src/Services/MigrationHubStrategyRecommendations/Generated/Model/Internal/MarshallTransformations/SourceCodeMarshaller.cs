@@ -51,6 +51,12 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                 context.Writer.Write(requestObject.Location);
             }
 
+            if(requestObject.IsSetProjectName())
+            {
+                context.Writer.WritePropertyName("projectName");
+                context.Writer.Write(requestObject.ProjectName);
+            }
+
             if(requestObject.IsSetSourceVersion())
             {
                 context.Writer.WritePropertyName("sourceVersion");

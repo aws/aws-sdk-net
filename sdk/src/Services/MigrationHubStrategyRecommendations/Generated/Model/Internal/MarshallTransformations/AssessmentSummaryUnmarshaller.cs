@@ -94,6 +94,12 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                     unmarshalledObject.ListAntipatternSeveritySummary = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("listApplicationComponentStatusSummary", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ApplicationComponentStatusSummary, ApplicationComponentStatusSummaryUnmarshaller>(ApplicationComponentStatusSummaryUnmarshaller.Instance);
+                    unmarshalledObject.ListApplicationComponentStatusSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("listApplicationComponentStrategySummary", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<StrategySummary, StrategySummaryUnmarshaller>(StrategySummaryUnmarshaller.Instance);
@@ -104,6 +110,12 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                 {
                     var unmarshaller = new ListUnmarshaller<ApplicationComponentSummary, ApplicationComponentSummaryUnmarshaller>(ApplicationComponentSummaryUnmarshaller.Instance);
                     unmarshalledObject.ListApplicationComponentSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("listServerStatusSummary", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ServerStatusSummary, ServerStatusSummaryUnmarshaller>(ServerStatusSummaryUnmarshaller.Instance);
+                    unmarshalledObject.ListServerStatusSummary = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("listServerStrategySummary", targetDepth))

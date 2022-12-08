@@ -70,6 +70,12 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                     unmarshalledObject.Branch = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("projectName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProjectName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("repository", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

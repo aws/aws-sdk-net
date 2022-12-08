@@ -531,6 +531,73 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
         #endregion
         
+        #region  GetLatestAssessmentId
+
+
+        /// <summary>
+        /// Retrieve the latest ID of a specific assessment task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLatestAssessmentId service method.</param>
+        /// 
+        /// <returns>The response from the GetLatestAssessmentId service method, as returned by MigrationHubStrategyRecommendations.</returns>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
+        /// The AWS user account does not have permission to perform the action. Check the AWS
+        /// Identity and Access Management (IAM) policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.ValidationException">
+        /// The request body isn't valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetLatestAssessmentId">REST API Reference for GetLatestAssessmentId Operation</seealso>
+        public virtual GetLatestAssessmentIdResponse GetLatestAssessmentId(GetLatestAssessmentIdRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLatestAssessmentIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLatestAssessmentIdResponseUnmarshaller.Instance;
+
+            return Invoke<GetLatestAssessmentIdResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieve the latest ID of a specific assessment task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLatestAssessmentId service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLatestAssessmentId service method, as returned by MigrationHubStrategyRecommendations.</returns>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
+        /// The AWS user account does not have permission to perform the action. Check the AWS
+        /// Identity and Access Management (IAM) policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.ValidationException">
+        /// The request body isn't valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetLatestAssessmentId">REST API Reference for GetLatestAssessmentId Operation</seealso>
+        public virtual Task<GetLatestAssessmentIdResponse> GetLatestAssessmentIdAsync(GetLatestAssessmentIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLatestAssessmentIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLatestAssessmentIdResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetLatestAssessmentIdResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetPortfolioPreferences
 
 

@@ -65,6 +65,22 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAssessmentTargets())
+                {
+                    context.Writer.WritePropertyName("assessmentTargets");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAssessmentTargetsListValue in publicRequest.AssessmentTargets)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AssessmentTargetMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAssessmentTargetsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetS3bucketForAnalysisData())
                 {
                     context.Writer.WritePropertyName("s3bucketForAnalysisData");

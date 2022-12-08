@@ -65,6 +65,12 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetApplicationMode())
+                {
+                    context.Writer.WritePropertyName("applicationMode");
+                    context.Writer.Write(publicRequest.ApplicationMode);
+                }
+
                 if(publicRequest.IsSetApplicationPreferences())
                 {
                     context.Writer.WritePropertyName("applicationPreferences");

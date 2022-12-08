@@ -34,9 +34,28 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     /// </summary>
     public partial class PutPortfolioPreferencesRequest : AmazonMigrationHubStrategyRecommendationsRequest
     {
+        private ApplicationMode _applicationMode;
         private ApplicationPreferences _applicationPreferences;
         private DatabasePreferences _databasePreferences;
         private PrioritizeBusinessGoals _prioritizeBusinessGoals;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationMode. 
+        /// <para>
+        /// The classification for application component types.
+        /// </para>
+        /// </summary>
+        public ApplicationMode ApplicationMode
+        {
+            get { return this._applicationMode; }
+            set { this._applicationMode = value; }
+        }
+
+        // Check to see if ApplicationMode property is set
+        internal bool IsSetApplicationMode()
+        {
+            return this._applicationMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationPreferences. 

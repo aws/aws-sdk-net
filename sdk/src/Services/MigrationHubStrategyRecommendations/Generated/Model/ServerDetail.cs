@@ -43,6 +43,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         private List<AntipatternSeveritySummary> _listAntipatternSeveritySummary = new List<AntipatternSeveritySummary>();
         private string _name;
         private RecommendationSet _recommendationSet;
+        private ServerError _serverError;
         private string _serverType;
         private string _statusMessage;
         private SystemInfo _systemInfo;
@@ -227,6 +228,24 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         internal bool IsSetRecommendationSet()
         {
             return this._recommendationSet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerError. 
+        /// <para>
+        /// The error in server analysis.
+        /// </para>
+        /// </summary>
+        public ServerError ServerError
+        {
+            get { return this._serverError; }
+            set { this._serverError = value; }
+        }
+
+        // Check to see if ServerError property is set
+        internal bool IsSetServerError()
+        {
+            return this._serverError != null;
         }
 
         /// <summary>
