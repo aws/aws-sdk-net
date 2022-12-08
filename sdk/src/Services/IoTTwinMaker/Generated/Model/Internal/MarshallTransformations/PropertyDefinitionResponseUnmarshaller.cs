@@ -82,6 +82,12 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("displayName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("isExternalId", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

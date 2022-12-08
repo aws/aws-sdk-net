@@ -71,6 +71,12 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetComponentTypeName())
+                {
+                    context.Writer.WritePropertyName("componentTypeName");
+                    context.Writer.Write(publicRequest.ComponentTypeName);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");

@@ -35,6 +35,7 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class UpdateComponentTypeRequest : AmazonIoTTwinMakerRequest
     {
         private string _componentTypeId;
+        private string _componentTypeName;
         private string _description;
         private List<string> _extendsFrom = new List<string>();
         private Dictionary<string, FunctionRequest> _functions = new Dictionary<string, FunctionRequest>();
@@ -63,12 +64,31 @@ namespace Amazon.IoTTwinMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ComponentTypeName. 
+        /// <para>
+        /// The component type name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string ComponentTypeName
+        {
+            get { return this._componentTypeName; }
+            set { this._componentTypeName = value; }
+        }
+
+        // Check to see if ComponentTypeName property is set
+        internal bool IsSetComponentTypeName()
+        {
+            return this._componentTypeName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the component type.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=512)]
+        [AWSProperty(Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -177,7 +197,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The ID of the workspace that contains the component type.
+        /// The ID of the workspace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

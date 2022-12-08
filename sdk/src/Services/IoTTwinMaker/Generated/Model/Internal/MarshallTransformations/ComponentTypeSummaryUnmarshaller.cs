@@ -76,6 +76,12 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComponentTypeId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("componentTypeName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ComponentTypeName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("creationDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

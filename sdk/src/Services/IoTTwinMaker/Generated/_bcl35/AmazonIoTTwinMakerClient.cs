@@ -550,6 +550,78 @@ namespace Amazon.IoTTwinMaker
 
         #endregion
         
+        #region  CreateSyncJob
+
+        /// <summary>
+        /// This action creates a SyncJob.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSyncJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateSyncJob service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ConflictException">
+        /// A conflict occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ServiceQuotaExceededException">
+        /// The service quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateSyncJob">REST API Reference for CreateSyncJob Operation</seealso>
+        public virtual CreateSyncJobResponse CreateSyncJob(CreateSyncJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSyncJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSyncJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSyncJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSyncJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSyncJob operation on AmazonIoTTwinMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSyncJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateSyncJob">REST API Reference for CreateSyncJob Operation</seealso>
+        public virtual IAsyncResult BeginCreateSyncJob(CreateSyncJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSyncJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSyncJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSyncJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSyncJob.</param>
+        /// 
+        /// <returns>Returns a  CreateSyncJobResult from IoTTwinMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateSyncJob">REST API Reference for CreateSyncJob Operation</seealso>
+        public virtual CreateSyncJobResponse EndCreateSyncJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateSyncJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateWorkspace
 
         /// <summary>
@@ -825,6 +897,78 @@ namespace Amazon.IoTTwinMaker
         public virtual DeleteSceneResponse EndDeleteScene(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSceneResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteSyncJob
+
+        /// <summary>
+        /// Delete the SyncJob.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSyncJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSyncJob service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ResourceNotFoundException">
+        /// The resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ServiceQuotaExceededException">
+        /// The service quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteSyncJob">REST API Reference for DeleteSyncJob Operation</seealso>
+        public virtual DeleteSyncJobResponse DeleteSyncJob(DeleteSyncJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSyncJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSyncJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSyncJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSyncJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSyncJob operation on AmazonIoTTwinMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSyncJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteSyncJob">REST API Reference for DeleteSyncJob Operation</seealso>
+        public virtual IAsyncResult BeginDeleteSyncJob(DeleteSyncJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSyncJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSyncJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSyncJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSyncJob.</param>
+        /// 
+        /// <returns>Returns a  DeleteSyncJobResult from IoTTwinMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteSyncJob">REST API Reference for DeleteSyncJob Operation</seealso>
+        public virtual DeleteSyncJobResponse EndDeleteSyncJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSyncJobResponse>(asyncResult);
         }
 
         #endregion
@@ -1408,6 +1552,78 @@ namespace Amazon.IoTTwinMaker
 
         #endregion
         
+        #region  GetSyncJob
+
+        /// <summary>
+        /// Gets the SyncJob.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSyncJob service method.</param>
+        /// 
+        /// <returns>The response from the GetSyncJob service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ResourceNotFoundException">
+        /// The resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ServiceQuotaExceededException">
+        /// The service quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetSyncJob">REST API Reference for GetSyncJob Operation</seealso>
+        public virtual GetSyncJobResponse GetSyncJob(GetSyncJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSyncJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSyncJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetSyncJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSyncJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSyncJob operation on AmazonIoTTwinMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSyncJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetSyncJob">REST API Reference for GetSyncJob Operation</seealso>
+        public virtual IAsyncResult BeginGetSyncJob(GetSyncJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSyncJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSyncJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSyncJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSyncJob.</param>
+        /// 
+        /// <returns>Returns a  GetSyncJobResult from IoTTwinMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetSyncJob">REST API Reference for GetSyncJob Operation</seealso>
+        public virtual GetSyncJobResponse EndGetSyncJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSyncJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetWorkspace
 
         /// <summary>
@@ -1671,6 +1887,144 @@ namespace Amazon.IoTTwinMaker
         public virtual ListScenesResponse EndListScenes(IAsyncResult asyncResult)
         {
             return EndInvoke<ListScenesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSyncJobs
+
+        /// <summary>
+        /// List all SyncJobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSyncJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListSyncJobs service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ServiceQuotaExceededException">
+        /// The service quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListSyncJobs">REST API Reference for ListSyncJobs Operation</seealso>
+        public virtual ListSyncJobsResponse ListSyncJobs(ListSyncJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSyncJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSyncJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSyncJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSyncJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSyncJobs operation on AmazonIoTTwinMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSyncJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListSyncJobs">REST API Reference for ListSyncJobs Operation</seealso>
+        public virtual IAsyncResult BeginListSyncJobs(ListSyncJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSyncJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSyncJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSyncJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSyncJobs.</param>
+        /// 
+        /// <returns>Returns a  ListSyncJobsResult from IoTTwinMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListSyncJobs">REST API Reference for ListSyncJobs Operation</seealso>
+        public virtual ListSyncJobsResponse EndListSyncJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSyncJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSyncResources
+
+        /// <summary>
+        /// Lists the sync resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSyncResources service method.</param>
+        /// 
+        /// <returns>The response from the ListSyncResources service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ServiceQuotaExceededException">
+        /// The service quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListSyncResources">REST API Reference for ListSyncResources Operation</seealso>
+        public virtual ListSyncResourcesResponse ListSyncResources(ListSyncResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSyncResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSyncResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSyncResourcesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSyncResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSyncResources operation on AmazonIoTTwinMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSyncResources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListSyncResources">REST API Reference for ListSyncResources Operation</seealso>
+        public virtual IAsyncResult BeginListSyncResources(ListSyncResourcesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSyncResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSyncResourcesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSyncResources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSyncResources.</param>
+        /// 
+        /// <returns>Returns a  ListSyncResourcesResult from IoTTwinMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListSyncResources">REST API Reference for ListSyncResources Operation</seealso>
+        public virtual ListSyncResourcesResponse EndListSyncResources(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSyncResourcesResponse>(asyncResult);
         }
 
         #endregion

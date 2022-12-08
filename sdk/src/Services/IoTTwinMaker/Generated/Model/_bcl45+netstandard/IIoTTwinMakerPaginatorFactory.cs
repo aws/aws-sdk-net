@@ -56,6 +56,16 @@ namespace Amazon.IoTTwinMaker.Model
         IListScenesPaginator ListScenes(ListScenesRequest request);
 
         /// <summary>
+        /// Paginator for ListSyncJobs operation
+        ///</summary>
+        IListSyncJobsPaginator ListSyncJobs(ListSyncJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSyncResources operation
+        ///</summary>
+        IListSyncResourcesPaginator ListSyncResources(ListSyncResourcesRequest request);
+
+        /// <summary>
         /// Paginator for ListWorkspaces operation
         ///</summary>
         IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request);

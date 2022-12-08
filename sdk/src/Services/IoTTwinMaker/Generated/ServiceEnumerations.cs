@@ -143,6 +143,18 @@ namespace Amazon.IoTTwinMaker
         /// </summary>
         public static readonly ErrorCode INTERNAL_FAILURE = new ErrorCode("INTERNAL_FAILURE");
         /// <summary>
+        /// Constant SYNC_CREATING_ERROR for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode SYNC_CREATING_ERROR = new ErrorCode("SYNC_CREATING_ERROR");
+        /// <summary>
+        /// Constant SYNC_INITIALIZING_ERROR for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode SYNC_INITIALIZING_ERROR = new ErrorCode("SYNC_INITIALIZING_ERROR");
+        /// <summary>
+        /// Constant SYNC_PROCESSING_ERROR for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode SYNC_PROCESSING_ERROR = new ErrorCode("SYNC_PROCESSING_ERROR");
+        /// <summary>
         /// Constant VALIDATION_ERROR for ErrorCode
         /// </summary>
         public static readonly ErrorCode VALIDATION_ERROR = new ErrorCode("VALIDATION_ERROR");
@@ -750,6 +762,180 @@ namespace Amazon.IoTTwinMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator State(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SyncJobState.
+    /// </summary>
+    public class SyncJobState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for SyncJobState
+        /// </summary>
+        public static readonly SyncJobState ACTIVE = new SyncJobState("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for SyncJobState
+        /// </summary>
+        public static readonly SyncJobState CREATING = new SyncJobState("CREATING");
+        /// <summary>
+        /// Constant DELETING for SyncJobState
+        /// </summary>
+        public static readonly SyncJobState DELETING = new SyncJobState("DELETING");
+        /// <summary>
+        /// Constant ERROR for SyncJobState
+        /// </summary>
+        public static readonly SyncJobState ERROR = new SyncJobState("ERROR");
+        /// <summary>
+        /// Constant INITIALIZING for SyncJobState
+        /// </summary>
+        public static readonly SyncJobState INITIALIZING = new SyncJobState("INITIALIZING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SyncJobState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SyncJobState FindValue(string value)
+        {
+            return FindValue<SyncJobState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SyncJobState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SyncResourceState.
+    /// </summary>
+    public class SyncResourceState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETED for SyncResourceState
+        /// </summary>
+        public static readonly SyncResourceState DELETED = new SyncResourceState("DELETED");
+        /// <summary>
+        /// Constant ERROR for SyncResourceState
+        /// </summary>
+        public static readonly SyncResourceState ERROR = new SyncResourceState("ERROR");
+        /// <summary>
+        /// Constant IN_SYNC for SyncResourceState
+        /// </summary>
+        public static readonly SyncResourceState IN_SYNC = new SyncResourceState("IN_SYNC");
+        /// <summary>
+        /// Constant INITIALIZING for SyncResourceState
+        /// </summary>
+        public static readonly SyncResourceState INITIALIZING = new SyncResourceState("INITIALIZING");
+        /// <summary>
+        /// Constant PROCESSING for SyncResourceState
+        /// </summary>
+        public static readonly SyncResourceState PROCESSING = new SyncResourceState("PROCESSING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SyncResourceState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SyncResourceState FindValue(string value)
+        {
+            return FindValue<SyncResourceState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SyncResourceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SyncResourceType.
+    /// </summary>
+    public class SyncResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPONENT_TYPE for SyncResourceType
+        /// </summary>
+        public static readonly SyncResourceType COMPONENT_TYPE = new SyncResourceType("COMPONENT_TYPE");
+        /// <summary>
+        /// Constant ENTITY for SyncResourceType
+        /// </summary>
+        public static readonly SyncResourceType ENTITY = new SyncResourceType("ENTITY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SyncResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SyncResourceType FindValue(string value)
+        {
+            return FindValue<SyncResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SyncResourceType(string value)
         {
             return FindValue(value);
         }

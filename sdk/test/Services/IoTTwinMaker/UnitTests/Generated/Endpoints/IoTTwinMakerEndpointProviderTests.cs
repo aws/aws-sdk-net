@@ -36,8 +36,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker-fips.eu-central-1.api.aws", endpoint.URL);
         }
@@ -51,8 +51,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker-fips.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -66,8 +66,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker.eu-central-1.api.aws", endpoint.URL);
         }
@@ -81,8 +81,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -96,8 +96,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker-fips.us-west-2.api.aws", endpoint.URL);
         }
@@ -111,8 +111,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker-fips.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -126,8 +126,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker.us-west-2.api.aws", endpoint.URL);
         }
@@ -141,8 +141,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -156,8 +156,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-west-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker-fips.eu-west-1.api.aws", endpoint.URL);
         }
@@ -171,8 +171,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-west-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker-fips.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -186,8 +186,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-west-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker.eu-west-1.api.aws", endpoint.URL);
         }
@@ -201,8 +201,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-west-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -216,8 +216,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-1";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker-fips.ap-southeast-1.api.aws", endpoint.URL);
         }
@@ -231,8 +231,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-1";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker-fips.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -246,8 +246,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-1";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker.ap-southeast-1.api.aws", endpoint.URL);
         }
@@ -261,8 +261,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-1";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -276,8 +276,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-southeast-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-2";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker-fips.ap-southeast-2.api.aws", endpoint.URL);
         }
@@ -291,8 +291,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-southeast-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-2";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker-fips.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -306,8 +306,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-southeast-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-2";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker.ap-southeast-2.api.aws", endpoint.URL);
         }
@@ -321,8 +321,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-southeast-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-2";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -336,8 +336,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -351,8 +351,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -366,8 +366,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker.us-east-1.api.aws", endpoint.URL);
         }
@@ -381,8 +381,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iottwinmaker.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -396,8 +396,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -413,8 +413,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -429,8 +429,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new IoTTwinMakerEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonIoTTwinMakerEndpointProvider().ResolveEndpoint(parameters);
         }

@@ -35,6 +35,7 @@ namespace Amazon.IoTTwinMaker.Model
     {
         private string _arn;
         private string _componentTypeId;
+        private string _componentTypeName;
         private DateTime? _creationDateTime;
         private string _description;
         private List<string> _extendsFrom = new List<string>();
@@ -45,6 +46,7 @@ namespace Amazon.IoTTwinMaker.Model
         private Dictionary<string, PropertyDefinitionResponse> _propertyDefinitions = new Dictionary<string, PropertyDefinitionResponse>();
         private Dictionary<string, PropertyGroupResponse> _propertyGroups = new Dictionary<string, PropertyGroupResponse>();
         private Status _status;
+        private string _syncSource;
         private DateTime? _updateDateTime;
         private string _workspaceId;
 
@@ -87,6 +89,25 @@ namespace Amazon.IoTTwinMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ComponentTypeName. 
+        /// <para>
+        /// The component type name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string ComponentTypeName
+        {
+            get { return this._componentTypeName; }
+            set { this._componentTypeName = value; }
+        }
+
+        // Check to see if ComponentTypeName property is set
+        internal bool IsSetComponentTypeName()
+        {
+            return this._componentTypeName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationDateTime. 
         /// <para>
         /// The date and time when the component type was created.
@@ -111,7 +132,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// The description of the component type.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=512)]
+        [AWSProperty(Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -274,6 +295,24 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SyncSource. 
+        /// <para>
+        /// The syncSource of the sync job, if this entity was created by a sync job.
+        /// </para>
+        /// </summary>
+        public string SyncSource
+        {
+            get { return this._syncSource; }
+            set { this._syncSource = value; }
+        }
+
+        // Check to see if SyncSource property is set
+        internal bool IsSetSyncSource()
+        {
+            return this._syncSource != null;
         }
 
         /// <summary>

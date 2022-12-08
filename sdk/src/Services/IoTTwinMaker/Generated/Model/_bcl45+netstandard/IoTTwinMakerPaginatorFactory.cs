@@ -84,6 +84,22 @@ namespace Amazon.IoTTwinMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListSyncJobs operation
+        ///</summary>
+        public IListSyncJobsPaginator ListSyncJobs(ListSyncJobsRequest request) 
+        {
+            return new ListSyncJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSyncResources operation
+        ///</summary>
+        public IListSyncResourcesPaginator ListSyncResources(ListSyncResourcesRequest request) 
+        {
+            return new ListSyncResourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListWorkspaces operation
         ///</summary>
         public IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request) 

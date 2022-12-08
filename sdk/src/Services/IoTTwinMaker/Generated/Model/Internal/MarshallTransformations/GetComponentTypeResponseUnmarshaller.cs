@@ -63,6 +63,12 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     response.ComponentTypeId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("componentTypeName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ComponentTypeName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("creationDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -121,6 +127,12 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StatusUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("syncSource", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SyncSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("updateDateTime", targetDepth))
