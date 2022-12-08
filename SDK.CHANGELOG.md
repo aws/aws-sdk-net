@@ -1,3 +1,14 @@
+### 3.7.436.0 (2022-12-08 19:21 UTC)
+* AutoScaling (3.7.102.0)
+	* Adds support for metric math for target tracking scaling policies, saving you the cost and effort of publishing a custom metric to CloudWatch. Also adds support for VPC Lattice by adding the Attach/Detach/DescribeTrafficSources APIs and a new health check type to the CreateAutoScalingGroup API.
+* IoTTwinMaker (3.7.102.0)
+	* This release adds the following new features: 1) New APIs for managing a continuous sync of assets and asset models from AWS IoT SiteWise. 2) Support user friendly names for component types (ComponentTypeName) and properties (DisplayName).
+* MigrationHubStrategyRecommendations (3.7.101.0)
+	* This release adds known application filtering, server selection for assessments, support for potential recommendations, and indications for configuration and assessment status. For more information, see the AWS Migration Hub documentation at https://docs.aws.amazon.com/migrationhub/index.html
+* Core 3.7.102.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.435.0 (2022-12-08 00:46 UTC)
 * GameLift (3.7.102.0)
 	* Add service customization to generate IsSet property for GameLift (PlayerLatencyPolicies and Destinations).
