@@ -55,7 +55,7 @@ namespace Amazon.Util.Internal
 #if AWS_ASYNC_API
         public async Task<string> ReadAllTextAsync(string path, CancellationToken token = default)
         {
-            using (var fs = new FileStream(path, FileMode.Open))
+            using (var fs = File.OpenRead(path))
             using (var reader = new StreamReader(fs))
                 return await reader.ReadToEndAsync().ConfigureAwait(false);
                 
