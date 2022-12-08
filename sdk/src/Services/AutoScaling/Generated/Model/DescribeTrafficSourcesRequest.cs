@@ -29,50 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeLoadBalancerTargetGroups operation.
-    /// Gets information about the Elastic Load Balancing target groups for the specified
-    /// Auto Scaling group.
+    /// Container for the parameters to the DescribeTrafficSources operation.
+    /// <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject to change.
+    /// Do not use this API for production workloads. This API is also subject to change.</b>
+    /// 
     /// 
     ///  
     /// <para>
-    /// To determine the attachment status of the target group, use the <code>State</code>
-    /// element in the response. When you attach a target group to an Auto Scaling group,
-    /// the initial <code>State</code> value is <code>Adding</code>. The state transitions
-    /// to <code>Added</code> after all Auto Scaling instances are registered with the target
-    /// group. If Elastic Load Balancing health checks are enabled for the Auto Scaling group,
-    /// the state transitions to <code>InService</code> after at least one Auto Scaling instance
-    /// passes the health check. When the target group is in the <code>InService</code> state,
-    /// Amazon EC2 Auto Scaling can terminate and replace any instances that are reported
-    /// as unhealthy. If no registered instances pass the health checks, the target group
-    /// doesn't enter the <code>InService</code> state. 
+    /// Gets information about the traffic sources for the specified Auto Scaling group.
     /// </para>
-    ///  
-    /// <para>
-    /// Target groups also have an <code>InService</code> state if you attach them in the
-    /// <a>CreateAutoScalingGroup</a> API call. If your target group state is <code>InService</code>,
-    /// but it is not working properly, check the scaling activities by calling <a>DescribeScalingActivities</a>
-    /// and take any corrective actions necessary.
-    /// </para>
-    ///  
-    /// <para>
-    /// For help with failed health checks, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ts-as-healthchecks.html">Troubleshooting
-    /// Amazon EC2 Auto Scaling: Health checks</a> in the <i>Amazon EC2 Auto Scaling User
-    /// Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
-    /// Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling
-    /// group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
-    /// </para>
-    ///  <note> 
-    /// <para>
-    /// You can use this operation to describe target groups that were attached by using <a>AttachLoadBalancerTargetGroups</a>,
-    /// but not for target groups that were attached by using <a>AttachTrafficSources</a>.
-    /// </para>
-    ///  </note>
     /// </summary>
-    public partial class DescribeLoadBalancerTargetGroupsRequest : AmazonAutoScalingRequest
+    public partial class DescribeTrafficSourcesRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
         private int? _maxRecords;
         private string _nextToken;
+        private string _trafficSourceType;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -96,8 +68,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// The maximum number of items to return with this call. The default value is <code>100</code>
-        /// and the maximum value is <code>100</code>.
+        /// The maximum number of items to return with this call. The maximum value is <code>50</code>.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -129,6 +100,26 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrafficSourceType. 
+        /// <para>
+        /// The type of traffic source you are describing. Currently, the only valid value is
+        /// <code>vpc-lattice</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
+        public string TrafficSourceType
+        {
+            get { return this._trafficSourceType; }
+            set { this._trafficSourceType = value; }
+        }
+
+        // Check to see if TrafficSourceType property is set
+        internal bool IsSetTrafficSourceType()
+        {
+            return this._trafficSourceType != null;
         }
 
     }

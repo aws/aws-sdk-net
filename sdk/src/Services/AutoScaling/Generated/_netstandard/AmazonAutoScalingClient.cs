@@ -482,6 +482,65 @@ namespace Amazon.AutoScaling
 
         #endregion
         
+        #region  AttachTrafficSources
+
+        internal virtual AttachTrafficSourcesResponse AttachTrafficSources(AttachTrafficSourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachTrafficSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachTrafficSourcesResponseUnmarshaller.Instance;
+
+            return Invoke<AttachTrafficSourcesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject to change.
+        /// Do not use this API for production workloads. This API is also subject to change.</b>
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Attaches one or more traffic sources to the specified Auto Scaling group.
+        /// </para>
+        ///  
+        /// <para>
+        /// To describe the traffic sources for an Auto Scaling group, call the <a>DescribeTrafficSources</a>
+        /// API. To detach a traffic source from the Auto Scaling group, call the <a>DetachTrafficSources</a>
+        /// API.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is additive and does not detach existing traffic sources from the Auto
+        /// Scaling group.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachTrafficSources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AttachTrafficSources service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
+        /// an Auto Scaling group, instance, or load balancer).
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ServiceLinkedRoleFailureException">
+        /// The service-linked role is not yet ready for use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachTrafficSources">REST API Reference for AttachTrafficSources Operation</seealso>
+        public virtual Task<AttachTrafficSourcesResponse> AttachTrafficSourcesAsync(AttachTrafficSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachTrafficSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachTrafficSourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AttachTrafficSourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchDeleteScheduledAction
 
         internal virtual BatchDeleteScheduledActionResponse BatchDeleteScheduledAction(BatchDeleteScheduledActionRequest request)
@@ -2070,6 +2129,12 @@ namespace Amazon.AutoScaling
         /// Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling
         /// group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use this operation to describe target groups that were attached by using <a>AttachLoadBalancerTargetGroups</a>,
+        /// but not for target groups that were attached by using <a>AttachTrafficSources</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerTargetGroups service method.</param>
         /// <param name="cancellationToken">
@@ -2722,6 +2787,54 @@ namespace Amazon.AutoScaling
 
         #endregion
         
+        #region  DescribeTrafficSources
+
+        internal virtual DescribeTrafficSourcesResponse DescribeTrafficSources(DescribeTrafficSourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrafficSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrafficSourcesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrafficSourcesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject to change.
+        /// Do not use this API for production workloads. This API is also subject to change.</b>
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Gets information about the traffic sources for the specified Auto Scaling group.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrafficSources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTrafficSources service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
+        /// an Auto Scaling group, instance, or load balancer).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTrafficSources">REST API Reference for DescribeTrafficSources Operation</seealso>
+        public virtual Task<DescribeTrafficSourcesResponse> DescribeTrafficSourcesAsync(DescribeTrafficSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrafficSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrafficSourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTrafficSourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeWarmPool
 
         internal virtual DescribeWarmPoolResponse DescribeWarmPool(DescribeWarmPoolRequest request)
@@ -2911,6 +3024,12 @@ namespace Amazon.AutoScaling
         /// describe the target group using the <a>DescribeLoadBalancerTargetGroups</a> API call.
         /// The instances remain running.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use this operation to detach target groups that were attached by using <a>AttachLoadBalancerTargetGroups</a>,
+        /// but not for target groups that were attached by using <a>AttachTrafficSources</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachLoadBalancerTargetGroups service method.</param>
         /// <param name="cancellationToken">
@@ -2930,6 +3049,51 @@ namespace Amazon.AutoScaling
             options.ResponseUnmarshaller = DetachLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetachLoadBalancerTargetGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetachTrafficSources
+
+        internal virtual DetachTrafficSourcesResponse DetachTrafficSources(DetachTrafficSourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachTrafficSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachTrafficSourcesResponseUnmarshaller.Instance;
+
+            return Invoke<DetachTrafficSourcesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject to change.
+        /// Do not use this API for production workloads. This API is also subject to change.</b>
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Detaches one or more traffic sources from the specified Auto Scaling group.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachTrafficSources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DetachTrafficSources service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
+        /// an Auto Scaling group, instance, or load balancer).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachTrafficSources">REST API Reference for DetachTrafficSources Operation</seealso>
+        public virtual Task<DetachTrafficSourcesResponse> DetachTrafficSourcesAsync(DetachTrafficSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachTrafficSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachTrafficSourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetachTrafficSourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion

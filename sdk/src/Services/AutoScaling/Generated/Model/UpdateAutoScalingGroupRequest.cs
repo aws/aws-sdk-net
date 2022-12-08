@@ -311,9 +311,9 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking
         /// the health status of an EC2 instance that has come into service and marking it unhealthy
-        /// due to a failed Elastic Load Balancing or custom health check. This is useful if your
-        /// instances do not immediately pass these health checks after they enter the <code>InService</code>
-        /// state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+        /// due to a failed health check. This is useful if your instances do not immediately
+        /// pass their health checks after they enter the <code>InService</code> state. For more
+        /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
         /// the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
         /// Scaling User Guide</i>.
         /// </para>
@@ -333,10 +333,14 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckType. 
         /// <para>
-        /// The service to use for the health checks. The valid values are <code>EC2</code> and
-        /// <code>ELB</code>. If you configure an Auto Scaling group to use <code>ELB</code> health
-        /// checks, it considers the instance unhealthy if it fails either the EC2 status checks
-        /// or the load balancer health checks.
+        /// Determines whether any additional health checks are performed on the instances in
+        /// this group. Amazon EC2 health checks are always on.
+        /// </para>
+        ///  
+        /// <para>
+        /// The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>.
+        /// The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice,
+        /// which is in preview release and is subject to change.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]

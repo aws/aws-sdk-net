@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CustomizedMetricSpecification Object
+    /// Response Unmarshaller for TargetTrackingMetricDataQuery Object
     /// </summary>  
-    public class CustomizedMetricSpecificationUnmarshaller : IUnmarshaller<CustomizedMetricSpecification, XmlUnmarshallerContext>, IUnmarshaller<CustomizedMetricSpecification, JsonUnmarshallerContext>
+    public class TargetTrackingMetricDataQueryUnmarshaller : IUnmarshaller<TargetTrackingMetricDataQuery, XmlUnmarshallerContext>, IUnmarshaller<TargetTrackingMetricDataQuery, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CustomizedMetricSpecification Unmarshall(XmlUnmarshallerContext context)
+        public TargetTrackingMetricDataQuery Unmarshall(XmlUnmarshallerContext context)
         {
-            CustomizedMetricSpecification unmarshalledObject = new CustomizedMetricSpecification();
+            TargetTrackingMetricDataQuery unmarshalledObject = new TargetTrackingMetricDataQuery();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,42 +54,34 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Dimensions/member", targetDepth))
-                    {
-                        var unmarshaller = MetricDimensionUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Dimensions.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("MetricName", targetDepth))
+                    if (context.TestExpression("Expression", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.MetricName = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Expression = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Metrics/member", targetDepth))
-                    {
-                        var unmarshaller = TargetTrackingMetricDataQueryUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Metrics.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("Namespace", targetDepth))
+                    if (context.TestExpression("Id", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Statistic", targetDepth))
+                    if (context.TestExpression("Label", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Statistic = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Label = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Unit", targetDepth))
+                    if (context.TestExpression("MetricStat", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Unit = unmarshaller.Unmarshall(context);
+                        var unmarshaller = TargetTrackingMetricStatUnmarshaller.Instance;
+                        unmarshalledObject.MetricStat = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ReturnData", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ReturnData = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -107,18 +99,18 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CustomizedMetricSpecification Unmarshall(JsonUnmarshallerContext context)
+        public TargetTrackingMetricDataQuery Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static CustomizedMetricSpecificationUnmarshaller _instance = new CustomizedMetricSpecificationUnmarshaller();        
+        private static TargetTrackingMetricDataQueryUnmarshaller _instance = new TargetTrackingMetricDataQueryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CustomizedMetricSpecificationUnmarshaller Instance
+        public static TargetTrackingMetricDataQueryUnmarshaller Instance
         {
             get
             {

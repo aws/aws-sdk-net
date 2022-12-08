@@ -539,6 +539,85 @@ namespace Amazon.AutoScaling
 
         #endregion
         
+        #region  AttachTrafficSources
+
+        /// <summary>
+        /// <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject to change.
+        /// Do not use this API for production workloads. This API is also subject to change.</b>
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Attaches one or more traffic sources to the specified Auto Scaling group.
+        /// </para>
+        ///  
+        /// <para>
+        /// To describe the traffic sources for an Auto Scaling group, call the <a>DescribeTrafficSources</a>
+        /// API. To detach a traffic source from the Auto Scaling group, call the <a>DetachTrafficSources</a>
+        /// API.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is additive and does not detach existing traffic sources from the Auto
+        /// Scaling group.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachTrafficSources service method.</param>
+        /// 
+        /// <returns>The response from the AttachTrafficSources service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
+        /// an Auto Scaling group, instance, or load balancer).
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ServiceLinkedRoleFailureException">
+        /// The service-linked role is not yet ready for use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachTrafficSources">REST API Reference for AttachTrafficSources Operation</seealso>
+        public virtual AttachTrafficSourcesResponse AttachTrafficSources(AttachTrafficSourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachTrafficSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachTrafficSourcesResponseUnmarshaller.Instance;
+
+            return Invoke<AttachTrafficSourcesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachTrafficSources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachTrafficSources operation on AmazonAutoScalingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachTrafficSources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachTrafficSources">REST API Reference for AttachTrafficSources Operation</seealso>
+        public virtual IAsyncResult BeginAttachTrafficSources(AttachTrafficSourcesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachTrafficSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachTrafficSourcesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AttachTrafficSources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachTrafficSources.</param>
+        /// 
+        /// <returns>Returns a  AttachTrafficSourcesResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachTrafficSources">REST API Reference for AttachTrafficSources Operation</seealso>
+        public virtual AttachTrafficSourcesResponse EndAttachTrafficSources(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AttachTrafficSourcesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchDeleteScheduledAction
 
         /// <summary>
@@ -2568,6 +2647,12 @@ namespace Amazon.AutoScaling
         /// Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling
         /// group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use this operation to describe target groups that were attached by using <a>AttachLoadBalancerTargetGroups</a>,
+        /// but not for target groups that were attached by using <a>AttachTrafficSources</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerTargetGroups service method.</param>
         /// 
@@ -3347,6 +3432,74 @@ namespace Amazon.AutoScaling
 
         #endregion
         
+        #region  DescribeTrafficSources
+
+        /// <summary>
+        /// <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject to change.
+        /// Do not use this API for production workloads. This API is also subject to change.</b>
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Gets information about the traffic sources for the specified Auto Scaling group.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrafficSources service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTrafficSources service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
+        /// an Auto Scaling group, instance, or load balancer).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTrafficSources">REST API Reference for DescribeTrafficSources Operation</seealso>
+        public virtual DescribeTrafficSourcesResponse DescribeTrafficSources(DescribeTrafficSourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrafficSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrafficSourcesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrafficSourcesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTrafficSources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrafficSources operation on AmazonAutoScalingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrafficSources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTrafficSources">REST API Reference for DescribeTrafficSources Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTrafficSources(DescribeTrafficSourcesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrafficSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrafficSourcesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTrafficSources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTrafficSources.</param>
+        /// 
+        /// <returns>Returns a  DescribeTrafficSourcesResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTrafficSources">REST API Reference for DescribeTrafficSources Operation</seealso>
+        public virtual DescribeTrafficSourcesResponse EndDescribeTrafficSources(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTrafficSourcesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeWarmPool
 
         /// <summary>
@@ -3585,6 +3738,12 @@ namespace Amazon.AutoScaling
         /// describe the target group using the <a>DescribeLoadBalancerTargetGroups</a> API call.
         /// The instances remain running.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use this operation to detach target groups that were attached by using <a>AttachLoadBalancerTargetGroups</a>,
+        /// but not for target groups that were attached by using <a>AttachTrafficSources</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachLoadBalancerTargetGroups service method.</param>
         /// 
@@ -3635,6 +3794,71 @@ namespace Amazon.AutoScaling
         public virtual DetachLoadBalancerTargetGroupsResponse EndDetachLoadBalancerTargetGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachLoadBalancerTargetGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DetachTrafficSources
+
+        /// <summary>
+        /// <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject to change.
+        /// Do not use this API for production workloads. This API is also subject to change.</b>
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Detaches one or more traffic sources from the specified Auto Scaling group.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachTrafficSources service method.</param>
+        /// 
+        /// <returns>The response from the DetachTrafficSources service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
+        /// an Auto Scaling group, instance, or load balancer).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachTrafficSources">REST API Reference for DetachTrafficSources Operation</seealso>
+        public virtual DetachTrafficSourcesResponse DetachTrafficSources(DetachTrafficSourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachTrafficSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachTrafficSourcesResponseUnmarshaller.Instance;
+
+            return Invoke<DetachTrafficSourcesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachTrafficSources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachTrafficSources operation on AmazonAutoScalingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachTrafficSources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachTrafficSources">REST API Reference for DetachTrafficSources Operation</seealso>
+        public virtual IAsyncResult BeginDetachTrafficSources(DetachTrafficSourcesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachTrafficSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachTrafficSourcesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetachTrafficSources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachTrafficSources.</param>
+        /// 
+        /// <returns>Returns a  DetachTrafficSourcesResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachTrafficSources">REST API Reference for DetachTrafficSources Operation</seealso>
+        public virtual DetachTrafficSourcesResponse EndDetachTrafficSources(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DetachTrafficSourcesResponse>(asyncResult);
         }
 
         #endregion

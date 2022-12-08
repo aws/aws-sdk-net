@@ -29,27 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Container for the parameters to the DetachLoadBalancerTargetGroups operation.
-    /// Detaches one or more target groups from the specified Auto Scaling group.
+    /// Container for the parameters to the AttachTrafficSources operation.
+    /// <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject to change.
+    /// Do not use this API for production workloads. This API is also subject to change.</b>
+    /// 
     /// 
     ///  
     /// <para>
-    /// When you detach a target group, it enters the <code>Removing</code> state while deregistering
-    /// the instances in the group. When all instances are deregistered, then you can no longer
-    /// describe the target group using the <a>DescribeLoadBalancerTargetGroups</a> API call.
-    /// The instances remain running.
+    /// Attaches one or more traffic sources to the specified Auto Scaling group.
     /// </para>
-    ///  <note> 
+    ///  
     /// <para>
-    /// You can use this operation to detach target groups that were attached by using <a>AttachLoadBalancerTargetGroups</a>,
-    /// but not for target groups that were attached by using <a>AttachTrafficSources</a>.
+    /// To describe the traffic sources for an Auto Scaling group, call the <a>DescribeTrafficSources</a>
+    /// API. To detach a traffic source from the Auto Scaling group, call the <a>DetachTrafficSources</a>
+    /// API.
     /// </para>
-    ///  </note>
+    ///  
+    /// <para>
+    /// This operation is additive and does not detach existing traffic sources from the Auto
+    /// Scaling group.
+    /// </para>
     /// </summary>
-    public partial class DetachLoadBalancerTargetGroupsRequest : AmazonAutoScalingRequest
+    public partial class AttachTrafficSourcesRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
-        private List<string> _targetGroupARNs = new List<string>();
+        private List<TrafficSourceIdentifier> _trafficSources = new List<TrafficSourceIdentifier>();
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -71,23 +75,30 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetGroupARNs. 
+        /// Gets and sets the property TrafficSources. 
         /// <para>
-        /// The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target
-        /// groups.
+        /// The unique identifiers of one or more traffic sources. You can specify up to 10 traffic
+        /// sources.
+        /// </para>
+        ///  
+        /// <para>
+        /// Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice
+        /// target group. Amazon EC2 Auto Scaling registers the running instances with the attached
+        /// target groups. The target groups receive incoming traffic and route requests to one
+        /// or more registered targets.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<string> TargetGroupARNs
+        public List<TrafficSourceIdentifier> TrafficSources
         {
-            get { return this._targetGroupARNs; }
-            set { this._targetGroupARNs = value; }
+            get { return this._trafficSources; }
+            set { this._trafficSources = value; }
         }
 
-        // Check to see if TargetGroupARNs property is set
-        internal bool IsSetTargetGroupARNs()
+        // Check to see if TrafficSources property is set
+        internal bool IsSetTrafficSources()
         {
-            return this._targetGroupARNs != null && this._targetGroupARNs.Count > 0; 
+            return this._trafficSources != null && this._trafficSources.Count > 0; 
         }
 
     }

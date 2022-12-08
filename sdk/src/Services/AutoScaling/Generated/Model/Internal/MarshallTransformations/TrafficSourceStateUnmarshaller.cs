@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CustomizedMetricSpecification Object
+    /// Response Unmarshaller for TrafficSourceState Object
     /// </summary>  
-    public class CustomizedMetricSpecificationUnmarshaller : IUnmarshaller<CustomizedMetricSpecification, XmlUnmarshallerContext>, IUnmarshaller<CustomizedMetricSpecification, JsonUnmarshallerContext>
+    public class TrafficSourceStateUnmarshaller : IUnmarshaller<TrafficSourceState, XmlUnmarshallerContext>, IUnmarshaller<TrafficSourceState, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CustomizedMetricSpecification Unmarshall(XmlUnmarshallerContext context)
+        public TrafficSourceState Unmarshall(XmlUnmarshallerContext context)
         {
-            CustomizedMetricSpecification unmarshalledObject = new CustomizedMetricSpecification();
+            TrafficSourceState unmarshalledObject = new TrafficSourceState();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,42 +54,16 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Dimensions/member", targetDepth))
-                    {
-                        var unmarshaller = MetricDimensionUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Dimensions.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("MetricName", targetDepth))
+                    if (context.TestExpression("State", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.MetricName = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Metrics/member", targetDepth))
-                    {
-                        var unmarshaller = TargetTrackingMetricDataQueryUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Metrics.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("Namespace", targetDepth))
+                    if (context.TestExpression("TrafficSource", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Statistic", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Statistic = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Unit", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Unit = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TrafficSource = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -107,18 +81,18 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CustomizedMetricSpecification Unmarshall(JsonUnmarshallerContext context)
+        public TrafficSourceState Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static CustomizedMetricSpecificationUnmarshaller _instance = new CustomizedMetricSpecificationUnmarshaller();        
+        private static TrafficSourceStateUnmarshaller _instance = new TrafficSourceStateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CustomizedMetricSpecificationUnmarshaller Instance
+        public static TrafficSourceStateUnmarshaller Instance
         {
             get
             {

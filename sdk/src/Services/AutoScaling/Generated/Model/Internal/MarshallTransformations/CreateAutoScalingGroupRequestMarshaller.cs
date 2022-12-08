@@ -518,6 +518,18 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetTrafficSources())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.TrafficSources)
+                    {
+                        if(publicRequestlistValue.IsSetIdentifier())
+                        {
+                            request.Parameters.Add("TrafficSources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Identifier", StringUtils.FromString(publicRequestlistValue.Identifier));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetVPCZoneIdentifier())
                 {
                     request.Parameters.Add("VPCZoneIdentifier", StringUtils.FromString(publicRequest.VPCZoneIdentifier));

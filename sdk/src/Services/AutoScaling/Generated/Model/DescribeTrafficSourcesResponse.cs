@@ -29,31 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeWarmPool operation.
+    /// This is the response object from the DescribeTrafficSources operation.
     /// </summary>
-    public partial class DescribeWarmPoolResponse : AmazonWebServiceResponse
+    public partial class DescribeTrafficSourcesResponse : AmazonWebServiceResponse
     {
-        private List<Instance> _instances = new List<Instance>();
         private string _nextToken;
-        private WarmPoolConfiguration _warmPoolConfiguration;
-
-        /// <summary>
-        /// Gets and sets the property Instances. 
-        /// <para>
-        /// The instances that are currently in the warm pool.
-        /// </para>
-        /// </summary>
-        public List<Instance> Instances
-        {
-            get { return this._instances; }
-            set { this._instances = value; }
-        }
-
-        // Check to see if Instances property is set
-        internal bool IsSetInstances()
-        {
-            return this._instances != null && this._instances.Count > 0; 
-        }
+        private List<TrafficSourceState> _trafficSources = new List<TrafficSourceState>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -77,21 +58,21 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WarmPoolConfiguration. 
+        /// Gets and sets the property TrafficSources. 
         /// <para>
-        /// The warm pool configuration details. 
+        /// Information about the traffic sources.
         /// </para>
         /// </summary>
-        public WarmPoolConfiguration WarmPoolConfiguration
+        public List<TrafficSourceState> TrafficSources
         {
-            get { return this._warmPoolConfiguration; }
-            set { this._warmPoolConfiguration = value; }
+            get { return this._trafficSources; }
+            set { this._trafficSources = value; }
         }
 
-        // Check to see if WarmPoolConfiguration property is set
-        internal bool IsSetWarmPoolConfiguration()
+        // Check to see if TrafficSources property is set
+        internal bool IsSetTrafficSources()
         {
-            return this._warmPoolConfiguration != null;
+            return this._trafficSources != null && this._trafficSources.Count > 0; 
         }
 
     }

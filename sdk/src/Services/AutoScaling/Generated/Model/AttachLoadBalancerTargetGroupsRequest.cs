@@ -95,7 +95,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TargetGroupARNs. 
         /// <para>
-        /// The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target
+        /// The Amazon Resource Names (ARNs) of the target groups. You can specify up to 10 target
         /// groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
         /// API operation.
         /// </para>

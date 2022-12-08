@@ -63,6 +63,7 @@ namespace Amazon.AutoScaling.Model
         private List<TagDescription> _tags = new List<TagDescription>();
         private List<string> _targetGroupARNs = new List<string>();
         private List<string> _terminationPolicies = new List<string>();
+        private List<TrafficSourceIdentifier> _trafficSources = new List<TrafficSourceIdentifier>();
         private string _vpcZoneIdentifier;
         private WarmPoolConfiguration _warmPoolConfiguration;
         private int? _warmPoolSize;
@@ -295,10 +296,14 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckType. 
         /// <para>
-        /// The service to use for the health checks. The valid values are <code>EC2</code> and
-        /// <code>ELB</code>. If you configure an Auto Scaling group to use <code>ELB</code> health
-        /// checks, it considers the instance unhealthy if it fails either the EC2 status checks
-        /// or the load balancer health checks.
+        /// Determines whether any additional health checks are performed on the instances in
+        /// this group. Amazon EC2 health checks are always on.
+        /// </para>
+        ///  
+        /// <para>
+        /// The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>.
+        /// The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice,
+        /// which is in preview release and is subject to change.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -631,6 +636,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetTerminationPolicies()
         {
             return this._terminationPolicies != null && this._terminationPolicies.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrafficSources. 
+        /// <para>
+        /// The unique identifiers of the traffic sources.
+        /// </para>
+        /// </summary>
+        public List<TrafficSourceIdentifier> TrafficSources
+        {
+            get { return this._trafficSources; }
+            set { this._trafficSources = value; }
+        }
+
+        // Check to see if TrafficSources property is set
+        internal bool IsSetTrafficSources()
+        {
+            return this._trafficSources != null && this._trafficSources.Count > 0; 
         }
 
         /// <summary>

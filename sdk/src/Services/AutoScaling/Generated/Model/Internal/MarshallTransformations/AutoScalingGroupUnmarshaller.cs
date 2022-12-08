@@ -242,6 +242,13 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.TerminationPolicies.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("TrafficSources/member", targetDepth))
+                    {
+                        var unmarshaller = TrafficSourceIdentifierUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TrafficSources.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("VPCZoneIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

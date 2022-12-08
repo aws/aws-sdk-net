@@ -88,6 +88,7 @@ namespace Amazon.AutoScaling.Model
         private List<Tag> _tags = new List<Tag>();
         private List<string> _targetGroupARNs = new List<string>();
         private List<string> _terminationPolicies = new List<string>();
+        private List<TrafficSourceIdentifier> _trafficSources = new List<TrafficSourceIdentifier>();
         private string _vpcZoneIdentifier;
 
         /// <summary>
@@ -312,9 +313,9 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking
         /// the health status of an EC2 instance that has come into service and marking it unhealthy
-        /// due to a failed Elastic Load Balancing or custom health check. This is useful if your
-        /// instances do not immediately pass these health checks after they enter the <code>InService</code>
-        /// state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+        /// due to a failed health check. This is useful if your instances do not immediately
+        /// pass their health checks after they enter the <code>InService</code> state. For more
+        /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
         /// the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
         /// Scaling User Guide</i>.
         /// </para>
@@ -338,11 +339,15 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckType. 
         /// <para>
-        /// The service to use for the health checks. The valid values are <code>EC2</code> (default)
-        /// and <code>ELB</code>. If you configure an Auto Scaling group to use load balancer
-        /// (ELB) health checks, it considers the instance unhealthy if it fails either the EC2
-        /// status checks or the load balancer health checks. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+        /// Determines whether any additional health checks are performed on the instances in
+        /// this group. Amazon EC2 health checks are always on. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
         /// checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>.
+        /// The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice,
+        /// which is in preview release and is subject to change.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -668,10 +673,10 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TargetGroupARNs. 
         /// <para>
-        /// The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling
-        /// group. Instances are registered as targets with the target groups. The target groups
-        /// receive incoming traffic and route requests to one or more registered targets. For
-        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
+        /// The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups to associate
+        /// with the Auto Scaling group. Instances are registered as targets with the target groups.
+        /// The target groups receive incoming traffic and route requests to one or more registered
+        /// targets. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
         /// Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling
         /// group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
@@ -715,6 +720,37 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetTerminationPolicies()
         {
             return this._terminationPolicies != null && this._terminationPolicies.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrafficSources. 
+        /// <para>
+        ///  <b>Reserved for use with Amazon VPC Lattice, which is in preview release and is subject
+        /// to change. Do not use this parameter for production workloads. It is also subject
+        /// to change.</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The unique identifiers of one or more traffic sources.
+        /// </para>
+        ///  
+        /// <para>
+        /// Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice
+        /// target group. Amazon EC2 Auto Scaling registers the running instances with the attached
+        /// target groups. The target groups receive incoming traffic and route requests to one
+        /// or more registered targets.
+        /// </para>
+        /// </summary>
+        public List<TrafficSourceIdentifier> TrafficSources
+        {
+            get { return this._trafficSources; }
+            set { this._trafficSources = value; }
+        }
+
+        // Check to see if TrafficSources property is set
+        internal bool IsSetTrafficSources()
+        {
+            return this._trafficSources != null && this._trafficSources.Count > 0; 
         }
 
         /// <summary>

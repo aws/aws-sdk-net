@@ -173,11 +173,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </dd> <dt>price-capacity-optimized (recommended)</dt> <dd> 
         /// <para>
-        /// Amazon EC2 Auto Scaling identifies the pools with the highest capacity availability
-        /// for the number of instances that are launching. This means that we will request Spot
-        /// Instances from the pools that we believe have the lowest chance of interruption in
-        /// the near term. Amazon EC2 Auto Scaling then requests Spot Instances from the lowest
-        /// priced of these pools.
+        /// The price and capacity optimized allocation strategy looks at both price and capacity
+        /// to select the Spot Instance pools that are the least likely to be interrupted and
+        /// have the lowest possible price.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

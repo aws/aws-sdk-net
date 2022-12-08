@@ -405,6 +405,68 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "MetricName", StringUtils.FromString(publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.MetricName));
                         }
+                        if(publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.IsSetMetrics())
+                        {
+                            int publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex = 1;
+                            foreach(var publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue in publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.Metrics)
+                            {
+                                if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.IsSetExpression())
+                                {
+                                    request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Metrics" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex + "." + "Expression", StringUtils.FromString(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.Expression));
+                                }
+                                if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.IsSetId())
+                                {
+                                    request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Metrics" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.Id));
+                                }
+                                if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.IsSetLabel())
+                                {
+                                    request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Metrics" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex + "." + "Label", StringUtils.FromString(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.Label));
+                                }
+                                if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.IsSetMetricStat())
+                                {
+                                    if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.MetricStat.IsSetMetric())
+                                    {
+                                        if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.MetricStat.Metric.IsSetDimensions())
+                                        {
+                                            int publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueMetricStatMetriclistValueIndex = 1;
+                                            foreach(var publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueMetricStatMetriclistValue in publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.MetricStat.Metric.Dimensions)
+                                            {
+                                                if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueMetricStatMetriclistValue.IsSetName())
+                                                {
+                                                    request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Metrics" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueMetricStatMetriclistValueIndex + "." + "Name", StringUtils.FromString(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueMetricStatMetriclistValue.Name));
+                                                }
+                                                if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueMetricStatMetriclistValue.IsSetValue())
+                                                {
+                                                    request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Metrics" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueMetricStatMetriclistValueIndex + "." + "Value", StringUtils.FromString(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueMetricStatMetriclistValue.Value));
+                                                }
+                                                publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueMetricStatMetriclistValueIndex++;
+                                            }
+                                        }
+                                        if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.MetricStat.Metric.IsSetMetricName())
+                                        {
+                                            request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Metrics" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "MetricName", StringUtils.FromString(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.MetricStat.Metric.MetricName));
+                                        }
+                                        if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.MetricStat.Metric.IsSetNamespace())
+                                        {
+                                            request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Metrics" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Namespace", StringUtils.FromString(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.MetricStat.Metric.Namespace));
+                                        }
+                                    }
+                                    if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.MetricStat.IsSetStat())
+                                    {
+                                        request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Metrics" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Stat", StringUtils.FromString(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.MetricStat.Stat));
+                                    }
+                                    if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.MetricStat.IsSetUnit())
+                                    {
+                                        request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Metrics" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Unit", StringUtils.FromString(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.MetricStat.Unit));
+                                    }
+                                }
+                                if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.IsSetReturnData())
+                                {
+                                    request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Metrics" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex + "." + "ReturnData", StringUtils.FromBool(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.ReturnData));
+                                }
+                                publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex++;
+                            }
+                        }
                         if(publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.IsSetNamespace())
                         {
                             request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Namespace", StringUtils.FromString(publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.Namespace));
