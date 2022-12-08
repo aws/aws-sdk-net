@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.Lightsail.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.Lightsail
     /// <summary>
     /// Configuration for accessing Amazon Lightsail service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonLightsailConfig : ClientConfig
     {
         private static readonly string UserAgentString =

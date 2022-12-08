@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.Personalize.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.Personalize
     /// <summary>
     /// Configuration for accessing Amazon Personalize service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonPersonalizeConfig : ClientConfig
     {
         private static readonly string UserAgentString =

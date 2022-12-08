@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.StorageGateway.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.StorageGateway
     /// <summary>
     /// Configuration for accessing Amazon StorageGateway service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonStorageGatewayConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ACMPCA.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ACMPCA
     /// <summary>
     /// Configuration for accessing Amazon ACMPCA service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonACMPCAConfig : ClientConfig
     {
         private static readonly string UserAgentString =

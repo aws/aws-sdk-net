@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.AWSHealth.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.AWSHealth
     /// <summary>
     /// Configuration for accessing Amazon AWSHealth service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonAWSHealthConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.XRay.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.XRay
     /// <summary>
     /// Configuration for accessing Amazon XRay service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonXRayConfig : ClientConfig
     {
         private static readonly string UserAgentString =

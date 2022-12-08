@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.CloudWatchEvents.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.CloudWatchEvents
     /// <summary>
     /// Configuration for accessing Amazon CloudWatchEvents service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonCloudWatchEventsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

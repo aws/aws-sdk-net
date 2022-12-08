@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ImportExport.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ImportExport
     /// <summary>
     /// Configuration for accessing Amazon ImportExport service
     /// </summary>
+    [AWSSignerType("v2")]
     public partial class AmazonImportExportConfig : ClientConfig
     {
         private static readonly string UserAgentString =

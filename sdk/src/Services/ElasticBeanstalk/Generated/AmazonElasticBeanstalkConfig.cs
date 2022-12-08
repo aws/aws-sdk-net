@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ElasticBeanstalk.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ElasticBeanstalk
     /// <summary>
     /// Configuration for accessing Amazon ElasticBeanstalk service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonElasticBeanstalkConfig : ClientConfig
     {
         private static readonly string UserAgentString =

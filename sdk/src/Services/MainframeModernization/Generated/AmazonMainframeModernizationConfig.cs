@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.MainframeModernization.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.MainframeModernization
     /// <summary>
     /// Configuration for accessing Amazon MainframeModernization service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonMainframeModernizationConfig : ClientConfig
     {
         private static readonly string UserAgentString =

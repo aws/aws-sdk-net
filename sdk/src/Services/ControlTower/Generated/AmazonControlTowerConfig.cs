@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ControlTower.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ControlTower
     /// <summary>
     /// Configuration for accessing Amazon ControlTower service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonControlTowerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

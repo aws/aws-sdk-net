@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.WellArchitected.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.WellArchitected
     /// <summary>
     /// Configuration for accessing Amazon WellArchitected service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonWellArchitectedConfig : ClientConfig
     {
         private static readonly string UserAgentString =

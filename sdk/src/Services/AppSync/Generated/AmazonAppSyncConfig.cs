@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.AppSync.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.AppSync
     /// <summary>
     /// Configuration for accessing Amazon AppSync service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonAppSyncConfig : ClientConfig
     {
         private static readonly string UserAgentString =

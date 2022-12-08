@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.SSOOIDC.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.SSOOIDC
     /// <summary>
     /// Configuration for accessing Amazon SSOOIDC service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonSSOOIDCConfig : ClientConfig
     {
         private static readonly string UserAgentString =

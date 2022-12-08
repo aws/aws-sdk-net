@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.BearerTokenAuthTest.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.BearerTokenAuthTest
     /// <summary>
     /// Configuration for accessing Amazon BearerTokenAuthTest service
     /// </summary>
+    [AWSSignerType("bearer")]
     public partial class AmazonBearerTokenAuthTestConfig : ClientConfig
     {
         private static readonly string UserAgentString =

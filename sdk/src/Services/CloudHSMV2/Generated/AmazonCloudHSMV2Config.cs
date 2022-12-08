@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.CloudHSMV2.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.CloudHSMV2
     /// <summary>
     /// Configuration for accessing Amazon CloudHSMV2 service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonCloudHSMV2Config : ClientConfig
     {
         private static readonly string UserAgentString =

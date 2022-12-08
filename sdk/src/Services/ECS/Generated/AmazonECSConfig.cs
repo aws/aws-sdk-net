@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ECS.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ECS
     /// <summary>
     /// Configuration for accessing Amazon ECS service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonECSConfig : ClientConfig
     {
         private static readonly string UserAgentString =

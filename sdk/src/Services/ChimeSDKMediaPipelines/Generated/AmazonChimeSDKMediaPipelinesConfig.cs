@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ChimeSDKMediaPipelines.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ChimeSDKMediaPipelines
     /// <summary>
     /// Configuration for accessing Amazon ChimeSDKMediaPipelines service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonChimeSDKMediaPipelinesConfig : ClientConfig
     {
         private static readonly string UserAgentString =

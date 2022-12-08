@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ConnectContactLens.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ConnectContactLens
     /// <summary>
     /// Configuration for accessing Amazon ConnectContactLens service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonConnectContactLensConfig : ClientConfig
     {
         private static readonly string UserAgentString =

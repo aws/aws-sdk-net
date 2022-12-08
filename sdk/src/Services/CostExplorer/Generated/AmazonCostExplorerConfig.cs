@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.CostExplorer.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.CostExplorer
     /// <summary>
     /// Configuration for accessing Amazon CostExplorer service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonCostExplorerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

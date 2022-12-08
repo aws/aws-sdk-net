@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ForecastQueryService.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ForecastQueryService
     /// <summary>
     /// Configuration for accessing Amazon ForecastQueryService service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonForecastQueryServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

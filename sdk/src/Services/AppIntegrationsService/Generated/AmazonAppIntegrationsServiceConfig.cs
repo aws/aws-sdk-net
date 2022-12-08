@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.AppIntegrationsService.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.AppIntegrationsService
     /// <summary>
     /// Configuration for accessing Amazon AppIntegrationsService service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonAppIntegrationsServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

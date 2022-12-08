@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ServiceDiscovery.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ServiceDiscovery
     /// <summary>
     /// Configuration for accessing Amazon ServiceDiscovery service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonServiceDiscoveryConfig : ClientConfig
     {
         private static readonly string UserAgentString =

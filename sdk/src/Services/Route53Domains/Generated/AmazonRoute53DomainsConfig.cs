@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.Route53Domains.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.Route53Domains
     /// <summary>
     /// Configuration for accessing Amazon Route53Domains service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonRoute53DomainsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

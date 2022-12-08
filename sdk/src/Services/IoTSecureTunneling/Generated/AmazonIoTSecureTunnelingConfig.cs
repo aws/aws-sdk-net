@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.IoTSecureTunneling.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.IoTSecureTunneling
     /// <summary>
     /// Configuration for accessing Amazon IoTSecureTunneling service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonIoTSecureTunnelingConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.MediaTailor.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.MediaTailor
     /// <summary>
     /// Configuration for accessing Amazon MediaTailor service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonMediaTailorConfig : ClientConfig
     {
         private static readonly string UserAgentString =

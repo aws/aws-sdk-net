@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.KinesisVideoSignalingChannels.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.KinesisVideoSignalingChannels
     /// <summary>
     /// Configuration for accessing Amazon KinesisVideoSignalingChannels service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonKinesisVideoSignalingChannelsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

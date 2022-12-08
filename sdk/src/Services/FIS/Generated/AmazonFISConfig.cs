@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.FIS.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.FIS
     /// <summary>
     /// Configuration for accessing Amazon FIS service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonFISConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ApplicationCostProfiler.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ApplicationCostProfiler
     /// <summary>
     /// Configuration for accessing Amazon ApplicationCostProfiler service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonApplicationCostProfilerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

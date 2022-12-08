@@ -185,7 +185,7 @@ namespace Amazon.CodeCatalyst
         ///
         /// </summary>
         public AmazonCodeCatalystClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodeCatalystConfig()) { }
+            : base(FallbackCredentialsFactory.GetCredentials(fallbackToAnonymous: true), new AmazonCodeCatalystConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCodeCatalystClient with the credentials loaded from the application's
@@ -204,7 +204,7 @@ namespace Amazon.CodeCatalyst
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCodeCatalystClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodeCatalystConfig{RegionEndpoint = region}) { }
+            : base(FallbackCredentialsFactory.GetCredentials(fallbackToAnonymous: true), new AmazonCodeCatalystConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCodeCatalystClient with the credentials loaded from the application's
@@ -223,7 +223,7 @@ namespace Amazon.CodeCatalyst
         /// </summary>
         /// <param name="config">The AmazonCodeCatalystClient Configuration Object</param>
         public AmazonCodeCatalystClient(AmazonCodeCatalystConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(fallbackToAnonymous: true), config) { }
 
 
         /// <summary>

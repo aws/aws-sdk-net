@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.CloudWatchLogs.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.CloudWatchLogs
     /// <summary>
     /// Configuration for accessing Amazon CloudWatchLogs service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonCloudWatchLogsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

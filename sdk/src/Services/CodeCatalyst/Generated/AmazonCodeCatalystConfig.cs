@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.CodeCatalyst.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.CodeCatalyst
     /// <summary>
     /// Configuration for accessing Amazon CodeCatalyst service
     /// </summary>
+    [AWSSignerType("bearer")]
     public partial class AmazonCodeCatalystConfig : ClientConfig
     {
         private static readonly string UserAgentString =

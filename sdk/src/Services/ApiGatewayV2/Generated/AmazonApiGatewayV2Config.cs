@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ApiGatewayV2.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ApiGatewayV2
     /// <summary>
     /// Configuration for accessing Amazon ApiGatewayV2 service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonApiGatewayV2Config : ClientConfig
     {
         private static readonly string UserAgentString =

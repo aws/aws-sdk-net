@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.DirectConnect.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.DirectConnect
     /// <summary>
     /// Configuration for accessing Amazon DirectConnect service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonDirectConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.Route53RecoveryReadiness.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.Route53RecoveryReadiness
     /// <summary>
     /// Configuration for accessing Amazon Route53RecoveryReadiness service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonRoute53RecoveryReadinessConfig : ClientConfig
     {
         private static readonly string UserAgentString =

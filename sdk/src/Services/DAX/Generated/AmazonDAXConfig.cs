@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.DAX.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.DAX
     /// <summary>
     /// Configuration for accessing Amazon DAX service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonDAXConfig : ClientConfig
     {
         private static readonly string UserAgentString =

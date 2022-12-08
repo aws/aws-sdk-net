@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.FSx.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.FSx
     /// <summary>
     /// Configuration for accessing Amazon FSx service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonFSxConfig : ClientConfig
     {
         private static readonly string UserAgentString =

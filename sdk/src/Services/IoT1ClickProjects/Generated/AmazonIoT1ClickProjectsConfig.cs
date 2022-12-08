@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.IoT1ClickProjects.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.IoT1ClickProjects
     /// <summary>
     /// Configuration for accessing Amazon IoT1ClickProjects service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonIoT1ClickProjectsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

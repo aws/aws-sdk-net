@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.WorkMail.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.WorkMail
     /// <summary>
     /// Configuration for accessing Amazon WorkMail service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonWorkMailConfig : ClientConfig
     {
         private static readonly string UserAgentString =

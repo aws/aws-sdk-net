@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.WorkLink.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.WorkLink
     /// <summary>
     /// Configuration for accessing Amazon WorkLink service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonWorkLinkConfig : ClientConfig
     {
         private static readonly string UserAgentString =

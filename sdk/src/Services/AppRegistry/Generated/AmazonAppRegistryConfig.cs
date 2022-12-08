@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.AppRegistry.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.AppRegistry
     /// <summary>
     /// Configuration for accessing Amazon AppRegistry service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonAppRegistryConfig : ClientConfig
     {
         private static readonly string UserAgentString =

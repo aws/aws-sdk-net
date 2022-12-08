@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.CodeStarconnections.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.CodeStarconnections
     /// <summary>
     /// Configuration for accessing Amazon CodeStarconnections service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonCodeStarconnectionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

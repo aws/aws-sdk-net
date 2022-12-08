@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.Appflow.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.Appflow
     /// <summary>
     /// Configuration for accessing Amazon Appflow service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonAppflowConfig : ClientConfig
     {
         private static readonly string UserAgentString =

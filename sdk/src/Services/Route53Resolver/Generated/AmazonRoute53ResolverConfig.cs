@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.Route53Resolver.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.Route53Resolver
     /// <summary>
     /// Configuration for accessing Amazon Route53Resolver service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonRoute53ResolverConfig : ClientConfig
     {
         private static readonly string UserAgentString =

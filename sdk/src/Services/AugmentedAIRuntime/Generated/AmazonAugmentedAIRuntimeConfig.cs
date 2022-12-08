@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.AugmentedAIRuntime.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.AugmentedAIRuntime
     /// <summary>
     /// Configuration for accessing Amazon AugmentedAIRuntime service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonAugmentedAIRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =

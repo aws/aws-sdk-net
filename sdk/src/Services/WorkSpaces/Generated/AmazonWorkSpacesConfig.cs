@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.WorkSpaces.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.WorkSpaces
     /// <summary>
     /// Configuration for accessing Amazon WorkSpaces service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonWorkSpacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =

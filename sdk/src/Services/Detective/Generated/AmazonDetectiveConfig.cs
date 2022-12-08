@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.Detective.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.Detective
     /// <summary>
     /// Configuration for accessing Amazon Detective service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonDetectiveConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.Kinesis.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.Kinesis
     /// <summary>
     /// Configuration for accessing Amazon Kinesis service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonKinesisConfig : ClientConfig
     {
         private static readonly string UserAgentString =

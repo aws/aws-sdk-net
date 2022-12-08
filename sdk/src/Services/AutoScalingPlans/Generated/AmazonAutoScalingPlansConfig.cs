@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.AutoScalingPlans.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.AutoScalingPlans
     /// <summary>
     /// Configuration for accessing Amazon AutoScalingPlans service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonAutoScalingPlansConfig : ClientConfig
     {
         private static readonly string UserAgentString =

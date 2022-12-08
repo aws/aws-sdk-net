@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.CodeStarNotifications.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.CodeStarNotifications
     /// <summary>
     /// Configuration for accessing Amazon CodeStarNotifications service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonCodeStarNotificationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

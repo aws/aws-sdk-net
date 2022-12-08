@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.SupportApp.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.SupportApp
     /// <summary>
     /// Configuration for accessing Amazon SupportApp service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonSupportAppConfig : ClientConfig
     {
         private static readonly string UserAgentString =

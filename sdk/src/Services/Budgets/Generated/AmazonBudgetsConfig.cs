@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.Budgets.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.Budgets
     /// <summary>
     /// Configuration for accessing Amazon Budgets service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonBudgetsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

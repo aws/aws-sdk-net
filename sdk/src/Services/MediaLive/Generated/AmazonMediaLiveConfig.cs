@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.MediaLive.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.MediaLive
     /// <summary>
     /// Configuration for accessing Amazon MediaLive service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonMediaLiveConfig : ClientConfig
     {
         private static readonly string UserAgentString =

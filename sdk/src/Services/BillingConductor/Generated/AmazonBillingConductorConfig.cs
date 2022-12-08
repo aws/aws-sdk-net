@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.BillingConductor.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.BillingConductor
     /// <summary>
     /// Configuration for accessing Amazon BillingConductor service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonBillingConductorConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.CloudWatchRUM.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.CloudWatchRUM
     /// <summary>
     /// Configuration for accessing Amazon CloudWatchRUM service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonCloudWatchRUMConfig : ClientConfig
     {
         private static readonly string UserAgentString =

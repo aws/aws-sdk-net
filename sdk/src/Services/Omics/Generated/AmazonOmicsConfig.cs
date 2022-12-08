@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.Omics.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.Omics
     /// <summary>
     /// Configuration for accessing Amazon Omics service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonOmicsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

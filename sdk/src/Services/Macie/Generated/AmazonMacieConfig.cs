@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.Macie.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.Macie
     /// <summary>
     /// Configuration for accessing Amazon Macie service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonMacieConfig : ClientConfig
     {
         private static readonly string UserAgentString =

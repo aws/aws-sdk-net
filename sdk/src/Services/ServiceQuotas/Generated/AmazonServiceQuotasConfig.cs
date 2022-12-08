@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ServiceQuotas.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ServiceQuotas
     /// <summary>
     /// Configuration for accessing Amazon ServiceQuotas service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonServiceQuotasConfig : ClientConfig
     {
         private static readonly string UserAgentString =

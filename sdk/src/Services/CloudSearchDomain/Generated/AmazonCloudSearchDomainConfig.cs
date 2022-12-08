@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.CloudSearchDomain.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.CloudSearchDomain
     /// <summary>
     /// Configuration for accessing Amazon CloudSearchDomain service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonCloudSearchDomainConfig : ClientConfig
     {
         private static readonly string UserAgentString =

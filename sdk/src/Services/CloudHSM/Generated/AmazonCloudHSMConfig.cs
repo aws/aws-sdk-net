@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.CloudHSM.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.CloudHSM
     /// <summary>
     /// Configuration for accessing Amazon CloudHSM service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonCloudHSMConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.SecretsManager.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.SecretsManager
     /// <summary>
     /// Configuration for accessing Amazon SecretsManager service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonSecretsManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

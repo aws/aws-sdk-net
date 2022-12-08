@@ -36,30 +36,38 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line default
             #line hidden
-            this.Write("\r\nusing System;\r\nusing Amazon.Runtime;\r\nusing Amazon.Util.Internal;\r\nusing ");
+            this.Write("\r\nusing System;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r\nusing Ama" +
+                    "zon.Util.Internal;\r\nusing ");
             
-            #line 13 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 14 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Internal;\r\n\r\nnamespace ");
             
-            #line 15 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 16 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    /// <summary>\r\n    /// Configuration for accessing Amazon ");
             
-            #line 18 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 19 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
-            this.Write(" service\r\n    /// </summary>\r\n    public partial class Amazon");
+            this.Write(" service\r\n    /// </summary>\r\n    [AWSSignerType(\"");
             
-            #line 20 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 21 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Config.ServiceModel.SignatureVersion));
+            
+            #line default
+            #line hidden
+            this.Write("\")]\r\n    public partial class Amazon");
+            
+            #line 22 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -67,7 +75,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config : ClientConfig\r\n    {\r\n        private static readonly string UserAgentStr" +
                     "ing =\r\n            InternalSDKUtils.BuildUserAgentString(\"");
             
-            #line 23 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 25 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceFileVersion));
             
             #line default
@@ -76,7 +84,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "ry>\r\n        /// Default constructor\r\n        /// </summary>\r\n        public Ama" +
                     "zon");
             
-            #line 30 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 32 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -84,14 +92,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config()\r\n            : base(new Amazon.Runtime.Internal.DefaultConfigurationProv" +
                     "ider(Amazon");
             
-            #line 31 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 33 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("DefaultConfiguration.GetAllConfigurations()))\r\n        {\r\n");
             
-            #line 33 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 35 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
 
             if(!string.IsNullOrEmpty(this.Config.AuthenticationServiceName))
             {
@@ -101,14 +109,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            this.AuthenticationServiceName = \"");
             
-            #line 37 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 39 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AuthenticationServiceName));
             
             #line default
             #line hidden
             this.Write("\";\r\n");
             
-            #line 38 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 40 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
 
             }
             if(this.Config.OverrideMaxRetries.HasValue)
@@ -119,14 +127,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            this.MaxErrorRetry = ");
             
-            #line 43 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 45 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.OverrideMaxRetries));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 44 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 46 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
 
             }
             if(!string.IsNullOrEmpty(this.Config.DefaultRegion))
@@ -138,14 +146,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("            var region = FallbackRegionFactory.GetRegionEndpoint(false);\r\n       " +
                     "     this.RegionEndpoint = region ?? RegionEndpoint.");
             
-            #line 50 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 52 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.DefaultRegion));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 51 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 53 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
 
             }
 
@@ -153,7 +161,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line default
             #line hidden
             
-            #line 54 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 56 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
 
             if (this.Config.EndpointsRuleSet != null)
             {
@@ -163,14 +171,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            this.EndpointProvider = new Amazon");
             
-            #line 58 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 60 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("EndpointProvider();\r\n");
             
-            #line 59 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 61 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
 
             }
 
@@ -188,7 +196,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             {
                 return """);
             
-            #line 71 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 73 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.RegionLookupName));
             
             #line default
@@ -197,7 +205,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "ceVersion property.\r\n        /// </summary>\r\n        public override string Serv" +
                     "iceVersion\r\n        {\r\n            get\r\n            {\r\n                return \"");
             
-            #line 82 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 84 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.APIVersion));
             
             #line default
@@ -219,7 +227,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
 
 ");
             
-            #line 97 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 99 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
  if (this.Config.EndpointsRuleSet != null)
        foreach(var parameter in this.Config.ServiceModel.ClientContextParameters) {
 
@@ -228,28 +236,28 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        /// <summary>\r\n        /// ");
             
-            #line 101 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 103 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(parameter.documentation));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        public ");
             
-            #line 103 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 105 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(parameter.nativeType));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 103 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 105 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(parameter.name));
             
             #line default
             #line hidden
             this.Write(" { get; set; }\r\n\r\n");
             
-            #line 105 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 107 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
 }
             
             #line default

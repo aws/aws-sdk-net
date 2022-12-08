@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.AppMesh.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.AppMesh
     /// <summary>
     /// Configuration for accessing Amazon AppMesh service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonAppMeshConfig : ClientConfig
     {
         private static readonly string UserAgentString =

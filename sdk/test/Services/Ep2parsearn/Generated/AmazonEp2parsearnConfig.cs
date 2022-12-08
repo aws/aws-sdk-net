@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.Ep2parsearn.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.Ep2parsearn
     /// <summary>
     /// Configuration for accessing Amazon Ep2parsearn service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonEp2parsearnConfig : ClientConfig
     {
         private static readonly string UserAgentString =

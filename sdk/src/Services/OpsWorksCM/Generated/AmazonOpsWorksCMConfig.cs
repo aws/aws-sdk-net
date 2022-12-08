@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.OpsWorksCM.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.OpsWorksCM
     /// <summary>
     /// Configuration for accessing Amazon OpsWorksCM service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonOpsWorksCMConfig : ClientConfig
     {
         private static readonly string UserAgentString =

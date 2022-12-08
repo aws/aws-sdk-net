@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.NimbleStudio.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.NimbleStudio
     /// <summary>
     /// Configuration for accessing Amazon NimbleStudio service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonNimbleStudioConfig : ClientConfig
     {
         private static readonly string UserAgentString =

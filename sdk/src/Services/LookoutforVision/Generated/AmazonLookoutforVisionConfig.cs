@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.LookoutforVision.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.LookoutforVision
     /// <summary>
     /// Configuration for accessing Amazon LookoutforVision service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonLookoutforVisionConfig : ClientConfig
     {
         private static readonly string UserAgentString =

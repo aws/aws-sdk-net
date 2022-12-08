@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ComprehendMedical.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ComprehendMedical
     /// <summary>
     /// Configuration for accessing Amazon ComprehendMedical service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonComprehendMedicalConfig : ClientConfig
     {
         private static readonly string UserAgentString =

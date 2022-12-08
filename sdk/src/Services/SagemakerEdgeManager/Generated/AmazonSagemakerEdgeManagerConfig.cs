@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.SagemakerEdgeManager.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.SagemakerEdgeManager
     /// <summary>
     /// Configuration for accessing Amazon SagemakerEdgeManager service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonSagemakerEdgeManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

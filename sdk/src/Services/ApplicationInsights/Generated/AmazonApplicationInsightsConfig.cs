@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ApplicationInsights.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ApplicationInsights
     /// <summary>
     /// Configuration for accessing Amazon ApplicationInsights service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonApplicationInsightsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

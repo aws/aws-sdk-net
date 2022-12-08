@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.IVS.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.IVS
     /// <summary>
     /// Configuration for accessing Amazon IVS service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonIVSConfig : ClientConfig
     {
         private static readonly string UserAgentString =

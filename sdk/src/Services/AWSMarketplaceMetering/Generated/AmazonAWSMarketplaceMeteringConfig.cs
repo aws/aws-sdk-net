@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.AWSMarketplaceMetering.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.AWSMarketplaceMetering
     /// <summary>
     /// Configuration for accessing Amazon AWSMarketplaceMetering service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonAWSMarketplaceMeteringConfig : ClientConfig
     {
         private static readonly string UserAgentString =

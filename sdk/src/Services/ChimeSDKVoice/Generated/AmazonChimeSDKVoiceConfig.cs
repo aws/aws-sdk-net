@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ChimeSDKVoice.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ChimeSDKVoice
     /// <summary>
     /// Configuration for accessing Amazon ChimeSDKVoice service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonChimeSDKVoiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

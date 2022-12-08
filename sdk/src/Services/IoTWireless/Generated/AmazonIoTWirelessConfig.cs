@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.IoTWireless.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.IoTWireless
     /// <summary>
     /// Configuration for accessing Amazon IoTWireless service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonIoTWirelessConfig : ClientConfig
     {
         private static readonly string UserAgentString =

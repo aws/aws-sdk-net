@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.NetworkFirewall.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.NetworkFirewall
     /// <summary>
     /// Configuration for accessing Amazon NetworkFirewall service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonNetworkFirewallConfig : ClientConfig
     {
         private static readonly string UserAgentString =

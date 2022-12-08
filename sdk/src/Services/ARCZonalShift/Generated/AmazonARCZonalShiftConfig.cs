@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ARCZonalShift.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ARCZonalShift
     /// <summary>
     /// Configuration for accessing Amazon ARCZonalShift service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonARCZonalShiftConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.PinpointSMSVoice.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.PinpointSMSVoice
     /// <summary>
     /// Configuration for accessing Amazon PinpointSMSVoice service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonPinpointSMSVoiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

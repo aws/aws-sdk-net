@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.Private5G.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.Private5G
     /// <summary>
     /// Configuration for accessing Amazon Private5G service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonPrivate5GConfig : ClientConfig
     {
         private static readonly string UserAgentString =

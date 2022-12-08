@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.Ivschat.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.Ivschat
     /// <summary>
     /// Configuration for accessing Amazon Ivschat service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonIvschatConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.QLDBSession.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.QLDBSession
     /// <summary>
     /// Configuration for accessing Amazon QLDBSession service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonQLDBSessionConfig : ClientConfig
     {
         private static readonly string UserAgentString =

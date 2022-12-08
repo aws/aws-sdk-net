@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.Snowball.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.Snowball
     /// <summary>
     /// Configuration for accessing Amazon Snowball service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonSnowballConfig : ClientConfig
     {
         private static readonly string UserAgentString =

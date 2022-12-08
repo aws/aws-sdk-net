@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ElasticInference.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ElasticInference
     /// <summary>
     /// Configuration for accessing Amazon ElasticInference service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonElasticInferenceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.IoTFleetWise.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.IoTFleetWise
     /// <summary>
     /// Configuration for accessing Amazon IoTFleetWise service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonIoTFleetWiseConfig : ClientConfig
     {
         private static readonly string UserAgentString =

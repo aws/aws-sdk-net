@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.MigrationHubRefactorSpaces.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.MigrationHubRefactorSpaces
     /// <summary>
     /// Configuration for accessing Amazon MigrationHubRefactorSpaces service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonMigrationHubRefactorSpacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =

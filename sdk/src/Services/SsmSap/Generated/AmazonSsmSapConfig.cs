@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.SsmSap.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.SsmSap
     /// <summary>
     /// Configuration for accessing Amazon SsmSap service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonSsmSapConfig : ClientConfig
     {
         private static readonly string UserAgentString =

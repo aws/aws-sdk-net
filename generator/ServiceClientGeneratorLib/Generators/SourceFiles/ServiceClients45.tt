@@ -57,6 +57,8 @@ namespace <#=this.Config.Namespace#>
     // Generates basic constructors for the service if enabled in the model
     if(this.Config.GenerateConstructors)
     {
+        var usesBearerAuth = this.Config.ServiceModel.SignatureVersion == "bearer";
+        var fallbackToAnonymousCredentials = usesBearerAuth;
 #>
         #region Constructors
 
@@ -76,7 +78,7 @@ namespace <#=this.Config.Namespace#>
         ///
         /// </summary>
         public Amazon<#=this.Config.ClassName#>Client()
-            : base(FallbackCredentialsFactory.GetCredentials(), new Amazon<#=this.Config.ClassName#>Config()) { }
+            : base(FallbackCredentialsFactory.GetCredentials(<#= fallbackToAnonymousCredentials ? "fallbackToAnonymous: true" : ""#>), new Amazon<#=this.Config.ClassName#>Config()) { }
 
         /// <summary>
         /// Constructs Amazon<#=this.Config.ClassName#>Client with the credentials loaded from the application's
@@ -95,7 +97,7 @@ namespace <#=this.Config.Namespace#>
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public Amazon<#=this.Config.ClassName#>Client(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new Amazon<#=this.Config.ClassName#>Config{RegionEndpoint = region}) { }
+            : base(FallbackCredentialsFactory.GetCredentials(<#= fallbackToAnonymousCredentials ? "fallbackToAnonymous: true" : ""#>), new Amazon<#=this.Config.ClassName#>Config{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs Amazon<#=this.Config.ClassName#>Client with the credentials loaded from the application's
@@ -114,7 +116,7 @@ namespace <#=this.Config.Namespace#>
         /// </summary>
         /// <param name="config">The Amazon<#=this.Config.ClassName#>Client Configuration Object</param>
         public Amazon<#=this.Config.ClassName#>Client(Amazon<#=this.Config.ClassName#>Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(<#= fallbackToAnonymousCredentials ? "fallbackToAnonymous: true" : ""#>), config) { }
 
         /// <summary>
         /// Constructs Amazon<#=this.Config.ClassName#>Client with AWS Credentials

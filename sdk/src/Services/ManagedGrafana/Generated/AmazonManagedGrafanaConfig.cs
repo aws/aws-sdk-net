@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ManagedGrafana.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ManagedGrafana
     /// <summary>
     /// Configuration for accessing Amazon ManagedGrafana service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonManagedGrafanaConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.Greengrass.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.Greengrass
     /// <summary>
     /// Configuration for accessing Amazon Greengrass service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonGreengrassConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ElasticTranscoder.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ElasticTranscoder
     /// <summary>
     /// Configuration for accessing Amazon ElasticTranscoder service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonElasticTranscoderConfig : ClientConfig
     {
         private static readonly string UserAgentString =

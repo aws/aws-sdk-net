@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.Pricing.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.Pricing
     /// <summary>
     /// Configuration for accessing Amazon Pricing service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonPricingConfig : ClientConfig
     {
         private static readonly string UserAgentString =

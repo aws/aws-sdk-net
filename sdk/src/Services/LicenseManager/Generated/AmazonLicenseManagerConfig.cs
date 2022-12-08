@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.LicenseManager.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.LicenseManager
     /// <summary>
     /// Configuration for accessing Amazon LicenseManager service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonLicenseManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

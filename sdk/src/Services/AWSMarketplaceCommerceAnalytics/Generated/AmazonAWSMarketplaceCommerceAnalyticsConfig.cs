@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.AWSMarketplaceCommerceAnalytics.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
     /// <summary>
     /// Configuration for accessing Amazon AWSMarketplaceCommerceAnalytics service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonAWSMarketplaceCommerceAnalyticsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.GroundStation.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.GroundStation
     /// <summary>
     /// Configuration for accessing Amazon GroundStation service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonGroundStationConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.MediaPackage.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.MediaPackage
     /// <summary>
     /// Configuration for accessing Amazon MediaPackage service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonMediaPackageConfig : ClientConfig
     {
         private static readonly string UserAgentString =

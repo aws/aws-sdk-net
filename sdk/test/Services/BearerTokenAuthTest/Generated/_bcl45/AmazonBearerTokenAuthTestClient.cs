@@ -61,7 +61,7 @@ namespace Amazon.BearerTokenAuthTest
         ///
         /// </summary>
         public AmazonBearerTokenAuthTestClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBearerTokenAuthTestConfig()) { }
+            : base(FallbackCredentialsFactory.GetCredentials(fallbackToAnonymous: true), new AmazonBearerTokenAuthTestConfig()) { }
 
         /// <summary>
         /// Constructs AmazonBearerTokenAuthTestClient with the credentials loaded from the application's
@@ -80,7 +80,7 @@ namespace Amazon.BearerTokenAuthTest
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonBearerTokenAuthTestClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBearerTokenAuthTestConfig{RegionEndpoint = region}) { }
+            : base(FallbackCredentialsFactory.GetCredentials(fallbackToAnonymous: true), new AmazonBearerTokenAuthTestConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonBearerTokenAuthTestClient with the credentials loaded from the application's
@@ -99,7 +99,7 @@ namespace Amazon.BearerTokenAuthTest
         /// </summary>
         /// <param name="config">The AmazonBearerTokenAuthTestClient Configuration Object</param>
         public AmazonBearerTokenAuthTestClient(AmazonBearerTokenAuthTestConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(fallbackToAnonymous: true), config) { }
 
         /// <summary>
         /// Constructs AmazonBearerTokenAuthTestClient with AWS Credentials

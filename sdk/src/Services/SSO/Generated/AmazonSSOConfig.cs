@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.SSO.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.SSO
     /// <summary>
     /// Configuration for accessing Amazon SSO service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonSSOConfig : ClientConfig
     {
         private static readonly string UserAgentString =

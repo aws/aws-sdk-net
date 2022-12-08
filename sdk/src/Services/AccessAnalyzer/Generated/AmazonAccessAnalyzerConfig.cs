@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.AccessAnalyzer.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.AccessAnalyzer
     /// <summary>
     /// Configuration for accessing Amazon AccessAnalyzer service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonAccessAnalyzerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.DatabaseMigrationService.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.DatabaseMigrationService
     /// <summary>
     /// Configuration for accessing Amazon DatabaseMigrationService service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonDatabaseMigrationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

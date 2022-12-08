@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.CloudWatchEvidently.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.CloudWatchEvidently
     /// <summary>
     /// Configuration for accessing Amazon CloudWatchEvidently service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonCloudWatchEvidentlyConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.Glue.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.Glue
     /// <summary>
     /// Configuration for accessing Amazon Glue service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonGlueConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.PaginatorsTest.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.PaginatorsTest
     /// <summary>
     /// Configuration for accessing Amazon PaginatorsTest service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonPaginatorsTestConfig : ClientConfig
     {
         private static readonly string UserAgentString =

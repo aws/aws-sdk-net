@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.GameSparks.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.GameSparks
     /// <summary>
     /// Configuration for accessing Amazon GameSparks service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonGameSparksConfig : ClientConfig
     {
         private static readonly string UserAgentString =

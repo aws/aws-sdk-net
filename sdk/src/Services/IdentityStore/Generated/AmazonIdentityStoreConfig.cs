@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.IdentityStore.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.IdentityStore
     /// <summary>
     /// Configuration for accessing Amazon IdentityStore service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonIdentityStoreConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.WorkDocs.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.WorkDocs
     /// <summary>
     /// Configuration for accessing Amazon WorkDocs service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonWorkDocsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

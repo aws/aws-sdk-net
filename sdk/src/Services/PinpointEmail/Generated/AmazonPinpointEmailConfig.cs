@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.PinpointEmail.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.PinpointEmail
     /// <summary>
     /// Configuration for accessing Amazon PinpointEmail service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonPinpointEmailConfig : ClientConfig
     {
         private static readonly string UserAgentString =

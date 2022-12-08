@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.SecurityHub.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.SecurityHub
     /// <summary>
     /// Configuration for accessing Amazon SecurityHub service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonSecurityHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =

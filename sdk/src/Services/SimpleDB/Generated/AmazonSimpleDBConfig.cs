@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.SimpleDB.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.SimpleDB
     /// <summary>
     /// Configuration for accessing Amazon SimpleDB service
     /// </summary>
+    [AWSSignerType("v2")]
     public partial class AmazonSimpleDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =

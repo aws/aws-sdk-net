@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.StepFunctions.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.StepFunctions
     /// <summary>
     /// Configuration for accessing Amazon StepFunctions service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonStepFunctionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

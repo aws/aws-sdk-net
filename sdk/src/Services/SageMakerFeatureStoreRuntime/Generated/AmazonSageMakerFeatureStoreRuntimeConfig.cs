@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.SageMakerFeatureStoreRuntime.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
     /// <summary>
     /// Configuration for accessing Amazon SageMakerFeatureStoreRuntime service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonSageMakerFeatureStoreRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =

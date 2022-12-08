@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.MachineLearning.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.MachineLearning
     /// <summary>
     /// Configuration for accessing Amazon MachineLearning service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonMachineLearningConfig : ClientConfig
     {
         private static readonly string UserAgentString =

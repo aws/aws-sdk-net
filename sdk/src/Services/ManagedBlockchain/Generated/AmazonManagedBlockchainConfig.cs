@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.ManagedBlockchain.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.ManagedBlockchain
     /// <summary>
     /// Configuration for accessing Amazon ManagedBlockchain service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonManagedBlockchainConfig : ClientConfig
     {
         private static readonly string UserAgentString =

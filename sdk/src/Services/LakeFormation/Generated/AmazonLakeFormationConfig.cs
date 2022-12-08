@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.LakeFormation.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.LakeFormation
     /// <summary>
     /// Configuration for accessing Amazon LakeFormation service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonLakeFormationConfig : ClientConfig
     {
         private static readonly string UserAgentString =

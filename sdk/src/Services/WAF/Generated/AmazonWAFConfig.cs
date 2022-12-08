@@ -19,6 +19,7 @@
 
 using System;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using Amazon.WAF.Internal;
 
@@ -27,6 +28,7 @@ namespace Amazon.WAF
     /// <summary>
     /// Configuration for accessing Amazon WAF service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonWAFConfig : ClientConfig
     {
         private static readonly string UserAgentString =
