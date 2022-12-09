@@ -33,12 +33,29 @@ namespace Amazon.MediaPackageVod.Model
     /// </summary>
     public partial class DescribePackagingGroupResponse : AmazonWebServiceResponse
     {
+        private int? _approximateAssetCount;
         private string _arn;
         private Authorization _authorization;
         private string _domainName;
         private EgressAccessLogs _egressAccessLogs;
         private string _id;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property ApproximateAssetCount. The approximate asset count of the
+        /// PackagingGroup.
+        /// </summary>
+        public int ApproximateAssetCount
+        {
+            get { return this._approximateAssetCount.GetValueOrDefault(); }
+            set { this._approximateAssetCount = value; }
+        }
+
+        // Check to see if ApproximateAssetCount property is set
+        internal bool IsSetApproximateAssetCount()
+        {
+            return this._approximateAssetCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. The ARN of the PackagingGroup.
