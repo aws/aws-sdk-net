@@ -68,6 +68,7 @@ namespace Amazon.IoTFleetWise.Model
         /// A specified value for the attribute.
         /// </para>
         /// </summary>
+        [Obsolete("assignedValue is no longer in use")]
         public string AssignedValue
         {
             get { return this._assignedValue; }
