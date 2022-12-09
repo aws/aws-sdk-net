@@ -8348,6 +8348,10 @@ namespace Amazon.MediaLive
         /// Constant HD for InputDeviceType
         /// </summary>
         public static readonly InputDeviceType HD = new InputDeviceType("HD");
+        /// <summary>
+        /// Constant UHD for InputDeviceType
+        /// </summary>
+        public static readonly InputDeviceType UHD = new InputDeviceType("UHD");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

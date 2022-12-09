@@ -94,6 +94,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Height = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("latencyMs", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.LatencyMs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("maxBitrate", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
