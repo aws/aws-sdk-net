@@ -1,3 +1,13 @@
+### 3.7.437.0 (2022-12-09 19:21 UTC)
+* CloudWatchLogs (3.7.102.11)
+	* Doc-only update for CloudWatch Logs, for Tagging Permissions clarifications
+* IoTFleetWise (3.7.101.0)
+	* Deprecated assignedValue property for actuators and attributes.  Added a message to invalid nodes and invalid decoder manifest exceptions.
+* MediaLive (3.7.102.0)
+	* Link devices now support buffer size (latency) configuration. A higher latency value means a longer delay in transmitting from the device to MediaLive, but improved resiliency. A lower latency value means a shorter delay, but less resiliency.
+* MediaPackageVod (3.7.102.0)
+	* This release provides the approximate number of assets in a packaging group.
+
 ### 3.7.436.0 (2022-12-08 19:21 UTC)
 * AutoScaling (3.7.102.0)
 	* Adds support for metric math for target tracking scaling policies, saving you the cost and effort of publishing a custom metric to CloudWatch. Also adds support for VPC Lattice by adding the Attach/Detach/DescribeTrafficSources APIs and a new health check type to the CreateAutoScalingGroup API.
