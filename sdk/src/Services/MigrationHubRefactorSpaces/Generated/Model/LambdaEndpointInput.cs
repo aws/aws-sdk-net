@@ -38,7 +38,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Lambda endpoint. 
+        /// The Amazon Resource Name (ARN) of the Lambda function or alias.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

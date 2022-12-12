@@ -1042,19 +1042,19 @@
     <property>Amazon.MigrationHubRefactorSpaces.Model.LambdaEndpointConfig.Arn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(: (\$LATEST|[a-zA-Z0-9-_]+))?$</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubRefactorSpaces.Model.LambdaEndpointInput.Arn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(: (\$LATEST|[a-zA-Z0-9-_]+))?$</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubRefactorSpaces.Model.LambdaEndpointSummary.Arn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(: (\$LATEST|[a-zA-Z0-9-_]+))?$</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubRefactorSpaces.Model.RouteSummary.ApplicationId</property>

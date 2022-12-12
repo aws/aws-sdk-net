@@ -214,7 +214,10 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property UrlEndpoint. 
         /// <para>
-        /// The configuration for the URL endpoint type.
+        /// The configuration for the URL endpoint type. When creating a route to a service, Refactor
+        /// Spaces automatically resolves the address in the <code>UrlEndpointInput</code> object
+        /// URL when the Domain Name System (DNS) time-to-live (TTL) expires, or every 60 seconds
+        /// for TTLs less than 60 seconds.
         /// </para>
         /// </summary>
         public UrlEndpointInput UrlEndpoint

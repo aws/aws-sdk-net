@@ -31,18 +31,24 @@ namespace Amazon.MigrationHubRefactorSpaces
     /// <summary>
     /// Interface for accessing MigrationHubRefactorSpaces
     ///
-    /// Amazon Web Services Migration Hub Refactor Spaces
+    /// Amazon Web Services Migration Hub Refactor Spaces 
+    /// <para>
+    /// This API reference provides descriptions, syntax, and other details about each of
+    /// the actions and data types for Amazon Web Services Migration Hub Refactor Spaces (Refactor
+    /// Spaces). The topic for each action shows the API request parameters and the response.
+    /// Alternatively, you can use one of the Amazon Web Services SDKs to access an API that
+    /// is tailored to the programming language or platform that you're using. For more information,
+    /// see <a href="https://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.
     /// 
-    ///  <pre><code> &lt;p&gt;This API reference provides descriptions, syntax, and other
-    /// details about each of the actions and data types for Amazon Web Services Migration
-    /// Hub Refactor Spaces (Refactor Spaces). The topic for each action shows the API request
-    /// parameters and the response. Alternatively, you can use one of the Amazon Web Services
-    /// SDKs to access an API that is tailored to the programming language or platform that
-    /// you're using. For more information, see &lt;a href=&quot;https://aws.amazon.com/tools/#SDKs&quot;&gt;Amazon
-    /// Web Services SDKs&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;To share Refactor Spaces environments
-    /// with other Amazon Web Services accounts or with Organizations and their OUs, use Resource
-    /// Access Manager's &lt;code&gt;CreateResourceShare&lt;/code&gt; API. See &lt;a href=&quot;https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html&quot;&gt;CreateResourceShare&lt;/a&gt;
-    /// in the &lt;i&gt;Amazon Web Services RAM API Reference&lt;/i&gt;.&lt;/p&gt; </code></pre>
+    ///  
+    /// <para>
+    /// To share Refactor Spaces environments with other Amazon Web Services accounts or with
+    /// Organizations and their OUs, use Resource Access Manager's <code>CreateResourceShare</code>
+    /// API. See <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
+    /// in the <i>Amazon Web Services RAM API Reference</i>.
+    /// </para>
+    /// 
+    /// </para>
     /// </summary>
     public partial interface IAmazonMigrationHubRefactorSpaces : IAmazonService, IDisposable
     {
@@ -276,6 +282,14 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// </para>
         ///  
         /// <para>
+        /// Refactor Spaces automatically resolves the public Domain Name System (DNS) names that
+        /// are set in <a>CreateServiceRequest$UrlEndpoint</a> when you create a service. The
+        /// DNS names resolve when the DNS time-to-live (TTL) expires, or every 60 seconds for
+        /// TTLs less than 60 seconds. This periodic DNS resolution ensures that the route configuration
+        /// remains up-to-date. 
+        /// </para>
+        ///  
+        /// <para>
         /// For private URLS, a target group is created on the Elastic Load Balancing and the
         /// target group health check is run. The <code>HealthCheckProtocol</code>, <code>HealthCheckPort</code>,
         /// and <code>HealthCheckPath</code> are the same protocol, port, and path specified in
@@ -377,6 +391,14 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// the specified ARN exists. If it does not exist, the health check fails. For public
         /// URLs, a connection is opened to the public endpoint. If the URL is not reachable,
         /// the health check fails. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Refactor Spaces automatically resolves the public Domain Name System (DNS) names that
+        /// are set in <a>CreateServiceRequest$UrlEndpoint</a> when you create a service. The
+        /// DNS names resolve when the DNS time-to-live (TTL) expires, or every 60 seconds for
+        /// TTLs less than 60 seconds. This periodic DNS resolution ensures that the route configuration
+        /// remains up-to-date. 
         /// </para>
         ///  
         /// <para>
