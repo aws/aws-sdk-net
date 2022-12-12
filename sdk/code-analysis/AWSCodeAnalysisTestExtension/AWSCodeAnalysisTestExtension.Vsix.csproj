@@ -1172,6 +1172,10 @@
       <Project>{67B70D70-8A47-49ED-B136-B039E557E6B6}</Project>
       <Name>AWSSDK.SageMakerGeospatial.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SageMakerMetrics/AWSSDK.SageMakerMetrics.CodeAnalysis.csproj">
+      <Project>{91868BFD-EEC0-43A0-8982-5CE0FA115DE0}</Project>
+      <Name>AWSSDK.SageMakerMetrics.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SageMakerRuntime/AWSSDK.SageMakerRuntime.CodeAnalysis.csproj">
       <Project>{D706F3A1-9553-4B25-8BEC-7B68DE5360FD}</Project>
       <Name>AWSSDK.SageMakerRuntime.CodeAnalysis</Name>

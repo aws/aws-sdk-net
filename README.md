@@ -664,6 +664,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This release adds support for Amazon SageMaker Feature Store, which makes it easy for customers to create, version, share, and manage curated data for machine learning (ML) development.
 * [AWSSDK.SageMakerGeospatial](https://www.nuget.org/packages/AWSSDK.SageMakerGeospatial/)
 	* This release provides Amazon SageMaker geospatial APIs to build, train, deploy and visualize geospatial models.
+* [AWSSDK.SageMakerMetrics](https://www.nuget.org/packages/AWSSDK.SageMakerMetrics/)
+	* This release introduces support SageMaker Metrics APIs.
 * [AWSSDK.SageMakerRuntime](https://www.nuget.org/packages/AWSSDK.SageMakerRuntime/)
 	* Amazon SageMaker is a fully-managed service that enables data scientists and developers to quickly and easily build, train, and deploy machine learning models, at scale.
 * [AWSSDK.SavingsPlans](https://www.nuget.org/packages/AWSSDK.SavingsPlans/)
