@@ -53,12 +53,14 @@ namespace Amazon.CustomerProfiles.Model
         private string _emailAddress;
         private string _firstName;
         private Gender _gender;
+        private string _genderString;
         private string _homePhoneNumber;
         private string _lastName;
         private Address _mailingAddress;
         private string _middleName;
         private string _mobilePhoneNumber;
         private PartyType _partyType;
+        private string _partyTypeString;
         private string _personalEmailAddress;
         private string _phoneNumber;
         private Address _shippingAddress;
@@ -308,6 +310,25 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GenderString. 
+        /// <para>
+        /// An alternative to <code>Gender</code> which accepts any string as input.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string GenderString
+        {
+            get { return this._genderString; }
+            set { this._genderString = value; }
+        }
+
+        // Check to see if GenderString property is set
+        internal bool IsSetGenderString()
+        {
+            return this._genderString != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HomePhoneNumber. 
         /// <para>
         /// The customer’s home phone number.
@@ -417,6 +438,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetPartyType()
         {
             return this._partyType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PartyTypeString. 
+        /// <para>
+        /// An alternative to <code>PartyType</code> which accepts any string as input.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string PartyTypeString
+        {
+            get { return this._partyTypeString; }
+            set { this._partyTypeString = value; }
+        }
+
+        // Check to see if PartyTypeString property is set
+        internal bool IsSetPartyTypeString()
+        {
+            return this._partyTypeString != null;
         }
 
         /// <summary>

@@ -137,6 +137,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.CreateProfileRequest.GenderString</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.CreateProfileRequest.HomePhoneNumber</property>
     <min>1</min>
     <max>255</max>
@@ -153,6 +158,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.CreateProfileRequest.MobilePhoneNumber</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.CreateProfileRequest.PartyTypeString</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -942,6 +952,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.UpdateProfileRequest.GenderString</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.UpdateProfileRequest.HomePhoneNumber</property>
     <min>0</min>
     <max>255</max>
@@ -958,6 +973,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.UpdateProfileRequest.MobilePhoneNumber</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.UpdateProfileRequest.PartyTypeString</property>
     <min>0</min>
     <max>255</max>
   </property-value-rule>

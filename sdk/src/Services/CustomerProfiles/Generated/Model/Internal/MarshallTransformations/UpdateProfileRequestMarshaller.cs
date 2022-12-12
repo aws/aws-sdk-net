@@ -158,6 +158,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Gender);
                 }
 
+                if(publicRequest.IsSetGenderString())
+                {
+                    context.Writer.WritePropertyName("GenderString");
+                    context.Writer.Write(publicRequest.GenderString);
+                }
+
                 if(publicRequest.IsSetHomePhoneNumber())
                 {
                     context.Writer.WritePropertyName("HomePhoneNumber");
@@ -197,6 +203,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("PartyType");
                     context.Writer.Write(publicRequest.PartyType);
+                }
+
+                if(publicRequest.IsSetPartyTypeString())
+                {
+                    context.Writer.WritePropertyName("PartyTypeString");
+                    context.Writer.Write(publicRequest.PartyTypeString);
                 }
 
                 if(publicRequest.IsSetPersonalEmailAddress())
