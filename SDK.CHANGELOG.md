@@ -1,3 +1,26 @@
+### 3.7.438.0 (2022-12-12 19:30 UTC)
+* CustomerProfiles (3.7.102.0)
+	* This release allows custom strings in PartyType and Gender through 2 new attributes in the CreateProfile and UpdateProfile APIs: PartyTypeString and GenderString.
+* EC2 (3.7.113.0)
+	* This release updates DescribeFpgaImages to show supported instance types of AFIs in its response.
+* KinesisVideo (3.7.101.0)
+	* This release adds support for public preview of Kinesis Video Stream at Edge enabling customers to provide configuration for the Kinesis Video Stream EdgeAgent running on an on-premise IoT device. Customers can now locally record from cameras and stream videos to the cloud on configured schedule.
+* LookoutforVision (3.7.100.34)
+	* This documentation update adds kms:GenerateDataKey as a required permission to StartModelPackagingJob.
+* MigrationHubRefactorSpaces (3.7.101.0)
+	* This release adds support for Lambda alias service endpoints. Lambda alias ARNs can now be passed into CreateService.
+* RDS (3.7.108.0)
+	* Update the RDS API model to support copying option groups during the CopyDBSnapshot operation
+* Rekognition (3.7.102.0)
+	* Adds support for "aliases" and "categories", inclusion and exclusion filters for labels and label categories, and aggregating labels by video segment timestamps for Stored Video Label Detection APIs.
+* SageMakerMetrics (3.7.100.0)
+	* This release introduces support SageMaker Metrics APIs.
+* WAFV2 (3.7.101.30)
+	* Documents the naming requirement for logging destinations that you use with web ACLs.
+* Core 3.7.102.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.437.0 (2022-12-09 19:21 UTC)
 * CloudWatchLogs (3.7.102.11)
 	* Doc-only update for CloudWatch Logs, for Tagging Permissions clarifications
