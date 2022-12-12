@@ -58,6 +58,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetCopyOptionGroup())
+                {
+                    request.Parameters.Add("CopyOptionGroup", StringUtils.FromBool(publicRequest.CopyOptionGroup));
+                }
                 if(publicRequest.IsSetCopyTags())
                 {
                     request.Parameters.Add("CopyTags", StringUtils.FromBool(publicRequest.CopyTags));

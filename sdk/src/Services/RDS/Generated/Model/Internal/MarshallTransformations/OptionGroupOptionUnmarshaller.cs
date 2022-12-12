@@ -54,6 +54,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("CopyableCrossAccount", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.CopyableCrossAccount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DefaultPort", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

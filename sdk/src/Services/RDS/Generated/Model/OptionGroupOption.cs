@@ -33,6 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class OptionGroupOption
     {
+        private bool? _copyableCrossAccount;
         private int? _defaultPort;
         private string _description;
         private string _engineName;
@@ -49,6 +50,24 @@ namespace Amazon.RDS.Model
         private bool? _requiresAutoMinorEngineVersionUpgrade;
         private bool? _supportsOptionVersionDowngrade;
         private bool? _vpcOnly;
+
+        /// <summary>
+        /// Gets and sets the property CopyableCrossAccount. 
+        /// <para>
+        /// Specifies whether the option can be copied across Amazon Web Services accounts.
+        /// </para>
+        /// </summary>
+        public bool CopyableCrossAccount
+        {
+            get { return this._copyableCrossAccount.GetValueOrDefault(); }
+            set { this._copyableCrossAccount = value; }
+        }
+
+        // Check to see if CopyableCrossAccount property is set
+        internal bool IsSetCopyableCrossAccount()
+        {
+            return this._copyableCrossAccount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DefaultPort. 

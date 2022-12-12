@@ -51,6 +51,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class CopyDBSnapshotRequest : AmazonRDSRequest
     {
+        private bool? _copyOptionGroup;
         private bool? _copyTags;
         private string _kmsKeyId;
         private string _optionGroupName;
@@ -61,10 +62,31 @@ namespace Amazon.RDS.Model
         private string _targetDBSnapshotIdentifier;
 
         /// <summary>
+        /// Gets and sets the property CopyOptionGroup. 
+        /// <para>
+        /// A value that indicates whether to copy the DB option group associated with the source
+        /// DB snapshot to the target Amazon Web Services account and associate with the target
+        /// DB snapshot. The associated option group can be copied only with cross-account snapshot
+        /// copy calls.
+        /// </para>
+        /// </summary>
+        public bool CopyOptionGroup
+        {
+            get { return this._copyOptionGroup.GetValueOrDefault(); }
+            set { this._copyOptionGroup = value; }
+        }
+
+        // Check to see if CopyOptionGroup property is set
+        internal bool IsSetCopyOptionGroup()
+        {
+            return this._copyOptionGroup.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property CopyTags. 
         /// <para>
         /// A value that indicates whether to copy all tags from the source DB snapshot to the
-        /// target DB snapshot. By default, tags are not copied.
+        /// target DB snapshot. By default, tags aren't copied.
         /// </para>
         /// </summary>
         public bool CopyTags
