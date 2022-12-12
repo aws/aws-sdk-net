@@ -63,6 +63,10 @@ namespace Amazon.LookoutforVision.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>kms:GenerateDataKey</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>greengrass:CreateComponentVersion</code> 
     /// </para>
     ///  </li> <li> 
