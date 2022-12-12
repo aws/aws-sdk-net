@@ -334,6 +334,11 @@ namespace Amazon.WAFV2.Model
         /// Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
         /// 
         /// </para>
+        ///  
+        /// <para>
+        /// Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or
+        /// <code>co.uk</code> as token domains.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> TokenDomains
