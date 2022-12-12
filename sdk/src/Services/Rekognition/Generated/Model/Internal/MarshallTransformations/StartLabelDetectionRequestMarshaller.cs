@@ -73,6 +73,17 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClientRequestToken);
                 }
 
+                if(publicRequest.IsSetFeatures())
+                {
+                    context.Writer.WritePropertyName("Features");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFeaturesListValue in publicRequest.Features)
+                    {
+                            context.Writer.Write(publicRequestFeaturesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetJobTag())
                 {
                     context.Writer.WritePropertyName("JobTag");
@@ -92,6 +103,17 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
                     var marshaller = NotificationChannelMarshaller.Instance;
                     marshaller.Marshall(publicRequest.NotificationChannel, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSettings())
+                {
+                    context.Writer.WritePropertyName("Settings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LabelDetectionSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Settings, context);
 
                     context.Writer.WriteObjectEnd();
                 }

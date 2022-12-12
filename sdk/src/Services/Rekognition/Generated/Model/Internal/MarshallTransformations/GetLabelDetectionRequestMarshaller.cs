@@ -67,6 +67,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAggregateBy())
+                {
+                    context.Writer.WritePropertyName("AggregateBy");
+                    context.Writer.Write(publicRequest.AggregateBy);
+                }
+
                 if(publicRequest.IsSetJobId())
                 {
                     context.Writer.WritePropertyName("JobId");

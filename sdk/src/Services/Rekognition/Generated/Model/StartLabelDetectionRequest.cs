@@ -53,13 +53,33 @@ namespace Amazon.Rekognition.Model
     /// published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetLabelDetection</a>
     /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartLabelDetection</code>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <i>Optional Parameters</i> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>StartLabelDetection</code> has the <code>GENERAL_LABELS</code> Feature applied
+    /// by default. This feature allows you to provide filtering criteria to the <code>Settings</code>
+    /// parameter. You can filter with sets of individual labels or with label categories.
+    /// You can specify inclusive filters, exclusive filters, or a combination of inclusive
+    /// and exclusive filters. For more information on filtering, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels-detecting-labels-video.html">Detecting
+    /// labels in a video</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can specify <code>MinConfidence</code> to control the confidence threshold for
+    /// the labels returned. The default is 50.
+    /// </para>
     /// </summary>
     public partial class StartLabelDetectionRequest : AmazonRekognitionRequest
     {
         private string _clientRequestToken;
+        private List<string> _features = new List<string>();
         private string _jobTag;
         private float? _minConfidence;
         private NotificationChannel _notificationChannel;
+        private LabelDetectionSettings _settings;
         private Video _video;
 
         /// <summary>
@@ -82,6 +102,26 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Features. 
+        /// <para>
+        /// The features to return after video analysis. You can specify that GENERAL_LABELS are
+        /// returned.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<string> Features
+        {
+            get { return this._features; }
+            set { this._features = value; }
+        }
+
+        // Check to see if Features property is set
+        internal bool IsSetFeatures()
+        {
+            return this._features != null && this._features.Count > 0; 
         }
 
         /// <summary>
@@ -116,8 +156,8 @@ namespace Amazon.Rekognition.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify <code>MinConfidence</code>, the operation returns labels with
-        /// confidence values greater than or equal to 50 percent.
+        /// If you don't specify <code>MinConfidence</code>, the operation returns labels and
+        /// bounding boxes (if detected) with confidence values greater than or equal to 50 percent.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -152,6 +192,26 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetNotificationChannel()
         {
             return this._notificationChannel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Settings. 
+        /// <para>
+        /// The settings for a StartLabelDetection request.Contains the specified parameters for
+        /// the label detection request of an asynchronous label analysis operation. Settings
+        /// can include filters for GENERAL_LABELS.
+        /// </para>
+        /// </summary>
+        public LabelDetectionSettings Settings
+        {
+            get { return this._settings; }
+            set { this._settings = value; }
+        }
+
+        // Check to see if Settings property is set
+        internal bool IsSetSettings()
+        {
+            return this._settings != null;
         }
 
         /// <summary>

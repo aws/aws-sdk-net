@@ -34,8 +34,51 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class LabelDetection
     {
+        private long? _durationMillis;
+        private long? _endTimestampMillis;
         private Label _label;
+        private long? _startTimestampMillis;
         private long? _timestamp;
+
+        /// <summary>
+        /// Gets and sets the property DurationMillis. 
+        /// <para>
+        /// The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis
+        /// to EndTimestampMillis.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long DurationMillis
+        {
+            get { return this._durationMillis.GetValueOrDefault(); }
+            set { this._durationMillis = value; }
+        }
+
+        // Check to see if DurationMillis property is set
+        internal bool IsSetDurationMillis()
+        {
+            return this._durationMillis.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndTimestampMillis. 
+        /// <para>
+        /// The time in milliseconds defining the end of the timeline segment containing a continuously
+        /// detected label.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long EndTimestampMillis
+        {
+            get { return this._endTimestampMillis.GetValueOrDefault(); }
+            set { this._endTimestampMillis = value; }
+        }
+
+        // Check to see if EndTimestampMillis property is set
+        internal bool IsSetEndTimestampMillis()
+        {
+            return this._endTimestampMillis.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Label. 
@@ -53,6 +96,26 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetLabel()
         {
             return this._label != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTimestampMillis. 
+        /// <para>
+        /// The time in milliseconds defining the start of the timeline segment containing a continuously
+        /// detected label.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long StartTimestampMillis
+        {
+            get { return this._startTimestampMillis.GetValueOrDefault(); }
+            set { this._startTimestampMillis = value; }
+        }
+
+        // Check to see if StartTimestampMillis property is set
+        internal bool IsSetStartTimestampMillis()
+        {
+            return this._startTimestampMillis.HasValue; 
         }
 
         /// <summary>

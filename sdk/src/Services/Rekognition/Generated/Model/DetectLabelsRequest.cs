@@ -107,8 +107,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  Categories - The label categories that the detected label belongs to. A given label
-    /// can belong to more than one category. 
+    ///  Categories - The label categories that the detected label belongs to. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -134,12 +133,13 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Foreground - Information about the Sharpness and Brightness of the input image’s foreground.
-    /// 
+    /// Foreground - Information about the sharpness, brightness, and dominant colors of the
+    /// input image’s foreground. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Background - Information about the Sharpness and Brightness of the input image’s background.
+    /// Background - Information about the sharpness, brightness, and dominant colors of the
+    /// input image’s background.
     /// </para>
     ///  </li> </ul> 
     /// <para>

@@ -44,7 +44,7 @@ namespace Amazon.Rekognition.Model
     /// attributes to return, use the <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>.
     /// The following Amazon Rekognition Video operations return only the default attributes.
     /// The corresponding Start operations don't have a <code>FaceAttributes</code> input
-    /// parameter.
+    /// parameter:
     /// </para>
     ///  <ul> <li> 
     /// <para>

@@ -1142,6 +1142,18 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.LabelDetection.DurationMillis</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.LabelDetection.EndTimestampMillis</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.LabelDetection.StartTimestampMillis</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.ModerationLabel.Confidence</property>
     <min>0</min>
     <max>100</max>
