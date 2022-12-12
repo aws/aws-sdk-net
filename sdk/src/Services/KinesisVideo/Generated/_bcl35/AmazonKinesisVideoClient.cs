@@ -650,6 +650,79 @@ namespace Amazon.KinesisVideo
 
         #endregion
         
+        #region  DescribeEdgeConfiguration
+
+        /// <summary>
+        /// Describes a stream’s edge configuration that was set using the <code>StartEdgeConfigurationUpdate</code>
+        /// API. Use this API to get the status of the configuration if the configuration is in
+        /// sync with the Edge Agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEdgeConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEdgeConfiguration service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.StreamEdgeConfigurationNotFoundException">
+        /// The Exception rendered when the Amazon Kinesis Video Stream can't find a stream's
+        /// edge configuration that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeEdgeConfiguration">REST API Reference for DescribeEdgeConfiguration Operation</seealso>
+        public virtual DescribeEdgeConfigurationResponse DescribeEdgeConfiguration(DescribeEdgeConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEdgeConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEdgeConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEdgeConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEdgeConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEdgeConfiguration operation on AmazonKinesisVideoClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEdgeConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeEdgeConfiguration">REST API Reference for DescribeEdgeConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDescribeEdgeConfiguration(DescribeEdgeConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEdgeConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEdgeConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEdgeConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEdgeConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeEdgeConfigurationResult from KinesisVideo.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeEdgeConfiguration">REST API Reference for DescribeEdgeConfiguration Operation</seealso>
+        public virtual DescribeEdgeConfigurationResponse EndDescribeEdgeConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeEdgeConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeImageGenerationConfiguration
 
         /// <summary>
@@ -1365,6 +1438,107 @@ namespace Amazon.KinesisVideo
         public virtual ListTagsForStreamResponse EndListTagsForStream(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForStreamResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartEdgeConfigurationUpdate
+
+        /// <summary>
+        /// An asynchronous API that updates a stream’s existing edge configuration. If this API
+        /// is invoked for the first time, a new edge configuration will be created for the stream,
+        /// and the sync status will be set to <code>SYNCING</code>. 
+        /// 
+        ///  
+        /// <para>
+        /// The Kinesis Video Stream will sync the stream’s edge configuration with the Edge Agent
+        /// IoT Greengrass component that runs on an IoT Hub Device setup at your premise. The
+        /// time to sync can vary and depends on the connectivity of the Hub Device. The <code>SyncStatus</code>
+        /// will be updated as the edge configuration is acknowledged, and synced with the Edge
+        /// Agent. You will have to wait for the sync status to reach a terminal state such as:
+        /// <code>IN_SYNC</code> and <code>SYNC_FAILED</code>, before using this API again.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you invoke this API during the syncing process, a <code>ResourceInUseException</code>
+        /// will be thrown. The connectivity of the stream's edge configuration and the Edge Agent
+        /// will be retried for 15 minutes. After 15 minutes, the status will transition into
+        /// the <code>SYNC_FAILED</code> state. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartEdgeConfigurationUpdate service method.</param>
+        /// 
+        /// <returns>The response from the StartEdgeConfigurationUpdate service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.NoDataRetentionException">
+        /// The Stream data retention in hours is equal to zero.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
+        /// The resource is currently not available for this operation. New resources cannot be
+        /// created with the same name as existing resources. Also, resources cannot be updated
+        /// or deleted unless they are in an <code>ACTIVE</code> state.
+        /// 
+        ///  
+        /// <para>
+        /// If this exception is returned, do not use it to determine whether the requested resource
+        /// already exists. Instead, it is recommended you use the resource-specific describe
+        /// API, for example, <code>DescribeStream</code> for video streams.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate">REST API Reference for StartEdgeConfigurationUpdate Operation</seealso>
+        public virtual StartEdgeConfigurationUpdateResponse StartEdgeConfigurationUpdate(StartEdgeConfigurationUpdateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartEdgeConfigurationUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartEdgeConfigurationUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<StartEdgeConfigurationUpdateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartEdgeConfigurationUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartEdgeConfigurationUpdate operation on AmazonKinesisVideoClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartEdgeConfigurationUpdate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate">REST API Reference for StartEdgeConfigurationUpdate Operation</seealso>
+        public virtual IAsyncResult BeginStartEdgeConfigurationUpdate(StartEdgeConfigurationUpdateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartEdgeConfigurationUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartEdgeConfigurationUpdateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartEdgeConfigurationUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartEdgeConfigurationUpdate.</param>
+        /// 
+        /// <returns>Returns a  StartEdgeConfigurationUpdateResult from KinesisVideo.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate">REST API Reference for StartEdgeConfigurationUpdate Operation</seealso>
+        public virtual StartEdgeConfigurationUpdateResponse EndStartEdgeConfigurationUpdate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartEdgeConfigurationUpdateResponse>(asyncResult);
         }
 
         #endregion

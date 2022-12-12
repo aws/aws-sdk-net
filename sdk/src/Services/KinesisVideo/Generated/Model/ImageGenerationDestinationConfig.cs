@@ -59,7 +59,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property Uri. 
         /// <para>
-        /// The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+        /// The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

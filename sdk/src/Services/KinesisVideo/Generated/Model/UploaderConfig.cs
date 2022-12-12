@@ -29,30 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// The structure that contains the information required to deliver a notification to
-    /// a customer.
+    /// The configuration that consists of the <code>ScheduleConfig</code> attribute that's
+    /// required, to schedule the jobs to upload the recorded media files onto the Edge Agent
+    /// in a Kinesis Video Stream.
     /// </summary>
-    public partial class NotificationDestinationConfig
+    public partial class UploaderConfig
     {
-        private string _uri;
+        private ScheduleConfig _scheduleConfig;
 
         /// <summary>
-        /// Gets and sets the property Uri. 
+        /// Gets and sets the property ScheduleConfig. 
         /// <para>
-        /// The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
+        /// The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>details
+        /// that specify the scheduling to record from a camera, or local media file, onto the
+        /// Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge
+        /// Agent will always be in recording mode.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string Uri
+        [AWSProperty(Required=true)]
+        public ScheduleConfig ScheduleConfig
         {
-            get { return this._uri; }
-            set { this._uri = value; }
+            get { return this._scheduleConfig; }
+            set { this._scheduleConfig = value; }
         }
 
-        // Check to see if Uri property is set
-        internal bool IsSetUri()
+        // Check to see if ScheduleConfig property is set
+        internal bool IsSetScheduleConfig()
         {
-            return this._uri != null;
+            return this._scheduleConfig != null;
         }
 
     }
