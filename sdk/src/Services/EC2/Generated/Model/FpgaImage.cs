@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private string _description;
         private string _fpgaImageGlobalId;
         private string _fpgaImageId;
+        private List<string> _instanceTypes = new List<string>();
         private string _name;
         private string _ownerAlias;
         private string _ownerId;
@@ -137,6 +138,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetFpgaImageId()
         {
             return this._fpgaImageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceTypes.
+        /// </summary>
+        public List<string> InstanceTypes
+        {
+            get { return this._instanceTypes; }
+            set { this._instanceTypes = value; }
+        }
+
+        // Check to see if InstanceTypes property is set
+        internal bool IsSetInstanceTypes()
+        {
+            return this._instanceTypes != null && this._instanceTypes.Count > 0; 
         }
 
         /// <summary>

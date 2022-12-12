@@ -14129,6 +14129,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType Vpc = new ResourceType("vpc");
         /// <summary>
+        /// Constant VpcBlockPublicAccessExclusion for ResourceType
+        /// </summary>
+        public static readonly ResourceType VpcBlockPublicAccessExclusion = new ResourceType("vpc-block-public-access-exclusion");
+        /// <summary>
         /// Constant VpcEndpoint for ResourceType
         /// </summary>
         public static readonly ResourceType VpcEndpoint = new ResourceType("vpc-endpoint");
