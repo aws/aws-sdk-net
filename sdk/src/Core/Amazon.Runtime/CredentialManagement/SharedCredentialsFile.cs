@@ -35,7 +35,7 @@ namespace Amazon.Runtime.CredentialManagement
     public class SharedCredentialsFile : ICredentialProfileStore
     {
         public const string DefaultProfileName = "default";
-
+        public const string SharedCredentialsFileEnvVar = "AWS_SHARED_CREDENTIALS_FILE";
         private const string ToolkitArtifactGuidField = "toolkit_artifact_guid";
         private const string RegionField = "region";
         private const string EndpointDiscoveryEnabledField = "endpoint_discovery_enabled";
@@ -144,19 +144,31 @@ namespace Amazon.Runtime.CredentialManagement
 
         static SharedCredentialsFile()
         {
-            var baseDirectory = Environment.GetEnvironmentVariable("HOME");
+            var environmentPath = Environment.GetEnvironmentVariable(SharedCredentialsFileEnvVar);
+            if (!string.IsNullOrEmpty(environmentPath))
+            {
+                if (File.Exists(environmentPath))
+                {
+                    DefaultDirectory = Directory.GetParent(environmentPath).FullName;
+                    DefaultFilePath = environmentPath;
+                }
+            }
+            if(DefaultFilePath == null)
+            {
+                var baseDirectory = Environment.GetEnvironmentVariable("HOME");
 
-            if (string.IsNullOrEmpty(baseDirectory))
-                baseDirectory = Environment.GetEnvironmentVariable("USERPROFILE");
+                if (string.IsNullOrEmpty(baseDirectory))
+                    baseDirectory = Environment.GetEnvironmentVariable("USERPROFILE");
 
-            if (string.IsNullOrEmpty(baseDirectory))
+                if (string.IsNullOrEmpty(baseDirectory))
 #if NETSTANDARD
-                baseDirectory = Directory.GetCurrentDirectory();
+                    baseDirectory = Directory.GetCurrentDirectory();
 #else
                 baseDirectory = Environment.CurrentDirectory;
 #endif
-            DefaultDirectory = Path.Combine(baseDirectory, DefaultDirectoryName);
-            DefaultFilePath = Path.Combine(DefaultDirectory, DefaultFileName);
+                DefaultDirectory = Path.Combine(baseDirectory, DefaultDirectoryName);
+                DefaultFilePath = Path.Combine(DefaultDirectory, DefaultFileName);
+            }
         }
 
         private ProfileIniFile _credentialsFile;

@@ -37,7 +37,7 @@ namespace AWSSDK.UnitTests
         public SharedCredentialsFile CredentialsFile { get; private set; }
 
         public SharedCredentialsFileTestFixture(string credentialsFileContents, string configFileContents = null,
-            bool createEmptyFile = false)
+            bool createEmptyFile = false, bool isSharedCredentialsVarProvided = false)
         {
             PrepareTempFilePaths();
 
@@ -57,7 +57,15 @@ namespace AWSSDK.UnitTests
             {
                 File.WriteAllText(ConfigFilePath, configFileContents);
             }
-
+            if (isSharedCredentialsVarProvided)
+            {
+                // In order to test the shared creds environment variable we must guarantee the static constructor gets called again
+                // This is because the logic for checking the shared creds env variable is in the static constructor.
+                Environment.SetEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE", CredentialsFilePath);
+                Type sharedCredentialsFile = typeof(SharedCredentialsFile);
+                sharedCredentialsFile.TypeInitializer.Invoke(null,null);
+            }
+            
             CredentialsFile = new SharedCredentialsFile(CredentialsFilePath);
         }
 

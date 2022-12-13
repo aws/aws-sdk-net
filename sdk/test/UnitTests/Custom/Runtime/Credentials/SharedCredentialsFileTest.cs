@@ -851,6 +851,25 @@ namespace AWSSDK.UnitTests
                 field.SetValue(null, originalWhitelist);
             }
         }
+        [TestMethod]
+        public void ReadAWSSharedCredentialVariableFile()
+        {
+            try
+            {
+                using (var tester = new SharedCredentialsFileTestFixture(DefaultProfileText, isSharedCredentialsVarProvided: true))
+                {
+                    tester.TestTryGetProfile("default", true, true);
+                }
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE", null);
+                //call static constructor again with reflection to reset the constructor
+                Type sharedCredentialsFile = typeof(SharedCredentialsFile);
+                sharedCredentialsFile.TypeInitializer.Invoke(null, null);
+            }
+
+        }
 
         [TestMethod]
         public void WriteUnsupportedProfileType()
