@@ -32,7 +32,7 @@ namespace Amazon.AppConfigData
     public partial class AmazonAppConfigDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.34");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.35");
 
         private string _userAgent = UserAgentString;
 

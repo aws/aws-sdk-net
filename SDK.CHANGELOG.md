@@ -1,3 +1,12 @@
+### 3.7.439.0 (2022-12-13 19:28 UTC)
+* CloudTrail (3.7.102.0)
+	* Merging mainline branch for service model into mainline release branch. There are no new APIs.
+* RDS (3.7.109.0)
+	* This deployment adds ClientPasswordAuthType field to the Auth structure of the DBProxy.
+* Core 3.7.102.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.438.0 (2022-12-12 19:30 UTC)
 * CustomerProfiles (3.7.102.0)
 	* This release allows custom strings in PartyType and Gender through 2 new attributes in the CreateProfile and UpdateProfile APIs: PartyTypeString and GenderString.
