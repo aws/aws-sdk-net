@@ -35,6 +35,7 @@ namespace Amazon.RDS.Model
     public partial class UserAuthConfig
     {
         private AuthScheme _authScheme;
+        private ClientPasswordAuthType _clientPasswordAuthType;
         private string _description;
         private IAMAuthMode _iamAuth;
         private string _secretArn;
@@ -57,6 +58,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetAuthScheme()
         {
             return this._authScheme != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientPasswordAuthType. 
+        /// <para>
+        /// The type of authentication the proxy uses for connections from clients.
+        /// </para>
+        /// </summary>
+        public ClientPasswordAuthType ClientPasswordAuthType
+        {
+            get { return this._clientPasswordAuthType; }
+            set { this._clientPasswordAuthType = value; }
+        }
+
+        // Check to see if ClientPasswordAuthType property is set
+        internal bool IsSetClientPasswordAuthType()
+        {
+            return this._clientPasswordAuthType != null;
         }
 
         /// <summary>

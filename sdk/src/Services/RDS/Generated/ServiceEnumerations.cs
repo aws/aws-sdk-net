@@ -387,6 +387,64 @@ namespace Amazon.RDS
 
 
     /// <summary>
+    /// Constants used for properties of type ClientPasswordAuthType.
+    /// </summary>
+    public class ClientPasswordAuthType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MYSQL_NATIVE_PASSWORD for ClientPasswordAuthType
+        /// </summary>
+        public static readonly ClientPasswordAuthType MYSQL_NATIVE_PASSWORD = new ClientPasswordAuthType("MYSQL_NATIVE_PASSWORD");
+        /// <summary>
+        /// Constant POSTGRES_MD5 for ClientPasswordAuthType
+        /// </summary>
+        public static readonly ClientPasswordAuthType POSTGRES_MD5 = new ClientPasswordAuthType("POSTGRES_MD5");
+        /// <summary>
+        /// Constant POSTGRES_SCRAM_SHA_256 for ClientPasswordAuthType
+        /// </summary>
+        public static readonly ClientPasswordAuthType POSTGRES_SCRAM_SHA_256 = new ClientPasswordAuthType("POSTGRES_SCRAM_SHA_256");
+        /// <summary>
+        /// Constant SQL_SERVER_AUTHENTICATION for ClientPasswordAuthType
+        /// </summary>
+        public static readonly ClientPasswordAuthType SQL_SERVER_AUTHENTICATION = new ClientPasswordAuthType("SQL_SERVER_AUTHENTICATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClientPasswordAuthType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientPasswordAuthType FindValue(string value)
+        {
+            return FindValue<ClientPasswordAuthType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientPasswordAuthType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CustomEngineVersionStatus.
     /// </summary>
     public class CustomEngineVersionStatus : ConstantClass
