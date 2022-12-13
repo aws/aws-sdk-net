@@ -489,6 +489,11 @@
     <pattern>^[a-f0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.LookupAttribute.AttributeValue</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.Query.QueryId</property>
     <min>36</min>
     <max>36</max>

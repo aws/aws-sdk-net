@@ -272,6 +272,43 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
         /// sufficient permissions for the operation.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventSelectorsException">
+        /// This exception is thrown when the <code>PutEventSelectors</code> operation is called
+        /// with a number of event selectors, advanced event selectors, or data resources that
+        /// is not valid. The combination of event selectors or advanced event selectors and data
+        /// resources is not valid. A trail can have up to 5 event selectors. If a trail uses
+        /// advanced event selectors, a maximum of 500 total values for all conditions in all
+        /// advanced event selectors is allowed. A trail is limited to 250 data resources. These
+        /// data resources can be distributed across event selectors, but the overall total cannot
+        /// exceed 250.
+        /// 
+        ///  
+        /// <para>
+        /// You can:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify a valid number of event selectors (1 to 5) for a trail.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify a valid number of data resources (1 to 250) for an event selector. The limit
+        /// of number of resources on an individual event selector is configurable up to 250.
+        /// However, this upper limit is allowed only if the total number of data resources does
+        /// not exceed 250 across all event selectors for a trail.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify up to 500 values for all conditions in all advanced event selectors for a
+        /// trail.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
+        /// parameter with a value of <code>read-only</code> is not valid.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidKmsKeyIdException">
         /// This exception is thrown when the KMS key ARN is not valid.
         /// </exception>
@@ -467,6 +504,10 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.S3BucketDoesNotExistException">
         /// This exception is thrown when the specified S3 bucket does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.TagsLimitExceededException">
+        /// The number of tags per trail has exceeded the permitted amount. Currently, the limit
+        /// is 50.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailAlreadyExistsException">
         /// This exception is thrown when the specified trail already exists.
         /// </exception>
@@ -522,6 +563,9 @@ namespace Amazon.CloudTrail
         /// The event data store cannot be deleted because termination protection is enabled for
         /// it.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
+        /// The event data store is inactive.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
         /// This exception is thrown when the IAM user or role that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
@@ -567,6 +611,15 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the DeleteTrail service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
+        /// This exception is thrown when an operation is called with a trail ARN that is not
+        /// valid. The following is the format of a trail ARN.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
         /// This exception is thrown when the specified resource is not ready for an operation.
         /// This can occur when you try to run an operation on a resource before CloudTrail has
@@ -968,6 +1021,15 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the GetEventSelectors service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
+        /// This exception is thrown when an operation is called with a trail ARN that is not
+        /// valid. The following is the format of a trail ARN.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
@@ -1067,6 +1129,15 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the GetInsightSelectors service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
+        /// This exception is thrown when an operation is called with a trail ARN that is not
+        /// valid. The following is the format of a trail ARN.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsightNotEnabledException">
         /// If you run <code>GetInsightSelectors</code> on a trail that does not have Insights
         /// events enabled, the operation throws the exception <code>InsightNotEnabledException</code>.
@@ -1186,6 +1257,15 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the GetTrail service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
+        /// This exception is thrown when an operation is called with a trail ARN that is not
+        /// valid. The following is the format of a trail ARN.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
@@ -1244,6 +1324,15 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the GetTrailStatus service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
+        /// This exception is thrown when an operation is called with a trail ARN that is not
+        /// valid. The following is the format of a trail ARN.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
@@ -1805,6 +1894,15 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the PutEventSelectors service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
+        /// This exception is thrown when an operation is called with a trail ARN that is not
+        /// valid. The following is the format of a trail ARN.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
         /// This exception is thrown when the IAM user or role that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
@@ -1921,6 +2019,15 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the PutInsightSelectors service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
+        /// This exception is thrown when an operation is called with a trail ARN that is not
+        /// valid. The following is the format of a trail ARN.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
         /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
         /// sufficient permissions for the operation.
@@ -2320,6 +2427,15 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the StartLogging service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
+        /// This exception is thrown when an operation is called with a trail ARN that is not
+        /// valid. The following is the format of a trail ARN.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
         /// This exception is thrown when the IAM user or role that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
@@ -2499,6 +2615,15 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the StopLogging service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
+        /// This exception is thrown when an operation is called with a trail ARN that is not
+        /// valid. The following is the format of a trail ARN.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
         /// This exception is thrown when the IAM user or role that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
@@ -2609,6 +2734,43 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
         /// sufficient permissions for the operation.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventSelectorsException">
+        /// This exception is thrown when the <code>PutEventSelectors</code> operation is called
+        /// with a number of event selectors, advanced event selectors, or data resources that
+        /// is not valid. The combination of event selectors or advanced event selectors and data
+        /// resources is not valid. A trail can have up to 5 event selectors. If a trail uses
+        /// advanced event selectors, a maximum of 500 total values for all conditions in all
+        /// advanced event selectors is allowed. A trail is limited to 250 data resources. These
+        /// data resources can be distributed across event selectors, but the overall total cannot
+        /// exceed 250.
+        /// 
+        ///  
+        /// <para>
+        /// You can:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify a valid number of event selectors (1 to 5) for a trail.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify a valid number of data resources (1 to 250) for an event selector. The limit
+        /// of number of resources on an individual event selector is configurable up to 250.
+        /// However, this upper limit is allowed only if the total number of data resources does
+        /// not exceed 250 across all event selectors for a trail.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify up to 500 values for all conditions in all advanced event selectors for a
+        /// trail.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
+        /// parameter with a value of <code>read-only</code> is not valid.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidKmsKeyIdException">
         /// This exception is thrown when the KMS key ARN is not valid.
         /// </exception>
@@ -2679,6 +2841,15 @@ namespace Amazon.CloudTrail
         /// and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
         /// Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
+        /// This exception is thrown when an operation is called with a trail ARN that is not
+        /// valid. The following is the format of a trail ARN.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailInvalidClientTokenIdException">
         /// This exception is thrown when a call results in the <code>InvalidClientTokenId</code>

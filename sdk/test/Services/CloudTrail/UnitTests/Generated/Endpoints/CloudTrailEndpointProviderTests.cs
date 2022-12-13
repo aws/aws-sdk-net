@@ -36,8 +36,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-south-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-south-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-south-2.api.aws", endpoint.URL);
         }
@@ -51,8 +51,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-south-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-south-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-south-2.amazonaws.com", endpoint.URL);
         }
@@ -66,8 +66,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-south-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-south-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-south-2.api.aws", endpoint.URL);
         }
@@ -81,8 +81,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-south-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-south-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-south-2.amazonaws.com", endpoint.URL);
         }
@@ -96,8 +96,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-south-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-south-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-south-1.api.aws", endpoint.URL);
         }
@@ -111,8 +111,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-south-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-south-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-south-1.amazonaws.com", endpoint.URL);
         }
@@ -126,8 +126,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-south-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-south-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-south-1.api.aws", endpoint.URL);
         }
@@ -141,8 +141,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-south-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-south-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-south-1.amazonaws.com", endpoint.URL);
         }
@@ -156,8 +156,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-south-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-south-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.eu-south-1.api.aws", endpoint.URL);
         }
@@ -171,8 +171,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-south-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-south-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.eu-south-1.amazonaws.com", endpoint.URL);
         }
@@ -186,8 +186,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-south-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-south-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.eu-south-1.api.aws", endpoint.URL);
         }
@@ -201,8 +201,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-south-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-south-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.eu-south-1.amazonaws.com", endpoint.URL);
         }
@@ -216,8 +216,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-south-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-south-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.eu-south-2.api.aws", endpoint.URL);
         }
@@ -231,8 +231,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-south-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-south-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.eu-south-2.amazonaws.com", endpoint.URL);
         }
@@ -246,8 +246,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-south-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-south-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.eu-south-2.api.aws", endpoint.URL);
         }
@@ -261,8 +261,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-south-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-south-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.eu-south-2.amazonaws.com", endpoint.URL);
         }
@@ -276,8 +276,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-gov-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-gov-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -291,8 +291,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-gov-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-gov-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -306,8 +306,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-gov-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-gov-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -321,8 +321,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-gov-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-gov-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -336,8 +336,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "me-central-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "me-central-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.me-central-1.api.aws", endpoint.URL);
         }
@@ -351,8 +351,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "me-central-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "me-central-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.me-central-1.amazonaws.com", endpoint.URL);
         }
@@ -366,8 +366,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "me-central-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "me-central-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.me-central-1.api.aws", endpoint.URL);
         }
@@ -381,8 +381,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "me-central-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "me-central-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.me-central-1.amazonaws.com", endpoint.URL);
         }
@@ -396,8 +396,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ca-central-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ca-central-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ca-central-1.api.aws", endpoint.URL);
         }
@@ -411,8 +411,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ca-central-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ca-central-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ca-central-1.amazonaws.com", endpoint.URL);
         }
@@ -426,8 +426,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ca-central-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ca-central-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ca-central-1.api.aws", endpoint.URL);
         }
@@ -441,8 +441,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ca-central-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ca-central-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ca-central-1.amazonaws.com", endpoint.URL);
         }
@@ -456,8 +456,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.eu-central-1.api.aws", endpoint.URL);
         }
@@ -471,8 +471,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -486,8 +486,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.eu-central-1.api.aws", endpoint.URL);
         }
@@ -501,8 +501,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -517,8 +517,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-iso-west-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-iso-west-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -531,8 +531,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-iso-west-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-iso-west-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.us-iso-west-1.c2s.ic.gov", endpoint.URL);
         }
@@ -547,8 +547,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-iso-west-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-iso-west-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -561,8 +561,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-iso-west-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-iso-west-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.us-iso-west-1.c2s.ic.gov", endpoint.URL);
         }
@@ -576,8 +576,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-central-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-central-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.eu-central-2.api.aws", endpoint.URL);
         }
@@ -591,8 +591,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-central-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-central-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.eu-central-2.amazonaws.com", endpoint.URL);
         }
@@ -606,8 +606,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-central-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-central-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.eu-central-2.api.aws", endpoint.URL);
         }
@@ -621,8 +621,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-central-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-central-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.eu-central-2.amazonaws.com", endpoint.URL);
         }
@@ -636,8 +636,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-west-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-west-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.us-west-1.api.aws", endpoint.URL);
         }
@@ -651,8 +651,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-west-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-west-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.us-west-1.amazonaws.com", endpoint.URL);
         }
@@ -666,8 +666,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-west-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-west-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.us-west-1.api.aws", endpoint.URL);
         }
@@ -681,8 +681,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-west-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-west-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.us-west-1.amazonaws.com", endpoint.URL);
         }
@@ -696,8 +696,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.us-west-2.api.aws", endpoint.URL);
         }
@@ -711,8 +711,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -726,8 +726,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.us-west-2.api.aws", endpoint.URL);
         }
@@ -741,8 +741,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -756,8 +756,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "af-south-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.af-south-1.api.aws", endpoint.URL);
         }
@@ -771,8 +771,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "af-south-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.af-south-1.amazonaws.com", endpoint.URL);
         }
@@ -786,8 +786,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "af-south-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.af-south-1.api.aws", endpoint.URL);
         }
@@ -801,8 +801,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "af-south-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.af-south-1.amazonaws.com", endpoint.URL);
         }
@@ -816,8 +816,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-north-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-north-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.eu-north-1.api.aws", endpoint.URL);
         }
@@ -831,8 +831,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-north-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-north-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.eu-north-1.amazonaws.com", endpoint.URL);
         }
@@ -846,8 +846,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-north-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-north-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.eu-north-1.api.aws", endpoint.URL);
         }
@@ -861,8 +861,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-north-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-north-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.eu-north-1.amazonaws.com", endpoint.URL);
         }
@@ -876,8 +876,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-west-3";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-west-3";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.eu-west-3.api.aws", endpoint.URL);
         }
@@ -891,8 +891,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-west-3";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-3";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.eu-west-3.amazonaws.com", endpoint.URL);
         }
@@ -906,8 +906,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-west-3";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-west-3";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.eu-west-3.api.aws", endpoint.URL);
         }
@@ -921,8 +921,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-west-3";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-3";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.eu-west-3.amazonaws.com", endpoint.URL);
         }
@@ -936,8 +936,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-west-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-west-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.eu-west-2.api.aws", endpoint.URL);
         }
@@ -951,8 +951,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-west-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.eu-west-2.amazonaws.com", endpoint.URL);
         }
@@ -966,8 +966,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-west-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-west-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.eu-west-2.api.aws", endpoint.URL);
         }
@@ -981,8 +981,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-west-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.eu-west-2.amazonaws.com", endpoint.URL);
         }
@@ -996,8 +996,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-west-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.eu-west-1.api.aws", endpoint.URL);
         }
@@ -1011,8 +1011,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-west-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -1026,8 +1026,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-west-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.eu-west-1.api.aws", endpoint.URL);
         }
@@ -1041,8 +1041,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-west-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -1056,8 +1056,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-northeast-3";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-northeast-3";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-northeast-3.api.aws", endpoint.URL);
         }
@@ -1071,8 +1071,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-northeast-3";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-northeast-3";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-northeast-3.amazonaws.com", endpoint.URL);
         }
@@ -1086,8 +1086,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-northeast-3";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-northeast-3";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-northeast-3.api.aws", endpoint.URL);
         }
@@ -1101,8 +1101,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-northeast-3";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-northeast-3";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-northeast-3.amazonaws.com", endpoint.URL);
         }
@@ -1116,8 +1116,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-northeast-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-northeast-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-northeast-2.api.aws", endpoint.URL);
         }
@@ -1131,8 +1131,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-northeast-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-northeast-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-northeast-2.amazonaws.com", endpoint.URL);
         }
@@ -1146,8 +1146,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-northeast-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-northeast-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-northeast-2.api.aws", endpoint.URL);
         }
@@ -1161,8 +1161,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-northeast-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-northeast-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-northeast-2.amazonaws.com", endpoint.URL);
         }
@@ -1176,8 +1176,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-northeast-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-northeast-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-northeast-1.api.aws", endpoint.URL);
         }
@@ -1191,8 +1191,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-northeast-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-northeast-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -1206,8 +1206,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-northeast-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-northeast-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-northeast-1.api.aws", endpoint.URL);
         }
@@ -1221,8 +1221,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-northeast-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-northeast-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -1236,8 +1236,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "me-south-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "me-south-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.me-south-1.api.aws", endpoint.URL);
         }
@@ -1251,8 +1251,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "me-south-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "me-south-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.me-south-1.amazonaws.com", endpoint.URL);
         }
@@ -1266,8 +1266,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "me-south-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "me-south-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.me-south-1.api.aws", endpoint.URL);
         }
@@ -1281,8 +1281,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "me-south-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "me-south-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.me-south-1.amazonaws.com", endpoint.URL);
         }
@@ -1296,8 +1296,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "sa-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "sa-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.sa-east-1.api.aws", endpoint.URL);
         }
@@ -1311,8 +1311,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "sa-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "sa-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.sa-east-1.amazonaws.com", endpoint.URL);
         }
@@ -1326,8 +1326,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "sa-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "sa-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.sa-east-1.api.aws", endpoint.URL);
         }
@@ -1341,8 +1341,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "sa-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "sa-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.sa-east-1.amazonaws.com", endpoint.URL);
         }
@@ -1356,8 +1356,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-east-1.api.aws", endpoint.URL);
         }
@@ -1371,8 +1371,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-east-1.amazonaws.com", endpoint.URL);
         }
@@ -1386,8 +1386,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-east-1.api.aws", endpoint.URL);
         }
@@ -1401,8 +1401,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-east-1.amazonaws.com", endpoint.URL);
         }
@@ -1416,8 +1416,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "cn-north-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -1431,8 +1431,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "cn-north-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -1446,8 +1446,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "cn-north-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -1461,8 +1461,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "cn-north-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -1476,8 +1476,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-gov-west-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-gov-west-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.us-gov-west-1.api.aws", endpoint.URL);
         }
@@ -1491,8 +1491,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-gov-west-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-gov-west-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
@@ -1506,8 +1506,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-gov-west-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-gov-west-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.us-gov-west-1.api.aws", endpoint.URL);
         }
@@ -1521,8 +1521,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-gov-west-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-gov-west-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
@@ -1536,8 +1536,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-southeast-1.api.aws", endpoint.URL);
         }
@@ -1551,8 +1551,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -1566,8 +1566,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-southeast-1.api.aws", endpoint.URL);
         }
@@ -1581,8 +1581,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -1596,8 +1596,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-southeast-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-southeast-2.api.aws", endpoint.URL);
         }
@@ -1611,8 +1611,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-southeast-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -1626,8 +1626,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-southeast-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-southeast-2.api.aws", endpoint.URL);
         }
@@ -1641,8 +1641,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-southeast-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -1657,8 +1657,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-iso-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -1671,8 +1671,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-iso-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
@@ -1687,8 +1687,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-iso-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -1701,8 +1701,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-iso-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
@@ -1716,8 +1716,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-southeast-3";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-3";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-southeast-3.api.aws", endpoint.URL);
         }
@@ -1731,8 +1731,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-southeast-3";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-3";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-southeast-3.amazonaws.com", endpoint.URL);
         }
@@ -1746,8 +1746,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-southeast-3";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-3";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-southeast-3.api.aws", endpoint.URL);
         }
@@ -1761,8 +1761,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-southeast-3";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-3";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-southeast-3.amazonaws.com", endpoint.URL);
         }
@@ -1776,8 +1776,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-southeast-4";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-4";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-southeast-4.api.aws", endpoint.URL);
         }
@@ -1791,8 +1791,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-southeast-4";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-4";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.ap-southeast-4.amazonaws.com", endpoint.URL);
         }
@@ -1806,8 +1806,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-southeast-4";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-4";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-southeast-4.api.aws", endpoint.URL);
         }
@@ -1821,8 +1821,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-southeast-4";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-4";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.ap-southeast-4.amazonaws.com", endpoint.URL);
         }
@@ -1836,8 +1836,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -1851,8 +1851,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -1866,8 +1866,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.us-east-1.api.aws", endpoint.URL);
         }
@@ -1881,8 +1881,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -1896,8 +1896,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-east-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.us-east-2.api.aws", endpoint.URL);
         }
@@ -1911,8 +1911,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-east-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -1926,8 +1926,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.us-east-2.api.aws", endpoint.URL);
         }
@@ -1941,8 +1941,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-2";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -1956,8 +1956,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "cn-northwest-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "cn-northwest-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -1971,8 +1971,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "cn-northwest-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "cn-northwest-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -1986,8 +1986,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "cn-northwest-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "cn-northwest-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -2001,8 +2001,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "cn-northwest-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "cn-northwest-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -2017,8 +2017,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-isob-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-isob-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -2031,8 +2031,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-isob-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-isob-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -2047,8 +2047,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-isob-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-isob-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -2061,8 +2061,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-isob-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-isob-east-1";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudtrail.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -2076,8 +2076,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -2093,8 +2093,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -2109,8 +2109,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudTrailEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonCloudTrailEndpointProvider().ResolveEndpoint(parameters);
         }

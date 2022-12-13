@@ -156,6 +156,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     return CloudTrailAccessNotEnabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("CloudTrailARNInvalidException"))
+                {
+                    return CloudTrailARNInvalidExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("CloudTrailInvalidClientTokenIdException"))
                 {
                     return CloudTrailInvalidClientTokenIdExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

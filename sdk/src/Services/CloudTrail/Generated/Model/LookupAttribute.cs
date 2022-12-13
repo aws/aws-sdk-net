@@ -61,7 +61,7 @@ namespace Amazon.CloudTrail.Model
         /// Specifies a value for the specified AttributeKey.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=2000)]
         public string AttributeValue
         {
             get { return this._attributeValue; }

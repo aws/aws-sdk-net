@@ -260,6 +260,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     return S3BucketDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TagsLimitExceededException"))
+                {
+                    return TagsLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TrailAlreadyExistsException"))
                 {
                     return TrailAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
