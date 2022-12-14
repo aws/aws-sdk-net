@@ -45,6 +45,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VpcOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetApplianceModeSupport())
+            {
+                context.Writer.WritePropertyName("ApplianceModeSupport");
+                context.Writer.Write(requestObject.ApplianceModeSupport);
+            }
+
             if(requestObject.IsSetIpv6Support())
             {
                 context.Writer.WritePropertyName("Ipv6Support");

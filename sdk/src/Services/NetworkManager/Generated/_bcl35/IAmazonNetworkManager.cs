@@ -4317,7 +4317,7 @@ namespace Amazon.NetworkManager
 
 
         /// <summary>
-        /// Enables for the Network Manager service for an Amazon Web Services Organization. This
+        /// Enables the Network Manager service for an Amazon Web Services Organization. This
         /// can only be called by a management account within the organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartOrganizationServiceAccessUpdate service method.</param>

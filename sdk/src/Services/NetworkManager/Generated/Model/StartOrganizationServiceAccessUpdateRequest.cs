@@ -30,7 +30,7 @@ namespace Amazon.NetworkManager.Model
 {
     /// <summary>
     /// Container for the parameters to the StartOrganizationServiceAccessUpdate operation.
-    /// Enables for the Network Manager service for an Amazon Web Services Organization. This
+    /// Enables the Network Manager service for an Amazon Web Services Organization. This
     /// can only be called by a management account within the organization.
     /// </summary>
     public partial class StartOrganizationServiceAccessUpdateRequest : AmazonNetworkManagerRequest
