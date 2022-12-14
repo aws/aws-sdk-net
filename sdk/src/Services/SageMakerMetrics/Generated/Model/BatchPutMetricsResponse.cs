@@ -38,7 +38,7 @@ namespace Amazon.SageMakerMetrics.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// Any errors that occur when inserting metric data will appear in this.
+        /// Lists any errors that occur when inserting metric data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

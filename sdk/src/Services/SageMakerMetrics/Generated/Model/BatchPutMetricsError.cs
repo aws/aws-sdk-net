@@ -43,20 +43,20 @@ namespace Amazon.SageMakerMetrics.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>METRIC_LIMIT_EXCEEDED</code> - The max amount of metrics per resource has been
+        ///  <code>METRIC_LIMIT_EXCEEDED</code>: The maximum amount of metrics per resource is
         /// exceeded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INTERNAL_ERROR</code> - An internal error occured.
+        ///  <code>INTERNAL_ERROR</code>: An internal error occured.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VALIDATION_ERROR</code> - The metric data failed validation.
+        ///  <code>VALIDATION_ERROR</code>: The metric data failed validation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CONFLICT_ERROR</code> - Multiple requests attempted to modify the same data
+        ///  <code>CONFLICT_ERROR</code>: Multiple requests attempted to modify the same data
         /// simultaneously.
         /// </para>
         ///  </li> </ul>

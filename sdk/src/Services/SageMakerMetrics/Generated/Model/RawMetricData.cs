@@ -60,7 +60,7 @@ namespace Amazon.SageMakerMetrics.Model
         /// <summary>
         /// Gets and sets the property Step. 
         /// <para>
-        /// Metric step (aka Epoch). 
+        /// The metric step (epoch). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -79,7 +79,7 @@ namespace Amazon.SageMakerMetrics.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The time when the metric was recorded.
+        /// The time that the metric was recorded.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

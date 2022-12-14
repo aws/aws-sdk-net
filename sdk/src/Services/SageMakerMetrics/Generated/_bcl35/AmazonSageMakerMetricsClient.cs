@@ -257,8 +257,8 @@ namespace Amazon.SageMakerMetrics
         #region  BatchPutMetrics
 
         /// <summary>
-        /// Used to ingest training metrics into SageMaker which can be visualized in SageMaker
-        /// Studio and retrieved with the <code>GetMetrics</code> API.
+        /// Used to ingest training metrics into SageMaker. These metrics can be visualized in
+        /// SageMaker Studio and retrieved with the <code>GetMetrics</code> API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutMetrics service method.</param>
         /// 
