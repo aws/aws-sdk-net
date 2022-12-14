@@ -1,3 +1,18 @@
+### 3.7.440.0 (2022-12-14 19:29 UTC)
+* CloudWatch (3.7.102.0)
+	* Adding support for Metrics Insights Alarms
+* CostExplorer (3.7.103.0)
+	* This release supports percentage-based thresholds on Cost Anomaly Detection alert subscriptions.
+* NetworkManager (3.7.101.0)
+	* Appliance Mode support for AWS Cloud WAN.
+* RedshiftDataAPIService (3.7.101.0)
+	* This release adds a new --client-token field to ExecuteStatement and BatchExecuteStatement operations. Customers can now run queries with the additional client token parameter to ensures idempotency.
+* SageMakerMetrics (3.7.100.2)
+	* Update SageMaker Metrics documentation.
+* Core 3.7.102.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.439.0 (2022-12-13 19:28 UTC)
 * CloudTrail (3.7.102.0)
 	* Merging mainline branch for service model into mainline release branch. There are no new APIs.
