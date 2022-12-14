@@ -59,7 +59,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The value of the parameter. Amazon Redshift implicitly converts to the proper data
-        /// type. For more inforation, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data
+        /// type. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data
         /// types</a> in the <i>Amazon Redshift Database Developer Guide</i>. 
         /// </para>
         /// </summary>

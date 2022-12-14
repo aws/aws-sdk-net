@@ -35,9 +35,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new RedshiftDataAPIServiceEndpointParameters();
+            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonRedshiftDataAPIServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -52,9 +52,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new RedshiftDataAPIServiceEndpointParameters();
+            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonRedshiftDataAPIServiceEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -68,9 +68,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new RedshiftDataAPIServiceEndpointParameters();
+            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonRedshiftDataAPIServiceEndpointProvider().ResolveEndpoint(parameters);
         }

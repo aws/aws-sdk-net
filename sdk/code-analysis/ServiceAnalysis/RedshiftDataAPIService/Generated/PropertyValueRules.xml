@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementRequest.StatementName</property>
     <min>0</min>
     <max>500</max>
@@ -49,6 +54,11 @@
     <min>3</min>
     <max>64</max>
     <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementRequest.StatementName</property>

@@ -49,7 +49,12 @@ namespace Amazon.RedshiftDataAPIService.Model
     /// name and database name. Also, permission to call the <code>redshift-serverless:GetCredentials</code>
     /// operation is required. 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+    /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+    /// </para>
     /// </summary>
     public partial class ListDatabasesRequest : AmazonRedshiftDataAPIServiceRequest
     {

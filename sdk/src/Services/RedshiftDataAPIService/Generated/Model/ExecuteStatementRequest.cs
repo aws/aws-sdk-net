@@ -49,10 +49,16 @@ namespace Amazon.RedshiftDataAPIService.Model
     /// name and database name. Also, permission to call the <code>redshift-serverless:GetCredentials</code>
     /// operation is required. 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+    /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+    /// </para>
     /// </summary>
     public partial class ExecuteStatementRequest : AmazonRedshiftDataAPIServiceRequest
     {
+        private string _clientToken;
         private string _clusterIdentifier;
         private string _database;
         private string _dbUser;
@@ -62,6 +68,26 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _statementName;
         private bool? _withEvent;
         private string _workgroupName;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
