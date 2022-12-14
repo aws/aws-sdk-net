@@ -29,56 +29,115 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Use <code>Expression</code> to filter by cost or by usage. There are two patterns:
+    /// Use <code>Expression</code> to filter in various Cost Explorer APIs.
     /// 
-    /// 
+    ///  
+    /// <para>
+    /// Not all <code>Expression</code> types are supported in each API. Refer to the documentation
+    /// for each specific API to see what is supported.
+    /// </para>
+    ///  
+    /// <para>
+    /// There are two patterns:
+    /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Simple dimension values - You can set the dimension name and values for the filters
-    /// that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>.
+    /// Simple dimension values.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>,
+    /// and <code>Dimensions</code>.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Specify the <code>CostCategories</code> field to define a filter that acts on Cost
+    /// Categories.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation
+    /// Tags.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html">
+    /// <code>DimensionValues</code> </a>.
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// For each filter type, you can set the dimension name and values for the filters that
+    /// you plan to use.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>.
     /// For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example,
-    /// <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is
-    /// as follows:
+    /// <code>REGION==US East (N. Virginia)</code>.
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    ///  <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] }
-    /// }</code> 
-    /// </para>
-    ///  
-    /// <para>
-    /// The list of dimension values are OR'd together to retrieve cost or usage data. You
-    /// can create <code>Expression</code> and <code>DimensionValues</code> objects using
-    /// either <code>with*</code> methods or <code>set*</code> methods in multiple lines.
+    /// The corresponding <code>Expression</code> for this example is as follows: <code>{
+    /// "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Compound dimension values with logical operations - You can use multiple <code>Expression</code>
-    /// types and the logical operators <code>AND/OR/NOT</code> to create a list of one or
-    /// more <code>Expression</code> objects. By doing this, you can filter on more advanced
-    /// options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1)
-    /// OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code>
-    /// for that is as follows:
+    /// As shown in the previous example, lists of dimension values are combined with <code>OR</code>
+    /// when applying the filter.
     /// </para>
-    ///  
+    ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1",
-    /// "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not":
-    /// {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> 
+    /// You can also set different match options to further control how the filter behaves.
+    /// Not all APIs support match options. Refer to the documentation for each specific API
+    /// to see what is supported.
     /// </para>
-    ///  <note> 
+    ///  <ul> <li> 
+    /// <para>
+    /// For example, you can filter for linked account names that start with “a”.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The corresponding <code>Expression</code> for this example is as follows: <code>{
+    /// "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values":
+    /// [ "a" ] } }</code> 
+    /// </para>
+    ///  </li> </ul> </li> </ul> </li> <li> 
+    /// <para>
+    /// Compound <code>Expression</code> types with logical operations.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code>
+    /// to create a list of one or more <code>Expression</code> objects. By doing this, you
+    /// can filter by more advanced options.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1)
+    /// OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The corresponding <code>Expression</code> for this example is as follows: <code>{
+    /// "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1"
+    /// ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions":
+    /// { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> 
+    /// </para>
+    ///  </li> </ul> <note> 
     /// <para>
     /// Because each <code>Expression</code> can have only one operator, the service returns
     /// an error if more than one is specified. The following example shows an <code>Expression</code>
-    /// object that creates an error.
+    /// object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE",
+    /// "Values": [ "DataTransfer" ] } } </code> 
     /// </para>
-    ///  </note> 
+    ///  
     /// <para>
-    ///  <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values":
-    /// [ "DataTransfer" ] } } </code> 
+    /// The following is an example of the corresponding error message: <code>"Expression
+    /// has more than one roots. Only one root operator is allowed for each expression: And,
+    /// Or, Not, Dimensions, Tags, CostCategories"</code> 
     /// </para>
-    ///  </li> </ul> <note> 
+    ///  </note> </li> </ul> <note> 
     /// <para>
     /// For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
     /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions

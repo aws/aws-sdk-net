@@ -106,6 +106,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ThresholdExpression", targetDepth))
+                {
+                    var unmarshaller = ExpressionUnmarshaller.Instance;
+                    unmarshalledObject.ThresholdExpression = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -40,6 +40,7 @@ namespace Amazon.CostExplorer.Model
         private string _subscriptionArn;
         private string _subscriptionName;
         private double? _threshold;
+        private Expression _thresholdExpression;
 
         /// <summary>
         /// Gets and sets the property Frequency. 
@@ -136,9 +137,19 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Threshold. 
         /// <para>
+        /// (deprecated)
+        /// </para>
+        ///  
+        /// <para>
         /// The update to the threshold value for receiving notifications. 
         /// </para>
+        ///  
+        /// <para>
+        /// This field has been deprecated. To update a threshold, use ThresholdExpression. Continued
+        /// use of Threshold will be treated as shorthand syntax for a ThresholdExpression.
+        /// </para>
         /// </summary>
+        [Obsolete("Threshold has been deprecated in favor of ThresholdExpression")]
         [AWSProperty(Min=0)]
         public double Threshold
         {
@@ -150,6 +161,58 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetThreshold()
         {
             return this._threshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThresholdExpression. 
+        /// <para>
+        /// The update to the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+        /// object used to specify the anomalies that you want to generate alerts for. This supports
+        /// dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code>
+        /// and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression
+        /// types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code>
+        /// is required. Values must be numbers between 0 and 10,000,000,000.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are examples of valid ThresholdExpressions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE",
+        /// "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE",
+        /// "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key":
+        /// "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values":
+        /// [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions":
+        /// [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key":
+        /// "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values":
+        /// [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions":
+        /// [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public Expression ThresholdExpression
+        {
+            get { return this._thresholdExpression; }
+            set { this._thresholdExpression = value; }
+        }
+
+        // Check to see if ThresholdExpression property is set
+        internal bool IsSetThresholdExpression()
+        {
+            return this._thresholdExpression != null;
         }
 
     }

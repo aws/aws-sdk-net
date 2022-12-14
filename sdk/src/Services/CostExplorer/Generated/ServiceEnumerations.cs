@@ -693,6 +693,14 @@ namespace Amazon.CostExplorer
         /// </summary>
         public static readonly Dimension AGREEMENT_END_DATE_TIME_BEFORE = new Dimension("AGREEMENT_END_DATE_TIME_BEFORE");
         /// <summary>
+        /// Constant ANOMALY_TOTAL_IMPACT_ABSOLUTE for Dimension
+        /// </summary>
+        public static readonly Dimension ANOMALY_TOTAL_IMPACT_ABSOLUTE = new Dimension("ANOMALY_TOTAL_IMPACT_ABSOLUTE");
+        /// <summary>
+        /// Constant ANOMALY_TOTAL_IMPACT_PERCENTAGE for Dimension
+        /// </summary>
+        public static readonly Dimension ANOMALY_TOTAL_IMPACT_PERCENTAGE = new Dimension("ANOMALY_TOTAL_IMPACT_PERCENTAGE");
+        /// <summary>
         /// Constant AZ for Dimension
         /// </summary>
         public static readonly Dimension AZ = new Dimension("AZ");
@@ -1200,6 +1208,10 @@ namespace Amazon.CostExplorer
         /// Constant EQUALS for MatchOption
         /// </summary>
         public static readonly MatchOption EQUALS = new MatchOption("EQUALS");
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUAL for MatchOption
+        /// </summary>
+        public static readonly MatchOption GREATER_THAN_OR_EQUAL = new MatchOption("GREATER_THAN_OR_EQUAL");
         /// <summary>
         /// Constant STARTS_WITH for MatchOption
         /// </summary>

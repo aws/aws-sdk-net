@@ -102,6 +102,17 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Threshold);
             }
 
+            if(requestObject.IsSetThresholdExpression())
+            {
+                context.Writer.WritePropertyName("ThresholdExpression");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ExpressionMarshaller.Instance;
+                marshaller.Marshall(requestObject.ThresholdExpression, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

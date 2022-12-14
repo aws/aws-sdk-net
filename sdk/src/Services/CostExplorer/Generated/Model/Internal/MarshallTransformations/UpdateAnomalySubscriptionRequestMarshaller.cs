@@ -118,6 +118,17 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Threshold);
                 }
 
+                if(publicRequest.IsSetThresholdExpression())
+                {
+                    context.Writer.WritePropertyName("ThresholdExpression");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExpressionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ThresholdExpression, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

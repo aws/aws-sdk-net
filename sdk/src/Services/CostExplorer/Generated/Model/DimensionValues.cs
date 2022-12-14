@@ -42,8 +42,22 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// The names of the metadata types that you can use to filter and group your results.
-        /// For example, <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code>
-        /// and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.
+        /// For example, <code>AZ</code> returns a list of Availability Zones.
+        /// </para>
+        ///  
+        /// <para>
+        /// Not all dimensions are supported in each API. Refer to the documentation for each
+        /// specific API to see what is supported.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in
+        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>
+        /// can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.
         /// </para>
         /// </summary>
         public Dimension Key
@@ -61,9 +75,17 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MatchOptions. 
         /// <para>
-        /// The match options that you can use to filter your results. <code>MatchOptions</code>
-        /// is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code>
-        /// are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+        /// The match options that you can use to filter your results.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>MatchOptions</code> is only applicable for actions related to Cost Category
+        /// and Anomaly Subscriptions. Refer to the documentation for each specific API to see
+        /// what is supported.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
         /// </para>
         /// </summary>
         public List<string> MatchOptions

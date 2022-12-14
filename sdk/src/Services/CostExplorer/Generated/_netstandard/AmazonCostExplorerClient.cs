@@ -340,9 +340,9 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Adds a subscription to a cost anomaly detection monitor. You can use each subscription
-        /// to define subscribers with email or SNS notifications. Email subscribers can set a
-        /// dollar threshold and a time frequency for receiving notifications.
+        /// Adds an alert subscription to a cost anomaly detection monitor. You can use each subscription
+        /// to define subscribers with email or SNS notifications. Email subscribers can set an
+        /// absolute or percentage threshold and a time frequency for receiving notifications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAnomalySubscription service method.</param>
         /// <param name="cancellationToken">
@@ -594,7 +594,8 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Retrieves all of the cost anomalies detected on your account during the time period
-        /// that's specified by the <code>DateInterval</code> object.
+        /// that's specified by the <code>DateInterval</code> object. Anomalies are available
+        /// for up to 90 days.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAnomalies service method.</param>
         /// <param name="cancellationToken">

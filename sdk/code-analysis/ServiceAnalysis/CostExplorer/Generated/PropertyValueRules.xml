@@ -1059,6 +1059,18 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.Impact.TotalActualSpend</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.Impact.TotalExpectedSpend</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.Impact.TotalImpactPercentage</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.NetworkResourceUtilization.NetworkInBytesPerSecond</property>
     <min>0</min>
     <max>1024</max>
