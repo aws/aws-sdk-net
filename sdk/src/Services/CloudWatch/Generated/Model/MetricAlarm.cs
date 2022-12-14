@@ -44,6 +44,7 @@ namespace Amazon.CloudWatch.Model
         private List<Dimension> _dimensions = new List<Dimension>();
         private string _evaluateLowSampleCountPercentile;
         private int? _evaluationPeriods;
+        private EvaluationState _evaluationState;
         private string _extendedStatistic;
         private List<string> _insufficientDataActions = new List<string>();
         private string _metricName;
@@ -53,6 +54,7 @@ namespace Amazon.CloudWatch.Model
         private int? _period;
         private string _stateReason;
         private string _stateReasonData;
+        private DateTime? _stateTransitionedTimestamp;
         private DateTime? _stateUpdatedTimestamp;
         private StateValue _stateValue;
         private Statistic _statistic;
@@ -273,6 +275,27 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EvaluationState. 
+        /// <para>
+        /// If the value of this field is <code>PARTIAL_DATA</code>, the alarm is being evaluated
+        /// based on only partial data. This happens if the query used for the alarm returns more
+        /// than 10,000 metrics. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+        /// alarms on Metrics Insights queries</a>.
+        /// </para>
+        /// </summary>
+        public EvaluationState EvaluationState
+        {
+            get { return this._evaluationState; }
+            set { this._evaluationState = value; }
+        }
+
+        // Check to see if EvaluationState property is set
+        internal bool IsSetEvaluationState()
+        {
+            return this._evaluationState != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ExtendedStatistic. 
         /// <para>
         /// The percentile statistic for the metric associated with the alarm. Specify a value
@@ -449,9 +472,28 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StateTransitionedTimestamp. 
+        /// <para>
+        /// The date and time that the alarm's <code>StateValue</code> most recently changed.
+        /// </para>
+        /// </summary>
+        public DateTime StateTransitionedTimestamp
+        {
+            get { return this._stateTransitionedTimestamp.GetValueOrDefault(); }
+            set { this._stateTransitionedTimestamp = value; }
+        }
+
+        // Check to see if StateTransitionedTimestamp property is set
+        internal bool IsSetStateTransitionedTimestamp()
+        {
+            return this._stateTransitionedTimestamp.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StateUpdatedTimestamp. 
         /// <para>
-        /// The time stamp of the last update to the alarm state.
+        /// The time stamp of the last update to the value of either the <code>StateValue</code>
+        /// or <code>EvaluationState</code> parameters.
         /// </para>
         /// </summary>
         public DateTime StateUpdatedTimestamp
