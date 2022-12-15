@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         private RecommendationJobResourceLimit _resourceLimit;
         private TrafficPattern _trafficPattern;
         private string _volumeKmsKeyId;
+        private RecommendationJobVpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property ContainerConfig. 
@@ -245,6 +246,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetVolumeKmsKeyId()
         {
             return this._volumeKmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// Inference Recommender provisions SageMaker endpoints with access to VPC in the inference
+        /// recommendation job.
+        /// </para>
+        /// </summary>
+        public RecommendationJobVpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

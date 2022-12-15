@@ -109,8 +109,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TableFormat. 
         /// <para>
-        /// Format for the offline store feature group. <code>Iceberg</code> is the optimal format
-        /// for feature groups shared between offline and online stores.
+        /// Format for the offline store table. Supported formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
+        /// Iceberg</a>.
         /// </para>
         /// </summary>
         public TableFormat TableFormat

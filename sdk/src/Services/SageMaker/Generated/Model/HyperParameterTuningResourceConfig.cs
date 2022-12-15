@@ -30,13 +30,17 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// The configuration of resources, including compute instances and storage volumes for
-    /// use in training jobs launched by hyperparameter tuning jobs. Specify one or more instance
-    /// type and count and the allocation strategy for instance selection.
+    /// use in training jobs launched by hyperparameter tuning jobs. <code>HyperParameterTuningResourceConfig</code>
+    /// is similar to <code>ResourceConfig</code>, but has the additional <code>InstanceConfigs</code>
+    /// and <code>AllocationStrategy</code> fields to allow for flexible instance management.
+    /// Specify one or more instance types, count, and the allocation strategy for instance
+    /// selection.
     /// 
     ///  <note> 
     /// <para>
-    ///  <code>HyperParameterTuningResourceConfig</code> supports all of the capabilities
-    /// of ResourceConfig with added functionality for flexible instance management.
+    ///  <code>HyperParameterTuningResourceConfig</code> supports the capabilities of <code>ResourceConfig</code>
+    /// with the exception of <code>KeepAlivePeriodInSeconds</code>. Hyperparameter tuning
+    /// jobs use warm pools by default, which reuse clusters between training jobs.
     /// </para>
     ///  </note>
     /// </summary>

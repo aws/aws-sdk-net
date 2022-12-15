@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The infrastructure configuration for deploying the model to real-time inference.
+    /// The infrastructure configuration for deploying the model to a real-time inference
+    /// endpoint.
     /// </summary>
     public partial class RealTimeInferenceConfig
     {
@@ -39,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InstanceCount. 
         /// <para>
-        /// The instance type the model is deployed to.
+        /// The number of instances of the type specified by <code>InstanceType</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -58,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The number of instances of the type specified by <code>InstanceType</code>.
+        /// The instance type the model is deployed to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

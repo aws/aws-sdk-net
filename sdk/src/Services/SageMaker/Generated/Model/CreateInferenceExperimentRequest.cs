@@ -35,8 +35,9 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    ///  Use this API to schedule an experiment to compare model variants on a Amazon SageMaker
-    /// inference endpoint. For more information about inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow
+    ///  Use this API to setup and schedule an experiment to compare model variants on a Amazon
+    /// SageMaker inference endpoint. For more information about inference experiments, see
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow
     /// tests</a>. 
     /// </para>
     ///  
@@ -68,8 +69,13 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DataStorageConfig. 
         /// <para>
-        ///  The storage configuration for the inference experiment. This is an optional parameter
-        /// that you can use for data capture. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
+        ///  The Amazon S3 location and configuration for storing inference request and response
+        /// data. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  This is an optional parameter that you can use for data capture. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
         /// data</a>. 
         /// </para>
         /// </summary>
@@ -202,10 +208,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelVariants. 
         /// <para>
-        ///  Array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant
-        /// in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in
-        /// the array describes the infrastructure configuration for the corresponding variant.
-        /// 
+        ///  An array of <code>ModelVariantConfig</code> objects. There is one for each variant
+        /// in the inference experiment. Each <code>ModelVariantConfig</code> object in the array
+        /// describes the infrastructure configuration for the corresponding variant. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2)]
@@ -244,7 +249,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         ///  The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts
-        /// and container images. 
+        /// and container images, and manage Amazon SageMaker Inference endpoints for model deployment.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -264,7 +270,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Schedule. 
         /// <para>
         ///  The duration for which you want the inference experiment to run. If you don't specify
-        /// this field, the experiment automatically concludes after 7 days. 
+        /// this field, the experiment automatically starts immediately upon creation and concludes
+        /// after 7 days. 
         /// </para>
         /// </summary>
         public InferenceExperimentSchedule Schedule
@@ -282,8 +289,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ShadowModeConfig. 
         /// <para>
-        ///  Shows which variant is the production variant and which variant is the shadow variant.
-        /// For the shadow variant, also shows the sampling percentage. 
+        ///  The configuration of <code>ShadowMode</code> inference experiment type. Use this
+        /// field to specify a production variant which takes all the inference requests, and
+        /// a shadow variant to which Amazon SageMaker replicates a percentage of the inference
+        /// requests. For the shadow variant also specify the percentage of requests that Amazon
+        /// SageMaker replicates. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

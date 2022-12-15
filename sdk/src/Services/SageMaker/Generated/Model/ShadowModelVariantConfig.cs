@@ -39,7 +39,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SamplingPercentage. 
         /// <para>
-        /// The percentage of inference requests that are replicated to the shadow variant.
+        ///  The percentage of inference requests that Amazon SageMaker replicates from the production
+        /// variant to the shadow variant. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=100)]

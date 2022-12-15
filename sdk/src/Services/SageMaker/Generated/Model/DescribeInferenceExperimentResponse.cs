@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CompletionTime. 
         /// <para>
-        ///  The timestamp at which the inference experiment was completed or will complete. 
+        ///  The timestamp at which the inference experiment was completed. 
         /// </para>
         /// </summary>
         public DateTime CompletionTime
@@ -108,7 +108,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DataStorageConfig. 
         /// <para>
-        /// The Amazon S3 storage configuration for the inference experiment.
+        /// The Amazon S3 location and configuration for storing inference request and response
+        /// data.
         /// </para>
         /// </summary>
         public InferenceExperimentDataStorageConfig DataStorageConfig
@@ -204,9 +205,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelVariants. 
         /// <para>
-        ///  Array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant
-        /// in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in
-        /// the array describes the infrastructure configuration for deploying the corresponding
+        ///  An array of <code>ModelVariantConfigSummary</code> objects. There is one for each
+        /// variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object
+        /// in the array describes the infrastructure configuration for deploying the corresponding
         /// variant. 
         /// </para>
         /// </summary>
@@ -246,7 +247,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         ///  The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts
-        /// and container images. 
+        /// and container images, and manage Amazon SageMaker Inference endpoints for model deployment.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -283,8 +285,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ShadowModeConfig. 
         /// <para>
-        ///  Shows which variant is a production variant and which variant is a shadow variant.
-        /// For shadow variants, also shows the sampling percentage. 
+        ///  The configuration of <code>ShadowMode</code> inference experiment type, which shows
+        /// the production variant that takes all the inference requests, and the shadow variant
+        /// to which Amazon SageMaker replicates a percentage of the inference requests. For the
+        /// shadow variant it also shows the percentage of requests that Amazon SageMaker replicates.
+        /// 
         /// </para>
         /// </summary>
         public ShadowModeConfig ShadowModeConfig
@@ -311,8 +316,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Created</code> - Amazon SageMaker has finished creating your experiment and
-        /// it will begin at the scheduled time. 
+        ///  <code>Created</code> - Amazon SageMaker has finished the creation of your experiment
+        /// and will begin the experiment at the scheduled time. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -337,8 +342,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Cancelled</code> - When you conclude your experiment early, it shows as canceled.
-        /// 
+        ///  <code>Cancelled</code> - When you conclude your experiment early using the <a>StopInferenceExperiment</a>
+        /// API, or if any operation fails with an unexpected error, it shows as cancelled. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -358,7 +363,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// The error message for the inference experiment status result.
+        ///  The error message or client-specified <code>Reason</code> from the <a>StopInferenceExperiment</a>
+        /// API, that explains the status of the inference experiment. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

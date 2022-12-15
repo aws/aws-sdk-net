@@ -1983,8 +1983,9 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
-        ///  Use this API to schedule an experiment to compare model variants on a Amazon SageMaker
-        /// inference endpoint. For more information about inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow
+        ///  Use this API to setup and schedule an experiment to compare model variants on a Amazon
+        /// SageMaker inference endpoint. For more information about inference experiments, see
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow
         /// tests</a>. 
         /// </para>
         ///  
@@ -2020,8 +2021,9 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
-        ///  Use this API to schedule an experiment to compare model variants on a Amazon SageMaker
-        /// inference endpoint. For more information about inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow
+        ///  Use this API to setup and schedule an experiment to compare model variants on a Amazon
+        /// SageMaker inference endpoint. For more information about inference experiments, see
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow
         /// tests</a>. 
         /// </para>
         ///  

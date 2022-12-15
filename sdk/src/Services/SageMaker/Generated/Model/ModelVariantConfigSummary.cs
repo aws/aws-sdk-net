@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The name of the model.
+        /// The name of the Amazon SageMaker Model entity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]
@@ -79,8 +79,34 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the deployment.
+        /// The status of deployment for the model variant on the hosted inference endpoint.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Creating</code> - Amazon SageMaker is preparing the model variant on the hosted
+        /// inference endpoint. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>InService</code> - The model variant is running on the hosted inference endpoint.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Updating</code> - Amazon SageMaker is updating the model variant on the hosted
+        /// inference endpoint. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Deleting</code> - Amazon SageMaker is deleting the model variant on the hosted
+        /// inference endpoint. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Deleted</code> - The model variant has been deleted on the hosted inference
+        /// endpoint. This can only happen after stopping the experiment. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ModelVariantStatus Status

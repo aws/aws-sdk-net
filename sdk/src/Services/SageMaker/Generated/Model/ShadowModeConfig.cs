@@ -29,8 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Shows which variant is a production variant and which variant is a shadow variant.
-    /// For shadow variants, also shows the sampling percentages.
+    /// The configuration of <code>ShadowMode</code> inference experiment type, which specifies
+    /// a production variant to take all the inference requests, and a shadow variant to which
+    /// Amazon SageMaker replicates a percentage of the inference requests. For the shadow
+    /// variant it also specifies the percentage of requests that Amazon SageMaker replicates.
     /// </summary>
     public partial class ShadowModeConfig
     {
@@ -59,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SourceModelVariantName. 
         /// <para>
-        ///  The name of the production variant. 
+        ///  The name of the production variant, which takes all the inference requests. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]

@@ -216,6 +216,11 @@ namespace Amazon.SageMaker.Model
         /// key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to 99
         /// percent.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Format for the offline store table. Supported formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
+        /// Iceberg</a>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// To learn more about this parameter, see <a>OfflineStoreConfig</a>.

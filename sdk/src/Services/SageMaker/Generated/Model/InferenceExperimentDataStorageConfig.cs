@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The Amazon S3 location and configuration for storing inference experiment data.
+    /// The Amazon S3 location and configuration for storing inference request and response
+    /// data.
     /// </summary>
     public partial class InferenceExperimentDataStorageConfig
     {
@@ -55,7 +56,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The Amazon S3 bucket where the inference experiment data is stored. 
+        /// The Amazon S3 bucket where the inference request and response data is stored. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=512)]
@@ -74,8 +75,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KmsKey. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key
-        /// that Amazon SageMaker uses to encrypt captured data when uploading to Amazon S3. 
+        ///  The Amazon Web Services Key Management Service key that Amazon SageMaker uses to
+        /// encrypt captured data at rest using Amazon S3 server-side encryption. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

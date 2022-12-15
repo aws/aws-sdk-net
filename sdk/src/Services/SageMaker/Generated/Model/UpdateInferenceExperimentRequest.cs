@@ -46,7 +46,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DataStorageConfig. 
         /// <para>
-        /// The Amazon S3 storage configuration for the inference experiment.
+        /// The Amazon S3 location and configuration for storing inference request and response
+        /// data.
         /// </para>
         /// </summary>
         public InferenceExperimentDataStorageConfig DataStorageConfig
@@ -83,7 +84,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelVariants. 
         /// <para>
-        ///  Array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant,
+        ///  An array of <code>ModelVariantConfig</code> objects. There is one for each variant,
         /// whose infrastructure configuration you want to update. 
         /// </para>
         /// </summary>
@@ -143,7 +144,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ShadowModeConfig. 
         /// <para>
-        /// The Amazon S3 storage configuration for the inference experiment.
+        ///  The configuration of <code>ShadowMode</code> inference experiment type. Use this
+        /// field to specify a production variant which takes all the inference requests, and
+        /// a shadow variant to which Amazon SageMaker replicates a percentage of the inference
+        /// requests. For the shadow variant also specify the percentage of requests that Amazon
+        /// SageMaker replicates. 
         /// </para>
         /// </summary>
         public ShadowModeConfig ShadowModeConfig

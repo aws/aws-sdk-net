@@ -140,8 +140,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key
-        /// that SageMaker uses to encrypt data on the storage volume attached to the ML compute
-        /// instance that hosts the endpoint.
+        /// that SageMaker uses to encrypt the captured data at rest using Amazon S3 server-side
+        /// encryption.
         /// </para>
         ///  
         /// <para>

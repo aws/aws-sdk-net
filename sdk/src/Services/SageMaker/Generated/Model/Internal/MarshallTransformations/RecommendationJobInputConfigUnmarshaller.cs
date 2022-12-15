@@ -112,6 +112,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.VolumeKmsKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VpcConfig", targetDepth))
+                {
+                    var unmarshaller = RecommendationJobVpcConfigUnmarshaller.Instance;
+                    unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

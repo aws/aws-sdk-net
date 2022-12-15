@@ -142,7 +142,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         ///  The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts
-        /// and container images. 
+        /// and container images, and manage Amazon SageMaker Inference endpoints for model deployment.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

@@ -277,10 +277,29 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property OfflineStoreConfig. 
         /// <para>
-        /// The configuration of the <code>OfflineStore</code>, inducing the S3 location of the
-        /// <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web Services Hive data
-        /// catalogue configurations, and the security configuration.
+        /// The configuration of the offline store. It includes the following configurations:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon S3 location of the offline store.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Configuration of the Glue data catalog.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Table format of the offline store.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Option to disable the automatic creation of a Glue table for the offline store.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Encryption configuration.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public OfflineStoreConfig OfflineStoreConfig
         {
@@ -374,7 +393,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM execution role used to persist data into
-        /// the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.
+        /// the OfflineStore if an OfflineStoreConfig is provided.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

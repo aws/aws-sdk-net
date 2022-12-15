@@ -43,8 +43,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DesiredModelVariants. 
         /// <para>
-        ///  Array of <code>ModelVariantConfig</code> objects. There is one for each variant that
-        /// you want to deploy after the inference experiment stops. Each <code>ModelVariantConfig</code>
+        ///  An array of <code>ModelVariantConfig</code> objects. There is one for each variant
+        /// that you want to deploy after the inference experiment stops. Each <code>ModelVariantConfig</code>
         /// describes the infrastructure configuration for deploying the corresponding variant.
         /// 
         /// </para>

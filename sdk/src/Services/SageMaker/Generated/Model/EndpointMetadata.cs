@@ -98,8 +98,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        ///  If the status of the endpoint is <code>Failed</code>, this provides the reason why
-        /// it failed. 
+        ///  If the status of the endpoint is <code>Failed</code>, or the status is <code>InService</code>
+        /// but update operation fails, this provides the reason why it failed. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

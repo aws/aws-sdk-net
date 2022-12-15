@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Describes the resources, including ML compute instances and ML storage volumes, to
-    /// use for model training.
+    /// Describes the resources, including machine learning (ML) compute instances and ML
+    /// storage volumes, to use for model training.
     /// </summary>
     public partial class ResourceConfig
     {
@@ -85,6 +85,35 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The ML compute instance type. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview
+        /// release starting December 9th, 2022. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="http://aws.amazon.com/ec2/instance-types/p4/">Amazon EC2 P4de instances</a>
+        /// (currently in preview) are powered by 8 NVIDIA A100 GPUs with 80GB high-performance
+        /// HBM2e GPU memory, which accelerate the speed of training ML models that need to be
+        /// trained on large datasets of high-resolution data. In this preview release, Amazon
+        /// SageMaker supports ML training jobs on P4de instances (<code>ml.p4de.24xlarge</code>)
+        /// to reduce model training time. The <code>ml.p4de.24xlarge</code> instances are available
+        /// in the following Amazon Web Services Regions. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// US East (N. Virginia) (us-east-1)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// US West (Oregon) (us-west-2)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To request quota limit increase and start using P4de instances, contact the SageMaker
+        /// Training service team through your account team.
+        /// </para>
+        ///  </note>
         /// </summary>
         public TrainingInstanceType InstanceType
         {
