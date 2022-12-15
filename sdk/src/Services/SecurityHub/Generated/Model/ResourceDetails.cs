@@ -68,6 +68,7 @@ namespace Amazon.SecurityHub.Model
         private AwsDynamoDbTableDetails _awsDynamoDbTable;
         private AwsEc2EipDetails _awsEc2Eip;
         private AwsEc2InstanceDetails _awsEc2Instance;
+        private AwsEc2LaunchTemplateDetails _awsEc2LaunchTemplate;
         private AwsEc2NetworkAclDetails _awsEc2NetworkAcl;
         private AwsEc2NetworkInterfaceDetails _awsEc2NetworkInterface;
         private AwsEc2SecurityGroupDetails _awsEc2SecurityGroup;
@@ -114,6 +115,7 @@ namespace Amazon.SecurityHub.Model
         private AwsS3AccountPublicAccessBlockDetails _awsS3AccountPublicAccessBlock;
         private AwsS3BucketDetails _awsS3Bucket;
         private AwsS3ObjectDetails _awsS3Object;
+        private AwsSageMakerNotebookInstanceDetails _awsSageMakerNotebookInstance;
         private AwsSecretsManagerSecretDetails _awsSecretsManagerSecret;
         private AwsSnsTopicDetails _awsSnsTopic;
         private AwsSqsQueueDetails _awsSqsQueue;
@@ -125,6 +127,8 @@ namespace Amazon.SecurityHub.Model
         private AwsWafRegionalWebAclDetails _awsWafRegionalWebAcl;
         private AwsWafRuleDetails _awsWafRule;
         private AwsWafRuleGroupDetails _awsWafRuleGroup;
+        private AwsWafv2RuleGroupDetails _awsWafv2RuleGroup;
+        private AwsWafv2WebAclDetails _awsWafv2WebAcl;
         private AwsWafWebAclDetails _awsWafWebAcl;
         private AwsXrayEncryptionConfigDetails _awsXrayEncryptionConfig;
         private ContainerDetails _container;
@@ -454,6 +458,21 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsEc2Instance()
         {
             return this._awsEc2Instance != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsEc2LaunchTemplate.
+        /// </summary>
+        public AwsEc2LaunchTemplateDetails AwsEc2LaunchTemplate
+        {
+            get { return this._awsEc2LaunchTemplate; }
+            set { this._awsEc2LaunchTemplate = value; }
+        }
+
+        // Check to see if AwsEc2LaunchTemplate property is set
+        internal bool IsSetAwsEc2LaunchTemplate()
+        {
+            return this._awsEc2LaunchTemplate != null;
         }
 
         /// <summary>
@@ -1291,6 +1310,21 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsSageMakerNotebookInstance.
+        /// </summary>
+        public AwsSageMakerNotebookInstanceDetails AwsSageMakerNotebookInstance
+        {
+            get { return this._awsSageMakerNotebookInstance; }
+            set { this._awsSageMakerNotebookInstance = value; }
+        }
+
+        // Check to see if AwsSageMakerNotebookInstance property is set
+        internal bool IsSetAwsSageMakerNotebookInstance()
+        {
+            return this._awsSageMakerNotebookInstance != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsSecretsManagerSecret. 
         /// <para>
         /// Details about a Secrets Manager secret.
@@ -1487,6 +1521,36 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsWafRuleGroup()
         {
             return this._awsWafRuleGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsWafv2RuleGroup.
+        /// </summary>
+        public AwsWafv2RuleGroupDetails AwsWafv2RuleGroup
+        {
+            get { return this._awsWafv2RuleGroup; }
+            set { this._awsWafv2RuleGroup = value; }
+        }
+
+        // Check to see if AwsWafv2RuleGroup property is set
+        internal bool IsSetAwsWafv2RuleGroup()
+        {
+            return this._awsWafv2RuleGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsWafv2WebAcl.
+        /// </summary>
+        public AwsWafv2WebAclDetails AwsWafv2WebAcl
+        {
+            get { return this._awsWafv2WebAcl; }
+            set { this._awsWafv2WebAcl = value; }
+        }
+
+        // Check to see if AwsWafv2WebAcl property is set
+        internal bool IsSetAwsWafv2WebAcl()
+        {
+            return this._awsWafv2WebAcl != null;
         }
 
         /// <summary>

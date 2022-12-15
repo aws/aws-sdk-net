@@ -347,9 +347,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -444,9 +442,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -527,9 +523,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -605,9 +599,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -755,9 +747,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -883,9 +873,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -960,9 +948,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1043,9 +1029,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1120,9 +1104,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1257,9 +1239,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1337,9 +1317,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1412,9 +1390,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1492,9 +1468,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1566,9 +1540,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1647,9 +1619,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1727,9 +1697,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1801,9 +1769,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1871,9 +1837,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1946,9 +1910,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2028,9 +1990,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2105,9 +2065,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2177,9 +2135,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2247,9 +2203,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2322,9 +2276,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2413,9 +2365,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
@@ -2490,9 +2440,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2584,9 +2532,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2667,9 +2613,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2748,9 +2692,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2823,9 +2765,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2937,9 +2877,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
@@ -3014,9 +2952,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3088,9 +3024,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3162,9 +3096,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3243,9 +3175,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3314,9 +3244,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3388,9 +3316,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3463,9 +3389,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3553,9 +3477,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3642,9 +3564,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3734,9 +3654,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3809,9 +3727,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
@@ -3880,9 +3796,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3958,9 +3872,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -4036,9 +3948,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -4108,9 +4018,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -4371,9 +4279,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -4451,9 +4357,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -4533,9 +4437,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -4607,9 +4509,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -4682,9 +4582,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -4753,9 +4651,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -4827,9 +4723,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for

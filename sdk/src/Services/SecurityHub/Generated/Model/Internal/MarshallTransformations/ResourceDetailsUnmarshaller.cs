@@ -172,6 +172,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsEc2Instance = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsEc2LaunchTemplate", targetDepth))
+                {
+                    var unmarshaller = AwsEc2LaunchTemplateDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsEc2LaunchTemplate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsEc2NetworkAcl", targetDepth))
                 {
                     var unmarshaller = AwsEc2NetworkAclDetailsUnmarshaller.Instance;
@@ -448,6 +454,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsS3Object = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsSageMakerNotebookInstance", targetDepth))
+                {
+                    var unmarshaller = AwsSageMakerNotebookInstanceDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsSageMakerNotebookInstance = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsSecretsManagerSecret", targetDepth))
                 {
                     var unmarshaller = AwsSecretsManagerSecretDetailsUnmarshaller.Instance;
@@ -512,6 +524,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AwsWafRuleGroupDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsWafRuleGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsWafv2RuleGroup", targetDepth))
+                {
+                    var unmarshaller = AwsWafv2RuleGroupDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsWafv2RuleGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsWafv2WebAcl", targetDepth))
+                {
+                    var unmarshaller = AwsWafv2WebAclDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsWafv2WebAcl = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AwsWafWebAcl", targetDepth))
