@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
-    /// Defines the storage configuration for an environment.
+    /// Defines the storage configuration for a runtime environment.
     /// </summary>
     public partial class StorageConfiguration
     {

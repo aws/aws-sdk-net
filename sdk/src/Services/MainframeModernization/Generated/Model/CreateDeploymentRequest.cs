@@ -30,7 +30,7 @@ namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDeployment operation.
-    /// Creates and starts a deployment to deploy an application into an environment.
+    /// Creates and starts a deployment to deploy an application into a runtime environment.
     /// </summary>
     public partial class CreateDeploymentRequest : AmazonMainframeModernizationRequest
     {
@@ -102,7 +102,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        /// The identifier of the environment where this application will be deployed.
+        /// The identifier of the runtime environment where you want to deploy this application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -105,6 +105,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                     response.InstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("kmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("loadBalancerArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

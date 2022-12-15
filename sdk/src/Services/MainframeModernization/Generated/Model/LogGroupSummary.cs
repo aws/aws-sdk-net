@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
-    /// A subset of the attributes about a log group. In CloudWatch a log group is a group
-    /// of log streams that share the same retention, monitoring, and access control settings.
+    /// A subset of the attributes that describe a log group. In CloudWatch a log group is
+    /// a group of log streams that share the same retention, monitoring, and access control
+    /// settings.
     /// </summary>
     public partial class LogGroupSummary
     {

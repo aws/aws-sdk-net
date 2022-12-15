@@ -57,7 +57,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// The maintenance schedule for the engine version.
+        /// The maintenance schedule for the runtime engine version.
         /// </para>
         /// </summary>
         public MaintenanceSchedule Schedule

@@ -30,7 +30,7 @@ namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
-    /// Creates a new application with given parameters. Requires an existing environment
+    /// Creates a new application with given parameters. Requires an existing runtime environment
     /// and application definition file.
     /// </summary>
     public partial class CreateApplicationRequest : AmazonMainframeModernizationRequest
@@ -39,6 +39,7 @@ namespace Amazon.MainframeModernization.Model
         private Definition _definition;
         private string _description;
         private EngineType _engineType;
+        private string _kmsKeyId;
         private string _name;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
@@ -120,6 +121,24 @@ namespace Amazon.MainframeModernization.Model
         internal bool IsSetEngineType()
         {
             return this._engineType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The identifier of a customer managed key.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

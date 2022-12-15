@@ -40,6 +40,7 @@ namespace Amazon.MainframeModernization.Model
         private string _description;
         private EngineType _engineType;
         private string _environmentId;
+        private string _kmsKeyId;
         private DateTime? _lastStartTime;
         private ApplicationVersionSummary _latestVersion;
         private List<string> _listenerArns = new List<string>();
@@ -168,7 +169,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        /// The identifier of the environment where the application will be deployed.
+        /// The identifier of the runtime environment where you want to deploy the application.
         /// </para>
         /// </summary>
         public string EnvironmentId
@@ -184,10 +185,28 @@ namespace Amazon.MainframeModernization.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The identifier of a customer managed key.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastStartTime. 
         /// <para>
-        /// The timestamp when the application was last started. Null until the application has
-        /// started running for the first time.
+        /// The timestamp when you last started the application. Null until the application runs
+        /// for the first time.
         /// </para>
         /// </summary>
         public DateTime LastStartTime
@@ -226,7 +245,7 @@ namespace Amazon.MainframeModernization.Model
         /// <para>
         /// The Amazon Resource Name (ARN) for the network load balancer listener created in your
         /// Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this
-        /// listener on your behalf the first time you deploy an application.
+        /// listener for you the first time you deploy an application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -284,8 +303,8 @@ namespace Amazon.MainframeModernization.Model
         /// Gets and sets the property LogGroups. 
         /// <para>
         /// The list of log summaries. Each log summary includes the log type as well as the log
-        /// group identifier. These are CloudWatch logs. The Amazon Web Services Mainframe Modernization
-        /// application log is pushed to CloudWatch under the customer's account.
+        /// group identifier. These are CloudWatch logs. Amazon Web Services Mainframe Modernization
+        /// pushes the application log to CloudWatch under the customer's account.
         /// </para>
         /// </summary>
         public List<LogGroupSummary> LogGroups

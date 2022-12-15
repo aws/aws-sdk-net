@@ -42,7 +42,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property EngineType. 
         /// <para>
-        /// The engine type for the environment.
+        /// The engine type for the runtime environment.
         /// </para>
         /// </summary>
         public EngineType EngineType
@@ -60,7 +60,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of environments to return.
+        /// The maximum number of runtime environments to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -79,7 +79,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property Names. 
         /// <para>
-        /// The name of the environment.
+        /// The names of the runtime environments. Must be unique within the account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -98,7 +98,8 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token to control the number of environments displayed in the list.
+        /// A pagination token to control the number of runtime environments displayed in the
+        /// list.
         /// </para>
         /// </summary>
         public string NextToken

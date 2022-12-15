@@ -344,7 +344,7 @@ namespace Amazon.MainframeModernization
         #region  CreateApplication
 
         /// <summary>
-        /// Creates a new application with given parameters. Requires an existing environment
+        /// Creates a new application with given parameters. Requires an existing runtime environment
         /// and application definition file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
@@ -492,7 +492,7 @@ namespace Amazon.MainframeModernization
         #region  CreateDeployment
 
         /// <summary>
-        /// Creates and starts a deployment to deploy an application into an environment.
+        /// Creates and starts a deployment to deploy an application into a runtime environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeployment service method.</param>
         /// 
@@ -708,10 +708,11 @@ namespace Amazon.MainframeModernization
         #region  DeleteApplicationFromEnvironment
 
         /// <summary>
-        /// Deletes a specific application from a specified environment where it has been previously
-        /// deployed. You cannot delete an environment using DeleteEnvironment, if any application
-        /// has ever been deployed to it. This API removes the association of the application
-        /// with the environment so you can delete the environment smoothly.
+        /// Deletes a specific application from the specific runtime environment where it was
+        /// previously deployed. You cannot delete a runtime environment using DeleteEnvironment
+        /// if any application has ever been deployed to it. This API removes the association
+        /// of the application with the runtime environment so you can delete the environment
+        /// smoothly.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationFromEnvironment service method.</param>
         /// 
@@ -783,7 +784,7 @@ namespace Amazon.MainframeModernization
         #region  DeleteEnvironment
 
         /// <summary>
-        /// Deletes a specific environment. The environment cannot contain deployed applications.
+        /// Deletes a specific runtime environment. The environment cannot contain deployed applications.
         /// If it does, you must delete those applications before you delete the environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironment service method.</param>
@@ -1338,8 +1339,8 @@ namespace Amazon.MainframeModernization
 
         /// <summary>
         /// Lists the applications associated with a specific Amazon Web Services account. You
-        /// can provide the unique identifier of a specific environment in a query parameter to
-        /// see all applications associated with that environment.
+        /// can provide the unique identifier of a specific runtime environment in a query parameter
+        /// to see all applications associated with that environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
         /// 
@@ -1475,7 +1476,7 @@ namespace Amazon.MainframeModernization
 
         /// <summary>
         /// Lists all the available batch job definitions based on the batch job resources uploaded
-        /// during the application creation. The listed batch job definitions can then be used
+        /// during the application creation. You can use the batch job definitions in the list
         /// to start a batch job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBatchJobDefinitions service method.</param>
@@ -1684,7 +1685,7 @@ namespace Amazon.MainframeModernization
 
         /// <summary>
         /// Lists the data sets imported for a specific application. In Amazon Web Services Mainframe
-        /// Modernization, data sets are associated with applications deployed on environments.
+        /// Modernization, data sets are associated with applications deployed on runtime environments.
         /// This is known as importing data sets. Currently, Amazon Web Services Mainframe Modernization
         /// can import data sets into catalogs using <a href="https://docs.aws.amazon.com/m2/latest/APIReference/API_CreateDataSetImportTask.html">CreateDataSetImportTask</a>.
         /// </summary>
@@ -2457,7 +2458,7 @@ namespace Amazon.MainframeModernization
         #region  UpdateEnvironment
 
         /// <summary>
-        /// Updates the configuration details for a specific environment.
+        /// Updates the configuration details for a specific runtime environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironment service method.</param>
         /// 

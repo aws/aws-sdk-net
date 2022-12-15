@@ -30,10 +30,11 @@ namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplicationFromEnvironment operation.
-    /// Deletes a specific application from a specified environment where it has been previously
-    /// deployed. You cannot delete an environment using DeleteEnvironment, if any application
-    /// has ever been deployed to it. This API removes the association of the application
-    /// with the environment so you can delete the environment smoothly.
+    /// Deletes a specific application from the specific runtime environment where it was
+    /// previously deployed. You cannot delete a runtime environment using DeleteEnvironment
+    /// if any application has ever been deployed to it. This API removes the association
+    /// of the application with the runtime environment so you can delete the environment
+    /// smoothly.
     /// </summary>
     public partial class DeleteApplicationFromEnvironmentRequest : AmazonMainframeModernizationRequest
     {

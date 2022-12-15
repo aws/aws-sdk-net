@@ -99,6 +99,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EngineType);
                 }
 
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("kmsKeyId");
+                    context.Writer.Write(publicRequest.KmsKeyId);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

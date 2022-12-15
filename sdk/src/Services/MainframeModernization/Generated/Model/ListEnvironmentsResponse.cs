@@ -39,7 +39,8 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property Environments. 
         /// <para>
-        /// Returns a list of summary details for all the environments in your account. 
+        /// Returns a list of summary details for all the runtime environments in your account.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +59,8 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token that's returned when the response doesn't contain all the environments.
+        /// A pagination token that's returned when the response doesn't contain all the runtime
+        /// environments.
         /// </para>
         /// </summary>
         public string NextToken

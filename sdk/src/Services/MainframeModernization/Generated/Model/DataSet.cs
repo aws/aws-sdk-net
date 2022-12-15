@@ -61,7 +61,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property DatasetOrg. 
         /// <para>
-        /// The type of dataset. Possible values include VSAM, IS, PS, GDG, PO, PS, UNKNOWN etc.
+        /// The type of dataset. The only supported value is VSAM.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

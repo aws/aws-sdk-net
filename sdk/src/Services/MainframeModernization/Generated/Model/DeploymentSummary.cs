@@ -120,7 +120,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        /// The unique identifier of the environment.
+        /// The unique identifier of the runtime environment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

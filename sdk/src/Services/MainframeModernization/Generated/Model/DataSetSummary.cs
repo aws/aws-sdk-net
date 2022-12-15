@@ -80,7 +80,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property DataSetOrg. 
         /// <para>
-        /// The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.
+        /// The type of data set. The only supported value is VSAM.
         /// </para>
         /// </summary>
         public string DataSetOrg

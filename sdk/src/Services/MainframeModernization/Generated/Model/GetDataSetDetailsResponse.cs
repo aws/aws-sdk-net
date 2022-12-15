@@ -100,7 +100,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property DataSetOrg. 
         /// <para>
-        /// The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.
+        /// The type of data set. The only supported value is VSAM.
         /// </para>
         /// </summary>
         public DatasetDetailOrgAttributes DataSetOrg
@@ -154,7 +154,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The locaion where the data set is stored.
+        /// The location where the data set is stored.
         /// </para>
         /// </summary>
         public string Location

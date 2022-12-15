@@ -97,6 +97,10 @@ namespace Amazon.MainframeModernization
         /// </summary>
         public static readonly ApplicationLifecycle Deleting = new ApplicationLifecycle("Deleting");
         /// <summary>
+        /// Constant DeletingFromEnvironment for ApplicationLifecycle
+        /// </summary>
+        public static readonly ApplicationLifecycle DeletingFromEnvironment = new ApplicationLifecycle("Deleting From Environment");
+        /// <summary>
         /// Constant Failed for ApplicationLifecycle
         /// </summary>
         public static readonly ApplicationLifecycle Failed = new ApplicationLifecycle("Failed");
@@ -522,6 +526,10 @@ namespace Amazon.MainframeModernization
         /// Constant Failed for EnvironmentLifecycle
         /// </summary>
         public static readonly EnvironmentLifecycle Failed = new EnvironmentLifecycle("Failed");
+        /// <summary>
+        /// Constant Updating for EnvironmentLifecycle
+        /// </summary>
+        public static readonly EnvironmentLifecycle Updating = new EnvironmentLifecycle("Updating");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

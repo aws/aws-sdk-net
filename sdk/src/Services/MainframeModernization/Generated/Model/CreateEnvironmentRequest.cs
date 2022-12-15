@@ -40,6 +40,7 @@ namespace Amazon.MainframeModernization.Model
         private string _engineVersion;
         private HighAvailabilityConfig _highAvailabilityConfig;
         private string _instanceType;
+        private string _kmsKeyId;
         private string _name;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
@@ -73,7 +74,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the environment.
+        /// The description of the runtime environment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -92,7 +93,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property EngineType. 
         /// <para>
-        /// The engine type for the environment.
+        /// The engine type for the runtime environment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -111,7 +112,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version of the engine type for the environment.
+        /// The version of the engine type for the runtime environment.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -147,7 +148,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The type of instance for the environment.
+        /// The type of instance for the runtime environment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -164,9 +165,27 @@ namespace Amazon.MainframeModernization.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The identifier of a customer managed key.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The unique identifier of the environment.
+        /// The name of the runtime environment. Must be unique within the account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -185,8 +204,8 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        /// Configures a desired maintenance window for the environment. If you do not provide
-        /// a value, a random system-generated value will be assigned.
+        /// Configures the maintenance window you want for the runtime environment. If you do
+        /// not provide a value, a random system-generated value will be assigned.
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -204,7 +223,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// Specifies whether the environment is publicly accessible.
+        /// Specifies whether the runtime environment is publicly accessible.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible
@@ -222,7 +241,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The list of security groups for the VPC associated with this environment.
+        /// The list of security groups for the VPC associated with this runtime environment.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -240,7 +259,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property StorageConfigurations. 
         /// <para>
-        /// Optional. The storage configurations for this environment.
+        /// Optional. The storage configurations for this runtime environment.
         /// </para>
         /// </summary>
         public List<StorageConfiguration> StorageConfigurations
@@ -258,7 +277,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The list of subnets associated with the VPC for this environment.
+        /// The list of subnets associated with the VPC for this runtime environment.
         /// </para>
         /// </summary>
         public List<string> SubnetIds
@@ -276,7 +295,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags for the environment.
+        /// The tags for the runtime environment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

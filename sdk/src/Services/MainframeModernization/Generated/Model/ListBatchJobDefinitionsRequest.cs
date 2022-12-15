@@ -31,7 +31,7 @@ namespace Amazon.MainframeModernization.Model
     /// <summary>
     /// Container for the parameters to the ListBatchJobDefinitions operation.
     /// Lists all the available batch job definitions based on the batch job resources uploaded
-    /// during the application creation. The listed batch job definitions can then be used
+    /// during the application creation. You can use the batch job definitions in the list
     /// to start a batch job.
     /// </summary>
     public partial class ListBatchJobDefinitionsRequest : AmazonMainframeModernizationRequest

@@ -42,6 +42,7 @@ namespace Amazon.MainframeModernization.Model
         private string _environmentId;
         private HighAvailabilityConfig _highAvailabilityConfig;
         private string _instanceType;
+        private string _kmsKeyId;
         private string _loadBalancerArn;
         private string _name;
         private PendingMaintenance _pendingMaintenance;
@@ -228,6 +229,24 @@ namespace Amazon.MainframeModernization.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The identifier of a customer managed key.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LoadBalancerArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the load balancer used with the runtime environment.
@@ -248,7 +267,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the runtime environment. 
+        /// The name of the runtime environment. Must be unique within the account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -285,8 +304,8 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        /// Configures a desired maintenance window for the environment. If you do not provide
-        /// a value, a random system-generated value will be assigned.
+        /// Configures the maintenance window you want for the runtime environment. If you do
+        /// not provide a value, a random system-generated value will be assigned.
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow

@@ -83,7 +83,7 @@ namespace Amazon.MainframeModernization.Model
         /// Gets and sets the property DefinitionContent. 
         /// <para>
         /// The content of the application definition. This is a JSON object that contains the
-        /// resource configuration/definitions that identify an application.
+        /// resource configuration and definitions that identify an application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65000)]

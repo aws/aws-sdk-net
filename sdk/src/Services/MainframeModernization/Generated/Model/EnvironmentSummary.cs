@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
-    /// Contains a subset of the possible environment attributes. Used in the environment
+    /// Contains a subset of the possible runtime environment attributes. Used in the environment
     /// list.
     /// </summary>
     public partial class EnvironmentSummary
@@ -46,7 +46,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The timestamp when the environment was created.
+        /// The timestamp when the runtime environment was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +65,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property EngineType. 
         /// <para>
-        /// The target platform for the environment.
+        /// The target platform for the runtime environment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -141,7 +141,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type of the environment.
+        /// The instance type of the runtime environment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -160,7 +160,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the environment.
+        /// The name of the runtime environment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -179,7 +179,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the environment
+        /// The status of the runtime environment
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

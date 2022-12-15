@@ -30,7 +30,7 @@ namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEnvironment operation.
-    /// Deletes a specific environment. The environment cannot contain deployed applications.
+    /// Deletes a specific runtime environment. The environment cannot contain deployed applications.
     /// If it does, you must delete those applications before you delete the environment.
     /// </summary>
     public partial class DeleteEnvironmentRequest : AmazonMainframeModernizationRequest

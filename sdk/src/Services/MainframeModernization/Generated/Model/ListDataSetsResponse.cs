@@ -39,7 +39,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property DataSets. 
         /// <para>
-        /// The list of data sets, containing ionformation including the creating time, the data
+        /// The list of data sets, containing information including the creation time, the data
         /// set name, the data set organization, the data set format, and the last time the data
         /// set was referenced or updated.
         /// </para>

@@ -39,7 +39,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property Applications. 
         /// <para>
-        /// Returns a list of summary details for all the applications in an environment.
+        /// Returns a list of summary details for all the applications in a runtime environment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
