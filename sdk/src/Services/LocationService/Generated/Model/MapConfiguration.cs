@@ -128,7 +128,25 @@ namespace Amazon.LocationService.Model
         /// This means that more tiles are retrieved than when using either vector or raster tiles
         /// alone. Your charges will include all tiles retrieved.
         /// </para>
-        ///  </note> </li> </ul>
+        ///  </note> </li> </ul> 
+        /// <para>
+        /// Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+        /// Data (Preview) map styles</a>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light (preview)
+        /// map style provides a detailed basemap for the world suitable for website and mobile
+        /// application use. The map includes highways major roads, minor roads, railways, water
+        /// features, cities, parks, landmarks, building footprints, and administrative boundaries.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Open Data maps is in preview. We may add, change, or remove features before announcing
+        /// general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
+        /// Data is in preview release</a>.
+        /// </para>
+        ///  </important> </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string Style

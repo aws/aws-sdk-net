@@ -79,7 +79,7 @@ namespace Amazon.LocationService.Model
         ///  </li> </ul> 
         /// <para>
         /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-        /// Technologies</a> styles: 
+        /// Technologies</a> styles:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -92,7 +92,26 @@ namespace Amazon.LocationService.Model
         /// Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK
         /// JP Regular</code> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+        /// Data (Preview)</a> styles:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VectorOpenDataStandardLight – <code>Amazon Ember Regular,Noto Sans Regular</code>
+        /// | <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans
+        /// Medium</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic</code> | <code>Amazon
+        /// Ember Condensed RC Regular,Noto Sans Regular</code> | <code>Amazon Ember Condensed
+        /// RC Bold,Noto Sans Bold</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The fonts used by <code>VectorOpenDataStandardLight</code> are combined fonts that
+        /// use <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs
+        /// unsupported by <code>Amazon Ember</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FontStack

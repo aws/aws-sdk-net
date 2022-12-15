@@ -35,9 +35,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo-fips.eu-central-1.api.aws", endpoint.URL);
         }
@@ -50,9 +50,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo-fips.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -65,9 +65,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo.eu-central-1.api.aws", endpoint.URL);
         }
@@ -80,9 +80,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -95,9 +95,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo-fips.us-west-2.api.aws", endpoint.URL);
         }
@@ -110,9 +110,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo-fips.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -125,9 +125,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo.us-west-2.api.aws", endpoint.URL);
         }
@@ -140,9 +140,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -155,9 +155,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eunorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-north-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo-fips.eu-north-1.api.aws", endpoint.URL);
         }
@@ -170,9 +170,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eunorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-north-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo-fips.eu-north-1.amazonaws.com", endpoint.URL);
         }
@@ -185,9 +185,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eunorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-north-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo.eu-north-1.api.aws", endpoint.URL);
         }
@@ -200,9 +200,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eunorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-north-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo.eu-north-1.amazonaws.com", endpoint.URL);
         }
@@ -215,9 +215,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo-fips.eu-west-1.api.aws", endpoint.URL);
         }
@@ -230,9 +230,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo-fips.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -245,9 +245,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo.eu-west-1.api.aws", endpoint.URL);
         }
@@ -260,9 +260,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -275,9 +275,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo-fips.ap-northeast-1.api.aws", endpoint.URL);
         }
@@ -290,9 +290,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo-fips.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -305,9 +305,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo.ap-northeast-1.api.aws", endpoint.URL);
         }
@@ -320,9 +320,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -335,9 +335,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo-fips.ap-southeast-1.api.aws", endpoint.URL);
         }
@@ -350,9 +350,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo-fips.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -365,9 +365,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo.ap-southeast-1.api.aws", endpoint.URL);
         }
@@ -380,9 +380,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -395,9 +395,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo-fips.ap-southeast-2.api.aws", endpoint.URL);
         }
@@ -410,9 +410,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo-fips.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -425,9 +425,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo.ap-southeast-2.api.aws", endpoint.URL);
         }
@@ -440,9 +440,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -455,9 +455,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -470,9 +470,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -485,9 +485,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo.us-east-1.api.aws", endpoint.URL);
         }
@@ -500,9 +500,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -515,9 +515,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-2";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo-fips.us-east-2.api.aws", endpoint.URL);
         }
@@ -530,9 +530,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-2";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo-fips.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -545,9 +545,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-2";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo.us-east-2.api.aws", endpoint.URL);
         }
@@ -560,9 +560,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-2";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://geo.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -575,9 +575,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -592,9 +592,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -608,9 +608,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new LocationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonLocationServiceEndpointProvider().ResolveEndpoint(parameters);
         }
