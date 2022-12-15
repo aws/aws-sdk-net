@@ -42,7 +42,10 @@ namespace Amazon.EKS.Model
         /// The Amazon EC2 SSH key name that provides access for SSH communication with the nodes
         /// in the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
         /// EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide for Linux Instances</i>.
+        /// Guide for Linux Instances</i>. For Windows, an Amazon EC2 SSH key is used to obtain
+        /// the RDP password. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html">Amazon
+        /// EC2 key pairs and Windows instances</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide for Windows Instances</i>.
         /// </para>
         /// </summary>
         public string Ec2SshKey
@@ -60,10 +63,10 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property SourceSecurityGroups. 
         /// <para>
-        /// The security group ids that are allowed SSH access (port 22) to the nodes. If you
-        /// specify an Amazon EC2 SSH key but do not specify a source security group when you
-        /// create a managed node group, then port 22 on the nodes is opened to the internet (0.0.0.0/0).
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
+        /// The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows,
+        /// the port is 3389. If you specify an Amazon EC2 SSH key but don't specify a source
+        /// security group when you create a managed node group, then the port on the nodes is
+        /// opened to the internet (<code>0.0.0.0/0</code>). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
         /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>

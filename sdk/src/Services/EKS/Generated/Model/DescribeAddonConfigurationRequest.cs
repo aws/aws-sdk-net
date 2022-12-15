@@ -40,8 +40,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property AddonName. 
         /// <para>
-        /// The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-        /// <code>DescribeAddonVersions</code> </a>.
+        /// The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
+        /// <code>DescribeAddonVersions</code> </a> returns.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

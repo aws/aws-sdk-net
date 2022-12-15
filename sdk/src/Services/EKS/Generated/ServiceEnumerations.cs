@@ -210,6 +210,22 @@ namespace Amazon.EKS
         /// Constant CUSTOM for AMITypes
         /// </summary>
         public static readonly AMITypes CUSTOM = new AMITypes("CUSTOM");
+        /// <summary>
+        /// Constant WINDOWS_CORE_2019_x86_64 for AMITypes
+        /// </summary>
+        public static readonly AMITypes WINDOWS_CORE_2019_x86_64 = new AMITypes("WINDOWS_CORE_2019_x86_64");
+        /// <summary>
+        /// Constant WINDOWS_CORE_2022_x86_64 for AMITypes
+        /// </summary>
+        public static readonly AMITypes WINDOWS_CORE_2022_x86_64 = new AMITypes("WINDOWS_CORE_2022_x86_64");
+        /// <summary>
+        /// Constant WINDOWS_FULL_2019_x86_64 for AMITypes
+        /// </summary>
+        public static readonly AMITypes WINDOWS_FULL_2019_x86_64 = new AMITypes("WINDOWS_FULL_2019_x86_64");
+        /// <summary>
+        /// Constant WINDOWS_FULL_2022_x86_64 for AMITypes
+        /// </summary>
+        public static readonly AMITypes WINDOWS_FULL_2022_x86_64 = new AMITypes("WINDOWS_FULL_2022_x86_64");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

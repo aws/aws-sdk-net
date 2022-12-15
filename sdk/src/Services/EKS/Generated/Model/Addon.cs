@@ -125,7 +125,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ConfigurationValues. 
         /// <para>
-        /// The provided configuration values.
+        /// The configuration values that you provided.
         /// </para>
         /// </summary>
         public string ConfigurationValues
@@ -161,7 +161,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Health. 
         /// <para>
-        /// An object representing the health of the add-on.
+        /// An object that represents the health of the add-on.
         /// </para>
         /// </summary>
         public AddonHealth Health
@@ -251,8 +251,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ServiceAccountRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role that is bound to the Kubernetes service
-        /// account used by the add-on.
+        /// The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service
+        /// account that the add-on uses.
         /// </para>
         /// </summary>
         public string ServiceAccountRoleArn
