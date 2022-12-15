@@ -70,6 +70,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConnectionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CreateNativeDeltaTable", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.CreateNativeDeltaTable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeltaTables", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

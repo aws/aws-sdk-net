@@ -51,6 +51,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ConnectionName);
             }
 
+            if(requestObject.IsSetCreateNativeDeltaTable())
+            {
+                context.Writer.WritePropertyName("CreateNativeDeltaTable");
+                context.Writer.Write(requestObject.CreateNativeDeltaTable);
+            }
+
             if(requestObject.IsSetDeltaTables())
             {
                 context.Writer.WritePropertyName("DeltaTables");

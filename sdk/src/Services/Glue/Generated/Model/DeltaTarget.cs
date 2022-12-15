@@ -34,6 +34,7 @@ namespace Amazon.Glue.Model
     public partial class DeltaTarget
     {
         private string _connectionName;
+        private bool? _createNativeDeltaTable;
         private List<string> _deltaTables = new List<string>();
         private bool? _writeManifest;
 
@@ -53,6 +54,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetConnectionName()
         {
             return this._connectionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateNativeDeltaTable. 
+        /// <para>
+        /// Specifies whether the crawler will create native tables, to allow integration with
+        /// query engines that support querying of the Delta transaction log directly.
+        /// </para>
+        /// </summary>
+        public bool CreateNativeDeltaTable
+        {
+            get { return this._createNativeDeltaTable.GetValueOrDefault(); }
+            set { this._createNativeDeltaTable = value; }
+        }
+
+        // Check to see if CreateNativeDeltaTable property is set
+        internal bool IsSetCreateNativeDeltaTable()
+        {
+            return this._createNativeDeltaTable.HasValue; 
         }
 
         /// <summary>
