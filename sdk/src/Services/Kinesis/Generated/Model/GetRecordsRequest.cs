@@ -32,7 +32,12 @@ namespace Amazon.Kinesis.Model
     /// Container for the parameters to the GetRecords operation.
     /// Gets data records from a Kinesis data stream's shard.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+    /// parameter in addition to the <code>ShardIterator</code> parameter.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard
     /// iterator specifies the position in the shard from which you want to start reading
@@ -106,6 +111,7 @@ namespace Amazon.Kinesis.Model
     {
         private int? _limit;
         private string _shardIterator;
+        private string _streamARN;
 
         /// <summary>
         /// Gets and sets the property Limit. 
@@ -147,6 +153,25 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetShardIterator()
         {
             return this._shardIterator != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamARN. 
+        /// <para>
+        /// The ARN of the stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string StreamARN
+        {
+            get { return this._streamARN; }
+            set { this._streamARN = value; }
+        }
+
+        // Check to see if StreamARN property is set
+        internal bool IsSetStreamARN()
+        {
+            return this._streamARN != null;
         }
 
     }

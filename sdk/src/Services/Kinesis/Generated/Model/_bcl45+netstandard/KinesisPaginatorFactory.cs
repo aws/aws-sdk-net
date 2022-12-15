@@ -42,5 +42,13 @@ namespace Amazon.Kinesis.Model
         {
             return new ListStreamConsumersPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListStreams operation
+        ///</summary>
+        public IListStreamsPaginator ListStreams(ListStreamsRequest request) 
+        {
+            return new ListStreamsPaginator(this.client, request);
+        }
     }
 }

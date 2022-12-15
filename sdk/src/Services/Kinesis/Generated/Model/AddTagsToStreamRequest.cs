@@ -33,7 +33,12 @@ namespace Amazon.Kinesis.Model
     /// Adds or updates tags for the specified Kinesis data stream. You can assign up to 50
     /// tags to a data stream.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+    /// parameter rather than the <code>StreamName</code> input parameter.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// If tags have already been assigned to the stream, <code>AddTagsToStream</code> overwrites
     /// any existing tags that correspond to the specified tag keys.
@@ -45,8 +50,28 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class AddTagsToStreamRequest : AmazonKinesisRequest
     {
+        private string _streamARN;
         private string _streamName;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property StreamARN. 
+        /// <para>
+        /// The ARN of the stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string StreamARN
+        {
+            get { return this._streamARN; }
+            set { this._streamARN = value; }
+        }
+
+        // Check to see if StreamARN property is set
+        internal bool IsSetStreamARN()
+        {
+            return this._streamARN != null;
+        }
 
         /// <summary>
         /// Gets and sets the property StreamName. 
@@ -54,7 +79,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the stream.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

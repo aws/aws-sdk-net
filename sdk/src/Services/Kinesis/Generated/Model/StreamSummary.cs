@@ -29,29 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Container for the parameters to the RemoveTagsFromStream operation.
-    /// Removes tags from the specified Kinesis data stream. Removed tags are deleted and
-    /// cannot be recovered after this operation successfully completes.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-    /// parameter rather than the <code>StreamName</code> input parameter.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// If you specify a tag that does not exist, it is ignored.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>RemoveTagsFromStream</a> has a limit of five transactions per second per account.
-    /// </para>
+    /// The summary of a stream.
     /// </summary>
-    public partial class RemoveTagsFromStreamRequest : AmazonKinesisRequest
+    public partial class StreamSummary
     {
         private string _streamARN;
+        private DateTime? _streamCreationTimestamp;
+        private StreamModeDetails _streamModeDetails;
         private string _streamName;
-        private List<string> _tagKeys = new List<string>();
+        private StreamStatus _streamStatus;
 
         /// <summary>
         /// Gets and sets the property StreamARN. 
@@ -59,7 +45,7 @@ namespace Amazon.Kinesis.Model
         /// The ARN of the stream.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string StreamARN
         {
             get { return this._streamARN; }
@@ -73,12 +59,45 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreamName. 
+        /// Gets and sets the property StreamCreationTimestamp. 
         /// <para>
-        /// The name of the stream.
+        /// The timestamp at which the stream was created.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        public DateTime StreamCreationTimestamp
+        {
+            get { return this._streamCreationTimestamp.GetValueOrDefault(); }
+            set { this._streamCreationTimestamp = value; }
+        }
+
+        // Check to see if StreamCreationTimestamp property is set
+        internal bool IsSetStreamCreationTimestamp()
+        {
+            return this._streamCreationTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamModeDetails.
+        /// </summary>
+        public StreamModeDetails StreamModeDetails
+        {
+            get { return this._streamModeDetails; }
+            set { this._streamModeDetails = value; }
+        }
+
+        // Check to see if StreamModeDetails property is set
+        internal bool IsSetStreamModeDetails()
+        {
+            return this._streamModeDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamName. 
+        /// <para>
+        /// The name of a stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }
@@ -92,22 +111,22 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. 
+        /// Gets and sets the property StreamStatus. 
         /// <para>
-        /// A list of tag keys. Each corresponding tag is removed from the stream.
+        /// The status of the stream.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
-        public List<string> TagKeys
+        [AWSProperty(Required=true)]
+        public StreamStatus StreamStatus
         {
-            get { return this._tagKeys; }
-            set { this._tagKeys = value; }
+            get { return this._streamStatus; }
+            set { this._streamStatus = value; }
         }
 
-        // Check to see if TagKeys property is set
-        internal bool IsSetTagKeys()
+        // Check to see if StreamStatus property is set
+        internal bool IsSetStreamStatus()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._streamStatus != null;
         }
 
     }

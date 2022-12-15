@@ -32,11 +32,19 @@ namespace Amazon.Kinesis.Model
     /// Container for the parameters to the ListTagsForStream operation.
     /// Lists the tags for the specified Kinesis data stream. This operation has a limit of
     /// five transactions per second per account.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+    /// parameter rather than the <code>StreamName</code> input parameter.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListTagsForStreamRequest : AmazonKinesisRequest
     {
         private string _exclusiveStartTagKey;
         private int? _limit;
+        private string _streamARN;
         private string _streamName;
 
         /// <summary>
@@ -83,12 +91,31 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StreamARN. 
+        /// <para>
+        /// The ARN of the stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string StreamARN
+        {
+            get { return this._streamARN; }
+            set { this._streamARN = value; }
+        }
+
+        // Check to see if StreamARN property is set
+        internal bool IsSetStreamARN()
+        {
+            return this._streamARN != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
         /// The name of the stream.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

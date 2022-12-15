@@ -16,23 +16,28 @@
 /*
  * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
  */
+using Amazon.Runtime;
 
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Paginators for the Kinesis service
+    /// Paginator for the ListStreams operation
     ///</summary>
-    public interface IKinesisPaginatorFactory
+    public interface IListStreamsPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListStreamsResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListStreamConsumers operation
-        ///</summary>
-        IListStreamConsumersPaginator ListStreamConsumers(ListStreamConsumersRequest request);
+        /// Enumerable containing all of the StreamNames
+        /// </summary>
+        IPaginatedEnumerable<string> StreamNames { get; }
 
         /// <summary>
-        /// Paginator for ListStreams operation
-        ///</summary>
-        IListStreamsPaginator ListStreams(ListStreamsRequest request);
+        /// Enumerable containing all of the StreamSummaries
+        /// </summary>
+        IPaginatedEnumerable<StreamSummary> StreamSummaries { get; }
     }
 }

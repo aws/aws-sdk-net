@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.AddTagsToStreamRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.AddTagsToStreamRequest.StreamName</property>
     <min>1</min>
     <max>128</max>
@@ -17,10 +23,22 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest.StreamName</property>
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.DeleteStreamRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.DeleteStreamRequest.StreamName</property>
@@ -44,7 +62,7 @@
     <property>Amazon.Kinesis.Model.DeregisterStreamConsumerRequest.StreamARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/.+</pattern>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.DescribeLimitsResponse.OnDemandStreamCount</property>
@@ -78,6 +96,12 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.DescribeStreamRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.DescribeStreamRequest.StreamName</property>
     <min>1</min>
     <max>128</max>
@@ -99,7 +123,13 @@
     <property>Amazon.Kinesis.Model.DescribeStreamConsumerRequest.StreamARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/.+</pattern>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.DescribeStreamSummaryRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.DescribeStreamSummaryRequest.StreamName</property>
@@ -108,10 +138,22 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.DisableEnhancedMonitoringRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.DisableEnhancedMonitoringRequest.StreamName</property>
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.DisableEnhancedMonitoringResponse.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.DisableEnhancedMonitoringResponse.StreamName</property>
@@ -120,10 +162,22 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.EnableEnhancedMonitoringRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.EnableEnhancedMonitoringRequest.StreamName</property>
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.EnableEnhancedMonitoringResponse.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.EnableEnhancedMonitoringResponse.StreamName</property>
@@ -140,6 +194,12 @@
     <property>Amazon.Kinesis.Model.GetRecordsRequest.ShardIterator</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.GetRecordsRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.GetRecordsResponse.MillisBehindLatest</property>
@@ -161,6 +221,12 @@
     <pattern>0|([1-9]\d{0,128})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.GetShardIteratorRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.GetShardIteratorRequest.StreamName</property>
     <min>1</min>
     <max>128</max>
@@ -170,6 +236,12 @@
     <property>Amazon.Kinesis.Model.GetShardIteratorResponse.ShardIterator</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest.StreamName</property>
@@ -192,6 +264,12 @@
     <property>Amazon.Kinesis.Model.ListShardsRequest.NextToken</property>
     <min>1</min>
     <max>1048576</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ListShardsRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.ListShardsRequest.StreamName</property>
@@ -218,7 +296,7 @@
     <property>Amazon.Kinesis.Model.ListStreamConsumersRequest.StreamARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/.+</pattern>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.ListStreamConsumersResponse.NextToken</property>
@@ -237,6 +315,16 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.ListStreamsRequest.NextToken</property>
+    <min>1</min>
+    <max>1048576</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ListStreamsResponse.NextToken</property>
+    <min>1</min>
+    <max>1048576</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.ListTagsForStreamRequest.ExclusiveStartTagKey</property>
     <min>1</min>
     <max>128</max>
@@ -245,6 +333,12 @@
     <property>Amazon.Kinesis.Model.ListTagsForStreamRequest.Limit</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ListTagsForStreamRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.ListTagsForStreamRequest.StreamName</property>
@@ -263,6 +357,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.MergeShardsRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.MergeShardsRequest.StreamName</property>
@@ -289,6 +389,12 @@
     <pattern>0|([1-9]\d{0,128})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.PutRecordRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.PutRecordRequest.StreamName</property>
     <min>1</min>
     <max>128</max>
@@ -303,6 +409,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.PutRecordsRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.PutRecordsRequest.StreamName</property>
@@ -324,7 +436,13 @@
     <property>Amazon.Kinesis.Model.RegisterStreamConsumerRequest.StreamARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/.+</pattern>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.RemoveTagsFromStreamRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.RemoveTagsFromStreamRequest.StreamName</property>
@@ -343,6 +461,12 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.SplitShardRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.SplitShardRequest.StreamName</property>
     <min>1</min>
     <max>128</max>
@@ -352,6 +476,12 @@
     <property>Amazon.Kinesis.Model.StartStreamEncryptionRequest.KeyId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.StartStreamEncryptionRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.StartStreamEncryptionRequest.StreamName</property>
@@ -365,10 +495,22 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.StopStreamEncryptionRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.StopStreamEncryptionRequest.StreamName</property>
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateShardCountRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.UpdateShardCountRequest.StreamName</property>
@@ -385,6 +527,12 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateShardCountResponse.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.UpdateShardCountResponse.StreamName</property>
     <min>1</min>
     <max>128</max>
@@ -398,7 +546,7 @@
     <property>Amazon.Kinesis.Model.UpdateStreamModeRequest.StreamARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/.+</pattern>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.ChildShard.ShardId</property>
@@ -434,7 +582,7 @@
     <property>Amazon.Kinesis.Model.ConsumerDescription.StreamARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/.+</pattern>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.HashKeyRange.EndingHashKey</property>
@@ -527,7 +675,7 @@
     <property>Amazon.Kinesis.Model.StreamDescription.StreamARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/.+</pattern>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.StreamDescription.StreamName</property>
@@ -554,10 +702,22 @@
     <property>Amazon.Kinesis.Model.StreamDescriptionSummary.StreamARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/.+</pattern>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.StreamDescriptionSummary.StreamName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.StreamSummary.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.StreamSummary.StreamName</property>
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>

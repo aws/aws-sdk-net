@@ -33,7 +33,12 @@ namespace Amazon.Kinesis.Model
     /// Lists the shards in a stream and provides information about each shard. This operation
     /// has a limit of 1000 transactions per second per data stream.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+    /// parameter rather than the <code>StreamName</code> input parameter.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// This action does not list expired shards. For information about expired shards, see
     /// <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-using-sdk-java-after-resharding.html#kinesis-using-sdk-java-resharding-data-routing">Data
@@ -54,6 +59,7 @@ namespace Amazon.Kinesis.Model
         private int? _maxResults;
         private string _nextToken;
         private ShardFilter _shardFilter;
+        private string _streamARN;
         private DateTime? _streamCreationTimestamp;
         private string _streamName;
 
@@ -200,6 +206,25 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetShardFilter()
         {
             return this._shardFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamARN. 
+        /// <para>
+        /// The ARN of the stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string StreamARN
+        {
+            get { return this._streamARN; }
+            set { this._streamARN = value; }
+        }
+
+        // Check to see if StreamARN property is set
+        internal bool IsSetStreamARN()
+        {
+            return this._streamARN != null;
         }
 
         /// <summary>

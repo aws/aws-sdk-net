@@ -96,6 +96,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetStreamARN())
+                {
+                    context.Writer.WritePropertyName("StreamARN");
+                    context.Writer.Write(publicRequest.StreamARN);
+                }
+
                 if(publicRequest.IsSetStreamCreationTimestamp())
                 {
                     context.Writer.WritePropertyName("StreamCreationTimestamp");

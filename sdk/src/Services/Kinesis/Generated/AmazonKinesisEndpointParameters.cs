@@ -74,5 +74,32 @@ namespace Amazon.Kinesis.Endpoints
             get { return (string)this["Endpoint"]; }
             set { this["Endpoint"] = value; } 
         }
+
+        /// <summary>
+        /// StreamARN parameter
+        /// </summary>
+        public string StreamARN 
+        { 
+            get { return (string)this["StreamARN"]; }
+            set { this["StreamARN"] = value; } 
+        }
+
+        /// <summary>
+        /// OperationType parameter
+        /// </summary>
+        public string OperationType 
+        { 
+            get { return (string)this["OperationType"]; }
+            set { this["OperationType"] = value; } 
+        }
+
+        /// <summary>
+        /// ConsumerARN parameter
+        /// </summary>
+        public string ConsumerARN 
+        { 
+            get { return (string)this["ConsumerARN"]; }
+            set { this["ConsumerARN"] = value; } 
+        }
     }
 }

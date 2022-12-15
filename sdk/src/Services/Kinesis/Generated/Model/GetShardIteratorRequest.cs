@@ -33,7 +33,12 @@ namespace Amazon.Kinesis.Model
     /// Gets an Amazon Kinesis shard iterator. A shard iterator expires 5 minutes after it
     /// is returned to the requester.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+    /// parameter rather than the <code>StreamName</code> input parameter.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// A shard iterator specifies the shard position from which to start reading data records
     /// sequentially. The position is specified using the sequence number of a data record
@@ -87,6 +92,7 @@ namespace Amazon.Kinesis.Model
         private string _shardId;
         private ShardIteratorType _shardIteratorType;
         private string _startingSequenceNumber;
+        private string _streamARN;
         private string _streamName;
         private DateTime? _timestamp;
 
@@ -178,12 +184,31 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StreamARN. 
+        /// <para>
+        /// The ARN of the stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string StreamARN
+        {
+            get { return this._streamARN; }
+            set { this._streamARN = value; }
+        }
+
+        // Check to see if StreamARN property is set
+        internal bool IsSetStreamARN()
+        {
+            return this._streamARN != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
         /// The name of the Amazon Kinesis data stream.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

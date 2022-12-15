@@ -53,7 +53,12 @@ namespace Amazon.Kinesis
         /// Adds or updates tags for the specified Kinesis data stream. You can assign up to 50
         /// tags to a data stream.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If tags have already been assigned to the stream, <code>AddTagsToStream</code> overwrites
         /// any existing tags that correspond to the specified tag keys.
@@ -66,6 +71,9 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToStream service method.</param>
         /// 
         /// <returns>The response from the AddTagsToStream service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -90,7 +98,12 @@ namespace Amazon.Kinesis
         /// Adds or updates tags for the specified Kinesis data stream. You can assign up to 50
         /// tags to a data stream.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If tags have already been assigned to the stream, <code>AddTagsToStream</code> overwrites
         /// any existing tags that correspond to the specified tag keys.
@@ -106,6 +119,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the AddTagsToStream service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -137,11 +153,16 @@ namespace Amazon.Kinesis
         /// 
         ///  
         /// <para>
-        /// You specify and control the number of shards that a stream is composed of. Each shard
-        /// can support reads up to five transactions per second, up to a maximum data read total
-        /// of 2 MiB per second. Each shard can support writes up to 1,000 records per second,
-        /// up to a maximum data write total of 1 MiB per second. If the amount of data input
-        /// increases or decreases, you can add or remove shards.
+        /// You can create your data stream using either on-demand or provisioned capacity mode.
+        /// Data streams with an on-demand mode require no capacity planning and automatically
+        /// scale to handle gigabytes of write and read throughput per minute. With the on-demand
+        /// mode, Kinesis Data Streams automatically manages the shards in order to provide the
+        /// necessary throughput. For the data streams with a provisioned mode, you must specify
+        /// the number of shards for the data stream. Each shard can support reads up to five
+        /// transactions per second, up to a maximum data read total of 2 MiB per second. Each
+        /// shard can support writes up to 1,000 records per second, up to a maximum data write
+        /// total of 1 MiB per second. If the amount of data input increases or decreases, you
+        /// can add or remove shards.
         /// </para>
         ///  
         /// <para>
@@ -216,11 +237,16 @@ namespace Amazon.Kinesis
         /// 
         ///  
         /// <para>
-        /// You specify and control the number of shards that a stream is composed of. Each shard
-        /// can support reads up to five transactions per second, up to a maximum data read total
-        /// of 2 MiB per second. Each shard can support writes up to 1,000 records per second,
-        /// up to a maximum data write total of 1 MiB per second. If the amount of data input
-        /// increases or decreases, you can add or remove shards.
+        /// You can create your data stream using either on-demand or provisioned capacity mode.
+        /// Data streams with an on-demand mode require no capacity planning and automatically
+        /// scale to handle gigabytes of write and read throughput per minute. With the on-demand
+        /// mode, Kinesis Data Streams automatically manages the shards in order to provide the
+        /// necessary throughput. For the data streams with a provisioned mode, you must specify
+        /// the number of shards for the data stream. Each shard can support reads up to five
+        /// transactions per second, up to a maximum data read total of 2 MiB per second. Each
+        /// shard can support writes up to 1,000 records per second, up to a maximum data write
+        /// total of 1 MiB per second. If the amount of data input increases or decreases, you
+        /// can add or remove shards.
         /// </para>
         ///  
         /// <para>
@@ -298,7 +324,12 @@ namespace Amazon.Kinesis
         /// data records are accessible after they are added to the stream. The minimum value
         /// of a stream's retention period is 24 hours.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// This operation may result in lost data. For example, if the stream's retention period
         /// is 48 hours and is decreased to 24 hours, any data already in the stream that is older
@@ -309,6 +340,9 @@ namespace Amazon.Kinesis
         /// <param name="retentionPeriodHours">The new retention period of the stream, in hours. Must be less than the current retention period.</param>
         /// 
         /// <returns>The response from the DecreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -332,7 +366,12 @@ namespace Amazon.Kinesis
         /// data records are accessible after they are added to the stream. The minimum value
         /// of a stream's retention period is 24 hours.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// This operation may result in lost data. For example, if the stream's retention period
         /// is 48 hours and is decreased to 24 hours, any data already in the stream that is older
@@ -342,6 +381,9 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the DecreaseStreamRetentionPeriod service method.</param>
         /// 
         /// <returns>The response from the DecreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -366,7 +408,12 @@ namespace Amazon.Kinesis
         /// data records are accessible after they are added to the stream. The minimum value
         /// of a stream's retention period is 24 hours.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// This operation may result in lost data. For example, if the stream's retention period
         /// is 48 hours and is decreased to 24 hours, any data already in the stream that is older
@@ -380,6 +427,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the DecreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -404,7 +454,12 @@ namespace Amazon.Kinesis
         /// data records are accessible after they are added to the stream. The minimum value
         /// of a stream's retention period is 24 hours.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// This operation may result in lost data. For example, if the stream's retention period
         /// is 48 hours and is decreased to 24 hours, any data already in the stream that is older
@@ -417,6 +472,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the DecreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -445,7 +503,12 @@ namespace Amazon.Kinesis
         /// applications that are operating on the stream before you delete the stream. If an
         /// application attempts to operate on a deleted stream, it receives the exception <code>ResourceNotFoundException</code>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If the stream is in the <code>ACTIVE</code> state, you can delete it. After a <code>DeleteStream</code>
         /// request, the specified stream is in the <code>DELETING</code> state until Kinesis
@@ -475,6 +538,13 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the DeleteStream service method.</param>
         /// 
         /// <returns>The response from the DeleteStream service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed.
@@ -496,7 +566,12 @@ namespace Amazon.Kinesis
         /// applications that are operating on the stream before you delete the stream. If an
         /// application attempts to operate on a deleted stream, it receives the exception <code>ResourceNotFoundException</code>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If the stream is in the <code>ACTIVE</code> state, you can delete it. After a <code>DeleteStream</code>
         /// request, the specified stream is in the <code>DELETING</code> state until Kinesis
@@ -529,6 +604,13 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the DeleteStream service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed.
@@ -684,6 +766,11 @@ namespace Amazon.Kinesis
         /// API to list the shards in a specified data stream and obtain information about each
         /// shard. 
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
         ///  </note> 
         /// <para>
         /// The information returned includes the stream name, Amazon Resource Name (ARN), creation
@@ -713,6 +800,13 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the DescribeStream service method.</param>
         /// 
         /// <returns>The response from the DescribeStream service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed.
@@ -734,6 +828,11 @@ namespace Amazon.Kinesis
         /// API to get a summarized description of the specified Kinesis data stream and the <a>ListShards</a>
         /// API to list the shards in a specified data stream and obtain information about each
         /// shard. 
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
         /// </para>
         ///  </note> 
         /// <para>
@@ -767,6 +866,13 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the DescribeStream service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed.
@@ -858,7 +964,12 @@ namespace Amazon.Kinesis
         /// Provides a summarized description of the specified Kinesis data stream without the
         /// shard list.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The information returned includes the stream name, Amazon Resource Name (ARN), status,
         /// record retention period, approximate creation time, monitoring, encryption details,
@@ -872,6 +983,13 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the DescribeStreamSummary service method.</param>
         /// 
         /// <returns>The response from the DescribeStreamSummary service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed.
@@ -888,7 +1006,12 @@ namespace Amazon.Kinesis
         /// Provides a summarized description of the specified Kinesis data stream without the
         /// shard list.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The information returned includes the stream name, Amazon Resource Name (ARN), status,
         /// record retention period, approximate creation time, monitoring, encryption details,
@@ -905,6 +1028,13 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the DescribeStreamSummary service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed.
@@ -922,10 +1052,20 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Disables enhanced monitoring.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableEnhancedMonitoring service method.</param>
         /// 
         /// <returns>The response from the DisableEnhancedMonitoring service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -948,6 +1088,13 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Disables enhanced monitoring.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableEnhancedMonitoring service method.</param>
         /// <param name="cancellationToken">
@@ -955,6 +1102,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the DisableEnhancedMonitoring service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -980,10 +1130,20 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Enables enhanced Kinesis data stream monitoring for shard-level metrics.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableEnhancedMonitoring service method.</param>
         /// 
         /// <returns>The response from the EnableEnhancedMonitoring service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -1006,6 +1166,13 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Enables enhanced Kinesis data stream monitoring for shard-level metrics.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableEnhancedMonitoring service method.</param>
         /// <param name="cancellationToken">
@@ -1013,6 +1180,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the EnableEnhancedMonitoring service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -1039,7 +1209,12 @@ namespace Amazon.Kinesis
         /// <summary>
         /// Gets data records from a Kinesis data stream's shard.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter in addition to the <code>ShardIterator</code> parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard
         /// iterator specifies the position in the shard from which you want to start reading
@@ -1112,6 +1287,9 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the GetRecords service method.</param>
         /// 
         /// <returns>The response from the GetRecords service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ExpiredIteratorException">
         /// The provided iterator exceeds the maximum age allowed.
         /// </exception>
@@ -1161,7 +1339,12 @@ namespace Amazon.Kinesis
         /// <summary>
         /// Gets data records from a Kinesis data stream's shard.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter in addition to the <code>ShardIterator</code> parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard
         /// iterator specifies the position in the shard from which you want to start reading
@@ -1237,6 +1420,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the GetRecords service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ExpiredIteratorException">
         /// The provided iterator exceeds the maximum age allowed.
         /// </exception>
@@ -1290,7 +1476,12 @@ namespace Amazon.Kinesis
         /// Gets an Amazon Kinesis shard iterator. A shard iterator expires 5 minutes after it
         /// is returned to the requester.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// A shard iterator specifies the shard position from which to start reading data records
         /// sequentially. The position is specified using the sequence number of a data record
@@ -1342,6 +1533,9 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the GetShardIterator service method.</param>
         /// 
         /// <returns>The response from the GetShardIterator service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -1366,7 +1560,12 @@ namespace Amazon.Kinesis
         /// Gets an Amazon Kinesis shard iterator. A shard iterator expires 5 minutes after it
         /// is returned to the requester.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// A shard iterator specifies the shard position from which to start reading data records
         /// sequentially. The position is specified using the sequence number of a data record
@@ -1421,6 +1620,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the GetShardIterator service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -1449,7 +1651,12 @@ namespace Amazon.Kinesis
         /// data records are accessible after they are added to the stream. The maximum value
         /// of a stream's retention period is 8760 hours (365 days).
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If you choose a longer stream retention period, this operation increases the time
         /// period during which records that have not yet expired are accessible. However, it
@@ -1463,6 +1670,9 @@ namespace Amazon.Kinesis
         /// <param name="retentionPeriodHours">The new retention period of the stream, in hours. Must be more than the current retention period.</param>
         /// 
         /// <returns>The response from the IncreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -1486,7 +1696,12 @@ namespace Amazon.Kinesis
         /// data records are accessible after they are added to the stream. The maximum value
         /// of a stream's retention period is 8760 hours (365 days).
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If you choose a longer stream retention period, this operation increases the time
         /// period during which records that have not yet expired are accessible. However, it
@@ -1499,6 +1714,9 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the IncreaseStreamRetentionPeriod service method.</param>
         /// 
         /// <returns>The response from the IncreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -1523,7 +1741,12 @@ namespace Amazon.Kinesis
         /// data records are accessible after they are added to the stream. The maximum value
         /// of a stream's retention period is 8760 hours (365 days).
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If you choose a longer stream retention period, this operation increases the time
         /// period during which records that have not yet expired are accessible. However, it
@@ -1540,6 +1763,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the IncreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -1564,7 +1790,12 @@ namespace Amazon.Kinesis
         /// data records are accessible after they are added to the stream. The maximum value
         /// of a stream's retention period is 8760 hours (365 days).
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If you choose a longer stream retention period, this operation increases the time
         /// period during which records that have not yet expired are accessible. However, it
@@ -1580,6 +1811,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the IncreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -1607,7 +1841,12 @@ namespace Amazon.Kinesis
         /// Lists the shards in a stream and provides information about each shard. This operation
         /// has a limit of 1000 transactions per second per data stream.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// This action does not list expired shards. For information about expired shards, see
         /// <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-using-sdk-java-after-resharding.html#kinesis-using-sdk-java-resharding-data-routing">Data
@@ -1625,6 +1864,9 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the ListShards service method.</param>
         /// 
         /// <returns>The response from the ListShards service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ExpiredNextTokenException">
         /// The pagination token passed to the operation is expired.
         /// </exception>
@@ -1652,7 +1894,12 @@ namespace Amazon.Kinesis
         /// Lists the shards in a stream and provides information about each shard. This operation
         /// has a limit of 1000 transactions per second per data stream.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// This action does not list expired shards. For information about expired shards, see
         /// <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-using-sdk-java-after-resharding.html#kinesis-using-sdk-java-resharding-data-routing">Data
@@ -1673,6 +1920,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the ListShards service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ExpiredNextTokenException">
         /// The pagination token passed to the operation is expired.
         /// </exception>
@@ -1802,6 +2052,13 @@ namespace Amazon.Kinesis
         /// </summary>
         /// 
         /// <returns>The response from the ListStreams service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.ExpiredNextTokenException">
+        /// The pagination token passed to the operation is expired.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed.
@@ -1838,6 +2095,13 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the ListStreams service method.</param>
         /// 
         /// <returns>The response from the ListStreams service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.ExpiredNextTokenException">
+        /// The pagination token passed to the operation is expired.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed.
@@ -1876,6 +2140,13 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the ListStreams service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.ExpiredNextTokenException">
+        /// The pagination token passed to the operation is expired.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed.
@@ -1916,6 +2187,13 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the ListStreams service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.ExpiredNextTokenException">
+        /// The pagination token passed to the operation is expired.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed.
@@ -1931,10 +2209,20 @@ namespace Amazon.Kinesis
         /// <summary>
         /// Lists the tags for the specified Kinesis data stream. This operation has a limit of
         /// five transactions per second per account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForStream service method.</param>
         /// 
         /// <returns>The response from the ListTagsForStream service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -1954,6 +2242,13 @@ namespace Amazon.Kinesis
         /// <summary>
         /// Lists the tags for the specified Kinesis data stream. This operation has a limit of
         /// five transactions per second per account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForStream service method.</param>
         /// <param name="cancellationToken">
@@ -1961,6 +2256,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the ListTagsForStream service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -1982,7 +2280,8 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Merges two adjacent shards in a Kinesis data stream and combines them into a single
-        /// shard to reduce the stream's capacity to ingest and transport data. Two shards are
+        /// shard to reduce the stream's capacity to ingest and transport data. This API is only
+        /// supported for the data streams with the provisioned capacity mode. Two shards are
         /// considered adjacent if the union of the hash key ranges for the two shards form a
         /// contiguous set with no gaps. For example, if you have two shards, one with a hash
         /// key range of 276...381 and the other with a hash key range of 382...454, then you
@@ -1990,7 +2289,12 @@ namespace Amazon.Kinesis
         /// of 276...454. After the merge, the single child shard receives data for all hash key
         /// values covered by the two parent shards.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <code>MergeShards</code> is called when there is a need to reduce the overall capacity
         /// of a stream because of excess capacity that is not being used. You must specify the
@@ -2038,6 +2342,9 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the MergeShards service method.</param>
         /// 
         /// <returns>The response from the MergeShards service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -2054,7 +2361,8 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// 
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShards">REST API Reference for MergeShards Operation</seealso>
         MergeShardsResponse MergeShards(MergeShardsRequest request);
@@ -2063,7 +2371,8 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Merges two adjacent shards in a Kinesis data stream and combines them into a single
-        /// shard to reduce the stream's capacity to ingest and transport data. Two shards are
+        /// shard to reduce the stream's capacity to ingest and transport data. This API is only
+        /// supported for the data streams with the provisioned capacity mode. Two shards are
         /// considered adjacent if the union of the hash key ranges for the two shards form a
         /// contiguous set with no gaps. For example, if you have two shards, one with a hash
         /// key range of 276...381 and the other with a hash key range of 382...454, then you
@@ -2071,7 +2380,12 @@ namespace Amazon.Kinesis
         /// of 276...454. After the merge, the single child shard receives data for all hash key
         /// values covered by the two parent shards.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <code>MergeShards</code> is called when there is a need to reduce the overall capacity
         /// of a stream because of excess capacity that is not being used. You must specify the
@@ -2122,6 +2436,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the MergeShards service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -2138,7 +2455,8 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// 
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShards">REST API Reference for MergeShards Operation</seealso>
         Task<MergeShardsResponse> MergeShardsAsync(MergeShardsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2154,7 +2472,12 @@ namespace Amazon.Kinesis
         /// record at a time. Each shard can support writes up to 1,000 records per second, up
         /// to a maximum data write total of 1 MiB per second.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You must specify the name of the stream that captures, stores, and transports the
         /// data; a partition key; and the data blob itself.
@@ -2215,6 +2538,9 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the PutRecord service method.</param>
         /// 
         /// <returns>The response from the PutRecord service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -2264,7 +2590,12 @@ namespace Amazon.Kinesis
         /// record at a time. Each shard can support writes up to 1,000 records per second, up
         /// to a maximum data write total of 1 MiB per second.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You must specify the name of the stream that captures, stores, and transports the
         /// data; a partition key; and the data blob itself.
@@ -2328,6 +2659,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the PutRecord service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -2379,7 +2713,12 @@ namespace Amazon.Kinesis
         /// to as a <code>PutRecords</code> request). Use this operation to send data into the
         /// stream for data ingestion and processing. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Each <code>PutRecords</code> request can support up to 500 records. Each record in
         /// the request can be as large as 1 MiB, up to a limit of 5 MiB for the entire request,
@@ -2467,6 +2806,9 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the PutRecords service method.</param>
         /// 
         /// <returns>The response from the PutRecords service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -2515,7 +2857,12 @@ namespace Amazon.Kinesis
         /// to as a <code>PutRecords</code> request). Use this operation to send data into the
         /// stream for data ingestion and processing. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Each <code>PutRecords</code> request can support up to 500 records. Each record in
         /// the request can be as large as 1 MiB, up to a limit of 5 MiB for the entire request,
@@ -2606,6 +2953,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the PutRecords service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -2758,7 +3108,12 @@ namespace Amazon.Kinesis
         /// Removes tags from the specified Kinesis data stream. Removed tags are deleted and
         /// cannot be recovered after this operation successfully completes.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If you specify a tag that does not exist, it is ignored.
         /// </para>
@@ -2770,6 +3125,9 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromStream service method.</param>
         /// 
         /// <returns>The response from the RemoveTagsFromStream service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -2794,7 +3152,12 @@ namespace Amazon.Kinesis
         /// Removes tags from the specified Kinesis data stream. Removed tags are deleted and
         /// cannot be recovered after this operation successfully completes.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If you specify a tag that does not exist, it is ignored.
         /// </para>
@@ -2809,6 +3172,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the RemoveTagsFromStream service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -2836,9 +3202,15 @@ namespace Amazon.Kinesis
         /// Splits a shard into two new shards in the Kinesis data stream, to increase the stream's
         /// capacity to ingest and transport data. <code>SplitShard</code> is called when there
         /// is a need to increase the overall capacity of a stream because of an expected increase
-        /// in the volume of data records being ingested. 
+        /// in the volume of data records being ingested. This API is only supported for the data
+        /// streams with the provisioned capacity mode.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can also use <code>SplitShard</code> when a shard appears to be approaching its
         /// maximum utilization; for example, the producers sending data into the specific shard
@@ -2901,6 +3273,9 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the SplitShard service method.</param>
         /// 
         /// <returns>The response from the SplitShard service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -2917,7 +3292,8 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// 
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard">REST API Reference for SplitShard Operation</seealso>
         SplitShardResponse SplitShard(SplitShardRequest request);
@@ -2928,9 +3304,15 @@ namespace Amazon.Kinesis
         /// Splits a shard into two new shards in the Kinesis data stream, to increase the stream's
         /// capacity to ingest and transport data. <code>SplitShard</code> is called when there
         /// is a need to increase the overall capacity of a stream because of an expected increase
-        /// in the volume of data records being ingested. 
+        /// in the volume of data records being ingested. This API is only supported for the data
+        /// streams with the provisioned capacity mode.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can also use <code>SplitShard</code> when a shard appears to be approaching its
         /// maximum utilization; for example, the producers sending data into the specific shard
@@ -2996,6 +3378,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the SplitShard service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -3012,7 +3397,8 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// 
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard">REST API Reference for SplitShard Operation</seealso>
         Task<SplitShardResponse> SplitShardAsync(SplitShardRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3048,10 +3434,19 @@ namespace Amazon.Kinesis
         /// you can verify that encryption is applied by inspecting the API response from <code>PutRecord</code>
         /// or <code>PutRecords</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartStreamEncryption service method.</param>
         /// 
         /// <returns>The response from the StartStreamEncryption service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -3121,6 +3516,12 @@ namespace Amazon.Kinesis
         /// you can verify that encryption is applied by inspecting the API response from <code>PutRecord</code>
         /// or <code>PutRecords</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartStreamEncryption service method.</param>
         /// <param name="cancellationToken">
@@ -3128,6 +3529,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the StartStreamEncryption service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -3177,7 +3581,12 @@ namespace Amazon.Kinesis
         /// <summary>
         /// Disables server-side encryption for a specified stream. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Stopping encryption is an asynchronous operation. Upon receiving the request, Kinesis
         /// Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>.
@@ -3203,6 +3612,9 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the StopStreamEncryption service method.</param>
         /// 
         /// <returns>The response from the StopStreamEncryption service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -3226,7 +3638,12 @@ namespace Amazon.Kinesis
         /// <summary>
         /// Disables server-side encryption for a specified stream. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Stopping encryption is an asynchronous operation. Upon receiving the request, Kinesis
         /// Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>.
@@ -3255,6 +3672,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the StopStreamEncryption service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -3280,8 +3700,14 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Updates the shard count of the specified stream to the specified number of shards.
+        /// This API is only supported for the data streams with the provisioned capacity mode.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Updating the shard count is an asynchronous operation. Upon receiving the request,
         /// Kinesis Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>.
@@ -3345,6 +3771,9 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the UpdateShardCount service method.</param>
         /// 
         /// <returns>The response from the UpdateShardCount service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -3361,7 +3790,8 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// 
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount">REST API Reference for UpdateShardCount Operation</seealso>
         UpdateShardCountResponse UpdateShardCount(UpdateShardCountRequest request);
@@ -3370,8 +3800,14 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Updates the shard count of the specified stream to the specified number of shards.
+        /// This API is only supported for the data streams with the provisioned capacity mode.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Updating the shard count is an asynchronous operation. Upon receiving the request,
         /// Kinesis Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>.
@@ -3438,6 +3874,9 @@ namespace Amazon.Kinesis
         /// </param>
         /// 
         /// <returns>The response from the UpdateShardCount service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -3454,7 +3893,8 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// 
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount">REST API Reference for UpdateShardCount Operation</seealso>
         Task<UpdateShardCountResponse> UpdateShardCountAsync(UpdateShardCountRequest request, CancellationToken cancellationToken = default(CancellationToken));

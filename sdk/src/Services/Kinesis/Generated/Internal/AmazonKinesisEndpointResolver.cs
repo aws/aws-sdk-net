@@ -76,6 +76,158 @@ namespace Amazon.Kinesis.Internal
 
 
             // Assign staticContextParams and contextParam per operation
+            if (requestContext.RequestName == "AddTagsToStreamRequest") {
+                result.OperationType = "control";
+                var request = (AddTagsToStreamRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "DecreaseStreamRetentionPeriodRequest") {
+                result.OperationType = "control";
+                var request = (DecreaseStreamRetentionPeriodRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteStreamRequest") {
+                result.OperationType = "control";
+                var request = (DeleteStreamRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "DeregisterStreamConsumerRequest") {
+                result.OperationType = "control";
+                var request = (DeregisterStreamConsumerRequest)requestContext.OriginalRequest;
+                result.ConsumerARN = request.ConsumerARN;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeStreamRequest") {
+                result.OperationType = "control";
+                var request = (DescribeStreamRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeStreamConsumerRequest") {
+                result.OperationType = "control";
+                var request = (DescribeStreamConsumerRequest)requestContext.OriginalRequest;
+                result.ConsumerARN = request.ConsumerARN;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeStreamSummaryRequest") {
+                result.OperationType = "control";
+                var request = (DescribeStreamSummaryRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "DisableEnhancedMonitoringRequest") {
+                result.OperationType = "control";
+                var request = (DisableEnhancedMonitoringRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "EnableEnhancedMonitoringRequest") {
+                result.OperationType = "control";
+                var request = (EnableEnhancedMonitoringRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "GetRecordsRequest") {
+                result.OperationType = "data";
+                var request = (GetRecordsRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "GetShardIteratorRequest") {
+                result.OperationType = "data";
+                var request = (GetShardIteratorRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "IncreaseStreamRetentionPeriodRequest") {
+                result.OperationType = "control";
+                var request = (IncreaseStreamRetentionPeriodRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "ListShardsRequest") {
+                result.OperationType = "control";
+                var request = (ListShardsRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "ListStreamConsumersRequest") {
+                result.OperationType = "control";
+                var request = (ListStreamConsumersRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "ListTagsForStreamRequest") {
+                result.OperationType = "control";
+                var request = (ListTagsForStreamRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "MergeShardsRequest") {
+                result.OperationType = "control";
+                var request = (MergeShardsRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "PutRecordRequest") {
+                result.OperationType = "data";
+                var request = (PutRecordRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "PutRecordsRequest") {
+                result.OperationType = "data";
+                var request = (PutRecordsRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "RegisterStreamConsumerRequest") {
+                result.OperationType = "control";
+                var request = (RegisterStreamConsumerRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "RemoveTagsFromStreamRequest") {
+                result.OperationType = "control";
+                var request = (RemoveTagsFromStreamRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "SplitShardRequest") {
+                result.OperationType = "control";
+                var request = (SplitShardRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "StartStreamEncryptionRequest") {
+                result.OperationType = "control";
+                var request = (StartStreamEncryptionRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "StopStreamEncryptionRequest") {
+                result.OperationType = "control";
+                var request = (StopStreamEncryptionRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateShardCountRequest") {
+                result.OperationType = "control";
+                var request = (UpdateShardCountRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateStreamModeRequest") {
+                result.OperationType = "control";
+                var request = (UpdateStreamModeRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                return result;
+            }
 
             return result;
         }
