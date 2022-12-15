@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateHypervisor Request Marshaller
+    /// GetBandwidthRateLimitSchedule Request Marshaller
     /// </summary>       
-    public class UpdateHypervisorRequestMarshaller : IMarshaller<IRequest, UpdateHypervisorRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetBandwidthRateLimitScheduleRequestMarshaller : IMarshaller<IRequest, GetBandwidthRateLimitScheduleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateHypervisorRequest)input);
+            return this.Marshall((GetBandwidthRateLimitScheduleRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateHypervisorRequest publicRequest)
+        public IRequest Marshall(GetBandwidthRateLimitScheduleRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.BackupGateway");
-            string target = "BackupOnPremises_v20210101.UpdateHypervisor";
+            string target = "BackupOnPremises_v20210101.GetBandwidthRateLimitSchedule";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
@@ -67,40 +67,10 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHost())
+                if(publicRequest.IsSetGatewayArn())
                 {
-                    context.Writer.WritePropertyName("Host");
-                    context.Writer.Write(publicRequest.Host);
-                }
-
-                if(publicRequest.IsSetHypervisorArn())
-                {
-                    context.Writer.WritePropertyName("HypervisorArn");
-                    context.Writer.Write(publicRequest.HypervisorArn);
-                }
-
-                if(publicRequest.IsSetLogGroupArn())
-                {
-                    context.Writer.WritePropertyName("LogGroupArn");
-                    context.Writer.Write(publicRequest.LogGroupArn);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPassword())
-                {
-                    context.Writer.WritePropertyName("Password");
-                    context.Writer.Write(publicRequest.Password);
-                }
-
-                if(publicRequest.IsSetUsername())
-                {
-                    context.Writer.WritePropertyName("Username");
-                    context.Writer.Write(publicRequest.Username);
+                    context.Writer.WritePropertyName("GatewayArn");
+                    context.Writer.Write(publicRequest.GatewayArn);
                 }
 
                 writer.WriteObjectEnd();
@@ -111,9 +81,9 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateHypervisorRequestMarshaller _instance = new UpdateHypervisorRequestMarshaller();        
+        private static GetBandwidthRateLimitScheduleRequestMarshaller _instance = new GetBandwidthRateLimitScheduleRequestMarshaller();        
 
-        internal static UpdateHypervisorRequestMarshaller GetInstance()
+        internal static GetBandwidthRateLimitScheduleRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -121,7 +91,7 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateHypervisorRequestMarshaller Instance
+        public static GetBandwidthRateLimitScheduleRequestMarshaller Instance
         {
             get
             {

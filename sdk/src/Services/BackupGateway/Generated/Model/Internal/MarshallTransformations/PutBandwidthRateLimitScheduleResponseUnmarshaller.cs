@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ImportHypervisorConfiguration operation
+    /// Response Unmarshaller for PutBandwidthRateLimitSchedule operation
     /// </summary>  
-    public class ImportHypervisorConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutBandwidthRateLimitScheduleResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ImportHypervisorConfigurationResponse response = new ImportHypervisorConfigurationResponse();
+            PutBandwidthRateLimitScheduleResponse response = new PutBandwidthRateLimitScheduleResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("HypervisorArn", targetDepth))
+                if (context.TestExpression("GatewayArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.HypervisorArn = unmarshaller.Unmarshall(context);
+                    response.GatewayArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -80,17 +80,13 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
-                {
-                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                {
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -104,9 +100,9 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             return new AmazonBackupGatewayException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ImportHypervisorConfigurationResponseUnmarshaller _instance = new ImportHypervisorConfigurationResponseUnmarshaller();        
+        private static PutBandwidthRateLimitScheduleResponseUnmarshaller _instance = new PutBandwidthRateLimitScheduleResponseUnmarshaller();        
 
-        internal static ImportHypervisorConfigurationResponseUnmarshaller GetInstance()
+        internal static PutBandwidthRateLimitScheduleResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -114,7 +110,7 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ImportHypervisorConfigurationResponseUnmarshaller Instance
+        public static PutBandwidthRateLimitScheduleResponseUnmarshaller Instance
         {
             get
             {

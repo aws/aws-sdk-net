@@ -39,6 +39,7 @@ namespace Amazon.BackupGateway.Model
         private string _name;
         private string _path;
         private string _resourceArn;
+        private List<VmwareTag> _vmwareTags = new List<VmwareTag>();
 
         /// <summary>
         /// Gets and sets the property HostName. 
@@ -150,6 +151,24 @@ namespace Amazon.BackupGateway.Model
         internal bool IsSetResourceArn()
         {
             return this._resourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VmwareTags. 
+        /// <para>
+        /// These are the details of the VMware tags associated with the specified virtual machine.
+        /// </para>
+        /// </summary>
+        public List<VmwareTag> VmwareTags
+        {
+            get { return this._vmwareTags; }
+            set { this._vmwareTags = value; }
+        }
+
+        // Check to see if VmwareTags property is set
+        internal bool IsSetVmwareTags()
+        {
+            return this._vmwareTags != null && this._vmwareTags.Count > 0; 
         }
 
     }

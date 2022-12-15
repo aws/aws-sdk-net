@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ImportHypervisorConfiguration operation
+    /// Response Unmarshaller for GetHypervisorPropertyMappings operation
     /// </summary>  
-    public class ImportHypervisorConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetHypervisorPropertyMappingsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ImportHypervisorConfigurationResponse response = new ImportHypervisorConfigurationResponse();
+            GetHypervisorPropertyMappingsResponse response = new GetHypervisorPropertyMappingsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -55,6 +55,18 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.HypervisorArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IamRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.IamRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VmwareToAwsTagMappings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<VmwareToAwsTagMapping, VmwareToAwsTagMappingUnmarshaller>(VmwareToAwsTagMappingUnmarshaller.Instance);
+                    response.VmwareToAwsTagMappings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -80,17 +92,13 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
-                {
-                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                {
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -104,9 +112,9 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             return new AmazonBackupGatewayException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ImportHypervisorConfigurationResponseUnmarshaller _instance = new ImportHypervisorConfigurationResponseUnmarshaller();        
+        private static GetHypervisorPropertyMappingsResponseUnmarshaller _instance = new GetHypervisorPropertyMappingsResponseUnmarshaller();        
 
-        internal static ImportHypervisorConfigurationResponseUnmarshaller GetInstance()
+        internal static GetHypervisorPropertyMappingsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -114,7 +122,7 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ImportHypervisorConfigurationResponseUnmarshaller Instance
+        public static GetHypervisorPropertyMappingsResponseUnmarshaller Instance
         {
             get
             {

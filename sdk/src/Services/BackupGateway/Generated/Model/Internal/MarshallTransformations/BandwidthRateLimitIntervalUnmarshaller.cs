@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VirtualMachineDetails Object
+    /// Response Unmarshaller for BandwidthRateLimitInterval Object
     /// </summary>  
-    public class VirtualMachineDetailsUnmarshaller : IUnmarshaller<VirtualMachineDetails, XmlUnmarshallerContext>, IUnmarshaller<VirtualMachineDetails, JsonUnmarshallerContext>
+    public class BandwidthRateLimitIntervalUnmarshaller : IUnmarshaller<BandwidthRateLimitInterval, XmlUnmarshallerContext>, IUnmarshaller<BandwidthRateLimitInterval, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VirtualMachineDetails IUnmarshaller<VirtualMachineDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        BandwidthRateLimitInterval IUnmarshaller<BandwidthRateLimitInterval, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,51 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VirtualMachineDetails Unmarshall(JsonUnmarshallerContext context)
+        public BandwidthRateLimitInterval Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VirtualMachineDetails unmarshalledObject = new VirtualMachineDetails();
+            BandwidthRateLimitInterval unmarshalledObject = new BandwidthRateLimitInterval();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("HostName", targetDepth))
+                if (context.TestExpression("AverageUploadRateLimitInBitsPerSec", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HostName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.AverageUploadRateLimitInBitsPerSec = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("HypervisorId", targetDepth))
+                if (context.TestExpression("DaysOfWeek", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HypervisorId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
+                    unmarshalledObject.DaysOfWeek = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LastBackupDate", targetDepth))
+                if (context.TestExpression("EndHourOfDay", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastBackupDate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.EndHourOfDay = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("EndMinuteOfHour", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.EndMinuteOfHour = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Path", targetDepth))
+                if (context.TestExpression("StartHourOfDay", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Path = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.StartHourOfDay = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResourceArn", targetDepth))
+                if (context.TestExpression("StartMinuteOfHour", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VmwareTags", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<VmwareTag, VmwareTagUnmarshaller>(VmwareTagUnmarshaller.Instance);
-                    unmarshalledObject.VmwareTags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.StartMinuteOfHour = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +106,12 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         }
 
 
-        private static VirtualMachineDetailsUnmarshaller _instance = new VirtualMachineDetailsUnmarshaller();        
+        private static BandwidthRateLimitIntervalUnmarshaller _instance = new BandwidthRateLimitIntervalUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VirtualMachineDetailsUnmarshaller Instance
+        public static BandwidthRateLimitIntervalUnmarshaller Instance
         {
             get
             {

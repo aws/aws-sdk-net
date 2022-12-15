@@ -127,4 +127,66 @@ namespace Amazon.BackupGateway
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type SyncMetadataStatus.
+    /// </summary>
+    public class SyncMetadataStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for SyncMetadataStatus
+        /// </summary>
+        public static readonly SyncMetadataStatus CREATED = new SyncMetadataStatus("CREATED");
+        /// <summary>
+        /// Constant FAILED for SyncMetadataStatus
+        /// </summary>
+        public static readonly SyncMetadataStatus FAILED = new SyncMetadataStatus("FAILED");
+        /// <summary>
+        /// Constant PARTIALLY_FAILED for SyncMetadataStatus
+        /// </summary>
+        public static readonly SyncMetadataStatus PARTIALLY_FAILED = new SyncMetadataStatus("PARTIALLY_FAILED");
+        /// <summary>
+        /// Constant RUNNING for SyncMetadataStatus
+        /// </summary>
+        public static readonly SyncMetadataStatus RUNNING = new SyncMetadataStatus("RUNNING");
+        /// <summary>
+        /// Constant SUCCEEDED for SyncMetadataStatus
+        /// </summary>
+        public static readonly SyncMetadataStatus SUCCEEDED = new SyncMetadataStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SyncMetadataStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SyncMetadataStatus FindValue(string value)
+        {
+            return FindValue<SyncMetadataStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SyncMetadataStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ImportHypervisorConfiguration operation
+    /// Response Unmarshaller for PutHypervisorPropertyMappings operation
     /// </summary>  
-    public class ImportHypervisorConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutHypervisorPropertyMappingsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ImportHypervisorConfigurationResponse response = new ImportHypervisorConfigurationResponse();
+            PutHypervisorPropertyMappingsResponse response = new PutHypervisorPropertyMappingsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -92,6 +92,10 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                {
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -104,9 +108,9 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             return new AmazonBackupGatewayException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ImportHypervisorConfigurationResponseUnmarshaller _instance = new ImportHypervisorConfigurationResponseUnmarshaller();        
+        private static PutHypervisorPropertyMappingsResponseUnmarshaller _instance = new PutHypervisorPropertyMappingsResponseUnmarshaller();        
 
-        internal static ImportHypervisorConfigurationResponseUnmarshaller GetInstance()
+        internal static PutHypervisorPropertyMappingsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -114,7 +118,7 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ImportHypervisorConfigurationResponseUnmarshaller Instance
+        public static PutHypervisorPropertyMappingsResponseUnmarshaller Instance
         {
             get
             {

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VirtualMachineDetails Object
+    /// Response Unmarshaller for VmwareTag Object
     /// </summary>  
-    public class VirtualMachineDetailsUnmarshaller : IUnmarshaller<VirtualMachineDetails, XmlUnmarshallerContext>, IUnmarshaller<VirtualMachineDetails, JsonUnmarshallerContext>
+    public class VmwareTagUnmarshaller : IUnmarshaller<VmwareTag, XmlUnmarshallerContext>, IUnmarshaller<VmwareTag, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VirtualMachineDetails IUnmarshaller<VirtualMachineDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VmwareTag IUnmarshaller<VmwareTag, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,33 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VirtualMachineDetails Unmarshall(JsonUnmarshallerContext context)
+        public VmwareTag Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VirtualMachineDetails unmarshalledObject = new VirtualMachineDetails();
+            VmwareTag unmarshalledObject = new VmwareTag();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("HostName", targetDepth))
+                if (context.TestExpression("VmwareCategory", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HostName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VmwareCategory = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("HypervisorId", targetDepth))
+                if (context.TestExpression("VmwareTagDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HypervisorId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VmwareTagDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LastBackupDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastBackupDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("VmwareTagName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Path", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Path = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResourceArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VmwareTags", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<VmwareTag, VmwareTagUnmarshaller>(VmwareTagUnmarshaller.Instance);
-                    unmarshalledObject.VmwareTags = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VmwareTagName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +88,12 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         }
 
 
-        private static VirtualMachineDetailsUnmarshaller _instance = new VirtualMachineDetailsUnmarshaller();        
+        private static VmwareTagUnmarshaller _instance = new VmwareTagUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VirtualMachineDetailsUnmarshaller Instance
+        public static VmwareTagUnmarshaller Instance
         {
             get
             {

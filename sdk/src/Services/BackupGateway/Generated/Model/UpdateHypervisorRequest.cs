@@ -38,6 +38,7 @@ namespace Amazon.BackupGateway.Model
     {
         private string _host;
         private string _hypervisorArn;
+        private string _logGroupArn;
         private string _name;
         private string _password;
         private string _username;
@@ -79,6 +80,25 @@ namespace Amazon.BackupGateway.Model
         internal bool IsSetHypervisorArn()
         {
             return this._hypervisorArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogGroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the group of gateways within the requested log.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string LogGroupArn
+        {
+            get { return this._logGroupArn; }
+            set { this._logGroupArn = value; }
+        }
+
+        // Check to see if LogGroupArn property is set
+        internal bool IsSetLogGroupArn()
+        {
+            return this._logGroupArn != null;
         }
 
         /// <summary>

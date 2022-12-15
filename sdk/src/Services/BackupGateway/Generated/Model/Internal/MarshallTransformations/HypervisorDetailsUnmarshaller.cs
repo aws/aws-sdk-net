@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VirtualMachineDetails Object
+    /// Response Unmarshaller for HypervisorDetails Object
     /// </summary>  
-    public class VirtualMachineDetailsUnmarshaller : IUnmarshaller<VirtualMachineDetails, XmlUnmarshallerContext>, IUnmarshaller<VirtualMachineDetails, JsonUnmarshallerContext>
+    public class HypervisorDetailsUnmarshaller : IUnmarshaller<HypervisorDetails, XmlUnmarshallerContext>, IUnmarshaller<HypervisorDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VirtualMachineDetails IUnmarshaller<VirtualMachineDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        HypervisorDetails IUnmarshaller<HypervisorDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,57 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VirtualMachineDetails Unmarshall(JsonUnmarshallerContext context)
+        public HypervisorDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VirtualMachineDetails unmarshalledObject = new VirtualMachineDetails();
+            HypervisorDetails unmarshalledObject = new HypervisorDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("HostName", targetDepth))
+                if (context.TestExpression("Host", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HostName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Host = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("HypervisorId", targetDepth))
+                if (context.TestExpression("HypervisorArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HypervisorId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HypervisorArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LastBackupDate", targetDepth))
+                if (context.TestExpression("KmsKeyArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastSuccessfulMetadataSyncTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastBackupDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastSuccessfulMetadataSyncTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestMetadataSyncStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LatestMetadataSyncStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestMetadataSyncStatusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LatestMetadataSyncStatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LogGroupArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogGroupArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
@@ -88,22 +112,10 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Path", targetDepth))
+                if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Path = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResourceArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VmwareTags", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<VmwareTag, VmwareTagUnmarshaller>(VmwareTagUnmarshaller.Instance);
-                    unmarshalledObject.VmwareTags = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +124,12 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         }
 
 
-        private static VirtualMachineDetailsUnmarshaller _instance = new VirtualMachineDetailsUnmarshaller();        
+        private static HypervisorDetailsUnmarshaller _instance = new HypervisorDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VirtualMachineDetailsUnmarshaller Instance
+        public static HypervisorDetailsUnmarshaller Instance
         {
             get
             {
