@@ -31,11 +31,12 @@ namespace Amazon.Translate.Model
     /// <summary>
     /// Container for the parameters to the StartTextTranslationJob operation.
     /// Starts an asynchronous batch translation job. Use batch translation jobs to translate
-    /// large volumes of text across multiple documents at once. For batch translation, the
-    /// input documents must share the same source language. You can specify one or more target
-    /// languages. Batch translation translates each input document into each of the target
-    /// languages. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous
-    /// batch processing</a> 
+    /// large volumes of text across multiple documents at once. For batch translation, you
+    /// can input documents with different source languages (specify <code>auto</code> as
+    /// the source language). You can specify one or more target languages. Batch translation
+    /// translates each input document into each of the target languages. For more information,
+    /// see <a href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous
+    /// batch processing</a>.
     /// 
     ///  
     /// <para>
@@ -43,12 +44,6 @@ namespace Amazon.Translate.Model
     /// operation, listed with the <a>ListTextTranslationJobs</a> operation, and stopped with
     /// the <a>StopTextTranslationJob</a> operation.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// Amazon Translate does not support batch translation of multiple source languages at
-    /// once.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class StartTextTranslationJobRequest : AmazonTranslateRequest
     {
@@ -229,13 +224,12 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property SourceLanguageCode. 
         /// <para>
-        /// The language code of the input language. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+        /// The language code of the input language. Specify the language if all input documents
+        /// share the same language. If you don't know the language of the source files, or your
+        /// input documents contains different source languages, select <code>auto</code>. Amazon
+        /// Translate auto detects the source language for each input document. For a list of
+        /// supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
         /// languages</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Amazon Translate does not automatically detect a source language during batch translation
-        /// jobs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=5)]
@@ -259,8 +253,8 @@ namespace Amazon.Translate.Model
         /// </para>
         ///  
         /// <para>
-        /// Each language code is two or five characters long. For a list of language codes, see
-        /// <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+        /// Each language code is 2 or 5 characters long. For a list of language codes, see <a
+        /// href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
         /// languages</a>.
         /// </para>
         /// </summary>

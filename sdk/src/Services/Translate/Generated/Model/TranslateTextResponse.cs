@@ -120,7 +120,7 @@ namespace Amazon.Translate.Model
         /// The translated text.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=10000)]
+        [AWSProperty(Required=true, Max=20000)]
         public string TranslatedText
         {
             get { return this._translatedText; }

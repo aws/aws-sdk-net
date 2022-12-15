@@ -54,8 +54,8 @@ namespace Amazon.Translate.Model
         /// </para>
         ///  
         /// <para>
-        /// For a list of target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html">Setting
-        /// Formality</a> in the Amazon Translate Developer Guide.
+        /// For a list of target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html#customizing-translations-formality-languages">Supported
+        /// languages</a> in the Amazon Translate Developer Guide.
         /// </para>
         /// </summary>
         public Formality Formality
@@ -85,8 +85,8 @@ namespace Amazon.Translate.Model
         ///  
         /// <para>
         /// Amazon Translate doesn't detect profanity in all of its supported languages. For languages
-        /// that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-profanity.html">Masking
-        /// profanity</a> in the Amazon Translate Developer Guide.
+        /// that don't support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-profanity.html#customizing-translations-profanity-languages">Unsupported
+        /// languages</a> in the Amazon Translate Developer Guide.
         /// </para>
         ///  
         /// <para>

@@ -139,11 +139,11 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// The text to translate. The text string can be a maximum of 5,000 bytes long. Depending
-        /// on your character set, this may be fewer than 5,000 characters.
+        /// The text to translate. The text string can be a maximum of 10,000 bytes long. Depending
+        /// on your character set, this may be fewer than 10,000 characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5000)]
+        [AWSProperty(Required=true, Min=1, Max=10000)]
         public string Text
         {
             get { return this._text; }

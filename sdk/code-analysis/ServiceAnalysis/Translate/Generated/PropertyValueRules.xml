@@ -186,8 +186,8 @@
   <property-value-rule>
     <property>Amazon.Translate.Model.TranslateTextRequest.Text</property>
     <min>1</min>
-    <max>5000</max>
-    <pattern>[\P{M}\p{M}]{1,5000}</pattern>
+    <max>10000</max>
+    <pattern>[\P{M}\p{M}]{1,10000}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.TranslateTextResponse.SourceLanguageCode</property>
@@ -201,8 +201,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.TranslateTextResponse.TranslatedText</property>
-    <max>10000</max>
-    <pattern>[\P{M}\p{M}]{0,10000}</pattern>
+    <max>20000</max>
+    <pattern>[\P{M}\p{M}]{0,20000}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.UntagResourceRequest.ResourceArn</property>

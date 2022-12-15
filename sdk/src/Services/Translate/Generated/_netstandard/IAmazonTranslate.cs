@@ -31,8 +31,7 @@ namespace Amazon.Translate
     /// <summary>
     /// Interface for accessing Translate
     ///
-    /// Provides language translation for input text in the source language to the specified
-    /// target language.
+    /// Provides translation of the input content from the source language to the target language.
     /// </summary>
     public partial interface IAmazonTranslate : IAmazonService, IDisposable
     {
@@ -471,11 +470,12 @@ namespace Amazon.Translate
 
         /// <summary>
         /// Starts an asynchronous batch translation job. Use batch translation jobs to translate
-        /// large volumes of text across multiple documents at once. For batch translation, the
-        /// input documents must share the same source language. You can specify one or more target
-        /// languages. Batch translation translates each input document into each of the target
-        /// languages. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous
-        /// batch processing</a> 
+        /// large volumes of text across multiple documents at once. For batch translation, you
+        /// can input documents with different source languages (specify <code>auto</code> as
+        /// the source language). You can specify one or more target languages. Batch translation
+        /// translates each input document into each of the target languages. For more information,
+        /// see <a href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous
+        /// batch processing</a>.
         /// 
         ///  
         /// <para>
@@ -483,12 +483,6 @@ namespace Amazon.Translate
         /// operation, listed with the <a>ListTextTranslationJobs</a> operation, and stopped with
         /// the <a>StopTextTranslationJob</a> operation.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Amazon Translate does not support batch translation of multiple source languages at
-        /// once.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTextTranslationJob service method.</param>
         /// <param name="cancellationToken">
