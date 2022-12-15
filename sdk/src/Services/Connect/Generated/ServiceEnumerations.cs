@@ -3955,6 +3955,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly VocabularyLanguageCode EnIN = new VocabularyLanguageCode("en-IN");
         /// <summary>
+        /// Constant EnNZ for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EnNZ = new VocabularyLanguageCode("en-NZ");
+        /// <summary>
         /// Constant EnUS for VocabularyLanguageCode
         /// </summary>
         public static readonly VocabularyLanguageCode EnUS = new VocabularyLanguageCode("en-US");
@@ -3962,6 +3966,10 @@ namespace Amazon.Connect
         /// Constant EnWL for VocabularyLanguageCode
         /// </summary>
         public static readonly VocabularyLanguageCode EnWL = new VocabularyLanguageCode("en-WL");
+        /// <summary>
+        /// Constant EnZA for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EnZA = new VocabularyLanguageCode("en-ZA");
         /// <summary>
         /// Constant EsES for VocabularyLanguageCode
         /// </summary>

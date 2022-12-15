@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+    /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
     /// Connect Flow language</a>.
     /// </para>
     /// </summary>
@@ -66,9 +66,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example
-        /// contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator
-        /// Guide</i>. 
+        /// The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+        /// contact flow in Amazon Connect Flow language</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

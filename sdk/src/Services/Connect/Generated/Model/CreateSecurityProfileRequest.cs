@@ -150,7 +150,8 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property TagRestrictedResources. 
         /// <para>
         /// The list of resources that a security profile applies tag restrictions to in Amazon
-        /// Connect.
+        /// Connect. Following are acceptable ResourceNames: <code>User</code> | <code>SecurityProfile</code>
+        /// | <code>Queue</code> | <code>RoutingProfile</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]

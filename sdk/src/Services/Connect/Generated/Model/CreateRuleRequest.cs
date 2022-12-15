@@ -31,6 +31,12 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the CreateRule operation.
     /// Creates a rule for the specified Amazon Connect instance.
+    /// 
+    ///  
+    /// <para>
+    /// Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules
+    /// Function language</a> to code conditions for the rule. 
+    /// </para>
     /// </summary>
     public partial class CreateRuleRequest : AmazonConnectRequest
     {

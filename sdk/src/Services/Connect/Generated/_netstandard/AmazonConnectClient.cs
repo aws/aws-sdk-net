@@ -60,12 +60,6 @@ namespace Amazon.Connect
     /// For a list of Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
     /// Connect Endpoints</a>.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// Working with flows? Check out the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
-    /// Connect Flow language</a>.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class AmazonConnectClient : AmazonServiceClient, IAmazonConnect
     {
@@ -1026,7 +1020,7 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
         /// Connect Flow language</a>.
         /// </para>
         /// </summary>
@@ -1507,6 +1501,12 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Creates a rule for the specified Amazon Connect instance.
+        /// 
+        ///  
+        /// <para>
+        /// Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules
+        /// Function language</a> to code conditions for the rule. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRule service method.</param>
         /// <param name="cancellationToken">
@@ -2817,7 +2817,7 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
         /// Connect Flow language</a>.
         /// </para>
         /// </summary>
@@ -4832,7 +4832,7 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
         /// Connect Flow language</a>.
         /// </para>
         ///  
@@ -7886,7 +7886,7 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
         /// Connect Flow language</a>.
         /// </para>
         /// </summary>
@@ -8103,7 +8103,7 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
         /// Connect Flow language</a>.
         /// </para>
         /// </summary>
@@ -9030,6 +9030,12 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Updates a rule for the specified Amazon Connect instance.
+        /// 
+        ///  
+        /// <para>
+        /// Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules
+        /// Function language</a> to code conditions for the rule. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRule service method.</param>
         /// <param name="cancellationToken">
