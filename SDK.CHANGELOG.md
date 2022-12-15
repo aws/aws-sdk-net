@@ -1,3 +1,30 @@
+### 3.7.441.0 (2022-12-15 19:32 UTC)
+* BackupGateway (3.7.101.0)
+	* This release adds support for VMware vSphere tags, enabling customer to protect VMware virtual machines using tag-based policies for AWS tags mapped from vSphere tags. This release also adds support for customer-accessible gateway-hypervisor interaction log and upload bandwidth rate limit schedule.
+* Connect (3.7.107.0)
+	* Added support for "English - New Zealand" and "English - South African" to be used with Amazon Connect Custom Vocabulary APIs.
+* ECS (3.7.103.0)
+	* This release adds support for container port ranges in ECS, a new capability that allows customers to provide container port ranges to simplify use cases where multiple ports are in use in a container. This release updates TaskDefinition mutation APIs and the Task description APIs.
+* EKS (3.7.104.0)
+	* Add support for Windows managed nodes groups.
+* Glue (3.7.105.0)
+	* This release adds support for AWS Glue Crawler with native DeltaLake tables, allowing Crawlers to classify Delta Lake format tables and catalog them for query engines to query against.
+* Kinesis (3.7.101.0)
+	* Added StreamARN parameter for Kinesis Data Streams APIs. Added a new opaque pagination token for ListStreams. SDKs will auto-generate Account Endpoint when accessing Kinesis Data Streams.
+* LocationService (3.7.100.37)
+	* This release adds support for a new style, "VectorOpenDataStandardLight" which can be used with the new data source, "Open Data Maps (Preview)".
+* MainframeModernization (3.7.101.0)
+	* Adds an optional create-only `KmsKeyId` property to Environment and Application resources.
+* SageMaker (3.7.109.0)
+	* SageMaker Inference Recommender now allows customers to load tests their models on various instance types using private VPC.
+* SecurityHub (3.7.103.0)
+	* Added new resource details objects to ASFF, including resources for AwsEc2LaunchTemplate, AwsSageMakerNotebookInstance, AwsWafv2WebAcl and AwsWafv2RuleGroup.
+* Translate (3.7.101.0)
+	* Raised the input byte size limit of the Text field in the TranslateText API to 10000 bytes.
+* Core 3.7.102.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.440.0 (2022-12-14 19:29 UTC)
 * CloudWatch (3.7.102.0)
 	* Adding support for Metrics Insights Alarms
