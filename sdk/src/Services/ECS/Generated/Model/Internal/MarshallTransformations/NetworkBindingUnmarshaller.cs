@@ -76,10 +76,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContainerPort = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("containerPortRange", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContainerPortRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hostPort", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.HostPort = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("hostPortRange", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HostPortRange = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("protocol", targetDepth))

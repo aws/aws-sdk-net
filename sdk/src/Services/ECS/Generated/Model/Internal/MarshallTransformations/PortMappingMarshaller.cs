@@ -57,6 +57,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ContainerPort);
             }
 
+            if(requestObject.IsSetContainerPortRange())
+            {
+                context.Writer.WritePropertyName("containerPortRange");
+                context.Writer.Write(requestObject.ContainerPortRange);
+            }
+
             if(requestObject.IsSetHostPort())
             {
                 context.Writer.WritePropertyName("hostPort");
