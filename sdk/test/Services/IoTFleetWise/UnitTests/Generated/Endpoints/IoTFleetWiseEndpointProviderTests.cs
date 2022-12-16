@@ -35,9 +35,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTFleetWiseEndpointParameters();
+            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonIoTFleetWiseEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iotfleetwise-fips.eu-central-1.api.aws", endpoint.URL);
         }
@@ -50,9 +50,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTFleetWiseEndpointParameters();
+            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonIoTFleetWiseEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iotfleetwise-fips.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -65,9 +65,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTFleetWiseEndpointParameters();
+            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonIoTFleetWiseEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iotfleetwise.eu-central-1.api.aws", endpoint.URL);
         }
@@ -80,9 +80,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTFleetWiseEndpointParameters();
+            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonIoTFleetWiseEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iotfleetwise.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -95,9 +95,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTFleetWiseEndpointParameters();
+            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonIoTFleetWiseEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iotfleetwise-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -110,9 +110,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTFleetWiseEndpointParameters();
+            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonIoTFleetWiseEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iotfleetwise-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -125,9 +125,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTFleetWiseEndpointParameters();
+            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonIoTFleetWiseEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iotfleetwise.us-east-1.api.aws", endpoint.URL);
         }
@@ -140,9 +140,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTFleetWiseEndpointParameters();
+            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonIoTFleetWiseEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iotfleetwise.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -155,9 +155,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new IoTFleetWiseEndpointParameters();
+            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonIoTFleetWiseEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -172,9 +172,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new IoTFleetWiseEndpointParameters();
+            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonIoTFleetWiseEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -188,9 +188,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new IoTFleetWiseEndpointParameters();
+            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonIoTFleetWiseEndpointProvider().ResolveEndpoint(parameters);
         }

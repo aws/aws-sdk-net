@@ -1849,6 +1849,9 @@ namespace Amazon.IoTFleetWise
         /// <exception cref="Amazon.IoTFleetWise.Model.ThrottlingException">
         /// The request couldn't be completed due to throttling.
         /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetModelManifest">REST API Reference for GetModelManifest Operation</seealso>
         public virtual GetModelManifestResponse GetModelManifest(GetModelManifestRequest request)
         {
@@ -3969,6 +3972,9 @@ namespace Amazon.IoTFleetWise
         /// </exception>
         /// <exception cref="Amazon.IoTFleetWise.Model.ThrottlingException">
         /// The request couldn't be completed due to throttling.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/UpdateSignalCatalog">REST API Reference for UpdateSignalCatalog Operation</seealso>
         public virtual UpdateSignalCatalogResponse UpdateSignalCatalog(UpdateSignalCatalogRequest request)
