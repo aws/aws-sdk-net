@@ -119,7 +119,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property UserProfileName. 
         /// <para>
-        /// The user profile name.
+        /// The user profile name. If this value is not set, then <code>SpaceName</code> must
+        /// be set.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]

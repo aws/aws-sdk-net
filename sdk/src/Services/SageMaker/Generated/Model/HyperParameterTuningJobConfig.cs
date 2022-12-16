@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     {
         private HyperParameterTuningJobObjective _hyperParameterTuningJobObjective;
         private ParameterRanges _parameterRanges;
+        private int? _randomSeed;
         private ResourceLimits _resourceLimits;
         private HyperParameterTuningJobStrategyType _strategy;
         private HyperParameterTuningJobStrategyConfig _strategyConfig;
@@ -44,8 +45,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HyperParameterTuningJobObjective. 
         /// <para>
-        /// The <a>HyperParameterTuningJobObjective</a> object that specifies the objective metric
-        /// for this tuning job.
+        /// The <a>HyperParameterTuningJobObjective</a> specifies the objective metric used to
+        /// evaluate the performance of training jobs launched by this tuning job.
         /// </para>
         /// </summary>
         public HyperParameterTuningJobObjective HyperParameterTuningJobObjective
@@ -64,7 +65,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ParameterRanges. 
         /// <para>
         /// The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that
-        /// this tuning job searches.
+        /// this tuning job searches over to find the optimal configuration for the highest model
+        /// performance against .your chosen objective metric. 
         /// </para>
         /// </summary>
         public ParameterRanges ParameterRanges
@@ -80,10 +82,31 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RandomSeed. 
+        /// <para>
+        /// A value used to initialize a pseudo-random number generator. Setting a random seed
+        /// and using the same seed later for the same tuning job will allow hyperparameter optimization
+        /// to find more a consistent hyperparameter configuration between the two runs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int RandomSeed
+        {
+            get { return this._randomSeed.GetValueOrDefault(); }
+            set { this._randomSeed = value; }
+        }
+
+        // Check to see if RandomSeed property is set
+        internal bool IsSetRandomSeed()
+        {
+            return this._randomSeed.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceLimits. 
         /// <para>
-        /// The <a>ResourceLimits</a> object that specifies the maximum number of training jobs
-        /// and parallel training jobs for this tuning job.
+        /// The <a>ResourceLimits</a> object that specifies the maximum number of training and
+        /// parallel training jobs that can be used for this hyperparameter tuning job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

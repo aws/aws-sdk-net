@@ -139,7 +139,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SpaceNameEquals. 
         /// <para>
-        /// A parameter to search by space name.
+        /// A parameter to search by space name. If <code>UserProfileNameEquals</code> is set,
+        /// then this value cannot be set.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]
@@ -158,7 +159,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property UserProfileNameEquals. 
         /// <para>
-        /// A parameter to search by user profile name.
+        /// A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set,
+        /// then this value cannot be set.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]

@@ -7544,6 +7544,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.HyperParameterTuningJobConfig.RandomSeed</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.HyperParameterTuningJobObjective.MetricName</property>
     <min>1</min>
     <max>255</max>

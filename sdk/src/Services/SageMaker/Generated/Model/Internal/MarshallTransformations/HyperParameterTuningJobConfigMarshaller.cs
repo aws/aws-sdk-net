@@ -67,6 +67,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRandomSeed())
+            {
+                context.Writer.WritePropertyName("RandomSeed");
+                context.Writer.Write(requestObject.RandomSeed);
+            }
+
             if(requestObject.IsSetResourceLimits())
             {
                 context.Writer.WritePropertyName("ResourceLimits");

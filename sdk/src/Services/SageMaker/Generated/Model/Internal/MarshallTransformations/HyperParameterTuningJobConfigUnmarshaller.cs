@@ -76,6 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ParameterRanges = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RandomSeed", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RandomSeed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceLimits", targetDepth))
                 {
                     var unmarshaller = ResourceLimitsUnmarshaller.Instance;
