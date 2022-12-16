@@ -30,13 +30,14 @@ namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
     /// Container for the parameters to the PutLifecycleConfiguration operation.
-    /// Use this action to manage EFS lifecycle management and intelligent tiering. A <code>LifecycleConfiguration</code>
-    /// consists of one or more <code>LifecyclePolicy</code> objects that define the following:
+    /// Use this action to manage EFS lifecycle management and EFS Intelligent-Tiering. A
+    /// <code>LifecycleConfiguration</code> consists of one or more <code>LifecyclePolicy</code>
+    /// objects that define the following:
     /// 
     ///  <ul> <li> 
     /// <para>
     ///  <b>EFS Lifecycle management</b> - When Amazon EFS automatically transitions files
-    /// in a file system into the lower-cost Infrequent Access (IA) storage class.
+    /// in a file system into the lower-cost EFS Infrequent Access (IA) storage class.
     /// </para>
     ///  
     /// <para>
@@ -45,12 +46,13 @@ namespace Amazon.ElasticFileSystem.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>EFS Intelligent tiering</b> - When Amazon EFS automatically transitions files
-    /// from IA back into the file system's primary storage class (Standard or One Zone Standard.
+    ///  <b>EFS Intelligent-Tiering</b> - When Amazon EFS automatically transitions files
+    /// from IA back into the file system's primary storage class (EFS Standard or EFS One
+    /// Zone Standard).
     /// </para>
     ///  
     /// <para>
-    /// To enable EFS Intelligent Tiering, set the value of <code>TransitionToPrimaryStorageClass</code>
+    /// To enable EFS Intelligent-Tiering, set the value of <code>TransitionToPrimaryStorageClass</code>
     /// to <code>AFTER_1_ACCESS</code>.
     /// </para>
     ///  </li> </ul> 
@@ -66,7 +68,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// modifies the existing configuration. A <code>PutLifecycleConfiguration</code> call
     /// with an empty <code>LifecyclePolicies</code> array in the request body deletes any
     /// existing <code>LifecycleConfiguration</code> and turns off lifecycle management and
-    /// intelligent tiering for the file system.
+    /// EFS Intelligent-Tiering for the file system.
     /// </para>
     ///  
     /// <para>
@@ -75,7 +77,7 @@ namespace Amazon.ElasticFileSystem.Model
     ///  <ul> <li> 
     /// <para>
     /// The ID for the file system for which you are enabling, disabling, or modifying lifecycle
-    /// management and intelligent tiering.
+    /// management and EFS Intelligent-Tiering.
     /// </para>
     ///  </li> <li> 
     /// <para>
