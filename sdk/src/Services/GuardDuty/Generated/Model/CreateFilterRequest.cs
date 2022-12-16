@@ -84,7 +84,9 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the filter.
+        /// The description of the filter. Valid special characters include period (.), underscore
+        /// (_), dash (-), and whitespace. The new line character is considered to be an invalid
+        /// input for description.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=512)]
@@ -386,9 +388,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters
-        /// include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are
-        /// not allowed.
+        /// The name of the filter. Valid characters include period (.), underscore (_), dash
+        /// (-), and alphanumeric characters. A whitespace is considered to be an invalid character.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=64)]

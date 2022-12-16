@@ -63,7 +63,9 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the filter.
+        /// The description of the filter. Valid special characters include period (.), underscore
+        /// (_), dash (-), and whitespace. The new line character is considered to be an invalid
+        /// input for description.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=512)]

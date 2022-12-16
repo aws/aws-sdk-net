@@ -294,7 +294,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property TriggerDetails. 
         /// <para>
-        /// Represents the reason the scan was triggered.
+        /// Specifies the reason why the scan was initiated.
         /// </para>
         /// </summary>
         public TriggerDetails TriggerDetails
