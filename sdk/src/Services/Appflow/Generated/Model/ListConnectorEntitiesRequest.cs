@@ -40,6 +40,8 @@ namespace Amazon.Appflow.Model
         private string _connectorProfileName;
         private ConnectorType _connectorType;
         private string _entitiesPath;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property ApiVersion. 
@@ -121,6 +123,46 @@ namespace Amazon.Appflow.Model
         internal bool IsSetEntitiesPath()
         {
             return this._entitiesPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of items that the operation returns in the response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A token that was provided by your prior <code>ListConnectorEntities</code> operation
+        /// if the response was too big for the page size. You specify this token to get the next
+        /// page of results in paginated response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

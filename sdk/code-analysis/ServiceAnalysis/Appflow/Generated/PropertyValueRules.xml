@@ -181,7 +181,22 @@
   <property-value-rule>
     <property>Amazon.Appflow.Model.ListConnectorEntitiesRequest.EntitiesPath</property>
     <max>256</max>
-    <pattern>[\s\w/!@#+=.-]*</pattern>
+    <pattern>[\s\w/!@#+=,.-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.ListConnectorEntitiesRequest.MaxResults</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.ListConnectorEntitiesRequest.NextToken</property>
+    <max>2048</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.ListConnectorEntitiesResponse.NextToken</property>
+    <max>2048</max>
+    <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ListConnectorsRequest.MaxResults</property>
