@@ -1,3 +1,8 @@
+### 3.7.442.0 (2022-12-16 00:44 UTC)
+* Core 3.7.103.0
+	* Bug fix: fix access denied exception when reading read-only cached SSO token files located in .aws directory; Feat: Add support for AWS_SHARED_CREDENTIALS_FILE environment variable.
+	* All services packages updated to require new Core
+
 ### 3.7.441.0 (2022-12-15 19:32 UTC)
 * BackupGateway (3.7.101.0)
 	* This release adds support for VMware vSphere tags, enabling customer to protect VMware virtual machines using tag-based policies for AWS tags mapped from vSphere tags. This release also adds support for customer-accessible gateway-hypervisor interaction log and upload bandwidth rate limit schedule.
