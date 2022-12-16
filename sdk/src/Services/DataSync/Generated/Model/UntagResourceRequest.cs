@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes a tag from an Amazon Web Services resource.
+    /// Removes tags from an Amazon Web Services resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonDataSyncRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Keys. 
         /// <para>
-        /// The keys in the key-value pair in the tag to remove.
+        /// Specifies the keys in the tags that you want to remove.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
@@ -59,7 +59,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource to remove the tag from.
+        /// Specifies the Amazon Resource Name (ARN) of the resource to remove the tags from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

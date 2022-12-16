@@ -110,6 +110,22 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagListEntryMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTaskArn())
                 {
                     context.Writer.WritePropertyName("TaskArn");

@@ -30,19 +30,12 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the StartTaskExecution operation.
-    /// Starts a specific invocation of a task. A <code>TaskExecution</code> value represents
-    /// an individual run of a task. Each task can have at most one <code>TaskExecution</code>
-    /// at a time.
+    /// Starts an DataSync task. For each task, you can only run one task execution at a time.
     /// 
     ///  
     /// <para>
-    ///  <code>TaskExecution</code> has the following transition phases: INITIALIZING | PREPARING
-    /// | TRANSFERRING | VERIFYING | SUCCESS/FAILURE. 
-    /// </para>
-    ///  
-    /// <para>
-    /// For detailed information, see the Task Execution section in the Components and Terminology
-    /// topic in the <i>DataSync User Guide</i>.
+    /// There are several phases to a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses">Task
+    /// execution statuses</a>.
     /// </para>
     /// </summary>
     public partial class StartTaskExecutionRequest : AmazonDataSyncRequest
@@ -50,14 +43,15 @@ namespace Amazon.DataSync.Model
         private List<FilterRule> _excludes = new List<FilterRule>();
         private List<FilterRule> _includes = new List<FilterRule>();
         private Options _overrideOptions;
+        private List<TagListEntry> _tags = new List<TagListEntry>();
         private string _taskArn;
 
         /// <summary>
         /// Gets and sets the property Excludes. 
         /// <para>
-        /// A list of filter rules that determines which files to exclude from a task. The list
-        /// contains a single filter string that consists of the patterns to exclude. The patterns
-        /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.
+        /// Specifies a list of filter rules that determines which files to exclude from a task.
+        /// The list contains a single filter string that consists of the patterns to exclude.
+        /// The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.
         /// 
         /// </para>
         /// </summary>
@@ -77,14 +71,10 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Includes. 
         /// <para>
-        /// A list of filter rules that determines which files to include when running a task.
-        /// The pattern should contain a single filter string that consists of the patterns to
-        /// include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.
+        /// Specifies a list of filter rules that determines which files to include when running
+        /// a task. The pattern should contain a single filter string that consists of the patterns
+        /// to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.
         /// 
-        /// </para>
-        ///  
-        /// <para>
-        ///  
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -116,9 +106,34 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing
+        /// the task execution.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Tags</i> are key-value pairs that help you manage, filter, and search for your
+        /// DataSync resources.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<TagListEntry> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the task to start.
+        /// Specifies the Amazon Resource Name (ARN) of the task that you want to start.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

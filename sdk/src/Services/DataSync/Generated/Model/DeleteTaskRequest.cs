@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTask operation.
-    /// Deletes a task.
+    /// Deletes an DataSync task.
     /// </summary>
     public partial class DeleteTaskRequest : AmazonDataSyncRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the task to delete.
+        /// Specifies the Amazon Resource Name (ARN) of the task that you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

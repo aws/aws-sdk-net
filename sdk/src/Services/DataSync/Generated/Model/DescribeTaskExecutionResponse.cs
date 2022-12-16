@@ -51,7 +51,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property BytesCompressed. 
         /// <para>
         /// The physical number of bytes transferred over the network after compression was applied.
-        /// In most cases, this number is less than <code>BytesTransferred</code>.
+        /// In most cases, this number is less than <code>BytesTransferred</code> unless the data
+        /// isn't compressible.
         /// </para>
         /// </summary>
         public long BytesCompressed
@@ -69,7 +70,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property BytesTransferred. 
         /// <para>
-        /// The physical number of bytes transferred over the network.
+        /// The total number of bytes that are involved in the transfer. For the number of bytes
+        /// sent over the network, see <code>BytesCompressed</code>. 
         /// </para>
         /// </summary>
         public long BytesTransferred
@@ -125,10 +127,10 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property EstimatedFilesToTransfer. 
         /// <para>
         /// The expected number of files that is to be transferred over the network. This value
-        /// is calculated during the PREPARING phase, before the TRANSFERRING phase. This value
-        /// is the expected number of files to be transferred. It's calculated based on comparing
-        /// the content of the source and destination locations and finding the delta that needs
-        /// to be transferred. 
+        /// is calculated during the <code>PREPARING</code> phase before the <code>TRANSFERRING</code>
+        /// phase of the task execution. This value is the expected number of files to be transferred.
+        /// It's calculated based on comparing the content of the source and destination locations
+        /// and finding the delta that needs to be transferred. 
         /// </para>
         /// </summary>
         public long EstimatedFilesToTransfer
@@ -146,10 +148,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Excludes. 
         /// <para>
-        /// A list of filter rules that determines which files to exclude from a task. The list
-        /// should contain a single filter string that consists of the patterns to exclude. The
-        /// patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
-        /// 
+        /// A list of filter rules that exclude specific data during your transfer. For more information
+        /// and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+        /// data transferred by DataSync</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -169,15 +170,16 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property FilesTransferred. 
         /// <para>
         /// The actual number of files that was transferred over the network. This value is calculated
-        /// and updated on an ongoing basis during the TRANSFERRING phase. It's updated periodically
-        /// when each file is read from the source and sent over the network. 
+        /// and updated on an ongoing basis during the <code>TRANSFERRING</code> phase of the
+        /// task execution. It's updated periodically when each file is read from the source and
+        /// sent over the network. 
         /// </para>
         ///  
         /// <para>
         /// If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>.
-        /// This value can also be greater than <code>EstimatedFilesTransferred</code> in some
-        /// cases. This element is implementation-specific for some location types, so don't use
-        /// it as an indicator for a correct file number or to monitor your task execution.
+        /// In some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>.
+        /// This element is implementation-specific for some location types, so don't use it as
+        /// an indicator for a correct file number or to monitor your task execution.
         /// </para>
         /// </summary>
         public long FilesTransferred
@@ -195,10 +197,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Includes. 
         /// <para>
-        /// A list of filter rules that determines which files to include when running a task.
-        /// The list should contain a single filter string that consists of the patterns to include.
-        /// The patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
-        /// 
+        /// A list of filter rules that include specific data during your transfer. For more information
+        /// and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+        /// data transferred by DataSync</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

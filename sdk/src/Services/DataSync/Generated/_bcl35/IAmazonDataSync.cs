@@ -676,27 +676,6 @@ namespace Amazon.DataSync
         /// how and when you want to transfer your data (such as bandwidth limits, scheduling,
         /// among other options).
         /// </para>
-        ///  
-        /// <para>
-        /// When you create a task that transfers data between Amazon Web Services services in
-        /// different Amazon Web Services Regions, one of your locations must reside in the Region
-        /// where you're using DataSync.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see the following topics:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html">Working
-        /// with DataSync locations</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure
-        /// DataSync task settings</a> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTask service method.</param>
         /// 
@@ -837,7 +816,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Deletes a task.
+        /// Deletes an DataSync task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTask service method.</param>
         /// 
@@ -1616,7 +1595,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns all the tags associated with a specified resource.
+        /// Returns all the tags associated with an Amazon Web Services resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1754,19 +1733,12 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Starts a specific invocation of a task. A <code>TaskExecution</code> value represents
-        /// an individual run of a task. Each task can have at most one <code>TaskExecution</code>
-        /// at a time.
+        /// Starts an DataSync task. For each task, you can only run one task execution at a time.
         /// 
         ///  
         /// <para>
-        ///  <code>TaskExecution</code> has the following transition phases: INITIALIZING | PREPARING
-        /// | TRANSFERRING | VERIFYING | SUCCESS/FAILURE. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For detailed information, see the Task Execution section in the Components and Terminology
-        /// topic in the <i>DataSync User Guide</i>.
+        /// There are several phases to a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses">Task
+        /// execution statuses</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTaskExecution service method.</param>
@@ -1813,7 +1785,13 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Applies a key-value pair to an Amazon Web Services resource.
+        /// Applies a <i>tag</i> to an Amazon Web Services resource. Tags are key-value pairs
+        /// that can help you manage, filter, and search for your resources.
+        /// 
+        ///  
+        /// <para>
+        /// These include DataSync resources, such as locations, tasks, and task executions.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1859,7 +1837,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Removes a tag from an Amazon Web Services resource.
+        /// Removes tags from an Amazon Web Services resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 

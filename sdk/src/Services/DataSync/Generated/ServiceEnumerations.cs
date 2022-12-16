@@ -1165,6 +1165,10 @@ namespace Amazon.DataSync
         /// </summary>
         public static readonly S3StorageClass GLACIER = new S3StorageClass("GLACIER");
         /// <summary>
+        /// Constant GLACIER_INSTANT_RETRIEVAL for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass GLACIER_INSTANT_RETRIEVAL = new S3StorageClass("GLACIER_INSTANT_RETRIEVAL");
+        /// <summary>
         /// Constant INTELLIGENT_TIERING for S3StorageClass
         /// </summary>
         public static readonly S3StorageClass INTELLIGENT_TIERING = new S3StorageClass("INTELLIGENT_TIERING");
