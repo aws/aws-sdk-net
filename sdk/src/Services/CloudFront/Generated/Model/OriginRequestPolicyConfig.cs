@@ -54,7 +54,7 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// CloudFront sends a request when it can’t find an object in its cache that matches
+    /// CloudFront sends a request when it can't find an object in its cache that matches
     /// the request. If you want to send values to the origin and also include them in the
     /// cache key, use <code>CachePolicy</code>.
     /// </para>

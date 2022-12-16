@@ -39,7 +39,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DistributionConfigWithTags. 
         /// <para>
-        /// The distribution's configuration information. 
+        /// The distribution's configuration information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

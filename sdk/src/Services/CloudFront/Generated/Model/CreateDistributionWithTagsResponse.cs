@@ -40,7 +40,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Distribution. 
         /// <para>
-        /// The distribution's information. 
+        /// The distribution's information.
         /// </para>
         /// </summary>
         public Distribution Distribution

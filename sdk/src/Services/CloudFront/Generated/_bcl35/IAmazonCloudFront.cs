@@ -59,7 +59,7 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// With this operation you can move an alias that’s already in use on a CloudFront distribution
+        /// With this operation you can move an alias that's already in use on a CloudFront distribution
         /// to a different distribution in one step. This prevents the downtime that could occur
         /// if you first remove the alias from one distribution and then separately add the alias
         /// to another distribution.
@@ -134,7 +134,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// After you create a staging distribution, you can use <code>UpdateDistribution</code>
-        /// to modify the staging distribution’s configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code>
+        /// to modify the staging distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code>
         /// to incrementally move traffic to the staging distribution.
         /// </para>
         /// </summary>
@@ -407,7 +407,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// After you create a cache policy, you can attach it to one or more cache behaviors.
-        /// When it’s attached to a cache behavior, the cache policy determines the following:
+        /// When it's attached to a cache behavior, the cache policy determines the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -424,7 +424,7 @@ namespace Amazon.CloudFront
         /// <para>
         /// The headers, cookies, and query strings that are included in the cache key are automatically
         /// included in requests that CloudFront sends to the origin. CloudFront sends a request
-        /// when it can’t find an object in its cache that matches the request’s cache key. If
+        /// when it can't find an object in its cache that matches the request's cache key. If
         /// you want to send values to the origin but <i>not</i> include them in the cache key,
         /// use <code>OriginRequestPolicy</code>.
         /// </para>
@@ -576,13 +576,13 @@ namespace Amazon.CloudFront
         /// <para>
         /// To use a continuous deployment policy, first use <code>CopyDistribution</code> to
         /// create a staging distribution, then use <code>UpdateDistribution</code> to modify
-        /// the staging distribution’s configuration.
+        /// the staging distribution's configuration.
         /// </para>
         ///  
         /// <para>
         /// After you create and update a staging distribution, you can use a continuous deployment
         /// policy to incrementally move traffic to the staging distribution. This workflow enables
-        /// you to test changes to a distribution’s configuration before moving all of your domain’s
+        /// you to test changes to a distribution's configuration before moving all of your domain's
         /// production traffic to the new configuration.
         /// </para>
         /// </summary>
@@ -760,7 +760,7 @@ namespace Amazon.CloudFront
         /// The cache policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
-        /// The continuous deployment policy doesn’t exist.
+        /// The continuous deployment policy doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
         /// The specified configuration for field-level encryption doesn't exist.
@@ -1040,7 +1040,7 @@ namespace Amazon.CloudFront
         /// The cache policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
-        /// The continuous deployment policy doesn’t exist.
+        /// The continuous deployment policy doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
         /// The specified configuration for field-level encryption doesn't exist.
@@ -1332,15 +1332,15 @@ namespace Amazon.CloudFront
         /// </para>
         ///  
         /// <para>
-        /// When you create a function, it’s in the <code>DEVELOPMENT</code> stage. In this stage,
+        /// When you create a function, it's in the <code>DEVELOPMENT</code> stage. In this stage,
         /// you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
         /// </para>
         ///  
         /// <para>
-        /// When you’re ready to use your function with a CloudFront distribution, use <code>PublishFunction</code>
+        /// When you're ready to use your function with a CloudFront distribution, use <code>PublishFunction</code>
         /// to copy the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>.
-        /// When it’s live, you can attach the function to a distribution’s cache behavior, using
-        /// the function’s ARN.
+        /// When it's live, you can attach the function to a distribution's cache behavior, using
+        /// the function's ARN.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFunction service method.</param>
@@ -1669,7 +1669,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// After you create an origin request policy, you can attach it to one or more cache
-        /// behaviors. When it’s attached to a cache behavior, the origin request policy determines
+        /// behaviors. When it's attached to a cache behavior, the origin request policy determines
         /// the values that CloudFront includes in requests that it sends to the origin. Each
         /// request that CloudFront sends to the origin includes the following:
         /// </para>
@@ -1690,7 +1690,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// CloudFront sends a request when it can’t find a valid object in its cache that matches
+        /// CloudFront sends a request when it can't find a valid object in its cache that matches
         /// the request. If you want to send values to the origin and also include them in the
         /// cache key, use <code>CachePolicy</code>.
         /// </para>
@@ -1900,7 +1900,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// After you create a response headers policy, you can use its ID to attach it to one
-        /// or more cache behaviors in a CloudFront distribution. When it’s attached to a cache
+        /// or more cache behaviors in a CloudFront distribution. When it's attached to a cache
         /// behavior, CloudFront adds the headers in the policy to HTTP responses that it sends
         /// for requests that match the cache behavior.
         /// </para>
@@ -2160,13 +2160,13 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// You cannot delete a cache policy if it’s attached to a cache behavior. First update
+        /// You cannot delete a cache policy if it's attached to a cache behavior. First update
         /// your distributions to remove the cache policy from all cache behaviors, then delete
         /// the cache policy.
         /// </para>
         ///  
         /// <para>
-        /// To delete a cache policy, you must provide the policy’s identifier and version. To
+        /// To delete a cache policy, you must provide the policy's identifier and version. To
         /// get these values, you can use <code>ListCachePolicies</code> or <code>GetCachePolicy</code>.
         /// </para>
         /// </summary>
@@ -2308,7 +2308,7 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// You cannot delete a continuous deployment policy that’s attached to a primary distribution.
+        /// You cannot delete a continuous deployment policy that's attached to a primary distribution.
         /// First update your distribution to remove the continuous deployment policy, then you
         /// can delete the policy.
         /// </para>
@@ -2330,7 +2330,7 @@ namespace Amazon.CloudFront
         /// The <code>If-Match</code> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
-        /// The continuous deployment policy doesn’t exist.
+        /// The continuous deployment policy doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition in one or more of the request fields evaluated to <code>false</code>.
@@ -2564,13 +2564,13 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// You cannot delete a function if it’s associated with a cache behavior. First, update
+        /// You cannot delete a function if it's associated with a cache behavior. First, update
         /// your distributions to remove the function association from all cache behaviors, then
         /// delete the function.
         /// </para>
         ///  
         /// <para>
-        /// To delete a function, you must provide the function’s name and version (<code>ETag</code>
+        /// To delete a function, you must provide the function's name and version (<code>ETag</code>
         /// value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
         /// </para>
         /// </summary>
@@ -2578,7 +2578,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the DeleteFunction service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.FunctionInUseException">
-        /// Cannot delete the function because it’s attached to one or more cache behaviors.
+        /// Cannot delete the function because it's attached to one or more cache behaviors.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid.
@@ -2637,7 +2637,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  
         /// <para>
-        /// To delete a key group, you must provide the key group’s identifier and version. To
+        /// To delete a key group, you must provide the key group's identifier and version. To
         /// get these values, use <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code>
         /// or <code>GetKeyGroupConfig</code>.
         /// </para>
@@ -2810,13 +2810,13 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// You cannot delete an origin request policy if it’s attached to any cache behaviors.
+        /// You cannot delete an origin request policy if it's attached to any cache behaviors.
         /// First update your distributions to remove the origin request policy from all cache
         /// behaviors, then delete the origin request policy.
         /// </para>
         ///  
         /// <para>
-        /// To delete an origin request policy, you must provide the policy’s identifier and version.
+        /// To delete an origin request policy, you must provide the policy's identifier and version.
         /// To get the identifier, you can use <code>ListOriginRequestPolicies</code> or <code>GetOriginRequestPolicy</code>.
         /// </para>
         /// </summary>
@@ -2936,13 +2936,13 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// You cannot delete a real-time log configuration if it’s attached to a cache behavior.
+        /// You cannot delete a real-time log configuration if it's attached to a cache behavior.
         /// First update your distributions to remove the real-time log configuration from all
         /// cache behaviors, then delete the real-time log configuration.
         /// </para>
         ///  
         /// <para>
-        /// To delete a real-time log configuration, you can provide the configuration’s name
+        /// To delete a real-time log configuration, you can provide the configuration's name
         /// or its Amazon Resource Name (ARN). You must provide at least one. If you provide both,
         /// CloudFront uses the name to identify the real-time log configuration to delete.
         /// </para>
@@ -3002,15 +3002,15 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// You cannot delete a response headers policy if it’s attached to a cache behavior.
+        /// You cannot delete a response headers policy if it's attached to a cache behavior.
         /// First update your distributions to remove the response headers policy from all cache
         /// behaviors, then delete the response headers policy.
         /// </para>
         ///  
         /// <para>
-        /// To delete a response headers policy, you must provide the policy’s identifier and
+        /// To delete a response headers policy, you must provide the policy's identifier and
         /// version. To get these values, you can use <code>ListResponseHeadersPolicies</code>
-        /// or <code>GetResponseHeadersPolicy</code>. 
+        /// or <code>GetResponseHeadersPolicy</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResponseHeadersPolicy service method.</param>
@@ -3267,12 +3267,12 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Gets configuration information and metadata about a CloudFront function, but not the
-        /// function’s code. To get a function’s code, use <code>GetFunction</code>.
+        /// function's code. To get a function's code, use <code>GetFunction</code>.
         /// 
         ///  
         /// <para>
         /// To get configuration information and metadata about a function, you must provide the
-        /// function’s name and stage. To get these values, you can use <code>ListFunctions</code>.
+        /// function's name and stage. To get these values, you can use <code>ListFunctions</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFunction service method.</param>
@@ -3323,7 +3323,7 @@ namespace Amazon.CloudFront
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The policy’s identifier.
+        /// The policy's identifier.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3331,8 +3331,8 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get a cache policy, you must provide the policy’s identifier. If the cache policy
-        /// is attached to a distribution’s cache behavior, you can get the policy’s identifier
+        /// To get a cache policy, you must provide the policy's identifier. If the cache policy
+        /// is attached to a distribution's cache behavior, you can get the policy's identifier
         /// using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache
         /// policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.
         /// </para>
@@ -3385,8 +3385,8 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// To get a cache policy configuration, you must provide the policy’s identifier. If
-        /// the cache policy is attached to a distribution’s cache behavior, you can get the policy’s
+        /// To get a cache policy configuration, you must provide the policy's identifier. If
+        /// the cache policy is attached to a distribution's cache behavior, you can get the policy's
         /// identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If
         /// the cache policy is not attached to a cache behavior, you can get the identifier using
         /// <code>ListCachePolicies</code>.
@@ -3556,7 +3556,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets a continuous deployment policy, including metadata (the policy’s identifier and
+        /// Gets a continuous deployment policy, including metadata (the policy's identifier and
         /// the date and time when the policy was last modified).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetContinuousDeploymentPolicy service method.</param>
@@ -3566,7 +3566,7 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
-        /// The continuous deployment policy doesn’t exist.
+        /// The continuous deployment policy doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicy">REST API Reference for GetContinuousDeploymentPolicy Operation</seealso>
         GetContinuousDeploymentPolicyResponse GetContinuousDeploymentPolicy(GetContinuousDeploymentPolicyRequest request);
@@ -3612,7 +3612,7 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
-        /// The continuous deployment policy doesn’t exist.
+        /// The continuous deployment policy doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicyConfig">REST API Reference for GetContinuousDeploymentPolicyConfig Operation</seealso>
         GetContinuousDeploymentPolicyConfigResponse GetContinuousDeploymentPolicyConfig(GetContinuousDeploymentPolicyConfigRequest request);
@@ -3958,7 +3958,7 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// To get a function’s code, you must provide the function’s name and stage. To get these
+        /// To get a function's code, you must provide the function's name and stage. To get these
         /// values, you can use <code>ListFunctions</code>.
         /// </para>
         /// </summary>
@@ -4059,8 +4059,8 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// To get a key group, you must provide the key group’s identifier. If the key group
-        /// is referenced in a distribution’s cache behavior, you can get the key group’s identifier
+        /// To get a key group, you must provide the key group's identifier. If the key group
+        /// is referenced in a distribution's cache behavior, you can get the key group's identifier
         /// using <code>ListDistributions</code> or <code>GetDistribution</code>. If the key group
         /// is not referenced in a cache behavior, you can get the identifier using <code>ListKeyGroups</code>.
         /// </para>
@@ -4110,9 +4110,9 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// To get a key group configuration, you must provide the key group’s identifier. If
-        /// the key group is referenced in a distribution’s cache behavior, you can get the key
-        /// group’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// To get a key group configuration, you must provide the key group's identifier. If
+        /// the key group is referenced in a distribution's cache behavior, you can get the key
+        /// group's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
         /// If the key group is not referenced in a cache behavior, you can get the identifier
         /// using <code>ListKeyGroups</code>.
         /// </para>
@@ -4307,7 +4307,7 @@ namespace Amazon.CloudFront
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The policy’s identifier.
+        /// The policy's identifier.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4315,9 +4315,9 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get an origin request policy, you must provide the policy’s identifier. If the
-        /// origin request policy is attached to a distribution’s cache behavior, you can get
-        /// the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// To get an origin request policy, you must provide the policy's identifier. If the
+        /// origin request policy is attached to a distribution's cache behavior, you can get
+        /// the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
         /// If the origin request policy is not attached to a cache behavior, you can get the
         /// identifier using <code>ListOriginRequestPolicies</code>.
         /// </para>
@@ -4370,9 +4370,9 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// To get an origin request policy configuration, you must provide the policy’s identifier.
-        /// If the origin request policy is attached to a distribution’s cache behavior, you can
-        /// get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// To get an origin request policy configuration, you must provide the policy's identifier.
+        /// If the origin request policy is attached to a distribution's cache behavior, you can
+        /// get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
         /// If the origin request policy is not attached to a cache behavior, you can get the
         /// identifier using <code>ListOriginRequestPolicies</code>.
         /// </para>
@@ -4517,7 +4517,7 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// To get a real-time log configuration, you can provide the configuration’s name or
+        /// To get a real-time log configuration, you can provide the configuration's name or
         /// its Amazon Resource Name (ARN). You must provide at least one. If you provide both,
         /// CloudFront uses the name to identify the real-time log configuration to get.
         /// </para>
@@ -4569,14 +4569,14 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets a response headers policy, including metadata (the policy’s identifier and the
+        /// Gets a response headers policy, including metadata (the policy's identifier and the
         /// date and time when the policy was last modified).
         /// 
         ///  
         /// <para>
-        /// To get a response headers policy, you must provide the policy’s identifier. If the
-        /// response headers policy is attached to a distribution’s cache behavior, you can get
-        /// the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// To get a response headers policy, you must provide the policy's identifier. If the
+        /// response headers policy is attached to a distribution's cache behavior, you can get
+        /// the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
         /// If the response headers policy is not attached to a cache behavior, you can get the
         /// identifier using <code>ListResponseHeadersPolicies</code>.
         /// </para>
@@ -4629,9 +4629,9 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// To get a response headers policy configuration, you must provide the policy’s identifier.
-        /// If the response headers policy is attached to a distribution’s cache behavior, you
-        /// can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// To get a response headers policy configuration, you must provide the policy's identifier.
+        /// If the response headers policy is attached to a distribution's cache behavior, you
+        /// can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
         /// If the response headers policy is not attached to a cache behavior, you can get the
         /// identifier using <code>ListResponseHeadersPolicies</code>.
         /// </para>
@@ -4922,7 +4922,7 @@ namespace Amazon.CloudFront
         /// Amazon Web Services accounts for each conflicting alias. In the returned list, the
         /// distribution and account IDs are partially hidden, which allows you to identify the
         /// distributions and accounts that you own, but helps to protect the information of ones
-        /// that you don’t own.
+        /// that you don't own.
         /// 
         ///  
         /// <para>
@@ -5017,7 +5017,7 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
-        /// The continuous deployment policy doesn’t exist.
+        /// The continuous deployment policy doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListContinuousDeploymentPolicies">REST API Reference for ListContinuousDeploymentPolicies Operation</seealso>
         ListContinuousDeploymentPoliciesResponse ListContinuousDeploymentPolicies(ListContinuousDeploymentPoliciesRequest request);
@@ -5108,7 +5108,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets a list of distribution IDs for distributions that have a cache behavior that’s
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that's
         /// associated with the specified cache policy.
         /// 
         ///  
@@ -5223,7 +5223,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets a list of distribution IDs for distributions that have a cache behavior that’s
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that's
         /// associated with the specified origin request policy.
         /// 
         ///  
@@ -5282,7 +5282,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets a list of distributions that have a cache behavior that’s associated with the
+        /// Gets a list of distributions that have a cache behavior that's associated with the
         /// specified real-time log configuration.
         /// 
         ///  
@@ -5297,7 +5297,7 @@ namespace Amazon.CloudFront
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
         /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request. 
+        /// response as the <code>Marker</code> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByRealtimeLogConfig service method.</param>
@@ -5341,7 +5341,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets a list of distribution IDs for distributions that have a cache behavior that’s
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that's
         /// associated with the specified response headers policy.
         /// 
         ///  
@@ -5863,7 +5863,7 @@ namespace Amazon.CloudFront
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
         /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request. 
+        /// response as the <code>Marker</code> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRealtimeLogConfigs service method.</param>
@@ -6089,11 +6089,11 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// When a function is published to the <code>LIVE</code> stage, you can attach the function
-        /// to a distribution’s cache behavior, using the function’s Amazon Resource Name (ARN).
+        /// to a distribution's cache behavior, using the function's Amazon Resource Name (ARN).
         /// </para>
         ///  
         /// <para>
-        /// To publish a function, you must provide the function’s name and version (<code>ETag</code>
+        /// To publish a function, you must provide the function's name and version (<code>ETag</code>
         /// value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
         /// </para>
         /// </summary>
@@ -6209,15 +6209,15 @@ namespace Amazon.CloudFront
         /// To test a function, you provide an <i>event object</i> that represents an HTTP request
         /// or response that your CloudFront distribution could receive in production. CloudFront
         /// runs the function, passing it the event object that you provided, and returns the
-        /// function’s result (the modified event object) in the response. The response also contains
+        /// function's result (the modified event object) in the response. The response also contains
         /// function logs and error messages, if any exist. For more information about testing
         /// functions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing
         /// functions</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// To test a function, you provide the function’s name and version (<code>ETag</code>
-        /// value) along with the event object. To get the function’s name and version, you can
+        /// To test a function, you provide the function's name and version (<code>ETag</code>
+        /// value) along with the event object. To get the function's name and version, you can
         /// use <code>ListFunctions</code> and <code>DescribeFunction</code>.
         /// </para>
         /// </summary>
@@ -6345,7 +6345,7 @@ namespace Amazon.CloudFront
         ///  </li> <li> 
         /// <para>
         /// Call <code>UpdateCachePolicy</code> by providing the entire cache policy configuration,
-        /// including the fields that you modified and those that you didn’t.
+        /// including the fields that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -6516,7 +6516,7 @@ namespace Amazon.CloudFront
         /// <para>
         /// Use <code>UpdateContinuousDeploymentPolicy</code>, providing the entire continuous
         /// deployment policy configuration, including the fields that you modified and those
-        /// that you didn’t.
+        /// that you didn't.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -6536,7 +6536,7 @@ namespace Amazon.CloudFront
         /// The <code>If-Match</code> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
-        /// The continuous deployment policy doesn’t exist.
+        /// The continuous deployment policy doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition in one or more of the request fields evaluated to <code>false</code>.
@@ -6609,7 +6609,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can’t change the value of <code>CallerReference</code>.
+        /// You can't change the value of <code>CallerReference</code>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -6617,7 +6617,7 @@ namespace Amazon.CloudFront
         /// The new configuration replaces the existing configuration. The values that you specify
         /// in an <code>UpdateDistribution</code> request are not merged into your existing configuration.
         /// Make sure to include all fields: the ones that you modified and also the ones that
-        /// you didn’t.
+        /// you didn't.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -6731,7 +6731,7 @@ namespace Amazon.CloudFront
         /// The cache policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
-        /// The continuous deployment policy doesn’t exist.
+        /// The continuous deployment policy doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
@@ -6899,10 +6899,10 @@ namespace Amazon.CloudFront
         /// <para>
         /// You can use this operation in a continuous deployment workflow after you have tested
         /// configuration changes on the staging distribution. After using a continuous deployment
-        /// policy to move a portion of your domain name’s traffic to the staging distribution
+        /// policy to move a portion of your domain name's traffic to the staging distribution
         /// and verifying that it works as intended, you can use this operation to copy the staging
-        /// distribution’s configuration to the primary distribution. This action will disable
-        /// the continuous deployment policy and move your domain’s traffic back to the primary
+        /// distribution's configuration to the primary distribution. This action will disable
+        /// the continuous deployment policy and move your domain's traffic back to the primary
         /// distribution.
         /// </para>
         /// </summary>
@@ -7311,12 +7311,12 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// You can update a function’s code or the comment that describes the function. You cannot
-        /// update a function’s name.
+        /// You can update a function's code or the comment that describes the function. You cannot
+        /// update a function's name.
         /// </para>
         ///  
         /// <para>
-        /// To update a function, you provide the function’s name and version (<code>ETag</code>
+        /// To update a function, you provide the function's name and version (<code>ETag</code>
         /// value) along with the updated function code. To get the name and version, you can
         /// use <code>ListFunctions</code> and <code>DescribeFunction</code>.
         /// </para>
@@ -7398,7 +7398,7 @@ namespace Amazon.CloudFront
         ///  </li> <li> 
         /// <para>
         /// Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields
-        /// that you modified and those that you didn’t.
+        /// that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -7542,7 +7542,7 @@ namespace Amazon.CloudFront
         ///  </li> <li> 
         /// <para>
         /// Call <code>UpdateOriginRequestPolicy</code> by providing the entire origin request
-        /// policy configuration, including the fields that you modified and those that you didn’t.
+        /// policy configuration, including the fields that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -7705,11 +7705,11 @@ namespace Amazon.CloudFront
         ///  </li> <li> 
         /// <para>
         /// Call this API (<code>UpdateRealtimeLogConfig</code>) by providing the entire real-time
-        /// log configuration, including the parameters that you modified and those that you didn’t.
+        /// log configuration, including the parameters that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// You cannot update a real-time log configuration’s <code>Name</code> or <code>ARN</code>.
+        /// You cannot update a real-time log configuration's <code>Name</code> or <code>ARN</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRealtimeLogConfig service method.</param>
@@ -7769,7 +7769,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy’s configuration.
+        /// Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy's configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7778,7 +7778,7 @@ namespace Amazon.CloudFront
         ///  </li> <li> 
         /// <para>
         /// Call <code>UpdateResponseHeadersPolicy</code>, providing the entire response headers
-        /// policy configuration, including the fields that you modified and those that you didn’t.
+        /// policy configuration, including the fields that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol>
         /// </summary>

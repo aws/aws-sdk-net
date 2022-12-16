@@ -58,7 +58,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Runtime. 
         /// <para>
-        /// The function’s runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+        /// The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

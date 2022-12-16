@@ -39,7 +39,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Invalidation. 
         /// <para>
         /// The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
-        /// Complex Type</a>. 
+        /// Complex Type</a>.
         /// </para>
         /// </summary>
         public Invalidation Invalidation

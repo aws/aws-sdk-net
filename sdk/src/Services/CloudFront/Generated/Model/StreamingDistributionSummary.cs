@@ -73,7 +73,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        ///  The ARN (Amazon Resource Name) for the streaming distribution. For example: <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
+        /// The ARN (Amazon Resource Name) for the streaming distribution. For example: <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
         /// where <code>123456789012</code> is your Amazon Web Services account ID.
         /// </para>
         /// </summary>
@@ -189,7 +189,6 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property PriceClass. 
         /// <para>
         /// A complex type that contains information about price class for this streaming distribution.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -228,7 +227,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  Indicates the current status of the distribution. When the status is <code>Deployed</code>,
+        /// Indicates the current status of the distribution. When the status is <code>Deployed</code>,
         /// the distribution's information is fully propagated throughout the Amazon CloudFront
         /// system.
         /// </para>
@@ -265,7 +264,6 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
         /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -54,7 +54,7 @@ namespace Amazon.CloudFront.Model
     /// <para>
     /// Use <code>UpdateContinuousDeploymentPolicy</code>, providing the entire continuous
     /// deployment policy configuration, including the fields that you modified and those
-    /// that you didn’t.
+    /// that you didn't.
     /// </para>
     ///  </li> </ol>
     /// </summary>

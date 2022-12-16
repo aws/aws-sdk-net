@@ -60,7 +60,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Quantity. 
         /// <para>
         /// The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing
-        /// an HTTPS connection with this origin. 
+        /// an HTTPS connection with this origin.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

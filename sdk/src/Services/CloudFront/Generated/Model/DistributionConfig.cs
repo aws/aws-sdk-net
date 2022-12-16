@@ -91,7 +91,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CacheBehaviors. 
         /// <para>
-        /// A complex type that contains zero or more <code>CacheBehavior</code> elements. 
+        /// A complex type that contains zero or more <code>CacheBehavior</code> elements.
         /// </para>
         /// </summary>
         public CacheBehaviors CacheBehaviors
@@ -140,8 +140,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// An optional comment to describe the distribution. The comment cannot be longer than
-        /// 128 characters.
+        /// A comment to describe the distribution. The comment cannot be longer than 128 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -335,7 +334,7 @@ namespace Amazon.CloudFront.Model
         /// distribution, specify <code>true</code>. If you specify <code>false</code>, CloudFront
         /// responds to IPv6 DNS requests with the DNS response code <code>NOERROR</code> and
         /// with no IP addresses. This allows viewers to submit a second request, for an IPv4
-        /// address for your distribution. 
+        /// address for your distribution.
         /// </para>
         ///  
         /// <para>
@@ -414,7 +413,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property OriginGroups. 
         /// <para>
-        ///  A complex type that contains information about origin groups for this distribution.
+        /// A complex type that contains information about origin groups for this distribution.
         /// </para>
         /// </summary>
         public OriginGroups OriginGroups
@@ -432,7 +431,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Origins. 
         /// <para>
-        /// A complex type that contains information about origins for this distribution. 
+        /// A complex type that contains information about origins for this distribution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -525,7 +524,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ViewerCertificate. 
         /// <para>
-        /// A complex type that determines the distribution’s SSL/TLS configuration for communicating
+        /// A complex type that determines the distribution's SSL/TLS configuration for communicating
         /// with viewers.
         /// </para>
         /// </summary>
@@ -558,7 +557,7 @@ namespace Amazon.CloudFront.Model
         /// content or with an HTTP 403 status code (Forbidden). You can also configure CloudFront
         /// to return a custom error page when a request is blocked. For more information about
         /// WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
-        /// Developer Guide</a>. 
+        /// Developer Guide</a>.
         /// </para>
         /// </summary>
         public string WebACLId

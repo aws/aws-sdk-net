@@ -50,7 +50,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CNAME. 
         /// <para>
-        /// A domain name associated with a distribution. 
+        /// A domain name associated with a distribution.
         /// </para>
         /// </summary>
         public string CNAME
@@ -69,7 +69,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property ICPRecordalStatus. 
         /// <para>
         /// The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus
-        /// is set to APPROVED for all CNAMEs (aliases) in regions outside of China. 
+        /// is set to APPROVED for all CNAMEs (aliases) in regions outside of China.
         /// </para>
         ///  
         /// <para>

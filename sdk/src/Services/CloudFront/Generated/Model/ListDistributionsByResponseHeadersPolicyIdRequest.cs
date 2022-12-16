@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDistributionsByResponseHeadersPolicyId operation.
-    /// Gets a list of distribution IDs for distributions that have a cache behavior that’s
+    /// Gets a list of distribution IDs for distributions that have a cache behavior that's
     /// associated with the specified response headers policy.
     /// 
     ///  
@@ -53,8 +53,8 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// Use this field when paginating results to indicate where to begin in your list of
         /// distribution IDs. The response includes distribution IDs in the list that occur after
-        /// the marker. To get the next page of the list, set this field’s value to the value
-        /// of <code>NextMarker</code> from the current page’s response.
+        /// the marker. To get the next page of the list, set this field's value to the value
+        /// of <code>NextMarker</code> from the current page's response.
         /// </para>
         /// </summary>
         public string Marker

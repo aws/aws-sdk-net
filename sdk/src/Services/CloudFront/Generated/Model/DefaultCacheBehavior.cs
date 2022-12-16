@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that describes the default cache behavior if you don’t specify a <code>CacheBehavior</code>
-    /// element or if request URLs don’t match any of the values of <code>PathPattern</code>
+    /// A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
+    /// element or if request URLs don't match any of the values of <code>PathPattern</code>
     /// in <code>CacheBehavior</code> elements. You must create exactly one default cache
     /// behavior.
     /// </summary>
@@ -387,7 +387,7 @@ namespace Amazon.CloudFront.Model
         /// format using the origin that is associated with this cache behavior. If so, specify
         /// <code>true</code>; if not, specify <code>false</code>. If you specify <code>true</code>
         /// for <code>SmoothStreaming</code>, you can still distribute other content using this
-        /// cache behavior if the content matches the value of <code>PathPattern</code>. 
+        /// cache behavior if the content matches the value of <code>PathPattern</code>.
         /// </para>
         /// </summary>
         public bool SmoothStreaming
@@ -463,7 +463,7 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// When a cache behavior contains trusted signers, CloudFront requires signed URLs or
         /// signed cookies for all requests that match the cache behavior. The URLs or cookies
-        /// must be signed with the private key of a CloudFront key pair in a trusted signer’s
+        /// must be signed with the private key of a CloudFront key pair in a trusted signer's
         /// Amazon Web Services account. The signed URL or cookie contains information about which
         /// public key CloudFront should use to verify the signature. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
@@ -513,7 +513,7 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// The only way to guarantee that viewers retrieve an object that was fetched from the
         /// origin using HTTPS is never to use any other protocol to fetch the object. If you
-        /// have recently changed from HTTP to HTTPS, we recommend that you clear your objects’
+        /// have recently changed from HTTP to HTTPS, we recommend that you clear your objects'
         /// cache because cached objects are protocol agnostic. That means that an edge location
         /// will return an object from the cache regardless of whether the current request protocol
         /// matches the protocol used previously. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing

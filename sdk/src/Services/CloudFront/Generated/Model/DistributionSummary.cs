@@ -246,7 +246,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property HttpVersion. 
         /// <para>
-        ///  Specify the maximum HTTP version that you want viewers to use to communicate with
+        /// Specify the maximum HTTP version that you want viewers to use to communicate with
         /// CloudFront. The default value for new web distributions is <code>http2</code>. Viewers
         /// that don't support <code>HTTP/2</code> will automatically use an earlier version.
         /// </para>
@@ -324,7 +324,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property OriginGroups. 
         /// <para>
-        ///  A complex type that contains information about origin groups for this distribution.
+        /// A complex type that contains information about origin groups for this distribution.
         /// </para>
         /// </summary>
         public OriginGroups OriginGroups
@@ -362,7 +362,6 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property PriceClass. 
         /// <para>
         /// A complex type that contains information about price class for this streaming distribution.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -440,7 +439,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ViewerCertificate. 
         /// <para>
-        /// A complex type that determines the distribution’s SSL/TLS configuration for communicating
+        /// A complex type that determines the distribution's SSL/TLS configuration for communicating
         /// with viewers.
         /// </para>
         /// </summary>

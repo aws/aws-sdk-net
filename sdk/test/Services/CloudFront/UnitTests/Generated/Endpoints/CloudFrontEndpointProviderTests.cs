@@ -36,8 +36,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudFrontEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
             parameters["Region"] = "aws-cn-global";
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudfront.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -51,8 +51,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudFrontEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
             parameters["Region"] = "aws-global";
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://cloudfront.amazonaws.com", endpoint.URL);
         }
@@ -66,8 +66,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudFrontEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
             parameters["Region"] = "us-east-1";
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -83,8 +83,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudFrontEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
             parameters["Region"] = "us-east-1";
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -99,8 +99,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new CloudFrontEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
             parameters["Region"] = "us-east-1";
+            parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
         }

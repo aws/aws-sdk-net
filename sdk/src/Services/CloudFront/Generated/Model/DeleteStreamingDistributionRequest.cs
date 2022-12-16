@@ -103,7 +103,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates DeleteStreamingDistributionRequest with the parameterized properties
         /// </summary>
-        /// <param name="id">The distribution ID. </param>
+        /// <param name="id">The distribution ID.</param>
         /// <param name="ifMatch">The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</param>
         public DeleteStreamingDistributionRequest(string id, string ifMatch)
         {
@@ -114,7 +114,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The distribution ID. 
+        /// The distribution ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

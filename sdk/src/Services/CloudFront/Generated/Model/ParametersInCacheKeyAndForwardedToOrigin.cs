@@ -37,7 +37,7 @@ namespace Amazon.CloudFront.Model
     /// <para>
     /// The headers, cookies, and query strings that are included in the cache key are automatically
     /// included in requests that CloudFront sends to the origin. CloudFront sends a request
-    /// when it can’t find an object in its cache that matches the request’s cache key. If
+    /// when it can't find an object in its cache that matches the request's cache key. If
     /// you want to send values to the origin but <i>not</i> include them in the cache key,
     /// use <code>OriginRequestPolicy</code>.
     /// </para>
@@ -85,7 +85,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+        /// Normalizes the value of the viewer's <code>Accept-Encoding</code> header
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -111,8 +111,8 @@ namespace Amazon.CloudFront.Model
         ///  
         /// <para>
         /// If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
-        /// header the same as any other HTTP header in the viewer request. By default, it’s not
-        /// included in the cache key and it’s not included in origin requests. In this case,
+        /// header the same as any other HTTP header in the viewer request. By default, it's not
+        /// included in the cache key and it's not included in origin requests. In this case,
         /// you can manually add <code>Accept-Encoding</code> to the headers whitelist like any
         /// other HTTP header.
         /// </para>
@@ -143,7 +143,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+        /// Normalizes the value of the viewer's <code>Accept-Encoding</code> header
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -169,8 +169,8 @@ namespace Amazon.CloudFront.Model
         ///  
         /// <para>
         /// If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
-        /// header the same as any other HTTP header in the viewer request. By default, it’s not
-        /// included in the cache key and it’s not included in origin requests. In this case,
+        /// header the same as any other HTTP header in the viewer request. By default, it's not
+        /// included in the cache key and it's not included in origin requests. In this case,
         /// you can manually add <code>Accept-Encoding</code> to the headers whitelist like any
         /// other HTTP header.
         /// </para>

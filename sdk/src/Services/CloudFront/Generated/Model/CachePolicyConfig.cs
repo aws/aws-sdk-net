@@ -50,7 +50,7 @@ namespace Amazon.CloudFront.Model
     /// <para>
     /// The headers, cookies, and query strings that are included in the cache key are automatically
     /// included in requests that CloudFront sends to the origin. CloudFront sends a request
-    /// when it can’t find a valid object in its cache that matches the request’s cache key.
+    /// when it can't find a valid object in its cache that matches the request's cache key.
     /// If you want to send values to the origin but <i>not</i> include them in the cache
     /// key, use <code>OriginRequestPolicy</code>.
     /// </para>
@@ -87,7 +87,7 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// The default amount of time, in seconds, that you want objects to stay in the CloudFront
         /// cache before CloudFront sends another request to the origin to see if the object has
-        /// been updated. CloudFront uses this value as the object’s time to live (TTL) only when
+        /// been updated. CloudFront uses this value as the object's time to live (TTL) only when
         /// the origin does <i>not</i> send <code>Cache-Control</code> or <code>Expires</code>
         /// headers with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
         /// How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront

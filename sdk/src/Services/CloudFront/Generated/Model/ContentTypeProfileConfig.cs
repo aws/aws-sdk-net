@@ -39,7 +39,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ContentTypeProfiles. 
         /// <para>
-        /// The configuration for a field-level encryption content type-profile. 
+        /// The configuration for a field-level encryption content type-profile.
         /// </para>
         /// </summary>
         public ContentTypeProfiles ContentTypeProfiles
@@ -60,7 +60,7 @@ namespace Amazon.CloudFront.Model
         /// The setting in a field-level encryption content type-profile mapping that specifies
         /// what to do when an unknown content type is provided for the profile. If true, content
         /// is forwarded without being encrypted when the content type is unknown. If false (the
-        /// default), an error is returned when the content type is unknown. 
+        /// default), an error is returned when the content type is unknown.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

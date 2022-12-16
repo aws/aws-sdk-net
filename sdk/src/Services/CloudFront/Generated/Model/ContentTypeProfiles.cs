@@ -39,7 +39,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// Items in a field-level encryption content type-profile mapping. 
+        /// Items in a field-level encryption content type-profile mapping.
         /// </para>
         /// </summary>
         public List<ContentTypeProfile> Items
@@ -57,7 +57,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The number of field-level encryption content type-profile mappings. 
+        /// The number of field-level encryption content type-profile mappings.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -40,15 +40,15 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  
     /// <para>
-    /// When you create a function, it’s in the <code>DEVELOPMENT</code> stage. In this stage,
+    /// When you create a function, it's in the <code>DEVELOPMENT</code> stage. In this stage,
     /// you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
     /// </para>
     ///  
     /// <para>
-    /// When you’re ready to use your function with a CloudFront distribution, use <code>PublishFunction</code>
+    /// When you're ready to use your function with a CloudFront distribution, use <code>PublishFunction</code>
     /// to copy the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>.
-    /// When it’s live, you can attach the function to a distribution’s cache behavior, using
-    /// the function’s ARN.
+    /// When it's live, you can attach the function to a distribution's cache behavior, using
+    /// the function's ARN.
     /// </para>
     /// </summary>
     public partial class CreateFunctionRequest : AmazonCloudFrontRequest
@@ -82,7 +82,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property FunctionConfig. 
         /// <para>
         /// Configuration information about the function, including an optional comment and the
-        /// function’s runtime.
+        /// function's runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

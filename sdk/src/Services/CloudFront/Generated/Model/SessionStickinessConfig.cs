@@ -42,8 +42,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IdleTTL. 
         /// <para>
-        /// The amount of time after which you want sessions to cease if no requests are received.&#x2028;Allowed
-        /// values are 300–3600 seconds (5–60 minutes).
+        /// The amount of time after which you want sessions to cease if no requests are received.
+        /// Allowed values are 300–3600 seconds (5–60 minutes).
         /// </para>
         ///  
         /// <para>

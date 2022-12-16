@@ -128,7 +128,7 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
         /// the value you can use for the <code>Marker</code> request parameter to continue listing
-        /// your distributions where they left off. 
+        /// your distributions where they left off.
         /// </para>
         /// </summary>
         public string NextMarker

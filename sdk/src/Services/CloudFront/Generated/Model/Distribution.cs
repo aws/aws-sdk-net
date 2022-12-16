@@ -53,9 +53,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates Distribution with the parameterized properties
         /// </summary>
-        /// <param name="id">The distribution’s identifier. For example: <code>E1U5RQF7T870K0</code>.</param>
-        /// <param name="status">The distribution’s status. When the status is <code>Deployed</code>, the distribution’s information is fully propagated to all CloudFront edge locations.</param>
-        /// <param name="domainName">The distribution’s CloudFront domain name. For example: <code>d111111abcdef8.cloudfront.net</code>.</param>
+        /// <param name="id">The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</param>
+        /// <param name="status">The distribution's status. When the status is <code>Deployed</code>, the distribution's information is fully propagated to all CloudFront edge locations.</param>
+        /// <param name="domainName">The distribution's CloudFront domain name. For example: <code>d111111abcdef8.cloudfront.net</code>.</param>
         public Distribution(string id, string status, string domainName)
         {
             _id = id;
@@ -66,10 +66,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ActiveTrustedKeyGroups. 
         /// <para>
-        /// CloudFront automatically adds this field to the response if you’ve configured a cache
-        /// behavior in this distribution to serve private content using key groups. This field
-        /// contains a list of key groups and the public keys in each key group that CloudFront
-        /// can use to verify the signatures of signed URLs or signed cookies.
+        /// This field contains a list of key groups and the public keys in each key group that
+        /// CloudFront can use to verify the signatures of signed URLs or signed cookies.
         /// </para>
         /// </summary>
         public ActiveTrustedKeyGroups ActiveTrustedKeyGroups
@@ -91,9 +89,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// CloudFront automatically adds this field to the response if you’ve configured a cache
-        /// behavior in this distribution to serve private content using trusted signers. This
-        /// field contains a list of Amazon Web Services account IDs and the active CloudFront
+        /// This field contains a list of Amazon Web Services account IDs and the active CloudFront
         /// key pairs in each account that CloudFront can use to verify the signatures of signed
         /// URLs or signed cookies.
         /// </para>
@@ -140,7 +136,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The distribution’s Amazon Resource Name (ARN).
+        /// The distribution's Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -159,7 +155,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DistributionConfig. 
         /// <para>
-        /// The distribution’s configuration.
+        /// The distribution's configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -178,7 +174,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The distribution’s CloudFront domain name. For example: <code>d111111abcdef8.cloudfront.net</code>.
+        /// The distribution's CloudFront domain name. For example: <code>d111111abcdef8.cloudfront.net</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -197,7 +193,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The distribution’s identifier. For example: <code>E1U5RQF7T870K0</code>.
+        /// The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -216,7 +212,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property InProgressInvalidationBatches. 
         /// <para>
-        /// The number of invalidation batches currently in progress. 
+        /// The number of invalidation batches currently in progress.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -254,7 +250,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The distribution’s status. When the status is <code>Deployed</code>, the distribution’s
+        /// The distribution's status. When the status is <code>Deployed</code>, the distribution's
         /// information is fully propagated to all CloudFront edge locations.
         /// </para>
         /// </summary>

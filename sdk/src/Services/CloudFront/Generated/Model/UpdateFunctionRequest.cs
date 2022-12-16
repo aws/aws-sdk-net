@@ -34,12 +34,12 @@ namespace Amazon.CloudFront.Model
     /// 
     ///  
     /// <para>
-    /// You can update a function’s code or the comment that describes the function. You cannot
-    /// update a function’s name.
+    /// You can update a function's code or the comment that describes the function. You cannot
+    /// update a function's name.
     /// </para>
     ///  
     /// <para>
-    /// To update a function, you provide the function’s name and version (<code>ETag</code>
+    /// To update a function, you provide the function's name and version (<code>ETag</code>
     /// value) along with the updated function code. To get the name and version, you can
     /// use <code>ListFunctions</code> and <code>DescribeFunction</code>.
     /// </para>

@@ -30,14 +30,14 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResponseHeadersPolicy operation.
-    /// Gets a response headers policy, including metadata (the policy’s identifier and the
+    /// Gets a response headers policy, including metadata (the policy's identifier and the
     /// date and time when the policy was last modified).
     /// 
     ///  
     /// <para>
-    /// To get a response headers policy, you must provide the policy’s identifier. If the
-    /// response headers policy is attached to a distribution’s cache behavior, you can get
-    /// the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+    /// To get a response headers policy, you must provide the policy's identifier. If the
+    /// response headers policy is attached to a distribution's cache behavior, you can get
+    /// the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
     /// If the response headers policy is not attached to a cache behavior, you can get the
     /// identifier using <code>ListResponseHeadersPolicies</code>.
     /// </para>
@@ -53,8 +53,8 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// If the response headers policy is attached to a distribution’s cache behavior, you
-        /// can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// If the response headers policy is attached to a distribution's cache behavior, you
+        /// can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
         /// If the response headers policy is not attached to a cache behavior, you can get the
         /// identifier using <code>ListResponseHeadersPolicies</code>.
         /// </para>

@@ -41,7 +41,7 @@ namespace Amazon.CloudFront.Model
     ///  
     /// <para>
     /// After you create a response headers policy, you can use its ID to attach it to one
-    /// or more cache behaviors in a CloudFront distribution. When it’s attached to a cache
+    /// or more cache behaviors in a CloudFront distribution. When it's attached to a cache
     /// behavior, CloudFront adds the headers in the policy to HTTP responses that it sends
     /// for requests that match the cache behavior.
     /// </para>

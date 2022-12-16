@@ -76,7 +76,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property StreamingDistribution. 
         /// <para>
-        /// The streaming distribution's information. 
+        /// The streaming distribution's information.
         /// </para>
         /// </summary>
         public StreamingDistribution StreamingDistribution

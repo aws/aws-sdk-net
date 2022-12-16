@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The continuous deployment policy doesn’t exist.
+    /// The continuous deployment policy doesn't exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

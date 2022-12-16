@@ -40,7 +40,7 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy’s configuration.
+    /// Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy's configuration.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.CloudFront.Model
     ///  </li> <li> 
     /// <para>
     /// Call <code>UpdateResponseHeadersPolicy</code>, providing the entire response headers
-    /// policy configuration, including the fields that you modified and those that you didn’t.
+    /// policy configuration, including the fields that you modified and those that you didn't.
     /// </para>
     ///  </li> </ol>
     /// </summary>
@@ -85,7 +85,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// The version is returned in the cache policy’s <code>ETag</code> field in the response
+        /// The version is returned in the cache policy's <code>ETag</code> field in the response
         /// to <code>GetResponseHeadersPolicyConfig</code>.
         /// </para>
         /// </summary>

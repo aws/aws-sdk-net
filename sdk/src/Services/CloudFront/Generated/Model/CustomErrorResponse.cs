@@ -34,7 +34,7 @@ namespace Amazon.CloudFront.Model
     ///  <ul> <li> 
     /// <para>
     /// Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom
-    /// error messages before returning the response to the viewer. 
+    /// error messages before returning the response to the viewer.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -157,7 +157,7 @@ namespace Amazon.CloudFront.Model
         /// For example, suppose you saved custom error pages for 4xx errors in an Amazon S3 bucket
         /// in a directory named <code>/4xx-errors</code>. Your distribution must include a cache
         /// behavior for which the path pattern routes requests for your custom error pages to
-        /// that location, for example, <code>/4xx-errors/*</code>. 
+        /// that location, for example, <code>/4xx-errors/*</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

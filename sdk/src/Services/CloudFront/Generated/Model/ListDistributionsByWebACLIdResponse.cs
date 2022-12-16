@@ -39,7 +39,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DistributionList. 
         /// <para>
-        /// The <code>DistributionList</code> type. 
+        /// The <code>DistributionList</code> type.
         /// </para>
         /// </summary>
         public DistributionList DistributionList

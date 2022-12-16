@@ -46,7 +46,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Aliases. 
         /// <para>
         /// A complex type that contains information about CNAMEs (alternate domain names), if
-        /// any, for this streaming distribution. 
+        /// any, for this streaming distribution.
         /// </para>
         /// </summary>
         public Aliases Aliases
@@ -95,7 +95,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// Any comments you want to include about the streaming distribution. 
+        /// Any comments you want to include about the streaming distribution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -134,7 +134,6 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Logging. 
         /// <para>
         /// A complex type that controls whether access logs are written for the streaming distribution.
-        /// 
         /// </para>
         /// </summary>
         public StreamingLoggingConfig Logging
@@ -153,7 +152,6 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property PriceClass. 
         /// <para>
         /// A complex type that contains information about price class for this streaming distribution.
-        /// 
         /// </para>
         /// </summary>
         public PriceClass PriceClass
@@ -172,7 +170,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property S3Origin. 
         /// <para>
         /// A complex type that contains information about the Amazon S3 bucket from which you
-        /// want CloudFront to get your media files for distribution. 
+        /// want CloudFront to get your media files for distribution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -196,7 +194,6 @@ namespace Amazon.CloudFront.Model
         /// URLs, include this element; if you want the distribution to use public URLs, remove
         /// this element. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
         /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

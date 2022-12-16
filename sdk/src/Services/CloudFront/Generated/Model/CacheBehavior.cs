@@ -48,8 +48,8 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  
     /// <para>
-    /// If you don’t want to specify any cache behaviors, include only an empty <code>CacheBehaviors</code>
-    /// element. Don’t include an empty <code>CacheBehavior</code> element because this is
+    /// If you don't want to specify any cache behaviors, include only an empty <code>CacheBehaviors</code>
+    /// element. Don't include an empty <code>CacheBehavior</code> element because this is
     /// invalid.
     /// </para>
     ///  
@@ -460,7 +460,7 @@ namespace Amazon.CloudFront.Model
         /// format using the origin that is associated with this cache behavior. If so, specify
         /// <code>true</code>; if not, specify <code>false</code>. If you specify <code>true</code>
         /// for <code>SmoothStreaming</code>, you can still distribute other content using this
-        /// cache behavior if the content matches the value of <code>PathPattern</code>. 
+        /// cache behavior if the content matches the value of <code>PathPattern</code>.
         /// </para>
         /// </summary>
         public bool SmoothStreaming
@@ -536,7 +536,7 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// When a cache behavior contains trusted signers, CloudFront requires signed URLs or
         /// signed cookies for all requests that match the cache behavior. The URLs or cookies
-        /// must be signed with the private key of a CloudFront key pair in the trusted signer’s
+        /// must be signed with the private key of a CloudFront key pair in the trusted signer's
         /// Amazon Web Services account. The signed URL or cookie contains information about which
         /// public key CloudFront should use to verify the signature. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
@@ -570,12 +570,12 @@ namespace Amazon.CloudFront.Model
         /// <para>
         ///  <code>redirect-to-https</code>: If a viewer submits an HTTP request, CloudFront returns
         /// an HTTP status code of 301 (Moved Permanently) to the viewer along with the HTTPS
-        /// URL. The viewer then resubmits the request using the new URL. 
+        /// URL. The viewer then resubmits the request using the new URL.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>https-only</code>: If a viewer sends an HTTP request, CloudFront returns an
-        /// HTTP status code of 403 (Forbidden). 
+        /// HTTP status code of 403 (Forbidden).
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -586,7 +586,7 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// The only way to guarantee that viewers retrieve an object that was fetched from the
         /// origin using HTTPS is never to use any other protocol to fetch the object. If you
-        /// have recently changed from HTTP to HTTPS, we recommend that you clear your objects’
+        /// have recently changed from HTTP to HTTPS, we recommend that you clear your objects'
         /// cache because cached objects are protocol agnostic. That means that an edge location
         /// will return an object from the cache regardless of whether the current request protocol
         /// matches the protocol used previously. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing

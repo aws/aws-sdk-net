@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// An HTTP response header name and its value. CloudFront includes this header in HTTP
-    /// responses that it sends for requests that match a cache behavior that’s associated
+    /// responses that it sends for requests that match a cache behavior that's associated
     /// with this response headers policy.
     /// </summary>
     public partial class ResponseHeadersPolicyCustomHeader

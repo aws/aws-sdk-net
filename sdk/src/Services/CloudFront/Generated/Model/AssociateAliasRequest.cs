@@ -35,7 +35,7 @@ namespace Amazon.CloudFront.Model
     /// 
     ///  
     /// <para>
-    /// With this operation you can move an alias that’s already in use on a CloudFront distribution
+    /// With this operation you can move an alias that's already in use on a CloudFront distribution
     /// to a different distribution in one step. This prevents the downtime that could occur
     /// if you first remove the alias from one distribution and then separately add the alias
     /// to another distribution.
@@ -77,7 +77,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property TargetDistributionId. 
         /// <para>
-        /// The ID of the distribution that you’re associating the alias with.
+        /// The ID of the distribution that you're associating the alias with.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

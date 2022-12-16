@@ -54,7 +54,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ETag. 
         /// <para>
-        /// The current version of the primary distribution (after it’s updated).
+        /// The current version of the primary distribution (after it's updated).
         /// </para>
         /// </summary>
         public string ETag

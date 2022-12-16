@@ -38,7 +38,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        ///  A complex type that contains <code>Tag</code> key elements.
+        /// A complex type that contains <code>Tag</code> key elements.
         /// </para>
         /// </summary>
         public List<string> Items

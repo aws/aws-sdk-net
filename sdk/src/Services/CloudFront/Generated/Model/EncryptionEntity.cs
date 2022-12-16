@@ -44,7 +44,7 @@ namespace Amazon.CloudFront.Model
         /// Field patterns in a field-level encryption content type profile specify the fields
         /// that you want to be encrypted. You can provide the full field name, or any beginning
         /// characters followed by a wildcard (*). You can't overlap field patterns. For example,
-        /// you can't have both ABC* and AB*. Note that field patterns are case-sensitive. 
+        /// you can't have both ABC* and AB*. Note that field patterns are case-sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,7 +85,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property PublicKeyId. 
         /// <para>
         /// The public key associated with a set of field-level encryption patterns, to be used
-        /// when encrypting the fields that match the patterns. 
+        /// when encrypting the fields that match the patterns.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

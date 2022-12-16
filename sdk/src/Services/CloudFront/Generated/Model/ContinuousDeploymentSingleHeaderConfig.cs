@@ -43,6 +43,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Header. 
         /// <para>
         /// The request header name that you want CloudFront to send to your staging distribution.
+        /// The header must contain the prefix <code>aws-cf-cd-</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -61,7 +61,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ContentTypeProfileConfig. 
         /// <para>
-        ///  A summary of a content type-profile mapping. 
+        /// A summary of a content type-profile mapping.
         /// </para>
         /// </summary>
         public ContentTypeProfileConfig ContentTypeProfileConfig
@@ -117,7 +117,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property QueryArgProfileConfig. 
         /// <para>
-        ///  A summary of a query argument-profile mapping. 
+        /// A summary of a query argument-profile mapping.
         /// </para>
         /// </summary>
         public QueryArgProfileConfig QueryArgProfileConfig

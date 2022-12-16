@@ -107,7 +107,7 @@ namespace Amazon.CloudFront.Model
         ///  
         /// <para>
         /// When a function is in the <code>LIVE</code> stage, you can attach the function to
-        /// a distribution’s cache behavior, using the function’s ARN.
+        /// a distribution's cache behavior, using the function's ARN.
         /// </para>
         /// </summary>
         public FunctionStage Stage

@@ -44,7 +44,7 @@ namespace Amazon.CloudFront.Model
         /// keys. The results include public keys in the list that occur after the marker. To
         /// get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code>
         /// from the current page's response (which is also the ID of the last public key on that
-        /// page). 
+        /// page).
         /// </para>
         /// </summary>
         public string Marker
@@ -62,7 +62,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of public keys you want in the response body. 
+        /// The maximum number of public keys you want in the response body.
         /// </para>
         /// </summary>
         public string MaxItems

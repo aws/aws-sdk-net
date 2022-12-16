@@ -35,7 +35,7 @@ namespace Amazon.CloudFront.Model
     /// 
     ///  
     /// <para>
-    /// To get a function’s code, you must provide the function’s name and stage. To get these
+    /// To get a function's code, you must provide the function's name and stage. To get these
     /// values, you can use <code>ListFunctions</code>.
     /// </para>
     /// </summary>
@@ -66,7 +66,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Stage. 
         /// <para>
-        /// The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+        /// The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
         /// </para>
         /// </summary>
         public FunctionStage Stage

@@ -67,7 +67,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of origin access identities you want in the response body. 
+        /// The maximum number of origin access identities you want in the response body.
         /// </para>
         /// </summary>
         public string MaxItems

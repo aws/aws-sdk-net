@@ -43,7 +43,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CallerReference. 
         /// <para>
-        /// A string included in the request to help make sure that the request can’t be replayed.
+        /// A string included in the request to help make sure that the request can't be replayed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the GetContinuousDeploymentPolicy operation.
-    /// Gets a continuous deployment policy, including metadata (the policy’s identifier and
+    /// Gets a continuous deployment policy, including metadata (the policy's identifier and
     /// the date and time when the policy was last modified).
     /// </summary>
     public partial class GetContinuousDeploymentPolicyRequest : AmazonCloudFrontRequest

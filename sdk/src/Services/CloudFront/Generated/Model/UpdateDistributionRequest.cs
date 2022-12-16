@@ -60,7 +60,7 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You can’t change the value of <code>CallerReference</code>.
+    /// You can't change the value of <code>CallerReference</code>.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -68,7 +68,7 @@ namespace Amazon.CloudFront.Model
     /// The new configuration replaces the existing configuration. The values that you specify
     /// in an <code>UpdateDistribution</code> request are not merged into your existing configuration.
     /// Make sure to include all fields: the ones that you modified and also the ones that
-    /// you didn’t.
+    /// you didn't.
     /// </para>
     ///  </li> </ol>
     /// </summary>

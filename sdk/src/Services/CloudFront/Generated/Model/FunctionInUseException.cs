@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Cannot delete the function because it’s attached to one or more cache behaviors.
+    /// Cannot delete the function because it's attached to one or more cache behaviors.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

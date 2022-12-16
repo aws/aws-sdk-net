@@ -44,7 +44,7 @@ namespace Amazon.CloudFront.Model
     /// <para>
     /// If you don't want to invoke any Lambda@Edge functions for the requests that match
     /// <code>PathPattern</code>, specify <code>0</code> for <code>Quantity</code> and omit
-    /// <code>Items</code>. 
+    /// <code>Items</code>.
     /// </para>
     /// </summary>
     public partial class LambdaFunctionAssociations

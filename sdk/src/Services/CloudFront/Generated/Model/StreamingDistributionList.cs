@@ -89,7 +89,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The value you provided for the <code>Marker</code> request parameter. 
+        /// The value you provided for the <code>Marker</code> request parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -108,7 +108,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The value you provided for the <code>MaxItems</code> request parameter. 
+        /// The value you provided for the <code>MaxItems</code> request parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -129,7 +129,7 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
         /// the value you can use for the <code>Marker</code> request parameter to continue listing
-        /// your RTMP distributions where they left off. 
+        /// your RTMP distributions where they left off.
         /// </para>
         /// </summary>
         public string NextMarker
