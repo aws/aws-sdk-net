@@ -1,3 +1,22 @@
+### 3.7.443.0 (2022-12-16 19:25 UTC)
+* Appflow (3.7.104.0)
+	* This release updates the ListConnectorEntities API action so that it returns paginated responses that customers can retrieve with next tokens.
+* CloudFront (3.7.102.8)
+	* Updated documentation for CloudFront
+* DataSync (3.7.102.0)
+	* AWS DataSync now supports the use of tags with task executions. With this new feature, you can apply tags each time you execute a task, giving you greater control and management over your task executions.
+* ElasticFileSystem (3.7.101.16)
+	* General documentation updates for EFS.
+* GuardDuty (3.7.100.39)
+	* This release provides the valid characters for the Description and Name field.
+* IoTFleetWise (3.7.102.0)
+	* Updated error handling for empty resource names in "UpdateSignalCatalog" and "GetModelManifest" operations.
+* SageMaker (3.7.110.0)
+	* AWS sagemaker - Features: This release adds support for random seed, it's an integer value used to initialize a pseudo-random number generator. Setting a random seed will allow the hyperparameter tuning search strategies to produce more consistent configurations for the same tuning job.
+* Core 3.7.103.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.442.0 (2022-12-16 00:44 UTC)
 * Core 3.7.103.0
 	* Bug fix: fix access denied exception when reading read-only cached SSO token files located in .aws directory; Feat: Add support for AWS_SHARED_CREDENTIALS_FILE environment variable.
