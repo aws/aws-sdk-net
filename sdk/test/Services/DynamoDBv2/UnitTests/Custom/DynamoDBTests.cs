@@ -92,6 +92,34 @@ namespace AWSSDK_DotNet35.UnitTests
             Assert.AreEqual("testvalue", dynamoDocument["testmap"].AsDocument()["test"].AsString());
         }
 
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestConvertingListContainsEmptyMapToJson()
+        {
+            var initialAttributeMap = new Dictionary<string, AttributeValue>
+            {
+                { "testlist",  new AttributeValue
+                    {
+                        L = new List<AttributeValue>
+                        {
+                            new AttributeValue
+                            {
+                                M = new Dictionary<string, AttributeValue>(),
+                            }
+                        }
+                    }
+                }
+            };
+
+            var document = Document.FromAttributeMap(initialAttributeMap);
+            var result = document.ToJson(); 
+
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(document["testlist"].AsListOfDocument().Count, 0);
+        }
+
         private static List<Type> GetSubTypes(Type baseType)
         {
             var assembly = baseType.Assembly;
