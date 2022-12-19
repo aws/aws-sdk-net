@@ -470,6 +470,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Announcing Amazon Kinesis Video Streams, a fully managed video ingestion and storage service. Kinesis Video Streams makes it easy to securely stream video from connected devices to AWS for machine learning, analytics, and processing. You can also stream other time-encoded data like RADAR and LIDAR signals using Kinesis Video Streams.
 * [AWSSDK.KinesisVideoSignalingChannels](https://www.nuget.org/packages/AWSSDK.KinesisVideoSignalingChannels/)
 	* Announcing support for WebRTC in Kinesis Video Streams, as fully managed capability. You can now use simple APIs to enable your connected devices, web, and mobile apps with real-time two-way media streaming capabilities.
+* [AWSSDK.KinesisVideoWebRTCStorage](https://www.nuget.org/packages/AWSSDK.KinesisVideoWebRTCStorage/)
+	* Amazon Kinesis Video Streams offers capabilities to stream video and audio in real-time via WebRTC to the cloud for storage, playback, and analytical processing. Customers can use our enhanced WebRTC SDK and cloud APIs to enable real-time streaming, as well as media ingestion to the cloud.
 * [AWSSDK.LakeFormation](https://www.nuget.org/packages/AWSSDK.LakeFormation/)
 	* Lake Formation: (New Service) AWS Lake Formation is a fully managed service that makes it easier for customers to build, secure and manage data lakes.  AWS Lake Formation simplifies and automates many of the complex manual steps usually required to create data lakes including collecting, cleaning and cataloging data and securely making that data available for analytics and machine learning.
 * [AWSSDK.Lambda](https://www.nuget.org/packages/AWSSDK.Lambda/)

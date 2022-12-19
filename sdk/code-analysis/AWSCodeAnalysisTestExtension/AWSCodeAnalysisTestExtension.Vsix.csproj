@@ -784,6 +784,10 @@
       <Project>{8085D36E-F3EF-431E-A88D-28E1F5ACC2C3}</Project>
       <Name>AWSSDK.KinesisVideoSignalingChannels.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/KinesisVideoWebRTCStorage/AWSSDK.KinesisVideoWebRTCStorage.CodeAnalysis.csproj">
+      <Project>{013C9B07-4AAB-4B31-959F-6E7C59132518}</Project>
+      <Name>AWSSDK.KinesisVideoWebRTCStorage.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/LakeFormation/AWSSDK.LakeFormation.CodeAnalysis.csproj">
       <Project>{4A33B035-7554-4E19-8765-575FCCD27339}</Project>
       <Name>AWSSDK.LakeFormation.CodeAnalysis</Name>

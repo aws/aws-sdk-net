@@ -381,6 +381,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.KinesisVideoMedia.CodeAnalysis" Path="|AWSSDK.KinesisVideoMedia.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.KinesisVideoSignalingChannels.CodeAnalysis" Path="|AWSSDK.KinesisVideoSignalingChannels.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.KinesisVideoSignalingChannels.CodeAnalysis" Path="|AWSSDK.KinesisVideoSignalingChannels.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.KinesisVideoWebRTCStorage.CodeAnalysis" Path="|AWSSDK.KinesisVideoWebRTCStorage.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.KinesisVideoWebRTCStorage.CodeAnalysis" Path="|AWSSDK.KinesisVideoWebRTCStorage.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.LakeFormation.CodeAnalysis" Path="|AWSSDK.LakeFormation.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.LakeFormation.CodeAnalysis" Path="|AWSSDK.LakeFormation.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Lambda.CodeAnalysis" Path="|AWSSDK.Lambda.CodeAnalysis|"/>
