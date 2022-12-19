@@ -60,7 +60,7 @@ namespace Amazon.Athena.Model
         /// The content of the exported notebook.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=15728640)]
+        [AWSProperty(Min=1, Max=10485760)]
         public string Payload
         {
             get { return this._payload; }

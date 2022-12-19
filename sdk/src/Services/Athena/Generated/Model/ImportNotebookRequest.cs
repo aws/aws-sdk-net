@@ -95,7 +95,7 @@ namespace Amazon.Athena.Model
         /// The notebook content to be imported.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=15728640)]
+        [AWSProperty(Required=true, Min=1, Max=10485760)]
         public string Payload
         {
             get { return this._payload; }

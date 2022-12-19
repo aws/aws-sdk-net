@@ -148,7 +148,7 @@
   <property-value-rule>
     <property>Amazon.Athena.Model.ExportNotebookResponse.Payload</property>
     <min>1</min>
-    <max>15728640</max>
+    <max>10485760</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.GetCalculationExecutionRequest.CalculationExecutionId</property>
@@ -331,7 +331,7 @@
   <property-value-rule>
     <property>Amazon.Athena.Model.ImportNotebookRequest.Payload</property>
     <min>1</min>
-    <max>15728640</max>
+    <max>10485760</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.ImportNotebookRequest.WorkGroup</property>
@@ -772,7 +772,7 @@
   <property-value-rule>
     <property>Amazon.Athena.Model.UpdateNotebookRequest.Payload</property>
     <min>1</min>
-    <max>15728640</max>
+    <max>10485760</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.UpdateNotebookRequest.SessionId</property>

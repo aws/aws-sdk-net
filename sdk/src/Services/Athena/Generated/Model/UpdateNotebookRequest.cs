@@ -93,7 +93,7 @@ namespace Amazon.Athena.Model
         /// The updated content for the notebook.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=15728640)]
+        [AWSProperty(Required=true, Min=1, Max=10485760)]
         public string Payload
         {
             get { return this._payload; }
@@ -131,6 +131,7 @@ namespace Amazon.Athena.Model
         /// The notebook content type. Currently, the only valid type is <code>IPYNB</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public NotebookType Type
         {
             get { return this._type; }

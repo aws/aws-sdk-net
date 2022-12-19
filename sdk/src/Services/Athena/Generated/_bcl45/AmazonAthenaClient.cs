@@ -1280,6 +1280,10 @@ namespace Amazon.Athena
         /// <exception cref="Amazon.Athena.Model.InternalServerException">
         /// Indicates a platform issue, which may be due to a transient condition or outage.
         /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
         /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
         /// A resource, such as a workgroup, was not found.
         /// </exception>
@@ -1305,6 +1309,10 @@ namespace Amazon.Athena
         /// <returns>The response from the GetCalculationExecutionCode service method, as returned by Athena.</returns>
         /// <exception cref="Amazon.Athena.Model.InternalServerException">
         /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
         /// </exception>
         /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
         /// A resource, such as a workgroup, was not found.
@@ -1850,9 +1858,10 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Returns query execution runtime statistics related to a single execution of a query
-        /// if you have access to the workgroup in which the query ran. The query execution runtime
-        /// statistics is returned only when <a>QueryExecutionStatus$State</a> is in a SUCCEEDED
-        /// or FAILED state.
+        /// if you have access to the workgroup in which the query ran. Query execution runtime
+        /// statistics are returned only when <a>QueryExecutionStatus$State</a> is in a SUCCEEDED
+        /// or FAILED state. Stage-level input and output row count and data size statistics are
+        /// not shown when a query has row-level filters defined in Lake Formation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueryRuntimeStatistics service method.</param>
         /// 
@@ -1877,9 +1886,10 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Returns query execution runtime statistics related to a single execution of a query
-        /// if you have access to the workgroup in which the query ran. The query execution runtime
-        /// statistics is returned only when <a>QueryExecutionStatus$State</a> is in a SUCCEEDED
-        /// or FAILED state.
+        /// if you have access to the workgroup in which the query ran. Query execution runtime
+        /// statistics are returned only when <a>QueryExecutionStatus$State</a> is in a SUCCEEDED
+        /// or FAILED state. Stage-level input and output row count and data size statistics are
+        /// not shown when a query has row-level filters defined in Lake Formation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueryRuntimeStatistics service method.</param>
         /// <param name="cancellationToken">
@@ -3396,6 +3406,10 @@ namespace Amazon.Athena
         /// <exception cref="Amazon.Athena.Model.InternalServerException">
         /// Indicates a platform issue, which may be due to a transient condition or outage.
         /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
         /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
         /// A resource, such as a workgroup, was not found.
         /// </exception>
@@ -3432,6 +3446,10 @@ namespace Amazon.Athena
         /// <returns>The response from the StopCalculationExecution service method, as returned by Athena.</returns>
         /// <exception cref="Amazon.Athena.Model.InternalServerException">
         /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
         /// </exception>
         /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
         /// A resource, such as a workgroup, was not found.
