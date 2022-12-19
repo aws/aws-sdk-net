@@ -75,6 +75,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Horovod", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.Horovod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ImageArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -93,10 +99,46 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.ImageVersionStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JobType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.JobType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModifiedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MLFramework", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MLFramework = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Processor", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Processor = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProgrammingLang", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ProgrammingLang = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReleaseNotes", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ReleaseNotes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VendorGuidance", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VendorGuidance = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Version", targetDepth))

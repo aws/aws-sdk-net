@@ -10670,6 +10670,53 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListAliases
+
+
+        /// <summary>
+        /// Lists the aliases of a specified image or image version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAliases service method.</param>
+        /// 
+        /// <returns>The response from the ListAliases service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAliases">REST API Reference for ListAliases Operation</seealso>
+        public virtual ListAliasesResponse ListAliases(ListAliasesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAliasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAliasesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the aliases of a specified image or image version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAliases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAliases service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAliases">REST API Reference for ListAliases Operation</seealso>
+        public virtual Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAliasesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAliasesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAppImageConfigs
 
 
@@ -16056,6 +16103,59 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = UpdateImageResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateImageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateImageVersion
+
+
+        /// <summary>
+        /// Updates the properties of a SageMaker image version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImageVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdateImageVersion service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImageVersion">REST API Reference for UpdateImageVersion Operation</seealso>
+        public virtual UpdateImageVersionResponse UpdateImageVersion(UpdateImageVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateImageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateImageVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateImageVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the properties of a SageMaker image version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImageVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateImageVersion service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImageVersion">REST API Reference for UpdateImageVersion Operation</seealso>
+        public virtual Task<UpdateImageVersionResponse> UpdateImageVersionAsync(UpdateImageVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateImageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateImageVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateImageVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion

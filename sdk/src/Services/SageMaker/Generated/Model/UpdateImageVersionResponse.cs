@@ -29,29 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateImage operation.
+    /// This is the response object from the UpdateImageVersion operation.
     /// </summary>
-    public partial class UpdateImageResponse : AmazonWebServiceResponse
+    public partial class UpdateImageVersionResponse : AmazonWebServiceResponse
     {
-        private string _imageArn;
+        private string _imageVersionArn;
 
         /// <summary>
-        /// Gets and sets the property ImageArn. 
+        /// Gets and sets the property ImageVersionArn. 
         /// <para>
-        /// The ARN of the image.
+        /// The ARN of the image version.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
-        public string ImageArn
+        public string ImageVersionArn
         {
-            get { return this._imageArn; }
-            set { this._imageArn = value; }
+            get { return this._imageVersionArn; }
+            set { this._imageVersionArn = value; }
         }
 
-        // Check to see if ImageArn property is set
-        internal bool IsSetImageArn()
+        // Check to see if ImageVersionArn property is set
+        internal bool IsSetImageVersionArn()
         {
-            return this._imageArn != null;
+            return this._imageVersionArn != null;
         }
 
     }

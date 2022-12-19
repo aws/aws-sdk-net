@@ -67,6 +67,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAlias())
+                {
+                    context.Writer.WritePropertyName("Alias");
+                    context.Writer.Write(publicRequest.Alias);
+                }
+
                 if(publicRequest.IsSetImageName())
                 {
                     context.Writer.WritePropertyName("ImageName");

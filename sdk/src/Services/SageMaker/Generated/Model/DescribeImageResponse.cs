@@ -121,7 +121,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ImageArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image.
+        /// The ARN of the image.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -195,8 +195,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role that enables Amazon SageMaker to perform
-        /// tasks on your behalf.
+        /// The ARN of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeImageVersion Request Marshaller
+    /// ListAliases Request Marshaller
     /// </summary>       
-    public class DescribeImageVersionRequestMarshaller : IMarshaller<IRequest, DescribeImageVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListAliasesRequestMarshaller : IMarshaller<IRequest, ListAliasesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeImageVersionRequest)input);
+            return this.Marshall((ListAliasesRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeImageVersionRequest publicRequest)
+        public IRequest Marshall(ListAliasesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMaker");
-            string target = "SageMaker.DescribeImageVersion";
+            string target = "SageMaker.ListAliases";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";
@@ -79,6 +79,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ImageName);
                 }
 
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
+                }
+
                 if(publicRequest.IsSetVersion())
                 {
                     context.Writer.WritePropertyName("Version");
@@ -93,9 +105,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DescribeImageVersionRequestMarshaller _instance = new DescribeImageVersionRequestMarshaller();        
+        private static ListAliasesRequestMarshaller _instance = new ListAliasesRequestMarshaller();        
 
-        internal static DescribeImageVersionRequestMarshaller GetInstance()
+        internal static ListAliasesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +115,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeImageVersionRequestMarshaller Instance
+        public static ListAliasesRequestMarshaller Instance
         {
             get
             {

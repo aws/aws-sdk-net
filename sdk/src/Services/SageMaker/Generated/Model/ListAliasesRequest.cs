@@ -29,13 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeImageVersion operation.
-    /// Describes a version of a SageMaker image.
+    /// Container for the parameters to the ListAliases operation.
+    /// Lists the aliases of a specified image or image version.
     /// </summary>
-    public partial class DescribeImageVersionRequest : AmazonSageMakerRequest
+    public partial class ListAliasesRequest : AmazonSageMakerRequest
     {
         private string _alias;
         private string _imageName;
+        private int? _maxResults;
+        private string _nextToken;
         private int? _version;
 
         /// <summary>
@@ -77,9 +79,49 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of aliases to return.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If the previous call to <code>ListAliases</code> didn't return the full set of aliases,
+        /// the call returns a token for retrieving the next set of aliases.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=8192)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the image. If not specified, the latest version is described.
+        /// The version of the image. If image version is not specified, the aliases of all versions
+        /// of the image are listed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

@@ -67,6 +67,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAliases())
+                {
+                    context.Writer.WritePropertyName("Aliases");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAliasesListValue in publicRequest.Aliases)
+                    {
+                            context.Writer.Write(publicRequestAliasesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetBaseImage())
                 {
                     context.Writer.WritePropertyName("BaseImage");
@@ -84,10 +95,52 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetHorovod())
+                {
+                    context.Writer.WritePropertyName("Horovod");
+                    context.Writer.Write(publicRequest.Horovod);
+                }
+
                 if(publicRequest.IsSetImageName())
                 {
                     context.Writer.WritePropertyName("ImageName");
                     context.Writer.Write(publicRequest.ImageName);
+                }
+
+                if(publicRequest.IsSetJobType())
+                {
+                    context.Writer.WritePropertyName("JobType");
+                    context.Writer.Write(publicRequest.JobType);
+                }
+
+                if(publicRequest.IsSetMLFramework())
+                {
+                    context.Writer.WritePropertyName("MLFramework");
+                    context.Writer.Write(publicRequest.MLFramework);
+                }
+
+                if(publicRequest.IsSetProcessor())
+                {
+                    context.Writer.WritePropertyName("Processor");
+                    context.Writer.Write(publicRequest.Processor);
+                }
+
+                if(publicRequest.IsSetProgrammingLang())
+                {
+                    context.Writer.WritePropertyName("ProgrammingLang");
+                    context.Writer.Write(publicRequest.ProgrammingLang);
+                }
+
+                if(publicRequest.IsSetReleaseNotes())
+                {
+                    context.Writer.WritePropertyName("ReleaseNotes");
+                    context.Writer.Write(publicRequest.ReleaseNotes);
+                }
+
+                if(publicRequest.IsSetVendorGuidance())
+                {
+                    context.Writer.WritePropertyName("VendorGuidance");
+                    context.Writer.Write(publicRequest.VendorGuidance);
                 }
 
                 writer.WriteObjectEnd();

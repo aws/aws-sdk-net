@@ -522,6 +522,24 @@
     <pattern>^[a-zA-Z0-9]([-.]?[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateImageVersionRequest.MLFramework</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z]+ ?\d+\.\d+(\.\d+)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateImageVersionRequest.ProgrammingLang</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z]+ ?\d+\.\d+(\.\d+)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateImageVersionRequest.ReleaseNotes</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateImageVersionResponse.ImageVersionArn</property>
     <max>256</max>
     <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image-version/[a-z0-9]([-.]?[a-z0-9])*/[0-9]+$</pattern>
@@ -1294,6 +1312,12 @@
     <min>1</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9]([-.]?[a-zA-Z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeleteImageVersionRequest.Alias</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>(?!^[.-])^([a-zA-Z0-9-_.]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteImageVersionRequest.ImageName</property>
@@ -2351,6 +2375,12 @@
     <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageVersionRequest.Alias</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>(?!^[.-])^([a-zA-Z0-9-_.]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeImageVersionRequest.ImageName</property>
     <min>1</min>
     <max>63</max>
@@ -2384,6 +2414,24 @@
     <property>Amazon.SageMaker.Model.DescribeImageVersionResponse.ImageVersionArn</property>
     <max>256</max>
     <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image-version/[a-z0-9]([-.]?[a-z0-9])*/[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageVersionResponse.MLFramework</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z]+ ?\d+\.\d+(\.\d+)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageVersionResponse.ProgrammingLang</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z]+ ?\d+\.\d+(\.\d+)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageVersionResponse.ReleaseNotes</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeImageVersionResponse.Version</property>
@@ -3414,6 +3462,37 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListAlgorithmsResponse.NextToken</property>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListAliasesRequest.Alias</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>(?!^[.-])^([a-zA-Z0-9-_.]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListAliasesRequest.ImageName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]([-.]?[a-zA-Z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListAliasesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListAliasesRequest.NextToken</property>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListAliasesRequest.Version</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListAliasesResponse.NextToken</property>
     <max>8192</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -5469,6 +5548,45 @@
     <property>Amazon.SageMaker.Model.UpdateImageResponse.ImageArn</property>
     <max>256</max>
     <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-z0-9]([-.]?[a-z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateImageVersionRequest.Alias</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>(?!^[.-])^([a-zA-Z0-9-_.]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateImageVersionRequest.ImageName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]([-.]?[a-zA-Z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateImageVersionRequest.MLFramework</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z]+ ?\d+\.\d+(\.\d+)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateImageVersionRequest.ProgrammingLang</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z]+ ?\d+\.\d+(\.\d+)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateImageVersionRequest.ReleaseNotes</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateImageVersionRequest.Version</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateImageVersionResponse.ImageVersionArn</property>
+    <max>256</max>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image-version/[a-z0-9]([-.]?[a-z0-9])*/[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateInferenceExperimentRequest.Description</property>

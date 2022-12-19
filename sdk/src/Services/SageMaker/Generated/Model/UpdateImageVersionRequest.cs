@@ -29,20 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeImageVersion operation.
+    /// Container for the parameters to the UpdateImageVersion operation.
+    /// Updates the properties of a SageMaker image version.
     /// </summary>
-    public partial class DescribeImageVersionResponse : AmazonWebServiceResponse
+    public partial class UpdateImageVersionRequest : AmazonSageMakerRequest
     {
-        private string _baseImage;
-        private string _containerImage;
-        private DateTime? _creationTime;
-        private string _failureReason;
+        private string _alias;
+        private List<string> _aliasesToAdd = new List<string>();
+        private List<string> _aliasesToDelete = new List<string>();
         private bool? _horovod;
-        private string _imageArn;
-        private string _imageVersionArn;
-        private ImageVersionStatus _imageVersionStatus;
+        private string _imageName;
         private JobType _jobType;
-        private DateTime? _lastModifiedTime;
         private string _mlFramework;
         private Processor _processor;
         private string _programmingLang;
@@ -51,78 +48,58 @@ namespace Amazon.SageMaker.Model
         private int? _version;
 
         /// <summary>
-        /// Gets and sets the property BaseImage. 
+        /// Gets and sets the property Alias. 
         /// <para>
-        /// The registry path of the container image on which this image version is based.
+        /// The alias of the image version.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string BaseImage
+        [AWSProperty(Min=1, Max=128)]
+        public string Alias
         {
-            get { return this._baseImage; }
-            set { this._baseImage = value; }
+            get { return this._alias; }
+            set { this._alias = value; }
         }
 
-        // Check to see if BaseImage property is set
-        internal bool IsSetBaseImage()
+        // Check to see if Alias property is set
+        internal bool IsSetAlias()
         {
-            return this._baseImage != null;
+            return this._alias != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ContainerImage. 
+        /// Gets and sets the property AliasesToAdd. 
         /// <para>
-        /// The registry path of the container image that contains this image version.
+        /// A list of aliases to add.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string ContainerImage
+        public List<string> AliasesToAdd
         {
-            get { return this._containerImage; }
-            set { this._containerImage = value; }
+            get { return this._aliasesToAdd; }
+            set { this._aliasesToAdd = value; }
         }
 
-        // Check to see if ContainerImage property is set
-        internal bool IsSetContainerImage()
+        // Check to see if AliasesToAdd property is set
+        internal bool IsSetAliasesToAdd()
         {
-            return this._containerImage != null;
+            return this._aliasesToAdd != null && this._aliasesToAdd.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property CreationTime. 
+        /// Gets and sets the property AliasesToDelete. 
         /// <para>
-        /// When the version was created.
+        /// A list of aliases to delete.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public List<string> AliasesToDelete
         {
-            get { return this._creationTime.GetValueOrDefault(); }
-            set { this._creationTime = value; }
+            get { return this._aliasesToDelete; }
+            set { this._aliasesToDelete = value; }
         }
 
-        // Check to see if CreationTime property is set
-        internal bool IsSetCreationTime()
+        // Check to see if AliasesToDelete property is set
+        internal bool IsSetAliasesToDelete()
         {
-            return this._creationTime.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property FailureReason. 
-        /// <para>
-        /// When a create or delete operation fails, the reason for the failure.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=1024)]
-        public string FailureReason
-        {
-            get { return this._failureReason; }
-            set { this._failureReason = value; }
-        }
-
-        // Check to see if FailureReason property is set
-        internal bool IsSetFailureReason()
-        {
-            return this._failureReason != null;
+            return this._aliasesToDelete != null && this._aliasesToDelete.Count > 0; 
         }
 
         /// <summary>
@@ -144,59 +121,22 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageArn. 
+        /// Gets and sets the property ImageName. 
         /// <para>
-        /// The ARN of the image the version is based on.
+        /// The name of the image.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
-        public string ImageArn
+        [AWSProperty(Required=true, Min=1, Max=63)]
+        public string ImageName
         {
-            get { return this._imageArn; }
-            set { this._imageArn = value; }
+            get { return this._imageName; }
+            set { this._imageName = value; }
         }
 
-        // Check to see if ImageArn property is set
-        internal bool IsSetImageArn()
+        // Check to see if ImageName property is set
+        internal bool IsSetImageName()
         {
-            return this._imageArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ImageVersionArn. 
-        /// <para>
-        /// The ARN of the version.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=256)]
-        public string ImageVersionArn
-        {
-            get { return this._imageVersionArn; }
-            set { this._imageVersionArn = value; }
-        }
-
-        // Check to see if ImageVersionArn property is set
-        internal bool IsSetImageVersionArn()
-        {
-            return this._imageVersionArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ImageVersionStatus. 
-        /// <para>
-        /// The status of the version.
-        /// </para>
-        /// </summary>
-        public ImageVersionStatus ImageVersionStatus
-        {
-            get { return this._imageVersionStatus; }
-            set { this._imageVersionStatus = value; }
-        }
-
-        // Check to see if ImageVersionStatus property is set
-        internal bool IsSetImageVersionStatus()
-        {
-            return this._imageVersionStatus != null;
+            return this._imageName != null;
         }
 
         /// <summary>
@@ -230,24 +170,6 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetJobType()
         {
             return this._jobType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property LastModifiedTime. 
-        /// <para>
-        /// When the version was last modified.
-        /// </para>
-        /// </summary>
-        public DateTime LastModifiedTime
-        {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
-            set { this._lastModifiedTime = value; }
-        }
-
-        // Check to see if LastModifiedTime property is set
-        internal bool IsSetLastModifiedTime()
-        {
-            return this._lastModifiedTime.HasValue; 
         }
 
         /// <summary>
@@ -337,7 +259,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VendorGuidance. 
         /// <para>
-        /// The stability of the image version specified by the maintainer.
+        /// The availability of the image version specified by the maintainer.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -375,7 +297,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version number.
+        /// The version of the image.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

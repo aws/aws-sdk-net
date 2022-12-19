@@ -36,6 +36,11 @@ namespace Amazon.SageMaker.Model
         IListAlgorithmsPaginator ListAlgorithms(ListAlgorithmsRequest request);
 
         /// <summary>
+        /// Paginator for ListAliases operation
+        ///</summary>
+        IListAliasesPaginator ListAliases(ListAliasesRequest request);
+
+        /// <summary>
         /// Paginator for ListAppImageConfigs operation
         ///</summary>
         IListAppImageConfigsPaginator ListAppImageConfigs(ListAppImageConfigsRequest request);

@@ -35,13 +35,33 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DeleteImageVersionRequest : AmazonSageMakerRequest
     {
+        private string _alias;
         private string _imageName;
         private int? _version;
 
         /// <summary>
+        /// Gets and sets the property Alias. 
+        /// <para>
+        /// The alias of the image to delete.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string Alias
+        {
+            get { return this._alias; }
+            set { this._alias = value; }
+        }
+
+        // Check to see if Alias property is set
+        internal bool IsSetAlias()
+        {
+            return this._alias != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ImageName. 
         /// <para>
-        /// The name of the image.
+        /// The name of the image to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -63,7 +83,7 @@ namespace Amazon.SageMaker.Model
         /// The version to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Min=0)]
         public int Version
         {
             get { return this._version.GetValueOrDefault(); }

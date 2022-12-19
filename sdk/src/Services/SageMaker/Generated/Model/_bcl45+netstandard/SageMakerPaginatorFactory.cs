@@ -52,6 +52,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListAliases operation
+        ///</summary>
+        public IListAliasesPaginator ListAliases(ListAliasesRequest request) 
+        {
+            return new ListAliasesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAppImageConfigs operation
         ///</summary>
         public IListAppImageConfigsPaginator ListAppImageConfigs(ListAppImageConfigsRequest request) 

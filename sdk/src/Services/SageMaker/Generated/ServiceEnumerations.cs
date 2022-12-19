@@ -6133,6 +6133,60 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type JobType.
+    /// </summary>
+    public class JobType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INFERENCE for JobType
+        /// </summary>
+        public static readonly JobType INFERENCE = new JobType("INFERENCE");
+        /// <summary>
+        /// Constant NOTEBOOK_KERNEL for JobType
+        /// </summary>
+        public static readonly JobType NOTEBOOK_KERNEL = new JobType("NOTEBOOK_KERNEL");
+        /// <summary>
+        /// Constant TRAINING for JobType
+        /// </summary>
+        public static readonly JobType TRAINING = new JobType("TRAINING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobType FindValue(string value)
+        {
+            return FindValue<JobType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JoinSource.
     /// </summary>
     public class JoinSource : ConstantClass
@@ -9674,6 +9728,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProcessingS3UploadMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Processor.
+    /// </summary>
+    public class Processor : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CPU for Processor
+        /// </summary>
+        public static readonly Processor CPU = new Processor("CPU");
+        /// <summary>
+        /// Constant GPU for Processor
+        /// </summary>
+        public static readonly Processor GPU = new Processor("GPU");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Processor(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Processor FindValue(string value)
+        {
+            return FindValue<Processor>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Processor(string value)
         {
             return FindValue(value);
         }
@@ -14254,6 +14358,64 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VariantStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VendorGuidance.
+    /// </summary>
+    public class VendorGuidance : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARCHIVED for VendorGuidance
+        /// </summary>
+        public static readonly VendorGuidance ARCHIVED = new VendorGuidance("ARCHIVED");
+        /// <summary>
+        /// Constant NOT_PROVIDED for VendorGuidance
+        /// </summary>
+        public static readonly VendorGuidance NOT_PROVIDED = new VendorGuidance("NOT_PROVIDED");
+        /// <summary>
+        /// Constant STABLE for VendorGuidance
+        /// </summary>
+        public static readonly VendorGuidance STABLE = new VendorGuidance("STABLE");
+        /// <summary>
+        /// Constant TO_BE_ARCHIVED for VendorGuidance
+        /// </summary>
+        public static readonly VendorGuidance TO_BE_ARCHIVED = new VendorGuidance("TO_BE_ARCHIVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VendorGuidance(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VendorGuidance FindValue(string value)
+        {
+            return FindValue<VendorGuidance>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VendorGuidance(string value)
         {
             return FindValue(value);
         }

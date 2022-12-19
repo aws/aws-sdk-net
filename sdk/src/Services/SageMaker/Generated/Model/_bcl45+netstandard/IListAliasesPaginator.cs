@@ -16,43 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the sagemaker-2017-07-24.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.Net;
-
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateImage operation.
-    /// </summary>
-    public partial class UpdateImageResponse : AmazonWebServiceResponse
+    /// Paginator for the ListAliases operation
+    ///</summary>
+    public interface IListAliasesPaginator
     {
-        private string _imageArn;
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListAliasesResponse> Responses { get; }
 
         /// <summary>
-        /// Gets and sets the property ImageArn. 
-        /// <para>
-        /// The ARN of the image.
-        /// </para>
+        /// Enumerable containing all of the SageMakerImageVersionAliases
         /// </summary>
-        [AWSProperty(Max=256)]
-        public string ImageArn
-        {
-            get { return this._imageArn; }
-            set { this._imageArn = value; }
-        }
-
-        // Check to see if ImageArn property is set
-        internal bool IsSetImageArn()
-        {
-            return this._imageArn != null;
-        }
-
+        IPaginatedEnumerable<string> SageMakerImageVersionAliases { get; }
     }
 }

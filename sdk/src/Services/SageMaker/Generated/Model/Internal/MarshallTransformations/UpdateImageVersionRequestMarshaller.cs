@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeImageVersion Request Marshaller
+    /// UpdateImageVersion Request Marshaller
     /// </summary>       
-    public class DescribeImageVersionRequestMarshaller : IMarshaller<IRequest, DescribeImageVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateImageVersionRequestMarshaller : IMarshaller<IRequest, UpdateImageVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeImageVersionRequest)input);
+            return this.Marshall((UpdateImageVersionRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeImageVersionRequest publicRequest)
+        public IRequest Marshall(UpdateImageVersionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMaker");
-            string target = "SageMaker.DescribeImageVersion";
+            string target = "SageMaker.UpdateImageVersion";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";
@@ -73,10 +73,74 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Alias);
                 }
 
+                if(publicRequest.IsSetAliasesToAdd())
+                {
+                    context.Writer.WritePropertyName("AliasesToAdd");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAliasesToAddListValue in publicRequest.AliasesToAdd)
+                    {
+                            context.Writer.Write(publicRequestAliasesToAddListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetAliasesToDelete())
+                {
+                    context.Writer.WritePropertyName("AliasesToDelete");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAliasesToDeleteListValue in publicRequest.AliasesToDelete)
+                    {
+                            context.Writer.Write(publicRequestAliasesToDeleteListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetHorovod())
+                {
+                    context.Writer.WritePropertyName("Horovod");
+                    context.Writer.Write(publicRequest.Horovod);
+                }
+
                 if(publicRequest.IsSetImageName())
                 {
                     context.Writer.WritePropertyName("ImageName");
                     context.Writer.Write(publicRequest.ImageName);
+                }
+
+                if(publicRequest.IsSetJobType())
+                {
+                    context.Writer.WritePropertyName("JobType");
+                    context.Writer.Write(publicRequest.JobType);
+                }
+
+                if(publicRequest.IsSetMLFramework())
+                {
+                    context.Writer.WritePropertyName("MLFramework");
+                    context.Writer.Write(publicRequest.MLFramework);
+                }
+
+                if(publicRequest.IsSetProcessor())
+                {
+                    context.Writer.WritePropertyName("Processor");
+                    context.Writer.Write(publicRequest.Processor);
+                }
+
+                if(publicRequest.IsSetProgrammingLang())
+                {
+                    context.Writer.WritePropertyName("ProgrammingLang");
+                    context.Writer.Write(publicRequest.ProgrammingLang);
+                }
+
+                if(publicRequest.IsSetReleaseNotes())
+                {
+                    context.Writer.WritePropertyName("ReleaseNotes");
+                    context.Writer.Write(publicRequest.ReleaseNotes);
+                }
+
+                if(publicRequest.IsSetVendorGuidance())
+                {
+                    context.Writer.WritePropertyName("VendorGuidance");
+                    context.Writer.Write(publicRequest.VendorGuidance);
                 }
 
                 if(publicRequest.IsSetVersion())
@@ -93,9 +157,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DescribeImageVersionRequestMarshaller _instance = new DescribeImageVersionRequestMarshaller();        
+        private static UpdateImageVersionRequestMarshaller _instance = new UpdateImageVersionRequestMarshaller();        
 
-        internal static DescribeImageVersionRequestMarshaller GetInstance()
+        internal static UpdateImageVersionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +167,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeImageVersionRequestMarshaller Instance
+        public static UpdateImageVersionRequestMarshaller Instance
         {
             get
             {

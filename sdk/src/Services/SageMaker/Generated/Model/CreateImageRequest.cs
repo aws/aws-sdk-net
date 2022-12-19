@@ -103,8 +103,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform
-        /// tasks on your behalf.
+        /// The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

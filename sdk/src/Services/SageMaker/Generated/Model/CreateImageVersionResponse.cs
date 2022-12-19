@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ImageVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image version.
+        /// The ARN of the image version.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
