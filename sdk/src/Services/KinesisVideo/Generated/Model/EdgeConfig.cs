@@ -104,7 +104,7 @@ namespace Amazon.KinesisVideo.Model
         /// Gets and sets the property UploaderConfig. 
         /// <para>
         /// The uploader configuration contains the <code>ScheduleExpression</code> details that
-        /// are used, to schedule upload jobs for the recorded media files from the Edge Agent,
+        /// are used to schedule upload jobs for the recorded media files from the Edge Agent
         /// to a Kinesis Video Stream.
         /// </para>
         /// </summary>

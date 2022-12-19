@@ -109,6 +109,10 @@ namespace Amazon.KinesisVideo
         /// </summary>
         public static readonly ChannelProtocol HTTPS = new ChannelProtocol("HTTPS");
         /// <summary>
+        /// Constant WEBRTC for ChannelProtocol
+        /// </summary>
+        public static readonly ChannelProtocol WEBRTC = new ChannelProtocol("WEBRTC");
+        /// <summary>
         /// Constant WSS for ChannelProtocol
         /// </summary>
         public static readonly ChannelProtocol WSS = new ChannelProtocol("WSS");
@@ -484,6 +488,56 @@ namespace Amazon.KinesisVideo
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ImageSelectorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MediaStorageConfigurationStatus.
+    /// </summary>
+    public class MediaStorageConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for MediaStorageConfigurationStatus
+        /// </summary>
+        public static readonly MediaStorageConfigurationStatus DISABLED = new MediaStorageConfigurationStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for MediaStorageConfigurationStatus
+        /// </summary>
+        public static readonly MediaStorageConfigurationStatus ENABLED = new MediaStorageConfigurationStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaStorageConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaStorageConfigurationStatus FindValue(string value)
+        {
+            return FindValue<MediaStorageConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaStorageConfigurationStatus(string value)
         {
             return FindValue(value);
         }

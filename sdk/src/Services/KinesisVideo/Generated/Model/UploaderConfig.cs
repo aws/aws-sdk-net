@@ -29,9 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// The configuration that consists of the <code>ScheduleConfig</code> attribute that's
-    /// required, to schedule the jobs to upload the recorded media files onto the Edge Agent
-    /// in a Kinesis Video Stream.
+    /// The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutesdetails</code>,
+    /// that specify the scheduling to record from a camera, or local media file, onto the
+    /// Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge
+    /// Agent will always be in upload mode.
     /// </summary>
     public partial class UploaderConfig
     {

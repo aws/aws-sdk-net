@@ -61,9 +61,14 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property MediaUriType. 
         /// <para>
-        /// The Uniform Resource Identifier (Uri) type. The <code>FILE_URI</code> value can be
+        /// The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be
         /// used to stream local media files.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Preview only supports the <code>RTSP_URI</code> media source URI format .
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public MediaUriType MediaUriType

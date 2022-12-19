@@ -29,55 +29,65 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// Container for the parameters to the StartEdgeConfigurationUpdate operation.
-    /// An asynchronous API that updates a stream’s existing edge configuration. The Kinesis
-    /// Video Stream will sync the stream’s edge configuration with the Edge Agent IoT Greengrass
-    /// component that runs on an IoT Hub Device, setup at your premise. The time to sync
-    /// can vary and depends on the connectivity of the Hub Device. The <code>SyncStatus</code>
-    /// will be updated as the edge configuration is acknowledged, and synced with the Edge
-    /// Agent. 
+    /// Container for the parameters to the DescribeMappedResourceConfiguration operation.
+    /// Returns the most current information about the stream. Either streamName or streamARN
+    /// should be provided in the input.
     /// 
     ///  
     /// <para>
-    /// If this API is invoked for the first time, a new edge configuration will be created
-    /// for the stream, and the sync status will be set to <code>SYNCING</code>. You will
-    /// have to wait for the sync status to reach a terminal state such as: <code>IN_SYNC</code>,
-    /// or <code>SYNC_FAILED</code>, before using this API again. If you invoke this API during
-    /// the syncing process, a <code>ResourceInUseException</code> will be thrown. The connectivity
-    /// of the stream’s edge configuration and the Edge Agent will be retried for 15 minutes.
-    /// After 15 minutes, the status will transition into the <code>SYNC_FAILED</code> state.
+    /// Returns the most current information about the stream. The <code>streamName</code>
+    /// or <code>streamARN</code> should be provided in the input.
     /// </para>
     /// </summary>
-    public partial class StartEdgeConfigurationUpdateRequest : AmazonKinesisVideoRequest
+    public partial class DescribeMappedResourceConfigurationRequest : AmazonKinesisVideoRequest
     {
-        private EdgeConfig _edgeConfig;
+        private int? _maxResults;
+        private string _nextToken;
         private string _streamARN;
         private string _streamName;
 
         /// <summary>
-        /// Gets and sets the property EdgeConfig. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The edge configuration details required to invoke the update process.
+        /// The maximum number of results to return in the response.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public EdgeConfig EdgeConfig
+        [AWSProperty(Min=1, Max=1)]
+        public int MaxResults
         {
-            get { return this._edgeConfig; }
-            set { this._edgeConfig = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if EdgeConfig property is set
-        internal bool IsSetEdgeConfig()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._edgeConfig != null;
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to provide in your next request, to get another batch of results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=512)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>
         /// Gets and sets the property StreamARN. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code>
-        /// or the <code>StreamARN</code>.
+        /// The Amazon Resource Name (ARN) of the stream.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -96,8 +106,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
-        /// The name of the stream whose edge configuration you want to update. Specify either
-        /// the <code>StreamName</code> or the <code>StreamARN</code>.
+        /// The name of the stream.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

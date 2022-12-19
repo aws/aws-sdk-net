@@ -16,28 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the kinesisvideo-2017-09-30.normal.json service model.
  */
+using Amazon.Runtime;
 
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// Paginators for the KinesisVideo service
+    /// Paginator for the DescribeMappedResourceConfiguration operation
     ///</summary>
-    public interface IKinesisVideoPaginatorFactory
+    public interface IDescribeMappedResourceConfigurationPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<DescribeMappedResourceConfigurationResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for DescribeMappedResourceConfiguration operation
-        ///</summary>
-        IDescribeMappedResourceConfigurationPaginator DescribeMappedResourceConfiguration(DescribeMappedResourceConfigurationRequest request);
-
-        /// <summary>
-        /// Paginator for ListSignalingChannels operation
-        ///</summary>
-        IListSignalingChannelsPaginator ListSignalingChannels(ListSignalingChannelsRequest request);
-
-        /// <summary>
-        /// Paginator for ListStreams operation
-        ///</summary>
-        IListStreamsPaginator ListStreams(ListStreamsRequest request);
+        /// Enumerable containing all of the MappedResourceConfigurationList
+        /// </summary>
+        IPaginatedEnumerable<MappedResourceConfigurationListItem> MappedResourceConfigurationList { get; }
     }
 }

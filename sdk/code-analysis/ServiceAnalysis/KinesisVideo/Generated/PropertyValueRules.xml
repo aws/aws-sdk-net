@@ -107,6 +107,47 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.DescribeMappedResourceConfigurationRequest.MaxResults</property>
+    <min>1</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.DescribeMappedResourceConfigurationRequest.NextToken</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9+/=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.DescribeMappedResourceConfigurationRequest.StreamARN</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.DescribeMappedResourceConfigurationRequest.StreamName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.DescribeMappedResourceConfigurationResponse.NextToken</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9+/=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.DescribeMediaStorageConfigurationRequest.ChannelARN</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.DescribeMediaStorageConfigurationRequest.ChannelName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisVideo.Model.DescribeNotificationConfigurationRequest.StreamARN</property>
     <min>1</min>
     <max>1024</max>
@@ -331,6 +372,12 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.UpdateMediaStorageConfigurationRequest.ChannelARN</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisVideo.Model.UpdateNotificationConfigurationRequest.StreamARN</property>
     <min>1</min>
     <max>1024</max>
@@ -452,10 +499,22 @@
     <max>2000000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.MappedResourceConfigurationListItem.ARN</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisVideo.Model.MediaSourceConfig.MediaUriSecretArn</property>
     <min>20</min>
     <max>2048</max>
     <pattern>arn:[a-z\d-]+:secretsmanager:[a-z0-9-]+:[0-9]+:secret:[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.MediaStorageConfiguration.StreamARN</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.NotificationDestinationConfig.Uri</property>
