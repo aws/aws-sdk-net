@@ -34,9 +34,28 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class DeploymentConfiguration
     {
+        private DeploymentAlarms _alarms;
         private DeploymentCircuitBreaker _deploymentCircuitBreaker;
         private int? _maximumPercent;
         private int? _minimumHealthyPercent;
+
+        /// <summary>
+        /// Gets and sets the property Alarms. 
+        /// <para>
+        /// Information about the CloudWatch alarms.
+        /// </para>
+        /// </summary>
+        public DeploymentAlarms Alarms
+        {
+            get { return this._alarms; }
+            set { this._alarms = value; }
+        }
+
+        // Check to see if Alarms property is set
+        internal bool IsSetAlarms()
+        {
+            return this._alarms != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DeploymentCircuitBreaker. <note> 

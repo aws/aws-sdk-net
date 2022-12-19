@@ -29,30 +29,55 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// <note> 
+    /// One of the methods which provide a way for you to quickly identify when a deployment
+    /// has failed, and then to optionally roll back the failure to the last working deployment.
+    /// 
+    ///  
     /// <para>
-    /// The deployment circuit breaker can only be used for services using the rolling update
-    /// (<code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.
+    /// When the alarms are generated, Amazon ECS sets the service deployment to failed. Set
+    /// the rollback parameter to have Amazon ECS to roll back your service to the last completed
+    /// deployment after a failure.
     /// </para>
-    ///  </note> 
+    ///  
     /// <para>
-    /// The <b>deployment circuit breaker</b> determines whether a service deployment will
-    /// fail if the service can't reach a steady state. If enabled, a service deployment will
-    /// transition to a failed state and stop launching new tasks. You can also configure
-    /// Amazon ECS to roll back your service to the last completed deployment after a failure.
+    /// You can only use the <code>DeploymentAlarms</code> method to detect failures when
+    /// the <code>DeploymentController</code> is set to <code>ECS</code> (rolling update).
+    /// </para>
+    ///  
+    /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
-    /// update</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// update</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>.
     /// </para>
     /// </summary>
-    public partial class DeploymentCircuitBreaker
+    public partial class DeploymentAlarms
     {
+        private List<string> _alarmNames = new List<string>();
         private bool? _enable;
         private bool? _rollback;
 
         /// <summary>
+        /// Gets and sets the property AlarmNames. 
+        /// <para>
+        /// One or more CloudWatch alarm names. Use a "," to separate the alarms.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public List<string> AlarmNames
+        {
+            get { return this._alarmNames; }
+            set { this._alarmNames = value; }
+        }
+
+        // Check to see if AlarmNames property is set
+        internal bool IsSetAlarmNames()
+        {
+            return this._alarmNames != null && this._alarmNames.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Enable. 
         /// <para>
-        /// Determines whether to use the deployment circuit breaker logic for the service.
+        /// Determines whether to use the CloudWatch alarm option in the service deployment process.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -72,8 +97,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Rollback. 
         /// <para>
         /// Determines whether to configure Amazon ECS to roll back the service if a service deployment
-        /// fails. If rollback is on, when a service deployment fails, the service is rolled back
-        /// to the last deployment that completed successfully.
+        /// fails. If rollback is used, when a service deployment fails, the service is rolled
+        /// back to the last deployment that completed successfully.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
