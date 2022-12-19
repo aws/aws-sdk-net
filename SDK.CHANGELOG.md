@@ -1,3 +1,20 @@
+### 3.7.444.0 (2022-12-19 19:26 UTC)
+* Athena (3.7.103.0)
+	* Add missed InvalidRequestException in GetCalculationExecutionCode,StopCalculationExecution APIs. Correct required parameters (Payload and Type) in UpdateNotebook API. Change Notebook size from 15 Mb to 10 Mb.
+* ECS (3.7.104.0)
+	* This release adds support for alarm-based rollbacks in ECS, a new feature that allows customers to add automated safeguards for Amazon ECS service rolling updates.
+* KinesisVideo (3.7.102.0)
+	* Amazon Kinesis Video Streams offers capabilities to stream video and audio in real-time via WebRTC to the cloud for storage, playback, and analytical processing. Customers can use our enhanced WebRTC SDK and cloud APIs to enable real-time streaming, as well as media ingestion to the cloud.
+* KinesisVideoWebRTCStorage (3.7.100.0)
+	* Amazon Kinesis Video Streams offers capabilities to stream video and audio in real-time via WebRTC to the cloud for storage, playback, and analytical processing. Customers can use our enhanced WebRTC SDK and cloud APIs to enable real-time streaming, as well as media ingestion to the cloud.
+* RDS (3.7.110.0)
+	* Add support for --enable-customer-owned-ip to RDS create-db-instance-read-replica API for RDS on Outposts.
+* SageMaker (3.7.111.0)
+	* AWS Sagemaker - Sagemaker Images now supports Aliases as secondary identifiers for ImageVersions. SageMaker Images now supports additional metadata for ImageVersions for better images management.
+* Core 3.7.103.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.443.0 (2022-12-16 19:25 UTC)
 * Appflow (3.7.104.0)
 	* This release updates the ListConnectorEntities API action so that it returns paginated responses that customers can retrieve with next tokens.
