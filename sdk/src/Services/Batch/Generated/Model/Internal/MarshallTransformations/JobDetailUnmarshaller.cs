@@ -106,6 +106,18 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.EksProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isCancelled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsCancelled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("isTerminated", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsTerminated = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
