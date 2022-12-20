@@ -383,6 +383,10 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly LanguageCode RuRU = new LanguageCode("ru-RU");
         /// <summary>
+        /// Constant SvSE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SvSE = new LanguageCode("sv-SE");
+        /// <summary>
         /// Constant TaIN for LanguageCode
         /// </summary>
         public static readonly LanguageCode TaIN = new LanguageCode("ta-IN");
@@ -398,6 +402,10 @@ namespace Amazon.TranscribeService
         /// Constant TrTR for LanguageCode
         /// </summary>
         public static readonly LanguageCode TrTR = new LanguageCode("tr-TR");
+        /// <summary>
+        /// Constant ViVN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ViVN = new LanguageCode("vi-VN");
         /// <summary>
         /// Constant ZhCN for LanguageCode
         /// </summary>
