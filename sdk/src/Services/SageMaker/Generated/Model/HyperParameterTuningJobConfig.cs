@@ -66,7 +66,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that
         /// this tuning job searches over to find the optimal configuration for the highest model
-        /// performance against .your chosen objective metric. 
+        /// performance against your chosen objective metric. 
         /// </para>
         /// </summary>
         public ParameterRanges ParameterRanges
