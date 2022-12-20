@@ -14,14 +14,11 @@
  */
 #pragma warning disable 1574
 
+using Amazon.DynamoDBv2.DocumentModel;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -58,6 +55,33 @@ namespace Amazon.DynamoDBv2.DataModel
         public Task SaveAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
             return SaveHelperAsync(value, operationConfig, cancellationToken);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Save operation.
+        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Save"/>
+        /// </summary>
+        /// <param name="valueType">Type of the Object to save.</param>
+        /// <param name="value">Object to save.</param>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        public Task SaveAsync(Type valueType, object value, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return SaveHelperAsync(valueType, value, null, cancellationToken);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Save operation.
+        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Save"/>
+        /// </summary>
+        /// <param name="valueType">Type of the Object to save.</param>
+        /// <param name="value">Object to save.</param>
+        /// <param name="operationConfig">Overriding configuration.</param>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        public Task SaveAsync(Type valueType, object value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return SaveHelperAsync(valueType, value, operationConfig, cancellationToken);
         }
 
         #endregion
