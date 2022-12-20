@@ -101,6 +101,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("IncludeDeprecated", StringUtils.FromBool(publicRequest.IncludeDeprecated));
                 }
+                if(publicRequest.IsSetMaxResults())
+                {
+                    request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
+                }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
                 if(publicRequest.IsSetOwners())
                 {
                     int publicRequestlistValueIndex = 1;

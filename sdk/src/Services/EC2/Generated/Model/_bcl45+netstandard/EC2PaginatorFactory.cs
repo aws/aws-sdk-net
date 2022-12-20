@@ -244,6 +244,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeImages operation
+        ///</summary>
+        public IDescribeImagesPaginator DescribeImages(DescribeImagesRequest request) 
+        {
+            return new DescribeImagesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeImportImageTasks operation
         ///</summary>
         public IDescribeImportImageTasksPaginator DescribeImportImageTasks(DescribeImportImageTasksRequest request) 

@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeImagesResponse : AmazonWebServiceResponse
     {
         private List<Image> _images = new List<Image>();
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property Images. 
@@ -51,6 +52,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetImages()
         {
             return this._images != null && this._images.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use to retrieve the next page of results. This value is <code>null</code>
+        /// when there are no more results to return.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

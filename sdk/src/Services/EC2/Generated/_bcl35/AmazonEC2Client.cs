@@ -3135,8 +3135,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Removes your Amazon Web Services account from the launch permissions for the specified
         /// AMI. For more information, see <a href="https://docs.aws.amazon.com/">Cancel having
-        /// an AMI shared with your Amazon Web Services account</a> in the <i>Amazon Elastic Compute
-        /// Cloud User Guide</i>.
+        /// an AMI shared with your Amazon Web Services account</a> in the <i>Amazon EC2 User
+        /// Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelImageLaunchPermission service method.</param>
         /// 
@@ -3560,14 +3560,13 @@ namespace Amazon.EC2
         /// encryption key for the Region, or a different key that you specify in the request
         /// using <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more information,
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
-        /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud
-        /// User Guide</i>.
+        /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about the prerequisites and limits when copying an AMI, see <a
         /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy an
-        /// AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyImage service method.</param>
@@ -6454,14 +6453,12 @@ namespace Amazon.EC2
         /// <para>
         /// To use this API, you must have the required permissions. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-        /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute
-        /// Cloud User Guide</i>.
+        /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-        /// and restore an AMI using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>.
+        /// and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRestoreImageTask service method.</param>
@@ -6994,14 +6991,12 @@ namespace Amazon.EC2
         /// <para>
         /// To use this API, you must have the required permissions. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-        /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute
-        /// Cloud User Guide</i>.
+        /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-        /// and restore an AMI using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>.
+        /// and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStoreImageTask service method.</param>
@@ -13388,7 +13383,7 @@ namespace Amazon.EC2
         /// If you deregister an AMI that matches a Recycle Bin retention rule, the AMI is retained
         /// in the Recycle Bin for the specified retention period. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-        /// Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Bin</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -20553,14 +20548,12 @@ namespace Amazon.EC2
         /// <para>
         /// To use this API, you must have the required permissions. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-        /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute
-        /// Cloud User Guide</i>.
+        /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-        /// and restore an AMI using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>.
+        /// and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStoreImageTasks service method.</param>
@@ -23662,7 +23655,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
-        /// an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableImageDeprecation service method.</param>
@@ -25123,7 +25116,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
-        /// an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableImageDeprecation service method.</param>
@@ -28633,7 +28626,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Lists one or more AMIs that are currently in the Recycle Bin. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-        /// Bin</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// Bin</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImagesInRecycleBin service method.</param>
         /// 
@@ -33511,7 +33504,7 @@ namespace Amazon.EC2
         /// matching billing product code, the Reserved Instance will not be applied to the On-Demand
         /// Instance. For information about how to obtain the platform details and billing information
         /// of an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
-        /// AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterImage service method.</param>
@@ -35324,7 +35317,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Restores an AMI from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-        /// Bin</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// Bin</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreImageFromRecycleBin service method.</param>
         /// 

@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the RestoreImageFromRecycleBin operation.
     /// Restores an AMI from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-    /// Bin</a> in the Amazon Elastic Compute Cloud User Guide.
+    /// Bin</a> in the <i>Amazon EC2 User Guide</i>.
     /// </summary>
     public partial class RestoreImageFromRecycleBinRequest : AmazonEC2Request
     {
