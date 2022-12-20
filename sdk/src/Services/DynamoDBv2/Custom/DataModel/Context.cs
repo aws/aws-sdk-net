@@ -19,6 +19,7 @@ using System.Threading;
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
 #endif
+using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DocumentModel;
 
 namespace Amazon.DynamoDBv2.DataModel
