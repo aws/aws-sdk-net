@@ -42,7 +42,7 @@ namespace Amazon.Route53Domains.Model
         /// use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Max=255)]
         public string OperationId
         {
             get { return this._operationId; }

@@ -30,8 +30,8 @@ namespace Amazon.Route53Domains.Model
 {
     /// <summary>
     /// Container for the parameters to the RetrieveDomainAuthCode operation.
-    /// This operation returns the AuthCode for the domain. To transfer a domain to another
-    /// registrar, you provide this value to the new registrar.
+    /// This operation returns the authorization code for the domain. To transfer a domain
+    /// to another registrar, you provide this value to the new registrar.
     /// </summary>
     public partial class RetrieveDomainAuthCodeRequest : AmazonRoute53DomainsRequest
     {

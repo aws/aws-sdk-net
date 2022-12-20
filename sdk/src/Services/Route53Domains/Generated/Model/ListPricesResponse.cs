@@ -68,7 +68,6 @@ namespace Amazon.Route53Domains.Model
         /// array contains only the pricing for that TLD.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<DomainPrice> Prices
         {
             get { return this._prices; }

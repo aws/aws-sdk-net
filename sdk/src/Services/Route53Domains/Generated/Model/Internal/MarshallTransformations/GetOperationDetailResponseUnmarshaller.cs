@@ -57,6 +57,12 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                     response.DomainName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastUpdatedDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LastUpdatedDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -73,6 +79,12 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatusFlag", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StatusFlag = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SubmittedDate", targetDepth))

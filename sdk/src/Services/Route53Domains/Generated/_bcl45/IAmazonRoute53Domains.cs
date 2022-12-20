@@ -134,6 +134,98 @@ namespace Amazon.Route53Domains
 
         #endregion
         
+        #region  AssociateDelegationSignerToDomain
+
+
+        /// <summary>
+        /// Creates a delegation signer (DS) record in the registry zone for this domain name.
+        /// 
+        ///  
+        /// <para>
+        /// Note that creating DS record at the registry impacts DNSSEC validation of your DNS
+        /// records. This action may render your domain name unavailable on the internet if the
+        /// steps are completed in the wrong order, or with incorrect timing. For more information
+        /// about DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec.html">Configuring
+        /// DNSSEC signing</a> in the <i>Route 53 developer guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDelegationSignerToDomain service method.</param>
+        /// 
+        /// <returns>The response from the AssociateDelegationSignerToDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.DnssecLimitExceededException">
+        /// This error is returned if you call <code>AssociateDelegationSignerToDomain</code>
+        /// when the specified domain has reached the maximum number of DS records. You can't
+        /// add any additional DS records unless you delete an existing one first.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
+        /// The request is already in progress for the domain.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
+        /// The top-level domain does not support this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AssociateDelegationSignerToDomain">REST API Reference for AssociateDelegationSignerToDomain Operation</seealso>
+        AssociateDelegationSignerToDomainResponse AssociateDelegationSignerToDomain(AssociateDelegationSignerToDomainRequest request);
+
+
+
+        /// <summary>
+        /// Creates a delegation signer (DS) record in the registry zone for this domain name.
+        /// 
+        ///  
+        /// <para>
+        /// Note that creating DS record at the registry impacts DNSSEC validation of your DNS
+        /// records. This action may render your domain name unavailable on the internet if the
+        /// steps are completed in the wrong order, or with incorrect timing. For more information
+        /// about DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec.html">Configuring
+        /// DNSSEC signing</a> in the <i>Route 53 developer guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDelegationSignerToDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateDelegationSignerToDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.DnssecLimitExceededException">
+        /// This error is returned if you call <code>AssociateDelegationSignerToDomain</code>
+        /// when the specified domain has reached the maximum number of DS records. You can't
+        /// add any additional DS records unless you delete an existing one first.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
+        /// The request is already in progress for the domain.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
+        /// The top-level domain does not support this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AssociateDelegationSignerToDomain">REST API Reference for AssociateDelegationSignerToDomain Operation</seealso>
+        Task<AssociateDelegationSignerToDomainResponse> AssociateDelegationSignerToDomainAsync(AssociateDelegationSignerToDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CancelDomainTransferToAnotherAwsAccount
 
 
@@ -666,6 +758,70 @@ namespace Amazon.Route53Domains
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLock">REST API Reference for DisableDomainTransferLock Operation</seealso>
         Task<DisableDomainTransferLockResponse> DisableDomainTransferLockAsync(DisableDomainTransferLockRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DisassociateDelegationSignerFromDomain
+
+
+        /// <summary>
+        /// Deletes a delegation signer (DS) record in the registry zone for this domain name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDelegationSignerFromDomain service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateDelegationSignerFromDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
+        /// The request is already in progress for the domain.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
+        /// The top-level domain does not support this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisassociateDelegationSignerFromDomain">REST API Reference for DisassociateDelegationSignerFromDomain Operation</seealso>
+        DisassociateDelegationSignerFromDomainResponse DisassociateDelegationSignerFromDomain(DisassociateDelegationSignerFromDomainRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a delegation signer (DS) record in the registry zone for this domain name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDelegationSignerFromDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateDelegationSignerFromDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
+        /// The request is already in progress for the domain.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
+        /// The top-level domain does not support this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisassociateDelegationSignerFromDomain">REST API Reference for DisassociateDelegationSignerFromDomain Operation</seealso>
+        Task<DisassociateDelegationSignerFromDomainResponse> DisassociateDelegationSignerFromDomainAsync(DisassociateDelegationSignerFromDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1404,6 +1560,80 @@ namespace Amazon.Route53Domains
 
         #endregion
         
+        #region  PushDomain
+
+
+        /// <summary>
+        /// Moves a domain from Amazon Web Services to another registrar. 
+        /// 
+        ///  
+        /// <para>
+        /// Supported actions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Changes the IPS tags of a .uk domain, and pushes it to transit. Transit means that
+        /// the domain is ready to be transferred to another registrar.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PushDomain service method.</param>
+        /// 
+        /// <returns>The response from the PushDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/PushDomain">REST API Reference for PushDomain Operation</seealso>
+        PushDomainResponse PushDomain(PushDomainRequest request);
+
+
+
+        /// <summary>
+        /// Moves a domain from Amazon Web Services to another registrar. 
+        /// 
+        ///  
+        /// <para>
+        /// Supported actions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Changes the IPS tags of a .uk domain, and pushes it to transit. Transit means that
+        /// the domain is ready to be transferred to another registrar.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PushDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PushDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/PushDomain">REST API Reference for PushDomain Operation</seealso>
+        Task<PushDomainResponse> PushDomainAsync(PushDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RegisterDomain
 
 
@@ -1424,7 +1654,7 @@ namespace Amazon.Route53Domains
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Enables autorenew, so your domain registration will renew automatically each year.
+        /// Enables auto renew, so your domain registration will renew automatically each year.
         /// We'll notify you in advance of the renewal date so you can choose whether to renew
         /// the registration.
         /// </para>
@@ -1501,7 +1731,7 @@ namespace Amazon.Route53Domains
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Enables autorenew, so your domain registration will renew automatically each year.
+        /// Enables auto renew, so your domain registration will renew automatically each year.
         /// We'll notify you in advance of the renewal date so you can choose whether to renew
         /// the registration.
         /// </para>
@@ -1780,12 +2010,52 @@ namespace Amazon.Route53Domains
 
         #endregion
         
+        #region  ResendOperationAuthorization
+
+
+        /// <summary>
+        /// Resend the form of authorization email for this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResendOperationAuthorization service method.</param>
+        /// 
+        /// <returns>The response from the ResendOperationAuthorization service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendOperationAuthorization">REST API Reference for ResendOperationAuthorization Operation</seealso>
+        ResendOperationAuthorizationResponse ResendOperationAuthorization(ResendOperationAuthorizationRequest request);
+
+
+
+        /// <summary>
+        /// Resend the form of authorization email for this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResendOperationAuthorization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResendOperationAuthorization service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendOperationAuthorization">REST API Reference for ResendOperationAuthorization Operation</seealso>
+        Task<ResendOperationAuthorizationResponse> ResendOperationAuthorizationAsync(ResendOperationAuthorizationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RetrieveDomainAuthCode
 
 
         /// <summary>
-        /// This operation returns the AuthCode for the domain. To transfer a domain to another
-        /// registrar, you provide this value to the new registrar.
+        /// This operation returns the authorization code for the domain. To transfer a domain
+        /// to another registrar, you provide this value to the new registrar.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetrieveDomainAuthCode service method.</param>
         /// 
@@ -1805,8 +2075,8 @@ namespace Amazon.Route53Domains
 
 
         /// <summary>
-        /// This operation returns the AuthCode for the domain. To transfer a domain to another
-        /// registrar, you provide this value to the new registrar.
+        /// This operation returns the authorization code for the domain. To transfer a domain
+        /// to another registrar, you provide this value to the new registrar.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetrieveDomainAuthCode service method.</param>
         /// <param name="cancellationToken">
@@ -2136,7 +2406,7 @@ namespace Amazon.Route53Domains
         ///  
         /// <para>
         /// If the update is successful, this method returns an operation ID that you can use
-        /// to track the progress and completion of the action. If the request is not completed
+        /// to track the progress and completion of the operation. If the request is not completed
         /// successfully, the domain registrant will be notified by email.
         /// </para>
         /// </summary>
@@ -2173,7 +2443,7 @@ namespace Amazon.Route53Domains
         ///  
         /// <para>
         /// If the update is successful, this method returns an operation ID that you can use
-        /// to track the progress and completion of the action. If the request is not completed
+        /// to track the progress and completion of the operation. If the request is not completed
         /// successfully, the domain registrant will be notified by email.
         /// </para>
         /// </summary>
