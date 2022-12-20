@@ -61,6 +61,7 @@ namespace Amazon.MediaLive.Model
         private H265SceneChangeDetect _sceneChangeDetect;
         private int? _slices;
         private H265Tier _tier;
+        private TimecodeBurninSettings _timecodeBurninSettings;
         private H265TimecodeInsertionBehavior _timecodeInsertion;
 
         /// <summary>
@@ -538,6 +539,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetTier()
         {
             return this._tier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimecodeBurninSettings. Timecode burn-in settings
+        /// </summary>
+        public TimecodeBurninSettings TimecodeBurninSettings
+        {
+            get { return this._timecodeBurninSettings; }
+            set { this._timecodeBurninSettings = value; }
+        }
+
+        // Check to see if TimecodeBurninSettings property is set
+        internal bool IsSetTimecodeBurninSettings()
+        {
+            return this._timecodeBurninSettings != null;
         }
 
         /// <summary>

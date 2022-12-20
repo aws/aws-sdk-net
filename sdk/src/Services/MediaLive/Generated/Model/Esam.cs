@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Settings for the Esam
+    /// Esam
     /// </summary>
     public partial class Esam
     {
@@ -76,10 +76,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PasswordParam. Password if credentials are required to
-        /// access the POIS endpoint.  This is a reference to an AWS parameter store name from
-        /// which the password can be retrieved.  AWS Parameter store format: "ssm://<parameter
-        /// name>"
+        /// Gets and sets the property PasswordParam. Documentation update needed
         /// </summary>
         public string PasswordParam
         {
@@ -112,10 +109,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Username. Username if credentials are required to access
-        /// the POIS endpoint.  This can be either a plaintext username, or a reference to an
-        /// AWS parameter store name from which the username can be retrieved.  AWS Parameter
-        /// store format: "ssm://<parameter name>"
+        /// Gets and sets the property Username. Documentation update needed
         /// </summary>
         public string Username
         {

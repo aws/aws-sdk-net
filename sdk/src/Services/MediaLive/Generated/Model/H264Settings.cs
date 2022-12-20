@@ -73,6 +73,7 @@ namespace Amazon.MediaLive.Model
         private H264SubGopLength _subgopLength;
         private H264Syntax _syntax;
         private H264TemporalAq _temporalAq;
+        private TimecodeBurninSettings _timecodeBurninSettings;
         private H264TimecodeInsertionBehavior _timecodeInsertion;
 
         /// <summary>
@@ -799,6 +800,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetTemporalAq()
         {
             return this._temporalAq != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimecodeBurninSettings. Timecode burn-in settings
+        /// </summary>
+        public TimecodeBurninSettings TimecodeBurninSettings
+        {
+            get { return this._timecodeBurninSettings; }
+            set { this._timecodeBurninSettings = value; }
+        }
+
+        // Check to see if TimecodeBurninSettings property is set
+        internal bool IsSetTimecodeBurninSettings()
+        {
+            return this._timecodeBurninSettings != null;
         }
 
         /// <summary>

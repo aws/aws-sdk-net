@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Dolby Vision Profile 8.1 Settings
+    /// Dolby Vision81 Settings
     /// </summary>
     public partial class DolbyVision81Settings
     {

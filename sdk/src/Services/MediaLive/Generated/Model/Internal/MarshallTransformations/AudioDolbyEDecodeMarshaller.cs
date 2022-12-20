@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FrameCaptureSettings Marshaller
+    /// AudioDolbyEDecode Marshaller
     /// </summary>
-    public class FrameCaptureSettingsMarshaller : IRequestMarshaller<FrameCaptureSettings, JsonMarshallerContext> 
+    public class AudioDolbyEDecodeMarshaller : IRequestMarshaller<AudioDolbyEDecode, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FrameCaptureSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(AudioDolbyEDecode requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCaptureInterval())
+            if(requestObject.IsSetProgramSelection())
             {
-                context.Writer.WritePropertyName("captureInterval");
-                context.Writer.Write(requestObject.CaptureInterval);
-            }
-
-            if(requestObject.IsSetCaptureIntervalUnits())
-            {
-                context.Writer.WritePropertyName("captureIntervalUnits");
-                context.Writer.Write(requestObject.CaptureIntervalUnits);
-            }
-
-            if(requestObject.IsSetTimecodeBurninSettings())
-            {
-                context.Writer.WritePropertyName("timecodeBurninSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = TimecodeBurninSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.TimecodeBurninSettings, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("programSelection");
+                context.Writer.Write(requestObject.ProgramSelection);
             }
 
         }
@@ -73,7 +56,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FrameCaptureSettingsMarshaller Instance = new FrameCaptureSettingsMarshaller();
+        public readonly static AudioDolbyEDecodeMarshaller Instance = new AudioDolbyEDecodeMarshaller();
 
     }
 }

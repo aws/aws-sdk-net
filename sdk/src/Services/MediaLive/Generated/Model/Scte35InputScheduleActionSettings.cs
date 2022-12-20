@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Settings for the "scte35 input" action
+    /// Scte35Input Schedule Action Settings
     /// </summary>
     public partial class Scte35InputScheduleActionSettings
     {

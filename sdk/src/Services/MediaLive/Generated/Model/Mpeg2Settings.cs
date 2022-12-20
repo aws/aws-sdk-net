@@ -48,6 +48,7 @@ namespace Amazon.MediaLive.Model
         private Mpeg2GopSizeUnits _gopSizeUnits;
         private Mpeg2ScanType _scanType;
         private Mpeg2SubGopLength _subgopLength;
+        private TimecodeBurninSettings _timecodeBurninSettings;
         private Mpeg2TimecodeInsertionBehavior _timecodeInsertion;
 
         /// <summary>
@@ -318,6 +319,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetSubgopLength()
         {
             return this._subgopLength != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimecodeBurninSettings. Timecode burn-in settings
+        /// </summary>
+        public TimecodeBurninSettings TimecodeBurninSettings
+        {
+            get { return this._timecodeBurninSettings; }
+            set { this._timecodeBurninSettings = value; }
+        }
+
+        // Check to see if TimecodeBurninSettings property is set
+        internal bool IsSetTimecodeBurninSettings()
+        {
+            return this._timecodeBurninSettings != null;
         }
 
         /// <summary>

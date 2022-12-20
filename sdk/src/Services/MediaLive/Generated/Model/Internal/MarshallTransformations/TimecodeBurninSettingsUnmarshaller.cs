@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AudioTrackSelection Object
+    /// Response Unmarshaller for TimecodeBurninSettings Object
     /// </summary>  
-    public class AudioTrackSelectionUnmarshaller : IUnmarshaller<AudioTrackSelection, XmlUnmarshallerContext>, IUnmarshaller<AudioTrackSelection, JsonUnmarshallerContext>
+    public class TimecodeBurninSettingsUnmarshaller : IUnmarshaller<TimecodeBurninSettings, XmlUnmarshallerContext>, IUnmarshaller<TimecodeBurninSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AudioTrackSelection IUnmarshaller<AudioTrackSelection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TimecodeBurninSettings IUnmarshaller<TimecodeBurninSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AudioTrackSelection Unmarshall(JsonUnmarshallerContext context)
+        public TimecodeBurninSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AudioTrackSelection unmarshalledObject = new AudioTrackSelection();
+            TimecodeBurninSettings unmarshalledObject = new TimecodeBurninSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("dolbyEDecode", targetDepth))
+                if (context.TestExpression("fontSize", targetDepth))
                 {
-                    var unmarshaller = AudioDolbyEDecodeUnmarshaller.Instance;
-                    unmarshalledObject.DolbyEDecode = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FontSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("tracks", targetDepth))
+                if (context.TestExpression("position", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AudioTrack, AudioTrackUnmarshaller>(AudioTrackUnmarshaller.Instance);
-                    unmarshalledObject.Tracks = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Position = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("prefix", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static AudioTrackSelectionUnmarshaller _instance = new AudioTrackSelectionUnmarshaller();        
+        private static TimecodeBurninSettingsUnmarshaller _instance = new TimecodeBurninSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AudioTrackSelectionUnmarshaller Instance
+        public static TimecodeBurninSettingsUnmarshaller Instance
         {
             get
             {

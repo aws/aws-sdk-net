@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AudioTrackSelection Object
+    /// Response Unmarshaller for AudioDolbyEDecode Object
     /// </summary>  
-    public class AudioTrackSelectionUnmarshaller : IUnmarshaller<AudioTrackSelection, XmlUnmarshallerContext>, IUnmarshaller<AudioTrackSelection, JsonUnmarshallerContext>
+    public class AudioDolbyEDecodeUnmarshaller : IUnmarshaller<AudioDolbyEDecode, XmlUnmarshallerContext>, IUnmarshaller<AudioDolbyEDecode, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AudioTrackSelection IUnmarshaller<AudioTrackSelection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AudioDolbyEDecode IUnmarshaller<AudioDolbyEDecode, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AudioTrackSelection Unmarshall(JsonUnmarshallerContext context)
+        public AudioDolbyEDecode Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AudioTrackSelection unmarshalledObject = new AudioTrackSelection();
+            AudioDolbyEDecode unmarshalledObject = new AudioDolbyEDecode();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("dolbyEDecode", targetDepth))
+                if (context.TestExpression("programSelection", targetDepth))
                 {
-                    var unmarshaller = AudioDolbyEDecodeUnmarshaller.Instance;
-                    unmarshalledObject.DolbyEDecode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tracks", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AudioTrack, AudioTrackUnmarshaller>(AudioTrackUnmarshaller.Instance);
-                    unmarshalledObject.Tracks = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProgramSelection = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static AudioTrackSelectionUnmarshaller _instance = new AudioTrackSelectionUnmarshaller();        
+        private static AudioDolbyEDecodeUnmarshaller _instance = new AudioDolbyEDecodeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AudioTrackSelectionUnmarshaller Instance
+        public static AudioDolbyEDecodeUnmarshaller Instance
         {
             get
             {

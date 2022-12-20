@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FrameCaptureSettings Marshaller
+    /// TimecodeBurninSettings Marshaller
     /// </summary>
-    public class FrameCaptureSettingsMarshaller : IRequestMarshaller<FrameCaptureSettings, JsonMarshallerContext> 
+    public class TimecodeBurninSettingsMarshaller : IRequestMarshaller<TimecodeBurninSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,24 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FrameCaptureSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(TimecodeBurninSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCaptureInterval())
+            if(requestObject.IsSetFontSize())
             {
-                context.Writer.WritePropertyName("captureInterval");
-                context.Writer.Write(requestObject.CaptureInterval);
+                context.Writer.WritePropertyName("fontSize");
+                context.Writer.Write(requestObject.FontSize);
             }
 
-            if(requestObject.IsSetCaptureIntervalUnits())
+            if(requestObject.IsSetPosition())
             {
-                context.Writer.WritePropertyName("captureIntervalUnits");
-                context.Writer.Write(requestObject.CaptureIntervalUnits);
+                context.Writer.WritePropertyName("position");
+                context.Writer.Write(requestObject.Position);
             }
 
-            if(requestObject.IsSetTimecodeBurninSettings())
+            if(requestObject.IsSetPrefix())
             {
-                context.Writer.WritePropertyName("timecodeBurninSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = TimecodeBurninSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.TimecodeBurninSettings, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("prefix");
+                context.Writer.Write(requestObject.Prefix);
             }
 
         }
@@ -73,7 +68,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FrameCaptureSettingsMarshaller Instance = new FrameCaptureSettingsMarshaller();
+        public readonly static TimecodeBurninSettingsMarshaller Instance = new TimecodeBurninSettingsMarshaller();
 
     }
 }

@@ -33,7 +33,24 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class AudioTrackSelection
     {
+        private AudioDolbyEDecode _dolbyEDecode;
         private List<AudioTrack> _tracks = new List<AudioTrack>();
+
+        /// <summary>
+        /// Gets and sets the property DolbyEDecode. Configure decoding options for Dolby E streams
+        /// - these should be Dolby E frames carried in PCM streams tagged with SMPTE-337
+        /// </summary>
+        public AudioDolbyEDecode DolbyEDecode
+        {
+            get { return this._dolbyEDecode; }
+            set { this._dolbyEDecode = value; }
+        }
+
+        // Check to see if DolbyEDecode property is set
+        internal bool IsSetDolbyEDecode()
+        {
+            return this._dolbyEDecode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Tracks. Selects one or more unique audio tracks from within

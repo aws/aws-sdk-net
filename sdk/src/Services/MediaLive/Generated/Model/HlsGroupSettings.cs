@@ -565,9 +565,10 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MinSegmentLength. When set, minimumSegmentLength is enforced
-        /// by looking ahead and back within the specified range for a nearby avail and extending
-        /// the segment size if needed.
+        /// Gets and sets the property MinSegmentLength. Minimum length of MPEG-2 Transport Stream
+        /// segments in seconds. When set, minimum segment length is enforced by looking ahead
+        /// and back within the specified range for a nearby avail and extending the segment size
+        /// if needed.
         /// </summary>
         [AWSProperty(Min=0)]
         public int MinSegmentLength
@@ -716,8 +717,8 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property SegmentLength. Length of MPEG-2 Transport Stream segments
-        /// to create (in seconds). Note that segments will end on the next keyframe after this
-        /// number of seconds, so actual segment length may be longer.
+        /// to create in seconds. Note that segments will end on the next keyframe after this
+        /// duration, so actual segment length may be longer.
         /// </summary>
         [AWSProperty(Min=1)]
         public int SegmentLength
