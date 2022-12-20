@@ -62,7 +62,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to request the next page of results. 
+        /// The token for the next set of results, or null if there are no more results.
         /// </para>
         /// </summary>
         public string NextToken

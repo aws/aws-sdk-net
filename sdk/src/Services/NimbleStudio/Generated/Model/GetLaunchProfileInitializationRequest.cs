@@ -43,7 +43,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property LaunchProfileId. 
         /// <para>
-        /// The Launch Profile ID.
+        /// The ID of the launch profile used to control access from the streaming session.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +100,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform where this Launch Profile will be used, either WINDOWS or LINUX.
+        /// The platform where this Launch Profile will be used, either Windows or Linux.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

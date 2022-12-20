@@ -432,6 +432,11 @@
     <max>5760</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.StreamConfigurationSessionBackup.MaxBackupsToRetain</property>
+    <min>0</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StreamingImage.Description</property>
     <min>0</min>
     <max>256</max>
@@ -459,6 +464,11 @@
     <property>Amazon.NimbleStudio.Model.StreamingImageEncryptionConfiguration.KeyArn</property>
     <min>4</min>
     <pattern>^arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.StreamingSession.MaxBackupsToRetain</property>
+    <min>0</min>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StreamingSession.StreamingImageId</property>
@@ -562,5 +572,20 @@
     <property>Amazon.NimbleStudio.Model.StudioEncryptionConfiguration.KeyArn</property>
     <min>4</min>
     <pattern>^arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.VolumeConfiguration.Iops</property>
+    <min>3000</min>
+    <max>16000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.VolumeConfiguration.Size</property>
+    <min>100</min>
+    <max>16000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.VolumeConfiguration.Throughput</property>
+    <min>125</min>
+    <max>1000</max>
   </property-value-rule>
 </property-value-rules>

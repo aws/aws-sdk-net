@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// Launch profile membership enables your studio admins to delegate launch profile access
-    /// to other studio users in the Nimble Studio portal without needing to write or maintain
-    /// complex IAM policies. A launch profile member is a user association from your studio
-    /// identity source who is granted permissions to a launch profile.
+    /// Studio admins can use launch profile membership to delegate launch profile access
+    /// to studio users in the Nimble Studio portal without writing or maintaining complex
+    /// IAM policies. A launch profile member is a user association from your studio identity
+    /// source who is granted permissions to a launch profile.
     /// 
     ///  
     /// <para>

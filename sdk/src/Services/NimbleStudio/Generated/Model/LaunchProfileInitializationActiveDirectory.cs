@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// The Launch Profile Initialization Active Directory contains information required for
+    /// The launch profile initialization Active Directory contains information required for
     /// the launch profile to connect to the Active Directory.
     /// </summary>
     public partial class LaunchProfileInitializationActiveDirectory

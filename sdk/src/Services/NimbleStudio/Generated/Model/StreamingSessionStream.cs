@@ -48,7 +48,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource was created.
+        /// The ISO timestamp in seconds for when the resource was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -84,7 +84,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property ExpiresAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource expires.
+        /// The ISO timestamp in seconds for when the resource expires.
         /// </para>
         /// </summary>
         public DateTime ExpiresAt

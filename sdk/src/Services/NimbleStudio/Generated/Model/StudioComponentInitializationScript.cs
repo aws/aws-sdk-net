@@ -61,7 +61,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform of the initialization script, either WINDOWS or LINUX.
+        /// The platform of the initialization script, either Windows or Linux.
         /// </para>
         /// </summary>
         public LaunchProfilePlatform Platform

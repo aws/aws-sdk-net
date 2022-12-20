@@ -42,7 +42,7 @@ namespace Amazon.NimbleStudio.Model
     /// </para>
     ///  
     /// <para>
-    /// When you add a user to studio membership with the persona ADMIN, upon logging in to
+    /// When you add a user to studio membership with the ADMIN persona, upon logging in to
     /// the Nimble Studio portal, they are granted permissions specified by the Studio's Admin
     /// IAM role.
     /// </para>

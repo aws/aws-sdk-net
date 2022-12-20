@@ -38,7 +38,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A collection of labels, in the form of key:value pairs, that apply to this resource.
+        /// A collection of labels, in the form of key-value pairs, that apply to this resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

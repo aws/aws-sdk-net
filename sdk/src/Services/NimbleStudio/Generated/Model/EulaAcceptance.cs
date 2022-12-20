@@ -42,7 +42,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property AcceptedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the EULA was accepted.
+        /// The ISO timestamp in seconds for when the EULA was accepted.
         /// </para>
         /// </summary>
         public DateTime AcceptedAt

@@ -35,7 +35,7 @@ namespace Amazon.NimbleStudio.Model
     ///  
     /// <para>
     /// After invoking this operation, you must poll GetStreamingSession until the streaming
-    /// session is in state READY.
+    /// session is in the <code>READY</code> state.
     /// </para>
     /// </summary>
     public partial class CreateStreamingSessionRequest : AmazonNimbleStudioRequest
@@ -52,8 +52,8 @@ namespace Amazon.NimbleStudio.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates
-        /// a client token and uses it for the request to ensure idempotency.
+        /// request. If you don’t specify a client token, the Amazon Web Services SDK automatically
+        /// generates a client token and uses it for the request to ensure idempotency.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -90,9 +90,10 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property LaunchProfileId. 
         /// <para>
-        /// The launch profile ID.
+        /// The ID of the launch profile used to control access from the streaming session.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LaunchProfileId
         {
             get { return this._launchProfileId; }
@@ -165,7 +166,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A collection of labels, in the form of key:value pairs, that apply to this resource.
+        /// A collection of labels, in the form of key-value pairs, that apply to this resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

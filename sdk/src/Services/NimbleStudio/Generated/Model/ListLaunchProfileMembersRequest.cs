@@ -42,7 +42,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property LaunchProfileId. 
         /// <para>
-        /// The Launch Profile ID.
+        /// The ID of the launch profile used to control access from the streaming session.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to request the next page of results. 
+        /// The token for the next set of results, or null if there are no more results.
         /// </para>
         /// </summary>
         public string NextToken
