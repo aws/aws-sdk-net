@@ -81,7 +81,7 @@
   <property-value-rule>
     <property>Amazon.ConnectParticipant.Model.SendEventRequest.Content</property>
     <min>1</min>
-    <max>1024</max>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectParticipant.Model.SendEventRequest.ContentType</property>
@@ -110,7 +110,7 @@
   <property-value-rule>
     <property>Amazon.ConnectParticipant.Model.SendMessageRequest.Content</property>
     <min>1</min>
-    <max>1024</max>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectParticipant.Model.SendMessageRequest.ContentType</property>
@@ -184,7 +184,7 @@
   <property-value-rule>
     <property>Amazon.ConnectParticipant.Model.Item.Content</property>
     <min>1</min>
-    <max>1024</max>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectParticipant.Model.Item.ContentType</property>

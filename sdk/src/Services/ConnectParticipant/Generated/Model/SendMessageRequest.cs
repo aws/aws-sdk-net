@@ -91,7 +91,7 @@ namespace Amazon.ConnectParticipant.Model
         /// The content of the message.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Min=1, Max=16384)]
         public string Content
         {
             get { return this._content; }

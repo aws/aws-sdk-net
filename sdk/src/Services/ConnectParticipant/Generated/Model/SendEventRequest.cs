@@ -91,7 +91,7 @@ namespace Amazon.ConnectParticipant.Model
         /// The content of the event to be sent (for example, message text). This is not yet supported.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=16384)]
         public string Content
         {
             get { return this._content; }
