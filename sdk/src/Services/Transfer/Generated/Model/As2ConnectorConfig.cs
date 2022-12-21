@@ -66,12 +66,6 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// The algorithm that is used to encrypt the file.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This
-        /// ensures that no traffic is sent in clear text.
-        /// </para>
-        ///  </note>
         /// </summary>
         public EncryptionAlg EncryptionAlgorithm
         {
@@ -141,7 +135,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code>
+        /// If set to DEFAULT (or not set at all), the value for <code>SigningAlogorithm</code>
         /// is used.
         /// </para>
         ///  </note>

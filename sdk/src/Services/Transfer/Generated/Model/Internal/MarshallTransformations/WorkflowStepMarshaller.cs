@@ -67,6 +67,17 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDecryptStepDetails())
+            {
+                context.Writer.WritePropertyName("DecryptStepDetails");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DecryptStepDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DecryptStepDetails, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDeleteStepDetails())
             {
                 context.Writer.WritePropertyName("DeleteStepDetails");

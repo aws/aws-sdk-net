@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for WorkflowStep Object
+    /// Response Unmarshaller for DecryptStepDetails Object
     /// </summary>  
-    public class WorkflowStepUnmarshaller : IUnmarshaller<WorkflowStep, XmlUnmarshallerContext>, IUnmarshaller<WorkflowStep, JsonUnmarshallerContext>
+    public class DecryptStepDetailsUnmarshaller : IUnmarshaller<DecryptStepDetails, XmlUnmarshallerContext>, IUnmarshaller<DecryptStepDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        WorkflowStep IUnmarshaller<WorkflowStep, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DecryptStepDetails IUnmarshaller<DecryptStepDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,39 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public WorkflowStep Unmarshall(JsonUnmarshallerContext context)
+        public DecryptStepDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            WorkflowStep unmarshalledObject = new WorkflowStep();
+            DecryptStepDetails unmarshalledObject = new DecryptStepDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CopyStepDetails", targetDepth))
+                if (context.TestExpression("DestinationFileLocation", targetDepth))
                 {
-                    var unmarshaller = CopyStepDetailsUnmarshaller.Instance;
-                    unmarshalledObject.CopyStepDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = InputFileLocationUnmarshaller.Instance;
+                    unmarshalledObject.DestinationFileLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CustomStepDetails", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
-                    var unmarshaller = CustomStepDetailsUnmarshaller.Instance;
-                    unmarshalledObject.CustomStepDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DecryptStepDetails", targetDepth))
+                if (context.TestExpression("OverwriteExisting", targetDepth))
                 {
-                    var unmarshaller = DecryptStepDetailsUnmarshaller.Instance;
-                    unmarshalledObject.DecryptStepDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OverwriteExisting = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DeleteStepDetails", targetDepth))
+                if (context.TestExpression("SourceFileLocation", targetDepth))
                 {
-                    var unmarshaller = DeleteStepDetailsUnmarshaller.Instance;
-                    unmarshalledObject.DeleteStepDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TagStepDetails", targetDepth))
-                {
-                    var unmarshaller = TagStepDetailsUnmarshaller.Instance;
-                    unmarshalledObject.TagStepDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceFileLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Type", targetDepth))
@@ -106,12 +100,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         }
 
 
-        private static WorkflowStepUnmarshaller _instance = new WorkflowStepUnmarshaller();        
+        private static DecryptStepDetailsUnmarshaller _instance = new DecryptStepDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static WorkflowStepUnmarshaller Instance
+        public static DecryptStepDetailsUnmarshaller Instance
         {
             get
             {
