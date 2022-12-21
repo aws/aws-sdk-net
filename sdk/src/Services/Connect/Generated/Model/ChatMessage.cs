@@ -42,7 +42,7 @@ namespace Amazon.Connect.Model
         /// The content of the chat message.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Min=1, Max=16384)]
         public string Content
         {
             get { return this._content; }

@@ -2025,7 +2025,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ChatMessage.Content</property>
     <min>1</min>
-    <max>1024</max>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ChatMessage.ContentType</property>
