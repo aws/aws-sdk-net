@@ -1,3 +1,26 @@
+### 3.7.446.0 (2022-12-21 20:19 UTC)
+* AWSSupport (3.7.100.42)
+	* Documentation updates for the AWS Support API
+* Connect (3.7.108.0)
+	* Amazon Connect Chat now allows for JSON (application/json) message types to be sent as part of the initial message in the StartChatContact API.
+* ConnectParticipant (3.7.101.0)
+	* Amazon Connect Chat now allows for JSON (application/json) message types to be sent in the SendMessage API.
+* LicenseManagerLinuxSubscriptions (3.7.100.0)
+	* AWS License Manager now offers cross-region, cross-account tracking of commercial Linux subscriptions on AWS. This includes subscriptions purchased as part of EC2 subscription-included AMIs, on the AWS Marketplace, or brought to AWS via Red Hat Cloud Access Program.
+* Macie2 (3.7.102.0)
+	* This release adds support for analyzing Amazon S3 objects that use the S3 Glacier Instant Retrieval (Glacier_IR) storage class.
+* SageMaker (3.7.113.0)
+	* This release enables adding RStudio Workbench support to an existing Amazon SageMaker Studio domain. It allows setting your RStudio on SageMaker environment configuration parameters and also updating the RStudioConnectUrl and RStudioPackageManagerUrl parameters for existing domains
+* Scheduler (3.7.101.0)
+	* Updated the ListSchedules and ListScheduleGroups APIs to allow the NamePrefix field to start with a number. Updated the validation for executionRole field to support any role name.
+* SimpleSystemsManagement (3.7.102.23)
+	* Doc-only updates for December 2022.
+* Transfer (3.7.103.0)
+	* This release adds support for Decrypt as a workflow step type.
+* Core 3.7.103.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.445.0 (2022-12-20 19:30 UTC)
 * Batch (3.7.102.0)
 	* Adds isCancelled and isTerminated to DescribeJobs response.
