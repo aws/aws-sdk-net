@@ -34,10 +34,32 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateDomainRequest : AmazonSageMakerRequest
     {
+        private AppSecurityGroupManagement _appSecurityGroupManagement;
         private DefaultSpaceSettings _defaultSpaceSettings;
         private UserSettings _defaultUserSettings;
         private string _domainId;
         private DomainSettingsForUpdate _domainSettingsForUpdate;
+
+        /// <summary>
+        /// Gets and sets the property AppSecurityGroupManagement. 
+        /// <para>
+        /// The entity that creates and manages the required security groups for inter-app communication
+        /// in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code>
+        /// is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+        /// is provided.
+        /// </para>
+        /// </summary>
+        public AppSecurityGroupManagement AppSecurityGroupManagement
+        {
+            get { return this._appSecurityGroupManagement; }
+            set { this._appSecurityGroupManagement = value; }
+        }
+
+        // Check to see if AppSecurityGroupManagement property is set
+        internal bool IsSetAppSecurityGroupManagement()
+        {
+            return this._appSecurityGroupManagement != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DefaultSpaceSettings. 

@@ -36,6 +36,8 @@ namespace Amazon.SageMaker.Model
     {
         private ResourceSpec _defaultResourceSpec;
         private string _domainExecutionRoleArn;
+        private string _rStudioConnectUrl;
+        private string _rStudioPackageManagerUrl;
 
         /// <summary>
         /// Gets and sets the property DefaultResourceSpec.
@@ -69,6 +71,42 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDomainExecutionRoleArn()
         {
             return this._domainExecutionRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RStudioConnectUrl. 
+        /// <para>
+        /// A URL pointing to an RStudio Connect server.
+        /// </para>
+        /// </summary>
+        public string RStudioConnectUrl
+        {
+            get { return this._rStudioConnectUrl; }
+            set { this._rStudioConnectUrl = value; }
+        }
+
+        // Check to see if RStudioConnectUrl property is set
+        internal bool IsSetRStudioConnectUrl()
+        {
+            return this._rStudioConnectUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RStudioPackageManagerUrl. 
+        /// <para>
+        /// A URL pointing to an RStudio Package Manager server.
+        /// </para>
+        /// </summary>
+        public string RStudioPackageManagerUrl
+        {
+            get { return this._rStudioPackageManagerUrl; }
+            set { this._rStudioPackageManagerUrl = value; }
+        }
+
+        // Check to see if RStudioPackageManagerUrl property is set
+        internal bool IsSetRStudioPackageManagerUrl()
+        {
+            return this._rStudioPackageManagerUrl != null;
         }
 
     }
