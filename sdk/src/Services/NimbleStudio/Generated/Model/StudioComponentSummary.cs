@@ -46,7 +46,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource was created.
+        /// The ISO timestamp in seconds for when the resource was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -175,7 +175,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource was updated.
+        /// The ISO timestamp in seconds for when the resource was updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

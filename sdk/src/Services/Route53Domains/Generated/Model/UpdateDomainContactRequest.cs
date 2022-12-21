@@ -36,13 +36,14 @@ namespace Amazon.Route53Domains.Model
     ///  
     /// <para>
     /// If the update is successful, this method returns an operation ID that you can use
-    /// to track the progress and completion of the action. If the request is not completed
+    /// to track the progress and completion of the operation. If the request is not completed
     /// successfully, the domain registrant will be notified by email.
     /// </para>
     /// </summary>
     public partial class UpdateDomainContactRequest : AmazonRoute53DomainsRequest
     {
         private ContactDetail _adminContact;
+        private Consent _consent;
         private string _domainName;
         private ContactDetail _registrantContact;
         private ContactDetail _techContact;
@@ -63,6 +64,24 @@ namespace Amazon.Route53Domains.Model
         internal bool IsSetAdminContact()
         {
             return this._adminContact != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Consent. 
+        /// <para>
+        ///  Customer's consent for the owner change request. 
+        /// </para>
+        /// </summary>
+        public Consent Consent
+        {
+            get { return this._consent; }
+            set { this._consent = value; }
+        }
+
+        // Check to see if Consent property is set
+        internal bool IsSetConsent()
+        {
+            return this._consent != null;
         }
 
         /// <summary>

@@ -42,7 +42,6 @@ namespace Amazon.Route53Domains.Model
         /// A list of domains.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<DomainSummary> Domains
         {
             get { return this._domains; }

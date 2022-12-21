@@ -72,7 +72,8 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the resource.
+        /// The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely
+        /// identifies it. ARNs are unique across all Regions.
         /// </para>
         /// </summary>
         public string Arn
@@ -108,7 +109,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource was created.
+        /// The ISO timestamp in seconds for when the resource was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -220,7 +221,7 @@ namespace Amazon.NimbleStudio.Model
         /// Gets and sets the property RuntimeRoleArn. 
         /// <para>
         /// An IAM role attached to a Studio Component that gives the studio component access
-        /// to AWS resources at anytime while the instance is running. 
+        /// to Amazon Web Services resources at anytime while the instance is running. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -259,8 +260,8 @@ namespace Amazon.NimbleStudio.Model
         /// Gets and sets the property SecureInitializationRoleArn. 
         /// <para>
         /// An IAM role attached to Studio Component when the system initialization script runs
-        /// which give the studio component access to AWS resources when the system initialization
-        /// script runs.
+        /// which give the studio component access to Amazon Web Services resources when the system
+        /// initialization script runs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -370,7 +371,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A collection of labels, in the form of key:value pairs, that apply to this resource.
+        /// A collection of labels, in the form of key-value pairs, that apply to this resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -406,7 +407,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource was updated.
+        /// The ISO timestamp in seconds for when the resource was updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

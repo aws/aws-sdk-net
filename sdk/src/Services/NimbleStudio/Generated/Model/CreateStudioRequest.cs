@@ -30,34 +30,35 @@ namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStudio operation.
-    /// Create a new Studio.
+    /// Create a new studio.
     /// 
     ///  
     /// <para>
-    /// When creating a Studio, two IAM roles must be provided: the admin role and the user
-    /// Role. These roles are assumed by your users when they log in to the Nimble Studio
+    /// When creating a studio, two IAM roles must be provided: the admin role and the user
+    /// role. These roles are assumed by your users when they log in to the Nimble Studio
     /// portal.
     /// </para>
     ///  
     /// <para>
-    /// The user role must have the AmazonNimbleStudio-StudioUser managed policy attached
-    /// for the portal to function properly.
+    /// The user role must have the <code>AmazonNimbleStudio-StudioUser</code> managed policy
+    /// attached for the portal to function properly.
     /// </para>
     ///  
     /// <para>
-    /// The Admin Role must have the AmazonNimbleStudio-StudioAdmin managed policy attached
-    /// for the portal to function properly.
+    /// The admin role must have the <code>AmazonNimbleStudio-StudioAdmin</code> managed policy
+    /// attached for the portal to function properly.
     /// </para>
     ///  
     /// <para>
-    /// You may optionally specify a KMS key in the StudioEncryptionConfiguration.
+    /// You may optionally specify a KMS key in the <code>StudioEncryptionConfiguration</code>.
     /// </para>
     ///  
     /// <para>
     /// In Nimble Studio, resource names, descriptions, initialization scripts, and other
     /// data you provide are always encrypted at rest using an KMS key. By default, this key
     /// is owned by Amazon Web Services and managed on your behalf. You may provide your own
-    /// KMS key when calling CreateStudio to encrypt this data using a key you own and manage.
+    /// KMS key when calling <code>CreateStudio</code> to encrypt this data using a key you
+    /// own and manage.
     /// </para>
     ///  
     /// <para>
@@ -86,7 +87,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property AdminRoleArn. 
         /// <para>
-        /// The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.
+        /// The IAM role that studio admins will assume when logging in to the Nimble Studio portal.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
@@ -106,8 +107,8 @@ namespace Amazon.NimbleStudio.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates
-        /// a client token and uses it for the request to ensure idempotency.
+        /// request. If you don’t specify a client token, the Amazon Web Services SDK automatically
+        /// generates a client token and uses it for the request to ensure idempotency.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -183,7 +184,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A collection of labels, in the form of key:value pairs, that apply to this resource.
+        /// A collection of labels, in the form of key-value pairs, that apply to this resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -201,7 +202,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property UserRoleArn. 
         /// <para>
-        /// The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.
+        /// The IAM role that studio users will assume when logging in to the Nimble Studio portal.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

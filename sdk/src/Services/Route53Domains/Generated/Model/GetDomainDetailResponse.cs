@@ -40,6 +40,7 @@ namespace Amazon.Route53Domains.Model
         private bool? _autoRenew;
         private DateTime? _creationDate;
         private string _dnsSec;
+        private List<DnssecKey> _dnssecKeys = new List<DnssecKey>();
         private string _domainName;
         private DateTime? _expirationDate;
         private List<Nameserver> _nameservers = new List<Nameserver>();
@@ -101,7 +102,6 @@ namespace Amazon.Route53Domains.Model
         /// Provides details about the domain administrative contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ContactDetail AdminContact
         {
             get { return this._adminContact; }
@@ -192,12 +192,30 @@ namespace Amazon.Route53Domains.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DnssecKeys. 
+        /// <para>
+        /// A complex type that contains information about the DNSSEC configuration.
+        /// </para>
+        /// </summary>
+        public List<DnssecKey> DnssecKeys
+        {
+            get { return this._dnssecKeys; }
+            set { this._dnssecKeys = value; }
+        }
+
+        // Check to see if DnssecKeys property is set
+        internal bool IsSetDnssecKeys()
+        {
+            return this._dnssecKeys != null && this._dnssecKeys.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
         /// The name of a domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Max=255)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -232,10 +250,9 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property Nameservers. 
         /// <para>
-        /// The name of the domain.
+        /// The name servers of the domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<Nameserver> Nameservers
         {
             get { return this._nameservers; }
@@ -254,7 +271,6 @@ namespace Amazon.Route53Domains.Model
         /// Provides details about the domain registrant.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ContactDetail RegistrantContact
         {
             get { return this._registrantContact; }
@@ -405,7 +421,6 @@ namespace Amazon.Route53Domains.Model
         /// Provides details about the domain technical contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ContactDetail TechContact
         {
             get { return this._techContact; }

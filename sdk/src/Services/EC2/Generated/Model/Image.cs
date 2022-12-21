@@ -104,7 +104,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property BootMode. 
         /// <para>
         /// The boot mode of the image. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
-        /// modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// modes</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public BootModeValues BootMode
@@ -292,7 +292,7 @@ namespace Amazon.EC2.Model
         /// so that, by default, the instance requires that IMDSv2 is used when requesting instance
         /// metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-        /// the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// the AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public ImdsSupportValues ImdsSupport
@@ -384,7 +384,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The platform details associated with the billing code of the AMI. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
-        /// AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public string PlatformDetails
@@ -571,7 +571,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For
         /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
-        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public TpmSupportValues TpmSupport

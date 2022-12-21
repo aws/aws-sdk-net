@@ -292,8 +292,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Sources. 
         /// <para>
-        /// A list of the Amazon Resource Name (ARN) and, if applicable, job type for multiple
-        /// sources of an experiment run.
+        /// A list of ARNs and, if applicable, job types for multiple sources of an experiment
+        /// run.
         /// </para>
         /// </summary>
         public List<TrialComponentSource> Sources

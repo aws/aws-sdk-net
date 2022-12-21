@@ -34,14 +34,19 @@ namespace Amazon.NimbleStudio.Model
     public partial class StreamingSession
     {
         private string _arn;
+        private AutomaticTerminationMode _automaticTerminationMode;
+        private SessionBackupMode _backupMode;
         private DateTime? _createdAt;
         private string _createdBy;
         private string _ec2InstanceType;
         private string _launchProfileId;
+        private int? _maxBackupsToRetain;
         private string _ownedBy;
         private string _sessionId;
+        private SessionPersistenceMode _sessionPersistenceMode;
         private DateTime? _startedAt;
         private string _startedBy;
+        private string _startedFromBackupId;
         private StreamingSessionState _state;
         private StreamingSessionStatusCode _statusCode;
         private string _statusMessage;
@@ -53,11 +58,14 @@ namespace Amazon.NimbleStudio.Model
         private DateTime? _terminateAt;
         private DateTime? _updatedAt;
         private string _updatedBy;
+        private VolumeConfiguration _volumeConfiguration;
+        private VolumeRetentionMode _volumeRetentionMode;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the resource.
+        /// The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely
+        /// identifies it. ARNs are unique across all Regions.
         /// </para>
         /// </summary>
         public string Arn
@@ -73,9 +81,62 @@ namespace Amazon.NimbleStudio.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AutomaticTerminationMode. 
+        /// <para>
+        /// Indicates if a streaming session created from this launch profile should be terminated
+        /// automatically or retained without termination after being in a <code>STOPPED</code>
+        /// state.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When <code>ACTIVATED</code>, the streaming session is scheduled for termination after
+        /// being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code>
+        /// state indefinitely.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+        /// When allowed, the default value for this parameter is <code>DEACTIVATED</code>.
+        /// </para>
+        /// </summary>
+        public AutomaticTerminationMode AutomaticTerminationMode
+        {
+            get { return this._automaticTerminationMode; }
+            set { this._automaticTerminationMode = value; }
+        }
+
+        // Check to see if AutomaticTerminationMode property is set
+        internal bool IsSetAutomaticTerminationMode()
+        {
+            return this._automaticTerminationMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupMode. 
+        /// <para>
+        /// Shows the current backup setting of the session.
+        /// </para>
+        /// </summary>
+        public SessionBackupMode BackupMode
+        {
+            get { return this._backupMode; }
+            set { this._backupMode = value; }
+        }
+
+        // Check to see if BackupMode property is set
+        internal bool IsSetBackupMode()
+        {
+            return this._backupMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource was created.
+        /// The ISO timestamp in seconds for when the resource was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -145,6 +206,26 @@ namespace Amazon.NimbleStudio.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxBackupsToRetain. 
+        /// <para>
+        /// The maximum number of backups of a streaming session that you can have. When the maximum
+        /// number of backups is reached, the oldest backup is deleted.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public int MaxBackupsToRetain
+        {
+            get { return this._maxBackupsToRetain.GetValueOrDefault(); }
+            set { this._maxBackupsToRetain = value; }
+        }
+
+        // Check to see if MaxBackupsToRetain property is set
+        internal bool IsSetMaxBackupsToRetain()
+        {
+            return this._maxBackupsToRetain.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property OwnedBy. 
         /// <para>
         /// The user ID of the user that owns the streaming session. The user that owns the session
@@ -182,9 +263,29 @@ namespace Amazon.NimbleStudio.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SessionPersistenceMode. 
+        /// <para>
+        /// Determine if a streaming session created from this launch profile can configure persistent
+        /// storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code>
+        /// are configured.
+        /// </para>
+        /// </summary>
+        public SessionPersistenceMode SessionPersistenceMode
+        {
+            get { return this._sessionPersistenceMode; }
+            set { this._sessionPersistenceMode = value; }
+        }
+
+        // Check to see if SessionPersistenceMode property is set
+        internal bool IsSetSessionPersistenceMode()
+        {
+            return this._sessionPersistenceMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The time the session entered START_IN_PROGRESS state.
+        /// The time the session entered <code>START_IN_PROGRESS</code> state.
         /// </para>
         /// </summary>
         public DateTime StartedAt
@@ -215,6 +316,24 @@ namespace Amazon.NimbleStudio.Model
         internal bool IsSetStartedBy()
         {
             return this._startedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartedFromBackupId. 
+        /// <para>
+        /// The backup ID used to restore a streaming session.
+        /// </para>
+        /// </summary>
+        public string StartedFromBackupId
+        {
+            get { return this._startedFromBackupId; }
+            set { this._startedFromBackupId = value; }
+        }
+
+        // Check to see if StartedFromBackupId property is set
+        internal bool IsSetStartedFromBackupId()
+        {
+            return this._startedFromBackupId != null;
         }
 
         /// <summary>
@@ -293,7 +412,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property StoppedAt. 
         /// <para>
-        /// The time the session entered STOP_IN_PROGRESS state.
+        /// The time the session entered <code>STOP_IN_PROGRESS</code> state.
         /// </para>
         /// </summary>
         public DateTime StoppedAt
@@ -348,7 +467,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A collection of labels, in the form of key:value pairs, that apply to this resource.
+        /// A collection of labels, in the form of key-value pairs, that apply to this resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -385,7 +504,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource was updated.
+        /// The ISO timestamp in seconds for when the resource was updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt
@@ -416,6 +535,46 @@ namespace Amazon.NimbleStudio.Model
         internal bool IsSetUpdatedBy()
         {
             return this._updatedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeConfiguration. 
+        /// <para>
+        /// Custom volume configuration for the root volumes that are attached to streaming sessions.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+        /// </para>
+        /// </summary>
+        public VolumeConfiguration VolumeConfiguration
+        {
+            get { return this._volumeConfiguration; }
+            set { this._volumeConfiguration = value; }
+        }
+
+        // Check to see if VolumeConfiguration property is set
+        internal bool IsSetVolumeConfiguration()
+        {
+            return this._volumeConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeRetentionMode. 
+        /// <para>
+        /// Determine if an EBS volume created from this streaming session will be backed up.
+        /// </para>
+        /// </summary>
+        public VolumeRetentionMode VolumeRetentionMode
+        {
+            get { return this._volumeRetentionMode; }
+            set { this._volumeRetentionMode = value; }
+        }
+
+        // Check to see if VolumeRetentionMode property is set
+        internal bool IsSetVolumeRetentionMode()
+        {
+            return this._volumeRetentionMode != null;
         }
 
     }

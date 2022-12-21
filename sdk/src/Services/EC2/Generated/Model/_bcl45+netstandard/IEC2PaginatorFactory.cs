@@ -156,6 +156,11 @@ namespace Amazon.EC2.Model
         IDescribeIamInstanceProfileAssociationsPaginator DescribeIamInstanceProfileAssociations(DescribeIamInstanceProfileAssociationsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeImages operation
+        ///</summary>
+        IDescribeImagesPaginator DescribeImages(DescribeImagesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeImportImageTasks operation
         ///</summary>
         IDescribeImportImageTasksPaginator DescribeImportImageTasks(DescribeImportImageTasksRequest request);

@@ -34,7 +34,7 @@ namespace Amazon.NimbleStudio.Model
     /// 
     ///  
     /// <para>
-    /// Please use AWS Service Quotas to request an increase. 
+    /// Please use Amazon Web Services Service Quotas to request an increase. 
     /// </para>
     /// </summary>
     #if !NETSTANDARD

@@ -45,6 +45,12 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StreamConfigurationCreate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAutomaticTerminationMode())
+            {
+                context.Writer.WritePropertyName("automaticTerminationMode");
+                context.Writer.Write(requestObject.AutomaticTerminationMode);
+            }
+
             if(requestObject.IsSetClipboardMode())
             {
                 context.Writer.WritePropertyName("clipboardMode");
@@ -74,6 +80,23 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MaxStoppedSessionLengthInMinutes);
             }
 
+            if(requestObject.IsSetSessionBackup())
+            {
+                context.Writer.WritePropertyName("sessionBackup");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = StreamConfigurationSessionBackupMarshaller.Instance;
+                marshaller.Marshall(requestObject.SessionBackup, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSessionPersistenceMode())
+            {
+                context.Writer.WritePropertyName("sessionPersistenceMode");
+                context.Writer.Write(requestObject.SessionPersistenceMode);
+            }
+
             if(requestObject.IsSetSessionStorage())
             {
                 context.Writer.WritePropertyName("sessionStorage");
@@ -94,6 +117,17 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectStreamingImageIdsListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetVolumeConfiguration())
+            {
+                context.Writer.WritePropertyName("volumeConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VolumeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.VolumeConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

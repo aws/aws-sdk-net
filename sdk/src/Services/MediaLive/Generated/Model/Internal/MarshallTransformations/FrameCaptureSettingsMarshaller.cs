@@ -57,6 +57,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CaptureIntervalUnits);
             }
 
+            if(requestObject.IsSetTimecodeBurninSettings())
+            {
+                context.Writer.WritePropertyName("timecodeBurninSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TimecodeBurninSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimecodeBurninSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

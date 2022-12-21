@@ -30,7 +30,7 @@ namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEula operation.
-    /// Get Eula.
+    /// Get EULA.
     /// </summary>
     public partial class GetEulaRequest : AmazonNimbleStudioRequest
     {

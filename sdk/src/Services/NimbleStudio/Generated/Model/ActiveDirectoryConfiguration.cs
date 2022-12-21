@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// The configuration for a Microsoft Active Directory (Microsoft AD) studio resource.
+    /// The configuration for a Directory Service for Microsoft Active Directory studio resource.
     /// </summary>
     public partial class ActiveDirectoryConfiguration
     {

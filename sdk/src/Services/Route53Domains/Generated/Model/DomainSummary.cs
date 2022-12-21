@@ -62,7 +62,7 @@ namespace Amazon.Route53Domains.Model
         /// The name of the domain that the summary information applies to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Max=255)]
         public string DomainName
         {
             get { return this._domainName; }

@@ -51,14 +51,13 @@ namespace Amazon.EC2.Model
     /// encryption key for the Region, or a different key that you specify in the request
     /// using <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more information,
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
-    /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud
-    /// User Guide</i>.
+    /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information about the prerequisites and limits when copying an AMI, see <a
     /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy an
-    /// AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// AMI</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CopyImageRequest : AmazonEC2Request
@@ -157,8 +156,8 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-        /// Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon Elastic
-        /// Compute Cloud User Guide</i>.
+        /// Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EC2
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         public string DestinationOutpostArn
@@ -181,7 +180,7 @@ namespace Amazon.EC2.Model
         /// copy of an encrypted snapshot. The default KMS key for Amazon EBS is used unless you
         /// specify a non-default Key Management Service (KMS) KMS key using <code>KmsKeyId</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public bool Encrypted

@@ -298,7 +298,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -346,7 +346,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -395,7 +395,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -443,7 +443,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -492,7 +492,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -540,7 +540,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -570,7 +570,7 @@ namespace Amazon.NimbleStudio
         ///  
         /// <para>
         /// After invoking this operation, you must poll GetStreamingSession until the streaming
-        /// session is in state READY.
+        /// session is in the <code>READY</code> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStreamingSession service method.</param>
@@ -595,7 +595,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -621,7 +621,7 @@ namespace Amazon.NimbleStudio
         ///  
         /// <para>
         /// After invoking this operation, you must poll GetStreamingSession until the streaming
-        /// session is in state READY.
+        /// session is in the <code>READY</code> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStreamingSession service method.</param>
@@ -649,7 +649,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -679,7 +679,7 @@ namespace Amazon.NimbleStudio
         ///  
         /// <para>
         /// After invoking this API, invoke GetStreamingSessionStream with the returned streamId
-        /// to poll the resource until it is in state READY.
+        /// to poll the resource until it is in the <code>READY</code> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStreamingSessionStream service method.</param>
@@ -704,7 +704,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -730,7 +730,7 @@ namespace Amazon.NimbleStudio
         ///  
         /// <para>
         /// After invoking this API, invoke GetStreamingSessionStream with the returned streamId
-        /// to poll the resource until it is in state READY.
+        /// to poll the resource until it is in the <code>READY</code> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStreamingSessionStream service method.</param>
@@ -758,7 +758,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -783,34 +783,35 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// Create a new Studio.
+        /// Create a new studio.
         /// 
         ///  
         /// <para>
-        /// When creating a Studio, two IAM roles must be provided: the admin role and the user
-        /// Role. These roles are assumed by your users when they log in to the Nimble Studio
+        /// When creating a studio, two IAM roles must be provided: the admin role and the user
+        /// role. These roles are assumed by your users when they log in to the Nimble Studio
         /// portal.
         /// </para>
         ///  
         /// <para>
-        /// The user role must have the AmazonNimbleStudio-StudioUser managed policy attached
-        /// for the portal to function properly.
+        /// The user role must have the <code>AmazonNimbleStudio-StudioUser</code> managed policy
+        /// attached for the portal to function properly.
         /// </para>
         ///  
         /// <para>
-        /// The Admin Role must have the AmazonNimbleStudio-StudioAdmin managed policy attached
-        /// for the portal to function properly.
+        /// The admin role must have the <code>AmazonNimbleStudio-StudioAdmin</code> managed policy
+        /// attached for the portal to function properly.
         /// </para>
         ///  
         /// <para>
-        /// You may optionally specify a KMS key in the StudioEncryptionConfiguration.
+        /// You may optionally specify a KMS key in the <code>StudioEncryptionConfiguration</code>.
         /// </para>
         ///  
         /// <para>
         /// In Nimble Studio, resource names, descriptions, initialization scripts, and other
         /// data you provide are always encrypted at rest using an KMS key. By default, this key
         /// is owned by Amazon Web Services and managed on your behalf. You may provide your own
-        /// KMS key when calling CreateStudio to encrypt this data using a key you own and manage.
+        /// KMS key when calling <code>CreateStudio</code> to encrypt this data using a key you
+        /// own and manage.
         /// </para>
         ///  
         /// <para>
@@ -848,7 +849,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -869,34 +870,35 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// Create a new Studio.
+        /// Create a new studio.
         /// 
         ///  
         /// <para>
-        /// When creating a Studio, two IAM roles must be provided: the admin role and the user
-        /// Role. These roles are assumed by your users when they log in to the Nimble Studio
+        /// When creating a studio, two IAM roles must be provided: the admin role and the user
+        /// role. These roles are assumed by your users when they log in to the Nimble Studio
         /// portal.
         /// </para>
         ///  
         /// <para>
-        /// The user role must have the AmazonNimbleStudio-StudioUser managed policy attached
-        /// for the portal to function properly.
+        /// The user role must have the <code>AmazonNimbleStudio-StudioUser</code> managed policy
+        /// attached for the portal to function properly.
         /// </para>
         ///  
         /// <para>
-        /// The Admin Role must have the AmazonNimbleStudio-StudioAdmin managed policy attached
-        /// for the portal to function properly.
+        /// The admin role must have the <code>AmazonNimbleStudio-StudioAdmin</code> managed policy
+        /// attached for the portal to function properly.
         /// </para>
         ///  
         /// <para>
-        /// You may optionally specify a KMS key in the StudioEncryptionConfiguration.
+        /// You may optionally specify a KMS key in the <code>StudioEncryptionConfiguration</code>.
         /// </para>
         ///  
         /// <para>
         /// In Nimble Studio, resource names, descriptions, initialization scripts, and other
         /// data you provide are always encrypted at rest using an KMS key. By default, this key
         /// is owned by Amazon Web Services and managed on your behalf. You may provide your own
-        /// KMS key when calling CreateStudio to encrypt this data using a key you own and manage.
+        /// KMS key when calling <code>CreateStudio</code> to encrypt this data using a key you
+        /// own and manage.
         /// </para>
         ///  
         /// <para>
@@ -937,7 +939,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -986,7 +988,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1034,7 +1036,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1083,7 +1085,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1131,7 +1133,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1180,7 +1182,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1228,7 +1230,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1277,7 +1279,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1325,7 +1327,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1355,12 +1357,12 @@ namespace Amazon.NimbleStudio
         ///  
         /// <para>
         /// After invoking this operation, use GetStreamingSession to poll the resource until
-        /// it transitions to a DELETED state.
+        /// it transitions to a <code>DELETED</code> state.
         /// </para>
         ///  
         /// <para>
         /// A streaming session will count against your streaming session quota until it is marked
-        /// DELETED.
+        /// <code>DELETED</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStreamingSession service method.</param>
@@ -1385,7 +1387,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1411,12 +1413,12 @@ namespace Amazon.NimbleStudio
         ///  
         /// <para>
         /// After invoking this operation, use GetStreamingSession to poll the resource until
-        /// it transitions to a DELETED state.
+        /// it transitions to a <code>DELETED</code> state.
         /// </para>
         ///  
         /// <para>
         /// A streaming session will count against your streaming session quota until it is marked
-        /// DELETED.
+        /// <code>DELETED</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStreamingSession service method.</param>
@@ -1444,7 +1446,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1493,7 +1495,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1541,7 +1543,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1590,7 +1592,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1638,7 +1640,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1687,7 +1689,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1735,7 +1737,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1760,7 +1762,7 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// Get Eula.
+        /// Get EULA.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEula service method.</param>
         /// 
@@ -1784,7 +1786,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1805,7 +1807,7 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// Get Eula.
+        /// Get EULA.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEula service method.</param>
         /// <param name="cancellationToken">
@@ -1832,7 +1834,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1881,7 +1883,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1929,7 +1931,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -1981,7 +1983,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2032,7 +2034,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2081,7 +2083,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2129,7 +2131,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2178,7 +2180,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2226,7 +2228,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2275,7 +2277,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2323,7 +2325,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2378,7 +2380,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2432,7 +2434,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2453,6 +2455,97 @@ namespace Amazon.NimbleStudio
 
         #endregion
         
+        #region  GetStreamingSessionBackup
+
+
+        /// <summary>
+        /// Gets <code>StreamingSessionBackup</code> resource.
+        /// 
+        ///  
+        /// <para>
+        /// Invoke this operation to poll for a streaming session backup while stopping a streaming
+        /// session.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStreamingSessionBackup service method.</param>
+        /// 
+        /// <returns>The response from the GetStreamingSessionBackup service method, as returned by NimbleStudio.</returns>
+        /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
+        /// Another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSessionBackup">REST API Reference for GetStreamingSessionBackup Operation</seealso>
+        public virtual GetStreamingSessionBackupResponse GetStreamingSessionBackup(GetStreamingSessionBackupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStreamingSessionBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStreamingSessionBackupResponseUnmarshaller.Instance;
+
+            return Invoke<GetStreamingSessionBackupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets <code>StreamingSessionBackup</code> resource.
+        /// 
+        ///  
+        /// <para>
+        /// Invoke this operation to poll for a streaming session backup while stopping a streaming
+        /// session.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStreamingSessionBackup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetStreamingSessionBackup service method, as returned by NimbleStudio.</returns>
+        /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
+        /// Another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSessionBackup">REST API Reference for GetStreamingSessionBackup Operation</seealso>
+        public virtual Task<GetStreamingSessionBackupResponse> GetStreamingSessionBackupAsync(GetStreamingSessionBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStreamingSessionBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStreamingSessionBackupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetStreamingSessionBackupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetStreamingSessionStream
 
 
@@ -2461,12 +2554,12 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Invoke this operation to poll the resource after invoking CreateStreamingSessionStream.
+        /// Invoke this operation to poll the resource after invoking <code>CreateStreamingSessionStream</code>.
         /// </para>
         ///  
         /// <para>
-        /// After the StreamingSessionStream changes to the state READY, the url property will
-        /// contain a stream to be used with the DCV streaming client.
+        /// After the <code>StreamingSessionStream</code> changes to the <code>READY</code> state,
+        /// the url property will contain a stream to be used with the DCV streaming client.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStreamingSessionStream service method.</param>
@@ -2491,7 +2584,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2516,12 +2609,12 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Invoke this operation to poll the resource after invoking CreateStreamingSessionStream.
+        /// Invoke this operation to poll the resource after invoking <code>CreateStreamingSessionStream</code>.
         /// </para>
         ///  
         /// <para>
-        /// After the StreamingSessionStream changes to the state READY, the url property will
-        /// contain a stream to be used with the DCV streaming client.
+        /// After the <code>StreamingSessionStream</code> changes to the <code>READY</code> state,
+        /// the url property will contain a stream to be used with the DCV streaming client.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStreamingSessionStream service method.</param>
@@ -2549,7 +2642,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2574,7 +2667,7 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// Get a Studio resource.
+        /// Get a studio resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStudio service method.</param>
         /// 
@@ -2598,7 +2691,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2619,7 +2712,7 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// Get a Studio resource.
+        /// Get a studio resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStudio service method.</param>
         /// <param name="cancellationToken">
@@ -2646,7 +2739,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2695,7 +2788,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2743,7 +2836,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2792,7 +2885,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2840,7 +2933,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2865,7 +2958,7 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// List Eula Acceptances.
+        /// List EULA acceptances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEulaAcceptances service method.</param>
         /// 
@@ -2889,7 +2982,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2910,7 +3003,7 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// List Eula Acceptances.
+        /// List EULA acceptances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEulaAcceptances service method.</param>
         /// <param name="cancellationToken">
@@ -2937,7 +3030,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -2962,7 +3055,7 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// List Eulas.
+        /// List EULAs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEulas service method.</param>
         /// 
@@ -2986,7 +3079,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3007,7 +3100,7 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// List Eulas.
+        /// List EULAs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEulas service method.</param>
         /// <param name="cancellationToken">
@@ -3034,7 +3127,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3083,7 +3176,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3131,7 +3224,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3180,7 +3273,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3228,7 +3321,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3283,7 +3376,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3337,7 +3430,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3354,6 +3447,85 @@ namespace Amazon.NimbleStudio
             options.ResponseUnmarshaller = ListStreamingImagesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListStreamingImagesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListStreamingSessionBackups
+
+
+        /// <summary>
+        /// Lists the backups of a streaming session in a studio.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStreamingSessionBackups service method.</param>
+        /// 
+        /// <returns>The response from the ListStreamingSessionBackups service method, as returned by NimbleStudio.</returns>
+        /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
+        /// Another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStreamingSessionBackups">REST API Reference for ListStreamingSessionBackups Operation</seealso>
+        public virtual ListStreamingSessionBackupsResponse ListStreamingSessionBackups(ListStreamingSessionBackupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStreamingSessionBackupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStreamingSessionBackupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStreamingSessionBackupsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the backups of a streaming session in a studio.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStreamingSessionBackups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStreamingSessionBackups service method, as returned by NimbleStudio.</returns>
+        /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
+        /// Another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStreamingSessionBackups">REST API Reference for ListStreamingSessionBackups Operation</seealso>
+        public virtual Task<ListStreamingSessionBackupsResponse> ListStreamingSessionBackupsAsync(ListStreamingSessionBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStreamingSessionBackupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStreamingSessionBackupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListStreamingSessionBackupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3386,7 +3558,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3434,7 +3606,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3459,7 +3631,7 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// Lists the StudioComponents in a studio.
+        /// Lists the <code>StudioComponents</code> in a studio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStudioComponents service method.</param>
         /// 
@@ -3483,7 +3655,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3504,7 +3676,7 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// Lists the StudioComponents in a studio.
+        /// Lists the <code>StudioComponents</code> in a studio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStudioComponents service method.</param>
         /// <param name="cancellationToken">
@@ -3531,7 +3703,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3586,7 +3758,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3640,7 +3812,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3665,7 +3837,7 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// List studios in your Amazon Web Services account in the requested Amazon Web Services
+        /// List studios in your Amazon Web Services accounts in the requested Amazon Web Services
         /// Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStudios service method.</param>
@@ -3690,7 +3862,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3711,7 +3883,7 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// List studios in your Amazon Web Services account in the requested Amazon Web Services
+        /// List studios in your Amazon Web Services accounts in the requested Amazon Web Services
         /// Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStudios service method.</param>
@@ -3739,7 +3911,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3796,7 +3968,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3852,7 +4024,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3901,7 +4073,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3949,7 +4121,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -3998,7 +4170,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4046,7 +4218,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4071,8 +4243,9 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// Transitions sessions from the STOPPED state into the READY state. The START_IN_PROGRESS
-        /// state is the intermediate state between the STOPPED and READY states.
+        /// Transitions sessions from the <code>STOPPED</code> state into the <code>READY</code>
+        /// state. The <code>START_IN_PROGRESS</code> state is the intermediate state between
+        /// the <code>STOPPED</code> and <code>READY</code> states.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartStreamingSession service method.</param>
         /// 
@@ -4096,7 +4269,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4117,8 +4290,9 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// Transitions sessions from the STOPPED state into the READY state. The START_IN_PROGRESS
-        /// state is the intermediate state between the STOPPED and READY states.
+        /// Transitions sessions from the <code>STOPPED</code> state into the <code>READY</code>
+        /// state. The <code>START_IN_PROGRESS</code> state is the intermediate state between
+        /// the <code>STOPPED</code> and <code>READY</code> states.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartStreamingSession service method.</param>
         /// <param name="cancellationToken">
@@ -4145,7 +4319,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4181,7 +4355,7 @@ namespace Amazon.NimbleStudio
         /// <para>
         /// If the studio does not have a valid IAM Identity Center configuration currently associated
         /// with it, then a new IAM Identity Center application is created for the studio and
-        /// the studio is changed to the READY state.
+        /// the studio is changed to the <code>READY</code> state.
         /// </para>
         ///  
         /// <para>
@@ -4211,7 +4385,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4243,7 +4417,7 @@ namespace Amazon.NimbleStudio
         /// <para>
         /// If the studio does not have a valid IAM Identity Center configuration currently associated
         /// with it, then a new IAM Identity Center application is created for the studio and
-        /// the studio is changed to the READY state.
+        /// the studio is changed to the <code>READY</code> state.
         /// </para>
         ///  
         /// <para>
@@ -4276,7 +4450,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4301,8 +4475,9 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// Transitions sessions from the READY state into the STOPPED state. The STOP_IN_PROGRESS
-        /// state is the intermediate state between the READY and STOPPED states.
+        /// Transitions sessions from the <code>READY</code> state into the <code>STOPPED</code>
+        /// state. The <code>STOP_IN_PROGRESS</code> state is the intermediate state between the
+        /// <code>READY</code> and <code>STOPPED</code> states.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopStreamingSession service method.</param>
         /// 
@@ -4326,7 +4501,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4347,8 +4522,9 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// Transitions sessions from the READY state into the STOPPED state. The STOP_IN_PROGRESS
-        /// state is the intermediate state between the READY and STOPPED states.
+        /// Transitions sessions from the <code>READY</code> state into the <code>STOPPED</code>
+        /// state. The <code>STOP_IN_PROGRESS</code> state is the intermediate state between the
+        /// <code>READY</code> and <code>STOPPED</code> states.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopStreamingSession service method.</param>
         /// <param name="cancellationToken">
@@ -4375,7 +4551,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4424,7 +4600,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4472,7 +4648,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4521,7 +4697,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4569,7 +4745,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4618,7 +4794,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4666,7 +4842,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4715,7 +4891,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4763,7 +4939,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4812,7 +4988,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4860,7 +5036,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4914,7 +5090,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -4967,7 +5143,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -5016,7 +5192,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
@@ -5064,7 +5240,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Please use AWS Service Quotas to request an increase. 
+        /// Please use Amazon Web Services Service Quotas to request an increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">

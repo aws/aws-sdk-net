@@ -46,7 +46,7 @@ namespace Amazon.Route53Domains.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Enables autorenew, so your domain registration will renew automatically each year.
+    /// Enables auto renew, so your domain registration will renew automatically each year.
     /// We'll notify you in advance of the renewal date so you can choose whether to renew
     /// the registration.
     /// </para>
@@ -114,7 +114,7 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property AutoRenew. 
         /// <para>
         /// Indicates whether the domain will be automatically renewed (<code>true</code>) or
-        /// not (<code>false</code>). Autorenewal only takes effect after the account is charged.
+        /// not (<code>false</code>). Auto renewal only takes effect after the account is charged.
         /// </para>
         ///  
         /// <para>

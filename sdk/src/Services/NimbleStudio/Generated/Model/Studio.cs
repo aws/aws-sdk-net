@@ -45,18 +45,18 @@ namespace Amazon.NimbleStudio.Model
     /// </para>
     ///  
     /// <para>
-    /// The user role must have the AmazonNimbleStudio-StudioUser managed policy attached
-    /// for the portal to function properly.
+    /// The user role must have the <code>AmazonNimbleStudio-StudioUser</code> managed policy
+    /// attached for the portal to function properly.
     /// </para>
     ///  
     /// <para>
-    /// The admin role must have the AmazonNimbleStudio-StudioAdmin managed policy attached
-    /// for the portal to function properly.
+    /// The admin role must have the <code>AmazonNimbleStudio-StudioAdmin</code> managed policy
+    /// attached for the portal to function properly.
     /// </para>
     ///  
     /// <para>
-    /// Your studio roles must trust the identity.nimble.amazonaws.com service principal to
-    /// function properly.
+    /// Your studio roles must trust the <code>identity.nimble.amazonaws.com</code> service
+    /// principal to function properly.
     /// </para>
     /// </summary>
     public partial class Studio
@@ -119,7 +119,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource was created.
+        /// The ISO timestamp in seconds for when the resource was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -176,7 +176,7 @@ namespace Amazon.NimbleStudio.Model
         /// Gets and sets the property SsoClientId. 
         /// <para>
         /// The IAM Identity Center application client ID used to integrate with IAM Identity
-        /// Center to enable IAM Identity Center users to log in to Nimble Studio portal.
+        /// Center. This ID allows IAM Identity Center users to log in to Nimble Studio portal.
         /// </para>
         /// </summary>
         public string SsoClientId
@@ -323,7 +323,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A collection of labels, in the form of key:value pairs, that apply to this resource.
+        /// A collection of labels, in the form of key-value pairs, that apply to this resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -341,7 +341,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource was updated.
+        /// The ISO timestamp in seconds for when the resource was updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

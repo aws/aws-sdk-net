@@ -42,7 +42,6 @@ namespace Amazon.Route53Domains.Model
         /// transferred to Route 53.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DomainTransferability Transferability
         {
             get { return this._transferability; }

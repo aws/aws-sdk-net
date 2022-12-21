@@ -30,21 +30,41 @@ namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
     /// Container for the parameters to the StartStreamingSession operation.
-    /// Transitions sessions from the STOPPED state into the READY state. The START_IN_PROGRESS
-    /// state is the intermediate state between the STOPPED and READY states.
+    /// Transitions sessions from the <code>STOPPED</code> state into the <code>READY</code>
+    /// state. The <code>START_IN_PROGRESS</code> state is the intermediate state between
+    /// the <code>STOPPED</code> and <code>READY</code> states.
     /// </summary>
     public partial class StartStreamingSessionRequest : AmazonNimbleStudioRequest
     {
+        private string _backupId;
         private string _clientToken;
         private string _sessionId;
         private string _studioId;
 
         /// <summary>
+        /// Gets and sets the property BackupId. 
+        /// <para>
+        /// The ID of the backup.
+        /// </para>
+        /// </summary>
+        public string BackupId
+        {
+            get { return this._backupId; }
+            set { this._backupId = value; }
+        }
+
+        // Check to see if BackupId property is set
+        internal bool IsSetBackupId()
+        {
+            return this._backupId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates
-        /// a client token and uses it for the request to ensure idempotency.
+        /// request. If you don’t specify a client token, the Amazon Web Services SDK automatically
+        /// generates a client token and uses it for the request to ensure idempotency.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -63,7 +83,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// The streaming session ID for the StartStreamingSessionRequest.
+        /// The streaming session ID for the <code>StartStreamingSessionRequest</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

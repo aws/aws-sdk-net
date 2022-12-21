@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
     {
         private int? _captureInterval;
         private FrameCaptureIntervalUnit _captureIntervalUnits;
+        private TimecodeBurninSettings _timecodeBurninSettings;
 
         /// <summary>
         /// Gets and sets the property CaptureInterval. The frequency at which to capture frames
@@ -67,6 +68,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetCaptureIntervalUnits()
         {
             return this._captureIntervalUnits != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimecodeBurninSettings. Timecode burn-in settings
+        /// </summary>
+        public TimecodeBurninSettings TimecodeBurninSettings
+        {
+            get { return this._timecodeBurninSettings; }
+            set { this._timecodeBurninSettings = value; }
+        }
+
+        // Check to see if TimecodeBurninSettings property is set
+        internal bool IsSetTimecodeBurninSettings()
+        {
+            return this._timecodeBurninSettings != null;
         }
 
     }

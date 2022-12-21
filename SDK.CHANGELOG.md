@@ -1,3 +1,26 @@
+### 3.7.445.0 (2022-12-20 19:30 UTC)
+* Batch (3.7.102.0)
+	* Adds isCancelled and isTerminated to DescribeJobs response.
+* EC2 (3.7.114.0)
+	* Adds support for pagination in the EC2 DescribeImages API.
+* LookoutEquipment (3.7.101.0)
+	* This release adds support for listing inference schedulers by status.
+* MediaLive (3.7.103.0)
+	* This release adds support for two new features to AWS Elemental MediaLive. First, you can now burn-in timecodes to your MediaLive outputs. Second, we now now support the ability to decode Dolby E audio when it comes in on an input.
+* NimbleStudio (3.7.101.0)
+	* Amazon Nimble Studio now supports configuring session storage volumes and persistence, as well as backup and restore sessions through launch profiles.
+* ResourceExplorer2 (3.7.101.0)
+	* Documentation updates for AWS Resource Explorer.
+* Route53Domains (3.7.101.0)
+	* Use Route 53 domain APIs to change owner, create/delete DS record, modify IPS tag, resend authorization. New: AssociateDelegationSignerToDomain, DisassociateDelegationSignerFromDomain, PushDomain, ResendOperationAuthorization. Updated: UpdateDomainContact, ListOperations, CheckDomainTransferability.
+* SageMaker (3.7.112.0)
+	* Amazon SageMaker Autopilot adds support for new objective metrics in CreateAutoMLJob API.
+* TranscribeService (3.7.103.0)
+	* Enable our batch transcription jobs for Swedish and Vietnamese.
+* Core 3.7.103.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.444.0 (2022-12-19 19:26 UTC)
 * Athena (3.7.103.0)
 	* Add missed InvalidRequestException in GetCalculationExecutionCode,StopCalculationExecution APIs. Correct required parameters (Payload and Type) in UpdateNotebook API. Change Notebook size from 15 Mb to 10 Mb.

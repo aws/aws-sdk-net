@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// A Launch Profile Initialization contains information required for a workstation or
+    /// A launch profile initialization contains information required for a workstation or
     /// server to connect to a launch profile.
     /// 
     ///  
@@ -52,7 +52,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property ActiveDirectory. 
         /// <para>
-        /// A LaunchProfileInitializationActiveDirectory resource.
+        /// A <code>LaunchProfileInitializationActiveDirectory</code> resource.
         /// </para>
         /// </summary>
         public LaunchProfileInitializationActiveDirectory ActiveDirectory
@@ -89,7 +89,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property LaunchProfileId. 
         /// <para>
-        /// The launch profile ID.
+        /// The ID of the launch profile used to control access from the streaming session.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=22)]
@@ -166,7 +166,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform of the launch platform, either WINDOWS or LINUX.
+        /// The platform of the launch platform, either Windows or Linux.
         /// </para>
         /// </summary>
         public LaunchProfilePlatform Platform

@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ExperimentName. 
         /// <para>
-        /// The name of an existing experiment to associate the trial component with.
+        /// The name of an existing experiment to associate with the trial component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=120)]
@@ -75,7 +75,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RunName. 
         /// <para>
-        /// The name of the experiment run to associate the trial component with.
+        /// The name of the experiment run to associate with the trial component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=120)]

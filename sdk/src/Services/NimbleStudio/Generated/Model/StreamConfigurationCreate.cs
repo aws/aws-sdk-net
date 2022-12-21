@@ -33,18 +33,57 @@ namespace Amazon.NimbleStudio.Model
     /// </summary>
     public partial class StreamConfigurationCreate
     {
+        private AutomaticTerminationMode _automaticTerminationMode;
         private StreamingClipboardMode _clipboardMode;
         private List<string> _ec2InstanceTypes = new List<string>();
         private int? _maxSessionLengthInMinutes;
         private int? _maxStoppedSessionLengthInMinutes;
+        private StreamConfigurationSessionBackup _sessionBackup;
+        private SessionPersistenceMode _sessionPersistenceMode;
         private StreamConfigurationSessionStorage _sessionStorage;
         private List<string> _streamingImageIds = new List<string>();
+        private VolumeConfiguration _volumeConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AutomaticTerminationMode. 
+        /// <para>
+        /// Indicates if a streaming session created from this launch profile should be terminated
+        /// automatically or retained without termination after being in a <code>STOPPED</code>
+        /// state.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When <code>ACTIVATED</code>, the streaming session is scheduled for termination after
+        /// being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code>
+        /// state indefinitely.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+        /// When allowed, the default value for this parameter is <code>DEACTIVATED</code>.
+        /// </para>
+        /// </summary>
+        public AutomaticTerminationMode AutomaticTerminationMode
+        {
+            get { return this._automaticTerminationMode; }
+            set { this._automaticTerminationMode = value; }
+        }
+
+        // Check to see if AutomaticTerminationMode property is set
+        internal bool IsSetAutomaticTerminationMode()
+        {
+            return this._automaticTerminationMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClipboardMode. 
         /// <para>
-        /// Enable or disable the use of the system clipboard to copy and paste between the streaming
-        /// session and streaming client.
+        /// Allows or deactivates the use of the system clipboard to copy and paste between the
+        /// streaming session and streaming client.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -106,20 +145,26 @@ namespace Amazon.NimbleStudio.Model
         /// Gets and sets the property MaxStoppedSessionLengthInMinutes. 
         /// <para>
         /// Integer that determines if you can start and stop your sessions and how long a session
-        /// can stay in the STOPPED state. The default value is 0. The maximum value is 5760.
+        /// can stay in the <code>STOPPED</code> state. The default value is 0. The maximum value
+        /// is 5760.
         /// </para>
         ///  
         /// <para>
-        /// If the value is missing or set to 0, your sessions can’t be stopped. If you then call
-        /// <code>StopStreamingSession</code>, the session fails. If the time that a session stays
-        /// in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session
-        /// will automatically be terminated (instead of stopped).
+        /// This field is allowed only when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>
+        /// and <code>automaticTerminationMode</code> is <code>ACTIVATED</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is set to 0, your sessions can’t be <code>STOPPED</code>. If you then
+        /// call <code>StopStreamingSession</code>, the session fails. If the time that a session
+        /// stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code>
+        /// value, the session will automatically be terminated (instead of <code>STOPPED</code>).
         /// </para>
         ///  
         /// <para>
         /// If the value is set to a positive number, the session can be stopped. You can call
-        /// <code>StopStreamingSession</code> to stop sessions in the READY state. If the time
-        /// that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code>
+        /// <code>StopStreamingSession</code> to stop sessions in the <code>READY</code> state.
+        /// If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code>
         /// value, the session will automatically be stopped (instead of terminated).
         /// </para>
         /// </summary>
@@ -137,10 +182,47 @@ namespace Amazon.NimbleStudio.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SessionBackup. 
+        /// <para>
+        /// Configures how streaming sessions are backed up when launched from this launch profile.
+        /// </para>
+        /// </summary>
+        public StreamConfigurationSessionBackup SessionBackup
+        {
+            get { return this._sessionBackup; }
+            set { this._sessionBackup = value; }
+        }
+
+        // Check to see if SessionBackup property is set
+        internal bool IsSetSessionBackup()
+        {
+            return this._sessionBackup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionPersistenceMode. 
+        /// <para>
+        /// Determine if a streaming session created from this launch profile can configure persistent
+        /// storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code>
+        /// are configured.
+        /// </para>
+        /// </summary>
+        public SessionPersistenceMode SessionPersistenceMode
+        {
+            get { return this._sessionPersistenceMode; }
+            set { this._sessionPersistenceMode = value; }
+        }
+
+        // Check to see if SessionPersistenceMode property is set
+        internal bool IsSetSessionPersistenceMode()
+        {
+            return this._sessionPersistenceMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SessionStorage. 
         /// <para>
-        /// (Optional) The upload storage for a streaming workstation that is created using this
-        /// launch profile.
+        /// The upload storage for a streaming workstation that is created using this launch profile.
         /// </para>
         /// </summary>
         public StreamConfigurationSessionStorage SessionStorage
@@ -173,6 +255,28 @@ namespace Amazon.NimbleStudio.Model
         internal bool IsSetStreamingImageIds()
         {
             return this._streamingImageIds != null && this._streamingImageIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeConfiguration. 
+        /// <para>
+        /// Custom volume configuration for the root volumes that are attached to streaming sessions.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+        /// </para>
+        /// </summary>
+        public VolumeConfiguration VolumeConfiguration
+        {
+            get { return this._volumeConfiguration; }
+            set { this._volumeConfiguration = value; }
+        }
+
+        // Check to see if VolumeConfiguration property is set
+        internal bool IsSetVolumeConfiguration()
+        {
+            return this._volumeConfiguration != null;
         }
 
     }

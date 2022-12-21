@@ -40,6 +40,8 @@ namespace Amazon.Batch.Model
         private List<JobDependency> _dependsOn = new List<JobDependency>();
         private List<EksAttemptDetail> _eksAttempts = new List<EksAttemptDetail>();
         private EksPropertiesDetail _eksProperties;
+        private bool? _isCancelled;
+        private bool? _isTerminated;
         private string _jobArn;
         private string _jobDefinition;
         private string _jobId;
@@ -191,6 +193,42 @@ namespace Amazon.Batch.Model
         internal bool IsSetEksProperties()
         {
             return this._eksProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsCancelled. 
+        /// <para>
+        /// Indicates whether the job is canceled.
+        /// </para>
+        /// </summary>
+        public bool IsCancelled
+        {
+            get { return this._isCancelled.GetValueOrDefault(); }
+            set { this._isCancelled = value; }
+        }
+
+        // Check to see if IsCancelled property is set
+        internal bool IsSetIsCancelled()
+        {
+            return this._isCancelled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsTerminated. 
+        /// <para>
+        /// Indicates whether the job is terminated.
+        /// </para>
+        /// </summary>
+        public bool IsTerminated
+        {
+            get { return this._isTerminated.GetValueOrDefault(); }
+            set { this._isTerminated = value; }
+        }
+
+        // Check to see if IsTerminated property is set
+        internal bool IsSetIsTerminated()
+        {
+            return this._isTerminated.HasValue; 
         }
 
         /// <summary>

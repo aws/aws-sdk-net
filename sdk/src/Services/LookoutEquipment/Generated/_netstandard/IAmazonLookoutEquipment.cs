@@ -302,6 +302,10 @@ namespace Amazon.LookoutEquipment
         /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -377,6 +381,10 @@ namespace Amazon.LookoutEquipment
         /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
         Task<DeleteLabelResponse> DeleteLabelAsync(DeleteLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -411,6 +419,10 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup">REST API Reference for DeleteLabelGroup Operation</seealso>
         Task<DeleteLabelGroupResponse> DeleteLabelGroupAsync(DeleteLabelGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -448,6 +460,10 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         Task<DeleteModelResponse> DeleteModelAsync(DeleteModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

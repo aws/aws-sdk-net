@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
     /// If you deregister an AMI that matches a Recycle Bin retention rule, the AMI is retained
     /// in the Recycle Bin for the specified retention period. For more information, see <a
     /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-    /// Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Bin</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  
     /// <para>

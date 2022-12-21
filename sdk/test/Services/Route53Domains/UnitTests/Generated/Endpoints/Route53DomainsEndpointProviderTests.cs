@@ -35,9 +35,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new Route53DomainsEndpointParameters();
+            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             var endpoint = new AmazonRoute53DomainsEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://route53domains-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -50,9 +50,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new Route53DomainsEndpointParameters();
+            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             var endpoint = new AmazonRoute53DomainsEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://route53domains-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -65,9 +65,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new Route53DomainsEndpointParameters();
+            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             var endpoint = new AmazonRoute53DomainsEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://route53domains.us-east-1.api.aws", endpoint.URL);
         }
@@ -80,9 +80,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new Route53DomainsEndpointParameters();
+            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             var endpoint = new AmazonRoute53DomainsEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://route53domains.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -95,9 +95,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new Route53DomainsEndpointParameters();
+            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonRoute53DomainsEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -112,9 +112,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new Route53DomainsEndpointParameters();
+            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonRoute53DomainsEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -128,9 +128,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new Route53DomainsEndpointParameters();
+            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonRoute53DomainsEndpointProvider().ResolveEndpoint(parameters);
         }

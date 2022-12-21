@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the ListImagesInRecycleBin operation.
     /// Lists one or more AMIs that are currently in the Recycle Bin. For more information,
     /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-    /// Bin</a> in the Amazon Elastic Compute Cloud User Guide.
+    /// Bin</a> in the <i>Amazon EC2 User Guide</i>.
     /// </summary>
     public partial class ListImagesInRecycleBinRequest : AmazonEC2Request
     {

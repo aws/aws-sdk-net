@@ -33,10 +33,13 @@ namespace Amazon.NimbleStudio.Model
     /// compute farms, shared file systems, managed file systems, and license server configurations,
     /// as well as instance types and Amazon Machine Images (AMIs). 
     /// 
-    ///  <pre><code> &lt;p&gt;Studio administrators create launch profiles in the Nimble Studio
-    /// console. Artists can use their launch profiles to launch an instance from the Nimble
-    /// Studio portal. Each user’s launch profile defines how they can launch a streaming
-    /// session. By default, studio admins can use all launch profiles.&lt;/p&gt; </code></pre>
+    ///  
+    /// <para>
+    /// Studio administrators create launch profiles in the Nimble Studio console. Artists
+    /// can use their launch profiles to launch an instance from the Nimble Studio portal.
+    /// Each user’s launch profile defines how they can launch a streaming session. By default,
+    /// studio admins can use all launch profiles.
+    /// </para>
     /// </summary>
     public partial class LaunchProfile
     {
@@ -61,7 +64,8 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the resource.
+        /// The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely
+        /// identifies it. ARNs are unique across all Regions.
         /// </para>
         /// </summary>
         public string Arn
@@ -79,7 +83,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource was created.
+        /// The ISO timestamp in seconds for when the resource was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -153,7 +157,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property LaunchProfileId. 
         /// <para>
-        /// The launch profile ID.
+        /// The ID of the launch profile used to control access from the streaming session.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=22)]
@@ -302,7 +306,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A collection of labels, in the form of key:value pairs, that apply to this resource.
+        /// A collection of labels, in the form of key-value pairs, that apply to this resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -320,7 +324,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource was updated.
+        /// The ISO timestamp in seconds for when the resource was updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

@@ -350,6 +350,92 @@ namespace Amazon.Route53Domains
 
         #endregion
         
+        #region  AssociateDelegationSignerToDomain
+
+        /// <summary>
+        /// Creates a delegation signer (DS) record in the registry zone for this domain name.
+        /// 
+        ///  
+        /// <para>
+        /// Note that creating DS record at the registry impacts DNSSEC validation of your DNS
+        /// records. This action may render your domain name unavailable on the internet if the
+        /// steps are completed in the wrong order, or with incorrect timing. For more information
+        /// about DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec.html">Configuring
+        /// DNSSEC signing</a> in the <i>Route 53 developer guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDelegationSignerToDomain service method.</param>
+        /// 
+        /// <returns>The response from the AssociateDelegationSignerToDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.DnssecLimitExceededException">
+        /// This error is returned if you call <code>AssociateDelegationSignerToDomain</code>
+        /// when the specified domain has reached the maximum number of DS records. You can't
+        /// add any additional DS records unless you delete an existing one first.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
+        /// The request is already in progress for the domain.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
+        /// The top-level domain does not support this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AssociateDelegationSignerToDomain">REST API Reference for AssociateDelegationSignerToDomain Operation</seealso>
+        public virtual AssociateDelegationSignerToDomainResponse AssociateDelegationSignerToDomain(AssociateDelegationSignerToDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDelegationSignerToDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDelegationSignerToDomainResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateDelegationSignerToDomainResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateDelegationSignerToDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDelegationSignerToDomain operation on AmazonRoute53DomainsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateDelegationSignerToDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AssociateDelegationSignerToDomain">REST API Reference for AssociateDelegationSignerToDomain Operation</seealso>
+        public virtual IAsyncResult BeginAssociateDelegationSignerToDomain(AssociateDelegationSignerToDomainRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDelegationSignerToDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDelegationSignerToDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateDelegationSignerToDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateDelegationSignerToDomain.</param>
+        /// 
+        /// <returns>Returns a  AssociateDelegationSignerToDomainResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AssociateDelegationSignerToDomain">REST API Reference for AssociateDelegationSignerToDomain Operation</seealso>
+        public virtual AssociateDelegationSignerToDomainResponse EndAssociateDelegationSignerToDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateDelegationSignerToDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelDomainTransferToAnotherAwsAccount
 
         /// <summary>
@@ -899,6 +985,78 @@ namespace Amazon.Route53Domains
         public virtual DisableDomainTransferLockResponse EndDisableDomainTransferLock(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableDomainTransferLockResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateDelegationSignerFromDomain
+
+        /// <summary>
+        /// Deletes a delegation signer (DS) record in the registry zone for this domain name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDelegationSignerFromDomain service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateDelegationSignerFromDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
+        /// The request is already in progress for the domain.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
+        /// The top-level domain does not support this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisassociateDelegationSignerFromDomain">REST API Reference for DisassociateDelegationSignerFromDomain Operation</seealso>
+        public virtual DisassociateDelegationSignerFromDomainResponse DisassociateDelegationSignerFromDomain(DisassociateDelegationSignerFromDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateDelegationSignerFromDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateDelegationSignerFromDomainResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateDelegationSignerFromDomainResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateDelegationSignerFromDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDelegationSignerFromDomain operation on AmazonRoute53DomainsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateDelegationSignerFromDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisassociateDelegationSignerFromDomain">REST API Reference for DisassociateDelegationSignerFromDomain Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateDelegationSignerFromDomain(DisassociateDelegationSignerFromDomainRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateDelegationSignerFromDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateDelegationSignerFromDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateDelegationSignerFromDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateDelegationSignerFromDomain.</param>
+        /// 
+        /// <returns>Returns a  DisassociateDelegationSignerFromDomainResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisassociateDelegationSignerFromDomain">REST API Reference for DisassociateDelegationSignerFromDomain Operation</seealso>
+        public virtual DisassociateDelegationSignerFromDomainResponse EndDisassociateDelegationSignerFromDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateDelegationSignerFromDomainResponse>(asyncResult);
         }
 
         #endregion
@@ -1676,6 +1834,83 @@ namespace Amazon.Route53Domains
 
         #endregion
         
+        #region  PushDomain
+
+        /// <summary>
+        /// Moves a domain from Amazon Web Services to another registrar. 
+        /// 
+        ///  
+        /// <para>
+        /// Supported actions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Changes the IPS tags of a .uk domain, and pushes it to transit. Transit means that
+        /// the domain is ready to be transferred to another registrar.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PushDomain service method.</param>
+        /// 
+        /// <returns>The response from the PushDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/PushDomain">REST API Reference for PushDomain Operation</seealso>
+        public virtual PushDomainResponse PushDomain(PushDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PushDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PushDomainResponseUnmarshaller.Instance;
+
+            return Invoke<PushDomainResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PushDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PushDomain operation on AmazonRoute53DomainsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPushDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/PushDomain">REST API Reference for PushDomain Operation</seealso>
+        public virtual IAsyncResult BeginPushDomain(PushDomainRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PushDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PushDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PushDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPushDomain.</param>
+        /// 
+        /// <returns>Returns a  PushDomainResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/PushDomain">REST API Reference for PushDomain Operation</seealso>
+        public virtual PushDomainResponse EndPushDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PushDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RegisterDomain
 
         /// <summary>
@@ -1695,7 +1930,7 @@ namespace Amazon.Route53Domains
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Enables autorenew, so your domain registration will renew automatically each year.
+        /// Enables auto renew, so your domain registration will renew automatically each year.
         /// We'll notify you in advance of the renewal date so you can choose whether to renew
         /// the registration.
         /// </para>
@@ -2024,11 +2259,71 @@ namespace Amazon.Route53Domains
 
         #endregion
         
+        #region  ResendOperationAuthorization
+
+        /// <summary>
+        /// Resend the form of authorization email for this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResendOperationAuthorization service method.</param>
+        /// 
+        /// <returns>The response from the ResendOperationAuthorization service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendOperationAuthorization">REST API Reference for ResendOperationAuthorization Operation</seealso>
+        public virtual ResendOperationAuthorizationResponse ResendOperationAuthorization(ResendOperationAuthorizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResendOperationAuthorizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResendOperationAuthorizationResponseUnmarshaller.Instance;
+
+            return Invoke<ResendOperationAuthorizationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResendOperationAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResendOperationAuthorization operation on AmazonRoute53DomainsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResendOperationAuthorization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendOperationAuthorization">REST API Reference for ResendOperationAuthorization Operation</seealso>
+        public virtual IAsyncResult BeginResendOperationAuthorization(ResendOperationAuthorizationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResendOperationAuthorizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResendOperationAuthorizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResendOperationAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResendOperationAuthorization.</param>
+        /// 
+        /// <returns>Returns a  ResendOperationAuthorizationResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendOperationAuthorization">REST API Reference for ResendOperationAuthorization Operation</seealso>
+        public virtual ResendOperationAuthorizationResponse EndResendOperationAuthorization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ResendOperationAuthorizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RetrieveDomainAuthCode
 
         /// <summary>
-        /// This operation returns the AuthCode for the domain. To transfer a domain to another
-        /// registrar, you provide this value to the new registrar.
+        /// This operation returns the authorization code for the domain. To transfer a domain
+        /// to another registrar, you provide this value to the new registrar.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetrieveDomainAuthCode service method.</param>
         /// 
@@ -2326,7 +2621,7 @@ namespace Amazon.Route53Domains
         ///  
         /// <para>
         /// If the update is successful, this method returns an operation ID that you can use
-        /// to track the progress and completion of the action. If the request is not completed
+        /// to track the progress and completion of the operation. If the request is not completed
         /// successfully, the domain registrant will be notified by email.
         /// </para>
         /// </summary>

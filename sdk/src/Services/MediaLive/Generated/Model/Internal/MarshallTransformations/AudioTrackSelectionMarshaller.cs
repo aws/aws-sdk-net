@@ -45,6 +45,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AudioTrackSelection requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDolbyEDecode())
+            {
+                context.Writer.WritePropertyName("dolbyEDecode");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AudioDolbyEDecodeMarshaller.Instance;
+                marshaller.Marshall(requestObject.DolbyEDecode, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTracks())
             {
                 context.Writer.WritePropertyName("tracks");

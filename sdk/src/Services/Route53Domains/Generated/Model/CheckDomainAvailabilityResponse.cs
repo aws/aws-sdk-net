@@ -90,7 +90,6 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  </dd> </dl>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DomainAvailability Availability
         {
             get { return this._availability; }

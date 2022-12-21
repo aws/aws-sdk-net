@@ -137,7 +137,7 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property AutoRenew. 
         /// <para>
         /// Indicates whether the domain will be automatically renewed (true) or not (false).
-        /// Autorenewal only takes effect after the account is charged.
+        /// Auto renewal only takes effect after the account is charged.
         /// </para>
         ///  
         /// <para>

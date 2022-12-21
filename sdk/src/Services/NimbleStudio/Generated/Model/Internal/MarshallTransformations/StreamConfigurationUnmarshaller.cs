@@ -64,6 +64,12 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("automaticTerminationMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AutomaticTerminationMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("clipboardMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -88,6 +94,18 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaxStoppedSessionLengthInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sessionBackup", targetDepth))
+                {
+                    var unmarshaller = StreamConfigurationSessionBackupUnmarshaller.Instance;
+                    unmarshalledObject.SessionBackup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sessionPersistenceMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SessionPersistenceMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sessionStorage", targetDepth))
                 {
                     var unmarshaller = StreamConfigurationSessionStorageUnmarshaller.Instance;
@@ -98,6 +116,12 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.StreamingImageIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("volumeConfiguration", targetDepth))
+                {
+                    var unmarshaller = VolumeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.VolumeConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

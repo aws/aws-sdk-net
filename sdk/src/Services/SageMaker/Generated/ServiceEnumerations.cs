@@ -1415,6 +1415,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AutoMLMetricEnum AUC = new AutoMLMetricEnum("AUC");
         /// <summary>
+        /// Constant BalancedAccuracy for AutoMLMetricEnum
+        /// </summary>
+        public static readonly AutoMLMetricEnum BalancedAccuracy = new AutoMLMetricEnum("BalancedAccuracy");
+        /// <summary>
         /// Constant F1 for AutoMLMetricEnum
         /// </summary>
         public static readonly AutoMLMetricEnum F1 = new AutoMLMetricEnum("F1");
@@ -1423,9 +1427,37 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AutoMLMetricEnum F1macro = new AutoMLMetricEnum("F1macro");
         /// <summary>
+        /// Constant MAE for AutoMLMetricEnum
+        /// </summary>
+        public static readonly AutoMLMetricEnum MAE = new AutoMLMetricEnum("MAE");
+        /// <summary>
         /// Constant MSE for AutoMLMetricEnum
         /// </summary>
         public static readonly AutoMLMetricEnum MSE = new AutoMLMetricEnum("MSE");
+        /// <summary>
+        /// Constant Precision for AutoMLMetricEnum
+        /// </summary>
+        public static readonly AutoMLMetricEnum Precision = new AutoMLMetricEnum("Precision");
+        /// <summary>
+        /// Constant PrecisionMacro for AutoMLMetricEnum
+        /// </summary>
+        public static readonly AutoMLMetricEnum PrecisionMacro = new AutoMLMetricEnum("PrecisionMacro");
+        /// <summary>
+        /// Constant R2 for AutoMLMetricEnum
+        /// </summary>
+        public static readonly AutoMLMetricEnum R2 = new AutoMLMetricEnum("R2");
+        /// <summary>
+        /// Constant Recall for AutoMLMetricEnum
+        /// </summary>
+        public static readonly AutoMLMetricEnum Recall = new AutoMLMetricEnum("Recall");
+        /// <summary>
+        /// Constant RecallMacro for AutoMLMetricEnum
+        /// </summary>
+        public static readonly AutoMLMetricEnum RecallMacro = new AutoMLMetricEnum("RecallMacro");
+        /// <summary>
+        /// Constant RMSE for AutoMLMetricEnum
+        /// </summary>
+        public static readonly AutoMLMetricEnum RMSE = new AutoMLMetricEnum("RMSE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -662,7 +662,7 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         ///  <code>SG_ID_NUMBER</code> 
         /// </para>
-        ///  </li> </ul> </dd> <dt>.co.uk, .me.uk, and .org.uk</dt> <dd> <ul> <li> 
+        ///  </li> </ul> </dd> <dt>.uk, .co.uk, .me.uk, and .org.uk</dt> <dd> <ul> <li> 
         /// <para>
         ///  <code>UK_CONTACT_TYPE</code> 
         /// </para>

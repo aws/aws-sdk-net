@@ -100,9 +100,12 @@ namespace Amazon.ResourceExplorer2.Model
         /// <summary>
         /// Gets and sets the property ReplicatingFrom. 
         /// <para>
-        /// If this index is <code>Type=AGGREGATOR</code>, then this response value contains a
-        /// list of the Amazon Web Services Regions that replicate their content to the index
-        /// in this Region. Not present for a local index.
+        /// This response value is present only if this index is <code>Type=AGGREGATOR</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A list of the Amazon Web Services Regions that replicate their content to the index
+        /// in this Region.
         /// </para>
         /// </summary>
         public List<string> ReplicatingFrom
@@ -120,10 +123,13 @@ namespace Amazon.ResourceExplorer2.Model
         /// <summary>
         /// Gets and sets the property ReplicatingTo. 
         /// <para>
-        /// Identifies the Amazon Web Services Region that has an index set to <code>Type=AGGREGATOR</code>,
-        /// if one exists. If it does, then the Region you called this operation in replicates
-        /// its index information to the Region specified in this response value. Not present
-        /// if there isn't an aggregator index in the account.
+        /// This response value is present only if this index is <code>Type=LOCAL</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Amazon Web Services Region that contains the aggregator index, if one exists.
+        /// If an aggregator index does exist then the Region in which you called this operation
+        /// replicates its index information to the Region specified in this response value. 
         /// </para>
         /// </summary>
         public List<string> ReplicatingTo
@@ -141,7 +147,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Indicates the current state of the index in this Amazon Web Services Region.
+        /// The current state of the index in this Amazon Web Services Region.
         /// </para>
         /// </summary>
         public IndexState State
@@ -177,8 +183,8 @@ namespace Amazon.ResourceExplorer2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specifies the type of the index in this Region. For information about the aggregator
-        /// index and how it differs from a local index, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning
+        /// The type of the index in this Region. For information about the aggregator index and
+        /// how it differs from a local index, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning
         /// on cross-Region search by creating an aggregator index</a>.
         /// </para>
         /// </summary>

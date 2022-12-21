@@ -122,7 +122,7 @@ namespace Amazon.Route53Domains.Model
         /// by Route 53 is returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=2, Max=255)]
         public string Tld
         {
             get { return this._tld; }

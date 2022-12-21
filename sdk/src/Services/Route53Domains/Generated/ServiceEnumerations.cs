@@ -1221,6 +1221,10 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly ExtraParamName AU_ID_TYPE = new ExtraParamName("AU_ID_TYPE");
         /// <summary>
+        /// Constant AU_PRIORITY_TOKEN for ExtraParamName
+        /// </summary>
+        public static readonly ExtraParamName AU_PRIORITY_TOKEN = new ExtraParamName("AU_PRIORITY_TOKEN");
+        /// <summary>
         /// Constant BIRTH_CITY for ExtraParamName
         /// </summary>
         public static readonly ExtraParamName BIRTH_CITY = new ExtraParamName("BIRTH_CITY");
@@ -1412,6 +1416,52 @@ namespace Amazon.Route53Domains
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ListDomainsAttributeName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ListOperationsSortAttributeName.
+    /// </summary>
+    public class ListOperationsSortAttributeName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SubmittedDate for ListOperationsSortAttributeName
+        /// </summary>
+        public static readonly ListOperationsSortAttributeName SubmittedDate = new ListOperationsSortAttributeName("SubmittedDate");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListOperationsSortAttributeName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListOperationsSortAttributeName FindValue(string value)
+        {
+            return FindValue<ListOperationsSortAttributeName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListOperationsSortAttributeName(string value)
         {
             return FindValue(value);
         }
@@ -1753,15 +1803,89 @@ namespace Amazon.Route53Domains
 
 
     /// <summary>
+    /// Constants used for properties of type StatusFlag.
+    /// </summary>
+    public class StatusFlag : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PENDING_ACCEPTANCE for StatusFlag
+        /// </summary>
+        public static readonly StatusFlag PENDING_ACCEPTANCE = new StatusFlag("PENDING_ACCEPTANCE");
+        /// <summary>
+        /// Constant PENDING_AUTHORIZATION for StatusFlag
+        /// </summary>
+        public static readonly StatusFlag PENDING_AUTHORIZATION = new StatusFlag("PENDING_AUTHORIZATION");
+        /// <summary>
+        /// Constant PENDING_CUSTOMER_ACTION for StatusFlag
+        /// </summary>
+        public static readonly StatusFlag PENDING_CUSTOMER_ACTION = new StatusFlag("PENDING_CUSTOMER_ACTION");
+        /// <summary>
+        /// Constant PENDING_PAYMENT_VERIFICATION for StatusFlag
+        /// </summary>
+        public static readonly StatusFlag PENDING_PAYMENT_VERIFICATION = new StatusFlag("PENDING_PAYMENT_VERIFICATION");
+        /// <summary>
+        /// Constant PENDING_SUPPORT_CASE for StatusFlag
+        /// </summary>
+        public static readonly StatusFlag PENDING_SUPPORT_CASE = new StatusFlag("PENDING_SUPPORT_CASE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StatusFlag(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatusFlag FindValue(string value)
+        {
+            return FindValue<StatusFlag>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatusFlag(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Transferable.
     /// </summary>
     public class Transferable : ConstantClass
     {
 
         /// <summary>
+        /// Constant DOMAIN_IN_ANOTHER_ACCOUNT for Transferable
+        /// </summary>
+        public static readonly Transferable DOMAIN_IN_ANOTHER_ACCOUNT = new Transferable("DOMAIN_IN_ANOTHER_ACCOUNT");
+        /// <summary>
+        /// Constant DOMAIN_IN_OWN_ACCOUNT for Transferable
+        /// </summary>
+        public static readonly Transferable DOMAIN_IN_OWN_ACCOUNT = new Transferable("DOMAIN_IN_OWN_ACCOUNT");
+        /// <summary>
         /// Constant DONT_KNOW for Transferable
         /// </summary>
         public static readonly Transferable DONT_KNOW = new Transferable("DONT_KNOW");
+        /// <summary>
+        /// Constant PREMIUM_DOMAIN for Transferable
+        /// </summary>
+        public static readonly Transferable PREMIUM_DOMAIN = new Transferable("PREMIUM_DOMAIN");
         /// <summary>
         /// Constant TRANSFERABLE for Transferable
         /// </summary>

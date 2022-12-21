@@ -42,6 +42,15 @@ namespace Amazon.Batch.Model
         /// timestamp. After this time passes, Batch terminates your jobs if they aren't finished.
         /// The minimum value for the timeout is 60 seconds.
         /// </para>
+        ///  
+        /// <para>
+        /// For array jobs, the timeout applies to the child jobs, not to the parent array job.
+        /// </para>
+        ///  
+        /// <para>
+        /// For multi-node parallel (MNP) jobs, the timeout applies to the whole job, not to the
+        /// individual nodes.
+        /// </para>
         /// </summary>
         public int AttemptDurationSeconds
         {

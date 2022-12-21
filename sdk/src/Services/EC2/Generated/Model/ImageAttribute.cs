@@ -127,7 +127,7 @@ namespace Amazon.EC2.Model
         /// so that, by default, the instance requires that IMDSv2 is used when requesting instance
         /// metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-        /// the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// the AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public string ImdsSupport
@@ -283,7 +283,7 @@ namespace Amazon.EC2.Model
         /// data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a>
         /// command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars
         /// tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-        /// Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public string UefiData

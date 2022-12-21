@@ -223,6 +223,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Tier);
             }
 
+            if(requestObject.IsSetTimecodeBurninSettings())
+            {
+                context.Writer.WritePropertyName("timecodeBurninSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TimecodeBurninSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimecodeBurninSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTimecodeInsertion())
             {
                 context.Writer.WritePropertyName("timecodeInsertion");
