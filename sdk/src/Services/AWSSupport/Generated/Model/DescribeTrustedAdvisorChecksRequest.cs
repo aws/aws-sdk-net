@@ -31,11 +31,13 @@ namespace Amazon.AWSSupport.Model
     /// <summary>
     /// Container for the parameters to the DescribeTrustedAdvisorChecks operation.
     /// Returns information about all available Trusted Advisor checks, including the name,
-    /// ID, category, description, and metadata. You must specify a language code. The Amazon
-    /// Web Services Support API currently supports English ("en") and Japanese ("ja"). The
-    /// response contains a <a>TrustedAdvisorCheckDescription</a> object for each check. You
-    /// must set the Amazon Web Services Region to us-east-1.
+    /// ID, category, description, and metadata. You must specify a language code.
     /// 
+    ///  
+    /// <para>
+    /// The response contains a <a>TrustedAdvisorCheckDescription</a> object for each check.
+    /// You must set the Amazon Web Services Region to us-east-1.
+    /// </para>
     ///  <note> <ul> <li> 
     /// <para>
     /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
@@ -43,7 +45,7 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you call the Amazon Web Services Support API from an account that does not have
+    /// If you call the Amazon Web Services Support API from an account that doesn't have
     /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
     /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
     /// Web Services Support</a>.
@@ -53,7 +55,15 @@ namespace Amazon.AWSSupport.Model
     /// The names and descriptions for Trusted Advisor checks are subject to change. We recommend
     /// that you specify the check ID in your code to uniquely identify a check.
     /// </para>
-    ///  </li> </ul> </note>
+    ///  </li> </ul> </note> 
+    /// <para>
+    /// To call the Trusted Advisor operations in the Amazon Web Services Support API, you
+    /// must use the US East (N. Virginia) endpoint. Currently, the US West (Oregon) and Europe
+    /// (Ireland) endpoints don't support the Trusted Advisor operations. For more information,
+    /// see <a href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About
+    /// the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support User
+    /// Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DescribeTrustedAdvisorChecksRequest : AmazonAWSSupportRequest
     {
@@ -62,10 +72,58 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        /// The ISO 639-1 code for the language in which Amazon Web Services provides support.
-        /// Amazon Web Services Support currently supports English ("en") and Japanese ("ja").
-        /// Language parameters must be passed explicitly for operations that take them.
+        /// The ISO 639-1 code for the language that you want your checks to appear in.
         /// </para>
+        ///  
+        /// <para>
+        /// The Amazon Web Services Support API currently supports the following languages for
+        /// Trusted Advisor:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Chinese, Simplified - <code>zh</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Chinese, Traditional - <code>zh_TW</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// English - <code>en</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// French - <code>fr</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// German - <code>de</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Indonesian - <code>id</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Italian - <code>it</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Japanese - <code>ja</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Korean - <code>ko</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Portuguese, Brazilian - <code>pt_BR</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Spanish - <code>es</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Language

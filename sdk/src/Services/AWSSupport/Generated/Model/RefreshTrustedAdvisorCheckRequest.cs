@@ -33,12 +33,12 @@ namespace Amazon.AWSSupport.Model
     /// Refreshes the Trusted Advisor check that you specify using the check ID. You can get
     /// the check IDs by calling the <a>DescribeTrustedAdvisorChecks</a> operation.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
     /// Some checks are refreshed automatically. If you call the <code>RefreshTrustedAdvisorCheck</code>
     /// operation to refresh them, you might see the <code>InvalidParameterValue</code> error.
     /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// The response contains a <a>TrustedAdvisorCheckRefreshStatus</a> object.
     /// </para>
@@ -49,12 +49,20 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you call the Amazon Web Services Support API from an account that does not have
+    /// If you call the Amazon Web Services Support API from an account that doesn't have
     /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
     /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
     /// Web Services Support</a>.
     /// </para>
-    ///  </li> </ul> </note>
+    ///  </li> </ul> </note> 
+    /// <para>
+    /// To call the Trusted Advisor operations in the Amazon Web Services Support API, you
+    /// must use the US East (N. Virginia) endpoint. Currently, the US West (Oregon) and Europe
+    /// (Ireland) endpoints don't support the Trusted Advisor operations. For more information,
+    /// see <a href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About
+    /// the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support User
+    /// Guide</i>.
+    /// </para>
     /// </summary>
     public partial class RefreshTrustedAdvisorCheckRequest : AmazonAWSSupportRequest
     {
