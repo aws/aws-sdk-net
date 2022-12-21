@@ -816,6 +816,10 @@
       <Project>{9AF53B73-A790-4430-9B55-6957CC650358}</Project>
       <Name>AWSSDK.LicenseManager.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/LicenseManagerLinuxSubscriptions/AWSSDK.LicenseManagerLinuxSubscriptions.CodeAnalysis.csproj">
+      <Project>{DADA5E37-7DA9-481A-B29F-2C22CBAC19A3}</Project>
+      <Name>AWSSDK.LicenseManagerLinuxSubscriptions.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/LicenseManagerUserSubscriptions/AWSSDK.LicenseManagerUserSubscriptions.CodeAnalysis.csproj">
       <Project>{27E80A60-0F0A-4776-9A53-BF48F89192A9}</Project>
       <Name>AWSSDK.LicenseManagerUserSubscriptions.CodeAnalysis</Name>
