@@ -39,9 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyHash. 
         /// <para>
-        /// ID of the current policy version. The hash helps to prevent a situation where multiple
-        /// users attempt to overwrite a policy. You must provide this hash when updating or deleting
-        /// a policy.
+        /// ID of the current policy version.
         /// </para>
         /// </summary>
         public string PolicyHash
