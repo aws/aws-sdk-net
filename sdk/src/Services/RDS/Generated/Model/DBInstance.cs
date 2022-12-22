@@ -90,6 +90,7 @@ namespace Amazon.RDS.Model
         private string _licenseModel;
         private Endpoint _listenerEndpoint;
         private string _masterUsername;
+        private MasterUserSecret _masterUserSecret;
         private int? _maxAllocatedStorage;
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
@@ -1116,6 +1117,31 @@ namespace Amazon.RDS.Model
         internal bool IsSetMasterUsername()
         {
             return this._masterUsername != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MasterUserSecret. 
+        /// <para>
+        /// Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the
+        /// master user password.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+        /// management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User
+        /// Guide.</i> 
+        /// </para>
+        /// </summary>
+        public MasterUserSecret MasterUserSecret
+        {
+            get { return this._masterUserSecret; }
+            set { this._masterUserSecret = value; }
+        }
+
+        // Check to see if MasterUserSecret property is set
+        internal bool IsSetMasterUserSecret()
+        {
+            return this._masterUserSecret != null;
         }
 
         /// <summary>

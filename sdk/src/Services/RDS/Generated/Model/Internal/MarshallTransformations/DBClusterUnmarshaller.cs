@@ -343,6 +343,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MasterUsername = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MasterUserSecret", targetDepth))
+                    {
+                        var unmarshaller = MasterUserSecretUnmarshaller.Instance;
+                        unmarshalledObject.MasterUserSecret = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MonitoringInterval", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

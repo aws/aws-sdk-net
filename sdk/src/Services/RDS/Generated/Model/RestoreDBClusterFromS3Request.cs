@@ -74,8 +74,10 @@ namespace Amazon.RDS.Model
         private string _engine;
         private string _engineVersion;
         private string _kmsKeyId;
+        private bool? _manageMasterUserPassword;
         private string _masterUsername;
         private string _masterUserPassword;
+        private string _masterUserSecretKmsKeyId;
         private string _networkType;
         private string _optionGroupName;
         private int? _port;
@@ -560,6 +562,43 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManageMasterUserPassword. 
+        /// <para>
+        /// A value that indicates whether to manage the master user password with Amazon Web
+        /// Services Secrets Manager.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+        /// management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User
+        /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password
+        /// management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User
+        /// Guide.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Can't manage the master user password with Amazon Web Services Secrets Manager if
+        /// <code>MasterUserPassword</code> is specified.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool ManageMasterUserPassword
+        {
+            get { return this._manageMasterUserPassword.GetValueOrDefault(); }
+            set { this._manageMasterUserPassword = value; }
+        }
+
+        // Check to see if ManageMasterUserPassword property is set
+        internal bool IsSetManageMasterUserPassword()
+        {
+            return this._manageMasterUserPassword.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
         /// The name of the master user for the restored DB cluster.
@@ -603,10 +642,18 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must contain from 8 to 41 characters.
+        /// Constraints:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain from 8 to 41 characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be specified if <code>ManageMasterUserPassword</code> is turned on.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }
@@ -617,6 +664,48 @@ namespace Amazon.RDS.Model
         internal bool IsSetMasterUserPassword()
         {
             return this._masterUserPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MasterUserSecretKmsKeyId. 
+        /// <para>
+        /// The Amazon Web Services KMS key identifier to encrypt a secret that is automatically
+        /// generated and managed in Amazon Web Services Secrets Manager.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is valid only if the master user password is managed by RDS in Amazon
+        /// Web Services Secrets Manager for the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
+        /// name for the KMS key. To use a KMS key in a different Amazon Web Services account,
+        /// specify the key ARN or alias ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code>
+        /// KMS key is used to encrypt the secret. If the secret is in a different Amazon Web
+        /// Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to
+        /// encrypt the secret, and you must use a customer managed KMS key.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services
+        /// account has a different default KMS key for each Amazon Web Services Region.
+        /// </para>
+        /// </summary>
+        public string MasterUserSecretKmsKeyId
+        {
+            get { return this._masterUserSecretKmsKeyId; }
+            set { this._masterUserSecretKmsKeyId = value; }
+        }
+
+        // Check to see if MasterUserSecretKmsKeyId property is set
+        internal bool IsSetMasterUserSecretKmsKeyId()
+        {
+            return this._masterUserSecretKmsKeyId != null;
         }
 
         /// <summary>
