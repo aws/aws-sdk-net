@@ -1,3 +1,20 @@
+### 3.7.447.0 (2022-12-22 19:24 UTC)
+* ComputeOptimizer (3.7.102.0)
+	* This release enables AWS Compute Optimizer to analyze and generate optimization recommendations for ecs services running on Fargate.
+* Connect (3.7.109.0)
+	* Amazon Connect Chat introduces the Idle Participant/Autodisconnect feature, which allows users to set timeouts relating to the activity of chat participants, using the new UpdateParticipantRoleConfig API.
+* IoTDeviceAdvisor (3.7.101.0)
+	* This release adds the following new features: 1) Documentation updates for IoT Device Advisor APIs. 2) Updated required request parameters for IoT Device Advisor APIs. 3) Added new service feature: ability to provide the test endpoint when customer executing the StartSuiteRun API.
+* KinesisVideoWebRTCStorage (3.7.101.0)
+	* Amazon Kinesis Video Streams offers capabilities to stream video and audio in real-time via WebRTC to the cloud for storage, playback, and analytical processing. Customers can use our enhanced WebRTC SDK and cloud APIs to enable real-time streaming, as well as media ingestion to the cloud.
+* RDS (3.7.111.0)
+	* Add support for managing master user password in AWS Secrets Manager for the DBInstance and DBCluster.
+* SecretsManager (3.7.100.43)
+	* Documentation updates for Secrets Manager
+* Core 3.7.103.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.446.0 (2022-12-21 20:19 UTC)
 * AWSSupport (3.7.100.42)
 	* Documentation updates for the AWS Support API
