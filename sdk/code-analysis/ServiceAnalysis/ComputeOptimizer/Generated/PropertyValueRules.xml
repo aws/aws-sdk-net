@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.ComputeOptimizer.Model.DescribeRecommendationExportJobsRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComputeOptimizer.Model.GetAutoScalingGroupRecommendationsRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComputeOptimizer.Model.GetEBSVolumeRecommendationsRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComputeOptimizer.Model.GetEC2InstanceRecommendationsRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComputeOptimizer.Model.GetECSServiceRecommendationsRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComputeOptimizer.Model.GetEnrollmentStatusesForOrganizationRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComputeOptimizer.Model.GetLambdaFunctionRecommendationsRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComputeOptimizer.Model.GetRecommendationPreferencesRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComputeOptimizer.Model.GetRecommendationSummariesRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ComputeOptimizer.Model.AutoScalingGroupRecommendationOption.PerformanceRisk</property>
     <min>0</min>
     <max>4</max>
