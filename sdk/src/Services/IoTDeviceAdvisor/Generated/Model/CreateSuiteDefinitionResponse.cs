@@ -41,7 +41,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Creates a Device Advisor test suite with TimeStamp of when it was created.
+        /// The timestamp of when the test suite was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -59,7 +59,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionArn. 
         /// <para>
-        /// Creates a Device Advisor test suite with Amazon Resource Name (ARN).
+        /// The Amazon Resource Name (ARN) of the test suite.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -78,7 +78,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionId. 
         /// <para>
-        /// Creates a Device Advisor test suite with suite UUID.
+        /// The UUID of the test suite created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=36)]
@@ -97,7 +97,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionName. 
         /// <para>
-        /// Creates a Device Advisor test suite with suite definition name.
+        /// The suite definition name of the test suite. This is a required parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
