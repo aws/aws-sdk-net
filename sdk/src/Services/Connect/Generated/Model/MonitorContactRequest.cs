@@ -31,7 +31,8 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the MonitorContact operation.
     /// Initiates silent monitoring of a contact. The Contact Control Panel (CCP) of the user
-    /// specified by <i>userId</i> will be set to silent monitoring mode on the contact.
+    /// specified by <i>userId</i> will be set to silent monitoring mode on the contact. Supports
+    /// voice and chat contacts.
     /// </summary>
     public partial class MonitorContactRequest : AmazonConnectRequest
     {

@@ -1764,6 +1764,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateParticipantRoleConfigRequest.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateParticipantRoleConfigRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UpdatePhoneNumberRequest.ClientToken</property>
     <max>500</max>
   </property-value-rule>
@@ -2301,6 +2311,11 @@
     <property>Amazon.Connect.Model.ParticipantDetails.DisplayName</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ParticipantTimerValue.ParticipantTimerDurationInMinutes</property>
+    <min>2</min>
+    <max>480</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PhoneNumberQuickConnectConfig.PhoneNumber</property>

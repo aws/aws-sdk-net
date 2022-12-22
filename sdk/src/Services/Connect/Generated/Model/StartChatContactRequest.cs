@@ -234,8 +234,11 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property SupportedMessagingContentTypes. 
         /// <para>
-        /// The supported chat message content types. Content types can be text/plain or both
-        /// text/plain and text/markdown.
+        /// The supported chat message content types. Content types must always contain <code>text/plain</code>.
+        /// You can then put any other supported type in the list. For example, all the following
+        /// lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown,
+        /// application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain,
+        /// application/json]</code>.
         /// </para>
         /// </summary>
         public List<string> SupportedMessagingContentTypes
