@@ -30,10 +30,13 @@ namespace Amazon.ConnectParticipant.Model
 {
     /// <summary>
     /// Container for the parameters to the SendMessage operation.
-    /// Sends a message. Note that ConnectionToken is used for invoking this API instead of
-    /// ParticipantToken.
+    /// Sends a message.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    ///  <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4 authentication</a>.
@@ -50,7 +53,9 @@ namespace Amazon.ConnectParticipant.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request.
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
@@ -88,8 +93,19 @@ namespace Amazon.ConnectParticipant.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content of the message.
+        /// The content of the message. 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints
+        /// are Minimum of 1, Maximum of 1024. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum
+        /// of 12000. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=16384)]
         public string Content
@@ -107,7 +123,8 @@ namespace Amazon.ConnectParticipant.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The type of the content. Supported types are text/plain.
+        /// The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>,
+        /// and <code>application/json</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

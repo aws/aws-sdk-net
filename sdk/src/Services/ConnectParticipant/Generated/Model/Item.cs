@@ -39,6 +39,7 @@ namespace Amazon.ConnectParticipant.Model
         private string _contentType;
         private string _displayName;
         private string _id;
+        private MessageMetadata _messageMetadata;
         private string _participantId;
         private ParticipantRole _participantRole;
         private ChatItemType _type;
@@ -158,6 +159,25 @@ namespace Amazon.ConnectParticipant.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageMetadata. 
+        /// <para>
+        /// The metadata related to the message. Currently this supports only information related
+        /// to message receipts.
+        /// </para>
+        /// </summary>
+        public MessageMetadata MessageMetadata
+        {
+            get { return this._messageMetadata; }
+            set { this._messageMetadata = value; }
+        }
+
+        // Check to see if MessageMetadata property is set
+        internal bool IsSetMessageMetadata()
+        {
+            return this._messageMetadata != null;
         }
 
         /// <summary>
