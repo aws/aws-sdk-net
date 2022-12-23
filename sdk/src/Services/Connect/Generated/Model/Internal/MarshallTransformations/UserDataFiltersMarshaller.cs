@@ -45,6 +45,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UserDataFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAgents())
+            {
+                context.Writer.WritePropertyName("Agents");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAgentsListValue in requestObject.Agents)
+                {
+                        context.Writer.Write(requestObjectAgentsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetContactFilter())
             {
                 context.Writer.WritePropertyName("ContactFilter");
@@ -63,6 +74,28 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 foreach(var requestObjectQueuesListValue in requestObject.Queues)
                 {
                         context.Writer.Write(requestObjectQueuesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetRoutingProfiles())
+            {
+                context.Writer.WritePropertyName("RoutingProfiles");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRoutingProfilesListValue in requestObject.RoutingProfiles)
+                {
+                        context.Writer.Write(requestObjectRoutingProfilesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetUserHierarchyGroups())
+            {
+                context.Writer.WritePropertyName("UserHierarchyGroups");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectUserHierarchyGroupsListValue in requestObject.UserHierarchyGroups)
+                {
+                        context.Writer.Write(requestObjectUserHierarchyGroupsListValue);
                 }
                 context.Writer.WriteArrayEnd();
             }

@@ -2009,6 +2009,11 @@
     <max>127</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AgentStatusReference.StatusName</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AgentStatusSummary.Name</property>
     <min>1</min>
     <max>127</max>
@@ -2629,6 +2634,11 @@
     <property>Amazon.Connect.Model.User.Username</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UserData.NextStatus</property>
+    <min>1</min>
+    <max>127</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserIdentityInfo.FirstName</property>

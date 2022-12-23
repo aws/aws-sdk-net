@@ -76,6 +76,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Queue = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RoutingProfile", targetDepth))
+                {
+                    var unmarshaller = RoutingProfileReferenceUnmarshaller.Instance;
+                    unmarshalledObject.RoutingProfile = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

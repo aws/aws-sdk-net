@@ -932,6 +932,10 @@ namespace Amazon.Connect
         /// Constant QUEUE for Grouping
         /// </summary>
         public static readonly Grouping QUEUE = new Grouping("QUEUE");
+        /// <summary>
+        /// Constant ROUTING_PROFILE for Grouping
+        /// </summary>
+        public static readonly Grouping ROUTING_PROFILE = new Grouping("ROUTING_PROFILE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3430,6 +3434,56 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SearchableQueueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASCENDING = new SortOrder("ASCENDING");
+        /// <summary>
+        /// Constant DESCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESCENDING = new SortOrder("DESCENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
         {
             return FindValue(value);
         }

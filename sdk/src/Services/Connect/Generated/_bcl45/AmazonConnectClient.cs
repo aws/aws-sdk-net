@@ -9351,8 +9351,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Initiates silent monitoring of a contact. The Contact Control Panel (CCP) of the user
-        /// specified by <i>userId</i> will be set to silent monitoring mode on the contact. Supports
-        /// voice and chat contacts.
+        /// specified by <i>userId</i> will be set to silent monitoring mode on the contact.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MonitorContact service method.</param>
         /// 
@@ -9391,8 +9390,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Initiates silent monitoring of a contact. The Contact Control Panel (CCP) of the user
-        /// specified by <i>userId</i> will be set to silent monitoring mode on the contact. Supports
-        /// voice and chat contacts.
+        /// specified by <i>userId</i> will be set to silent monitoring mode on the contact.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MonitorContact service method.</param>
         /// <param name="cancellationToken">
