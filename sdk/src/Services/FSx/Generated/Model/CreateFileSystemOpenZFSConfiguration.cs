@@ -145,9 +145,9 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see: <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/available-aws-regions.html">Deployment
-        /// type availability</a> and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/zfs-fs-performance.html">
-        /// File system performance</a>in the<i>Amazon FSx for OpenZFS User Guide</i>.
+        /// For more information, see: <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
+        /// type availability</a> and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
+        /// system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
