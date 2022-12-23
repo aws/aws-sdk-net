@@ -1,3 +1,18 @@
+### 3.7.448.0 (2022-12-23 19:26 UTC)
+* Connect (3.7.110.0)
+	* Support for Routing Profile filter, SortCriteria, and grouping by Routing Profiles for GetCurrentMetricData API. Support for RoutingProfiles, UserHierarchyGroups, and Agents as filters, NextStatus and AgentStatusName for GetCurrentUserData. Adds ApproximateTotalCount to both APIs.
+* ConnectParticipant (3.7.102.0)
+	* Amazon Connect Chat introduces the Message Receipts feature. This feature allows agents and customers to receive message delivered and read receipts after they send a chat message.
+* Detective (3.7.101.0)
+	* This release adds a missed AccessDeniedException type to several endpoints.
+* FSx (3.7.102.0)
+	* Fix a bug where a recent release might break certain existing SDKs.
+* Inspector2 (3.7.102.0)
+	* Amazon Inspector adds support for scanning NodeJS 18.x and Go 1.x AWS Lambda function runtimes.
+* Core 3.7.103.6
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.447.0 (2022-12-22 19:24 UTC)
 * ComputeOptimizer (3.7.102.0)
 	* This release enables AWS Compute Optimizer to analyze and generate optimization recommendations for ecs services running on Fargate.
