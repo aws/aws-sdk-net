@@ -162,6 +162,15 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
         BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Creates a strongly-typed BatchWrite object, allowing
+        /// a batch-write operation against DynamoDB.
+        /// </summary>
+        /// <param name="valuesType">The type of data which will be persisted in this batch.</param>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <returns>Empty strongly-typed BatchWrite object</returns>
+        BatchWrite<object> CreateBatchWrite(Type valuesType, DynamoDBOperationConfig operationConfig = null);
 #endif
 
         /// <summary>

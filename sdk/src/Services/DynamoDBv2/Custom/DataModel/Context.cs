@@ -227,6 +227,30 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <summary>
+        /// Creates a strongly-typed BatchWrite object, allowing
+        /// a batch-write operation against DynamoDB.
+        /// </summary>
+        /// <param name="valuesType">Type of objects to write</param>
+        /// <returns>Empty strongly-typed BatchWrite object</returns>
+        public BatchWrite<object> CreateBatchWrite(Type valuesType)
+        {
+            return CreateBatchWrite(valuesType, null);
+        }
+
+        /// <summary>
+        /// Creates a strongly-typed BatchWrite object, allowing
+        /// a batch-write operation against DynamoDB.
+        /// </summary>
+        /// <param name="valuesType">Type of objects to write</param>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <returns>Empty strongly-typed BatchWrite object</returns>
+        public BatchWrite<object> CreateBatchWrite(Type valuesType, DynamoDBOperationConfig operationConfig)
+        {
+            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
+            return new BatchWrite<object>(this, valuesType, config);
+        }
+
+        /// <summary>
         /// Creates a MultiTableBatchWrite object, composed of multiple
         /// individual BatchWrite objects.
         /// </summary>
