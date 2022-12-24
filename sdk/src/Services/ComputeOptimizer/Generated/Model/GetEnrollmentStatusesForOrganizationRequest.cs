@@ -76,6 +76,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

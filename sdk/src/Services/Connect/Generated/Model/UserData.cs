@@ -38,6 +38,7 @@ namespace Amazon.Connect.Model
         private List<AgentContactReference> _contacts = new List<AgentContactReference>();
         private HierarchyPathReference _hierarchyPath;
         private Dictionary<string, int> _maxSlotsByChannel = new Dictionary<string, int>();
+        private string _nextStatus;
         private RoutingProfileReference _routingProfile;
         private AgentStatusReference _status;
         private UserReference _user;
@@ -134,6 +135,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetMaxSlotsByChannel()
         {
             return this._maxSlotsByChannel != null && this._maxSlotsByChannel.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextStatus. 
+        /// <para>
+        /// The Next status of the agent.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=127)]
+        public string NextStatus
+        {
+            get { return this._nextStatus; }
+            set { this._nextStatus = value; }
+        }
+
+        // Check to see if NextStatus property is set
+        internal bool IsSetNextStatus()
+        {
+            return this._nextStatus != null;
         }
 
         /// <summary>

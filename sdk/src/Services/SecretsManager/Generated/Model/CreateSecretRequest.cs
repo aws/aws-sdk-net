@@ -39,6 +39,12 @@ namespace Amazon.SecretsManager.Model
     /// 
     ///  
     /// <para>
+    /// For secrets that use <i>managed rotation</i>, you need to create the secret through
+    /// the managing service. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+    /// Manager secrets managed by other Amazon Web Services services</a>. 
+    /// </para>
+    ///  
+    /// <para>
     /// For information about creating a secret in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html">Create
     /// a secret</a>.
     /// </para>

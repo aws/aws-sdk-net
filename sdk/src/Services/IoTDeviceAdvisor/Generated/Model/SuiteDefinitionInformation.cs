@@ -99,7 +99,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property IsLongDurationTest. 
         /// <para>
-        ///  Verifies if the test suite is a long duration test. 
+        /// Verifies if the test suite is a long duration test.
         /// </para>
         /// </summary>
         public bool IsLongDurationTest
@@ -117,7 +117,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        ///  Gets the MQTT protocol that is configured in the suite definition.
+        /// Gets the MQTT protocol that is configured in the suite definition.
         /// </para>
         /// </summary>
         public Protocol Protocol

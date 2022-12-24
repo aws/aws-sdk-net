@@ -46,7 +46,8 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The resource ARN of an IoT Device Advisor resource.
+        /// The resource ARN of an IoT Device Advisor resource. This can be SuiteDefinition ARN
+        /// or SuiteRun ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

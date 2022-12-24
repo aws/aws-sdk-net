@@ -50,10 +50,10 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>language</b> - The ISO 639-1 code for the language in which Amazon Web Services
-    /// provides support. Amazon Web Services Support currently supports English ("en") and
-    /// Japanese ("ja"). Language parameters must be passed explicitly for operations that
-    /// take them.
+    ///  <b>language</b> - The language in which Amazon Web Services Support handles the case.
+    /// Amazon Web Services Support currently supports English ("en") and Japanese ("ja").
+    /// You must specify the ISO 639-1 code for the <code>language</code> parameter if you
+    /// want support in that language.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -214,9 +214,10 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        /// The ISO 639-1 code for the language in which Amazon Web Services provides support.
-        /// Amazon Web Services Support currently supports English ("en") and Japanese ("ja").
-        /// Language parameters must be passed explicitly for operations that take them.
+        /// The language in which Amazon Web Services Support handles the case. Amazon Web Services
+        /// Support currently supports English ("en") and Japanese ("ja"). You must specify the
+        /// ISO 639-1 code for the <code>language</code> parameter if you want support in that
+        /// language.
         /// </para>
         /// </summary>
         public string Language

@@ -33,8 +33,27 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class GetCurrentUserDataResponse : AmazonWebServiceResponse
     {
+        private long? _approximateTotalCount;
         private string _nextToken;
         private List<UserData> _userDataList = new List<UserData>();
+
+        /// <summary>
+        /// Gets and sets the property ApproximateTotalCount. 
+        /// <para>
+        /// The total count of the result, regardless of the current page size.
+        /// </para>
+        /// </summary>
+        public long ApproximateTotalCount
+        {
+            get { return this._approximateTotalCount.GetValueOrDefault(); }
+            set { this._approximateTotalCount = value; }
+        }
+
+        // Check to see if ApproximateTotalCount property is set
+        internal bool IsSetApproximateTotalCount()
+        {
+            return this._approximateTotalCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property NextToken. 

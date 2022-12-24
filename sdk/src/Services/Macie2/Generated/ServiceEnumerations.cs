@@ -2499,6 +2499,10 @@ namespace Amazon.Macie2
         /// </summary>
         public static readonly StorageClass GLACIER = new StorageClass("GLACIER");
         /// <summary>
+        /// Constant GLACIER_IR for StorageClass
+        /// </summary>
+        public static readonly StorageClass GLACIER_IR = new StorageClass("GLACIER_IR");
+        /// <summary>
         /// Constant INTELLIGENT_TIERING for StorageClass
         /// </summary>
         public static readonly StorageClass INTELLIGENT_TIERING = new StorageClass("INTELLIGENT_TIERING");
@@ -2506,6 +2510,10 @@ namespace Amazon.Macie2
         /// Constant ONEZONE_IA for StorageClass
         /// </summary>
         public static readonly StorageClass ONEZONE_IA = new StorageClass("ONEZONE_IA");
+        /// <summary>
+        /// Constant OUTPOSTS for StorageClass
+        /// </summary>
+        public static readonly StorageClass OUTPOSTS = new StorageClass("OUTPOSTS");
         /// <summary>
         /// Constant REDUCED_REDUNDANCY for StorageClass
         /// </summary>

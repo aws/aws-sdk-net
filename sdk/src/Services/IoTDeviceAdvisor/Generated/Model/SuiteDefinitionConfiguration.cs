@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
-    /// Gets Suite Definition Configuration.
+    /// Gets the suite definition configuration.
     /// </summary>
     public partial class SuiteDefinitionConfiguration
     {
@@ -44,10 +44,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property DevicePermissionRoleArn. 
         /// <para>
-        /// Gets the device permission ARN.
+        /// Gets the device permission ARN. This is a required parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string DevicePermissionRoleArn
         {
             get { return this._devicePermissionRoleArn; }
@@ -100,7 +100,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property IsLongDurationTest. 
         /// <para>
-        ///  Verifies if the test suite is a long duration test. 
+        /// Verifies if the test suite is a long duration test.
         /// </para>
         /// </summary>
         public bool IsLongDurationTest
@@ -118,7 +118,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        ///  Gets the MQTT protocol that is configured in the suite definition.
+        /// Sets the MQTT protocol that is configured in the suite definition.
         /// </para>
         /// </summary>
         public Protocol Protocol
@@ -136,10 +136,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property RootGroup. 
         /// <para>
-        /// Gets test suite root group.
+        /// Gets the test suite root group. This is a required parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string RootGroup
         {
             get { return this._rootGroup; }
@@ -155,10 +155,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionName. 
         /// <para>
-        /// Gets Suite Definition Configuration name.
+        /// Gets the suite definition name. This is a required parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string SuiteDefinitionName
         {
             get { return this._suiteDefinitionName; }

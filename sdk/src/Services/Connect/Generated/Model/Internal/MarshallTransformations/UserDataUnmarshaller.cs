@@ -94,6 +94,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaxSlotsByChannel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NextStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NextStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RoutingProfile", targetDepth))
                 {
                     var unmarshaller = RoutingProfileReferenceUnmarshaller.Instance;

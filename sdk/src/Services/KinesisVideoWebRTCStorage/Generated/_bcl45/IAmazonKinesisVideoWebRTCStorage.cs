@@ -77,42 +77,17 @@ namespace Amazon.KinesisVideoWebRTCStorage
         /// 
         /// <returns>The response from the JoinStorageSession service method, as returned by KinesisVideoWebRTCStorage.</returns>
         /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.AccessDeniedException">
-        /// <ol> <li> 
-        /// <para>
-        /// You do not have required permissions to perform this operation
-        /// </para>
-        ///  </li> </ol> <ol> <li> 
-        /// <para>
-        /// The <code>AccessDeniedException</code> can be thrown for operation access as well
-        /// as tokens or resource access
-        /// </para>
-        ///  </li> </ol>
+        /// You do not have required permissions to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.ClientLimitExceededException">
         /// Kinesis Video Streams has throttled the request because you have exceeded the limit
         /// of allowed client calls. Try making the call later.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.InvalidArgumentException">
-        /// <ol> <li> 
-        /// <para>
         /// The value for this input parameter is invalid.
-        /// </para>
-        ///  </li> </ol> <ol> <li> 
-        /// <para>
-        /// Additional details may <b>not</b>be returned.
-        /// </para>
-        ///  </li> </ol>
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.ResourceNotFoundException">
-        /// <ol> <li> 
-        /// <para>
-        /// The specified resource is not found
-        /// </para>
-        ///  </li> </ol> <ol> <li> 
-        /// <para>
-        /// You have not specified a channel in this API call.
-        /// </para>
-        ///  </li> </ol>
+        /// The specified resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-webrtc-storage-2018-05-10/JoinStorageSession">REST API Reference for JoinStorageSession Operation</seealso>
         JoinStorageSessionResponse JoinStorageSession(JoinStorageSessionRequest request);
@@ -158,189 +133,20 @@ namespace Amazon.KinesisVideoWebRTCStorage
         /// 
         /// <returns>The response from the JoinStorageSession service method, as returned by KinesisVideoWebRTCStorage.</returns>
         /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.AccessDeniedException">
-        /// <ol> <li> 
-        /// <para>
-        /// You do not have required permissions to perform this operation
-        /// </para>
-        ///  </li> </ol> <ol> <li> 
-        /// <para>
-        /// The <code>AccessDeniedException</code> can be thrown for operation access as well
-        /// as tokens or resource access
-        /// </para>
-        ///  </li> </ol>
+        /// You do not have required permissions to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.ClientLimitExceededException">
         /// Kinesis Video Streams has throttled the request because you have exceeded the limit
         /// of allowed client calls. Try making the call later.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.InvalidArgumentException">
-        /// <ol> <li> 
-        /// <para>
         /// The value for this input parameter is invalid.
-        /// </para>
-        ///  </li> </ol> <ol> <li> 
-        /// <para>
-        /// Additional details may <b>not</b>be returned.
-        /// </para>
-        ///  </li> </ol>
         /// </exception>
         /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.ResourceNotFoundException">
-        /// <ol> <li> 
-        /// <para>
-        /// The specified resource is not found
-        /// </para>
-        ///  </li> </ol> <ol> <li> 
-        /// <para>
-        /// You have not specified a channel in this API call.
-        /// </para>
-        ///  </li> </ol>
+        /// The specified resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-webrtc-storage-2018-05-10/JoinStorageSession">REST API Reference for JoinStorageSession Operation</seealso>
         Task<JoinStorageSessionResponse> JoinStorageSessionAsync(JoinStorageSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  JoinStorageSessionAsViewer
-
-
-        /// <summary>
-        /// Join the ongoing one way-video and/or multi-way audio WebRTC session as a viewer
-        /// for an input channel. If there’s no existing session for the channel, create a new
-        /// streaming session and provide the Amazon Resource Name (ARN) of the signaling channel
-        /// (<code>channelArn</code>) and client id (<code>clientId</code>). 
-        /// 
-        ///  
-        /// <para>
-        /// Currently for <code>SINGLE_MASTER</code> type, a video producing device is able to
-        /// ingest both audio and video media into a stream, while viewers can only ingest audio.
-        /// Both a video producing device and viewers can join a session first and wait for other
-        /// participants. While participants are having peer to peer conversations through webRTC,
-        /// the ingested media session will be stored into the Kinesis Video Stream. Multiple
-        /// viewers are able to playback real-time media. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Customers can also use existing Kinesis Video Streams features like <code>HLS</code>
-        /// or <code>DASH</code> playback, Image generation, and more with ingested WebRTC media.
-        /// If there’s an existing session with the same <code>clientId</code> that's found in
-        /// the join session request, the new request takes precedence.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the JoinStorageSessionAsViewer service method.</param>
-        /// 
-        /// <returns>The response from the JoinStorageSessionAsViewer service method, as returned by KinesisVideoWebRTCStorage.</returns>
-        /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.AccessDeniedException">
-        /// <ol> <li> 
-        /// <para>
-        /// You do not have required permissions to perform this operation
-        /// </para>
-        ///  </li> </ol> <ol> <li> 
-        /// <para>
-        /// The <code>AccessDeniedException</code> can be thrown for operation access as well
-        /// as tokens or resource access
-        /// </para>
-        ///  </li> </ol>
-        /// </exception>
-        /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.ClientLimitExceededException">
-        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
-        /// of allowed client calls. Try making the call later.
-        /// </exception>
-        /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.InvalidArgumentException">
-        /// <ol> <li> 
-        /// <para>
-        /// The value for this input parameter is invalid.
-        /// </para>
-        ///  </li> </ol> <ol> <li> 
-        /// <para>
-        /// Additional details may <b>not</b>be returned.
-        /// </para>
-        ///  </li> </ol>
-        /// </exception>
-        /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.ResourceNotFoundException">
-        /// <ol> <li> 
-        /// <para>
-        /// The specified resource is not found
-        /// </para>
-        ///  </li> </ol> <ol> <li> 
-        /// <para>
-        /// You have not specified a channel in this API call.
-        /// </para>
-        ///  </li> </ol>
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-webrtc-storage-2018-05-10/JoinStorageSessionAsViewer">REST API Reference for JoinStorageSessionAsViewer Operation</seealso>
-        JoinStorageSessionAsViewerResponse JoinStorageSessionAsViewer(JoinStorageSessionAsViewerRequest request);
-
-
-
-        /// <summary>
-        /// Join the ongoing one way-video and/or multi-way audio WebRTC session as a viewer
-        /// for an input channel. If there’s no existing session for the channel, create a new
-        /// streaming session and provide the Amazon Resource Name (ARN) of the signaling channel
-        /// (<code>channelArn</code>) and client id (<code>clientId</code>). 
-        /// 
-        ///  
-        /// <para>
-        /// Currently for <code>SINGLE_MASTER</code> type, a video producing device is able to
-        /// ingest both audio and video media into a stream, while viewers can only ingest audio.
-        /// Both a video producing device and viewers can join a session first and wait for other
-        /// participants. While participants are having peer to peer conversations through webRTC,
-        /// the ingested media session will be stored into the Kinesis Video Stream. Multiple
-        /// viewers are able to playback real-time media. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Customers can also use existing Kinesis Video Streams features like <code>HLS</code>
-        /// or <code>DASH</code> playback, Image generation, and more with ingested WebRTC media.
-        /// If there’s an existing session with the same <code>clientId</code> that's found in
-        /// the join session request, the new request takes precedence.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the JoinStorageSessionAsViewer service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the JoinStorageSessionAsViewer service method, as returned by KinesisVideoWebRTCStorage.</returns>
-        /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.AccessDeniedException">
-        /// <ol> <li> 
-        /// <para>
-        /// You do not have required permissions to perform this operation
-        /// </para>
-        ///  </li> </ol> <ol> <li> 
-        /// <para>
-        /// The <code>AccessDeniedException</code> can be thrown for operation access as well
-        /// as tokens or resource access
-        /// </para>
-        ///  </li> </ol>
-        /// </exception>
-        /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.ClientLimitExceededException">
-        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
-        /// of allowed client calls. Try making the call later.
-        /// </exception>
-        /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.InvalidArgumentException">
-        /// <ol> <li> 
-        /// <para>
-        /// The value for this input parameter is invalid.
-        /// </para>
-        ///  </li> </ol> <ol> <li> 
-        /// <para>
-        /// Additional details may <b>not</b>be returned.
-        /// </para>
-        ///  </li> </ol>
-        /// </exception>
-        /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.ResourceNotFoundException">
-        /// <ol> <li> 
-        /// <para>
-        /// The specified resource is not found
-        /// </para>
-        ///  </li> </ol> <ol> <li> 
-        /// <para>
-        /// You have not specified a channel in this API call.
-        /// </para>
-        ///  </li> </ol>
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-webrtc-storage-2018-05-10/JoinStorageSessionAsViewer">REST API Reference for JoinStorageSessionAsViewer Operation</seealso>
-        Task<JoinStorageSessionAsViewerResponse> JoinStorageSessionAsViewerAsync(JoinStorageSessionAsViewerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -35,6 +35,7 @@ namespace Amazon.Transfer.Model
     {
         private CopyStepDetails _copyStepDetails;
         private CustomStepDetails _customStepDetails;
+        private DecryptStepDetails _decryptStepDetails;
         private DeleteStepDetails _deleteStepDetails;
         private TagStepDetails _tagStepDetails;
         private WorkflowStepType _type;
@@ -95,6 +96,21 @@ namespace Amazon.Transfer.Model
         internal bool IsSetCustomStepDetails()
         {
             return this._customStepDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DecryptStepDetails.
+        /// </summary>
+        public DecryptStepDetails DecryptStepDetails
+        {
+            get { return this._decryptStepDetails; }
+            set { this._decryptStepDetails = value; }
+        }
+
+        // Check to see if DecryptStepDetails property is set
+        internal bool IsSetDecryptStepDetails()
+        {
+            return this._decryptStepDetails != null;
         }
 
         /// <summary>

@@ -34,6 +34,7 @@ namespace Amazon.Connect.Model
     public partial class AgentStatusReference
     {
         private string _statusArn;
+        private string _statusName;
         private DateTime? _statusStartTimestamp;
 
         /// <summary>
@@ -52,6 +53,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetStatusArn()
         {
             return this._statusArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusName. 
+        /// <para>
+        /// The name of the agent status.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=127)]
+        public string StatusName
+        {
+            get { return this._statusName; }
+            set { this._statusName = value; }
+        }
+
+        // Check to see if StatusName property is set
+        internal bool IsSetStatusName()
+        {
+            return this._statusName != null;
         }
 
         /// <summary>

@@ -62,6 +62,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DomainExecutionRoleArn);
             }
 
+            if(requestObject.IsSetRStudioConnectUrl())
+            {
+                context.Writer.WritePropertyName("RStudioConnectUrl");
+                context.Writer.Write(requestObject.RStudioConnectUrl);
+            }
+
+            if(requestObject.IsSetRStudioPackageManagerUrl())
+            {
+                context.Writer.WritePropertyName("RStudioPackageManagerUrl");
+                context.Writer.Write(requestObject.RStudioPackageManagerUrl);
+            }
+
         }
 
         /// <summary>

@@ -63,7 +63,9 @@ namespace Amazon.RDS.Model
         private string _engineVersion;
         private int? _iops;
         private string _licenseModel;
+        private bool? _manageMasterUserPassword;
         private string _masterUserPassword;
+        private string _masterUserSecretKmsKeyId;
         private int? _maxAllocatedStorage;
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
@@ -80,6 +82,7 @@ namespace Amazon.RDS.Model
         private bool? _publiclyAccessible;
         private ReplicaMode _replicaMode;
         private int? _resumeFullAutomationModeMinutes;
+        private bool? _rotateMasterUserPassword;
         private int? _storageThroughput;
         private string _storageType;
         private string _tdeCredentialArn;
@@ -483,7 +486,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// If you modify the DB instance class, an outage occurs during the change. The change
         /// is applied during the next maintenance window, unless you specify <code>ApplyImmediately</code>
-        /// in your request.
+        /// in your request. 
         /// </para>
         ///  
         /// <para>
@@ -1036,6 +1039,55 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManageMasterUserPassword. 
+        /// <para>
+        /// A value that indicates whether to manage the master user password with Amazon Web
+        /// Services Secrets Manager.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the DB cluster doesn't manage the master user password with Amazon Web Services
+        /// Secrets Manager, you can turn on this management. In this case, you can't specify
+        /// <code>MasterUserPassword</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the DB cluster already manages the master user password with Amazon Web Services
+        /// Secrets Manager, and you specify that the master user password is not managed with
+        /// Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>.
+        /// In this case, RDS deletes the secret and uses the new password for the master user
+        /// specified by <code>MasterUserPassword</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+        /// management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User
+        /// Guide.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Can't manage the master user password with Amazon Web Services Secrets Manager if
+        /// <code>MasterUserPassword</code> is specified.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool ManageMasterUserPassword
+        {
+            get { return this._manageMasterUserPassword.GetValueOrDefault(); }
+            set { this._manageMasterUserPassword = value; }
+        }
+
+        // Check to see if ManageMasterUserPassword property is set
+        internal bool IsSetManageMasterUserPassword()
+        {
+            return this._manageMasterUserPassword.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
         /// The new password for the master user. The password can include any printable ASCII
@@ -1064,6 +1116,11 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Default: Uses existing setting
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned
+        /// on.
         /// </para>
         ///  
         /// <para>
@@ -1123,6 +1180,62 @@ namespace Amazon.RDS.Model
         internal bool IsSetMasterUserPassword()
         {
             return this._masterUserPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MasterUserSecretKmsKeyId. 
+        /// <para>
+        /// The Amazon Web Services KMS key identifier to encrypt a secret that is automatically
+        /// generated and managed in Amazon Web Services Secrets Manager.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is valid only if both of the following conditions are met:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The DB instance doesn't manage the master user password in Amazon Web Services Secrets
+        /// Manager.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the DB instance already manages the master user password in Amazon Web Services
+        /// Secrets Manager, you can't change the KMS key used to encrypt the secret.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are turning on <code>ManageMasterUserPassword</code> to manage the master user
+        /// password in Amazon Web Services Secrets Manager.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>,
+        /// then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If
+        /// the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code>
+        /// KMS key to encrypt the secret, and you must use a customer managed KMS key.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
+        /// name for the KMS key. To use a KMS key in a different Amazon Web Services account,
+        /// specify the key ARN or alias ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services
+        /// account has a different default KMS key for each Amazon Web Services Region.
+        /// </para>
+        /// </summary>
+        public string MasterUserSecretKmsKeyId
+        {
+            get { return this._masterUserSecretKmsKeyId; }
+            set { this._masterUserSecretKmsKeyId = value; }
+        }
+
+        // Check to see if MasterUserSecretKmsKeyId property is set
+        internal bool IsSetMasterUserSecretKmsKeyId()
+        {
+            return this._masterUserSecretKmsKeyId != null;
         }
 
         /// <summary>
@@ -1718,6 +1831,46 @@ namespace Amazon.RDS.Model
         internal bool IsSetResumeFullAutomationModeMinutes()
         {
             return this._resumeFullAutomationModeMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RotateMasterUserPassword. 
+        /// <para>
+        /// A value that indicates whether to rotate the secret managed by Amazon Web Services
+        /// Secrets Manager for the master user password.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is valid only if the master user password is managed by RDS in Amazon
+        /// Web Services Secrets Manager for the DB cluster. The secret value contains the updated
+        /// password.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+        /// management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User
+        /// Guide.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must apply the change immediately when rotating the master user password.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool RotateMasterUserPassword
+        {
+            get { return this._rotateMasterUserPassword.GetValueOrDefault(); }
+            set { this._rotateMasterUserPassword = value; }
+        }
+
+        // Check to see if RotateMasterUserPassword property is set
+        internal bool IsSetRotateMasterUserPassword()
+        {
+            return this._rotateMasterUserPassword.HasValue; 
         }
 
         /// <summary>

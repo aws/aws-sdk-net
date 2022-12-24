@@ -30,10 +30,13 @@ namespace Amazon.ConnectParticipant.Model
 {
     /// <summary>
     /// Container for the parameters to the DisconnectParticipant operation.
-    /// Disconnects a participant. Note that ConnectionToken is used for invoking this API
-    /// instead of ParticipantToken.
+    /// Disconnects a participant. 
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    ///  <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4 authentication</a>.
@@ -48,7 +51,9 @@ namespace Amazon.ConnectParticipant.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request.
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]

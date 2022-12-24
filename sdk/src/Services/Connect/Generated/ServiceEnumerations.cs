@@ -932,6 +932,10 @@ namespace Amazon.Connect
         /// Constant QUEUE for Grouping
         /// </summary>
         public static readonly Grouping QUEUE = new Grouping("QUEUE");
+        /// <summary>
+        /// Constant ROUTING_PROFILE for Grouping
+        /// </summary>
+        public static readonly Grouping ROUTING_PROFILE = new Grouping("ROUTING_PROFILE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1688,6 +1692,102 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NotificationDeliveryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ParticipantTimerAction.
+    /// </summary>
+    public class ParticipantTimerAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Unset for ParticipantTimerAction
+        /// </summary>
+        public static readonly ParticipantTimerAction Unset = new ParticipantTimerAction("Unset");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParticipantTimerAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParticipantTimerAction FindValue(string value)
+        {
+            return FindValue<ParticipantTimerAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParticipantTimerAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ParticipantTimerType.
+    /// </summary>
+    public class ParticipantTimerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISCONNECT_NONCUSTOMER for ParticipantTimerType
+        /// </summary>
+        public static readonly ParticipantTimerType DISCONNECT_NONCUSTOMER = new ParticipantTimerType("DISCONNECT_NONCUSTOMER");
+        /// <summary>
+        /// Constant IDLE for ParticipantTimerType
+        /// </summary>
+        public static readonly ParticipantTimerType IDLE = new ParticipantTimerType("IDLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParticipantTimerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParticipantTimerType FindValue(string value)
+        {
+            return FindValue<ParticipantTimerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParticipantTimerType(string value)
         {
             return FindValue(value);
         }
@@ -3341,6 +3441,56 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASCENDING = new SortOrder("ASCENDING");
+        /// <summary>
+        /// Constant DESCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESCENDING = new SortOrder("DESCENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SourceType.
     /// </summary>
     public class SourceType : ConstantClass
@@ -3690,6 +3840,56 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TaskTemplateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TimerEligibleParticipantRoles.
+    /// </summary>
+    public class TimerEligibleParticipantRoles : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGENT for TimerEligibleParticipantRoles
+        /// </summary>
+        public static readonly TimerEligibleParticipantRoles AGENT = new TimerEligibleParticipantRoles("AGENT");
+        /// <summary>
+        /// Constant CUSTOMER for TimerEligibleParticipantRoles
+        /// </summary>
+        public static readonly TimerEligibleParticipantRoles CUSTOMER = new TimerEligibleParticipantRoles("CUSTOMER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TimerEligibleParticipantRoles(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TimerEligibleParticipantRoles FindValue(string value)
+        {
+            return FindValue<TimerEligibleParticipantRoles>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TimerEligibleParticipantRoles(string value)
         {
             return FindValue(value);
         }

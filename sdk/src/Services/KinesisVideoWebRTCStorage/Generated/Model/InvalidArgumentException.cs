@@ -29,15 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideoWebRTCStorage.Model
 {
     /// <summary>
-    /// <ol> <li> 
-    /// <para>
     /// The value for this input parameter is invalid.
-    /// </para>
-    ///  </li> </ol> <ol> <li> 
-    /// <para>
-    /// Additional details may <b>not</b>be returned.
-    /// </para>
-    ///  </li> </ol>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

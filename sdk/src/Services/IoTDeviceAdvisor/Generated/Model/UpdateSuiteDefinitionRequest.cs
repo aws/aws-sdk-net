@@ -49,6 +49,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// Updates a Device Advisor test suite with suite definition configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SuiteDefinitionConfiguration SuiteDefinitionConfiguration
         {
             get { return this._suiteDefinitionConfiguration; }

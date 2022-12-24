@@ -9007,6 +9007,88 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateParticipantRoleConfig
+
+
+        /// <summary>
+        /// Updates timeouts for when human chat participants are to be considered idle, and when
+        /// agents are automatically disconnected from a chat due to idleness. You can set four
+        /// timers:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Customer idle timeout
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Customer auto-disconnect timeout
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agent idle timeout
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agent auto-disconnect timeout
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about how chat timeouts work, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-chat-timeouts.html">Set
+        /// up chat timeouts for human participants</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateParticipantRoleConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateParticipantRoleConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantRoleConfig">REST API Reference for UpdateParticipantRoleConfig Operation</seealso>
+        UpdateParticipantRoleConfigResponse UpdateParticipantRoleConfig(UpdateParticipantRoleConfigRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateParticipantRoleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateParticipantRoleConfig operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateParticipantRoleConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantRoleConfig">REST API Reference for UpdateParticipantRoleConfig Operation</seealso>
+        IAsyncResult BeginUpdateParticipantRoleConfig(UpdateParticipantRoleConfigRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateParticipantRoleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateParticipantRoleConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateParticipantRoleConfigResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantRoleConfig">REST API Reference for UpdateParticipantRoleConfig Operation</seealso>
+        UpdateParticipantRoleConfigResponse EndUpdateParticipantRoleConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdatePhoneNumber
 
 

@@ -42,9 +42,37 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters up to 100 <code>Queues</code>, or up to 9 <code>ContactStates</code>. The
-        /// user data is retrieved only for those users who are associated with the queues and
-        /// have contacts that are in the specified <code>ContactState</code>. 
+        /// The filters to apply to returned user data. You can filter up to the following limits:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Queues: 100
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Routing profiles: 100
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agents: 100
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Contact states: 9
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User hierarchy groups: 1
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  The user data is retrieved for only the specified values/resources in the filter.
+        /// A maximum of one filter can be passed from queues, routing profiles, agents, and user
+        /// hierarchy groups. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Currently tagging is only supported on the resources that are passed in the filter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

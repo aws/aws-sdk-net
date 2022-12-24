@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the kinesis-video-webrtc-storage-2018-05-10.normal.json service model.
+ * Do not modify this file. This file is generated from the connect-2017-08-08.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -23,19 +23,19 @@ using System.IO;
 using System.Text;
 using System.Xml.Serialization;
 
-using Amazon.KinesisVideoWebRTCStorage.Model;
+using Amazon.Connect.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
-namespace Amazon.KinesisVideoWebRTCStorage.Model.Internal.MarshallTransformations
+namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// JoinStorageSessionAsViewer Request Marshaller
+    /// UpdateParticipantRoleConfig Request Marshaller
     /// </summary>       
-    public class JoinStorageSessionAsViewerRequestMarshaller : IMarshaller<IRequest, JoinStorageSessionAsViewerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateParticipantRoleConfigRequestMarshaller : IMarshaller<IRequest, UpdateParticipantRoleConfigRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.KinesisVideoWebRTCStorage.Model.Internal.MarshallTransformation
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((JoinStorageSessionAsViewerRequest)input);
+            return this.Marshall((UpdateParticipantRoleConfigRequest)input);
         }
 
         /// <summary>
@@ -52,29 +52,34 @@ namespace Amazon.KinesisVideoWebRTCStorage.Model.Internal.MarshallTransformation
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(JoinStorageSessionAsViewerRequest publicRequest)
+        public IRequest Marshall(UpdateParticipantRoleConfigRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(publicRequest, "Amazon.KinesisVideoWebRTCStorage");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
-            request.HttpMethod = "POST";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";
+            request.HttpMethod = "PUT";
 
-            request.ResourcePath = "/joinStorageSessionAsViewer";
+            if (!publicRequest.IsSetContactId())
+                throw new AmazonConnectException("Request object does not have required field ContactId set");
+            request.AddPathResource("{ContactId}", StringUtils.FromString(publicRequest.ContactId));
+            if (!publicRequest.IsSetInstanceId())
+                throw new AmazonConnectException("Request object does not have required field InstanceId set");
+            request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
+            request.ResourcePath = "/contact/participant-role-config/{InstanceId}/{ContactId}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChannelArn())
+                if(publicRequest.IsSetChannelConfiguration())
                 {
-                    context.Writer.WritePropertyName("channelArn");
-                    context.Writer.Write(publicRequest.ChannelArn);
-                }
+                    context.Writer.WritePropertyName("ChannelConfiguration");
+                    context.Writer.WriteObjectStart();
 
-                if(publicRequest.IsSetClientId())
-                {
-                    context.Writer.WritePropertyName("clientId");
-                    context.Writer.Write(publicRequest.ClientId);
+                    var marshaller = UpdateParticipantRoleConfigChannelInfoMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ChannelConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -85,9 +90,9 @@ namespace Amazon.KinesisVideoWebRTCStorage.Model.Internal.MarshallTransformation
 
             return request;
         }
-        private static JoinStorageSessionAsViewerRequestMarshaller _instance = new JoinStorageSessionAsViewerRequestMarshaller();        
+        private static UpdateParticipantRoleConfigRequestMarshaller _instance = new UpdateParticipantRoleConfigRequestMarshaller();        
 
-        internal static JoinStorageSessionAsViewerRequestMarshaller GetInstance()
+        internal static UpdateParticipantRoleConfigRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -95,7 +100,7 @@ namespace Amazon.KinesisVideoWebRTCStorage.Model.Internal.MarshallTransformation
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JoinStorageSessionAsViewerRequestMarshaller Instance
+        public static UpdateParticipantRoleConfigRequestMarshaller Instance
         {
             get
             {

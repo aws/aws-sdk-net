@@ -70,6 +70,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.StatusArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StatusName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StatusStartTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
