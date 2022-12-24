@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the kinesis-video-webrtc-storage-2018-05-10.normal.json service model.
+ * Do not modify this file. This file is generated from the connect-2017-08-08.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -26,12 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
-namespace Amazon.KinesisVideoWebRTCStorage.Model
+namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// This is the response object from the JoinStorageSessionAsViewer operation.
+    /// This is the response object from the UpdateParticipantRoleConfig operation.
     /// </summary>
-    public partial class JoinStorageSessionAsViewerResponse : AmazonWebServiceResponse
+    public partial class UpdateParticipantRoleConfigResponse : AmazonWebServiceResponse
     {
 
     }

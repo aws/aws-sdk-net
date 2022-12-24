@@ -1123,6 +1123,16 @@
     <max>1800</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.DecryptStepDetails.Name</property>
+    <max>30</max>
+    <pattern>^[\w-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DecryptStepDetails.SourceFileLocation</property>
+    <max>256</max>
+    <pattern>^\$\{(\w+.)+\w+\}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.DeleteStepDetails.Name</property>
     <max>30</max>
     <pattern>^[\w-]*$</pattern>

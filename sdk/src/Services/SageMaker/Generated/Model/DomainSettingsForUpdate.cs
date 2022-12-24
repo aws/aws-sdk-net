@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     {
         private ExecutionRoleIdentityConfig _executionRoleIdentityConfig;
         private RStudioServerProDomainSettingsForUpdate _rStudioServerProDomainSettingsForUpdate;
+        private List<string> _securityGroupIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property ExecutionRoleIdentityConfig. 
@@ -73,6 +74,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetRStudioServerProDomainSettingsForUpdate()
         {
             return this._rStudioServerProDomainSettingsForUpdate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupIds. 
+        /// <para>
+        /// The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code>
+        /// uses for communication between Domain-level apps and user apps.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=3)]
+        public List<string> SecurityGroupIds
+        {
+            get { return this._securityGroupIds; }
+            set { this._securityGroupIds = value; }
+        }
+
+        // Check to see if SecurityGroupIds property is set
+        internal bool IsSetSecurityGroupIds()
+        {
+            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
         }
 
     }

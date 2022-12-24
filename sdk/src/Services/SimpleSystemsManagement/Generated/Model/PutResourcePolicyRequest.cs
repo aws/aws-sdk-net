@@ -67,7 +67,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property PolicyHash. 
         /// <para>
         /// ID of the current policy version. The hash helps to prevent a situation where multiple
-        /// users attempt to overwrite a policy.
+        /// users attempt to overwrite a policy. You must provide this hash when updating or deleting
+        /// a policy.
         /// </para>
         /// </summary>
         public string PolicyHash
@@ -103,7 +104,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Amazon Resource Name (ARN) of the resource to which the policies are attached.
+        /// Amazon Resource Name (ARN) of the resource to which you want to attach a policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

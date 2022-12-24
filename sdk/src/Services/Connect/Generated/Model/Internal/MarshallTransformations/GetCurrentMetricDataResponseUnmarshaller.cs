@@ -51,6 +51,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ApproximateTotalCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.ApproximateTotalCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DataSnapshotTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

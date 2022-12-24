@@ -8360,6 +8360,82 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateParticipantRoleConfig
+
+        internal virtual UpdateParticipantRoleConfigResponse UpdateParticipantRoleConfig(UpdateParticipantRoleConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateParticipantRoleConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateParticipantRoleConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateParticipantRoleConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates timeouts for when human chat participants are to be considered idle, and when
+        /// agents are automatically disconnected from a chat due to idleness. You can set four
+        /// timers:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Customer idle timeout
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Customer auto-disconnect timeout
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agent idle timeout
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agent auto-disconnect timeout
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about how chat timeouts work, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-chat-timeouts.html">Set
+        /// up chat timeouts for human participants</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateParticipantRoleConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateParticipantRoleConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantRoleConfig">REST API Reference for UpdateParticipantRoleConfig Operation</seealso>
+        public virtual Task<UpdateParticipantRoleConfigResponse> UpdateParticipantRoleConfigAsync(UpdateParticipantRoleConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateParticipantRoleConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateParticipantRoleConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateParticipantRoleConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdatePhoneNumber
 
         internal virtual UpdatePhoneNumberResponse UpdatePhoneNumber(UpdatePhoneNumberRequest request)

@@ -67,6 +67,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetRoutingProfiles())
+            {
+                context.Writer.WritePropertyName("RoutingProfiles");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRoutingProfilesListValue in requestObject.RoutingProfiles)
+                {
+                        context.Writer.Write(requestObjectRoutingProfilesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

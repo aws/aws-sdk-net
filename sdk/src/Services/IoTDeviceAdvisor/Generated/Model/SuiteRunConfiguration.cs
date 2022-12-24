@@ -58,9 +58,11 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property PrimaryDevice. 
         /// <para>
-        /// Gets the primary device for suite run.
+        /// Sets the primary device for the test suite run. This requires a thing ARN or a certificate
+        /// ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DeviceUnderTest PrimaryDevice
         {
             get { return this._primaryDevice; }
@@ -76,7 +78,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SelectedTestList. 
         /// <para>
-        /// Gets test case list.
+        /// Sets test case list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

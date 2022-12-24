@@ -412,6 +412,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the AcceptInvitation service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.ConflictException">
         /// The request attempted an invalid action.
         /// </exception>
@@ -458,6 +462,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the BatchGetGraphMemberDatasources service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -501,6 +509,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the BatchGetMembershipDatasources service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -570,6 +582,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the CreateGraph service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.ConflictException">
         /// The request attempted an invalid action.
         /// </exception>
@@ -674,6 +690,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the CreateMembers service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -744,6 +764,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the DeleteGraph service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -809,6 +833,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the DeleteMembers service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.ConflictException">
         /// The request attempted an invalid action.
         /// </exception>
@@ -861,6 +889,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the DescribeOrganizationConfiguration service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -923,6 +955,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the DisableOrganizationAdminAccount service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -976,6 +1012,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the DisassociateMembership service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.ConflictException">
         /// The request attempted an invalid action.
         /// </exception>
@@ -1047,6 +1087,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the EnableOrganizationAdminAccount service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1091,6 +1135,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the GetMembers service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1134,6 +1182,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the ListDatasourcePackages service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1184,6 +1236,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the ListGraphs service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1236,6 +1292,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the ListInvitations service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1287,6 +1347,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the ListMembers service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1331,6 +1395,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the ListOrganizationAdminAccounts service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1375,6 +1443,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1426,6 +1498,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the RejectInvitation service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.ConflictException">
         /// The request attempted an invalid action.
         /// </exception>
@@ -1487,6 +1563,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the StartMonitoringMember service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.ConflictException">
         /// The request attempted an invalid action.
         /// </exception>
@@ -1553,6 +1633,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1596,6 +1680,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1639,6 +1727,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the UpdateDatasourcePackages service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1703,6 +1795,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the UpdateOrganizationConfiguration service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>

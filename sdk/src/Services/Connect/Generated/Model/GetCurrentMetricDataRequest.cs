@@ -46,6 +46,7 @@ namespace Amazon.Connect.Model
         private string _instanceId;
         private int? _maxResults;
         private string _nextToken;
+        private List<CurrentMetricSortCriteria> _sortCriteria = new List<CurrentMetricSortCriteria>();
 
         /// <summary>
         /// Gets and sets the property CurrentMetrics. 
@@ -207,10 +208,30 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The queues, up to 100, or channels, to use to filter the metrics returned. Metric
-        /// data is retrieved only for the resources associated with the queues or channels included
-        /// in the filter. You can include both queue IDs and queue ARNs in the same request.
-        /// VOICE, CHAT, and TASK channels are supported.
+        /// The filters to apply to returned metrics. You can filter up to the following limits:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Queues: 100
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Routing profiles: 100
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Channels: 3 (VOICE, CHAT, and TASK channels are supported.)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Metric data is retrieved only for the resources associated with the queues or routing
+        /// profiles, and by any channels included in the filter. (You cannot filter by both queue
+        /// AND routing profile.) You can include both resource IDs and resource ARNs in the same
+        /// request. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Currently tagging is only supported on the resources that are passed in the filter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -240,7 +261,8 @@ namespace Amazon.Connect.Model
         ///  </li> <li> 
         /// <para>
         /// If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing
-        /// profile filter.
+        /// profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>,
+        /// <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -323,6 +345,36 @@ namespace Amazon.Connect.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortCriteria. 
+        /// <para>
+        /// The way to sort the resulting response based on metrics. You can enter one sort criteria.
+        /// By default resources are sorted based on <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>.
+        /// The metric collection is sorted based on the input metrics.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<CurrentMetricSortCriteria> SortCriteria
+        {
+            get { return this._sortCriteria; }
+            set { this._sortCriteria = value; }
+        }
+
+        // Check to see if SortCriteria property is set
+        internal bool IsSetSortCriteria()
+        {
+            return this._sortCriteria != null && this._sortCriteria.Count > 0; 
         }
 
     }

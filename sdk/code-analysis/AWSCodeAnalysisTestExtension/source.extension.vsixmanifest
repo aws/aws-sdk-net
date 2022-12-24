@@ -397,6 +397,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.LexRuntimeV2.CodeAnalysis" Path="|AWSSDK.LexRuntimeV2.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.LicenseManager.CodeAnalysis" Path="|AWSSDK.LicenseManager.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.LicenseManager.CodeAnalysis" Path="|AWSSDK.LicenseManager.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.LicenseManagerLinuxSubscriptions.CodeAnalysis" Path="|AWSSDK.LicenseManagerLinuxSubscriptions.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.LicenseManagerLinuxSubscriptions.CodeAnalysis" Path="|AWSSDK.LicenseManagerLinuxSubscriptions.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.LicenseManagerUserSubscriptions.CodeAnalysis" Path="|AWSSDK.LicenseManagerUserSubscriptions.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.LicenseManagerUserSubscriptions.CodeAnalysis" Path="|AWSSDK.LicenseManagerUserSubscriptions.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Lightsail.CodeAnalysis" Path="|AWSSDK.Lightsail.CodeAnalysis|"/>

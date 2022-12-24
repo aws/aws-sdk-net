@@ -33,8 +33,30 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class UserDataFilters
     {
+        private List<string> _agents = new List<string>();
         private ContactFilter _contactFilter;
         private List<string> _queues = new List<string>();
+        private List<string> _routingProfiles = new List<string>();
+        private List<string> _userHierarchyGroups = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property Agents. 
+        /// <para>
+        /// A list of up to 100 agent IDs or ARNs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<string> Agents
+        {
+            get { return this._agents; }
+            set { this._agents = value; }
+        }
+
+        // Check to see if Agents property is set
+        internal bool IsSetAgents()
+        {
+            return this._agents != null && this._agents.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ContactFilter. 
@@ -58,7 +80,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Queues. 
         /// <para>
-        /// Contains information about a queue resource for which metrics are returned.
+        /// A list of up to 100 queues or ARNs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -72,6 +94,44 @@ namespace Amazon.Connect.Model
         internal bool IsSetQueues()
         {
             return this._queues != null && this._queues.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingProfiles. 
+        /// <para>
+        /// A list of up to 100 routing profile IDs or ARNs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<string> RoutingProfiles
+        {
+            get { return this._routingProfiles; }
+            set { this._routingProfiles = value; }
+        }
+
+        // Check to see if RoutingProfiles property is set
+        internal bool IsSetRoutingProfiles()
+        {
+            return this._routingProfiles != null && this._routingProfiles.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserHierarchyGroups. 
+        /// <para>
+        /// A UserHierarchyGroup ID or ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> UserHierarchyGroups
+        {
+            get { return this._userHierarchyGroups; }
+            set { this._userHierarchyGroups = value; }
+        }
+
+        // Check to see if UserHierarchyGroups property is set
+        internal bool IsSetUserHierarchyGroups()
+        {
+            return this._userHierarchyGroups != null && this._userHierarchyGroups.Count > 0; 
         }
 
     }

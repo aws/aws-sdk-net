@@ -29,15 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideoWebRTCStorage.Model
 {
     /// <summary>
-    /// <ol> <li> 
-    /// <para>
-    /// The specified resource is not found
-    /// </para>
-    ///  </li> </ol> <ol> <li> 
-    /// <para>
-    /// You have not specified a channel in this API call.
-    /// </para>
-    ///  </li> </ol>
+    /// The specified resource is not found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

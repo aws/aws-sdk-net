@@ -40,6 +40,8 @@ namespace Amazon.AWSSupport.Internal
             if (parameters == null) 
                 throw new ArgumentNullException("parameters");
 
+            if (parameters["Region"] == null)
+                throw new AmazonClientException("Region parameter must be set for endpoint resolution");
             if (parameters["UseDualStack"] == null)
                 throw new AmazonClientException("UseDualStack parameter must be set for endpoint resolution");
             if (parameters["UseFIPS"] == null)
@@ -54,7 +56,7 @@ namespace Amazon.AWSSupport.Internal
             };
             if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
             {
-                if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
+                if (IsSet(refs["Endpoint"]))
                 {
                     if (Equals(refs["UseFIPS"], true))
                     {
@@ -96,23 +98,23 @@ namespace Amazon.AWSSupport.Internal
                 }
                 if (Equals(refs["Region"], "aws-global"))
                 {
-                    return new Endpoint("https://support.us-east-1.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""support"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                    return new Endpoint("https://support.us-east-1.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""support""}]}", refs), InterpolateJson(@"", refs));
                 }
                 if (Equals(refs["Region"], "aws-cn-global"))
                 {
-                    return new Endpoint("https://support.cn-north-1.amazonaws.com.cn", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""support"",""signingRegion"":""cn-north-1""}]}", refs), InterpolateJson(@"", refs));
+                    return new Endpoint("https://support.cn-north-1.amazonaws.com.cn", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""cn-north-1"",""signingName"":""support""}]}", refs), InterpolateJson(@"", refs));
                 }
                 if (Equals(refs["Region"], "aws-us-gov-global"))
                 {
-                    return new Endpoint("https://support.us-gov-west-1.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""support"",""signingRegion"":""us-gov-west-1""}]}", refs), InterpolateJson(@"", refs));
+                    return new Endpoint("https://support.us-gov-west-1.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-gov-west-1"",""signingName"":""support""}]}", refs), InterpolateJson(@"", refs));
                 }
                 if (Equals(refs["Region"], "aws-iso-global"))
                 {
-                    return new Endpoint("https://support.us-iso-east-1.c2s.ic.gov", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""support"",""signingRegion"":""us-iso-east-1""}]}", refs), InterpolateJson(@"", refs));
+                    return new Endpoint("https://support.us-iso-east-1.c2s.ic.gov", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-iso-east-1"",""signingName"":""support""}]}", refs), InterpolateJson(@"", refs));
                 }
                 if (Equals(refs["Region"], "aws-iso-b-global"))
                 {
-                    return new Endpoint("https://support.us-isob-east-1.sc2s.sgov.gov", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""support"",""signingRegion"":""us-isob-east-1""}]}", refs), InterpolateJson(@"", refs));
+                    return new Endpoint("https://support.us-isob-east-1.sc2s.sgov.gov", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-isob-east-1"",""signingName"":""support""}]}", refs), InterpolateJson(@"", refs));
                 }
                 return new Endpoint(Interpolate(@"https://support.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
             }

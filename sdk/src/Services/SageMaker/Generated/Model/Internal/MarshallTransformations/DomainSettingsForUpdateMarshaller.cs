@@ -62,6 +62,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSecurityGroupIds())
+            {
+                context.Writer.WritePropertyName("SecurityGroupIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
+                {
+                        context.Writer.Write(requestObjectSecurityGroupIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

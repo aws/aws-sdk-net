@@ -418,38 +418,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Transfer")]
-        public void CreateAgreement_ThrottlingExceptionMarshallTest()
-        {
-            var operation =  service_model.FindOperation("CreateAgreement");
-
-            var request = InstantiateClassGenerator.Execute<CreateAgreementRequest>();
-            var marshaller = new CreateAgreementRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
-
-            Comparer.CompareObjectToJson<CreateAgreementRequest>(request,jsonRequest);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
-            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
-                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
-                }
-            };
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
-            var response = CreateAgreementResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("Transfer")]
         public void CreateConnectorMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<CreateConnectorRequest>();
@@ -637,38 +605,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Transfer")]
-        public void CreateConnector_ThrottlingExceptionMarshallTest()
-        {
-            var operation =  service_model.FindOperation("CreateConnector");
-
-            var request = InstantiateClassGenerator.Execute<CreateConnectorRequest>();
-            var marshaller = new CreateConnectorRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
-
-            Comparer.CompareObjectToJson<CreateConnectorRequest>(request,jsonRequest);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
-            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
-                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
-                }
-            };
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
-            var response = CreateConnectorResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("Transfer")]
         public void CreateProfileMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<CreateProfileRequest>();
@@ -811,38 +747,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
                     {"x-amzn-ErrorType","ServiceUnavailableException"},
-                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
-                }
-            };
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
-            var response = CreateProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("Transfer")]
-        public void CreateProfile_ThrottlingExceptionMarshallTest()
-        {
-            var operation =  service_model.FindOperation("CreateProfile");
-
-            var request = InstantiateClassGenerator.Execute<CreateProfileRequest>();
-            var marshaller = new CreateProfileRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
-
-            Comparer.CompareObjectToJson<CreateProfileRequest>(request,jsonRequest);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
-            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
                     {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
                 }
             };
@@ -8869,38 +8773,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Transfer")]
-        public void UpdateAccess_ThrottlingExceptionMarshallTest()
-        {
-            var operation =  service_model.FindOperation("UpdateAccess");
-
-            var request = InstantiateClassGenerator.Execute<UpdateAccessRequest>();
-            var marshaller = new UpdateAccessRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
-
-            Comparer.CompareObjectToJson<UpdateAccessRequest>(request,jsonRequest);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
-            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
-                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
-                }
-            };
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
-            var response = UpdateAccessResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("Transfer")]
         public void UpdateAgreementMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<UpdateAgreementRequest>();
@@ -9088,38 +8960,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Transfer")]
-        public void UpdateAgreement_ThrottlingExceptionMarshallTest()
-        {
-            var operation =  service_model.FindOperation("UpdateAgreement");
-
-            var request = InstantiateClassGenerator.Execute<UpdateAgreementRequest>();
-            var marshaller = new UpdateAgreementRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
-
-            Comparer.CompareObjectToJson<UpdateAgreementRequest>(request,jsonRequest);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
-            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
-                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
-                }
-            };
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
-            var response = UpdateAgreementResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("Transfer")]
         public void UpdateCertificateMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<UpdateCertificateRequest>();
@@ -9262,38 +9102,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
                     {"x-amzn-ErrorType","ServiceUnavailableException"},
-                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
-                }
-            };
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
-            var response = UpdateCertificateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("Transfer")]
-        public void UpdateCertificate_ThrottlingExceptionMarshallTest()
-        {
-            var operation =  service_model.FindOperation("UpdateCertificate");
-
-            var request = InstantiateClassGenerator.Execute<UpdateCertificateRequest>();
-            var marshaller = new UpdateCertificateRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
-
-            Comparer.CompareObjectToJson<UpdateCertificateRequest>(request,jsonRequest);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
-            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
                     {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
                 }
             };
@@ -9481,38 +9289,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
                     {"x-amzn-ErrorType","ServiceUnavailableException"},
-                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
-                }
-            };
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
-            var response = UpdateConnectorResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("Transfer")]
-        public void UpdateConnector_ThrottlingExceptionMarshallTest()
-        {
-            var operation =  service_model.FindOperation("UpdateConnector");
-
-            var request = InstantiateClassGenerator.Execute<UpdateConnectorRequest>();
-            var marshaller = new UpdateConnectorRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
-
-            Comparer.CompareObjectToJson<UpdateConnectorRequest>(request,jsonRequest);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
-            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
                     {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
                 }
             };
@@ -9855,38 +9631,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
                     {"x-amzn-ErrorType","ServiceUnavailableException"},
-                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
-                }
-            };
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
-            var response = UpdateProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("Transfer")]
-        public void UpdateProfile_ThrottlingExceptionMarshallTest()
-        {
-            var operation =  service_model.FindOperation("UpdateProfile");
-
-            var request = InstantiateClassGenerator.Execute<UpdateProfileRequest>();
-            var marshaller = new UpdateProfileRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
-
-            Comparer.CompareObjectToJson<UpdateProfileRequest>(request,jsonRequest);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
-            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
                     {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
                 }
             };

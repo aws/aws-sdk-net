@@ -387,9 +387,6 @@ namespace Amazon.Transfer
         /// The request has failed because the Amazon Web ServicesTransfer Family service is not
         /// available.
         /// </exception>
-        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAgreement">REST API Reference for CreateAgreement Operation</seealso>
         public virtual CreateAgreementResponse CreateAgreement(CreateAgreementRequest request)
         {
@@ -465,9 +462,6 @@ namespace Amazon.Transfer
         /// The request has failed because the Amazon Web ServicesTransfer Family service is not
         /// available.
         /// </exception>
-        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
         public virtual CreateConnectorResponse CreateConnector(CreateConnectorRequest request)
         {
@@ -536,9 +530,6 @@ namespace Amazon.Transfer
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the Amazon Web ServicesTransfer Family service is not
         /// available.
-        /// </exception>
-        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
         public virtual CreateProfileResponse CreateProfile(CreateProfileRequest request)
@@ -4037,9 +4028,6 @@ namespace Amazon.Transfer
         /// The request has failed because the Amazon Web ServicesTransfer Family service is not
         /// available.
         /// </exception>
-        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAccess">REST API Reference for UpdateAccess Operation</seealso>
         public virtual UpdateAccessResponse UpdateAccess(UpdateAccessRequest request)
         {
@@ -4114,9 +4102,6 @@ namespace Amazon.Transfer
         /// The request has failed because the Amazon Web ServicesTransfer Family service is not
         /// available.
         /// </exception>
-        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAgreement">REST API Reference for UpdateAgreement Operation</seealso>
         public virtual UpdateAgreementResponse UpdateAgreement(UpdateAgreementRequest request)
         {
@@ -4185,9 +4170,6 @@ namespace Amazon.Transfer
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the Amazon Web ServicesTransfer Family service is not
         /// available.
-        /// </exception>
-        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
         public virtual UpdateCertificateResponse UpdateCertificate(UpdateCertificateRequest request)
@@ -4262,9 +4244,6 @@ namespace Amazon.Transfer
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the Amazon Web ServicesTransfer Family service is not
         /// available.
-        /// </exception>
-        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateConnector">REST API Reference for UpdateConnector Operation</seealso>
         public virtual UpdateConnectorResponse UpdateConnector(UpdateConnectorRequest request)
@@ -4409,9 +4388,6 @@ namespace Amazon.Transfer
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the Amazon Web ServicesTransfer Family service is not
         /// available.
-        /// </exception>
-        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
         public virtual UpdateProfileResponse UpdateProfile(UpdateProfileRequest request)

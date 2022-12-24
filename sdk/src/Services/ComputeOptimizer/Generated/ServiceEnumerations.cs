@@ -25,6 +25,56 @@ namespace Amazon.ComputeOptimizer
 {
 
     /// <summary>
+    /// Constants used for properties of type AutoScalingConfiguration.
+    /// </summary>
+    public class AutoScalingConfiguration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TargetTrackingScalingCpu for AutoScalingConfiguration
+        /// </summary>
+        public static readonly AutoScalingConfiguration TargetTrackingScalingCpu = new AutoScalingConfiguration("TargetTrackingScalingCpu");
+        /// <summary>
+        /// Constant TargetTrackingScalingMemory for AutoScalingConfiguration
+        /// </summary>
+        public static readonly AutoScalingConfiguration TargetTrackingScalingMemory = new AutoScalingConfiguration("TargetTrackingScalingMemory");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoScalingConfiguration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoScalingConfiguration FindValue(string value)
+        {
+            return FindValue<AutoScalingConfiguration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoScalingConfiguration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CpuVendorArchitecture.
     /// </summary>
     public class CpuVendorArchitecture : ConstantClass
@@ -330,6 +380,318 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EBSMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ECSServiceLaunchType.
+    /// </summary>
+    public class ECSServiceLaunchType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EC2 for ECSServiceLaunchType
+        /// </summary>
+        public static readonly ECSServiceLaunchType EC2 = new ECSServiceLaunchType("EC2");
+        /// <summary>
+        /// Constant Fargate for ECSServiceLaunchType
+        /// </summary>
+        public static readonly ECSServiceLaunchType Fargate = new ECSServiceLaunchType("Fargate");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ECSServiceLaunchType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ECSServiceLaunchType FindValue(string value)
+        {
+            return FindValue<ECSServiceLaunchType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ECSServiceLaunchType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ECSServiceMetricName.
+    /// </summary>
+    public class ECSServiceMetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Cpu for ECSServiceMetricName
+        /// </summary>
+        public static readonly ECSServiceMetricName Cpu = new ECSServiceMetricName("Cpu");
+        /// <summary>
+        /// Constant Memory for ECSServiceMetricName
+        /// </summary>
+        public static readonly ECSServiceMetricName Memory = new ECSServiceMetricName("Memory");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ECSServiceMetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ECSServiceMetricName FindValue(string value)
+        {
+            return FindValue<ECSServiceMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ECSServiceMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ECSServiceMetricStatistic.
+    /// </summary>
+    public class ECSServiceMetricStatistic : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Average for ECSServiceMetricStatistic
+        /// </summary>
+        public static readonly ECSServiceMetricStatistic Average = new ECSServiceMetricStatistic("Average");
+        /// <summary>
+        /// Constant Maximum for ECSServiceMetricStatistic
+        /// </summary>
+        public static readonly ECSServiceMetricStatistic Maximum = new ECSServiceMetricStatistic("Maximum");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ECSServiceMetricStatistic(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ECSServiceMetricStatistic FindValue(string value)
+        {
+            return FindValue<ECSServiceMetricStatistic>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ECSServiceMetricStatistic(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ECSServiceRecommendationFilterName.
+    /// </summary>
+    public class ECSServiceRecommendationFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Finding for ECSServiceRecommendationFilterName
+        /// </summary>
+        public static readonly ECSServiceRecommendationFilterName Finding = new ECSServiceRecommendationFilterName("Finding");
+        /// <summary>
+        /// Constant FindingReasonCode for ECSServiceRecommendationFilterName
+        /// </summary>
+        public static readonly ECSServiceRecommendationFilterName FindingReasonCode = new ECSServiceRecommendationFilterName("FindingReasonCode");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ECSServiceRecommendationFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ECSServiceRecommendationFilterName FindValue(string value)
+        {
+            return FindValue<ECSServiceRecommendationFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ECSServiceRecommendationFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ECSServiceRecommendationFinding.
+    /// </summary>
+    public class ECSServiceRecommendationFinding : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Optimized for ECSServiceRecommendationFinding
+        /// </summary>
+        public static readonly ECSServiceRecommendationFinding Optimized = new ECSServiceRecommendationFinding("Optimized");
+        /// <summary>
+        /// Constant Overprovisioned for ECSServiceRecommendationFinding
+        /// </summary>
+        public static readonly ECSServiceRecommendationFinding Overprovisioned = new ECSServiceRecommendationFinding("Overprovisioned");
+        /// <summary>
+        /// Constant Underprovisioned for ECSServiceRecommendationFinding
+        /// </summary>
+        public static readonly ECSServiceRecommendationFinding Underprovisioned = new ECSServiceRecommendationFinding("Underprovisioned");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ECSServiceRecommendationFinding(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ECSServiceRecommendationFinding FindValue(string value)
+        {
+            return FindValue<ECSServiceRecommendationFinding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ECSServiceRecommendationFinding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ECSServiceRecommendationFindingReasonCode.
+    /// </summary>
+    public class ECSServiceRecommendationFindingReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CPUOverprovisioned for ECSServiceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly ECSServiceRecommendationFindingReasonCode CPUOverprovisioned = new ECSServiceRecommendationFindingReasonCode("CPUOverprovisioned");
+        /// <summary>
+        /// Constant CPUUnderprovisioned for ECSServiceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly ECSServiceRecommendationFindingReasonCode CPUUnderprovisioned = new ECSServiceRecommendationFindingReasonCode("CPUUnderprovisioned");
+        /// <summary>
+        /// Constant MemoryOverprovisioned for ECSServiceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly ECSServiceRecommendationFindingReasonCode MemoryOverprovisioned = new ECSServiceRecommendationFindingReasonCode("MemoryOverprovisioned");
+        /// <summary>
+        /// Constant MemoryUnderprovisioned for ECSServiceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly ECSServiceRecommendationFindingReasonCode MemoryUnderprovisioned = new ECSServiceRecommendationFindingReasonCode("MemoryUnderprovisioned");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ECSServiceRecommendationFindingReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ECSServiceRecommendationFindingReasonCode FindValue(string value)
+        {
+            return FindValue<ECSServiceRecommendationFindingReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ECSServiceRecommendationFindingReasonCode(string value)
         {
             return FindValue(value);
         }
@@ -684,6 +1046,140 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExportableAutoScalingGroupField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExportableECSServiceField.
+    /// </summary>
+    public class ExportableECSServiceField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccountId for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField AccountId = new ExportableECSServiceField("AccountId");
+        /// <summary>
+        /// Constant CurrentPerformanceRisk for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField CurrentPerformanceRisk = new ExportableECSServiceField("CurrentPerformanceRisk");
+        /// <summary>
+        /// Constant CurrentServiceConfigurationAutoScalingConfiguration for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField CurrentServiceConfigurationAutoScalingConfiguration = new ExportableECSServiceField("CurrentServiceConfigurationAutoScalingConfiguration");
+        /// <summary>
+        /// Constant CurrentServiceConfigurationCpu for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField CurrentServiceConfigurationCpu = new ExportableECSServiceField("CurrentServiceConfigurationCpu");
+        /// <summary>
+        /// Constant CurrentServiceConfigurationMemory for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField CurrentServiceConfigurationMemory = new ExportableECSServiceField("CurrentServiceConfigurationMemory");
+        /// <summary>
+        /// Constant CurrentServiceConfigurationTaskDefinitionArn for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField CurrentServiceConfigurationTaskDefinitionArn = new ExportableECSServiceField("CurrentServiceConfigurationTaskDefinitionArn");
+        /// <summary>
+        /// Constant CurrentServiceContainerConfigurations for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField CurrentServiceContainerConfigurations = new ExportableECSServiceField("CurrentServiceContainerConfigurations");
+        /// <summary>
+        /// Constant Finding for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField Finding = new ExportableECSServiceField("Finding");
+        /// <summary>
+        /// Constant FindingReasonCodes for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField FindingReasonCodes = new ExportableECSServiceField("FindingReasonCodes");
+        /// <summary>
+        /// Constant LastRefreshTimestamp for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField LastRefreshTimestamp = new ExportableECSServiceField("LastRefreshTimestamp");
+        /// <summary>
+        /// Constant LaunchType for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField LaunchType = new ExportableECSServiceField("LaunchType");
+        /// <summary>
+        /// Constant LookbackPeriodInDays for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField LookbackPeriodInDays = new ExportableECSServiceField("LookbackPeriodInDays");
+        /// <summary>
+        /// Constant RecommendationOptionsContainerRecommendations for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField RecommendationOptionsContainerRecommendations = new ExportableECSServiceField("RecommendationOptionsContainerRecommendations");
+        /// <summary>
+        /// Constant RecommendationOptionsCpu for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField RecommendationOptionsCpu = new ExportableECSServiceField("RecommendationOptionsCpu");
+        /// <summary>
+        /// Constant RecommendationOptionsEstimatedMonthlySavingsCurrency for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField RecommendationOptionsEstimatedMonthlySavingsCurrency = new ExportableECSServiceField("RecommendationOptionsEstimatedMonthlySavingsCurrency");
+        /// <summary>
+        /// Constant RecommendationOptionsEstimatedMonthlySavingsValue for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField RecommendationOptionsEstimatedMonthlySavingsValue = new ExportableECSServiceField("RecommendationOptionsEstimatedMonthlySavingsValue");
+        /// <summary>
+        /// Constant RecommendationOptionsMemory for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField RecommendationOptionsMemory = new ExportableECSServiceField("RecommendationOptionsMemory");
+        /// <summary>
+        /// Constant RecommendationOptionsProjectedUtilizationMetricsCpuMaximum for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = new ExportableECSServiceField("RecommendationOptionsProjectedUtilizationMetricsCpuMaximum");
+        /// <summary>
+        /// Constant RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = new ExportableECSServiceField("RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum");
+        /// <summary>
+        /// Constant RecommendationOptionsSavingsOpportunityPercentage for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField RecommendationOptionsSavingsOpportunityPercentage = new ExportableECSServiceField("RecommendationOptionsSavingsOpportunityPercentage");
+        /// <summary>
+        /// Constant ServiceArn for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField ServiceArn = new ExportableECSServiceField("ServiceArn");
+        /// <summary>
+        /// Constant UtilizationMetricsCpuMaximum for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField UtilizationMetricsCpuMaximum = new ExportableECSServiceField("UtilizationMetricsCpuMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsMemoryMaximum for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField UtilizationMetricsMemoryMaximum = new ExportableECSServiceField("UtilizationMetricsMemoryMaximum");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportableECSServiceField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportableECSServiceField FindValue(string value)
+        {
+            return FindValue<ExportableECSServiceField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportableECSServiceField(string value)
         {
             return FindValue(value);
         }
@@ -2551,6 +3047,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly RecommendationSourceType Ec2Instance = new RecommendationSourceType("Ec2Instance");
         /// <summary>
+        /// Constant EcsService for RecommendationSourceType
+        /// </summary>
+        public static readonly RecommendationSourceType EcsService = new RecommendationSourceType("EcsService");
+        /// <summary>
         /// Constant LambdaFunction for RecommendationSourceType
         /// </summary>
         public static readonly RecommendationSourceType LambdaFunction = new RecommendationSourceType("LambdaFunction");
@@ -2608,6 +3108,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant Ec2Instance for ResourceType
         /// </summary>
         public static readonly ResourceType Ec2Instance = new ResourceType("Ec2Instance");
+        /// <summary>
+        /// Constant EcsService for ResourceType
+        /// </summary>
+        public static readonly ResourceType EcsService = new ResourceType("EcsService");
         /// <summary>
         /// Constant LambdaFunction for ResourceType
         /// </summary>

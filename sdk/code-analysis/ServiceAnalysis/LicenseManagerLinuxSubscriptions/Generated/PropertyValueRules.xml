@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.LicenseManagerLinuxSubscriptions.Model.ListLinuxSubscriptionInstancesRequest.NextToken</property>
+    <min>1</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManagerLinuxSubscriptions.Model.ListLinuxSubscriptionsRequest.NextToken</property>
+    <min>1</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManagerLinuxSubscriptions.Model.Filter.Operator</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+</property-value-rules>

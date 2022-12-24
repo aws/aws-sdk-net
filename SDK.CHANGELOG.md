@@ -1,3 +1,58 @@
+### 3.7.448.0 (2022-12-23 19:26 UTC)
+* Connect (3.7.110.0)
+	* Support for Routing Profile filter, SortCriteria, and grouping by Routing Profiles for GetCurrentMetricData API. Support for RoutingProfiles, UserHierarchyGroups, and Agents as filters, NextStatus and AgentStatusName for GetCurrentUserData. Adds ApproximateTotalCount to both APIs.
+* ConnectParticipant (3.7.102.0)
+	* Amazon Connect Chat introduces the Message Receipts feature. This feature allows agents and customers to receive message delivered and read receipts after they send a chat message.
+* Detective (3.7.101.0)
+	* This release adds a missed AccessDeniedException type to several endpoints.
+* FSx (3.7.102.0)
+	* Fix a bug where a recent release might break certain existing SDKs.
+* Inspector2 (3.7.102.0)
+	* Amazon Inspector adds support for scanning NodeJS 18.x and Go 1.x AWS Lambda function runtimes.
+* Core 3.7.103.6
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.447.0 (2022-12-22 19:24 UTC)
+* ComputeOptimizer (3.7.102.0)
+	* This release enables AWS Compute Optimizer to analyze and generate optimization recommendations for ecs services running on Fargate.
+* Connect (3.7.109.0)
+	* Amazon Connect Chat introduces the Idle Participant/Autodisconnect feature, which allows users to set timeouts relating to the activity of chat participants, using the new UpdateParticipantRoleConfig API.
+* IoTDeviceAdvisor (3.7.101.0)
+	* This release adds the following new features: 1) Documentation updates for IoT Device Advisor APIs. 2) Updated required request parameters for IoT Device Advisor APIs. 3) Added new service feature: ability to provide the test endpoint when customer executing the StartSuiteRun API.
+* KinesisVideoWebRTCStorage (3.7.101.0)
+	* Amazon Kinesis Video Streams offers capabilities to stream video and audio in real-time via WebRTC to the cloud for storage, playback, and analytical processing. Customers can use our enhanced WebRTC SDK and cloud APIs to enable real-time streaming, as well as media ingestion to the cloud.
+* RDS (3.7.111.0)
+	* Add support for managing master user password in AWS Secrets Manager for the DBInstance and DBCluster.
+* SecretsManager (3.7.100.43)
+	* Documentation updates for Secrets Manager
+* Core 3.7.103.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.446.0 (2022-12-21 20:19 UTC)
+* AWSSupport (3.7.100.42)
+	* Documentation updates for the AWS Support API
+* Connect (3.7.108.0)
+	* Amazon Connect Chat now allows for JSON (application/json) message types to be sent as part of the initial message in the StartChatContact API.
+* ConnectParticipant (3.7.101.0)
+	* Amazon Connect Chat now allows for JSON (application/json) message types to be sent in the SendMessage API.
+* LicenseManagerLinuxSubscriptions (3.7.100.0)
+	* AWS License Manager now offers cross-region, cross-account tracking of commercial Linux subscriptions on AWS. This includes subscriptions purchased as part of EC2 subscription-included AMIs, on the AWS Marketplace, or brought to AWS via Red Hat Cloud Access Program.
+* Macie2 (3.7.102.0)
+	* This release adds support for analyzing Amazon S3 objects that use the S3 Glacier Instant Retrieval (Glacier_IR) storage class.
+* SageMaker (3.7.113.0)
+	* This release enables adding RStudio Workbench support to an existing Amazon SageMaker Studio domain. It allows setting your RStudio on SageMaker environment configuration parameters and also updating the RStudioConnectUrl and RStudioPackageManagerUrl parameters for existing domains
+* Scheduler (3.7.101.0)
+	* Updated the ListSchedules and ListScheduleGroups APIs to allow the NamePrefix field to start with a number. Updated the validation for executionRole field to support any role name.
+* SimpleSystemsManagement (3.7.102.23)
+	* Doc-only updates for December 2022.
+* Transfer (3.7.103.0)
+	* This release adds support for Decrypt as a workflow step type.
+* Core 3.7.103.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.445.0 (2022-12-20 19:30 UTC)
 * Batch (3.7.102.0)
 	* Adds isCancelled and isTerminated to DescribeJobs response.

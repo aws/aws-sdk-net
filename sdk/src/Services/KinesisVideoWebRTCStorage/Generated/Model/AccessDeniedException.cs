@@ -29,16 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideoWebRTCStorage.Model
 {
     /// <summary>
-    /// <ol> <li> 
-    /// <para>
-    /// You do not have required permissions to perform this operation
-    /// </para>
-    ///  </li> </ol> <ol> <li> 
-    /// <para>
-    /// The <code>AccessDeniedException</code> can be thrown for operation access as well
-    /// as tokens or resource access
-    /// </para>
-    ///  </li> </ol>
+    /// You do not have required permissions to perform this operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

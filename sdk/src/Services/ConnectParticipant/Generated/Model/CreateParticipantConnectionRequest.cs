@@ -30,10 +30,13 @@ namespace Amazon.ConnectParticipant.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateParticipantConnection operation.
-    /// Creates the participant's connection. Note that ParticipantToken is used for invoking
-    /// this API instead of ConnectionToken.
+    /// Creates the participant's connection. 
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    ///  <code>ParticipantToken</code> is used for invoking this API instead of <code>ConnectionToken</code>.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// The participant token is valid for the lifetime of the participant – until they are
     /// part of a contact.
@@ -131,10 +134,11 @@ namespace Amazon.ConnectParticipant.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Type of connection information required.
+        /// Type of connection information required. This can be omitted if <code>ConnectParticipant</code>
+        /// is <code>true</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=1)]
         public List<string> Type
         {
             get { return this._type; }

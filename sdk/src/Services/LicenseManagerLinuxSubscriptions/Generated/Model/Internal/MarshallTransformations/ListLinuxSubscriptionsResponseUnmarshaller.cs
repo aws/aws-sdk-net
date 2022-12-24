@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the kinesis-video-webrtc-storage-2018-05-10.normal.json service model.
+ * Do not modify this file. This file is generated from the license-manager-linux-subscriptions-2018-05-10.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -24,19 +24,19 @@ using System.Net;
 using System.Text;
 using System.Xml.Serialization;
 
-using Amazon.KinesisVideoWebRTCStorage.Model;
+using Amazon.LicenseManagerLinuxSubscriptions.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
-namespace Amazon.KinesisVideoWebRTCStorage.Model.Internal.MarshallTransformations
+namespace Amazon.LicenseManagerLinuxSubscriptions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JoinStorageSessionAsViewer operation
+    /// Response Unmarshaller for ListLinuxSubscriptions operation
     /// </summary>  
-    public class JoinStorageSessionAsViewerResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListLinuxSubscriptionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,25 @@ namespace Amazon.KinesisVideoWebRTCStorage.Model.Internal.MarshallTransformation
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            JoinStorageSessionAsViewerResponse response = new JoinStorageSessionAsViewerResponse();
+            ListLinuxSubscriptionsResponse response = new ListLinuxSubscriptionsResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("NextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Subscriptions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Subscription, SubscriptionUnmarshaller>(SubscriptionUnmarshaller.Instance);
+                    response.Subscriptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -69,29 +86,25 @@ namespace Amazon.KinesisVideoWebRTCStorage.Model.Internal.MarshallTransformation
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
-                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ClientLimitExceededException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
-                    return ClientLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgumentException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
-                    return InvalidArgumentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
-            return new AmazonKinesisVideoWebRTCStorageException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            return new AmazonLicenseManagerLinuxSubscriptionsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static JoinStorageSessionAsViewerResponseUnmarshaller _instance = new JoinStorageSessionAsViewerResponseUnmarshaller();        
+        private static ListLinuxSubscriptionsResponseUnmarshaller _instance = new ListLinuxSubscriptionsResponseUnmarshaller();        
 
-        internal static JoinStorageSessionAsViewerResponseUnmarshaller GetInstance()
+        internal static ListLinuxSubscriptionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +112,7 @@ namespace Amazon.KinesisVideoWebRTCStorage.Model.Internal.MarshallTransformation
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JoinStorageSessionAsViewerResponseUnmarshaller Instance
+        public static ListLinuxSubscriptionsResponseUnmarshaller Instance
         {
             get
             {

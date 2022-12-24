@@ -43,6 +43,7 @@ namespace Amazon.FSx.Model
         private string _resourceARN;
         private StorageVirtualMachineRootVolumeSecurityStyle _rootVolumeSecurityStyle;
         private string _storageVirtualMachineId;
+        private StorageVirtualMachineSubtype _subtype;
         private List<Tag> _tags = new List<Tag>();
         private string _uuid;
 
@@ -247,6 +248,24 @@ namespace Amazon.FSx.Model
         internal bool IsSetStorageVirtualMachineId()
         {
             return this._storageVirtualMachineId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Subtype. 
+        /// <para>
+        /// Describes the SVM's subtype.
+        /// </para>
+        /// </summary>
+        public StorageVirtualMachineSubtype Subtype
+        {
+            get { return this._subtype; }
+            set { this._subtype = value; }
+        }
+
+        // Check to see if Subtype property is set
+        internal bool IsSetSubtype()
+        {
+            return this._subtype != null;
         }
 
         /// <summary>

@@ -174,7 +174,7 @@
     <property>Amazon.Detective.Model.Account.EmailAddress</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^.+@.+$</pattern>
+    <pattern>^.+@(?:(?:(?!-)[A-Za-z0-9-]{1,62})?[A-Za-z0-9]{1}\.)+[A-Za-z]{2,6}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Detective.Model.Administrator.AccountId</property>
@@ -206,7 +206,7 @@
     <property>Amazon.Detective.Model.MemberDetail.EmailAddress</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^.+@.+$</pattern>
+    <pattern>^.+@(?:(?:(?!-)[A-Za-z0-9-]{1,62})?[A-Za-z0-9]{1}\.)+[A-Za-z]{2,6}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Detective.Model.MemberDetail.GraphArn</property>

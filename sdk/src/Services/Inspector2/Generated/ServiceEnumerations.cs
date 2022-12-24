@@ -2547,6 +2547,10 @@ namespace Amazon.Inspector2
     {
 
         /// <summary>
+        /// Constant GO_1_X for Runtime
+        /// </summary>
+        public static readonly Runtime GO_1_X = new Runtime("GO_1_X");
+        /// <summary>
         /// Constant JAVA_11 for Runtime
         /// </summary>
         public static readonly Runtime JAVA_11 = new Runtime("JAVA_11");
@@ -2574,6 +2578,10 @@ namespace Amazon.Inspector2
         /// Constant NODEJS_16_X for Runtime
         /// </summary>
         public static readonly Runtime NODEJS_16_X = new Runtime("NODEJS_16_X");
+        /// <summary>
+        /// Constant NODEJS_18_X for Runtime
+        /// </summary>
+        public static readonly Runtime NODEJS_18_X = new Runtime("NODEJS_18_X");
         /// <summary>
         /// Constant PYTHON_3_7 for Runtime
         /// </summary>

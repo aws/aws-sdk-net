@@ -57,6 +57,12 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("endpoint", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Endpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("suiteRunArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
