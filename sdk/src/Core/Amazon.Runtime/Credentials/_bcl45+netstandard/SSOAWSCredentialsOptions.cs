@@ -62,6 +62,11 @@ namespace Amazon.Runtime
         public string ClientName { get; set; }
 
         /// <summary>
+        /// The name of the sso_session section in the shared configuration file specified to be used when loading the token.
+        /// </summary>
+        public string SessionName { get; set; }
+
+        /// <summary>
         /// A callback that is used to initiate the SSO Login flow with the user.
         /// </summary>
         public Action<SsoVerificationArguments> SsoVerificationCallback { get; set; }

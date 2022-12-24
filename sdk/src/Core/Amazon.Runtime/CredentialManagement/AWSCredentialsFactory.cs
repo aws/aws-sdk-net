@@ -287,7 +287,11 @@ namespace Amazon.Runtime.CredentialManagement
 #if !BCL35
                     case CredentialProfileType.SSO:
                     {
-                        var ssoCredentialsOptions = new SSOAWSCredentialsOptions();
+                        var ssoCredentialsOptions = new SSOAWSCredentialsOptions 
+                        { 
+                            SessionName = options.SsoSession 
+                        };
+
                         return new SSOAWSCredentials(
                             options.SsoAccountId, options.SsoRegion,
                             options.SsoRoleName, options.SsoStartUrl,
