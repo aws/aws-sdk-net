@@ -1,3 +1,9 @@
+### 3.7.449.0 (2022-12-27 19:20 UTC)
+* MemoryDB (3.7.102.0)
+	* This release adds support for MemoryDB Reserved nodes which provides a significant discount compared to on-demand node pricing. Reserved nodes are not physical nodes, but rather a billing discount applied to the use of on-demand nodes in your account.
+* Transfer (3.7.104.0)
+	* Add additional operations to throw ThrottlingExceptions
+
 ### 3.7.448.0 (2022-12-23 19:26 UTC)
 * Connect (3.7.110.0)
 	* Support for Routing Profile filter, SortCriteria, and grouping by Routing Profiles for GetCurrentMetricData API. Support for RoutingProfiles, UserHierarchyGroups, and Agents as filters, NextStatus and AgentStatusName for GetCurrentUserData. Adds ApproximateTotalCount to both APIs.
