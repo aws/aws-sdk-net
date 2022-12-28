@@ -78,6 +78,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
                 }
+                if(publicRequest.IsSetImageId())
+                {
+                    request.Parameters.Add("ImageId", StringUtils.FromString(publicRequest.ImageId));
+                }
                 if(publicRequest.IsSetKMSKeyId())
                 {
                     request.Parameters.Add("KMSKeyId", StringUtils.FromString(publicRequest.KMSKeyId));

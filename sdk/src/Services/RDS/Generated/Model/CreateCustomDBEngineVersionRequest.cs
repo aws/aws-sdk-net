@@ -30,57 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCustomDBEngineVersion operation.
-    /// Creates a custom DB engine version (CEV). A CEV is a binary volume snapshot of a database
-    /// engine and specific AMI. The supported engines are the following:
-    /// 
-    ///  <ul> <li> 
-    /// <para>
-    /// Oracle Database 12.1 Enterprise Edition with the January 2021 or later RU/RUR
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Oracle Database 19c Enterprise Edition with the January 2021 or later RU/RUR
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// Amazon RDS, which is a fully managed service, supplies the Amazon Machine Image (AMI)
-    /// and database software. The Amazon RDS database software is preinstalled, so you need
-    /// only select a DB engine and version, and create your database. With Amazon RDS Custom
-    /// for Oracle, you upload your database installation files in Amazon S3.
-    /// </para>
-    ///  
-    /// <para>
-    /// When you create a custom engine version, you specify the files in a JSON document
-    /// called a CEV manifest. This document describes installation .zip files stored in Amazon
-    /// S3. RDS Custom creates your CEV from the installation files that you provided. This
-    /// service model is called Bring Your Own Media (BYOM).
-    /// </para>
-    ///  
-    /// <para>
-    /// Creation takes approximately two hours. If creation fails, RDS Custom issues <code>RDS-EVENT-0196</code>
-    /// with the message <code>Creation failed for custom engine version</code>, and includes
-    /// details about the failure. For example, the event prints missing files.
-    /// </para>
-    ///  
-    /// <para>
-    /// After you create the CEV, it is available for use. You can create multiple CEVs, and
-    /// create multiple RDS Custom instances from any CEV. You can also change the status
-    /// of a CEV to make it available or inactive.
-    /// </para>
-    ///  <note> 
-    /// <para>
-    /// The MediaImport service that imports files from Amazon S3 to create CEVs isn't integrated
-    /// with Amazon Web Services CloudTrail. If you turn on data logging for Amazon RDS in
-    /// CloudTrail, calls to the <code>CreateCustomDbEngineVersion</code> event aren't logged.
-    /// However, you might see calls from the API gateway that accesses your Amazon S3 bucket.
-    /// These calls originate from the MediaImport service for the <code>CreateCustomDbEngineVersion</code>
-    /// event.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.create">
-    /// Creating a CEV</a> in the <i>Amazon RDS User Guide</i>.
-    /// </para>
+    /// Creates a custom DB engine version (CEV).
     /// </summary>
     public partial class CreateCustomDBEngineVersionRequest : AmazonRDSRequest
     {
@@ -89,6 +39,7 @@ namespace Amazon.RDS.Model
         private string _description;
         private string _engine;
         private string _engineVersion;
+        private string _imageId;
         private string _kmsKeyId;
         private string _manifest;
         private List<Tag> _tags = new List<Tag>();
@@ -100,7 +51,7 @@ namespace Amazon.RDS.Model
         /// CEV. For example, a valid bucket name is <code>my-custom-installation-files</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=63)]
+        [AWSProperty(Min=3, Max=63)]
         public string DatabaseInstallationFilesS3BucketName
         {
             get { return this._databaseInstallationFilesS3BucketName; }
@@ -196,6 +147,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
+        /// The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for SQL Server.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string ImageId
+        {
+            get { return this._imageId; }
+            set { this._imageId = value; }
+        }
+
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
+        {
+            return this._imageId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KMSKeyId. 
         /// <para>
         /// The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric encryption
@@ -215,7 +185,7 @@ namespace Amazon.RDS.Model
         /// or choose different keys.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=2048)]
         public string KMSKeyId
         {
             get { return this._kmsKeyId; }
@@ -266,7 +236,7 @@ namespace Amazon.RDS.Model
         /// Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=51000)]
+        [AWSProperty(Min=1, Max=51000)]
         public string Manifest
         {
             get { return this._manifest; }
