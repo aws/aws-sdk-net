@@ -92,7 +92,6 @@ namespace AWSSDK_DotNet35.UnitTests
             Assert.AreEqual("testvalue", dynamoDocument["testmap"].AsDocument()["test"].AsString());
         }
 
-
         [TestMethod]
         [TestCategory("DynamoDBv2")]
         public void TestConvertingListContainsEmptyMapToJson()
@@ -113,11 +112,48 @@ namespace AWSSDK_DotNet35.UnitTests
             };
 
             var document = Document.FromAttributeMap(initialAttributeMap);
-            var result = document.ToJson(); 
-
+            var result = document.ToJson();
 
             Assert.IsNotNull(result);
             Assert.AreEqual(document["testlist"].AsListOfDocument().Count, 0);
+        }
+
+        [TestMethod]
+        [DataRow(@"{
+          ""Lists"": {
+            ""L"": [
+              {
+                ""M"": {
+                  ""SubLists"": {
+                    ""L"": [
+                      {
+                        ""M"": {}
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }")]
+        [DataRow(@"{
+          ""Lists"": {
+            ""L"": [
+              {
+                ""M"": {}
+              }
+            ]
+          }
+        }")]
+        [TestCategory("DynamoDBv2")]
+        public void TestJsonContainsEmptyMapToDocumentAndBackToJson(string json)
+        {
+            var initialAttributeMap = Document.FromJson(json).ToAttributeMap();
+            
+            var document = Document.FromAttributeMap(initialAttributeMap);
+            var result = document.ToJson();
+
+            Assert.IsNotNull(result);
         }
 
         private static List<Type> GetSubTypes(Type baseType)
