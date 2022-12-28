@@ -39,6 +39,8 @@ namespace Amazon.ElastiCache.Model
         private List<PendingLogDeliveryConfiguration> _logDeliveryConfigurations = new List<PendingLogDeliveryConfiguration>();
         private string _primaryClusterId;
         private ReshardingStatus _resharding;
+        private bool? _transitEncryptionEnabled;
+        private TransitEncryptionMode _transitEncryptionMode;
         private UserGroupsUpdateStatus _userGroups;
 
         /// <summary>
@@ -130,6 +132,43 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetResharding()
         {
             return this._resharding != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitEncryptionEnabled. 
+        /// <para>
+        /// A flag that enables in-transit encryption when set to true.
+        /// </para>
+        /// </summary>
+        public bool TransitEncryptionEnabled
+        {
+            get { return this._transitEncryptionEnabled.GetValueOrDefault(); }
+            set { this._transitEncryptionEnabled = value; }
+        }
+
+        // Check to see if TransitEncryptionEnabled property is set
+        internal bool IsSetTransitEncryptionEnabled()
+        {
+            return this._transitEncryptionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitEncryptionMode. 
+        /// <para>
+        /// A setting that allows you to migrate your clients to use in-transit encryption, with
+        /// no downtime.
+        /// </para>
+        /// </summary>
+        public TransitEncryptionMode TransitEncryptionMode
+        {
+            get { return this._transitEncryptionMode; }
+            set { this._transitEncryptionMode = value; }
+        }
+
+        // Check to see if TransitEncryptionMode property is set
+        internal bool IsSetTransitEncryptionMode()
+        {
+            return this._transitEncryptionMode != null;
         }
 
         /// <summary>
