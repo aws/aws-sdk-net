@@ -1,3 +1,13 @@
+### 3.7.450.0 (2022-12-28 19:20 UTC)
+* ElastiCache (3.7.103.0)
+	* This release allows you to modify the encryption in transit setting, for existing Redis clusters. You can now change the TLS configuration of your Redis clusters without the need to re-build or re-provision the clusters or impact application availability.
+* NetworkFirewall (3.7.101.0)
+	* AWS Network Firewall now provides status messages for firewalls to help you troubleshoot when your endpoint fails.
+* RDS (3.7.112.0)
+	* This release adds support for Custom Engine Version (CEV) on RDS Custom SQL Server.
+* Route53RecoveryControlConfig (3.7.101.0)
+	* Added support for Python paginators in the route53-recovery-control-config List* APIs.
+
 ### 3.7.449.0 (2022-12-27 19:20 UTC)
 * MemoryDB (3.7.102.0)
 	* This release adds support for MemoryDB Reserved nodes which provides a significant discount compared to on-demand node pricing. Reserved nodes are not physical nodes, but rather a billing discount applied to the use of on-demand nodes in your account.
