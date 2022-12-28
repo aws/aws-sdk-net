@@ -101,7 +101,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// <summary>
         /// Gets and sets the property RuleConfig. 
         /// <para>
-        /// The criteria that you set for specific gating controls (routing controls) that designates
+        /// The criteria that you set for specific gating controls (routing controls) that designate
         /// how many control states must be ON to allow you to change (set or unset) the target
         /// control states.
         /// </para>
@@ -124,7 +124,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// <para>
         /// Routing controls that can only be set or unset if the specified RuleConfig evaluates
         /// to true for the specified GatingControls. For example, say you have three gating controls,
-        /// one for each of three Amazon Web Services Regions. Now you specify AtLeast 2 as your
+        /// one for each of three Amazon Web Services Regions. Now you specify ATLEAST 2 as your
         /// RuleConfig. With these settings, you can only change (set or unset) the routing controls
         /// that you have specified as TargetControls if that rule evaluates to true.
         /// </para>

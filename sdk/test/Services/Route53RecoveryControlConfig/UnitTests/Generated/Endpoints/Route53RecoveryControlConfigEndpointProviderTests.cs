@@ -35,9 +35,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "aws-global";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "aws-global";
             var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://route53-recovery-control-config.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -50,9 +50,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -67,9 +67,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -83,9 +83,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
         }

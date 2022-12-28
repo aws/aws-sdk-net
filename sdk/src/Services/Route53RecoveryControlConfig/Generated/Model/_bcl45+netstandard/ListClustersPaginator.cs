@@ -41,6 +41,12 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// </summary>
         public IPaginatedEnumerable<ListClustersResponse> Responses => new PaginatedResponse<ListClustersResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Clusters
+        /// </summary>
+        public IPaginatedEnumerable<Cluster> Clusters => 
+            new PaginatedResultKeyResponse<ListClustersResponse, Cluster>(this, (i) => i.Clusters);
+
         internal ListClustersPaginator(IAmazonRoute53RecoveryControlConfig client, ListClustersRequest request)
         {
             this._client = client;

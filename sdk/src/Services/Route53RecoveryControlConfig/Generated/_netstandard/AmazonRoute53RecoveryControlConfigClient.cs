@@ -305,7 +305,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ServiceQuotaExceededException">
         /// 402 response - You attempted to create more resources than the service allows based
@@ -368,7 +368,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ServiceQuotaExceededException">
         /// 402 response - You attempted to create more resources than the service allows based
@@ -439,7 +439,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ServiceQuotaExceededException">
         /// 402 response - You attempted to create more resources than the service allows based
@@ -491,7 +491,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <para>
         /// Assertion rule: An assertion rule enforces that, when you change a routing control
         /// state, that a certain criteria is met. For example, the criteria might be that at
-        /// least one routing control state is On after the transation so that traffic continues
+        /// least one routing control state is On after the transaction so that traffic continues
         /// to flow to at least one cell for the application. This ensures that you avoid a fail-open
         /// scenario.
         /// </para>
@@ -566,7 +566,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
         /// 429 response - LimitExceededException or TooManyRequestsException.
@@ -621,7 +621,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
         /// 429 response - LimitExceededException or TooManyRequestsException.
@@ -676,7 +676,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
         /// 429 response - LimitExceededException or TooManyRequestsException.
@@ -727,7 +727,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
@@ -780,7 +780,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
         /// 429 response - LimitExceededException or TooManyRequestsException.
@@ -835,7 +835,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
         /// 429 response - LimitExceededException or TooManyRequestsException.
@@ -898,7 +898,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
         /// 429 response - LimitExceededException or TooManyRequestsException.
@@ -944,7 +944,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <returns>The response from the DescribeSafetyRule service method, as returned by Route53RecoveryControlConfig.</returns>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
@@ -991,7 +991,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
@@ -1040,7 +1040,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
         /// 429 response - LimitExceededException or TooManyRequestsException.
@@ -1092,7 +1092,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
         /// 429 response - LimitExceededException or TooManyRequestsException.
@@ -1147,7 +1147,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
         /// 429 response - LimitExceededException or TooManyRequestsException.
@@ -1200,7 +1200,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
         /// 429 response - LimitExceededException or TooManyRequestsException.
@@ -1249,7 +1249,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
@@ -1295,7 +1295,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
@@ -1341,7 +1341,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
@@ -1394,7 +1394,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
         /// 429 response - LimitExceededException or TooManyRequestsException.
@@ -1451,7 +1451,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
         /// 429 response - LimitExceededException or TooManyRequestsException.
@@ -1502,7 +1502,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
         /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-        /// not found..
+        /// not found.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
