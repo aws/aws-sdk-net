@@ -105,6 +105,12 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NextRotationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.NextRotationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OwningService", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

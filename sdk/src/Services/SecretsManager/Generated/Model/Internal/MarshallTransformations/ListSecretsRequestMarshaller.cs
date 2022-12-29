@@ -83,6 +83,12 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetIncludePlannedDeletion())
+                {
+                    context.Writer.WritePropertyName("IncludePlannedDeletion");
+                    context.Writer.Write(publicRequest.IncludePlannedDeletion);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");

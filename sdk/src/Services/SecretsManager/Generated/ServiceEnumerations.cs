@@ -43,6 +43,10 @@ namespace Amazon.SecretsManager
         /// </summary>
         public static readonly FilterNameStringType Name = new FilterNameStringType("name");
         /// <summary>
+        /// Constant OwningService for FilterNameStringType
+        /// </summary>
+        public static readonly FilterNameStringType OwningService = new FilterNameStringType("owning-service");
+        /// <summary>
         /// Constant PrimaryRegion for FilterNameStringType
         /// </summary>
         public static readonly FilterNameStringType PrimaryRegion = new FilterNameStringType("primary-region");
