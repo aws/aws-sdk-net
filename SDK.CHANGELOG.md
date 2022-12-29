@@ -1,3 +1,16 @@
+### 3.7.451.0 (2022-12-29 19:21 UTC)
+* APIGateway (3.7.100.45)
+	* Documentation updates for Amazon API Gateway
+* ConnectWisdomService (3.7.101.0)
+	* This release extends Wisdom CreateContent and StartContentUpload APIs to support PDF and MicrosoftWord docx document uploading.
+* ElasticMapReduce (3.7.101.0)
+	* Added GetClusterSessionCredentials API to allow Amazon SageMaker Studio to connect to EMR on EC2 clusters with runtime roles and AWS Lake Formation-based access control for Apache Spark, Apache Hive, and Presto queries.
+* SecretsManager (3.7.101.0)
+	* Added owning service filter, include planned deletion flag, and next rotation date response parameter in ListSecrets.
+* Core 3.7.103.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.450.0 (2022-12-28 19:20 UTC)
 * ElastiCache (3.7.103.0)
 	* This release allows you to modify the encryption in transit setting, for existing Redis clusters. You can now change the TLS configuration of your Redis clusters without the need to re-build or re-provision the clusters or impact application availability.
