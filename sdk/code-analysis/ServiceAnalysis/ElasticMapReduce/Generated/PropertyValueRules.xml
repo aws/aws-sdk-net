@@ -186,6 +186,16 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.GetClusterSessionCredentialsRequest.ClusterId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.GetClusterSessionCredentialsRequest.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.GetStudioSessionMappingRequest.IdentityId</property>
     <min>0</min>
     <max>256</max>
@@ -997,6 +1007,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.SupportedProductConfig.Name</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.UsernamePassword.Password</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.UsernamePassword.Username</property>
     <min>0</min>
     <max>256</max>
   </property-value-rule>

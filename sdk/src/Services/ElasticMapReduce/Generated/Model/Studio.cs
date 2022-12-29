@@ -54,8 +54,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property AuthMode. 
         /// <para>
-        /// Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web
-        /// Services SSO.
+        /// Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity
+        /// Center.
         /// </para>
         /// </summary>
         public AuthMode AuthMode
