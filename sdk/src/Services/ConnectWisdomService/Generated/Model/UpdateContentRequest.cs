@@ -191,7 +191,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Min=1, Max=1200)]
         public string UploadId
         {
             get { return this._uploadId; }

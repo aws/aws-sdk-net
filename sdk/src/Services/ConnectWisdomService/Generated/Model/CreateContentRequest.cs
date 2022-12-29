@@ -190,7 +190,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4096)]
+        [AWSProperty(Required=true, Min=1, Max=1200)]
         public string UploadId
         {
             get { return this._uploadId; }

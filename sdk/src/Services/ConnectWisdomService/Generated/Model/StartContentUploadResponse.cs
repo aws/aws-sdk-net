@@ -63,7 +63,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// The identifier of the upload.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4096)]
+        [AWSProperty(Required=true, Min=1, Max=1200)]
         public string UploadId
         {
             get { return this._uploadId; }
