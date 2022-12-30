@@ -113,7 +113,9 @@ namespace AWSSDK_DotNet35.UnitTests
 
             var document = Document.FromAttributeMap(initialAttributeMap);
             var result = document.ToJson();
+            document = Document.FromAttributeMap(document.ToAttributeMap());
 
+            Assert.IsNotNull(document);
             Assert.IsNotNull(result);
             Assert.AreEqual(document["testlist"].AsListOfDocument().Count, 0);
         }
@@ -152,7 +154,9 @@ namespace AWSSDK_DotNet35.UnitTests
             
             var document = Document.FromAttributeMap(initialAttributeMap);
             var result = document.ToJson();
+            document = Document.FromAttributeMap(document.ToAttributeMap());
 
+            Assert.IsNotNull(document);
             Assert.IsNotNull(result);
         }
 
