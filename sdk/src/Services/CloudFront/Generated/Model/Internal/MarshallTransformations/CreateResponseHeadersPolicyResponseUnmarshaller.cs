@@ -122,6 +122,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return TooManyCustomHeadersInResponseHeadersPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRemoveHeadersInResponseHeadersPolicy"))
+                {
+                    return TooManyRemoveHeadersInResponseHeadersPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyResponseHeadersPolicies"))
                 {
                     return TooManyResponseHeadersPoliciesExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

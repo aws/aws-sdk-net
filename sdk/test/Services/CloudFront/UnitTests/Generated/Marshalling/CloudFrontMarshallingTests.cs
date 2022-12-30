@@ -9675,6 +9675,39 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("CloudFront")]
+        public void CreateResponseHeadersPolicy_TooManyRemoveHeadersInResponseHeadersPolicyExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateResponseHeadersPolicy");
+
+            var request = InstantiateClassGenerator.Execute<CreateResponseHeadersPolicyRequest>();
+            var marshaller = new CreateResponseHeadersPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateResponseHeadersPolicy", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRemoveHeadersInResponseHeadersPolicyException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateResponseHeadersPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
         public void CreateResponseHeadersPolicy_TooManyResponseHeadersPoliciesExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateResponseHeadersPolicy");
@@ -26487,6 +26520,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             TestTools.RequestValidator.Validate("UpdateResponseHeadersPolicy", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyCustomHeadersInResponseHeadersPolicyException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateResponseHeadersPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void UpdateResponseHeadersPolicy_TooManyRemoveHeadersInResponseHeadersPolicyExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateResponseHeadersPolicy");
+
+            var request = InstantiateClassGenerator.Execute<UpdateResponseHeadersPolicyRequest>();
+            var marshaller = new UpdateResponseHeadersPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateResponseHeadersPolicy", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRemoveHeadersInResponseHeadersPolicyException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
