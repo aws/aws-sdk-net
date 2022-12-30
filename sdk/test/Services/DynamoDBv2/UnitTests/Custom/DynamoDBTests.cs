@@ -94,11 +94,11 @@ namespace AWSSDK_DotNet35.UnitTests
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestConvertingListContainsEmptyMapToJson()
+        public void TestConvertingEmptyListToJson()
         {
             var initialAttributeMap = new Dictionary<string, AttributeValue>
             {
-                { "testlist",  new AttributeValue
+                { "Lists", new AttributeValue
                     {
                         L = new List<AttributeValue>
                         {
@@ -112,52 +112,51 @@ namespace AWSSDK_DotNet35.UnitTests
             };
 
             var document = Document.FromAttributeMap(initialAttributeMap);
-            var result = document.ToJson();
-            document = Document.FromAttributeMap(document.ToAttributeMap());
+            Assert.AreEqual(document["Lists"].AsListOfDocument().Count, 0);
 
-            Assert.IsNotNull(document);
-            Assert.IsNotNull(result);
-            Assert.AreEqual(document["testlist"].AsListOfDocument().Count, 0);
+            var jsonString = document.ToJson();
+            Assert.IsNotNull(jsonString);
         }
 
         [TestMethod]
-        [DataRow(@"{
-          ""Lists"": {
-            ""L"": [
-              {
-                ""M"": {
-                  ""SubLists"": {
-                    ""L"": [
-                      {
-                        ""M"": {}
-                      }
-                    ]
-                  }
-                }
-              }
-            ]
-          }
-        }")]
-        [DataRow(@"{
-          ""Lists"": {
-            ""L"": [
-              {
-                ""M"": {}
-              }
-            ]
-          }
-        }")]
         [TestCategory("DynamoDBv2")]
+        [DataRow(@"{
+            ""Lists"": {
+                ""L"": [
+                    {
+                        ""M"": {
+                            ""SubLists"": {
+                                ""L"": [
+                                    {
+                                        ""M"": {}
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }")]
+        [DataRow(@"{
+            ""Lists"": {
+                ""L"": [
+                    {
+                        ""M"": {}
+                    }
+                ]
+            }
+        }")]
         public void TestJsonContainsEmptyMapToDocumentAndBackToJson(string json)
         {
-            var initialAttributeMap = Document.FromJson(json).ToAttributeMap();
-            
-            var document = Document.FromAttributeMap(initialAttributeMap);
-            var result = document.ToJson();
-            document = Document.FromAttributeMap(document.ToAttributeMap());
+            var initialDocument = Document.FromJson(json);
+            Assert.IsNotNull(initialDocument);
 
-            Assert.IsNotNull(document);
-            Assert.IsNotNull(result);
+            var initialAttributeMap = initialDocument.ToAttributeMap();
+            var convertedDocument = Document.FromAttributeMap(initialAttributeMap);
+            Assert.IsNotNull(convertedDocument);
+
+            var jsonString = convertedDocument.ToJson();
+            Assert.IsNotNull(jsonString);
         }
 
         private static List<Type> GetSubTypes(Type baseType)
