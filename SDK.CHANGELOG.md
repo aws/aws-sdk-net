@@ -1,3 +1,12 @@
+### 3.7.452.0 (2022-12-30 19:19 UTC)
+* CloudFront (3.7.103.0)
+	* Extend response headers policy to support removing headers from viewer responses
+* IoTFleetWise (3.7.102.7)
+	* Update documentation - correct the epoch constant value of default value for expiryTime field in CreateCampaign request.
+* Core 3.7.103.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.451.0 (2022-12-29 19:21 UTC)
 * APIGateway (3.7.100.45)
 	* Documentation updates for Amazon API Gateway

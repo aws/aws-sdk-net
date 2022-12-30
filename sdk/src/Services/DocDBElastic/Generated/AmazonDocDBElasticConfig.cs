@@ -32,7 +32,7 @@ namespace Amazon.DocDBElastic
     public partial class AmazonDocDBElasticConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.19");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.20");
 
         private string _userAgent = UserAgentString;
 
