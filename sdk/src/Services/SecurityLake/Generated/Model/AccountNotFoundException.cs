@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// Amazon Security Lake can't find an Amazon Web Services account with the accountID
+    /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
     /// that you specified, or the account whose credentials you used to make this request
     /// isn't a member of an organization.
     /// </summary>

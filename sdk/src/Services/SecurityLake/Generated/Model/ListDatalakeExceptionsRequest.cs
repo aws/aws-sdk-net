@@ -30,7 +30,7 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDatalakeExceptions operation.
-    /// List the Amazon Security Lake exceptions that you can use to find the source of problems
+    /// Lists the Amazon Security Lake exceptions that you can use to find the source of problems
     /// and fix them.
     /// </summary>
     public partial class ListDatalakeExceptionsRequest : AmazonSecurityLakeRequest
@@ -60,8 +60,14 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// List if there are more results available. if nextToken is returned, You can make the
-        /// call again using the returned token to retrieve the next page
+        /// List if there are more results available. The value of nextToken is a unique pagination
+        /// token for each page. Repeat the call using the returned token to retrieve the next
+        /// page. Keep all other arguments unchanged. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Each pagination token expires after 24 hours. Using an expired pagination token will
+        /// return an HTTP 400 InvalidToken error.
         /// </para>
         /// </summary>
         public string NextToken
@@ -79,7 +85,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property RegionSet. 
         /// <para>
-        /// List the regions from which exceptions are retrieved.
+        /// List the Amazon Web Services Regions from which exceptions are retrieved.
         /// </para>
         /// </summary>
         public List<string> RegionSet

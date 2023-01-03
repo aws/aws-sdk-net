@@ -39,8 +39,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Failed. 
         /// <para>
-        /// List of all accounts in which enabling a natively-supported Amazon Web Services service
-        /// as a Security Lake failed. The failure occurred as these accounts are not part of
+        /// Lists all accounts in which enabling a natively supported Amazon Web Service as a
+        /// Security Lake source failed. The failure occurred as these accounts are not part of
         /// an organization.
         /// </para>
         /// </summary>
@@ -59,8 +59,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Processing. 
         /// <para>
-        /// List of all accounts which are in the process of enabling a natively-supported Amazon
-        /// Web Services service as a Security Lake.
+        /// Lists the accounts that are in the process of enabling a natively supported Amazon
+        /// Web Service as a Security Lake source.
         /// </para>
         /// </summary>
         public List<string> Processing

@@ -38,7 +38,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property QueueArn. 
         /// <para>
-        /// Returns the Amazon resource name (ARN) of the queue.
+        /// Returns the Amazon Resource Name (ARN) of the queue.
         /// </para>
         /// </summary>
         public string QueueArn

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// Retention settings for the destination Amazon S3 buckets in Security Lake.
+    /// Retention settings for the destination Amazon S3 buckets in Amazon Security Lake.
     /// </summary>
     public partial class RetentionSetting
     {
@@ -40,8 +40,8 @@ namespace Amazon.SecurityLake.Model
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
         /// The retention period specifies a fixed period of time during which the Security Lake
-        /// object remains locked. You can specify the retention period for one or more source
-        /// in days. 
+        /// object remains locked. You can specify the retention period in days for one or more
+        /// sources. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

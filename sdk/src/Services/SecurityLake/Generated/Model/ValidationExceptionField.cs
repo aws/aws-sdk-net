@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// The input fails to meet the constraints specified in Amazon Security Lake
+    /// The input fails to meet the constraints specified in Amazon Security Lake.
     /// </summary>
     public partial class ValidationExceptionField
     {

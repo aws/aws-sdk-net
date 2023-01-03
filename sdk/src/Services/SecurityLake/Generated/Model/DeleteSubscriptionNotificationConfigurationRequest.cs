@@ -30,8 +30,8 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSubscriptionNotificationConfiguration operation.
-    /// Deletes the specified notification subscription in Security Lake. Deletes the specified
-    /// subscription notifications from the specified organization.
+    /// Deletes the specified notification subscription in Amazon Security Lake for the organization
+    /// you specify.
     /// </summary>
     public partial class DeleteSubscriptionNotificationConfigurationRequest : AmazonSecurityLakeRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SubscriptionId. 
         /// <para>
-        /// The subscription ID of the Amazon Security Lake subscriber account.
+        /// The ID of the Security Lake subscriber account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

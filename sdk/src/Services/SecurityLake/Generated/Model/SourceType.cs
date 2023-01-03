@@ -30,7 +30,8 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// The supported source types from which logs and events are collected in Amazon Security
-    /// Lake.
+    /// Lake. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon
+    /// Security Lake User Guide</a>.
     /// </summary>
     public partial class SourceType
     {
@@ -40,8 +41,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property AwsSourceType. 
         /// <para>
-        /// Amazon Security Lake supports logs and events collection for natively-supported Amazon
-        /// Web Services services. For more information, see the Amazon Security Lake User Guide.
+        /// Amazon Security Lake supports log and event collection for natively supported Amazon
+        /// Web Services. 
         /// </para>
         /// </summary>
         public AwsLogSourceType AwsSourceType
@@ -59,8 +60,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property CustomSourceType. 
         /// <para>
-        /// Amazon Security Lake supports custom source types. For the detailed list, see the
-        /// Amazon Security Lake User Guide.
+        /// Amazon Security Lake supports custom source types. For a detailed list, see the Amazon
+        /// Security Lake User Guide.
         /// </para>
         /// </summary>
         public string CustomSourceType

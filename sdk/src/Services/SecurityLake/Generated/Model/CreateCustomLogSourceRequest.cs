@@ -30,12 +30,13 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCustomLogSource operation.
-    /// Adds a third-party custom source in Amazon Security Lake, from the Region where you
-    /// want to create a custom source. Security Lake can collect logs and events from third-party
-    /// custom sources. After creating the appropriate API roles, use this API to add a custom
-    /// source name in Security Lake. This operation creates a partition in the Security Lake
-    /// S3 bucket as the target location for log files from the custom source, an associated
-    /// Glue table, and an Glue crawler.
+    /// Adds a third-party custom source in Amazon Security Lake, from the Amazon Web Services
+    /// Region where you want to create a custom source. Security Lake can collect logs and
+    /// events from third-party custom sources. After creating the appropriate IAM role to
+    /// invoke Glue crawler, use this API to add a custom source name in Security Lake. This
+    /// operation creates a partition in the Amazon S3 bucket for Security Lake as the target
+    /// location for log files from the custom source in addition to an associated Glue table
+    /// and an Glue crawler.
     /// </summary>
     public partial class CreateCustomLogSourceRequest : AmazonSecurityLakeRequest
     {
@@ -47,7 +48,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property CustomSourceName. 
         /// <para>
-        /// The custom source name for a third-party custom source. 
+        /// The name for a third-party custom source. This must be a Regionally unique value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -66,7 +67,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property EventClass. 
         /// <para>
-        /// The Open Cybersecurity Schema Framework (OCSF) event class.
+        /// The Open Cybersecurity Schema Framework (OCSF) event class which describes the type
+        /// of data that the custom source will send to Security Lake.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,7 +87,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property GlueInvocationRoleArn. 
         /// <para>
-        /// The IAM Role ARN to be used by the Glue Crawler. The recommended IAM policies are:
+        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
+        /// be used by the Glue crawler. The recommended IAM policies are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -93,7 +96,7 @@ namespace Amazon.SecurityLake.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A custom policy granting access to your S3 Data Lake
+        /// A custom policy granting access to your Amazon S3 Data Lake
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -113,7 +116,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property LogProviderAccountId. 
         /// <para>
-        /// The Account ID that will assume the above Role to put logs into the Data Lake.
+        /// The Amazon Web Services account ID of the custom source that will write logs and events
+        /// into the Amazon S3 Data Lake.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

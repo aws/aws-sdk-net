@@ -30,8 +30,9 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDatalake operation.
-    /// Retrieve the Security Lake configuration object for the specified account ID. This
-    /// API does not take input parameters.
+    /// Retrieves the Amazon Security Lake configuration object for the specified Amazon Web
+    /// Services account ID. You can use the <code>GetDatalake</code> API to know whether
+    /// Security Lake is enabled for the current Region. This API does not take input parameters.
     /// </summary>
     public partial class GetDatalakeRequest : AmazonSecurityLakeRequest
     {

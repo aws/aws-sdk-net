@@ -30,7 +30,9 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSubscriber operation.
-    /// Update the subscription permission for the given Security Lake account ID.
+    /// Updates an existing subscription for the given Amazon Security Lake account ID. You
+    /// can update a subscriber by changing the sources that the subscriber consumes data
+    /// from.
     /// </summary>
     public partial class UpdateSubscriberRequest : AmazonSecurityLakeRequest
     {
@@ -43,7 +45,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property ExternalId. 
         /// <para>
-        /// External ID of the Security Lake account.
+        /// The external ID of the Security Lake account.
         /// </para>
         /// </summary>
         public string ExternalId
@@ -61,8 +63,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// A value created by Security Lake that uniquely identifies your <code>UpdateSubscriber</code>
-        /// API request. 
+        /// A value created by Security Lake that uniquely identifies your subscription. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,12 +82,12 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SourceTypes. 
         /// <para>
-        /// The supported Amazon Web Services services from which logs and events are collected.
-        /// Amazon Security Lake supports logs and events collection for the following natively-supported
-        /// Amazon Web Services services. For more information, see the Amazon Security Lake User
-        /// Guide.
+        /// The supported Amazon Web Services from which logs and events are collected. For the
+        /// list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon
+        /// Security Lake User Guide</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<SourceType> SourceTypes
         {
             get { return this._sourceTypes; }
@@ -102,7 +103,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SubscriberDescription. 
         /// <para>
-        /// Description of the Security Lake account subscriber.
+        /// The description of the Security Lake account subscriber.
         /// </para>
         /// </summary>
         public string SubscriberDescription
@@ -120,7 +121,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SubscriberName. 
         /// <para>
-        /// Name of the Security Lake account subscriber. 
+        /// The name of the Security Lake account subscriber. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]

@@ -38,7 +38,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.CreateSubscriberRequest.SubscriberDescription</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+    <pattern>^[\\\w\s\-_:/,.@=+]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.CreateSubscriberRequest.SubscriberName</property>
@@ -102,14 +102,6 @@
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.ListSubscribersRequest.NextToken</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityLake.Model.ListSubscribersResponse.NextToken</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SecurityLake.Model.UpdateDatalakeExceptionsExpiryRequest.ExceptionMessageExpiry</property>
     <min>1</min>
   </property-value-rule>
@@ -123,7 +115,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.UpdateSubscriberRequest.SubscriberDescription</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+    <pattern>^[\\\w\s\-_:/,.@=+]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.UpdateSubscriberRequest.SubscriberName</property>

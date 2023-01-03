@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// Notifications in Security Lake which dictates how notifications are posted at the
-    /// endpoint.
+    /// Protocol used in Amazon Security Lake that dictates how notifications are posted at
+    /// the endpoint.
     /// </summary>
     public partial class ProtocolAndNotificationEndpoint
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        /// The account which is subscribed to receive exception notifications. 
+        /// The account that is subscribed to receive exception notifications. 
         /// </para>
         /// </summary>
         public string Endpoint

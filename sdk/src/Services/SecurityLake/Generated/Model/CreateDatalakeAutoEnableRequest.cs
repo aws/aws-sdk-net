@@ -30,10 +30,9 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDatalakeAutoEnable operation.
-    /// Automatically enable Security Lake in the specified Regions to begin ingesting security
-    /// data. When you choose to enable organization accounts automatically, then Security
-    /// Lake begins to enable new accounts as member accounts as they are added to the organization.
-    /// Security Lake does not enable existing organization accounts that are not yet enabled.
+    /// Automatically enables Amazon Security Lake for new member accounts in your organization.
+    /// Security Lake is not automatically enabled for any existing member accounts in your
+    /// organization.
     /// </summary>
     public partial class CreateDatalakeAutoEnableRequest : AmazonSecurityLakeRequest
     {
@@ -42,8 +41,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property ConfigurationForNewAccounts. 
         /// <para>
-        /// Enable Amazon Security Lake with the specified configurations settings to begin ingesting
-        /// security data for new accounts in Security Lake. 
+        /// Enable Security Lake with the specified configuration settings to begin collecting
+        /// security data for new accounts in your organization. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

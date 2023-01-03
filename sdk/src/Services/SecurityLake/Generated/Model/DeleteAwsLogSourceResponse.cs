@@ -58,7 +58,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Processing. 
         /// <para>
-        /// Deletion of the Amazon Web Services sources is in-progress.
+        /// Deletion of the Amazon Web Services sources is in progress.
         /// </para>
         /// </summary>
         public List<string> Processing

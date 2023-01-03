@@ -30,7 +30,7 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLogSources operation.
-    /// Lists the log sources in the current region.
+    /// Retrieves the log sources in the current Amazon Web Services Region.
     /// </summary>
     public partial class ListLogSourcesRequest : AmazonSecurityLakeRequest
     {
@@ -62,8 +62,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property ListAllDimensions. 
         /// <para>
-        /// List the view of log sources for enabled Security Lake accounts in all Regions and
-        /// source types.
+        /// List the view of log sources for enabled Amazon Security Lake accounts for specific
+        /// Amazon Web Services sources from specific accounts and specific Regions.
         /// </para>
         /// </summary>
         public Dictionary<string, Dictionary<string, List<string>>> ListAllDimensions
@@ -81,7 +81,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property ListSingleDimension. 
         /// <para>
-        /// List the view of log sources for enabled Security Lake accounts for the entire region.
+        /// List the view of log sources for enabled Security Lake accounts for all Amazon Web
+        /// Services sources from specific accounts or specific Regions.
         /// </para>
         /// </summary>
         public List<string> ListSingleDimension
@@ -99,8 +100,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property ListTwoDimensions. 
         /// <para>
-        /// Lists the log sources for the specified source types in enabled Security Lake accounts
-        /// for the entire Region, for selected member accounts.
+        /// Lists the view of log sources for enabled Security Lake accounts for specific Amazon
+        /// Web Services sources from specific accounts or specific Regions.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> ListTwoDimensions
@@ -118,7 +119,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of accounts for which the configuration is displayed.
+        /// The maximum number of accounts for which the log sources are displayed.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -136,8 +137,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If nextToken is returned, there are more results available. You can make the call
-        /// again using the returned token to retrieve the next page.
+        /// If nextToken is returned, there are more results available. You can repeat the call
+        /// using the returned token to retrieve the next page.
         /// </para>
         /// </summary>
         public string NextToken

@@ -30,7 +30,8 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSubscriber operation.
-    /// Retrieves subscription information for the specified subscription ID.
+    /// Retrieves the subscription information for the specified subscription ID. You can
+    /// get information about a specific subscriber.
     /// </summary>
     public partial class GetSubscriberRequest : AmazonSecurityLakeRequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// A value created by Security Lake that uniquely identifies your <code>GetSubscriber</code>
+        /// A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code>
         /// API request.
         /// </para>
         /// </summary>
