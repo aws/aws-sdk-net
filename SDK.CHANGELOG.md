@@ -1,3 +1,10 @@
+### 3.7.453.0 (2023-01-03 19:20 UTC)
+* SecurityLake (3.7.101.0)
+	* Allow CreateSubscriber API to take string input that allows setting more descriptive SubscriberDescription field. Make souceTypes field required in model level for UpdateSubscriberRequest as it is required for every API call on the backend. Allow ListSubscribers take any String as nextToken param.
+* Core 3.7.103.9
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.452.0 (2022-12-30 19:19 UTC)
 * CloudFront (3.7.103.0)
 	* Extend response headers policy to support removing headers from viewer responses
