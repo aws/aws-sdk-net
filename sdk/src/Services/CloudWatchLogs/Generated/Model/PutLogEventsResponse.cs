@@ -41,6 +41,19 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// The next sequence token.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This field has been deprecated.
+        /// </para>
+        ///  
+        /// <para>
+        /// The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code>
+        /// actions are always accepted even if the sequence token is not valid. You can use parallel
+        /// <code>PutLogEvents</code> actions on the same log stream and you do not need to wait
+        /// for the response of a previous <code>PutLogEvents</code> action to obtain the <code>nextSequenceToken</code>
+        /// value.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=1)]
         public string NextSequenceToken

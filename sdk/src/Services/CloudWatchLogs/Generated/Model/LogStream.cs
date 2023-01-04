@@ -128,7 +128,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property LastIngestionTime. 
         /// <para>
         /// The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970
-        /// 00:00:00 UTC</code>.
+        /// 00:00:00 UTC</code> The <code>lastIngestionTime</code> value updates on an eventual
+        /// consistency basis. It typically updates in less than an hour after ingestion, but
+        /// in rare situations might take longer.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -194,6 +196,14 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// The sequence token.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code>
+        /// actions are always accepted regardless of receiving an invalid sequence token. You
+        /// don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code>
+        /// action.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=1)]
         public string UploadSequenceToken

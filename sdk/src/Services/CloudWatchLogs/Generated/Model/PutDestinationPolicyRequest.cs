@@ -34,14 +34,6 @@ namespace Amazon.CloudWatchLogs.Model
     /// policy is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM
     /// policy document</a> that is used to authorize claims to register a subscription filter
     /// against a given destination.
-    /// 
-    ///  
-    /// <para>
-    /// If multiple Amazon Web Services accounts are sending logs to this destination, each
-    /// sender account must be listed separately in the policy. The policy does not support
-    /// specifying <code>*</code> as the Principal or the use of the <code>aws:PrincipalOrgId</code>
-    /// global key.
-    /// </para>
     /// </summary>
     public partial class PutDestinationPolicyRequest : AmazonCloudWatchLogsRequest
     {
