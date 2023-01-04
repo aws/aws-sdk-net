@@ -1,3 +1,11 @@
+### 3.7.454.0 (2023-01-04 19:21 UTC)
+* ApplicationAutoScaling (3.7.101.0)
+	* Customers can now use the existing DescribeScalingActivities API to also see the detailed and machine-readable reasons for Application Auto Scaling not scaling their resources and, if needed, take the necessary corrective actions.
+* CloudWatchLogs (3.7.102.27)
+	* Update to remove sequenceToken as a required field in PutLogEvents calls.
+* SimpleSystemsManagement (3.7.103.0)
+	* Adding support for QuickSetup Document Type in Systems Manager
+
 ### 3.7.453.1 (2023-01-04 00:34 UTC)
 * Core 3.7.103.10
 	* Fix profile resolution when using AWS SSO by updating credentials factory to consider sso-session if present.
