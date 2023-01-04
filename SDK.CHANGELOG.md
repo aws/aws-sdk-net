@@ -1,3 +1,8 @@
+### 3.7.453.1 (2023-01-04 00:34 UTC)
+* Core 3.7.103.10
+	* Fix profile resolution when using AWS SSO by updating credentials factory to consider sso-session if present.
+	* All services packages updated to require new Core
+
 ### 3.7.453.0 (2023-01-03 19:20 UTC)
 * SecurityLake (3.7.101.0)
 	* Allow CreateSubscriber API to take string input that allows setting more descriptive SubscriberDescription field. Make souceTypes field required in model level for UpdateSubscriberRequest as it is required for every API call on the backend. Allow ListSubscribers take any String as nextToken param.
