@@ -733,6 +733,12 @@ namespace Amazon.ApplicationAutoScaling
         /// <para>
         /// You can filter the results using <code>ResourceId</code> and <code>ScalableDimension</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// For information about viewing scaling activities using the Amazon Web Services CLI,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling
+        /// activities for Application Auto Scaling</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingActivities service method.</param>
         /// 
@@ -769,6 +775,12 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// You can filter the results using <code>ResourceId</code> and <code>ScalableDimension</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about viewing scaling activities using the Amazon Web Services CLI,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling
+        /// activities for Application Auto Scaling</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingActivities service method.</param>
@@ -1341,20 +1353,26 @@ namespace Amazon.ApplicationAutoScaling
 
 
         /// <summary>
-        /// Registers or updates a scalable target. 
+        /// Registers or updates a scalable target, the resource that you want to scale.
         /// 
         ///  
         /// <para>
-        /// A scalable target is a resource that Application Auto Scaling can scale out and scale
-        /// in. Scalable targets are uniquely identified by the combination of resource ID, scalable
-        /// dimension, and namespace. 
+        /// Scalable targets are uniquely identified by the combination of resource ID, scalable
+        /// dimension, and namespace, which represents some capacity dimension of the underlying
+        /// service.
         /// </para>
         ///  
         /// <para>
-        /// When you register a new scalable target, you must specify values for minimum and maximum
-        /// capacity. Current capacity will be adjusted within the specified range when scaling
-        /// starts. Application Auto Scaling scaling policies will not scale capacity to values
-        /// that are outside of this range.
+        /// When you register a new scalable target, you must specify values for the minimum and
+        /// maximum capacity. If the specified resource is not active in the target service, this
+        /// operation does not change the resource's current capacity. Otherwise, it changes the
+        /// resource's current capacity to a value that is inside of this range.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you choose to add a scaling policy, current capacity is adjustable within the specified
+        /// range when scaling starts. Application Auto Scaling scaling policies will not scale
+        /// capacity to values that are outside of the minimum and maximum range.
         /// </para>
         ///  
         /// <para>
@@ -1412,20 +1430,26 @@ namespace Amazon.ApplicationAutoScaling
 
 
         /// <summary>
-        /// Registers or updates a scalable target. 
+        /// Registers or updates a scalable target, the resource that you want to scale.
         /// 
         ///  
         /// <para>
-        /// A scalable target is a resource that Application Auto Scaling can scale out and scale
-        /// in. Scalable targets are uniquely identified by the combination of resource ID, scalable
-        /// dimension, and namespace. 
+        /// Scalable targets are uniquely identified by the combination of resource ID, scalable
+        /// dimension, and namespace, which represents some capacity dimension of the underlying
+        /// service.
         /// </para>
         ///  
         /// <para>
-        /// When you register a new scalable target, you must specify values for minimum and maximum
-        /// capacity. Current capacity will be adjusted within the specified range when scaling
-        /// starts. Application Auto Scaling scaling policies will not scale capacity to values
-        /// that are outside of this range.
+        /// When you register a new scalable target, you must specify values for the minimum and
+        /// maximum capacity. If the specified resource is not active in the target service, this
+        /// operation does not change the resource's current capacity. Otherwise, it changes the
+        /// resource's current capacity to a value that is inside of this range.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you choose to add a scaling policy, current capacity is adjustable within the specified
+        /// range when scaling starts. Application Auto Scaling scaling policies will not scale
+        /// capacity to values that are outside of the minimum and maximum range.
         /// </para>
         ///  
         /// <para>

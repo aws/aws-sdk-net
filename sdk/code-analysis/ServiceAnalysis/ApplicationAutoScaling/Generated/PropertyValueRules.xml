@@ -117,6 +117,9 @@
     <property>Amazon.ApplicationAutoScaling.Model.Alarm.AlarmName</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.NotScaledReason.Code</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationAutoScaling.Model.PredefinedMetricSpecification.ResourceLabel</property>
     <min>1</min>
     <max>1023</max>
