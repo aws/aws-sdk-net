@@ -101,7 +101,7 @@ namespace Amazon.MWAA
     ///  <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_CreateWebLoginToken.html">CreateWebLoginToken</a>
     /// 
     /// </para>
-    ///  </li> </ul><br /> </li> <li> 
+    ///  </li> </ul> </li> <li> 
     /// <para>
     ///  <code>ops.airflow.{region}.amazonaws.com</code> - This endpoint is used to push environment
     /// metrics that track environment health.
