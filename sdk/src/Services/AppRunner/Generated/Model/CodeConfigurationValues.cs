@@ -39,6 +39,7 @@ namespace Amazon.AppRunner.Model
         private string _buildCommand;
         private string _port;
         private Runtime _runtime;
+        private Dictionary<string, string> _runtimeEnvironmentSecrets = new Dictionary<string, string>();
         private Dictionary<string, string> _runtimeEnvironmentVariables = new Dictionary<string, string>();
         private string _startCommand;
 
@@ -104,11 +105,44 @@ namespace Amazon.AppRunner.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RuntimeEnvironmentSecrets. 
+        /// <para>
+        /// An array of key-value pairs representing the secrets and parameters that get referenced
+        /// to your service as an environment variable. The supported values are either the full
+        /// Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter
+        /// in the Amazon Web Services Systems Manager Parameter Store.
+        /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        ///  If the Amazon Web Services Systems Manager Parameter Store parameter exists in the
+        /// same Amazon Web Services Region as the service that you're launching, you can use
+        /// either the full ARN or name of the secret. If the parameter exists in a different
+        /// Region, then the full ARN must be specified. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Currently, cross account referencing of Amazon Web Services Systems Manager Parameter
+        /// Store parameter is not supported. 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        public Dictionary<string, string> RuntimeEnvironmentSecrets
+        {
+            get { return this._runtimeEnvironmentSecrets; }
+            set { this._runtimeEnvironmentSecrets = value; }
+        }
+
+        // Check to see if RuntimeEnvironmentSecrets property is set
+        internal bool IsSetRuntimeEnvironmentSecrets()
+        {
+            return this._runtimeEnvironmentSecrets != null && this._runtimeEnvironmentSecrets.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RuntimeEnvironmentVariables. 
         /// <para>
         /// The environment variables that are available to your running App Runner service. An
-        /// array of key-value pairs. Keys with a prefix of <code>AWSAPPRUNNER</code> are reserved
-        /// for system use and aren't valid.
+        /// array of key-value pairs.
         /// </para>
         /// </summary>
         public Dictionary<string, string> RuntimeEnvironmentVariables

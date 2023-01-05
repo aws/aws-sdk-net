@@ -35,9 +35,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "us-west-2";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
-            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner-fips.us-west-2.api.aws", endpoint.URL);
         }
@@ -50,9 +50,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "us-west-2";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner-fips.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -65,9 +65,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "us-west-2";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
-            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner.us-west-2.api.aws", endpoint.URL);
         }
@@ -80,9 +80,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "us-west-2";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
-            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -95,9 +95,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "eu-west-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
-            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner-fips.eu-west-1.api.aws", endpoint.URL);
         }
@@ -110,9 +110,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "eu-west-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner-fips.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -125,9 +125,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "eu-west-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
-            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner.eu-west-1.api.aws", endpoint.URL);
         }
@@ -140,9 +140,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "eu-west-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
-            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -155,9 +155,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "ap-northeast-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
-            parameters["Region"] = "ap-northeast-1";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner-fips.ap-northeast-1.api.aws", endpoint.URL);
         }
@@ -170,9 +170,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "ap-northeast-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            parameters["Region"] = "ap-northeast-1";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner-fips.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -185,9 +185,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "ap-northeast-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
-            parameters["Region"] = "ap-northeast-1";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner.ap-northeast-1.api.aws", endpoint.URL);
         }
@@ -200,9 +200,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "ap-northeast-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
-            parameters["Region"] = "ap-northeast-1";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -215,9 +215,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
-            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -230,9 +230,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -245,9 +245,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
-            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner.us-east-1.api.aws", endpoint.URL);
         }
@@ -260,9 +260,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
-            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -275,9 +275,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "us-east-2";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
-            parameters["Region"] = "us-east-2";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner-fips.us-east-2.api.aws", endpoint.URL);
         }
@@ -290,9 +290,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "us-east-2";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            parameters["Region"] = "us-east-2";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner-fips.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -305,9 +305,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "us-east-2";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
-            parameters["Region"] = "us-east-2";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner.us-east-2.api.aws", endpoint.URL);
         }
@@ -320,9 +320,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "us-east-2";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
-            parameters["Region"] = "us-east-2";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://apprunner.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -335,9 +335,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
-            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -352,9 +352,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -368,9 +368,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new AppRunnerEndpointParameters();
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
-            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonAppRunnerEndpointProvider().ResolveEndpoint(parameters);
         }
