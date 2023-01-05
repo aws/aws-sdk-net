@@ -39,6 +39,7 @@ namespace Amazon.EMRServerless.Model
         private AutoStartConfig _autoStartConfiguration;
         private AutoStopConfig _autoStopConfiguration;
         private DateTime? _createdAt;
+        private ImageConfiguration _imageConfiguration;
         private Dictionary<string, InitialCapacityConfig> _initialCapacity = new Dictionary<string, InitialCapacityConfig>();
         private MaximumAllowedResources _maximumCapacity;
         private string _name;
@@ -49,6 +50,7 @@ namespace Amazon.EMRServerless.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _type;
         private DateTime? _updatedAt;
+        private Dictionary<string, WorkerTypeSpecification> _workerTypeSpecifications = new Dictionary<string, WorkerTypeSpecification>();
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -163,6 +165,24 @@ namespace Amazon.EMRServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImageConfiguration. 
+        /// <para>
+        /// The image configuration applied to all worker types.
+        /// </para>
+        /// </summary>
+        public ImageConfiguration ImageConfiguration
+        {
+            get { return this._imageConfiguration; }
+            set { this._imageConfiguration = value; }
+        }
+
+        // Check to see if ImageConfiguration property is set
+        internal bool IsSetImageConfiguration()
+        {
+            return this._imageConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InitialCapacity. 
         /// <para>
         /// The initial capacity of the application.
@@ -241,7 +261,7 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property ReleaseLabel. 
         /// <para>
-        /// The EMR release version associated with the application.
+        /// The EMR release associated with the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -350,6 +370,24 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetUpdatedAt()
         {
             return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkerTypeSpecifications. 
+        /// <para>
+        /// The specification applied to each worker type.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, WorkerTypeSpecification> WorkerTypeSpecifications
+        {
+            get { return this._workerTypeSpecifications; }
+            set { this._workerTypeSpecifications = value; }
+        }
+
+        // Check to see if WorkerTypeSpecifications property is set
+        internal bool IsSetWorkerTypeSpecifications()
+        {
+            return this._workerTypeSpecifications != null && this._workerTypeSpecifications.Count > 0; 
         }
 
     }

@@ -107,6 +107,17 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetImageConfiguration())
+                {
+                    context.Writer.WritePropertyName("imageConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ImageConfigurationInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ImageConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetInitialCapacity())
                 {
                     context.Writer.WritePropertyName("initialCapacity");
@@ -145,6 +156,25 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     var marshaller = NetworkConfigurationMarshaller.Instance;
                     marshaller.Marshall(publicRequest.NetworkConfiguration, context);
 
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetWorkerTypeSpecifications())
+                {
+                    context.Writer.WritePropertyName("workerTypeSpecifications");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestWorkerTypeSpecificationsKvp in publicRequest.WorkerTypeSpecifications)
+                    {
+                        context.Writer.WritePropertyName(publicRequestWorkerTypeSpecificationsKvp.Key);
+                        var publicRequestWorkerTypeSpecificationsValue = publicRequestWorkerTypeSpecificationsKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WorkerTypeSpecificationInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequestWorkerTypeSpecificationsValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
                     context.Writer.WriteObjectEnd();
                 }
 

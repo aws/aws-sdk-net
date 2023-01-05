@@ -136,6 +136,9 @@ namespace Amazon.EMRServerless
         /// <exception cref="Amazon.EMRServerless.Model.InternalServerException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.EMRServerless.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
