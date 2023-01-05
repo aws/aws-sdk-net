@@ -29,5 +29,10 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListAssociatedRoute53HealthChecksResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the HealthCheckIds
+        /// </summary>
+        IPaginatedEnumerable<string> HealthCheckIds { get; }
     }
 }

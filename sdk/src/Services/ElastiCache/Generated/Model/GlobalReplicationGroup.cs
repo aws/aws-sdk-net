@@ -292,10 +292,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property TransitEncryptionEnabled. 
         /// <para>
-        /// A flag that enables in-transit encryption when set to true. You cannot modify the
-        /// value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
-        /// in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code>
-        /// to true when you create a cluster. 
+        /// A flag that enables in-transit encryption when set to true.
         /// </para>
         ///  
         /// <para>

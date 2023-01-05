@@ -36,8 +36,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-gov-east-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://securitylake-fips.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -51,8 +51,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-gov-east-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://securitylake-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -66,8 +66,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-gov-east-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://securitylake.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -81,8 +81,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-gov-east-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://securitylake.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -96,8 +96,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://securitylake-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -111,8 +111,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://securitylake-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -126,8 +126,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://securitylake.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -141,8 +141,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://securitylake.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -157,8 +157,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -171,8 +171,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://securitylake-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
@@ -187,8 +187,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -201,8 +201,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://securitylake.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
@@ -216,8 +216,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://securitylake-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -231,8 +231,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://securitylake-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -246,8 +246,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://securitylake.us-east-1.api.aws", endpoint.URL);
         }
@@ -261,8 +261,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://securitylake.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -277,8 +277,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -291,8 +291,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://securitylake-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -307,8 +307,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -321,8 +321,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://securitylake.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -336,8 +336,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -353,8 +353,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -369,8 +369,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SecurityLakeEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonSecurityLakeEndpointProvider().ResolveEndpoint(parameters);
         }

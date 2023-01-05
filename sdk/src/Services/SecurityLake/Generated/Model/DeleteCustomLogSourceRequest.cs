@@ -30,7 +30,7 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCustomLogSource operation.
-    /// Removes a custom log source from Security Lake.
+    /// Removes a custom log source from Amazon Security Lake.
     /// </summary>
     public partial class DeleteCustomLogSourceRequest : AmazonSecurityLakeRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property CustomSourceName. 
         /// <para>
-        /// The custom source name for the custome log source.
+        /// The custom source name for the custom log source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

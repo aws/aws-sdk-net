@@ -71,6 +71,7 @@ namespace Amazon.SecretsManager.Model
     public partial class ListSecretsRequest : AmazonSecretsManagerRequest
     {
         private List<Filter> _filters = new List<Filter>();
+        private bool? _includePlannedDeletion;
         private int? _maxResults;
         private string _nextToken;
         private SortOrderType _sortOrder;
@@ -92,6 +93,21 @@ namespace Amazon.SecretsManager.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludePlannedDeletion.
+        /// </summary>
+        public bool IncludePlannedDeletion
+        {
+            get { return this._includePlannedDeletion.GetValueOrDefault(); }
+            set { this._includePlannedDeletion = value; }
+        }
+
+        // Check to see if IncludePlannedDeletion property is set
+        internal bool IsSetIncludePlannedDeletion()
+        {
+            return this._includePlannedDeletion.HasValue; 
         }
 
         /// <summary>

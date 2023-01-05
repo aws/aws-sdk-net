@@ -289,6 +289,13 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// percent value that represents how much of the CPU can be used before scaling out.
         /// 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined
+        /// metric, specify the target utilization as the optimal average request count per target
+        /// during any one-minute interval.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public double TargetValue

@@ -279,7 +279,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances
-        /// for an SageMaker model endpoint variant.
+        /// for a SageMaker model endpoint variant.
         /// </para>
         ///  </li> <li> 
         /// <para>

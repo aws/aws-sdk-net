@@ -29,5 +29,10 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListClustersResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Clusters
+        /// </summary>
+        IPaginatedEnumerable<Cluster> Clusters { get; }
     }
 }

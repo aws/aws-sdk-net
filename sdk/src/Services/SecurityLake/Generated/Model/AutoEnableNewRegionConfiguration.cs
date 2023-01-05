@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// Automatically enable new organization accounts as member accounts from a Security
+    /// Automatically enable new organization accounts as member accounts from an Amazon Security
     /// Lake administrator account.
     /// </summary>
     public partial class AutoEnableNewRegionConfiguration
@@ -40,7 +40,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The Regions where Security Lake is auto enabled
+        /// The Amazon Web Services Regions where Security Lake is automatically enabled.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Sources. 
         /// <para>
-        /// The Amazon Web Services sources which are auto enabled in Security Lake.
+        /// The Amazon Web Services sources that are automatically enabled in Security Lake.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

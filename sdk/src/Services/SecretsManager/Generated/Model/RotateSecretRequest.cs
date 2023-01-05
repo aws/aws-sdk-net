@@ -30,13 +30,42 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the RotateSecret operation.
-    /// Configures and starts the asynchronous process of rotating the secret. For information
+    /// Configures and starts the asynchronous process of rotating the secret. For more information
     /// about rotation, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotate
-    /// secrets</a> in the <i>Secrets Manager User Guide</i>. If you include the configuration
-    /// parameters, the operation sets the values for the secret and then immediately starts
-    /// a rotation. If you don't include the configuration parameters, the operation starts
-    /// a rotation with the values already stored in the secret. 
+    /// secrets</a>.
     /// 
+    ///  
+    /// <para>
+    /// If you include the configuration parameters, the operation sets the values for the
+    /// secret and then immediately starts a rotation. If you don't include the configuration
+    /// parameters, the operation starts a rotation with the values already stored in the
+    /// secret. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For database credentials you want to rotate, for Secrets Manager to be able to rotate
+    /// the secret, you must make sure the secret value is in the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_secret_json_structure.html">
+    /// JSON structure of a database secret</a>. In particular, if you want to use the <a
+    /// href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets_strategies.html#rotating-secrets-two-users">
+    /// alternating users strategy</a>, your secret must contain the ARN of a superuser secret.
+    /// </para>
+    ///  
+    /// <para>
+    /// To configure rotation, you also need the ARN of an Amazon Web Services Lambda function
+    /// and the schedule for the rotation. The Lambda rotation function creates a new version
+    /// of the secret and creates or updates the credentials on the database or service to
+    /// match. After testing the new credentials, the function marks the new secret version
+    /// with the staging label <code>AWSCURRENT</code>. Then anyone who retrieves the secret
+    /// gets the new version. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How
+    /// rotation works</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can create the Lambda rotation function based on the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_available-rotation-templates.html">rotation
+    /// function templates</a> that Secrets Manager provides. Choose a template that matches
+    /// your <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets_strategies.html">Rotation
+    /// strategy</a>.
+    /// </para>
     ///  
     /// <para>
     /// When rotation is successful, the <code>AWSPENDING</code> staging label might be attached
@@ -44,6 +73,9 @@ namespace Amazon.SecretsManager.Model
     /// to any version. If the <code>AWSPENDING</code> staging label is present but not attached
     /// to the same version as <code>AWSCURRENT</code>, then any later invocation of <code>RotateSecret</code>
     /// assumes that a previous rotation request is still in progress and returns an error.
+    /// </para>
+    ///  
+    /// <para>
     /// When rotation is unsuccessful, the <code>AWSPENDING</code> staging label might be
     /// attached to an empty secret version. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot_rotation.html">Troubleshoot
     /// rotation</a> in the <i>Secrets Manager User Guide</i>.
@@ -119,9 +151,8 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  
         /// <para>
-        /// For secrets that use a Lambda rotation function to rotate, if you don't immediately
-        /// rotate the secret, Secrets Manager tests the rotation configuration by running the
-        /// <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+        /// If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration
+        /// by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
         /// <code>testSecret</code> step</a> of the Lambda rotation function. The test creates
         /// an <code>AWSPENDING</code> version of the secret and then removes it.
         /// </para>
@@ -146,14 +177,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property RotationLambdaARN. 
         /// <para>
-        /// For secrets that use a Lambda rotation function to rotate, the ARN of the Lambda rotation
-        /// function. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For secrets that use <i>managed rotation</i>, omit this field. For more information,
-        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_managed.html">Managed
-        /// rotation</a> in the <i>Secrets Manager User Guide</i>.
+        /// The ARN of the Lambda rotation function that can rotate the secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

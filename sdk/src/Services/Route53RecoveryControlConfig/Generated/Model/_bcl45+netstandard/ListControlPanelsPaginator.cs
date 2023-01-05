@@ -41,6 +41,12 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// </summary>
         public IPaginatedEnumerable<ListControlPanelsResponse> Responses => new PaginatedResponse<ListControlPanelsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the ControlPanels
+        /// </summary>
+        public IPaginatedEnumerable<ControlPanel> ControlPanels => 
+            new PaginatedResultKeyResponse<ListControlPanelsResponse, ControlPanel>(this, (i) => i.ControlPanels);
+
         internal ListControlPanelsPaginator(IAmazonRoute53RecoveryControlConfig client, ListControlPanelsRequest request)
         {
             this._client = client;

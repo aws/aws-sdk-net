@@ -30,7 +30,14 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code>
-    /// field in the <code>InvalidSequenceTokenException</code> message.
+    /// field in the <code>InvalidSequenceTokenException</code> message. 
+    /// 
+    ///  <important> 
+    /// <para>
+    ///  <code>PutLogEvents</code> actions are now always accepted and never return <code>InvalidSequenceTokenException</code>
+    /// regardless of receiving an invalid sequence token. 
+    /// </para>
+    ///  </important>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

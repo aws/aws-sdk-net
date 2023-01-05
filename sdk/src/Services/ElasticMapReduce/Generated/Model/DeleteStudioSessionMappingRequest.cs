@@ -45,7 +45,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The globally unique identifier (GUID) of the user or group to remove from the Amazon
         /// EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a>
         /// and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
-        /// in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code>
+        /// in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code>
         /// or <code>IdentityId</code> must be specified.
         /// </para>
         /// </summary>
@@ -68,7 +68,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The name of the user name or group to remove from the Amazon EMR Studio. For more
         /// information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
         /// and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-        /// in the <i>Amazon Web Services SSO Store API Reference</i>. Either <code>IdentityName</code>
+        /// in the <i>IAM Identity Center Store API Reference</i>. Either <code>IdentityName</code>
         /// or <code>IdentityId</code> must be specified.
         /// </para>
         /// </summary>

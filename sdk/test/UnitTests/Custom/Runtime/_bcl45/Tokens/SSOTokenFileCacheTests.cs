@@ -39,8 +39,8 @@ namespace AWSSDK.UnitTests.Runtime
             "d033e22ae348aeb5660fc2140aec35850c4da997.json")]
         // "Name with dash"
         [DataRow(
-            "https://d-abc123.awsapps.com",
-            "ab6e8a5ac0e97bd6867ae3eacd5fd7dc0cd4de86.json")]
+            "dev-scopes",
+            "75e4d41276d8bd17f85986fc6cccef29fd725ce3.json")]
         public void ValidateTokenCacheLocation(string sessionName, string expectedCacheFile)
         {
             var testCacheFolder = "test";
@@ -86,8 +86,8 @@ namespace AWSSDK.UnitTests.Runtime
             "d033e22ae348aeb5660fc2140aec35850c4da997.json")]
         // "Name with dash"
         [DataRow(
-            "https://d-abc123.awsapps.com",
-            "ab6e8a5ac0e97bd6867ae3eacd5fd7dc0cd4de86.json")]
+            "dev-scopes",
+            "75e4d41276d8bd17f85986fc6cccef29fd725ce3.json")]
         public async Task ValidateTokenCacheLocationAsync(string sessionName, string expectedCacheFile)
         {
             var testCacheFolder = "test";

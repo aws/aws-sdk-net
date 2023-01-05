@@ -89,6 +89,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// The name of the scaling policy.
         /// </para>
+        ///  
+        /// <para>
+        /// You cannot change the name of a scaling policy, but you can delete the original scaling
+        /// policy and create a new scaling policy with the same settings and a different name.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string PolicyName
@@ -106,7 +111,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property PolicyType. 
         /// <para>
-        /// The policy type. This parameter is required if you are creating a scaling policy.
+        /// The scaling policy type. This parameter is required if you are creating a scaling
+        /// policy.
         /// </para>
         ///  
         /// <para>
@@ -300,7 +306,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances
-        /// for an SageMaker model endpoint variant.
+        /// for a SageMaker model endpoint variant.
         /// </para>
         ///  </li> <li> 
         /// <para>

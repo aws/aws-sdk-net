@@ -39,8 +39,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If nextToken is returned, there are more results available. You can make the call
-        /// again using the returned token to retrieve the next page.
+        /// If nextToken is returned, there are more results available. You can repeat the call
+        /// using the returned token to retrieve the next page.
         /// </para>
         /// </summary>
         public string NextToken
@@ -58,7 +58,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Subscribers. 
         /// <para>
-        /// The subscribers available in the specified Security Lake account ID.
+        /// The subscribers available for the specified Security Lake account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

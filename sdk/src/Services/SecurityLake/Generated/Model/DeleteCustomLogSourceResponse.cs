@@ -38,7 +38,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property CustomDataLocation. 
         /// <para>
-        /// The location of the partition in the Security Lake S3 bucket.
+        /// The location of the partition in the Amazon S3 bucket for Security Lake.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

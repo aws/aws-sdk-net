@@ -35,7 +35,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     ///  
     /// <para>
     /// For information about the available metrics for a service, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon
-    /// Web Services Services That Publish CloudWatch Metrics</a> in the <i>Amazon CloudWatch
+    /// Web Services services that publish CloudWatch metrics</a> in the <i>Amazon CloudWatch
     /// User Guide</i>.
     /// </para>
     ///  
@@ -47,7 +47,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// Add values for each required parameter from CloudWatch. You can use an existing metric,
     /// or a new metric that you create. To use your own metric, you must first publish the
     /// metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish
-    /// Custom Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+    /// custom metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -58,8 +58,16 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information about CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
-    /// CloudWatch Concepts</a>. 
+    /// For an example of how creating new metrics can be useful, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-using-sqs-queue.html">Scaling
+    /// based on Amazon SQS</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. This topic
+    /// mentions Auto Scaling groups, but the same scenario for Amazon SQS can apply to the
+    /// target tracking scaling policies that you create for a Spot Fleet by using the Application
+    /// Auto Scaling API.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about the CloudWatch terminology below, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
+    /// CloudWatch concepts</a> in the <i>Amazon CloudWatch User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class CustomizedMetricSpecification
@@ -96,7 +104,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// The name of the metric. 
+        /// The name of the metric. To get the exact metric name, namespace, and dimensions, inspect
+        /// the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a>
+        /// object that is returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -153,7 +163,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The unit of the metric.
+        /// The unit of the metric. For a complete list of the units that CloudWatch supports,
+        /// see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a>
+        /// data type in the <i>Amazon CloudWatch API Reference</i>.
         /// </para>
         /// </summary>
         public string Unit

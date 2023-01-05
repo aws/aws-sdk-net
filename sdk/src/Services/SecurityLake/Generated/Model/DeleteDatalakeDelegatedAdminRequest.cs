@@ -30,9 +30,9 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDatalakeDelegatedAdmin operation.
-    /// Deletes the Security Lake administrator account for the organization. This API can
-    /// only be called by the organization management account. The organization management
-    /// account cannot be the delegated administrator account.
+    /// Deletes the Amazon Security Lake delegated administrator account for the organization.
+    /// This API can only be called by the organization management account. The organization
+    /// management account cannot be the delegated administrator account.
     /// </summary>
     public partial class DeleteDatalakeDelegatedAdminRequest : AmazonSecurityLakeRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// Account ID the Security Lake delegated administrator.
+        /// The account ID the Security Lake delegated administrator.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

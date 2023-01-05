@@ -79,6 +79,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("RemoveHeadersConfig", targetDepth))
+                    {
+                        var unmarshaller = ResponseHeadersPolicyRemoveHeadersConfigUnmarshaller.Instance;
+                        unmarshalledObject.RemoveHeadersConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SecurityHeadersConfig", targetDepth))
                     {
                         var unmarshaller = ResponseHeadersPolicySecurityHeadersConfigUnmarshaller.Instance;

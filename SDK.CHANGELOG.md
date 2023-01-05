@@ -1,3 +1,61 @@
+### 3.7.454.0 (2023-01-04 19:21 UTC)
+* ApplicationAutoScaling (3.7.101.0)
+	* Customers can now use the existing DescribeScalingActivities API to also see the detailed and machine-readable reasons for Application Auto Scaling not scaling their resources and, if needed, take the necessary corrective actions.
+* CloudWatchLogs (3.7.102.27)
+	* Update to remove sequenceToken as a required field in PutLogEvents calls.
+* SimpleSystemsManagement (3.7.103.0)
+	* Adding support for QuickSetup Document Type in Systems Manager
+
+### 3.7.453.1 (2023-01-04 00:34 UTC)
+* Core 3.7.103.10
+	* Fix profile resolution when using AWS SSO by updating credentials factory to consider sso-session if present.
+	* All services packages updated to require new Core
+
+### 3.7.453.0 (2023-01-03 19:20 UTC)
+* SecurityLake (3.7.101.0)
+	* Allow CreateSubscriber API to take string input that allows setting more descriptive SubscriberDescription field. Make souceTypes field required in model level for UpdateSubscriberRequest as it is required for every API call on the backend. Allow ListSubscribers take any String as nextToken param.
+* Core 3.7.103.9
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.452.0 (2022-12-30 19:19 UTC)
+* CloudFront (3.7.103.0)
+	* Extend response headers policy to support removing headers from viewer responses
+* IoTFleetWise (3.7.102.7)
+	* Update documentation - correct the epoch constant value of default value for expiryTime field in CreateCampaign request.
+* Core 3.7.103.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.451.0 (2022-12-29 19:21 UTC)
+* APIGateway (3.7.100.45)
+	* Documentation updates for Amazon API Gateway
+* ConnectWisdomService (3.7.101.0)
+	* This release extends Wisdom CreateContent and StartContentUpload APIs to support PDF and MicrosoftWord docx document uploading.
+* ElasticMapReduce (3.7.101.0)
+	* Added GetClusterSessionCredentials API to allow Amazon SageMaker Studio to connect to EMR on EC2 clusters with runtime roles and AWS Lake Formation-based access control for Apache Spark, Apache Hive, and Presto queries.
+* SecretsManager (3.7.101.0)
+	* Added owning service filter, include planned deletion flag, and next rotation date response parameter in ListSecrets.
+* Core 3.7.103.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.450.0 (2022-12-28 19:20 UTC)
+* ElastiCache (3.7.103.0)
+	* This release allows you to modify the encryption in transit setting, for existing Redis clusters. You can now change the TLS configuration of your Redis clusters without the need to re-build or re-provision the clusters or impact application availability.
+* NetworkFirewall (3.7.101.0)
+	* AWS Network Firewall now provides status messages for firewalls to help you troubleshoot when your endpoint fails.
+* RDS (3.7.112.0)
+	* This release adds support for Custom Engine Version (CEV) on RDS Custom SQL Server.
+* Route53RecoveryControlConfig (3.7.101.0)
+	* Added support for Python paginators in the route53-recovery-control-config List* APIs.
+
+### 3.7.449.0 (2022-12-27 19:20 UTC)
+* MemoryDB (3.7.102.0)
+	* This release adds support for MemoryDB Reserved nodes which provides a significant discount compared to on-demand node pricing. Reserved nodes are not physical nodes, but rather a billing discount applied to the use of on-demand nodes in your account.
+* Transfer (3.7.104.0)
+	* Add additional operations to throw ThrottlingExceptions
+
 ### 3.7.448.0 (2022-12-23 19:26 UTC)
 * Connect (3.7.110.0)
 	* Support for Routing Profile filter, SortCriteria, and grouping by Routing Profiles for GetCurrentMetricData API. Support for RoutingProfiles, UserHierarchyGroups, and Agents as filters, NextStatus and AgentStatusName for GetCurrentUserData. Adds ApproximateTotalCount to both APIs.

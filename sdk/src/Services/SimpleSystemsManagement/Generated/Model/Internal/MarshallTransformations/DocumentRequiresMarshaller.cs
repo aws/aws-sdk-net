@@ -51,10 +51,22 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetRequireType())
+            {
+                context.Writer.WritePropertyName("RequireType");
+                context.Writer.Write(requestObject.RequireType);
+            }
+
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
                 context.Writer.Write(requestObject.Version);
+            }
+
+            if(requestObject.IsSetVersionName())
+            {
+                context.Writer.WritePropertyName("VersionName");
+                context.Writer.Write(requestObject.VersionName);
             }
 
         }

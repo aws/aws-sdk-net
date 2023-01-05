@@ -30,8 +30,8 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSubscriptionNotificationConfiguration operation.
-    /// Creates the specified notification subscription in Security Lake. Creates the specified
-    /// subscription notifications from the specified organization.
+    /// Notifies the subscriber when new data is written to the data lake for the sources
+    /// that the subscriber consumes in Security Lake.
     /// </summary>
     public partial class CreateSubscriptionNotificationConfigurationRequest : AmazonSecurityLakeRequest
     {
@@ -46,8 +46,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property CreateSqs. 
         /// <para>
-        /// Create a new subscription notification for the specified subscription ID in Security
-        /// Lake.
+        /// Create an Amazon Simple Queue Service queue.
         /// </para>
         /// </summary>
         public bool CreateSqs
@@ -65,7 +64,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property HttpsApiKeyName. 
         /// <para>
-        /// The key name for the subscription notification.
+        /// The key name for the notification subscription.
         /// </para>
         /// </summary>
         public string HttpsApiKeyName
@@ -83,7 +82,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property HttpsApiKeyValue. 
         /// <para>
-        /// The key value for the subscription notification.
+        /// The key value for the notification subscription.
         /// </para>
         /// </summary>
         public string HttpsApiKeyValue
@@ -101,7 +100,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property HttpsMethod. 
         /// <para>
-        /// The HTTPS method used for the subscription notification. 
+        /// The HTTPS method used for the notification subscription. 
         /// </para>
         /// </summary>
         public HttpsMethod HttpsMethod
@@ -119,7 +118,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) specifying the role of the subscriber.
+        /// The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you
+        /// created.
         /// </para>
         /// </summary>
         public string RoleArn
@@ -137,7 +137,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SubscriptionEndpoint. 
         /// <para>
-        /// The subscription endpoint in Security Lake.
+        /// The subscription endpoint in Security Lake. If you prefer notification with an HTTPs
+        /// endpoint, populate this field.
         /// </para>
         /// </summary>
         public string SubscriptionEndpoint
@@ -155,7 +156,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SubscriptionId. 
         /// <para>
-        /// The subscription ID for which the subscription notification is specified. 
+        /// The subscription ID for the notification subscription/
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

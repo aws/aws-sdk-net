@@ -53,12 +53,10 @@ namespace Amazon.ElasticMapReduce.Model
     /// require more than 256 steps to process your data. You can bypass the 256-step limitation
     /// in various ways, including using the SSH shell to connect to the master node and submitting
     /// queries directly to the software running on the master node, such as Hive and Hadoop.
-    /// For more information on how to do this, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
-    /// More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// For long running clusters, we recommend that you periodically store your results.
+    /// For long-running clusters, we recommend that you periodically store your results.
     /// </para>
     ///  <note> 
     /// <para>
@@ -636,7 +634,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property ServiceRole. 
         /// <para>
         /// The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources
-        /// on your behalf.
+        /// on your behalf. If you've created a custom service role path, you must specify it
+        /// for the service role when you launch your cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10280)]

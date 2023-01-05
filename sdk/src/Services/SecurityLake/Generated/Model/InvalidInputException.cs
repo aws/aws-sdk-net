@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// The request was rejected because an invalid or out-of-range value was supplied for
-    /// an input parameter.
+    /// The request was rejected because a value that's not valid or is out of range was supplied
+    /// for an input parameter.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

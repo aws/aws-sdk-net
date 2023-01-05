@@ -34,7 +34,9 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DocumentRequires
     {
         private string _name;
+        private string _requireType;
         private string _version;
+        private string _versionName;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -56,6 +58,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RequireType. 
+        /// <para>
+        /// The document type of the required SSM document.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=128)]
+        public string RequireType
+        {
+            get { return this._requireType; }
+            set { this._requireType = value; }
+        }
+
+        // Check to see if RequireType property is set
+        internal bool IsSetRequireType()
+        {
+            return this._requireType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
         /// The document version required by the current document.
@@ -71,6 +92,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetVersion()
         {
             return this._version != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionName. 
+        /// <para>
+        /// An optional field specifying the version of the artifact associated with the document.
+        /// For example, "Release 12, Update 6". This value is unique across all versions of a
+        /// document, and can't be changed.
+        /// </para>
+        /// </summary>
+        public string VersionName
+        {
+            get { return this._versionName; }
+            set { this._versionName = value; }
+        }
+
+        // Check to see if VersionName property is set
+        internal bool IsSetVersionName()
+        {
+            return this._versionName != null;
         }
 
     }

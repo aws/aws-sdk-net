@@ -41,9 +41,9 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) created by the user to provide to the subscriber. For
-        /// more information about ARNs and how to use them in policies, see IAM identifiers in
-        /// the IAM User Guide.
+        /// The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more
+        /// information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+        /// identifiers in the Identity and Access Management (IAM) User Guide</a>. .
         /// </para>
         /// </summary>
         public string RoleArn
@@ -61,7 +61,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property S3BucketArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the Amazon S3 bucket. 
+        /// The ARN for the Amazon S3 bucket. 
         /// </para>
         /// </summary>
         public string S3BucketArn
@@ -79,7 +79,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SnsArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the Amazon Simple Notification Service.
+        /// The ARN for the Amazon Simple Notification Service.
         /// </para>
         /// </summary>
         public string SnsArn
@@ -97,8 +97,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SubscriptionId. 
         /// <para>
-        /// The <code>subscriptionId</code> that was created by the <code>CreateSubscriber</code>
-        /// API call.
+        /// The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

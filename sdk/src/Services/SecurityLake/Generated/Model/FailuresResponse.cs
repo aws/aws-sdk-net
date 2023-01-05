@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// Response element for actions which make changes namely create, update, or delete actions.
+    /// Response element for actions that make changes, namely create, update, or delete actions.
     /// </summary>
     public partial class FailuresResponse
     {
@@ -57,7 +57,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// List of Regions where the failure occurred. 
+        /// List of Amazon Web Services Regions where the failure occurred. 
         /// </para>
         /// </summary>
         public string Region

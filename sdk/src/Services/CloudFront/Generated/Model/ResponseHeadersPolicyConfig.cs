@@ -34,9 +34,7 @@ namespace Amazon.CloudFront.Model
     ///  
     /// <para>
     /// A response headers policy configuration contains metadata about the response headers
-    /// policy, and configurations for sets of HTTP response headers and their values. CloudFront
-    /// adds the headers in the policy to HTTP responses that it sends for requests that match
-    /// a cache behavior associated with the policy.
+    /// policy, and configurations for sets of HTTP response headers.
     /// </para>
     /// </summary>
     public partial class ResponseHeadersPolicyConfig
@@ -45,6 +43,7 @@ namespace Amazon.CloudFront.Model
         private ResponseHeadersPolicyCorsConfig _corsConfig;
         private ResponseHeadersPolicyCustomHeadersConfig _customHeadersConfig;
         private string _name;
+        private ResponseHeadersPolicyRemoveHeadersConfig _removeHeadersConfig;
         private ResponseHeadersPolicySecurityHeadersConfig _securityHeadersConfig;
         private ResponseHeadersPolicyServerTimingHeadersConfig _serverTimingHeadersConfig;
 
@@ -129,6 +128,24 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoveHeadersConfig. 
+        /// <para>
+        /// A configuration for a set of HTTP headers to remove from the HTTP response.
+        /// </para>
+        /// </summary>
+        public ResponseHeadersPolicyRemoveHeadersConfig RemoveHeadersConfig
+        {
+            get { return this._removeHeadersConfig; }
+            set { this._removeHeadersConfig = value; }
+        }
+
+        // Check to see if RemoveHeadersConfig property is set
+        internal bool IsSetRemoveHeadersConfig()
+        {
+            return this._removeHeadersConfig != null;
         }
 
         /// <summary>

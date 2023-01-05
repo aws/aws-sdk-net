@@ -138,9 +138,9 @@ namespace Amazon
         public static readonly RegionEndpoint MESouth1 = GetEndpoint("me-south-1", "Middle East (Bahrain)");
 
         /// <summary>
-        /// The South America (São Paulo) endpoint.
+        /// The South America (Sao Paulo) endpoint.
         /// </summary>
-        public static readonly RegionEndpoint SAEast1 = GetEndpoint("sa-east-1", "South America (São Paulo)");
+        public static readonly RegionEndpoint SAEast1 = GetEndpoint("sa-east-1", "South America (Sao Paulo)");
 
         /// <summary>
         /// The US East (N. Virginia) endpoint.
