@@ -33,8 +33,27 @@ namespace Amazon.AmplifyBackend.Model
     /// </summary>
     public partial class GetBackendAPIModelsResponse : AmazonWebServiceResponse
     {
+        private string _modelIntrospectionSchema;
         private string _models;
         private Status _status;
+
+        /// <summary>
+        /// Gets and sets the property ModelIntrospectionSchema. 
+        /// <para>
+        /// Stringified JSON of the model introspection schema for an existing backend API resource.
+        /// </para>
+        /// </summary>
+        public string ModelIntrospectionSchema
+        {
+            get { return this._modelIntrospectionSchema; }
+            set { this._modelIntrospectionSchema = value; }
+        }
+
+        // Check to see if ModelIntrospectionSchema property is set
+        internal bool IsSetModelIntrospectionSchema()
+        {
+            return this._modelIntrospectionSchema != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Models. 

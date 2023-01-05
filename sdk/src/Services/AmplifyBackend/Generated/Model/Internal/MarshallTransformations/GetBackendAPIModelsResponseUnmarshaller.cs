@@ -51,6 +51,12 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("modelIntrospectionSchema", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ModelIntrospectionSchema = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("models", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
