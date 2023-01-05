@@ -529,9 +529,17 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly ContactInitiationMethod CALLBACK = new ContactInitiationMethod("CALLBACK");
         /// <summary>
+        /// Constant DISCONNECT for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod DISCONNECT = new ContactInitiationMethod("DISCONNECT");
+        /// <summary>
         /// Constant INBOUND for ContactInitiationMethod
         /// </summary>
         public static readonly ContactInitiationMethod INBOUND = new ContactInitiationMethod("INBOUND");
+        /// <summary>
+        /// Constant MONITOR for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod MONITOR = new ContactInitiationMethod("MONITOR");
         /// <summary>
         /// Constant OUTBOUND for ContactInitiationMethod
         /// </summary>
