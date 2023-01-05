@@ -32,6 +32,15 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DescribeCertificates operation.
     /// Lists the set of CA certificates provided by Amazon RDS for this Amazon Web Services
     /// account.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+    /// SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>
+    /// and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+    /// Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora
+    /// User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DescribeCertificatesRequest : AmazonRDSRequest
     {

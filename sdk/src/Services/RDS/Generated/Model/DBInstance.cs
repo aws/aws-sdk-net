@@ -58,6 +58,7 @@ namespace Amazon.RDS.Model
         private int? _backupRetentionPeriod;
         private string _backupTarget;
         private string _caCertificateIdentifier;
+        private CertificateDetails _certificateDetails;
         private string _characterSetName;
         private bool? _copyTagsToSnapshot;
         private bool? _customerOwnedIpEnabled;
@@ -406,6 +407,14 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The identifier of the CA certificate for this DB instance.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+        /// SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>
+        /// and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+        /// Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora
+        /// User Guide</i>.
+        /// </para>
         /// </summary>
         public string CACertificateIdentifier
         {
@@ -417,6 +426,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetCACertificateIdentifier()
         {
             return this._caCertificateIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateDetails. 
+        /// <para>
+        /// The details of the DB instance's server certificate.
+        /// </para>
+        /// </summary>
+        public CertificateDetails CertificateDetails
+        {
+            get { return this._certificateDetails; }
+            set { this._certificateDetails = value; }
+        }
+
+        // Check to see if CertificateDetails property is set
+        internal bool IsSetCertificateDetails()
+        {
+            return this._certificateDetails != null;
         }
 
         /// <summary>

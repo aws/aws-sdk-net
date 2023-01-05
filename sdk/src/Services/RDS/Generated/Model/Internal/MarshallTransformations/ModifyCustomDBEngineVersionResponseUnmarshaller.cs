@@ -184,6 +184,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         response.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SupportedCACertificateIdentifiers/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.SupportedCACertificateIdentifiers.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("SupportedCharacterSets/CharacterSet", targetDepth))
                     {
                         var unmarshaller = CharacterSetUnmarshaller.Instance;
@@ -223,6 +230,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         response.SupportsBabelfish = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SupportsCertificateRotationWithoutRestart", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        response.SupportsCertificateRotationWithoutRestart = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsGlobalDatabases", targetDepth))
