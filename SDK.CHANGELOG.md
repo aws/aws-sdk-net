@@ -1,3 +1,21 @@
+### 3.7.455.0 (2023-01-05 19:23 UTC)
+* AmplifyBackend (3.7.101.0)
+	* Updated GetBackendAPIModels response to include ModelIntrospectionSchema json string
+* AppRunner (3.7.103.0)
+	* This release adds support of securely referencing secrets and configuration data that are stored in Secrets Manager and SSM Parameter Store by adding them as environment secrets in your App Runner service.
+* Connect (3.7.111.0)
+	* Documentation update for a new Initiation Method value in DescribeContact API
+* EMRServerless (3.7.102.0)
+	* Adds support for customized images. You can now provide runtime images when creating or updating EMR Serverless Applications.
+* Lightsail (3.7.101.38)
+	* Documentation updates for Amazon Lightsail.
+* MWAA (3.7.100.49)
+	* MWAA supports Apache Airflow version 2.4.3.
+* RDS (3.7.113.0)
+	* This release adds support for specifying which certificate authority (CA) to use for a DB instance's server certificate during DB instance creation, as well as other CA enhancements.
+* Core 3.7.103.11
+	* All services packages updated to require new Core
+
 ### 3.7.454.0 (2023-01-04 19:21 UTC)
 * ApplicationAutoScaling (3.7.101.0)
 	* Customers can now use the existing DescribeScalingActivities API to also see the detailed and machine-readable reasons for Application Auto Scaling not scaling their resources and, if needed, take the necessary corrective actions.
