@@ -187,7 +187,7 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: 253402243200 (December 31, 9999, 00:00:00 UTC)
+        /// Default: 253402214400 (December 31, 9999, 00:00:00 UTC)
         /// </para>
         /// </summary>
         public DateTime ExpiryTime

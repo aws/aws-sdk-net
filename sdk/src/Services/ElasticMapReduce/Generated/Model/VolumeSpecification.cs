@@ -100,7 +100,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The volume type. Volume types supported are gp2, io1, and standard.
+        /// The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and standard.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

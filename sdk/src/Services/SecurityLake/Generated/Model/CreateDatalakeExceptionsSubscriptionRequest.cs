@@ -30,8 +30,8 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDatalakeExceptionsSubscription operation.
-    /// Creates the specified notification subscription in Security Lake. Creates the specified
-    /// subscription notifications in the specified organization.
+    /// Creates the specified notification subscription in Amazon Security Lake for the organization
+    /// you specify.
     /// </summary>
     public partial class CreateDatalakeExceptionsSubscriptionRequest : AmazonSecurityLakeRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property NotificationEndpoint. 
         /// <para>
-        /// The account in which the exception notifications subscription is created.
+        /// The Amazon Web Services account where you want to receive exception notifications.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SubscriptionProtocol. 
         /// <para>
-        /// The subscription protocol to which exception messages are posted. 
+        /// The subscription protocol to which exception notifications are posted. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

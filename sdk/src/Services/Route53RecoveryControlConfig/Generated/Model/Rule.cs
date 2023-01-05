@@ -42,8 +42,8 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// An assertion rule enforces that, when a routing control state is changed, the criteria
         /// set by the rule configuration is met. Otherwise, the change to the routing control
         /// state is not accepted. For example, the criteria might be that at least one routing
-        /// control state is On after the transation so that traffic continues to flow to at least
-        /// one cell for the application. This ensures that you avoid a fail-open scenario.
+        /// control state is On after the transaction so that traffic continues to flow to at
+        /// least one cell for the application. This ensures that you avoid a fail-open scenario.
         /// </para>
         /// </summary>
         public AssertionRule ASSERTION
@@ -61,7 +61,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// <summary>
         /// Gets and sets the property GATING. 
         /// <para>
-        /// A gating rule verifies that a gating routing control or set of gating rounting controls,
+        /// A gating rule verifies that a gating routing control or set of gating routing controls,
         /// evaluates as true, based on a rule configuration that you specify, which allows a
         /// set of routing control state changes to complete.
         /// </para>

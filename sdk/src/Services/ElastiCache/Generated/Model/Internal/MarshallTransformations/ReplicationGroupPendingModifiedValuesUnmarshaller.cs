@@ -85,6 +85,18 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.Resharding = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("TransitEncryptionEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.TransitEncryptionEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TransitEncryptionMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TransitEncryptionMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("UserGroups", targetDepth))
                     {
                         var unmarshaller = UserGroupsUpdateStatusUnmarshaller.Instance;

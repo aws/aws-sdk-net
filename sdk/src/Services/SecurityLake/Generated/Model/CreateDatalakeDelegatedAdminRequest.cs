@@ -30,9 +30,9 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDatalakeDelegatedAdmin operation.
-    /// Designates the Security Lake administrator account for the organization. This API
-    /// can only be called by the organization management account. The organization management
-    /// account cannot be the delegated administrator account.
+    /// Designates the Amazon Security Lake delegated administrator account for the organization.
+    /// This API can only be called by the organization management account. The organization
+    /// management account cannot be the delegated administrator account.
     /// </summary>
     public partial class CreateDatalakeDelegatedAdminRequest : AmazonSecurityLakeRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// Account ID of the Security Lake delegated administrator.
+        /// The Amazon Web Services account ID of the Security Lake delegated administrator.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

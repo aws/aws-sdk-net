@@ -30,7 +30,8 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDatalakeExceptionsSubscription operation.
-    /// Update the subscription notification for exception notification.
+    /// Updates the specified notification subscription in Amazon Security Lake for the organization
+    /// you specify.
     /// </summary>
     public partial class UpdateDatalakeExceptionsSubscriptionRequest : AmazonSecurityLakeRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property NotificationEndpoint. 
         /// <para>
-        /// The account which is subscribed to receive exception notifications.
+        /// The account that is subscribed to receive exception notifications.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -65,6 +65,7 @@ namespace Amazon.ElastiCache.Model
         private int? _snapshotRetentionLimit;
         private string _snapshotWindow;
         private bool? _transitEncryptionEnabled;
+        private TransitEncryptionMode _transitEncryptionMode;
 
         /// <summary>
         /// Gets and sets the property ARN. 
@@ -886,12 +887,6 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster
-        /// is created. To enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code>
-        /// to <code>true</code> when you create a cluster.
-        /// </para>
-        ///  
-        /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
         /// using redis version <code>3.2.6</code>, <code>4.x</code> or later.
         /// </para>
@@ -910,6 +905,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetTransitEncryptionEnabled()
         {
             return this._transitEncryptionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitEncryptionMode. 
+        /// <para>
+        /// A setting that allows you to migrate your clients to use in-transit encryption, with
+        /// no downtime.
+        /// </para>
+        /// </summary>
+        public TransitEncryptionMode TransitEncryptionMode
+        {
+            get { return this._transitEncryptionMode; }
+            set { this._transitEncryptionMode = value; }
+        }
+
+        // Check to see if TransitEncryptionMode property is set
+        internal bool IsSetTransitEncryptionMode()
+        {
+            return this._transitEncryptionMode != null;
         }
 
     }

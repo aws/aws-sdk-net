@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// Log status for the Security Lake account.
+    /// Retrieves the Logs status for the Amazon Security Lake account.
     /// </summary>
     public partial class LogsStatus
     {
@@ -39,7 +39,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property HealthStatus. 
         /// <para>
-        /// Health status of services including error codes and patterns.
+        /// The health status of services, including error codes and patterns.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

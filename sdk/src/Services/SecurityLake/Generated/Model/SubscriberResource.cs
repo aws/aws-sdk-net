@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// Provides details of the Amazon Security Lake account subscription. Subscribers are
-    /// notified of new objects for a source as the data is written to your Amazon Security
-    /// Lake S3 bucket.
+    /// Provides details about the Amazon Security Lake account subscription. Subscribers
+    /// are notified of new objects for a source as the data is written to your Amazon S3
+    /// bucket for Security Lake.
     /// </summary>
     public partial class SubscriberResource
     {
@@ -60,9 +60,9 @@ namespace Amazon.SecurityLake.Model
         /// </para>
         ///  
         /// <para>
-        ///  Subscribers can consume data by directly querying Lake Formation tables in your S3
-        /// bucket via services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
-        /// 
+        ///  Subscribers can consume data by directly querying Lake Formation tables in your Amazon
+        /// S3 bucket through services like Amazon Athena. This subscription type is defined as
+        /// <code>LAKEFORMATION</code>. 
         /// </para>
         /// </summary>
         public List<string> AccessTypes
@@ -80,8 +80,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The Amazon Web Services account ID of the account that you are using to create your
-        /// Amazon Security Lake account.
+        /// The Amazon Web Services account ID you are using to create your Amazon Security Lake
+        /// account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -118,9 +118,9 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property ExternalId. 
         /// <para>
-        /// The external ID of the subscriber. External ID allows the user that is assuming the
-        /// role to assert the circumstances in which they are operating. It also provides a way
-        /// for the account owner to permit the role to be assumed only under specific circumstances.
+        /// The external ID of the subscriber. The external ID lets the user that is assuming
+        /// the role assert the circumstances in which they are operating. It also provides a
+        /// way for the account owner to permit the role to be assumed only under specific circumstances.
         /// </para>
         /// </summary>
         public string ExternalId
@@ -156,7 +156,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property S3BucketArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the Amazon S3 bucket. 
+        /// The ARN for the Amazon S3 bucket. 
         /// </para>
         /// </summary>
         public string S3BucketArn
@@ -174,7 +174,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SnsArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the Amazon Simple Notification Service.
+        /// The ARN for the Amazon Simple Notification Service.
         /// </para>
         /// </summary>
         public string SnsArn
@@ -192,9 +192,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SourceTypes. 
         /// <para>
-        /// Amazon Security Lake supports logs and events collection for the natively-supported
-        /// Amazon Web Services services. For more information, see the Amazon Security Lake User
-        /// Guide.
+        /// Amazon Security Lake supports log and event collection for natively supported Amazon
+        /// Web Services. For more information, see the Amazon Security Lake User Guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -306,7 +305,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SubscriptionStatus. 
         /// <para>
-        /// Subscription status of the Amazon Security Lake subscriber account.
+        /// The subscription status of the Amazon Security Lake subscriber account.
         /// </para>
         /// </summary>
         public SubscriptionStatus SubscriptionStatus

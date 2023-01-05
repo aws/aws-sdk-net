@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// Provides details of lake configuration object in Amazon Security Lake.
+    /// Provides details of Amazon Security Lake lake configuration object.
     /// </summary>
     public partial class LakeConfigurationResponse
     {
@@ -44,7 +44,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property EncryptionKey. 
         /// <para>
-        /// The type of encryption key used by Security Lake to encrypt the lake configuration
+        /// The type of encryption key used by secure the Security Lake configuration object.
         /// </para>
         /// </summary>
         public string EncryptionKey
@@ -64,9 +64,10 @@ namespace Amazon.SecurityLake.Model
         /// <para>
         /// Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets.
         /// Amazon S3 buckets that are configured for object replication can be owned by the same
-        /// AWS account or by different accounts. You can replicate objects to a single destination
-        /// bucket or to multiple destination buckets. The destination buckets can be in different
-        /// Amazon Web Services Regions or within the same Region as the source bucket.
+        /// Amazon Web Services account or by different accounts. You can replicate objects to
+        /// a single destination bucket or to multiple destination buckets. The destination buckets
+        /// can be in different Amazon Web Services Regions or within the same Region as the source
+        /// bucket.
         /// </para>
         ///  
         /// <para>
@@ -89,8 +90,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property ReplicationRoleArn. 
         /// <para>
-        /// Replication settings for the Amazon S3 buckets. This parameter uses the IAM role created
-        /// by you that is managed by Security Lake, to ensure the replication setting is correct.
+        /// Replication settings for the Amazon S3 buckets. This parameter uses the IAM role you
+        /// created that is managed by Security Lake, to ensure the replication setting is correct.
         /// 
         /// </para>
         /// </summary>

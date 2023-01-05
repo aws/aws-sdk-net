@@ -33,20 +33,21 @@ namespace Amazon.CloudFront.Model
     /// 
     ///  
     /// <para>
-    /// A response headers policy contains information about a set of HTTP response headers
-    /// and their values.
+    /// A response headers policy contains information about a set of HTTP response headers.
     /// </para>
     ///  
     /// <para>
     /// After you create a response headers policy, you can use its ID to attach it to one
     /// or more cache behaviors in a CloudFront distribution. When it's attached to a cache
-    /// behavior, CloudFront adds the headers in the policy to HTTP responses that it sends
-    /// for requests that match the cache behavior.
+    /// behavior, the response headers policy affects the HTTP headers that CloudFront includes
+    /// in HTTP responses to requests that match the cache behavior. CloudFront adds or removes
+    /// response headers according to the configuration of the response headers policy.
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/adding-response-headers.html">Adding
-    /// HTTP headers to CloudFront responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/modifying-response-headers.html">Adding
+    /// or removing HTTP headers in CloudFront responses</a> in the <i>Amazon CloudFront Developer
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class ResponseHeadersPolicy
@@ -97,12 +98,6 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property ResponseHeadersPolicyConfig. 
         /// <para>
         /// A response headers policy configuration.
-        /// </para>
-        ///  
-        /// <para>
-        /// A response headers policy contains information about a set of HTTP response headers
-        /// and their values. CloudFront adds the headers in the policy to HTTP responses that
-        /// it sends for requests that match a cache behavior that's associated with the policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

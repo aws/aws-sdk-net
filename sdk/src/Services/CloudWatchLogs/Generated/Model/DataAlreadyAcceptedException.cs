@@ -30,6 +30,13 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// The event was already logged.
+    /// 
+    ///  <important> 
+    /// <para>
+    ///  <code>PutLogEvents</code> actions are now always accepted and never return <code>DataAlreadyAcceptedException</code>
+    /// regardless of whether a given batch of log events has already been accepted. 
+    /// </para>
+    ///  </important>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

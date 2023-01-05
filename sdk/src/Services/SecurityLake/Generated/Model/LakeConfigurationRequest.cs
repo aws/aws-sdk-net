@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// Provides details of lake configuration object in Amazon Security Lake.
+    /// Provides details of Amazon Security Lake configuration object.
     /// </summary>
     public partial class LakeConfigurationRequest
     {
@@ -42,8 +42,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property EncryptionKey. 
         /// <para>
-        /// The type of encryption key used by Security Lake to encrypt the lake configuration
-        /// object.
+        /// The type of encryption key used by Amazon Security Lake to encrypt the Security Lake
+        /// configuration object.
         /// </para>
         /// </summary>
         public string EncryptionKey
@@ -89,9 +89,9 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property ReplicationRoleArn. 
         /// <para>
-        /// Replication settings for the Amazon S3 buckets. This parameter uses the IAM role created
-        /// by you that is managed by Security Lake, to ensure the replication setting is correct.
-        /// 
+        /// Replication settings for the Amazon S3 buckets. This parameter uses the Identity and
+        /// Access Management (IAM) role you created that is managed by Security Lake, to ensure
+        /// the replication setting is correct. 
         /// </para>
         /// </summary>
         public string ReplicationRoleArn

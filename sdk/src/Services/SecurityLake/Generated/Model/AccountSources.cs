@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// Security Lake can collect logs and events from supported Amazon Web Services services
-    /// and custom sources.
+    /// Amazon Security Lake collects logs and events from supported Amazon Web Services and
+    /// custom sources. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon
+    /// Security Lake User Guide</a>.
     /// </summary>
     public partial class AccountSources
     {
@@ -42,7 +43,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// Account ID of the Security Lake account for which logs are collected.
+        /// The ID of the Security Lake account for which logs are collected.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +80,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property LogsStatus. 
         /// <para>
-        /// Log status for the Security Lake account.
+        /// The log status for the Security Lake account.
         /// </para>
         /// </summary>
         public List<LogsStatus> LogsStatus
@@ -97,10 +98,9 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        /// The supported Amazon Web Services services from which logs and events are collected.
-        /// Amazon Security Lake supports logs and events collection for natively-supported Amazon
-        /// Web Services services. For more information, see the Amazon Security Lake User Guide.
-        /// 
+        /// The supported Amazon Web Services from which logs and events are collected. Amazon
+        /// Security Lake supports log and event collection for natively supported Amazon Web
+        /// Services. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

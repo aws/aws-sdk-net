@@ -38,6 +38,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         private string _description;
         private string _details;
         private DateTime? _endTime;
+        private List<NotScaledReason> _notScaledReasons = new List<NotScaledReason>();
         private string _resourceId;
         private ScalableDimension _scalableDimension;
         private ServiceNamespace _serviceNamespace;
@@ -136,6 +137,26 @@ namespace Amazon.ApplicationAutoScaling.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotScaledReasons. 
+        /// <para>
+        /// Machine-readable data that describes the reason for a not scaled activity. Only available
+        /// when <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a>
+        /// includes not scaled activities.
+        /// </para>
+        /// </summary>
+        public List<NotScaledReason> NotScaledReasons
+        {
+            get { return this._notScaledReasons; }
+            set { this._notScaledReasons = value; }
+        }
+
+        // Check to see if NotScaledReasons property is set
+        internal bool IsSetNotScaledReasons()
+        {
+            return this._notScaledReasons != null && this._notScaledReasons.Count > 0; 
         }
 
         /// <summary>
@@ -298,7 +319,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances
-        /// for an SageMaker model endpoint variant.
+        /// for a SageMaker model endpoint variant.
         /// </para>
         ///  </li> <li> 
         /// <para>

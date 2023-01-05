@@ -30,8 +30,9 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSubscriber operation.
-    /// Deletes the specified subscription permissions to Security Lake. Deletes the specified
-    /// subscription permissions from the specified organization.
+    /// Deletes the subscription permission for accounts that are already enabled in Amazon
+    /// Security Lake. You can delete a subscriber and remove access to data in the current
+    /// Amazon Web Services Region.
     /// </summary>
     public partial class DeleteSubscriberRequest : AmazonSecurityLakeRequest
     {

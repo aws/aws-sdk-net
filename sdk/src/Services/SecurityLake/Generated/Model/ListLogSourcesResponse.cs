@@ -39,8 +39,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If nextToken is returned, there are more results available. You can make the call
-        /// again using the returned token to retrieve the next page.
+        /// If nextToken is returned, there are more results available. You can repeat the call
+        /// using the returned token to retrieve the next page.
         /// </para>
         /// </summary>
         public string NextToken
@@ -58,7 +58,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property RegionSourceTypesAccountsList. 
         /// <para>
-        /// Lists the log sources in the Regions for enabled Security Lake accounts.
+        /// Lists the log sources by Regions for enabled Security Lake accounts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

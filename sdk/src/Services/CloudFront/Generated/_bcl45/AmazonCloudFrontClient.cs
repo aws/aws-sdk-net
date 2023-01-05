@@ -3284,16 +3284,23 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// A response headers policy contains information about a set of HTTP response headers
-        /// and their values. To create a response headers policy, you provide some metadata about
-        /// the policy, and a set of configurations that specify the response headers.
+        /// A response headers policy contains information about a set of HTTP headers. To create
+        /// a response headers policy, you provide some metadata about the policy and a set of
+        /// configurations that specify the headers.
         /// </para>
         ///  
         /// <para>
         /// After you create a response headers policy, you can use its ID to attach it to one
         /// or more cache behaviors in a CloudFront distribution. When it's attached to a cache
-        /// behavior, CloudFront adds the headers in the policy to HTTP responses that it sends
-        /// for requests that match the cache behavior.
+        /// behavior, the response headers policy affects the HTTP headers that CloudFront includes
+        /// in HTTP responses to requests that match the cache behavior. CloudFront adds or removes
+        /// response headers according to the configuration of the response headers policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/modifying-response-headers.html">Adding
+        /// or removing HTTP headers in CloudFront responses</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResponseHeadersPolicy service method.</param>
@@ -3324,6 +3331,16 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCustomHeadersInResponseHeadersPolicyException">
         /// The number of custom headers in the response headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyRemoveHeadersInResponseHeadersPolicyException">
+        /// The number of headers in <code>RemoveHeadersConfig</code> in the response headers
+        /// policy exceeds the maximum.
         /// 
         ///  
         /// <para>
@@ -3357,16 +3374,23 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// A response headers policy contains information about a set of HTTP response headers
-        /// and their values. To create a response headers policy, you provide some metadata about
-        /// the policy, and a set of configurations that specify the response headers.
+        /// A response headers policy contains information about a set of HTTP headers. To create
+        /// a response headers policy, you provide some metadata about the policy and a set of
+        /// configurations that specify the headers.
         /// </para>
         ///  
         /// <para>
         /// After you create a response headers policy, you can use its ID to attach it to one
         /// or more cache behaviors in a CloudFront distribution. When it's attached to a cache
-        /// behavior, CloudFront adds the headers in the policy to HTTP responses that it sends
-        /// for requests that match the cache behavior.
+        /// behavior, the response headers policy affects the HTTP headers that CloudFront includes
+        /// in HTTP responses to requests that match the cache behavior. CloudFront adds or removes
+        /// response headers according to the configuration of the response headers policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/modifying-response-headers.html">Adding
+        /// or removing HTTP headers in CloudFront responses</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResponseHeadersPolicy service method.</param>
@@ -3400,6 +3424,16 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCustomHeadersInResponseHeadersPolicyException">
         /// The number of custom headers in the response headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyRemoveHeadersInResponseHeadersPolicyException">
+        /// The number of headers in <code>RemoveHeadersConfig</code> in the response headers
+        /// policy exceeds the maximum.
         /// 
         ///  
         /// <para>
@@ -11817,6 +11851,16 @@ namespace Amazon.CloudFront
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyRemoveHeadersInResponseHeadersPolicyException">
+        /// The number of headers in <code>RemoveHeadersConfig</code> in the response headers
+        /// policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateResponseHeadersPolicy">REST API Reference for UpdateResponseHeadersPolicy Operation</seealso>
         public virtual UpdateResponseHeadersPolicyResponse UpdateResponseHeadersPolicy(UpdateResponseHeadersPolicyRequest request)
         {
@@ -11895,6 +11939,16 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCustomHeadersInResponseHeadersPolicyException">
         /// The number of custom headers in the response headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyRemoveHeadersInResponseHeadersPolicyException">
+        /// The number of headers in <code>RemoveHeadersConfig</code> in the response headers
+        /// policy exceeds the maximum.
         /// 
         ///  
         /// <para>

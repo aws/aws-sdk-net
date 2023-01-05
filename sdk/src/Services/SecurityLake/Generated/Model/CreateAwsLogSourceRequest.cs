@@ -30,27 +30,27 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAwsLogSource operation.
-    /// Adds a natively-supported Amazon Web Services service as a Security Lake source. Enables
-    /// source types for member accounts in required Regions, based on specified parameters.
-    /// You can choose any source type in any Region for accounts that are either part of
-    /// a trusted organization or standalone accounts. At least one of the three dimensions
-    /// is a mandatory input to this API. However, any combination of the three dimensions
-    /// can be supplied to this API. 
+    /// Adds a natively supported Amazon Web Service as an Amazon Security Lake source. Enables
+    /// source types for member accounts in required Amazon Web Services Regions, based on
+    /// the parameters you specify. You can choose any source type in any Region for either
+    /// accounts that are part of a trusted organization or standalone accounts. At least
+    /// one of the three dimensions is a mandatory input to this API. However, you can supply
+    /// any combination of the three dimensions to this API. 
     /// 
     ///  
     /// <para>
-    /// By default, dimension refers to the entire set. When you don't provide a dimension,
+    /// By default, a dimension refers to the entire set. When you don't provide a dimension,
     /// Security Lake assumes that the missing dimension refers to the entire set. This is
-    /// overridden when you supply any one of the inputs. For instance, when members is not
-    /// specified, the API disables all Security Lake member accounts for sources. Similarly,
-    /// when Regions are not specified, Security Lake is disabled for all the Regions where
+    /// overridden when you supply any one of the inputs. For instance, when you do not specify
+    /// members, the API enables all Security Lake member accounts for all sources. Similarly,
+    /// when you do not specify Regions, Security Lake is enabled for all the Regions where
     /// Security Lake is available as a service.
     /// </para>
     ///  
     /// <para>
-    /// You can use this API only to enable a natively-supported Amazon Web Services services
-    /// as a source. Use <code>CreateCustomLogSource</code> to enable data collection from
-    /// a custom source. 
+    /// You can use this API only to enable natively supported Amazon Web Services as a source.
+    /// Use <code>CreateCustomLogSource</code> to enable data collection from a custom source.
+    /// 
     /// </para>
     /// </summary>
     public partial class CreateAwsLogSourceRequest : AmazonSecurityLakeRequest
@@ -63,7 +63,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property EnableAllDimensions. 
         /// <para>
-        /// Enables specific sources in all Regions and source types.
+        /// Enables data collection from specific Amazon Web Services sources in all specific
+        /// accounts and specific Regions.
         /// </para>
         /// </summary>
         public Dictionary<string, Dictionary<string, List<string>>> EnableAllDimensions
@@ -81,7 +82,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property EnableSingleDimension. 
         /// <para>
-        /// Enables all sources in specific accounts or Regions.
+        /// Enables data collection from all Amazon Web Services sources in specific accounts
+        /// or Regions.
         /// </para>
         /// </summary>
         public List<string> EnableSingleDimension
@@ -99,7 +101,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property EnableTwoDimensions. 
         /// <para>
-        /// Enables specific service sources in specific accounts or Regions.
+        /// Enables data collection from specific Amazon Web Services sources in specific accounts
+        /// or Regions.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> EnableTwoDimensions
@@ -117,7 +120,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property InputOrder. 
         /// <para>
-        /// Specifies the input order to enable dimensions in Security Lake, namely region, source
+        /// Specifies the input order to enable dimensions in Security Lake, namely Region, source
         /// type, and member account.
         /// </para>
         /// </summary>

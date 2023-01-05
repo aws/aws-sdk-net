@@ -46,6 +46,24 @@ namespace Amazon.MemoryDB
     {
         private static IServiceMetadata serviceMetadata = new AmazonMemoryDBMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IMemoryDBPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMemoryDBPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MemoryDBPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>
@@ -1676,6 +1694,139 @@ namespace Amazon.MemoryDB
 
         #endregion
         
+        #region  DescribeReservedNodes
+
+        /// <summary>
+        /// Returns information about reserved nodes for this account, or about a specified reserved
+        /// node.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedNodes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReservedNodes service method, as returned by MemoryDB.</returns>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.ReservedNodeNotFoundException">
+        /// The requested node does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodes">REST API Reference for DescribeReservedNodes Operation</seealso>
+        public virtual DescribeReservedNodesResponse DescribeReservedNodes(DescribeReservedNodesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReservedNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReservedNodesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReservedNodesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReservedNodes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedNodes operation on AmazonMemoryDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReservedNodes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodes">REST API Reference for DescribeReservedNodes Operation</seealso>
+        public virtual IAsyncResult BeginDescribeReservedNodes(DescribeReservedNodesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReservedNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReservedNodesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeReservedNodes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedNodes.</param>
+        /// 
+        /// <returns>Returns a  DescribeReservedNodesResult from MemoryDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodes">REST API Reference for DescribeReservedNodes Operation</seealso>
+        public virtual DescribeReservedNodesResponse EndDescribeReservedNodes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeReservedNodesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeReservedNodesOfferings
+
+        /// <summary>
+        /// Lists available reserved node offerings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedNodesOfferings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReservedNodesOfferings service method, as returned by MemoryDB.</returns>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.ReservedNodesOfferingNotFoundException">
+        /// The requested node offering does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodesOfferings">REST API Reference for DescribeReservedNodesOfferings Operation</seealso>
+        public virtual DescribeReservedNodesOfferingsResponse DescribeReservedNodesOfferings(DescribeReservedNodesOfferingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReservedNodesOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReservedNodesOfferingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReservedNodesOfferingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReservedNodesOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedNodesOfferings operation on AmazonMemoryDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReservedNodesOfferings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodesOfferings">REST API Reference for DescribeReservedNodesOfferings Operation</seealso>
+        public virtual IAsyncResult BeginDescribeReservedNodesOfferings(DescribeReservedNodesOfferingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReservedNodesOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReservedNodesOfferingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeReservedNodesOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedNodesOfferings.</param>
+        /// 
+        /// <returns>Returns a  DescribeReservedNodesOfferingsResult from MemoryDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodesOfferings">REST API Reference for DescribeReservedNodesOfferings Operation</seealso>
+        public virtual DescribeReservedNodesOfferingsResponse EndDescribeReservedNodesOfferings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeReservedNodesOfferingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeServiceUpdates
 
         /// <summary>
@@ -2155,6 +2306,82 @@ namespace Amazon.MemoryDB
         public virtual ListTagsResponse EndListTags(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PurchaseReservedNodesOffering
+
+        /// <summary>
+        /// Allows you to purchase a reserved node offering. Reserved nodes are not eligible for
+        /// cancellation and are non-refundable.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedNodesOffering service method.</param>
+        /// 
+        /// <returns>The response from the PurchaseReservedNodesOffering service method, as returned by MemoryDB.</returns>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.ReservedNodeAlreadyExistsException">
+        /// You already have a reservation with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.ReservedNodeQuotaExceededException">
+        /// The request cannot be processed because it would exceed the user's node quota.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.ReservedNodesOfferingNotFoundException">
+        /// The requested node offering does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.ServiceLinkedRoleNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.TagQuotaPerResourceExceededException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/PurchaseReservedNodesOffering">REST API Reference for PurchaseReservedNodesOffering Operation</seealso>
+        public virtual PurchaseReservedNodesOfferingResponse PurchaseReservedNodesOffering(PurchaseReservedNodesOfferingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PurchaseReservedNodesOfferingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PurchaseReservedNodesOfferingResponseUnmarshaller.Instance;
+
+            return Invoke<PurchaseReservedNodesOfferingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PurchaseReservedNodesOffering operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedNodesOffering operation on AmazonMemoryDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseReservedNodesOffering
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/PurchaseReservedNodesOffering">REST API Reference for PurchaseReservedNodesOffering Operation</seealso>
+        public virtual IAsyncResult BeginPurchaseReservedNodesOffering(PurchaseReservedNodesOfferingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PurchaseReservedNodesOfferingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PurchaseReservedNodesOfferingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PurchaseReservedNodesOffering operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseReservedNodesOffering.</param>
+        /// 
+        /// <returns>Returns a  PurchaseReservedNodesOfferingResult from MemoryDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/PurchaseReservedNodesOffering">REST API Reference for PurchaseReservedNodesOffering Operation</seealso>
+        public virtual PurchaseReservedNodesOfferingResponse EndPurchaseReservedNodesOffering(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PurchaseReservedNodesOfferingResponse>(asyncResult);
         }
 
         #endregion

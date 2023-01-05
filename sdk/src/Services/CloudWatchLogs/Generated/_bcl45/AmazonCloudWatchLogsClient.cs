@@ -3226,14 +3226,6 @@ namespace Amazon.CloudWatchLogs
         /// policy is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM
         /// policy document</a> that is used to authorize claims to register a subscription filter
         /// against a given destination.
-        /// 
-        ///  
-        /// <para>
-        /// If multiple Amazon Web Services accounts are sending logs to this destination, each
-        /// sender account must be listed separately in the policy. The policy does not support
-        /// specifying <code>*</code> as the Principal or the use of the <code>aws:PrincipalOrgId</code>
-        /// global key.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDestinationPolicy service method.</param>
         /// 
@@ -3263,14 +3255,6 @@ namespace Amazon.CloudWatchLogs
         /// policy is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM
         /// policy document</a> that is used to authorize claims to register a subscription filter
         /// against a given destination.
-        /// 
-        ///  
-        /// <para>
-        /// If multiple Amazon Web Services accounts are sending logs to this destination, each
-        /// sender account must be listed separately in the policy. The policy does not support
-        /// specifying <code>*</code> as the Principal or the use of the <code>aws:PrincipalOrgId</code>
-        /// global key.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDestinationPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -3305,16 +3289,14 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Uploads a batch of log events to the specified log stream.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
-        /// You must include the sequence token obtained from the response of the previous call.
-        /// An upload in a newly created log stream does not require a sequence token. You can
-        /// also get the sequence token in the <code>expectedSequenceToken</code> field from <code>InvalidSequenceTokenException</code>.
-        /// If you call <code>PutLogEvents</code> twice within a narrow time period using the
-        /// same value for <code>sequenceToken</code>, both calls might be successful or one might
-        /// be rejected.
+        /// The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code>
+        /// actions are always accepted and never return <code>InvalidSequenceTokenException</code>
+        /// or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.
+        /// You can use parallel <code>PutLogEvents</code> actions on the same log stream. 
         /// </para>
-        ///  
+        ///  </important> 
         /// <para>
         /// The batch of events must satisfy the following constraints:
         /// </para>
@@ -3350,12 +3332,13 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// The maximum number of log events in a batch is 10,000.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> <li> <important> 
         /// <para>
-        /// There is a quota of five requests per second per log stream. Additional requests are
-        /// throttled. This quota can't be changed.
+        /// The quota of five requests per second per log stream has been removed. Instead, <code>PutLogEvents</code>
+        /// actions are throttled based on a per-second per-account quota. You can request an
+        /// increase to the per-second throttling quota by using the Service Quotas service.
         /// </para>
-        ///  </li> </ul> 
+        ///  </important> </li> </ul> 
         /// <para>
         /// If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most
         /// likely cause is a non-valid Amazon Web Services access key ID or secret key. 
@@ -3366,13 +3349,27 @@ namespace Amazon.CloudWatchLogs
         /// <returns>The response from the PutLogEvents service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.DataAlreadyAcceptedException">
         /// The event was already logged.
+        /// 
+        ///  <important> 
+        /// <para>
+        ///  <code>PutLogEvents</code> actions are now always accepted and never return <code>DataAlreadyAcceptedException</code>
+        /// regardless of whether a given batch of log events has already been accepted. 
+        /// </para>
+        ///  </important>
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidSequenceTokenException">
         /// The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code>
-        /// field in the <code>InvalidSequenceTokenException</code> message.
+        /// field in the <code>InvalidSequenceTokenException</code> message. 
+        /// 
+        ///  <important> 
+        /// <para>
+        ///  <code>PutLogEvents</code> actions are now always accepted and never return <code>InvalidSequenceTokenException</code>
+        /// regardless of receiving an invalid sequence token. 
+        /// </para>
+        ///  </important>
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -3398,16 +3395,14 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Uploads a batch of log events to the specified log stream.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
-        /// You must include the sequence token obtained from the response of the previous call.
-        /// An upload in a newly created log stream does not require a sequence token. You can
-        /// also get the sequence token in the <code>expectedSequenceToken</code> field from <code>InvalidSequenceTokenException</code>.
-        /// If you call <code>PutLogEvents</code> twice within a narrow time period using the
-        /// same value for <code>sequenceToken</code>, both calls might be successful or one might
-        /// be rejected.
+        /// The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code>
+        /// actions are always accepted and never return <code>InvalidSequenceTokenException</code>
+        /// or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.
+        /// You can use parallel <code>PutLogEvents</code> actions on the same log stream. 
         /// </para>
-        ///  
+        ///  </important> 
         /// <para>
         /// The batch of events must satisfy the following constraints:
         /// </para>
@@ -3443,12 +3438,13 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// The maximum number of log events in a batch is 10,000.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> <li> <important> 
         /// <para>
-        /// There is a quota of five requests per second per log stream. Additional requests are
-        /// throttled. This quota can't be changed.
+        /// The quota of five requests per second per log stream has been removed. Instead, <code>PutLogEvents</code>
+        /// actions are throttled based on a per-second per-account quota. You can request an
+        /// increase to the per-second throttling quota by using the Service Quotas service.
         /// </para>
-        ///  </li> </ul> 
+        ///  </important> </li> </ul> 
         /// <para>
         /// If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most
         /// likely cause is a non-valid Amazon Web Services access key ID or secret key. 
@@ -3462,13 +3458,27 @@ namespace Amazon.CloudWatchLogs
         /// <returns>The response from the PutLogEvents service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.DataAlreadyAcceptedException">
         /// The event was already logged.
+        /// 
+        ///  <important> 
+        /// <para>
+        ///  <code>PutLogEvents</code> actions are now always accepted and never return <code>DataAlreadyAcceptedException</code>
+        /// regardless of whether a given batch of log events has already been accepted. 
+        /// </para>
+        ///  </important>
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidSequenceTokenException">
         /// The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code>
-        /// field in the <code>InvalidSequenceTokenException</code> message.
+        /// field in the <code>InvalidSequenceTokenException</code> message. 
+        /// 
+        ///  <important> 
+        /// <para>
+        ///  <code>PutLogEvents</code> actions are now always accepted and never return <code>InvalidSequenceTokenException</code>
+        /// regardless of receiving an invalid sequence token. 
+        /// </para>
+        ///  </important>
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.

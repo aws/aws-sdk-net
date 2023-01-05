@@ -84,6 +84,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DBEngineDescription = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DBEngineMediaType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBEngineMediaType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DBEngineVersionArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -125,6 +131,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         var unmarshaller = StringUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ExportableLogTypes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("Image", targetDepth))
+                    {
+                        var unmarshaller = CustomDBEngineVersionAMIUnmarshaller.Instance;
+                        unmarshalledObject.Image = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("KMSKeyId", targetDepth))

@@ -48,7 +48,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// the resource. If you want to specify a higher limit, you can request an increase.
         /// For more information, consult the documentation for that service. For information
         /// about the default quotas for each service, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service
-        /// Endpoints and Quotas</a> in the <i>Amazon Web Services General Reference</i>.
+        /// endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         public int MaxCapacity
@@ -70,9 +70,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For certain resources, the minimum value allowed is 0. This includes Lambda provisioned
-        /// concurrency, Spot Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom
-        /// resources. For all other resources, the minimum value allowed is 1.
+        /// When the scheduled action runs, the resource will have at least this much capacity,
+        /// but it might have more depending on other settings, such as the target utilization
+        /// level of a target tracking scaling policy.
         /// </para>
         /// </summary>
         public int MinCapacity

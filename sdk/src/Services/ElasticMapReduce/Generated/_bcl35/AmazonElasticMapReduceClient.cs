@@ -404,8 +404,6 @@ namespace Amazon.ElasticMapReduce
         /// require more than 256 steps to process your data. You can bypass the 256-step limitation
         /// in various ways, including using SSH to connect to the master node and submitting
         /// queries directly to the software running on the master node, such as Hive and Hadoop.
-        /// For more information on how to do this, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
-        /// More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -742,8 +740,8 @@ namespace Amazon.ElasticMapReduce
         /// Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>,
         /// and applies a session policy to refine Studio permissions for that user or group.
         /// Use <code>CreateStudioSessionMapping</code> to assign users to a Studio when you use
-        /// Amazon Web Services SSO authentication. For instructions on how to assign users to
-        /// a Studio when you use IAM authentication, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-manage-users.html#emr-studio-assign-users-groups">Assign
+        /// IAM Identity Center authentication. For instructions on how to assign users to a Studio
+        /// when you use IAM authentication, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-manage-users.html#emr-studio-assign-users-groups">Assign
         /// a user or group to your EMR Studio</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStudioSessionMapping service method.</param>
@@ -1638,6 +1636,70 @@ namespace Amazon.ElasticMapReduce
         public virtual GetBlockPublicAccessConfigurationResponse EndGetBlockPublicAccessConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBlockPublicAccessConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetClusterSessionCredentials
+
+        /// <summary>
+        /// Provides Temporary, basic HTTP credentials that are associated with a given runtime
+        /// IAM role and used by a cluster with fine-grained access control activated. You can
+        /// use these credentials to connect to cluster endpoints that support username-based
+        /// and password-based authentication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClusterSessionCredentials service method.</param>
+        /// 
+        /// <returns>The response from the GetClusterSessionCredentials service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetClusterSessionCredentials">REST API Reference for GetClusterSessionCredentials Operation</seealso>
+        public virtual GetClusterSessionCredentialsResponse GetClusterSessionCredentials(GetClusterSessionCredentialsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetClusterSessionCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClusterSessionCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<GetClusterSessionCredentialsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetClusterSessionCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetClusterSessionCredentials operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetClusterSessionCredentials
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetClusterSessionCredentials">REST API Reference for GetClusterSessionCredentials Operation</seealso>
+        public virtual IAsyncResult BeginGetClusterSessionCredentials(GetClusterSessionCredentialsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetClusterSessionCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClusterSessionCredentialsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetClusterSessionCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetClusterSessionCredentials.</param>
+        /// 
+        /// <returns>Returns a  GetClusterSessionCredentialsResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetClusterSessionCredentials">REST API Reference for GetClusterSessionCredentials Operation</seealso>
+        public virtual GetClusterSessionCredentialsResponse EndGetClusterSessionCredentials(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetClusterSessionCredentialsResponse>(asyncResult);
         }
 
         #endregion
@@ -3231,12 +3293,10 @@ namespace Amazon.ElasticMapReduce
         /// require more than 256 steps to process your data. You can bypass the 256-step limitation
         /// in various ways, including using the SSH shell to connect to the master node and submitting
         /// queries directly to the software running on the master node, such as Hive and Hadoop.
-        /// For more information on how to do this, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
-        /// More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For long running clusters, we recommend that you periodically store your results.
+        /// For long-running clusters, we recommend that you periodically store your results.
         /// </para>
         ///  <note> 
         /// <para>

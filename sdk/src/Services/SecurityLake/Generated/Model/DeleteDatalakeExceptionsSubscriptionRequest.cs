@@ -30,8 +30,8 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDatalakeExceptionsSubscription operation.
-    /// Deletes the specified notification subscription in Security Lake. Deletes the specified
-    /// subscription notifications in the specified organization.
+    /// Deletes the specified notification subscription in Amazon Security Lake for the organization
+    /// you specify.
     /// </summary>
     public partial class DeleteDatalakeExceptionsSubscriptionRequest : AmazonSecurityLakeRequest
     {

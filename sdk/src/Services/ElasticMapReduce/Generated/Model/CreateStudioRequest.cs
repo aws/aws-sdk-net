@@ -51,8 +51,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property AuthMode. 
         /// <para>
-        /// Specifies whether the Studio authenticates users using IAM or Amazon Web Services
-        /// SSO.
+        /// Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -255,7 +254,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property UserRole. 
         /// <para>
         /// The IAM user role that users and groups assume when logged in to an Amazon EMR Studio.
-        /// Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication.
+        /// Only specify a <code>UserRole</code> when you use IAM Identity Center authentication.
         /// The permissions attached to the <code>UserRole</code> can be scoped down for each
         /// user or group using session policies.
         /// </para>

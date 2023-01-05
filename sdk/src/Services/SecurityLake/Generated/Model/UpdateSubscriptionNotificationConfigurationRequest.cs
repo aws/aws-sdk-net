@@ -30,7 +30,7 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSubscriptionNotificationConfiguration operation.
-    /// Create a new subscription notification or add the existing subscription notification
+    /// Creates a new subscription notification or adds the existing subscription notification
     /// setting for the specified subscription ID.
     /// </summary>
     public partial class UpdateSubscriptionNotificationConfigurationRequest : AmazonSecurityLakeRequest
@@ -46,8 +46,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property CreateSqs. 
         /// <para>
-        /// Create a new subscription notification for the specified subscription ID in Security
-        /// Lake.
+        /// Create a new subscription notification for the specified subscription ID in Amazon
+        /// Security Lake.
         /// </para>
         /// </summary>
         public bool CreateSqs

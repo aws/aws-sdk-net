@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
-    /// A gating rule verifies that a gating routing control or set of gating rounting controls,
+    /// A gating rule verifies that a gating routing control or set of gating routing controls,
     /// evaluates as true, based on a rule configuration that you specify, which allows a
     /// set of routing control state changes to complete.
     /// 
@@ -116,9 +116,8 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// <summary>
         /// Gets and sets the property RuleConfig. 
         /// <para>
-        /// The criteria that you set for gating routing controls that designates how many of
-        /// the routing control states must be ON to allow you to update target routing control
-        /// states.
+        /// The criteria that you set for gating routing controls that designate how many of the
+        /// routing control states must be ON to allow you to update target routing control states.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -180,7 +179,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// can only be updated if the rule configuration that you specify evaluates to true for
         /// the gating routing control. As a simple example, if you have a single gating control,
         /// it acts as an overall "on/off" switch for a set of target routing controls. You can
-        /// use this to manually override automated fail over, for example.
+        /// use this to manually override automated failover, for example.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

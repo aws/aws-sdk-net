@@ -34,9 +34,9 @@ namespace Amazon.ApplicationAutoScaling.Model
     ///  
     /// <para>
     /// For more information about configuring scaling policies for a specific service, see
-    /// <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/getting-started.html">Getting
-    /// started with Application Auto Scaling</a> in the <i>Application Auto Scaling User
-    /// Guide</i>.
+    /// <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/integrated-services-list.html">Amazon
+    /// Web Services services that you can use with Application Auto Scaling</a> in the <i>Application
+    /// Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ScalingPolicy
@@ -131,6 +131,19 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property PolicyType. 
         /// <para>
         /// The scaling policy type.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following policy types are supported: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon
+        /// Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -306,7 +319,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances
-        /// for an SageMaker model endpoint variant.
+        /// for a SageMaker model endpoint variant.
         /// </para>
         ///  </li> <li> 
         /// <para>

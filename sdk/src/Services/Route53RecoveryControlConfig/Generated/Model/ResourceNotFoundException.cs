@@ -30,7 +30,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
     /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
-    /// not found..
+    /// not found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

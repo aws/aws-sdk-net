@@ -75,6 +75,8 @@ namespace Amazon.ElastiCache.Model
         private int? _snapshotRetentionLimit;
         private string _snapshottingClusterId;
         private string _snapshotWindow;
+        private bool? _transitEncryptionEnabled;
+        private TransitEncryptionMode _transitEncryptionMode;
         private List<string> _userGroupIdsToAdd = new List<string>();
         private List<string> _userGroupIdsToRemove = new List<string>();
 
@@ -663,6 +665,60 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetSnapshotWindow()
         {
             return this._snapshotWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitEncryptionEnabled. 
+        /// <para>
+        /// A flag that enables in-transit encryption when set to true. If you are enabling in-transit
+        /// encryption for an existing cluster, you must also set <code>TransitEncryptionMode</code>
+        /// to <code>preferred</code>.
+        /// </para>
+        /// </summary>
+        public bool TransitEncryptionEnabled
+        {
+            get { return this._transitEncryptionEnabled.GetValueOrDefault(); }
+            set { this._transitEncryptionEnabled = value; }
+        }
+
+        // Check to see if TransitEncryptionEnabled property is set
+        internal bool IsSetTransitEncryptionEnabled()
+        {
+            return this._transitEncryptionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitEncryptionMode. 
+        /// <para>
+        /// A setting that allows you to migrate your clients to use in-transit encryption, with
+        /// no downtime.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your
+        /// existing cluster, and set <code>TransitEncryptionMode</code> to <code>preferred</code>
+        /// in the same request to allow both encrypted and unencrypted connections at the same
+        /// time. Once you migrate all your Redis clients to use encrypted connections you can
+        /// set the value to <code>required</code> to allow encrypted connections only.
+        /// </para>
+        ///  
+        /// <para>
+        /// Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step
+        /// process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>
+        /// first, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public TransitEncryptionMode TransitEncryptionMode
+        {
+            get { return this._transitEncryptionMode; }
+            set { this._transitEncryptionMode = value; }
+        }
+
+        // Check to see if TransitEncryptionMode property is set
+        internal bool IsSetTransitEncryptionMode()
+        {
+            return this._transitEncryptionMode != null;
         }
 
         /// <summary>

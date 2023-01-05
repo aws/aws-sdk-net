@@ -38,6 +38,7 @@ namespace Amazon.RDS.Model
         private string _databaseInstallationFilesS3BucketName;
         private string _databaseInstallationFilesS3Prefix;
         private string _dbEngineDescription;
+        private string _dbEngineMediaType;
         private string _dbEngineVersionArn;
         private string _dbEngineVersionDescription;
         private string _dbParameterGroupFamily;
@@ -45,6 +46,7 @@ namespace Amazon.RDS.Model
         private string _engine;
         private string _engineVersion;
         private List<string> _exportableLogTypes = new List<string>();
+        private CustomDBEngineVersionAMI _image;
         private string _kmsKeyId;
         private string _majorEngineVersion;
         private string _status;
@@ -161,6 +163,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBEngineDescription()
         {
             return this._dbEngineDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBEngineMediaType. 
+        /// <para>
+        /// A value that indicates the source media provider of the AMI based on the usage operation.
+        /// Applicable for RDS Custom for SQL Server.
+        /// </para>
+        /// </summary>
+        public string DBEngineMediaType
+        {
+            get { return this._dbEngineMediaType; }
+            set { this._dbEngineMediaType = value; }
+        }
+
+        // Check to see if DBEngineMediaType property is set
+        internal bool IsSetDBEngineMediaType()
+        {
+            return this._dbEngineMediaType != null;
         }
 
         /// <summary>
@@ -289,6 +310,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetExportableLogTypes()
         {
             return this._exportableLogTypes != null && this._exportableLogTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Image. 
+        /// <para>
+        /// The EC2 image
+        /// </para>
+        /// </summary>
+        public CustomDBEngineVersionAMI Image
+        {
+            get { return this._image; }
+            set { this._image = value; }
+        }
+
+        // Check to see if Image property is set
+        internal bool IsSetImage()
+        {
+            return this._image != null;
         }
 
         /// <summary>

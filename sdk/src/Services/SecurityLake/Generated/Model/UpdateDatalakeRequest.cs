@@ -30,15 +30,8 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDatalake operation.
-    /// Amazon Security Lake allows you to specify where to store your security data and for
-    /// how long. You can specify a rollup Region to consolidate data from multiple regions.
-    /// 
-    /// 
-    ///  
-    /// <para>
-    /// You can update the properties of a Region or source. Input can either be directly
-    /// specified to the API. 
-    /// </para>
+    /// Specifies where to store your security data and for how long. You can add a rollup
+    /// Region to consolidate data from multiple Amazon Web Services Regions.
     /// </summary>
     public partial class UpdateDatalakeRequest : AmazonSecurityLakeRequest
     {
@@ -47,7 +40,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Configurations. 
         /// <para>
-        /// The configuration object
+        /// Specify the Region or Regions that will contribute data to the rollup region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

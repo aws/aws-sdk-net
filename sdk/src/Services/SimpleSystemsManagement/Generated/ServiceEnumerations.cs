@@ -2009,6 +2009,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly DocumentType ProblemAnalysisTemplate = new DocumentType("ProblemAnalysisTemplate");
         /// <summary>
+        /// Constant QuickSetup for DocumentType
+        /// </summary>
+        public static readonly DocumentType QuickSetup = new DocumentType("QuickSetup");
+        /// <summary>
         /// Constant Session for DocumentType
         /// </summary>
         public static readonly DocumentType Session = new DocumentType("Session");

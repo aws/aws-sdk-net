@@ -30,7 +30,9 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSubscribers operation.
-    /// List all subscribers for the specific Security Lake account ID.
+    /// List all subscribers for the specific Amazon Security Lake account ID. You can retrieve
+    /// a list of subscriptions associated with a specific organization or Amazon Web Services
+    /// account.
     /// </summary>
     public partial class ListSubscribersRequest : AmazonSecurityLakeRequest
     {
@@ -58,8 +60,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If nextToken is returned, there are more results available. You can make the call
-        /// again using the returned token to retrieve the next page.
+        /// If nextToken is returned, there are more results available. You can repeat the call
+        /// using the returned token to retrieve the next page.
         /// </para>
         /// </summary>
         public string NextToken

@@ -39,8 +39,6 @@ namespace Amazon.ElasticMapReduce.Model
     /// require more than 256 steps to process your data. You can bypass the 256-step limitation
     /// in various ways, including using SSH to connect to the master node and submitting
     /// queries directly to the software running on the master node, such as Hive and Hadoop.
-    /// For more information on how to do this, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
-    /// More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.
     /// </para>
     ///  
     /// <para>

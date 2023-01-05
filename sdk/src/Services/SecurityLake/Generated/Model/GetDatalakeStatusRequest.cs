@@ -30,8 +30,8 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDatalakeStatus operation.
-    /// Retrieve the Security Lake configuration object for the specified account ID. This
-    /// API does not take input parameters.
+    /// Retrieves a snapshot of the current Region, including whether Amazon Security Lake
+    /// is enabled for those accounts and which sources Security Lake is collecting data from.
     /// </summary>
     public partial class GetDatalakeStatusRequest : AmazonSecurityLakeRequest
     {
@@ -42,8 +42,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property AccountSet. 
         /// <para>
-        /// The account IDs for which a static snapshot of the current Region, including enabled
-        /// accounts and log sources is retrieved.
+        /// The Amazon Web Services account ID for which a static snapshot of the current Amazon
+        /// Web Services Region, including enabled accounts and log sources, is retrieved.
         /// </para>
         /// </summary>
         public List<string> AccountSet
@@ -61,8 +61,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property MaxAccountResults. 
         /// <para>
-        /// The maximum limit of accounts for which the static snapshot of the current Region
-        /// including enabled accounts and log sources is retrieved.
+        /// The maximum limit of accounts for which the static snapshot of the current Region,
+        /// including enabled accounts and log sources, is retrieved.
         /// </para>
         /// </summary>
         public int MaxAccountResults
@@ -80,11 +80,14 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If nextToken is returned, there are more results available. The value of nextToken
-        /// is a unique pagination token for each page. Make the call again using the returned
-        /// token to retrieve the next page. Keep all other arguments unchanged. Each pagination
-        /// token expires after 24 hours. Using an expired pagination token will return an HTTP
-        /// 400 InvalidToken error.
+        /// Lists if there are more results available. The value of nextToken is a unique pagination
+        /// token for each page. Repeat the call using the returned token to retrieve the next
+        /// page. Keep all other arguments unchanged. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Each pagination token expires after 24 hours. Using an expired pagination token will
+        /// return an HTTP 400 InvalidToken error.
         /// </para>
         /// </summary>
         public string NextToken

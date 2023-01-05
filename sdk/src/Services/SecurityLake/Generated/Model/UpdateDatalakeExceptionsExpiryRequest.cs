@@ -32,8 +32,7 @@ namespace Amazon.SecurityLake.Model
     /// Container for the parameters to the UpdateDatalakeExceptionsExpiry operation.
     /// Update the expiration period for the exception message to your preferred time, and
     /// control the time-to-live (TTL) for the exception message to remain. Exceptions are
-    /// stored by default, for a 2 week period of time from when a record was created in Security
-    /// Lake.
+    /// stored by default for 2 weeks from when a record was created in Amazon Security Lake.
     /// </summary>
     public partial class UpdateDatalakeExceptionsExpiryRequest : AmazonSecurityLakeRequest
     {

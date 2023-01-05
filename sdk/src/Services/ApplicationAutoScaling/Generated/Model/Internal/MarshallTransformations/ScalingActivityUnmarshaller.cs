@@ -94,6 +94,12 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NotScaledReasons", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<NotScaledReason, NotScaledReasonUnmarshaller>(NotScaledReasonUnmarshaller.Instance);
+                    unmarshalledObject.NotScaledReasons = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

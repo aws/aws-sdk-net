@@ -67,7 +67,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CacheClusterSize. 
         /// <para>
-        /// The stage's cache cluster size.
+        /// The stage's cache capacity in GB. For more information about choosing a cache size,
+        /// see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling
+        /// API caching to enhance responsiveness</a>.
         /// </para>
         /// </summary>
         public CacheClusterSize CacheClusterSize

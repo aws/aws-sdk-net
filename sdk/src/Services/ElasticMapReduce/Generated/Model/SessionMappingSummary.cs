@@ -62,8 +62,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property IdentityId. 
         /// <para>
-        /// The globally unique identifier (GUID) of the user or group from the Amazon Web Services
-        /// SSO Identity Store.
+        /// The globally unique identifier (GUID) of the user or group from the IAM Identity Center
+        /// Identity Store.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -84,7 +84,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
         /// and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-        /// in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+        /// in the <i>IAM Identity Center Identity Store API Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]

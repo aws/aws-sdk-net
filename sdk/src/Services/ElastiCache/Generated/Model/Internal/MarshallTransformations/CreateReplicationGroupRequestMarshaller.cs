@@ -309,6 +309,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("TransitEncryptionEnabled", StringUtils.FromBool(publicRequest.TransitEncryptionEnabled));
                 }
+                if(publicRequest.IsSetTransitEncryptionMode())
+                {
+                    request.Parameters.Add("TransitEncryptionMode", StringUtils.FromString(publicRequest.TransitEncryptionMode));
+                }
                 if(publicRequest.IsSetUserGroupIds())
                 {
                     int publicRequestlistValueIndex = 1;
