@@ -92,6 +92,17 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetDeregistrationPolicy())
+                {
+                    context.Writer.WritePropertyName("deregistrationPolicy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeregistrationPolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeregistrationPolicy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEvidenceFinderEnabled())
                 {
                     context.Writer.WritePropertyName("evidenceFinderEnabled");

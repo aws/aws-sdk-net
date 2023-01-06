@@ -157,7 +157,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  Specifies the current status of the control set. 
+        ///  The current status of the control set. 
         /// </para>
         /// </summary>
         public ControlSetStatus Status

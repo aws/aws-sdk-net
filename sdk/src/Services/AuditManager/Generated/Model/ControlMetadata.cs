@@ -82,7 +82,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        ///  Specifies when the control was created. 
+        ///  The time when the control was created. 
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -119,7 +119,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        ///  Specifies when the control was most recently updated. 
+        ///  The time when the control was most recently updated. 
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
