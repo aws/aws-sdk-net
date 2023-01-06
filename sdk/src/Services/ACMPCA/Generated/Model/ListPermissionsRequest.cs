@@ -40,8 +40,8 @@ namespace Amazon.ACMPCA.Model
     /// </para>
     ///  
     /// <para>
-    /// Permissions can be granted with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html">CreatePermission</a>
-    /// action and revoked with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html">DeletePermission</a>
+    /// Permissions can be granted with the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreatePermission.html">CreatePermission</a>
+    /// action and revoked with the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeletePermission.html">DeletePermission</a>
     /// action.
     /// </para>
     ///  <p class="title"> <b>About Permissions</b> 
@@ -62,8 +62,8 @@ namespace Amazon.ACMPCA.Model
     /// If the private CA and the ACM certificates reside in different accounts, then permissions
     /// cannot be used to enable automatic renewals. Instead, the ACM certificate owner must
     /// set up a resource-based policy to enable cross-account issuance and renewals. For
-    /// more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
-    /// a Resource Based Policy with ACM Private CA</a>.
+    /// more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/pca-rbp.html">Using
+    /// a Resource Based Policy with Amazon Web Services Private CA</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -77,9 +77,9 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
         /// The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN
-        /// by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
+        /// by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
         /// action. This must be of the form: <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
-        /// You can get a private CA's ARN by running the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
+        /// You can get a private CA's ARN by running the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
         /// action.
         /// </para>
         /// </summary>

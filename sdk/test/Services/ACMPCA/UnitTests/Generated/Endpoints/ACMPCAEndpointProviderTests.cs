@@ -31,6 +31,66 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("ACMPCA")]
+        [Description("For region ap-south-2 with FIPS enabled and DualStack enabled")]
+        public void For_region_apsouth2_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new ACMPCAEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "ap-south-2";
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-pca-fips.ap-south-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ACMPCA")]
+        [Description("For region ap-south-2 with FIPS enabled and DualStack disabled")]
+        public void For_region_apsouth2_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ACMPCAEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "ap-south-2";
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-pca-fips.ap-south-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ACMPCA")]
+        [Description("For region ap-south-2 with FIPS disabled and DualStack enabled")]
+        public void For_region_apsouth2_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new ACMPCAEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-south-2";
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-pca.ap-south-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ACMPCA")]
+        [Description("For region ap-south-2 with FIPS disabled and DualStack disabled")]
+        public void For_region_apsouth2_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ACMPCAEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-south-2";
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-pca.ap-south-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ACMPCA")]
         [Description("For region ap-south-1 with FIPS enabled and DualStack enabled")]
         public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
@@ -145,6 +205,66 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm-pca.eu-south-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ACMPCA")]
+        [Description("For region eu-south-2 with FIPS enabled and DualStack enabled")]
+        public void For_region_eusouth2_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new ACMPCAEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "eu-south-2";
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-pca-fips.eu-south-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ACMPCA")]
+        [Description("For region eu-south-2 with FIPS enabled and DualStack disabled")]
+        public void For_region_eusouth2_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ACMPCAEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "eu-south-2";
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-pca-fips.eu-south-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ACMPCA")]
+        [Description("For region eu-south-2 with FIPS disabled and DualStack enabled")]
+        public void For_region_eusouth2_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new ACMPCAEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "eu-south-2";
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-pca.eu-south-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ACMPCA")]
+        [Description("For region eu-south-2 with FIPS disabled and DualStack disabled")]
+        public void For_region_eusouth2_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ACMPCAEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "eu-south-2";
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-pca.eu-south-2.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -385,6 +505,66 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm-pca.eu-central-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ACMPCA")]
+        [Description("For region eu-central-2 with FIPS enabled and DualStack enabled")]
+        public void For_region_eucentral2_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new ACMPCAEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "eu-central-2";
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-pca-fips.eu-central-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ACMPCA")]
+        [Description("For region eu-central-2 with FIPS enabled and DualStack disabled")]
+        public void For_region_eucentral2_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ACMPCAEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "eu-central-2";
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-pca-fips.eu-central-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ACMPCA")]
+        [Description("For region eu-central-2 with FIPS disabled and DualStack enabled")]
+        public void For_region_eucentral2_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new ACMPCAEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "eu-central-2";
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-pca.eu-central-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ACMPCA")]
+        [Description("For region eu-central-2 with FIPS disabled and DualStack disabled")]
+        public void For_region_eucentral2_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ACMPCAEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "eu-central-2";
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-pca.eu-central-2.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -1525,6 +1705,66 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm-pca.ap-southeast-3.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ACMPCA")]
+        [Description("For region ap-southeast-4 with FIPS enabled and DualStack enabled")]
+        public void For_region_apsoutheast4_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new ACMPCAEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "ap-southeast-4";
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-pca-fips.ap-southeast-4.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ACMPCA")]
+        [Description("For region ap-southeast-4 with FIPS enabled and DualStack disabled")]
+        public void For_region_apsoutheast4_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ACMPCAEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "ap-southeast-4";
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-pca-fips.ap-southeast-4.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ACMPCA")]
+        [Description("For region ap-southeast-4 with FIPS disabled and DualStack enabled")]
+        public void For_region_apsoutheast4_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new ACMPCAEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-southeast-4";
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-pca.ap-southeast-4.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ACMPCA")]
+        [Description("For region ap-southeast-4 with FIPS disabled and DualStack disabled")]
+        public void For_region_apsoutheast4_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ACMPCAEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-southeast-4";
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonACMPCAEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-pca.ap-southeast-4.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]

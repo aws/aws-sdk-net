@@ -36,7 +36,7 @@ namespace Amazon.ACMPCA.Model
     ///  
     /// <para>
     /// If conflicting or duplicate certificate information is supplied from other sources,
-    /// ACM Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
+    /// Amazon Web Services Private CA applies <a href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
     /// of operation rules</a> to determine what information is used.
     /// </para>
     /// </summary>

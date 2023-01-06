@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model
     ///  
     /// <para>
     /// Extensions present in <code>CustomExtensions</code> follow the <code>ApiPassthrough</code>
-    /// <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">template
+    /// <a href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-order-of-operations">template
     /// rules</a>. 
     /// </para>
     /// </summary>

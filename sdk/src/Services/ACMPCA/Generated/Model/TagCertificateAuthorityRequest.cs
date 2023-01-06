@@ -36,9 +36,18 @@ namespace Amazon.ACMPCA.Model
     /// You specify the tag by using a key-value pair. You can apply a tag to just one private
     /// CA if you want to identify a specific characteristic of that CA, or you can apply
     /// the same tag to multiple private CAs if you want to filter for a common relationship
-    /// among those CAs. To remove one or more tags, use the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html">UntagCertificateAuthority</a>
-    /// action. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListTags.html">ListTags</a>
-    /// action to see what tags are associated with your CA.
+    /// among those CAs. To remove one or more tags, use the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UntagCertificateAuthority.html">UntagCertificateAuthority</a>
+    /// action. Call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListTags.html">ListTags</a>
+    /// action to see what tags are associated with your CA. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// To attach tags to a private CA during the creation procedure, a CA administrator must
+    /// first associate an inline IAM policy with the <code>CreateCertificateAuthority</code>
+    /// action and explicitly allow tagging. For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/auth-InlinePolicies.html#policy-tag-ca">Attaching
+    /// tags to a CA at the time of creation</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class TagCertificateAuthorityRequest : AmazonACMPCARequest
     {
@@ -48,7 +57,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>.
+        /// The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>.
         /// This must be of the form: 
         /// </para>
         ///  
