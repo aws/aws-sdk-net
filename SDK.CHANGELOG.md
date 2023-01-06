@@ -1,3 +1,12 @@
+### 3.7.456.0 (2023-01-06 19:20 UTC)
+* ACMPCA (3.7.102.0)
+	* Added revocation parameter validation: bucket names must match S3 bucket naming rules and CNAMEs conform to RFC2396 restrictions on the use of special characters in URIs.
+* AuditManager (3.7.102.0)
+	* This release introduces a new data retention option in your Audit Manager settings. You can now use the DeregistrationPolicy parameter to specify if you want to delete your data when you deregister Audit Manager.
+* Core 3.7.103.12
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.455.0 (2023-01-05 19:23 UTC)
 * AmplifyBackend (3.7.101.0)
 	* Updated GetBackendAPIModels response to include ModelIntrospectionSchema json string
