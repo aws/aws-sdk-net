@@ -1,3 +1,18 @@
+### 3.7.457.0 (2023-01-09 19:54 UTC)
+* ECRPublic (3.7.101.0)
+	* This release for Amazon ECR Public makes several change to bring the SDK into sync with the API.
+* KendraRanking (3.7.100.0)
+	* Introducing Amazon Kendra Intelligent Ranking, a new set of Kendra APIs that leverages Kendra semantic ranking capabilities to improve the quality of search results from other search services (i.e. OpenSearch, ElasticSearch, Solr).
+* NetworkFirewall (3.7.102.0)
+	* Network Firewall now supports the Suricata rule action reject, in addition to the actions pass, drop, and alert.
+* RAM (3.7.101.0)
+	* Enabled FIPS aws-us-gov endpoints in SDK.
+* WorkSpacesWeb (3.7.101.0)
+	* This release adds support for a new portal authentication type: AWS IAM Identity Center (successor to AWS Single Sign-On).
+* Core 3.7.103.13
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.456.0 (2023-01-06 19:20 UTC)
 * ACMPCA (3.7.102.0)
 	* Added revocation parameter validation: bucket names must match S3 bucket naming rules and CNAMEs conform to RFC2396 restrictions on the use of special characters in URIs.
