@@ -744,6 +744,10 @@
       <Project>{04DE067E-5C75-43C0-88EF-7618FA712B80}</Project>
       <Name>AWSSDK.Kendra.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/KendraRanking/AWSSDK.KendraRanking.CodeAnalysis.csproj">
+      <Project>{AF2D1D42-C3AD-4537-9B4A-26CC4AFC0F74}</Project>
+      <Name>AWSSDK.KendraRanking.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/KeyManagementService/AWSSDK.KeyManagementService.CodeAnalysis.csproj">
       <Project>{76145C3D-D380-4BAC-9B92-2DB55ED091C7}</Project>
       <Name>AWSSDK.KeyManagementService.CodeAnalysis</Name>
