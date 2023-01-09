@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// The image requested does not exist in the specified repository.
+    /// The image requested doesn't exist in the specified repository.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

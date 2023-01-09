@@ -44,9 +44,9 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property Force. 
         /// <para>
-        /// If the policy you are attempting to set on a repository policy would prevent you from
-        /// setting another policy in the future, you must force the <a>SetRepositoryPolicy</a>
-        /// operation. This is intended to prevent accidental repository lock outs.
+        /// If the policy that you want to set on a repository policy would prevent you from setting
+        /// another policy in the future, you must force the <a>SetRepositoryPolicy</a> operation.
+        /// This prevents accidental repository lockouts.
         /// </para>
         /// </summary>
         public bool Force
@@ -85,8 +85,8 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the registry that contains the repository. If you
-        /// do not specify a registry, the default public registry is assumed.
+        /// The Amazon Web Services account ID that's associated with the registry that contains
+        /// the repository. If you do not specify a registry, the default public registry is assumed.
         /// </para>
         /// </summary>
         public string RegistryId

@@ -57,7 +57,8 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property Layers. 
         /// <para>
-        /// A list of image layer objects corresponding to the image layer references in the request.
+        /// A list of image layer objects that correspond to the image layer references in the
+        /// request.
         /// </para>
         /// </summary>
         public List<Layer> Layers

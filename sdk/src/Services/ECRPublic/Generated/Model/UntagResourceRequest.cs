@@ -40,11 +40,11 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently,
-        /// the supported resource is an Amazon ECR Public repository.
+        /// The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the
+        /// supported resource is an Amazon ECR Public repository.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

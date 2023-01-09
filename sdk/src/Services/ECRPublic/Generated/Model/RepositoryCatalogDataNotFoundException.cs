@@ -29,42 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// The specified repository can't be found. Check the spelling of the specified repository
-    /// and ensure that you're performing operations on the correct registry.
+    /// The repository catalog data doesn't exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class RepositoryNotFoundException : AmazonECRPublicException
+    public partial class RepositoryCatalogDataNotFoundException : AmazonECRPublicException
     {
 
         /// <summary>
-        /// Constructs a new RepositoryNotFoundException with the specified error
+        /// Constructs a new RepositoryCatalogDataNotFoundException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public RepositoryNotFoundException(string message) 
+        public RepositoryCatalogDataNotFoundException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of RepositoryNotFoundException
+        /// Construct instance of RepositoryCatalogDataNotFoundException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public RepositoryNotFoundException(string message, Exception innerException) 
+        public RepositoryCatalogDataNotFoundException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of RepositoryNotFoundException
+        /// Construct instance of RepositoryCatalogDataNotFoundException
         /// </summary>
         /// <param name="innerException"></param>
-        public RepositoryNotFoundException(Exception innerException) 
+        public RepositoryCatalogDataNotFoundException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of RepositoryNotFoundException
+        /// Construct instance of RepositoryCatalogDataNotFoundException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -72,30 +71,30 @@ namespace Amazon.ECRPublic.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public RepositoryNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public RepositoryCatalogDataNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of RepositoryNotFoundException
+        /// Construct instance of RepositoryCatalogDataNotFoundException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public RepositoryNotFoundException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public RepositoryCatalogDataNotFoundException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the RepositoryNotFoundException class with serialized data.
+        /// Constructs a new instance of the RepositoryCatalogDataNotFoundException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected RepositoryNotFoundException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected RepositoryCatalogDataNotFoundException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }

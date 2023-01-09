@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// An object containing the catalog data for a repository. This data is publicly visible
+    /// An object that contains the catalog data for a repository. This data is publicly visible
     /// in the Amazon ECR Public Gallery.
     /// </summary>
     public partial class RepositoryCatalogDataInput
@@ -44,11 +44,11 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property AboutText. 
         /// <para>
-        /// A detailed description of the contents of the repository. It is publicly visible in
+        /// A detailed description of the contents of the repository. It's publicly visible in
         /// the Amazon ECR Public Gallery. The text must be in markdown format.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10240)]
+        [AWSProperty(Max=25600)]
         public string AboutText
         {
             get { return this._aboutText; }
@@ -65,24 +65,32 @@ namespace Amazon.ECRPublic.Model
         /// Gets and sets the property Architectures. 
         /// <para>
         /// The system architecture that the images in the repository are compatible with. On
-        /// the Amazon ECR Public Gallery, the following supported architectures will appear as
-        /// badges on the repository and are used as search filters.
+        /// the Amazon ECR Public Gallery, the following supported architectures appear as badges
+        /// on the repository and are used as search filters.
         /// </para>
-        ///  <ul> <li> 
+        ///  <note> 
         /// <para>
-        ///  <code>Linux</code> 
+        /// If an unsupported tag is added to your repository catalog data, it's associated with
+        /// the repository and can be retrieved using the API but isn't discoverable in the Amazon
+        /// ECR Public Gallery.
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        ///  <code>ARM</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Windows</code> 
+        ///  <code>ARM 64</code> 
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> <li> 
         /// <para>
-        /// If an unsupported tag is added to your repository catalog data, it will be associated
-        /// with the repository and can be retrieved using the API but will not be discoverable
-        /// in the Amazon ECR Public Gallery.
+        ///  <code>x86</code> 
         /// </para>
-        ///  </note>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>x86-64</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=50)]
         public List<string> Architectures
@@ -146,32 +154,24 @@ namespace Amazon.ECRPublic.Model
         /// Gets and sets the property OperatingSystems. 
         /// <para>
         /// The operating systems that the images in the repository are compatible with. On the
-        /// Amazon ECR Public Gallery, the following supported operating systems will appear as
-        /// badges on the repository and are used as search filters.
+        /// Amazon ECR Public Gallery, the following supported operating systems appear as badges
+        /// on the repository and are used as search filters.
         /// </para>
-        ///  <ul> <li> 
+        ///  <note> 
         /// <para>
-        ///  <code>ARM</code> 
+        /// If an unsupported tag is added to your repository catalog data, it's associated with
+        /// the repository and can be retrieved using the API but isn't discoverable in the Amazon
+        /// ECR Public Gallery.
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        ///  <code>Linux</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ARM 64</code> 
+        ///  <code>Windows</code> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>x86</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>x86-64</code> 
-        /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// If an unsupported tag is added to your repository catalog data, it will be associated
-        /// with the repository and can be retrieved using the API but will not be discoverable
-        /// in the Amazon ECR Public Gallery.
-        /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=50)]
         public List<string> OperatingSystems
@@ -189,13 +189,13 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property UsageText. 
         /// <para>
-        /// Detailed information on how to use the contents of the repository. It is publicly
+        /// Detailed information about how to use the contents of the repository. It's publicly
         /// visible in the Amazon ECR Public Gallery. The usage text provides context, support
         /// information, and additional usage details for users of the repository. The text must
         /// be in markdown format.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10240)]
+        [AWSProperty(Max=25600)]
         public string UsageText
         {
             get { return this._usageText; }

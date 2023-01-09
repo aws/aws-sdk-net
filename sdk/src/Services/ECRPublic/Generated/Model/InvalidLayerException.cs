@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// The layer digest calculation performed by Amazon ECR upon receipt of the image layer
-    /// does not match the digest specified.
+    /// The layer digest calculation performed by Amazon ECR when the image layer doesn't
+    /// match the digest specified.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

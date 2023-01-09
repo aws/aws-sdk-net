@@ -42,7 +42,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property Aliases. 
         /// <para>
-        /// An array of objects representing the aliases for a public registry.
+        /// An array of objects that represents the aliases for a public registry.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +64,7 @@ namespace Amazon.ECRPublic.Model
         /// The Amazon Resource Name (ARN) of the public registry.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string RegistryArn
         {
             get { return this._registryArn; }
@@ -80,8 +80,8 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the registry. If you do not specify a registry,
-        /// the default public registry is assumed.
+        /// The Amazon Web Services account ID that's associated with the registry. If you do
+        /// not specify a registry, the default public registry is assumed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -120,9 +120,9 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property Verified. 
         /// <para>
-        /// Whether the account is verified. This indicates whether the account is an AWS Marketplace
-        /// vendor. If an account is verified, each public repository will received a verified
-        /// account badge on the Amazon ECR Public Gallery.
+        /// Indicates whether the account is a verified Amazon Web Services Marketplace vendor.
+        /// If an account is verified, each public repository receives a verified account badge
+        /// on the Amazon ECR Public Gallery.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
