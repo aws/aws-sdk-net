@@ -762,6 +762,10 @@ namespace Amazon.NetworkFirewall
         /// Constant PASS for StatefulAction
         /// </summary>
         public static readonly StatefulAction PASS = new StatefulAction("PASS");
+        /// <summary>
+        /// Constant REJECT for StatefulAction
+        /// </summary>
+        public static readonly StatefulAction REJECT = new StatefulAction("REJECT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
