@@ -1308,6 +1308,10 @@ namespace Amazon.LocationService
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
         /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// set for Amazon Location Service.
+        /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
         /// The request was denied because of request throttling.
         /// </exception>
@@ -1345,6 +1349,10 @@ namespace Amazon.LocationService
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
         /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// set for Amazon Location Service.
+        /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
         /// The request was denied because of request throttling.
         /// </exception>
@@ -1373,7 +1381,7 @@ namespace Amazon.LocationService
         ///  <note> 
         /// <para>
         /// If your application is tracking or routing assets you use in your business, such as
-        /// delivery vehicles or employees, you may only use HERE as your geolocation provider.
+        /// delivery vehicles or employees, you must not use Esri as your geolocation provider.
         /// See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a>
         /// for more details.
         /// </para>
@@ -1392,6 +1400,10 @@ namespace Amazon.LocationService
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// set for Amazon Location Service.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
         /// The request was denied because of request throttling.
@@ -1417,7 +1429,7 @@ namespace Amazon.LocationService
         ///  <note> 
         /// <para>
         /// If your application is tracking or routing assets you use in your business, such as
-        /// delivery vehicles or employees, you may only use HERE as your geolocation provider.
+        /// delivery vehicles or employees, you must not use Esri as your geolocation provider.
         /// See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a>
         /// for more details.
         /// </para>
@@ -1439,6 +1451,10 @@ namespace Amazon.LocationService
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// set for Amazon Location Service.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
         /// The request was denied because of request throttling.
@@ -1471,7 +1487,7 @@ namespace Amazon.LocationService
         ///  <note> 
         /// <para>
         /// If your application is tracking or routing assets you use in your business, such as
-        /// delivery vehicles or employees, you may only use HERE as your geolocation provider.
+        /// delivery vehicles or employees, you must not use Esri as your geolocation provider.
         /// See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a>
         /// for more details.
         /// </para>
@@ -1490,6 +1506,10 @@ namespace Amazon.LocationService
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// set for Amazon Location Service.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
         /// The request was denied because of request throttling.
@@ -1518,7 +1538,7 @@ namespace Amazon.LocationService
         ///  <note> 
         /// <para>
         /// If your application is tracking or routing assets you use in your business, such as
-        /// delivery vehicles or employees, you may only use HERE as your geolocation provider.
+        /// delivery vehicles or employees, you must not use Esri as your geolocation provider.
         /// See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a>
         /// for more details.
         /// </para>
@@ -1540,6 +1560,10 @@ namespace Amazon.LocationService
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// set for Amazon Location Service.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
         /// The request was denied because of request throttling.
@@ -1574,7 +1598,7 @@ namespace Amazon.LocationService
         ///  <note> 
         /// <para>
         /// If your application is tracking or routing assets you use in your business, such as
-        /// delivery vehicles or employees, you may only use HERE as your geolocation provider.
+        /// delivery vehicles or employees, you must not use Esri as your geolocation provider.
         /// See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a>
         /// for more details.
         /// </para>
@@ -1593,6 +1617,10 @@ namespace Amazon.LocationService
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// set for Amazon Location Service.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
         /// The request was denied because of request throttling.
@@ -1623,7 +1651,7 @@ namespace Amazon.LocationService
         ///  <note> 
         /// <para>
         /// If your application is tracking or routing assets you use in your business, such as
-        /// delivery vehicles or employees, you may only use HERE as your geolocation provider.
+        /// delivery vehicles or employees, you must not use Esri as your geolocation provider.
         /// See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a>
         /// for more details.
         /// </para>
@@ -1645,6 +1673,10 @@ namespace Amazon.LocationService
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// set for Amazon Location Service.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
         /// The request was denied because of request throttling.
@@ -4372,15 +4404,24 @@ namespace Amazon.LocationService
         /// Assigns one or more tags (key-value pairs) to the specified Amazon Location Service
         /// resource.
         /// 
-        ///  <pre><code> &lt;p&gt;Tags can help you organize and categorize your resources. You
-        /// can also use them to scope user permissions, by granting a user permission to access
-        /// or change only resources with certain tag values.&lt;/p&gt; &lt;p&gt;You can use the
-        /// &lt;code&gt;TagResource&lt;/code&gt; operation with an Amazon Location Service resource
-        /// that already has tags. If you specify a new tag key for the resource, this tag is
-        /// appended to the tags already associated with the resource. If you specify a tag key
-        /// that's already associated with the resource, the new tag value that you specify replaces
-        /// the previous value for that tag. &lt;/p&gt; &lt;p&gt;You can associate up to 50 tags
-        /// with a resource.&lt;/p&gt; </code></pre>
+        ///  
+        /// <para>
+        /// Tags can help you organize and categorize your resources. You can also use them to
+        /// scope user permissions, by granting a user permission to access or change only resources
+        /// with certain tag values.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <code>TagResource</code> operation with an Amazon Location Service
+        /// resource that already has tags. If you specify a new tag key for the resource, this
+        /// tag is appended to the tags already associated with the resource. If you specify a
+        /// tag key that's already associated with the resource, the new tag value that you specify
+        /// replaces the previous value for that tag. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can associate up to 50 tags with a resource.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -4417,15 +4458,24 @@ namespace Amazon.LocationService
         /// Assigns one or more tags (key-value pairs) to the specified Amazon Location Service
         /// resource.
         /// 
-        ///  <pre><code> &lt;p&gt;Tags can help you organize and categorize your resources. You
-        /// can also use them to scope user permissions, by granting a user permission to access
-        /// or change only resources with certain tag values.&lt;/p&gt; &lt;p&gt;You can use the
-        /// &lt;code&gt;TagResource&lt;/code&gt; operation with an Amazon Location Service resource
-        /// that already has tags. If you specify a new tag key for the resource, this tag is
-        /// appended to the tags already associated with the resource. If you specify a tag key
-        /// that's already associated with the resource, the new tag value that you specify replaces
-        /// the previous value for that tag. &lt;/p&gt; &lt;p&gt;You can associate up to 50 tags
-        /// with a resource.&lt;/p&gt; </code></pre>
+        ///  
+        /// <para>
+        /// Tags can help you organize and categorize your resources. You can also use them to
+        /// scope user permissions, by granting a user permission to access or change only resources
+        /// with certain tag values.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <code>TagResource</code> operation with an Amazon Location Service
+        /// resource that already has tags. If you specify a new tag key for the resource, this
+        /// tag is appended to the tags already associated with the resource. If you specify a
+        /// tag key that's already associated with the resource, the new tag value that you specify
+        /// replaces the previous value for that tag. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can associate up to 50 tags with a resource.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">

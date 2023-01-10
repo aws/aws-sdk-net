@@ -46,7 +46,7 @@ namespace Amazon.LocationService.Model
         ///  <note> 
         /// <para>
         /// For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code>
-        /// is returned by place indexes that use HERE or Esri as data providers.
+        /// is returned by place indexes that use Esri, Grab, or HERE as data providers.
         /// </para>
         ///  </note>
         /// </summary>

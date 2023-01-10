@@ -91,7 +91,7 @@ namespace Amazon.LocationService.Model
         ///  <note> 
         /// <para>
         /// For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code>
-        /// is returned only by place indexes that use HERE as a data provider.
+        /// is returned only by place indexes that use HERE or Grab as a data provider.
         /// </para>
         ///  </note>
         /// </summary>
