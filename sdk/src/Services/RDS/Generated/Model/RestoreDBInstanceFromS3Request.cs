@@ -96,7 +96,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// The amount of storage (in gigabytes) to allocate initially for the DB instance. Follow
+        /// The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow
         /// the allocation rules specified in <code>CreateDBInstance</code>.
         /// </para>
         ///  <note> 

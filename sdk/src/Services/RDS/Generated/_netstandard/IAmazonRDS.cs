@@ -5816,8 +5816,11 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Starts a database activity stream to monitor activity on the database. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database
-        /// Activity Streams</a> in the <i>Amazon Aurora User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">
+        /// Monitoring Amazon Aurora with Database Activity Streams</a> in the <i>Amazon Aurora
+        /// User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.html">
+        /// Monitoring Amazon RDS with Database Activity Streams</a> in the <i>Amazon RDS User
+        /// Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartActivityStream service method.</param>
         /// <param name="cancellationToken">
@@ -6076,8 +6079,11 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database
-        /// Activity Streams</a> in the <i>Amazon Aurora User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">
+        /// Monitoring Amazon Aurora with Database Activity Streams</a> in the <i>Amazon Aurora
+        /// User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.html">
+        /// Monitoring Amazon RDS with Database Activity Streams</a> in the <i>Amazon RDS User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopActivityStream service method.</param>
