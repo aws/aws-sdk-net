@@ -1,3 +1,12 @@
+### 3.7.458.0 (2023-01-10 19:19 UTC)
+* LocationService (3.7.101.0)
+	* This release adds support for two new route travel models, Bicycle and Motorcycle which can be used with Grab data source.
+* RDS (3.7.114.0)
+	* This release adds support for configuring allocated storage on the CreateDBInstanceReadReplica, RestoreDBInstanceFromDBSnapshot, and RestoreDBInstanceToPointInTime APIs.
+* Core 3.7.103.14
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.457.0 (2023-01-09 19:54 UTC)
 * ECRPublic (3.7.101.0)
 	* This release for Amazon ECR Public makes several change to bring the SDK into sync with the API.
