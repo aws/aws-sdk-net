@@ -1,3 +1,7 @@
+### 3.7.459.0 (2023-01-11 19:17 UTC)
+* Kendra (3.7.102.0)
+	* This release adds support to new document types - RTF, XML, XSLT, MS_EXCEL, CSV, JSON, MD
+
 ### 3.7.458.0 (2023-01-10 19:19 UTC)
 * LocationService (3.7.101.0)
 	* This release adds support for two new route travel models, Bicycle and Motorcycle which can be used with Grab data source.
