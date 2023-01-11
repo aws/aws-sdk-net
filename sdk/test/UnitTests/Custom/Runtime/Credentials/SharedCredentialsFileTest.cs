@@ -870,6 +870,102 @@ namespace AWSSDK.UnitTests
             }
 
         }
+        [TestMethod]
+        public void ReadAWSConfigFileVariableFile()
+        {
+            try
+            {
+                using (var tester = new SharedCredentialsFileTestFixture(credentialsFileContents: null, configFileContents: BasicProfileConfigText,isSharedCredentialsVarProvided:true, isSharedConfigVarProvided: true))
+                {
+                    tester.TestTryGetProfile("basic_profile", true, true);
+                }
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_CONFIG_FILE", null);
+                //call static constructor again with reflection to reset the constructor
+                Type AWSConfigFile = typeof(SharedCredentialsFile);
+                AWSConfigFile.TypeInitializer.Invoke(null, null);
+            }
+        }
+
+        [TestMethod]
+        public void ReadAWSConfigAndCredentialFileVariable()
+        {
+            try
+            {
+                using (var tester = new SharedCredentialsFileTestFixture(credentialsFileContents: BasicProfileTextCredentialsPrecedence, configFileContents: BasicProfileTextConfigPrecedence, isSharedConfigVarProvided: true, isSharedCredentialsVarProvided: true))
+                {
+                    tester.ReadAndAssertProfile("basic_profile", BasicProfilePrecedenceOptions);
+                }
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_CONFIG_FILE", null);
+                Environment.SetEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE", null);
+                Type AWSConfigFile = typeof(SharedCredentialsFile);
+                AWSConfigFile.TypeInitializer.Invoke(null, null);
+                Type sharedCredentialsFile = typeof(SharedCredentialsFile);
+                sharedCredentialsFile.TypeInitializer.Invoke(null, null);
+            }
+        }
+
+        [TestMethod]
+        public void ReadBasicProfileSplitForAWSConfigAndCredentialFileVariable()
+        {
+            try
+            {
+                using (var tester = new SharedCredentialsFileTestFixture(BasicProfileTextCredentialsPartial, BasicProfileTextConfigPartial, isSharedCredentialsVarProvided: true, isSharedConfigVarProvided: true))
+                {
+                    tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions);
+                }
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_CONFIG_FILE", null);
+                Environment.SetEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE", null);
+                Type AWSConfigFile = typeof(SharedCredentialsFile);
+                AWSConfigFile.TypeInitializer.Invoke(null, null);
+                Type sharedCredentialsFile = typeof(SharedCredentialsFile);
+                sharedCredentialsFile.TypeInitializer.Invoke(null, null);
+            }
+        }
+
+        [TestMethod]
+        public void ReadBasicProfileSplitForAWSConfigVariable()
+        {
+            try
+            {
+                using (var tester = new SharedCredentialsFileTestFixture(BasicProfileTextCredentialsPartial, BasicProfileTextConfigPartial, isSharedConfigVarProvided: true))
+                {
+                    tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions);
+                }
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_CONFIG_FILE", null);
+                Type AWSConfigFile = typeof(SharedCredentialsFile);
+                AWSConfigFile.TypeInitializer.Invoke(null, null);
+            }
+        }
+
+        [TestMethod]
+        public void ReadBasicProfileSplitForAWSCredentialsVariable()
+        {
+            try
+            {
+                using (var tester = new SharedCredentialsFileTestFixture(BasicProfileTextCredentialsPartial, BasicProfileTextConfigPartial, isSharedCredentialsVarProvided: true))
+                {
+                    tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions);
+                }
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE", null);
+                Type sharedCredentialsFile = typeof(SharedCredentialsFile);
+                sharedCredentialsFile.TypeInitializer.Invoke(null, null);
+            }
+        }
 
         [TestMethod]
         public void WriteUnsupportedProfileType()
