@@ -29,38 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The function's Lambda SnapStart setting. Set <code>ApplyOn</code> to <code>PublishedVersions</code>
-    /// to create a snapshot of the initialized execution environment when you publish a function
-    /// version.
-    /// 
-    ///  
-    /// <para>
-    /// SnapStart is supported with the <code>java11</code> runtime. For more information,
-    /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving
-    /// startup performance with Lambda SnapStart</a>.
-    /// </para>
+    /// (Amazon SQS only) The scaling configuration for the event source. To remove the configuration,
+    /// pass an empty value.
     /// </summary>
-    public partial class SnapStart
+    public partial class ScalingConfig
     {
-        private SnapStartApplyOn _applyOn;
+        private int? _maximumConcurrency;
 
         /// <summary>
-        /// Gets and sets the property ApplyOn. 
+        /// Gets and sets the property MaximumConcurrency. 
         /// <para>
-        /// Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution
-        /// environment when you publish a function version.
+        /// Limits the number of concurrent instances that the Amazon SQS event source can invoke.
         /// </para>
         /// </summary>
-        public SnapStartApplyOn ApplyOn
+        [AWSProperty(Min=2, Max=1000)]
+        public int MaximumConcurrency
         {
-            get { return this._applyOn; }
-            set { this._applyOn = value; }
+            get { return this._maximumConcurrency.GetValueOrDefault(); }
+            set { this._maximumConcurrency = value; }
         }
 
-        // Check to see if ApplyOn property is set
-        internal bool IsSetApplyOn()
+        // Check to see if MaximumConcurrency property is set
+        internal bool IsSetMaximumConcurrency()
         {
-            return this._applyOn != null;
+            return this._maximumConcurrency.HasValue; 
         }
 
     }

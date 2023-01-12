@@ -379,29 +379,29 @@ namespace Amazon.Lambda
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BisectBatchOnFunctionError</code> - If the function returns an error, split
+        ///  <code>BisectBatchOnFunctionError</code> – If the function returns an error, split
         /// the batch in two and retry.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue or
+        ///  <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue or
         /// Amazon SNS topic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified
+        ///  <code>MaximumRecordAgeInSeconds</code> – Discard records older than the specified
         /// age. The default value is infinite (-1). When set to infinite (-1), failed records
         /// are retried until the record expires
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
+        ///  <code>MaximumRetryAttempts</code> – Discard records after the specified number of
         /// retries. The default value is infinite (-1). When set to infinite (-1), failed records
         /// are retried until the record expires.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
+        ///  <code>ParallelizationFactor</code> – Process multiple batches from each shard concurrently.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2740,29 +2740,29 @@ namespace Amazon.Lambda
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BisectBatchOnFunctionError</code> - If the function returns an error, split
+        ///  <code>BisectBatchOnFunctionError</code> – If the function returns an error, split
         /// the batch in two and retry.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue or
+        ///  <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue or
         /// Amazon SNS topic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified
+        ///  <code>MaximumRecordAgeInSeconds</code> – Discard records older than the specified
         /// age. The default value is infinite (-1). When set to infinite (-1), failed records
         /// are retried until the record expires
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
+        ///  <code>MaximumRetryAttempts</code> – Discard records after the specified number of
         /// retries. The default value is infinite (-1). When set to infinite (-1), failed records
         /// are retried until the record expires.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
+        ///  <code>ParallelizationFactor</code> – Process multiple batches from each shard concurrently.
         /// </para>
         ///  </li> </ul> 
         /// <para>

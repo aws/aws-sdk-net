@@ -1663,6 +1663,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.ScalingConfig.MaximumConcurrency</property>
+    <min>2</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.SelfManagedKafkaEventSourceConfig.ConsumerGroupId</property>
     <min>1</min>
     <max>200</max>

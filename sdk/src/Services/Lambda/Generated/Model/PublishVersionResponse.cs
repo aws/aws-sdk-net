@@ -555,8 +555,8 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of
         /// the initialized execution environment when you publish a function version. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing
-        /// startup time with Lambda SnapStart</a>.
+        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving
+        /// startup performance with Lambda SnapStart</a>.
         /// </para>
         /// </summary>
         public SnapStartResponse SnapStart

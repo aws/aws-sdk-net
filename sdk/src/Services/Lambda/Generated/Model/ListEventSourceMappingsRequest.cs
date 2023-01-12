@@ -47,23 +47,23 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+        ///  <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+        ///  <b>Amazon DynamoDB Streams</b> – The ARN of the stream.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+        ///  <b>Amazon Simple Queue Service</b> – The ARN of the queue.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+        ///  <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Amazon MQ</b> - The ARN of the broker.
+        ///  <b>Amazon MQ</b> – The ARN of the broker.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -88,19 +88,19 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Function name</b> - <code>MyFunction</code>.
+        ///  <b>Function name</b> – <code>MyFunction</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+        ///  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+        ///  <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+        ///  <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

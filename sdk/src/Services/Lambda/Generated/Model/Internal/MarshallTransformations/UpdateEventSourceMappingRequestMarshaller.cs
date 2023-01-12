@@ -149,6 +149,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ParallelizationFactor);
                 }
 
+                if(publicRequest.IsSetScalingConfig())
+                {
+                    context.Writer.WritePropertyName("ScalingConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ScalingConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ScalingConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSourceAccessConfigurations())
                 {
                     context.Writer.WritePropertyName("SourceAccessConfigurations");

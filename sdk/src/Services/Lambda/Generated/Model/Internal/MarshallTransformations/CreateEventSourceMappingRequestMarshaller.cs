@@ -174,6 +174,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetScalingConfig())
+                {
+                    context.Writer.WritePropertyName("ScalingConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ScalingConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ScalingConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSelfManagedEventSource())
                 {
                     context.Writer.WritePropertyName("SelfManagedEventSource");
