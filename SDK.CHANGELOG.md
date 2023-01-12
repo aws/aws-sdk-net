@@ -1,3 +1,18 @@
+### 3.7.460.0 (2023-01-12 19:24 UTC)
+* CleanRooms (3.7.100.0)
+	* Initial release of AWS Clean Rooms
+* CloudWatchLogs (3.7.103.0)
+	* Bug fix: logGroupName is now not a required field in GetLogEvents, FilterLogEvents, GetLogGroupFields, and DescribeLogStreams APIs as logGroupIdentifier can be provided instead
+* Lambda (3.7.103.0)
+	* Add support for MaximumConcurrency parameter for SQS event source. Customers can now limit the maximum concurrent invocations for their SQS Event Source Mapping.
+* MediaConvert (3.7.103.0)
+	* The AWS Elemental MediaConvert SDK has added support for compact DASH manifest generation, audio normalization using TruePeak measurements, and the ability to clip the sample range in the color corrector.
+* SecretsManager (3.7.101.8)
+	* Update documentation for new ListSecrets and DescribeSecret parameters
+* Core 3.7.103.15
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.459.0 (2023-01-11 19:17 UTC)
 * Kendra (3.7.102.0)
 	* This release adds support to new document types - RTF, XML, XSLT, MS_EXCEL, CSV, JSON, MD
