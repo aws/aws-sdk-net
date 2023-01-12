@@ -36,8 +36,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-south-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.ap-south-1.api.aws", endpoint.URL);
         }
@@ -51,8 +51,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-south-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.ap-south-1.amazonaws.com", endpoint.URL);
         }
@@ -66,8 +66,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-south-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.ap-south-1.api.aws", endpoint.URL);
         }
@@ -81,8 +81,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-south-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.ap-south-1.amazonaws.com", endpoint.URL);
         }
@@ -96,8 +96,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "ca-central-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.ca-central-1.api.aws", endpoint.URL);
         }
@@ -111,8 +111,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "ca-central-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.ca-central-1.amazonaws.com", endpoint.URL);
         }
@@ -126,8 +126,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "ca-central-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.ca-central-1.api.aws", endpoint.URL);
         }
@@ -141,8 +141,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "ca-central-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.ca-central-1.amazonaws.com", endpoint.URL);
         }
@@ -156,8 +156,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-central-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.eu-central-1.api.aws", endpoint.URL);
         }
@@ -171,8 +171,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-central-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -186,8 +186,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-central-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.eu-central-1.api.aws", endpoint.URL);
         }
@@ -201,8 +201,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-central-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -216,8 +216,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-west-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.us-west-1.api.aws", endpoint.URL);
         }
@@ -231,8 +231,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-west-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.us-west-1.amazonaws.com", endpoint.URL);
         }
@@ -246,8 +246,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-west-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.us-west-1.api.aws", endpoint.URL);
         }
@@ -261,8 +261,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-west-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.us-west-1.amazonaws.com", endpoint.URL);
         }
@@ -276,8 +276,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.us-west-2.api.aws", endpoint.URL);
         }
@@ -291,8 +291,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -306,8 +306,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.us-west-2.api.aws", endpoint.URL);
         }
@@ -321,8 +321,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -336,8 +336,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "af-south-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.af-south-1.api.aws", endpoint.URL);
         }
@@ -351,8 +351,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "af-south-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.af-south-1.amazonaws.com", endpoint.URL);
         }
@@ -366,8 +366,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "af-south-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.af-south-1.api.aws", endpoint.URL);
         }
@@ -381,8 +381,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "af-south-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.af-south-1.amazonaws.com", endpoint.URL);
         }
@@ -396,8 +396,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-north-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.eu-north-1.api.aws", endpoint.URL);
         }
@@ -411,8 +411,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-north-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.eu-north-1.amazonaws.com", endpoint.URL);
         }
@@ -426,8 +426,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-north-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.eu-north-1.api.aws", endpoint.URL);
         }
@@ -441,8 +441,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-north-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.eu-north-1.amazonaws.com", endpoint.URL);
         }
@@ -456,8 +456,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-west-3";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.eu-west-3.api.aws", endpoint.URL);
         }
@@ -471,8 +471,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-west-3";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.eu-west-3.amazonaws.com", endpoint.URL);
         }
@@ -486,8 +486,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-west-3";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.eu-west-3.api.aws", endpoint.URL);
         }
@@ -501,8 +501,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-west-3";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.eu-west-3.amazonaws.com", endpoint.URL);
         }
@@ -516,8 +516,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-west-2";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.eu-west-2.api.aws", endpoint.URL);
         }
@@ -531,8 +531,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-west-2";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.eu-west-2.amazonaws.com", endpoint.URL);
         }
@@ -546,8 +546,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-west-2";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.eu-west-2.api.aws", endpoint.URL);
         }
@@ -561,8 +561,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-west-2";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.eu-west-2.amazonaws.com", endpoint.URL);
         }
@@ -576,8 +576,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-west-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.eu-west-1.api.aws", endpoint.URL);
         }
@@ -591,8 +591,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-west-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -606,8 +606,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-west-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.eu-west-1.api.aws", endpoint.URL);
         }
@@ -621,8 +621,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-west-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -636,8 +636,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-northeast-2";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.ap-northeast-2.api.aws", endpoint.URL);
         }
@@ -651,8 +651,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-northeast-2";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.ap-northeast-2.amazonaws.com", endpoint.URL);
         }
@@ -666,8 +666,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-northeast-2";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.ap-northeast-2.api.aws", endpoint.URL);
         }
@@ -681,8 +681,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-northeast-2";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.ap-northeast-2.amazonaws.com", endpoint.URL);
         }
@@ -696,8 +696,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-northeast-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.ap-northeast-1.api.aws", endpoint.URL);
         }
@@ -711,8 +711,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-northeast-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -726,8 +726,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-northeast-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.ap-northeast-1.api.aws", endpoint.URL);
         }
@@ -741,8 +741,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-northeast-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -756,8 +756,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "sa-east-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.sa-east-1.api.aws", endpoint.URL);
         }
@@ -771,8 +771,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "sa-east-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.sa-east-1.amazonaws.com", endpoint.URL);
         }
@@ -786,8 +786,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "sa-east-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.sa-east-1.api.aws", endpoint.URL);
         }
@@ -801,8 +801,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "sa-east-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.sa-east-1.amazonaws.com", endpoint.URL);
         }
@@ -816,8 +816,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.us-gov-west-1.api.aws", endpoint.URL);
         }
@@ -831,8 +831,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
@@ -846,8 +846,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.us-gov-west-1.api.aws", endpoint.URL);
         }
@@ -861,8 +861,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
@@ -876,8 +876,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-southeast-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.ap-southeast-1.api.aws", endpoint.URL);
         }
@@ -891,8 +891,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-southeast-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -906,8 +906,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-southeast-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.ap-southeast-1.api.aws", endpoint.URL);
         }
@@ -921,8 +921,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-southeast-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -936,8 +936,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-southeast-2";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.ap-southeast-2.api.aws", endpoint.URL);
         }
@@ -951,8 +951,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-southeast-2";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -966,8 +966,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-southeast-2";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.ap-southeast-2.api.aws", endpoint.URL);
         }
@@ -981,8 +981,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-southeast-2";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -997,8 +997,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -1011,8 +1011,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
@@ -1027,8 +1027,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -1041,8 +1041,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
@@ -1056,8 +1056,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -1071,8 +1071,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -1086,8 +1086,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.us-east-1.api.aws", endpoint.URL);
         }
@@ -1101,8 +1101,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -1116,8 +1116,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-2";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.us-east-2.api.aws", endpoint.URL);
         }
@@ -1131,8 +1131,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-2";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -1146,8 +1146,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-2";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.us-east-2.api.aws", endpoint.URL);
         }
@@ -1161,8 +1161,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-2";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -1176,8 +1176,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "cn-northwest-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -1191,8 +1191,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "cn-northwest-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -1206,8 +1206,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "cn-northwest-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -1221,8 +1221,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "cn-northwest-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://subscribe.mediaconvert.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -1237,8 +1237,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -1251,8 +1251,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -1267,8 +1267,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -1281,8 +1281,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://mediaconvert.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -1296,8 +1296,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -1313,8 +1313,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -1329,8 +1329,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new MediaConvertEndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonMediaConvertEndpointProvider().ResolveEndpoint(parameters);
         }

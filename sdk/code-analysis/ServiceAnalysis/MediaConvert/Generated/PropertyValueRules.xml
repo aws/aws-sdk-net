@@ -273,6 +273,26 @@
     <max>60000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.ClipLimits.MaximumRGBTolerance</property>
+    <min>90</min>
+    <max>105</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.ClipLimits.MaximumYUV</property>
+    <min>920</min>
+    <max>1023</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.ClipLimits.MinimumRGBTolerance</property>
+    <min>-5</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.ClipLimits.MinimumYUV</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.CmafAdditionalManifest.ManifestNameModifier</property>
     <min>1</min>
   </property-value-rule>
