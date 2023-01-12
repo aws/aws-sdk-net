@@ -98,6 +98,7 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
             DateTime lastChangedDate = response.LastChangedDate;
             DateTime lastRotatedDate = response.LastRotatedDate;
             string name = response.Name;
+            DateTime nextRotationDate = response.NextRotationDate;
             bool rotationEnabled = response.RotationEnabled;
             string rotationLambdaARN = response.RotationLambdaARN;
             RotationRulesType rotationRules = response.RotationRules;

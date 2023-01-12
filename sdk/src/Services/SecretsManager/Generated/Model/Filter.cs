@@ -65,6 +65,10 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <b>owning-service</b>: Prefix match, case-sensitive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b>all</b>: Breaks the filter value string into words and then searches all attributes
         /// for matches. Not case-sensitive.
         /// </para>
