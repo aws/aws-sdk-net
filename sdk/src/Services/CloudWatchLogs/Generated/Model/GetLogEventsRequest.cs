@@ -47,6 +47,12 @@ namespace Amazon.CloudWatchLogs.Model
     /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
     /// cross-account observability</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// You can specify the log group to search by using either <code>logGroupIdentifier</code>
+    /// or <code>logGroupName</code>. You must include one of these two parameters, but you
+    /// can't include both. 
+    /// </para>
     /// </summary>
     public partial class GetLogEventsRequest : AmazonCloudWatchLogsRequest
     {
@@ -124,11 +130,12 @@ namespace Amazon.CloudWatchLogs.Model
         /// is in a source account and you are using a monitoring account, you must use the log
         /// group ARN.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
         ///  If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>,
-        /// the action returns an <code>InvalidParameterException</code> error.
+        /// the action returns an <code>InvalidParameterException</code> error. 
         /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string LogGroupIdentifier
@@ -155,7 +162,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
+        [AWSProperty(Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }

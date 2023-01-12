@@ -35,6 +35,12 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
+    /// You can specify the log group to search by using either <code>logGroupIdentifier</code>
+    /// or <code>logGroupName</code>. You must include one of these two parameters, but you
+    /// can't include both. 
+    /// </para>
+    ///  
+    /// <para>
     /// This operation has a limit of five transactions per second, after which transactions
     /// are throttled.
     /// </para>
@@ -116,11 +122,12 @@ namespace Amazon.CloudWatchLogs.Model
         /// source account and you are using a monitoring account, you must use the log group
         /// ARN.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>,
-        /// the action returns an <code>InvalidParameterException</code> error.
+        ///  If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>,
+        /// the action returns an <code>InvalidParameterException</code> error. 
         /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string LogGroupIdentifier
@@ -147,7 +154,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
+        [AWSProperty(Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
