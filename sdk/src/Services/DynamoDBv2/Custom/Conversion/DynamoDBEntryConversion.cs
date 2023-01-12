@@ -573,12 +573,15 @@ namespace Amazon.DynamoDBv2
             if (d != null && TryFrom(d, targetType, out value))
                 return true;
 
-            value = null;
-
             var n = entry as DynamoDBNull;
             if (n != null)
+            {
+                value = null;
                 return true;
+            }
 
+            // Could not convert entry to a known type, setting value to null as it's an out parameter
+            value = null;
             return false;
         }
 
