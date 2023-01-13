@@ -29,31 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
-    /// This is the response object from the GetGroup operation.
+    /// Container for the parameters to the GetAccountSettings operation.
+    /// Retrieves the current status of optional features in Resource Groups.
     /// </summary>
-    public partial class GetGroupResponse : AmazonWebServiceResponse
+    public partial class GetAccountSettingsRequest : AmazonResourceGroupsRequest
     {
-        private Group _group;
-
-        /// <summary>
-        /// Gets and sets the property Group. 
-        /// <para>
-        /// A structure that contains the metadata details for the specified resource group. Use
-        /// <a>GetGroupQuery</a> and <a>GetGroupConfiguration</a> to get those additional details
-        /// of the resource group.
-        /// </para>
-        /// </summary>
-        public Group Group
-        {
-            get { return this._group; }
-            set { this._group = value; }
-        }
-
-        // Check to see if Group property is set
-        internal bool IsSetGroup()
-        {
-            return this._group != null;
-        }
 
     }
 }

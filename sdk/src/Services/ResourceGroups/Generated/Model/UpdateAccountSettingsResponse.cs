@@ -29,49 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
-    /// The unique identifiers for a resource group.
+    /// This is the response object from the UpdateAccountSettings operation.
     /// </summary>
-    public partial class GroupIdentifier
+    public partial class UpdateAccountSettingsResponse : AmazonWebServiceResponse
     {
-        private string _groupArn;
-        private string _groupName;
+        private AccountSettings _accountSettings;
 
         /// <summary>
-        /// Gets and sets the property GroupArn. 
+        /// Gets and sets the property AccountSettings. 
         /// <para>
-        /// The ARN of the resource group.
+        /// A structure that displays the status of the optional features in the account.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=12, Max=1600)]
-        public string GroupArn
+        public AccountSettings AccountSettings
         {
-            get { return this._groupArn; }
-            set { this._groupArn = value; }
+            get { return this._accountSettings; }
+            set { this._accountSettings = value; }
         }
 
-        // Check to see if GroupArn property is set
-        internal bool IsSetGroupArn()
+        // Check to see if AccountSettings property is set
+        internal bool IsSetAccountSettings()
         {
-            return this._groupArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property GroupName. 
-        /// <para>
-        /// The name of the resource group.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=300)]
-        public string GroupName
-        {
-            get { return this._groupName; }
-            set { this._groupName = value; }
-        }
-
-        // Check to see if GroupName property is set
-        internal bool IsSetGroupName()
-        {
-            return this._groupName != null;
+            return this._accountSettings != null;
         }
 
     }

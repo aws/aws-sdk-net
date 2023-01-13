@@ -30,7 +30,7 @@ namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGroups operation.
-    /// Returns a list of existing resource groups in your account.
+    /// Returns a list of existing Resource Groups in your account.
     /// 
     ///  
     /// <para>
@@ -72,11 +72,11 @@ namespace Amazon.ResourceGroups.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS:EC2::CapacityReservationPool</code> 
+        ///  <code>AWS::EC2::CapacityReservationPool</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS:EC2::HostManagement</code> 
+        ///  <code>AWS::EC2::HostManagement</code> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

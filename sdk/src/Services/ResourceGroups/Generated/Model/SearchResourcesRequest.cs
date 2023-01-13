@@ -30,8 +30,9 @@ namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchResources operation.
-    /// Returns a list of AWS resource identifiers that matches the specified query. The query
-    /// uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.
+    /// Returns a list of Amazon Web Services resource identifiers that matches the specified
+    /// query. The query uses the same format as a resource query in a <a>CreateGroup</a>
+    /// or <a>UpdateGroupQuery</a> operation.
     /// 
     ///  
     /// <para>

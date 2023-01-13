@@ -81,9 +81,9 @@ namespace Amazon.ResourceGroups.Model
         ///  </li> </ul> 
         /// <para>
         /// When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>,
-        /// AWS Resource Groups validates your filter resource types against the types that are
-        /// defined in the query associated with the group. For example, if a group contains only
-        /// S3 buckets because its query specifies only that resource type, but your <code>resource-type</code>
+        /// Resource Groups validates your filter resource types against the types that are defined
+        /// in the query associated with the group. For example, if a group contains only S3 buckets
+        /// because its query specifies only that resource type, but your <code>resource-type</code>
         /// filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances.
         /// In this case, a <code>ListGroupResources</code> request returns a <code>BadRequestException</code>
         /// error with a message similar to the following:
@@ -99,7 +99,7 @@ namespace Amazon.ResourceGroups.Model
         /// are not part of the query associated with the group. This validation doesn't occur
         /// when the group query specifies <code>AWS::AllSupported</code>, because a group based
         /// on such a query can contain any of the allowed resource types for the query type (tag-based
-        /// or AWS CloudFormation stack-based queries).
+        /// or Amazon CloudFront stack-based queries).
         /// </para>
         /// </summary>
         public List<ResourceFilter> Filters
@@ -142,7 +142,7 @@ namespace Amazon.ResourceGroups.Model
         ///  </important>
         /// </summary>
         [Obsolete("This field is deprecated, use Group instead.")]
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=300)]
         public string GroupName
         {
             get { return this._groupName; }
