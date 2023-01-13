@@ -1,3 +1,16 @@
+### 3.7.461.0 (2023-01-13 19:28 UTC)
+* Connect (3.7.112.0)
+	* This release updates the responses of UpdateContactFlowContent, UpdateContactFlowMetadata, UpdateContactFlowName and DeleteContactFlow API with empty responses.
+* EC2 (3.7.115.0)
+	* Documentation updates for EC2.
+* Outposts (3.7.101.0)
+	* This release adds POWER_30_KVA as an option for PowerDrawKva. PowerDrawKva is part of the RackPhysicalProperties structure in the CreateSite request.
+* ResourceGroups (3.7.101.0)
+	* AWS Resource Groups customers can now turn on Group Lifecycle Events in their AWS account. When you turn this on, Resource Groups monitors your groups for changes to group state or membership. Those changes are sent to Amazon EventBridge as events that you can respond to using rules you create.
+* Core 3.7.103.16
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.460.0 (2023-01-12 19:24 UTC)
 * CleanRooms (3.7.100.0)
 	* Initial release of AWS Clean Rooms

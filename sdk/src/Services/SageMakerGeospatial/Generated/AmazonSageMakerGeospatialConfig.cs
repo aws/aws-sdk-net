@@ -32,7 +32,7 @@ namespace Amazon.SageMakerGeospatial
     public partial class AmazonSageMakerGeospatialConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.27");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.28");
 
         private string _userAgent = UserAgentString;
 
