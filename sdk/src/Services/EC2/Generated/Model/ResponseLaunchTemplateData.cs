@@ -143,7 +143,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Indicates whether the instance is enabled for stop protection. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-        /// Protection</a>.
+        /// protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public bool DisableApiStop

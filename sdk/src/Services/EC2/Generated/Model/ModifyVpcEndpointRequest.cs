@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AddRouteTableIds. 
         /// <para>
-        /// (Gateway endpoint) One or more route tables IDs to associate with the endpoint.
+        /// (Gateway endpoint) The IDs of the route tables to associate with the endpoint.
         /// </para>
         /// </summary>
         public List<string> AddRouteTableIds
@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AddSecurityGroupIds. 
         /// <para>
-        /// (Interface endpoint) One or more security group IDs to associate with the network
+        /// (Interface endpoint) The IDs of the security groups to associate with the network
         /// interface.
         /// </para>
         /// </summary>
@@ -90,7 +90,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AddSubnetIds. 
         /// <para>
-        /// (Interface and Gateway Load Balancer endpoints) One or more subnet IDs in which to
+        /// (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to
         /// serve the endpoint. For a Gateway Load Balancer endpoint, you can specify only one
         /// subnet.
         /// </para>
@@ -184,7 +184,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RemoveRouteTableIds. 
         /// <para>
-        /// (Gateway endpoint) One or more route table IDs to disassociate from the endpoint.
+        /// (Gateway endpoint) The IDs of the route tables to disassociate from the endpoint.
         /// </para>
         /// </summary>
         public List<string> RemoveRouteTableIds
@@ -202,7 +202,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RemoveSecurityGroupIds. 
         /// <para>
-        /// (Interface endpoint) One or more security group IDs to disassociate from the network
+        /// (Interface endpoint) The IDs of the security groups to disassociate from the network
         /// interface.
         /// </para>
         /// </summary>
@@ -221,7 +221,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RemoveSubnetIds. 
         /// <para>
-        /// (Interface endpoint) One or more subnets IDs in which to remove the endpoint.
+        /// (Interface endpoint) The IDs of the subnets from which to remove the endpoint.
         /// </para>
         /// </summary>
         public List<string> RemoveSubnetIds

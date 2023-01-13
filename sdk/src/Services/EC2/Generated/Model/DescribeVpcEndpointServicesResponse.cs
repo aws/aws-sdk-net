@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeVpcEndpointServices.
+    /// This is the response object from the DescribeVpcEndpointServices operation.
     /// </summary>
     public partial class DescribeVpcEndpointServicesResponse : AmazonWebServiceResponse
     {
@@ -77,7 +77,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ServiceNames. 
         /// <para>
-        /// A list of supported services.
+        /// The supported services.
         /// </para>
         /// </summary>
         public List<string> ServiceNames

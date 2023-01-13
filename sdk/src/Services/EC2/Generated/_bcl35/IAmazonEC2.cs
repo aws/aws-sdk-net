@@ -47,24 +47,23 @@ namespace Amazon.EC2
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Amazon EC2: <a href="http://aws.amazon.com/ec2">AmazonEC2 product page</a>, <a href="http://aws.amazon.com/documentation/ec2">Amazon
+    /// Amazon EC2: <a href="http://aws.amazon.com/ec2">Amazon EC2 product page</a>, <a href="https://docs.aws.amazon.com/ec2/index.html">Amazon
     /// EC2 documentation</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon EBS: <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a>, <a href="http://aws.amazon.com/documentation/ebs">Amazon
+    /// Amazon EBS: <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a>, <a href="https://docs.aws.amazon.com/ebs/index.html">Amazon
     /// EBS documentation</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon VPC: <a href="http://aws.amazon.com/vpc">Amazon VPC product page</a>, <a href="http://aws.amazon.com/documentation/vpc">Amazon
+    /// Amazon VPC: <a href="http://aws.amazon.com/vpc">Amazon VPC product page</a>, <a href="https://docs.aws.amazon.com/vpc/index.html">Amazon
     /// VPC documentation</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon Web Services VPN: <a href="http://aws.amazon.com/vpn">Amazon Web Services VPN
-    /// product page</a>, <a href="http://aws.amazon.com/documentation/vpn">Amazon Web Services
-    /// VPN documentation</a> 
+    /// VPN: <a href="http://aws.amazon.com/vpn">VPN product page</a>, <a href="https://docs.aws.amazon.com/vpn/index.html">VPN
+    /// documentation</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -295,8 +294,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Accepts one or more interface VPC endpoint connection requests to your VPC endpoint
-        /// service.
+        /// Accepts connection requests to your VPC endpoint service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptVpcEndpointConnections service method.</param>
         /// 
@@ -5411,26 +5409,30 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a subnet in a specified VPC.
+        /// Creates a subnet in the specified VPC. For an IPv4 only subnet, specify an IPv4 CIDR
+        /// block. If the VPC has an IPv6 CIDR block, you can create an IPv6 only subnet or a
+        /// dual stack subnet instead. For an IPv6 only subnet, specify an IPv6 CIDR block. For
+        /// a dual stack subnet, specify both an IPv4 CIDR block and an IPv6 CIDR block.
         /// 
         ///  
         /// <para>
-        /// You must specify an IPv4 CIDR block for the subnet. After you create a subnet, you
-        /// can't change its CIDR block. The allowed block size is between a /16 netmask (65,536
-        /// IP addresses) and /28 netmask (16 IP addresses). The CIDR block must not overlap with
-        /// the CIDR block of an existing subnet in the VPC.
+        /// A subnet CIDR block must not overlap the CIDR block of an existing subnet in the VPC.
+        /// After you create a subnet, you can't change its CIDR block.
         /// </para>
         ///  
         /// <para>
-        /// If you've associated an IPv6 CIDR block with your VPC, you can create a subnet with
-        /// an IPv6 CIDR block that uses a /64 prefix length. 
+        /// The allowed size for an IPv4 subnet is between a /28 netmask (16 IP addresses) and
+        /// a /16 netmask (65,536 IP addresses). Amazon Web Services reserves both the first four
+        /// and the last IPv4 address in each subnet's CIDR block. They're not available for your
+        /// use.
         /// </para>
-        ///  <important> 
+        ///  
         /// <para>
-        /// Amazon Web Services reserves both the first four and the last IPv4 address in each
-        /// subnet's CIDR block. They're not available for use.
+        /// If you've associated an IPv6 CIDR block with your VPC, you can associate an IPv6 CIDR
+        /// block with a subnet when you create it. The allowed block size for an IPv6 subnet
+        /// is a /64 netmask.
         /// </para>
-        ///  </important> 
+        ///  
         /// <para>
         /// If you add more than one subnet to a VPC, they're set up in a star topology with a
         /// logical router in the middle.
@@ -5443,8 +5445,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about subnets, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-        /// VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a>
+        /// in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubnet service method.</param>
@@ -6545,10 +6547,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create
-        /// uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
-        /// IPv4 addresses). For more information about how large to make your VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-        /// VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// Creates a VPC with the specified CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-your-vpc.html#vpc-cidr-blocks">VPC
+        /// CIDR blocks</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -6558,10 +6558,10 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// By default, each instance you launch in the VPC has the default DHCP options, which
-        /// include only a default DNS server that we provide (AmazonProvidedDNS). For more information,
-        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// By default, each instance that you launch in the VPC has the default DHCP options,
+        /// which include only a default DNS server that we provide (AmazonProvidedDNS). For more
+        /// information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
+        /// option sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6701,7 +6701,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a VPC endpoint service to which service consumers (Amazon Web Services accounts,
-        /// IAM users, and IAM roles) can connect.
+        /// users, and IAM roles) can connect.
         /// 
         ///  
         /// <para>
@@ -9771,7 +9771,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes one or more VPC endpoint connection notifications.
+        /// Deletes the specified VPC endpoint connection notifications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpointConnectionNotifications service method.</param>
         /// 
@@ -9811,45 +9811,23 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes one or more specified VPC endpoints. You can delete any of the following types
-        /// of VPC endpoints. 
+        /// Deletes the specified VPC endpoints.
         /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// Gateway endpoint,
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Gateway Load Balancer endpoint,
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Interface endpoint
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The following rules apply when you delete a VPC endpoint:
-        /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
         /// When you delete a gateway endpoint, we delete the endpoint routes in the route tables
-        /// that are associated with the endpoint.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// When you delete a Gateway Load Balancer endpoint, we delete the endpoint network interfaces.
-        /// 
+        /// for the endpoint.
         /// </para>
         ///  
         /// <para>
+        /// When you delete a Gateway Load Balancer endpoint, we delete its endpoint network interfaces.
         /// You can only delete Gateway Load Balancer endpoints when the routes that are associated
         /// with the endpoint are deleted.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// When you delete an interface endpoint, we delete the endpoint network interfaces.
+        /// When you delete an interface endpoint, we delete its endpoint network interfaces.
         /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoints service method.</param>
         /// 
@@ -9889,10 +9867,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes one or more VPC endpoint service configurations in your account. Before you
-        /// delete the endpoint service configuration, you must reject any <code>Available</code>
-        /// or <code>PendingAcceptance</code> interface endpoint connections that are attached
-        /// to the service.
+        /// Deletes the specified VPC endpoint service configurations. Before you can delete an
+        /// endpoint service configuration, you must reject any <code>Available</code> or <code>PendingAcceptance</code>
+        /// interface endpoint connections that are attached to the service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpointServiceConfigurations service method.</param>
         /// 
@@ -17323,7 +17300,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your VPC endpoints.
+        /// Describes your VPC endpoints.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpoints service method.</param>
         /// 
@@ -24848,8 +24825,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the permissions for your VPC endpoint service. You can add or remove permissions
-        /// for service consumers (IAM users, IAM roles, and Amazon Web Services accounts) to
-        /// connect to your endpoint service.
+        /// for service consumers (Amazon Web Services accounts, users, and IAM roles) to connect
+        /// to your endpoint service.
         /// 
         ///  
         /// <para>
@@ -26179,7 +26156,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Rejects one or more VPC endpoint connection requests to your VPC endpoint service.
+        /// Rejects VPC endpoint connection requests to your VPC endpoint service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectVpcEndpointConnections service method.</param>
         /// 

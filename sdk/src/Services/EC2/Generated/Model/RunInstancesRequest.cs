@@ -974,8 +974,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC,
-        /// you must use security group IDs instead.
+        /// [EC2-Classic, default VPC] The names of the security groups.
         /// </para>
         ///  
         /// <para>
