@@ -15,7 +15,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class CoreAssemblyInfo : BaseGenerator
     {
@@ -35,29 +35,30 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "ime\")]\r\n#elif NETSTANDARD20\r\n[assembly: AssemblyDescription(\"The Amazon Web Serv" +
                     "ices SDK for .NET (NetStandard 2.0) - Core Runtime\")]\r\n#elif NETCOREAPP3_1\r\n[ass" +
                     "embly: AssemblyDescription(\"The Amazon Web Services SDK for .NET (.NET Core 3.1)" +
-                    " - Core Runtime\")]\r\n#else\r\n#error Unknown platform constant - unable to set corr" +
-                    "ect AssemblyDescription\r\n#endif\r\n\r\n[assembly: AssemblyConfiguration(\"\")]\r\n[assem" +
-                    "bly: AssemblyProduct(\"Amazon Web Services SDK for .NET\")]\r\n[assembly: AssemblyCo" +
-                    "mpany(\"Amazon.com, Inc\")]\r\n[assembly: AssemblyCopyright(\"Copyright Amazon.com, I" +
-                    "nc. or its affiliates. All Rights Reserved.\")]\r\n[assembly: AssemblyTrademark(\"\")" +
-                    "]\r\n[assembly: AssemblyCulture(\"\")]\r\n\r\n// Setting ComVisible to false makes the t" +
-                    "ypes in this assembly not visible \r\n// to COM components.  If you need to access" +
-                    " a type in this assembly from \r\n// COM, set the ComVisible attribute to true on " +
-                    "that type.\r\n[assembly: ComVisible(false)]\r\n\r\n// Version information for an assem" +
-                    "bly consists of the following four values:\r\n//\r\n//      Major Version\r\n//      M" +
-                    "inor Version \r\n//      Build Number\r\n//      Revision\r\n//\r\n// You can specify al" +
-                    "l the values or you can default the Build and Revision Numbers \r\n// by using the" +
-                    " \'*\' as shown below:\r\n// [assembly: AssemblyVersion(\"1.0.*\")]\r\n[assembly: Assemb" +
-                    "lyVersion(\"");
+                    " - Core Runtime\")]\r\n#elif NET6_0\r\n[assembly: AssemblyDescription(\"The Amazon Web" +
+                    " Services SDK for .NET (.NET 6.0) - Core Runtime\")]\r\n#else\r\n#error Unknown platf" +
+                    "orm constant - unable to set correct AssemblyDescription\r\n#endif\r\n\r\n[assembly: A" +
+                    "ssemblyConfiguration(\"\")]\r\n[assembly: AssemblyProduct(\"Amazon Web Services SDK f" +
+                    "or .NET\")]\r\n[assembly: AssemblyCompany(\"Amazon.com, Inc\")]\r\n[assembly: AssemblyC" +
+                    "opyright(\"Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.\")]\r" +
+                    "\n[assembly: AssemblyTrademark(\"\")]\r\n[assembly: AssemblyCulture(\"\")]\r\n\r\n// Settin" +
+                    "g ComVisible to false makes the types in this assembly not visible \r\n// to COM c" +
+                    "omponents.  If you need to access a type in this assembly from \r\n// COM, set the" +
+                    " ComVisible attribute to true on that type.\r\n[assembly: ComVisible(false)]\r\n\r\n//" +
+                    " Version information for an assembly consists of the following four values:\r\n//\r" +
+                    "\n//      Major Version\r\n//      Minor Version \r\n//      Build Number\r\n//      Re" +
+                    "vision\r\n//\r\n// You can specify all the values or you can default the Build and R" +
+                    "evision Numbers \r\n// by using the \'*\' as shown below:\r\n// [assembly: AssemblyVer" +
+                    "sion(\"1.0.*\")]\r\n[assembly: AssemblyVersion(\"");
             
-            #line 47 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            #line 49 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["Version"]));
             
             #line default
             #line hidden
             this.Write("\")]\r\n[assembly: AssemblyFileVersion(\"");
             
-            #line 48 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            #line 50 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default

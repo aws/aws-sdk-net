@@ -15,7 +15,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class CoreNuspec : CoreNuspecBase
     {
@@ -28,13 +28,13 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write("\r\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<package> \r\n  <metadata> \r\n    <id>AWSS" +
                     "DK.Core</id>\r\n    <title>AWSSDK - Core Runtime</title>\r\n    <version>");
             
-            #line 9 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 9 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default
             #line hidden
             
-            #line 9 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 9 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NuGetPreviewFlag"]));
             
             #line default
@@ -48,22 +48,25 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "amework=\"net35\">\r\n      </group>\r\n      <group targetFramework=\"net45\">\r\n      <" +
                     "/group>\r\n\t    <group targetFramework=\"netstandard2.0\">\r\n        <dependency id=\"" +
                     "Microsoft.Bcl.AsyncInterfaces\" version=\"1.1.0\" />\r\n      </group>\r\n      <group " +
-                    "targetFramework=\"netcoreapp3.1\">\r\n      </group>\r\n    </dependencies>\r\n  </metad" +
-                    "ata> \r\n  <files>\r\n    <file src=\"..\\..\\nuget-content\\account-management.ps1\" tar" +
-                    "get=\"tools\" />\r\n\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.dll\" target=\"li" +
-                    "b\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.xml\" target=\"lib\\net" +
-                    "35\" />\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.pdb\" target=\"lib\\net35\" /" +
-                    ">\r\n\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.dll\" target=\"lib\\net45\" />\r\n" +
-                    "    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.xml\" target=\"lib\\net45\" />\r\n    <" +
-                    "file src=\".\\bin\\Release\\net45\\AWSSDK.Core.pdb\" target=\"lib\\net45\" />\r\n\r\n    <fil" +
-                    "e src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.dll\" target=\"lib\\netstandard2.0\"" +
-                    "/>\r\n    <file src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.xml\" target=\"lib\\net" +
-                    "standard2.0\"/>\r\n    <file src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.pdb\" tar" +
-                    "get=\"lib\\netstandard2.0\"/>\r\n\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSDK." +
-                    "Core.dll\" target=\"lib\\netcoreapp3.1\"/>\r\n    <file src=\".\\bin\\Release\\netcoreapp3" +
-                    ".1\\AWSSDK.Core.xml\" target=\"lib\\netcoreapp3.1\"/>\r\n    <file src=\".\\bin\\Release\\n" +
-                    "etcoreapp3.1\\AWSSDK.Core.pdb\" target=\"lib\\netcoreapp3.1\"/>\r\n  </files>\r\n</packag" +
-                    "e>");
+                    "targetFramework=\"netcoreapp3.1\">\r\n      </group>\r\n      <group targetFramework=\"" +
+                    "net6.0\">\r\n      </group>\t\t\r\n    </dependencies>\r\n  </metadata> \r\n  <files>\r\n    " +
+                    "<file src=\"..\\..\\nuget-content\\account-management.ps1\" target=\"tools\" />\r\n\r\n    " +
+                    "<file src=\".\\bin\\Release\\net35\\AWSSDK.Core.dll\" target=\"lib\\net35\" />\r\n    <file" +
+                    " src=\".\\bin\\Release\\net35\\AWSSDK.Core.xml\" target=\"lib\\net35\" />\r\n    <file src=" +
+                    "\".\\bin\\Release\\net35\\AWSSDK.Core.pdb\" target=\"lib\\net35\" />\r\n\r\n    <file src=\".\\" +
+                    "bin\\Release\\net45\\AWSSDK.Core.dll\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\R" +
+                    "elease\\net45\\AWSSDK.Core.xml\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Releas" +
+                    "e\\net45\\AWSSDK.Core.pdb\" target=\"lib\\net45\" />\r\n\r\n    <file src=\".\\bin\\Release\\n" +
+                    "etstandard2.0\\AWSSDK.Core.dll\" target=\"lib\\netstandard2.0\"/>\r\n    <file src=\".\\b" +
+                    "in\\Release\\netstandard2.0\\AWSSDK.Core.xml\" target=\"lib\\netstandard2.0\"/>\r\n    <f" +
+                    "ile src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.pdb\" target=\"lib\\netstandard2." +
+                    "0\"/>\r\n\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSDK.Core.dll\" target=\"lib\\" +
+                    "netcoreapp3.1\"/>\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSDK.Core.xml\" ta" +
+                    "rget=\"lib\\netcoreapp3.1\"/>\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSDK.Co" +
+                    "re.pdb\" target=\"lib\\netcoreapp3.1\"/>\r\n\r\n    <file src=\".\\bin\\Release\\net6.0\\AWSS" +
+                    "DK.Core.dll\" target=\"lib\\net6.0\"/>\r\n    <file src=\".\\bin\\Release\\net6.0\\AWSSDK.C" +
+                    "ore.xml\" target=\"lib\\net6.0\"/>\r\n    <file src=\".\\bin\\Release\\net6.0\\AWSSDK.Core." +
+                    "pdb\" target=\"lib\\net6.0\"/>\r\n  </files>\r\n</package>");
             return this.GenerationEnvironment.ToString();
         }
     }

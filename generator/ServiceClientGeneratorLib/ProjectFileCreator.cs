@@ -69,7 +69,7 @@ namespace ServiceClientGenerator
                         "endpoints.json",
                     };
                     projectProperties.KeyFilePath = @"..\..\awssdk.dll.snk";
-                    projectProperties.SupressWarnings = "419,1570,1591";
+                    projectProperties.SupressWarnings = "419,1570,1591;CA1822";
                     projectProperties.NugetPackagesLocation = @"..\..\packages\";
                     projectProperties.FxcopAnalyzerRuleSetFilePath = @"..\..\AWSDotNetSDK.ruleset";
                     projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = @"..\..\AWSDotNetSDKForBuild.ruleset";
@@ -164,6 +164,7 @@ namespace ServiceClientGenerator
                 projectProperties.ProjectGuid = projectGuid;
                 projectProperties.RootNamespace = serviceConfiguration.Namespace;
                 projectProperties.AssemblyName = assemblyName;
+                projectProperties.SupressWarnings = "CA1822";
                 projectProperties.SourceDirectories = GetProjectSourceFolders(projectFileConfiguration, serviceFilesRoot);
                 projectProperties.NugetPackagesLocation = @"..\..\..\packages\";
                 projectProperties.FxcopAnalyzerRuleSetFilePath = @"..\..\..\AWSDotNetSDK.ruleset";
