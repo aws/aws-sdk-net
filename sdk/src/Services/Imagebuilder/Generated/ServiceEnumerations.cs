@@ -437,6 +437,64 @@ namespace Amazon.Imagebuilder
 
 
     /// <summary>
+    /// Constants used for properties of type ImageSource.
+    /// </summary>
+    public class ImageSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AMAZON_MANAGED for ImageSource
+        /// </summary>
+        public static readonly ImageSource AMAZON_MANAGED = new ImageSource("AMAZON_MANAGED");
+        /// <summary>
+        /// Constant AWS_MARKETPLACE for ImageSource
+        /// </summary>
+        public static readonly ImageSource AWS_MARKETPLACE = new ImageSource("AWS_MARKETPLACE");
+        /// <summary>
+        /// Constant CUSTOM for ImageSource
+        /// </summary>
+        public static readonly ImageSource CUSTOM = new ImageSource("CUSTOM");
+        /// <summary>
+        /// Constant IMPORTED for ImageSource
+        /// </summary>
+        public static readonly ImageSource IMPORTED = new ImageSource("IMPORTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageSource FindValue(string value)
+        {
+            return FindValue<ImageSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImageStatus.
     /// </summary>
     public class ImageStatus : ConstantClass
@@ -590,6 +648,10 @@ namespace Amazon.Imagebuilder
         /// Constant Shared for Ownership
         /// </summary>
         public static readonly Ownership Shared = new Ownership("Shared");
+        /// <summary>
+        /// Constant ThirdParty for Ownership
+        /// </summary>
+        public static readonly Ownership ThirdParty = new Ownership("ThirdParty");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
