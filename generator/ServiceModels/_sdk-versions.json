@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.461.0",
+    "ProductVersion" : "3.7.461.1",
     "CoreVersion"    : "3.7.103.16",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -144,7 +144,7 @@
             "InPreview"               : false
         },
         "DynamoDBv2"        : {
-            "Version" : "3.7.101.24",
+            "Version" : "3.7.101.25",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.103.16"

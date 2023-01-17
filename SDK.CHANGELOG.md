@@ -1,3 +1,7 @@
+### 3.7.461.1 (2023-01-17 15:00 UTC)
+* DynamoDBv2 (3.7.101.25)
+	* Fix DynamoDB attribute mapping crash due to empty map and FromDocument crash when document contains nulls
+
 ### 3.7.461.0 (2023-01-13 19:28 UTC)
 * Connect (3.7.112.0)
 	* This release updates the responses of UpdateContactFlowContent, UpdateContactFlowMetadata, UpdateContactFlowName and DeleteContactFlow API with empty responses.
