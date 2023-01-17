@@ -40,10 +40,12 @@ namespace Amazon.BillingConductor.Model
         private long? _lastModifiedTime;
         private double? _modifierPercentage;
         private string _name;
+        private string _operation;
         private PricingRuleScope _scope;
         private string _service;
         private UpdateTieringInput _tiering;
         private PricingRuleType _type;
+        private string _usageType;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -177,6 +179,32 @@ namespace Amazon.BillingConductor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Operation. 
+        /// <para>
+        /// Operation refers to the specific Amazon Web Services covered by this line item. This
+        /// describes the specific usage of the line item.
+        /// </para>
+        ///  
+        /// <para>
+        ///  If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates
+        /// which operation the <code>PricingRule</code> is modifying. For example, a value of
+        /// <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Operation
+        {
+            get { return this._operation; }
+            set { this._operation = value; }
+        }
+
+        // Check to see if Operation property is set
+        internal bool IsSetOperation()
+        {
+            return this._operation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
         ///  The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
@@ -249,6 +277,33 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsageType. 
+        /// <para>
+        /// Usage type is the unit that each service uses to measure the usage of a specific type
+        /// of resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates
+        /// which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code>
+        /// describes an <code>M2 High Memory Double Extra Large</code> instance in the US West
+        /// (Oregon) Region. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string UsageType
+        {
+            get { return this._usageType; }
+            set { this._usageType = value; }
+        }
+
+        // Check to see if UsageType property is set
+        internal bool IsSetUsageType()
+        {
+            return this._usageType != null;
         }
 
     }
