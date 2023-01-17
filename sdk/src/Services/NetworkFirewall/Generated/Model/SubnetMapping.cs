@@ -36,7 +36,27 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class SubnetMapping
     {
+        private IPAddressType _ipAddressType;
         private string _subnetId;
+
+        /// <summary>
+        /// Gets and sets the property IPAddressType. 
+        /// <para>
+        /// The subnet's IP address type. You can't change the IP address type after you create
+        /// the subnet.
+        /// </para>
+        /// </summary>
+        public IPAddressType IPAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IPAddressType property is set
+        internal bool IsSetIPAddressType()
+        {
+            return this._ipAddressType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SubnetId. 
