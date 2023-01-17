@@ -1,3 +1,16 @@
+### 3.7.462.0 (2023-01-17 19:19 UTC)
+* BillingConductor (3.7.104.0)
+	* This release adds support for SKU Scope for pricing plans.
+* Cloud9 (3.7.101.0)
+	* Added minimum value to AutomaticStopTimeMinutes parameter.
+* Imagebuilder (3.7.101.0)
+	* Add support for AWS Marketplace product IDs as input during CreateImageRecipe for the parent-image parameter. Add support for listing third-party components.
+* NetworkFirewall (3.7.103.0)
+	* Network Firewall now allows creation of dual stack endpoints, enabling inspection of IPv6 traffic.
+* Core 3.7.103.17
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.461.1 (2023-01-17 15:00 UTC)
 * DynamoDBv2 (3.7.101.25)
 	* Fix DynamoDB attribute mapping crash due to empty map and FromDocument crash when document contains nulls
