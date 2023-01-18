@@ -107,7 +107,7 @@ namespace Amazon.Ivschat.Model
         /// Default: 10.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=100)]
         public int MaximumMessageRatePerSecond
         {
             get { return this._maximumMessageRatePerSecond.GetValueOrDefault(); }
