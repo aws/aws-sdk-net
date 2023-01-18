@@ -1,3 +1,16 @@
+### 3.7.463.0 (2023-01-18 19:22 UTC)
+* CloudWatch (3.7.103.0)
+	* Enable cross-account streams in CloudWatch Metric Streams via Observability Access Manager.
+* ElasticFileSystem (3.7.101.33)
+	* Documentation updates for EFS access points limit increase
+* Ivschat (3.7.103.0)
+	* Updates the range for a Chat Room's maximumMessageRatePerSecond field.
+* WAFV2 (3.7.101.52)
+	* Improved the visibility of the guidance for updating AWS WAF resources, such as web ACLs and rule groups.
+* Core 3.7.103.18
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.462.0 (2023-01-17 19:19 UTC)
 * BillingConductor (3.7.104.0)
 	* This release adds support for SKU Scope for pricing plans.
