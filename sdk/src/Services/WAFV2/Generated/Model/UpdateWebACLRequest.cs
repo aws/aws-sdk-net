@@ -33,7 +33,28 @@ namespace Amazon.WAFV2.Model
     /// Updates the specified <a>WebACL</a>. While updating a web ACL, WAF provides continuous
     /// coverage to the resources that you have associated with the web ACL. 
     /// 
+    ///  <note> 
+    /// <para>
+    /// This operation completely replaces the mutable specifications that you already have
+    /// for the web ACL with the ones that you provide to this call. 
+    /// </para>
     ///  
+    /// <para>
+    /// To modify a web ACL, do the following: 
+    /// </para>
+    ///  <ol> <li> 
+    /// <para>
+    /// Retrieve it by calling <a>GetWebACL</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Update its settings as needed
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Provide the complete web ACL specification to this call
+    /// </para>
+    ///  </li> </ol> </note> 
     /// <para>
     /// When you make changes to web ACLs or web ACL components, like rules and rule groups,
     /// WAF propagates the changes everywhere that the web ACL and its components are stored
@@ -47,14 +68,7 @@ namespace Amazon.WAFV2.Model
     /// ACL that is already associated with a resource. Generally, any inconsistencies of
     /// this type last only a few seconds.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// This operation completely replaces the mutable specifications that you already have
-    /// for the web ACL with the ones that you provide to this call. To modify the web ACL,
-    /// retrieve it by calling <a>GetWebACL</a>, update the settings as needed, and then provide
-    /// the complete web ACL specification to this call.
-    /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     ///  A web ACL defines a collection of rules to use to inspect and control web requests.
     /// Each rule has an action defined (allow, block, or count) for requests that match the
