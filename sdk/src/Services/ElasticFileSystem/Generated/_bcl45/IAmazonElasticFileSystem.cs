@@ -67,7 +67,7 @@ namespace Amazon.ElasticFileSystem
         ///  <note> 
         /// <para>
         /// If multiple requests to create access points on the same file system are sent in quick
-        /// succession, and the file system is near the limit of 120 access points, you may experience
+        /// succession, and the file system is near the limit of 1000 access points, you may experience
         /// a throttling response for these requests. This is to ensure that the file system does
         /// not exceed the stated access point limit.
         /// </para>
@@ -125,7 +125,7 @@ namespace Amazon.ElasticFileSystem
         ///  <note> 
         /// <para>
         /// If multiple requests to create access points on the same file system are sent in quick
-        /// succession, and the file system is near the limit of 120 access points, you may experience
+        /// succession, and the file system is near the limit of 1000 access points, you may experience
         /// a throttling response for these requests. This is to ensure that the file system does
         /// not exceed the stated access point limit.
         /// </para>
@@ -2500,11 +2500,11 @@ namespace Amazon.ElasticFileSystem
         ///  
         /// <para>
         /// When retrieving all file system descriptions, you can optionally specify the <code>MaxItems</code>
-        /// parameter to limit the number of descriptions in a response. Currently, this number
-        /// is automatically set to 10. If more file system descriptions remain, Amazon EFS returns
-        /// a <code>NextMarker</code>, an opaque token, in the response. In this case, you should
-        /// send a subsequent request with the <code>Marker</code> request parameter set to the
-        /// value of <code>NextMarker</code>. 
+        /// parameter to limit the number of descriptions in a response. This number is automatically
+        /// set to 100. If more file system descriptions remain, Amazon EFS returns a <code>NextMarker</code>,
+        /// an opaque token, in the response. In this case, you should send a subsequent request
+        /// with the <code>Marker</code> request parameter set to the value of <code>NextMarker</code>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -2554,11 +2554,11 @@ namespace Amazon.ElasticFileSystem
         ///  
         /// <para>
         /// When retrieving all file system descriptions, you can optionally specify the <code>MaxItems</code>
-        /// parameter to limit the number of descriptions in a response. Currently, this number
-        /// is automatically set to 10. If more file system descriptions remain, Amazon EFS returns
-        /// a <code>NextMarker</code>, an opaque token, in the response. In this case, you should
-        /// send a subsequent request with the <code>Marker</code> request parameter set to the
-        /// value of <code>NextMarker</code>. 
+        /// parameter to limit the number of descriptions in a response. This number is automatically
+        /// set to 100. If more file system descriptions remain, Amazon EFS returns a <code>NextMarker</code>,
+        /// an opaque token, in the response. In this case, you should send a subsequent request
+        /// with the <code>Marker</code> request parameter set to the value of <code>NextMarker</code>.
+        /// 
         /// </para>
         ///  
         /// <para>
