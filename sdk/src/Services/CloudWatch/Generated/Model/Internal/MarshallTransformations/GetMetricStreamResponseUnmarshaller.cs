@@ -113,6 +113,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         response.IncludeFilters.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("IncludeLinkedAccountsMetrics", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        response.IncludeLinkedAccountsMetrics = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LastUpdateDate", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

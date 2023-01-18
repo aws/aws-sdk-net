@@ -1619,6 +1619,13 @@ namespace Amazon.CloudWatch
         /// is created in the <code>running</code> state. If you use it to update an existing
         /// stream, the state of the stream is not changed.
         /// </para>
+        ///  
+        /// <para>
+        /// If you are using CloudWatch cross-account observability and you create a metric stream
+        /// in a monitoring account, you can choose whether to include metrics from source accounts
+        /// in the stream. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMetricStream service method.</param>
         /// <param name="cancellationToken">

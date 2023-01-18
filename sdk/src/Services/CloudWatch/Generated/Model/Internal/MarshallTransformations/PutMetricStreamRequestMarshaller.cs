@@ -86,6 +86,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetIncludeLinkedAccountsMetrics())
+                {
+                    request.Parameters.Add("IncludeLinkedAccountsMetrics", StringUtils.FromBool(publicRequest.IncludeLinkedAccountsMetrics));
+                }
                 if(publicRequest.IsSetName())
                 {
                     request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
