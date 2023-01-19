@@ -229,6 +229,11 @@ namespace Amazon.Runtime.CredentialManagement
             SetUpFilePath(filePath);
             Refresh();
         }
+        /// <summary>
+        /// SetUpFilePath sets FilePath and ConfigFilePath using the DefaultFilePath and DefaultConfigFilePath set in
+        /// the static constructor. If AWSConfigs.AWSProfilesLocation is provided, FilePath supercedes DefaultFilePath
+        /// </summary>
+        /// <param name="filePath"></param>
         private void SetUpFilePath(string filePath)
         {
             if (string.IsNullOrEmpty(filePath))
@@ -242,12 +247,13 @@ namespace Amazon.Runtime.CredentialManagement
                 else
                 {
                     FilePath = AWSConfigs.AWSProfilesLocation;
+                    ConfigFilePath = DefaultConfigFilePath;
                 }
             }
             else
             {
-                ConfigFilePath = filePath;
                 FilePath = filePath;
+                ConfigFilePath = DefaultConfigFilePath;
             }
         }
 
@@ -421,15 +427,11 @@ namespace Amazon.Runtime.CredentialManagement
         private void Refresh()
         {
             _credentialsFile = new ProfileIniFile(FilePath, false);
+            //Re-check if they set an explicit config file path, use that if it's set
             var awsConfigEnvironmentPath = Environment.GetEnvironmentVariable(SharedConfigFileEnvVar);
-            var awsCredentialsEnvironmentPath = Environment.GetEnvironmentVariable(SharedCredentialsFileEnvVar);
             if (!string.IsNullOrEmpty(awsConfigEnvironmentPath))
             {
                 _configFile = new ProfileIniFile(ConfigFilePath, true);
-            }
-            else if (!string.IsNullOrEmpty(awsCredentialsEnvironmentPath))
-            {
-                _configFile = new ProfileIniFile(DefaultConfigFilePath, true);
             }
 
             // If a config file exists in the same location as the credentials file and no env vars are set

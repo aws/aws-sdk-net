@@ -59,23 +59,21 @@ namespace AWSSDK.UnitTests
             }
             // In order to test the shared creds environment variable we must guarantee the static constructor gets called again
             // This is because the logic for checking the shared creds env variable is in the static constructor.
-            if (isSharedCredentialsVarProvided)
+            if (isSharedCredentialsVarProvided || isSharedConfigVarProvided)
             {
-
-                Environment.SetEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE", CredentialsFilePath);
+                if (isSharedCredentialsVarProvided)
+                {
+                    Environment.SetEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE", CredentialsFilePath);
+                }
+                if (isSharedConfigVarProvided)
+                {
+                    Environment.SetEnvironmentVariable("AWS_CONFIG_FILE", ConfigFilePath);
+                }
                 Type sharedCredentialsFile = typeof(SharedCredentialsFile);
                 sharedCredentialsFile.TypeInitializer.Invoke(null,null);
             }
-            
+
             CredentialsFile = new SharedCredentialsFile(CredentialsFilePath);
-            if (isSharedConfigVarProvided)
-            {
-                Environment.SetEnvironmentVariable("AWS_CONFIG_FILE", ConfigFilePath);
-                Type AWSConfigFile = typeof(SharedCredentialsFile);
-                AWSConfigFile.TypeInitializer.Invoke(null, null);
-                //if sharedConfig variable is provided override the previously set CredentialsFile
-                CredentialsFile = new SharedCredentialsFile(ConfigFilePath);
-            }
         }
 
         public SharedCredentialsFileTestFixture(bool createEmptyFile = false)

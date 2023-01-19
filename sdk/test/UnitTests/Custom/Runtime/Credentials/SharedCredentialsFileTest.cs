@@ -936,7 +936,7 @@ namespace AWSSDK.UnitTests
         {
             try
             {
-                using (var tester = new SharedCredentialsFileTestFixture(BasicProfileTextCredentialsPartial, BasicProfileTextConfigPartial, isSharedConfigVarProvided: true))
+                using (var tester = new SharedCredentialsFileTestFixture(credentialsFileContents: BasicProfileTextCredentialsPartial, configFileContents: BasicProfileTextConfigPartial, isSharedConfigVarProvided: true))
                 {
                     tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions);
                 }
@@ -954,7 +954,7 @@ namespace AWSSDK.UnitTests
         {
             try
             {
-                using (var tester = new SharedCredentialsFileTestFixture(BasicProfileTextCredentialsPartial, BasicProfileTextConfigPartial, isSharedCredentialsVarProvided: true))
+                using (var tester = new SharedCredentialsFileTestFixture(credentialsFileContents: BasicProfileTextCredentialsPartial,configFileContents: BasicProfileTextConfigPartial, isSharedCredentialsVarProvided: true))
                 {
                     tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions);
                 }
