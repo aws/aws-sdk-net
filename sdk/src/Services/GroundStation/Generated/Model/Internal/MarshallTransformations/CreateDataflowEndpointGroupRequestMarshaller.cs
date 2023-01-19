@@ -65,6 +65,18 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetContactPostPassDurationSeconds())
+                {
+                    context.Writer.WritePropertyName("contactPostPassDurationSeconds");
+                    context.Writer.Write(publicRequest.ContactPostPassDurationSeconds);
+                }
+
+                if(publicRequest.IsSetContactPrePassDurationSeconds())
+                {
+                    context.Writer.WritePropertyName("contactPrePassDurationSeconds");
+                    context.Writer.Write(publicRequest.ContactPrePassDurationSeconds);
+                }
+
                 if(publicRequest.IsSetEndpointDetails())
                 {
                     context.Writer.WritePropertyName("endpointDetails");
