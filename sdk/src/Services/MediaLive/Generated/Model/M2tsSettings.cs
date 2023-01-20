@@ -73,6 +73,7 @@ namespace Amazon.MediaLive.Model
         private string _scte27Pids;
         private M2tsScte35Control _scte35Control;
         private string _scte35Pid;
+        private double? _scte35PrerollPullupMilliseconds;
         private M2tsSegmentationMarkers _segmentationMarkers;
         private M2tsSegmentationStyle _segmentationStyle;
         private double? _segmentationTime;
@@ -762,6 +763,27 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetScte35Pid()
         {
             return this._scte35Pid != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scte35PrerollPullupMilliseconds. Defines the amount SCTE-35
+        /// preroll will be increased (in milliseconds) on the output. Preroll is the amount of
+        /// time between the presence of a SCTE-35 indication in a transport stream and the PTS
+        /// of the video frame it references. Zero means don't add pullup (it doesn't mean set
+        /// the preroll to zero). Negative pullup is not supported, which means that you can't
+        /// make the preroll shorter. Be aware that latency in the output will increase by the
+        /// pullup amount.
+        /// </summary>
+        public double Scte35PrerollPullupMilliseconds
+        {
+            get { return this._scte35PrerollPullupMilliseconds.GetValueOrDefault(); }
+            set { this._scte35PrerollPullupMilliseconds = value; }
+        }
+
+        // Check to see if Scte35PrerollPullupMilliseconds property is set
+        internal bool IsSetScte35PrerollPullupMilliseconds()
+        {
+            return this._scte35PrerollPullupMilliseconds.HasValue; 
         }
 
         /// <summary>
