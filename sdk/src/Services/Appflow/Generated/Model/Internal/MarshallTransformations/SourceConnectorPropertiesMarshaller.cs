@@ -122,6 +122,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPardot())
+            {
+                context.Writer.WritePropertyName("Pardot");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PardotSourcePropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Pardot, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3())
             {
                 context.Writer.WritePropertyName("S3");

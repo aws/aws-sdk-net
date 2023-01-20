@@ -133,6 +133,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPardot())
+            {
+                context.Writer.WritePropertyName("Pardot");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PardotConnectorProfilePropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Pardot, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRedshift())
             {
                 context.Writer.WritePropertyName("Redshift");

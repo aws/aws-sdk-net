@@ -41,6 +41,7 @@ namespace Amazon.Appflow.Model
         private HoneycodeConnectorProfileCredentials _honeycode;
         private InforNexusConnectorProfileCredentials _inforNexus;
         private MarketoConnectorProfileCredentials _marketo;
+        private PardotConnectorProfileCredentials _pardot;
         private RedshiftConnectorProfileCredentials _redshift;
         private SalesforceConnectorProfileCredentials _salesforce;
         private SAPODataConnectorProfileCredentials _sapoData;
@@ -191,6 +192,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetMarketo()
         {
             return this._marketo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Pardot. 
+        /// <para>
+        /// The connector-specific credentials required when using Salesforce Pardot.
+        /// </para>
+        /// </summary>
+        public PardotConnectorProfileCredentials Pardot
+        {
+            get { return this._pardot; }
+            set { this._pardot = value; }
+        }
+
+        // Check to see if Pardot property is set
+        internal bool IsSetPardot()
+        {
+            return this._pardot != null;
         }
 
         /// <summary>

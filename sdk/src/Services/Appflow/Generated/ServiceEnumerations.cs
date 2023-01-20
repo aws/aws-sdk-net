@@ -371,6 +371,10 @@ namespace Amazon.Appflow
         /// </summary>
         public static readonly ConnectorType Marketo = new ConnectorType("Marketo");
         /// <summary>
+        /// Constant Pardot for ConnectorType
+        /// </summary>
+        public static readonly ConnectorType Pardot = new ConnectorType("Pardot");
+        /// <summary>
         /// Constant Redshift for ConnectorType
         /// </summary>
         public static readonly ConnectorType Redshift = new ConnectorType("Redshift");
@@ -1596,6 +1600,104 @@ namespace Amazon.Appflow
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Operators(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PardotConnectorOperator.
+    /// </summary>
+    public class PardotConnectorOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDITION for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator ADDITION = new PardotConnectorOperator("ADDITION");
+        /// <summary>
+        /// Constant DIVISION for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator DIVISION = new PardotConnectorOperator("DIVISION");
+        /// <summary>
+        /// Constant EQUAL_TO for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator EQUAL_TO = new PardotConnectorOperator("EQUAL_TO");
+        /// <summary>
+        /// Constant MASK_ALL for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator MASK_ALL = new PardotConnectorOperator("MASK_ALL");
+        /// <summary>
+        /// Constant MASK_FIRST_N for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator MASK_FIRST_N = new PardotConnectorOperator("MASK_FIRST_N");
+        /// <summary>
+        /// Constant MASK_LAST_N for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator MASK_LAST_N = new PardotConnectorOperator("MASK_LAST_N");
+        /// <summary>
+        /// Constant MULTIPLICATION for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator MULTIPLICATION = new PardotConnectorOperator("MULTIPLICATION");
+        /// <summary>
+        /// Constant NO_OP for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator NO_OP = new PardotConnectorOperator("NO_OP");
+        /// <summary>
+        /// Constant PROJECTION for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator PROJECTION = new PardotConnectorOperator("PROJECTION");
+        /// <summary>
+        /// Constant SUBTRACTION for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator SUBTRACTION = new PardotConnectorOperator("SUBTRACTION");
+        /// <summary>
+        /// Constant VALIDATE_NON_NEGATIVE for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator VALIDATE_NON_NEGATIVE = new PardotConnectorOperator("VALIDATE_NON_NEGATIVE");
+        /// <summary>
+        /// Constant VALIDATE_NON_NULL for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator VALIDATE_NON_NULL = new PardotConnectorOperator("VALIDATE_NON_NULL");
+        /// <summary>
+        /// Constant VALIDATE_NON_ZERO for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator VALIDATE_NON_ZERO = new PardotConnectorOperator("VALIDATE_NON_ZERO");
+        /// <summary>
+        /// Constant VALIDATE_NUMERIC for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator VALIDATE_NUMERIC = new PardotConnectorOperator("VALIDATE_NUMERIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PardotConnectorOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PardotConnectorOperator FindValue(string value)
+        {
+            return FindValue<PardotConnectorOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PardotConnectorOperator(string value)
         {
             return FindValue(value);
         }
