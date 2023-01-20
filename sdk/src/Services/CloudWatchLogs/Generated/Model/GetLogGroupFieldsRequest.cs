@@ -74,8 +74,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>,
-        /// the action returns an <code>InvalidParameterException</code> error. 
+        ///  You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>,
+        /// but not both. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -99,8 +99,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>,
-        /// the action returns an <code>InvalidParameterException</code> error. 
+        ///  You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>,
+        /// but not both. 
         /// </para>
         ///  </note>
         /// </summary>

@@ -74,7 +74,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates GetLogEventsRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">The name of the log group. <note>  If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.  </note></param>
+        /// <param name="logGroupName">The name of the log group. <note>  You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.  </note></param>
         /// <param name="logStreamName">The name of the log stream.</param>
         public GetLogEventsRequest(string logGroupName, string logStreamName)
         {
@@ -132,8 +132,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>,
-        /// the action returns an <code>InvalidParameterException</code> error. 
+        ///  You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>,
+        /// but not both. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -157,8 +157,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>,
-        /// the action returns an <code>InvalidParameterException</code> error. 
+        ///  You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>,
+        /// but not both. 
         /// </para>
         ///  </note>
         /// </summary>
