@@ -36,7 +36,11 @@ namespace Amazon.IVS.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags attached to the resource. Array of maps, each of the form <code>string:string
+        /// (key:value)</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]
         public Dictionary<string, string> Tags

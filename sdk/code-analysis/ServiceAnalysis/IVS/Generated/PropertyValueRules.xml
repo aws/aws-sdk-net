@@ -122,11 +122,13 @@
     <property>Amazon.IVS.Model.ListChannelsRequest.NextToken</property>
     <min>0</min>
     <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ListChannelsResponse.NextToken</property>
     <min>0</min>
     <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ListPlaybackKeyPairsRequest.MaxResults</property>
@@ -137,11 +139,13 @@
     <property>Amazon.IVS.Model.ListPlaybackKeyPairsRequest.NextToken</property>
     <min>0</min>
     <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ListPlaybackKeyPairsResponse.NextToken</property>
     <min>0</min>
     <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ListRecordingConfigurationsRequest.MaxResults</property>
@@ -152,11 +156,13 @@
     <property>Amazon.IVS.Model.ListRecordingConfigurationsRequest.NextToken</property>
     <min>0</min>
     <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ListRecordingConfigurationsResponse.NextToken</property>
     <min>0</min>
     <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ListStreamKeysRequest.ChannelArn</property>
@@ -173,11 +179,13 @@
     <property>Amazon.IVS.Model.ListStreamKeysRequest.NextToken</property>
     <min>0</min>
     <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ListStreamKeysResponse.NextToken</property>
     <min>0</min>
     <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ListStreamsRequest.MaxResults</property>
@@ -188,11 +196,13 @@
     <property>Amazon.IVS.Model.ListStreamsRequest.NextToken</property>
     <min>0</min>
     <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ListStreamsResponse.NextToken</property>
     <min>0</min>
     <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ListStreamSessionsRequest.ChannelArn</property>
@@ -209,11 +219,13 @@
     <property>Amazon.IVS.Model.ListStreamSessionsRequest.NextToken</property>
     <min>0</min>
     <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ListStreamSessionsResponse.NextToken</property>
     <min>0</min>
     <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ListTagsForResourceRequest.ResourceArn</property>
