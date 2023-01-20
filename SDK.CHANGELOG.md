@@ -1,3 +1,14 @@
+### 3.7.465.0 (2023-01-20 19:33 UTC)
+* EC2 (3.7.117.0)
+	* C6in, M6in, M6idn, R6in and R6idn instances are powered by 3rd Generation Intel Xeon Scalable processors (code named Ice Lake) with an all-core turbo frequency of 3.5 GHz.
+* IVS (3.7.101.0)
+	* API and Doc update. Update to arns field in BatchGetStreamKey. Also updates to operations and structures.
+* QuickSight (3.7.103.0)
+	* This release adds support for data bars in QuickSight table and increases pivot table field well limit.
+* Core 3.7.103.20
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.464.0 (2023-01-20 00:03 UTC)
 * Appflow (3.7.105.0)
 	* Adding support for Salesforce Pardot connector in Amazon AppFlow.
