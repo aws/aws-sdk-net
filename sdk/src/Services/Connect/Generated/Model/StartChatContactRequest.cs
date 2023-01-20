@@ -76,6 +76,7 @@ namespace Amazon.Connect.Model
         private ChatMessage _initialMessage;
         private string _instanceId;
         private ParticipantDetails _participantDetails;
+        private PersistentChat _persistentChat;
         private List<string> _supportedMessagingContentTypes = new List<string>();
 
         /// <summary>
@@ -229,6 +230,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetParticipantDetails()
         {
             return this._participantDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PersistentChat. 
+        /// <para>
+        /// Enable persistent chats. For more information about enabling persistent chat, and
+        /// for example use cases and how to configure for them, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+        /// persistent chat</a>.
+        /// </para>
+        /// </summary>
+        public PersistentChat PersistentChat
+        {
+            get { return this._persistentChat; }
+            set { this._persistentChat = value; }
+        }
+
+        // Check to see if PersistentChat property is set
+        internal bool IsSetPersistentChat()
+        {
+            return this._persistentChat != null;
         }
 
         /// <summary>
