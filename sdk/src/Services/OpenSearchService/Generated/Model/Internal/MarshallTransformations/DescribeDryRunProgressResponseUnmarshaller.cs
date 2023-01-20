@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateDomainConfig operation
+    /// Response Unmarshaller for DescribeDryRunProgress operation
     /// </summary>  
-    public class UpdateDomainConfigResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeDryRunProgressResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateDomainConfigResponse response = new UpdateDomainConfigResponse();
+            DescribeDryRunProgressResponse response = new DescribeDryRunProgressResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DomainConfig", targetDepth))
+                if (context.TestExpression("DryRunConfig", targetDepth))
                 {
-                    var unmarshaller = DomainConfigUnmarshaller.Instance;
-                    response.DomainConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DomainStatusUnmarshaller.Instance;
+                    response.DryRunConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DryRunProgressStatus", targetDepth))
@@ -96,17 +96,13 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 {
                     return BaseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DisabledOperationException"))
+                {
+                    return DisabledOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalException"))
                 {
                     return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTypeException"))
-                {
-                    return InvalidTypeExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
@@ -120,9 +116,9 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             return new AmazonOpenSearchServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateDomainConfigResponseUnmarshaller _instance = new UpdateDomainConfigResponseUnmarshaller();        
+        private static DescribeDryRunProgressResponseUnmarshaller _instance = new DescribeDryRunProgressResponseUnmarshaller();        
 
-        internal static UpdateDomainConfigResponseUnmarshaller GetInstance()
+        internal static DescribeDryRunProgressResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -130,7 +126,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateDomainConfigResponseUnmarshaller Instance
+        public static DescribeDryRunProgressResponseUnmarshaller Instance
         {
             get
             {

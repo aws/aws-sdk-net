@@ -147,6 +147,17 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDryRunProgressRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDryRunProgressRequest.DryRunId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DescribeInboundConnectionsRequest.MaxResults</property>
     <max>100</max>
   </property-value-rule>
@@ -511,6 +522,11 @@
     <min>14</min>
     <max>18</max>
     <pattern>^Elasticsearch_[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DryRunProgressStatus.DryRunId</property>
+    <min>36</min>
+    <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DryRunResults.DeploymentType</property>

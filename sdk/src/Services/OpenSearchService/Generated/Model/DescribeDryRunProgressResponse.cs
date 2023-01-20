@@ -29,38 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The results of an <code>UpdateDomain</code> request. Contains the status of the domain
-    /// being updated.
+    /// This is the response object from the DescribeDryRunProgress operation.
     /// </summary>
-    public partial class UpdateDomainConfigResponse : AmazonWebServiceResponse
+    public partial class DescribeDryRunProgressResponse : AmazonWebServiceResponse
     {
-        private DomainConfig _domainConfig;
+        private DomainStatus _dryRunConfig;
         private DryRunProgressStatus _dryRunProgressStatus;
         private DryRunResults _dryRunResults;
 
         /// <summary>
-        /// Gets and sets the property DomainConfig. 
+        /// Gets and sets the property DryRunConfig. 
         /// <para>
-        /// The status of the updated domain.
+        /// Details about the changes you're planning to make on the domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public DomainConfig DomainConfig
+        public DomainStatus DryRunConfig
         {
-            get { return this._domainConfig; }
-            set { this._domainConfig = value; }
+            get { return this._dryRunConfig; }
+            set { this._dryRunConfig = value; }
         }
 
-        // Check to see if DomainConfig property is set
-        internal bool IsSetDomainConfig()
+        // Check to see if DryRunConfig property is set
+        internal bool IsSetDryRunConfig()
         {
-            return this._domainConfig != null;
+            return this._dryRunConfig != null;
         }
 
         /// <summary>
         /// Gets and sets the property DryRunProgressStatus. 
         /// <para>
-        /// The status of the dry run being performed on the domain, if any.
+        /// The current status of the dry run, including any validation errors.
         /// </para>
         /// </summary>
         public DryRunProgressStatus DryRunProgressStatus
@@ -78,7 +76,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DryRunResults. 
         /// <para>
-        /// Results of the dry run performed in the update domain request.
+        /// The results of the dry run. 
         /// </para>
         /// </summary>
         public DryRunResults DryRunResults
