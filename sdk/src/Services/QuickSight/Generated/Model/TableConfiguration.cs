@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
         private TableFieldWells _fieldWells;
         private TablePaginatedReportOptions _paginatedReportOptions;
         private TableSortConfiguration _sortConfiguration;
+        private List<TableInlineVisualization> _tableInlineVisualizations = new List<TableInlineVisualization>();
         private TableOptions _tableOptions;
         private TotalOptions _totalOptions;
 
@@ -110,6 +111,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSortConfiguration()
         {
             return this._sortConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TableInlineVisualizations. 
+        /// <para>
+        /// A collection of inline visualizations to display within a chart.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=200)]
+        public List<TableInlineVisualization> TableInlineVisualizations
+        {
+            get { return this._tableInlineVisualizations; }
+            set { this._tableInlineVisualizations = value; }
+        }
+
+        // Check to see if TableInlineVisualizations property is set
+        internal bool IsSetTableInlineVisualizations()
+        {
+            return this._tableInlineVisualizations != null && this._tableInlineVisualizations.Count > 0; 
         }
 
         /// <summary>

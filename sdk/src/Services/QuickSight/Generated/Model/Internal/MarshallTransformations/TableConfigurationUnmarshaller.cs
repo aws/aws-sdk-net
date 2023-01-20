@@ -88,6 +88,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.SortConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TableInlineVisualizations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TableInlineVisualization, TableInlineVisualizationUnmarshaller>(TableInlineVisualizationUnmarshaller.Instance);
+                    unmarshalledObject.TableInlineVisualizations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TableOptions", targetDepth))
                 {
                     var unmarshaller = TableOptionsUnmarshaller.Instance;
