@@ -1,3 +1,32 @@
+### 3.7.464.0 (2023-01-20 00:03 UTC)
+* Appflow (3.7.105.0)
+	* Adding support for Salesforce Pardot connector in Amazon AppFlow.
+* CloudWatchLogs (3.7.104.0)
+	* Bug fix - Removed the regex pattern validation from CoralModel to avoid potential security issue.
+* CodeArtifact (3.7.101.0)
+	* Documentation updates for CodeArtifact
+* Connect (3.7.113.0)
+	* Amazon Connect Chat introduces Persistent Chat, allowing customers to resume previous conversations with context and transcripts carried over from previous chats, eliminating the need to repeat themselves and allowing agents to provide personalized service with access to entire conversation history.
+* ConnectParticipant (3.7.103.0)
+	* This release updates Amazon Connect Participant's GetTranscript api to provide transcripts of past chats on a persistent chat session.
+* EC2 (3.7.116.0)
+	* Adds SSM Parameter Resource Aliasing support to EC2 Launch Templates. Launch Templates can now store parameter aliases in place of AMI Resource IDs. CreateLaunchTemplateVersion and DescribeLaunchTemplateVersions now support a convenience flag, ResolveAlias, to return the resolved parameter value.
+* Glue (3.7.106.0)
+	* Release Glue Studio Hudi Data Lake Format for SDK/CLI
+* GroundStation (3.7.102.0)
+	* Add configurable prepass and postpass times for DataflowEndpointGroup. Add Waiter to allow customers to wait for a contact that was reserved through ReserveContact
+* MediaLive (3.7.104.0)
+	* AWS Elemental MediaLive adds support for SCTE 35 preRollMilliSeconds.
+* OpenSearchService (3.7.102.0)
+	* This release adds the enhanced dry run option, that checks for validation errors that might occur when deploying configuration changes and provides a summary of these errors, if any. The feature will also indicate whether a blue/green deployment will be required to apply a change.
+* Panorama (3.7.101.0)
+	* Added AllowMajorVersionUpdate option to OTAJobConfig to make appliance software major version updates opt-in.
+* SageMaker (3.7.114.0)
+	* HyperParameterTuningJobs now allow passing environment variables into the corresponding TrainingJobs
+* Core 3.7.103.19
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.463.0 (2023-01-18 19:22 UTC)
 * CloudWatch (3.7.103.0)
 	* Enable cross-account streams in CloudWatch Metric Streams via Observability Access Manager.
