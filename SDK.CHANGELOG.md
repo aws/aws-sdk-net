@@ -1,3 +1,12 @@
+### 3.7.466.0 (2023-01-23 19:28 UTC)
+* Lambda (3.7.104.0)
+	* Release Lambda RuntimeManagementConfig, enabling customers to better manage runtime updates to their Lambda functions. This release adds two new APIs, GetRuntimeManagementConfig and PutRuntimeManagementConfig, as well as support on existing Create/Get/Update function APIs.
+* SageMaker (3.7.115.0)
+	* Amazon SageMaker Inference now supports P4de instance types.
+* Core 3.7.103.21
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.465.0 (2023-01-20 19:33 UTC)
 * EC2 (3.7.117.0)
 	* C6in, M6in, M6idn, R6in and R6idn instances are powered by 3rd Generation Intel Xeon Scalable processors (code named Ice Lake) with an all-core turbo frequency of 3.5 GHz.
