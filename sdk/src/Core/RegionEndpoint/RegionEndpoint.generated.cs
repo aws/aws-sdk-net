@@ -83,6 +83,11 @@ namespace Amazon
         public static readonly RegionEndpoint APSoutheast3 = GetEndpoint("ap-southeast-3", "Asia Pacific (Jakarta)");
 
         /// <summary>
+        /// The Asia Pacific (Melbourne) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint APSoutheast4 = GetEndpoint("ap-southeast-4", "Asia Pacific (Melbourne)");
+
+        /// <summary>
         /// The Canada (Central) endpoint.
         /// </summary>
         public static readonly RegionEndpoint CACentral1 = GetEndpoint("ca-central-1", "Canada (Central)");
