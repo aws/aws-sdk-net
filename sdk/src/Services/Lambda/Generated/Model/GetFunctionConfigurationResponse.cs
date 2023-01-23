@@ -57,6 +57,7 @@ namespace Amazon.Lambda.Model
         private string _revisionId;
         private string _role;
         private Runtime _runtime;
+        private RuntimeVersionConfig _runtimeVersionConfig;
         private string _signingJobArn;
         private string _signingProfileVersionArn;
         private SnapStartResponse _snapStart;
@@ -512,6 +513,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetRuntime()
         {
             return this._runtime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimeVersionConfig. 
+        /// <para>
+        /// The ARN of the runtime and any errors that occured.
+        /// </para>
+        /// </summary>
+        public RuntimeVersionConfig RuntimeVersionConfig
+        {
+            get { return this._runtimeVersionConfig; }
+            set { this._runtimeVersionConfig = value; }
+        }
+
+        // Check to see if RuntimeVersionConfig property is set
+        internal bool IsSetRuntimeVersionConfig()
+        {
+            return this._runtimeVersionConfig != null;
         }
 
         /// <summary>

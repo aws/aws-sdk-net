@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The runtime restore hook failed to complete within the timeout limit (2 seconds).
+    /// Lambda couldn't restore the snapshot within the timeout limit.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
