@@ -1,3 +1,14 @@
+### 3.7.467.0 (2023-01-24 19:23 UTC)
+* GlueDataBrew (3.7.101.0)
+	* Enabled FIPS us-gov-west-1 endpoints in SDK.
+* Route53 (3.7.104.0)
+	* Amazon Route 53 now supports the Asia Pacific (Melbourne) Region (ap-southeast-4) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+* SsmSap (3.7.101.0)
+	* This release provides updates to documentation and support for listing operations performed by AWS Systems Manager for SAP.
+* Core 3.7.103.22
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.466.0 (2023-01-23 19:28 UTC)
 * Lambda (3.7.104.0)
 	* Release Lambda RuntimeManagementConfig, enabling customers to better manage runtime updates to their Lambda functions. This release adds two new APIs, GetRuntimeManagementConfig and PutRuntimeManagementConfig, as well as support on existing Create/Get/Update function APIs.
