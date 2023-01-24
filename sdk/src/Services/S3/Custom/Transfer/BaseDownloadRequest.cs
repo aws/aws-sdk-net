@@ -23,6 +23,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+using Amazon.Runtime.Internal;
+
 namespace Amazon.S3.Transfer
 {
     /// <summary>
@@ -241,6 +243,7 @@ namespace Amazon.S3.Transfer
         /// Important: Amazon S3 does not store the encryption key you provide.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionCustomerProvidedKey
         {
             get { return this.serverSideEncryptionCustomerProvidedKey; }

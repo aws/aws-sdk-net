@@ -19,6 +19,8 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime.Internal;
+
 namespace Amazon.S3.Model
 {
     /// <summary>
@@ -69,6 +71,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {
             get { return this.serverSideEncryptionKeyManagementServiceKeyId; }

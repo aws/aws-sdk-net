@@ -24,6 +24,7 @@ using Amazon.Util;
 using System.Globalization;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.S3;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.S3.Model
 {
@@ -405,6 +406,7 @@ namespace Amazon.S3.Model
         /// Web Services KMS) symmetric customer managed key that was used for the object.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {
             get { return this.serverSideEncryptionKeyManagementServiceKeyId; }

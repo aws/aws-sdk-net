@@ -433,6 +433,7 @@ namespace Amazon.S3.Model
         /// Important: Amazon S3 does not store the encryption key you provide.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionCustomerProvidedKey
         {
             get { return this.serverSideEncryptionCustomerProvidedKey; }
@@ -471,6 +472,7 @@ namespace Amazon.S3.Model
         /// This property is obsolete. Use ServerSideEncryptionKeyManagementServiceKeyId in InitiateMultipartUploadRequest instead.
         /// </summary>
         [Obsolete("Use ServerSideEncryptionKeyManagementServiceKeyId in InitiateMultipartUploadRequest instead.")]
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {
             get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
@@ -509,6 +511,7 @@ namespace Amazon.S3.Model
         /// Important: Amazon S3 does not store the encryption key you provide.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string CopySourceServerSideEncryptionCustomerProvidedKey
         {
             get { return this.copySourceServerSideEncryptionCustomerProvidedKey; }
