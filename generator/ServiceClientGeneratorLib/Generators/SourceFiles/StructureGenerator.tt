@@ -141,6 +141,10 @@ namespace <#=this.Config.Namespace#>.Model
 					{
 						propertyAttributes.Add("Required=true");
 					}
+					if (member.Shape.Sensitive)
+					{
+						propertyAttributes.Add("Sensitive=true");
+					}
 					if (member.Shape.Min.HasValue)
 					{
 						propertyAttributes.Add("Min=" + member.Shape.Min);
