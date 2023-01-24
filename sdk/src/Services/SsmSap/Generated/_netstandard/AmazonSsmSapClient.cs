@@ -292,13 +292,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the DeleteResourcePermission service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/DeleteResourcePermission">REST API Reference for DeleteResourcePermission Operation</seealso>
         public virtual Task<DeleteResourcePermissionResponse> DeleteResourcePermissionAsync(DeleteResourcePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -336,10 +336,10 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the DeregisterApplication service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/DeregisterApplication">REST API Reference for DeregisterApplication Operation</seealso>
         public virtual Task<DeregisterApplicationResponse> DeregisterApplicationAsync(DeregisterApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -377,10 +377,10 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the GetApplication service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual Task<GetApplicationResponse> GetApplicationAsync(GetApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -417,10 +417,10 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the GetComponent service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetComponent">REST API Reference for GetComponent Operation</seealso>
         public virtual Task<GetComponentResponse> GetComponentAsync(GetComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -458,10 +458,10 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the GetDatabase service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetDatabase">REST API Reference for GetDatabase Operation</seealso>
         public virtual Task<GetDatabaseResponse> GetDatabaseAsync(GetDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -498,10 +498,10 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the GetOperation service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetOperation">REST API Reference for GetOperation Operation</seealso>
         public virtual Task<GetOperationResponse> GetOperationAsync(GetOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -538,13 +538,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the GetResourcePermission service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetResourcePermission">REST API Reference for GetResourcePermission Operation</seealso>
         public virtual Task<GetResourcePermissionResponse> GetResourcePermissionAsync(GetResourcePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -581,13 +581,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the ListApplications service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -624,13 +624,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the ListComponents service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListComponents">REST API Reference for ListComponents Operation</seealso>
         public virtual Task<ListComponentsResponse> ListComponentsAsync(ListComponentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -668,13 +668,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the ListDatabases service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListDatabases">REST API Reference for ListDatabases Operation</seealso>
         public virtual Task<ListDatabasesResponse> ListDatabasesAsync(ListDatabasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -684,6 +684,46 @@ namespace Amazon.SsmSap
             options.ResponseUnmarshaller = ListDatabasesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDatabasesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListOperations
+
+        internal virtual ListOperationsResponse ListOperations(ListOperationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOperationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the operations performed by AWS Systems Manager for SAP.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOperations service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListOperations">REST API Reference for ListOperations Operation</seealso>
+        public virtual Task<ListOperationsResponse> ListOperationsAsync(ListOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOperationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOperationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -712,13 +752,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.ConflictException">
-        /// 
+        /// A conflict has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -755,13 +795,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the PutResourcePermission service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/PutResourcePermission">REST API Reference for PutResourcePermission Operation</seealso>
         public virtual Task<PutResourcePermissionResponse> PutResourcePermissionAsync(PutResourcePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -815,13 +855,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the RegisterApplication service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.ConflictException">
-        /// 
+        /// A conflict has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/RegisterApplication">REST API Reference for RegisterApplication Operation</seealso>
         public virtual Task<RegisterApplicationResponse> RegisterApplicationAsync(RegisterApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -858,13 +898,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the TagResource service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.ConflictException">
-        /// 
+        /// A conflict has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -901,13 +941,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the UntagResource service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.ConflictException">
-        /// 
+        /// A conflict has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -935,7 +975,7 @@ namespace Amazon.SsmSap
 
 
         /// <summary>
-        /// 
+        /// Updates the settings of an application registered with AWS Systems Manager for SAP.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationSettings service method.</param>
         /// <param name="cancellationToken">
@@ -944,13 +984,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the UpdateApplicationSettings service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/UpdateApplicationSettings">REST API Reference for UpdateApplicationSettings Operation</seealso>
         public virtual Task<UpdateApplicationSettingsResponse> UpdateApplicationSettingsAsync(UpdateApplicationSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

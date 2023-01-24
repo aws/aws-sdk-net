@@ -29,38 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListApplications operation.
-    /// Lists all the applications registered with AWS Systems Manager for SAP.
+    /// This is the response object from the ListOperations operation.
     /// </summary>
-    public partial class ListApplicationsRequest : AmazonSsmSapRequest
+    public partial class ListOperationsResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
         private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned nextToken value. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
-        {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
-        }
+        private List<Operation> _operations = new List<Operation>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next page of results.
+        /// The token to use to retrieve the next page of results. This value is null when there
+        /// are no more results to return.
         /// </para>
         /// </summary>
         public string NextToken
@@ -73,6 +53,24 @@ namespace Amazon.SsmSap.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operations. 
+        /// <para>
+        /// List of operations performed by AWS Systems Manager for SAP.
+        /// </para>
+        /// </summary>
+        public List<Operation> Operations
+        {
+            get { return this._operations; }
+            set { this._operations = value; }
+        }
+
+        // Check to see if Operations property is set
+        internal bool IsSetOperations()
+        {
+            return this._operations != null && this._operations.Count > 0; 
         }
 
     }

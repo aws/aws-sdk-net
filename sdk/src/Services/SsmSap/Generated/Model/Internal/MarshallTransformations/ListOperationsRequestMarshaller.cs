@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetApplication Request Marshaller
+    /// ListOperations Request Marshaller
     /// </summary>       
-    public class GetApplicationRequestMarshaller : IMarshaller<IRequest, GetApplicationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListOperationsRequestMarshaller : IMarshaller<IRequest, ListOperationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetApplicationRequest)input);
+            return this.Marshall((ListOperationsRequest)input);
         }
 
         /// <summary>
@@ -52,35 +52,51 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetApplicationRequest publicRequest)
+        public IRequest Marshall(ListOperationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SsmSap");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/get-application";
+            request.ResourcePath = "/list-operations";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationArn())
-                {
-                    context.Writer.WritePropertyName("ApplicationArn");
-                    context.Writer.Write(publicRequest.ApplicationArn);
-                }
-
                 if(publicRequest.IsSetApplicationId())
                 {
                     context.Writer.WritePropertyName("ApplicationId");
                     context.Writer.Write(publicRequest.ApplicationId);
                 }
 
-                if(publicRequest.IsSetAppRegistryArn())
+                if(publicRequest.IsSetFilters())
                 {
-                    context.Writer.WritePropertyName("AppRegistryArn");
-                    context.Writer.Write(publicRequest.AppRegistryArn);
+                    context.Writer.WritePropertyName("Filters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
                 writer.WriteObjectEnd();
@@ -91,9 +107,9 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetApplicationRequestMarshaller _instance = new GetApplicationRequestMarshaller();        
+        private static ListOperationsRequestMarshaller _instance = new ListOperationsRequestMarshaller();        
 
-        internal static GetApplicationRequestMarshaller GetInstance()
+        internal static ListOperationsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -101,7 +117,7 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetApplicationRequestMarshaller Instance
+        public static ListOperationsRequestMarshaller Instance
         {
             get
             {

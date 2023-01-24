@@ -275,13 +275,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the DeleteResourcePermission service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/DeleteResourcePermission">REST API Reference for DeleteResourcePermission Operation</seealso>
         public virtual DeleteResourcePermissionResponse DeleteResourcePermission(DeleteResourcePermissionRequest request)
@@ -339,10 +339,10 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the DeregisterApplication service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/DeregisterApplication">REST API Reference for DeregisterApplication Operation</seealso>
         public virtual DeregisterApplicationResponse DeregisterApplication(DeregisterApplicationRequest request)
@@ -400,10 +400,10 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the GetApplication service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual GetApplicationResponse GetApplication(GetApplicationRequest request)
@@ -460,10 +460,10 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the GetComponent service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetComponent">REST API Reference for GetComponent Operation</seealso>
         public virtual GetComponentResponse GetComponent(GetComponentRequest request)
@@ -521,10 +521,10 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the GetDatabase service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetDatabase">REST API Reference for GetDatabase Operation</seealso>
         public virtual GetDatabaseResponse GetDatabase(GetDatabaseRequest request)
@@ -581,10 +581,10 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the GetOperation service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetOperation">REST API Reference for GetOperation Operation</seealso>
         public virtual GetOperationResponse GetOperation(GetOperationRequest request)
@@ -641,13 +641,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the GetResourcePermission service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetResourcePermission">REST API Reference for GetResourcePermission Operation</seealso>
         public virtual GetResourcePermissionResponse GetResourcePermission(GetResourcePermissionRequest request)
@@ -704,13 +704,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the ListApplications service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
@@ -767,13 +767,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the ListComponents service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListComponents">REST API Reference for ListComponents Operation</seealso>
         public virtual ListComponentsResponse ListComponents(ListComponentsRequest request)
@@ -831,13 +831,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the ListDatabases service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListDatabases">REST API Reference for ListDatabases Operation</seealso>
         public virtual ListDatabasesResponse ListDatabases(ListDatabasesRequest request)
@@ -885,6 +885,66 @@ namespace Amazon.SsmSap
 
         #endregion
         
+        #region  ListOperations
+
+        /// <summary>
+        /// Lists the operations performed by AWS Systems Manager for SAP.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOperations service method.</param>
+        /// 
+        /// <returns>The response from the ListOperations service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListOperations">REST API Reference for ListOperations Operation</seealso>
+        public virtual ListOperationsResponse ListOperations(ListOperationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOperationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOperations operation on AmazonSsmSapClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOperations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListOperations">REST API Reference for ListOperations Operation</seealso>
+        public virtual IAsyncResult BeginListOperations(ListOperationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOperationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOperations.</param>
+        /// 
+        /// <returns>Returns a  ListOperationsResult from SsmSap.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListOperations">REST API Reference for ListOperations Operation</seealso>
+        public virtual ListOperationsResponse EndListOperations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListOperationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
@@ -895,13 +955,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.ConflictException">
-        /// 
+        /// A conflict has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -958,13 +1018,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the PutResourcePermission service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/PutResourcePermission">REST API Reference for PutResourcePermission Operation</seealso>
         public virtual PutResourcePermissionResponse PutResourcePermission(PutResourcePermissionRequest request)
@@ -1038,13 +1098,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the RegisterApplication service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.ConflictException">
-        /// 
+        /// A conflict has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/RegisterApplication">REST API Reference for RegisterApplication Operation</seealso>
         public virtual RegisterApplicationResponse RegisterApplication(RegisterApplicationRequest request)
@@ -1101,13 +1161,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the TagResource service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.ConflictException">
-        /// 
+        /// A conflict has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -1164,13 +1224,13 @@ namespace Amazon.SsmSap
         /// 
         /// <returns>The response from the UntagResource service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.ConflictException">
-        /// 
+        /// A conflict has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -1221,19 +1281,19 @@ namespace Amazon.SsmSap
         #region  UpdateApplicationSettings
 
         /// <summary>
-        /// 
+        /// Updates the settings of an application registered with AWS Systems Manager for SAP.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationSettings service method.</param>
         /// 
         /// <returns>The response from the UpdateApplicationSettings service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
-        /// 
+        /// An internal error has occurred.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
-        /// 
+        /// The resource is not available.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/UpdateApplicationSettings">REST API Reference for UpdateApplicationSettings Operation</seealso>
         public virtual UpdateApplicationSettingsResponse UpdateApplicationSettings(UpdateApplicationSettingsRequest request)

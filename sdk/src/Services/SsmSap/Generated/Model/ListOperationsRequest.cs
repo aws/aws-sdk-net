@@ -29,19 +29,60 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListApplications operation.
-    /// Lists all the applications registered with AWS Systems Manager for SAP.
+    /// Container for the parameters to the ListOperations operation.
+    /// Lists the operations performed by AWS Systems Manager for SAP.
     /// </summary>
-    public partial class ListApplicationsRequest : AmazonSsmSapRequest
+    public partial class ListOperationsRequest : AmazonSsmSapRequest
     {
+        private string _applicationId;
+        private List<Filter> _filters = new List<Filter>();
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The ID of the application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string ApplicationId
+        {
+            get { return this._applicationId; }
+            set { this._applicationId = value; }
+        }
+
+        // Check to see if ApplicationId property is set
+        internal bool IsSetApplicationId()
+        {
+            return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// The filters of an operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<Filter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned nextToken value. 
+        /// results, make another call with the returned nextToken value. If you do not specify
+        /// a value for MaxResults, the request returns 50 items per page by default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -60,7 +101,7 @@ namespace Amazon.SsmSap.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next page of results.
+        /// The token for the next page of results. 
         /// </para>
         /// </summary>
         public string NextToken

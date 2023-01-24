@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
-    /// 
+    /// The SAP HANA database of the application registered with AWS Systems Manager for SAP.
     /// </summary>
     public partial class Database
     {
@@ -46,7 +46,10 @@ namespace Amazon.SsmSap.Model
         private DatabaseStatus _status;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The ID of the application.
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -61,7 +64,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Arn.
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the database.
+        /// </para>
         /// </summary>
         public string Arn
         {
@@ -76,7 +82,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ComponentId.
+        /// Gets and sets the property ComponentId. 
+        /// <para>
+        /// The ID of the component.
+        /// </para>
         /// </summary>
         public string ComponentId
         {
@@ -91,7 +100,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Credentials.
+        /// Gets and sets the property Credentials. 
+        /// <para>
+        /// The credentials of the database.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<ApplicationCredential> Credentials
@@ -107,7 +119,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DatabaseId.
+        /// Gets and sets the property DatabaseId. 
+        /// <para>
+        /// The ID of the SAP HANA database.
+        /// </para>
         /// </summary>
         public string DatabaseId
         {
@@ -122,7 +137,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DatabaseName.
+        /// Gets and sets the property DatabaseName. 
+        /// <para>
+        /// The name of the database.
+        /// </para>
         /// </summary>
         public string DatabaseName
         {
@@ -137,7 +155,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DatabaseType.
+        /// Gets and sets the property DatabaseType. 
+        /// <para>
+        /// The type of the database.
+        /// </para>
         /// </summary>
         public DatabaseType DatabaseType
         {
@@ -152,7 +173,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastUpdated.
+        /// Gets and sets the property LastUpdated. 
+        /// <para>
+        /// The time at which the database was last updated.
+        /// </para>
         /// </summary>
         public DateTime LastUpdated
         {
@@ -167,7 +191,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrimaryHost.
+        /// Gets and sets the property PrimaryHost. 
+        /// <para>
+        /// The primary host of the database.
+        /// </para>
         /// </summary>
         public string PrimaryHost
         {
@@ -182,7 +209,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SQLPort.
+        /// Gets and sets the property SQLPort. 
+        /// <para>
+        /// The SQL port of the database.
+        /// </para>
         /// </summary>
         public int SQLPort
         {
@@ -197,7 +227,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the database.
+        /// </para>
         /// </summary>
         public DatabaseStatus Status
         {

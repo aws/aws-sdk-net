@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
-    /// 
+    /// An SAP application registered with AWS Systems Manager for SAP.
     /// </summary>
     public partial class Application
     {
@@ -43,7 +43,10 @@ namespace Amazon.SsmSap.Model
         private ApplicationType _type;
 
         /// <summary>
-        /// Gets and sets the property AppRegistryArn.
+        /// Gets and sets the property AppRegistryArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Application Registry.
+        /// </para>
         /// </summary>
         public string AppRegistryArn
         {
@@ -58,7 +61,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Arn.
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the application.
+        /// </para>
         /// </summary>
         public string Arn
         {
@@ -73,7 +79,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Components.
+        /// Gets and sets the property Components. 
+        /// <para>
+        /// The components of the application.
+        /// </para>
         /// </summary>
         public List<string> Components
         {
@@ -88,7 +97,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The ID of the application.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -103,7 +115,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastUpdated.
+        /// Gets and sets the property LastUpdated. 
+        /// <para>
+        /// The time at which the application was last updated.
+        /// </para>
         /// </summary>
         public DateTime LastUpdated
         {
@@ -118,7 +133,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the application.
+        /// </para>
         /// </summary>
         public ApplicationStatus Status
         {
@@ -133,7 +151,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusMessage.
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// The status message.
+        /// </para>
         /// </summary>
         public string StatusMessage
         {
@@ -148,7 +169,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the application.
+        /// </para>
         /// </summary>
         public ApplicationType Type
         {

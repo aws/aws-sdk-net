@@ -37,7 +37,10 @@ namespace Amazon.SsmSap.Model
         private string _operationId;
 
         /// <summary>
-        /// Gets and sets the property OperationId.
+        /// Gets and sets the property OperationId. 
+        /// <para>
+        /// The ID of the operation.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string OperationId

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
-    /// 
+    /// The input fails to satisfy the constraints specified by an AWS service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

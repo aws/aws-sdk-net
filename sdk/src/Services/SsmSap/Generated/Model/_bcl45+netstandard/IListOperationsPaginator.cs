@@ -16,42 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the ssm-sap-2018-05-10.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.Net;
-
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
-    /// This is the response object from the GetOperation operation.
-    /// </summary>
-    public partial class GetOperationResponse : AmazonWebServiceResponse
+    /// Paginator for the ListOperations operation
+    ///</summary>
+    public interface IListOperationsPaginator
     {
-        private Operation _operation;
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListOperationsResponse> Responses { get; }
 
         /// <summary>
-        /// Gets and sets the property Operation. 
-        /// <para>
-        /// Returns the details of an operation.
-        /// </para>
+        /// Enumerable containing all of the Operations
         /// </summary>
-        public Operation Operation
-        {
-            get { return this._operation; }
-            set { this._operation = value; }
-        }
-
-        // Check to see if Operation property is set
-        internal bool IsSetOperation()
-        {
-            return this._operation != null;
-        }
-
+        IPaginatedEnumerable<Operation> Operations { get; }
     }
 }

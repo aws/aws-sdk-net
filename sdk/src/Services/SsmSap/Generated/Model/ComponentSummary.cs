@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
-    /// 
+    /// The summary of the component.
     /// </summary>
     public partial class ComponentSummary
     {
@@ -39,7 +39,10 @@ namespace Amazon.SsmSap.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The ID of the application.
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -54,7 +57,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ComponentId.
+        /// Gets and sets the property ComponentId. 
+        /// <para>
+        /// The ID of the component.
+        /// </para>
         /// </summary>
         public string ComponentId
         {
@@ -69,7 +75,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ComponentType.
+        /// Gets and sets the property ComponentType. 
+        /// <para>
+        /// The type of the component.
+        /// </para>
         /// </summary>
         public ComponentType ComponentType
         {
@@ -84,7 +93,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags of the component.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

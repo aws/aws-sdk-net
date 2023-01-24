@@ -37,9 +37,13 @@ namespace Amazon.SsmSap.Model
     {
         private string _applicationArn;
         private string _applicationId;
+        private string _appRegistryArn;
 
         /// <summary>
-        /// Gets and sets the property ApplicationArn.
+        /// Gets and sets the property ApplicationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the application. 
+        /// </para>
         /// </summary>
         public string ApplicationArn
         {
@@ -54,7 +58,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The ID of the application.
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -66,6 +73,24 @@ namespace Amazon.SsmSap.Model
         internal bool IsSetApplicationId()
         {
             return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppRegistryArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the application registry.
+        /// </para>
+        /// </summary>
+        public string AppRegistryArn
+        {
+            get { return this._appRegistryArn; }
+            set { this._appRegistryArn = value; }
+        }
+
+        // Check to see if AppRegistryArn property is set
+        internal bool IsSetAppRegistryArn()
+        {
+            return this._appRegistryArn != null;
         }
 
     }
