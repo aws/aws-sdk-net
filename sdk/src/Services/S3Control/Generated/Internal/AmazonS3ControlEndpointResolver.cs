@@ -276,6 +276,13 @@ namespace Amazon.S3Control.Internal
                 result.Bucket = request.Bucket;
                 return result;
             }
+            if (requestContext.RequestName == "GetBucketVersioningRequest") {
+                result.RequiresAccountId = true;
+                var request = (GetBucketVersioningRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                result.Bucket = request.Bucket;
+                return result;
+            }
             if (requestContext.RequestName == "GetJobTaggingRequest") {
                 result.RequiresAccountId = true;
                 var request = (GetJobTaggingRequest)requestContext.OriginalRequest;
@@ -398,6 +405,13 @@ namespace Amazon.S3Control.Internal
             if (requestContext.RequestName == "PutBucketTaggingRequest") {
                 result.RequiresAccountId = true;
                 var request = (PutBucketTaggingRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                result.Bucket = request.Bucket;
+                return result;
+            }
+            if (requestContext.RequestName == "PutBucketVersioningRequest") {
+                result.RequiresAccountId = true;
+                var request = (PutBucketVersioningRequest)requestContext.OriginalRequest;
                 result.AccountId = request.AccountId;
                 result.Bucket = request.Bucket;
                 return result;
