@@ -9977,6 +9977,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type IpamAssociatedResourceDiscoveryStatus.
+    /// </summary>
+    public class IpamAssociatedResourceDiscoveryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for IpamAssociatedResourceDiscoveryStatus
+        /// </summary>
+        public static readonly IpamAssociatedResourceDiscoveryStatus Active = new IpamAssociatedResourceDiscoveryStatus("active");
+        /// <summary>
+        /// Constant NotFound for IpamAssociatedResourceDiscoveryStatus
+        /// </summary>
+        public static readonly IpamAssociatedResourceDiscoveryStatus NotFound = new IpamAssociatedResourceDiscoveryStatus("not-found");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpamAssociatedResourceDiscoveryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpamAssociatedResourceDiscoveryStatus FindValue(string value)
+        {
+            return FindValue<IpamAssociatedResourceDiscoveryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpamAssociatedResourceDiscoveryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IpamComplianceStatus.
     /// </summary>
     public class IpamComplianceStatus : ConstantClass
@@ -10028,6 +10078,60 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IpamComplianceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IpamDiscoveryFailureCode.
+    /// </summary>
+    public class IpamDiscoveryFailureCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AssumeRoleFailure for IpamDiscoveryFailureCode
+        /// </summary>
+        public static readonly IpamDiscoveryFailureCode AssumeRoleFailure = new IpamDiscoveryFailureCode("assume-role-failure");
+        /// <summary>
+        /// Constant ThrottlingFailure for IpamDiscoveryFailureCode
+        /// </summary>
+        public static readonly IpamDiscoveryFailureCode ThrottlingFailure = new IpamDiscoveryFailureCode("throttling-failure");
+        /// <summary>
+        /// Constant UnauthorizedFailure for IpamDiscoveryFailureCode
+        /// </summary>
+        public static readonly IpamDiscoveryFailureCode UnauthorizedFailure = new IpamDiscoveryFailureCode("unauthorized-failure");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpamDiscoveryFailureCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpamDiscoveryFailureCode FindValue(string value)
+        {
+            return FindValue<IpamDiscoveryFailureCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpamDiscoveryFailureCode(string value)
         {
             return FindValue(value);
         }
@@ -10256,6 +10360,10 @@ namespace Amazon.EC2
         /// Constant CidrNotAvailable for IpamPoolCidrFailureCode
         /// </summary>
         public static readonly IpamPoolCidrFailureCode CidrNotAvailable = new IpamPoolCidrFailureCode("cidr-not-available");
+        /// <summary>
+        /// Constant LimitExceeded for IpamPoolCidrFailureCode
+        /// </summary>
+        public static readonly IpamPoolCidrFailureCode LimitExceeded = new IpamPoolCidrFailureCode("limit-exceeded");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -10367,6 +10475,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type IpamPoolPublicIpSource.
+    /// </summary>
+    public class IpamPoolPublicIpSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Amazon for IpamPoolPublicIpSource
+        /// </summary>
+        public static readonly IpamPoolPublicIpSource Amazon = new IpamPoolPublicIpSource("amazon");
+        /// <summary>
+        /// Constant Byoip for IpamPoolPublicIpSource
+        /// </summary>
+        public static readonly IpamPoolPublicIpSource Byoip = new IpamPoolPublicIpSource("byoip");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpamPoolPublicIpSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpamPoolPublicIpSource FindValue(string value)
+        {
+            return FindValue<IpamPoolPublicIpSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpamPoolPublicIpSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IpamPoolState.
     /// </summary>
     public class IpamPoolState : ConstantClass
@@ -10450,6 +10608,174 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IpamPoolState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IpamResourceDiscoveryAssociationState.
+    /// </summary>
+    public class IpamResourceDiscoveryAssociationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AssociateComplete for IpamResourceDiscoveryAssociationState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryAssociationState AssociateComplete = new IpamResourceDiscoveryAssociationState("associate-complete");
+        /// <summary>
+        /// Constant AssociateFailed for IpamResourceDiscoveryAssociationState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryAssociationState AssociateFailed = new IpamResourceDiscoveryAssociationState("associate-failed");
+        /// <summary>
+        /// Constant AssociateInProgress for IpamResourceDiscoveryAssociationState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryAssociationState AssociateInProgress = new IpamResourceDiscoveryAssociationState("associate-in-progress");
+        /// <summary>
+        /// Constant DisassociateComplete for IpamResourceDiscoveryAssociationState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryAssociationState DisassociateComplete = new IpamResourceDiscoveryAssociationState("disassociate-complete");
+        /// <summary>
+        /// Constant DisassociateFailed for IpamResourceDiscoveryAssociationState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryAssociationState DisassociateFailed = new IpamResourceDiscoveryAssociationState("disassociate-failed");
+        /// <summary>
+        /// Constant DisassociateInProgress for IpamResourceDiscoveryAssociationState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryAssociationState DisassociateInProgress = new IpamResourceDiscoveryAssociationState("disassociate-in-progress");
+        /// <summary>
+        /// Constant IsolateComplete for IpamResourceDiscoveryAssociationState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryAssociationState IsolateComplete = new IpamResourceDiscoveryAssociationState("isolate-complete");
+        /// <summary>
+        /// Constant IsolateInProgress for IpamResourceDiscoveryAssociationState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryAssociationState IsolateInProgress = new IpamResourceDiscoveryAssociationState("isolate-in-progress");
+        /// <summary>
+        /// Constant RestoreInProgress for IpamResourceDiscoveryAssociationState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryAssociationState RestoreInProgress = new IpamResourceDiscoveryAssociationState("restore-in-progress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpamResourceDiscoveryAssociationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpamResourceDiscoveryAssociationState FindValue(string value)
+        {
+            return FindValue<IpamResourceDiscoveryAssociationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpamResourceDiscoveryAssociationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IpamResourceDiscoveryState.
+    /// </summary>
+    public class IpamResourceDiscoveryState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreateComplete for IpamResourceDiscoveryState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryState CreateComplete = new IpamResourceDiscoveryState("create-complete");
+        /// <summary>
+        /// Constant CreateFailed for IpamResourceDiscoveryState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryState CreateFailed = new IpamResourceDiscoveryState("create-failed");
+        /// <summary>
+        /// Constant CreateInProgress for IpamResourceDiscoveryState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryState CreateInProgress = new IpamResourceDiscoveryState("create-in-progress");
+        /// <summary>
+        /// Constant DeleteComplete for IpamResourceDiscoveryState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryState DeleteComplete = new IpamResourceDiscoveryState("delete-complete");
+        /// <summary>
+        /// Constant DeleteFailed for IpamResourceDiscoveryState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryState DeleteFailed = new IpamResourceDiscoveryState("delete-failed");
+        /// <summary>
+        /// Constant DeleteInProgress for IpamResourceDiscoveryState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryState DeleteInProgress = new IpamResourceDiscoveryState("delete-in-progress");
+        /// <summary>
+        /// Constant IsolateComplete for IpamResourceDiscoveryState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryState IsolateComplete = new IpamResourceDiscoveryState("isolate-complete");
+        /// <summary>
+        /// Constant IsolateInProgress for IpamResourceDiscoveryState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryState IsolateInProgress = new IpamResourceDiscoveryState("isolate-in-progress");
+        /// <summary>
+        /// Constant ModifyComplete for IpamResourceDiscoveryState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryState ModifyComplete = new IpamResourceDiscoveryState("modify-complete");
+        /// <summary>
+        /// Constant ModifyFailed for IpamResourceDiscoveryState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryState ModifyFailed = new IpamResourceDiscoveryState("modify-failed");
+        /// <summary>
+        /// Constant ModifyInProgress for IpamResourceDiscoveryState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryState ModifyInProgress = new IpamResourceDiscoveryState("modify-in-progress");
+        /// <summary>
+        /// Constant RestoreInProgress for IpamResourceDiscoveryState
+        /// </summary>
+        public static readonly IpamResourceDiscoveryState RestoreInProgress = new IpamResourceDiscoveryState("restore-in-progress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpamResourceDiscoveryState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpamResourceDiscoveryState FindValue(string value)
+        {
+            return FindValue<IpamResourceDiscoveryState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpamResourceDiscoveryState(string value)
         {
             return FindValue(value);
         }
@@ -14116,6 +14442,14 @@ namespace Amazon.EC2
         /// Constant IpamPool for ResourceType
         /// </summary>
         public static readonly ResourceType IpamPool = new ResourceType("ipam-pool");
+        /// <summary>
+        /// Constant IpamResourceDiscovery for ResourceType
+        /// </summary>
+        public static readonly ResourceType IpamResourceDiscovery = new ResourceType("ipam-resource-discovery");
+        /// <summary>
+        /// Constant IpamResourceDiscoveryAssociation for ResourceType
+        /// </summary>
+        public static readonly ResourceType IpamResourceDiscoveryAssociation = new ResourceType("ipam-resource-discovery-association");
         /// <summary>
         /// Constant IpamScope for ResourceType
         /// </summary>

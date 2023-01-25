@@ -157,6 +157,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.PoolDepth = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("publicIpSource", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublicIpSource = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("publiclyAdvertisable", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

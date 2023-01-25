@@ -118,6 +118,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Locale", StringUtils.FromString(publicRequest.Locale));
                 }
+                if(publicRequest.IsSetPublicIpSource())
+                {
+                    request.Parameters.Add("PublicIpSource", StringUtils.FromString(publicRequest.PublicIpSource));
+                }
                 if(publicRequest.IsSetPubliclyAdvertisable())
                 {
                     request.Parameters.Add("PubliclyAdvertisable", StringUtils.FromBool(publicRequest.PubliclyAdvertisable));

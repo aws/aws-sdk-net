@@ -43,12 +43,16 @@ namespace Amazon.EC2.Model
     {
         private string _cidr;
         private IpamCidrAuthorizationContext _cidrAuthorizationContext;
+        private string _clientToken;
         private string _ipamPoolId;
+        private int? _netmaskLength;
 
         /// <summary>
         /// Gets and sets the property Cidr. 
         /// <para>
-        /// The CIDR you want to assign to the IPAM pool.
+        /// The CIDR you want to assign to the IPAM pool. Either "NetmaskLength" or "Cidr" is
+        /// required. This value will be null if you specify "NetmaskLength" and will be filled
+        /// in during the provisioning process.
         /// </para>
         /// </summary>
         public string Cidr
@@ -83,6 +87,26 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// Idempotency</a>.
+        /// </para>
+        /// </summary>
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IpamPoolId. 
         /// <para>
         /// The ID of the IPAM pool to which you want to assign a CIDR.
@@ -99,6 +123,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpamPoolId()
         {
             return this._ipamPoolId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetmaskLength. 
+        /// <para>
+        /// The netmask length of the CIDR you'd like to provision to a pool. Can be used for
+        /// provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs
+        /// to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools.
+        /// Either "NetmaskLength" or "Cidr" is required.
+        /// </para>
+        /// </summary>
+        public int NetmaskLength
+        {
+            get { return this._netmaskLength.GetValueOrDefault(); }
+            set { this._netmaskLength = value; }
+        }
+
+        // Check to see if NetmaskLength property is set
+        internal bool IsSetNetmaskLength()
+        {
+            return this._netmaskLength.HasValue; 
         }
 
     }

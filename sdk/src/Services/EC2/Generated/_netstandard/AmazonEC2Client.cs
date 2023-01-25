@@ -825,7 +825,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR assignment from
-        /// an IPAM pool to another resource or IPAM pool. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
+        /// an IPAM pool to another IPAM pool or to a resource. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
         /// CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateIpamPoolCidr service method.</param>
@@ -1308,6 +1308,42 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = AssociateInstanceEventWindowResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateInstanceEventWindowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateIpamResourceDiscovery
+
+        internal virtual AssociateIpamResourceDiscoveryResponse AssociateIpamResourceDiscovery(AssociateIpamResourceDiscoveryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateIpamResourceDiscoveryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates an IPAM resource discovery with an Amazon VPC IPAM. A resource discovery
+        /// is an IPAM component that enables IPAM Service to manage and monitor resources that
+        /// belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIpamResourceDiscovery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamResourceDiscovery">REST API Reference for AssociateIpamResourceDiscovery Operation</seealso>
+        public virtual Task<AssociateIpamResourceDiscoveryResponse> AssociateIpamResourceDiscoveryAsync(AssociateIpamResourceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateIpamResourceDiscoveryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3715,6 +3751,41 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = CreateIpamPoolResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateIpamPoolResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateIpamResourceDiscovery
+
+        internal virtual CreateIpamResourceDiscoveryResponse CreateIpamResourceDiscovery(CreateIpamResourceDiscoveryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIpamResourceDiscoveryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an IPAM resource discovery. A resource discovery is an IPAM component that
+        /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamResourceDiscovery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamResourceDiscovery">REST API Reference for CreateIpamResourceDiscovery Operation</seealso>
+        public virtual Task<CreateIpamResourceDiscoveryResponse> CreateIpamResourceDiscoveryAsync(CreateIpamResourceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateIpamResourceDiscoveryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7049,6 +7120,41 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DeleteIpamPoolResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteIpamPoolResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteIpamResourceDiscovery
+
+        internal virtual DeleteIpamResourceDiscoveryResponse DeleteIpamResourceDiscovery(DeleteIpamResourceDiscoveryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIpamResourceDiscoveryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an IPAM resource discovery. A resource discovery is an IPAM component that
+        /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamResourceDiscovery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamResourceDiscovery">REST API Reference for DeleteIpamResourceDiscovery Operation</seealso>
+        public virtual Task<DeleteIpamResourceDiscoveryResponse> DeleteIpamResourceDiscoveryAsync(DeleteIpamResourceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIpamResourceDiscoveryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -12009,6 +12115,76 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeIpamPoolsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeIpamPoolsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeIpamResourceDiscoveries
+
+        internal virtual DescribeIpamResourceDiscoveriesResponse DescribeIpamResourceDiscoveries(DescribeIpamResourceDiscoveriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamResourceDiscoveriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamResourceDiscoveriesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIpamResourceDiscoveriesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes IPAM resource discoveries. A resource discovery is an IPAM component that
+        /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamResourceDiscoveries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIpamResourceDiscoveries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveries">REST API Reference for DescribeIpamResourceDiscoveries Operation</seealso>
+        public virtual Task<DescribeIpamResourceDiscoveriesResponse> DescribeIpamResourceDiscoveriesAsync(DescribeIpamResourceDiscoveriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamResourceDiscoveriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamResourceDiscoveriesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeIpamResourceDiscoveriesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeIpamResourceDiscoveryAssociations
+
+        internal virtual DescribeIpamResourceDiscoveryAssociationsResponse DescribeIpamResourceDiscoveryAssociations(DescribeIpamResourceDiscoveryAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamResourceDiscoveryAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamResourceDiscoveryAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIpamResourceDiscoveryAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes resource discovery association with an Amazon VPC IPAM. An associated resource
+        /// discovery is a resource discovery that has been associated with an IPAM..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamResourceDiscoveryAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIpamResourceDiscoveryAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveryAssociations">REST API Reference for DescribeIpamResourceDiscoveryAssociations Operation</seealso>
+        public virtual Task<DescribeIpamResourceDiscoveryAssociationsResponse> DescribeIpamResourceDiscoveryAssociationsAsync(DescribeIpamResourceDiscoveryAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamResourceDiscoveryAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamResourceDiscoveryAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeIpamResourceDiscoveryAssociationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -17168,6 +17344,42 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateIpamResourceDiscovery
+
+        internal virtual DisassociateIpamResourceDiscoveryResponse DisassociateIpamResourceDiscovery(DisassociateIpamResourceDiscoveryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateIpamResourceDiscoveryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates a resource discovery from an Amazon VPC IPAM. A resource discovery is
+        /// an IPAM component that enables IPAM Service to manage and monitor resources that belong
+        /// to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIpamResourceDiscovery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamResourceDiscovery">REST API Reference for DisassociateIpamResourceDiscovery Operation</seealso>
+        public virtual Task<DisassociateIpamResourceDiscoveryResponse> DisassociateIpamResourceDiscoveryAsync(DisassociateIpamResourceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateIpamResourceDiscoveryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateRouteTable
 
         internal virtual DisassociateRouteTableResponse DisassociateRouteTable(DisassociateRouteTableRequest request)
@@ -18832,6 +19044,79 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetIpamDiscoveredAccounts
+
+        internal virtual GetIpamDiscoveredAccountsResponse GetIpamDiscoveredAccounts(GetIpamDiscoveredAccountsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamDiscoveredAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamDiscoveredAccountsResponseUnmarshaller.Instance;
+
+            return Invoke<GetIpamDiscoveredAccountsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets IPAM discovered accounts. A discovered account is an Amazon Web Services account
+        /// that is monitored under a resource discovery. If you have integrated IPAM with Amazon
+        /// Web Services Organizations, all accounts in the organization are discovered accounts.
+        /// Only the IPAM account can get all discovered accounts in the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamDiscoveredAccounts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamDiscoveredAccounts service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredAccounts">REST API Reference for GetIpamDiscoveredAccounts Operation</seealso>
+        public virtual Task<GetIpamDiscoveredAccountsResponse> GetIpamDiscoveredAccountsAsync(GetIpamDiscoveredAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamDiscoveredAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamDiscoveredAccountsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIpamDiscoveredAccountsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIpamDiscoveredResourceCidrs
+
+        internal virtual GetIpamDiscoveredResourceCidrsResponse GetIpamDiscoveredResourceCidrs(GetIpamDiscoveredResourceCidrsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamDiscoveredResourceCidrsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamDiscoveredResourceCidrsResponseUnmarshaller.Instance;
+
+            return Invoke<GetIpamDiscoveredResourceCidrsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the resource CIDRs that are monitored as part of a resource discovery. A discovered
+        /// resource is a resource CIDR monitored under a resource discovery. The following resources
+        /// can be discovered: VPCs, Public IPv4 pools, VPC subnets, and Elastic IP addresses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamDiscoveredResourceCidrs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamDiscoveredResourceCidrs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredResourceCidrs">REST API Reference for GetIpamDiscoveredResourceCidrs Operation</seealso>
+        public virtual Task<GetIpamDiscoveredResourceCidrsResponse> GetIpamDiscoveredResourceCidrsAsync(GetIpamDiscoveredResourceCidrsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamDiscoveredResourceCidrsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamDiscoveredResourceCidrsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIpamDiscoveredResourceCidrsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetIpamPoolAllocations
 
         internal virtual GetIpamPoolAllocationsResponse GetIpamPoolAllocations(GetIpamPoolAllocationsRequest request)
@@ -18914,7 +19199,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Get information about the resources in a scope.
+        /// Returns resource CIDRs managed by IPAM in a given scope. If an IPAM is associated
+        /// with more than one resource discovery, the resource CIDRs across all of the resource
+        /// discoveries is returned. A resource discovery is an IPAM component that enables IPAM
+        /// Service to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIpamResourceCidrs service method.</param>
         /// <param name="cancellationToken">
@@ -21162,6 +21450,41 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyIpamResourceDiscovery
+
+        internal virtual ModifyIpamResourceDiscoveryResponse ModifyIpamResourceDiscovery(ModifyIpamResourceDiscoveryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyIpamResourceDiscoveryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies a resource discovery. A resource discovery is an IPAM component that enables
+        /// IPAM Service to manage and monitor resources that belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamResourceDiscovery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceDiscovery">REST API Reference for ModifyIpamResourceDiscovery Operation</seealso>
+        public virtual Task<ModifyIpamResourceDiscoveryResponse> ModifyIpamResourceDiscoveryAsync(ModifyIpamResourceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyIpamResourceDiscoveryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyIpamScope
 
         internal virtual ModifyIpamScopeResponse ModifyIpamScope(ModifyIpamScopeRequest request)
@@ -22930,14 +23253,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Move an BYOIP IPv4 CIDR to IPAM from a public IPv4 pool.
+        /// Move a BYOIPv4 CIDR to IPAM from a public IPv4 pool.
         /// 
         ///  
         /// <para>
-        /// If you already have an IPv4 BYOIP CIDR with Amazon Web Services, you can move the
-        /// CIDR to IPAM from a public IPv4 pool. You cannot move an IPv6 CIDR to IPAM. If you
-        /// are bringing a new IP address to Amazon Web Services for the first time, complete
-        /// the steps in <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-ipam.html">Tutorial:
+        /// If you already have a BYOIPv4 CIDR with Amazon Web Services, you can move the CIDR
+        /// to IPAM from a public IPv4 pool. You cannot move an IPv6 CIDR to IPAM. If you are
+        /// bringing a new IP address to Amazon Web Services for the first time, complete the
+        /// steps in <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-ipam.html">Tutorial:
         /// BYOIP address CIDRs to IPAM</a>.
         /// </para>
         /// </summary>

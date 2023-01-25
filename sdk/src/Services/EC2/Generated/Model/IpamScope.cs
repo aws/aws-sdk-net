@@ -113,7 +113,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpamScopeArn. 
         /// <para>
-        /// The ARN of the scope.
+        /// The Amazon Resource Name (ARN) of the scope.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1283)]

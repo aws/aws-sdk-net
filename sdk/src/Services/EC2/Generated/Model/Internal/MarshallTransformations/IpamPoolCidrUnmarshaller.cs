@@ -66,6 +66,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ipamPoolCidrId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpamPoolCidrId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("netmaskLength", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.NetmaskLength = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("state", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

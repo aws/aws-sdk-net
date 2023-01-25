@@ -91,7 +91,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions
         /// where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors
-        /// resources in the Amazon Web Services Regions you select as operating Regions.
+        /// resources in the Amazon Web Services Regions you select as operating Regions. 
         /// </para>
         ///  
         /// <para>

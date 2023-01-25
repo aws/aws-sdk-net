@@ -211,6 +211,16 @@ namespace Amazon.EC2.Model
         IDescribeIpamPoolsPaginator DescribeIpamPools(DescribeIpamPoolsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeIpamResourceDiscoveries operation
+        ///</summary>
+        IDescribeIpamResourceDiscoveriesPaginator DescribeIpamResourceDiscoveries(DescribeIpamResourceDiscoveriesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeIpamResourceDiscoveryAssociations operation
+        ///</summary>
+        IDescribeIpamResourceDiscoveryAssociationsPaginator DescribeIpamResourceDiscoveryAssociations(DescribeIpamResourceDiscoveryAssociationsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeIpams operation
         ///</summary>
         IDescribeIpamsPaginator DescribeIpams(DescribeIpamsRequest request);
@@ -589,6 +599,16 @@ namespace Amazon.EC2.Model
         /// Paginator for GetIpamAddressHistory operation
         ///</summary>
         IGetIpamAddressHistoryPaginator GetIpamAddressHistory(GetIpamAddressHistoryRequest request);
+
+        /// <summary>
+        /// Paginator for GetIpamDiscoveredAccounts operation
+        ///</summary>
+        IGetIpamDiscoveredAccountsPaginator GetIpamDiscoveredAccounts(GetIpamDiscoveredAccountsRequest request);
+
+        /// <summary>
+        /// Paginator for GetIpamDiscoveredResourceCidrs operation
+        ///</summary>
+        IGetIpamDiscoveredResourceCidrsPaginator GetIpamDiscoveredResourceCidrs(GetIpamDiscoveredResourceCidrsRequest request);
 
         /// <summary>
         /// Paginator for GetIpamPoolAllocations operation

@@ -1003,7 +1003,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR assignment from
-        /// an IPAM pool to another resource or IPAM pool. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
+        /// an IPAM pool to another IPAM pool or to a resource. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
         /// CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateIpamPoolCidr service method.</param>
@@ -1697,6 +1697,62 @@ namespace Amazon.EC2
         public virtual AssociateInstanceEventWindowResponse EndAssociateInstanceEventWindow(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateInstanceEventWindowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateIpamResourceDiscovery
+
+        /// <summary>
+        /// Associates an IPAM resource discovery with an Amazon VPC IPAM. A resource discovery
+        /// is an IPAM component that enables IPAM Service to manage and monitor resources that
+        /// belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIpamResourceDiscovery service method.</param>
+        /// 
+        /// <returns>The response from the AssociateIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamResourceDiscovery">REST API Reference for AssociateIpamResourceDiscovery Operation</seealso>
+        public virtual AssociateIpamResourceDiscoveryResponse AssociateIpamResourceDiscovery(AssociateIpamResourceDiscoveryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateIpamResourceDiscoveryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIpamResourceDiscovery operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateIpamResourceDiscovery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamResourceDiscovery">REST API Reference for AssociateIpamResourceDiscovery Operation</seealso>
+        public virtual IAsyncResult BeginAssociateIpamResourceDiscovery(AssociateIpamResourceDiscoveryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateIpamResourceDiscovery.</param>
+        /// 
+        /// <returns>Returns a  AssociateIpamResourceDiscoveryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamResourceDiscovery">REST API Reference for AssociateIpamResourceDiscovery Operation</seealso>
+        public virtual AssociateIpamResourceDiscoveryResponse EndAssociateIpamResourceDiscovery(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateIpamResourceDiscoveryResponse>(asyncResult);
         }
 
         #endregion
@@ -5136,6 +5192,61 @@ namespace Amazon.EC2
         public virtual CreateIpamPoolResponse EndCreateIpamPool(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateIpamPoolResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateIpamResourceDiscovery
+
+        /// <summary>
+        /// Creates an IPAM resource discovery. A resource discovery is an IPAM component that
+        /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamResourceDiscovery service method.</param>
+        /// 
+        /// <returns>The response from the CreateIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamResourceDiscovery">REST API Reference for CreateIpamResourceDiscovery Operation</seealso>
+        public virtual CreateIpamResourceDiscoveryResponse CreateIpamResourceDiscovery(CreateIpamResourceDiscoveryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIpamResourceDiscoveryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamResourceDiscovery operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIpamResourceDiscovery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamResourceDiscovery">REST API Reference for CreateIpamResourceDiscovery Operation</seealso>
+        public virtual IAsyncResult BeginCreateIpamResourceDiscovery(CreateIpamResourceDiscoveryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIpamResourceDiscovery.</param>
+        /// 
+        /// <returns>Returns a  CreateIpamResourceDiscoveryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamResourceDiscovery">REST API Reference for CreateIpamResourceDiscovery Operation</seealso>
+        public virtual CreateIpamResourceDiscoveryResponse EndCreateIpamResourceDiscovery(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateIpamResourceDiscoveryResponse>(asyncResult);
         }
 
         #endregion
@@ -9950,6 +10061,61 @@ namespace Amazon.EC2
         public virtual DeleteIpamPoolResponse EndDeleteIpamPool(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteIpamPoolResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteIpamResourceDiscovery
+
+        /// <summary>
+        /// Deletes an IPAM resource discovery. A resource discovery is an IPAM component that
+        /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamResourceDiscovery service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamResourceDiscovery">REST API Reference for DeleteIpamResourceDiscovery Operation</seealso>
+        public virtual DeleteIpamResourceDiscoveryResponse DeleteIpamResourceDiscovery(DeleteIpamResourceDiscoveryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIpamResourceDiscoveryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamResourceDiscovery operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIpamResourceDiscovery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamResourceDiscovery">REST API Reference for DeleteIpamResourceDiscovery Operation</seealso>
+        public virtual IAsyncResult BeginDeleteIpamResourceDiscovery(DeleteIpamResourceDiscoveryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIpamResourceDiscovery.</param>
+        /// 
+        /// <returns>Returns a  DeleteIpamResourceDiscoveryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamResourceDiscovery">REST API Reference for DeleteIpamResourceDiscovery Operation</seealso>
+        public virtual DeleteIpamResourceDiscoveryResponse EndDeleteIpamResourceDiscovery(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteIpamResourceDiscoveryResponse>(asyncResult);
         }
 
         #endregion
@@ -17170,6 +17336,116 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeIpamResourceDiscoveries
+
+        /// <summary>
+        /// Describes IPAM resource discoveries. A resource discovery is an IPAM component that
+        /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamResourceDiscoveries service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIpamResourceDiscoveries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveries">REST API Reference for DescribeIpamResourceDiscoveries Operation</seealso>
+        public virtual DescribeIpamResourceDiscoveriesResponse DescribeIpamResourceDiscoveries(DescribeIpamResourceDiscoveriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamResourceDiscoveriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamResourceDiscoveriesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIpamResourceDiscoveriesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIpamResourceDiscoveries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamResourceDiscoveries operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIpamResourceDiscoveries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveries">REST API Reference for DescribeIpamResourceDiscoveries Operation</seealso>
+        public virtual IAsyncResult BeginDescribeIpamResourceDiscoveries(DescribeIpamResourceDiscoveriesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamResourceDiscoveriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamResourceDiscoveriesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeIpamResourceDiscoveries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIpamResourceDiscoveries.</param>
+        /// 
+        /// <returns>Returns a  DescribeIpamResourceDiscoveriesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveries">REST API Reference for DescribeIpamResourceDiscoveries Operation</seealso>
+        public virtual DescribeIpamResourceDiscoveriesResponse EndDescribeIpamResourceDiscoveries(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeIpamResourceDiscoveriesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeIpamResourceDiscoveryAssociations
+
+        /// <summary>
+        /// Describes resource discovery association with an Amazon VPC IPAM. An associated resource
+        /// discovery is a resource discovery that has been associated with an IPAM..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamResourceDiscoveryAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIpamResourceDiscoveryAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveryAssociations">REST API Reference for DescribeIpamResourceDiscoveryAssociations Operation</seealso>
+        public virtual DescribeIpamResourceDiscoveryAssociationsResponse DescribeIpamResourceDiscoveryAssociations(DescribeIpamResourceDiscoveryAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamResourceDiscoveryAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamResourceDiscoveryAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIpamResourceDiscoveryAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIpamResourceDiscoveryAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamResourceDiscoveryAssociations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIpamResourceDiscoveryAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveryAssociations">REST API Reference for DescribeIpamResourceDiscoveryAssociations Operation</seealso>
+        public virtual IAsyncResult BeginDescribeIpamResourceDiscoveryAssociations(DescribeIpamResourceDiscoveryAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamResourceDiscoveryAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamResourceDiscoveryAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeIpamResourceDiscoveryAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIpamResourceDiscoveryAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeIpamResourceDiscoveryAssociationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveryAssociations">REST API Reference for DescribeIpamResourceDiscoveryAssociations Operation</seealso>
+        public virtual DescribeIpamResourceDiscoveryAssociationsResponse EndDescribeIpamResourceDiscoveryAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeIpamResourceDiscoveryAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeIpams
 
         /// <summary>
@@ -24361,6 +24637,62 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateIpamResourceDiscovery
+
+        /// <summary>
+        /// Disassociates a resource discovery from an Amazon VPC IPAM. A resource discovery is
+        /// an IPAM component that enables IPAM Service to manage and monitor resources that belong
+        /// to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIpamResourceDiscovery service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamResourceDiscovery">REST API Reference for DisassociateIpamResourceDiscovery Operation</seealso>
+        public virtual DisassociateIpamResourceDiscoveryResponse DisassociateIpamResourceDiscovery(DisassociateIpamResourceDiscoveryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateIpamResourceDiscoveryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIpamResourceDiscovery operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateIpamResourceDiscovery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamResourceDiscovery">REST API Reference for DisassociateIpamResourceDiscovery Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateIpamResourceDiscovery(DisassociateIpamResourceDiscoveryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateIpamResourceDiscovery.</param>
+        /// 
+        /// <returns>Returns a  DisassociateIpamResourceDiscoveryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamResourceDiscovery">REST API Reference for DisassociateIpamResourceDiscovery Operation</seealso>
+        public virtual DisassociateIpamResourceDiscoveryResponse EndDisassociateIpamResourceDiscovery(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateIpamResourceDiscoveryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateRouteTable
 
         /// <summary>
@@ -26845,6 +27177,119 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetIpamDiscoveredAccounts
+
+        /// <summary>
+        /// Gets IPAM discovered accounts. A discovered account is an Amazon Web Services account
+        /// that is monitored under a resource discovery. If you have integrated IPAM with Amazon
+        /// Web Services Organizations, all accounts in the organization are discovered accounts.
+        /// Only the IPAM account can get all discovered accounts in the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamDiscoveredAccounts service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamDiscoveredAccounts service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredAccounts">REST API Reference for GetIpamDiscoveredAccounts Operation</seealso>
+        public virtual GetIpamDiscoveredAccountsResponse GetIpamDiscoveredAccounts(GetIpamDiscoveredAccountsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamDiscoveredAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamDiscoveredAccountsResponseUnmarshaller.Instance;
+
+            return Invoke<GetIpamDiscoveredAccountsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIpamDiscoveredAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamDiscoveredAccounts operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIpamDiscoveredAccounts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredAccounts">REST API Reference for GetIpamDiscoveredAccounts Operation</seealso>
+        public virtual IAsyncResult BeginGetIpamDiscoveredAccounts(GetIpamDiscoveredAccountsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamDiscoveredAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamDiscoveredAccountsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIpamDiscoveredAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIpamDiscoveredAccounts.</param>
+        /// 
+        /// <returns>Returns a  GetIpamDiscoveredAccountsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredAccounts">REST API Reference for GetIpamDiscoveredAccounts Operation</seealso>
+        public virtual GetIpamDiscoveredAccountsResponse EndGetIpamDiscoveredAccounts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetIpamDiscoveredAccountsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetIpamDiscoveredResourceCidrs
+
+        /// <summary>
+        /// Returns the resource CIDRs that are monitored as part of a resource discovery. A discovered
+        /// resource is a resource CIDR monitored under a resource discovery. The following resources
+        /// can be discovered: VPCs, Public IPv4 pools, VPC subnets, and Elastic IP addresses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamDiscoveredResourceCidrs service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamDiscoveredResourceCidrs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredResourceCidrs">REST API Reference for GetIpamDiscoveredResourceCidrs Operation</seealso>
+        public virtual GetIpamDiscoveredResourceCidrsResponse GetIpamDiscoveredResourceCidrs(GetIpamDiscoveredResourceCidrsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamDiscoveredResourceCidrsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamDiscoveredResourceCidrsResponseUnmarshaller.Instance;
+
+            return Invoke<GetIpamDiscoveredResourceCidrsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIpamDiscoveredResourceCidrs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamDiscoveredResourceCidrs operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIpamDiscoveredResourceCidrs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredResourceCidrs">REST API Reference for GetIpamDiscoveredResourceCidrs Operation</seealso>
+        public virtual IAsyncResult BeginGetIpamDiscoveredResourceCidrs(GetIpamDiscoveredResourceCidrsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamDiscoveredResourceCidrsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamDiscoveredResourceCidrsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIpamDiscoveredResourceCidrs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIpamDiscoveredResourceCidrs.</param>
+        /// 
+        /// <returns>Returns a  GetIpamDiscoveredResourceCidrsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredResourceCidrs">REST API Reference for GetIpamDiscoveredResourceCidrs Operation</seealso>
+        public virtual GetIpamDiscoveredResourceCidrsResponse EndGetIpamDiscoveredResourceCidrs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetIpamDiscoveredResourceCidrsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetIpamPoolAllocations
 
         /// <summary>
@@ -26956,7 +27401,10 @@ namespace Amazon.EC2
         #region  GetIpamResourceCidrs
 
         /// <summary>
-        /// Get information about the resources in a scope.
+        /// Returns resource CIDRs managed by IPAM in a given scope. If an IPAM is associated
+        /// with more than one resource discovery, the resource CIDRs across all of the resource
+        /// discoveries is returned. A resource discovery is an IPAM component that enables IPAM
+        /// Service to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIpamResourceCidrs service method.</param>
         /// 
@@ -30295,6 +30743,61 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyIpamResourceDiscovery
+
+        /// <summary>
+        /// Modifies a resource discovery. A resource discovery is an IPAM component that enables
+        /// IPAM Service to manage and monitor resources that belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamResourceDiscovery service method.</param>
+        /// 
+        /// <returns>The response from the ModifyIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceDiscovery">REST API Reference for ModifyIpamResourceDiscovery Operation</seealso>
+        public virtual ModifyIpamResourceDiscoveryResponse ModifyIpamResourceDiscovery(ModifyIpamResourceDiscoveryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyIpamResourceDiscoveryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamResourceDiscovery operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyIpamResourceDiscovery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceDiscovery">REST API Reference for ModifyIpamResourceDiscovery Operation</seealso>
+        public virtual IAsyncResult BeginModifyIpamResourceDiscovery(ModifyIpamResourceDiscoveryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyIpamResourceDiscovery.</param>
+        /// 
+        /// <returns>Returns a  ModifyIpamResourceDiscoveryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceDiscovery">REST API Reference for ModifyIpamResourceDiscovery Operation</seealso>
+        public virtual ModifyIpamResourceDiscoveryResponse EndModifyIpamResourceDiscovery(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyIpamResourceDiscoveryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifyIpamScope
 
         /// <summary>
@@ -32872,14 +33375,14 @@ namespace Amazon.EC2
         #region  MoveByoipCidrToIpam
 
         /// <summary>
-        /// Move an BYOIP IPv4 CIDR to IPAM from a public IPv4 pool.
+        /// Move a BYOIPv4 CIDR to IPAM from a public IPv4 pool.
         /// 
         ///  
         /// <para>
-        /// If you already have an IPv4 BYOIP CIDR with Amazon Web Services, you can move the
-        /// CIDR to IPAM from a public IPv4 pool. You cannot move an IPv6 CIDR to IPAM. If you
-        /// are bringing a new IP address to Amazon Web Services for the first time, complete
-        /// the steps in <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-ipam.html">Tutorial:
+        /// If you already have a BYOIPv4 CIDR with Amazon Web Services, you can move the CIDR
+        /// to IPAM from a public IPv4 pool. You cannot move an IPv6 CIDR to IPAM. If you are
+        /// bringing a new IP address to Amazon Web Services for the first time, complete the
+        /// steps in <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-ipam.html">Tutorial:
         /// BYOIP address CIDRs to IPAM</a>.
         /// </para>
         /// </summary>
