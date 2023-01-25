@@ -8877,6 +8877,9 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the ListInferenceRecommendationsJobSteps service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobSteps">REST API Reference for ListInferenceRecommendationsJobSteps Operation</seealso>
         public virtual Task<ListInferenceRecommendationsJobStepsResponse> ListInferenceRecommendationsJobStepsAsync(ListInferenceRecommendationsJobStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
