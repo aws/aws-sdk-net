@@ -57,6 +57,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                     response.ApplicationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("batchJobIdentifier", targetDepth))
+                {
+                    var unmarshaller = BatchJobIdentifierUnmarshaller.Instance;
+                    response.BatchJobIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("endTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -91,6 +97,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobUser = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("returnCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ReturnCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startTime", targetDepth))
