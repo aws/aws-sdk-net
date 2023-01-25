@@ -32,7 +32,7 @@ namespace Amazon.RDS
     public partial class AmazonRDSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.114.8");
+            InternalSDKUtils.BuildUserAgentString("3.7.114.9");
 
         private string _userAgent = UserAgentString;
 

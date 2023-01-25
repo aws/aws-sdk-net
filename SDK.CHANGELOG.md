@@ -1,3 +1,24 @@
+### 3.7.468.0 (2023-01-25 19:38 UTC)
+* CloudFormation (3.7.103.0)
+	* Enabled FIPS aws-us-gov endpoints in SDK.
+* EC2 (3.7.118.0)
+	* This release adds new functionality that allows customers to provision IPv6 CIDR blocks through Amazon VPC IP Address Manager (IPAM) as well as allowing customers to utilize IPAM Resource Discovery APIs.
+* MainframeModernization (3.7.102.0)
+	* Add returnCode, batchJobIdentifier in GetBatchJobExecution response, for user to view the batch job execution result & unique identifier from engine. Also removed unused headers from REST APIs
+* Polly (3.7.104.0)
+	* Add 5 new neural voices - Sergio (es-ES), Andres (es-MX), Remi (fr-FR), Adriano (it-IT) and Thiago (pt-BR).
+* RedshiftServerless (3.7.101.33)
+	* Added query monitoring rules as possible parameters for create and update workgroup operations.
+* S3Control (3.7.105.0)
+	* Add additional endpoint tests for S3 Control. Fix missing endpoint parameters for PutBucketVersioning and GetBucketVersioning. Prior to this fix, those operations may have resulted in an invalid endpoint being resolved.
+* SageMaker (3.7.116.0)
+	* SageMaker Inference Recommender now decouples from Model Registry and could accept Model Name to invoke inference recommendations job; Inference Recommender now provides CPU/Memory Utilization metrics data in recommendation output.
+* SecurityToken (3.7.100.61)
+	* Doc only change to update wording in a key topic
+* Core 3.7.103.23
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.467.0 (2023-01-24 19:23 UTC)
 * GlueDataBrew (3.7.101.0)
 	* Enabled FIPS us-gov-west-1 endpoints in SDK.
