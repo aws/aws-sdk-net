@@ -73,8 +73,7 @@ namespace Amazon.EventBridge.Model
         /// <para>
         /// Input template where you specify placeholders that will be filled with the values
         /// of the keys from <code>InputPathsMap</code> to customize the data sent to the target.
-        /// Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The
-        /// InputTemplate must be valid JSON.
+        /// Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; 
         /// </para>
         ///  
         /// <para>

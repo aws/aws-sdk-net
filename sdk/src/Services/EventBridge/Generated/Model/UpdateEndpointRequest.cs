@@ -140,7 +140,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property RoutingConfig. 
         /// <para>
-        /// Configure the routing policy, including the health check and secondary Region..
+        /// Configure the routing policy, including the health check and secondary Region.
         /// </para>
         /// </summary>
         public RoutingConfig RoutingConfig

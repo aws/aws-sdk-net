@@ -40,6 +40,8 @@ namespace Amazon.EventBridge.Internal
             if (parameters == null) 
                 throw new ArgumentNullException("parameters");
 
+            if (parameters["Region"] == null)
+                throw new AmazonClientException("Region parameter must be set for endpoint resolution");
             if (parameters["UseDualStack"] == null)
                 throw new AmazonClientException("UseDualStack parameter must be set for endpoint resolution");
             if (parameters["UseFIPS"] == null)
@@ -63,23 +65,23 @@ namespace Amazon.EventBridge.Internal
                         {
                             if (IsSet(refs["Endpoint"]))
                             {
-                                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4a"",""signingRegionSet"":[""*""],""signingName"":""events""}]}", refs), InterpolateJson(@"", refs));
+                                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4a"",""signingName"":""events"",""signingRegionSet"":[""*""]}]}", refs), InterpolateJson(@"", refs));
                             }
                             if (Equals(refs["UseDualStack"], true))
                             {
                                 if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                                 {
-                                    return new Endpoint(Interpolate(@"https://{EndpointId}.endpoint.events.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4a"",""signingRegionSet"":[""*""],""signingName"":""events""}]}", refs), InterpolateJson(@"", refs));
+                                    return new Endpoint(Interpolate(@"https://{EndpointId}.endpoint.events.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4a"",""signingName"":""events"",""signingRegionSet"":[""*""]}]}", refs), InterpolateJson(@"", refs));
                                 }
                                 throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
                             }
-                            return new Endpoint(Interpolate(@"https://{EndpointId}.endpoint.events.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4a"",""signingRegionSet"":[""*""],""signingName"":""events""}]}", refs), InterpolateJson(@"", refs));
+                            return new Endpoint(Interpolate(@"https://{EndpointId}.endpoint.events.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4a"",""signingName"":""events"",""signingRegionSet"":[""*""]}]}", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("Invalid Configuration: FIPS is not supported with EventBridge multi-region endpoints.");
                     }
                     throw new AmazonClientException("EndpointId must be a valid host label.");
                 }
-                if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
+                if (IsSet(refs["Endpoint"]))
                 {
                     if (Equals(refs["UseFIPS"], true))
                     {
@@ -103,13 +105,13 @@ namespace Amazon.EventBridge.Internal
                 {
                     if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
                     {
-                        if (Equals(refs["Region"], "us-gov-west-1"))
-                        {
-                            return new Endpoint("https://events.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
                         if (Equals(refs["Region"], "us-gov-east-1"))
                         {
                             return new Endpoint("https://events.us-gov-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        if (Equals(refs["Region"], "us-gov-west-1"))
+                        {
+                            return new Endpoint("https://events.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         return new Endpoint(Interpolate(@"https://events-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
