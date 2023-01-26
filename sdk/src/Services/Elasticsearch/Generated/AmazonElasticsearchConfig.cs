@@ -32,7 +32,7 @@ namespace Amazon.Elasticsearch
     public partial class AmazonElasticsearchConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.46");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.47");
 
         private string _userAgent = UserAgentString;
 

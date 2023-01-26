@@ -1,3 +1,14 @@
+### 3.7.469.0 (2023-01-26 19:21 UTC)
+* EventBridge (3.7.101.0)
+	* Minor comments for Redshift Serverless workgroup target support.
+* IoTFleetWise (3.7.103.0)
+	* Add model validation to BatchCreateVehicle and BatchUpdateVehicle operations that invalidate requests with an empty vehicles list.
+* S3 (3.7.102.0)
+	* Allow FIPS to be used with path-style URLs.
+* Core 3.7.103.24
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.468.0 (2023-01-25 19:38 UTC)
 * CloudFormation (3.7.103.0)
 	* Enabled FIPS aws-us-gov endpoints in SDK.
