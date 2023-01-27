@@ -272,30 +272,7 @@ namespace Amazon.DynamoDBv2.DataModel
 #if AWS_ASYNC_API 
         private async Task SaveHelperAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
         {
-            if (value == null) return;
-
-            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
-            ItemStorage storage = ObjectToItemStorage(value, false, flatConfig);
-            if (storage == null) return;
-
-            Table table = GetTargetTable(storage.Config, flatConfig);
-            if (
-                (flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value)
-                || !storage.Config.HasVersion)
-            {
-                await table.UpdateHelperAsync(storage.Document, table.MakeKey(storage.Document), null, cancellationToken).ConfigureAwait(false);
-            }
-            else
-            {
-                Document expectedDocument = CreateExpectedDocumentForVersion(storage);
-                SetNewVersion(storage);
-                await table.UpdateHelperAsync(
-                    storage.Document,
-                    table.MakeKey(storage.Document),
-                    new UpdateItemOperationConfig { Expected = expectedDocument, ReturnValues = ReturnValues.None },
-                    cancellationToken).ConfigureAwait(false);
-                PopulateInstance(storage, value, flatConfig);
-            }
+            await SaveHelperAsync(typeof(T), value, operationConfig, cancellationToken).ConfigureAwait(false);
         }
 
         private async Task SaveHelperAsync(Type valueType, object value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
