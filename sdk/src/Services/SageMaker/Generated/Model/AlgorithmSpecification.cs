@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         private bool? _enableSageMakerMetricsTimeSeries;
         private List<MetricDefinition> _metricDefinitions = new List<MetricDefinition>();
         private string _trainingImage;
+        private TrainingImageConfig _trainingImageConfig;
         private TrainingInputMode _trainingInputMode;
 
         /// <summary>
@@ -228,6 +229,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTrainingImage()
         {
             return this._trainingImage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingImageConfig. 
+        /// <para>
+        /// The configuration to use an image from a private Docker registry for a training job.
+        /// </para>
+        /// </summary>
+        public TrainingImageConfig TrainingImageConfig
+        {
+            get { return this._trainingImageConfig; }
+            set { this._trainingImageConfig = value; }
+        }
+
+        // Check to see if TrainingImageConfig property is set
+        internal bool IsSetTrainingImageConfig()
+        {
+            return this._trainingImageConfig != null;
         }
 
         /// <summary>
