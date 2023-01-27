@@ -39,6 +39,7 @@ namespace Amazon.Outposts.Model
         private DateTime? _orderSubmissionDate;
         private string _outpostId;
         private PaymentOption _paymentOption;
+        private PaymentTerm _paymentTerm;
         private OrderStatus _status;
 
         /// <summary>
@@ -149,6 +150,24 @@ namespace Amazon.Outposts.Model
         internal bool IsSetPaymentOption()
         {
             return this._paymentOption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PaymentTerm. 
+        /// <para>
+        /// The payment term.
+        /// </para>
+        /// </summary>
+        public PaymentTerm PaymentTerm
+        {
+            get { return this._paymentTerm; }
+            set { this._paymentTerm = value; }
+        }
+
+        // Check to see if PaymentTerm property is set
+        internal bool IsSetPaymentTerm()
+        {
+            return this._paymentTerm != null;
         }
 
         /// <summary>
