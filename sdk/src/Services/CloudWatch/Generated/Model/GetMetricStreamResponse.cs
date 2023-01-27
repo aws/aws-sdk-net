@@ -38,6 +38,7 @@ namespace Amazon.CloudWatch.Model
         private List<MetricStreamFilter> _excludeFilters = new List<MetricStreamFilter>();
         private string _firehoseArn;
         private List<MetricStreamFilter> _includeFilters = new List<MetricStreamFilter>();
+        private bool? _includeLinkedAccountsMetrics;
         private DateTime? _lastUpdateDate;
         private string _name;
         private MetricStreamOutputFormat _outputFormat;
@@ -139,6 +140,26 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetIncludeFilters()
         {
             return this._includeFilters != null && this._includeFilters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeLinkedAccountsMetrics. 
+        /// <para>
+        /// If this is <code>true</code> and this metric stream is in a monitoring account, then
+        /// the stream includes metrics from source accounts that the monitoring account is linked
+        /// to.
+        /// </para>
+        /// </summary>
+        public bool IncludeLinkedAccountsMetrics
+        {
+            get { return this._includeLinkedAccountsMetrics.GetValueOrDefault(); }
+            set { this._includeLinkedAccountsMetrics = value; }
+        }
+
+        // Check to see if IncludeLinkedAccountsMetrics property is set
+        internal bool IsSetIncludeLinkedAccountsMetrics()
+        {
+            return this._includeLinkedAccountsMetrics.HasValue; 
         }
 
         /// <summary>

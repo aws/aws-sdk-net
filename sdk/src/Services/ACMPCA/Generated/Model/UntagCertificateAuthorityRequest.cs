@@ -34,8 +34,8 @@ namespace Amazon.ACMPCA.Model
     /// If you do not specify the value portion of the tag when calling this action, the tag
     /// will be removed regardless of value. If you specify a value, the tag is removed only
     /// if it is associated with the specified value. To add tags to a private CA, use the
-    /// <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_TagCertificateAuthority.html">TagCertificateAuthority</a>.
-    /// Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListTags.html">ListTags</a>
+    /// <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_TagCertificateAuthority.html">TagCertificateAuthority</a>.
+    /// Call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListTags.html">ListTags</a>
     /// action to see what tags are associated with your CA.
     /// </summary>
     public partial class UntagCertificateAuthorityRequest : AmazonACMPCARequest
@@ -46,7 +46,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>.
+        /// The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>.
         /// This must be of the form: 
         /// </para>
         ///  

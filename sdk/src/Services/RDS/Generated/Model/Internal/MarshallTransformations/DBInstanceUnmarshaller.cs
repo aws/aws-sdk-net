@@ -151,6 +151,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.CACertificateIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CertificateDetails", targetDepth))
+                    {
+                        var unmarshaller = CertificateDetailsUnmarshaller.Instance;
+                        unmarshalledObject.CertificateDetails = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CharacterSetName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

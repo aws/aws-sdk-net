@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
-    /// A mapping of a query attached to a resource group that determines the AWS resources
-    /// that are members of the group.
+    /// A mapping of a query attached to a resource group that determines the Amazon Web Services
+    /// resources that are members of the group.
     /// </summary>
     public partial class GroupQuery
     {
@@ -43,7 +43,7 @@ namespace Amazon.ResourceGroups.Model
         /// The name of the resource group that is associated with the specified resource query.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string GroupName
         {
             get { return this._groupName; }
@@ -59,8 +59,8 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property ResourceQuery. 
         /// <para>
-        /// The resource query that determines which AWS resources are members of the associated
-        /// resource group.
+        /// The resource query that determines which Amazon Web Services resources are members
+        /// of the associated resource group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

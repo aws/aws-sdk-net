@@ -60,7 +60,10 @@ namespace Amazon.SsmSap.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The ID of the application.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplicationId
@@ -76,7 +79,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ApplicationType.
+        /// Gets and sets the property ApplicationType. 
+        /// <para>
+        /// The type of the application.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ApplicationType ApplicationType
@@ -92,7 +98,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Credentials.
+        /// Gets and sets the property Credentials. 
+        /// <para>
+        /// The credentials of the SAP application.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
         public List<ApplicationCredential> Credentials
@@ -108,7 +117,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Instances.
+        /// Gets and sets the property Instances. 
+        /// <para>
+        /// The Amazon EC2 instances on which your SAP application is running.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
         public List<string> Instances
@@ -124,7 +136,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SapInstanceNumber.
+        /// Gets and sets the property SapInstanceNumber. 
+        /// <para>
+        /// The SAP instance number of the application.
+        /// </para>
         /// </summary>
         public string SapInstanceNumber
         {
@@ -139,7 +154,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Sid.
+        /// Gets and sets the property Sid. 
+        /// <para>
+        /// The System ID of the application.
+        /// </para>
         /// </summary>
         public string Sid
         {
@@ -154,7 +172,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to be attached to the SAP application.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

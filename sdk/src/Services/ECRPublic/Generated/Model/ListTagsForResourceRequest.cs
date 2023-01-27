@@ -39,11 +39,11 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that identifies the resource for which to list the
-        /// tags. Currently, the supported resource is an Amazon ECR Public repository.
+        /// The Amazon Resource Name (ARN) that identifies the resource to list the tags for.
+        /// Currently, the supported resource is an Amazon ECR Public repository.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

@@ -32,7 +32,24 @@ namespace Amazon.ResourceGroups.Model
     /// Container for the parameters to the GroupResources operation.
     /// Adds the specified resources to the specified group.
     /// 
-    ///  
+    ///  <important> 
+    /// <para>
+    /// You can use this operation with only resource groups that are configured with the
+    /// following types:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>AWS::EC2::HostManagement</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>AWS::EC2::CapacityReservationPool</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Other resource group type and resource types aren't currently supported by this operation.
+    /// </para>
+    ///  </important> 
     /// <para>
     ///  <b>Minimum permissions</b> 
     /// </para>
@@ -73,7 +90,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property ResourceArns. 
         /// <para>
-        /// The list of ARNs for resources to be added to the group. 
+        /// The list of ARNs of the resources to be added to the group. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

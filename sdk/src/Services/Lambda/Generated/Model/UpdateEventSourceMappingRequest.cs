@@ -75,29 +75,29 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>BisectBatchOnFunctionError</code> - If the function returns an error, split
+    ///  <code>BisectBatchOnFunctionError</code> – If the function returns an error, split
     /// the batch in two and retry.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue or
+    ///  <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue or
     /// Amazon SNS topic.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified
+    ///  <code>MaximumRecordAgeInSeconds</code> – Discard records older than the specified
     /// age. The default value is infinite (-1). When set to infinite (-1), failed records
     /// are retried until the record expires
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
+    ///  <code>MaximumRetryAttempts</code> – Discard records after the specified number of
     /// retries. The default value is infinite (-1). When set to infinite (-1), failed records
     /// are retried until the record expires.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
+    ///  <code>ParallelizationFactor</code> – Process multiple batches from each shard concurrently.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -149,6 +149,7 @@ namespace Amazon.Lambda.Model
         private int? _maximumRecordAgeInSeconds;
         private int? _maximumRetryAttempts;
         private int? _parallelizationFactor;
+        private ScalingConfig _scalingConfig;
         private List<SourceAccessConfiguration> _sourceAccessConfigurations = new List<SourceAccessConfiguration>();
         private int? _tumblingWindowInSeconds;
         private string _uuid;
@@ -163,28 +164,28 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+        ///  <b>Amazon Kinesis</b> – Default 100. Max 10,000.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
+        ///  <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000.
+        ///  <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000.
         /// For FIFO queues the max is 10.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+        ///  <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
+        ///  <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.
+        ///  <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -289,19 +290,19 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Function name</b> - <code>MyFunction</code>.
+        ///  <b>Function name</b> – <code>MyFunction</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+        ///  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+        ///  <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+        ///  <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -436,6 +437,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetParallelizationFactor()
         {
             return this._parallelizationFactor.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScalingConfig. 
+        /// <para>
+        /// (Amazon SQS only) The scaling configuration for the event source. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+        /// maximum concurrency for Amazon SQS event sources</a>.
+        /// </para>
+        /// </summary>
+        public ScalingConfig ScalingConfig
+        {
+            get { return this._scalingConfig; }
+            set { this._scalingConfig = value; }
+        }
+
+        // Check to see if ScalingConfig property is set
+        internal bool IsSetScalingConfig()
+        {
+            return this._scalingConfig != null;
         }
 
         /// <summary>

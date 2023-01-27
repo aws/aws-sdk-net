@@ -88,6 +88,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.CodecSpecification = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dashManifestStyle", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DashManifestStyle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("destination", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

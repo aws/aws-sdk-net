@@ -254,7 +254,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property SubRegion. 
         /// <para>
-        /// A country, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.
+        /// A county, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.
         /// </para>
         /// </summary>
         public string SubRegion

@@ -30,7 +30,8 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListImages operation.
-    /// Returns the list of images that you have access to.
+    /// Returns the list of images that you have access to. Newly created images can take
+    /// up to two minutes to appear in the ListImages API Results.
     /// </summary>
     public partial class ListImagesRequest : AmazonImagebuilderRequest
     {

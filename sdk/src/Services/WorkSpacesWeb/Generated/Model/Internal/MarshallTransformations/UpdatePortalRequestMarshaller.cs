@@ -68,6 +68,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAuthenticationType())
+                {
+                    context.Writer.WritePropertyName("authenticationType");
+                    context.Writer.Write(publicRequest.AuthenticationType);
+                }
+
                 if(publicRequest.IsSetDisplayName())
                 {
                     context.Writer.WritePropertyName("displayName");

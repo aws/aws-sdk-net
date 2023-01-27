@@ -230,6 +230,16 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeIpamResourceDiscoveriesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeIpamResourceDiscoveryAssociationsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeIpamsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -561,6 +571,16 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamDiscoveredAccountsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamDiscoveredResourceCidrsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.GetIpamPoolAllocationsRequest.MaxResults</property>
     <min>1000</min>
     <max>100000</max>
@@ -846,6 +866,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.IpamPool.IpamScopeArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamResourceDiscoveryAssociation.IpamArn</property>
     <min>1</min>
     <max>1283</max>
   </property-value-rule>

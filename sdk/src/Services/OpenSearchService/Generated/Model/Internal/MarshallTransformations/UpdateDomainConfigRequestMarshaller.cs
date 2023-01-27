@@ -149,6 +149,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DryRun);
                 }
 
+                if(publicRequest.IsSetDryRunMode())
+                {
+                    context.Writer.WritePropertyName("DryRunMode");
+                    context.Writer.Write(publicRequest.DryRunMode);
+                }
+
                 if(publicRequest.IsSetEBSOptions())
                 {
                     context.Writer.WritePropertyName("EBSOptions");

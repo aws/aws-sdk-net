@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ConnectionNotificationSet. 
         /// <para>
-        /// One or more notifications.
+        /// The notifications.
         /// </para>
         /// </summary>
         public List<ConnectionNotification> ConnectionNotificationSet

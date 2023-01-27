@@ -182,6 +182,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.Item.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectParticipant.Model.Item.Content</property>
     <min>1</min>
     <max>16384</max>
@@ -203,6 +208,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectParticipant.Model.Item.ParticipantId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.Item.RelatedContactId</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>

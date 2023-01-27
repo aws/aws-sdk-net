@@ -109,6 +109,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ChimeSDKMessaging.CodeAnalysis" Path="|AWSSDK.ChimeSDKMessaging.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ChimeSDKVoice.CodeAnalysis" Path="|AWSSDK.ChimeSDKVoice.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ChimeSDKVoice.CodeAnalysis" Path="|AWSSDK.ChimeSDKVoice.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CleanRooms.CodeAnalysis" Path="|AWSSDK.CleanRooms.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CleanRooms.CodeAnalysis" Path="|AWSSDK.CleanRooms.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Cloud9.CodeAnalysis" Path="|AWSSDK.Cloud9.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Cloud9.CodeAnalysis" Path="|AWSSDK.Cloud9.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CloudControlApi.CodeAnalysis" Path="|AWSSDK.CloudControlApi.CodeAnalysis|"/>
@@ -361,6 +363,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.KafkaConnect.CodeAnalysis" Path="|AWSSDK.KafkaConnect.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Kendra.CodeAnalysis" Path="|AWSSDK.Kendra.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Kendra.CodeAnalysis" Path="|AWSSDK.Kendra.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.KendraRanking.CodeAnalysis" Path="|AWSSDK.KendraRanking.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.KendraRanking.CodeAnalysis" Path="|AWSSDK.KendraRanking.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.KeyManagementService.CodeAnalysis" Path="|AWSSDK.KeyManagementService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.KeyManagementService.CodeAnalysis" Path="|AWSSDK.KeyManagementService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Keyspaces.CodeAnalysis" Path="|AWSSDK.Keyspaces.CodeAnalysis|"/>

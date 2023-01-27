@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// In IPAM, an allocation is a CIDR assignment from an IPAM pool to another resource
-    /// or IPAM pool.
+    /// In IPAM, an allocation is a CIDR assignment from an IPAM pool to another IPAM pool
+    /// or to a resource.
     /// </summary>
     public partial class IpamPoolAllocation
     {

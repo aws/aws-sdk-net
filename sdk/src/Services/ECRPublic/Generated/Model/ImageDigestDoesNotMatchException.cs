@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// The specified image digest does not match the digest that Amazon ECR calculated for
+    /// The specified image digest doesn't match the digest that Amazon ECR calculated for
     /// the image.
     /// </summary>
     #if !NETSTANDARD

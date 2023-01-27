@@ -100,6 +100,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.TargetLkfs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("truePeakLimiterThreshold", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.TruePeakLimiterThreshold = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -62,7 +62,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataTransforms. 
         /// <para>
-        /// Transform operations that act on this logical table.
+        /// Transform operations that act on this logical table. For this structure to be valid,
+        /// only one of the attributes can be non-null. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

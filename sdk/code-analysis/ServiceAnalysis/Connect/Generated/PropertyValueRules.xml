@@ -1401,6 +1401,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.StartChatContactResponse.ContinuedFromContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.StartChatContactResponse.ParticipantId</property>
     <min>1</min>
     <max>256</max>
@@ -2088,6 +2093,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.Contact.RelatedContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlow.Id</property>
     <max>500</max>
   </property-value-rule>
@@ -2321,6 +2331,11 @@
     <property>Amazon.Connect.Model.ParticipantTimerValue.ParticipantTimerDurationInMinutes</property>
     <min>2</min>
     <max>480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.PersistentChat.SourceContactId</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PhoneNumberQuickConnectConfig.PhoneNumber</property>

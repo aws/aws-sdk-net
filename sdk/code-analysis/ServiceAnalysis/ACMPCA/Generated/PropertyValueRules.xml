@@ -393,6 +393,7 @@
     <property>Amazon.ACMPCA.Model.CrlConfiguration.CustomCname</property>
     <min>0</min>
     <max>253</max>
+    <pattern>^[-a-zA-Z0-9;/?:@&amp;=+$,%_.!~*()']*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.CrlConfiguration.ExpirationInDays</property>
@@ -403,6 +404,7 @@
     <property>Amazon.ACMPCA.Model.CrlConfiguration.S3BucketName</property>
     <min>3</min>
     <max>255</max>
+    <pattern>^[-a-zA-Z0-9._/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.CustomAttribute.ObjectIdentifier</property>
@@ -473,6 +475,7 @@
     <property>Amazon.ACMPCA.Model.OcspConfiguration.OcspCustomCname</property>
     <min>0</min>
     <max>253</max>
+    <pattern>^[-a-zA-Z0-9;/?:@&amp;=+$,%_.!~*()']*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.OtherName.TypeId</property>

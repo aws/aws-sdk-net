@@ -104,7 +104,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Components. 
         /// <para>
-        /// The components of the image recipe.
+        /// The components included in the image recipe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

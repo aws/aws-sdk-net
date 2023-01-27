@@ -34,7 +34,7 @@ namespace Amazon.CodeArtifact.Model
     /// in your repository. If you want to remove a package version from your repository and
     /// be able to restore it later, set its status to <code>Archived</code>. Archived packages
     /// cannot be downloaded from a repository and don't show up with list package APIs (for
-    /// example, <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a>),
+    /// example, <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>),
     /// but you can restore them using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionsStatus</a>.
     /// </summary>
     public partial class DeletePackageVersionsRequest : AmazonCodeArtifactRequest

@@ -39,7 +39,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Arns. 
         /// <para>
-        /// Array of ARNs, one per channel.
+        /// Array of ARNs, one per stream key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

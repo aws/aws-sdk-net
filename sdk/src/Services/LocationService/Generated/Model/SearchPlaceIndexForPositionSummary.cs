@@ -50,6 +50,10 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Grab
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Here
         /// </para>
         ///  </li> </ul> 

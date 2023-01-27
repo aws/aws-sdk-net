@@ -81,6 +81,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TargetLkfs);
             }
 
+            if(requestObject.IsSetTruePeakLimiterThreshold())
+            {
+                context.Writer.WritePropertyName("truePeakLimiterThreshold");
+                context.Writer.Write(requestObject.TruePeakLimiterThreshold);
+            }
+
         }
 
         /// <summary>

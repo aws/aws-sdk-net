@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeVpcEndpoints.
+    /// This is the response object from the DescribeVpcEndpoints operation.
     /// </summary>
     public partial class DescribeVpcEndpointsResponse : AmazonWebServiceResponse
     {

@@ -94,6 +94,16 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+        /// styles:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VectorGrabStandardLight, VectorGrabStandardDark – <code>Noto Sans Regular</code> |
+        /// <code>Noto Sans Medium</code> | <code>Noto Sans Bold</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
         /// Data (Preview)</a> styles:
         /// </para>

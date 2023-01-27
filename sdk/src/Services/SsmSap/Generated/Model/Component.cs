@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
-    /// 
+    /// The SAP component of your application.
     /// </summary>
     public partial class Component
     {
@@ -43,7 +43,10 @@ namespace Amazon.SsmSap.Model
         private ComponentStatus _status;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The ID of the application.
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -58,7 +61,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ComponentId.
+        /// Gets and sets the property ComponentId. 
+        /// <para>
+        /// The ID of the component.
+        /// </para>
         /// </summary>
         public string ComponentId
         {
@@ -73,7 +79,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ComponentType.
+        /// Gets and sets the property ComponentType. 
+        /// <para>
+        /// The type of the component.
+        /// </para>
         /// </summary>
         public ComponentType ComponentType
         {
@@ -88,7 +97,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Databases.
+        /// Gets and sets the property Databases. 
+        /// <para>
+        /// The SAP HANA databases of the component.
+        /// </para>
         /// </summary>
         public List<string> Databases
         {
@@ -103,7 +115,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Hosts.
+        /// Gets and sets the property Hosts. 
+        /// <para>
+        /// The hosts of the component.
+        /// </para>
         /// </summary>
         public List<Host> Hosts
         {
@@ -118,7 +133,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastUpdated.
+        /// Gets and sets the property LastUpdated. 
+        /// <para>
+        /// The time at which the component was last updated.
+        /// </para>
         /// </summary>
         public DateTime LastUpdated
         {
@@ -133,7 +151,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrimaryHost.
+        /// Gets and sets the property PrimaryHost. 
+        /// <para>
+        /// The primary host of the component.
+        /// </para>
         /// </summary>
         public string PrimaryHost
         {
@@ -148,7 +169,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the component.
+        /// </para>
         /// </summary>
         public ComponentStatus Status
         {

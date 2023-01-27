@@ -42,8 +42,8 @@ namespace Amazon.Lambda.Model
     /// <para>
     /// The <code>ListFunctions</code> operation returns a subset of the <a>FunctionConfiguration</a>
     /// fields. To get the additional fields (State, StateReasonCode, StateReason, LastUpdateStatus,
-    /// LastUpdateStatusReason, LastUpdateStatusReasonCode) for a function or version, use
-    /// <a>GetFunction</a>.
+    /// LastUpdateStatusReason, LastUpdateStatusReasonCode, RuntimeVersionConfig) for a function
+    /// or version, use <a>GetFunction</a>.
     /// </para>
     ///  </note>
     /// </summary>

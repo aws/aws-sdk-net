@@ -40,6 +40,8 @@ namespace Amazon.GlueDataBrew.Internal
             if (parameters == null) 
                 throw new ArgumentNullException("parameters");
 
+            if (parameters["Region"] == null)
+                throw new AmazonClientException("Region parameter must be set for endpoint resolution");
             if (parameters["UseDualStack"] == null)
                 throw new AmazonClientException("UseDualStack parameter must be set for endpoint resolution");
             if (parameters["UseFIPS"] == null)
@@ -54,7 +56,7 @@ namespace Amazon.GlueDataBrew.Internal
             };
             if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
             {
-                if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
+                if (IsSet(refs["Endpoint"]))
                 {
                     if (Equals(refs["UseFIPS"], true))
                     {
@@ -78,6 +80,10 @@ namespace Amazon.GlueDataBrew.Internal
                 {
                     if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
                     {
+                        if (Equals(refs["Region"], "us-gov-west-1"))
+                        {
+                            return new Endpoint("https://databrew.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
                         return new Endpoint(Interpolate(@"https://databrew-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");

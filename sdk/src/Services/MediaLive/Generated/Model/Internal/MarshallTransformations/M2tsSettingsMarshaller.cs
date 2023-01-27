@@ -300,6 +300,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Scte35Pid);
             }
 
+            if(requestObject.IsSetScte35PrerollPullupMilliseconds())
+            {
+                context.Writer.WritePropertyName("scte35PrerollPullupMilliseconds");
+                context.Writer.Write(requestObject.Scte35PrerollPullupMilliseconds);
+            }
+
             if(requestObject.IsSetSegmentationMarkers())
             {
                 context.Writer.WritePropertyName("segmentationMarkers");

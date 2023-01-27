@@ -198,6 +198,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* The Amazon Chime SDK Messaging APIs allow software developers to send and receive messages in custom messaging applications.
 * [AWSSDK.ChimeSDKVoice](https://www.nuget.org/packages/AWSSDK.ChimeSDKVoice/)
 	* Amazon Chime Voice Connector, Voice Connector Group and PSTN Audio Service APIs are now available in the Amazon Chime SDK Voice namespace. See https://docs.aws.amazon.com/chime-sdk/latest/dg/sdk-available-regions.html for more details.
+* [AWSSDK.CleanRooms](https://www.nuget.org/packages/AWSSDK.CleanRooms/)
+	* Initial release of AWS Clean Rooms
 * [AWSSDK.Cloud9](https://www.nuget.org/packages/AWSSDK.Cloud9/)
 	* Adds support for creating and managing AWS Cloud9 development environments. AWS Cloud9 is a cloud-based integrated development environment (IDE) that you use to write, run, and debug code.
 * [AWSSDK.CloudControlApi](https://www.nuget.org/packages/AWSSDK.CloudControlApi/)
@@ -450,6 +452,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This is the initial SDK release for Amazon Managed Streaming for Apache Kafka Connect (MSK Connect).
 * [AWSSDK.Kendra](https://www.nuget.org/packages/AWSSDK.Kendra/)
 	* It is a preview launch of Amazon Kendra. Amazon Kendra is a managed, highly accurate and easy to use enterprise search service that is powered by machine learning.
+* [AWSSDK.KendraRanking](https://www.nuget.org/packages/AWSSDK.KendraRanking/)
+	* Introducing Amazon Kendra Intelligent Ranking, a new set of Kendra APIs that leverages Kendra semantic ranking capabilities to improve the quality of search results from other search services (i.e. OpenSearch, ElasticSearch, Solr).
 * [AWSSDK.KeyManagementService](https://www.nuget.org/packages/AWSSDK.KeyManagementService/)
 	* AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys.
 * [AWSSDK.Keyspaces](https://www.nuget.org/packages/AWSSDK.Keyspaces/)

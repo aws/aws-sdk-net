@@ -10329,6 +10329,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ProductionVariantInstanceType MlP4d24xlarge = new ProductionVariantInstanceType("ml.p4d.24xlarge");
         /// <summary>
+        /// Constant MlP4de24xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlP4de24xlarge = new ProductionVariantInstanceType("ml.p4de.24xlarge");
+        /// <summary>
         /// Constant MlR512xlarge for ProductionVariantInstanceType
         /// </summary>
         public static readonly ProductionVariantInstanceType MlR512xlarge = new ProductionVariantInstanceType("ml.r5.12xlarge");

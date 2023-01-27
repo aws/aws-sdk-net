@@ -165,7 +165,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaceIds. 
         /// <para>
-        /// (Interface endpoint) One or more network interfaces for the endpoint.
+        /// (Interface endpoint) The network interfaces for the endpoint.
         /// </para>
         /// </summary>
         public List<string> NetworkInterfaceIds
@@ -256,7 +256,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RouteTableIds. 
         /// <para>
-        /// (Gateway endpoint) One or more route tables associated with the endpoint.
+        /// (Gateway endpoint) The IDs of the route tables associated with the endpoint.
         /// </para>
         /// </summary>
         public List<string> RouteTableIds
@@ -328,7 +328,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Any tags assigned to the endpoint.
+        /// The tags assigned to the endpoint.
         /// </para>
         /// </summary>
         public List<Tag> Tags

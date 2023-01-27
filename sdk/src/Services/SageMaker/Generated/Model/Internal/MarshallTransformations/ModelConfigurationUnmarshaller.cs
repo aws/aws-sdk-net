@@ -64,6 +64,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CompilationJobName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CompilationJobName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EnvironmentParameters", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<EnvironmentParameter, EnvironmentParameterUnmarshaller>(EnvironmentParameterUnmarshaller.Instance);

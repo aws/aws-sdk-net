@@ -50,12 +50,14 @@ namespace Amazon.RDS.Model
         private string _kmsKeyId;
         private string _majorEngineVersion;
         private string _status;
+        private List<string> _supportedCACertificateIdentifiers = new List<string>();
         private List<CharacterSet> _supportedCharacterSets = new List<CharacterSet>();
         private List<string> _supportedEngineModes = new List<string>();
         private List<string> _supportedFeatureNames = new List<string>();
         private List<CharacterSet> _supportedNcharCharacterSets = new List<CharacterSet>();
         private List<Timezone> _supportedTimezones = new List<Timezone>();
         private bool? _supportsBabelfish;
+        private bool? _supportsCertificateRotationWithoutRestart;
         private bool? _supportsGlobalDatabases;
         private bool? _supportsLogExportsToCloudwatchLogs;
         private bool? _supportsParallelQuery;
@@ -381,6 +383,32 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SupportedCACertificateIdentifiers. 
+        /// <para>
+        /// A list of the supported CA certificate identifiers.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+        /// SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>
+        /// and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+        /// Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedCACertificateIdentifiers
+        {
+            get { return this._supportedCACertificateIdentifiers; }
+            set { this._supportedCACertificateIdentifiers = value; }
+        }
+
+        // Check to see if SupportedCACertificateIdentifiers property is set
+        internal bool IsSetSupportedCACertificateIdentifiers()
+        {
+            return this._supportedCACertificateIdentifiers != null && this._supportedCACertificateIdentifiers.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SupportedCharacterSets. 
         /// <para>
         /// A list of the character sets supported by this engine for the <code>CharacterSetName</code>
@@ -518,6 +546,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportsBabelfish()
         {
             return this._supportsBabelfish.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsCertificateRotationWithoutRestart. 
+        /// <para>
+        /// A value that indicates whether the engine version supports rotating the server certificate
+        /// without rebooting the DB instance.
+        /// </para>
+        /// </summary>
+        public bool SupportsCertificateRotationWithoutRestart
+        {
+            get { return this._supportsCertificateRotationWithoutRestart.GetValueOrDefault(); }
+            set { this._supportsCertificateRotationWithoutRestart = value; }
+        }
+
+        // Check to see if SupportsCertificateRotationWithoutRestart property is set
+        internal bool IsSetSupportsCertificateRotationWithoutRestart()
+        {
+            return this._supportsCertificateRotationWithoutRestart.HasValue; 
         }
 
         /// <summary>

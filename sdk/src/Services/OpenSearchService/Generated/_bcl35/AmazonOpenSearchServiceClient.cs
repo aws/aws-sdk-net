@@ -349,8 +349,8 @@ namespace Amazon.OpenSearchService
 
         /// <summary>
         /// Attaches tags to an existing Amazon OpenSearch Service domain. Tags are a set of case-sensitive
-        /// key-value pairs. An domain can have up to 10 tags. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging">
-        /// Tagging Amazon OpenSearch Service domains</a>.
+        /// key-value pairs. A domain can have up to 10 tags. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging
+        /// Amazon OpenSearch Service domains</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
         /// 
@@ -1634,6 +1634,80 @@ namespace Amazon.OpenSearchService
         public virtual DescribeDomainsResponse EndDescribeDomains(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDomainsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeDryRunProgress
+
+        /// <summary>
+        /// Describes the progress of a pre-update dry run analysis on an Amazon OpenSearch Service
+        /// domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#dryrun">Determining
+        /// whether a change will cause a blue/green deployment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDryRunProgress service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDryRunProgress service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDryRunProgress">REST API Reference for DescribeDryRunProgress Operation</seealso>
+        public virtual DescribeDryRunProgressResponse DescribeDryRunProgress(DescribeDryRunProgressRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDryRunProgressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDryRunProgressResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDryRunProgressResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDryRunProgress operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDryRunProgress operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDryRunProgress
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDryRunProgress">REST API Reference for DescribeDryRunProgress Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDryRunProgress(DescribeDryRunProgressRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDryRunProgressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDryRunProgressResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDryRunProgress operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDryRunProgress.</param>
+        /// 
+        /// <returns>Returns a  DescribeDryRunProgressResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDryRunProgress">REST API Reference for DescribeDryRunProgress Operation</seealso>
+        public virtual DescribeDryRunProgressResponse EndDescribeDryRunProgress(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDryRunProgressResponse>(asyncResult);
         }
 
         #endregion

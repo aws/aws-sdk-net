@@ -80,7 +80,7 @@ namespace Amazon.ResourceGroups.Model
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated, use Group instead.")]
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=300)]
         public string GroupName
         {
             get { return this._groupName; }
@@ -96,7 +96,8 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property ResourceQuery. 
         /// <para>
-        /// The resource query to determine which AWS resources are members of this resource group.
+        /// The resource query to determine which Amazon Web Services resources are members of
+        /// this resource group.
         /// </para>
         ///  <note> 
         /// <para>

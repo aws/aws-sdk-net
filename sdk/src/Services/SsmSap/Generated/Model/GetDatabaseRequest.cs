@@ -41,7 +41,10 @@ namespace Amazon.SsmSap.Model
         private string _databaseId;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The ID of the application.
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -56,7 +59,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ComponentId.
+        /// Gets and sets the property ComponentId. 
+        /// <para>
+        /// The ID of the component.
+        /// </para>
         /// </summary>
         public string ComponentId
         {
@@ -71,7 +77,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DatabaseArn.
+        /// Gets and sets the property DatabaseArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the database.
+        /// </para>
         /// </summary>
         public string DatabaseArn
         {
@@ -86,7 +95,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DatabaseId.
+        /// Gets and sets the property DatabaseId. 
+        /// <para>
+        /// The ID of the database.
+        /// </para>
         /// </summary>
         public string DatabaseId
         {

@@ -39,7 +39,10 @@ namespace Amazon.SsmSap.Model
         private string _sourceResourceArn;
 
         /// <summary>
-        /// Gets and sets the property ActionType.
+        /// Gets and sets the property ActionType. 
+        /// <para>
+        /// Delete or restore the permissions on the target database.
+        /// </para>
         /// </summary>
         public PermissionActionType ActionType
         {
@@ -54,7 +57,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn
@@ -70,7 +76,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceResourceArn.
+        /// Gets and sets the property SourceResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the source resource.
+        /// </para>
         /// </summary>
         public string SourceResourceArn
         {

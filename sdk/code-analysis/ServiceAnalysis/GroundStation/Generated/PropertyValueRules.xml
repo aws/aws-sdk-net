@@ -19,6 +19,16 @@
     <pattern>^[ a-zA-Z0-9_:-]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.CreateDataflowEndpointGroupRequest.ContactPostPassDurationSeconds</property>
+    <min>120</min>
+    <max>480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.CreateDataflowEndpointGroupRequest.ContactPrePassDurationSeconds</property>
+    <min>120</min>
+    <max>480</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.CreateDataflowEndpointGroupResponse.DataflowEndpointGroupId</property>
     <min>1</min>
     <max>128</max>
@@ -168,6 +178,16 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.GetDataflowEndpointGroupResponse.ContactPostPassDurationSeconds</property>
+    <min>120</min>
+    <max>480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.GetDataflowEndpointGroupResponse.ContactPrePassDurationSeconds</property>
+    <min>120</min>
+    <max>480</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.GetDataflowEndpointGroupResponse.DataflowEndpointGroupId</property>

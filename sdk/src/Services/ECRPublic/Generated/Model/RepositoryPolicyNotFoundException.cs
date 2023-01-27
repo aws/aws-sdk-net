@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// The specified repository and registry combination does not have an associated repository
+    /// The specified repository and registry combination doesn't have an associated repository
     /// policy.
     /// </summary>
     #if !NETSTANDARD

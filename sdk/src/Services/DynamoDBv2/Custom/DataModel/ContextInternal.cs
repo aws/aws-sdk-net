@@ -370,6 +370,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 return conversion.ConvertFromEntry(targetType, entry);
             else
             {
+                if (entry is DynamoDBNull)
+                    return null;
+
                 object output;
                 Document document = entry as Document;
                 if (document != null)

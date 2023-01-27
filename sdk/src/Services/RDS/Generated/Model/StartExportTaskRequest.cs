@@ -133,44 +133,44 @@ namespace Amazon.RDS.Model
         /// The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported
         /// to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias
         /// ARN, or alias name for the KMS key. The caller of this operation must be authorized
-        /// to execute the following operations. These can be set in the Amazon Web Services KMS
-        /// key policy:
+        /// to run the following operations. These can be set in the Amazon Web Services KMS key
+        /// policy:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// GrantOperation.Encrypt
+        /// kms:Encrypt
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// GrantOperation.Decrypt
+        /// kms:Decrypt
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// GrantOperation.GenerateDataKey
+        /// kms:GenerateDataKey
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// GrantOperation.GenerateDataKeyWithoutPlaintext
+        /// kms:GenerateDataKeyWithoutPlaintext
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// GrantOperation.ReEncryptFrom
+        /// kms:ReEncryptFrom
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// GrantOperation.ReEncryptTo
+        /// kms:ReEncryptTo
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// GrantOperation.CreateGrant
+        /// kms:CreateGrant
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// GrantOperation.DescribeKey
+        /// kms:DescribeKey
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// GrantOperation.RetireGrant
+        /// kms:RetireGrant
         /// </para>
         ///  </li> </ul>
         /// </summary>

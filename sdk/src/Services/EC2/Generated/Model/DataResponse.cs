@@ -81,8 +81,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Metric. 
         /// <para>
-        /// The metric used for the network performance request. Currently only <code>aggregate-latency</code>
-        /// is supported, showing network latency during a specified period. 
+        /// The metric used for the network performance request. Only <code>aggregate-latency</code>
+        /// is supported, which shows network latency during a specified period. 
         /// </para>
         /// </summary>
         public MetricType Metric

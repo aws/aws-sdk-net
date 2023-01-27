@@ -118,22 +118,25 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HttpTokens. 
         /// <para>
-        /// The state of token usage for your instance metadata requests. If the parameter is
-        /// not specified in the request, the default state is <code>optional</code>.
+        /// Indicates whether IMDSv2 is <code>optional</code> or <code>required</code>.
         /// </para>
         ///  
         /// <para>
-        /// If the state is <code>optional</code>, you can choose to retrieve instance metadata
-        /// with or without a signed token header on your request. If you retrieve the IAM role
-        /// credentials without a token, the version 1.0 role credentials are returned. If you
-        /// retrieve the IAM role credentials using a valid signed token, the version 2.0 role
-        /// credentials are returned.
+        ///  <code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance
+        /// metadata with or without a session token in your request. If you retrieve the IAM
+        /// role credentials without a token, the IMDSv1 role credentials are returned. If you
+        /// retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials
+        /// are returned.
         /// </para>
         ///  
         /// <para>
-        /// If the state is <code>required</code>, you must send a signed token header with any
-        /// instance metadata retrieval requests. In this state, retrieving the IAM role credentials
-        /// always returns the version 2.0 credentials; the version 1.0 credentials are not available.
+        ///  <code>required</code> - When IMDSv2 is required, you must send a session token with
+        /// any instance metadata retrieval requests. In this state, retrieving the IAM role credentials
+        /// always returns IMDSv2 credentials; IMDSv1 credentials are not available.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>optional</code> 
         /// </para>
         /// </summary>
         public LaunchTemplateHttpTokensState HttpTokens

@@ -35,6 +35,8 @@ namespace Amazon.EC2.Model
     {
         private string _cidr;
         private IpamPoolCidrFailureReason _failureReason;
+        private string _ipamPoolCidrId;
+        private int? _netmaskLength;
         private IpamPoolCidrState _state;
 
         /// <summary>
@@ -73,6 +75,45 @@ namespace Amazon.EC2.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpamPoolCidrId. 
+        /// <para>
+        /// The IPAM pool CIDR ID.
+        /// </para>
+        /// </summary>
+        public string IpamPoolCidrId
+        {
+            get { return this._ipamPoolCidrId; }
+            set { this._ipamPoolCidrId = value; }
+        }
+
+        // Check to see if IpamPoolCidrId property is set
+        internal bool IsSetIpamPoolCidrId()
+        {
+            return this._ipamPoolCidrId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetmaskLength. 
+        /// <para>
+        /// The netmask length of the CIDR you'd like to provision to a pool. Can be used for
+        /// provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs
+        /// to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools.
+        /// "NetmaskLength" or "Cidr" is required.
+        /// </para>
+        /// </summary>
+        public int NetmaskLength
+        {
+            get { return this._netmaskLength.GetValueOrDefault(); }
+            set { this._netmaskLength = value; }
+        }
+
+        // Check to see if NetmaskLength property is set
+        internal bool IsSetNetmaskLength()
+        {
+            return this._netmaskLength.HasValue; 
         }
 
         /// <summary>

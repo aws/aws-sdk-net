@@ -30,18 +30,19 @@ namespace Amazon.ACMPCA.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportCertificateAuthorityCertificate operation.
-    /// Imports a signed private CA certificate into ACM Private CA. This action is used when
-    /// you are using a chain of trust whose root is located outside ACM Private CA. Before
-    /// you can call this action, the following preparations must in place:
+    /// Imports a signed private CA certificate into Amazon Web Services Private CA. This
+    /// action is used when you are using a chain of trust whose root is located outside Amazon
+    /// Web Services Private CA. Before you can call this action, the following preparations
+    /// must in place:
     /// 
     ///  <ol> <li> 
     /// <para>
-    /// In ACM Private CA, call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
+    /// In Amazon Web Services Private CA, call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
     /// action to create the private CA that you plan to back with the imported certificate.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCsr.html">GetCertificateAuthorityCsr</a>
+    /// Call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificateAuthorityCsr.html">GetCertificateAuthorityCsr</a>
     /// action to generate a certificate signing request (CSR).
     /// </para>
     ///  </li> <li> 
@@ -56,16 +57,16 @@ namespace Amazon.ACMPCA.Model
     /// </para>
     ///  </li> </ol> 
     /// <para>
-    /// ACM Private CA supports three scenarios for installing a CA certificate:
+    /// Amazon Web Services Private CA supports three scenarios for installing a CA certificate:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Installing a certificate for a root CA hosted by ACM Private CA.
+    /// Installing a certificate for a root CA hosted by Amazon Web Services Private CA.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Installing a subordinate CA certificate whose parent authority is hosted by ACM Private
-    /// CA.
+    /// Installing a subordinate CA certificate whose parent authority is hosted by Amazon
+    /// Web Services Private CA.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -112,8 +113,8 @@ namespace Amazon.ACMPCA.Model
     /// </para>
     ///  
     /// <para>
-    /// ACM Private CA allows the following extensions to be marked critical in the imported
-    /// CA certificate or chain.
+    /// Amazon Web Services Private CA allows the following extensions to be marked critical
+    /// in the imported CA certificate or chain.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -165,8 +166,8 @@ namespace Amazon.ACMPCA.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// ACM Private CA rejects the following extensions when they are marked critical in an
-    /// imported CA certificate or chain.
+    /// Amazon Web Services Private CA rejects the following extensions when they are marked
+    /// critical in an imported CA certificate or chain.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -223,7 +224,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>.
+        /// The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>.
         /// This must be of the form: 
         /// </para>
         ///  
@@ -249,9 +250,9 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property CertificateChain. 
         /// <para>
         /// A PEM-encoded file that contains all of your certificates, other than the certificate
-        /// you're importing, chaining up to your root CA. Your ACM Private CA-hosted or on-premises
-        /// root certificate is the last in the chain, and each certificate in the chain signs
-        /// the one preceding. 
+        /// you're importing, chaining up to your root CA. Your Amazon Web Services Private CA-hosted
+        /// or on-premises root certificate is the last in the chain, and each certificate in
+        /// the chain signs the one preceding. 
         /// </para>
         ///  
         /// <para>

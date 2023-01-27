@@ -40,8 +40,9 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the public registry that contains the repository.
-        /// If you do not specify a registry, the default public registry is assumed.
+        /// The Amazon Web Services account ID that's associated with the public registry that
+        /// contains the repository. If you do not specify a registry, the default public registry
+        /// is assumed.
         /// </para>
         /// </summary>
         public string RegistryId

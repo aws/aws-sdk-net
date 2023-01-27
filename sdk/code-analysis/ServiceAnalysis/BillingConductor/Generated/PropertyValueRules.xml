@@ -121,10 +121,22 @@
     <pattern>[a-zA-Z0-9_\+=\.\-@]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BillingConductor.Model.CreatePricingRuleRequest.Operation</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BillingConductor.Model.CreatePricingRuleRequest.Service</property>
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BillingConductor.Model.CreatePricingRuleRequest.UsageType</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.CreatePricingRuleResponse.Arn</property>
@@ -482,10 +494,22 @@
     <pattern>[a-zA-Z0-9_\+=\.\-@]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BillingConductor.Model.UpdatePricingRuleResponse.Operation</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BillingConductor.Model.UpdatePricingRuleResponse.Service</property>
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BillingConductor.Model.UpdatePricingRuleResponse.UsageType</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.AccountAssociationsListElement.AccountId</property>

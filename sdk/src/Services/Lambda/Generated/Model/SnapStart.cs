@@ -29,10 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The function's SnapStart setting. Set <code>ApplyOn</code> to <code>PublishedVersions</code>
+    /// The function's Lambda SnapStart setting. Set <code>ApplyOn</code> to <code>PublishedVersions</code>
     /// to create a snapshot of the initialized execution environment when you publish a function
-    /// version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing
-    /// startup time with Lambda SnapStart</a>.
+    /// version.
+    /// 
+    ///  
+    /// <para>
+    /// SnapStart is supported with the <code>java11</code> runtime. For more information,
+    /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving
+    /// startup performance with Lambda SnapStart</a>.
+    /// </para>
     /// </summary>
     public partial class SnapStart
     {

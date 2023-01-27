@@ -36,7 +36,7 @@ namespace Amazon.LocationService.Model
     ///  <note> 
     /// <para>
     /// If your application is tracking or routing assets you use in your business, such as
-    /// delivery vehicles or employees, you may only use HERE as your geolocation provider.
+    /// delivery vehicles or employees, you must not use Esri as your geolocation provider.
     /// See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a>
     /// for more details.
     /// </para>

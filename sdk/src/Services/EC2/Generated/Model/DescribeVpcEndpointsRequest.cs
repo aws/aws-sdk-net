@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVpcEndpoints operation.
-    /// Describes one or more of your VPC endpoints.
+    /// Describes your VPC endpoints.
     /// </summary>
     public partial class DescribeVpcEndpointsRequest : AmazonEC2Request
     {
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -143,7 +143,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcEndpointIds. 
         /// <para>
-        /// One or more endpoint IDs.
+        /// The IDs of the VPC endpoints.
         /// </para>
         /// </summary>
         public List<string> VpcEndpointIds

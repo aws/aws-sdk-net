@@ -40,6 +40,7 @@ namespace Amazon.Appflow.Model
         private GoogleAnalyticsConnectorOperator _googleAnalytics;
         private InforNexusConnectorOperator _inforNexus;
         private MarketoConnectorOperator _marketo;
+        private PardotConnectorOperator _pardot;
         private S3ConnectorOperator _s3;
         private SalesforceConnectorOperator _salesforce;
         private SAPODataConnectorOperator _sapoData;
@@ -174,6 +175,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetMarketo()
         {
             return this._marketo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Pardot. 
+        /// <para>
+        /// The operation to be performed on the provided Salesforce Pardot source fields.
+        /// </para>
+        /// </summary>
+        public PardotConnectorOperator Pardot
+        {
+            get { return this._pardot; }
+            set { this._pardot = value; }
+        }
+
+        // Check to see if Pardot property is set
+        internal bool IsSetPardot()
+        {
+            return this._pardot != null;
         }
 
         /// <summary>

@@ -30,7 +30,8 @@ namespace Amazon.EventBridge.Model
 {
     /// <summary>
     /// These are custom parameters to be used when the target is a Amazon Redshift cluster
-    /// to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.
+    /// or Redshift Serverless workgroup to invoke the Amazon Redshift Data API ExecuteStatement
+    /// based on EventBridge events.
     /// </summary>
     public partial class RedshiftDataParameters
     {
@@ -64,6 +65,10 @@ namespace Amazon.EventBridge.Model
         /// Gets and sets the property DbUser. 
         /// <para>
         /// The database user name. Required when authenticating using temporary credentials.
+        /// </para>
+        ///  
+        /// <para>
+        /// Do not provide this parameter when connecting to a Redshift Serverless workgroup.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

@@ -573,6 +573,56 @@ namespace Amazon.AuditManager
 
 
     /// <summary>
+    /// Constants used for properties of type DeleteResources.
+    /// </summary>
+    public class DeleteResources : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for DeleteResources
+        /// </summary>
+        public static readonly DeleteResources ALL = new DeleteResources("ALL");
+        /// <summary>
+        /// Constant DEFAULT for DeleteResources
+        /// </summary>
+        public static readonly DeleteResources DEFAULT = new DeleteResources("DEFAULT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeleteResources(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeleteResources FindValue(string value)
+        {
+            return FindValue<DeleteResources>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeleteResources(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EvidenceFinderBackfillStatus.
     /// </summary>
     public class EvidenceFinderBackfillStatus : ConstantClass
@@ -910,6 +960,10 @@ namespace Amazon.AuditManager
         /// Constant DEFAULT_PROCESS_OWNERS for SettingAttribute
         /// </summary>
         public static readonly SettingAttribute DEFAULT_PROCESS_OWNERS = new SettingAttribute("DEFAULT_PROCESS_OWNERS");
+        /// <summary>
+        /// Constant DEREGISTRATION_POLICY for SettingAttribute
+        /// </summary>
+        public static readonly SettingAttribute DEREGISTRATION_POLICY = new SettingAttribute("DEREGISTRATION_POLICY");
         /// <summary>
         /// Constant EVIDENCE_FINDER_ENABLEMENT for SettingAttribute
         /// </summary>

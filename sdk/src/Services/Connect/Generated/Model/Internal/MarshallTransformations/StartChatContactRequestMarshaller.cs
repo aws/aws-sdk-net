@@ -130,6 +130,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetPersistentChat())
+                {
+                    context.Writer.WritePropertyName("PersistentChat");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PersistentChatMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PersistentChat, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSupportedMessagingContentTypes())
                 {
                     context.Writer.WritePropertyName("SupportedMessagingContentTypes");

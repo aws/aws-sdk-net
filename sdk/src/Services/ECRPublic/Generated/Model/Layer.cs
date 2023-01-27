@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// An object representing an Amazon ECR image layer.
+    /// An object that represents an Amazon ECR image layer.
     /// </summary>
     public partial class Layer
     {

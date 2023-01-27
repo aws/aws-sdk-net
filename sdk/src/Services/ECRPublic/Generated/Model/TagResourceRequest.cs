@@ -31,9 +31,9 @@ namespace Amazon.ECRPublic.Model
     /// <summary>
     /// Container for the parameters to the TagResource operation.
     /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
-    /// If existing tags on a resource are not specified in the request parameters, they are
-    /// not changed. When a resource is deleted, the tags associated with that resource are
-    /// deleted as well.
+    /// If existing tags on a resource aren't specified in the request parameters, they aren't
+    /// changed. When a resource is deleted, the tags associated with that resource are also
+    /// deleted.
     /// </summary>
     public partial class TagResourceRequest : AmazonECRPublicRequest
     {
@@ -43,11 +43,11 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the
-        /// supported resource is an Amazon ECR Public repository.
+        /// The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported
+        /// resource is an Amazon ECR Public repository.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

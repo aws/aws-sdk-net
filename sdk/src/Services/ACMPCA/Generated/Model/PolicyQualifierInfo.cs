@@ -30,8 +30,8 @@ namespace Amazon.ACMPCA.Model
 {
     /// <summary>
     /// Modifies the <code>CertPolicyId</code> of a <code>PolicyInformation</code> object
-    /// with a qualifier. ACM Private CA supports the certification practice statement (CPS)
-    /// qualifier.
+    /// with a qualifier. Amazon Web Services Private CA supports the certification practice
+    /// statement (CPS) qualifier.
     /// </summary>
     public partial class PolicyQualifierInfo
     {
@@ -60,8 +60,8 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property Qualifier. 
         /// <para>
-        /// Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier
-        /// in this field.
+        /// Defines the qualifier type. Amazon Web Services Private CA supports the use of a URI
+        /// for a CPS qualifier in this field.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

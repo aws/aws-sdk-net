@@ -30,12 +30,12 @@ namespace Amazon.ECRPublic.Model
 {
     /// <summary>
     /// Container for the parameters to the PutImage operation.
-    /// Creates or updates the image manifest and tags associated with an image.
+    /// Creates or updates the image manifest and tags that are associated with an image.
     /// 
     ///  
     /// <para>
     /// When an image is pushed and all new image layers have been uploaded, the PutImage
-    /// API is called once to create or update the image manifest and the tags associated
+    /// API is called once to create or update the image manifest and the tags that are associated
     /// with the image.
     /// </para>
     ///  <note> 
@@ -58,7 +58,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property ImageDigest. 
         /// <para>
-        /// The image digest of the image manifest corresponding to the image.
+        /// The image digest of the image manifest that corresponds to the image.
         /// </para>
         /// </summary>
         public string ImageDigest
@@ -76,7 +76,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property ImageManifest. 
         /// <para>
-        /// The image manifest corresponding to the image to be uploaded.
+        /// The image manifest that corresponds to the image to be uploaded.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4194304)]
@@ -95,8 +95,8 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property ImageManifestMediaType. 
         /// <para>
-        /// The media type of the image manifest. If you push an image manifest that does not
-        /// contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code>
+        /// The media type of the image manifest. If you push an image manifest that doesn't contain
+        /// the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code>
         /// in the request.
         /// </para>
         /// </summary>
@@ -135,12 +135,12 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the public registry that contains the repository
-        /// in which to put the image. If you do not specify a registry, the default public registry
-        /// is assumed.
+        /// The Amazon Web Services account ID, or registry alias, that's associated with the
+        /// public registry that contains the repository where the image is put. If you do not
+        /// specify a registry, the default public registry is assumed.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=2, Max=50)]
         public string RegistryId
         {
             get { return this._registryId; }
@@ -156,7 +156,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository in which to put the image.
+        /// The name of the repository where the image is put.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=205)]

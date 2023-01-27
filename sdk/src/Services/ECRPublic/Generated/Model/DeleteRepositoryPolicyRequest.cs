@@ -30,7 +30,7 @@ namespace Amazon.ECRPublic.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRepositoryPolicy operation.
-    /// Deletes the repository policy associated with the specified repository.
+    /// Deletes the repository policy that's associated with the specified repository.
     /// </summary>
     public partial class DeleteRepositoryPolicyRequest : AmazonECRPublicRequest
     {
@@ -40,9 +40,9 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the public registry that contains the repository
-        /// policy to delete. If you do not specify a registry, the default public registry is
-        /// assumed.
+        /// The Amazon Web Services account ID that's associated with the public registry that
+        /// contains the repository policy to delete. If you do not specify a registry, the default
+        /// public registry is assumed.
         /// </para>
         /// </summary>
         public string RegistryId
@@ -60,7 +60,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository that is associated with the repository policy to delete.
+        /// The name of the repository that's associated with the repository policy to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=205)]

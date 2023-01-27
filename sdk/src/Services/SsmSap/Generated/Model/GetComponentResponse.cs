@@ -36,7 +36,10 @@ namespace Amazon.SsmSap.Model
         private Component _component;
 
         /// <summary>
-        /// Gets and sets the property Component.
+        /// Gets and sets the property Component. 
+        /// <para>
+        /// The component of an application registered with AWS Systems Manager for SAP.
+        /// </para>
         /// </summary>
         public Component Component
         {

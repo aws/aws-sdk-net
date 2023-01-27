@@ -41,8 +41,8 @@ namespace Amazon.ACMPCA.Model
     /// </para>
     ///  
     /// <para>
-    /// Permissions can be granted with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html">CreatePermission</a>
-    /// action and listed with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html">ListPermissions</a>
+    /// Permissions can be granted with the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreatePermission.html">CreatePermission</a>
+    /// action and listed with the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListPermissions.html">ListPermissions</a>
     /// action. 
     /// </para>
     ///  <p class="title"> <b>About Permissions</b> 
@@ -63,8 +63,8 @@ namespace Amazon.ACMPCA.Model
     /// If the private CA and the ACM certificates reside in different accounts, then permissions
     /// cannot be used to enable automatic renewals. Instead, the ACM certificate owner must
     /// set up a resource-based policy to enable cross-account issuance and renewals. For
-    /// more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
-    /// a Resource Based Policy with ACM Private CA</a>.
+    /// more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/pca-rbp.html">Using
+    /// a Resource Based Policy with Amazon Web Services Private CA</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -78,7 +78,7 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
         /// The Amazon Resource Number (ARN) of the private CA that issued the permissions. You
-        /// can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
+        /// can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
         /// action. This must have the following form: 
         /// </para>
         ///  

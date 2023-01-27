@@ -76,10 +76,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CostPerInference = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CpuUtilization", targetDepth))
+                {
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.CpuUtilization = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxInvocations", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.MaxInvocations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MemoryUtilization", targetDepth))
+                {
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.MemoryUtilization = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ModelLatency", targetDepth))

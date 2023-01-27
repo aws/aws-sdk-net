@@ -53,7 +53,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn

@@ -61,69 +61,69 @@ namespace Amazon.SecurityToken.Internal
                 {
                     if (Equals(refs["Region"], "ap-northeast-1"))
                     {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["Region"], "ap-south-1"))
                     {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["Region"], "ap-southeast-1"))
                     {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["Region"], "ap-southeast-2"))
                     {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["Region"], "aws-global"))
                     {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["Region"], "ca-central-1"))
                     {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["Region"], "eu-central-1"))
                     {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["Region"], "eu-north-1"))
                     {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["Region"], "eu-west-1"))
                     {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["Region"], "eu-west-2"))
                     {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["Region"], "eu-west-3"))
                     {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["Region"], "sa-east-1"))
                     {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["Region"], "us-east-1"))
                     {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["Region"], "us-east-2"))
                     {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["Region"], "us-west-1"))
                     {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["Region"], "us-west-2"))
                     {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
                     }
-                    return new Endpoint(Interpolate(@"https://sts.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                    return new Endpoint(Interpolate(@"https://sts.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""{Region}"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
                 }
                 if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
                 {

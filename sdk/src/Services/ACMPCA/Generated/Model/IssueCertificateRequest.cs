@@ -32,13 +32,13 @@ namespace Amazon.ACMPCA.Model
     /// Container for the parameters to the IssueCertificate operation.
     /// Uses your private certificate authority (CA), or one that has been shared with you,
     /// to issue a client certificate. This action returns the Amazon Resource Name (ARN)
-    /// of the certificate. You can retrieve the certificate by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
+    /// of the certificate. You can retrieve the certificate by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
     /// action and specifying the ARN. 
     /// 
     ///  <note> 
     /// <para>
     /// You cannot use the ACM <b>ListCertificateAuthorities</b> action to retrieve the ARNs
-    /// of the certificates that you issue by using ACM Private CA.
+    /// of the certificates that you issue by using Amazon Web Services Private CA.
     /// </para>
     ///  </note>
     /// </summary>
@@ -59,13 +59,13 @@ namespace Amazon.ACMPCA.Model
         /// Specifies X.509 certificate information to be included in the issued certificate.
         /// An <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant
         /// must be selected, or else this parameter is ignored. For more information about using
-        /// these templates, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
+        /// these templates, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html">Understanding
         /// Certificate Templates</a>.
         /// </para>
         ///  
         /// <para>
         /// If conflicting or duplicate certificate information is supplied during certificate
-        /// issuance, ACM Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
+        /// issuance, Amazon Web Services Private CA applies <a href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
         /// of operation rules</a> to determine what information is used.
         /// </para>
         /// </summary>
@@ -84,7 +84,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>.
+        /// The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>.
         /// This must be of the form:
         /// </para>
         ///  
@@ -154,9 +154,10 @@ namespace Amazon.ACMPCA.Model
         /// Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b>
         /// action. Idempotency tokens for <b>IssueCertificate</b> time out after one minute.
         /// Therefore, if you call <b>IssueCertificate</b> multiple times with the same idempotency
-        /// token within one minute, ACM Private CA recognizes that you are requesting only one
-        /// certificate and will issue only one. If you change the idempotency token for each
-        /// call, PCA recognizes that you are requesting multiple certificates.
+        /// token within one minute, Amazon Web Services Private CA recognizes that you are requesting
+        /// only one certificate and will issue only one. If you change the idempotency token
+        /// for each call, Amazon Web Services Private CA recognizes that you are requesting multiple
+        /// certificates.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -207,10 +208,10 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property TemplateArn. 
         /// <para>
         /// Specifies a custom configuration template to use when issuing a certificate. If this
-        /// parameter is not provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code>
+        /// parameter is not provided, Amazon Web Services Private CA defaults to the <code>EndEntityCertificate/V1</code>
         /// template. For CA certificates, you should choose the shortest path length that meets
         /// your needs. The path length is indicated by the PathLen<i>N</i> portion of the ARN,
-        /// where <i>N</i> is the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA
+        /// where <i>N</i> is the <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaTerms.html#terms-cadepth">CA
         /// depth</a>.
         /// </para>
         ///  
@@ -220,8 +221,8 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        /// For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
-        /// href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
+        /// For a list of <code>TemplateArn</code> values supported by Amazon Web Services Private
+        /// CA, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html">Understanding
         /// Certificate Templates</a>.
         /// </para>
         /// </summary>
@@ -286,8 +287,8 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, when issuing a certificate, ACM Private CA sets the "Not Before" date
-        /// to the issuance time minus 60 minutes. This compensates for clock inconsistencies
+        /// By default, when issuing a certificate, Amazon Web Services Private CA sets the "Not
+        /// Before" date to the issuance time minus 60 minutes. This compensates for clock inconsistencies
         /// across computer systems. The <code>ValidityNotBefore</code> parameter can be used
         /// to customize the “Not Before” value. 
         /// </para>

@@ -36,7 +36,10 @@ namespace Amazon.SsmSap.Model
         private Operation _operation;
 
         /// <summary>
-        /// Gets and sets the property Operation.
+        /// Gets and sets the property Operation. 
+        /// <para>
+        /// Returns the details of an operation.
+        /// </para>
         /// </summary>
         public Operation Operation
         {

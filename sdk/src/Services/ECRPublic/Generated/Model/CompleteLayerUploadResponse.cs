@@ -59,7 +59,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The public registry ID associated with the request.
+        /// The public registry ID that's associated with the request.
         /// </para>
         /// </summary>
         public string RegistryId
@@ -77,7 +77,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The repository name associated with the request.
+        /// The repository name that's associated with the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=205)]
@@ -96,7 +96,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property UploadId. 
         /// <para>
-        /// The upload ID associated with the layer.
+        /// The upload ID that's associated with the layer.
         /// </para>
         /// </summary>
         public string UploadId

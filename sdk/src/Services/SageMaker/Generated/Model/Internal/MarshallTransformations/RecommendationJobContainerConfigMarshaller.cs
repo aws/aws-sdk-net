@@ -45,6 +45,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RecommendationJobContainerConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDataInputConfig())
+            {
+                context.Writer.WritePropertyName("DataInputConfig");
+                context.Writer.Write(requestObject.DataInputConfig);
+            }
+
             if(requestObject.IsSetDomain())
             {
                 context.Writer.WritePropertyName("Domain");

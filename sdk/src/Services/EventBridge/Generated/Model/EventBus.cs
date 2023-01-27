@@ -29,11 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// An event bus receives events from a source and routes them to rules associated with
-    /// that event bus. Your account's default event bus receives events from Amazon Web Services
-    /// services. A custom event bus can receive events from your custom applications and
-    /// services. A partner event bus receives events from an event source created by an SaaS
-    /// partner. These events come from the partners services or applications.
+    /// An event bus receives events from a source, uses rules to evaluate them, applies any
+    /// configured input transformation, and routes them to the appropriate target(s). Your
+    /// account's default event bus receives events from Amazon Web Services services. A custom
+    /// event bus can receive events from your custom applications and services. A partner
+    /// event bus receives events from an event source created by an SaaS partner. These events
+    /// come from the partners services or applications.
     /// </summary>
     public partial class EventBus
     {

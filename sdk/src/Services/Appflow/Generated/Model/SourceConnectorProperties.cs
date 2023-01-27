@@ -40,6 +40,7 @@ namespace Amazon.Appflow.Model
         private GoogleAnalyticsSourceProperties _googleAnalytics;
         private InforNexusSourceProperties _inforNexus;
         private MarketoSourceProperties _marketo;
+        private PardotSourceProperties _pardot;
         private S3SourceProperties _s3;
         private SalesforceSourceProperties _salesforce;
         private SAPODataSourceProperties _sapoData;
@@ -171,6 +172,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetMarketo()
         {
             return this._marketo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Pardot. 
+        /// <para>
+        /// Specifies the information that is required for querying Salesforce Pardot.
+        /// </para>
+        /// </summary>
+        public PardotSourceProperties Pardot
+        {
+            get { return this._pardot; }
+            set { this._pardot = value; }
+        }
+
+        // Check to see if Pardot property is set
+        internal bool IsSetPardot()
+        {
+            return this._pardot != null;
         }
 
         /// <summary>

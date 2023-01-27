@@ -93,7 +93,7 @@ namespace Amazon.LocationService.Model
         ///  <note> 
         /// <para>
         /// For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned
-        /// only by place indexes that use HERE as a data provider.
+        /// only by place indexes that use HERE or Grab as a data provider.
         /// </para>
         ///  </note>
         /// </summary>
@@ -118,7 +118,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Returned only when the partner selected is Esri.
+        /// Returned only when the partner selected is Esri or Grab.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

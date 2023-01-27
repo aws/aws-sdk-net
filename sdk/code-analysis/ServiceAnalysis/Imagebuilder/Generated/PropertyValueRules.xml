@@ -1160,6 +1160,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.Component.Publisher</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.Component.Version</property>
     <pattern>^[0-9]+\.[0-9]+\.[0-9]+$</pattern>
   </property-value-rule>
@@ -1216,6 +1221,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ComponentSummary.Owner</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ComponentSummary.Publisher</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>

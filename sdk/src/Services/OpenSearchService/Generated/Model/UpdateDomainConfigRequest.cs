@@ -43,6 +43,7 @@ namespace Amazon.OpenSearchService.Model
         private DomainEndpointOptions _domainEndpointOptions;
         private string _domainName;
         private bool? _dryRun;
+        private DryRunMode _dryRunMode;
         private EBSOptions _ebsOptions;
         private EncryptionAtRestOptions _encryptionAtRestOptions;
         private Dictionary<string, LogPublishingOption> _logPublishingOptions = new Dictionary<string, LogPublishingOption>();
@@ -236,7 +237,8 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property DryRun. 
         /// <para>
         /// This flag, when set to True, specifies whether the <code>UpdateDomain</code> request
-        /// should return the results of validation check without actually applying the change.
+        /// should return the results of a dry run analysis without actually applying the change.
+        /// A dry run determines what type of deployment the update will cause.
         /// </para>
         /// </summary>
         public bool DryRun
@@ -249,6 +251,36 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetDryRun()
         {
             return this._dryRun.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DryRunMode. 
+        /// <para>
+        /// The type of dry run to perform.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Basic</code> only returns the type of deployment (blue/green or dynamic) that
+        /// the update will cause.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Verbose</code> runs an additional check to validate the changes you're making.
+        /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating
+        /// a domain update</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public DryRunMode DryRunMode
+        {
+            get { return this._dryRunMode; }
+            set { this._dryRunMode = value; }
+        }
+
+        // Check to see if DryRunMode property is set
+        internal bool IsSetDryRunMode()
+        {
+            return this._dryRunMode != null;
         }
 
         /// <summary>

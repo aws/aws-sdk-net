@@ -38,19 +38,19 @@ namespace Amazon.ResourceGroups
     /// <summary>
     /// Implementation for accessing ResourceGroups
     ///
-    /// AWS Resource Groups 
-    /// <para>
-    /// AWS Resource Groups lets you organize AWS resources such as Amazon EC2 instances,
-    /// Amazon Relational Database Service databases, and Amazon S3 buckets into groups using
-    /// criteria that you define as tags. A resource group is a collection of resources that
-    /// match the resource types specified in a query, and share one or more tags or portions
-    /// of tags. You can create a group of resources based on their roles in your cloud infrastructure,
-    /// lifecycle stages, regions, application layers, or virtually any criteria. Resource
-    /// Groups enable you to automate management tasks, such as those in AWS Systems Manager
-    /// Automation documents, on tag-related resources in AWS Systems Manager. Groups of tagged
-    /// resources also let you quickly view a custom console in AWS Systems Manager that shows
-    /// AWS Config compliance and other monitoring data about member resources.
-    /// </para>
+    /// Resource Groups lets you organize Amazon Web Services resources such as Amazon Elastic
+    /// Compute Cloud instances, Amazon Relational Database Service databases, and Amazon
+    /// Simple Storage Service buckets into groups using criteria that you define as tags.
+    /// A resource group is a collection of resources that match the resource types specified
+    /// in a query, and share one or more tags or portions of tags. You can create a group
+    /// of resources based on their roles in your cloud infrastructure, lifecycle stages,
+    /// regions, application layers, or virtually any criteria. Resource Groups enable you
+    /// to automate management tasks, such as those in Amazon Web Services Systems Manager
+    /// Automation documents, on tag-related resources in Amazon Web Services Systems Manager.
+    /// Groups of tagged resources also let you quickly view a custom console in Amazon Web
+    /// Services Systems Manager that shows Config compliance and other monitoring data about
+    /// member resources.
+    /// 
     ///  
     /// <para>
     /// To create a resource group, build a resource query, and specify tags that identify
@@ -58,12 +58,12 @@ namespace Amazon.ResourceGroups
     /// </para>
     ///  
     /// <para>
-    /// For more information about Resource Groups, see the <a href="https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html">AWS
-    /// Resource Groups User Guide</a>.
+    /// For more information about Resource Groups, see the <a href="https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html">Resource
+    /// Groups User Guide</a>.
     /// </para>
     ///  
     /// <para>
-    /// AWS Resource Groups uses a REST-compliant API that you can use to perform the following
+    /// Resource Groups uses a REST-compliant API that you can use to perform the following
     /// types of operations.
     /// </para>
     ///  <ul> <li> 
@@ -85,7 +85,7 @@ namespace Amazon.ResourceGroups
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Searching AWS resources based on a resource query
+    /// Searching Amazon Web Services resources based on a resource query
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -317,11 +317,12 @@ namespace Amazon.ResourceGroups
 
         /// <summary>
         /// Creates a resource group with the specified name and description. You can optionally
-        /// include a resource query, or a service configuration. For more information about constructing
-        /// a resource query, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
-        /// a tag-based group in Resource Groups</a>. For more information about service configurations,
-        /// see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-        /// configurations for resource groups</a>.
+        /// include either a resource query or a service configuration. For more information about
+        /// constructing a resource query, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/getting_started-query.html">Build
+        /// queries and groups in Resource Groups</a> in the <i>Resource Groups User Guide</i>.
+        /// For more information about service-linked groups and service configurations, see <a
+        /// href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+        /// configurations for Resource Groups</a>.
         /// 
         ///  
         /// <para>
@@ -368,11 +369,12 @@ namespace Amazon.ResourceGroups
 
         /// <summary>
         /// Creates a resource group with the specified name and description. You can optionally
-        /// include a resource query, or a service configuration. For more information about constructing
-        /// a resource query, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
-        /// a tag-based group in Resource Groups</a>. For more information about service configurations,
-        /// see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-        /// configurations for resource groups</a>.
+        /// include either a resource query or a service configuration. For more information about
+        /// constructing a resource query, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/getting_started-query.html">Build
+        /// queries and groups in Resource Groups</a> in the <i>Resource Groups User Guide</i>.
+        /// For more information about service-linked groups and service configurations, see <a
+        /// href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+        /// configurations for Resource Groups</a>.
         /// 
         ///  
         /// <para>
@@ -528,6 +530,77 @@ namespace Amazon.ResourceGroups
 
         #endregion
         
+        #region  GetAccountSettings
+
+
+        /// <summary>
+        /// Retrieves the current status of optional features in Resource Groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountSettings service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request includes one or more parameters that violate validation rules.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request. Check permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method that isn't allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// You've exceeded throttling limits by making too many requests in a period of time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
+        public virtual GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountSettingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the current status of optional features in Resource Groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountSettings service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request includes one or more parameters that violate validation rules.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request. Check permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method that isn't allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// You've exceeded throttling limits by making too many requests in a period of time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
+        public virtual Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAccountSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetGroup
 
 
@@ -637,9 +710,9 @@ namespace Amazon.ResourceGroups
 
 
         /// <summary>
-        /// Returns the service configuration associated with the specified resource group. For
-        /// details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-        /// configurations for resource groups</a>.
+        /// Retrieves the service configuration associated with the specified resource group.
+        /// For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+        /// configurations for Resource Groups</a>.
         /// 
         ///  
         /// <para>
@@ -688,9 +761,9 @@ namespace Amazon.ResourceGroups
 
 
         /// <summary>
-        /// Returns the service configuration associated with the specified resource group. For
-        /// details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-        /// configurations for resource groups</a>.
+        /// Retrieves the service configuration associated with the specified resource group.
+        /// For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+        /// configurations for Resource Groups</a>.
         /// 
         ///  
         /// <para>
@@ -964,7 +1037,24 @@ namespace Amazon.ResourceGroups
         /// <summary>
         /// Adds the specified resources to the specified group.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// You can use this operation with only resource groups that are configured with the
+        /// following types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AWS::EC2::HostManagement</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::EC2::CapacityReservationPool</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Other resource group type and resource types aren't currently supported by this operation.
+        /// </para>
+        ///  </important> 
         /// <para>
         ///  <b>Minimum permissions</b> 
         /// </para>
@@ -1013,7 +1103,24 @@ namespace Amazon.ResourceGroups
         /// <summary>
         /// Adds the specified resources to the specified group.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// You can use this operation with only resource groups that are configured with the
+        /// following types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AWS::EC2::HostManagement</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::EC2::CapacityReservationPool</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Other resource group type and resource types aren't currently supported by this operation.
+        /// </para>
+        ///  </important> 
         /// <para>
         ///  <b>Minimum permissions</b> 
         /// </para>
@@ -1204,7 +1311,7 @@ namespace Amazon.ResourceGroups
 
 
         /// <summary>
-        /// Returns a list of existing resource groups in your account.
+        /// Returns a list of existing Resource Groups in your account.
         /// 
         ///  
         /// <para>
@@ -1250,7 +1357,7 @@ namespace Amazon.ResourceGroups
 
 
         /// <summary>
-        /// Returns a list of existing resource groups in your account.
+        /// Returns a list of existing Resource Groups in your account.
         /// 
         ///  
         /// <para>
@@ -1412,8 +1519,9 @@ namespace Amazon.ResourceGroups
 
 
         /// <summary>
-        /// Returns a list of AWS resource identifiers that matches the specified query. The query
-        /// uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.
+        /// Returns a list of Amazon Web Services resource identifiers that matches the specified
+        /// query. The query uses the same format as a resource query in a <a>CreateGroup</a>
+        /// or <a>UpdateGroupQuery</a> operation.
         /// 
         ///  
         /// <para>
@@ -1475,8 +1583,9 @@ namespace Amazon.ResourceGroups
 
 
         /// <summary>
-        /// Returns a list of AWS resource identifiers that matches the specified query. The query
-        /// uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.
+        /// Returns a list of Amazon Web Services resource identifiers that matches the specified
+        /// query. The query uses the same format as a resource query in a <a>CreateGroup</a>
+        /// or <a>UpdateGroupQuery</a> operation.
         /// 
         ///  
         /// <para>
@@ -1664,7 +1773,10 @@ namespace Amazon.ResourceGroups
 
 
         /// <summary>
-        /// Removes the specified resources from the specified group.
+        /// Removes the specified resources from the specified group. This operation works only
+        /// with static groups that you populated using the <a>GroupResources</a> operation. It
+        /// doesn't work with any resource groups that are automatically populated by tag-based
+        /// or CloudFormation stack-based queries.
         /// 
         ///  
         /// <para>
@@ -1713,7 +1825,10 @@ namespace Amazon.ResourceGroups
 
 
         /// <summary>
-        /// Removes the specified resources from the specified group.
+        /// Removes the specified resources from the specified group. This operation works only
+        /// with static groups that you populated using the <a>GroupResources</a> operation. It
+        /// doesn't work with any resource groups that are automatically populated by tag-based
+        /// or CloudFormation stack-based queries.
         /// 
         ///  
         /// <para>
@@ -1866,6 +1981,93 @@ namespace Amazon.ResourceGroups
             options.ResponseUnmarshaller = UntagResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAccountSettings
+
+
+        /// <summary>
+        /// Turns on or turns off optional features in Resource Groups.
+        /// 
+        ///  
+        /// <para>
+        /// The preceding example shows that the request to turn on group lifecycle events is
+        /// <code>IN_PROGRESS</code>. You can call the <a>GetAccountSettings</a> operation to
+        /// check for completion by looking for <code>GroupLifecycleEventsStatus</code> to change
+        /// to <code>ACTIVE</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAccountSettings service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request includes one or more parameters that violate validation rules.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request. Check permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method that isn't allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// You've exceeded throttling limits by making too many requests in a period of time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
+        public virtual UpdateAccountSettingsResponse UpdateAccountSettings(UpdateAccountSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAccountSettingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Turns on or turns off optional features in Resource Groups.
+        /// 
+        ///  
+        /// <para>
+        /// The preceding example shows that the request to turn on group lifecycle events is
+        /// <code>IN_PROGRESS</code>. You can call the <a>GetAccountSettings</a> operation to
+        /// check for completion by looking for <code>GroupLifecycleEventsStatus</code> to change
+        /// to <code>ACTIVE</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAccountSettings service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request includes one or more parameters that violate validation rules.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request. Check permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method that isn't allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// You've exceeded throttling limits by making too many requests in a period of time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
+        public virtual Task<UpdateAccountSettingsResponse> UpdateAccountSettingsAsync(UpdateAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAccountSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion

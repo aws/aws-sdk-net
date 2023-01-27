@@ -54,6 +54,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class CreateDBInstanceReadReplicaRequest : AmazonRDSRequest
     {
+        private int? _allocatedStorage;
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
         private bool? _copyTagsToSnapshot;
@@ -105,6 +106,31 @@ namespace Amazon.RDS.Model
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
             _sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllocatedStorage. 
+        /// <para>
+        /// The amount of storage (in gibibytes) to allocate initially for the read replica. Follow
+        /// the allocation rules specified in <code>CreateDBInstance</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Be sure to allocate enough memory for your read replica so that the create operation
+        /// can succeed. You can also allocate additional memory for future growth.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public int AllocatedStorage
+        {
+            get { return this._allocatedStorage.GetValueOrDefault(); }
+            set { this._allocatedStorage = value; }
+        }
+
+        // Check to see if AllocatedStorage property is set
+        internal bool IsSetAllocatedStorage()
+        {
+            return this._allocatedStorage.HasValue; 
         }
 
         /// <summary>

@@ -73,9 +73,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("CidrAuthorizationContext" + "." + "Signature", StringUtils.FromString(publicRequest.CidrAuthorizationContext.Signature));
                     }
                 }
+                if(publicRequest.IsSetClientToken())
+                {
+                    request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
+                }
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
+                }
                 if(publicRequest.IsSetIpamPoolId())
                 {
                     request.Parameters.Add("IpamPoolId", StringUtils.FromString(publicRequest.IpamPoolId));
+                }
+                if(publicRequest.IsSetNetmaskLength())
+                {
+                    request.Parameters.Add("NetmaskLength", StringUtils.FromInt(publicRequest.NetmaskLength));
                 }
             }
             return request;

@@ -89,6 +89,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetOperation())
+                {
+                    context.Writer.WritePropertyName("Operation");
+                    context.Writer.Write(publicRequest.Operation);
+                }
+
                 if(publicRequest.IsSetScope())
                 {
                     context.Writer.WritePropertyName("Scope");
@@ -130,6 +136,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Type");
                     context.Writer.Write(publicRequest.Type);
+                }
+
+                if(publicRequest.IsSetUsageType())
+                {
+                    context.Writer.WritePropertyName("UsageType");
+                    context.Writer.Write(publicRequest.UsageType);
                 }
 
                 writer.WriteObjectEnd();

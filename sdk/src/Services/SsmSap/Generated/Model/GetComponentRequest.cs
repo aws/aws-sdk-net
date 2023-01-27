@@ -38,7 +38,10 @@ namespace Amazon.SsmSap.Model
         private string _componentId;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The ID of the application.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplicationId
@@ -54,7 +57,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ComponentId.
+        /// Gets and sets the property ComponentId. 
+        /// <para>
+        /// The ID of the component.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ComponentId

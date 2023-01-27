@@ -57,6 +57,7 @@ namespace Amazon.EC2.Model
         private RequestLaunchTemplateData _launchTemplateData;
         private string _launchTemplateId;
         private string _launchTemplateName;
+        private bool? _resolveAlias;
         private string _sourceVersion;
         private string _versionDescription;
 
@@ -148,6 +149,32 @@ namespace Amazon.EC2.Model
         internal bool IsSetLaunchTemplateName()
         {
             return this._launchTemplateName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolveAlias. 
+        /// <para>
+        /// If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>,
+        /// the AMI ID is displayed in the response for <code>imageID</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+        /// a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool ResolveAlias
+        {
+            get { return this._resolveAlias.GetValueOrDefault(); }
+            set { this._resolveAlias = value; }
+        }
+
+        // Check to see if ResolveAlias property is set
+        internal bool IsSetResolveAlias()
+        {
+            return this._resolveAlias.HasValue; 
         }
 
         /// <summary>

@@ -30,10 +30,10 @@ namespace Amazon.ECRPublic.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchCheckLayerAvailability operation.
-    /// Checks the availability of one or more image layers within a repository in a public
-    /// registry. When an image is pushed to a repository, each image layer is checked to
-    /// verify if it has been uploaded before. If it has been uploaded, then the image layer
-    /// is skipped.
+    /// Checks the availability of one or more image layers that are within a repository in
+    /// a public registry. When an image is pushed to a repository, each image layer is checked
+    /// to verify if it has been uploaded before. If it has been uploaded, then the image
+    /// layer is skipped.
     /// 
     ///  <note> 
     /// <para>
@@ -71,11 +71,12 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the public registry that contains the image layers
-        /// to check. If you do not specify a registry, the default public registry is assumed.
+        /// The Amazon Web Services account ID, or registry alias, associated with the public
+        /// registry that contains the image layers to check. If you do not specify a registry,
+        /// the default public registry is assumed.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=2, Max=50)]
         public string RegistryId
         {
             get { return this._registryId; }
@@ -91,7 +92,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository that is associated with the image layers to check.
+        /// The name of the repository that's associated with the image layers to check.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=205)]

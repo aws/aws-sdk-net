@@ -63,6 +63,20 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Runtime);
             }
 
+            if(requestObject.IsSetRuntimeEnvironmentSecrets())
+            {
+                context.Writer.WritePropertyName("RuntimeEnvironmentSecrets");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectRuntimeEnvironmentSecretsKvp in requestObject.RuntimeEnvironmentSecrets)
+                {
+                    context.Writer.WritePropertyName(requestObjectRuntimeEnvironmentSecretsKvp.Key);
+                    var requestObjectRuntimeEnvironmentSecretsValue = requestObjectRuntimeEnvironmentSecretsKvp.Value;
+
+                        context.Writer.Write(requestObjectRuntimeEnvironmentSecretsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRuntimeEnvironmentVariables())
             {
                 context.Writer.WritePropertyName("RuntimeEnvironmentVariables");

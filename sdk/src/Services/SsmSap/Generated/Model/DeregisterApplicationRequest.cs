@@ -38,7 +38,10 @@ namespace Amazon.SsmSap.Model
         private string _applicationId;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The ID of the application.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplicationId

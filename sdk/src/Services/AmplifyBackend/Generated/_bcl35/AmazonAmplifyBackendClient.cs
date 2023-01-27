@@ -1259,7 +1259,7 @@ namespace Amazon.AmplifyBackend
         #region  GetBackendAPIModels
 
         /// <summary>
-        /// Generates a model schema for existing backend API resource.
+        /// Gets a model introspection schema for an existing backend API resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBackendAPIModels service method.</param>
         /// 

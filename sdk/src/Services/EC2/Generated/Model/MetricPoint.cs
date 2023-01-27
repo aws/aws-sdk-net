@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Indicates whether the network was healthy or unhealthy at a particular point. The
-    /// value is aggregated from the <code>startDate</code> to the <code>endDate</code>. Currently
+    /// Indicates whether the network was healthy or degraded at a particular point. The value
+    /// is aggregated from the <code>startDate</code> to the <code>endDate</code>. Currently
     /// only <code>five_minutes</code> is supported.
     /// </summary>
     public partial class MetricPoint

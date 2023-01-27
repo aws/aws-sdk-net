@@ -160,7 +160,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property SecretArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user
-        /// name and password to connect to OneDrive. The user namd should be the application
+        /// name and password to connect to OneDrive. The user name should be the application
         /// ID for the OneDrive application, and the password is the application key for the OneDrive
         /// application.
         /// </para>

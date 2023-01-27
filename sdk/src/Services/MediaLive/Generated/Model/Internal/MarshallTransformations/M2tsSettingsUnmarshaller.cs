@@ -304,6 +304,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Scte35Pid = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("scte35PrerollPullupMilliseconds", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Scte35PrerollPullupMilliseconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("segmentationMarkers", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
