@@ -276,6 +276,47 @@ namespace Amazon.MediaTailor
         #endregion
 
 
+        #region  ConfigureLogsForChannel
+
+
+        /// <summary>
+        /// Configures Amazon CloudWatch log settings for a channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureLogsForChannel service method.</param>
+        /// 
+        /// <returns>The response from the ConfigureLogsForChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForChannel">REST API Reference for ConfigureLogsForChannel Operation</seealso>
+        public virtual ConfigureLogsForChannelResponse ConfigureLogsForChannel(ConfigureLogsForChannelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfigureLogsForChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfigureLogsForChannelResponseUnmarshaller.Instance;
+
+            return Invoke<ConfigureLogsForChannelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Configures Amazon CloudWatch log settings for a channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureLogsForChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ConfigureLogsForChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForChannel">REST API Reference for ConfigureLogsForChannel Operation</seealso>
+        public virtual Task<ConfigureLogsForChannelResponse> ConfigureLogsForChannelAsync(ConfigureLogsForChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfigureLogsForChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfigureLogsForChannelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ConfigureLogsForChannelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ConfigureLogsForPlaybackConfiguration
 
 

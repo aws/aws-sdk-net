@@ -277,6 +277,60 @@ namespace Amazon.MediaTailor
         #endregion
 
 
+        #region  ConfigureLogsForChannel
+
+        /// <summary>
+        /// Configures Amazon CloudWatch log settings for a channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureLogsForChannel service method.</param>
+        /// 
+        /// <returns>The response from the ConfigureLogsForChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForChannel">REST API Reference for ConfigureLogsForChannel Operation</seealso>
+        public virtual ConfigureLogsForChannelResponse ConfigureLogsForChannel(ConfigureLogsForChannelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfigureLogsForChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfigureLogsForChannelResponseUnmarshaller.Instance;
+
+            return Invoke<ConfigureLogsForChannelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ConfigureLogsForChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureLogsForChannel operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConfigureLogsForChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForChannel">REST API Reference for ConfigureLogsForChannel Operation</seealso>
+        public virtual IAsyncResult BeginConfigureLogsForChannel(ConfigureLogsForChannelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfigureLogsForChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfigureLogsForChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ConfigureLogsForChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfigureLogsForChannel.</param>
+        /// 
+        /// <returns>Returns a  ConfigureLogsForChannelResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForChannel">REST API Reference for ConfigureLogsForChannel Operation</seealso>
+        public virtual ConfigureLogsForChannelResponse EndConfigureLogsForChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ConfigureLogsForChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ConfigureLogsForPlaybackConfiguration
 
         /// <summary>

@@ -55,6 +55,24 @@ namespace Amazon.MediaTailor
         IMediaTailorPaginatorFactory Paginators { get; }
 #endif
                 
+        #region  ConfigureLogsForChannel
+
+
+
+        /// <summary>
+        /// Configures Amazon CloudWatch log settings for a channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureLogsForChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ConfigureLogsForChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForChannel">REST API Reference for ConfigureLogsForChannel Operation</seealso>
+        Task<ConfigureLogsForChannelResponse> ConfigureLogsForChannelAsync(ConfigureLogsForChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ConfigureLogsForPlaybackConfiguration
 
 
