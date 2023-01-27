@@ -37,6 +37,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class Ipam
     {
+        private string _defaultResourceDiscoveryAssociationId;
+        private string _defaultResourceDiscoveryId;
         private string _description;
         private string _ipamArn;
         private string _ipamId;
@@ -45,9 +47,46 @@ namespace Amazon.EC2.Model
         private string _ownerId;
         private string _privateDefaultScopeId;
         private string _publicDefaultScopeId;
+        private int? _resourceDiscoveryAssociationCount;
         private int? _scopeCount;
         private IpamState _state;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property DefaultResourceDiscoveryAssociationId. 
+        /// <para>
+        /// The IPAM's default resource discovery association ID.
+        /// </para>
+        /// </summary>
+        public string DefaultResourceDiscoveryAssociationId
+        {
+            get { return this._defaultResourceDiscoveryAssociationId; }
+            set { this._defaultResourceDiscoveryAssociationId = value; }
+        }
+
+        // Check to see if DefaultResourceDiscoveryAssociationId property is set
+        internal bool IsSetDefaultResourceDiscoveryAssociationId()
+        {
+            return this._defaultResourceDiscoveryAssociationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultResourceDiscoveryId. 
+        /// <para>
+        /// The IPAM's default resource discovery ID.
+        /// </para>
+        /// </summary>
+        public string DefaultResourceDiscoveryId
+        {
+            get { return this._defaultResourceDiscoveryId; }
+            set { this._defaultResourceDiscoveryId = value; }
+        }
+
+        // Check to see if DefaultResourceDiscoveryId property is set
+        internal bool IsSetDefaultResourceDiscoveryId()
+        {
+            return this._defaultResourceDiscoveryId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -70,7 +109,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpamArn. 
         /// <para>
-        /// The ARN of the IPAM.
+        /// The Amazon Resource Name (ARN) of the IPAM.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1283)]
@@ -199,6 +238,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPublicDefaultScopeId()
         {
             return this._publicDefaultScopeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceDiscoveryAssociationCount. 
+        /// <para>
+        /// The IPAM's resource discovery association count.
+        /// </para>
+        /// </summary>
+        public int ResourceDiscoveryAssociationCount
+        {
+            get { return this._resourceDiscoveryAssociationCount.GetValueOrDefault(); }
+            set { this._resourceDiscoveryAssociationCount = value; }
+        }
+
+        // Check to see if ResourceDiscoveryAssociationCount property is set
+        internal bool IsSetResourceDiscoveryAssociationCount()
+        {
+            return this._resourceDiscoveryAssociationCount.HasValue; 
         }
 
         /// <summary>

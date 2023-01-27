@@ -1,3 +1,208 @@
+### 3.7.469.0 (2023-01-26 19:21 UTC)
+* EventBridge (3.7.101.0)
+	* Minor comments for Redshift Serverless workgroup target support.
+* IoTFleetWise (3.7.103.0)
+	* Add model validation to BatchCreateVehicle and BatchUpdateVehicle operations that invalidate requests with an empty vehicles list.
+* S3 (3.7.102.0)
+	* Allow FIPS to be used with path-style URLs.
+* Core 3.7.103.24
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.468.0 (2023-01-25 19:38 UTC)
+* CloudFormation (3.7.103.0)
+	* Enabled FIPS aws-us-gov endpoints in SDK.
+* EC2 (3.7.118.0)
+	* This release adds new functionality that allows customers to provision IPv6 CIDR blocks through Amazon VPC IP Address Manager (IPAM) as well as allowing customers to utilize IPAM Resource Discovery APIs.
+* MainframeModernization (3.7.102.0)
+	* Add returnCode, batchJobIdentifier in GetBatchJobExecution response, for user to view the batch job execution result & unique identifier from engine. Also removed unused headers from REST APIs
+* Polly (3.7.104.0)
+	* Add 5 new neural voices - Sergio (es-ES), Andres (es-MX), Remi (fr-FR), Adriano (it-IT) and Thiago (pt-BR).
+* RedshiftServerless (3.7.101.33)
+	* Added query monitoring rules as possible parameters for create and update workgroup operations.
+* S3Control (3.7.105.0)
+	* Add additional endpoint tests for S3 Control. Fix missing endpoint parameters for PutBucketVersioning and GetBucketVersioning. Prior to this fix, those operations may have resulted in an invalid endpoint being resolved.
+* SageMaker (3.7.116.0)
+	* SageMaker Inference Recommender now decouples from Model Registry and could accept Model Name to invoke inference recommendations job; Inference Recommender now provides CPU/Memory Utilization metrics data in recommendation output.
+* SecurityToken (3.7.100.61)
+	* Doc only change to update wording in a key topic
+* Core 3.7.103.23
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.467.0 (2023-01-24 19:23 UTC)
+* GlueDataBrew (3.7.101.0)
+	* Enabled FIPS us-gov-west-1 endpoints in SDK.
+* Route53 (3.7.104.0)
+	* Amazon Route 53 now supports the Asia Pacific (Melbourne) Region (ap-southeast-4) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+* SsmSap (3.7.101.0)
+	* This release provides updates to documentation and support for listing operations performed by AWS Systems Manager for SAP.
+* Core 3.7.103.22
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.466.0 (2023-01-23 19:28 UTC)
+* Lambda (3.7.104.0)
+	* Release Lambda RuntimeManagementConfig, enabling customers to better manage runtime updates to their Lambda functions. This release adds two new APIs, GetRuntimeManagementConfig and PutRuntimeManagementConfig, as well as support on existing Create/Get/Update function APIs.
+* SageMaker (3.7.115.0)
+	* Amazon SageMaker Inference now supports P4de instance types.
+* Core 3.7.103.21
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.465.0 (2023-01-20 19:33 UTC)
+* EC2 (3.7.117.0)
+	* C6in, M6in, M6idn, R6in and R6idn instances are powered by 3rd Generation Intel Xeon Scalable processors (code named Ice Lake) with an all-core turbo frequency of 3.5 GHz.
+* IVS (3.7.101.0)
+	* API and Doc update. Update to arns field in BatchGetStreamKey. Also updates to operations and structures.
+* QuickSight (3.7.103.0)
+	* This release adds support for data bars in QuickSight table and increases pivot table field well limit.
+* Core 3.7.103.20
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.464.0 (2023-01-20 00:03 UTC)
+* Appflow (3.7.105.0)
+	* Adding support for Salesforce Pardot connector in Amazon AppFlow.
+* CloudWatchLogs (3.7.104.0)
+	* Bug fix - Removed the regex pattern validation from CoralModel to avoid potential security issue.
+* CodeArtifact (3.7.101.0)
+	* Documentation updates for CodeArtifact
+* Connect (3.7.113.0)
+	* Amazon Connect Chat introduces Persistent Chat, allowing customers to resume previous conversations with context and transcripts carried over from previous chats, eliminating the need to repeat themselves and allowing agents to provide personalized service with access to entire conversation history.
+* ConnectParticipant (3.7.103.0)
+	* This release updates Amazon Connect Participant's GetTranscript api to provide transcripts of past chats on a persistent chat session.
+* EC2 (3.7.116.0)
+	* Adds SSM Parameter Resource Aliasing support to EC2 Launch Templates. Launch Templates can now store parameter aliases in place of AMI Resource IDs. CreateLaunchTemplateVersion and DescribeLaunchTemplateVersions now support a convenience flag, ResolveAlias, to return the resolved parameter value.
+* Glue (3.7.106.0)
+	* Release Glue Studio Hudi Data Lake Format for SDK/CLI
+* GroundStation (3.7.102.0)
+	* Add configurable prepass and postpass times for DataflowEndpointGroup. Add Waiter to allow customers to wait for a contact that was reserved through ReserveContact
+* MediaLive (3.7.104.0)
+	* AWS Elemental MediaLive adds support for SCTE 35 preRollMilliSeconds.
+* OpenSearchService (3.7.102.0)
+	* This release adds the enhanced dry run option, that checks for validation errors that might occur when deploying configuration changes and provides a summary of these errors, if any. The feature will also indicate whether a blue/green deployment will be required to apply a change.
+* Panorama (3.7.101.0)
+	* Added AllowMajorVersionUpdate option to OTAJobConfig to make appliance software major version updates opt-in.
+* SageMaker (3.7.114.0)
+	* HyperParameterTuningJobs now allow passing environment variables into the corresponding TrainingJobs
+* Core 3.7.103.19
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.463.0 (2023-01-18 19:22 UTC)
+* CloudWatch (3.7.103.0)
+	* Enable cross-account streams in CloudWatch Metric Streams via Observability Access Manager.
+* ElasticFileSystem (3.7.101.33)
+	* Documentation updates for EFS access points limit increase
+* Ivschat (3.7.103.0)
+	* Updates the range for a Chat Room's maximumMessageRatePerSecond field.
+* WAFV2 (3.7.101.52)
+	* Improved the visibility of the guidance for updating AWS WAF resources, such as web ACLs and rule groups.
+* Core 3.7.103.18
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.462.0 (2023-01-17 19:19 UTC)
+* BillingConductor (3.7.104.0)
+	* This release adds support for SKU Scope for pricing plans.
+* Cloud9 (3.7.101.0)
+	* Added minimum value to AutomaticStopTimeMinutes parameter.
+* Imagebuilder (3.7.101.0)
+	* Add support for AWS Marketplace product IDs as input during CreateImageRecipe for the parent-image parameter. Add support for listing third-party components.
+* NetworkFirewall (3.7.103.0)
+	* Network Firewall now allows creation of dual stack endpoints, enabling inspection of IPv6 traffic.
+* Core 3.7.103.17
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.461.1 (2023-01-17 15:00 UTC)
+* DynamoDBv2 (3.7.101.25)
+	* Fix DynamoDB attribute mapping crash due to empty map and FromDocument crash when document contains nulls
+
+### 3.7.461.0 (2023-01-13 19:28 UTC)
+* Connect (3.7.112.0)
+	* This release updates the responses of UpdateContactFlowContent, UpdateContactFlowMetadata, UpdateContactFlowName and DeleteContactFlow API with empty responses.
+* EC2 (3.7.115.0)
+	* Documentation updates for EC2.
+* Outposts (3.7.101.0)
+	* This release adds POWER_30_KVA as an option for PowerDrawKva. PowerDrawKva is part of the RackPhysicalProperties structure in the CreateSite request.
+* ResourceGroups (3.7.101.0)
+	* AWS Resource Groups customers can now turn on Group Lifecycle Events in their AWS account. When you turn this on, Resource Groups monitors your groups for changes to group state or membership. Those changes are sent to Amazon EventBridge as events that you can respond to using rules you create.
+* Core 3.7.103.16
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.460.0 (2023-01-12 19:24 UTC)
+* CleanRooms (3.7.100.0)
+	* Initial release of AWS Clean Rooms
+* CloudWatchLogs (3.7.103.0)
+	* Bug fix: logGroupName is now not a required field in GetLogEvents, FilterLogEvents, GetLogGroupFields, and DescribeLogStreams APIs as logGroupIdentifier can be provided instead
+* Lambda (3.7.103.0)
+	* Add support for MaximumConcurrency parameter for SQS event source. Customers can now limit the maximum concurrent invocations for their SQS Event Source Mapping.
+* MediaConvert (3.7.103.0)
+	* The AWS Elemental MediaConvert SDK has added support for compact DASH manifest generation, audio normalization using TruePeak measurements, and the ability to clip the sample range in the color corrector.
+* SecretsManager (3.7.101.8)
+	* Update documentation for new ListSecrets and DescribeSecret parameters
+* Core 3.7.103.15
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.459.0 (2023-01-11 19:17 UTC)
+* Kendra (3.7.102.0)
+	* This release adds support to new document types - RTF, XML, XSLT, MS_EXCEL, CSV, JSON, MD
+
+### 3.7.458.0 (2023-01-10 19:19 UTC)
+* LocationService (3.7.101.0)
+	* This release adds support for two new route travel models, Bicycle and Motorcycle which can be used with Grab data source.
+* RDS (3.7.114.0)
+	* This release adds support for configuring allocated storage on the CreateDBInstanceReadReplica, RestoreDBInstanceFromDBSnapshot, and RestoreDBInstanceToPointInTime APIs.
+* Core 3.7.103.14
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.457.0 (2023-01-09 19:54 UTC)
+* ECRPublic (3.7.101.0)
+	* This release for Amazon ECR Public makes several change to bring the SDK into sync with the API.
+* KendraRanking (3.7.100.0)
+	* Introducing Amazon Kendra Intelligent Ranking, a new set of Kendra APIs that leverages Kendra semantic ranking capabilities to improve the quality of search results from other search services (i.e. OpenSearch, ElasticSearch, Solr).
+* NetworkFirewall (3.7.102.0)
+	* Network Firewall now supports the Suricata rule action reject, in addition to the actions pass, drop, and alert.
+* RAM (3.7.101.0)
+	* Enabled FIPS aws-us-gov endpoints in SDK.
+* WorkSpacesWeb (3.7.101.0)
+	* This release adds support for a new portal authentication type: AWS IAM Identity Center (successor to AWS Single Sign-On).
+* Core 3.7.103.13
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.456.0 (2023-01-06 19:20 UTC)
+* ACMPCA (3.7.102.0)
+	* Added revocation parameter validation: bucket names must match S3 bucket naming rules and CNAMEs conform to RFC2396 restrictions on the use of special characters in URIs.
+* AuditManager (3.7.102.0)
+	* This release introduces a new data retention option in your Audit Manager settings. You can now use the DeregistrationPolicy parameter to specify if you want to delete your data when you deregister Audit Manager.
+* Core 3.7.103.12
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.455.0 (2023-01-05 19:23 UTC)
+* AmplifyBackend (3.7.101.0)
+	* Updated GetBackendAPIModels response to include ModelIntrospectionSchema json string
+* AppRunner (3.7.103.0)
+	* This release adds support of securely referencing secrets and configuration data that are stored in Secrets Manager and SSM Parameter Store by adding them as environment secrets in your App Runner service.
+* Connect (3.7.111.0)
+	* Documentation update for a new Initiation Method value in DescribeContact API
+* EMRServerless (3.7.102.0)
+	* Adds support for customized images. You can now provide runtime images when creating or updating EMR Serverless Applications.
+* Lightsail (3.7.101.38)
+	* Documentation updates for Amazon Lightsail.
+* MWAA (3.7.100.49)
+	* MWAA supports Apache Airflow version 2.4.3.
+* RDS (3.7.113.0)
+	* This release adds support for specifying which certificate authority (CA) to use for a DB instance's server certificate during DB instance creation, as well as other CA enhancements.
+* Core 3.7.103.11
+	* All services packages updated to require new Core
+
 ### 3.7.454.0 (2023-01-04 19:21 UTC)
 * ApplicationAutoScaling (3.7.101.0)
 	* Customers can now use the existing DescribeScalingActivities API to also see the detailed and machine-readable reasons for Application Auto Scaling not scaling their resources and, if needed, take the necessary corrective actions.

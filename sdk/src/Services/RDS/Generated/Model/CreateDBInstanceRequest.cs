@@ -57,6 +57,7 @@ namespace Amazon.RDS.Model
         private string _availabilityZone;
         private int? _backupRetentionPeriod;
         private string _backupTarget;
+        private string _caCertificateIdentifier;
         private string _characterSetName;
         private bool? _copyTagsToSnapshot;
         private string _customIamInstanceProfile;
@@ -451,6 +452,36 @@ namespace Amazon.RDS.Model
         internal bool IsSetBackupTarget()
         {
             return this._backupTarget != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CACertificateIdentifier. 
+        /// <para>
+        /// Specifies the CA certificate identifier to use for the DB instance’s server certificate.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+        /// SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>
+        /// and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+        /// Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string CACertificateIdentifier
+        {
+            get { return this._caCertificateIdentifier; }
+            set { this._caCertificateIdentifier = value; }
+        }
+
+        // Check to see if CACertificateIdentifier property is set
+        internal bool IsSetCACertificateIdentifier()
+        {
+            return this._caCertificateIdentifier != null;
         }
 
         /// <summary>

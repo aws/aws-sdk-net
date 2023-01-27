@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
-    /// 
+    /// The operations performed by AWS Systems Manager for SAP.
     /// </summary>
     public partial class Operation
     {
@@ -46,7 +46,10 @@ namespace Amazon.SsmSap.Model
         private string _type;
 
         /// <summary>
-        /// Gets and sets the property EndTime.
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        /// The end time of the operation.
+        /// </para>
         /// </summary>
         public DateTime EndTime
         {
@@ -61,7 +64,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The ID of the operation.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -76,7 +82,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastUpdatedTime.
+        /// Gets and sets the property LastUpdatedTime. 
+        /// <para>
+        /// The time at which the operation was last updated.
+        /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
         {
@@ -91,7 +100,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Properties.
+        /// Gets and sets the property Properties. 
+        /// <para>
+        /// The properties of the operation.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Properties
         {
@@ -106,7 +118,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the operation.
+        /// </para>
         /// </summary>
         public string ResourceArn
         {
@@ -121,7 +136,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceId.
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        /// The resource ID of the operation.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string ResourceId
@@ -137,7 +155,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceType.
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// The resource type of the operation.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string ResourceType
@@ -153,7 +174,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTime.
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The start time of the operation.
+        /// </para>
         /// </summary>
         public DateTime StartTime
         {
@@ -168,7 +192,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the operation.
+        /// </para>
         /// </summary>
         public OperationStatus Status
         {
@@ -183,7 +210,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusMessage.
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// The status message of the operation.
+        /// </para>
         /// </summary>
         public string StatusMessage
         {
@@ -198,7 +228,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the operation.
+        /// </para>
         /// </summary>
         public string Type
         {

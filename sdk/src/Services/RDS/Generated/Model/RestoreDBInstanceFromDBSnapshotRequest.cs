@@ -61,6 +61,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class RestoreDBInstanceFromDBSnapshotRequest : AmazonRDSRequest
     {
+        private int? _allocatedStorage;
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
         private string _backupTarget;
@@ -110,6 +111,31 @@ namespace Amazon.RDS.Model
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
             _dbSnapshotIdentifier = dbSnapshotIdentifier;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllocatedStorage. 
+        /// <para>
+        /// The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow
+        /// the allocation rules specified in CreateDBInstance.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Be sure to allocate enough memory for your new DB instance so that the restore operation
+        /// can succeed. You can also allocate additional memory for future growth.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public int AllocatedStorage
+        {
+            get { return this._allocatedStorage.GetValueOrDefault(); }
+            set { this._allocatedStorage = value; }
+        }
+
+        // Check to see if AllocatedStorage property is set
+        internal bool IsSetAllocatedStorage()
+        {
+            return this._allocatedStorage.HasValue; 
         }
 
         /// <summary>

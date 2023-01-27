@@ -30,8 +30,8 @@ namespace Amazon.ECRPublic.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchDeleteImage operation.
-    /// Deletes a list of specified images within a repository in a public registry. Images
-    /// are specified with either an <code>imageTag</code> or <code>imageDigest</code>.
+    /// Deletes a list of specified images that are within a repository in a public registry.
+    /// Images are specified with either an <code>imageTag</code> or <code>imageDigest</code>.
     /// 
     ///  
     /// <para>
@@ -40,8 +40,8 @@ namespace Amazon.ECRPublic.Model
     /// </para>
     ///  
     /// <para>
-    /// You can completely delete an image (and all of its tags) by specifying the image's
-    /// digest in your request.
+    /// You can completely delete an image (and all of its tags) by specifying the digest
+    /// of the image in your request.
     /// </para>
     /// </summary>
     public partial class BatchDeleteImageRequest : AmazonECRPublicRequest
@@ -73,8 +73,9 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the registry that contains the image to delete.
-        /// If you do not specify a registry, the default public registry is assumed.
+        /// The Amazon Web Services account ID that's associated with the registry that contains
+        /// the image to delete. If you do not specify a registry, the default public registry
+        /// is assumed.
         /// </para>
         /// </summary>
         public string RegistryId

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// An object representing an Amazon ECR image.
+    /// An object that represents an Amazon ECR image.
     /// </summary>
     public partial class Image
     {
@@ -42,7 +42,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// An object containing the image tag and image digest associated with an image.
+        /// An object that contains the image tag and image digest associated with an image.
         /// </para>
         /// </summary>
         public ImageIdentifier ImageId
@@ -60,7 +60,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property ImageManifest. 
         /// <para>
-        /// The image manifest associated with the image.
+        /// The image manifest that's associated with the image.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4194304)]
@@ -97,10 +97,11 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the registry containing the image.
+        /// The Amazon Web Services account ID that's associated with the registry containing
+        /// the image.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=2, Max=50)]
         public string RegistryId
         {
             get { return this._registryId; }
@@ -116,7 +117,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository associated with the image.
+        /// The name of the repository that's associated with the image.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=205)]

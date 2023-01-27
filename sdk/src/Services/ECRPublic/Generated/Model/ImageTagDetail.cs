@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// An object representing the image tag details for an image.
+    /// An object that represents the image tag details for an image.
     /// </summary>
     public partial class ImageTagDetail
     {
@@ -40,7 +40,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time stamp indicating when the image tag was created.
+        /// The time stamp that indicates when the image tag was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -76,7 +76,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property ImageTag. 
         /// <para>
-        /// The tag associated with the image.
+        /// The tag that's associated with the image.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]

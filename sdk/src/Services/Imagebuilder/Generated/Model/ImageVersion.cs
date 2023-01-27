@@ -36,6 +36,7 @@ namespace Amazon.Imagebuilder.Model
         private string _arn;
         private BuildType _buildType;
         private string _dateCreated;
+        private ImageSource _imageSource;
         private string _name;
         private string _osVersion;
         private string _owner;
@@ -134,6 +135,24 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImageSource. 
+        /// <para>
+        /// The origin of the base image that Image Builder used to build this image.
+        /// </para>
+        /// </summary>
+        public ImageSource ImageSource
+        {
+            get { return this._imageSource; }
+            set { this._imageSource = value; }
+        }
+
+        // Check to see if ImageSource property is set
+        internal bool IsSetImageSource()
+        {
+            return this._imageSource != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of this specific version of an Image Builder image.
@@ -193,7 +212,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform of the image version, for example "Windows" or "Linux".
+        /// The operating system platform of the image version, for example "Windows" or "Linux".
         /// </para>
         /// </summary>
         public Platform Platform
@@ -211,7 +230,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specifies whether this image is an AMI or a container image.
+        /// Specifies whether this image produces an AMI or a container image.
         /// </para>
         /// </summary>
         public ImageType Type

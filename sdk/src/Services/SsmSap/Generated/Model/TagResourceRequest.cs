@@ -38,7 +38,10 @@ namespace Amazon.SsmSap.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn
@@ -54,7 +57,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags on a resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags

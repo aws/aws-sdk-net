@@ -36,7 +36,10 @@ namespace Amazon.SsmSap.Model
         private string _policy;
 
         /// <summary>
-        /// Gets and sets the property Policy.
+        /// Gets and sets the property Policy. 
+        /// <para>
+        /// The policy that removes permissions on the target database.
+        /// </para>
         /// </summary>
         public string Policy
         {

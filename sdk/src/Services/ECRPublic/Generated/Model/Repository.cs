@@ -60,7 +60,8 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the public registry that contains the repository.
+        /// The Amazon Web Services account ID that's associated with the public registry that
+        /// contains the repository.
         /// </para>
         /// </summary>
         public string RegistryId
@@ -79,11 +80,12 @@ namespace Amazon.ECRPublic.Model
         /// Gets and sets the property RepositoryArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the
-        /// <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS
-        /// account ID of the repository owner, repository namespace, and repository name. For
-        /// example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+        /// <code>arn:aws:ecr</code> namespace, followed by the region of the repository, Amazon
+        /// Web Services account ID of the repository owner, repository namespace, and repository
+        /// name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string RepositoryArn
         {
             get { return this._repositoryArn; }

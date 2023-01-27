@@ -51,6 +51,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Brightness);
             }
 
+            if(requestObject.IsSetClipLimits())
+            {
+                context.Writer.WritePropertyName("clipLimits");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ClipLimitsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ClipLimits, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetColorSpaceConversion())
             {
                 context.Writer.WritePropertyName("colorSpaceConversion");

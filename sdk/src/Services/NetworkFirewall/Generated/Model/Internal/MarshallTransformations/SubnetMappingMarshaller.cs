@@ -45,6 +45,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SubnetMapping requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetIPAddressType())
+            {
+                context.Writer.WritePropertyName("IPAddressType");
+                context.Writer.Write(requestObject.IPAddressType);
+            }
+
             if(requestObject.IsSetSubnetId())
             {
                 context.Writer.WritePropertyName("SubnetId");

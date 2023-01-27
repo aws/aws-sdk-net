@@ -47,24 +47,23 @@ namespace Amazon.EC2
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Amazon EC2: <a href="http://aws.amazon.com/ec2">AmazonEC2 product page</a>, <a href="http://aws.amazon.com/documentation/ec2">Amazon
+    /// Amazon EC2: <a href="http://aws.amazon.com/ec2">Amazon EC2 product page</a>, <a href="https://docs.aws.amazon.com/ec2/index.html">Amazon
     /// EC2 documentation</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon EBS: <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a>, <a href="http://aws.amazon.com/documentation/ebs">Amazon
+    /// Amazon EBS: <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a>, <a href="https://docs.aws.amazon.com/ebs/index.html">Amazon
     /// EBS documentation</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon VPC: <a href="http://aws.amazon.com/vpc">Amazon VPC product page</a>, <a href="http://aws.amazon.com/documentation/vpc">Amazon
+    /// Amazon VPC: <a href="http://aws.amazon.com/vpc">Amazon VPC product page</a>, <a href="https://docs.aws.amazon.com/vpc/index.html">Amazon
     /// VPC documentation</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon Web Services VPN: <a href="http://aws.amazon.com/vpn">Amazon Web Services VPN
-    /// product page</a>, <a href="http://aws.amazon.com/documentation/vpn">Amazon Web Services
-    /// VPN documentation</a> 
+    /// VPN: <a href="http://aws.amazon.com/vpn">VPN product page</a>, <a href="https://docs.aws.amazon.com/vpn/index.html">VPN
+    /// documentation</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -295,8 +294,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Accepts one or more interface VPC endpoint connection requests to your VPC endpoint
-        /// service.
+        /// Accepts connection requests to your VPC endpoint service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptVpcEndpointConnections service method.</param>
         /// 
@@ -628,7 +626,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR assignment from
-        /// an IPAM pool to another resource or IPAM pool. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
+        /// an IPAM pool to another IPAM pool or to a resource. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
         /// CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateIpamPoolCidr service method.</param>
@@ -1182,6 +1180,48 @@ namespace Amazon.EC2
         /// <returns>Returns a  AssociateInstanceEventWindowResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateInstanceEventWindow">REST API Reference for AssociateInstanceEventWindow Operation</seealso>
         AssociateInstanceEventWindowResponse EndAssociateInstanceEventWindow(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  AssociateIpamResourceDiscovery
+
+
+        /// <summary>
+        /// Associates an IPAM resource discovery with an Amazon VPC IPAM. A resource discovery
+        /// is an IPAM component that enables IPAM Service to manage and monitor resources that
+        /// belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIpamResourceDiscovery service method.</param>
+        /// 
+        /// <returns>The response from the AssociateIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamResourceDiscovery">REST API Reference for AssociateIpamResourceDiscovery Operation</seealso>
+        AssociateIpamResourceDiscoveryResponse AssociateIpamResourceDiscovery(AssociateIpamResourceDiscoveryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIpamResourceDiscovery operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateIpamResourceDiscovery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamResourceDiscovery">REST API Reference for AssociateIpamResourceDiscovery Operation</seealso>
+        IAsyncResult BeginAssociateIpamResourceDiscovery(AssociateIpamResourceDiscoveryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateIpamResourceDiscovery.</param>
+        /// 
+        /// <returns>Returns a  AssociateIpamResourceDiscoveryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamResourceDiscovery">REST API Reference for AssociateIpamResourceDiscovery Operation</seealso>
+        AssociateIpamResourceDiscoveryResponse EndAssociateIpamResourceDiscovery(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3893,6 +3933,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateIpamResourceDiscovery
+
+
+        /// <summary>
+        /// Creates an IPAM resource discovery. A resource discovery is an IPAM component that
+        /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamResourceDiscovery service method.</param>
+        /// 
+        /// <returns>The response from the CreateIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamResourceDiscovery">REST API Reference for CreateIpamResourceDiscovery Operation</seealso>
+        CreateIpamResourceDiscoveryResponse CreateIpamResourceDiscovery(CreateIpamResourceDiscoveryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamResourceDiscovery operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIpamResourceDiscovery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamResourceDiscovery">REST API Reference for CreateIpamResourceDiscovery Operation</seealso>
+        IAsyncResult BeginCreateIpamResourceDiscovery(CreateIpamResourceDiscoveryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIpamResourceDiscovery.</param>
+        /// 
+        /// <returns>Returns a  CreateIpamResourceDiscoveryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamResourceDiscovery">REST API Reference for CreateIpamResourceDiscovery Operation</seealso>
+        CreateIpamResourceDiscoveryResponse EndCreateIpamResourceDiscovery(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateIpamScope
 
 
@@ -5411,26 +5492,30 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a subnet in a specified VPC.
+        /// Creates a subnet in the specified VPC. For an IPv4 only subnet, specify an IPv4 CIDR
+        /// block. If the VPC has an IPv6 CIDR block, you can create an IPv6 only subnet or a
+        /// dual stack subnet instead. For an IPv6 only subnet, specify an IPv6 CIDR block. For
+        /// a dual stack subnet, specify both an IPv4 CIDR block and an IPv6 CIDR block.
         /// 
         ///  
         /// <para>
-        /// You must specify an IPv4 CIDR block for the subnet. After you create a subnet, you
-        /// can't change its CIDR block. The allowed block size is between a /16 netmask (65,536
-        /// IP addresses) and /28 netmask (16 IP addresses). The CIDR block must not overlap with
-        /// the CIDR block of an existing subnet in the VPC.
+        /// A subnet CIDR block must not overlap the CIDR block of an existing subnet in the VPC.
+        /// After you create a subnet, you can't change its CIDR block.
         /// </para>
         ///  
         /// <para>
-        /// If you've associated an IPv6 CIDR block with your VPC, you can create a subnet with
-        /// an IPv6 CIDR block that uses a /64 prefix length. 
+        /// The allowed size for an IPv4 subnet is between a /28 netmask (16 IP addresses) and
+        /// a /16 netmask (65,536 IP addresses). Amazon Web Services reserves both the first four
+        /// and the last IPv4 address in each subnet's CIDR block. They're not available for your
+        /// use.
         /// </para>
-        ///  <important> 
+        ///  
         /// <para>
-        /// Amazon Web Services reserves both the first four and the last IPv4 address in each
-        /// subnet's CIDR block. They're not available for use.
+        /// If you've associated an IPv6 CIDR block with your VPC, you can associate an IPv6 CIDR
+        /// block with a subnet when you create it. The allowed block size for an IPv6 subnet
+        /// is a /64 netmask.
         /// </para>
-        ///  </important> 
+        ///  
         /// <para>
         /// If you add more than one subnet to a VPC, they're set up in a star topology with a
         /// logical router in the middle.
@@ -5443,8 +5528,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about subnets, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-        /// VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a>
+        /// in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubnet service method.</param>
@@ -6545,10 +6630,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create
-        /// uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
-        /// IPv4 addresses). For more information about how large to make your VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-        /// VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// Creates a VPC with the specified CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-your-vpc.html#vpc-cidr-blocks">VPC
+        /// CIDR blocks</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -6558,10 +6641,10 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// By default, each instance you launch in the VPC has the default DHCP options, which
-        /// include only a default DNS server that we provide (AmazonProvidedDNS). For more information,
-        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// By default, each instance that you launch in the VPC has the default DHCP options,
+        /// which include only a default DNS server that we provide (AmazonProvidedDNS). For more
+        /// information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
+        /// option sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6701,7 +6784,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a VPC endpoint service to which service consumers (Amazon Web Services accounts,
-        /// IAM users, and IAM roles) can connect.
+        /// users, and IAM roles) can connect.
         /// 
         ///  
         /// <para>
@@ -7666,6 +7749,47 @@ namespace Amazon.EC2
         /// <returns>Returns a  DeleteIpamPoolResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPool">REST API Reference for DeleteIpamPool Operation</seealso>
         DeleteIpamPoolResponse EndDeleteIpamPool(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteIpamResourceDiscovery
+
+
+        /// <summary>
+        /// Deletes an IPAM resource discovery. A resource discovery is an IPAM component that
+        /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamResourceDiscovery service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamResourceDiscovery">REST API Reference for DeleteIpamResourceDiscovery Operation</seealso>
+        DeleteIpamResourceDiscoveryResponse DeleteIpamResourceDiscovery(DeleteIpamResourceDiscoveryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamResourceDiscovery operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIpamResourceDiscovery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamResourceDiscovery">REST API Reference for DeleteIpamResourceDiscovery Operation</seealso>
+        IAsyncResult BeginDeleteIpamResourceDiscovery(DeleteIpamResourceDiscoveryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIpamResourceDiscovery.</param>
+        /// 
+        /// <returns>Returns a  DeleteIpamResourceDiscoveryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamResourceDiscovery">REST API Reference for DeleteIpamResourceDiscovery Operation</seealso>
+        DeleteIpamResourceDiscoveryResponse EndDeleteIpamResourceDiscovery(IAsyncResult asyncResult);
 
         #endregion
         
@@ -9771,7 +9895,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes one or more VPC endpoint connection notifications.
+        /// Deletes the specified VPC endpoint connection notifications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpointConnectionNotifications service method.</param>
         /// 
@@ -9811,45 +9935,23 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes one or more specified VPC endpoints. You can delete any of the following types
-        /// of VPC endpoints. 
+        /// Deletes the specified VPC endpoints.
         /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// Gateway endpoint,
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Gateway Load Balancer endpoint,
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Interface endpoint
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The following rules apply when you delete a VPC endpoint:
-        /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
         /// When you delete a gateway endpoint, we delete the endpoint routes in the route tables
-        /// that are associated with the endpoint.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// When you delete a Gateway Load Balancer endpoint, we delete the endpoint network interfaces.
-        /// 
+        /// for the endpoint.
         /// </para>
         ///  
         /// <para>
+        /// When you delete a Gateway Load Balancer endpoint, we delete its endpoint network interfaces.
         /// You can only delete Gateway Load Balancer endpoints when the routes that are associated
         /// with the endpoint are deleted.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// When you delete an interface endpoint, we delete the endpoint network interfaces.
+        /// When you delete an interface endpoint, we delete its endpoint network interfaces.
         /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoints service method.</param>
         /// 
@@ -9889,10 +9991,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes one or more VPC endpoint service configurations in your account. Before you
-        /// delete the endpoint service configuration, you must reject any <code>Available</code>
-        /// or <code>PendingAcceptance</code> interface endpoint connections that are attached
-        /// to the service.
+        /// Deletes the specified VPC endpoint service configurations. Before you can delete an
+        /// endpoint service configuration, you must reject any <code>Available</code> or <code>PendingAcceptance</code>
+        /// interface endpoint connections that are attached to the service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpointServiceConfigurations service method.</param>
         /// 
@@ -13214,6 +13315,88 @@ namespace Amazon.EC2
         /// <returns>Returns a  DescribeIpamPoolsResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPools">REST API Reference for DescribeIpamPools Operation</seealso>
         DescribeIpamPoolsResponse EndDescribeIpamPools(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeIpamResourceDiscoveries
+
+
+        /// <summary>
+        /// Describes IPAM resource discoveries. A resource discovery is an IPAM component that
+        /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamResourceDiscoveries service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIpamResourceDiscoveries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveries">REST API Reference for DescribeIpamResourceDiscoveries Operation</seealso>
+        DescribeIpamResourceDiscoveriesResponse DescribeIpamResourceDiscoveries(DescribeIpamResourceDiscoveriesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIpamResourceDiscoveries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamResourceDiscoveries operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIpamResourceDiscoveries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveries">REST API Reference for DescribeIpamResourceDiscoveries Operation</seealso>
+        IAsyncResult BeginDescribeIpamResourceDiscoveries(DescribeIpamResourceDiscoveriesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeIpamResourceDiscoveries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIpamResourceDiscoveries.</param>
+        /// 
+        /// <returns>Returns a  DescribeIpamResourceDiscoveriesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveries">REST API Reference for DescribeIpamResourceDiscoveries Operation</seealso>
+        DescribeIpamResourceDiscoveriesResponse EndDescribeIpamResourceDiscoveries(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeIpamResourceDiscoveryAssociations
+
+
+        /// <summary>
+        /// Describes resource discovery association with an Amazon VPC IPAM. An associated resource
+        /// discovery is a resource discovery that has been associated with an IPAM..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamResourceDiscoveryAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIpamResourceDiscoveryAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveryAssociations">REST API Reference for DescribeIpamResourceDiscoveryAssociations Operation</seealso>
+        DescribeIpamResourceDiscoveryAssociationsResponse DescribeIpamResourceDiscoveryAssociations(DescribeIpamResourceDiscoveryAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIpamResourceDiscoveryAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamResourceDiscoveryAssociations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIpamResourceDiscoveryAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveryAssociations">REST API Reference for DescribeIpamResourceDiscoveryAssociations Operation</seealso>
+        IAsyncResult BeginDescribeIpamResourceDiscoveryAssociations(DescribeIpamResourceDiscoveryAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeIpamResourceDiscoveryAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIpamResourceDiscoveryAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeIpamResourceDiscoveryAssociationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveryAssociations">REST API Reference for DescribeIpamResourceDiscoveryAssociations Operation</seealso>
+        DescribeIpamResourceDiscoveryAssociationsResponse EndDescribeIpamResourceDiscoveryAssociations(IAsyncResult asyncResult);
 
         #endregion
         
@@ -17323,7 +17506,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your VPC endpoints.
+        /// Describes your VPC endpoints.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpoints service method.</param>
         /// 
@@ -18782,6 +18965,48 @@ namespace Amazon.EC2
         /// <returns>Returns a  DisassociateInstanceEventWindowResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateInstanceEventWindow">REST API Reference for DisassociateInstanceEventWindow Operation</seealso>
         DisassociateInstanceEventWindowResponse EndDisassociateInstanceEventWindow(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DisassociateIpamResourceDiscovery
+
+
+        /// <summary>
+        /// Disassociates a resource discovery from an Amazon VPC IPAM. A resource discovery is
+        /// an IPAM component that enables IPAM Service to manage and monitor resources that belong
+        /// to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIpamResourceDiscovery service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamResourceDiscovery">REST API Reference for DisassociateIpamResourceDiscovery Operation</seealso>
+        DisassociateIpamResourceDiscoveryResponse DisassociateIpamResourceDiscovery(DisassociateIpamResourceDiscoveryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIpamResourceDiscovery operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateIpamResourceDiscovery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamResourceDiscovery">REST API Reference for DisassociateIpamResourceDiscovery Operation</seealso>
+        IAsyncResult BeginDisassociateIpamResourceDiscovery(DisassociateIpamResourceDiscoveryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateIpamResourceDiscovery.</param>
+        /// 
+        /// <returns>Returns a  DisassociateIpamResourceDiscoveryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamResourceDiscovery">REST API Reference for DisassociateIpamResourceDiscovery Operation</seealso>
+        DisassociateIpamResourceDiscoveryResponse EndDisassociateIpamResourceDiscovery(IAsyncResult asyncResult);
 
         #endregion
         
@@ -20695,6 +20920,91 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetIpamDiscoveredAccounts
+
+
+        /// <summary>
+        /// Gets IPAM discovered accounts. A discovered account is an Amazon Web Services account
+        /// that is monitored under a resource discovery. If you have integrated IPAM with Amazon
+        /// Web Services Organizations, all accounts in the organization are discovered accounts.
+        /// Only the IPAM account can get all discovered accounts in the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamDiscoveredAccounts service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamDiscoveredAccounts service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredAccounts">REST API Reference for GetIpamDiscoveredAccounts Operation</seealso>
+        GetIpamDiscoveredAccountsResponse GetIpamDiscoveredAccounts(GetIpamDiscoveredAccountsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIpamDiscoveredAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamDiscoveredAccounts operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIpamDiscoveredAccounts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredAccounts">REST API Reference for GetIpamDiscoveredAccounts Operation</seealso>
+        IAsyncResult BeginGetIpamDiscoveredAccounts(GetIpamDiscoveredAccountsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIpamDiscoveredAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIpamDiscoveredAccounts.</param>
+        /// 
+        /// <returns>Returns a  GetIpamDiscoveredAccountsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredAccounts">REST API Reference for GetIpamDiscoveredAccounts Operation</seealso>
+        GetIpamDiscoveredAccountsResponse EndGetIpamDiscoveredAccounts(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetIpamDiscoveredResourceCidrs
+
+
+        /// <summary>
+        /// Returns the resource CIDRs that are monitored as part of a resource discovery. A discovered
+        /// resource is a resource CIDR monitored under a resource discovery. The following resources
+        /// can be discovered: VPCs, Public IPv4 pools, VPC subnets, and Elastic IP addresses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamDiscoveredResourceCidrs service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamDiscoveredResourceCidrs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredResourceCidrs">REST API Reference for GetIpamDiscoveredResourceCidrs Operation</seealso>
+        GetIpamDiscoveredResourceCidrsResponse GetIpamDiscoveredResourceCidrs(GetIpamDiscoveredResourceCidrsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIpamDiscoveredResourceCidrs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamDiscoveredResourceCidrs operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIpamDiscoveredResourceCidrs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredResourceCidrs">REST API Reference for GetIpamDiscoveredResourceCidrs Operation</seealso>
+        IAsyncResult BeginGetIpamDiscoveredResourceCidrs(GetIpamDiscoveredResourceCidrsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIpamDiscoveredResourceCidrs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIpamDiscoveredResourceCidrs.</param>
+        /// 
+        /// <returns>Returns a  GetIpamDiscoveredResourceCidrsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredResourceCidrs">REST API Reference for GetIpamDiscoveredResourceCidrs Operation</seealso>
+        GetIpamDiscoveredResourceCidrsResponse EndGetIpamDiscoveredResourceCidrs(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetIpamPoolAllocations
 
 
@@ -20779,7 +21089,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Get information about the resources in a scope.
+        /// Returns resource CIDRs managed by IPAM in a given scope. If an IPAM is associated
+        /// with more than one resource discovery, the resource CIDRs across all of the resource
+        /// discoveries is returned. A resource discovery is an IPAM component that enables IPAM
+        /// Service to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIpamResourceCidrs service method.</param>
         /// 
@@ -23361,6 +23674,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyIpamResourceDiscovery
+
+
+        /// <summary>
+        /// Modifies a resource discovery. A resource discovery is an IPAM component that enables
+        /// IPAM Service to manage and monitor resources that belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamResourceDiscovery service method.</param>
+        /// 
+        /// <returns>The response from the ModifyIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceDiscovery">REST API Reference for ModifyIpamResourceDiscovery Operation</seealso>
+        ModifyIpamResourceDiscoveryResponse ModifyIpamResourceDiscovery(ModifyIpamResourceDiscoveryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamResourceDiscovery operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyIpamResourceDiscovery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceDiscovery">REST API Reference for ModifyIpamResourceDiscovery Operation</seealso>
+        IAsyncResult BeginModifyIpamResourceDiscovery(ModifyIpamResourceDiscoveryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyIpamResourceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyIpamResourceDiscovery.</param>
+        /// 
+        /// <returns>Returns a  ModifyIpamResourceDiscoveryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceDiscovery">REST API Reference for ModifyIpamResourceDiscovery Operation</seealso>
+        ModifyIpamResourceDiscoveryResponse EndModifyIpamResourceDiscovery(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyIpamScope
 
 
@@ -24848,8 +25202,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the permissions for your VPC endpoint service. You can add or remove permissions
-        /// for service consumers (IAM users, IAM roles, and Amazon Web Services accounts) to
-        /// connect to your endpoint service.
+        /// for service consumers (Amazon Web Services accounts, users, and IAM roles) to connect
+        /// to your endpoint service.
         /// 
         ///  
         /// <para>
@@ -25365,14 +25719,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Move an BYOIP IPv4 CIDR to IPAM from a public IPv4 pool.
+        /// Move a BYOIPv4 CIDR to IPAM from a public IPv4 pool.
         /// 
         ///  
         /// <para>
-        /// If you already have an IPv4 BYOIP CIDR with Amazon Web Services, you can move the
-        /// CIDR to IPAM from a public IPv4 pool. You cannot move an IPv6 CIDR to IPAM. If you
-        /// are bringing a new IP address to Amazon Web Services for the first time, complete
-        /// the steps in <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-ipam.html">Tutorial:
+        /// If you already have a BYOIPv4 CIDR with Amazon Web Services, you can move the CIDR
+        /// to IPAM from a public IPv4 pool. You cannot move an IPv6 CIDR to IPAM. If you are
+        /// bringing a new IP address to Amazon Web Services for the first time, complete the
+        /// steps in <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-ipam.html">Tutorial:
         /// BYOIP address CIDRs to IPAM</a>.
         /// </para>
         /// </summary>
@@ -26179,7 +26533,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Rejects one or more VPC endpoint connection requests to your VPC endpoint service.
+        /// Rejects VPC endpoint connection requests to your VPC endpoint service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectVpcEndpointConnections service method.</param>
         /// 

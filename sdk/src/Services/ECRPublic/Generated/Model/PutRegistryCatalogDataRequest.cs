@@ -30,7 +30,7 @@ namespace Amazon.ECRPublic.Model
 {
     /// <summary>
     /// Container for the parameters to the PutRegistryCatalogData operation.
-    /// Create or updates the catalog data for a public registry.
+    /// Create or update the catalog data for a public registry.
     /// </summary>
     public partial class PutRegistryCatalogDataRequest : AmazonECRPublicRequest
     {

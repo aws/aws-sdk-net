@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The runtime restore hook encountered an error. For more information, check the Amazon
-    /// CloudWatch logs.
+    /// The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime
+    /// hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

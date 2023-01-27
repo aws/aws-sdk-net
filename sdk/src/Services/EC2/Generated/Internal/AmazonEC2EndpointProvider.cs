@@ -82,7 +82,7 @@ namespace Amazon.EC2.Internal
                     {
                         if (Equals("aws-us-gov", GetAttr(refs["PartitionResult"], "name")))
                         {
-                            return new Endpoint(Interpolate(@"https://ec2.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            return new Endpoint(Interpolate(@"https://ec2.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         return new Endpoint(Interpolate(@"https://ec2-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
@@ -95,6 +95,14 @@ namespace Amazon.EC2.Internal
                         return new Endpoint(Interpolate(@"https://ec2.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                }
+                if (Equals(refs["Region"], "us-gov-east-1"))
+                {
+                    return new Endpoint("https://ec2.us-gov-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(refs["Region"], "us-gov-west-1"))
+                {
+                    return new Endpoint("https://ec2.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                 }
                 return new Endpoint(Interpolate(@"https://ec2.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
             }

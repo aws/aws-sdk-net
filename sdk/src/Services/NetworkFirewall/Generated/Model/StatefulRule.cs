@@ -73,6 +73,18 @@ namespace Amazon.NetworkFirewall.Model
         /// can enable the rule with <code>ALERT</code> action, verify in the logs that the rule
         /// is filtering as you want, then change the action to <code>DROP</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful rule,
+        /// and sends a TCP reset packet back to sender of the packet. A TCP reset packet is a
+        /// packet with no payload and a <code>RST</code> bit contained in the TCP header flags.
+        /// Also sends an alert log mesage if alert logging is configured in the <a>Firewall</a>
+        /// <a>LoggingConfiguration</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>REJECT</code> isn't currently available for use with IMAP and FTP protocols.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -38,7 +38,11 @@ namespace Amazon.SsmSap.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return with a single call. To retrieve the remaining
+        /// results, make another call with the returned nextToken value. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public int MaxResults
@@ -54,7 +58,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next page of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {

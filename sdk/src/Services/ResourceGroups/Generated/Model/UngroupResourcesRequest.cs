@@ -30,7 +30,10 @@ namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
     /// Container for the parameters to the UngroupResources operation.
-    /// Removes the specified resources from the specified group.
+    /// Removes the specified resources from the specified group. This operation works only
+    /// with static groups that you populated using the <a>GroupResources</a> operation. It
+    /// doesn't work with any resource groups that are automatically populated by tag-based
+    /// or CloudFormation stack-based queries.
     /// 
     ///  
     /// <para>

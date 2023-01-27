@@ -34,9 +34,9 @@ namespace Amazon.ECRPublic.Model
     /// 
     ///  
     /// <para>
-    /// When an image is pushed, the InitiateLayerUpload API is called once per image layer
-    /// that has not already been uploaded. Whether or not an image layer has been uploaded
-    /// is determined by the BatchCheckLayerAvailability API action.
+    /// When an image is pushed, the InitiateLayerUpload API is called once for each image
+    /// layer that hasn't already been uploaded. Whether an image layer uploads is determined
+    /// by the BatchCheckLayerAvailability API action.
     /// </para>
     ///  <note> 
     /// <para>
@@ -54,11 +54,12 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the registry to which you intend to upload layers.
-        /// If you do not specify a registry, the default public registry is assumed.
+        /// The Amazon Web Services account ID, or registry alias, that's associated with the
+        /// registry to which you intend to upload layers. If you do not specify a registry, the
+        /// default public registry is assumed.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=2, Max=50)]
         public string RegistryId
         {
             get { return this._registryId; }
@@ -74,7 +75,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository to which you intend to upload layers.
+        /// The name of the repository that you want to upload layers to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=205)]

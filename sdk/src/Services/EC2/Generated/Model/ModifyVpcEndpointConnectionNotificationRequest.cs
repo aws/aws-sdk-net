@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ConnectionEvents. 
         /// <para>
-        /// One or more events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>,
+        /// The events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>,
         /// <code>Delete</code>, and <code>Reject</code>.
         /// </para>
         /// </summary>

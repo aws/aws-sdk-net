@@ -8224,6 +8224,12 @@
     <max>3600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ModelConfiguration.CompilationJobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelConfiguration.InferenceSpecificationName</property>
     <min>1</min>
     <max>63</max>
@@ -9471,8 +9477,19 @@
     <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.RecommendationJobContainerConfig.DataInputConfig</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\S\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.RecommendationJobInputConfig.JobDurationInSeconds</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.RecommendationJobInputConfig.ModelName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.RecommendationJobInputConfig.ModelPackageVersionArn</property>
@@ -9497,6 +9514,14 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.RecommendationJobResourceLimit.MaxParallelOfTests</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.RecommendationMetrics.CpuUtilization</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.RecommendationMetrics.MemoryUtilization</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.RedshiftDatasetDefinition.ClusterId</property>

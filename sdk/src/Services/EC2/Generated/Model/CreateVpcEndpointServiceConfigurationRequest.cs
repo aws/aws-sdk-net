@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CreateVpcEndpointServiceConfiguration operation.
     /// Creates a VPC endpoint service to which service consumers (Amazon Web Services accounts,
-    /// IAM users, and IAM roles) can connect.
+    /// users, and IAM roles) can connect.
     /// 
     ///  
     /// <para>
@@ -112,7 +112,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GatewayLoadBalancerArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+        /// The Amazon Resource Names (ARNs) of the Gateway Load Balancers.
         /// </para>
         /// </summary>
         public List<string> GatewayLoadBalancerArns
@@ -130,7 +130,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkLoadBalancerArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of one or more Network Load Balancers for your service.
+        /// The Amazon Resource Names (ARNs) of the Network Load Balancers.
         /// </para>
         /// </summary>
         public List<string> NetworkLoadBalancerArns

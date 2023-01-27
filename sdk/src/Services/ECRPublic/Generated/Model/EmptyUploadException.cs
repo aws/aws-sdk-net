@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// The specified layer upload does not contain any layer parts.
+    /// The specified layer upload doesn't contain any layer parts.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

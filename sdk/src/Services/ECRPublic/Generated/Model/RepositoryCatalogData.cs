@@ -49,7 +49,7 @@ namespace Amazon.ECRPublic.Model
         /// repository details on the Amazon ECR Public Gallery.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10240)]
+        [AWSProperty(Max=25600)]
         public string AboutText
         {
             get { return this._aboutText; }
@@ -109,7 +109,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property LogoUrl. 
         /// <para>
-        /// The URL containing the logo associated with the repository.
+        /// The URL that contains the logo that's associated with the repository.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -128,7 +128,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property MarketplaceCertified. 
         /// <para>
-        /// Whether or not the repository is certified by AWS Marketplace.
+        /// Indicates whether the repository is certified by Amazon Web Services Marketplace.
         /// </para>
         /// </summary>
         public bool MarketplaceCertified
@@ -175,7 +175,7 @@ namespace Amazon.ECRPublic.Model
         /// context for users of the repository.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10240)]
+        [AWSProperty(Max=25600)]
         public string UsageText
         {
             get { return this._usageText; }

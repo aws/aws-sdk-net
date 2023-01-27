@@ -240,6 +240,10 @@
       <Project>{42A487B0-B057-4921-9A4B-9AC8FA3DD0A7}</Project>
       <Name>AWSSDK.ChimeSDKVoice.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CleanRooms/AWSSDK.CleanRooms.CodeAnalysis.csproj">
+      <Project>{C82E6FE2-6A22-4E02-97BB-19CAC01F6D16}</Project>
+      <Name>AWSSDK.CleanRooms.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Cloud9/AWSSDK.Cloud9.CodeAnalysis.csproj">
       <Project>{3566CC31-603D-45F7-A615-37C7963B3753}</Project>
       <Name>AWSSDK.Cloud9.CodeAnalysis</Name>
@@ -743,6 +747,10 @@
     <ProjectReference Include="../ServiceAnalysis/Kendra/AWSSDK.Kendra.CodeAnalysis.csproj">
       <Project>{04DE067E-5C75-43C0-88EF-7618FA712B80}</Project>
       <Name>AWSSDK.Kendra.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/KendraRanking/AWSSDK.KendraRanking.CodeAnalysis.csproj">
+      <Project>{AF2D1D42-C3AD-4537-9B4A-26CC4AFC0F74}</Project>
+      <Name>AWSSDK.KendraRanking.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/KeyManagementService/AWSSDK.KeyManagementService.CodeAnalysis.csproj">
       <Project>{76145C3D-D380-4BAC-9B92-2DB55ED091C7}</Project>

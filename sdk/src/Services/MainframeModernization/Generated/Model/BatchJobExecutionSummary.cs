@@ -34,11 +34,13 @@ namespace Amazon.MainframeModernization.Model
     public partial class BatchJobExecutionSummary
     {
         private string _applicationId;
+        private BatchJobIdentifier _batchJobIdentifier;
         private DateTime? _endTime;
         private string _executionId;
         private string _jobId;
         private string _jobName;
         private BatchJobType _jobType;
+        private string _returnCode;
         private DateTime? _startTime;
         private BatchJobExecutionStatus _status;
 
@@ -59,6 +61,21 @@ namespace Amazon.MainframeModernization.Model
         internal bool IsSetApplicationId()
         {
             return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BatchJobIdentifier.
+        /// </summary>
+        public BatchJobIdentifier BatchJobIdentifier
+        {
+            get { return this._batchJobIdentifier; }
+            set { this._batchJobIdentifier = value; }
+        }
+
+        // Check to see if BatchJobIdentifier property is set
+        internal bool IsSetBatchJobIdentifier()
+        {
+            return this._batchJobIdentifier != null;
         }
 
         /// <summary>
@@ -150,6 +167,21 @@ namespace Amazon.MainframeModernization.Model
         internal bool IsSetJobType()
         {
             return this._jobType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReturnCode.
+        /// </summary>
+        public string ReturnCode
+        {
+            get { return this._returnCode; }
+            set { this._returnCode = value; }
+        }
+
+        // Check to see if ReturnCode property is set
+        internal bool IsSetReturnCode()
+        {
+            return this._returnCode != null;
         }
 
         /// <summary>

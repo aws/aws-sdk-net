@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private List<EndpointInputConfiguration> _endpointConfigurations = new List<EndpointInputConfiguration>();
         private List<EndpointInfo> _endpoints = new List<EndpointInfo>();
         private int? _jobDurationInSeconds;
+        private string _modelName;
         private string _modelPackageVersionArn;
         private RecommendationJobResourceLimit _resourceLimit;
         private TrafficPattern _trafficPattern;
@@ -120,12 +121,31 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelName. 
+        /// <para>
+        /// The name of the created model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string ModelName
+        {
+            get { return this._modelName; }
+            set { this._modelName = value; }
+        }
+
+        // Check to see if ModelName property is set
+        internal bool IsSetModelName()
+        {
+            return this._modelName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ModelPackageVersionArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of a versioned model package.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=2048)]
         public string ModelPackageVersionArn
         {
             get { return this._modelPackageVersionArn; }

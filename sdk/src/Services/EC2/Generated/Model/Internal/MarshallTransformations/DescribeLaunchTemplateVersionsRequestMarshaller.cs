@@ -103,6 +103,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
+                if(publicRequest.IsSetResolveAlias())
+                {
+                    request.Parameters.Add("ResolveAlias", StringUtils.FromBool(publicRequest.ResolveAlias));
+                }
                 if(publicRequest.IsSetVersions())
                 {
                     int publicRequestlistValueIndex = 1;

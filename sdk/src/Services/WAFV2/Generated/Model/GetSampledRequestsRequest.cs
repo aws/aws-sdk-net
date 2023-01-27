@@ -77,8 +77,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property RuleMetricName. 
         /// <para>
-        /// The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which
-        /// you want a sample of requests.
+        /// The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension
+        /// for which you want a sample of requests.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

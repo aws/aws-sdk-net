@@ -36,6 +36,7 @@ namespace Amazon.AuditManager.Model
     {
         private AssessmentReportsDestination _defaultAssessmentReportsDestination;
         private List<Role> _defaultProcessOwners = new List<Role>();
+        private DeregistrationPolicy _deregistrationPolicy;
         private bool? _evidenceFinderEnabled;
         private string _kmsKey;
         private string _snsTopic;
@@ -77,6 +78,25 @@ namespace Amazon.AuditManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeregistrationPolicy. 
+        /// <para>
+        /// The deregistration policy for your Audit Manager data. You can use this attribute
+        /// to determine how your data is handled when you deregister Audit Manager.
+        /// </para>
+        /// </summary>
+        public DeregistrationPolicy DeregistrationPolicy
+        {
+            get { return this._deregistrationPolicy; }
+            set { this._deregistrationPolicy = value; }
+        }
+
+        // Check to see if DeregistrationPolicy property is set
+        internal bool IsSetDeregistrationPolicy()
+        {
+            return this._deregistrationPolicy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EvidenceFinderEnabled. 
         /// <para>
         /// Specifies whether the evidence finder feature is enabled. Change this attribute to
@@ -89,12 +109,6 @@ namespace Amazon.AuditManager.Model
         /// evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a>
         /// and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
         /// Audit Manager. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Disabling evidence finder is permanent, so consider this decision carefully before
-        /// you proceed. If you’re using Audit Manager as a delegated administrator, keep in mind
-        /// that this action applies to all member accounts in your organization.
         /// </para>
         ///  </important>
         /// </summary>

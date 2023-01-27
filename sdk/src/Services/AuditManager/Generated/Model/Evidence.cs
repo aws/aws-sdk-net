@@ -31,7 +31,7 @@ namespace Amazon.AuditManager.Model
     /// <summary>
     /// A record that contains the information needed to demonstrate compliance with the
     /// requirements specified by a control. Examples of evidence include change activity
-    /// triggered by a user, or a system configuration snapshot.
+    /// invoked by a user, or a system configuration snapshot.
     /// </summary>
     public partial class Evidence
     {

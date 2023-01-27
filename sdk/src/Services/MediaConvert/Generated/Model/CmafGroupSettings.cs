@@ -39,6 +39,7 @@ namespace Amazon.MediaConvert.Model
         private string _baseUrl;
         private CmafClientCache _clientCache;
         private CmafCodecSpecification _codecSpecification;
+        private DashManifestStyle _dashManifestStyle;
         private string _destination;
         private DestinationSettings _destinationSettings;
         private CmafEncryptionSettings _encryption;
@@ -131,6 +132,26 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetCodecSpecification()
         {
             return this._codecSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DashManifestStyle. Specify how MediaConvert writes SegmentTimeline
+        /// in your output DASH manifest. To write a SegmentTimeline in each video Representation:
+        /// Keep the default value, Basic. To write a common SegmentTimeline in the video AdaptationSet:
+        /// Choose Compact. Note that MediaConvert will still write a SegmentTimeline in any Representation
+        /// that does not share a common timeline. To write a video AdaptationSet for each different
+        /// output framerate, and a common SegmentTimeline in each AdaptationSet: Choose Distinct.
+        /// </summary>
+        public DashManifestStyle DashManifestStyle
+        {
+            get { return this._dashManifestStyle; }
+            set { this._dashManifestStyle = value; }
+        }
+
+        // Check to see if DashManifestStyle property is set
+        internal bool IsSetDashManifestStyle()
+        {
+            return this._dashManifestStyle != null;
         }
 
         /// <summary>

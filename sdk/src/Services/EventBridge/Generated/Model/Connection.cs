@@ -47,6 +47,11 @@ namespace Amazon.EventBridge.Model
         /// <para>
         /// The authorization type specified for the connection.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// OAUTH tokens are refreshed when a 401 or 407 response is returned.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ConnectionAuthorizationType AuthorizationType
         {

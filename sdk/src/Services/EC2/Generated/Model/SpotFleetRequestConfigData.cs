@@ -561,7 +561,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TargetCapacityUnitType. 
         /// <para>
-        /// The unit for the target capacity.
+        /// The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be
+        /// specified when <code>InstanceRequirements</code> is specified.
         /// </para>
         ///  
         /// <para>

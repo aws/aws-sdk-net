@@ -1941,6 +1941,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
+        /// <code>CertificateIdentifier</code> doesn't refer to an existing certificate.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -4345,6 +4348,15 @@ namespace Amazon.RDS
         /// <summary>
         /// Lists the set of CA certificates provided by Amazon RDS for this Amazon Web Services
         /// account.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+        /// SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>
+        /// and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+        /// Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora
+        /// User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates service method.</param>
         /// 
@@ -10692,8 +10704,11 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Starts a database activity stream to monitor activity on the database. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database
-        /// Activity Streams</a> in the <i>Amazon Aurora User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">
+        /// Monitoring Amazon Aurora with Database Activity Streams</a> in the <i>Amazon Aurora
+        /// User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.html">
+        /// Monitoring Amazon RDS with Database Activity Streams</a> in the <i>Amazon RDS User
+        /// Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartActivityStream service method.</param>
         /// 
@@ -11132,8 +11147,11 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database
-        /// Activity Streams</a> in the <i>Amazon Aurora User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">
+        /// Monitoring Amazon Aurora with Database Activity Streams</a> in the <i>Amazon Aurora
+        /// User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.html">
+        /// Monitoring Amazon RDS with Database Activity Streams</a> in the <i>Amazon RDS User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopActivityStream service method.</param>

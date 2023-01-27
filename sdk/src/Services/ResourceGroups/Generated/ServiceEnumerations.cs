@@ -129,6 +129,114 @@ namespace Amazon.ResourceGroups
 
 
     /// <summary>
+    /// Constants used for properties of type GroupLifecycleEventsDesiredStatus.
+    /// </summary>
+    public class GroupLifecycleEventsDesiredStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for GroupLifecycleEventsDesiredStatus
+        /// </summary>
+        public static readonly GroupLifecycleEventsDesiredStatus ACTIVE = new GroupLifecycleEventsDesiredStatus("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for GroupLifecycleEventsDesiredStatus
+        /// </summary>
+        public static readonly GroupLifecycleEventsDesiredStatus INACTIVE = new GroupLifecycleEventsDesiredStatus("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GroupLifecycleEventsDesiredStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GroupLifecycleEventsDesiredStatus FindValue(string value)
+        {
+            return FindValue<GroupLifecycleEventsDesiredStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GroupLifecycleEventsDesiredStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GroupLifecycleEventsStatus.
+    /// </summary>
+    public class GroupLifecycleEventsStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for GroupLifecycleEventsStatus
+        /// </summary>
+        public static readonly GroupLifecycleEventsStatus ACTIVE = new GroupLifecycleEventsStatus("ACTIVE");
+        /// <summary>
+        /// Constant ERROR for GroupLifecycleEventsStatus
+        /// </summary>
+        public static readonly GroupLifecycleEventsStatus ERROR = new GroupLifecycleEventsStatus("ERROR");
+        /// <summary>
+        /// Constant IN_PROGRESS for GroupLifecycleEventsStatus
+        /// </summary>
+        public static readonly GroupLifecycleEventsStatus IN_PROGRESS = new GroupLifecycleEventsStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant INACTIVE for GroupLifecycleEventsStatus
+        /// </summary>
+        public static readonly GroupLifecycleEventsStatus INACTIVE = new GroupLifecycleEventsStatus("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GroupLifecycleEventsStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GroupLifecycleEventsStatus FindValue(string value)
+        {
+            return FindValue<GroupLifecycleEventsStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GroupLifecycleEventsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type QueryErrorCode.
     /// </summary>
     public class QueryErrorCode : ConstantClass
@@ -142,6 +250,10 @@ namespace Amazon.ResourceGroups
         /// Constant CLOUDFORMATION_STACK_NOT_EXISTING for QueryErrorCode
         /// </summary>
         public static readonly QueryErrorCode CLOUDFORMATION_STACK_NOT_EXISTING = new QueryErrorCode("CLOUDFORMATION_STACK_NOT_EXISTING");
+        /// <summary>
+        /// Constant CLOUDFORMATION_STACK_UNASSUMABLE_ROLE for QueryErrorCode
+        /// </summary>
+        public static readonly QueryErrorCode CLOUDFORMATION_STACK_UNASSUMABLE_ROLE = new QueryErrorCode("CLOUDFORMATION_STACK_UNASSUMABLE_ROLE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

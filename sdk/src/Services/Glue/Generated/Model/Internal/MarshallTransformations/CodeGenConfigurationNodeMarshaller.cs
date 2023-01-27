@@ -78,6 +78,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCatalogHudiSource())
+            {
+                context.Writer.WritePropertyName("CatalogHudiSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CatalogHudiSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.CatalogHudiSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCatalogKafkaSource())
             {
                 context.Writer.WritePropertyName("CatalogKafkaSource");
@@ -452,6 +463,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetS3CatalogHudiSource())
+            {
+                context.Writer.WritePropertyName("S3CatalogHudiSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3CatalogHudiSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3CatalogHudiSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3CatalogSource())
             {
                 context.Writer.WritePropertyName("S3CatalogSource");
@@ -503,6 +525,39 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
                 var marshaller = S3GlueParquetTargetMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3GlueParquetTarget, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetS3HudiCatalogTarget())
+            {
+                context.Writer.WritePropertyName("S3HudiCatalogTarget");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3HudiCatalogTargetMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3HudiCatalogTarget, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetS3HudiDirectTarget())
+            {
+                context.Writer.WritePropertyName("S3HudiDirectTarget");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3HudiDirectTargetMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3HudiDirectTarget, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetS3HudiSource())
+            {
+                context.Writer.WritePropertyName("S3HudiSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3HudiSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3HudiSource, context);
 
                 context.Writer.WriteObjectEnd();
             }

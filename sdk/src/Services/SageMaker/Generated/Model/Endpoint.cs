@@ -238,7 +238,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ShadowProductionVariants. 
         /// <para>
         /// A list of the shadow variants hosted on the endpoint. Each shadow variant is a model
-        /// in shadow mode with production traffic replicated from the proudction variant.
+        /// in shadow mode with production traffic replicated from the production variant.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

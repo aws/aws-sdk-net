@@ -40,12 +40,12 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of repository results returned by <code>DescribeRegistries</code>
+        /// The maximum number of repository results that's returned by <code>DescribeRegistries</code>
         /// in paginated output. When this parameter is used, <code>DescribeRegistries</code>
         /// only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
         /// response element. The remaining results of the initial request can be seen by sending
         /// another <code>DescribeRegistries</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRegistries</code>
+        /// value. This value can be between 1 and 1000. If this parameter isn't used, then <code>DescribeRegistries</code>
         /// returns up to 100 results and a <code>nextToken</code> value, if applicable.
         /// </para>
         /// </summary>
@@ -65,11 +65,11 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous paginated <code>DescribeRegistries</code>
+        /// The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeRegistries</code>
         /// request where <code>maxResults</code> was used and the results exceeded the value
         /// of that parameter. Pagination continues from the end of the previous results that
-        /// returned the <code>nextToken</code> value. This value is <code>null</code> when there
-        /// are no more results to return.
+        /// returned the <code>nextToken</code> value. If there are no more results to return,
+        /// this value is <code>null</code>.
         /// </para>
         ///  <note> 
         /// <para>

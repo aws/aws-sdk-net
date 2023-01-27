@@ -759,6 +759,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("LaunchTemplateName", StringUtils.FromString(publicRequest.LaunchTemplateName));
                 }
+                if(publicRequest.IsSetResolveAlias())
+                {
+                    request.Parameters.Add("ResolveAlias", StringUtils.FromBool(publicRequest.ResolveAlias));
+                }
                 if(publicRequest.IsSetSourceVersion())
                 {
                     request.Parameters.Add("SourceVersion", StringUtils.FromString(publicRequest.SourceVersion));

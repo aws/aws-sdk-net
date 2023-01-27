@@ -30,7 +30,7 @@ namespace Amazon.ACMPCA.Model
 {
     /// <summary>
     /// The token specified in the <code>NextToken</code> argument is not valid. Use the token
-    /// returned from your previous call to <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.
+    /// returned from your previous call to <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

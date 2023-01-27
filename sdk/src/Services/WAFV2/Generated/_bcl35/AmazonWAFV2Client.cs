@@ -4264,6 +4264,27 @@ namespace Amazon.WAFV2
         /// 
         ///  <note> 
         /// <para>
+        /// This operation completely replaces any mutable specifications that you already have
+        /// for a logging configuration with the ones that you provide to this call. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To modify an existing logging configuration, do the following: 
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Retrieve it by calling <a>GetLoggingConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update its settings as needed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provide the complete logging configuration specification to this call
+        /// </para>
+        ///  </li> </ol> </note> <note> 
+        /// <para>
         /// You can define one logging destination per web ACL.
         /// </para>
         ///  </note> 
@@ -4307,15 +4328,6 @@ namespace Amazon.WAFV2
         /// For additional information about web ACL logging, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
         /// web ACL traffic information</a> in the <i>WAF Developer Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This operation completely replaces the mutable specifications that you already have
-        /// for the logging configuration with the ones that you provide to this call. To modify
-        /// the logging configuration, retrieve it by calling <a>GetLoggingConfiguration</a>,
-        /// update the settings as needed, and then provide the complete logging configuration
-        /// specification to this call.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLoggingConfiguration service method.</param>
         /// 
@@ -4928,11 +4940,25 @@ namespace Amazon.WAFV2
         ///  <note> 
         /// <para>
         /// This operation completely replaces the mutable specifications that you already have
-        /// for the IP set with the ones that you provide to this call. To modify the IP set,
-        /// retrieve it by calling <a>GetIPSet</a>, update the settings as needed, and then provide
-        /// the complete IP set specification to this call.
+        /// for the IP set with the ones that you provide to this call. 
         /// </para>
-        ///  </note> 
+        ///  
+        /// <para>
+        /// To modify an IP set, do the following: 
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Retrieve it by calling <a>GetIPSet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update its settings as needed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provide the complete IP set specification to this call
+        /// </para>
+        ///  </li> </ol> </note> 
         /// <para>
         /// When you make changes to web ACLs or web ACL components, like rules and rule groups,
         /// WAF propagates the changes everywhere that the web ACL and its components are stored
@@ -5170,11 +5196,25 @@ namespace Amazon.WAFV2
         ///  <note> 
         /// <para>
         /// This operation completely replaces the mutable specifications that you already have
-        /// for the regex pattern set with the ones that you provide to this call. To modify the
-        /// regex pattern set, retrieve it by calling <a>GetRegexPatternSet</a>, update the settings
-        /// as needed, and then provide the complete regex pattern set specification to this call.
+        /// for the regex pattern set with the ones that you provide to this call. 
         /// </para>
-        ///  </note> 
+        ///  
+        /// <para>
+        /// To modify a regex pattern set, do the following: 
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Retrieve it by calling <a>GetRegexPatternSet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update its settings as needed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provide the complete regex pattern set specification to this call
+        /// </para>
+        ///  </li> </ol> </note> 
         /// <para>
         /// When you make changes to web ACLs or web ACL components, like rules and rule groups,
         /// WAF propagates the changes everywhere that the web ACL and its components are stored
@@ -5299,11 +5339,25 @@ namespace Amazon.WAFV2
         ///  <note> 
         /// <para>
         /// This operation completely replaces the mutable specifications that you already have
-        /// for the rule group with the ones that you provide to this call. To modify the rule
-        /// group, retrieve it by calling <a>GetRuleGroup</a>, update the settings as needed,
-        /// and then provide the complete rule group specification to this call.
+        /// for the rule group with the ones that you provide to this call. 
         /// </para>
-        ///  </note> 
+        ///  
+        /// <para>
+        /// To modify a rule group, do the following: 
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Retrieve it by calling <a>GetRuleGroup</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update its settings as needed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provide the complete rule group specification to this call
+        /// </para>
+        ///  </li> </ol> </note> 
         /// <para>
         /// When you make changes to web ACLs or web ACL components, like rules and rule groups,
         /// WAF propagates the changes everywhere that the web ACL and its components are stored
@@ -5464,7 +5518,28 @@ namespace Amazon.WAFV2
         /// Updates the specified <a>WebACL</a>. While updating a web ACL, WAF provides continuous
         /// coverage to the resources that you have associated with the web ACL. 
         /// 
+        ///  <note> 
+        /// <para>
+        /// This operation completely replaces the mutable specifications that you already have
+        /// for the web ACL with the ones that you provide to this call. 
+        /// </para>
         ///  
+        /// <para>
+        /// To modify a web ACL, do the following: 
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Retrieve it by calling <a>GetWebACL</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update its settings as needed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provide the complete web ACL specification to this call
+        /// </para>
+        ///  </li> </ol> </note> 
         /// <para>
         /// When you make changes to web ACLs or web ACL components, like rules and rule groups,
         /// WAF propagates the changes everywhere that the web ACL and its components are stored
@@ -5478,14 +5553,7 @@ namespace Amazon.WAFV2
         /// ACL that is already associated with a resource. Generally, any inconsistencies of
         /// this type last only a few seconds.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This operation completely replaces the mutable specifications that you already have
-        /// for the web ACL with the ones that you provide to this call. To modify the web ACL,
-        /// retrieve it by calling <a>GetWebACL</a>, update the settings as needed, and then provide
-        /// the complete web ACL specification to this call.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         ///  A web ACL defines a collection of rules to use to inspect and control web requests.
         /// Each rule has an action defined (allow, block, or count) for requests that match the

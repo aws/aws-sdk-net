@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// The specified layers could not be found, or the specified layer is not valid for this
-    /// repository.
+    /// The specified layers can't be found, or the specified layer isn't valid for this repository.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

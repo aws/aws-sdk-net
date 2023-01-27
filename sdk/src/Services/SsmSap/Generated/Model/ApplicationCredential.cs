@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
-    /// 
+    /// The credentials of your SAP application.
     /// </summary>
     public partial class ApplicationCredential
     {
@@ -38,7 +38,10 @@ namespace Amazon.SsmSap.Model
         private string _secretId;
 
         /// <summary>
-        /// Gets and sets the property CredentialType.
+        /// Gets and sets the property CredentialType. 
+        /// <para>
+        /// The type of the application credentials. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public CredentialType CredentialType
@@ -54,7 +57,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DatabaseName.
+        /// Gets and sets the property DatabaseName. 
+        /// <para>
+        /// The name of the SAP HANA database.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string DatabaseName
@@ -70,7 +76,11 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecretId.
+        /// Gets and sets the property SecretId. 
+        /// <para>
+        /// The secret ID created in AWS Secrets Manager to store the credentials of the SAP application.
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string SecretId

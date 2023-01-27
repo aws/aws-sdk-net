@@ -195,6 +195,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.Runtime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RuntimeVersionConfig", targetDepth))
+                {
+                    var unmarshaller = RuntimeVersionConfigUnmarshaller.Instance;
+                    response.RuntimeVersionConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SigningJobArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

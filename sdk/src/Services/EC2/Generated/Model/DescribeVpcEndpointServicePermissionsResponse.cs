@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllowedPrincipals. 
         /// <para>
-        /// Information about one or more allowed principals.
+        /// Information about the allowed principals.
         /// </para>
         /// </summary>
         public List<AllowedPrincipal> AllowedPrincipals

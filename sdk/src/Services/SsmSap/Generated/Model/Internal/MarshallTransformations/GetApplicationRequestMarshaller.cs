@@ -77,6 +77,12 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ApplicationId);
                 }
 
+                if(publicRequest.IsSetAppRegistryArn())
+                {
+                    context.Writer.WritePropertyName("AppRegistryArn");
+                    context.Writer.Write(publicRequest.AppRegistryArn);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

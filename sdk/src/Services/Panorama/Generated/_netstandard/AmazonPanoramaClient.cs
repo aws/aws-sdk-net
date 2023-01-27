@@ -338,8 +338,7 @@ namespace Amazon.Panorama
 
 
         /// <summary>
-        /// Creates a job to run on one or more devices. A job can update a device's software
-        /// or reboot it.
+        /// Creates a job to run on a device. A job can update a device's software or reboot it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJobForDevices service method.</param>
         /// <param name="cancellationToken">

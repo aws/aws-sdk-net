@@ -82,8 +82,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Metric. 
         /// <para>
-        /// The aggregation metric used for the data query. Currently only <code>aggregation-latency</code>
-        /// is supported, indicating network latency.
+        /// The metric, <code>aggregation-latency</code>, indicating that network latency is aggregated
+        /// for the query. This is the only supported metric.
         /// </para>
         /// </summary>
         public MetricType Metric
@@ -138,16 +138,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Statistic. 
         /// <para>
-        /// Metric data aggregations over specified periods of time. The following are the supported
-        /// Infrastructure Performance statistics:
+        /// The metric data aggregation period, <code>p50</code>, between the specified <code>startDate</code>
+        /// and <code>endDate</code>. For example, a metric of <code>five_minutes</code> is the
+        /// median of all the data points gathered within those five minutes. <code>p50</code>
+        /// is the only supported metric.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>p50</code> - The median value of the metric aggregated over a specified start
-        /// and end time. For example, a metric of <code>five_minutes</code> is the median of
-        /// all the data points gathered within those five minutes.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public StatisticType Statistic
         {

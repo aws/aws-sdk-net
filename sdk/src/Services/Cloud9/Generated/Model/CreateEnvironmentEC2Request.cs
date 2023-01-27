@@ -54,7 +54,7 @@ namespace Amazon.Cloud9.Model
         /// has last been used.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20160)]
+        [AWSProperty(Min=0, Max=20160)]
         public int AutomaticStopTimeMinutes
         {
             get { return this._automaticStopTimeMinutes.GetValueOrDefault(); }

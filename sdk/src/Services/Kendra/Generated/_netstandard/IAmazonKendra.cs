@@ -2375,7 +2375,7 @@ namespace Amazon.Kendra
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You can specify that the query return only one type of result using the <code>QueryResultTypeConfig</code>
+        /// You can specify that the query return only one type of result using the <code>QueryResultTypeFilter</code>
         /// parameter.
         /// </para>
         ///  

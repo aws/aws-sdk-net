@@ -2,6 +2,7 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.CreateEnvironmentEC2Request.AutomaticStopTimeMinutes</property>
+    <min>0</min>
     <max>20160</max>
   </property-value-rule>
   <property-value-rule>

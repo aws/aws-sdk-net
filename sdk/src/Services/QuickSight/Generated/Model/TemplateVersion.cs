@@ -161,8 +161,37 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The HTTP status of the request.
+        /// The status that is associated with the template.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATION_IN_PROGRESS</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATION_SUCCESSFUL</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATION_FAILED</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATE_IN_PROGRESS</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATE_SUCCESSFUL</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATE_FAILED</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETED</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ResourceStatus Status
         {

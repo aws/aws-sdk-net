@@ -60,7 +60,7 @@ namespace Amazon.ResourceGroups.Model
         /// can contain letters, numbers, hyphens, underscores, periods, and spaces.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=512)]
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -99,7 +99,7 @@ namespace Amazon.ResourceGroups.Model
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated, use Group instead.")]
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=300)]
         public string GroupName
         {
             get { return this._groupName; }

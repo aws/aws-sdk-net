@@ -35,11 +35,25 @@ namespace Amazon.WAFV2.Model
     ///  <note> 
     /// <para>
     /// This operation completely replaces the mutable specifications that you already have
-    /// for the regex pattern set with the ones that you provide to this call. To modify the
-    /// regex pattern set, retrieve it by calling <a>GetRegexPatternSet</a>, update the settings
-    /// as needed, and then provide the complete regex pattern set specification to this call.
+    /// for the regex pattern set with the ones that you provide to this call. 
     /// </para>
-    ///  </note> 
+    ///  
+    /// <para>
+    /// To modify a regex pattern set, do the following: 
+    /// </para>
+    ///  <ol> <li> 
+    /// <para>
+    /// Retrieve it by calling <a>GetRegexPatternSet</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Update its settings as needed
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Provide the complete regex pattern set specification to this call
+    /// </para>
+    ///  </li> </ol> </note> 
     /// <para>
     /// When you make changes to web ACLs or web ACL components, like rules and rule groups,
     /// WAF propagates the changes everywhere that the web ACL and its components are stored

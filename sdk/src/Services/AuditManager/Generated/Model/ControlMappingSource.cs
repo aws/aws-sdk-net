@@ -155,7 +155,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        ///  Specifies one of the five types of data sources for evidence collection. 
+        ///  Specifies one of the five data source types for evidence collection. 
         /// </para>
         /// </summary>
         public SourceType SourceType

@@ -73,6 +73,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.BaseUrl);
             }
 
+            if(requestObject.IsSetDashManifestStyle())
+            {
+                context.Writer.WritePropertyName("dashManifestStyle");
+                context.Writer.Write(requestObject.DashManifestStyle);
+            }
+
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");

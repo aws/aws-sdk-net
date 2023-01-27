@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
-    /// 
+    /// The summary of the SAP application registered with AWS Systems Manager for SAP.
     /// </summary>
     public partial class ApplicationSummary
     {
@@ -39,7 +39,10 @@ namespace Amazon.SsmSap.Model
         private ApplicationType _type;
 
         /// <summary>
-        /// Gets and sets the property Arn.
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the application.
+        /// </para>
         /// </summary>
         public string Arn
         {
@@ -54,7 +57,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The ID of the application.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -69,7 +75,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags on the application.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {
@@ -84,7 +93,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the application.
+        /// </para>
         /// </summary>
         public ApplicationType Type
         {

@@ -61,6 +61,11 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         /// The maximum time in minutes that tests are permitted to run.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The timeoutMinutes attribute is not currently active. This value is ignored.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=60, Max=1440)]
         public int TimeoutMinutes

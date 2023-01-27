@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// An object that describes the image tag details returned by a <a>DescribeImageTags</a>
+    /// An object that describes the image tag details that are returned by a <a>DescribeImageTags</a>
     /// action.
     /// </summary>
     public partial class ReferencedImageDetail
@@ -97,8 +97,8 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property ImagePushedAt. 
         /// <para>
-        /// The date and time, expressed in standard JavaScript date format, at which the current
-        /// image tag was pushed to the repository.
+        /// The date and time, expressed in standard JavaScript date format, which the current
+        /// image tag was pushed to the repository at.
         /// </para>
         /// </summary>
         public DateTime ImagePushedAt
@@ -120,15 +120,14 @@ namespace Amazon.ECRPublic.Model
         /// </para>
         ///  
         /// <para>
-        /// If the image is a manifest list, this will be the max size of all manifests in the
-        /// list.
+        /// If the image is a manifest list, this is the max size of all manifests in the list.
         /// </para>
         ///  <note> 
         /// <para>
         /// Beginning with Docker version 1.9, the Docker client compresses image layers before
         /// pushing them to a V2 Docker registry. The output of the <code>docker images</code>
-        /// command shows the uncompressed image size, so it may return a larger image size than
-        /// the image sizes returned by <a>DescribeImages</a>.
+        /// command shows the uncompressed image size, so it might return a larger image size
+        /// than the image sizes that are returned by <a>DescribeImages</a>.
         /// </para>
         ///  </note>
         /// </summary>

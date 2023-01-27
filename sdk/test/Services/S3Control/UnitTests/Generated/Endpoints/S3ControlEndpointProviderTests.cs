@@ -764,7 +764,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["__name"] = "apname";
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://s3-outposts.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -867,7 +866,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["__name"] = "apname";
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://s3-outposts.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -970,7 +968,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["__name"] = "apname";
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://s3-outposts.af-south-1.amazonaws.com", endpoint.URL);
         }
@@ -1887,6 +1884,23 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseArnRegion"] = false;
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("outpost bucket arn@us-west-2")]
+        public void Outpost_bucket_arnuswest2_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["Bucket"] = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket";
+            parameters["Region"] = "us-west-2";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-outposts.us-west-2.amazonaws.com", endpoint.URL);
         }
 
     }

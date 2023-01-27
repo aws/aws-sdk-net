@@ -40,13 +40,13 @@ namespace Amazon.ECRPublic
     ///
     /// Amazon Elastic Container Registry Public 
     /// <para>
-    /// Amazon Elastic Container Registry (Amazon ECR) is a managed container image registry
-    /// service. Amazon ECR provides both public and private registries to host your container
-    /// images. You can use the familiar Docker CLI, or their preferred client, to push, pull,
-    /// and manage images. Amazon ECR provides a secure, scalable, and reliable registry for
-    /// your Docker or Open Container Initiative (OCI) images. Amazon ECR supports public
-    /// repositories with this API. For information about the Amazon ECR API for private repositories,
-    /// see <a href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/Welcome.html">Amazon
+    /// Amazon Elastic Container Registry Public (Amazon ECR Public) is a managed container
+    /// image registry service. Amazon ECR provides both public and private registries to
+    /// host your container images. You can use the Docker CLI or your preferred client to
+    /// push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable
+    /// registry for your Docker or Open Container Initiative (OCI) images. Amazon ECR supports
+    /// public repositories with this API. For information about the Amazon ECR API for private
+    /// repositories, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/Welcome.html">Amazon
     /// Elastic Container Registry API Reference</a>.
     /// </para>
     /// </summary>
@@ -277,10 +277,10 @@ namespace Amazon.ECRPublic
 
 
         /// <summary>
-        /// Checks the availability of one or more image layers within a repository in a public
-        /// registry. When an image is pushed to a repository, each image layer is checked to
-        /// verify if it has been uploaded before. If it has been uploaded, then the image layer
-        /// is skipped.
+        /// Checks the availability of one or more image layers that are within a repository in
+        /// a public registry. When an image is pushed to a repository, each image layer is checked
+        /// to verify if it has been uploaded before. If it has been uploaded, then the image
+        /// layer is skipped.
         /// 
         ///  <note> 
         /// <para>
@@ -297,14 +297,17 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RegistryNotFoundException">
-        /// The registry does not exist.
+        /// The registry doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/BatchCheckLayerAvailability">REST API Reference for BatchCheckLayerAvailability Operation</seealso>
         public virtual BatchCheckLayerAvailabilityResponse BatchCheckLayerAvailability(BatchCheckLayerAvailabilityRequest request)
@@ -318,10 +321,10 @@ namespace Amazon.ECRPublic
 
 
         /// <summary>
-        /// Checks the availability of one or more image layers within a repository in a public
-        /// registry. When an image is pushed to a repository, each image layer is checked to
-        /// verify if it has been uploaded before. If it has been uploaded, then the image layer
-        /// is skipped.
+        /// Checks the availability of one or more image layers that are within a repository in
+        /// a public registry. When an image is pushed to a repository, each image layer is checked
+        /// to verify if it has been uploaded before. If it has been uploaded, then the image
+        /// layer is skipped.
         /// 
         ///  <note> 
         /// <para>
@@ -341,14 +344,17 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RegistryNotFoundException">
-        /// The registry does not exist.
+        /// The registry doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/BatchCheckLayerAvailability">REST API Reference for BatchCheckLayerAvailability Operation</seealso>
         public virtual Task<BatchCheckLayerAvailabilityResponse> BatchCheckLayerAvailabilityAsync(BatchCheckLayerAvailabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -366,8 +372,8 @@ namespace Amazon.ECRPublic
 
 
         /// <summary>
-        /// Deletes a list of specified images within a repository in a public registry. Images
-        /// are specified with either an <code>imageTag</code> or <code>imageDigest</code>.
+        /// Deletes a list of specified images that are within a repository in a public registry.
+        /// Images are specified with either an <code>imageTag</code> or <code>imageDigest</code>.
         /// 
         ///  
         /// <para>
@@ -376,8 +382,8 @@ namespace Amazon.ECRPublic
         /// </para>
         ///  
         /// <para>
-        /// You can completely delete an image (and all of its tags) by specifying the image's
-        /// digest in your request.
+        /// You can completely delete an image (and all of its tags) by specifying the digest
+        /// of the image in your request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteImage service method.</param>
@@ -387,11 +393,14 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/BatchDeleteImage">REST API Reference for BatchDeleteImage Operation</seealso>
         public virtual BatchDeleteImageResponse BatchDeleteImage(BatchDeleteImageRequest request)
@@ -405,8 +414,8 @@ namespace Amazon.ECRPublic
 
 
         /// <summary>
-        /// Deletes a list of specified images within a repository in a public registry. Images
-        /// are specified with either an <code>imageTag</code> or <code>imageDigest</code>.
+        /// Deletes a list of specified images that are within a repository in a public registry.
+        /// Images are specified with either an <code>imageTag</code> or <code>imageDigest</code>.
         /// 
         ///  
         /// <para>
@@ -415,8 +424,8 @@ namespace Amazon.ECRPublic
         /// </para>
         ///  
         /// <para>
-        /// You can completely delete an image (and all of its tags) by specifying the image's
-        /// digest in your request.
+        /// You can completely delete an image (and all of its tags) by specifying the digest
+        /// of the image in your request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteImage service method.</param>
@@ -429,11 +438,14 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/BatchDeleteImage">REST API Reference for BatchDeleteImage Operation</seealso>
         public virtual Task<BatchDeleteImageResponse> BatchDeleteImageAsync(BatchDeleteImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -451,14 +463,14 @@ namespace Amazon.ECRPublic
 
 
         /// <summary>
-        /// Informs Amazon ECR that the image layer upload has completed for a specified public
+        /// Informs Amazon ECR that the image layer upload is complete for a specified public
         /// registry, repository name, and upload ID. You can optionally provide a <code>sha256</code>
         /// digest of the image layer for data validation purposes.
         /// 
         ///  
         /// <para>
-        /// When an image is pushed, the CompleteLayerUpload API is called once per each new image
-        /// layer to verify that the upload has completed.
+        /// When an image is pushed, the CompleteLayerUpload API is called once for each new image
+        /// layer to verify that the upload is complete.
         /// </para>
         ///  <note> 
         /// <para>
@@ -472,11 +484,11 @@ namespace Amazon.ECRPublic
         /// 
         /// <returns>The response from the CompleteLayerUpload service method, as returned by ECRPublic.</returns>
         /// <exception cref="Amazon.ECRPublic.Model.EmptyUploadException">
-        /// The specified layer upload does not contain any layer parts.
+        /// The specified layer upload doesn't contain any layer parts.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.InvalidLayerException">
-        /// The layer digest calculation performed by Amazon ECR upon receipt of the image layer
-        /// does not match the digest specified.
+        /// The layer digest calculation performed by Amazon ECR when the image layer doesn't
+        /// match the digest specified.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -488,20 +500,20 @@ namespace Amazon.ECRPublic
         /// Layer parts must be at least 5 MiB in size.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RegistryNotFoundException">
-        /// The registry does not exist.
+        /// The registry doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
-        /// The action is not supported in this Region.
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.UploadNotFoundException">
-        /// The upload could not be found, or the specified upload ID is not valid for this repository.
+        /// The upload can't be found, or the specified upload ID isn't valid for this repository.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/CompleteLayerUpload">REST API Reference for CompleteLayerUpload Operation</seealso>
         public virtual CompleteLayerUploadResponse CompleteLayerUpload(CompleteLayerUploadRequest request)
@@ -515,14 +527,14 @@ namespace Amazon.ECRPublic
 
 
         /// <summary>
-        /// Informs Amazon ECR that the image layer upload has completed for a specified public
+        /// Informs Amazon ECR that the image layer upload is complete for a specified public
         /// registry, repository name, and upload ID. You can optionally provide a <code>sha256</code>
         /// digest of the image layer for data validation purposes.
         /// 
         ///  
         /// <para>
-        /// When an image is pushed, the CompleteLayerUpload API is called once per each new image
-        /// layer to verify that the upload has completed.
+        /// When an image is pushed, the CompleteLayerUpload API is called once for each new image
+        /// layer to verify that the upload is complete.
         /// </para>
         ///  <note> 
         /// <para>
@@ -539,11 +551,11 @@ namespace Amazon.ECRPublic
         /// 
         /// <returns>The response from the CompleteLayerUpload service method, as returned by ECRPublic.</returns>
         /// <exception cref="Amazon.ECRPublic.Model.EmptyUploadException">
-        /// The specified layer upload does not contain any layer parts.
+        /// The specified layer upload doesn't contain any layer parts.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.InvalidLayerException">
-        /// The layer digest calculation performed by Amazon ECR upon receipt of the image layer
-        /// does not match the digest specified.
+        /// The layer digest calculation performed by Amazon ECR when the image layer doesn't
+        /// match the digest specified.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -555,20 +567,20 @@ namespace Amazon.ECRPublic
         /// Layer parts must be at least 5 MiB in size.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RegistryNotFoundException">
-        /// The registry does not exist.
+        /// The registry doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
-        /// The action is not supported in this Region.
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.UploadNotFoundException">
-        /// The upload could not be found, or the specified upload ID is not valid for this repository.
+        /// The upload can't be found, or the specified upload ID isn't valid for this repository.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/CompleteLayerUpload">REST API Reference for CompleteLayerUpload Operation</seealso>
         public virtual Task<CompleteLayerUploadResponse> CompleteLayerUploadAsync(CompleteLayerUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -600,7 +612,7 @@ namespace Amazon.ECRPublic
         /// of 128 characters, and tag values can have a maximum length of 256 characters.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.LimitExceededException">
-        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// The operation didn't succeed because it would have exceeded a service limit for your
         /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
         /// ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
@@ -613,6 +625,9 @@ namespace Amazon.ECRPublic
         /// <exception cref="Amazon.ECRPublic.Model.TooManyTagsException">
         /// The list of tags on the repository is over the limit. The maximum number of tags that
         /// can be applied to a repository is 50.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         public virtual CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request)
@@ -643,7 +658,7 @@ namespace Amazon.ECRPublic
         /// of 128 characters, and tag values can have a maximum length of 256 characters.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.LimitExceededException">
-        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// The operation didn't succeed because it would have exceeded a service limit for your
         /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
         /// ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
@@ -656,6 +671,9 @@ namespace Amazon.ECRPublic
         /// <exception cref="Amazon.ECRPublic.Model.TooManyTagsException">
         /// The list of tags on the repository is over the limit. The maximum number of tags that
         /// can be applied to a repository is 50.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         public virtual Task<CreateRepositoryResponse> CreateRepositoryAsync(CreateRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -674,8 +692,8 @@ namespace Amazon.ECRPublic
 
         /// <summary>
         /// Deletes a repository in a public registry. If the repository contains images, you
-        /// must either delete all images in the repository or use the <code>force</code> option
-        /// which deletes all images on your behalf before deleting the repository.
+        /// must either manually delete all images in the repository or use the <code>force</code>
+        /// option. This option deletes all images on your behalf before deleting the repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRepository service method.</param>
         /// 
@@ -688,11 +706,14 @@ namespace Amazon.ECRPublic
         /// you must force the deletion with the <code>force</code> parameter.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         public virtual DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request)
@@ -707,8 +728,8 @@ namespace Amazon.ECRPublic
 
         /// <summary>
         /// Deletes a repository in a public registry. If the repository contains images, you
-        /// must either delete all images in the repository or use the <code>force</code> option
-        /// which deletes all images on your behalf before deleting the repository.
+        /// must either manually delete all images in the repository or use the <code>force</code>
+        /// option. This option deletes all images on your behalf before deleting the repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRepository service method.</param>
         /// <param name="cancellationToken">
@@ -724,11 +745,14 @@ namespace Amazon.ECRPublic
         /// you must force the deletion with the <code>force</code> parameter.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         public virtual Task<DeleteRepositoryResponse> DeleteRepositoryAsync(DeleteRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -746,7 +770,7 @@ namespace Amazon.ECRPublic
 
 
         /// <summary>
-        /// Deletes the repository policy associated with the specified repository.
+        /// Deletes the repository policy that's associated with the specified repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRepositoryPolicy service method.</param>
         /// 
@@ -755,15 +779,18 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryPolicyNotFoundException">
-        /// The specified repository and registry combination does not have an associated repository
+        /// The specified repository and registry combination doesn't have an associated repository
         /// policy.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DeleteRepositoryPolicy">REST API Reference for DeleteRepositoryPolicy Operation</seealso>
         public virtual DeleteRepositoryPolicyResponse DeleteRepositoryPolicy(DeleteRepositoryPolicyRequest request)
@@ -777,7 +804,7 @@ namespace Amazon.ECRPublic
 
 
         /// <summary>
-        /// Deletes the repository policy associated with the specified repository.
+        /// Deletes the repository policy that's associated with the specified repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRepositoryPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -789,15 +816,18 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryPolicyNotFoundException">
-        /// The specified repository and registry combination does not have an associated repository
+        /// The specified repository and registry combination doesn't have an associated repository
         /// policy.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DeleteRepositoryPolicy">REST API Reference for DeleteRepositoryPolicy Operation</seealso>
         public virtual Task<DeleteRepositoryPolicyResponse> DeleteRepositoryPolicyAsync(DeleteRepositoryPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -815,14 +845,14 @@ namespace Amazon.ECRPublic
 
 
         /// <summary>
-        /// Returns metadata about the images in a repository in a public registry.
+        /// Returns metadata that's related to the images in a repository in a public registry.
         /// 
         ///  <note> 
         /// <para>
         /// Beginning with Docker version 1.9, the Docker client compresses image layers before
         /// pushing them to a V2 Docker registry. The output of the <code>docker images</code>
-        /// command shows the uncompressed image size, so it may return a larger image size than
-        /// the image sizes returned by <a>DescribeImages</a>.
+        /// command shows the uncompressed image size. Therefore, it might return a larger image
+        /// size than the image sizes that are returned by <a>DescribeImages</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -830,17 +860,20 @@ namespace Amazon.ECRPublic
         /// 
         /// <returns>The response from the DescribeImages service method, as returned by ECRPublic.</returns>
         /// <exception cref="Amazon.ECRPublic.Model.ImageNotFoundException">
-        /// The image requested does not exist in the specified repository.
+        /// The image requested doesn't exist in the specified repository.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public virtual DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
@@ -854,14 +887,14 @@ namespace Amazon.ECRPublic
 
 
         /// <summary>
-        /// Returns metadata about the images in a repository in a public registry.
+        /// Returns metadata that's related to the images in a repository in a public registry.
         /// 
         ///  <note> 
         /// <para>
         /// Beginning with Docker version 1.9, the Docker client compresses image layers before
         /// pushing them to a V2 Docker registry. The output of the <code>docker images</code>
-        /// command shows the uncompressed image size, so it may return a larger image size than
-        /// the image sizes returned by <a>DescribeImages</a>.
+        /// command shows the uncompressed image size. Therefore, it might return a larger image
+        /// size than the image sizes that are returned by <a>DescribeImages</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -872,17 +905,20 @@ namespace Amazon.ECRPublic
         /// 
         /// <returns>The response from the DescribeImages service method, as returned by ECRPublic.</returns>
         /// <exception cref="Amazon.ECRPublic.Model.ImageNotFoundException">
-        /// The image requested does not exist in the specified repository.
+        /// The image requested doesn't exist in the specified repository.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public virtual Task<DescribeImagesResponse> DescribeImagesAsync(DescribeImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -909,11 +945,14 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DescribeImageTags">REST API Reference for DescribeImageTags Operation</seealso>
         public virtual DescribeImageTagsResponse DescribeImageTags(DescribeImageTagsRequest request)
@@ -939,11 +978,14 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DescribeImageTags">REST API Reference for DescribeImageTags Operation</seealso>
         public virtual Task<DescribeImageTagsResponse> DescribeImageTagsAsync(DescribeImageTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -973,7 +1015,7 @@ namespace Amazon.ECRPublic
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
-        /// The action is not supported in this Region.
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DescribeRegistries">REST API Reference for DescribeRegistries Operation</seealso>
         public virtual DescribeRegistriesResponse DescribeRegistries(DescribeRegistriesRequest request)
@@ -1002,7 +1044,7 @@ namespace Amazon.ECRPublic
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
-        /// The action is not supported in this Region.
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DescribeRegistries">REST API Reference for DescribeRegistries Operation</seealso>
         public virtual Task<DescribeRegistriesResponse> DescribeRegistriesAsync(DescribeRegistriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1020,7 +1062,7 @@ namespace Amazon.ECRPublic
 
 
         /// <summary>
-        /// Describes repositories in a public registry.
+        /// Describes repositories that are in a public registry.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRepositories service method.</param>
         /// 
@@ -1029,11 +1071,14 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DescribeRepositories">REST API Reference for DescribeRepositories Operation</seealso>
         public virtual DescribeRepositoriesResponse DescribeRepositories(DescribeRepositoriesRequest request)
@@ -1047,7 +1092,7 @@ namespace Amazon.ECRPublic
 
 
         /// <summary>
-        /// Describes repositories in a public registry.
+        /// Describes repositories that are in a public registry.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRepositories service method.</param>
         /// <param name="cancellationToken">
@@ -1059,11 +1104,14 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DescribeRepositories">REST API Reference for DescribeRepositories Operation</seealso>
         public virtual Task<DescribeRepositoriesResponse> DescribeRepositoriesAsync(DescribeRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1082,7 +1130,7 @@ namespace Amazon.ECRPublic
 
         /// <summary>
         /// Retrieves an authorization token. An authorization token represents your IAM authentication
-        /// credentials and can be used to access any Amazon ECR registry that your IAM principal
+        /// credentials. You can use it to access any Amazon ECR registry that your IAM principal
         /// has access to. The authorization token is valid for 12 hours. This API requires the
         /// <code>ecr-public:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code>
         /// permissions.
@@ -1095,6 +1143,9 @@ namespace Amazon.ECRPublic
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/GetAuthorizationToken">REST API Reference for GetAuthorizationToken Operation</seealso>
         public virtual GetAuthorizationTokenResponse GetAuthorizationToken(GetAuthorizationTokenRequest request)
@@ -1109,7 +1160,7 @@ namespace Amazon.ECRPublic
 
         /// <summary>
         /// Retrieves an authorization token. An authorization token represents your IAM authentication
-        /// credentials and can be used to access any Amazon ECR registry that your IAM principal
+        /// credentials. You can use it to access any Amazon ECR registry that your IAM principal
         /// has access to. The authorization token is valid for 12 hours. This API requires the
         /// <code>ecr-public:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code>
         /// permissions.
@@ -1125,6 +1176,9 @@ namespace Amazon.ECRPublic
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/GetAuthorizationToken">REST API Reference for GetAuthorizationToken Operation</seealso>
         public virtual Task<GetAuthorizationTokenResponse> GetAuthorizationTokenAsync(GetAuthorizationTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1151,7 +1205,7 @@ namespace Amazon.ECRPublic
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
-        /// The action is not supported in this Region.
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/GetRegistryCatalogData">REST API Reference for GetRegistryCatalogData Operation</seealso>
         public virtual GetRegistryCatalogDataResponse GetRegistryCatalogData(GetRegistryCatalogDataRequest request)
@@ -1177,7 +1231,7 @@ namespace Amazon.ECRPublic
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
-        /// The action is not supported in this Region.
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/GetRegistryCatalogData">REST API Reference for GetRegistryCatalogData Operation</seealso>
         public virtual Task<GetRegistryCatalogDataResponse> GetRegistryCatalogDataAsync(GetRegistryCatalogDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1204,12 +1258,18 @@ namespace Amazon.ECRPublic
         /// <exception cref="Amazon.ECRPublic.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.RepositoryCatalogDataNotFoundException">
+        /// The repository catalog data doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/GetRepositoryCatalogData">REST API Reference for GetRepositoryCatalogData Operation</seealso>
         public virtual GetRepositoryCatalogDataResponse GetRepositoryCatalogData(GetRepositoryCatalogDataRequest request)
@@ -1235,12 +1295,18 @@ namespace Amazon.ECRPublic
         /// <exception cref="Amazon.ECRPublic.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.RepositoryCatalogDataNotFoundException">
+        /// The repository catalog data doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/GetRepositoryCatalogData">REST API Reference for GetRepositoryCatalogData Operation</seealso>
         public virtual Task<GetRepositoryCatalogDataResponse> GetRepositoryCatalogDataAsync(GetRepositoryCatalogDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1267,15 +1333,18 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryPolicyNotFoundException">
-        /// The specified repository and registry combination does not have an associated repository
+        /// The specified repository and registry combination doesn't have an associated repository
         /// policy.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/GetRepositoryPolicy">REST API Reference for GetRepositoryPolicy Operation</seealso>
         public virtual GetRepositoryPolicyResponse GetRepositoryPolicy(GetRepositoryPolicyRequest request)
@@ -1301,15 +1370,18 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryPolicyNotFoundException">
-        /// The specified repository and registry combination does not have an associated repository
+        /// The specified repository and registry combination doesn't have an associated repository
         /// policy.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/GetRepositoryPolicy">REST API Reference for GetRepositoryPolicy Operation</seealso>
         public virtual Task<GetRepositoryPolicyResponse> GetRepositoryPolicyAsync(GetRepositoryPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1331,9 +1403,9 @@ namespace Amazon.ECRPublic
         /// 
         ///  
         /// <para>
-        /// When an image is pushed, the InitiateLayerUpload API is called once per image layer
-        /// that has not already been uploaded. Whether or not an image layer has been uploaded
-        /// is determined by the BatchCheckLayerAvailability API action.
+        /// When an image is pushed, the InitiateLayerUpload API is called once for each image
+        /// layer that hasn't already been uploaded. Whether an image layer uploads is determined
+        /// by the BatchCheckLayerAvailability API action.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1350,17 +1422,17 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RegistryNotFoundException">
-        /// The registry does not exist.
+        /// The registry doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
-        /// The action is not supported in this Region.
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/InitiateLayerUpload">REST API Reference for InitiateLayerUpload Operation</seealso>
         public virtual InitiateLayerUploadResponse InitiateLayerUpload(InitiateLayerUploadRequest request)
@@ -1378,9 +1450,9 @@ namespace Amazon.ECRPublic
         /// 
         ///  
         /// <para>
-        /// When an image is pushed, the InitiateLayerUpload API is called once per image layer
-        /// that has not already been uploaded. Whether or not an image layer has been uploaded
-        /// is determined by the BatchCheckLayerAvailability API action.
+        /// When an image is pushed, the InitiateLayerUpload API is called once for each image
+        /// layer that hasn't already been uploaded. Whether an image layer uploads is determined
+        /// by the BatchCheckLayerAvailability API action.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1400,17 +1472,17 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RegistryNotFoundException">
-        /// The registry does not exist.
+        /// The registry doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
-        /// The action is not supported in this Region.
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/InitiateLayerUpload">REST API Reference for InitiateLayerUpload Operation</seealso>
         public virtual Task<InitiateLayerUploadResponse> InitiateLayerUploadAsync(InitiateLayerUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1437,11 +1509,14 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -1467,11 +1542,14 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1489,12 +1567,12 @@ namespace Amazon.ECRPublic
 
 
         /// <summary>
-        /// Creates or updates the image manifest and tags associated with an image.
+        /// Creates or updates the image manifest and tags that are associated with an image.
         /// 
         ///  
         /// <para>
         /// When an image is pushed and all new image layers have been uploaded, the PutImage
-        /// API is called once to create or update the image manifest and the tags associated
+        /// API is called once to create or update the image manifest and the tags that are associated
         /// with the image.
         /// </para>
         ///  <note> 
@@ -1513,7 +1591,7 @@ namespace Amazon.ECRPublic
         /// or image tag after the last push.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ImageDigestDoesNotMatchException">
-        /// The specified image digest does not match the digest that Amazon ECR calculated for
+        /// The specified image digest doesn't match the digest that Amazon ECR calculated for
         /// the image.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ImageTagAlreadyExistsException">
@@ -1524,29 +1602,28 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.LayersNotFoundException">
-        /// The specified layers could not be found, or the specified layer is not valid for this
-        /// repository.
+        /// The specified layers can't be found, or the specified layer isn't valid for this repository.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.LimitExceededException">
-        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// The operation didn't succeed because it would have exceeded a service limit for your
         /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
         /// ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ReferencedImagesNotFoundException">
-        /// The manifest list is referencing an image that does not exist.
+        /// The manifest list is referencing an image that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RegistryNotFoundException">
-        /// The registry does not exist.
+        /// The registry doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
-        /// The action is not supported in this Region.
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/PutImage">REST API Reference for PutImage Operation</seealso>
         public virtual PutImageResponse PutImage(PutImageRequest request)
@@ -1560,12 +1637,12 @@ namespace Amazon.ECRPublic
 
 
         /// <summary>
-        /// Creates or updates the image manifest and tags associated with an image.
+        /// Creates or updates the image manifest and tags that are associated with an image.
         /// 
         ///  
         /// <para>
         /// When an image is pushed and all new image layers have been uploaded, the PutImage
-        /// API is called once to create or update the image manifest and the tags associated
+        /// API is called once to create or update the image manifest and the tags that are associated
         /// with the image.
         /// </para>
         ///  <note> 
@@ -1587,7 +1664,7 @@ namespace Amazon.ECRPublic
         /// or image tag after the last push.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ImageDigestDoesNotMatchException">
-        /// The specified image digest does not match the digest that Amazon ECR calculated for
+        /// The specified image digest doesn't match the digest that Amazon ECR calculated for
         /// the image.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ImageTagAlreadyExistsException">
@@ -1598,29 +1675,28 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.LayersNotFoundException">
-        /// The specified layers could not be found, or the specified layer is not valid for this
-        /// repository.
+        /// The specified layers can't be found, or the specified layer isn't valid for this repository.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.LimitExceededException">
-        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// The operation didn't succeed because it would have exceeded a service limit for your
         /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
         /// ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ReferencedImagesNotFoundException">
-        /// The manifest list is referencing an image that does not exist.
+        /// The manifest list is referencing an image that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RegistryNotFoundException">
-        /// The registry does not exist.
+        /// The registry doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
-        /// The action is not supported in this Region.
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/PutImage">REST API Reference for PutImage Operation</seealso>
         public virtual Task<PutImageResponse> PutImageAsync(PutImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1638,7 +1714,7 @@ namespace Amazon.ECRPublic
 
 
         /// <summary>
-        /// Create or updates the catalog data for a public registry.
+        /// Create or update the catalog data for a public registry.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRegistryCatalogData service method.</param>
         /// 
@@ -1650,7 +1726,7 @@ namespace Amazon.ECRPublic
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
-        /// The action is not supported in this Region.
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/PutRegistryCatalogData">REST API Reference for PutRegistryCatalogData Operation</seealso>
         public virtual PutRegistryCatalogDataResponse PutRegistryCatalogData(PutRegistryCatalogDataRequest request)
@@ -1664,7 +1740,7 @@ namespace Amazon.ECRPublic
 
 
         /// <summary>
-        /// Create or updates the catalog data for a public registry.
+        /// Create or update the catalog data for a public registry.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRegistryCatalogData service method.</param>
         /// <param name="cancellationToken">
@@ -1679,7 +1755,7 @@ namespace Amazon.ECRPublic
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
-        /// The action is not supported in this Region.
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/PutRegistryCatalogData">REST API Reference for PutRegistryCatalogData Operation</seealso>
         public virtual Task<PutRegistryCatalogDataResponse> PutRegistryCatalogDataAsync(PutRegistryCatalogDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1706,11 +1782,14 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/PutRepositoryCatalogData">REST API Reference for PutRepositoryCatalogData Operation</seealso>
         public virtual PutRepositoryCatalogDataResponse PutRepositoryCatalogData(PutRepositoryCatalogDataRequest request)
@@ -1736,11 +1815,14 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/PutRepositoryCatalogData">REST API Reference for PutRepositoryCatalogData Operation</seealso>
         public virtual Task<PutRepositoryCatalogDataResponse> PutRepositoryCatalogDataAsync(PutRepositoryCatalogDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1769,11 +1851,14 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/SetRepositoryPolicy">REST API Reference for SetRepositoryPolicy Operation</seealso>
         public virtual SetRepositoryPolicyResponse SetRepositoryPolicy(SetRepositoryPolicyRequest request)
@@ -1801,11 +1886,14 @@ namespace Amazon.ECRPublic
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/SetRepositoryPolicy">REST API Reference for SetRepositoryPolicy Operation</seealso>
         public virtual Task<SetRepositoryPolicyResponse> SetRepositoryPolicyAsync(SetRepositoryPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1824,9 +1912,9 @@ namespace Amazon.ECRPublic
 
         /// <summary>
         /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
-        /// If existing tags on a resource are not specified in the request parameters, they are
-        /// not changed. When a resource is deleted, the tags associated with that resource are
-        /// deleted as well.
+        /// If existing tags on a resource aren't specified in the request parameters, they aren't
+        /// changed. When a resource is deleted, the tags associated with that resource are also
+        /// deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1839,8 +1927,8 @@ namespace Amazon.ECRPublic
         /// of 128 characters, and tag values can have a maximum length of 256 characters.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1848,6 +1936,9 @@ namespace Amazon.ECRPublic
         /// <exception cref="Amazon.ECRPublic.Model.TooManyTagsException">
         /// The list of tags on the repository is over the limit. The maximum number of tags that
         /// can be applied to a repository is 50.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -1862,9 +1953,9 @@ namespace Amazon.ECRPublic
 
         /// <summary>
         /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
-        /// If existing tags on a resource are not specified in the request parameters, they are
-        /// not changed. When a resource is deleted, the tags associated with that resource are
-        /// deleted as well.
+        /// If existing tags on a resource aren't specified in the request parameters, they aren't
+        /// changed. When a resource is deleted, the tags associated with that resource are also
+        /// deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1880,8 +1971,8 @@ namespace Amazon.ECRPublic
         /// of 128 characters, and tag values can have a maximum length of 256 characters.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1889,6 +1980,9 @@ namespace Amazon.ECRPublic
         /// <exception cref="Amazon.ECRPublic.Model.TooManyTagsException">
         /// The list of tags on the repository is over the limit. The maximum number of tags that
         /// can be applied to a repository is 50.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1919,8 +2013,8 @@ namespace Amazon.ECRPublic
         /// of 128 characters, and tag values can have a maximum length of 256 characters.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1928,6 +2022,9 @@ namespace Amazon.ECRPublic
         /// <exception cref="Amazon.ECRPublic.Model.TooManyTagsException">
         /// The list of tags on the repository is over the limit. The maximum number of tags that
         /// can be applied to a repository is 50.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -1957,8 +2054,8 @@ namespace Amazon.ECRPublic
         /// of 128 characters, and tag values can have a maximum length of 256 characters.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1966,6 +2063,9 @@ namespace Amazon.ECRPublic
         /// <exception cref="Amazon.ECRPublic.Model.TooManyTagsException">
         /// The list of tags on the repository is over the limit. The maximum number of tags that
         /// can be applied to a repository is 50.
+        /// </exception>
+        /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1988,8 +2088,8 @@ namespace Amazon.ECRPublic
         ///  
         /// <para>
         /// When an image is pushed, each new image layer is uploaded in parts. The maximum size
-        /// of each image layer part can be 20971520 bytes (or about 20MB). The UploadLayerPart
-        /// API is called once per each new image layer part.
+        /// of each image layer part can be 20971520 bytes (about 20MB). The UploadLayerPart API
+        /// is called once for each new image layer part.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2003,32 +2103,32 @@ namespace Amazon.ECRPublic
         /// 
         /// <returns>The response from the UploadLayerPart service method, as returned by ECRPublic.</returns>
         /// <exception cref="Amazon.ECRPublic.Model.InvalidLayerPartException">
-        /// The layer part size is not valid, or the first byte specified is not consecutive to
+        /// The layer part size isn't valid, or the first byte specified isn't consecutive to
         /// the last byte of a previous layer part upload.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.LimitExceededException">
-        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// The operation didn't succeed because it would have exceeded a service limit for your
         /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
         /// ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RegistryNotFoundException">
-        /// The registry does not exist.
+        /// The registry doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
-        /// The action is not supported in this Region.
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.UploadNotFoundException">
-        /// The upload could not be found, or the specified upload ID is not valid for this repository.
+        /// The upload can't be found, or the specified upload ID isn't valid for this repository.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/UploadLayerPart">REST API Reference for UploadLayerPart Operation</seealso>
         public virtual UploadLayerPartResponse UploadLayerPart(UploadLayerPartRequest request)
@@ -2047,8 +2147,8 @@ namespace Amazon.ECRPublic
         ///  
         /// <para>
         /// When an image is pushed, each new image layer is uploaded in parts. The maximum size
-        /// of each image layer part can be 20971520 bytes (or about 20MB). The UploadLayerPart
-        /// API is called once per each new image layer part.
+        /// of each image layer part can be 20971520 bytes (about 20MB). The UploadLayerPart API
+        /// is called once for each new image layer part.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2065,32 +2165,32 @@ namespace Amazon.ECRPublic
         /// 
         /// <returns>The response from the UploadLayerPart service method, as returned by ECRPublic.</returns>
         /// <exception cref="Amazon.ECRPublic.Model.InvalidLayerPartException">
-        /// The layer part size is not valid, or the first byte specified is not consecutive to
+        /// The layer part size isn't valid, or the first byte specified isn't consecutive to
         /// the last byte of a previous layer part upload.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.LimitExceededException">
-        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// The operation didn't succeed because it would have exceeded a service limit for your
         /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
         /// ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RegistryNotFoundException">
-        /// The registry does not exist.
+        /// The registry doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
-        /// The specified repository could not be found. Check the spelling of the specified repository
-        /// and ensure that you are performing operations on the correct registry.
+        /// The specified repository can't be found. Check the spelling of the specified repository
+        /// and ensure that you're performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.UnsupportedCommandException">
-        /// The action is not supported in this Region.
+        /// The action isn't supported in this Region.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.UploadNotFoundException">
-        /// The upload could not be found, or the specified upload ID is not valid for this repository.
+        /// The upload can't be found, or the specified upload ID isn't valid for this repository.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/UploadLayerPart">REST API Reference for UploadLayerPart Operation</seealso>
         public virtual Task<UploadLayerPartResponse> UploadLayerPartAsync(UploadLayerPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

@@ -48,8 +48,8 @@ namespace Amazon.AuditManager.Model
         ///  
         /// <para>
         /// The backfill starts after you enable evidence finder. During this task, Audit Manager
-        /// populates an event data store with your past evidence data so that your evidence can
-        /// be queried.
+        /// populates an event data store with your past two years’ worth of evidence data so
+        /// that your evidence can be queried.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -58,7 +58,7 @@ namespace Amazon.AuditManager.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up
-        /// to 24 hours to complete, depending on the amount of evidence data. 
+        /// to 7 days to complete, depending on the amount of evidence data. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -93,9 +93,10 @@ namespace Amazon.AuditManager.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ENABLED</code> means that an event data store was successfully created and
-        /// evidence finder is enabled. We recommend that you wait 24 hours until the event data
-        /// store is backfilled with your past evidence data. You can use evidence finder in the
-        /// meantime, but not all data might be available until the backfill is complete.
+        /// evidence finder is enabled. We recommend that you wait 7 days until the event data
+        /// store is backfilled with your past two years’ worth of evidence data. You can use
+        /// evidence finder in the meantime, but not all data might be available until the backfill
+        /// is complete.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -29,21 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
-    /// A resource group that contains AWS resources. You can assign resources to the group
-    /// by associating either of the following elements with the group:
+    /// A resource group that contains Amazon Web Services resources. You can assign resources
+    /// to the group by associating either of the following elements with the group:
     /// 
     ///  <ul> <li> 
     /// <para>
     ///  <a>ResourceQuery</a> - Use a resource query to specify a set of tag keys and values.
-    /// All resources in the same AWS Region and AWS account that have those keys with the
-    /// same values are included in the group. You can add a resource query when you create
-    /// the group, or later by using the <a>PutGroupConfiguration</a> operation.
+    /// All resources in the same Amazon Web Services Region and Amazon Web Services account
+    /// that have those keys with the same values are included in the group. You can add a
+    /// resource query when you create the group, or later by using the <a>PutGroupConfiguration</a>
+    /// operation.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>GroupConfiguration</a> - Use a service configuration to associate the group with
-    /// an AWS service. The configuration specifies which resource types can be included in
-    /// the group.
+    /// an Amazon Web Services service. The configuration specifies which resource types can
+    /// be included in the group.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -59,7 +60,7 @@ namespace Amazon.ResourceGroups.Model
         /// The description of the resource group.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=512)]
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -97,7 +98,7 @@ namespace Amazon.ResourceGroups.Model
         /// The name of the resource group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string Name
         {
             get { return this._name; }

@@ -314,7 +314,21 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        ///  <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code>
+        /// as a data provider, and only within Southeast Asia.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Truck</code> is not available for Grab.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+        /// in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Default Value: <code>Car</code> 
         /// </para>

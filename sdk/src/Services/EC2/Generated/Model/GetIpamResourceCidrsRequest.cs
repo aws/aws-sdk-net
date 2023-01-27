@@ -30,7 +30,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetIpamResourceCidrs operation.
-    /// Get information about the resources in a scope.
+    /// Returns resource CIDRs managed by IPAM in a given scope. If an IPAM is associated
+    /// with more than one resource discovery, the resource CIDRs across all of the resource
+    /// discoveries is returned. A resource discovery is an IPAM component that enables IPAM
+    /// Service to manage and monitor resources that belong to the owning account.
     /// </summary>
     public partial class GetIpamResourceCidrsRequest : AmazonEC2Request
     {

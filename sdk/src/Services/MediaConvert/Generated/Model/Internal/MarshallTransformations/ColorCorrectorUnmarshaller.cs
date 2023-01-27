@@ -70,6 +70,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Brightness = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("clipLimits", targetDepth))
+                {
+                    var unmarshaller = ClipLimitsUnmarshaller.Instance;
+                    unmarshalledObject.ClipLimits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("colorSpaceConversion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

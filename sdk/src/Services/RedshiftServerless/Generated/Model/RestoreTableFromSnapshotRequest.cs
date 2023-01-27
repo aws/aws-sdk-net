@@ -30,7 +30,9 @@ namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreTableFromSnapshot operation.
-    /// Restores a table from a snapshot to your Amazon Redshift Serverless instance.
+    /// Restores a table from a snapshot to your Amazon Redshift Serverless instance. You
+    /// can't use this operation to restore tables with <a href="https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved">interleaved
+    /// sort keys</a>.
     /// </summary>
     public partial class RestoreTableFromSnapshotRequest : AmazonRedshiftServerlessRequest
     {

@@ -93,6 +93,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Operation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Operation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Scope", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -115,6 +121,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Type = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UsageType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.UsageType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

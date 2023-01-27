@@ -35,6 +35,7 @@ namespace Amazon.ConnectParticipant.Model
     {
         private string _absoluteTime;
         private List<AttachmentItem> _attachments = new List<AttachmentItem>();
+        private string _contactId;
         private string _content;
         private string _contentType;
         private string _displayName;
@@ -42,6 +43,7 @@ namespace Amazon.ConnectParticipant.Model
         private MessageMetadata _messageMetadata;
         private string _participantId;
         private ParticipantRole _participantRole;
+        private string _relatedContactId;
         private ChatItemType _type;
 
         /// <summary>
@@ -83,6 +85,26 @@ namespace Amazon.ConnectParticipant.Model
         internal bool IsSetAttachments()
         {
             return this._attachments != null && this._attachments.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContactId. 
+        /// <para>
+        /// The contactId on which the transcript item was originally sent. This field is populated
+        /// only when the transcript item is from the current chat session.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ContactId
+        {
+            get { return this._contactId; }
+            set { this._contactId = value; }
+        }
+
+        // Check to see if ContactId property is set
+        internal bool IsSetContactId()
+        {
+            return this._contactId != null;
         }
 
         /// <summary>
@@ -215,6 +237,28 @@ namespace Amazon.ConnectParticipant.Model
         internal bool IsSetParticipantRole()
         {
             return this._participantRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RelatedContactId. 
+        /// <para>
+        /// The contactId on which the transcript item was originally sent. This field is only
+        /// populated for persistent chats when the transcript item is from the past chat session.
+        /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+        /// persistent chat</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string RelatedContactId
+        {
+            get { return this._relatedContactId; }
+            set { this._relatedContactId = value; }
+        }
+
+        // Check to see if RelatedContactId property is set
+        internal bool IsSetRelatedContactId()
+        {
+            return this._relatedContactId != null;
         }
 
         /// <summary>

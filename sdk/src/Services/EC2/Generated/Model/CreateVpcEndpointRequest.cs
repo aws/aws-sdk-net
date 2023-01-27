@@ -164,7 +164,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RouteTableIds. 
         /// <para>
-        /// (Gateway endpoint) One or more route table IDs.
+        /// (Gateway endpoint) The route table IDs.
         /// </para>
         /// </summary>
         public List<string> RouteTableIds
@@ -182,8 +182,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// (Interface endpoint) The ID of one or more security groups to associate with the endpoint
-        /// network interface.
+        /// (Interface endpoint) The IDs of the security groups to associate with the endpoint
+        /// network interface. If this parameter is not specified, we use the default security
+        /// group for the VPC.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -201,8 +202,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a>
-        /// request, or get the name from the service provider.
+        /// The service name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -221,9 +221,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// (Interface and Gateway Load Balancer endpoints) The ID of one or more subnets in which
-        /// to create an endpoint network interface. For a Gateway Load Balancer endpoint, you
-        /// can specify one subnet only.
+        /// (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to
+        /// create an endpoint network interface. For a Gateway Load Balancer endpoint, you can
+        /// specify only one subnet.
         /// </para>
         /// </summary>
         public List<string> SubnetIds
@@ -281,7 +281,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The ID of the VPC in which the endpoint will be used.
+        /// The ID of the VPC for the endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

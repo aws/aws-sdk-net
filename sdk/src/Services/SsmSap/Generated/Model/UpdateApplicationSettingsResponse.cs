@@ -37,7 +37,10 @@ namespace Amazon.SsmSap.Model
         private List<string> _operationIds = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Message.
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The update message.
+        /// </para>
         /// </summary>
         public string Message
         {
@@ -52,7 +55,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OperationIds.
+        /// Gets and sets the property OperationIds. 
+        /// <para>
+        /// The IDs of the operations.
+        /// </para>
         /// </summary>
         public List<string> OperationIds
         {

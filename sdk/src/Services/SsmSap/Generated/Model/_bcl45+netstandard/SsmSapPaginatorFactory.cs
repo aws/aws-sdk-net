@@ -58,5 +58,13 @@ namespace Amazon.SsmSap.Model
         {
             return new ListDatabasesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListOperations operation
+        ///</summary>
+        public IListOperationsPaginator ListOperations(ListOperationsRequest request) 
+        {
+            return new ListOperationsPaginator(this.client, request);
+        }
     }
 }

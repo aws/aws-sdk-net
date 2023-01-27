@@ -108,7 +108,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Components. 
         /// <para>
-        /// The components of the image recipe.
+        /// The components that are included in the image recipe. Recipes require a minimum of
+        /// one build component, and can have a maximum of 20 build and test components in any
+        /// combination.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

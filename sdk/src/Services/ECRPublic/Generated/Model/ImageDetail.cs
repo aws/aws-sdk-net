@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// An object that describes an image returned by a <a>DescribeImages</a> operation.
+    /// An object that describes an image that's returned by a <a>DescribeImages</a> operation.
     /// </summary>
     public partial class ImageDetail
     {
@@ -99,8 +99,8 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property ImagePushedAt. 
         /// <para>
-        /// The date and time, expressed in standard JavaScript date format, at which the current
-        /// image was pushed to the repository. 
+        /// The date and time, expressed in standard JavaScript date format, that the current
+        /// image was pushed to the repository at. 
         /// </para>
         /// </summary>
         public DateTime ImagePushedAt
@@ -122,15 +122,14 @@ namespace Amazon.ECRPublic.Model
         /// </para>
         ///  
         /// <para>
-        /// If the image is a manifest list, this will be the max size of all manifests in the
-        /// list.
+        /// If the image is a manifest list, this is the max size of all manifests in the list.
         /// </para>
         ///  <note> 
         /// <para>
         /// Beginning with Docker version 1.9, the Docker client compresses image layers before
         /// pushing them to a V2 Docker registry. The output of the <code>docker images</code>
-        /// command shows the uncompressed image size, so it may return a larger image size than
-        /// the image sizes returned by <a>DescribeImages</a>.
+        /// command shows the uncompressed image size, so it might return a larger image size
+        /// than the image sizes that are returned by <a>DescribeImages</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -149,7 +148,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property ImageTags. 
         /// <para>
-        /// The list of tags associated with this image.
+        /// The list of tags that's associated with this image.
         /// </para>
         /// </summary>
         public List<string> ImageTags
@@ -167,7 +166,8 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the public registry to which this image belongs.
+        /// The Amazon Web Services account ID that's associated with the public registry where
+        /// this image belongs.
         /// </para>
         /// </summary>
         public string RegistryId
@@ -185,7 +185,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository to which this image belongs.
+        /// The name of the repository where this image belongs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=205)]

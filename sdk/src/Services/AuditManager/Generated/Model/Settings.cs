@@ -35,6 +35,7 @@ namespace Amazon.AuditManager.Model
     {
         private AssessmentReportsDestination _defaultAssessmentReportsDestination;
         private List<Role> _defaultProcessOwners = new List<Role>();
+        private DeregistrationPolicy _deregistrationPolicy;
         private EvidenceFinderEnablement _evidenceFinderEnablement;
         private bool? _isAwsOrgEnabled;
         private string _kmsKey;
@@ -74,6 +75,25 @@ namespace Amazon.AuditManager.Model
         internal bool IsSetDefaultProcessOwners()
         {
             return this._defaultProcessOwners != null && this._defaultProcessOwners.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeregistrationPolicy. 
+        /// <para>
+        /// The deregistration policy for your Audit Manager data. You can use this attribute
+        /// to determine how your data is handled when you deregister Audit Manager.
+        /// </para>
+        /// </summary>
+        public DeregistrationPolicy DeregistrationPolicy
+        {
+            get { return this._deregistrationPolicy; }
+            set { this._deregistrationPolicy = value; }
+        }
+
+        // Check to see if DeregistrationPolicy property is set
+        internal bool IsSetDeregistrationPolicy()
+        {
+            return this._deregistrationPolicy != null;
         }
 
         /// <summary>

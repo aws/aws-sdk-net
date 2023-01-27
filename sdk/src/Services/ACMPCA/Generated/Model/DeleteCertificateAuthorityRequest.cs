@@ -32,7 +32,7 @@ namespace Amazon.ACMPCA.Model
     /// Container for the parameters to the DeleteCertificateAuthority operation.
     /// Deletes a private certificate authority (CA). You must provide the Amazon Resource
     /// Name (ARN) of the private CA that you want to delete. You can find the ARN by calling
-    /// the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
+    /// the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
     /// action. 
     /// 
     ///  <note> 
@@ -42,7 +42,7 @@ namespace Amazon.ACMPCA.Model
     ///  </note> 
     /// <para>
     /// Before you can delete a CA that you have created and activated, you must disable it.
-    /// To do this, call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+    /// To do this, call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
     /// action and set the <b>CertificateAuthorityStatus</b> parameter to <code>DISABLED</code>.
     /// 
     /// </para>
@@ -50,18 +50,18 @@ namespace Amazon.ACMPCA.Model
     /// <para>
     /// Additionally, you can delete a CA if you are waiting for it to be created (that is,
     /// the status of the CA is <code>CREATING</code>). You can also delete it if the CA has
-    /// been created but you haven't yet imported the signed certificate into ACM Private
-    /// CA (that is, the status of the CA is <code>PENDING_CERTIFICATE</code>). 
+    /// been created but you haven't yet imported the signed certificate into Amazon Web Services
+    /// Private CA (that is, the status of the CA is <code>PENDING_CERTIFICATE</code>). 
     /// </para>
     ///  
     /// <para>
-    /// When you successfully call <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthority.html">DeleteCertificateAuthority</a>,
+    /// When you successfully call <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthority.html">DeleteCertificateAuthority</a>,
     /// the CA's status changes to <code>DELETED</code>. However, the CA won't be permanently
     /// deleted until the restoration period has passed. By default, if you do not set the
     /// <code>PermanentDeletionTimeInDays</code> parameter, the CA remains restorable for
-    /// 30 days. You can set the parameter from 7 to 30 days. The <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DescribeCertificateAuthority.html">DescribeCertificateAuthority</a>
+    /// 30 days. You can set the parameter from 7 to 30 days. The <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DescribeCertificateAuthority.html">DescribeCertificateAuthority</a>
     /// action returns the time remaining in the restoration window of a private CA in the
-    /// <code>DELETED</code> state. To restore an eligible CA, call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RestoreCertificateAuthority.html">RestoreCertificateAuthority</a>
+    /// <code>DELETED</code> state. To restore an eligible CA, call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_RestoreCertificateAuthority.html">RestoreCertificateAuthority</a>
     /// action.
     /// </para>
     /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>.
+        /// The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>.
         /// This must have the following form: 
         /// </para>
         ///  

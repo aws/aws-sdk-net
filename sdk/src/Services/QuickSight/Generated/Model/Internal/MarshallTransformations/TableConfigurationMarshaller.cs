@@ -89,6 +89,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTableInlineVisualizations())
+            {
+                context.Writer.WritePropertyName("TableInlineVisualizations");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTableInlineVisualizationsListValue in requestObject.TableInlineVisualizations)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TableInlineVisualizationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTableInlineVisualizationsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetTableOptions())
             {
                 context.Writer.WritePropertyName("TableOptions");

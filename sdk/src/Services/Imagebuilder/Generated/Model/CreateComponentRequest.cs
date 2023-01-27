@@ -122,7 +122,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the component. Describes the contents of the component.
+        /// Describes the contents of the component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -141,7 +141,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of the KMS key that should be used to encrypt this component.
+        /// The ID of the KMS key that is used to encrypt this component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -179,7 +179,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform of the component.
+        /// The operating system platform of the component.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -256,7 +256,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags of the component.
+        /// The tags that apply to the component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

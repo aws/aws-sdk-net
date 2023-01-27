@@ -36,12 +36,13 @@ namespace Amazon.ACMPCA.Model
     /// in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying
     /// a value for the <b>CustomCname</b> parameter. Your private CA copies the CNAME or
     /// the S3 bucket name to the <b>CRL Distribution Points</b> extension of each certificate
-    /// it issues. Your S3 bucket policy must give write permission to ACM Private CA. 
+    /// it issues. Your S3 bucket policy must give write permission to Amazon Web Services
+    /// Private CA. 
     /// 
     ///  
     /// <para>
-    /// ACM Private CA assets that are stored in Amazon S3 can be protected with encryption.
-    /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
+    /// Amazon Web Services Private CA assets that are stored in Amazon S3 can be protected
+    /// with encryption. For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
     /// Your CRLs</a>.
     /// </para>
     ///  
@@ -55,8 +56,8 @@ namespace Amazon.ACMPCA.Model
     ///  
     /// <para>
     /// A CRL is typically updated approximately 30 minutes after a certificate is revoked.
-    /// If for any reason a CRL update fails, ACM Private CA makes further attempts every
-    /// 15 minutes.
+    /// If for any reason a CRL update fails, Amazon Web Services Private CA makes further
+    /// attempts every 15 minutes.
     /// </para>
     ///  
     /// <para>
@@ -127,8 +128,8 @@ namespace Amazon.ACMPCA.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Certificate revocation lists created by ACM Private CA are DER-encoded. You can use
-    /// the following OpenSSL command to list a CRL.
+    /// Certificate revocation lists created by Amazon Web Services Private CA are DER-encoded.
+    /// You can use the following OpenSSL command to list a CRL.
     /// </para>
     ///  
     /// <para>
@@ -136,9 +137,9 @@ namespace Amazon.ACMPCA.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html">Planning
-    /// a certificate revocation list (CRL)</a> in the <i>Private Certificate Authority (PCA)
-    /// User Guide</i> 
+    /// For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/crl-planning.html">Planning
+    /// a certificate revocation list (CRL)</a> in the <i>Amazon Web Services Private Certificate
+    /// Authority User Guide</i> 
     /// </para>
     /// </summary>
     public partial class CrlConfiguration
@@ -156,6 +157,13 @@ namespace Amazon.ACMPCA.Model
         /// the use of an alias for the CRL distribution point. Use this value if you don't want
         /// the name of your S3 bucket to be public.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The content of a Canonical Name (CNAME) record must conform to <a href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a>
+        /// restrictions on the use of special characters in URIs. Additionally, the value of
+        /// the CNAME must not include a protocol prefix such as "http://" or "https://".
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=253)]
         public string CustomCname
@@ -175,8 +183,8 @@ namespace Amazon.ACMPCA.Model
         /// <para>
         /// Boolean value that specifies whether certificate revocation lists (CRLs) are enabled.
         /// You can use this value to enable certificate revocation for a new CA when you call
-        /// the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
-        /// action or for an existing CA when you call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+        /// the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
+        /// action or for an existing CA when you call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
         /// action. 
         /// </para>
         /// </summary>
@@ -218,10 +226,16 @@ namespace Amazon.ACMPCA.Model
         /// Name of the S3 bucket that contains the CRL. If you do not provide a value for the
         /// <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL
         /// Distribution Points</b> extension of the issued certificate. You can change the name
-        /// of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
-        /// operation. You must specify a <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
-        /// policy</a> that allows ACM Private CA to write the CRL to your bucket.
+        /// of your bucket by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+        /// operation. You must specify a <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
+        /// policy</a> that allows Amazon Web Services Private CA to write the CRL to your bucket.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>S3BucketName</code> parameter must conform to the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">S3
+        /// bucket naming rules</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=3, Max=255)]
         public string S3BucketName
@@ -260,7 +274,7 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking
+        /// For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking
         /// public access to the S3 bucket</a>.
         /// </para>
         /// </summary>

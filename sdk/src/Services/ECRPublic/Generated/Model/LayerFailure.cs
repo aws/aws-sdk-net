@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// An object representing an Amazon ECR image layer failure.
+    /// An object that represents an Amazon ECR image layer failure.
     /// </summary>
     public partial class LayerFailure
     {
@@ -40,7 +40,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property FailureCode. 
         /// <para>
-        /// The failure code associated with the failure.
+        /// The failure code that's associated with the failure.
         /// </para>
         /// </summary>
         public LayerFailureCode FailureCode
@@ -76,7 +76,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property LayerDigest. 
         /// <para>
-        /// The layer digest associated with the failure.
+        /// The layer digest that's associated with the failure.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]

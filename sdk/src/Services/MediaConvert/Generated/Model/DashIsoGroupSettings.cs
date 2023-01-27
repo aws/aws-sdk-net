@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         private List<DashAdditionalManifest> _additionalManifests = new List<DashAdditionalManifest>();
         private DashIsoGroupAudioChannelConfigSchemeIdUri _audioChannelConfigSchemeIdUri;
         private string _baseUrl;
+        private DashManifestStyle _dashManifestStyle;
         private string _destination;
         private DestinationSettings _destinationSettings;
         private DashIsoEncryptionSettings _encryption;
@@ -112,6 +113,26 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetBaseUrl()
         {
             return this._baseUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DashManifestStyle. Specify how MediaConvert writes SegmentTimeline
+        /// in your output DASH manifest. To write a SegmentTimeline in each video Representation:
+        /// Keep the default value, Basic. To write a common SegmentTimeline in the video AdaptationSet:
+        /// Choose Compact. Note that MediaConvert will still write a SegmentTimeline in any Representation
+        /// that does not share a common timeline. To write a video AdaptationSet for each different
+        /// output framerate, and a common SegmentTimeline in each AdaptationSet: Choose Distinct.
+        /// </summary>
+        public DashManifestStyle DashManifestStyle
+        {
+            get { return this._dashManifestStyle; }
+            set { this._dashManifestStyle = value; }
+        }
+
+        // Check to see if DashManifestStyle property is set
+        internal bool IsSetDashManifestStyle()
+        {
+            return this._dashManifestStyle != null;
         }
 
         /// <summary>

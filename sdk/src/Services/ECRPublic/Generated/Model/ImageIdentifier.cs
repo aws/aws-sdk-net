@@ -57,7 +57,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property ImageTag. 
         /// <para>
-        /// The tag used for the image.
+        /// The tag that's used for the image.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]

@@ -30,7 +30,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAlias operation.
-    /// Returns details about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+    /// Returns details about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
     /// </summary>
     public partial class GetAliasRequest : AmazonLambdaRequest
     {

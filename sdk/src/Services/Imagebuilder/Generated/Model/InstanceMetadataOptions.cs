@@ -46,7 +46,8 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property HttpPutResponseHopLimit. 
         /// <para>
         /// Limit the number of hops that an instance metadata request can traverse to reach its
-        /// destination.
+        /// destination. The default is one hop. However, if HTTP tokens are required, container
+        /// image builds need a minimum of two hops.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

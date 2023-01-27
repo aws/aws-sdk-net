@@ -30,7 +30,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAlias operation.
-    /// Updates the configuration of a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+    /// Updates the configuration of a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
     /// </summary>
     public partial class UpdateAliasRequest : AmazonLambdaRequest
     {

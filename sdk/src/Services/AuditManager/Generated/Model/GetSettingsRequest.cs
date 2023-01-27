@@ -39,7 +39,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Attribute. 
         /// <para>
-        ///  The list of <code>SettingAttribute</code> enum values. 
+        ///  The list of setting attribute enum values. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -61,7 +61,8 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property DetailType. 
         /// <para>
-        /// A free-form string used to decide what fields to expect in the event detail.
+        /// A free-form string, with a maximum of 128 characters, used to decide what fields to
+        /// expect in the event detail.
         /// </para>
         /// </summary>
         public string DetailType

@@ -297,7 +297,6 @@
     <property>Amazon.CloudWatchLogs.Model.DescribeQueryDefinitionsRequest.QueryDefinitionNamePrefix</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^([^:*\/]+\/?)*[^:*\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DescribeQueryDefinitionsResponse.NextToken</property>
@@ -564,7 +563,6 @@
     <property>Amazon.CloudWatchLogs.Model.PutQueryDefinitionRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^([^:*\/]+\/?)*[^:*\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutQueryDefinitionRequest.QueryDefinitionId</property>
@@ -885,7 +883,6 @@
     <property>Amazon.CloudWatchLogs.Model.QueryDefinition.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^([^:*\/]+\/?)*[^:*\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.QueryDefinition.QueryDefinitionId</property>

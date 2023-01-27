@@ -40,9 +40,9 @@ namespace Amazon.ECRPublic.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code>
-        /// request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>,
-        /// this value can be used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.
+        /// request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>,
+        /// you can use this value to retrieve the next page of results. If there are no more
+        /// results, this value is <code>null</code>.
         /// </para>
         /// </summary>
         public string NextToken
@@ -60,7 +60,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property Registries. 
         /// <para>
-        /// An object containing the details for a public registry.
+        /// An object that contains the details for a public registry.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
-    /// 
+    /// A conflict has occurred.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

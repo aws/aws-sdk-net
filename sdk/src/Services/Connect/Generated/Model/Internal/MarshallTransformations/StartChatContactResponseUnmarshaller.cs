@@ -57,6 +57,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     response.ContactId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ContinuedFromContactId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ContinuedFromContactId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ParticipantId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

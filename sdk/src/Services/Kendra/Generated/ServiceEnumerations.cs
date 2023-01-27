@@ -629,9 +629,25 @@ namespace Amazon.Kendra
     {
 
         /// <summary>
+        /// Constant CSV for ContentType
+        /// </summary>
+        public static readonly ContentType CSV = new ContentType("CSV");
+        /// <summary>
         /// Constant HTML for ContentType
         /// </summary>
         public static readonly ContentType HTML = new ContentType("HTML");
+        /// <summary>
+        /// Constant JSON for ContentType
+        /// </summary>
+        public static readonly ContentType JSON = new ContentType("JSON");
+        /// <summary>
+        /// Constant MD for ContentType
+        /// </summary>
+        public static readonly ContentType MD = new ContentType("MD");
+        /// <summary>
+        /// Constant MS_EXCEL for ContentType
+        /// </summary>
+        public static readonly ContentType MS_EXCEL = new ContentType("MS_EXCEL");
         /// <summary>
         /// Constant MS_WORD for ContentType
         /// </summary>
@@ -648,6 +664,18 @@ namespace Amazon.Kendra
         /// Constant PPT for ContentType
         /// </summary>
         public static readonly ContentType PPT = new ContentType("PPT");
+        /// <summary>
+        /// Constant RTF for ContentType
+        /// </summary>
+        public static readonly ContentType RTF = new ContentType("RTF");
+        /// <summary>
+        /// Constant XML for ContentType
+        /// </summary>
+        public static readonly ContentType XML = new ContentType("XML");
+        /// <summary>
+        /// Constant XSLT for ContentType
+        /// </summary>
+        public static readonly ContentType XSLT = new ContentType("XSLT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

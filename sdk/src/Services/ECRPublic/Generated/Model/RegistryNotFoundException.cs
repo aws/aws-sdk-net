@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// The registry does not exist.
+    /// The registry doesn't exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

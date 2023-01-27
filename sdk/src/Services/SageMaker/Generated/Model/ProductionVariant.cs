@@ -250,7 +250,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property VolumeSizeInGB. 
         /// <para>
         /// The size, in GB, of the ML storage volume attached to individual inference instance
-        /// associated with the production variant. Currenly only Amazon EBS gp2 storage volumes
+        /// associated with the production variant. Currently only Amazon EBS gp2 storage volumes
         /// are supported.
         /// </para>
         /// </summary>

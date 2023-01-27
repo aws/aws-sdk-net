@@ -39,7 +39,7 @@ namespace Amazon.LocationService.Model
     ///  <note> 
     /// <para>
     /// If your application is tracking or routing assets you use in your business, such as
-    /// delivery vehicles or employees, you may only use HERE as your geolocation provider.
+    /// delivery vehicles or employees, you must not use Esri as your geolocation provider.
     /// See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a>
     /// for more details.
     /// </para>
@@ -73,6 +73,13 @@ namespace Amazon.LocationService.Model
         ///  <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
         /// coverage in your region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
         /// details on geocoding coverage</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Grab</code> – Grab provides place index functionality for Southeast Asia. For
+        /// additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+        /// coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+        /// countries and areas covered</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>

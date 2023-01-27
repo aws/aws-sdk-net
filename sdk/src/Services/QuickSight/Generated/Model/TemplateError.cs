@@ -74,7 +74,10 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ViolatedEntities.
+        /// Gets and sets the property ViolatedEntities. 
+        /// <para>
+        /// An error path that shows which entities caused the template error.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=200)]
         public List<Entity> ViolatedEntities

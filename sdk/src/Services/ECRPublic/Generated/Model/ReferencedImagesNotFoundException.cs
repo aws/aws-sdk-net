@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// The manifest list is referencing an image that does not exist.
+    /// The manifest list is referencing an image that doesn't exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

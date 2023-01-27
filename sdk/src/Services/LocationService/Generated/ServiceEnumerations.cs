@@ -421,9 +421,17 @@ namespace Amazon.LocationService
     {
 
         /// <summary>
+        /// Constant Bicycle for TravelMode
+        /// </summary>
+        public static readonly TravelMode Bicycle = new TravelMode("Bicycle");
+        /// <summary>
         /// Constant Car for TravelMode
         /// </summary>
         public static readonly TravelMode Car = new TravelMode("Car");
+        /// <summary>
+        /// Constant Motorcycle for TravelMode
+        /// </summary>
+        public static readonly TravelMode Motorcycle = new TravelMode("Motorcycle");
         /// <summary>
         /// Constant Truck for TravelMode
         /// </summary>

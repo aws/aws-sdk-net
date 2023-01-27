@@ -82,6 +82,12 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                     unmarshalledObject.Runtime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RuntimeEnvironmentSecrets", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.RuntimeEnvironmentSecrets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RuntimeEnvironmentVariables", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

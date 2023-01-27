@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// An global endpoint used to improve your application's availability by making it regional-fault
+    /// A global endpoint used to improve your application's availability by making it regional-fault
     /// tolerant. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
     /// applications Regional-fault tolerant with global endpoints and event replication</a>
-    /// in the Amazon EventBridge User Guide..
+    /// in the Amazon EventBridge User Guide.
     /// </summary>
     public partial class Endpoint
     {
@@ -109,7 +109,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property EndpointId. 
         /// <para>
-        /// The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com,
+        /// The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com,
         /// then the EndpointId is <code>abcde.veo</code>.
         /// </para>
         /// </summary>
@@ -204,7 +204,10 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property ReplicationConfig. 
         /// <para>
-        /// Whether event replication was enabled or disabled for this endpoint.
+        /// Whether event replication was enabled or disabled for this endpoint. The default state
+        /// is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you
+        /// don't have a <code>RoleArn</code> or you don't want event replication enabled, set
+        /// the state to <code>DISABLED</code>.
         /// </para>
         /// </summary>
         public ReplicationConfig ReplicationConfig

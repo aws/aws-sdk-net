@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// The layer part size is not valid, or the first byte specified is not consecutive to
+    /// The layer part size isn't valid, or the first byte specified isn't consecutive to
     /// the last byte of a previous layer part upload.
     /// </summary>
     #if !NETSTANDARD
@@ -155,7 +155,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the layer part.
+        /// The Amazon Web Services account ID that's associated with the layer part.
         /// </para>
         /// </summary>
         public string RegistryId
@@ -192,7 +192,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property UploadId. 
         /// <para>
-        /// The upload ID associated with the layer part.
+        /// The upload ID that's associated with the layer part.
         /// </para>
         /// </summary>
         public string UploadId

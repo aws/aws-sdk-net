@@ -102,7 +102,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EvidenceCount. 
         /// <para>
-        ///  The amount of evidence that's generated for the control. 
+        ///  The amount of evidence that's collected for the control. 
         /// </para>
         /// </summary>
         public int EvidenceCount

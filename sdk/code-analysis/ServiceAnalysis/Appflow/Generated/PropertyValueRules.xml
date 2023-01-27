@@ -888,6 +888,37 @@
     <pattern>^(https?)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Appflow.Model.PardotConnectorProfileCredentials.AccessToken</property>
+    <max>4096</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.PardotConnectorProfileCredentials.ClientCredentialsArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws:secretsmanager:.*:[0-9]+:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.PardotConnectorProfileCredentials.RefreshToken</property>
+    <max>2048</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.PardotConnectorProfileProperties.BusinessUnitId</property>
+    <max>18</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.PardotConnectorProfileProperties.InstanceUrl</property>
+    <max>256</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.PardotSourceProperties.Object</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Appflow.Model.PrivateConnectionProvisioningState.FailureMessage</property>
     <max>2048</max>
     <pattern>[\s\w/!@#+=.-]*</pattern>
