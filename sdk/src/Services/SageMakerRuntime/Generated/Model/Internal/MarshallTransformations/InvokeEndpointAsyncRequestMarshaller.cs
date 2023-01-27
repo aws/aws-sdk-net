@@ -89,6 +89,11 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
                 request.Headers["X-Amzn-SageMaker-InputLocation"] = publicRequest.InputLocation;
             }
         
+            if (publicRequest.IsSetInvocationTimeoutSeconds()) 
+            {
+                request.Headers["X-Amzn-SageMaker-InvocationTimeoutSeconds"] = StringUtils.FromInt(publicRequest.InvocationTimeoutSeconds);
+            }
+        
             if (publicRequest.IsSetRequestTTLSeconds()) 
             {
                 request.Headers["X-Amzn-SageMaker-RequestTTLSeconds"] = StringUtils.FromInt(publicRequest.RequestTTLSeconds);

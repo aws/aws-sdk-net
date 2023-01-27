@@ -37,9 +37,9 @@ namespace Amazon.SageMakerRuntime.Model
     ///  
     /// <para>
     /// Inference requests sent to this API are enqueued for asynchronous processing. The
-    /// processing of the inference request may or may not complete before the you receive
-    /// a response from this API. The response from this API will not contain the result of
-    /// the inference request but contain information about where you can locate it.
+    /// processing of the inference request may or may not complete before you receive a response
+    /// from this API. The response from this API will not contain the result of the inference
+    /// request but contain information about where you can locate it.
     /// </para>
     ///  
     /// <para>
@@ -50,7 +50,7 @@ namespace Amazon.SageMakerRuntime.Model
     ///  
     /// <para>
     /// Calls to <code>InvokeEndpointAsync</code> are authenticated by using Amazon Web Services
-    /// Signature Version 4. For information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+    /// Signature Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
     /// Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
     /// </para>
     /// </summary>
@@ -62,6 +62,7 @@ namespace Amazon.SageMakerRuntime.Model
         private string _endpointName;
         private string _inferenceId;
         private string _inputLocation;
+        private int? _invocationTimeoutSeconds;
         private int? _requestTTLSeconds;
 
         /// <summary>
@@ -198,6 +199,26 @@ namespace Amazon.SageMakerRuntime.Model
         internal bool IsSetInputLocation()
         {
             return this._inputLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvocationTimeoutSeconds. 
+        /// <para>
+        /// Maximum amount of time in seconds a request can be processed before it is marked as
+        /// expired.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=3600)]
+        public int InvocationTimeoutSeconds
+        {
+            get { return this._invocationTimeoutSeconds.GetValueOrDefault(); }
+            set { this._invocationTimeoutSeconds = value; }
+        }
+
+        // Check to see if InvocationTimeoutSeconds property is set
+        internal bool IsSetInvocationTimeoutSeconds()
+        {
+            return this._invocationTimeoutSeconds.HasValue; 
         }
 
         /// <summary>

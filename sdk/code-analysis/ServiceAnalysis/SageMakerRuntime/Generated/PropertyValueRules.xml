@@ -92,6 +92,11 @@
     <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMakerRuntime.Model.InvokeEndpointAsyncRequest.InvocationTimeoutSeconds</property>
+    <min>1</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMakerRuntime.Model.InvokeEndpointAsyncRequest.RequestTTLSeconds</property>
     <min>60</min>
     <max>21600</max>
