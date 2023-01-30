@@ -64,7 +64,6 @@ namespace Amazon.EC2.Model
         /// The ARN of the ACM certificate with which to associate the IAM role.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1283)]
         public string CertificateArn
         {
             get { return this._certificateArn; }
@@ -84,7 +83,6 @@ namespace Amazon.EC2.Model
         /// to 16 IAM roles with an ACM certificate.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1283)]
         public string RoleArn
         {
             get { return this._roleArn; }

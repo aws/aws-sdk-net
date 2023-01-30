@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     {
         private string _coipPoolId;
         private string _destinationCidrBlock;
+        private string _destinationPrefixListId;
         private string _localGatewayRouteTableArn;
         private string _localGatewayRouteTableId;
         private string _localGatewayVirtualInterfaceGroupId;
@@ -78,6 +79,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDestinationCidrBlock()
         {
             return this._destinationCidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationPrefixListId. 
+        /// <para>
+        ///  The ID of the prefix list. 
+        /// </para>
+        /// </summary>
+        public string DestinationPrefixListId
+        {
+            get { return this._destinationPrefixListId; }
+            set { this._destinationPrefixListId = value; }
+        }
+
+        // Check to see if DestinationPrefixListId property is set
+        internal bool IsSetDestinationPrefixListId()
+        {
+            return this._destinationPrefixListId != null;
         }
 
         /// <summary>

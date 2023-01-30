@@ -46,7 +46,6 @@ namespace Amazon.EC2.Model
         /// keys, and Amazon S3 object information.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1283)]
         public string CertificateArn
         {
             get { return this._certificateArn; }
