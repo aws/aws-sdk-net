@@ -140,7 +140,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// import task.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
