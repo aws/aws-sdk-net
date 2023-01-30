@@ -45,6 +45,7 @@ namespace Amazon.CloudFormation.Model
         private List<string> _organizationalUnitIds = new List<string>();
         private List<Parameter> _parameters = new List<Parameter>();
         private PermissionModels _permissionModel;
+        private List<string> _regions = new List<string>();
         private string _stackSetARN;
         private StackSetDriftDetectionDetails _stackSetDriftDetectionDetails;
         private string _stackSetId;
@@ -251,6 +252,21 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetPermissionModel()
         {
             return this._permissionModel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Regions.
+        /// </summary>
+        public List<string> Regions
+        {
+            get { return this._regions; }
+            set { this._regions = value; }
+        }
+
+        // Check to see if Regions property is set
+        internal bool IsSetRegions()
+        {
+            return this._regions != null && this._regions.Count > 0; 
         }
 
         /// <summary>

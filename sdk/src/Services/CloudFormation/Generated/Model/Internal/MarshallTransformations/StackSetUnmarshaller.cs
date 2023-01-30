@@ -111,6 +111,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.PermissionModel = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Regions/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Regions.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("StackSetARN", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
