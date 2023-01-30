@@ -80,6 +80,10 @@ namespace Amazon.MediaConvert.Internal
                 {
                     if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
                     {
+                        if (Equals("aws-us-gov", GetAttr(refs["PartitionResult"], "name")))
+                        {
+                            return new Endpoint(Interpolate(@"https://mediaconvert.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
                         return new Endpoint(Interpolate(@"https://mediaconvert-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
@@ -95,6 +99,10 @@ namespace Amazon.MediaConvert.Internal
                 if (Equals(refs["Region"], "cn-northwest-1"))
                 {
                     return new Endpoint("https://subscribe.mediaconvert.cn-northwest-1.amazonaws.com.cn", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(refs["Region"], "us-gov-west-1"))
+                {
+                    return new Endpoint("https://mediaconvert.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                 }
                 return new Endpoint(Interpolate(@"https://mediaconvert.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
             }
