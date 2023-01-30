@@ -1,3 +1,23 @@
+### 3.7.471.0 (2023-01-30 19:49 UTC)
+* ApplicationDiscoveryService (3.7.101.0)
+	* Update ImportName validation to 255 from the current length of 100
+* CloudDirectory (3.7.101.0)
+	* Enabled FIPS endpoints for GovCloud (US) regions in SDK.
+* CloudFormation (3.7.104.0)
+	* This feature provides a method of obtaining which regions a stackset has stack instances deployed in.
+* DLM (3.7.101.0)
+	* Enabled FIPS endpoints for GovCloud (US) regions in SDK.
+* EC2 (3.7.119.0)
+	* We add Prefix Lists as a new route destination option for LocalGatewayRoutes. This will allow customers to create routes to Prefix Lists. Prefix List routes will allow customers to group individual CIDR routes with the same target into a single route.
+* Imagebuilder (3.7.102.0)
+	* Enabled FIPS endpoints for GovCloud (US) regions in SDK.
+* Kafka (3.7.102.0)
+	* Enabled FIPS endpoints for GovCloud (US) regions in SDK.
+* MediaConvert (3.7.104.0)
+	* Enabled FIPS endpoints for GovCloud (US) regions in SDK.
+* SimpleWorkflow (3.7.101.0)
+	* Enabled FIPS endpoints for GovCloud (US) regions in SDK.
+
 ### 3.7.470.0 (2023-01-27 19:30 UTC)
 * ApplicationAutoScaling (3.7.102.0)
 	* Enabled FIPS endpoints for GovCloud (US) regions in SDK.
