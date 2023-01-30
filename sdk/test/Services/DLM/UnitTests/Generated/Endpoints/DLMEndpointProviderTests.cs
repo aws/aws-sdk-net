@@ -31,765 +31,30 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DLM")]
-        [Description("For region ap-south-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region us-iso-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-south-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.ap-south-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-south-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.ap-south-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://dlm-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DLM")]
-        [Description("For region ap-south-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        [Description("For region us-iso-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-south-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.ap-south-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-south-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.ap-south-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-south-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_eusouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-south-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.eu-south-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-south-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_eusouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-south-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.eu-south-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-south-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_eusouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-south-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.eu-south-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-south-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_eusouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-south-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.eu-south-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.us-gov-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region us-gov-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.us-gov-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region us-gov-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.us-gov-east-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ca-central-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ca-central-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.ca-central-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ca-central-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ca-central-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.ca-central-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ca-central-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ca-central-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.ca-central-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ca-central-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ca-central-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.ca-central-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-central-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.eu-central-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-central-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.eu-central-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-central-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.eu-central-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-central-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.eu-central-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region us-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-west-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.us-west-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region us-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-west-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.us-west-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region us-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-west-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.us-west-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region us-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-west-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.us-west-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region us-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.us-west-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.us-west-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region us-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.us-west-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.us-west-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region af-south-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_afsouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "af-south-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.af-south-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region af-south-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_afsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "af-south-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.af-south-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region af-south-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_afsouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "af-south-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.af-south-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region af-south-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_afsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "af-south-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.af-south-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-north-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_eunorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-north-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.eu-north-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-north-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_eunorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-north-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.eu-north-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-north-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_eunorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-north-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.eu-north-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-north-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_eunorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-north-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.eu-north-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-west-3 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest3_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-west-3";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.eu-west-3.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-west-3 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest3_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-west-3";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.eu-west-3.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-west-3 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest3_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-west-3";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.eu-west-3.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-west-3 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest3_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-west-3";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.eu-west-3.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.eu-west-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.eu-west-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.eu-west-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.eu-west-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.eu-west-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.eu-west-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.eu-west-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region eu-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.eu-west-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-northeast-3 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast3_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-northeast-3";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.ap-northeast-3.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-northeast-3 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast3_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-northeast-3";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.ap-northeast-3.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-northeast-3 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast3_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-northeast-3";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.ap-northeast-3.api.aws", endpoint.URL);
+            Assert.AreEqual("https://dlm.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
 
         [TestMethod]
@@ -800,9 +65,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast3_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-northeast-3";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-northeast-3";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://dlm.ap-northeast-3.amazonaws.com", endpoint.URL);
         }
@@ -811,165 +76,60 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DLM")]
-        [Description("For region ap-northeast-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-northeast-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.ap-northeast-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-northeast-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-northeast-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.ap-northeast-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-northeast-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-northeast-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.ap-northeast-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-northeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-northeast-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.ap-northeast-2.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://dlm.us-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DLM")]
-        [Description("For region ap-northeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region eu-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.ap-northeast-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-northeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.ap-northeast-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-northeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.ap-northeast-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-northeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-northeast-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.ap-northeast-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://dlm.eu-west-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DLM")]
-        [Description("For region me-south-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_mesouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region eu-west-2 with FIPS disabled and DualStack disabled")]
+        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "me-south-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.me-south-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region me-south-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_mesouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "me-south-1";
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "eu-west-2";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.me-south-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://dlm.eu-west-2.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DLM")]
-        [Description("For region me-south-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_mesouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        [Description("For region eu-west-3 with FIPS disabled and DualStack disabled")]
+        public void For_region_euwest3_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "me-south-1";
-            parameters["UseDualStack"] = true;
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "eu-west-3";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.me-south-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://dlm.eu-west-3.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -980,9 +140,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_mesouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "me-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "me-south-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://dlm.me-south-1.amazonaws.com", endpoint.URL);
         }
@@ -991,45 +151,30 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DLM")]
-        [Description("For region sa-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_saeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region eu-north-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_eunorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "sa-east-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.sa-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region sa-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_saeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "sa-east-1";
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "eu-north-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.sa-east-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://dlm.eu-north-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DLM")]
-        [Description("For region sa-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_saeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        [Description("For region us-east-2 with FIPS disabled and DualStack disabled")]
+        public void For_region_useast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "sa-east-1";
-            parameters["UseDualStack"] = true;
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-east-2";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.sa-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://dlm.us-east-2.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -1040,56 +185,11 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_saeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "sa-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "sa-east-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://dlm.sa-east-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-east-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.ap-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-east-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.ap-east-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-east-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.ap-east-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -1100,9 +200,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-east-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://dlm.ap-east-1.amazonaws.com", endpoint.URL);
         }
@@ -1111,165 +211,30 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DLM")]
-        [Description("For region cn-north-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region eu-south-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_eusouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region cn-north-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region cn-north-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region cn-north-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "eu-south-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.cn-north-1.amazonaws.com.cn", endpoint.URL);
+            Assert.AreEqual("https://dlm.eu-south-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DLM")]
-        [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region eu-central-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.us-gov-west-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.us-gov-west-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.us-gov-west-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.us-gov-west-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-southeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.ap-southeast-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-southeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.ap-southeast-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-southeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.ap-southeast-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://dlm.eu-central-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -1280,56 +245,11 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-southeast-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://dlm.ap-southeast-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-southeast-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.ap-southeast-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-southeast-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.ap-southeast-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-southeast-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.ap-southeast-2.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -1340,56 +260,11 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-southeast-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-southeast-2";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://dlm.ap-southeast-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-southeast-3 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast3_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-southeast-3";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.ap-southeast-3.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-southeast-3 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast3_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-southeast-3";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.ap-southeast-3.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region ap-southeast-3 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast3_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-southeast-3";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.ap-southeast-3.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -1400,11 +275,116 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast3_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "ap-southeast-3";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-southeast-3";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://dlm.ap-southeast-3.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DLM")]
+        [Description("For region ca-central-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new DLMEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "ca-central-1";
+            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dlm.ca-central-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DLM")]
+        [Description("For region us-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new DLMEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-west-1";
+            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dlm.us-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DLM")]
+        [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new DLMEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-west-2";
+            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dlm.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DLM")]
+        [Description("For region af-south-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_afsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new DLMEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "af-south-1";
+            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dlm.af-south-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DLM")]
+        [Description("For region ap-south-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new DLMEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-south-1";
+            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dlm.ap-south-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DLM")]
+        [Description("For region ap-northeast-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new DLMEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-northeast-1";
+            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dlm.ap-northeast-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DLM")]
+        [Description("For region ap-northeast-2 with FIPS disabled and DualStack disabled")]
+        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new DLMEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-northeast-2";
+            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dlm.ap-northeast-2.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -1415,9 +395,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://dlm-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -1430,9 +410,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://dlm-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -1445,9 +425,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://dlm.us-east-1.api.aws", endpoint.URL);
         }
@@ -1456,120 +436,120 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DLM")]
-        [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-gov-west-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.us-east-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://dlm.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DLM")]
-        [Description("For region us-east-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast2_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-east-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.us-east-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region us-east-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast2_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-east-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-gov-west-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.us-east-2.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://dlm.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DLM")]
-        [Description("For region us-east-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast2_with_FIPS_disabled_and_DualStack_enabled_Test()
+        [Description("For region us-gov-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-east-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.us-east-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region us-east-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast2_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-east-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-gov-east-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.us-east-2.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://dlm.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DLM")]
-        [Description("For region cn-northwest-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "cn-northwest-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DLM")]
-        [Description("For region cn-northwest-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "cn-northwest-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-gov-east-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm-fips.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
+            Assert.AreEqual("https://dlm.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DLM")]
-        [Description("For region cn-northwest-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "cn-northwest-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-gov-east-1";
+            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dlm-fips.us-gov-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DLM")]
+        [Description("For region us-gov-east-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new DLMEndpointParameters();
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-gov-east-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dlm.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
+            Assert.AreEqual("https://dlm.us-gov-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DLM")]
+        [Description("For region us-isob-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new DLMEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-isob-east-1";
+            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dlm-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DLM")]
+        [Description("For region us-isob-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new DLMEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-isob-east-1";
+            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dlm.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
 
         [TestMethod]
@@ -1580,11 +560,71 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "cn-northwest-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "cn-northwest-1";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://dlm.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DLM")]
+        [Description("For region cn-north-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new DLMEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "cn-north-1";
+            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dlm.cn-north-1.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DLM")]
+        [Description("For region cn-north-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new DLMEndpointParameters();
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "cn-north-1";
+            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dlm-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DLM")]
+        [Description("For region cn-north-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new DLMEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "cn-north-1";
+            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dlm-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DLM")]
+        [Description("For region cn-north-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new DLMEndpointParameters();
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "cn-north-1";
+            var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dlm.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
 
         [TestMethod]
@@ -1595,9 +635,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -1612,9 +652,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -1628,9 +668,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new DLMEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonDLMEndpointProvider().ResolveEndpoint(parameters);
         }
