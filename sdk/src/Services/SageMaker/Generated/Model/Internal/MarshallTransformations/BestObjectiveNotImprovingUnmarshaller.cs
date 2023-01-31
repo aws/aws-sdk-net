@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TuningJobCompletionCriteria Object
+    /// Response Unmarshaller for BestObjectiveNotImproving Object
     /// </summary>  
-    public class TuningJobCompletionCriteriaUnmarshaller : IUnmarshaller<TuningJobCompletionCriteria, XmlUnmarshallerContext>, IUnmarshaller<TuningJobCompletionCriteria, JsonUnmarshallerContext>
+    public class BestObjectiveNotImprovingUnmarshaller : IUnmarshaller<BestObjectiveNotImproving, XmlUnmarshallerContext>, IUnmarshaller<BestObjectiveNotImproving, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TuningJobCompletionCriteria IUnmarshaller<TuningJobCompletionCriteria, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        BestObjectiveNotImproving IUnmarshaller<BestObjectiveNotImproving, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public TuningJobCompletionCriteria Unmarshall(JsonUnmarshallerContext context)
+        public BestObjectiveNotImproving Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TuningJobCompletionCriteria unmarshalledObject = new TuningJobCompletionCriteria();
+            BestObjectiveNotImproving unmarshalledObject = new BestObjectiveNotImproving();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BestObjectiveNotImproving", targetDepth))
+                if (context.TestExpression("MaxNumberOfTrainingJobsNotImproving", targetDepth))
                 {
-                    var unmarshaller = BestObjectiveNotImprovingUnmarshaller.Instance;
-                    unmarshalledObject.BestObjectiveNotImproving = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ConvergenceDetected", targetDepth))
-                {
-                    var unmarshaller = ConvergenceDetectedUnmarshaller.Instance;
-                    unmarshalledObject.ConvergenceDetected = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TargetObjectiveMetricValue", targetDepth))
-                {
-                    var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.TargetObjectiveMetricValue = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxNumberOfTrainingJobsNotImproving = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static TuningJobCompletionCriteriaUnmarshaller _instance = new TuningJobCompletionCriteriaUnmarshaller();        
+        private static BestObjectiveNotImprovingUnmarshaller _instance = new BestObjectiveNotImprovingUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TuningJobCompletionCriteriaUnmarshaller Instance
+        public static BestObjectiveNotImprovingUnmarshaller Instance
         {
             get
             {

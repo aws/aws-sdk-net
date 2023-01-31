@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private int? _maxNumberOfTrainingJobs;
         private int? _maxParallelTrainingJobs;
+        private int? _maxRuntimeInSeconds;
 
         /// <summary>
         /// Gets and sets the property MaxNumberOfTrainingJobs. 
@@ -74,6 +75,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMaxParallelTrainingJobs()
         {
             return this._maxParallelTrainingJobs.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxRuntimeInSeconds. 
+        /// <para>
+        /// The maximum time in seconds that a training job launched by a hyperparameter tuning
+        /// job can run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=120, Max=15768000)]
+        public int MaxRuntimeInSeconds
+        {
+            get { return this._maxRuntimeInSeconds.GetValueOrDefault(); }
+            set { this._maxRuntimeInSeconds = value; }
+        }
+
+        // Check to see if MaxRuntimeInSeconds property is set
+        internal bool IsSetMaxRuntimeInSeconds()
+        {
+            return this._maxRuntimeInSeconds.HasValue; 
         }
 
     }

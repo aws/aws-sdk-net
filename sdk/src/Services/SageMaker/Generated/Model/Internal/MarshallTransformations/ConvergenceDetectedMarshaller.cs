@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ResourceLimits Marshaller
+    /// ConvergenceDetected Marshaller
     /// </summary>
-    public class ResourceLimitsMarshaller : IRequestMarshaller<ResourceLimits, JsonMarshallerContext> 
+    public class ConvergenceDetectedMarshaller : IRequestMarshaller<ConvergenceDetected, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,24 +43,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ResourceLimits requestObject, JsonMarshallerContext context)
+        public void Marshall(ConvergenceDetected requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetMaxNumberOfTrainingJobs())
+            if(requestObject.IsSetCompleteOnConvergence())
             {
-                context.Writer.WritePropertyName("MaxNumberOfTrainingJobs");
-                context.Writer.Write(requestObject.MaxNumberOfTrainingJobs);
-            }
-
-            if(requestObject.IsSetMaxParallelTrainingJobs())
-            {
-                context.Writer.WritePropertyName("MaxParallelTrainingJobs");
-                context.Writer.Write(requestObject.MaxParallelTrainingJobs);
-            }
-
-            if(requestObject.IsSetMaxRuntimeInSeconds())
-            {
-                context.Writer.WritePropertyName("MaxRuntimeInSeconds");
-                context.Writer.Write(requestObject.MaxRuntimeInSeconds);
+                context.Writer.WritePropertyName("CompleteOnConvergence");
+                context.Writer.Write(requestObject.CompleteOnConvergence);
             }
 
         }
@@ -68,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ResourceLimitsMarshaller Instance = new ResourceLimitsMarshaller();
+        public readonly static ConvergenceDetectedMarshaller Instance = new ConvergenceDetectedMarshaller();
 
     }
 }

@@ -6293,6 +6293,10 @@
     <pattern>^.?P.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.BestObjectiveNotImproving.MaxNumberOfTrainingJobsNotImproving</property>
+    <min>3</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.BlueGreenUpdatePolicy.MaximumExecutionTimeoutInSeconds</property>
     <min>600</min>
     <max>14400</max>
@@ -9609,6 +9613,11 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceLimits.MaxParallelTrainingJobs</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ResourceLimits.MaxRuntimeInSeconds</property>
+    <min>120</min>
+    <max>15768000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceSpec.LifecycleConfigArn</property>
