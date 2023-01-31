@@ -1,3 +1,40 @@
+### 3.7.472.0 (2023-01-31 19:45 UTC)
+* AccessAnalyzer (3.7.103.0)
+	* Enabled FIPS endpoints for GovCloud (US) regions in SDK.
+* AppSync (3.7.103.0)
+	* This release introduces the feature to support EventBridge as AppSync data source.
+* AWSSupport (3.7.101.0)
+	* This fixes incorrect endpoint construction when a customer is explicitly setting a region.
+* CloudTrail (3.7.103.0)
+	* Add new "Channel" APIs to enable users to manage channels used for CloudTrail Lake integrations, and "Resource Policy" APIs to enable users to manage the resource-based permissions policy attached to a channel.
+* CloudTrailData (3.7.100.0)
+	* Add CloudTrail Data Service to enable users to ingest activity events from non-AWS sources into CloudTrail Lake.
+* CodeArtifact (3.7.102.0)
+	* This release introduces a new DeletePackage API, which enables deletion of a package and all of its versions from a repository.
+* ConnectParticipant (3.7.104.0)
+	* Enabled FIPS endpoints for GovCloud (US) regions in SDK.
+* EC2 (3.7.120.0)
+	* This launch allows customers to associate up to 8 IP addresses to their NAT Gateways to increase the limit on concurrent connections to a single destination by eight times from 55K to 440K.
+* GroundStation (3.7.103.0)
+	* DigIF Expansion changes to the Customer APIs.
+* IoT (3.7.104.0)
+	* Added support for IoT Rules Engine Cloudwatch Logs action batch mode.
+* Kinesis (3.7.102.0)
+	* Enabled FIPS endpoints for GovCloud (US) regions in SDK.
+* OpenSearchService (3.7.103.0)
+	* Amazon OpenSearch Service adds the option for a VPC endpoint connection between two domains when the local domain uses OpenSearch version 1.3 or 2.3. You can now use remote reindex to copy indices from one VPC domain to another without a reverse proxy.
+* Outposts (3.7.103.0)
+	* Enabled FIPS endpoints for GovCloud (US) regions in SDK.
+* Polly (3.7.105.0)
+	* Amazon Polly adds two new neural American English voices - Ruth, Stephen
+* SageMaker (3.7.118.0)
+	* Amazon SageMaker Automatic Model Tuning now supports more completion criteria for Hyperparameter Optimization.
+* SecurityHub (3.7.104.0)
+	* New fields have been added to the AWS Security Finding Format. Compliance.SecurityControlId is a unique identifier for a security control across standards. Compliance.AssociatedStandards contains all enabled standards in which a security control is enabled.
+* Core 3.7.103.25
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.471.0 (2023-01-30 19:49 UTC)
 * ApplicationDiscoveryService (3.7.101.0)
 	* Update ImportName validation to 255 from the current length of 100
