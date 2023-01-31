@@ -284,6 +284,10 @@
       <Project>{C6D853D7-8136-4AC6-8BD1-E43089EB0458}</Project>
       <Name>AWSSDK.CloudTrail.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CloudTrailData/AWSSDK.CloudTrailData.CodeAnalysis.csproj">
+      <Project>{A5484965-036F-4ECB-B738-D88AC002AA1C}</Project>
+      <Name>AWSSDK.CloudTrailData.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CloudWatch/AWSSDK.CloudWatch.CodeAnalysis.csproj">
       <Project>{FDF13EF0-0743-4F7A-8A02-397B58D45376}</Project>
       <Name>AWSSDK.CloudWatch.CodeAnalysis</Name>

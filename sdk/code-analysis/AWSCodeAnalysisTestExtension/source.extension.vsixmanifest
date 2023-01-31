@@ -131,6 +131,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CloudSearchDomain.CodeAnalysis" Path="|AWSSDK.CloudSearchDomain.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CloudTrail.CodeAnalysis" Path="|AWSSDK.CloudTrail.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CloudTrail.CodeAnalysis" Path="|AWSSDK.CloudTrail.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CloudTrailData.CodeAnalysis" Path="|AWSSDK.CloudTrailData.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CloudTrailData.CodeAnalysis" Path="|AWSSDK.CloudTrailData.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CloudWatch.CodeAnalysis" Path="|AWSSDK.CloudWatch.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CloudWatch.CodeAnalysis" Path="|AWSSDK.CloudWatch.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CloudWatchEvents.CodeAnalysis" Path="|AWSSDK.CloudWatchEvents.CodeAnalysis|"/>

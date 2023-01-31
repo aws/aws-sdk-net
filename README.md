@@ -220,6 +220,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon CloudSearch Domain encapsulates a collection of data you want to search, the search instances that process your search requests, and a configuration that controls how your data is indexed and searched.
 * [AWSSDK.CloudTrail](https://www.nuget.org/packages/AWSSDK.CloudTrail/)
 	* AWS CloudTrail is a web service that records AWS API calls for your account and delivers log files to you. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, the request parameters, and the response elements returned by the AWS service.
+* [AWSSDK.CloudTrailData](https://www.nuget.org/packages/AWSSDK.CloudTrailData/)
+	* Add CloudTrail Data Service to enable users to ingest activity events from non-AWS sources into CloudTrail Lake.
 * [AWSSDK.CloudWatch](https://www.nuget.org/packages/AWSSDK.CloudWatch/)
 	* Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms.
 * [AWSSDK.CloudWatchEvents](https://www.nuget.org/packages/AWSSDK.CloudWatchEvents/)
