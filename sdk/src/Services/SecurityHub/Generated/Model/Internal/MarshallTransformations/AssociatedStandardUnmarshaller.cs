@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Compliance Object
+    /// Response Unmarshaller for AssociatedStandard Object
     /// </summary>  
-    public class ComplianceUnmarshaller : IUnmarshaller<Compliance, XmlUnmarshallerContext>, IUnmarshaller<Compliance, JsonUnmarshallerContext>
+    public class AssociatedStandardUnmarshaller : IUnmarshaller<AssociatedStandard, XmlUnmarshallerContext>, IUnmarshaller<AssociatedStandard, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Compliance IUnmarshaller<Compliance, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AssociatedStandard IUnmarshaller<AssociatedStandard, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Compliance Unmarshall(JsonUnmarshallerContext context)
+        public AssociatedStandard Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Compliance unmarshalledObject = new Compliance();
+            AssociatedStandard unmarshalledObject = new AssociatedStandard();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AssociatedStandards", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AssociatedStandard, AssociatedStandardUnmarshaller>(AssociatedStandardUnmarshaller.Instance);
-                    unmarshalledObject.AssociatedStandards = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RelatedRequirements", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.RelatedRequirements = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SecurityControlId", targetDepth))
+                if (context.TestExpression("StandardsId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecurityControlId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StatusReasons", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<StatusReason, StatusReasonUnmarshaller>(StatusReasonUnmarshaller.Instance);
-                    unmarshalledObject.StatusReasons = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StandardsId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static ComplianceUnmarshaller _instance = new ComplianceUnmarshaller();        
+        private static AssociatedStandardUnmarshaller _instance = new AssociatedStandardUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ComplianceUnmarshaller Instance
+        public static AssociatedStandardUnmarshaller Instance
         {
             get
             {

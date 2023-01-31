@@ -45,6 +45,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Compliance requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAssociatedStandards())
+            {
+                context.Writer.WritePropertyName("AssociatedStandards");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAssociatedStandardsListValue in requestObject.AssociatedStandards)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AssociatedStandardMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAssociatedStandardsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetRelatedRequirements())
             {
                 context.Writer.WritePropertyName("RelatedRequirements");
@@ -54,6 +70,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectRelatedRequirementsListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetSecurityControlId())
+            {
+                context.Writer.WritePropertyName("SecurityControlId");
+                context.Writer.Write(requestObject.SecurityControlId);
             }
 
             if(requestObject.IsSetStatus())

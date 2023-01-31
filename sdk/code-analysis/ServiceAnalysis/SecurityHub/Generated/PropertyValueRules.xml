@@ -335,6 +335,10 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AssociatedStandard.StandardsId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.AvailabilityZone.SubnetId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -4888,6 +4892,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.ClassificationStatus.Reason</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.Compliance.SecurityControlId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
