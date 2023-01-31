@@ -29,29 +29,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeletePackageVersions operation.
-    /// Deletes one or more versions of a package. A deleted package version cannot be restored
-    /// in your repository. If you want to remove a package version from your repository and
-    /// be able to restore it later, set its status to <code>Archived</code>. Archived packages
-    /// cannot be downloaded from a repository and don't show up with list package APIs (for
-    /// example, <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a>),
-    /// but you can restore them using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionsStatus</a>.
+    /// Container for the parameters to the DeletePackage operation.
+    /// Deletes a package and all associated package versions. A deleted package cannot be
+    /// restored. To delete one or more package versions, use the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeletePackageVersions.html">DeletePackageVersions</a>
+    /// API.
     /// </summary>
-    public partial class DeletePackageVersionsRequest : AmazonCodeArtifactRequest
+    public partial class DeletePackageRequest : AmazonCodeArtifactRequest
     {
         private string _domain;
         private string _domainOwner;
-        private PackageVersionStatus _expectedStatus;
         private PackageFormat _format;
         private string _awsNamespace;
         private string _package;
         private string _repository;
-        private List<string> _versions = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain that contains the package to delete. 
+        /// The name of the domain that contains the package to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=50)]
@@ -88,27 +83,9 @@ namespace Amazon.CodeArtifact.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExpectedStatus. 
-        /// <para>
-        ///  The expected status of the package version to delete. 
-        /// </para>
-        /// </summary>
-        public PackageVersionStatus ExpectedStatus
-        {
-            get { return this._expectedStatus; }
-            set { this._expectedStatus = value; }
-        }
-
-        // Check to see if ExpectedStatus property is set
-        internal bool IsSetExpectedStatus()
-        {
-            return this._expectedStatus != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        ///  The format of the package versions to delete. 
+        /// The format of the requested package to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -127,22 +104,22 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace of the package versions to be deleted. The package version component
-        /// that specifies its namespace depends on its type. For example:
+        /// The namespace of the package to delete. The package component that specifies its namespace
+        /// depends on its type. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package version is its <code>groupId</code>. The namespace
-        /// is required when deleting Maven package versions. 
+        ///  The namespace of a Maven package is its <code>groupId</code>. The namespace is required
+        /// when deleting Maven package versions. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package version is its <code>scope</code>. 
+        ///  The namespace of an npm package is its <code>scope</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Python and NuGet package versions do not contain a corresponding component, package
-        /// versions of those formats do not have a namespace. 
+        ///  Python and NuGet packages do not contain corresponding components, packages of those
+        /// formats do not have a namespace. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -162,7 +139,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Package. 
         /// <para>
-        ///  The name of the package with the versions to delete. 
+        /// The name of the package to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -181,7 +158,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Repository. 
         /// <para>
-        ///  The name of the repository that contains the package versions to delete. 
+        /// The name of the repository that contains the package to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=100)]
@@ -195,25 +172,6 @@ namespace Amazon.CodeArtifact.Model
         internal bool IsSetRepository()
         {
             return this._repository != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Versions. 
-        /// <para>
-        ///  An array of strings that specify the versions of the package to delete. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Max=100)]
-        public List<string> Versions
-        {
-            get { return this._versions; }
-            set { this._versions = value; }
-        }
-
-        // Check to see if Versions property is set
-        internal bool IsSetVersions()
-        {
-            return this._versions != null && this._versions.Count > 0; 
         }
 
     }

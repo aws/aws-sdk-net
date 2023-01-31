@@ -126,6 +126,36 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.DeletePackageRequest.Domain</property>
+    <min>2</min>
+    <max>50</max>
+    <pattern>[a-z][a-z0-9\-]{0,48}[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.DeletePackageRequest.DomainOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.DeletePackageRequest.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^#/\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.DeletePackageRequest.Package</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^#/\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.DeletePackageRequest.Repository</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9._\-]{1,99}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeArtifact.Model.DeletePackageVersionsRequest.Domain</property>
     <min>2</min>
     <max>50</max>

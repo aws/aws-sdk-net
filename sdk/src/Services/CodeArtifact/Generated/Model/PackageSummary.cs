@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
-    /// Details about a package, including its format, namespace, and name. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackages.html">ListPackages</a>
-    /// operation returns a list of <code>PackageSummary</code> objects.
+    /// Details about a package, including its format, namespace, and name.
     /// </summary>
     public partial class PackageSummary
     {

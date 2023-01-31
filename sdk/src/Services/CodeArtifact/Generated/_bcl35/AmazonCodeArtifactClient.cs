@@ -1031,6 +1031,82 @@ namespace Amazon.CodeArtifact
 
         #endregion
         
+        #region  DeletePackage
+
+        /// <summary>
+        /// Deletes a package and all associated package versions. A deleted package cannot be
+        /// restored. To delete one or more package versions, use the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeletePackageVersions.html">DeletePackageVersions</a>
+        /// API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackage service method.</param>
+        /// 
+        /// <returns>The response from the DeletePackage service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ConflictException">
+        /// The operation did not succeed because prerequisites are not met.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
+        public virtual DeletePackageResponse DeletePackage(DeletePackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePackageResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePackageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackage operation on AmazonCodeArtifactClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePackage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
+        public virtual IAsyncResult BeginDeletePackage(DeletePackageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePackageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePackage.</param>
+        /// 
+        /// <returns>Returns a  DeletePackageResult from CodeArtifact.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
+        public virtual DeletePackageResponse EndDeletePackage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePackageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeletePackageVersions
 
         /// <summary>
@@ -1038,7 +1114,7 @@ namespace Amazon.CodeArtifact
         /// in your repository. If you want to remove a package version from your repository and
         /// be able to restore it later, set its status to <code>Archived</code>. Archived packages
         /// cannot be downloaded from a repository and don't show up with list package APIs (for
-        /// example, <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>),
+        /// example, <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a>),
         /// but you can restore them using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionsStatus</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePackageVersions service method.</param>
@@ -2510,7 +2586,9 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
-        /// objects for package versions in a repository that match the request parameters.
+        /// objects for package versions in a repository that match the request parameters. Package
+        /// versions of all statuses will be returned by default when calling <code>list-package-versions</code>
+        /// with no <code>--status</code> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPackageVersions service method.</param>
         /// 
