@@ -80,6 +80,10 @@ namespace Amazon.ConnectParticipant.Internal
                 {
                     if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
                     {
+                        if (Equals("aws-us-gov", GetAttr(refs["PartitionResult"], "name")))
+                        {
+                            return new Endpoint(Interpolate(@"https://participant.connect.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
                         return new Endpoint(Interpolate(@"https://participant.connect-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
