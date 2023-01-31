@@ -51,6 +51,13 @@ namespace Amazon.CloudTrail.Model
     /// <para>
     ///  When you retry an import, the <code>ImportID</code> parameter is required. 
     /// </para>
+    ///  <note> 
+    /// <para>
+    ///  If the destination event data store is for an organization, you must use the management
+    /// account to import trail events. You cannot use the delegated administrator account
+    /// for the organization. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class StartImportRequest : AmazonCloudTrailRequest
     {

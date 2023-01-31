@@ -51,8 +51,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property AdvancedEventSelectors. 
         /// <para>
-        /// This field is being deprecated. The advanced event selectors that were used to select
-        /// events for the data store.
+        /// The advanced event selectors that were used to select events for the data store.
         /// </para>
         /// </summary>
         [Obsolete("AdvancedEventSelectors is no longer returned by ListEventDataStores")]
@@ -71,7 +70,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
         /// <para>
-        /// This field is being deprecated. The timestamp of the event data store's creation.
+        /// The timestamp of the event data store's creation.
         /// </para>
         /// </summary>
         [Obsolete("CreatedTimestamp is no longer returned by ListEventDataStores")]
@@ -109,8 +108,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property MultiRegionEnabled. 
         /// <para>
-        /// This field is being deprecated. Indicates whether the event data store includes events
-        /// from all regions, or only from the region in which it was created.
+        /// Indicates whether the event data store includes events from all regions, or only from
+        /// the region in which it was created.
         /// </para>
         /// </summary>
         [Obsolete("MultiRegionEnabled is no longer returned by ListEventDataStores")]
@@ -148,8 +147,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property OrganizationEnabled. 
         /// <para>
-        /// This field is being deprecated. Indicates that an event data store is collecting logged
-        /// events for an organization.
+        /// Indicates that an event data store is collecting logged events for an organization.
         /// </para>
         /// </summary>
         [Obsolete("OrganizationEnabled is no longer returned by ListEventDataStores")]
@@ -168,7 +166,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        /// This field is being deprecated. The retention period, in days.
+        /// The retention period, in days.
         /// </para>
         /// </summary>
         [Obsolete("RetentionPeriod is no longer returned by ListEventDataStores")]
@@ -188,8 +186,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code>
-        /// and <code>PENDING_DELETION</code>.
+        /// The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.
         /// </para>
         /// </summary>
         [Obsolete("Status is no longer returned by ListEventDataStores")]
@@ -208,8 +205,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property TerminationProtectionEnabled. 
         /// <para>
-        /// This field is being deprecated. Indicates whether the event data store is protected
-        /// from termination.
+        /// Indicates whether the event data store is protected from termination.
         /// </para>
         /// </summary>
         [Obsolete("TerminationProtectionEnabled is no longer returned by ListEventDataStores")]
@@ -228,9 +224,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property UpdatedTimestamp. 
         /// <para>
-        /// This field is being deprecated. The timestamp showing when an event data store was
-        /// updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or
-        /// newer than the time shown in <code>CreatedTimestamp</code>.
+        /// The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code>
+        /// is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.
         /// </para>
         /// </summary>
         [Obsolete("UpdatedTimestamp is no longer returned by ListEventDataStores")]

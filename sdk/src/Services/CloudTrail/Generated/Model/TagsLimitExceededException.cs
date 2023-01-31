@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// The number of tags per trail has exceeded the permitted amount. Currently, the limit
-    /// is 50.
+    /// The number of tags per trail, event data store, or channel has exceeded the permitted
+    /// amount. Currently, the limit is 50.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -38,7 +38,8 @@ namespace Amazon.CloudTrail.Model
     ///  <note> 
     /// <para>
     /// The total number of allowed data resources is 250. This number can be distributed
-    /// between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors.
+    /// between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors
+    /// for the trail.
     /// </para>
     ///  
     /// <para>
@@ -131,6 +132,10 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>AWS::CloudTrail::Channel</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>AWS::S3Outposts::Object</code> 
         /// </para>
         ///  </li> <li> 
@@ -156,6 +161,18 @@ namespace Amazon.CloudTrail.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>AWS::Glue::Table</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::FinSpace::Environment</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::SageMaker::ExperimentTrialComponent</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::SageMaker::FeatureGroup</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

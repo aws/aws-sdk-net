@@ -89,8 +89,9 @@ namespace Amazon.CloudTrail.Model
         ///  </li> </ul> <note> 
         /// <para>
         /// If one or more trail names are specified, information is returned only if the names
-        /// match the names of trails belonging only to the current region. To return information
-        /// about a trail in another region, you must specify its trail ARN.
+        /// match the names of trails belonging only to the current region and current account.
+        /// To return information about a trail in another region, you must specify its trail
+        /// ARN.
         /// </para>
         ///  </note>
         /// </summary>

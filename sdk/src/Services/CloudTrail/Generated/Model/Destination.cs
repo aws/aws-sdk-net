@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Contains information about the service where CloudTrail delivers events.
+    /// Contains information about the destination receiving events.
     /// </summary>
     public partial class Destination
     {
@@ -39,7 +39,9 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// For service-linked channels, the value is the name of the Amazon Web Services service.
+        ///  For channels used for a CloudTrail Lake integration, the location is the ARN of an
+        /// event data store that receives events from a channel. For service-linked channels,
+        /// the location is the name of the Amazon Web Services service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=1024)]
@@ -58,8 +60,9 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of destination for events arriving from a channel. For service-linked channels,
-        /// the value is <code>AWS_SERVICE</code>.
+        /// The type of destination for events arriving from a channel. For channels used for
+        /// a CloudTrail Lake integration, the value is <code>EventDataStore</code>. For service-linked
+        /// channels, the value is <code>AWS_SERVICE</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,13 +30,13 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the AddTags operation.
-    /// Adds one or more tags to a trail or event data store, up to a limit of 50. Overwrites
-    /// an existing tag's value when a new value is specified for an existing tag key. Tag
-    /// key names must be unique for a trail; you cannot have two keys with the same name
-    /// but different values. If you specify a key without a value, the tag will be created
-    /// with the specified key and a value of null. You can tag a trail or event data store
-    /// that applies to all Amazon Web Services Regions only from the Region in which the
-    /// trail or event data store was created (also known as its home region).
+    /// Adds one or more tags to a trail, event data store, or channel, up to a limit of 50.
+    /// Overwrites an existing tag's value when a new value is specified for an existing tag
+    /// key. Tag key names must be unique; you cannot have two keys with the same name but
+    /// different values. If you specify a key without a value, the tag will be created with
+    /// the specified key and a value of null. You can tag a trail or event data store that
+    /// applies to all Amazon Web Services Regions only from the Region in which the trail
+    /// or event data store was created (also known as its home region).
     /// </summary>
     public partial class AddTagsRequest : AmazonCloudTrailRequest
     {
@@ -46,12 +46,23 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// Specifies the ARN of the trail or event data store to which one or more tags will
-        /// be added. The format of a trail ARN is:
+        /// Specifies the ARN of the trail, event data store, or channel to which one or more
+        /// tags will be added.
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
+        /// The format of a trail ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The format of an event data store ARN is: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The format of a channel ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

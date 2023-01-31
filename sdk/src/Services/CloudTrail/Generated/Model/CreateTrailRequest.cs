@@ -52,8 +52,12 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property CloudWatchLogsLogGroupArn. 
         /// <para>
         /// Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier
-        /// that represents the log group to which CloudTrail logs will be delivered. Not required
-        /// unless you specify <code>CloudWatchLogsRoleArn</code>.
+        /// that represents the log group to which CloudTrail logs will be delivered. You must
+        /// use a log group that exists in your account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Not required unless you specify <code>CloudWatchLogsRoleArn</code>.
         /// </para>
         /// </summary>
         public string CloudWatchLogsLogGroupArn
@@ -72,7 +76,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property CloudWatchLogsRoleArn. 
         /// <para>
         /// Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's
-        /// log group.
+        /// log group. You must use a role that exists in your account.
         /// </para>
         /// </summary>
         public string CloudWatchLogsRoleArn
@@ -161,7 +165,7 @@ namespace Amazon.CloudTrail.Model
         /// Specifies whether the trail is created for all accounts in an organization in Organizations,
         /// or only for the current Amazon Web Services account. The default is false, and cannot
         /// be true unless the call is made on behalf of an Amazon Web Services account that is
-        /// the management account for an organization in Organizations.
+        /// the management account or delegated administrator account for an organization in Organizations.
         /// </para>
         /// </summary>
         public bool IsOrganizationTrail
