@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The request processing has failed because of invalid pagination token provided by
-    /// customer. Returns an HTTP status code of 400.
+    /// The request processing has failed because you provided an invalid pagination token.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

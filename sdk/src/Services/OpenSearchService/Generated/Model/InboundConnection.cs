@@ -36,6 +36,7 @@ namespace Amazon.OpenSearchService.Model
     public partial class InboundConnection
     {
         private string _connectionId;
+        private ConnectionMode _connectionMode;
         private InboundConnectionStatus _connectionStatus;
         private DomainInformationContainer _localDomainInfo;
         private DomainInformationContainer _remoteDomainInfo;
@@ -57,6 +58,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetConnectionId()
         {
             return this._connectionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionMode. 
+        /// <para>
+        /// The connection mode.
+        /// </para>
+        /// </summary>
+        public ConnectionMode ConnectionMode
+        {
+            get { return this._connectionMode; }
+            set { this._connectionMode = value; }
+        }
+
+        // Check to see if ConnectionMode property is set
+        internal bool IsSetConnectionMode()
+        {
+            return this._connectionMode != null;
         }
 
         /// <summary>

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The request processing has failed because of an unknown error, exception or failure
-    /// (the failure is internal to the service) . Gives http status code of 500.
+    /// Request processing failed because of an unknown error, exception, or internal failure.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

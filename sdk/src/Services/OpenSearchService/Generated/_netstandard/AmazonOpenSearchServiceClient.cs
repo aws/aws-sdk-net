@@ -305,16 +305,13 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the AcceptInboundConnection service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AcceptInboundConnection">REST API Reference for AcceptInboundConnection Operation</seealso>
         public virtual Task<AcceptInboundConnectionResponse> AcceptInboundConnectionAsync(AcceptInboundConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -356,15 +353,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -403,26 +398,23 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the AssociatePackage service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
-        /// An error occurred because user does not have permissions to access the resource. Returns
-        /// HTTP status code 403.
+        /// An error occurred because you don't have permissions to access the resource.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
-        /// An error occurred because the client attempts to remove a resource that is currently
-        /// in use. Returns HTTP status code 409.
+        /// An error occurred because the client attempts to remove a resource that's currently
+        /// in use.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AssociatePackage">REST API Reference for AssociatePackage Operation</seealso>
         public virtual Task<AssociatePackageResponse> AssociatePackageAsync(AssociatePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -463,23 +455,19 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AuthorizeVpcEndpointAccess">REST API Reference for AuthorizeVpcEndpointAccess Operation</seealso>
         public virtual Task<AuthorizeVpcEndpointAccessResponse> AuthorizeVpcEndpointAccessAsync(AuthorizeVpcEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -523,15 +511,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CancelServiceSoftwareUpdate">REST API Reference for CancelServiceSoftwareUpdate Operation</seealso>
         public virtual Task<CancelServiceSoftwareUpdateResponse> CancelServiceSoftwareUpdateAsync(CancelServiceSoftwareUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -572,27 +558,23 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InvalidTypeException">
-        /// An exception for trying to create or access sub-resource that is either invalid or
-        /// not supported. Gives http status code of 409.
+        /// An exception for trying to create or access a sub-resource that's either invalid or
+        /// not supported.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceAlreadyExistsException">
-        /// An exception for creating a resource that already exists. Gives http status code of
-        /// 400.
+        /// An exception for creating a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -631,20 +613,16 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the CreateOutboundConnection service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceAlreadyExistsException">
-        /// An exception for creating a resource that already exists. Gives http status code of
-        /// 400.
+        /// An exception for creating a resource that already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateOutboundConnection">REST API Reference for CreateOutboundConnection Operation</seealso>
         public virtual Task<CreateOutboundConnectionResponse> CreateOutboundConnectionAsync(CreateOutboundConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -683,30 +661,26 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the CreatePackage service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
-        /// An error occurred because user does not have permissions to access the resource. Returns
-        /// HTTP status code 403.
+        /// An error occurred because you don't have permissions to access the resource.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InvalidTypeException">
-        /// An exception for trying to create or access sub-resource that is either invalid or
-        /// not supported. Gives http status code of 409.
+        /// An exception for trying to create or access a sub-resource that's either invalid or
+        /// not supported.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceAlreadyExistsException">
-        /// An exception for creating a resource that already exists. Gives http status code of
-        /// 400.
+        /// An exception for creating a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
         public virtual Task<CreatePackageResponse> CreatePackageAsync(CreatePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -746,23 +720,20 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
-        /// An error occurred because the client attempts to remove a resource that is currently
-        /// in use. Returns HTTP status code 409.
+        /// An error occurred because the client attempts to remove a resource that's currently
+        /// in use.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
         public virtual Task<CreateVpcEndpointResponse> CreateVpcEndpointAsync(CreateVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -803,15 +774,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -850,12 +819,10 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the DeleteInboundConnection service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteInboundConnection">REST API Reference for DeleteInboundConnection Operation</seealso>
         public virtual Task<DeleteInboundConnectionResponse> DeleteInboundConnectionAsync(DeleteInboundConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -894,12 +861,10 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the DeleteOutboundConnection service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteOutboundConnection">REST API Reference for DeleteOutboundConnection Operation</seealso>
         public virtual Task<DeleteOutboundConnectionResponse> DeleteOutboundConnectionAsync(DeleteOutboundConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -937,26 +902,23 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the DeletePackage service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
-        /// An error occurred because user does not have permissions to access the resource. Returns
-        /// HTTP status code 403.
+        /// An error occurred because you don't have permissions to access the resource.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
-        /// An error occurred because the client attempts to remove a resource that is currently
-        /// in use. Returns HTTP status code 409.
+        /// An error occurred because the client attempts to remove a resource that's currently
+        /// in use.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
         public virtual Task<DeletePackageResponse> DeletePackageAsync(DeletePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -996,16 +958,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteVpcEndpoint">REST API Reference for DeleteVpcEndpoint Operation</seealso>
         public virtual Task<DeleteVpcEndpointResponse> DeleteVpcEndpointAsync(DeleteVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1046,15 +1005,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
         public virtual Task<DescribeDomainResponse> DescribeDomainAsync(DescribeDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1096,15 +1053,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainAutoTunes">REST API Reference for DescribeDomainAutoTunes Operation</seealso>
         public virtual Task<DescribeDomainAutoTunesResponse> DescribeDomainAutoTunesAsync(DescribeDomainAutoTunesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1146,15 +1101,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainChangeProgress">REST API Reference for DescribeDomainChangeProgress Operation</seealso>
         public virtual Task<DescribeDomainChangeProgressResponse> DescribeDomainChangeProgressAsync(DescribeDomainChangeProgressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1194,15 +1147,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainConfig">REST API Reference for DescribeDomainConfig Operation</seealso>
         public virtual Task<DescribeDomainConfigResponse> DescribeDomainConfigAsync(DescribeDomainConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1243,11 +1194,10 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomains">REST API Reference for DescribeDomains Operation</seealso>
         public virtual Task<DescribeDomainsResponse> DescribeDomainsAsync(DescribeDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1289,19 +1239,16 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDryRunProgress">REST API Reference for DescribeDryRunProgress Operation</seealso>
         public virtual Task<DescribeDryRunProgressResponse> DescribeDryRunProgressAsync(DescribeDryRunProgressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1340,12 +1287,10 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the DescribeInboundConnections service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InvalidPaginationTokenException">
-        /// The request processing has failed because of invalid pagination token provided by
-        /// customer. Returns an HTTP status code of 400.
+        /// The request processing has failed because you provided an invalid pagination token.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeInboundConnections">REST API Reference for DescribeInboundConnections Operation</seealso>
         public virtual Task<DescribeInboundConnectionsResponse> DescribeInboundConnectionsAsync(DescribeInboundConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1386,23 +1331,20 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InvalidTypeException">
-        /// An exception for trying to create or access sub-resource that is either invalid or
-        /// not supported. Gives http status code of 409.
+        /// An exception for trying to create or access a sub-resource that's either invalid or
+        /// not supported.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeInstanceTypeLimits">REST API Reference for DescribeInstanceTypeLimits Operation</seealso>
         public virtual Task<DescribeInstanceTypeLimitsResponse> DescribeInstanceTypeLimitsAsync(DescribeInstanceTypeLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1441,12 +1383,10 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the DescribeOutboundConnections service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InvalidPaginationTokenException">
-        /// The request processing has failed because of invalid pagination token provided by
-        /// customer. Returns an HTTP status code of 400.
+        /// The request processing has failed because you provided an invalid pagination token.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeOutboundConnections">REST API Reference for DescribeOutboundConnections Operation</seealso>
         public virtual Task<DescribeOutboundConnectionsResponse> DescribeOutboundConnectionsAsync(DescribeOutboundConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1485,22 +1425,19 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the DescribePackages service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
-        /// An error occurred because user does not have permissions to access the resource. Returns
-        /// HTTP status code 403.
+        /// An error occurred because you don't have permissions to access the resource.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribePackages">REST API Reference for DescribePackages Operation</seealso>
         public virtual Task<DescribePackagesResponse> DescribePackagesAsync(DescribePackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1539,19 +1476,16 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the DescribeReservedInstanceOfferings service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeReservedInstanceOfferings">REST API Reference for DescribeReservedInstanceOfferings Operation</seealso>
         public virtual Task<DescribeReservedInstanceOfferingsResponse> DescribeReservedInstanceOfferingsAsync(DescribeReservedInstanceOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1590,19 +1524,16 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the DescribeReservedInstances service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeReservedInstances">REST API Reference for DescribeReservedInstances Operation</seealso>
         public virtual Task<DescribeReservedInstancesResponse> DescribeReservedInstancesAsync(DescribeReservedInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1642,15 +1573,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
         public virtual Task<DescribeVpcEndpointsResponse> DescribeVpcEndpointsAsync(DescribeVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1691,26 +1620,23 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the DissociatePackage service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
-        /// An error occurred because user does not have permissions to access the resource. Returns
-        /// HTTP status code 403.
+        /// An error occurred because you don't have permissions to access the resource.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
-        /// An error occurred because the client attempts to remove a resource that is currently
-        /// in use. Returns HTTP status code 409.
+        /// An error occurred because the client attempts to remove a resource that's currently
+        /// in use.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DissociatePackage">REST API Reference for DissociatePackage Operation</seealso>
         public virtual Task<DissociatePackageResponse> DissociatePackageAsync(DissociatePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1751,19 +1677,16 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetCompatibleVersions">REST API Reference for GetCompatibleVersions Operation</seealso>
         public virtual Task<GetCompatibleVersionsResponse> GetCompatibleVersionsAsync(GetCompatibleVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1802,22 +1725,19 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the GetPackageVersionHistory service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
-        /// An error occurred because user does not have permissions to access the resource. Returns
-        /// HTTP status code 403.
+        /// An error occurred because you don't have permissions to access the resource.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetPackageVersionHistory">REST API Reference for GetPackageVersionHistory Operation</seealso>
         public virtual Task<GetPackageVersionHistoryResponse> GetPackageVersionHistoryAsync(GetPackageVersionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1858,19 +1778,16 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetUpgradeHistory">REST API Reference for GetUpgradeHistory Operation</seealso>
         public virtual Task<GetUpgradeHistoryResponse> GetUpgradeHistoryAsync(GetUpgradeHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1911,19 +1828,16 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetUpgradeStatus">REST API Reference for GetUpgradeStatus Operation</seealso>
         public virtual Task<GetUpgradeStatusResponse> GetUpgradeStatusAsync(GetUpgradeStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1964,7 +1878,7 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         public virtual Task<ListDomainNamesResponse> ListDomainNamesAsync(ListDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2003,22 +1917,19 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the ListDomainsForPackage service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
-        /// An error occurred because user does not have permissions to access the resource. Returns
-        /// HTTP status code 403.
+        /// An error occurred because you don't have permissions to access the resource.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainsForPackage">REST API Reference for ListDomainsForPackage Operation</seealso>
         public virtual Task<ListDomainsForPackageResponse> ListDomainsForPackageAsync(ListDomainsForPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2059,15 +1970,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListInstanceTypeDetails">REST API Reference for ListInstanceTypeDetails Operation</seealso>
         public virtual Task<ListInstanceTypeDetailsResponse> ListInstanceTypeDetailsAsync(ListInstanceTypeDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2106,22 +2015,19 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the ListPackagesForDomain service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
-        /// An error occurred because user does not have permissions to access the resource. Returns
-        /// HTTP status code 403.
+        /// An error occurred because you don't have permissions to access the resource.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListPackagesForDomain">REST API Reference for ListPackagesForDomain Operation</seealso>
         public virtual Task<ListPackagesForDomainResponse> ListPackagesForDomainAsync(ListPackagesForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2163,15 +2069,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2212,15 +2116,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVersions">REST API Reference for ListVersions Operation</seealso>
         public virtual Task<ListVersionsResponse> ListVersionsAsync(ListVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2262,16 +2164,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpointAccess">REST API Reference for ListVpcEndpointAccess Operation</seealso>
         public virtual Task<ListVpcEndpointAccessResponse> ListVpcEndpointAccessAsync(ListVpcEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2312,12 +2211,10 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpoints">REST API Reference for ListVpcEndpoints Operation</seealso>
         public virtual Task<ListVpcEndpointsResponse> ListVpcEndpointsAsync(ListVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2358,16 +2255,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpointsForDomain">REST API Reference for ListVpcEndpointsForDomain Operation</seealso>
         public virtual Task<ListVpcEndpointsForDomainResponse> ListVpcEndpointsForDomainAsync(ListVpcEndpointsForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2404,27 +2298,22 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the PurchaseReservedInstanceOffering service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceAlreadyExistsException">
-        /// An exception for creating a resource that already exists. Gives http status code of
-        /// 400.
+        /// An exception for creating a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PurchaseReservedInstanceOffering">REST API Reference for PurchaseReservedInstanceOffering Operation</seealso>
         public virtual Task<PurchaseReservedInstanceOfferingResponse> PurchaseReservedInstanceOfferingAsync(PurchaseReservedInstanceOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2462,12 +2351,10 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the RejectInboundConnection service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RejectInboundConnection">REST API Reference for RejectInboundConnection Operation</seealso>
         public virtual Task<RejectInboundConnectionResponse> RejectInboundConnectionAsync(RejectInboundConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2509,11 +2396,10 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2554,19 +2440,16 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RevokeVpcEndpointAccess">REST API Reference for RevokeVpcEndpointAccess Operation</seealso>
         public virtual Task<RevokeVpcEndpointAccessResponse> RevokeVpcEndpointAccessAsync(RevokeVpcEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2608,15 +2491,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartServiceSoftwareUpdate">REST API Reference for StartServiceSoftwareUpdate Operation</seealso>
         public virtual Task<StartServiceSoftwareUpdateResponse> StartServiceSoftwareUpdateAsync(StartServiceSoftwareUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2656,23 +2537,20 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InvalidTypeException">
-        /// An exception for trying to create or access sub-resource that is either invalid or
-        /// not supported. Gives http status code of 409.
+        /// An exception for trying to create or access a sub-resource that's either invalid or
+        /// not supported.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDomainConfig">REST API Reference for UpdateDomainConfig Operation</seealso>
         public virtual Task<UpdateDomainConfigResponse> UpdateDomainConfigAsync(UpdateDomainConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2711,26 +2589,22 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the UpdatePackage service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
-        /// An error occurred because user does not have permissions to access the resource. Returns
-        /// HTTP status code 403.
+        /// An error occurred because you don't have permissions to access the resource.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
         public virtual Task<UpdatePackageResponse> UpdatePackageAsync(UpdatePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2770,23 +2644,20 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
-        /// An error occurred because the client attempts to remove a resource that is currently
-        /// in use. Returns HTTP status code 409.
+        /// An error occurred because the client attempts to remove a resource that's currently
+        /// in use.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateVpcEndpoint">REST API Reference for UpdateVpcEndpoint Operation</seealso>
         public virtual Task<UpdateVpcEndpointResponse> UpdateVpcEndpointAsync(UpdateVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2827,23 +2698,19 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceAlreadyExistsException">
-        /// An exception for creating a resource that already exists. Gives http status code of
-        /// 400.
+        /// An exception for creating a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for missing or invalid input fields.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpgradeDomain">REST API Reference for UpgradeDomain Operation</seealso>
         public virtual Task<UpgradeDomainResponse> UpgradeDomainAsync(UpgradeDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

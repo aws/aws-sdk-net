@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InboundConnection Object
+    /// Response Unmarshaller for ConnectionProperties Object
     /// </summary>  
-    public class InboundConnectionUnmarshaller : IUnmarshaller<InboundConnection, XmlUnmarshallerContext>, IUnmarshaller<InboundConnection, JsonUnmarshallerContext>
+    public class ConnectionPropertiesUnmarshaller : IUnmarshaller<ConnectionProperties, XmlUnmarshallerContext>, IUnmarshaller<ConnectionProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        InboundConnection IUnmarshaller<InboundConnection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ConnectionProperties IUnmarshaller<ConnectionProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InboundConnection Unmarshall(JsonUnmarshallerContext context)
+        public ConnectionProperties Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            InboundConnection unmarshalledObject = new InboundConnection();
+            ConnectionProperties unmarshalledObject = new ConnectionProperties();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ConnectionId", targetDepth))
+                if (context.TestExpression("Endpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ConnectionMode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionMode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ConnectionStatus", targetDepth))
-                {
-                    var unmarshaller = InboundConnectionStatusUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LocalDomainInfo", targetDepth))
-                {
-                    var unmarshaller = DomainInformationContainerUnmarshaller.Instance;
-                    unmarshalledObject.LocalDomainInfo = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RemoteDomainInfo", targetDepth))
-                {
-                    var unmarshaller = DomainInformationContainerUnmarshaller.Instance;
-                    unmarshalledObject.RemoteDomainInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         }
 
 
-        private static InboundConnectionUnmarshaller _instance = new InboundConnectionUnmarshaller();        
+        private static ConnectionPropertiesUnmarshaller _instance = new ConnectionPropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InboundConnectionUnmarshaller Instance
+        public static ConnectionPropertiesUnmarshaller Instance
         {
             get
             {
