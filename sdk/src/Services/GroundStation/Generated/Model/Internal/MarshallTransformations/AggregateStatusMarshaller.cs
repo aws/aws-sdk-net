@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EndpointDetails Marshaller
+    /// AggregateStatus Marshaller
     /// </summary>
-    public class EndpointDetailsMarshaller : IRequestMarshaller<EndpointDetails, JsonMarshallerContext> 
+    public class AggregateStatusMarshaller : IRequestMarshaller<AggregateStatus, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,26 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EndpointDetails requestObject, JsonMarshallerContext context)
+        public void Marshall(AggregateStatus requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAwsGroundStationAgentEndpoint())
+            if(requestObject.IsSetSignatureMap())
             {
-                context.Writer.WritePropertyName("awsGroundStationAgentEndpoint");
+                context.Writer.WritePropertyName("signatureMap");
                 context.Writer.WriteObjectStart();
+                foreach (var requestObjectSignatureMapKvp in requestObject.SignatureMap)
+                {
+                    context.Writer.WritePropertyName(requestObjectSignatureMapKvp.Key);
+                    var requestObjectSignatureMapValue = requestObjectSignatureMapKvp.Value;
 
-                var marshaller = AwsGroundStationAgentEndpointMarshaller.Instance;
-                marshaller.Marshall(requestObject.AwsGroundStationAgentEndpoint, context);
-
+                        context.Writer.Write(requestObjectSignatureMapValue);
+                }
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetEndpoint())
+            if(requestObject.IsSetStatus())
             {
-                context.Writer.WritePropertyName("endpoint");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DataflowEndpointMarshaller.Instance;
-                marshaller.Marshall(requestObject.Endpoint, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSecurityDetails())
-            {
-                context.Writer.WritePropertyName("securityDetails");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SecurityDetailsMarshaller.Instance;
-                marshaller.Marshall(requestObject.SecurityDetails, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("status");
+                context.Writer.Write(requestObject.Status);
             }
 
         }
@@ -83,7 +70,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EndpointDetailsMarshaller Instance = new EndpointDetailsMarshaller();
+        public readonly static AggregateStatusMarshaller Instance = new AggregateStatusMarshaller();
 
     }
 }

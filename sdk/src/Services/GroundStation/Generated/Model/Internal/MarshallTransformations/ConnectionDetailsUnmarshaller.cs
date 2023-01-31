@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EndpointDetails Object
+    /// Response Unmarshaller for ConnectionDetails Object
     /// </summary>  
-    public class EndpointDetailsUnmarshaller : IUnmarshaller<EndpointDetails, XmlUnmarshallerContext>, IUnmarshaller<EndpointDetails, JsonUnmarshallerContext>
+    public class ConnectionDetailsUnmarshaller : IUnmarshaller<ConnectionDetails, XmlUnmarshallerContext>, IUnmarshaller<ConnectionDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EndpointDetails IUnmarshaller<EndpointDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ConnectionDetails IUnmarshaller<ConnectionDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EndpointDetails Unmarshall(JsonUnmarshallerContext context)
+        public ConnectionDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EndpointDetails unmarshalledObject = new EndpointDetails();
+            ConnectionDetails unmarshalledObject = new ConnectionDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("awsGroundStationAgentEndpoint", targetDepth))
+                if (context.TestExpression("mtu", targetDepth))
                 {
-                    var unmarshaller = AwsGroundStationAgentEndpointUnmarshaller.Instance;
-                    unmarshalledObject.AwsGroundStationAgentEndpoint = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Mtu = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("endpoint", targetDepth))
+                if (context.TestExpression("socketAddress", targetDepth))
                 {
-                    var unmarshaller = DataflowEndpointUnmarshaller.Instance;
-                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("securityDetails", targetDepth))
-                {
-                    var unmarshaller = SecurityDetailsUnmarshaller.Instance;
-                    unmarshalledObject.SecurityDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = SocketAddressUnmarshaller.Instance;
+                    unmarshalledObject.SocketAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         }
 
 
-        private static EndpointDetailsUnmarshaller _instance = new EndpointDetailsUnmarshaller();        
+        private static ConnectionDetailsUnmarshaller _instance = new ConnectionDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EndpointDetailsUnmarshaller Instance
+        public static ConnectionDetailsUnmarshaller Instance
         {
             get
             {

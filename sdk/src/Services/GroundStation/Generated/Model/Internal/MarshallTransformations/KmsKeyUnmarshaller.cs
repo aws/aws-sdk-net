@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EndpointDetails Object
+    /// Response Unmarshaller for KmsKey Object
     /// </summary>  
-    public class EndpointDetailsUnmarshaller : IUnmarshaller<EndpointDetails, XmlUnmarshallerContext>, IUnmarshaller<EndpointDetails, JsonUnmarshallerContext>
+    public class KmsKeyUnmarshaller : IUnmarshaller<KmsKey, XmlUnmarshallerContext>, IUnmarshaller<KmsKey, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EndpointDetails IUnmarshaller<EndpointDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        KmsKey IUnmarshaller<KmsKey, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EndpointDetails Unmarshall(JsonUnmarshallerContext context)
+        public KmsKey Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EndpointDetails unmarshalledObject = new EndpointDetails();
+            KmsKey unmarshalledObject = new KmsKey();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("awsGroundStationAgentEndpoint", targetDepth))
+                if (context.TestExpression("kmsAliasArn", targetDepth))
                 {
-                    var unmarshaller = AwsGroundStationAgentEndpointUnmarshaller.Instance;
-                    unmarshalledObject.AwsGroundStationAgentEndpoint = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsAliasArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("endpoint", targetDepth))
+                if (context.TestExpression("kmsKeyArn", targetDepth))
                 {
-                    var unmarshaller = DataflowEndpointUnmarshaller.Instance;
-                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("securityDetails", targetDepth))
-                {
-                    var unmarshaller = SecurityDetailsUnmarshaller.Instance;
-                    unmarshalledObject.SecurityDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         }
 
 
-        private static EndpointDetailsUnmarshaller _instance = new EndpointDetailsUnmarshaller();        
+        private static KmsKeyUnmarshaller _instance = new KmsKeyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EndpointDetailsUnmarshaller Instance
+        public static KmsKeyUnmarshaller Instance
         {
             get
             {

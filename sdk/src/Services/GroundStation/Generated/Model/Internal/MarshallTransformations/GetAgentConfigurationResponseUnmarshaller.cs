@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetMissionProfile operation
+    /// Response Unmarshaller for GetAgentConfiguration operation
     /// </summary>  
-    public class GetMissionProfileResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetAgentConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,82 +45,22 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetMissionProfileResponse response = new GetMissionProfileResponse();
+            GetAgentConfigurationResponse response = new GetAgentConfigurationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("contactPostPassDurationSeconds", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.ContactPostPassDurationSeconds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("contactPrePassDurationSeconds", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.ContactPrePassDurationSeconds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("dataflowEdges", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<List<string>, ListUnmarshaller<string, StringUnmarshaller>>(new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
-                    response.DataflowEdges = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("minimumViableContactDurationSeconds", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.MinimumViableContactDurationSeconds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("missionProfileArn", targetDepth))
+                if (context.TestExpression("agentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.MissionProfileArn = unmarshaller.Unmarshall(context);
+                    response.AgentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("missionProfileId", targetDepth))
+                if (context.TestExpression("taskingDocument", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.MissionProfileId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("region", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Region = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("streamsKmsKey", targetDepth))
-                {
-                    var unmarshaller = KmsKeyUnmarshaller.Instance;
-                    response.StreamsKmsKey = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("streamsKmsRole", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StreamsKmsRole = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("trackingConfigArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TrackingConfigArn = unmarshaller.Unmarshall(context);
+                    response.TaskingDocument = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -162,9 +102,9 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             return new AmazonGroundStationException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetMissionProfileResponseUnmarshaller _instance = new GetMissionProfileResponseUnmarshaller();        
+        private static GetAgentConfigurationResponseUnmarshaller _instance = new GetAgentConfigurationResponseUnmarshaller();        
 
-        internal static GetMissionProfileResponseUnmarshaller GetInstance()
+        internal static GetAgentConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -172,7 +112,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetMissionProfileResponseUnmarshaller Instance
+        public static GetAgentConfigurationResponseUnmarshaller Instance
         {
             get
             {

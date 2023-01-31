@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EndpointDetails Marshaller
+    /// ComponentVersion Marshaller
     /// </summary>
-    public class EndpointDetailsMarshaller : IRequestMarshaller<EndpointDetails, JsonMarshallerContext> 
+    public class ComponentVersionMarshaller : IRequestMarshaller<ComponentVersion, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,23 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EndpointDetails requestObject, JsonMarshallerContext context)
+        public void Marshall(ComponentVersion requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAwsGroundStationAgentEndpoint())
+            if(requestObject.IsSetComponentType())
             {
-                context.Writer.WritePropertyName("awsGroundStationAgentEndpoint");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AwsGroundStationAgentEndpointMarshaller.Instance;
-                marshaller.Marshall(requestObject.AwsGroundStationAgentEndpoint, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("componentType");
+                context.Writer.Write(requestObject.ComponentType);
             }
 
-            if(requestObject.IsSetEndpoint())
+            if(requestObject.IsSetVersions())
             {
-                context.Writer.WritePropertyName("endpoint");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DataflowEndpointMarshaller.Instance;
-                marshaller.Marshall(requestObject.Endpoint, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSecurityDetails())
-            {
-                context.Writer.WritePropertyName("securityDetails");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SecurityDetailsMarshaller.Instance;
-                marshaller.Marshall(requestObject.SecurityDetails, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("versions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectVersionsListValue in requestObject.Versions)
+                {
+                        context.Writer.Write(requestObjectVersionsListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -83,7 +67,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EndpointDetailsMarshaller Instance = new EndpointDetailsMarshaller();
+        public readonly static ComponentVersionMarshaller Instance = new ComponentVersionMarshaller();
 
     }
 }

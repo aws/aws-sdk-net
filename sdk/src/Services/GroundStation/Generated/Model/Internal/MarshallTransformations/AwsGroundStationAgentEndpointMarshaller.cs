@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EndpointDetails Marshaller
+    /// AwsGroundStationAgentEndpoint Marshaller
     /// </summary>
-    public class EndpointDetailsMarshaller : IRequestMarshaller<EndpointDetails, JsonMarshallerContext> 
+    public class AwsGroundStationAgentEndpointMarshaller : IRequestMarshaller<AwsGroundStationAgentEndpoint, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,46 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EndpointDetails requestObject, JsonMarshallerContext context)
+        public void Marshall(AwsGroundStationAgentEndpoint requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAwsGroundStationAgentEndpoint())
+            if(requestObject.IsSetAgentStatus())
             {
-                context.Writer.WritePropertyName("awsGroundStationAgentEndpoint");
+                context.Writer.WritePropertyName("agentStatus");
+                context.Writer.Write(requestObject.AgentStatus);
+            }
+
+            if(requestObject.IsSetAuditResults())
+            {
+                context.Writer.WritePropertyName("auditResults");
+                context.Writer.Write(requestObject.AuditResults);
+            }
+
+            if(requestObject.IsSetEgressAddress())
+            {
+                context.Writer.WritePropertyName("egressAddress");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = AwsGroundStationAgentEndpointMarshaller.Instance;
-                marshaller.Marshall(requestObject.AwsGroundStationAgentEndpoint, context);
+                var marshaller = ConnectionDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.EgressAddress, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetEndpoint())
+            if(requestObject.IsSetIngressAddress())
             {
-                context.Writer.WritePropertyName("endpoint");
+                context.Writer.WritePropertyName("ingressAddress");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = DataflowEndpointMarshaller.Instance;
-                marshaller.Marshall(requestObject.Endpoint, context);
+                var marshaller = RangedConnectionDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.IngressAddress, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetSecurityDetails())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("securityDetails");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SecurityDetailsMarshaller.Instance;
-                marshaller.Marshall(requestObject.SecurityDetails, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("name");
+                context.Writer.Write(requestObject.Name);
             }
 
         }
@@ -83,7 +90,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EndpointDetailsMarshaller Instance = new EndpointDetailsMarshaller();
+        public readonly static AwsGroundStationAgentEndpointMarshaller Instance = new AwsGroundStationAgentEndpointMarshaller();
 
     }
 }

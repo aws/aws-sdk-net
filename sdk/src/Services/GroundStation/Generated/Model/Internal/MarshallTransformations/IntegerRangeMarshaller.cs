@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EndpointDetails Marshaller
+    /// IntegerRange Marshaller
     /// </summary>
-    public class EndpointDetailsMarshaller : IRequestMarshaller<EndpointDetails, JsonMarshallerContext> 
+    public class IntegerRangeMarshaller : IRequestMarshaller<IntegerRange, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,18 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EndpointDetails requestObject, JsonMarshallerContext context)
+        public void Marshall(IntegerRange requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAwsGroundStationAgentEndpoint())
+            if(requestObject.IsSetMaximum())
             {
-                context.Writer.WritePropertyName("awsGroundStationAgentEndpoint");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AwsGroundStationAgentEndpointMarshaller.Instance;
-                marshaller.Marshall(requestObject.AwsGroundStationAgentEndpoint, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("maximum");
+                context.Writer.Write(requestObject.Maximum);
             }
 
-            if(requestObject.IsSetEndpoint())
+            if(requestObject.IsSetMinimum())
             {
-                context.Writer.WritePropertyName("endpoint");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DataflowEndpointMarshaller.Instance;
-                marshaller.Marshall(requestObject.Endpoint, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSecurityDetails())
-            {
-                context.Writer.WritePropertyName("securityDetails");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SecurityDetailsMarshaller.Instance;
-                marshaller.Marshall(requestObject.SecurityDetails, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("minimum");
+                context.Writer.Write(requestObject.Minimum);
             }
 
         }
@@ -83,7 +62,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EndpointDetailsMarshaller Instance = new EndpointDetailsMarshaller();
+        public readonly static IntegerRangeMarshaller Instance = new IntegerRangeMarshaller();
 
     }
 }

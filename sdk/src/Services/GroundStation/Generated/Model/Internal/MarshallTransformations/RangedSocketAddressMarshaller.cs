@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EndpointDetails Marshaller
+    /// RangedSocketAddress Marshaller
     /// </summary>
-    public class EndpointDetailsMarshaller : IRequestMarshaller<EndpointDetails, JsonMarshallerContext> 
+    public class RangedSocketAddressMarshaller : IRequestMarshaller<RangedSocketAddress, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,37 +43,21 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EndpointDetails requestObject, JsonMarshallerContext context)
+        public void Marshall(RangedSocketAddress requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAwsGroundStationAgentEndpoint())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("awsGroundStationAgentEndpoint");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AwsGroundStationAgentEndpointMarshaller.Instance;
-                marshaller.Marshall(requestObject.AwsGroundStationAgentEndpoint, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("name");
+                context.Writer.Write(requestObject.Name);
             }
 
-            if(requestObject.IsSetEndpoint())
+            if(requestObject.IsSetPortRange())
             {
-                context.Writer.WritePropertyName("endpoint");
+                context.Writer.WritePropertyName("portRange");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = DataflowEndpointMarshaller.Instance;
-                marshaller.Marshall(requestObject.Endpoint, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSecurityDetails())
-            {
-                context.Writer.WritePropertyName("securityDetails");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SecurityDetailsMarshaller.Instance;
-                marshaller.Marshall(requestObject.SecurityDetails, context);
+                var marshaller = IntegerRangeMarshaller.Instance;
+                marshaller.Marshall(requestObject.PortRange, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -83,7 +67,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EndpointDetailsMarshaller Instance = new EndpointDetailsMarshaller();
+        public readonly static RangedSocketAddressMarshaller Instance = new RangedSocketAddressMarshaller();
 
     }
 }

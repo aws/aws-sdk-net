@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EndpointDetails Marshaller
+    /// KmsKey Marshaller
     /// </summary>
-    public class EndpointDetailsMarshaller : IRequestMarshaller<EndpointDetails, JsonMarshallerContext> 
+    public class KmsKeyMarshaller : IRequestMarshaller<KmsKey, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,18 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EndpointDetails requestObject, JsonMarshallerContext context)
+        public void Marshall(KmsKey requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAwsGroundStationAgentEndpoint())
+            if(requestObject.IsSetKmsAliasArn())
             {
-                context.Writer.WritePropertyName("awsGroundStationAgentEndpoint");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AwsGroundStationAgentEndpointMarshaller.Instance;
-                marshaller.Marshall(requestObject.AwsGroundStationAgentEndpoint, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("kmsAliasArn");
+                context.Writer.Write(requestObject.KmsAliasArn);
             }
 
-            if(requestObject.IsSetEndpoint())
+            if(requestObject.IsSetKmsKeyArn())
             {
-                context.Writer.WritePropertyName("endpoint");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DataflowEndpointMarshaller.Instance;
-                marshaller.Marshall(requestObject.Endpoint, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSecurityDetails())
-            {
-                context.Writer.WritePropertyName("securityDetails");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SecurityDetailsMarshaller.Instance;
-                marshaller.Marshall(requestObject.SecurityDetails, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("kmsKeyArn");
+                context.Writer.Write(requestObject.KmsKeyArn);
             }
 
         }
@@ -83,7 +62,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EndpointDetailsMarshaller Instance = new EndpointDetailsMarshaller();
+        public readonly static KmsKeyMarshaller Instance = new KmsKeyMarshaller();
 
     }
 }
