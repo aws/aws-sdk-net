@@ -1296,6 +1296,51 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AssignPrivateNatGatewayAddress
+
+
+        /// <summary>
+        /// Assigns one or more private IPv4 addresses to a private NAT gateway. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
+        /// with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssignPrivateNatGatewayAddress service method.</param>
+        /// 
+        /// <returns>The response from the AssignPrivateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateNatGatewayAddress">REST API Reference for AssignPrivateNatGatewayAddress Operation</seealso>
+        public virtual AssignPrivateNatGatewayAddressResponse AssignPrivateNatGatewayAddress(AssignPrivateNatGatewayAddressRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssignPrivateNatGatewayAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssignPrivateNatGatewayAddressResponseUnmarshaller.Instance;
+
+            return Invoke<AssignPrivateNatGatewayAddressResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Assigns one or more private IPv4 addresses to a private NAT gateway. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
+        /// with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssignPrivateNatGatewayAddress service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssignPrivateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateNatGatewayAddress">REST API Reference for AssignPrivateNatGatewayAddress Operation</seealso>
+        public virtual Task<AssignPrivateNatGatewayAddressResponse> AssignPrivateNatGatewayAddressAsync(AssignPrivateNatGatewayAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssignPrivateNatGatewayAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssignPrivateNatGatewayAddressResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssignPrivateNatGatewayAddressResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateAddress
 
 
@@ -1791,6 +1836,67 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = AssociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
             
             return InvokeAsync<AssociateIpamResourceDiscoveryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateNatGatewayAddress
+
+
+        /// <summary>
+        /// Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a public NAT
+        /// gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
+        /// with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// By default, you can associate up to 2 Elastic IP addresses per public NAT gateway.
+        /// You can increase the limit by requesting a quota adjustment. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-eips">Elastic
+        /// IP address quotas</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateNatGatewayAddress service method.</param>
+        /// 
+        /// <returns>The response from the AssociateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateNatGatewayAddress">REST API Reference for AssociateNatGatewayAddress Operation</seealso>
+        public virtual AssociateNatGatewayAddressResponse AssociateNatGatewayAddress(AssociateNatGatewayAddressRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateNatGatewayAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateNatGatewayAddressResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateNatGatewayAddressResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a public NAT
+        /// gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
+        /// with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// By default, you can associate up to 2 Elastic IP addresses per public NAT gateway.
+        /// You can increase the limit by requesting a quota adjustment. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-eips">Elastic
+        /// IP address quotas</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateNatGatewayAddress service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateNatGatewayAddress">REST API Reference for AssociateNatGatewayAddress Operation</seealso>
+        public virtual Task<AssociateNatGatewayAddressResponse> AssociateNatGatewayAddressAsync(AssociateNatGatewayAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateNatGatewayAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateNatGatewayAddressResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateNatGatewayAddressResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -23695,6 +23801,83 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateNatGatewayAddress
+
+
+        /// <summary>
+        /// Disassociates secondary Elastic IP addresses (EIPs) from a public NAT gateway. You
+        /// cannot disassociate your primary EIP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+        /// secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud User
+        /// Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// While disassociating is in progress, you cannot associate/disassociate additional
+        /// EIPs while the connections are being drained. You are, however, allowed to delete
+        /// the NAT gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// An EIP will only be released at the end of MaxDrainDurationSeconds. The EIPs stay
+        /// associated and support the existing connections but do not support any new connections
+        /// (new connections are distributed across the remaining associated EIPs). As the existing
+        /// connections drain out, the EIPs (and the corresponding private IPs mapped to them)
+        /// get released.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateNatGatewayAddress service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateNatGatewayAddress">REST API Reference for DisassociateNatGatewayAddress Operation</seealso>
+        public virtual DisassociateNatGatewayAddressResponse DisassociateNatGatewayAddress(DisassociateNatGatewayAddressRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateNatGatewayAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateNatGatewayAddressResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateNatGatewayAddressResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates secondary Elastic IP addresses (EIPs) from a public NAT gateway. You
+        /// cannot disassociate your primary EIP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+        /// secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud User
+        /// Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// While disassociating is in progress, you cannot associate/disassociate additional
+        /// EIPs while the connections are being drained. You are, however, allowed to delete
+        /// the NAT gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// An EIP will only be released at the end of MaxDrainDurationSeconds. The EIPs stay
+        /// associated and support the existing connections but do not support any new connections
+        /// (new connections are distributed across the remaining associated EIPs). As the existing
+        /// connections drain out, the EIPs (and the corresponding private IPs mapped to them)
+        /// get released.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateNatGatewayAddress service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateNatGatewayAddress">REST API Reference for DisassociateNatGatewayAddress Operation</seealso>
+        public virtual Task<DisassociateNatGatewayAddressResponse> DisassociateNatGatewayAddressAsync(DisassociateNatGatewayAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateNatGatewayAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateNatGatewayAddressResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateNatGatewayAddressResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateRouteTable
 
 
@@ -35627,6 +35810,83 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = UnassignPrivateIpAddressesResponseUnmarshaller.Instance;
             
             return InvokeAsync<UnassignPrivateIpAddressesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UnassignPrivateNatGatewayAddress
+
+
+        /// <summary>
+        /// Unassigns secondary private NAT gateway IPv4 addresses from a private NAT gateway.
+        /// You cannot unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+        /// secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud User
+        /// Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// While unassigning is in progress, you cannot assign/unassign additional IP addresses
+        /// while the connections are being drained. You are, however, allowed to delete the NAT
+        /// gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// A private IP address will only be released at the end of MaxDrainDurationSeconds.
+        /// The private IP addresses stay associated and support the existing connections but
+        /// do not support any new connections (new connections are distributed across the remaining
+        /// assigned private IP address). After the existing connections drain out, the private
+        /// IP addresses get released. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnassignPrivateNatGatewayAddress service method.</param>
+        /// 
+        /// <returns>The response from the UnassignPrivateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateNatGatewayAddress">REST API Reference for UnassignPrivateNatGatewayAddress Operation</seealso>
+        public virtual UnassignPrivateNatGatewayAddressResponse UnassignPrivateNatGatewayAddress(UnassignPrivateNatGatewayAddressRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnassignPrivateNatGatewayAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnassignPrivateNatGatewayAddressResponseUnmarshaller.Instance;
+
+            return Invoke<UnassignPrivateNatGatewayAddressResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Unassigns secondary private NAT gateway IPv4 addresses from a private NAT gateway.
+        /// You cannot unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+        /// secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud User
+        /// Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// While unassigning is in progress, you cannot assign/unassign additional IP addresses
+        /// while the connections are being drained. You are, however, allowed to delete the NAT
+        /// gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// A private IP address will only be released at the end of MaxDrainDurationSeconds.
+        /// The private IP addresses stay associated and support the existing connections but
+        /// do not support any new connections (new connections are distributed across the remaining
+        /// assigned private IP address). After the existing connections drain out, the private
+        /// IP addresses get released. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnassignPrivateNatGatewayAddress service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UnassignPrivateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateNatGatewayAddress">REST API Reference for UnassignPrivateNatGatewayAddress Operation</seealso>
+        public virtual Task<UnassignPrivateNatGatewayAddressResponse> UnassignPrivateNatGatewayAddressAsync(UnassignPrivateNatGatewayAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnassignPrivateNatGatewayAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnassignPrivateNatGatewayAddressResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UnassignPrivateNatGatewayAddressResponse>(request, options, cancellationToken);
         }
 
         #endregion

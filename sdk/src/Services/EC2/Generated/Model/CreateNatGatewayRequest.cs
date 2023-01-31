@@ -58,6 +58,9 @@ namespace Amazon.EC2.Model
         private string _clientToken;
         private ConnectivityType _connectivityType;
         private string _privateIpAddress;
+        private List<string> _secondaryAllocationIds = new List<string>();
+        private int? _secondaryPrivateIpAddressCount;
+        private List<string> _secondaryPrivateIpAddresses = new List<string>();
         private string _subnetId;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
@@ -145,9 +148,71 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SecondaryAllocationIds. 
+        /// <para>
+        /// Secondary EIP allocation IDs. For more information about secondary addresses, see
+        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+        /// a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<string> SecondaryAllocationIds
+        {
+            get { return this._secondaryAllocationIds; }
+            set { this._secondaryAllocationIds = value; }
+        }
+
+        // Check to see if SecondaryAllocationIds property is set
+        internal bool IsSetSecondaryAllocationIds()
+        {
+            return this._secondaryAllocationIds != null && this._secondaryAllocationIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryPrivateIpAddressCount. 
+        /// <para>
+        /// [Private NAT gateway only] The number of secondary private IPv4 addresses you want
+        /// to assign to the NAT gateway. For more information about secondary addresses, see
+        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+        /// a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=7)]
+        public int SecondaryPrivateIpAddressCount
+        {
+            get { return this._secondaryPrivateIpAddressCount.GetValueOrDefault(); }
+            set { this._secondaryPrivateIpAddressCount = value; }
+        }
+
+        // Check to see if SecondaryPrivateIpAddressCount property is set
+        internal bool IsSetSecondaryPrivateIpAddressCount()
+        {
+            return this._secondaryPrivateIpAddressCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryPrivateIpAddresses. 
+        /// <para>
+        /// Secondary private IPv4 addresses. For more information about secondary addresses,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+        /// a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<string> SecondaryPrivateIpAddresses
+        {
+            get { return this._secondaryPrivateIpAddresses; }
+            set { this._secondaryPrivateIpAddresses = value; }
+        }
+
+        // Check to see if SecondaryPrivateIpAddresses property is set
+        internal bool IsSetSecondaryPrivateIpAddresses()
+        {
+            return this._secondaryPrivateIpAddresses != null && this._secondaryPrivateIpAddresses.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The subnet in which to create the NAT gateway.
+        /// The ID of the subnet in which to create the NAT gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

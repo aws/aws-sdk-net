@@ -12431,6 +12431,72 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type NatGatewayAddressStatus.
+    /// </summary>
+    public class NatGatewayAddressStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Assigning for NatGatewayAddressStatus
+        /// </summary>
+        public static readonly NatGatewayAddressStatus Assigning = new NatGatewayAddressStatus("assigning");
+        /// <summary>
+        /// Constant Associating for NatGatewayAddressStatus
+        /// </summary>
+        public static readonly NatGatewayAddressStatus Associating = new NatGatewayAddressStatus("associating");
+        /// <summary>
+        /// Constant Disassociating for NatGatewayAddressStatus
+        /// </summary>
+        public static readonly NatGatewayAddressStatus Disassociating = new NatGatewayAddressStatus("disassociating");
+        /// <summary>
+        /// Constant Failed for NatGatewayAddressStatus
+        /// </summary>
+        public static readonly NatGatewayAddressStatus Failed = new NatGatewayAddressStatus("failed");
+        /// <summary>
+        /// Constant Succeeded for NatGatewayAddressStatus
+        /// </summary>
+        public static readonly NatGatewayAddressStatus Succeeded = new NatGatewayAddressStatus("succeeded");
+        /// <summary>
+        /// Constant Unassigning for NatGatewayAddressStatus
+        /// </summary>
+        public static readonly NatGatewayAddressStatus Unassigning = new NatGatewayAddressStatus("unassigning");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NatGatewayAddressStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NatGatewayAddressStatus FindValue(string value)
+        {
+            return FindValue<NatGatewayAddressStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NatGatewayAddressStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NatGatewayState.
     /// </summary>
     public class NatGatewayState : ConstantClass

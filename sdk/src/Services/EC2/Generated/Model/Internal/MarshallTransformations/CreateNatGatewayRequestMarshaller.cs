@@ -78,6 +78,28 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PrivateIpAddress", StringUtils.FromString(publicRequest.PrivateIpAddress));
                 }
+                if(publicRequest.IsSetSecondaryAllocationIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.SecondaryAllocationIds)
+                    {
+                        request.Parameters.Add("SecondaryAllocationId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetSecondaryPrivateIpAddressCount())
+                {
+                    request.Parameters.Add("SecondaryPrivateIpAddressCount", StringUtils.FromInt(publicRequest.SecondaryPrivateIpAddressCount));
+                }
+                if(publicRequest.IsSetSecondaryPrivateIpAddresses())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.SecondaryPrivateIpAddresses)
+                    {
+                        request.Parameters.Add("SecondaryPrivateIpAddress" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetSubnetId())
                 {
                     request.Parameters.Add("SubnetId", StringUtils.FromString(publicRequest.SubnetId));
