@@ -93,14 +93,6 @@ namespace Amazon.SimpleNotificationService.Model
         /// or unsubscribe confirmation messages sent by Amazon SNS. By default, <code>SignatureVersion</code>
         /// is set to 1.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code>
-        /// is set to <code>PassThrough</code>, and the topic passes through the tracing header
-        /// it receives from an Amazon SNS publisher to its subscriptions. If set to Active, Amazon
-        /// SNS will vend X-Ray segment data to topic owner account if the sampled flag in the
-        /// tracing header is true. This is only supported on standard topics.
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side

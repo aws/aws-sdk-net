@@ -1471,6 +1471,66 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("SimpleNotificationService")]
+        [Description("For region ca-west-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_cawest1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new SimpleNotificationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "ca-west-1";
+            var endpoint = new AmazonSimpleNotificationServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://sns-fips.ca-west-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleNotificationService")]
+        [Description("For region ca-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_cawest1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new SimpleNotificationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "ca-west-1";
+            var endpoint = new AmazonSimpleNotificationServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://sns-fips.ca-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleNotificationService")]
+        [Description("For region ca-west-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_cawest1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new SimpleNotificationServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "ca-west-1";
+            var endpoint = new AmazonSimpleNotificationServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://sns.ca-west-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleNotificationService")]
+        [Description("For region ca-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_cawest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new SimpleNotificationServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "ca-west-1";
+            var endpoint = new AmazonSimpleNotificationServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://sns.ca-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleNotificationService")]
         [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
         public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
