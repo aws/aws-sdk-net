@@ -1343,6 +1343,36 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("MediaTailor")]
+        public void UpdateProgramMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateProgram");
+
+            var request = InstantiateClassGenerator.Execute<UpdateProgramRequest>();
+            var marshaller = new UpdateProgramRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateProgram", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateProgramResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as UpdateProgramResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("MediaTailor")]
         public void UpdateSourceLocationMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateSourceLocation");

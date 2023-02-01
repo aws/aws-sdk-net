@@ -1751,6 +1751,46 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  UpdateProgram
+
+
+        /// <summary>
+        /// Updates a program within a channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProgram service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProgram service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateProgram">REST API Reference for UpdateProgram Operation</seealso>
+        UpdateProgramResponse UpdateProgram(UpdateProgramRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProgram operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProgram operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProgram
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateProgram">REST API Reference for UpdateProgram Operation</seealso>
+        IAsyncResult BeginUpdateProgram(UpdateProgramRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateProgram operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateProgram.</param>
+        /// 
+        /// <returns>Returns a  UpdateProgramResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateProgram">REST API Reference for UpdateProgram Operation</seealso>
+        UpdateProgramResponse EndUpdateProgram(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateSourceLocation
 
 

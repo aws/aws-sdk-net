@@ -847,6 +847,24 @@ namespace Amazon.MediaTailor
 
         #endregion
                 
+        #region  UpdateProgram
+
+
+
+        /// <summary>
+        /// Updates a program within a channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProgram service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProgram service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateProgram">REST API Reference for UpdateProgram Operation</seealso>
+        Task<UpdateProgramResponse> UpdateProgramAsync(UpdateProgramRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateSourceLocation
 
 

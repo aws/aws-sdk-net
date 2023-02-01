@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ScheduleConfiguration Marshaller
+    /// UpdateProgramScheduleConfiguration Marshaller
     /// </summary>
-    public class ScheduleConfigurationMarshaller : IRequestMarshaller<ScheduleConfiguration, JsonMarshallerContext> 
+    public class UpdateProgramScheduleConfigurationMarshaller : IRequestMarshaller<UpdateProgramScheduleConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ScheduleConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(UpdateProgramScheduleConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetClipRange())
             {
@@ -61,7 +61,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Transition");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = TransitionMarshaller.Instance;
+                var marshaller = UpdateProgramTransitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Transition, context);
 
                 context.Writer.WriteObjectEnd();
@@ -72,7 +72,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ScheduleConfigurationMarshaller Instance = new ScheduleConfigurationMarshaller();
+        public readonly static UpdateProgramScheduleConfigurationMarshaller Instance = new UpdateProgramScheduleConfigurationMarshaller();
 
     }
 }

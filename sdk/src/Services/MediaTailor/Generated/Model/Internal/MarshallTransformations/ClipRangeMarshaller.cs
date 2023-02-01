@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ScheduleConfiguration Marshaller
+    /// ClipRange Marshaller
     /// </summary>
-    public class ScheduleConfigurationMarshaller : IRequestMarshaller<ScheduleConfiguration, JsonMarshallerContext> 
+    public class ClipRangeMarshaller : IRequestMarshaller<ClipRange, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ScheduleConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ClipRange requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetClipRange())
+            if(requestObject.IsSetEndOffsetMillis())
             {
-                context.Writer.WritePropertyName("ClipRange");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ClipRangeMarshaller.Instance;
-                marshaller.Marshall(requestObject.ClipRange, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetTransition())
-            {
-                context.Writer.WritePropertyName("Transition");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = TransitionMarshaller.Instance;
-                marshaller.Marshall(requestObject.Transition, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("EndOffsetMillis");
+                context.Writer.Write(requestObject.EndOffsetMillis);
             }
 
         }
@@ -72,7 +56,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ScheduleConfigurationMarshaller Instance = new ScheduleConfigurationMarshaller();
+        public readonly static ClipRangeMarshaller Instance = new ClipRangeMarshaller();
 
     }
 }

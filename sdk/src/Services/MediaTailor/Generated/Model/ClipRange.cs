@@ -29,49 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// Schedule configuration parameters. A channel must be stopped before changes can be
-    /// made to the schedule.
+    /// Clip range configuration for the VOD source associated with the program.
     /// </summary>
-    public partial class ScheduleConfiguration
+    public partial class ClipRange
     {
-        private ClipRange _clipRange;
-        private Transition _transition;
+        private long? _endOffsetMillis;
 
         /// <summary>
-        /// Gets and sets the property ClipRange. 
+        /// Gets and sets the property EndOffsetMillis. 
         /// <para>
-        /// Program clip range configuration.
-        /// </para>
-        /// </summary>
-        public ClipRange ClipRange
-        {
-            get { return this._clipRange; }
-            set { this._clipRange = value; }
-        }
-
-        // Check to see if ClipRange property is set
-        internal bool IsSetClipRange()
-        {
-            return this._clipRange != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Transition. 
-        /// <para>
-        /// Program transition configurations.
+        /// The end offset of the clip range, in milliseconds, starting from the beginning of
+        /// the VOD source associated with the program.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public Transition Transition
+        public long EndOffsetMillis
         {
-            get { return this._transition; }
-            set { this._transition = value; }
+            get { return this._endOffsetMillis.GetValueOrDefault(); }
+            set { this._endOffsetMillis = value; }
         }
 
-        // Check to see if Transition property is set
-        internal bool IsSetTransition()
+        // Check to see if EndOffsetMillis property is set
+        internal bool IsSetEndOffsetMillis()
         {
-            return this._transition != null;
+            return this._endOffsetMillis.HasValue; 
         }
 
     }

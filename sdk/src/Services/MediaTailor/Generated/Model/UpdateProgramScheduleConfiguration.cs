@@ -29,13 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// Schedule configuration parameters. A channel must be stopped before changes can be
-    /// made to the schedule.
+    /// Schedule configuration parameters.
     /// </summary>
-    public partial class ScheduleConfiguration
+    public partial class UpdateProgramScheduleConfiguration
     {
         private ClipRange _clipRange;
-        private Transition _transition;
+        private UpdateProgramTransition _transition;
 
         /// <summary>
         /// Gets and sets the property ClipRange. 
@@ -58,11 +57,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Transition. 
         /// <para>
-        /// Program transition configurations.
+        /// Program transition configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public Transition Transition
+        public UpdateProgramTransition Transition
         {
             get { return this._transition; }
             set { this._transition = value; }

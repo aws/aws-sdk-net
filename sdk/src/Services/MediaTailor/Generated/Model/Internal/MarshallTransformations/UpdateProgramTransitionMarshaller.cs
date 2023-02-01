@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ScheduleConfiguration Marshaller
+    /// UpdateProgramTransition Marshaller
     /// </summary>
-    public class ScheduleConfigurationMarshaller : IRequestMarshaller<ScheduleConfiguration, JsonMarshallerContext> 
+    public class UpdateProgramTransitionMarshaller : IRequestMarshaller<UpdateProgramTransition, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,18 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ScheduleConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(UpdateProgramTransition requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetClipRange())
+            if(requestObject.IsSetDurationMillis())
             {
-                context.Writer.WritePropertyName("ClipRange");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ClipRangeMarshaller.Instance;
-                marshaller.Marshall(requestObject.ClipRange, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("DurationMillis");
+                context.Writer.Write(requestObject.DurationMillis);
             }
 
-            if(requestObject.IsSetTransition())
+            if(requestObject.IsSetScheduledStartTimeMillis())
             {
-                context.Writer.WritePropertyName("Transition");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = TransitionMarshaller.Instance;
-                marshaller.Marshall(requestObject.Transition, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("ScheduledStartTimeMillis");
+                context.Writer.Write(requestObject.ScheduledStartTimeMillis);
             }
 
         }
@@ -72,7 +62,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ScheduleConfigurationMarshaller Instance = new ScheduleConfigurationMarshaller();
+        public readonly static UpdateProgramTransitionMarshaller Instance = new UpdateProgramTransitionMarshaller();
 
     }
 }

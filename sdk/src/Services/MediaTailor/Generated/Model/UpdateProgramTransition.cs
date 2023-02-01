@@ -29,49 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// Schedule configuration parameters. A channel must be stopped before changes can be
-    /// made to the schedule.
+    /// Program transition configuration.
     /// </summary>
-    public partial class ScheduleConfiguration
+    public partial class UpdateProgramTransition
     {
-        private ClipRange _clipRange;
-        private Transition _transition;
+        private long? _durationMillis;
+        private long? _scheduledStartTimeMillis;
 
         /// <summary>
-        /// Gets and sets the property ClipRange. 
+        /// Gets and sets the property DurationMillis. 
         /// <para>
-        /// Program clip range configuration.
+        /// The duration of the live program in seconds.
         /// </para>
         /// </summary>
-        public ClipRange ClipRange
+        public long DurationMillis
         {
-            get { return this._clipRange; }
-            set { this._clipRange = value; }
+            get { return this._durationMillis.GetValueOrDefault(); }
+            set { this._durationMillis = value; }
         }
 
-        // Check to see if ClipRange property is set
-        internal bool IsSetClipRange()
+        // Check to see if DurationMillis property is set
+        internal bool IsSetDurationMillis()
         {
-            return this._clipRange != null;
+            return this._durationMillis.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Transition. 
+        /// Gets and sets the property ScheduledStartTimeMillis. 
         /// <para>
-        /// Program transition configurations.
+        /// The date and time that the program is scheduled to start, in epoch milliseconds.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public Transition Transition
+        public long ScheduledStartTimeMillis
         {
-            get { return this._transition; }
-            set { this._transition = value; }
+            get { return this._scheduledStartTimeMillis.GetValueOrDefault(); }
+            set { this._scheduledStartTimeMillis = value; }
         }
 
-        // Check to see if Transition property is set
-        internal bool IsSetTransition()
+        // Check to see if ScheduledStartTimeMillis property is set
+        internal bool IsSetScheduledStartTimeMillis()
         {
-            return this._transition != null;
+            return this._scheduledStartTimeMillis.HasValue; 
         }
 
     }

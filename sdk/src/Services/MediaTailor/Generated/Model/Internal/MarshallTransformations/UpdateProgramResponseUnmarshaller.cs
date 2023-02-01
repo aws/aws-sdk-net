@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeProgram operation
+    /// Response Unmarshaller for UpdateProgram operation
     /// </summary>  
-    public class DescribeProgramResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateProgramResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeProgramResponse response = new DescribeProgramResponse();
+            UpdateProgramResponse response = new UpdateProgramResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -144,9 +144,9 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             return new AmazonMediaTailorException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeProgramResponseUnmarshaller _instance = new DescribeProgramResponseUnmarshaller();        
+        private static UpdateProgramResponseUnmarshaller _instance = new UpdateProgramResponseUnmarshaller();        
 
-        internal static DescribeProgramResponseUnmarshaller GetInstance()
+        internal static UpdateProgramResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -154,7 +154,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeProgramResponseUnmarshaller Instance
+        public static UpdateProgramResponseUnmarshaller Instance
         {
             get
             {
