@@ -31,15 +31,45 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("IdentityManagement")]
-        [Description("For region aws-cn-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awscnglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For region aws-iso-global with FIPS disabled and DualStack disabled")]
+        public void For_region_awsisoglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IdentityManagementServiceEndpointParameters();
-            parameters["UseFIPS"] = false;
-            parameters["Region"] = "aws-cn-global";
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "aws-iso-global";
             var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://iam.cn-north-1.amazonaws.com.cn", endpoint.URL);
+            Assert.AreEqual("https://iam.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region us-iso-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-iso-east-1";
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region us-iso-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-iso-east-1";
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
 
         [TestMethod]
@@ -50,9 +80,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "aws-global";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iam.amazonaws.com", endpoint.URL);
         }
@@ -61,30 +91,75 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("IdentityManagement")]
-        [Description("For region aws-iso-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsisoglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For region aws-global with FIPS enabled and DualStack disabled")]
+        public void For_region_awsglobal_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new IdentityManagementServiceEndpointParameters();
-            parameters["UseFIPS"] = false;
-            parameters["Region"] = "aws-iso-global";
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "aws-global";
             var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://iam.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+            Assert.AreEqual("https://iam-fips.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("IdentityManagement")]
-        [Description("For region aws-iso-b-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsisobglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new IdentityManagementServiceEndpointParameters();
-            parameters["UseFIPS"] = false;
-            parameters["Region"] = "aws-iso-b-global";
-            parameters["UseDualStack"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://iam.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+            Assert.AreEqual("https://iam-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-east-1";
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam-fips.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-east-1";
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-east-1";
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -95,11 +170,206 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_awsusgovglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "aws-us-gov-global";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://iam.us-gov.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region aws-us-gov-global with FIPS enabled and DualStack disabled")]
+        public void For_region_awsusgovglobal_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "aws-us-gov-global";
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam.us-gov.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-gov-east-1";
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam-fips.us-gov-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-gov-east-1";
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam.us-gov.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region us-gov-east-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-gov-east-1";
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam.us-gov-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region us-gov-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-gov-east-1";
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam.us-gov.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region aws-iso-b-global with FIPS disabled and DualStack disabled")]
+        public void For_region_awsisobglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "aws-iso-b-global";
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region us-isob-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-isob-east-1";
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region us-isob-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-isob-east-1";
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region aws-cn-global with FIPS disabled and DualStack disabled")]
+        public void For_region_awscnglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "aws-cn-global";
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam.cn-north-1.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region cn-north-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "cn-north-1";
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region cn-north-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "cn-north-1";
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region cn-north-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "cn-north-1";
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("IdentityManagement")]
+        [Description("For region cn-north-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "cn-north-1";
+            var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://iam.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
 
         [TestMethod]
@@ -110,9 +380,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -127,9 +397,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -143,9 +413,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new IdentityManagementServiceEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonIdentityManagementServiceEndpointProvider().ResolveEndpoint(parameters);
         }

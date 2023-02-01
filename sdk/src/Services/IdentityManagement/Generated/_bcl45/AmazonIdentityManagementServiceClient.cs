@@ -1603,7 +1603,7 @@ namespace Amazon.IdentityManagement
         /// Amazon Web Services secures communication with some OIDC identity providers (IdPs)
         /// through our library of trusted certificate authorities (CAs) instead of using a certificate
         /// thumbprint to verify your IdP server certificate. These OIDC IdPs include Google,
-        /// and those that use an Amazon S3 bucket to host a JSON Web Key Set (JWKS) endpoint.
+        /// Auth0, and those that use an Amazon S3 bucket to host a JSON Web Key Set (JWKS) endpoint.
         /// In these cases, your legacy thumbprint remains in your configuration, but is no longer
         /// used for validation.
         /// </para>
@@ -1693,7 +1693,7 @@ namespace Amazon.IdentityManagement
         /// Amazon Web Services secures communication with some OIDC identity providers (IdPs)
         /// through our library of trusted certificate authorities (CAs) instead of using a certificate
         /// thumbprint to verify your IdP server certificate. These OIDC IdPs include Google,
-        /// and those that use an Amazon S3 bucket to host a JSON Web Key Set (JWKS) endpoint.
+        /// Auth0, and those that use an Amazon S3 bucket to host a JSON Web Key Set (JWKS) endpoint.
         /// In these cases, your legacy thumbprint remains in your configuration, but is no longer
         /// used for validation.
         /// </para>
@@ -3656,11 +3656,30 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Deletes the specified role. The role must not have any policies attached. For more
-        /// information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with roles</a>.
+        /// Deletes the specified role. Unlike the Amazon Web Services Management Console, when
+        /// you delete a role programmatically, you must delete the items attached to the role
+        /// manually, or the deletion fails. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_manage_delete.html#roles-managingrole-deleting-cli">Deleting
+        /// an IAM role</a>. Before attempting to delete a role, remove the following attached
+        /// items: 
         /// 
-        ///  <important> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Inline policies (<a>DeleteRolePolicy</a>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Attached managed policies (<a>DetachRolePolicy</a>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Instance profile (<a>RemoveRoleFromInstanceProfile</a>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Optional – Delete instance profile after detaching from role for resource clean up
+        /// (<a>DeleteInstanceProfile</a>)
+        /// </para>
+        ///  </li> </ul> <important> 
         /// <para>
         /// Make sure that you do not have any Amazon EC2 instances running with the role you
         /// are about to delete. Deleting a role or instance profile that is associated with a
@@ -3708,11 +3727,30 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Deletes the specified role. The role must not have any policies attached. For more
-        /// information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with roles</a>.
+        /// Deletes the specified role. Unlike the Amazon Web Services Management Console, when
+        /// you delete a role programmatically, you must delete the items attached to the role
+        /// manually, or the deletion fails. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_manage_delete.html#roles-managingrole-deleting-cli">Deleting
+        /// an IAM role</a>. Before attempting to delete a role, remove the following attached
+        /// items: 
         /// 
-        ///  <important> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Inline policies (<a>DeleteRolePolicy</a>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Attached managed policies (<a>DetachRolePolicy</a>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Instance profile (<a>RemoveRoleFromInstanceProfile</a>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Optional – Delete instance profile after detaching from role for resource clean up
+        /// (<a>DeleteInstanceProfile</a>)
+        /// </para>
+        ///  </li> </ul> <important> 
         /// <para>
         /// Make sure that you do not have any Amazon EC2 instances running with the role you
         /// are about to delete. Deleting a role or instance profile that is associated with a
@@ -13089,11 +13127,17 @@ namespace Amazon.IdentityManagement
         /// If the output is long, you can use <code>MaxItems</code> and <code>Marker</code> parameters
         /// to paginate the results.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// For more information about using the policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing
+        /// The IAM policy simulator evaluates statements in the identity-based policy and the
+        /// inputs that you provide during simulation. The policy simulator results can differ
+        /// from your live Amazon Web Services environment. We recommend that you check your policies
+        /// against your live Amazon Web Services environment after testing using the policy simulator
+        /// to confirm that you have the desired results. For more information about using the
+        /// policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing
         /// IAM policies with the IAM policy simulator </a>in the <i>IAM User Guide</i>.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SimulateCustomPolicy service method.</param>
         /// 
@@ -13145,11 +13189,17 @@ namespace Amazon.IdentityManagement
         /// If the output is long, you can use <code>MaxItems</code> and <code>Marker</code> parameters
         /// to paginate the results.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// For more information about using the policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing
+        /// The IAM policy simulator evaluates statements in the identity-based policy and the
+        /// inputs that you provide during simulation. The policy simulator results can differ
+        /// from your live Amazon Web Services environment. We recommend that you check your policies
+        /// against your live Amazon Web Services environment after testing using the policy simulator
+        /// to confirm that you have the desired results. For more information about using the
+        /// policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing
         /// IAM policies with the IAM policy simulator </a>in the <i>IAM User Guide</i>.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SimulateCustomPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -13196,7 +13246,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// You can also optionally include one resource-based policy to be evaluated with each
-        /// of the resources included in the simulation.
+        /// of the resources included in the simulation for IAM users only.
         /// </para>
         ///  
         /// <para>
@@ -13221,11 +13271,17 @@ namespace Amazon.IdentityManagement
         /// If the output is long, you can use the <code>MaxItems</code> and <code>Marker</code>
         /// parameters to paginate the results.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// For more information about using the policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing
+        /// The IAM policy simulator evaluates statements in the identity-based policy and the
+        /// inputs that you provide during simulation. The policy simulator results can differ
+        /// from your live Amazon Web Services environment. We recommend that you check your policies
+        /// against your live Amazon Web Services environment after testing using the policy simulator
+        /// to confirm that you have the desired results. For more information about using the
+        /// policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing
         /// IAM policies with the IAM policy simulator </a>in the <i>IAM User Guide</i>.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SimulatePrincipalPolicy service method.</param>
         /// 
@@ -13269,7 +13325,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// You can also optionally include one resource-based policy to be evaluated with each
-        /// of the resources included in the simulation.
+        /// of the resources included in the simulation for IAM users only.
         /// </para>
         ///  
         /// <para>
@@ -13294,11 +13350,17 @@ namespace Amazon.IdentityManagement
         /// If the output is long, you can use the <code>MaxItems</code> and <code>Marker</code>
         /// parameters to paginate the results.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// For more information about using the policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing
+        /// The IAM policy simulator evaluates statements in the identity-based policy and the
+        /// inputs that you provide during simulation. The policy simulator results can differ
+        /// from your live Amazon Web Services environment. We recommend that you check your policies
+        /// against your live Amazon Web Services environment after testing using the policy simulator
+        /// to confirm that you have the desired results. For more information about using the
+        /// policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing
         /// IAM policies with the IAM policy simulator </a>in the <i>IAM User Guide</i>.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SimulatePrincipalPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -15825,7 +15887,7 @@ namespace Amazon.IdentityManagement
         /// Amazon Web Services secures communication with some OIDC identity providers (IdPs)
         /// through our library of trusted certificate authorities (CAs) instead of using a certificate
         /// thumbprint to verify your IdP server certificate. These OIDC IdPs include Google,
-        /// and those that use an Amazon S3 bucket to host a JSON Web Key Set (JWKS) endpoint.
+        /// Auth0, and those that use an Amazon S3 bucket to host a JSON Web Key Set (JWKS) endpoint.
         /// In these cases, your legacy thumbprint remains in your configuration, but is no longer
         /// used for validation.
         /// </para>
@@ -15883,7 +15945,7 @@ namespace Amazon.IdentityManagement
         /// Amazon Web Services secures communication with some OIDC identity providers (IdPs)
         /// through our library of trusted certificate authorities (CAs) instead of using a certificate
         /// thumbprint to verify your IdP server certificate. These OIDC IdPs include Google,
-        /// and those that use an Amazon S3 bucket to host a JSON Web Key Set (JWKS) endpoint.
+        /// Auth0, and those that use an Amazon S3 bucket to host a JSON Web Key Set (JWKS) endpoint.
         /// In these cases, your legacy thumbprint remains in your configuration, but is no longer
         /// used for validation.
         /// </para>
