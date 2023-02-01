@@ -102,6 +102,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GeolocationFormat);
                 }
 
+                if(publicRequest.IsSetImportMode())
+                {
+                    context.Writer.WritePropertyName("ImportMode");
+                    context.Writer.Write(publicRequest.ImportMode);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

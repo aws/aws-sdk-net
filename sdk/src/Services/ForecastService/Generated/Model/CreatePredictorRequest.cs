@@ -188,8 +188,8 @@ namespace Amazon.ForecastService.Model
         /// Gets and sets the property AutoMLOverrideStrategy. <note> 
         /// <para>
         ///  The <code>LatencyOptimized</code> AutoML override strategy is only available in private
-        /// beta. Contact AWS Support or your account manager to learn more about access privileges.
-        /// 
+        /// beta. Contact Amazon Web Services Support or your account manager to learn more about
+        /// access privileges. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -216,8 +216,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property EncryptionConfig. 
         /// <para>
-        /// An AWS Key Management Service (KMS) key and the AWS Identity and Access Management
-        /// (IAM) role that Amazon Forecast can assume to access the key.
+        /// An Key Management Service (KMS) key and the Identity and Access Management (IAM) role
+        /// that Amazon Forecast can assume to access the key.
         /// </para>
         /// </summary>
         public EncryptionConfig EncryptionConfig
@@ -528,11 +528,11 @@ namespace Amazon.ForecastService.Model
         ///  </li> <li> 
         /// <para>
         /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete
-        /// tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code>
-        /// as its prefix but the key does not, then Forecast considers it to be a user tag and
-        /// will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code>
-        /// do not count against your tags per resource limit.
+        /// of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot
+        /// edit or delete tag keys with this prefix. Values can have this prefix. If a tag value
+        /// has <code>aws</code> as its prefix but the key does not, then Forecast considers it
+        /// to be a user tag and will count against the limit of 50 tags. Tags with only the key
+        /// prefix of <code>aws</code> do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>
