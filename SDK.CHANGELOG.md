@@ -1,3 +1,18 @@
+### 3.7.473.0 (2023-02-01 19:22 UTC)
+* DevOpsGuru (3.7.101.0)
+	* This release adds filter support ListAnomalyForInsight API.
+* ForecastService (3.7.101.0)
+	* This release will enable customer select INCREMENTAL as ImportModel in Forecast's CreateDatasetImportJob API. Verified latest SDK containing required attribute, following https://w.amazon.com/bin/view/AWS-Seer/Launch/Trebuchet/
+* IdentityManagement (3.7.100.65)
+	* Documentation updates for AWS Identity and Access Management (IAM).
+* MediaTailor (3.7.104.0)
+	* The AWS Elemental MediaTailor SDK for Channel Assembly has added support for program updates, and the ability to clip the end of VOD sources in programs.
+* SimpleNotificationService (3.7.101.0)
+	* Additional attributes added for set-topic-attributes.
+* Core 3.7.103.26
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.472.0 (2023-01-31 19:45 UTC)
 * AccessAnalyzer (3.7.103.0)
 	* Enabled FIPS endpoints for GovCloud (US) regions in SDK.
