@@ -62,7 +62,7 @@ namespace Amazon.Private5G.Model
         /// The tags to add to the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

@@ -70,6 +70,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property PhoneNumberId.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PhoneNumberId
         {
             get { return this._phoneNumberId; }

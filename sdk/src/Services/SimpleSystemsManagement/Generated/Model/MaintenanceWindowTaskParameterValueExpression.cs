@@ -41,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// This field contains an array of 0 or more strings, each 1 to 255 characters in length.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<string> Values
         {
             get { return this._values; }

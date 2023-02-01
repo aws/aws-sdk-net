@@ -294,7 +294,7 @@ namespace Amazon.Pipes.Model
         /// The reference ID to use for the task.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string ReferenceId
         {
             get { return this._referenceId; }

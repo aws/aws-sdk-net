@@ -46,7 +46,7 @@ namespace Amazon.Pipes.Model
         /// The token used for deduplication of sent messages.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Sensitive=true, Min=0, Max=100)]
         public string MessageDeduplicationId
         {
             get { return this._messageDeduplicationId; }
@@ -65,7 +65,7 @@ namespace Amazon.Pipes.Model
         /// The FIFO message group ID to use as the target.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Sensitive=true, Min=0, Max=100)]
         public string MessageGroupId
         {
             get { return this._messageGroupId; }

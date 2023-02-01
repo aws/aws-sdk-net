@@ -67,7 +67,7 @@ namespace Amazon.EBS.Model
         /// User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public Stream BlockData
         {
             get { return this._blockData; }

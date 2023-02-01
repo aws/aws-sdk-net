@@ -44,6 +44,7 @@ namespace Amazon.IoTSecureTunneling.Model
         /// Tunneling.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DestinationAccessToken
         {
             get { return this._destinationAccessToken; }
@@ -63,6 +64,7 @@ namespace Amazon.IoTSecureTunneling.Model
         /// Tunneling.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string SourceAccessToken
         {
             get { return this._sourceAccessToken; }

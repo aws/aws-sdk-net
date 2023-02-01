@@ -252,7 +252,7 @@ namespace Amazon.KeyManagementService.Model
         /// the password in the CloudHSM cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7, Max=32)]
+        [AWSProperty(Sensitive=true, Min=7, Max=32)]
         public string KeyStorePassword
         {
             get { return this._keyStorePassword; }

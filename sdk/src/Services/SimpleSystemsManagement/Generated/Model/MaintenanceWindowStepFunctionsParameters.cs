@@ -69,7 +69,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The inputs for the <code>STEP_FUNCTIONS</code> task.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4096)]
+        [AWSProperty(Sensitive=true, Max=4096)]
         public string Input
         {
             get { return this._input; }

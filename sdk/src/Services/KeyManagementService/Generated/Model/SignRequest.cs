@@ -209,7 +209,7 @@ namespace Amazon.KeyManagementService.Model
         /// it.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4096)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=4096)]
         public MemoryStream Message
         {
             get { return this._message; }

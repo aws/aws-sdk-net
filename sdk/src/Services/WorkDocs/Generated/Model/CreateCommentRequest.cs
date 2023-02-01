@@ -50,7 +50,7 @@ namespace Amazon.WorkDocs.Model
         /// to access the API.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=8199)]
+        [AWSProperty(Sensitive=true, Min=1, Max=8199)]
         public string AuthenticationToken
         {
             get { return this._authenticationToken; }
@@ -126,7 +126,7 @@ namespace Amazon.WorkDocs.Model
         /// The text of the comment.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=2048)]
         public string Text
         {
             get { return this._text; }

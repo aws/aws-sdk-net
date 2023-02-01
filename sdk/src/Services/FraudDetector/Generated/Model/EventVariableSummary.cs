@@ -44,6 +44,7 @@ namespace Amazon.FraudDetector.Model
         ///  The event variable name. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Name
         {
             get { return this._name; }
@@ -62,6 +63,7 @@ namespace Amazon.FraudDetector.Model
         ///  The event variable source. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Source
         {
             get { return this._source; }
@@ -80,6 +82,7 @@ namespace Amazon.FraudDetector.Model
         ///  The value of the event variable. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Value
         {
             get { return this._value; }

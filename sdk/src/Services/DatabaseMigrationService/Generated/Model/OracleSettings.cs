@@ -220,6 +220,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// for change data capture (CDC) on an Oracle source database</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AsmPassword
         {
             get { return this._asmPassword; }
@@ -520,6 +521,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Endpoint connection password.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Password
         {
             get { return this._password; }
@@ -751,6 +753,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Migration Service User Guide</i>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string SecurityDbEncryption
         {
             get { return this._securityDbEncryption; }

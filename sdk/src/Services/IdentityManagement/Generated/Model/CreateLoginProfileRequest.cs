@@ -85,7 +85,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters because they have special meaning within that tool.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Password
         {
             get { return this._password; }

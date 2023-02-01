@@ -44,7 +44,7 @@ namespace Amazon.Chime.Model
         /// The default outbound calling name for the account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string CallingName
         {
             get { return this._callingName; }

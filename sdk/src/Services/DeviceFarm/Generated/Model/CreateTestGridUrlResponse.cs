@@ -61,6 +61,7 @@ namespace Amazon.DeviceFarm.Model
         /// to be passed to a <code>RemoteWebDriver</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Url
         {
             get { return this._url; }

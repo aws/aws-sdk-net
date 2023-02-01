@@ -69,7 +69,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The current password of the Wi-Fi network.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=128)]
+        [AWSProperty(Sensitive=true, Min=5, Max=128)]
         public string CurrentPassword
         {
             get { return this._currentPassword; }
@@ -165,7 +165,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// NextPassword. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=128)]
+        [AWSProperty(Sensitive=true, Min=0, Max=128)]
         public string NextPassword
         {
             get { return this._nextPassword; }

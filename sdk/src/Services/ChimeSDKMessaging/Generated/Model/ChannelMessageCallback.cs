@@ -46,7 +46,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The message content.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Sensitive=true, Min=1)]
         public string Content
         {
             get { return this._content; }
@@ -103,7 +103,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The message metadata.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Metadata
         {
             get { return this._metadata; }

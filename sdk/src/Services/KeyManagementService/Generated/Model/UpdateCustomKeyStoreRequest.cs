@@ -240,7 +240,7 @@ namespace Amazon.KeyManagementService.Model
         /// To change this value, the CloudHSM key store must be disconnected.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7, Max=32)]
+        [AWSProperty(Sensitive=true, Min=7, Max=32)]
         public string KeyStorePassword
         {
             get { return this._keyStorePassword; }

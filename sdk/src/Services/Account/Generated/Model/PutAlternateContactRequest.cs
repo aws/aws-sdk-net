@@ -126,7 +126,7 @@ namespace Amazon.Account.Model
         /// Specifies an email address for the alternate contact. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=64)]
         public string EmailAddress
         {
             get { return this._emailAddress; }
@@ -145,7 +145,7 @@ namespace Amazon.Account.Model
         /// Specifies a name for the alternate contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -164,7 +164,7 @@ namespace Amazon.Account.Model
         /// Specifies a phone number for the alternate contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=25)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=25)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }
@@ -183,7 +183,7 @@ namespace Amazon.Account.Model
         /// Specifies a title for the alternate contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=50)]
         public string Title
         {
             get { return this._title; }

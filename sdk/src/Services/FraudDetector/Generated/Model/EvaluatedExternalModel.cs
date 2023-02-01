@@ -44,6 +44,7 @@ namespace Amazon.FraudDetector.Model
         ///  Input variables use for generating predictions. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> InputVariables
         {
             get { return this._inputVariables; }
@@ -80,6 +81,7 @@ namespace Amazon.FraudDetector.Model
         ///  Output variables. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> OutputVariables
         {
             get { return this._outputVariables; }

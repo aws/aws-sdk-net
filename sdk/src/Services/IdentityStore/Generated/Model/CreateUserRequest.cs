@@ -75,7 +75,7 @@ namespace Amazon.IdentityStore.Model
         /// when the user is referenced. For example, "John Doe."
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -133,7 +133,7 @@ namespace Amazon.IdentityStore.Model
         /// A string containing the user's geographical region or location.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Locale
         {
             get { return this._locale; }
@@ -170,7 +170,7 @@ namespace Amazon.IdentityStore.Model
         /// A string containing an alternate name for the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string NickName
         {
             get { return this._nickName; }
@@ -210,7 +210,7 @@ namespace Amazon.IdentityStore.Model
         /// or "en-us."
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string PreferredLanguage
         {
             get { return this._preferredLanguage; }
@@ -229,7 +229,7 @@ namespace Amazon.IdentityStore.Model
         /// A string containing a URL that may be associated with the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string ProfileUrl
         {
             get { return this._profileUrl; }
@@ -248,7 +248,7 @@ namespace Amazon.IdentityStore.Model
         /// A string containing the user's time zone.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Timezone
         {
             get { return this._timezone; }
@@ -268,7 +268,7 @@ namespace Amazon.IdentityStore.Model
         /// they depend on each customer's specific needs.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Title
         {
             get { return this._title; }
@@ -290,7 +290,7 @@ namespace Amazon.IdentityStore.Model
         /// of the user object in the identity store.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string UserName
         {
             get { return this._userName; }
@@ -310,7 +310,7 @@ namespace Amazon.IdentityStore.Model
         /// needs, so they are left unspecified.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string UserType
         {
             get { return this._userType; }

@@ -124,7 +124,7 @@ namespace Amazon.FinSpaceData.Model
         ///  A brief description for the permission group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4000)]
         public string Description
         {
             get { return this._description; }
@@ -196,7 +196,7 @@ namespace Amazon.FinSpaceData.Model
         /// The name of the permission group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Sensitive=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

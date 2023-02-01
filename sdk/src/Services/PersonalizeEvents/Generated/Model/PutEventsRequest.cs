@@ -108,7 +108,7 @@ namespace Amazon.PersonalizeEvents.Model
         /// The user associated with the event.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string UserId
         {
             get { return this._userId; }

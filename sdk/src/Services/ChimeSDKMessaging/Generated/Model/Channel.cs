@@ -180,7 +180,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The channel's metadata.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Metadata
         {
             get { return this._metadata; }
@@ -217,7 +217,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The name of a channel.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

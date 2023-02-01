@@ -81,6 +81,7 @@ namespace Amazon.ECS.Model
         /// the connection to the container.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string TokenValue
         {
             get { return this._tokenValue; }

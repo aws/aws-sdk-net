@@ -83,6 +83,7 @@ namespace Amazon.GameLift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Credentials UploadCredentials
         {
             get { return this._uploadCredentials; }

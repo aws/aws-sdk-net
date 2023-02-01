@@ -42,7 +42,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The access code to send in the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Code
         {
             get { return this._code; }

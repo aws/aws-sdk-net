@@ -119,7 +119,7 @@ namespace Amazon.QuickSight.Model
         /// Determines the prefix value of the number format.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string Prefix
         {
             get { return this._prefix; }
@@ -156,7 +156,7 @@ namespace Amazon.QuickSight.Model
         /// Determines the suffix value of the number format.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string Suffix
         {
             get { return this._suffix; }

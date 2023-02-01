@@ -62,6 +62,7 @@ namespace Amazon.Lambda.Model
         /// Environment variable key-value pairs. Omitted from CloudTrail logs.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Variables
         {
             get { return this._variables; }

@@ -83,7 +83,7 @@ namespace Amazon.LocationService.Model
         /// 84</a> format: <code>[X or longitude, Y or latitude]</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]
         public List<double> Position
         {
             get { return this._position; }
@@ -108,7 +108,7 @@ namespace Amazon.LocationService.Model
         /// Format: <code>"key" : "value"</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=3)]
+        [AWSProperty(Sensitive=true, Min=0, Max=3)]
         public Dictionary<string, string> PositionProperties
         {
             get { return this._positionProperties; }

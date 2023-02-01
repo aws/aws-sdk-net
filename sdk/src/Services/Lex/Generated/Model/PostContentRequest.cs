@@ -203,6 +203,7 @@ namespace Amazon.Lex.Model
         /// for the session. If you specify an empty list, all contexts for the session are cleared.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ActiveContexts
         {
             get { return this._activeContexts; }
@@ -360,6 +361,7 @@ namespace Amazon.Lex.Model
         /// Request Attributes</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string RequestAttributes
         {
             get { return this._requestAttributes; }
@@ -390,6 +392,7 @@ namespace Amazon.Lex.Model
         /// Session Attributes</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string SessionAttributes
         {
             get { return this._sessionAttributes; }

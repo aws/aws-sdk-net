@@ -61,7 +61,7 @@ namespace Amazon.Honeycode.Model
         /// The name of the column.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Name
         {
             get { return this._name; }

@@ -201,7 +201,7 @@ namespace Amazon.Organizations.Model
         /// or dot (.) You can't separate characters with a dash (–).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=50)]
         public string AccountName
         {
             get { return this._accountName; }
@@ -273,7 +273,7 @@ namespace Amazon.Organizations.Model
         /// Region.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=6, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=6, Max=64)]
         public string Email
         {
             get { return this._email; }

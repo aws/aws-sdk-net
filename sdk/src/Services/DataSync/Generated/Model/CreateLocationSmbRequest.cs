@@ -108,7 +108,7 @@ namespace Amazon.DataSync.Model
         /// and folders in the SMB share.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=104)]
+        [AWSProperty(Required=true, Sensitive=true, Max=104)]
         public string Password
         {
             get { return this._password; }

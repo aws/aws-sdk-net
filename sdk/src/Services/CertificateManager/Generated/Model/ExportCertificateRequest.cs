@@ -92,7 +92,7 @@ namespace Amazon.CertificateManager.Model
         ///  <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=4, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=4, Max=128)]
         public MemoryStream Passphrase
         {
             get { return this._passphrase; }

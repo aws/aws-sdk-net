@@ -117,7 +117,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

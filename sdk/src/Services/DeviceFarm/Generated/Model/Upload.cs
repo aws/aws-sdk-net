@@ -382,7 +382,7 @@ namespace Amazon.DeviceFarm.Model
         /// The presigned Amazon S3 URL that was used to store a file using a PUT request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string Url
         {
             get { return this._url; }

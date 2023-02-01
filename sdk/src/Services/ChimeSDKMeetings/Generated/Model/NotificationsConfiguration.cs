@@ -44,7 +44,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// The ARN of the AWS Lambda function in the notifications configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string LambdaFunctionArn
         {
             get { return this._lambdaFunctionArn; }
@@ -63,7 +63,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// The ARN of the SNS topic.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string SnsTopicArn
         {
             get { return this._snsTopicArn; }
@@ -82,7 +82,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// The ARN of the SQS queue.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string SqsQueueArn
         {
             get { return this._sqsQueueArn; }

@@ -64,7 +64,7 @@ namespace Amazon.CodeStarNotifications.Model
         /// The ARN of the Chatbot topic to unsubscribe from the notification rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=320)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=320)]
         public string TargetAddress
         {
             get { return this._targetAddress; }

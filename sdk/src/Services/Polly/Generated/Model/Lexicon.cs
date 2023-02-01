@@ -44,6 +44,7 @@ namespace Amazon.Polly.Model
         /// Lexicon content in string format. The content of a lexicon must be in PLS format.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Content
         {
             get { return this._content; }

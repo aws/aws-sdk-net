@@ -70,7 +70,7 @@ namespace Amazon.Chime.Model
         /// The address city, such as <code>Portland</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string City
         {
             get { return this._city; }
@@ -89,7 +89,7 @@ namespace Amazon.Chime.Model
         /// The address country, such as <code>US</code>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Country
         {
             get { return this._country; }
@@ -108,7 +108,7 @@ namespace Amazon.Chime.Model
         /// The address postal code, such as <code>04352</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string PostalCode
         {
             get { return this._postalCode; }
@@ -127,7 +127,7 @@ namespace Amazon.Chime.Model
         /// The address state, such as <code>ME</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string State
         {
             get { return this._state; }
@@ -146,7 +146,7 @@ namespace Amazon.Chime.Model
         /// The address street information, such as <code>8th Avenue</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string StreetInfo
         {
             get { return this._streetInfo; }
@@ -165,7 +165,7 @@ namespace Amazon.Chime.Model
         /// The address street number, such as <code>200</code> or <code>2121</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string StreetNumber
         {
             get { return this._streetNumber; }

@@ -52,6 +52,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// in the results of queries made using this view.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public SearchFilter Filters
         {
             get { return this._filters; }

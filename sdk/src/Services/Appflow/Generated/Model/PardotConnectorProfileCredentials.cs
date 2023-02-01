@@ -44,7 +44,7 @@ namespace Amazon.Appflow.Model
         /// The credentials used to access protected Salesforce Pardot resources.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4096)]
+        [AWSProperty(Sensitive=true, Max=4096)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -64,7 +64,7 @@ namespace Amazon.Appflow.Model
         /// app.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=20, Max=2048)]
         public string ClientCredentialsArn
         {
             get { return this._clientCredentialsArn; }

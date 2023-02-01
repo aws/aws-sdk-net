@@ -87,7 +87,7 @@ namespace Amazon.ForecastService.Model
         /// label that acts like a category for more specific tag values.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -107,7 +107,7 @@ namespace Amazon.ForecastService.Model
         /// as a descriptor within a tag category (key).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

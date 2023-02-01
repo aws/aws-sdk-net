@@ -63,7 +63,7 @@ namespace Amazon.Comprehend.Model
         /// A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string Text
         {
             get { return this._text; }

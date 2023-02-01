@@ -87,6 +87,7 @@ namespace Amazon.CodePipeline.Model
         /// CodePipeline. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public AWSSessionCredentials ArtifactCredentials
         {
             get { return this._artifactCredentials; }

@@ -87,7 +87,7 @@ namespace Amazon.NimbleStudio.Model
         /// A human-readable description of the streaming image.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -161,7 +161,7 @@ namespace Amazon.NimbleStudio.Model
         /// A friendly name for a streaming image resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=64)]
+        [AWSProperty(Sensitive=true, Min=0, Max=64)]
         public string Name
         {
             get { return this._name; }

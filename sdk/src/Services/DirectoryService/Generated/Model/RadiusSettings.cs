@@ -163,7 +163,7 @@ namespace Amazon.DirectoryService.Model
         /// Required for enabling RADIUS on the directory.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=512)]
+        [AWSProperty(Sensitive=true, Min=8, Max=512)]
         public string SharedSecret
         {
             get { return this._sharedSecret; }

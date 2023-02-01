@@ -46,7 +46,7 @@ namespace Amazon.CodePipeline.Model
         /// The access key for the session.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string AccessKeyId
         {
             get { return this._accessKeyId; }
@@ -65,7 +65,7 @@ namespace Amazon.CodePipeline.Model
         /// The secret access key for the session.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string SecretAccessKey
         {
             get { return this._secretAccessKey; }
@@ -84,7 +84,7 @@ namespace Amazon.CodePipeline.Model
         /// The token for the session.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string SessionToken
         {
             get { return this._sessionToken; }

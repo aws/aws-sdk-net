@@ -138,7 +138,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public Dictionary<string, string> Metadata
         {
             get { return this._metadata; }

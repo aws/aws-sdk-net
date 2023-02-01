@@ -105,7 +105,7 @@ namespace Amazon.Chime.Model
         /// ARN of the destination to which the media artifacts are saved.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string SinkArn
         {
             get { return this._sinkArn; }
@@ -142,7 +142,7 @@ namespace Amazon.Chime.Model
         /// ARN of the source from which the media artifacts will be saved.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string SourceArn
         {
             get { return this._sourceArn; }

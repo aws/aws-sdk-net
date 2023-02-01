@@ -49,7 +49,7 @@ namespace Amazon.KeyManagementService.Model
         /// authentication credential</a> that uniquely identifies the secret access key.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=30)]
+        [AWSProperty(Sensitive=true, Min=20, Max=30)]
         public string AccessKeyId
         {
             get { return this._accessKeyId; }

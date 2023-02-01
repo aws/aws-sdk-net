@@ -41,7 +41,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// The destination URL of the S3 bucket.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string Destination
         {
             get { return this._destination; }

@@ -122,7 +122,7 @@ namespace Amazon.NimbleStudio.Model
         /// A human-readable description of the launch profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -198,7 +198,7 @@ namespace Amazon.NimbleStudio.Model
         /// A friendly name for the launch profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }

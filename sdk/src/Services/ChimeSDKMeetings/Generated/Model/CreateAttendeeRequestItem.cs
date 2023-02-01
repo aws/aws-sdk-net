@@ -62,7 +62,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// an identity managed by a builder application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=64)]
         public string ExternalUserId
         {
             get { return this._externalUserId; }

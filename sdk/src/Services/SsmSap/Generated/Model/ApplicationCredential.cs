@@ -82,7 +82,7 @@ namespace Amazon.SsmSap.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=100)]
         public string SecretId
         {
             get { return this._secretId; }

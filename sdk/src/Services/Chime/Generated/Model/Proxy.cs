@@ -81,6 +81,7 @@ namespace Amazon.Chime.Model
         /// The phone number to route calls to after a proxy session expires.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string FallBackPhoneNumber
         {
             get { return this._fallBackPhoneNumber; }

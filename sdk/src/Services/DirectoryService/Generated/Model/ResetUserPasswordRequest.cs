@@ -84,7 +84,7 @@ namespace Amazon.DirectoryService.Model
         /// The new password that will be reset.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=127)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=127)]
         public string NewPassword
         {
             get { return this._newPassword; }

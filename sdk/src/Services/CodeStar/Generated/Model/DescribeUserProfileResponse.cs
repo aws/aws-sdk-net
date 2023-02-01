@@ -73,7 +73,7 @@ namespace Amazon.CodeStar.Model
         /// first character and the first character after the space ("MJ", not "MM").
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -92,7 +92,7 @@ namespace Amazon.CodeStar.Model
         /// The email address for the user. Optional.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=128)]
+        [AWSProperty(Sensitive=true, Min=3, Max=128)]
         public string EmailAddress
         {
             get { return this._emailAddress; }

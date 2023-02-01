@@ -69,7 +69,7 @@ namespace Amazon.Cloud9.Model
         /// The list of tags to add to the given Cloud9 development environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

@@ -110,6 +110,7 @@ namespace Amazon.Proton.Model
         /// The message associated with the service instance deployment status.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DeploymentStatusMessage
         {
             get { return this._deploymentStatusMessage; }
@@ -223,7 +224,7 @@ namespace Amazon.Proton.Model
         /// The service spec that was used to create the service instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=51200)]
+        [AWSProperty(Sensitive=true, Min=1, Max=51200)]
         public string Spec
         {
             get { return this._spec; }

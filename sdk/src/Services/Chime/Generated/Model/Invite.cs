@@ -45,6 +45,7 @@ namespace Amazon.Chime.Model
         /// The email address to which the invite is sent.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string EmailAddress
         {
             get { return this._emailAddress; }

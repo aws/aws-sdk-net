@@ -44,7 +44,7 @@ namespace Amazon.Proton.Model
         /// A description of the environment template update.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -63,7 +63,7 @@ namespace Amazon.Proton.Model
         /// The name of the environment template to update as displayed in the developer interface.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string DisplayName
         {
             get { return this._displayName; }

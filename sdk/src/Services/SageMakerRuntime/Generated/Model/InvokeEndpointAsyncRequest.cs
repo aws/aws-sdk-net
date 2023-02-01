@@ -128,7 +128,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// Amazon SageMaker Python SDK. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Sensitive=true, Max=1024)]
         public string CustomAttributes
         {
             get { return this._customAttributes; }

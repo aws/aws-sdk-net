@@ -194,7 +194,7 @@ namespace Amazon.KeyManagementService.Model
         /// verification fails. A message and its hash digest are considered to be the same message.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4096)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=4096)]
         public MemoryStream Message
         {
             get { return this._message; }

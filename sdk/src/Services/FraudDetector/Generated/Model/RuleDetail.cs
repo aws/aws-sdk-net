@@ -126,7 +126,7 @@ namespace Amazon.FraudDetector.Model
         /// The rule expression.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public string Expression
         {
             get { return this._expression; }

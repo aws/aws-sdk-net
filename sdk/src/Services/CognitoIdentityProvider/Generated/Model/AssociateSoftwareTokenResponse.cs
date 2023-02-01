@@ -43,7 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// a one-time code.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=16)]
+        [AWSProperty(Sensitive=true, Min=16)]
         public string SecretCode
         {
             get { return this._secretCode; }

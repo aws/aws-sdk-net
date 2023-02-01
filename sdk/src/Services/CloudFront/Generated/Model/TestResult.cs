@@ -66,6 +66,7 @@ namespace Amazon.CloudFront.Model
         /// message.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string FunctionErrorMessage
         {
             get { return this._functionErrorMessage; }
@@ -84,6 +85,7 @@ namespace Amazon.CloudFront.Model
         /// Contains the log lines that the function wrote (if any) when running the test.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<string> FunctionExecutionLogs
         {
             get { return this._functionExecutionLogs; }
@@ -104,6 +106,7 @@ namespace Amazon.CloudFront.Model
         /// object structure</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string FunctionOutput
         {
             get { return this._functionOutput; }

@@ -68,7 +68,7 @@ namespace Amazon.Transfer.Model
         /// The file that contains the certificate to import.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=16384)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=16384)]
         public string Certificate
         {
             get { return this._certificate; }
@@ -88,7 +88,7 @@ namespace Amazon.Transfer.Model
         /// being imported.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2097152)]
+        [AWSProperty(Sensitive=true, Min=1, Max=2097152)]
         public string CertificateChain
         {
             get { return this._certificateChain; }
@@ -144,7 +144,7 @@ namespace Amazon.Transfer.Model
         /// The file that contains the private key for the certificate that's being imported.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=16384)]
+        [AWSProperty(Sensitive=true, Min=1, Max=16384)]
         public string PrivateKey
         {
             get { return this._privateKey; }

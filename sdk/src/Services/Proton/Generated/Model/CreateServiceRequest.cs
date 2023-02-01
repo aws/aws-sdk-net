@@ -75,7 +75,7 @@ namespace Amazon.Proton.Model
         /// A description of the Proton service.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -159,7 +159,7 @@ namespace Amazon.Proton.Model
         /// a service</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=51200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=51200)]
         public string Spec
         {
             get { return this._spec; }

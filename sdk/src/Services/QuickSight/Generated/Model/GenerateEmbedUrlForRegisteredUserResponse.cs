@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string EmbedUrl
         {
             get { return this._embedUrl; }

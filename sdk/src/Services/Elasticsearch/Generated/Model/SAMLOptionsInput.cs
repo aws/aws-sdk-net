@@ -103,7 +103,7 @@ namespace Amazon.Elasticsearch.Model
         /// internal database.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Sensitive=true, Min=1)]
         public string MasterUserName
         {
             get { return this._masterUserName; }

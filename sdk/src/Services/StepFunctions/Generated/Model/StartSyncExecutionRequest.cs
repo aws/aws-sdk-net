@@ -74,7 +74,7 @@ namespace Amazon.StepFunctions.Model
         /// encoding.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=262144)]
+        [AWSProperty(Sensitive=true, Max=262144)]
         public string Input
         {
             get { return this._input; }

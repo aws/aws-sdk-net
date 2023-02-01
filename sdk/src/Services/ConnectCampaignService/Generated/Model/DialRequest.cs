@@ -41,7 +41,7 @@ namespace Amazon.ConnectCampaignService.Model
         /// <summary>
         /// Gets and sets the property Attributes.
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public Dictionary<string, string> Attributes
         {
             get { return this._attributes; }
@@ -89,7 +89,7 @@ namespace Amazon.ConnectCampaignService.Model
         /// <summary>
         /// Gets and sets the property PhoneNumber.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=20)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=20)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }

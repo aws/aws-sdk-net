@@ -128,7 +128,7 @@ namespace Amazon.VoiceID.Model
         /// Only present if a <code>SpeakerId</code> is provided for the session.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string CustomerSpeakerId
         {
             get { return this._customerSpeakerId; }

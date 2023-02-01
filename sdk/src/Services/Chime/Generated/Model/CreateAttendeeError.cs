@@ -82,7 +82,7 @@ namespace Amazon.Chime.Model
         /// an identity managed by a builder application.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ExternalUserId
         {
             get { return this._externalUserId; }

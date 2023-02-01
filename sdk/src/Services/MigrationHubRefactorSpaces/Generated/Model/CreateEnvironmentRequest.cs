@@ -130,7 +130,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// Web Services resource. Each tag consists of a key-value pair.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

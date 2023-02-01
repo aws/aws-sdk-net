@@ -174,6 +174,7 @@ namespace Amazon.Lightsail.Model
         /// Constraints: Must contain from 8 to 128 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }

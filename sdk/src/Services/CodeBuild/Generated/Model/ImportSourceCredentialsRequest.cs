@@ -108,7 +108,7 @@ namespace Amazon.CodeBuild.Model
         /// this is the app password. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string Token
         {
             get { return this._token; }

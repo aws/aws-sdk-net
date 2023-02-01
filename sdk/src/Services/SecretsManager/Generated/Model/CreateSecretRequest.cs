@@ -314,7 +314,7 @@ namespace Amazon.SecretsManager.Model
         /// This parameter is not available in the Secrets Manager console.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=65536)]
+        [AWSProperty(Sensitive=true, Min=0, Max=65536)]
         public MemoryStream SecretBinary
         {
             get { return this._secretBinary; }
@@ -346,7 +346,7 @@ namespace Amazon.SecretsManager.Model
         /// a Lambda rotation function can parse.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=65536)]
+        [AWSProperty(Sensitive=true, Min=0, Max=65536)]
         public string SecretString
         {
             get { return this._secretString; }

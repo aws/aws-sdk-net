@@ -140,7 +140,7 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string UserName
         {
             get { return this._userName; }

@@ -116,6 +116,7 @@ namespace Amazon.Proton.Model
         /// The message associated with the component deployment status.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DeploymentStatusMessage
         {
             get { return this._deploymentStatusMessage; }
@@ -134,7 +135,7 @@ namespace Amazon.Proton.Model
         /// A description of the component.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -287,7 +288,7 @@ namespace Amazon.Proton.Model
         /// component is attached to a service instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=51200)]
+        [AWSProperty(Sensitive=true, Min=1, Max=51200)]
         public string ServiceSpec
         {
             get { return this._serviceSpec; }

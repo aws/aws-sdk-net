@@ -42,7 +42,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The ARN of the <code>AppInstanceUser</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=1600)]
+        [AWSProperty(Sensitive=true, Min=5, Max=1600)]
         public string AppInstanceUserArn
         {
             get { return this._appInstanceUserArn; }
@@ -61,7 +61,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The unique identifier of the <code>AppInstanceUserEndpoint</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=64)]
+        [AWSProperty(Sensitive=true, Min=0, Max=64)]
         public string EndpointId
         {
             get { return this._endpointId; }

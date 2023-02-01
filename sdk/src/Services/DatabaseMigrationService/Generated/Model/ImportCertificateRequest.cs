@@ -66,6 +66,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The contents of a <code>.pem</code> file, which contains an X.509 certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string CertificatePem
         {
             get { return this._certificatePem; }

@@ -72,7 +72,7 @@ namespace Amazon.StepFunctions.Model
         /// States Language</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1048576)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1048576)]
         public string Definition
         {
             get { return this._definition; }

@@ -80,7 +80,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=100)]
         public string SecretToAuthenticateInitiator
         {
             get { return this._secretToAuthenticateInitiator; }
@@ -109,7 +109,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string SecretToAuthenticateTarget
         {
             get { return this._secretToAuthenticateTarget; }

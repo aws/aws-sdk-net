@@ -242,6 +242,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The parameters for the <code>RUN_COMMAND</code> task execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, List<string>> Parameters
         {
             get { return this._parameters; }

@@ -39,6 +39,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property PhoneNumber.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }
@@ -54,6 +55,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property ProxyPhoneNumber.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ProxyPhoneNumber
         {
             get { return this._proxyPhoneNumber; }

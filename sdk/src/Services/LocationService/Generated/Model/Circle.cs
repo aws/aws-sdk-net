@@ -43,7 +43,7 @@ namespace Amazon.LocationService.Model
         /// 84</a> coordinates, in the form <code>[longitude, latitude]</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]
         public List<double> Center
         {
             get { return this._center; }

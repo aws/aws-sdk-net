@@ -177,7 +177,7 @@ namespace Amazon.Proton.Model
         /// The spec for the service pipeline to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=51200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=51200)]
         public string Spec
         {
             get { return this._spec; }

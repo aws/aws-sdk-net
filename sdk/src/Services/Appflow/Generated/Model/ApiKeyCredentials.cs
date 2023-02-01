@@ -42,7 +42,7 @@ namespace Amazon.Appflow.Model
         /// The API key required for API key authentication.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Max=256)]
         public string ApiKey
         {
             get { return this._apiKey; }
@@ -61,7 +61,7 @@ namespace Amazon.Appflow.Model
         /// The API secret key required for API key authentication.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Sensitive=true, Max=256)]
         public string ApiSecretKey
         {
             get { return this._apiSecretKey; }

@@ -216,6 +216,7 @@ namespace Amazon.Mgn.Model
         /// Source server Tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

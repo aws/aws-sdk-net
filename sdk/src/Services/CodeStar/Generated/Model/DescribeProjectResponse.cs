@@ -105,7 +105,7 @@ namespace Amazon.CodeStar.Model
         /// The description of the project, if any.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Sensitive=true, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -143,7 +143,7 @@ namespace Amazon.CodeStar.Model
         /// The display name for the project.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

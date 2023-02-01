@@ -125,6 +125,7 @@ namespace Amazon.Lambda.Model
         /// CLI clients handle the encoding for you.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public MemoryStream ZipFile
         {
             get { return this._zipFile; }

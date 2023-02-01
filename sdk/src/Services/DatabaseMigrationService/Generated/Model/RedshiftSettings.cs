@@ -412,6 +412,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The password for the user named in the <code>username</code> property.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Password
         {
             get { return this._password; }

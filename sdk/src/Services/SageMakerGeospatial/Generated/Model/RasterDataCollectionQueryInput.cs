@@ -93,7 +93,7 @@ namespace Amazon.SageMakerGeospatial.Model
         /// <summary>
         /// Gets and sets the property TimeRangeFilter.
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public TimeRangeFilterInput TimeRangeFilter
         {
             get { return this._timeRangeFilter; }

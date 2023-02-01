@@ -576,6 +576,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The password to be used to login to the endpoint database.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Password
         {
             get { return this._password; }

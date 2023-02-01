@@ -73,7 +73,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated")]
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string FIAuthKey
         {
             get { return this._fiAuthKey; }

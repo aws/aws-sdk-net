@@ -44,6 +44,7 @@ namespace Amazon.IdentityStore.Model
         /// resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool Primary
         {
             get { return this._primary.GetValueOrDefault(); }
@@ -62,7 +63,7 @@ namespace Amazon.IdentityStore.Model
         /// A string representing the type of address. For example, "Work."
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Type
         {
             get { return this._type; }
@@ -81,7 +82,7 @@ namespace Amazon.IdentityStore.Model
         /// A string containing an email address. For example, "johndoe@amazon.com."
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Value
         {
             get { return this._value; }

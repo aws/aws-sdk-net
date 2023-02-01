@@ -415,6 +415,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// the parameter using <code>{{ssm:parameter-name}}</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, List<string>> Parameters
         {
             get { return this._parameters; }

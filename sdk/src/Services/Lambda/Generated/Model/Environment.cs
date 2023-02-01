@@ -44,6 +44,7 @@ namespace Amazon.Lambda.Model
         /// Lambda environment variables</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Variables
         {
             get { return this._variables; }

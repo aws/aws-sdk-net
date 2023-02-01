@@ -66,7 +66,7 @@ namespace Amazon.IdentityStore.Model
         /// pair. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string AttributeValue
         {
             get { return this._attributeValue; }

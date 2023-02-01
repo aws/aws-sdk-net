@@ -167,7 +167,7 @@ namespace Amazon.StorageGateway.Model
         /// The password of the user credential.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string Password
         {
             get { return this._password; }

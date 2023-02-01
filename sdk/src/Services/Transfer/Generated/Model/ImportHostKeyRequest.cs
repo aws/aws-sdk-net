@@ -68,7 +68,7 @@ namespace Amazon.Transfer.Model
         /// Transfer Family accepts RSA, ECDSA, and ED25519 keys.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=4096)]
+        [AWSProperty(Required=true, Sensitive=true, Max=4096)]
         public string HostKeyBody
         {
             get { return this._hostKeyBody; }

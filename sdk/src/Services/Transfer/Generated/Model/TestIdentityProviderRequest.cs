@@ -182,7 +182,7 @@ namespace Amazon.Transfer.Model
         /// The password of the user account to be tested.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Sensitive=true, Max=1024)]
         public string UserPassword
         {
             get { return this._userPassword; }

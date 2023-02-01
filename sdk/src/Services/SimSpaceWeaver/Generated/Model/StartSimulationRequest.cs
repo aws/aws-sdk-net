@@ -50,7 +50,7 @@ namespace Amazon.SimSpaceWeaver.Model
         /// an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32, Max=128)]
+        [AWSProperty(Sensitive=true, Min=32, Max=128)]
         public string ClientToken
         {
             get { return this._clientToken; }

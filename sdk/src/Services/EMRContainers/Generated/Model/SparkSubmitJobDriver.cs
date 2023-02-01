@@ -43,7 +43,7 @@ namespace Amazon.EMRContainers.Model
         /// The entry point of job application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string EntryPoint
         {
             get { return this._entryPoint; }
@@ -80,7 +80,7 @@ namespace Amazon.EMRContainers.Model
         /// The Spark submit parameters that are used for job runs.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=102400)]
+        [AWSProperty(Sensitive=true, Min=1, Max=102400)]
         public string SparkSubmitParameters
         {
             get { return this._sparkSubmitParameters; }

@@ -62,7 +62,7 @@ namespace Amazon.WorkMail.Model
         /// The password used to authenticate the remote EWS server.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Max=256)]
         public string EwsPassword
         {
             get { return this._ewsPassword; }

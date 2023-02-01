@@ -47,7 +47,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// slash(\), @, or a space.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=8, Max=32)]
+        [AWSProperty(Required=true, Sensitive=true, Min=8, Max=32)]
         public string AdminPassword
         {
             get { return this._adminPassword; }

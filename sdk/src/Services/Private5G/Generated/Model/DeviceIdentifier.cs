@@ -103,6 +103,7 @@ namespace Amazon.Private5G.Model
         /// The International Mobile Subscriber Identity of the device identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Imsi
         {
             get { return this._imsi; }

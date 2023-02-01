@@ -266,7 +266,7 @@ namespace Amazon.Transfer.Model
         /// host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4096)]
+        [AWSProperty(Sensitive=true, Max=4096)]
         public string HostKey
         {
             get { return this._hostKey; }

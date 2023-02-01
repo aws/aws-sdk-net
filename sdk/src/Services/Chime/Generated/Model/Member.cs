@@ -63,6 +63,7 @@ namespace Amazon.Chime.Model
         /// The member email address.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Email
         {
             get { return this._email; }
@@ -81,6 +82,7 @@ namespace Amazon.Chime.Model
         /// The member name.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string FullName
         {
             get { return this._fullName; }

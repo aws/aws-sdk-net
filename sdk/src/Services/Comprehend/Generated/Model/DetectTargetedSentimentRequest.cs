@@ -69,7 +69,7 @@ namespace Amazon.Comprehend.Model
         /// A UTF-8 text string. The maximum string length is 5 KB.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string Text
         {
             get { return this._text; }

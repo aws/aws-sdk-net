@@ -96,7 +96,7 @@ namespace Amazon.FinSpaceData.Model
         /// each user and cannot be changed after it's created.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=4, Max=320)]
+        [AWSProperty(Sensitive=true, Min=4, Max=320)]
         public string EmailAddress
         {
             get { return this._emailAddress; }
@@ -115,7 +115,7 @@ namespace Amazon.FinSpaceData.Model
         /// The first name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public string FirstName
         {
             get { return this._firstName; }
@@ -134,7 +134,7 @@ namespace Amazon.FinSpaceData.Model
         /// The last name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public string LastName
         {
             get { return this._lastName; }

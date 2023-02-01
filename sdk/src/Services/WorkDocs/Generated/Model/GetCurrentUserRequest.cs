@@ -50,7 +50,7 @@ namespace Amazon.WorkDocs.Model
         /// Amazon WorkDocs authentication token.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=8199)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=8199)]
         public string AuthenticationToken
         {
             get { return this._authenticationToken; }

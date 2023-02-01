@@ -82,7 +82,7 @@ namespace Amazon.LocationService.Model
         /// The last known device position. Empty if no positions currently stored.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]
         public List<double> Position
         {
             get { return this._position; }
@@ -101,7 +101,7 @@ namespace Amazon.LocationService.Model
         /// The properties associated with the position.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=3)]
+        [AWSProperty(Sensitive=true, Min=0, Max=3)]
         public Dictionary<string, string> PositionProperties
         {
             get { return this._positionProperties; }

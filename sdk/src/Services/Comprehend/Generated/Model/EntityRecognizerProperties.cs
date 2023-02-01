@@ -198,6 +198,7 @@ namespace Amazon.Comprehend.Model
         ///  Provides information about an entity recognizer.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public EntityRecognizerMetadata RecognizerMetadata
         {
             get { return this._recognizerMetadata; }

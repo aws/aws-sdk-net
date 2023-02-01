@@ -82,7 +82,7 @@ namespace Amazon.DataSync.Model
         /// Specifies the password of a user who has permission to access your SVM.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=104)]
+        [AWSProperty(Required=true, Sensitive=true, Max=104)]
         public string Password
         {
             get { return this._password; }

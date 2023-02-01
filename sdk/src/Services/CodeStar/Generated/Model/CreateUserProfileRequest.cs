@@ -49,7 +49,7 @@ namespace Amazon.CodeStar.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=64)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -68,7 +68,7 @@ namespace Amazon.CodeStar.Model
         /// The email address that will be displayed as part of the user's profile in AWS CodeStar.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=3, Max=128)]
         public string EmailAddress
         {
             get { return this._emailAddress; }

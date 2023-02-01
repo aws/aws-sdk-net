@@ -45,6 +45,7 @@ namespace Amazon.AppConfigData.Model
         /// version of configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public MemoryStream Configuration
         {
             get { return this._configuration; }

@@ -48,7 +48,7 @@ namespace Amazon.WorkDocs.Model
         /// credentials to access the API.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=8199)]
+        [AWSProperty(Sensitive=true, Min=1, Max=8199)]
         public string AuthenticationToken
         {
             get { return this._authenticationToken; }

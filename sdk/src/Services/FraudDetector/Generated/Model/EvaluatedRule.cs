@@ -65,6 +65,7 @@ namespace Amazon.FraudDetector.Model
         ///  The rule expression. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Expression
         {
             get { return this._expression; }
@@ -83,6 +84,7 @@ namespace Amazon.FraudDetector.Model
         ///  The rule expression value. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ExpressionWithValues
         {
             get { return this._expressionWithValues; }

@@ -45,7 +45,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// The token assigned to the client making the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }

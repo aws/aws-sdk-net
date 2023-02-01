@@ -1078,6 +1078,7 @@ namespace Amazon.EC2.Model
         /// you must provide base64-encoded text. User data is limited to 16 KB.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string UserData
         {
             get { return this._userData; }

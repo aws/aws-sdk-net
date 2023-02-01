@@ -49,7 +49,7 @@ namespace Amazon.KeyManagementService.Model
         /// A unique identifier for the raw secret access key.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=30)]
+        [AWSProperty(Required=true, Sensitive=true, Min=20, Max=30)]
         public string AccessKeyId
         {
             get { return this._accessKeyId; }
@@ -69,7 +69,7 @@ namespace Amazon.KeyManagementService.Model
         /// =.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=43, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=43, Max=64)]
         public string RawSecretAccessKey
         {
             get { return this._rawSecretAccessKey; }

@@ -81,6 +81,7 @@ namespace Amazon.Drs.Model
         /// A list of tags associated with the staging source server.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

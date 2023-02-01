@@ -39,6 +39,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property E164PhoneNumber.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string E164PhoneNumber
         {
             get { return this._e164PhoneNumber; }

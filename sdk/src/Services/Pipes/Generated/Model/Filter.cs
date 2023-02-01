@@ -42,7 +42,7 @@ namespace Amazon.Pipes.Model
         /// The event pattern.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4096)]
         public string Pattern
         {
             get { return this._pattern; }

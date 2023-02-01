@@ -65,7 +65,7 @@ namespace Amazon.AppStream.Model
         /// The first name, or given name, of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Sensitive=true, Max=2048)]
         public string FirstName
         {
             get { return this._firstName; }
@@ -84,7 +84,7 @@ namespace Amazon.AppStream.Model
         /// The last name, or surname, of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Sensitive=true, Max=2048)]
         public string LastName
         {
             get { return this._lastName; }
@@ -137,7 +137,7 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string UserName
         {
             get { return this._userName; }

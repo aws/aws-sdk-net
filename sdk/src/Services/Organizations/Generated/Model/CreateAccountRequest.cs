@@ -136,7 +136,7 @@ namespace Amazon.Organizations.Model
         /// The friendly name of the member account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=50)]
         public string AccountName
         {
             get { return this._accountName; }
@@ -204,7 +204,7 @@ namespace Amazon.Organizations.Model
         /// with an invalid email address.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=6, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=6, Max=64)]
         public string Email
         {
             get { return this._email; }

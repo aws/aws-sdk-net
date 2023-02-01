@@ -213,6 +213,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// encoded before sending to Amazon Lex V2.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string RequestAttributes
         {
             get { return this._requestAttributes; }
@@ -373,6 +374,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// encoded before sending to Amazon Lex V2.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string SessionStateValue
         {
             get { return this._sessionStateValue; }

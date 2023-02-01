@@ -39,6 +39,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property Password.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Password
         {
             get { return this._password; }
@@ -54,6 +55,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property Username.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Username
         {
             get { return this._username; }

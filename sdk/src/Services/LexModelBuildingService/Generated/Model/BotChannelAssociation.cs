@@ -69,7 +69,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Provides information necessary to communicate with the messaging platform. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
+        [AWSProperty(Sensitive=true, Min=1, Max=10)]
         public Dictionary<string, string> BotConfiguration
         {
             get { return this._botConfiguration; }

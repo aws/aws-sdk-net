@@ -43,7 +43,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// The text of the message.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Content
         {
             get { return this._content; }

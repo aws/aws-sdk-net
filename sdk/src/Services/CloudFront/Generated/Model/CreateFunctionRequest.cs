@@ -65,7 +65,7 @@ namespace Amazon.CloudFront.Model
         /// function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=40960)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=40960)]
         public MemoryStream FunctionCode
         {
             get { return this._functionCode; }

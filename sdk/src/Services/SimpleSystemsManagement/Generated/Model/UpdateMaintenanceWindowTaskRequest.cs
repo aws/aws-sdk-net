@@ -175,7 +175,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The new task description to specify.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string Description
         {
             get { return this._description; }
@@ -484,6 +484,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Value: an array of strings, each string is between 1 and 255 characters
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, MaintenanceWindowTaskParameterValueExpression> TaskParameters
         {
             get { return this._taskParameters; }

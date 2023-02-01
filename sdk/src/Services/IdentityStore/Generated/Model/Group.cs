@@ -45,7 +45,7 @@ namespace Amazon.IdentityStore.Model
         /// A string containing a description of the specified group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -68,7 +68,7 @@ namespace Amazon.IdentityStore.Model
         /// the identity store.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string DisplayName
         {
             get { return this._displayName; }

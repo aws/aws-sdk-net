@@ -125,6 +125,7 @@ namespace Amazon.Chime.Model
         /// The name of the proxy session.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Name
         {
             get { return this._name; }

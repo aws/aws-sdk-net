@@ -162,7 +162,7 @@ namespace Amazon.Proton.Model
         /// The formatted specification that defines the service instance update.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=51200)]
+        [AWSProperty(Sensitive=true, Min=1, Max=51200)]
         public string Spec
         {
             get { return this._spec; }

@@ -122,7 +122,7 @@ namespace Amazon.DirectoryService.Model
         /// <a>ResetUserPassword</a> API call.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Password
         {
             get { return this._password; }

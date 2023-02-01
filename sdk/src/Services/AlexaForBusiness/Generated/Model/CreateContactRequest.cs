@@ -127,7 +127,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// which lets you specify the phone number type and multiple numbers.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }

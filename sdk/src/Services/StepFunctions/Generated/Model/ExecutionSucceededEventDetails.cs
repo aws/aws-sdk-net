@@ -43,7 +43,7 @@ namespace Amazon.StepFunctions.Model
         /// and are expressed as bytes in UTF-8 encoding.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=262144)]
+        [AWSProperty(Sensitive=true, Max=262144)]
         public string Output
         {
             get { return this._output; }

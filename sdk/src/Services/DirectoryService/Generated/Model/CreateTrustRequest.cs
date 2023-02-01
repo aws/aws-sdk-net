@@ -155,7 +155,7 @@ namespace Amazon.DirectoryService.Model
         /// trust relationship on the external domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string TrustPassword
         {
             get { return this._trustPassword; }

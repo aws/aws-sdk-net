@@ -48,7 +48,7 @@ namespace Amazon.WorkDocs.Model
         /// to access the API.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=8199)]
+        [AWSProperty(Sensitive=true, Min=1, Max=8199)]
         public string AuthenticationToken
         {
             get { return this._authenticationToken; }
@@ -125,7 +125,7 @@ namespace Amazon.WorkDocs.Model
         /// A query to describe groups by group name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=512)]
         public string SearchQuery
         {
             get { return this._searchQuery; }

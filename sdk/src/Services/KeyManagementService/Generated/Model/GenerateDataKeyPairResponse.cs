@@ -104,7 +104,7 @@ namespace Amazon.KeyManagementService.Model
         /// Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public MemoryStream PrivateKeyPlaintext
         {
             get { return this._privateKeyPlaintext; }

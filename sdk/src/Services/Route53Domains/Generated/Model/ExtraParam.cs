@@ -762,7 +762,7 @@ namespace Amazon.Route53Domains.Model
         /// The value that corresponds with the name of an extra parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2048)]
+        [AWSProperty(Required=true, Sensitive=true, Max=2048)]
         public string Value
         {
             get { return this._value; }

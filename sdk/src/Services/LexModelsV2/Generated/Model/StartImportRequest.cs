@@ -48,7 +48,7 @@ namespace Amazon.LexModelsV2.Model
         /// site and Amazon Lex.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string FilePassword
         {
             get { return this._filePassword; }

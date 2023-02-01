@@ -80,6 +80,7 @@ namespace Amazon.Backup.Model
         /// backed-up resource. These values vary depending on the service that is being restored.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> RestoreMetadata
         {
             get { return this._restoreMetadata; }

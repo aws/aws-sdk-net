@@ -277,6 +277,7 @@ namespace Amazon.Drs.Model
         /// An array of tags that are associated with the Recovery Instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

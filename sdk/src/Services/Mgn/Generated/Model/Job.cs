@@ -179,6 +179,7 @@ namespace Amazon.Mgn.Model
         /// Tags associated with specific Job.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

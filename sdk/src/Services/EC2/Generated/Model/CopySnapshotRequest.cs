@@ -243,6 +243,7 @@ namespace Amazon.EC2.Model
         /// the snapshot will move to an <code>error</code> state.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         internal string PresignedUrl
         {
             get { return this._presignedUrl; }

@@ -41,7 +41,7 @@ namespace Amazon.SecretsManager.Model
         /// A string with the password.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4096)]
         public string RandomPassword
         {
             get { return this._randomPassword; }

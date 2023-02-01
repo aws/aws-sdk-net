@@ -52,6 +52,7 @@ namespace Amazon.RedshiftServerless.Model
         /// This parameter must be updated together with <code>adminUserPassword</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AdminUsername
         {
             get { return this._adminUsername; }
@@ -71,6 +72,7 @@ namespace Amazon.RedshiftServerless.Model
         /// This parameter must be updated together with <code>adminUsername</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AdminUserPassword
         {
             get { return this._adminUserPassword; }

@@ -42,7 +42,7 @@ namespace Amazon.Appflow.Model
         ///  The password to use to connect to a resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=512)]
+        [AWSProperty(Required=true, Sensitive=true, Max=512)]
         public string Password
         {
             get { return this._password; }

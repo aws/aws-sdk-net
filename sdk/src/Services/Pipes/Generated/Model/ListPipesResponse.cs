@@ -46,7 +46,7 @@ namespace Amazon.Pipes.Model
         /// token will return an HTTP 400 InvalidToken error.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

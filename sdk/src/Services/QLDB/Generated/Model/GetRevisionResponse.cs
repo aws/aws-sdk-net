@@ -44,6 +44,7 @@ namespace Amazon.QLDB.Model
         /// digest using a Merkle tree, starting with the specified document revision.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public ValueHolder Proof
         {
             get { return this._proof; }
@@ -62,7 +63,7 @@ namespace Amazon.QLDB.Model
         /// The document revision data object in Amazon Ion format.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public ValueHolder Revision
         {
             get { return this._revision; }

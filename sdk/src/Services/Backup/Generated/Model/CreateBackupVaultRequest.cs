@@ -75,6 +75,7 @@ namespace Amazon.Backup.Model
         /// tag is a key-value pair.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> BackupVaultTags
         {
             get { return this._backupVaultTags; }

@@ -89,7 +89,7 @@ namespace Amazon.ManagedGrafana.Model
         /// The customer-entered description of the workspace.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -184,6 +184,7 @@ namespace Amazon.ManagedGrafana.Model
         /// The name of the workspace.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Name
         {
             get { return this._name; }

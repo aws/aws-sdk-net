@@ -52,7 +52,7 @@ namespace Amazon.Polly.Model
         /// Content of the PLS lexicon as string data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Content
         {
             get { return this._content; }

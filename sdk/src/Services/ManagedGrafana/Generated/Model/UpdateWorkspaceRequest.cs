@@ -88,7 +88,7 @@ namespace Amazon.ManagedGrafana.Model
         /// The name of an IAM role that already exists to use to access resources through Organizations.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=1, Max=2048)]
         public string OrganizationRoleName
         {
             get { return this._organizationRoleName; }
@@ -229,7 +229,7 @@ namespace Amazon.ManagedGrafana.Model
         /// A description for the workspace. This is used only to help you identify this workspace.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string WorkspaceDescription
         {
             get { return this._workspaceDescription; }
@@ -267,6 +267,7 @@ namespace Amazon.ManagedGrafana.Model
         /// A new name for the workspace to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string WorkspaceName
         {
             get { return this._workspaceName; }
@@ -306,6 +307,7 @@ namespace Amazon.ManagedGrafana.Model
         /// from, if this workspace is in an account that is part of an organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<string> WorkspaceOrganizationalUnits
         {
             get { return this._workspaceOrganizationalUnits; }
@@ -328,7 +330,7 @@ namespace Amazon.ManagedGrafana.Model
         /// a new IAM role with the necessary permissions is automatically created.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=1, Max=2048)]
         public string WorkspaceRoleArn
         {
             get { return this._workspaceRoleArn; }

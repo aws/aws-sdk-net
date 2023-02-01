@@ -402,6 +402,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The parameter values to be inserted in the document when running the command.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, List<string>> Parameters
         {
             get { return this._parameters; }

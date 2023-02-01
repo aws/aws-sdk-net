@@ -62,7 +62,7 @@ namespace Amazon.VoiceID.Model
         /// The identifier of the speaker you are describing.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string SpeakerId
         {
             get { return this._speakerId; }

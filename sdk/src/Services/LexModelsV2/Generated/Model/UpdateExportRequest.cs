@@ -70,7 +70,7 @@ namespace Amazon.LexModelsV2.Model
         /// The new password to use to encrypt the export zip archive.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string FilePassword
         {
             get { return this._filePassword; }

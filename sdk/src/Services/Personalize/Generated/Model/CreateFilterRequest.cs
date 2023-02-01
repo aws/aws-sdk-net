@@ -68,7 +68,7 @@ namespace Amazon.Personalize.Model
         /// expressions</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2500)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=2500)]
         public string FilterExpression
         {
             get { return this._filterExpression; }

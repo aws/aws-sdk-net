@@ -50,6 +50,7 @@ namespace Amazon.Chime.Model
         /// The city of an address.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string City
         {
             get { return this._city; }
@@ -68,6 +69,7 @@ namespace Amazon.Chime.Model
         /// The country of an address. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Country
         {
             get { return this._country; }
@@ -86,6 +88,7 @@ namespace Amazon.Chime.Model
         /// The postal code of an address.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PostalCode
         {
             get { return this._postalCode; }
@@ -104,6 +107,7 @@ namespace Amazon.Chime.Model
         /// The Zip + 4 or postal code + 4 of an address.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PostalCodePlus4
         {
             get { return this._postalCodePlus4; }
@@ -123,6 +127,7 @@ namespace Amazon.Chime.Model
         /// S. Unit A</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PostDirectional
         {
             get { return this._postDirectional; }
@@ -141,6 +146,7 @@ namespace Amazon.Chime.Model
         /// An address prefix location, such as the <code>N</code> in <code>N. Third St.</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PreDirectional
         {
             get { return this._preDirectional; }
@@ -159,6 +165,7 @@ namespace Amazon.Chime.Model
         /// The state of an address.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string State
         {
             get { return this._state; }
@@ -177,6 +184,7 @@ namespace Amazon.Chime.Model
         /// The address street, such as <code>8th Avenue</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string StreetName
         {
             get { return this._streetName; }
@@ -195,6 +203,7 @@ namespace Amazon.Chime.Model
         /// The numeric portion of an address.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string StreetNumber
         {
             get { return this._streetNumber; }
@@ -213,6 +222,7 @@ namespace Amazon.Chime.Model
         /// The address suffix, such as the <code>N</code> in <code>8th Avenue N</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string StreetSuffix
         {
             get { return this._streetSuffix; }

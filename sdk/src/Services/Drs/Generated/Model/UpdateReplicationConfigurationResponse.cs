@@ -320,6 +320,7 @@ namespace Amazon.Drs.Model
         /// area: EC2 replication server, EBS volumes, EBS snapshots, etc.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> StagingAreaTags
         {
             get { return this._stagingAreaTags; }
