@@ -1,3 +1,14 @@
+### 3.7.474.0 (2023-02-02 14:49 UTC)
+* S3 (3.7.103.0)
+	* Performance optimization for endpoint resolvers for S3.
+* S3Control (3.7.106.0)
+	* Performance optimization for endpoint resolvers for S3Control.
+* SecurityToken (3.7.101.0)
+	* Performance optimization for endpoint resolvers for STS.
+* Core 3.7.104.0
+	* Add Sensitive property to AWSPropertyAttribute and use it to mark sensitive data.
+	* All services packages updated to require new Core
+
 ### 3.7.473.0 (2023-02-01 19:22 UTC)
 * DevOpsGuru (3.7.101.0)
 	* This release adds filter support ListAnomalyForInsight API.
