@@ -40,6 +40,8 @@ namespace Amazon.AppConfig.Internal
             if (parameters == null) 
                 throw new ArgumentNullException("parameters");
 
+            if (parameters["Region"] == null)
+                throw new AmazonClientException("Region parameter must be set for endpoint resolution");
             if (parameters["UseDualStack"] == null)
                 throw new AmazonClientException("UseDualStack parameter must be set for endpoint resolution");
             if (parameters["UseFIPS"] == null)
@@ -54,7 +56,7 @@ namespace Amazon.AppConfig.Internal
             };
             if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
             {
-                if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
+                if (IsSet(refs["Endpoint"]))
                 {
                     if (Equals(refs["UseFIPS"], true))
                     {
@@ -78,13 +80,13 @@ namespace Amazon.AppConfig.Internal
                 {
                     if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
                     {
-                        if (Equals(refs["Region"], "us-gov-west-1"))
-                        {
-                            return new Endpoint("https://appconfig.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
                         if (Equals(refs["Region"], "us-gov-east-1"))
                         {
                             return new Endpoint("https://appconfig.us-gov-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        if (Equals(refs["Region"], "us-gov-west-1"))
+                        {
+                            return new Endpoint("https://appconfig.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         return new Endpoint(Interpolate(@"https://appconfig-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }

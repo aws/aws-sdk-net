@@ -461,6 +461,17 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetDeploymentResponse.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetDeploymentResponse.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentResponse.PercentageComplete</property>
     <min>1</min>
     <max>100</max>
@@ -799,6 +810,11 @@
     <pattern>[a-z0-9]{4,7}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.StartDeploymentRequest.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.ApplicationId</property>
     <pattern>[a-z0-9]{4,7}</pattern>
   </property-value-rule>
@@ -848,6 +864,17 @@
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.GrowthFactor</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StartDeploymentResponse.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StartDeploymentResponse.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.PercentageComplete</property>
@@ -912,6 +939,17 @@
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.GrowthFactor</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StopDeploymentResponse.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StopDeploymentResponse.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.PercentageComplete</property>

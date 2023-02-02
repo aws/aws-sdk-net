@@ -40,6 +40,7 @@ namespace Amazon.AppConfig.Model
         private string _deploymentStrategyId;
         private string _description;
         private string _environmentId;
+        private string _kmsKeyIdentifier;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -154,6 +155,26 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetEnvironmentId()
         {
             return this._environmentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyIdentifier. 
+        /// <para>
+        /// The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to
+        /// encrypt the configuration data using a customer managed key. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyIdentifier
+        {
+            get { return this._kmsKeyIdentifier; }
+            set { this._kmsKeyIdentifier = value; }
+        }
+
+        // Check to see if KmsKeyIdentifier property is set
+        internal bool IsSetKmsKeyIdentifier()
+        {
+            return this._kmsKeyIdentifier != null;
         }
 
         /// <summary>

@@ -36,8 +36,8 @@ namespace Amazon.AppConfig.Model
     /// 
     ///  
     /// <para>
-    /// You can create your own extensions or use the Amazon Web Services-authored extensions
-    /// provided by AppConfig. For most use-cases, to create your own extension, you must
+    /// You can create your own extensions or use the Amazon Web Services authored extensions
+    /// provided by AppConfig. For most use cases, to create your own extension, you must
     /// create an Lambda function to perform any computation and processing defined in the
     /// extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
     /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.

@@ -95,6 +95,12 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetKmsKeyIdentifier())
+                {
+                    context.Writer.WritePropertyName("KmsKeyIdentifier");
+                    context.Writer.Write(publicRequest.KmsKeyIdentifier);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
