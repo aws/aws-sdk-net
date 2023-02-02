@@ -57,6 +57,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     response.DashboardId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DashboardPublishOptions", targetDepth))
+                {
+                    var unmarshaller = DashboardPublishOptionsUnmarshaller.Instance;
+                    response.DashboardPublishOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Definition", targetDepth))
                 {
                     var unmarshaller = DashboardVersionDefinitionUnmarshaller.Instance;

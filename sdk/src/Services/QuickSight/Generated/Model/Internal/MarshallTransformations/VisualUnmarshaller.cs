@@ -160,6 +160,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.PivotTableVisual = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RadarChartVisual", targetDepth))
+                {
+                    var unmarshaller = RadarChartVisualUnmarshaller.Instance;
+                    unmarshalledObject.RadarChartVisual = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SankeyDiagramVisual", targetDepth))
                 {
                     var unmarshaller = SankeyDiagramVisualUnmarshaller.Instance;

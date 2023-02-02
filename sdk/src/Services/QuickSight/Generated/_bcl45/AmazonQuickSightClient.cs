@@ -678,7 +678,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates an analysis in Amazon QuickSight.
+        /// Creates an analysis in Amazon QuickSight. Analyses can be created either from a template
+        /// or from an <code>AnalysisDefinition</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAnalysis service method.</param>
         /// 
@@ -722,7 +723,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates an analysis in Amazon QuickSight.
+        /// Creates an analysis in Amazon QuickSight. Analyses can be created either from a template
+        /// or from an <code>AnalysisDefinition</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAnalysis service method.</param>
         /// <param name="cancellationToken">
@@ -773,8 +775,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates a dashboard from a template. To first create a template, see the <code> <a
-        /// href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+        /// Creates a dashboard from either a template or directly with a <code>DashboardDefinition</code>.
+        /// To first create a template, see the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
         /// </code> API operation.
         /// 
         ///  
@@ -828,8 +830,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates a dashboard from a template. To first create a template, see the <code> <a
-        /// href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+        /// Creates a dashboard from either a template or directly with a <code>DashboardDefinition</code>.
+        /// To first create a template, see the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
         /// </code> API operation.
         /// 
         ///  
@@ -1857,8 +1859,9 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates a template from an existing Amazon QuickSight analysis or template. You can
-        /// use the resulting template to create a dashboard.
+        /// Creates a template either from a <code>TemplateDefinition</code> or from an existing
+        /// Amazon QuickSight analysis or template. You can use the resulting template to create
+        /// additional dashboards, templates, or analyses.
         /// 
         ///  
         /// <para>
@@ -1918,8 +1921,9 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates a template from an existing Amazon QuickSight analysis or template. You can
-        /// use the resulting template to create a dashboard.
+        /// Creates a template either from a <code>TemplateDefinition</code> or from an existing
+        /// Amazon QuickSight analysis or template. You can use the resulting template to create
+        /// additional dashboards, templates, or analyses.
         /// 
         ///  
         /// <para>

@@ -34,6 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class DescribeDashboardDefinitionResponse : AmazonWebServiceResponse
     {
         private string _dashboardId;
+        private DashboardPublishOptions _dashboardPublishOptions;
         private DashboardVersionDefinition _definition;
         private List<DashboardError> _errors = new List<DashboardError>();
         private string _name;
@@ -59,6 +60,46 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDashboardId()
         {
             return this._dashboardId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DashboardPublishOptions. 
+        /// <para>
+        /// Options for publishing the dashboard:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status
+        /// can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>,
+        /// Amazon QuickSight disables the left filter pane on the published dashboard, which
+        /// can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by
+        /// default. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
+        /// can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to
+        /// export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>.
+        /// This option is <code>ENABLED</code> by default. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility
+        /// state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is
+        /// <code>COLLAPSED</code> by default. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public DashboardPublishOptions DashboardPublishOptions
+        {
+            get { return this._dashboardPublishOptions; }
+            set { this._dashboardPublishOptions = value; }
+        }
+
+        // Check to see if DashboardPublishOptions property is set
+        internal bool IsSetDashboardPublishOptions()
+        {
+            return this._dashboardPublishOptions != null;
         }
 
         /// <summary>

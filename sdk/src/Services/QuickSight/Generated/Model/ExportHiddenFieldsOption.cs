@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// 
+    /// Determines if hidden fields are included in an exported dashboard.
     /// </summary>
     public partial class ExportHiddenFieldsOption
     {
         private DashboardBehavior _availabilityStatus;
 
         /// <summary>
-        /// Gets and sets the property AvailabilityStatus.
+        /// Gets and sets the property AvailabilityStatus. 
+        /// <para>
+        /// The status of the export hidden fields options of a dashbaord.
+        /// </para>
         /// </summary>
         public DashboardBehavior AvailabilityStatus
         {

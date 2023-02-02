@@ -56,6 +56,39 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDataPointDrillUpDownOption())
+            {
+                context.Writer.WritePropertyName("DataPointDrillUpDownOption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DataPointDrillUpDownOptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataPointDrillUpDownOption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDataPointMenuLabelOption())
+            {
+                context.Writer.WritePropertyName("DataPointMenuLabelOption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DataPointMenuLabelOptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataPointMenuLabelOption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDataPointTooltipOption())
+            {
+                context.Writer.WritePropertyName("DataPointTooltipOption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DataPointTooltipOptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataPointTooltipOption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetExportToCSVOption())
             {
                 context.Writer.WritePropertyName("ExportToCSVOption");
@@ -67,6 +100,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetExportWithHiddenFieldsOption())
+            {
+                context.Writer.WritePropertyName("ExportWithHiddenFieldsOption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ExportWithHiddenFieldsOptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.ExportWithHiddenFieldsOption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSheetControlsOption())
             {
                 context.Writer.WritePropertyName("SheetControlsOption");
@@ -74,6 +118,39 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                 var marshaller = SheetControlsOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.SheetControlsOption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSheetLayoutElementMaximizationOption())
+            {
+                context.Writer.WritePropertyName("SheetLayoutElementMaximizationOption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SheetLayoutElementMaximizationOptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.SheetLayoutElementMaximizationOption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetVisualAxisSortOption())
+            {
+                context.Writer.WritePropertyName("VisualAxisSortOption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VisualAxisSortOptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.VisualAxisSortOption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetVisualMenuOption())
+            {
+                context.Writer.WritePropertyName("VisualMenuOption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VisualMenuOptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.VisualMenuOption, context);
 
                 context.Writer.WriteObjectEnd();
             }

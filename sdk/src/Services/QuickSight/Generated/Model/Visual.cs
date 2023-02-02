@@ -55,6 +55,7 @@ namespace Amazon.QuickSight.Model
         private LineChartVisual _lineChartVisual;
         private PieChartVisual _pieChartVisual;
         private PivotTableVisual _pivotTableVisual;
+        private RadarChartVisual _radarChartVisual;
         private SankeyDiagramVisual _sankeyDiagramVisual;
         private ScatterPlotVisual _scatterPlotVisual;
         private TableVisual _tableVisual;
@@ -423,6 +424,29 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetPivotTableVisual()
         {
             return this._pivotTableVisual != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RadarChartVisual. 
+        /// <para>
+        /// A radar chart visual.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/radar-chart.html">Using
+        /// radar charts</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// </para>
+        /// </summary>
+        public RadarChartVisual RadarChartVisual
+        {
+            get { return this._radarChartVisual; }
+            set { this._radarChartVisual = value; }
+        }
+
+        // Check to see if RadarChartVisual property is set
+        internal bool IsSetRadarChartVisual()
+        {
+            return this._radarChartVisual != null;
         }
 
         /// <summary>
