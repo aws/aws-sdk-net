@@ -149,6 +149,7 @@ namespace Amazon.EC2.Model
         /// The ID of the requester VPC. You must specify this parameter in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcId
         {
             get { return this._vpcId; }

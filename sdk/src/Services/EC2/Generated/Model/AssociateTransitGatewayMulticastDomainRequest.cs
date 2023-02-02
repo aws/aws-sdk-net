@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// The IDs of the subnets to associate with the transit gateway multicast domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }
@@ -71,6 +72,7 @@ namespace Amazon.EC2.Model
         /// domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TransitGatewayAttachmentId
         {
             get { return this._transitGatewayAttachmentId; }
@@ -89,6 +91,7 @@ namespace Amazon.EC2.Model
         /// The ID of the transit gateway multicast domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TransitGatewayMulticastDomainId
         {
             get { return this._transitGatewayMulticastDomainId; }

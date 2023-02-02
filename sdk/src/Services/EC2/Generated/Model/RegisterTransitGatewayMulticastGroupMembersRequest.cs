@@ -72,6 +72,7 @@ namespace Amazon.EC2.Model
         /// group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> NetworkInterfaceIds
         {
             get { return this._networkInterfaceIds; }
@@ -90,6 +91,7 @@ namespace Amazon.EC2.Model
         /// The ID of the transit gateway multicast domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TransitGatewayMulticastDomainId
         {
             get { return this._transitGatewayMulticastDomainId; }

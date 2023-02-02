@@ -47,6 +47,7 @@ namespace Amazon.EC2.Model
         /// The ARN of the ACM certificate from which to disassociate the IAM role.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CertificateArn
         {
             get { return this._certificateArn; }
@@ -65,6 +66,7 @@ namespace Amazon.EC2.Model
         /// The ARN of the IAM role to disassociate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }

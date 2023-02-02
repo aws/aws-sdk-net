@@ -31,8 +31,8 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the AssociateIpamResourceDiscovery operation.
     /// Associates an IPAM resource discovery with an Amazon VPC IPAM. A resource discovery
-    /// is an IPAM component that enables IPAM Service to manage and monitor resources that
-    /// belong to the owning account.
+    /// is an IPAM component that enables IPAM to manage and monitor resources that belong
+    /// to the owning account.
     /// </summary>
     public partial class AssociateIpamResourceDiscoveryRequest : AmazonEC2Request
     {

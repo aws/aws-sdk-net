@@ -1363,8 +1363,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Associates an IPAM resource discovery with an Amazon VPC IPAM. A resource discovery
-        /// is an IPAM component that enables IPAM Service to manage and monitor resources that
-        /// belong to the owning account.
+        /// is an IPAM component that enables IPAM to manage and monitor resources that belong
+        /// to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateIpamResourceDiscovery service method.</param>
         /// <param name="cancellationToken">
@@ -3850,7 +3850,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates an IPAM resource discovery. A resource discovery is an IPAM component that
-        /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+        /// enables IPAM to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIpamResourceDiscovery service method.</param>
         /// <param name="cancellationToken">
@@ -7219,7 +7219,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Deletes an IPAM resource discovery. A resource discovery is an IPAM component that
-        /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+        /// enables IPAM to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIpamResourceDiscovery service method.</param>
         /// <param name="cancellationToken">
@@ -12214,7 +12214,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes IPAM resource discoveries. A resource discovery is an IPAM component that
-        /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+        /// enables IPAM to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIpamResourceDiscoveries service method.</param>
         /// <param name="cancellationToken">
@@ -17439,8 +17439,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Disassociates a resource discovery from an Amazon VPC IPAM. A resource discovery is
-        /// an IPAM component that enables IPAM Service to manage and monitor resources that belong
-        /// to the owning account.
+        /// an IPAM component that enables IPAM to manage and monitor resources that belong to
+        /// the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateIpamResourceDiscovery service method.</param>
         /// <param name="cancellationToken">
@@ -19334,7 +19334,7 @@ namespace Amazon.EC2
         /// Returns resource CIDRs managed by IPAM in a given scope. If an IPAM is associated
         /// with more than one resource discovery, the resource CIDRs across all of the resource
         /// discoveries is returned. A resource discovery is an IPAM component that enables IPAM
-        /// Service to manage and monitor resources that belong to the owning account.
+        /// to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIpamResourceCidrs service method.</param>
         /// <param name="cancellationToken">
@@ -21597,7 +21597,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies a resource discovery. A resource discovery is an IPAM component that enables
-        /// IPAM Service to manage and monitor resources that belong to the owning account.
+        /// IPAM to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyIpamResourceDiscovery service method.</param>
         /// <param name="cancellationToken">

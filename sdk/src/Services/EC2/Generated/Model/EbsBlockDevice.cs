@@ -87,6 +87,14 @@ namespace Amazon.EC2.Model
         /// <para>
         /// This parameter is not returned by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html">DescribeImageAttribute</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// For <a>CreateImage</a> and <a>RegisterImage</a>, you can specify this parameter only
+        /// for block device mappings that result in new, empty volumes when instances are launched
+        /// from the image. Omit this parameter on block device mappings that include an existing
+        /// volume or snapshot. If you include this parameter, and specify an encryption setting
+        /// that is different from the existing volume or snapshot, the request will fail.
+        /// </para>
         /// </summary>
         public bool Encrypted
         {
