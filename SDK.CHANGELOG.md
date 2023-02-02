@@ -1,3 +1,24 @@
+### 3.7.475.0 (2023-02-02 19:44 UTC)
+* AppConfig (3.7.101.0)
+	* AWS AppConfig introduces KMS customer-managed key (CMK) encryption of configuration data, along with AWS Secrets Manager as a new configuration data source. S3 objects using SSE-KMS encryption and SSM Parameter Store SecureStrings are also now supported.
+* Connect (3.7.114.0)
+	* Enabled FIPS endpoints for GovCloud (US) regions in SDK.
+* EC2 (3.7.121.0)
+	* Documentation updates for EC2.
+* ElasticLoadBalancingV2 (3.7.100.66)
+	* The GWLB Flex Health Check project updates the default values of healthy-threshold-count from 3 to 5 and unhealthy-threshold-count from 3 to 2
+* Keyspaces (3.7.101.0)
+	* Enabled FIPS endpoints for GovCloud (US) regions in SDK.
+* QuickSight (3.7.104.0)
+	* QuickSight support for Radar Chart and Dashboard Publish Options
+* Redshift (3.7.101.0)
+	* Enabled FIPS endpoints for GovCloud (US) regions in SDK.
+* SSOAdmin (3.7.101.0)
+	* Enabled FIPS endpoints for GovCloud (US) regions in SDK.
+* Core 3.7.104.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.474.0 (2023-02-02 14:49 UTC)
 * S3 (3.7.103.0)
 	* Performance optimization for endpoint resolvers for S3.
