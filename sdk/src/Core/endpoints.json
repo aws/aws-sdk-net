@@ -22856,6 +22856,22 @@
             }
           }
         },
+        "compute-optimizer": {
+          "endpoints": {
+            "us-gov-east-1": {
+              "credentialScope": {
+                "region": "us-gov-east-1"
+              },
+              "hostname": "compute-optimizer-fips.us-gov-east-1.amazonaws.com"
+            },
+            "us-gov-west-1": {
+              "credentialScope": {
+                "region": "us-gov-west-1"
+              },
+              "hostname": "compute-optimizer-fips.us-gov-west-1.amazonaws.com"
+            }
+          }
+        },
         "config": {
           "defaults": {
             "variants": [
@@ -24172,7 +24188,23 @@
         },
         "ingest.timestream": {
           "endpoints": {
-            "us-gov-west-1": {}
+            "us-gov-west-1": {
+              "variants": [
+                {
+                  "hostname": "ingest.timestream.us-gov-west-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "us-gov-west-1-fips": {
+              "credentialScope": {
+                "region": "us-gov-west-1"
+              },
+              "deprecated": true,
+              "hostname": "ingest.timestream.us-gov-west-1.amazonaws.com"
+            }
           }
         },
         "inspector": {
