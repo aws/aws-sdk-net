@@ -1,3 +1,12 @@
+### 3.7.476.0 (2023-02-03 19:25 UTC)
+* Proton (3.7.104.0)
+	* Add new GetResourcesSummary API
+* Redshift (3.7.101.1)
+	* Corrects descriptions of the parameters for the API operations RestoreFromClusterSnapshot, RestoreTableFromClusterSnapshot, and CreateCluster.
+* Core 3.7.104.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.475.0 (2023-02-02 19:44 UTC)
 * AppConfig (3.7.101.0)
 	* AWS AppConfig introduces KMS customer-managed key (CMK) encryption of configuration data, along with AWS Secrets Manager as a new configuration data source. S3 objects using SSE-KMS encryption and SSM Parameter Store SecureStrings are also now supported.
