@@ -8878,6 +8878,11 @@ namespace Amazon.Redshift
         /// <code>NewTableName</code> parameter value in the call to <code>RestoreTableFromClusterSnapshot</code>.
         /// This way, you can replace the original table with the table created from the snapshot.
         /// </para>
+        ///  
+        /// <para>
+        /// You can't use this operation to restore tables with <a href="https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved">interleaved
+        /// sort keys</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreTableFromClusterSnapshot service method.</param>
         /// 

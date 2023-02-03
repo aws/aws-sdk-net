@@ -762,7 +762,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property SnapshotArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the snapshot associated with the message to restore
-        /// from a cluster. You can specify this parameter or <code>snapshotIdentifier</code>,
+        /// from a cluster. You must specify this parameter or <code>snapshotIdentifier</code>,
         /// but not both.
         /// </para>
         /// </summary>
@@ -804,7 +804,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property SnapshotIdentifier. 
         /// <para>
         /// The name of the snapshot from which to create the new cluster. This parameter isn't
-        /// case sensitive. You can specify this parameter or <code>snapshotArn</code>, but not
+        /// case sensitive. You must specify this parameter or <code>snapshotArn</code>, but not
         /// both.
         /// </para>
         ///  
