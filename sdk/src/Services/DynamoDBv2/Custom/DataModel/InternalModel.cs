@@ -879,6 +879,9 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 config.TableName = typeMapping.TargetTable;
 
+                if (AWSConfigsDynamoDB.Context.TableAliases.TryGetValue(config.TableName, out var tableAlias))
+                    config.TableName = tableAlias;
+
                 foreach (var kvp in typeMapping.PropertyConfigs)
                 {
                     PropertyConfig propertyConfig = kvp.Value;
