@@ -47,6 +47,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 TestHashRangeObjects();
                 TestOtherContextOperations();
                 TestBatchOperations();
+                TestTransactionOperations();
+                TestMultiTableTransactionOperations();
 
                 TestStoreAsEpoch();
             }
@@ -850,6 +852,366 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Verify items are loaded
             Assert.AreEqual(itemCount, batchGet1.Results.Count);
             Assert.AreEqual(itemCount, batchGet2.Results.Count);
+        }
+
+        private void TestTransactionOperations()
+        {
+            var employee1 = new VersionedEmployee
+            {
+                Name = "Mark",
+                Age = 31,
+                Score = 120,
+                ManagerName = "Harmony"
+            };
+            var employee2 = new VersionedEmployee
+            {
+                Name = "Helena",
+                Age = 25,
+                Score = 140
+            };
+            var employee3 = new VersionedEmployee
+            {
+                Name = "Irving",
+                Age = 55,
+                Score = 100
+            };
+
+            {
+                var transactWrite = Context.CreateTransactWrite<VersionedEmployee>();
+                transactWrite.AddSaveItems(new List<VersionedEmployee> { employee1, employee2 });
+                transactWrite.AddSaveItem(employee3);
+                transactWrite.Execute();
+
+                Assert.IsNotNull(employee1.Version);
+                Assert.IsNotNull(employee2.Version);
+                Assert.IsNotNull(employee3.Version);
+            }
+
+            {
+                var transactGet = Context.CreateTransactGet<VersionedEmployee>();
+                transactGet.AddKeys(new List<VersionedEmployee> { employee1, employee2 });
+                transactGet.AddKey(employee3.Name, employee3.Age);
+                transactGet.Execute();
+
+                Assert.IsNotNull(transactGet.Results);
+                Assert.AreEqual(3, transactGet.Results.Count);
+                Assert.AreEqual(employee1.Name, transactGet.Results[0].Name);
+                Assert.AreEqual(employee1.Version, transactGet.Results[0].Version);
+                Assert.AreEqual(employee2.Name, transactGet.Results[1].Name);
+                Assert.AreEqual(employee2.Version, transactGet.Results[1].Version);
+                Assert.AreEqual(employee3.Name, transactGet.Results[2].Name);
+                Assert.AreEqual(employee3.Version, transactGet.Results[2].Version);
+            }
+
+            {
+                var originalVersion = employee1.Version.Value;
+                employee1.Version = null;
+                employee1.Score++;
+
+                var transactWrite = Context.CreateTransactWrite<VersionedEmployee>();
+                transactWrite.AddSaveItem(employee1);
+                transactWrite.AddVersionCheckKey(employee2.Name, employee2.Age, employee2.Version);
+                transactWrite.AddDeleteItem(employee3);
+                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
+
+                Assert.IsNotNull(ex.CancellationReasons);
+                Assert.AreEqual(3, ex.CancellationReasons.Count);
+                Assert.AreEqual("ConditionalCheckFailed", ex.CancellationReasons[0].Code);
+                Assert.AreEqual("None", ex.CancellationReasons[1].Code);
+                Assert.AreEqual("None", ex.CancellationReasons[2].Code);
+
+                employee1.Version = originalVersion;
+                employee1.Score--;
+            }
+
+            {
+                var transactGet = Context.CreateTransactGet<VersionedEmployee>();
+                transactGet.AddKey(employee1);
+                transactGet.AddKeys(new List<VersionedEmployee> { employee2, employee3 });
+                transactGet.Execute();
+
+                Assert.IsNotNull(transactGet.Results);
+                Assert.AreEqual(3, transactGet.Results.Count);
+                Assert.AreEqual(employee1.Score, transactGet.Results[0].Score);
+                Assert.AreEqual(employee1.Version, transactGet.Results[0].Version);
+                Assert.AreEqual(employee2.Version, transactGet.Results[1].Version);
+                Assert.AreEqual(employee3.Version, transactGet.Results[2].Version);
+            }
+
+            {
+                employee1.Score++;
+                employee2.Version++;
+
+                var transactWrite = Context.CreateTransactWrite<VersionedEmployee>();
+                transactWrite.AddSaveItem(employee1);
+                transactWrite.AddVersionCheckItem(employee2);
+                transactWrite.AddDeleteItem(employee3);
+                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
+
+                Assert.IsNotNull(ex.CancellationReasons);
+                Assert.AreEqual(3, ex.CancellationReasons.Count);
+                Assert.AreEqual("None", ex.CancellationReasons[0].Code);
+                Assert.AreEqual("ConditionalCheckFailed", ex.CancellationReasons[1].Code);
+                Assert.AreEqual("None", ex.CancellationReasons[2].Code);
+
+                employee1.Score--;
+                employee2.Version--;
+            }
+
+            {
+                var transactGet = Context.CreateTransactGet<VersionedEmployee>();
+                transactGet.AddKeys(new List<VersionedEmployee> { employee1, employee2 });
+                transactGet.AddKey(employee3.Name, employee3.Age);
+                transactGet.Execute();
+
+                Assert.IsNotNull(transactGet.Results);
+                Assert.AreEqual(3, transactGet.Results.Count);
+                Assert.AreEqual(employee1.Score, transactGet.Results[0].Score);
+                Assert.AreEqual(employee1.Version, transactGet.Results[0].Version);
+                Assert.AreEqual(employee2.Version, transactGet.Results[1].Version);
+                Assert.AreEqual(employee3.Version, transactGet.Results[2].Version);
+            }
+
+            {
+                employee1.Score++;
+                employee3.Version--;
+
+                var transactWrite = Context.CreateTransactWrite<VersionedEmployee>();
+                transactWrite.AddSaveItem(employee1);
+                transactWrite.AddVersionCheckKey(employee2.Name, employee2.Age, employee2.Version);
+                transactWrite.AddDeleteItem(employee3);
+                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
+
+                Assert.IsNotNull(ex.CancellationReasons);
+                Assert.AreEqual(3, ex.CancellationReasons.Count);
+                Assert.AreEqual("None", ex.CancellationReasons[0].Code);
+                Assert.AreEqual("None", ex.CancellationReasons[1].Code);
+                Assert.AreEqual("ConditionalCheckFailed", ex.CancellationReasons[2].Code);
+
+                employee1.Score--;
+                employee3.Version++;
+            }
+
+            {
+                var transactGet = Context.CreateTransactGet<VersionedEmployee>();
+                transactGet.AddKey(employee1);
+                transactGet.AddKeys(new List<VersionedEmployee> { employee2, employee3 });
+                transactGet.Execute();
+
+                Assert.IsNotNull(transactGet.Results);
+                Assert.AreEqual(3, transactGet.Results.Count);
+                Assert.AreEqual(employee1.Score, transactGet.Results[0].Score);
+                Assert.AreEqual(employee1.Version, transactGet.Results[0].Version);
+                Assert.AreEqual(employee2.Version, transactGet.Results[1].Version);
+                Assert.AreEqual(employee3.Version, transactGet.Results[2].Version);
+            }
+
+            {
+                var originalVersion1 = employee1.Version.Value;
+                var originalVersion2 = employee2.Version.Value;
+                var originalVersion3 = employee3.Version.Value;
+                employee1.Score++;
+                employee1.ManagerName = null;
+
+                var transactWrite = Context.CreateTransactWrite<VersionedEmployee>();
+                transactWrite.AddSaveItem(employee1);
+                transactWrite.AddVersionCheckItem(employee2);
+                transactWrite.AddDeleteItem(employee3);
+                transactWrite.Execute();
+
+                Assert.AreEqual(originalVersion1 + 1, employee1.Version);
+                Assert.AreEqual(originalVersion2, employee2.Version);
+                Assert.AreEqual(originalVersion3, employee3.Version);
+            }
+
+            {
+                var transactGet = Context.CreateTransactGet<VersionedEmployee>();
+                transactGet.AddKeys(new List<VersionedEmployee> { employee1, employee2 });
+                transactGet.AddKey(employee3.Name, employee3.Age);
+                transactGet.Execute();
+
+                Assert.IsNotNull(transactGet.Results);
+                Assert.AreEqual(2, transactGet.Results.Count);
+                Assert.AreEqual(employee1.Name, transactGet.Results[0].Name);
+                Assert.AreEqual(employee1.Score, transactGet.Results[0].Score);
+                Assert.IsNull(transactGet.Results[0].ManagerName);
+                Assert.AreEqual(employee1.Version, transactGet.Results[0].Version);
+                Assert.AreEqual(employee2.Name, transactGet.Results[1].Name);
+                Assert.AreEqual(employee2.Version, transactGet.Results[1].Version);
+            }
+
+            {
+                var transactWrite = Context.CreateTransactWrite<VersionedEmployee>();
+                transactWrite.AddDeleteItem(employee1);
+                transactWrite.AddDeleteKey(employee2.Name, employee2.Age);
+                transactWrite.Execute();
+            }
+
+            {
+                var transactGet = Context.CreateTransactGet<VersionedEmployee>();
+                transactGet.AddKeys(new List<VersionedEmployee> { employee1, employee2, employee3 });
+                transactGet.Execute();
+
+                Assert.IsNotNull(transactGet.Results);
+                Assert.AreEqual(0, transactGet.Results.Count);
+            }
+        }
+
+        private void TestMultiTableTransactionOperations()
+        {
+            var employee1 = new VersionedEmployee
+            {
+                Name = "Alan",
+                Age = 31,
+                Score = 120,
+                ManagerName = "Barbara"
+            };
+            var employee2 = new VersionedEmployee
+            {
+                Name = "Diane",
+                Age = 40,
+                Score = 140
+            };
+            var product = new VersionedProduct
+            {
+                Id = 1001,
+                Name = "CloudSpotter",
+                Price = 1200
+            };
+
+            {
+                var employeeTran = Context.CreateTransactWrite<VersionedEmployee>();
+                employeeTran.AddSaveItems(new[] { employee1, employee2 });
+                var productTran = Context.CreateTransactWrite<VersionedProduct>();
+                productTran.AddSaveItem(product);
+                var tran = Context.CreateMultiTableTransactWrite(employeeTran, productTran);
+                tran.Execute();
+
+                Assert.IsNotNull(employee1.Version);
+                Assert.IsNotNull(employee2.Version);
+                Assert.IsNotNull(product.Version);
+            }
+
+            {
+                var employeeTran = Context.CreateTransactGet<VersionedEmployee>();
+                employeeTran.AddKeys(new[] { employee1, employee2 });
+                var productTran = Context.CreateTransactGet<VersionedProduct>();
+                productTran.AddKey(product.Id);
+                var tran = Context.CreateMultiTableTransactGet(employeeTran, productTran);
+                tran.Execute();
+
+                Assert.IsNotNull(employeeTran.Results);
+                Assert.AreEqual(2, employeeTran.Results.Count);
+                Assert.AreEqual(employee1.Name, employeeTran.Results[0].Name);
+                Assert.AreEqual(employee1.Version, employeeTran.Results[0].Version);
+                Assert.AreEqual(employee2.Name, employeeTran.Results[1].Name);
+                Assert.AreEqual(employee2.Version, employeeTran.Results[1].Version);
+                Assert.IsNotNull(productTran.Results);
+                Assert.AreEqual(1, productTran.Results.Count);
+                Assert.AreEqual(product.Id, productTran.Results[0].Id);
+                Assert.AreEqual(product.Version, productTran.Results[0].Version);
+            }
+
+            {
+                employee1.Score++;
+
+                var employeeTran = Context.CreateTransactWrite<VersionedEmployee>();
+                employeeTran.AddSaveItem(employee1);
+                employeeTran.AddDeleteItem(employee2);
+                var productTran = Context.CreateTransactWrite<VersionedProduct>();
+                productTran.AddVersionCheckKey(product.Id, product.Version.Value + 1);
+                var tran = Context.CreateMultiTableTransactWrite(employeeTran, productTran);
+                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => tran.Execute());
+
+                Assert.IsNotNull(ex.CancellationReasons);
+                Assert.AreEqual(3, ex.CancellationReasons.Count);
+                Assert.AreEqual("None", ex.CancellationReasons[0].Code);
+                Assert.AreEqual("None", ex.CancellationReasons[1].Code);
+                Assert.AreEqual("ConditionalCheckFailed", ex.CancellationReasons[2].Code);
+
+                employee1.Score--;
+            }
+
+            {
+                var employeeTran = Context.CreateTransactGet<VersionedEmployee>();
+                employeeTran.AddKeys(new[] { employee1, employee2 });
+                var productTran = Context.CreateTransactGet<VersionedProduct>();
+                productTran.AddKey(product);
+                var tran = Context.CreateMultiTableTransactGet(employeeTran, productTran);
+                tran.Execute();
+
+                Assert.IsNotNull(employeeTran.Results);
+                Assert.AreEqual(2, employeeTran.Results.Count);
+                Assert.AreEqual(employee1.Score, employeeTran.Results[0].Score);
+                Assert.AreEqual(employee1.Version, employeeTran.Results[0].Version);
+                Assert.AreEqual(employee2.Version, employeeTran.Results[1].Version);
+                Assert.IsNotNull(productTran.Results);
+                Assert.AreEqual(1, productTran.Results.Count);
+                Assert.AreEqual(product.Version, productTran.Results[0].Version);
+            }
+
+            {
+                var originalEmployeeVersion1 = employee1.Version.Value;
+                var originalEmployeeVersion2 = employee2.Version.Value;
+                var originalProductVersion = product.Version.Value;
+                employee1.Score++;
+                employee1.ManagerName = null;
+
+                var employeeTran = Context.CreateTransactWrite<VersionedEmployee>();
+                employeeTran.AddSaveItem(employee1);
+                employeeTran.AddDeleteItem(employee2);
+                var productTran = Context.CreateTransactWrite<VersionedProduct>();
+                productTran.AddVersionCheckItem(product);
+                var tran = Context.CreateMultiTableTransactWrite(employeeTran, productTran);
+                tran.Execute();
+
+                Assert.AreEqual(originalEmployeeVersion1 + 1, employee1.Version);
+                Assert.AreEqual(originalEmployeeVersion2, employee2.Version);
+                Assert.AreEqual(originalProductVersion, product.Version);
+            }
+
+            {
+                var employeeTran = Context.CreateTransactGet<VersionedEmployee>();
+                employeeTran.AddKeys(new[] { employee1, employee2 });
+                var productTran = Context.CreateTransactGet<VersionedProduct>();
+                productTran.AddKey(product.Id);
+                var tran = Context.CreateMultiTableTransactGet(employeeTran, productTran);
+                tran.Execute();
+
+                Assert.IsNotNull(employeeTran.Results);
+                Assert.AreEqual(1, employeeTran.Results.Count);
+                Assert.AreEqual(employee1.Name, employeeTran.Results[0].Name);
+                Assert.AreEqual(employee1.Score, employeeTran.Results[0].Score);
+                Assert.IsNull(employeeTran.Results[0].ManagerName);
+                Assert.AreEqual(employee1.Version, employeeTran.Results[0].Version);
+                Assert.IsNotNull(productTran.Results);
+                Assert.AreEqual(1, productTran.Results.Count);
+                Assert.AreEqual(product.Id, productTran.Results[0].Id);
+                Assert.AreEqual(product.Version, productTran.Results[0].Version);
+            }
+
+            {
+                var employeeTran = Context.CreateTransactWrite<VersionedEmployee>();
+                employeeTran.AddDeleteItem(employee1);
+                var productTran = Context.CreateTransactWrite<VersionedProduct>();
+                productTran.AddDeleteKey(product.Id);
+                var tran = Context.CreateMultiTableTransactWrite(employeeTran, productTran);
+                tran.Execute();
+            }
+
+            {
+                var employeeTran = Context.CreateTransactGet<VersionedEmployee>();
+                employeeTran.AddKeys(new[] { employee1, employee2 });
+                var productTran = Context.CreateTransactGet<VersionedProduct>();
+                productTran.AddKey(product);
+                var tran = Context.CreateMultiTableTransactGet(employeeTran, productTran);
+                tran.Execute();
+
+                Assert.IsNotNull(employeeTran.Results);
+                Assert.AreEqual(0, employeeTran.Results.Count);
+                Assert.IsNotNull(productTran.Results);
+                Assert.AreEqual(0, productTran.Results.Count);
+            }
         }
 
         private void TestOtherContextOperations()
