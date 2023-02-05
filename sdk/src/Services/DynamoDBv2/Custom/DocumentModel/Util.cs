@@ -450,6 +450,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return variableName;
         }
 
+        public static string GetVariableName(string suffix)
+        {
+            return AwsVariablePrefix + suffix;
+        }
+
         public static Dictionary<string, T> Combine<T>(
             IDictionary<string, T> items1, IDictionary<string, T> items2,
             IEqualityComparer<T> valueComparer)
