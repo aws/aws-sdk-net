@@ -12,6 +12,7 @@ using Amazon.DynamoDBv2.DocumentModel;
 using System.IO;
 using ThirdParty.Json.LitJson;
 using System.Xml;
+using ReturnValuesOnConditionCheckFailure = Amazon.DynamoDBv2.DocumentModel.ReturnValuesOnConditionCheckFailure;
 
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
@@ -48,6 +49,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // Test using multiple test batch writer
                 TestMultiTableDocumentBatchWrite(hashTable, hashRangeTable);
 
+                // Test multi-table transactional operations
+                TestMultiTableDocumentTransactWrite(hashTable, hashRangeTable, conversion);
+
                 // Test large batch writes and gets
                 TestLargeBatchOperations(hashTable);
 
@@ -59,6 +63,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Test expressions for delete
                 TestExpressionsOnDelete(hashTable);
+
+                // Test expressions for transactional operations
+                TestExpressionsOnTransactWrite(hashTable, conversion);
 
                 // Test expressions for query
                 TestExpressionsOnQuery(hashRangeTable);
@@ -381,6 +388,67 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             batchGet.AddKey(doc2);
             batchGet.Execute();
             Assert.AreEqual(0, batchGet.Results.Count);
+
+            // Transact-put items
+            var transactWrite = hashTable.CreateTransactWrite();
+            doc["Garbage"] = "asdf";
+            Assert.AreEqual("asdf", doc["Garbage"].AsString());
+            doc2["Garbage"] = "hjkl";
+            Assert.AreEqual("hjkl", doc2["Garbage"].AsString());
+            transactWrite.AddDocumentToPut(doc);
+            transactWrite.AddDocumentToPut(doc2);
+            transactWrite.Execute();
+
+            // Transact-get items
+            var transactGet = hashTable.CreateTransactGet();
+            transactGet.AddKey(1);
+            transactGet.AddKey(doc2);
+            transactGet.Execute();
+            Assert.AreEqual(2, transactGet.Results.Count);
+            Assert.IsTrue(AreValuesEqual(doc, transactGet.Results[0], conversion));
+            // Remove Tags attribute before comparison, because it has a null value, so it was not added
+            doc2.Remove("Tags");
+            Assert.IsTrue(AreValuesEqual(doc2, transactGet.Results[1], conversion));
+
+            // Transact-update items
+            transactWrite = hashTable.CreateTransactWrite();
+            doc["Price"] = doc["Price"].AsInt() + 1;
+            doc["Garbage"] = null;
+            Assert.IsNull(doc["Garbage"].AsString());
+            transactWrite.AddDocumentToUpdate(doc);
+            transactWrite.AddDocumentToUpdate(new Document
+            {
+                ["Price"] = doc2["Price"].AsInt() + 1,
+                ["Garbage"] = null
+            }, 2);
+            transactWrite.Execute();
+
+            // Transact-get updated items
+            transactGet = hashTable.CreateTransactGet();
+            transactGet.AddKey(doc);
+            transactGet.AddKey(2);
+            transactGet.Execute();
+            Assert.AreEqual(2, transactGet.Results.Count);
+            Assert.IsFalse(AreValuesEqual(doc, transactGet.Results[0], conversion));
+            doc.Remove("Garbage");
+            Assert.IsTrue(AreValuesEqual(doc, transactGet.Results[0], conversion));
+            Assert.IsFalse(AreValuesEqual(doc2, transactGet.Results[1], conversion));
+            doc2["Price"] = doc2["Price"].AsInt() + 1;
+            doc2.Remove("Garbage");
+            Assert.IsTrue(AreValuesEqual(doc2, transactGet.Results[1], conversion));
+
+            // Transact-delete items
+            transactWrite = hashTable.CreateTransactWrite();
+            transactWrite.AddItemToDelete(doc);
+            transactWrite.AddKeyToDelete(2);
+            transactWrite.Execute();
+
+            // Transact-get non-existent items
+            transactGet = hashTable.CreateTransactGet();
+            transactGet.AddKey(1);
+            transactGet.AddKey(doc2);
+            transactGet.Execute();
+            Assert.AreEqual(0, transactGet.Results.Count);
 
             // Scan the hash-key table to confirm it is empty
             items = hashTable.Scan(new ScanFilter()).GetRemaining();
@@ -725,6 +793,190 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             multiTableDocumentBatchWrite.Execute();
         }
 
+        private void TestMultiTableDocumentTransactWrite(Table hashTable, Table hashRangeTable, DynamoDBEntryConversion conversion)
+        {
+            // Test multi-table transactional put
+            var multiTableDocumentTransactWrite = new MultiTableDocumentTransactWrite();
+
+            var hDoc1 = new Document
+            {
+                ["Id"] = 6001,
+                ["Data"] = Guid.NewGuid().ToString(),
+                ["Price"] = 1000,
+                ["Garbage"] = "asdf"
+            };
+
+            var hDoc2 = new Document
+            {
+                ["Id"] = 6002,
+                ["Data"] = Guid.NewGuid().ToString(),
+                ["Price"] = 500,
+                ["Garbage"] = "hjkl"
+            };
+
+            {
+                var transactWrite = new DocumentTransactWrite(hashTable);
+                transactWrite.AddDocumentToPut(hDoc1);
+                transactWrite.AddDocumentToPut(hDoc2);
+                multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
+            }
+
+            var hrDoc1 = new Document
+            {
+                ["Name"] = "Alan",
+                ["Age"] = 30,
+                ["Data"] = Guid.NewGuid().ToString(),
+                ["Score"] = 100,
+                ["Garbage"] = "xcvb"
+            };
+
+            var hrDoc2 = new Document
+            {
+                ["Name"] = "Diane",
+                ["Age"] = 40,
+                ["Data"] = Guid.NewGuid().ToString(),
+                ["Score"] = 150,
+                ["Garbage"] = "qwer"
+            };
+
+            {
+                var transactWrite = new DocumentTransactWrite(hashRangeTable);
+                transactWrite.AddDocumentToPut(hrDoc1);
+                transactWrite.AddDocumentToPut(hrDoc2);
+                multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
+            }
+
+            multiTableDocumentTransactWrite.Execute();
+
+            {
+                var multiTableDocumentTransactGet = new MultiTableDocumentTransactGet();
+
+                var hTransactGet = new DocumentTransactGet(hashTable);
+                hTransactGet.AddKey(hashKey: 6001);
+                hTransactGet.AddKey(hashKey: 6002);
+                multiTableDocumentTransactGet.AddTransactionPart(hTransactGet);
+
+                var hrTransactGet = new DocumentTransactGet(hashRangeTable);
+                hrTransactGet.AddKey(hashKey: "Alan", rangeKey: 30);
+                hrTransactGet.AddKey(hashKey: "Diane", rangeKey: 40);
+                multiTableDocumentTransactGet.AddTransactionPart(hrTransactGet);
+
+                multiTableDocumentTransactGet.Execute();
+                Assert.AreEqual(2, hTransactGet.Results.Count);
+                Assert.AreEqual(2, hrTransactGet.Results.Count);
+                Assert.IsTrue(AreValuesEqual(hDoc1, hTransactGet.Results[0], conversion));
+                Assert.IsTrue(AreValuesEqual(hDoc2, hTransactGet.Results[1], conversion));
+                Assert.IsTrue(AreValuesEqual(hrDoc1, hrTransactGet.Results[0], conversion));
+                Assert.IsTrue(AreValuesEqual(hrDoc2, hrTransactGet.Results[1], conversion));
+            }
+
+            // Test multi-table transactional update
+            multiTableDocumentTransactWrite = new MultiTableDocumentTransactWrite();
+
+            {
+                var transactWrite = new DocumentTransactWrite(hashTable);
+                transactWrite.AddDocumentToUpdate(new Document
+                {
+                    ["Price"] = 1001,
+                    ["Garbage"] = null
+                }, hashKey: 6001);
+                transactWrite.AddDocumentToUpdate(new Document
+                {
+                    ["Price"] = 501,
+                    ["Garbage"] = null
+                }, key: new Document { ["Id"] = 6002 });
+                multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
+            }
+
+            {
+                var transactWrite = new DocumentTransactWrite(hashRangeTable);
+                transactWrite.AddDocumentToUpdate(new Document
+                {
+                    ["Score"] = 101,
+                    ["Garbage"] = null
+                }, hashKey: "Alan", rangeKey: 30);
+                transactWrite.AddDocumentToUpdate(new Document
+                {
+                    ["Score"] = 151,
+                    ["Garbage"] = null
+                }, key: new Document { ["Name"] = "Diane", ["Age"] = 40 });
+                multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
+            }
+
+            multiTableDocumentTransactWrite.Execute();
+
+            {
+                var multiTableDocumentTransactGet = new MultiTableDocumentTransactGet();
+
+                var hTransactGet = new DocumentTransactGet(hashTable);
+                hTransactGet.AddKey(key: new Document { ["Id"] = 6001 });
+                hTransactGet.AddKey(key: new Document { ["Id"] = 6002 });
+                multiTableDocumentTransactGet.AddTransactionPart(hTransactGet);
+
+                var hrTransactGet = new DocumentTransactGet(hashRangeTable);
+                hrTransactGet.AddKey(key: new Document { ["Name"] = "Alan", ["Age"] = 30 });
+                hrTransactGet.AddKey(key: new Document { ["Name"] = "Diane", ["Age"] = 40 });
+                multiTableDocumentTransactGet.AddTransactionPart(hrTransactGet);
+
+                multiTableDocumentTransactGet.Execute();
+                Assert.AreEqual(2, hTransactGet.Results.Count);
+                Assert.AreEqual(2, hrTransactGet.Results.Count);
+                Assert.IsFalse(AreValuesEqual(hDoc1, hTransactGet.Results[0], conversion));
+                hDoc1["Price"] = 1001;
+                hDoc1.Remove("Garbage");
+                Assert.IsTrue(AreValuesEqual(hDoc1, hTransactGet.Results[0], conversion));
+                Assert.IsFalse(AreValuesEqual(hDoc2, hTransactGet.Results[1], conversion));
+                hDoc2["Price"] = 501;
+                hDoc2.Remove("Garbage");
+                Assert.IsTrue(AreValuesEqual(hDoc2, hTransactGet.Results[1], conversion));
+                Assert.IsFalse(AreValuesEqual(hrDoc1, hrTransactGet.Results[0], conversion));
+                hrDoc1["Score"] = 101;
+                hrDoc1.Remove("Garbage");
+                Assert.IsTrue(AreValuesEqual(hrDoc1, hrTransactGet.Results[0], conversion));
+                Assert.IsFalse(AreValuesEqual(hrDoc2, hrTransactGet.Results[1], conversion));
+                hrDoc2["Score"] = 151;
+                hrDoc2.Remove("Garbage");
+                Assert.IsTrue(AreValuesEqual(hrDoc2, hrTransactGet.Results[1], conversion));
+            }
+
+            // Test multi-table transactional delete
+            multiTableDocumentTransactWrite = new MultiTableDocumentTransactWrite();
+
+            {
+                var transactWrite = new DocumentTransactWrite(hashTable);
+                transactWrite.AddKeyToDelete(hashKey: 6001);
+                transactWrite.AddKeyToDelete(key: new Document { ["Id"] = 6002 });
+                multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
+            }
+
+            {
+                var transactWrite = new DocumentTransactWrite(hashRangeTable);
+                transactWrite.AddKeyToDelete(hashKey: "Alan", rangeKey: 30);
+                transactWrite.AddKeyToDelete(new Document { ["Name"] = "Diane", ["Age"] = 40 });
+                multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
+            }
+
+            multiTableDocumentTransactWrite.Execute();
+
+            {
+                var multiTableDocumentTransactGet = new MultiTableDocumentTransactGet();
+
+                var hTransactGet = new DocumentTransactGet(hashTable);
+                hTransactGet.AddKey(hashKey: 6001);
+                hTransactGet.AddKey(hashKey: 6002);
+                multiTableDocumentTransactGet.AddTransactionPart(hTransactGet);
+
+                var hrTransactGet = new DocumentTransactGet(hashRangeTable);
+                hrTransactGet.AddKey(hashKey: "Alan", rangeKey: 30);
+                hrTransactGet.AddKey(hashKey: "Diane", rangeKey: 40);
+                multiTableDocumentTransactGet.AddTransactionPart(hrTransactGet);
+
+                multiTableDocumentTransactGet.Execute();
+                Assert.AreEqual(0, hTransactGet.Results.Count);
+                Assert.AreEqual(0, hrTransactGet.Results.Count);
+            }
+        }
+
         private void TestExpressionsOnDelete(Table hashTable)
         {
             Document doc1 = new Document();
@@ -743,6 +995,352 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             expression.ExpressionAttributeValues[":price"] = 4;
             Assert.IsTrue(hashTable.TryDeleteItem(doc1, config));
+        }
+
+        private void TestExpressionsOnTransactWrite(Table hashTable, DynamoDBEntryConversion conversion)
+        {
+            var doc1 = new Document
+            {
+                ["Id"] = 7001,
+                ["Price"] = 50,
+                ["Garbage"] = "asdf"
+            };
+
+            var doc2 = new Document
+            {
+                ["Id"] = 7002,
+                ["Price"] = 100,
+                ["Garbage"] = "hjkl"
+            };
+
+            var doc3 = new Document
+            {
+                ["Id"] = 7003,
+                ["Price"] = 500,
+                ["Garbage"] = "xcvb"
+            };
+
+            {
+                var transactWrite = hashTable.CreateTransactWrite();
+                transactWrite.AddDocumentToPut(doc1, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = new Expression
+                    {
+                        ExpressionStatement = "#price = :price",
+                        ExpressionAttributeNames = { ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":price"] = 50 }
+                    },
+                    ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                });
+                transactWrite.AddDocumentToUpdate(doc2, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = new Expression
+                    {
+                        ExpressionStatement = "attribute_exists(#id)",
+                        ExpressionAttributeNames = { ["#id"] = "Id" }
+                    },
+                    ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                });
+                transactWrite.AddDocumentToUpdate(doc3, hashKey: 7003, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = new Expression
+                    {
+                        ExpressionStatement = "attribute_not_exists(#id) AND #price <> :price",
+                        ExpressionAttributeNames = { ["#id"] = "Id", ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":price"] = 500 }
+                    },
+                    ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                });
+
+                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
+                Assert.IsNotNull(ex);
+                Assert.AreEqual(3, ex.CancellationReasons.Count);
+                Assert.AreEqual(BatchStatementErrorCodeEnum.ConditionalCheckFailed.Value, ex.CancellationReasons[0].Code);
+                Assert.AreEqual(0, ex.CancellationReasons[0].Item.Count);
+                Assert.AreEqual(BatchStatementErrorCodeEnum.ConditionalCheckFailed.Value, ex.CancellationReasons[1].Code);
+                Assert.AreEqual(0, ex.CancellationReasons[1].Item.Count);
+                Assert.AreEqual("None", ex.CancellationReasons[2].Code);
+                Assert.AreEqual(0, ex.CancellationReasons[2].Item.Count);
+                Assert.AreEqual(0, transactWrite.ConditionCheckFailedItems.Count);
+            }
+
+            {
+                var transactGet = hashTable.CreateTransactGet();
+                transactGet.AddKey(7001);
+                transactGet.AddKey(7002);
+                transactGet.AddKey(7003);
+                transactGet.Execute();
+                Assert.AreEqual(0, transactGet.Results.Count);
+            }
+
+            {
+                var transactWrite = hashTable.CreateTransactWrite();
+                transactWrite.AddDocumentToPut(doc1, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = new Expression
+                    {
+                        ExpressionStatement = "#price <> :price",
+                        ExpressionAttributeNames = { ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":price"] = 50 }
+                    },
+                    ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                });
+                transactWrite.AddDocumentToUpdate(doc2, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = new Expression
+                    {
+                        ExpressionStatement = "attribute_not_exists(#id)",
+                        ExpressionAttributeNames = { ["#id"] = "Id" }
+                    },
+                    ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                });
+                transactWrite.AddDocumentToUpdate(doc3, hashKey: 7003, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = new Expression
+                    {
+                        ExpressionStatement = "attribute_not_exists(#id) AND #price <> :price",
+                        ExpressionAttributeNames = { ["#id"] = "Id", ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":price"] = 500 }
+                    },
+                    ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                });
+
+                transactWrite.Execute();
+            }
+
+            {
+                var transactGet = hashTable.CreateTransactGet();
+                transactGet.AddKey(7001);
+                transactGet.AddKey(7002);
+                transactGet.AddKey(7003);
+                transactGet.Execute();
+                Assert.AreEqual(3, transactGet.Results.Count);
+                Assert.IsTrue(AreValuesEqual(doc1, transactGet.Results[0], conversion));
+                Assert.IsTrue(AreValuesEqual(doc2, transactGet.Results[1], conversion));
+                Assert.IsTrue(AreValuesEqual(doc3, transactGet.Results[2], conversion));
+            }
+
+            {
+                var transactWrite = hashTable.CreateTransactWrite();
+                transactWrite.AddKeyToConditionCheck(hashKey: 7001, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = new Expression
+                    {
+                        ExpressionStatement = "#price <> :price",
+                        ExpressionAttributeNames = { ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":price"] = 50 }
+                    },
+                    ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                });
+                transactWrite.AddDocumentToUpdate(new Document
+                {
+                    ["Price"] = 101,
+                    ["Garbage"] = null
+                }, hashKey: 7002, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = new Expression
+                    {
+                        ExpressionStatement = "#price = :price",
+                        ExpressionAttributeNames = { ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":price"] = 99 }
+                    },
+                    ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                });
+                transactWrite.AddKeyToDelete(hashKey: 7003, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = new Expression
+                    {
+                        ExpressionStatement = "#price = :price",
+                        ExpressionAttributeNames = { ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":price"] = 500 }
+                    },
+                    ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                });
+
+                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
+                Assert.IsNotNull(ex);
+                Assert.AreEqual(3, ex.CancellationReasons.Count);
+                Assert.AreEqual(BatchStatementErrorCodeEnum.ConditionalCheckFailed.Value, ex.CancellationReasons[0].Code);
+                Assert.AreNotEqual(0, ex.CancellationReasons[0].Item.Count);
+                Assert.AreEqual(BatchStatementErrorCodeEnum.ConditionalCheckFailed.Value, ex.CancellationReasons[1].Code);
+                Assert.AreNotEqual(0, ex.CancellationReasons[1].Item.Count);
+                Assert.AreEqual("None", ex.CancellationReasons[2].Code);
+                Assert.AreEqual(0, ex.CancellationReasons[2].Item.Count);
+                Assert.AreEqual(2, transactWrite.ConditionCheckFailedItems.Count);
+                Assert.IsTrue(AreValuesEqual(doc1, transactWrite.ConditionCheckFailedItems[0], conversion));
+                Assert.IsTrue(AreValuesEqual(doc2, transactWrite.ConditionCheckFailedItems[1], conversion));
+            }
+
+            {
+                var transactGet = hashTable.CreateTransactGet();
+                transactGet.AddKey(7001);
+                transactGet.AddKey(7002);
+                transactGet.AddKey(7003);
+                transactGet.Execute();
+                Assert.AreEqual(3, transactGet.Results.Count);
+                Assert.IsTrue(AreValuesEqual(doc1, transactGet.Results[0], conversion));
+                Assert.IsTrue(AreValuesEqual(doc2, transactGet.Results[1], conversion));
+                Assert.IsTrue(AreValuesEqual(doc3, transactGet.Results[2], conversion));
+            }
+
+            {
+                var transactWrite = hashTable.CreateTransactWrite();
+                transactWrite.AddDocumentToPut(new Document
+                {
+                    ["Id"] = 7001,
+                    ["Price"] = 51
+                }, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = new Expression
+                    {
+                        ExpressionStatement = "#price = :price",
+                        ExpressionAttributeNames = { ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":price"] = 50 }
+                    },
+                    ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                });
+                transactWrite.AddItemToConditionCheck(doc2, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = new Expression
+                    {
+                        ExpressionStatement = "#price = :price",
+                        ExpressionAttributeNames = { ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":price"] = 100 }
+                    },
+                    ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                });
+                transactWrite.AddItemToDelete(doc3, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = new Expression
+                    {
+                        ExpressionStatement = "#price <> :price",
+                        ExpressionAttributeNames = { ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":price"] = 500 }
+                    },
+                    ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                });
+
+                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
+                Assert.IsNotNull(ex);
+                Assert.AreEqual(3, ex.CancellationReasons.Count);
+                Assert.AreEqual("None", ex.CancellationReasons[0].Code);
+                Assert.AreEqual(0, ex.CancellationReasons[0].Item.Count);
+                Assert.AreEqual("None", ex.CancellationReasons[1].Code);
+                Assert.AreEqual(0, ex.CancellationReasons[1].Item.Count);
+                Assert.AreEqual(BatchStatementErrorCodeEnum.ConditionalCheckFailed.Value, ex.CancellationReasons[2].Code);
+                Assert.AreNotEqual(0, ex.CancellationReasons[2].Item.Count);
+                Assert.AreEqual(1, transactWrite.ConditionCheckFailedItems.Count);
+                Assert.IsTrue(AreValuesEqual(doc3, transactWrite.ConditionCheckFailedItems[0], conversion));
+            }
+
+            {
+                var transactGet = hashTable.CreateTransactGet();
+                transactGet.AddKey(7001);
+                transactGet.AddKey(7002);
+                transactGet.AddKey(7003);
+                transactGet.Execute();
+                Assert.AreEqual(3, transactGet.Results.Count);
+                Assert.IsTrue(AreValuesEqual(doc1, transactGet.Results[0], conversion));
+                Assert.IsTrue(AreValuesEqual(doc2, transactGet.Results[1], conversion));
+                Assert.IsTrue(AreValuesEqual(doc3, transactGet.Results[2], conversion));
+            }
+
+            {
+                var transactWrite = hashTable.CreateTransactWrite();
+                transactWrite.AddDocumentToPut(new Document
+                {
+                    ["Id"] = 7001,
+                    ["Price"] = 51
+                }, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = new Expression
+                    {
+                        ExpressionStatement = "#price = :price",
+                        ExpressionAttributeNames = { ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":price"] = 50 }
+                    },
+                    ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                });
+                transactWrite.AddDocumentToUpdate(new Document
+                {
+                    ["Id"] = 7002,
+                    ["Price"] = 101,
+                    ["Garbage"] = null
+                }, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = new Expression
+                    {
+                        ExpressionStatement = "#price = :price",
+                        ExpressionAttributeNames = { ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":price"] = 100 }
+                    },
+                    ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                });
+                transactWrite.AddKeyToDelete(key: new Document { ["Id"] = 7003 }, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = new Expression
+                    {
+                        ExpressionStatement = "#price = :price",
+                        ExpressionAttributeNames = { ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":price"] = 500 }
+                    },
+                    ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                });
+
+                transactWrite.Execute();
+            }
+
+            {
+                var transactGet = hashTable.CreateTransactGet();
+                transactGet.AddKey(7001);
+                transactGet.AddKey(7002);
+                transactGet.AddKey(7003);
+                transactGet.Execute();
+                Assert.AreEqual(2, transactGet.Results.Count);
+                Assert.IsFalse(AreValuesEqual(doc1, transactGet.Results[0], conversion));
+                doc1["Price"] = 51;
+                doc1.Remove("Garbage");
+                Assert.IsTrue(AreValuesEqual(doc1, transactGet.Results[0], conversion));
+                Assert.IsFalse(AreValuesEqual(doc2, transactGet.Results[1], conversion));
+                doc2["Price"] = 101;
+                doc2.Remove("Garbage");
+                Assert.IsTrue(AreValuesEqual(doc2, transactGet.Results[1], conversion));
+            }
+
+            {
+                var transactWrite = hashTable.CreateTransactWrite();
+                transactWrite.AddItemToDelete(doc1, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = new Expression
+                    {
+                        ExpressionStatement = "#price = :price",
+                        ExpressionAttributeNames = { ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":price"] = 51 }
+                    },
+                    ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                });
+                transactWrite.AddKeyToDelete(hashKey: 7002, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = new Expression
+                    {
+                        ExpressionStatement = "#price = :price",
+                        ExpressionAttributeNames = { ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":price"] = 101 }
+                    },
+                    ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                });
+
+                transactWrite.Execute();
+            }
+
+            {
+                var transactGet = hashTable.CreateTransactGet();
+                transactGet.AddKey(7001);
+                transactGet.AddKey(7002);
+                transactGet.AddKey(7003);
+                transactGet.Execute();
+                Assert.AreEqual(0, transactGet.Results.Count);
+            }
         }
 
         private void TestExpressionsOnQuery(Table hashRangeTable)
