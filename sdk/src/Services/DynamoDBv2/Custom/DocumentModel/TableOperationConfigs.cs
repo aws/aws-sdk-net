@@ -388,4 +388,35 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         Document Expected { get; set; }
     }
+
+    /// <summary>
+    /// Configuration for a request item of the Table.DocumentTransactGet operation.
+    /// </summary>
+    public class TransactGetItemOperationConfig
+    {
+        /// <summary>
+        /// An expression that identifies one or more attributes of an item to retrieve from the table.
+        /// The attributes in the expression must be separated by commas.
+        /// If no attribute names are specified, then all attributes of the item are returned.
+        /// If any of the requested attributes are not found, they do not appear in the result.
+        /// </summary>
+        public Expression ProjectionExpression { get; set; }
+    }
+
+    /// <summary>
+    /// Configuration for a request item of the Table.DocumentTransactWrite operation.
+    /// </summary>
+    public class TransactWriteItemOperationConfig
+    {
+        /// <summary>
+        /// An expression that is evaluated before the operation. If the expression evaluates to false then the operation
+        /// will fail with a ConditionalCheckFailedException exception.
+        /// </summary>
+        public Expression ConditionalExpression { get; set; }
+
+        /// <summary>
+        /// Flag specifying what values should be returned if the ConditionalExpression evaluates to false.
+        /// </summary>
+        public ReturnValuesOnConditionCheckFailure ReturnValuesOnConditionCheckFailure { get; set; }
+    }
 }
