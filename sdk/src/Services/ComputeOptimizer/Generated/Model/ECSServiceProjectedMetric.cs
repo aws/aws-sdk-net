@@ -33,8 +33,9 @@ namespace Amazon.ComputeOptimizer.Model
     /// 
     ///  
     /// <para>
-    /// To determine the performance difference between your current ECS service and the recommended
-    /// option, compare the metric data of your service against its projected metric data.
+    /// To determine the performance difference between your current Amazon ECS service and
+    /// the recommended option, compare the metric data of your service against its projected
+    /// metric data.
     /// </para>
     /// </summary>
     public partial class ECSServiceProjectedMetric
@@ -73,13 +74,13 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CPU</code> — The percentage of allocated compute units that are currently in
-        /// use on the ECS service tasks.
+        ///  <code>Cpu</code> — The percentage of allocated compute units that are currently in
+        /// use on the service tasks.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Memory</code> — The percentage of memory that is currently in use on the ECS
-        /// service tasks.
+        ///  <code>Memory</code> — The percentage of memory that's currently in use on the service
+        /// tasks.
         /// </para>
         ///  </li> </ul>
         /// </summary>

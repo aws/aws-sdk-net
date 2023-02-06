@@ -48,7 +48,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        ///  The Amazon Web Services account ID of the ECS service. 
+        ///  The Amazon Web Services account ID of the Amazon ECS service. 
         /// </para>
         /// </summary>
         public string AccountId
@@ -66,9 +66,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property CurrentPerformanceRisk. 
         /// <para>
-        ///  The risk of the current ECS service not meeting the performance needs of its workloads.
-        /// The higher the risk, the more likely the current service can't meet the performance
-        /// requirements of its workload. 
+        ///  The risk of the current Amazon ECS service not meeting the performance needs of its
+        /// workloads. The higher the risk, the more likely the current service can't meet the
+        /// performance requirements of its workload. 
         /// </para>
         /// </summary>
         public CurrentPerformanceRisk CurrentPerformanceRisk
@@ -86,7 +86,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property CurrentServiceConfiguration. 
         /// <para>
-        ///  The configuration of the current ECS service. 
+        ///  The configuration of the current Amazon ECS service. 
         /// </para>
         /// </summary>
         public ServiceConfiguration CurrentServiceConfiguration
@@ -104,28 +104,29 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Finding. 
         /// <para>
-        ///  The finding classification of an ECS service. 
+        ///  The finding classification of an Amazon ECS service. 
         /// </para>
         ///  
         /// <para>
-        /// Findings for ECS services include:
+        /// Findings for Amazon ECS services include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s
-        /// not enough memory or CPU, an ECS service is considered under-provisioned. An under-provisioned
-        /// ECS service might result in poor application performance.
+        /// not enough memory or CPU, an Amazon ECS service is considered under-provisioned. An
+        /// under-provisioned service might result in poor application performance.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
-        /// excessive memory or CPU, an ECS service is considered over-provisioned. An over-provisioned
-        /// ECS service might result in additional infrastructure costs. 
+        /// excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An
+        /// over-provisioned service might result in additional infrastructure costs. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Optimized</code> </b> — When both the CPU and memory of your ECS service
-        /// meet the performance requirements of your workload, the service is considered optimized.
+        ///  <b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS
+        /// service meet the performance requirements of your workload, the service is considered
+        /// optimized.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -144,38 +145,38 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property FindingReasonCodes. 
         /// <para>
-        ///  The reason for the finding classification of an ECS service. 
+        ///  The reason for the finding classification of an Amazon ECS service. 
         /// </para>
         ///  
         /// <para>
-        /// Finding reason codes for ECS services include:
+        /// Finding reason codes for Amazon ECS services include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>CPUUnderprovisioned</code> </b> — The ECS service CPU configuration can
-        /// be sized up to enhance the performance of your workload. This is identified by analyzing
+        ///  <b> <code>CPUUnderprovisioned</code> </b> — The service CPU configuration can be
+        /// sized up to enhance the performance of your workload. This is identified by analyzing
         /// the <code>CPUUtilization</code> metric of the current service during the look-back
         /// period.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>CPUOverprovisioned</code> </b> — The ECS service CPU configuration can
+        ///  <b> <code>CPUOverprovisioned</code> </b> — The service CPU configuration can be sized
+        /// down while still meeting the performance requirements of your workload. This is identified
+        /// by analyzing the <code>CPUUtilization</code> metric of the current service during
+        /// the look-back period. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can
+        /// be sized up to enhance the performance of your workload. This is identified by analyzing
+        /// the <code>MemoryUtilization</code> metric of the current service during the look-back
+        /// period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can
         /// be sized down while still meeting the performance requirements of your workload. This
-        /// is identified by analyzing the <code>CPUUtilization</code> metric of the current service
-        /// during the look-back period. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b> <code>MemoryUnderprovisioned</code> </b> — The ECS service memory configuration
-        /// can be sized up to enhance the performance of your workload. This is identified by
-        /// analyzing the <code>MemoryUtilization</code> metric of the current service during
-        /// the look-back period.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b> <code>MemoryOverprovisioned</code> </b> — The ECS service memory configuration
-        /// can be sized down while still meeting the performance requirements of your workload.
-        /// This is identified by analyzing the <code>MemoryUtilization</code> metric of the current
+        /// is identified by analyzing the <code>MemoryUtilization</code> metric of the current
         /// service during the look-back period.
         /// </para>
         ///  </li> </ul>
@@ -195,7 +196,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property LastRefreshTimestamp. 
         /// <para>
-        ///  The timestamp of when the ECS service recommendation was last generated. 
+        ///  The timestamp of when the Amazon ECS service recommendation was last generated. 
         /// </para>
         /// </summary>
         public DateTime LastRefreshTimestamp
@@ -213,7 +214,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property LaunchType. 
         /// <para>
-        ///  The launch type the ECS service is using. 
+        ///  The launch type the Amazon ECS service is using. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -236,7 +237,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property LookbackPeriodInDays. 
         /// <para>
-        ///  The number of days the ECS service utilization metrics were analyzed. 
+        ///  The number of days the Amazon ECS service utilization metrics were analyzed. 
         /// </para>
         /// </summary>
         public double LookbackPeriodInDays
@@ -254,7 +255,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property ServiceArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the current ECS service. 
+        ///  The Amazon Resource Name (ARN) of the current Amazon ECS service. 
         /// </para>
         ///  
         /// <para>
@@ -281,7 +282,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property ServiceRecommendationOptions. 
         /// <para>
-        ///  An array of objects that describe the recommendation options for the ECS service.
+        ///  An array of objects that describe the recommendation options for the Amazon ECS service.
         /// 
         /// </para>
         /// </summary>
@@ -300,7 +301,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property UtilizationMetrics. 
         /// <para>
-        ///  An array of objects that describe the utilization metrics of the ECS service. 
+        ///  An array of objects that describe the utilization metrics of the Amazon ECS service.
+        /// 
         /// </para>
         /// </summary>
         public List<ECSServiceUtilizationMetric> UtilizationMetrics
