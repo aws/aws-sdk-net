@@ -258,7 +258,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property FramerateDenominator. When you use the API for transcode
         /// jobs that use frame rate conversion, specify the frame rate as a fraction. For example,
-        ///  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of
+        /// 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of
         /// this fraction. In this example, use 1001 for the value of FramerateDenominator. When
         /// you use the console for transcode jobs that use frame rate conversion, provide the
         /// value as a decimal number for Framerate. In this example, specify 23.976.
@@ -279,7 +279,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property FramerateNumerator. When you use the API for transcode
         /// jobs that use frame rate conversion, specify the frame rate as a fraction. For example,
-        ///  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this
+        /// 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this
         /// fraction. In this example, use 24000 for the value of FramerateNumerator. When you
         /// use the console for transcode jobs that use frame rate conversion, provide the value
         /// as a decimal number for Framerate. In this example, specify 23.976.
@@ -658,7 +658,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property SampleAdaptiveOffsetFilterMode. Specify Sample Adaptive
-        /// Offset (SAO) filter strength.  Adaptive mode dynamically selects best strength based
+        /// Offset (SAO) filter strength. Adaptive mode dynamically selects best strength based
         /// on content
         /// </summary>
         public H265SampleAdaptiveOffsetFilterMode SampleAdaptiveOffsetFilterMode
@@ -786,9 +786,9 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property Telecine. This field applies only if the Streams > Advanced
-        /// > Framerate (framerate) field  is set to 29.970. This field works with the Streams
-        /// > Advanced > Preprocessors > Deinterlacer  field (deinterlace_mode) and the Streams
-        /// > Advanced > Interlaced Mode field (interlace_mode)  to identify the scan type for
+        /// > Framerate (framerate) field is set to 29.970. This field works with the Streams
+        /// > Advanced > Preprocessors > Deinterlacer field (deinterlace_mode) and the Streams
+        /// > Advanced > Interlaced Mode field (interlace_mode) to identify the scan type for
         /// the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces
         /// 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this
         /// output to 29.97i.

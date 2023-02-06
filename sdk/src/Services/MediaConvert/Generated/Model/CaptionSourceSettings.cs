@@ -111,7 +111,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property SourceType. Use Source (SourceType) to identify the format
-        /// of your input captions.  The service cannot auto-detect caption format.
+        /// of your input captions. The service cannot auto-detect caption format.
         /// </summary>
         public CaptionSourceType SourceType
         {
