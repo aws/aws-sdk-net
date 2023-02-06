@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TFIModelPerformance Object
+    /// Response Unmarshaller for UncertaintyRange Object
     /// </summary>  
-    public class TFIModelPerformanceUnmarshaller : IUnmarshaller<TFIModelPerformance, XmlUnmarshallerContext>, IUnmarshaller<TFIModelPerformance, JsonUnmarshallerContext>
+    public class UncertaintyRangeUnmarshaller : IUnmarshaller<UncertaintyRange, XmlUnmarshallerContext>, IUnmarshaller<UncertaintyRange, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TFIModelPerformance IUnmarshaller<TFIModelPerformance, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        UncertaintyRange IUnmarshaller<UncertaintyRange, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public TFIModelPerformance Unmarshall(JsonUnmarshallerContext context)
+        public UncertaintyRange Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TFIModelPerformance unmarshalledObject = new TFIModelPerformance();
+            UncertaintyRange unmarshalledObject = new UncertaintyRange();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("auc", targetDepth))
+                if (context.TestExpression("lowerBoundValue", targetDepth))
                 {
                     var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.Auc = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LowerBoundValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("uncertaintyRange", targetDepth))
+                if (context.TestExpression("upperBoundValue", targetDepth))
                 {
-                    var unmarshaller = UncertaintyRangeUnmarshaller.Instance;
-                    unmarshalledObject.UncertaintyRange = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.UpperBoundValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         }
 
 
-        private static TFIModelPerformanceUnmarshaller _instance = new TFIModelPerformanceUnmarshaller();        
+        private static UncertaintyRangeUnmarshaller _instance = new UncertaintyRangeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TFIModelPerformanceUnmarshaller Instance
+        public static UncertaintyRangeUnmarshaller Instance
         {
             get
             {

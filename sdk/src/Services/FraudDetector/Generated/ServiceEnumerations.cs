@@ -763,6 +763,10 @@ namespace Amazon.FraudDetector
     {
 
         /// <summary>
+        /// Constant AUTO for UnlabeledEventsTreatment
+        /// </summary>
+        public static readonly UnlabeledEventsTreatment AUTO = new UnlabeledEventsTreatment("AUTO");
+        /// <summary>
         /// Constant FRAUD for UnlabeledEventsTreatment
         /// </summary>
         public static readonly UnlabeledEventsTreatment FRAUD = new UnlabeledEventsTreatment("FRAUD");
