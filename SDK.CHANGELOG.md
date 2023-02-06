@@ -1,3 +1,18 @@
+### 3.7.477.0 (2023-02-06 19:29 UTC)
+* ComputeOptimizer (3.7.103.0)
+	* AWS Compute optimizer can now infer if Kafka is running on an instance.
+* CustomerProfiles (3.7.103.0)
+	* This release deprecates the PartyType and Gender enum data types from the Profile model and replaces them with new PartyTypeString and GenderString attributes, which accept any string of length up to 255.
+* FraudDetector (3.7.101.0)
+	* My AWS Service (Amazon Fraud Detector) - This release introduces Cold Start Model Training which optimizes training for small datasets and adds intelligent methods for treating unlabeled data. You can now train Online Fraud Insights or Transaction Fraud Insights models with minimal historical-data.
+* MediaConvert (3.7.105.0)
+	* The AWS Elemental MediaConvert SDK has added improved scene change detection capabilities and a bandwidth reduction filter, along with video quality enhancements, to the AVC encoder.
+* Outposts (3.7.104.0)
+	* Adds OrderType to Order structure. Adds PreviousOrderId and PreviousLineItemId to LineItem structure. Adds new line item status REPLACED. Increases maximum length of pagination token.
+* Core 3.7.104.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.476.0 (2023-02-03 19:25 UTC)
 * Proton (3.7.104.0)
 	* Add new GetResourcesSummary API
