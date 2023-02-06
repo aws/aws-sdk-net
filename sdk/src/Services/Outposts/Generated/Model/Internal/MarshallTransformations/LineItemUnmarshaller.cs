@@ -82,6 +82,18 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                     unmarshalledObject.LineItemId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PreviousLineItemId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreviousLineItemId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PreviousOrderId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreviousOrderId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Quantity", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

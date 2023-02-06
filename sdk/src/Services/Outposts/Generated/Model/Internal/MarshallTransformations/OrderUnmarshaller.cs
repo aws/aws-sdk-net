@@ -88,6 +88,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                     unmarshalledObject.OrderSubmissionDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OrderType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OrderType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OutpostId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

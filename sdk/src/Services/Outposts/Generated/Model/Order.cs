@@ -37,6 +37,7 @@ namespace Amazon.Outposts.Model
         private DateTime? _orderFulfilledDate;
         private string _orderId;
         private DateTime? _orderSubmissionDate;
+        private OrderType _orderType;
         private string _outpostId;
         private PaymentOption _paymentOption;
         private PaymentTerm _paymentTerm;
@@ -113,6 +114,24 @@ namespace Amazon.Outposts.Model
         internal bool IsSetOrderSubmissionDate()
         {
             return this._orderSubmissionDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrderType. 
+        /// <para>
+        /// The type of order.
+        /// </para>
+        /// </summary>
+        public OrderType OrderType
+        {
+            get { return this._orderType; }
+            set { this._orderType = value; }
+        }
+
+        // Check to see if OrderType property is set
+        internal bool IsSetOrderType()
+        {
+            return this._orderType != null;
         }
 
         /// <summary>
