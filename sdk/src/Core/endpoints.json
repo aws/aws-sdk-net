@@ -23991,16 +23991,19 @@
                 "region": "us-gov-east-1"
               },
               "deprecated": true,
-              "hostname": "greengrass-fips.us-gov-east-1.amazonaws.com"
+              "hostname": "greengrass.us-gov-east-1.amazonaws.com"
+            },
+            "fips-us-gov-west-1": {
+              "credentialScope": {
+                "region": "us-gov-west-1"
+              },
+              "deprecated": true,
+              "hostname": "greengrass.us-gov-west-1.amazonaws.com"
             },
             "us-gov-east-1": {
-              "credentialScope": {
-                "region": "us-gov-east-1"
-              },
-              "hostname": "greengrass.us-gov-east-1.amazonaws.com",
               "variants": [
                 {
-                  "hostname": "greengrass-fips.us-gov-east-1.amazonaws.com",
+                  "hostname": "greengrass.us-gov-east-1.amazonaws.com",
                   "tags": [
                     "fips"
                   ]
@@ -24008,10 +24011,14 @@
               ]
             },
             "us-gov-west-1": {
-              "credentialScope": {
-                "region": "us-gov-west-1"
-              },
-              "hostname": "greengrass.us-gov-west-1.amazonaws.com"
+              "variants": [
+                {
+                  "hostname": "greengrass.us-gov-west-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
             }
           },
           "isRegionalized": true
