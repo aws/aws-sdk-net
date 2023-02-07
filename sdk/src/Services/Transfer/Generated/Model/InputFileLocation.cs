@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Specifies the location for the file being copied. Only applicable for the Copy type
-    /// of workflow steps.
+    /// Specifies the location for the file that's being processed.
     /// </summary>
     public partial class InputFileLocation
     {
@@ -40,7 +39,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property EfsFileLocation. 
         /// <para>
-        /// Reserved for future use.
+        /// Specifies the details for the Amazon Elastic File System (Amazon EFS) file that's
+        /// being decrypted.
         /// </para>
         /// </summary>
         public EfsFileLocation EfsFileLocation
@@ -58,7 +58,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property S3FileLocation. 
         /// <para>
-        /// Specifies the details for the S3 file being copied.
+        /// Specifies the details for the Amazon S3 file that's being copied or decrypted.
         /// </para>
         /// </summary>
         public S3InputFileLocation S3FileLocation

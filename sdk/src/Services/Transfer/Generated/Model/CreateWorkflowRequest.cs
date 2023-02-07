@@ -100,19 +100,23 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>COPY</i>: Copy the file to another location.
+        ///  <b> <code>COPY</code> </b> - Copy the file to another location.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
+        ///  <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>DELETE</i>: Delete the file.
+        ///  <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>TAG</i>: Add a tag to the file.
+        ///  <b> <code>DELETE</code> </b> - Delete the file.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>TAG</code> </b> - Add a tag to the file.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -120,8 +124,8 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </note> 
         /// <para>
-        ///  For file location, you specify either the S3 bucket and key, or the EFS file system
-        /// ID and path. 
+        ///  For file location, you specify either the Amazon S3 bucket and key, or the Amazon
+        /// EFS file system ID and path. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=8)]

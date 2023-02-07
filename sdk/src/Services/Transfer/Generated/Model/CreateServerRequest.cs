@@ -262,7 +262,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update
+        /// For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Manage
         /// host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
         /// </para>
         /// </summary>
@@ -495,7 +495,7 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then
         /// the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code>
-        /// must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+        /// must be either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -506,7 +506,8 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code>
         /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be
-        /// set to <code>SERVICE_MANAGED</code>.
+        /// set any of the supported identity types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>,
+        /// <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -574,7 +575,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code>
+        /// In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code>
         /// can also contain a workflow ID (and execution role) for a workflow to execute on partial
         /// upload. A partial upload occurs when a file is open when the session disconnects.
         /// </para>
