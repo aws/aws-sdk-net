@@ -1,3 +1,10 @@
+### 3.7.477.1 (2023-02-07 19:19 UTC)
+* Transfer (3.7.104.25)
+	* Updated the documentation for the ImportCertificate API call, and added examples.
+* Core 3.7.104.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.477.0 (2023-02-06 19:29 UTC)
 * ComputeOptimizer (3.7.103.0)
 	* AWS Compute optimizer can now infer if Kafka is running on an instance.
