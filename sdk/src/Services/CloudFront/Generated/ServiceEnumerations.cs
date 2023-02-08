@@ -961,6 +961,10 @@ namespace Amazon.CloudFront
     {
 
         /// <summary>
+        /// Constant Mediastore for OriginAccessControlOriginTypes
+        /// </summary>
+        public static readonly OriginAccessControlOriginTypes Mediastore = new OriginAccessControlOriginTypes("mediastore");
+        /// <summary>
         /// Constant S3 for OriginAccessControlOriginTypes
         /// </summary>
         public static readonly OriginAccessControlOriginTypes S3 = new OriginAccessControlOriginTypes("s3");
