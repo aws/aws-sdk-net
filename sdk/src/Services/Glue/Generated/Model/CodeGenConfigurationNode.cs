@@ -370,7 +370,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DynamoDBCatalogSource.
+        /// Gets and sets the property DynamoDBCatalogSource. 
+        /// <para>
+        /// Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.
+        /// </para>
         /// </summary>
         public DynamoDBCatalogSource DynamoDBCatalogSource
         {
@@ -752,7 +755,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RelationalCatalogSource.
+        /// Gets and sets the property RelationalCatalogSource. 
+        /// <para>
+        /// Specifies a relational catalog data store in the Glue Data Catalog.
+        /// </para>
         /// </summary>
         public RelationalCatalogSource RelationalCatalogSource
         {

@@ -58,7 +58,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AdditionalOptions.
+        /// Gets and sets the property AdditionalOptions. 
+        /// <para>
+        /// Specifies additional options for the connector.
+        /// </para>
         /// </summary>
         public S3DirectSourceAdditionalOptions AdditionalOptions
         {

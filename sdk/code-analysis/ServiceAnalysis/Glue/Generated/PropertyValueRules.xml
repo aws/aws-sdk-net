@@ -3697,6 +3697,9 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.KafkaStreamingSourceOptions.AddRecordTimestamp</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.KafkaStreamingSourceOptions.Assign</property>
   </property-value-rule>
   <property-value-rule>
@@ -3710,6 +3713,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.KafkaStreamingSourceOptions.Delimiter</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.KafkaStreamingSourceOptions.EmitConsumerLagMetrics</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.KafkaStreamingSourceOptions.EndingOffsets</property>
@@ -3757,6 +3763,9 @@
     <max>131072</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.KinesisStreamingSourceOptions.AddRecordTimestamp</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.KinesisStreamingSourceOptions.Classification</property>
   </property-value-rule>
   <property-value-rule>
@@ -3765,6 +3774,9 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.KinesisStreamingSourceOptions.DescribeShardInterval</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.KinesisStreamingSourceOptions.EmitConsumerLagMetrics</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.KinesisStreamingSourceOptions.EndpointUrl</property>

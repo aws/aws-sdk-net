@@ -51,6 +51,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AddIdleTimeBetweenReads);
             }
 
+            if(requestObject.IsSetAddRecordTimestamp())
+            {
+                context.Writer.WritePropertyName("AddRecordTimestamp");
+                context.Writer.Write(requestObject.AddRecordTimestamp);
+            }
+
             if(requestObject.IsSetAvoidEmptyBatches())
             {
                 context.Writer.WritePropertyName("AvoidEmptyBatches");
@@ -73,6 +79,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("DescribeShardInterval");
                 context.Writer.Write(requestObject.DescribeShardInterval);
+            }
+
+            if(requestObject.IsSetEmitConsumerLagMetrics())
+            {
+                context.Writer.WritePropertyName("EmitConsumerLagMetrics");
+                context.Writer.Write(requestObject.EmitConsumerLagMetrics);
             }
 
             if(requestObject.IsSetEndpointUrl())
