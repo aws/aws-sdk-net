@@ -1,3 +1,16 @@
+### 3.7.478.0 (2023-02-08 19:21 UTC)
+* Backup (3.7.102.0)
+	* This release added one attribute (resource name) in the output model of our 9 existing APIs in AWS backup so that customers will see the resource name at the output. No input required from Customers.
+* CloudFront (3.7.104.0)
+	* CloudFront Origin Access Control extends support to AWS Elemental MediaStore origins.
+* Glue (3.7.107.0)
+	* DirectJDBCSource + Glue 4.0 streaming options
+* LakeFormation (3.7.102.0)
+	* This release removes the LFTagpolicyResource expression limits.
+* Core 3.7.104.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.477.1 (2023-02-07 19:19 UTC)
 * Transfer (3.7.104.25)
 	* Updated the documentation for the ImportCertificate API call, and added examples.

@@ -32,7 +32,7 @@ namespace Amazon.Glue
     public partial class AmazonGlueConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.106.12");
+            InternalSDKUtils.BuildUserAgentString("3.7.107.0");
 
         private string _userAgent = UserAgentString;
 
