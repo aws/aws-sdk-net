@@ -133,7 +133,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
             ValidateNoProfileOptionsProperties(userProperties);
             ValidateNoReservedProperties(reservedPropertyNames, userProperties);
 
-            var profileDictionary = new Dictionary<string, string>();
+            var profileDictionary = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
             foreach (var pair in Convert(profileOptions).Concat(reservedProperties).Concat(userProperties))
             {
                 profileDictionary.Add(pair.Key, pair.Value);

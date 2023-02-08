@@ -261,9 +261,32 @@ namespace AWSSDK.UnitTests
             AssertCredentialsFileContents(expectedFileContents);
         }
 
+        public void AssertSsoSplitProfileWithCredentials(string profileName, CredentialProfileOptions profileOptions, string expectedCredentialsContents, string expectedConfigContents)
+        {
+            CredentialsFile.RegisterProfile(
+                CredentialProfileTestHelper.GetCredentialProfile(
+                    uniqueKey: null,
+                    profileName: profileName,
+                    options: profileOptions,
+                    properties: null,
+                    defaultConfigurationModeName: null,
+                    region: null,
+                    endpointDiscoveryEnabled: null,
+                    retryMode: null,
+                    maxAttempts: null));
+
+            AssertCredentialsFileContents(expectedCredentialsContents);
+            AssertConfigsFileContents(expectedConfigContents);
+        }
+
         public void AssertCredentialsFileContents(string expectedContents)
         {
-            Assert.AreEqual(expectedContents, File.ReadAllText(CredentialsFilePath));
+            Assert.AreEqual(expectedContents.Trim(), File.ReadAllText(CredentialsFilePath).Trim());
+        }
+
+        public void AssertConfigsFileContents(string expectedContents)
+        {
+            Assert.AreEqual(expectedContents.Trim(), File.ReadAllText(ConfigFilePath).Trim());
         }
 
         public void Dispose()

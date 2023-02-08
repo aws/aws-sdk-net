@@ -360,9 +360,48 @@ namespace Amazon.Runtime.CredentialManagement
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
 
+            // The config file might contain parts of the profile
+            // These parts are updated at the config file and removed from profileDictionary to avoid duplication
+            UpdateConfigSectionsFromProfile(profile, profileDictionary);
+
             _credentialsFile.EditSection(profile.Name, new SortedDictionary<string, string>(profileDictionary));
             _credentialsFile.Persist();
             profile.CredentialProfileStore = this;
+        }
+
+        private void UpdateConfigSectionsFromProfile(CredentialProfile profile, Dictionary<string, string> profileDictionary)
+        {
+            if (_configFile == null || !_configFile.TryGetSection(profile.Name, out var configProperties))
+                return;
+
+            var configPropertiesNames = configProperties.Keys.ToArray();
+            foreach (var propertyName in configPropertiesNames)
+            {
+                if (profileDictionary.ContainsKey(propertyName))
+                {
+                    configProperties[propertyName] = profileDictionary[propertyName];
+                    profileDictionary.Remove(propertyName); // Remove the property from profileDictionary as we updated it in the config
+                }
+                else
+                {
+                    configProperties[propertyName] = null;
+                }
+            }
+
+            _configFile.EditSection(profile.Name, new SortedDictionary<string, string>(configProperties));
+            _configFile.Persist();
+
+
+            if (configProperties.TryGetValue(SsoSession, out var session)
+                && _configFile.TryGetSection(session, true, out var ssoSessionProperties))
+            {
+                // Skip SsoSession properties as it might be used by other profiles
+                var ssoSessionPropertiesNames = ssoSessionProperties.Keys.ToArray();
+                foreach (var propertyName in ssoSessionPropertiesNames)
+                {
+                    profileDictionary.Remove(propertyName);
+                }
+            }
         }
 
         /// <summary>
