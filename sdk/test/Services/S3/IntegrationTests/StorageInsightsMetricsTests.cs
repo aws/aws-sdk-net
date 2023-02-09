@@ -271,6 +271,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
 
             var listBucketMetricsConfigurationResponse = Client.ListBucketMetricsConfigurations(listBucketMetricsConfigurationRequest);
+            Assert.IsTrue(listBucketMetricsConfigurationResponse.MetricsConfigurationList.Count > 0);
         }
 
         private static void DeleteBucketMetricsAndValidate()
