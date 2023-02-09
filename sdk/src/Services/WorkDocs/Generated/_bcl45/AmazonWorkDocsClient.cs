@@ -38,7 +38,7 @@ namespace Amazon.WorkDocs
     /// <summary>
     /// Implementation for accessing WorkDocs
     ///
-    /// The WorkDocs API is designed for the following use cases:
+    /// The Amazon WorkDocs API is designed for the following use cases:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -51,29 +51,29 @@ namespace Amazon.WorkDocs
     /// <para>
     /// Security: Support security applications are supported for users who have additional
     /// security needs, such as antivirus or data loss prevention. The API actions, along
-    /// with AWS CloudTrail, allow these applications to detect when changes occur in Amazon
-    /// WorkDocs. Then, the application can take the necessary actions and replace the target
-    /// file. If the target file violates the policy, the application can also choose to email
-    /// the user.
+    /// with CloudTrail, allow these applications to detect when changes occur in Amazon WorkDocs.
+    /// Then, the application can take the necessary actions and replace the target file.
+    /// If the target file violates the policy, the application can also choose to email the
+    /// user.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// eDiscovery/Analytics: General administrative applications are supported, such as eDiscovery
     /// and analytics. These applications can choose to mimic or record the actions in an
-    /// Amazon WorkDocs site, along with AWS CloudTrail, to replicate data for eDiscovery,
-    /// backup, or analytical applications.
+    /// Amazon WorkDocs site, along with CloudTrail, to replicate data for eDiscovery, backup,
+    /// or analytical applications.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// All Amazon WorkDocs API actions are Amazon authenticated and certificate-signed. They
-    /// not only require the use of the AWS SDK, but also allow for the exclusive use of IAM
-    /// users and roles to help facilitate access, trust, and permission policies. By creating
-    /// a role and allowing an IAM user to access the Amazon WorkDocs site, the IAM user gains
-    /// full administrative visibility into the entire Amazon WorkDocs site (or as set in
-    /// the IAM policy). This includes, but is not limited to, the ability to modify file
-    /// permissions and upload any file to any user. This allows developers to perform the
-    /// three use cases above, as well as give users the ability to grant access on a selective
-    /// basis using the IAM model.
+    /// not only require the use of the Amazon Web Services SDK, but also allow for the exclusive
+    /// use of IAM users and roles to help facilitate access, trust, and permission policies.
+    /// By creating a role and allowing an IAM user to access the Amazon WorkDocs site, the
+    /// IAM user gains full administrative visibility into the entire Amazon WorkDocs site
+    /// (or as set in the IAM policy). This includes, but is not limited to, the ability to
+    /// modify file permissions and upload any file to any user. This allows developers to
+    /// perform the three use cases above, as well as give users the ability to grant access
+    /// on a selective basis using the IAM model.
     /// </para>
     ///  <note> 
     /// <para>
@@ -344,7 +344,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
@@ -388,7 +388,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
@@ -428,7 +428,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -464,7 +464,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -499,7 +499,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>The response from the AddResourcePermissions service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
@@ -536,7 +536,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>The response from the AddResourcePermissions service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
@@ -580,7 +580,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidCommentOperationException">
@@ -626,7 +626,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidCommentOperationException">
@@ -673,7 +673,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
@@ -716,7 +716,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
@@ -765,7 +765,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
@@ -816,7 +816,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
@@ -859,7 +859,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -898,7 +898,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -1018,7 +1018,7 @@ namespace Amazon.WorkDocs
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -1055,7 +1055,7 @@ namespace Amazon.WorkDocs
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -1092,7 +1092,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -1128,7 +1128,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -1169,7 +1169,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
@@ -1212,7 +1212,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
@@ -1252,7 +1252,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
@@ -1291,7 +1291,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
@@ -1337,7 +1337,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
@@ -1385,7 +1385,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
@@ -1419,8 +1419,7 @@ namespace Amazon.WorkDocs
 
 
         /// <summary>
-        /// Deletes a version of an Amazon WorkDocs document. Use the <code>DeletePriorVersions</code>
-        /// parameter to delete prior versions.
+        /// Deletes a specific version of a document.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentVersion service method.</param>
         /// 
@@ -1435,7 +1434,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidOperationException">
@@ -1462,8 +1461,7 @@ namespace Amazon.WorkDocs
 
 
         /// <summary>
-        /// Deletes a version of an Amazon WorkDocs document. Use the <code>DeletePriorVersions</code>
-        /// parameter to delete prior versions.
+        /// Deletes a specific version of a document.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentVersion service method.</param>
         /// <param name="cancellationToken">
@@ -1481,7 +1479,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidOperationException">
@@ -1527,7 +1525,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
@@ -1575,7 +1573,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
@@ -1621,7 +1619,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
@@ -1663,7 +1661,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
@@ -1703,7 +1701,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
@@ -1742,7 +1740,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
@@ -1839,6 +1837,13 @@ namespace Amazon.WorkDocs
 
         /// <summary>
         /// Deletes the specified user from a Simple AD or Microsoft AD directory.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Deleting a user immediately and permanently deletes all content in that user's folder
+        /// structure. Site retention policies do NOT apply to this type of deletion.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// 
@@ -1847,7 +1852,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -1872,6 +1877,13 @@ namespace Amazon.WorkDocs
 
         /// <summary>
         /// Deletes the specified user from a Simple AD or Microsoft AD directory.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Deleting a user immediately and permanently deletes all content in that user's folder
+        /// structure. Site retention policies do NOT apply to this type of deletion.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// <param name="cancellationToken">
@@ -1883,7 +1895,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -1917,7 +1929,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>The response from the DescribeActivities service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
@@ -1953,7 +1965,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>The response from the DescribeActivities service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
@@ -1993,7 +2005,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
@@ -2032,7 +2044,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
@@ -2077,7 +2089,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
@@ -2127,7 +2139,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
@@ -2180,7 +2192,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
@@ -2226,7 +2238,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
@@ -2264,7 +2276,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>The response from the DescribeGroups service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -2298,7 +2310,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>The response from the DescribeGroups service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -2391,7 +2403,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>The response from the DescribeResourcePermissions service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
@@ -2427,7 +2439,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>The response from the DescribeResourcePermissions service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
@@ -2474,7 +2486,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>The response from the DescribeRootFolders service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
@@ -2520,7 +2532,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>The response from the DescribeRootFolders service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
@@ -2568,7 +2580,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
@@ -2619,7 +2631,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
@@ -2671,7 +2683,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -2715,7 +2727,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -2752,7 +2764,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
@@ -2794,7 +2806,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
@@ -2845,7 +2857,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -2889,7 +2901,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -2926,7 +2938,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidPasswordException">
@@ -2968,7 +2980,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidPasswordException">
@@ -3011,7 +3023,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
@@ -3053,7 +3065,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
@@ -3104,7 +3116,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -3148,7 +3160,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -3183,7 +3195,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>The response from the GetResources service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
@@ -3220,7 +3232,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>The response from the GetResources service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
@@ -3279,7 +3291,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidPasswordException">
@@ -3352,7 +3364,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidPasswordException">
@@ -3404,7 +3416,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>The response from the RemoveAllResourcePermissions service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -3437,7 +3449,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>The response from the RemoveAllResourcePermissions service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -3471,7 +3483,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>The response from the RemoveResourcePermission service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -3504,7 +3516,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>The response from the RemoveResourcePermission service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
@@ -3547,7 +3559,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidOperationException">
@@ -3592,7 +3604,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidOperationException">
@@ -3642,7 +3654,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
@@ -3694,7 +3706,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
@@ -3747,7 +3759,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidOperationException">
@@ -3799,7 +3811,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidOperationException">
@@ -3852,7 +3864,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
@@ -3904,7 +3916,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
@@ -3951,7 +3963,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.IllegalUserStateException">
@@ -4000,7 +4012,7 @@ namespace Amazon.WorkDocs
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
-        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.IllegalUserStateException">

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
-    /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+    /// The Directory Service cannot reach an on-premises instance. Or a dependency under
     /// the control of the organization is failing, such as a connected Active Directory.
     /// </summary>
     #if !NETSTANDARD

@@ -30,8 +30,7 @@ namespace Amazon.WorkDocs.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDocumentVersion operation.
-    /// Deletes a version of an Amazon WorkDocs document. Use the <code>DeletePriorVersions</code>
-    /// parameter to delete prior versions.
+    /// Deletes a specific version of a document.
     /// </summary>
     public partial class DeleteDocumentVersionRequest : AmazonWorkDocsRequest
     {
@@ -43,8 +42,8 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property AuthenticationToken. 
         /// <para>
-        /// Amazon WorkDocs authentication token. Not required when using AWS administrator credentials
-        /// to access the API.
+        /// Amazon WorkDocs authentication token. Not required when using Amazon Web Services
+        /// administrator credentials to access the API.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=8199)]
@@ -63,8 +62,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property DeletePriorVersions. 
         /// <para>
-        /// When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i>
-        /// of a document.
+        /// Deletes all versions of a document prior to the current version.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,7 +81,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property DocumentId. 
         /// <para>
-        /// The ID of a document.
+        /// The ID of the document associated with the version being deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -102,7 +100,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The version ID of a document.
+        /// The ID of the version being deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
