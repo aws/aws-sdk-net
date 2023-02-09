@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMeetings.Model
 {
     /// <summary>
-    /// The configuration settings of the features available to a meeting.&gt;
+    /// The configuration settings of the features available to a meeting.
     /// </summary>
     public partial class MeetingFeaturesConfiguration
     {
@@ -38,7 +38,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// <summary>
         /// Gets and sets the property Audio. 
         /// <para>
-        /// The configuration settings for the audio features available to a meeting. 
+        /// The configuration settings for the audio features available to a meeting.
         /// </para>
         /// </summary>
         public AudioFeatures Audio
