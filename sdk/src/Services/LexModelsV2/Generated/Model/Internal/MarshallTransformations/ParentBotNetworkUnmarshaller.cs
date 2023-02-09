@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BotSummary Object
+    /// Response Unmarshaller for ParentBotNetwork Object
     /// </summary>  
-    public class BotSummaryUnmarshaller : IUnmarshaller<BotSummary, XmlUnmarshallerContext>, IUnmarshaller<BotSummary, JsonUnmarshallerContext>
+    public class ParentBotNetworkUnmarshaller : IUnmarshaller<ParentBotNetwork, XmlUnmarshallerContext>, IUnmarshaller<ParentBotNetwork, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BotSummary IUnmarshaller<BotSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ParentBotNetwork IUnmarshaller<ParentBotNetwork, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public BotSummary Unmarshall(JsonUnmarshallerContext context)
+        public ParentBotNetwork Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BotSummary unmarshalledObject = new BotSummary();
+            ParentBotNetwork unmarshalledObject = new ParentBotNetwork();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,40 +70,10 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.BotId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("botName", targetDepth))
+                if (context.TestExpression("botVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BotName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("botStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BotStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("botType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BotType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdatedDateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedDateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("latestBotVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LatestBotVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BotVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +82,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static BotSummaryUnmarshaller _instance = new BotSummaryUnmarshaller();        
+        private static ParentBotNetworkUnmarshaller _instance = new ParentBotNetworkUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BotSummaryUnmarshaller Instance
+        public static ParentBotNetworkUnmarshaller Instance
         {
             get
             {

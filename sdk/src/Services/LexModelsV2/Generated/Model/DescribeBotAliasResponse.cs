@@ -44,6 +44,7 @@ namespace Amazon.LexModelsV2.Model
         private DateTime? _creationDateTime;
         private string _description;
         private DateTime? _lastUpdatedDateTime;
+        private List<ParentBotNetwork> _parentBotNetworks = new List<ParentBotNetwork>();
         private SentimentAnalysisSettings _sentimentAnalysisSettings;
 
         /// <summary>
@@ -251,6 +252,25 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetLastUpdatedDateTime()
         {
             return this._lastUpdatedDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentBotNetworks. 
+        /// <para>
+        /// A list of the networks to which the bot alias you described belongs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=30)]
+        public List<ParentBotNetwork> ParentBotNetworks
+        {
+            get { return this._parentBotNetworks; }
+            set { this._parentBotNetworks = value; }
+        }
+
+        // Check to see if ParentBotNetworks property is set
+        internal bool IsSetParentBotNetworks()
+        {
+            return this._parentBotNetworks != null && this._parentBotNetworks.Count > 0; 
         }
 
         /// <summary>

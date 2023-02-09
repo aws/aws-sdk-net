@@ -30,7 +30,7 @@ namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCustomVocabularyItems operation.
-    /// List custom vocabulary items for the specified locale in the specified bot.
+    /// Paginated list of custom vocabulary items for a given bot locale's custom vocabulary.
     /// </summary>
     public partial class ListCustomVocabularyItemsRequest : AmazonLexModelsV2Request
     {
@@ -43,7 +43,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotId. 
         /// <para>
-        /// The unique identifier of the bot to the list custom vocabulary request.
+        /// The identifier of the version of the bot associated with this custom vocabulary.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=10)]
@@ -81,7 +81,9 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property LocaleId. 
         /// <para>
-        /// The locale identifier of the bot to the list custom vocabulary request.
+        /// The identifier of the language and locale where this custom vocabulary is used. The
+        /// string must match one of the supported locales. For more information, see Supported
+        /// languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +102,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum results to the list custom vocabulary request.
+        /// The maximum number of items returned by the list operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

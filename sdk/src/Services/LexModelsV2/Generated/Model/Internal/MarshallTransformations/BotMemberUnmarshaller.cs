@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BotSummary Object
+    /// Response Unmarshaller for BotMember Object
     /// </summary>  
-    public class BotSummaryUnmarshaller : IUnmarshaller<BotSummary, XmlUnmarshallerContext>, IUnmarshaller<BotSummary, JsonUnmarshallerContext>
+    public class BotMemberUnmarshaller : IUnmarshaller<BotMember, XmlUnmarshallerContext>, IUnmarshaller<BotMember, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BotSummary IUnmarshaller<BotSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        BotMember IUnmarshaller<BotMember, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,45 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public BotSummary Unmarshall(JsonUnmarshallerContext context)
+        public BotMember Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BotSummary unmarshalledObject = new BotSummary();
+            BotMember unmarshalledObject = new BotMember();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("botId", targetDepth))
+                if (context.TestExpression("botMemberAliasId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BotId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BotMemberAliasId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("botName", targetDepth))
+                if (context.TestExpression("botMemberAliasName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BotName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BotMemberAliasName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("botStatus", targetDepth))
+                if (context.TestExpression("botMemberId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BotStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BotMemberId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("botType", targetDepth))
+                if (context.TestExpression("botMemberName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BotType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BotMemberName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("botMemberVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdatedDateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedDateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("latestBotVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LatestBotVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BotMemberVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +100,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static BotSummaryUnmarshaller _instance = new BotSummaryUnmarshaller();        
+        private static BotMemberUnmarshaller _instance = new BotMemberUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BotSummaryUnmarshaller Instance
+        public static BotMemberUnmarshaller Instance
         {
             get
             {

@@ -57,6 +57,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.BotId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("botMembers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BotMember, BotMemberUnmarshaller>(BotMemberUnmarshaller.Instance);
+                    response.BotMembers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("botName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -73,6 +79,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.BotTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("botType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.BotType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("creationDateTime", targetDepth))

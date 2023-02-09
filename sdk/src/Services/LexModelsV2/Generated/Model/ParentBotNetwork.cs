@@ -29,23 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the BuildBotLocale operation.
-    /// Builds a bot, its intents, and its slot types into a specific locale. A bot can be
-    /// built into multiple locales. At runtime the locale is used to choose a specific build
-    /// of the bot.
+    /// A network of bots.
     /// </summary>
-    public partial class BuildBotLocaleRequest : AmazonLexModelsV2Request
+    public partial class ParentBotNetwork
     {
         private string _botId;
         private string _botVersion;
-        private string _localeId;
 
         /// <summary>
         /// Gets and sets the property BotId. 
         /// <para>
-        /// The identifier of the bot to build. The identifier is returned in the response from
-        /// the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a>
-        /// operation.
+        /// The identifier of the network of bots assigned by Amazon Lex.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=10)]
@@ -64,10 +58,10 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotVersion. 
         /// <para>
-        /// The version of the bot to build. This can only be the draft version of the bot.
+        /// The version of the network of bots.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=5)]
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public string BotVersion
         {
             get { return this._botVersion; }
@@ -78,28 +72,6 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetBotVersion()
         {
             return this._botVersion != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property LocaleId. 
-        /// <para>
-        /// The identifier of the language and locale that the bot will be used in. The string
-        /// must match one of the supported locales. All of the intents, slot types, and slots
-        /// used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
-        /// languages</a>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string LocaleId
-        {
-            get { return this._localeId; }
-            set { this._localeId = value; }
-        }
-
-        // Check to see if LocaleId property is set
-        internal bool IsSetLocaleId()
-        {
-            return this._localeId != null;
         }
 
     }

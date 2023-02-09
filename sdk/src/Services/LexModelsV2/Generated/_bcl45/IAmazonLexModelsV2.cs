@@ -46,7 +46,7 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Batch create custom vocabulary item for the specified locale in the specified bot.
+        /// Create a batch of custom vocabulary items for a given bot locale's custom vocabulary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateCustomVocabularyItem service method.</param>
         /// 
@@ -74,7 +74,7 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Batch create custom vocabulary item for the specified locale in the specified bot.
+        /// Create a batch of custom vocabulary items for a given bot locale's custom vocabulary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateCustomVocabularyItem service method.</param>
         /// <param name="cancellationToken">
@@ -108,7 +108,7 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Batch delete custom vocabulary item for the specified locale in the specified bot.
+        /// Delete a batch of custom vocabulary items for a given bot locale's custom vocabulary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteCustomVocabularyItem service method.</param>
         /// 
@@ -136,7 +136,7 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Batch delete custom vocabulary item for the specified locale in the specified bot.
+        /// Delete a batch of custom vocabulary items for a given bot locale's custom vocabulary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteCustomVocabularyItem service method.</param>
         /// <param name="cancellationToken">
@@ -170,7 +170,7 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Batch update custom vocabulary item for the specified locale in the specified bot.
+        /// Update a batch of custom vocabulary items for a given bot locale's custom vocabulary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateCustomVocabularyItem service method.</param>
         /// 
@@ -198,7 +198,7 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Batch update custom vocabulary item for the specified locale in the specified bot.
+        /// Update a batch of custom vocabulary items for a given bot locale's custom vocabulary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateCustomVocabularyItem service method.</param>
         /// <param name="cancellationToken">
@@ -1540,7 +1540,7 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Deletes a specific version of a bot. To delete all version of a bot, use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBot.html">DeleteBot</a>
+        /// Deletes a specific version of a bot. To delete all versions of a bot, use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBot.html">DeleteBot</a>
         /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBotVersion service method.</param>
@@ -1574,7 +1574,7 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Deletes a specific version of a bot. To delete all version of a bot, use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBot.html">DeleteBot</a>
+        /// Deletes a specific version of a bot. To delete all versions of a bot, use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBot.html">DeleteBot</a>
         /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBotVersion service method.</param>
@@ -2175,7 +2175,7 @@ namespace Amazon.LexModelsV2
         ///  
         /// <para>
         /// Amazon Lex stores the utterances that users send to your bot. Utterances are stored
-        /// for 15 days for use with the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
+        /// for 15 days for use with the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
         /// operation, and then stored indefinitely for use in improving the ability of your bot
         /// to respond to user input..
         /// </para>
@@ -2212,7 +2212,7 @@ namespace Amazon.LexModelsV2
         ///  
         /// <para>
         /// Amazon Lex stores the utterances that users send to your bot. Utterances are stored
-        /// for 15 days for use with the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
+        /// for 15 days for use with the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
         /// operation, and then stored indefinitely for use in improving the ability of your bot
         /// to respond to user input..
         /// </para>
@@ -3399,7 +3399,7 @@ namespace Amazon.LexModelsV2
         /// <para>
         /// To use a built-in intent as a the base for your own intent, include the built-in intent
         /// signature in the <code>parentIntentSignature</code> parameter when you call the <code>CreateIntent</code>
-        /// operation. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateIntent.html">CreateIntent</a>.
+        /// operation. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateIntent.html">CreateIntent</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBuiltInIntents service method.</param>
@@ -3431,7 +3431,7 @@ namespace Amazon.LexModelsV2
         /// <para>
         /// To use a built-in intent as a the base for your own intent, include the built-in intent
         /// signature in the <code>parentIntentSignature</code> parameter when you call the <code>CreateIntent</code>
-        /// operation. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateIntent.html">CreateIntent</a>.
+        /// operation. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateIntent.html">CreateIntent</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBuiltInIntents service method.</param>
@@ -3516,7 +3516,7 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// List custom vocabulary items for the specified locale in the specified bot.
+        /// Paginated list of custom vocabulary items for a given bot locale's custom vocabulary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCustomVocabularyItems service method.</param>
         /// 
@@ -3544,7 +3544,7 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// List custom vocabulary items for the specified locale in the specified bot.
+        /// Paginated list of custom vocabulary items for a given bot locale's custom vocabulary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCustomVocabularyItems service method.</param>
         /// <param name="cancellationToken">
@@ -4674,7 +4674,7 @@ namespace Amazon.LexModelsV2
         /// <para>
         /// The password is not required. If you don't supply a password, Amazon Lex generates
         /// a zip file that is not protected by a password. This is the archive that is available
-        /// at the pre-signed S3 URL provided by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a>
+        /// at the pre-signed S3 URL provided by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a>
         /// operation.
         /// </para>
         /// </summary>
@@ -4715,7 +4715,7 @@ namespace Amazon.LexModelsV2
         /// <para>
         /// The password is not required. If you don't supply a password, Amazon Lex generates
         /// a zip file that is not protected by a password. This is the archive that is available
-        /// at the pre-signed S3 URL provided by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a>
+        /// at the pre-signed S3 URL provided by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a>
         /// operation.
         /// </para>
         /// </summary>

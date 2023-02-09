@@ -35,7 +35,9 @@ namespace Amazon.LexModelsV2.Model
     public partial class UpdateBotRequest : AmazonLexModelsV2Request
     {
         private string _botId;
+        private List<BotMember> _botMembers = new List<BotMember>();
         private string _botName;
+        private BotType _botType;
         private DataPrivacy _dataPrivacy;
         private string _description;
         private int? _idleSessionTTLInSeconds;
@@ -45,7 +47,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property BotId. 
         /// <para>
         /// The unique identifier of the bot to update. This identifier is returned by the <a
-        /// href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+        /// href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a>
         /// operation.
         /// </para>
         /// </summary>
@@ -60,6 +62,25 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetBotId()
         {
             return this._botId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BotMembers. 
+        /// <para>
+        /// The list of bot members in the network associated with the update action.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<BotMember> BotMembers
+        {
+            get { return this._botMembers; }
+            set { this._botMembers = value; }
+        }
+
+        // Check to see if BotMembers property is set
+        internal bool IsSetBotMembers()
+        {
+            return this._botMembers != null && this._botMembers.Count > 0; 
         }
 
         /// <summary>
@@ -79,6 +100,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetBotName()
         {
             return this._botName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BotType. 
+        /// <para>
+        /// The type of the bot to be updated.
+        /// </para>
+        /// </summary>
+        public BotType BotType
+        {
+            get { return this._botType; }
+            set { this._botType = value; }
+        }
+
+        // Check to see if BotType property is set
+        internal bool IsSetBotType()
+        {
+            return this._botType != null;
         }
 
         /// <summary>
