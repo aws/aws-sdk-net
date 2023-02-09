@@ -29,29 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
-    /// The information about the Amazon EKS cluster.
+    /// The configuration of the retry policy that the job runs on.
     /// </summary>
-    public partial class EksInfo
+    public partial class RetryPolicyConfiguration
     {
-        private string _awsNamespace;
+        private int? _maxAttempts;
 
         /// <summary>
-        /// Gets and sets the property Namespace. 
+        /// Gets and sets the property MaxAttempts. 
         /// <para>
-        /// The namespaces of the Amazon EKS cluster.
+        /// The maximum number of attempts on the job's driver.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=63)]
-        public string Namespace
+        [AWSProperty(Required=true)]
+        public int MaxAttempts
         {
-            get { return this._awsNamespace; }
-            set { this._awsNamespace = value; }
+            get { return this._maxAttempts.GetValueOrDefault(); }
+            set { this._maxAttempts = value; }
         }
 
-        // Check to see if Namespace property is set
-        internal bool IsSetNamespace()
+        // Check to see if MaxAttempts property is set
+        internal bool IsSetMaxAttempts()
         {
-            return this._awsNamespace != null;
+            return this._maxAttempts.HasValue; 
         }
 
     }

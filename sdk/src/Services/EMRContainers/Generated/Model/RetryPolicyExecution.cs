@@ -29,29 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
-    /// The information about the Amazon EKS cluster.
+    /// The current status of the retry policy executed on the job.
     /// </summary>
-    public partial class EksInfo
+    public partial class RetryPolicyExecution
     {
-        private string _awsNamespace;
+        private int? _currentAttemptCount;
 
         /// <summary>
-        /// Gets and sets the property Namespace. 
+        /// Gets and sets the property CurrentAttemptCount. 
         /// <para>
-        /// The namespaces of the Amazon EKS cluster.
+        /// The current number of attempts made on the driver of the job.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=63)]
-        public string Namespace
+        [AWSProperty(Required=true)]
+        public int CurrentAttemptCount
         {
-            get { return this._awsNamespace; }
-            set { this._awsNamespace = value; }
+            get { return this._currentAttemptCount.GetValueOrDefault(); }
+            set { this._currentAttemptCount = value; }
         }
 
-        // Check to see if Namespace property is set
-        internal bool IsSetNamespace()
+        // Check to see if CurrentAttemptCount property is set
+        internal bool IsSetCurrentAttemptCount()
         {
-            return this._awsNamespace != null;
+            return this._currentAttemptCount.HasValue; 
         }
 
     }
