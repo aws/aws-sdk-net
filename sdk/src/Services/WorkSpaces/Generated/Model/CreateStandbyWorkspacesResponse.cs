@@ -39,7 +39,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property FailedStandbyRequests. 
         /// <para>
-        /// Information about the Standby WorkSpace that could not be created. 
+        /// Information about the standby WorkSpace that could not be created. 
         /// </para>
         /// </summary>
         public List<FailedCreateStandbyWorkspacesRequest> FailedStandbyRequests
@@ -57,7 +57,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property PendingStandbyRequests. 
         /// <para>
-        /// Information about the Standby WorkSpace that was created.
+        /// Information about the standby WorkSpace that was created.
         /// </para>
         /// </summary>
         public List<PendingCreateStandbyWorkspacesRequest> PendingStandbyRequests
