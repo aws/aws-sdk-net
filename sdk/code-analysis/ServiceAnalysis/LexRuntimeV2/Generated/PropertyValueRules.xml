@@ -166,6 +166,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexRuntimeV2.Model.RecognizeUtteranceResponse.RecognizedBotMember</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.RecognizeUtteranceResponse.RequestAttributes</property>
     <min>1</min>
   </property-value-rule>
@@ -320,6 +324,18 @@
     <min>2</min>
     <max>100</max>
     <pattern>[0-9a-zA-Z._:-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexRuntimeV2.Model.RecognizedBotMember.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexRuntimeV2.Model.RecognizedBotMember.BotName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^([0-9a-zA-Z][_-]?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.RuntimeHintValue.Phrase</property>

@@ -35,6 +35,7 @@ namespace Amazon.LexRuntimeV2.Model
     {
         private List<Interpretation> _interpretations = new List<Interpretation>();
         private List<Message> _messages = new List<Message>();
+        private RecognizedBotMember _recognizedBotMember;
         private Dictionary<string, string> _requestAttributes = new Dictionary<string, string>();
         private string _sessionId;
         private SessionState _sessionStateValue;
@@ -84,6 +85,24 @@ namespace Amazon.LexRuntimeV2.Model
         internal bool IsSetMessages()
         {
             return this._messages != null && this._messages.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecognizedBotMember. 
+        /// <para>
+        /// The bot member that recognized the text.
+        /// </para>
+        /// </summary>
+        public RecognizedBotMember RecognizedBotMember
+        {
+            get { return this._recognizedBotMember; }
+            set { this._recognizedBotMember = value; }
+        }
+
+        // Check to see if RecognizedBotMember property is set
+        internal bool IsSetRecognizedBotMember()
+        {
+            return this._recognizedBotMember != null;
         }
 
         /// <summary>

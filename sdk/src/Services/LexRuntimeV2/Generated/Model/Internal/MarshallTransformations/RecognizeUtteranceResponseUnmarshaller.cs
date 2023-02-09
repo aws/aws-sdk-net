@@ -58,6 +58,8 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                 response.Interpretations = context.ResponseData.GetHeaderValue("x-amz-lex-interpretations");
             if (context.ResponseData.IsHeaderPresent("x-amz-lex-messages"))
                 response.Messages = context.ResponseData.GetHeaderValue("x-amz-lex-messages");
+            if (context.ResponseData.IsHeaderPresent("x-amz-lex-recognized-bot-member"))
+                response.RecognizedBotMember = context.ResponseData.GetHeaderValue("x-amz-lex-recognized-bot-member");
             if (context.ResponseData.IsHeaderPresent("x-amz-lex-request-attributes"))
                 response.RequestAttributes = context.ResponseData.GetHeaderValue("x-amz-lex-request-attributes");
             if (context.ResponseData.IsHeaderPresent("x-amz-lex-session-id"))
