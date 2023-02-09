@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Describes the login information for the container image registry of an Amazon Lightsail
+    /// Describes the sign-in credentials for the container image registry of an Amazon Lightsail
     /// account.
     /// </summary>
     public partial class ContainerServiceRegistryLogin
@@ -42,7 +42,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ExpiresAt. 
         /// <para>
-        /// The timestamp of when the container image registry username and password expire.
+        /// The timestamp of when the container image registry sign-in credentials expire.
         /// </para>
         ///  
         /// <para>

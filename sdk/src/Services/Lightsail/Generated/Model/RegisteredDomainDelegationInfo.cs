@@ -93,7 +93,11 @@ namespace Amazon.Lightsail.Model
         }
 
         /// <summary>
-        /// Gets and sets the property R53HostedZoneDeletionState.
+        /// Gets and sets the property R53HostedZoneDeletionState. 
+        /// <para>
+        /// Describes the deletion state of an Amazon Route 53 hosted zone for a domain that is
+        /// being automatically delegated to an Amazon Lightsail DNS zone.
+        /// </para>
         /// </summary>
         public R53HostedZoneDeletionState R53HostedZoneDeletionState
         {
