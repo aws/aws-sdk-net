@@ -1,3 +1,26 @@
+### 3.7.479.0 (2023-02-09 19:28 UTC)
+* ChimeSDKMeetings (3.7.100.71)
+	* Documentation updates for Chime Meetings SDK
+* CloudWatchEvidently (3.7.101.0)
+	* Updated entity overrides parameter to accept up to 2500 overrides or a total of 40KB.
+* EMRContainers (3.7.102.0)
+	* EMR on EKS allows configuring retry policies for job runs through the StartJobRun API. Using retry policies, a job cause a driver pod to be restarted automatically if it fails or is deleted. The job's status can be seen in the DescribeJobRun and ListJobRun APIs and monitored using CloudWatch events.
+* LexModelsV2 (3.7.102.0)
+	* AWS Lex now supports Network of Bots.
+* LexRuntimeV2 (3.7.101.0)
+	* AWS Lex now supports Network of Bots.
+* Lightsail (3.7.101.60)
+	* Documentation updates for Lightsail
+* MigrationHubRefactorSpaces (3.7.102.0)
+	* This release adds support for creating environments with a network fabric type of NONE
+* WorkDocs (3.7.101.55)
+	* Doc only update for the WorkDocs APIs.
+* WorkSpaces (3.7.104.51)
+	* Removed Windows Server 2016 BYOL and made changes based on IAM campaign.
+* Core 3.7.104.6
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.478.0 (2023-02-08 19:21 UTC)
 * Backup (3.7.102.0)
 	* This release added one attribute (resource name) in the output model of our 9 existing APIs in AWS backup so that customers will see the resource name at the output. No input required from Customers.
