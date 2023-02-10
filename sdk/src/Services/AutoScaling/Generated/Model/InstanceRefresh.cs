@@ -41,6 +41,7 @@ namespace Amazon.AutoScaling.Model
         private int? _percentageComplete;
         private RefreshPreferences _preferences;
         private InstanceRefreshProgressDetails _progressDetails;
+        private RollbackDetails _rollbackDetails;
         private DateTime? _startTime;
         private InstanceRefreshStatus _status;
         private string _statusReason;
@@ -67,7 +68,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DesiredConfiguration. 
         /// <para>
-        /// Describes the specific update you want to deploy.
+        /// Describes the desired configuration for the instance refresh.
         /// </para>
         /// </summary>
         public DesiredConfiguration DesiredConfiguration
@@ -124,6 +125,13 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The number of instances remaining to update before the instance refresh is complete.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you roll back the instance refresh, <code>InstancesToUpdate</code> shows you the
+        /// number of instances that were not yet updated by the instance refresh. Therefore,
+        /// these instances don't need to be replaced as part of the rollback.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
         public int InstancesToUpdate
@@ -146,6 +154,12 @@ namespace Amazon.AutoScaling.Model
         /// the instance's health status changes to healthy and the specified warm-up time passes,
         /// the instance is considered updated and is added to the percentage complete.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>PercentageComplete</code> does not include instances that are replaced during
+        /// a rollback. This value gradually goes back down to zero during a rollback.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public int PercentageComplete
@@ -194,6 +208,24 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RollbackDetails. 
+        /// <para>
+        /// The rollback details.
+        /// </para>
+        /// </summary>
+        public RollbackDetails RollbackDetails
+        {
+            get { return this._rollbackDetails; }
+            set { this._rollbackDetails = value; }
+        }
+
+        // Check to see if RollbackDetails property is set
+        internal bool IsSetRollbackDetails()
+        {
+            return this._rollbackDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The date and time at which the instance refresh began.
@@ -218,30 +250,42 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Pending</code> - The request was created, but the operation has not started.
+        ///  <code>Pending</code> - The request was created, but the instance refresh has not
+        /// started.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InProgress</code> - The operation is in progress.
+        ///  <code>InProgress</code> - An instance refresh is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Successful</code> - The operation completed successfully.
+        ///  <code>Successful</code> - An instance refresh completed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code> - The operation failed to complete. You can troubleshoot using
-        /// the status reason and the scaling activities. 
+        ///  <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot
+        /// using the status reason and the scaling activities. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation does
-        /// not roll back any replacements that have already been completed, but it prevents new
-        /// replacements from being started. 
+        ///  <code>Cancelling</code> - An ongoing instance refresh is being cancelled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Cancelled</code> - The operation is cancelled. 
+        ///  <code>Cancelled</code> - The instance refresh is cancelled. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RollbackInProgress</code> - An instance refresh is being rolled back.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot
+        /// using the status reason and the scaling activities.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RollbackSuccessful</code> - The rollback completed successfully.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -260,7 +304,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// Provides more details about the current status of the instance refresh. 
+        /// The explanation for the specific status assigned to this operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1023)]

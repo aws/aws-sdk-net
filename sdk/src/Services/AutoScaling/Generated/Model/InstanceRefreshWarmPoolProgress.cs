@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Reports the progress of an instance refresh on instances that are in the warm pool.
+    /// Reports progress on replacing instances that are in the warm pool.
     /// </summary>
     public partial class InstanceRefreshWarmPoolProgress
     {

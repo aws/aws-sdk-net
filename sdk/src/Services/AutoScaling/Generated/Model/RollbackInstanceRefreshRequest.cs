@@ -29,10 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Container for the parameters to the CancelInstanceRefresh operation.
-    /// Cancels an instance refresh or rollback that is in progress. If an instance refresh
-    /// or rollback is not in progress, an <code>ActiveInstanceRefreshNotFound</code> error
-    /// occurs.
+    /// Container for the parameters to the RollbackInstanceRefresh operation.
+    /// Cancels an instance refresh that is in progress and rolls back any changes that it
+    /// made. Amazon EC2 Auto Scaling replaces any instances that were replaced during the
+    /// instance refresh. This restores your Auto Scaling group to the configuration that
+    /// it was using before the start of the instance refresh. 
     /// 
     ///  
     /// <para>
@@ -42,11 +43,30 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// When you cancel an instance refresh, this does not roll back any changes that it made.
-    /// Use the <a>RollbackInstanceRefresh</a> API to roll back instead.
+    /// A rollback is not supported in the following situations: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// There is no desired configuration specified for the instance refresh.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The Auto Scaling group has a launch template that uses an Amazon Web Services Systems
+    /// Manager parameter instead of an AMI ID for the <code>ImageId</code> property.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code>
+    /// version.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// When you receive a successful response from this operation, Amazon EC2 Auto Scaling
+    /// immediately begins replacing instances. You can check the status of this operation
+    /// through the <a>DescribeInstanceRefreshes</a> API operation. 
     /// </para>
     /// </summary>
-    public partial class CancelInstanceRefreshRequest : AmazonAutoScalingRequest
+    public partial class RollbackInstanceRefreshRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
 
@@ -56,7 +76,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }

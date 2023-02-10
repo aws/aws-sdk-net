@@ -102,6 +102,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.ProgressDetails = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("RollbackDetails", targetDepth))
+                    {
+                        var unmarshaller = RollbackDetailsUnmarshaller.Instance;
+                        unmarshalledObject.RollbackDetails = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("StartTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

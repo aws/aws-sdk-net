@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RefreshPreferences Object
+    /// Response Unmarshaller for RollbackDetails Object
     /// </summary>  
-    public class RefreshPreferencesUnmarshaller : IUnmarshaller<RefreshPreferences, XmlUnmarshallerContext>, IUnmarshaller<RefreshPreferences, JsonUnmarshallerContext>
+    public class RollbackDetailsUnmarshaller : IUnmarshaller<RollbackDetails, XmlUnmarshallerContext>, IUnmarshaller<RollbackDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RefreshPreferences Unmarshall(XmlUnmarshallerContext context)
+        public RollbackDetails Unmarshall(XmlUnmarshallerContext context)
         {
-            RefreshPreferences unmarshalledObject = new RefreshPreferences();
+            RollbackDetails unmarshalledObject = new RollbackDetails();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,53 +54,34 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AutoRollback", targetDepth))
-                    {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.AutoRollback = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("CheckpointDelay", targetDepth))
+                    if (context.TestExpression("InstancesToUpdateOnRollback", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.CheckpointDelay = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.InstancesToUpdateOnRollback = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("CheckpointPercentages/member", targetDepth))
+                    if (context.TestExpression("PercentageCompleteOnRollback", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.CheckpointPercentages.Add(item);
+                        unmarshalledObject.PercentageCompleteOnRollback = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("InstanceWarmup", targetDepth))
+                    if (context.TestExpression("ProgressDetailsOnRollback", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.InstanceWarmup = unmarshaller.Unmarshall(context);
+                        var unmarshaller = InstanceRefreshProgressDetailsUnmarshaller.Instance;
+                        unmarshalledObject.ProgressDetailsOnRollback = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("MinHealthyPercentage", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.MinHealthyPercentage = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ScaleInProtectedInstances", targetDepth))
+                    if (context.TestExpression("RollbackReason", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ScaleInProtectedInstances = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.RollbackReason = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SkipMatching", targetDepth))
+                    if (context.TestExpression("RollbackStartTime", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.SkipMatching = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("StandbyInstances", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.StandbyInstances = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.RollbackStartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -118,18 +99,18 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RefreshPreferences Unmarshall(JsonUnmarshallerContext context)
+        public RollbackDetails Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static RefreshPreferencesUnmarshaller _instance = new RefreshPreferencesUnmarshaller();        
+        private static RollbackDetailsUnmarshaller _instance = new RollbackDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RefreshPreferencesUnmarshaller Instance
+        public static RollbackDetailsUnmarshaller Instance
         {
             get
             {

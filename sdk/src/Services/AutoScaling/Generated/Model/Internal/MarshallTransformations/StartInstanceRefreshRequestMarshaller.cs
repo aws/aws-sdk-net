@@ -359,6 +359,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetPreferences())
                 {
+                    if(publicRequest.Preferences.IsSetAutoRollback())
+                    {
+                        request.Parameters.Add("Preferences" + "." + "AutoRollback", StringUtils.FromBool(publicRequest.Preferences.AutoRollback));
+                    }
                     if(publicRequest.Preferences.IsSetCheckpointDelay())
                     {
                         request.Parameters.Add("Preferences" + "." + "CheckpointDelay", StringUtils.FromInt(publicRequest.Preferences.CheckpointDelay));
@@ -380,9 +384,17 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Preferences" + "." + "MinHealthyPercentage", StringUtils.FromInt(publicRequest.Preferences.MinHealthyPercentage));
                     }
+                    if(publicRequest.Preferences.IsSetScaleInProtectedInstances())
+                    {
+                        request.Parameters.Add("Preferences" + "." + "ScaleInProtectedInstances", StringUtils.FromString(publicRequest.Preferences.ScaleInProtectedInstances));
+                    }
                     if(publicRequest.Preferences.IsSetSkipMatching())
                     {
                         request.Parameters.Add("Preferences" + "." + "SkipMatching", StringUtils.FromBool(publicRequest.Preferences.SkipMatching));
+                    }
+                    if(publicRequest.Preferences.IsSetStandbyInstances())
+                    {
+                        request.Parameters.Add("Preferences" + "." + "StandbyInstances", StringUtils.FromString(publicRequest.Preferences.StandbyInstances));
                     }
                 }
                 if(publicRequest.IsSetStrategy())

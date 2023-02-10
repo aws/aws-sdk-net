@@ -641,6 +641,12 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TrafficSources. 
         /// <para>
+        ///  <b>Reserved for use with Amazon VPC Lattice, which is in preview release and is subject
+        /// to change. Do not use this parameter for production workloads. It is also subject
+        /// to change.</b> 
+        /// </para>
+        ///  
+        /// <para>
         /// The unique identifiers of the traffic sources.
         /// </para>
         /// </summary>

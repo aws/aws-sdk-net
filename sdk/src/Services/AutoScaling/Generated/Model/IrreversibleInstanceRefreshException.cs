@@ -29,42 +29,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The request failed because an active instance refresh already exists for the specified
+    /// The request failed because a desired configuration was not found or an incompatible
+    /// launch template (uses a Systems Manager parameter instead of an AMI ID) or launch
+    /// template version (<code>$Latest</code> or <code>$Default</code>) is present on the
     /// Auto Scaling group.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class InstanceRefreshInProgressException : AmazonAutoScalingException
+    public partial class IrreversibleInstanceRefreshException : AmazonAutoScalingException
     {
 
         /// <summary>
-        /// Constructs a new InstanceRefreshInProgressException with the specified error
+        /// Constructs a new IrreversibleInstanceRefreshException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public InstanceRefreshInProgressException(string message) 
+        public IrreversibleInstanceRefreshException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of InstanceRefreshInProgressException
+        /// Construct instance of IrreversibleInstanceRefreshException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public InstanceRefreshInProgressException(string message, Exception innerException) 
+        public IrreversibleInstanceRefreshException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of InstanceRefreshInProgressException
+        /// Construct instance of IrreversibleInstanceRefreshException
         /// </summary>
         /// <param name="innerException"></param>
-        public InstanceRefreshInProgressException(Exception innerException) 
+        public IrreversibleInstanceRefreshException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of InstanceRefreshInProgressException
+        /// Construct instance of IrreversibleInstanceRefreshException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -72,30 +74,30 @@ namespace Amazon.AutoScaling.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public InstanceRefreshInProgressException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public IrreversibleInstanceRefreshException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of InstanceRefreshInProgressException
+        /// Construct instance of IrreversibleInstanceRefreshException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public InstanceRefreshInProgressException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public IrreversibleInstanceRefreshException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the InstanceRefreshInProgressException class with serialized data.
+        /// Constructs a new instance of the IrreversibleInstanceRefreshException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected InstanceRefreshInProgressException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected IrreversibleInstanceRefreshException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }
