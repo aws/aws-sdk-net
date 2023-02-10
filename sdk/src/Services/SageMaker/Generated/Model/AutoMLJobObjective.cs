@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <dl> <dt>Accuracy</dt> <dd> 
         /// <para>
-        ///  The ratio of the number of correctly classified items to the total number of (correctly
+        /// The ratio of the number of correctly classified items to the total number of (correctly
         /// and incorrectly) classified items. It is used for both binary and multiclass classification.
         /// Accuracy measures how close the predicted class values are to the actual values. Values
         /// for accuracy metrics vary between zero (0) and one (1). A value of 1 indicates perfect
@@ -177,7 +177,7 @@ namespace Amazon.SageMaker.Model
         /// Recall is important when testing for cancer because it's used to find all of the true
         /// positives. A false positive (FP) reflects a positive prediction that is actually negative
         /// in the data. It is often insufficient to measure only recall, because predicting every
-        /// output as a true positive will yield a perfect recall score.
+        /// output as a true positive yield a perfect recall score.
         /// </para>
         ///  </dd> <dt>RecallMacro</dt> <dd> 
         /// <para>
@@ -186,8 +186,8 @@ namespace Amazon.SageMaker.Model
         /// scores range from 0 to 1. Higher scores reflect the model's ability to predict true
         /// positives (TP) in a dataset. Whereas, a true positive reflects a positive prediction
         /// that is also an actual positive value in the data. It is often insufficient to measure
-        /// only recall, because predicting every output as a true positive will yield a perfect
-        /// recall score.
+        /// only recall, because predicting every output as a true positive yields a perfect recall
+        /// score.
         /// </para>
         ///  </dd> <dt>RMSE</dt> <dd> 
         /// <para>

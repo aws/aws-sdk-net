@@ -6188,6 +6188,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AutoMLJobCompletionCriteria.MaxCandidates</property>
     <min>1</min>
+    <max>750</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AutoMLJobCompletionCriteria.MaxRuntimePerTrainingJobInSeconds</property>

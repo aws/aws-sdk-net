@@ -1129,6 +1129,84 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type AutoMLAlgorithm.
+    /// </summary>
+    public class AutoMLAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Catboost for AutoMLAlgorithm
+        /// </summary>
+        public static readonly AutoMLAlgorithm Catboost = new AutoMLAlgorithm("catboost");
+        /// <summary>
+        /// Constant ExtraTrees for AutoMLAlgorithm
+        /// </summary>
+        public static readonly AutoMLAlgorithm ExtraTrees = new AutoMLAlgorithm("extra-trees");
+        /// <summary>
+        /// Constant Fastai for AutoMLAlgorithm
+        /// </summary>
+        public static readonly AutoMLAlgorithm Fastai = new AutoMLAlgorithm("fastai");
+        /// <summary>
+        /// Constant Lightgbm for AutoMLAlgorithm
+        /// </summary>
+        public static readonly AutoMLAlgorithm Lightgbm = new AutoMLAlgorithm("lightgbm");
+        /// <summary>
+        /// Constant LinearLearner for AutoMLAlgorithm
+        /// </summary>
+        public static readonly AutoMLAlgorithm LinearLearner = new AutoMLAlgorithm("linear-learner");
+        /// <summary>
+        /// Constant Mlp for AutoMLAlgorithm
+        /// </summary>
+        public static readonly AutoMLAlgorithm Mlp = new AutoMLAlgorithm("mlp");
+        /// <summary>
+        /// Constant NnTorch for AutoMLAlgorithm
+        /// </summary>
+        public static readonly AutoMLAlgorithm NnTorch = new AutoMLAlgorithm("nn-torch");
+        /// <summary>
+        /// Constant Randomforest for AutoMLAlgorithm
+        /// </summary>
+        public static readonly AutoMLAlgorithm Randomforest = new AutoMLAlgorithm("randomforest");
+        /// <summary>
+        /// Constant Xgboost for AutoMLAlgorithm
+        /// </summary>
+        public static readonly AutoMLAlgorithm Xgboost = new AutoMLAlgorithm("xgboost");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoMLAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoMLAlgorithm FindValue(string value)
+        {
+            return FindValue<AutoMLAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoMLAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutoMLChannelType.
     /// </summary>
     public class AutoMLChannelType : ConstantClass

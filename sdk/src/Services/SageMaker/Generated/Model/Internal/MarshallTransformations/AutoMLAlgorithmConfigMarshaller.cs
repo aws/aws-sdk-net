@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AutoMLCandidateGenerationConfig Marshaller
+    /// AutoMLAlgorithmConfig Marshaller
     /// </summary>
-    public class AutoMLCandidateGenerationConfigMarshaller : IRequestMarshaller<AutoMLCandidateGenerationConfig, JsonMarshallerContext> 
+    public class AutoMLAlgorithmConfigMarshaller : IRequestMarshaller<AutoMLAlgorithmConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AutoMLCandidateGenerationConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(AutoMLAlgorithmConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAlgorithmsConfig())
+            if(requestObject.IsSetAutoMLAlgorithms())
             {
-                context.Writer.WritePropertyName("AlgorithmsConfig");
+                context.Writer.WritePropertyName("AutoMLAlgorithms");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectAlgorithmsConfigListValue in requestObject.AlgorithmsConfig)
+                foreach(var requestObjectAutoMLAlgorithmsListValue in requestObject.AutoMLAlgorithms)
                 {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AutoMLAlgorithmConfigMarshaller.Instance;
-                    marshaller.Marshall(requestObjectAlgorithmsConfigListValue, context);
-
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.Write(requestObjectAutoMLAlgorithmsListValue);
                 }
                 context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetFeatureSpecificationS3Uri())
-            {
-                context.Writer.WritePropertyName("FeatureSpecificationS3Uri");
-                context.Writer.Write(requestObject.FeatureSpecificationS3Uri);
             }
 
         }
@@ -72,7 +61,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AutoMLCandidateGenerationConfigMarshaller Instance = new AutoMLCandidateGenerationConfigMarshaller();
+        public readonly static AutoMLAlgorithmConfigMarshaller Instance = new AutoMLAlgorithmConfigMarshaller();
 
     }
 }

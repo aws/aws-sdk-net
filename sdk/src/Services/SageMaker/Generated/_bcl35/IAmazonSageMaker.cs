@@ -847,8 +847,8 @@ namespace Amazon.SageMaker
         /// Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain consists of
         /// an associated Amazon Elastic File System (EFS) volume, a list of authorized users,
         /// and a variety of security, application, policy, and Amazon Virtual Private Cloud (VPC)
-        /// configurations. An Amazon Web Services account is limited to one domain per region.
-        /// Users within a domain can share notebook files and other artifacts with each other.
+        /// configurations. Users within a domain can share notebook files and other artifacts
+        /// with each other.
         /// 
         ///  
         /// <para>
@@ -1143,10 +1143,10 @@ namespace Amazon.SageMaker
         /// <para>
         /// If any of the models hosted at this endpoint get model data from an Amazon S3 location,
         /// SageMaker uses Amazon Web Services Security Token Service to download model artifacts
-        /// from the S3 path you provided. Amazon Web Services STS is activated in your IAM user
-        /// account by default. If you previously deactivated Amazon Web Services STS for a region,
-        /// you need to reactivate Amazon Web Services STS for that region. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// from the S3 path you provided. Amazon Web Services STS is activated in your Amazon
+        /// Web Services account by default. If you previously deactivated Amazon Web Services
+        /// STS for a region, you need to reactivate Amazon Web Services STS for that region.
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
         /// and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
         /// <i>Amazon Web Services Identity and Access Management User Guide</i>.
         /// </para>
@@ -1517,6 +1517,12 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Create a hub.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Hub APIs are only callable through SageMaker Studio.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHub service method.</param>
         /// 
@@ -4370,6 +4376,12 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Delete a hub.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Hub APIs are only callable through SageMaker Studio.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHub service method.</param>
         /// 
@@ -4416,6 +4428,12 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Delete the contents of a hub.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Hub APIs are only callable through SageMaker Studio.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHubContent service method.</param>
         /// 
@@ -6563,6 +6581,12 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Describe a hub.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Hub APIs are only callable through SageMaker Studio.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHub service method.</param>
         /// 
@@ -6606,6 +6630,12 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Describe the content of a hub.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Hub APIs are only callable through SageMaker Studio.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHubContent service method.</param>
         /// 
@@ -8467,6 +8497,12 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Import hub content.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Hub APIs are only callable through SageMaker Studio.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportHubContent service method.</param>
         /// 
@@ -9465,6 +9501,12 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// List the contents of a hub.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Hub APIs are only callable through SageMaker Studio.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubContents service method.</param>
         /// 
@@ -9508,6 +9550,12 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// List hub content versions.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Hub APIs are only callable through SageMaker Studio.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubContentVersions service method.</param>
         /// 
@@ -9551,6 +9599,12 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// List all existing hubs.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Hub APIs are only callable through SageMaker Studio.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubs service method.</param>
         /// 
@@ -12106,7 +12160,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// A method for forcing the termination of a running job.
+        /// A method for forcing a running job to shut down.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopAutoMLJob service method.</param>
         /// 
@@ -13396,6 +13450,12 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Update a hub.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Hub APIs are only callable through SageMaker Studio.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHub service method.</param>
         /// 

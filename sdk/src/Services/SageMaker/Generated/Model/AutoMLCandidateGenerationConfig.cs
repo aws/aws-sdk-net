@@ -29,11 +29,67 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Stores the config information for how a candidate is generated (optional).
+    /// Stores the configuration information for how a candidate is generated (optional).
     /// </summary>
     public partial class AutoMLCandidateGenerationConfig
     {
+        private List<AutoMLAlgorithmConfig> _algorithmsConfig = new List<AutoMLAlgorithmConfig>();
         private string _featureSpecificationS3Uri;
+
+        /// <summary>
+        /// Gets and sets the property AlgorithmsConfig. 
+        /// <para>
+        /// Stores the configuration information for the selection of algorithms used to train
+        /// the model candidates.
+        /// </para>
+        ///  
+        /// <para>
+        /// The list of available algorithms to choose from depends on the training mode set in
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html">
+        /// <code>AutoMLJobConfig.Mode</code> </a>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AlgorithmsConfig</code> should not be set in <code>AUTO</code> training mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When <code>AlgorithmsConfig</code> is provided, one <code>AutoMLAlgorithms</code>
+        /// attribute must be set and one only.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the list of algorithms provided as values for <code>AutoMLAlgorithms</code> is
+        /// empty, <code>AutoMLCandidateGenerationConfig</code> uses the full set of algorithms
+        /// for the given training mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When <code>AlgorithmsConfig</code> is not provided, <code>AutoMLCandidateGenerationConfig</code>
+        /// uses the full set of algorithms for the given training mode.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the list of all algorithms per training mode, see .
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on each algorithm, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Algorithm
+        /// support</a> section in Autopilot developer guide.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<AutoMLAlgorithmConfig> AlgorithmsConfig
+        {
+            get { return this._algorithmsConfig; }
+            set { this._algorithmsConfig = value; }
+        }
+
+        // Check to see if AlgorithmsConfig property is set
+        internal bool IsSetAlgorithmsConfig()
+        {
+            return this._algorithmsConfig != null && this._algorithmsConfig.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property FeatureSpecificationS3Uri. 
@@ -61,10 +117,10 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// In ensembling mode, Autopilot will only support the following data types: <code>numeric</code>,
-        /// <code>categorical</code>, <code>text</code> and <code>datetime</code>. In HPO mode,
+        /// In ensembling mode, Autopilot only supports the following data types: <code>numeric</code>,
+        /// <code>categorical</code>, <code>text</code>, and <code>datetime</code>. In HPO mode,
         /// Autopilot can support <code>numeric</code>, <code>categorical</code>, <code>text</code>,
-        /// <code>datetime</code> and <code>sequence</code>.
+        /// <code>datetime</code>, and <code>sequence</code>.
         /// </para>
         ///  
         /// <para>
@@ -80,9 +136,9 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         /// The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1",
-        /// "col2", ...]</code> is case sensitive and should be a list of strings containing unique
-        /// values that are a subset of the column names in the input data. The list of columns
-        /// provided must not include the target column.
+        /// "col2", ...]</code> are case sensitive and should be a list of strings containing
+        /// unique values that are a subset of the column names in the input data. The list of
+        /// columns provided must not include the target column.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

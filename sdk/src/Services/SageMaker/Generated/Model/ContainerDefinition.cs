@@ -197,9 +197,9 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// If you provide a value for this parameter, SageMaker uses Amazon Web Services Security
         /// Token Service to download model artifacts from the S3 path you provide. Amazon Web
-        /// Services STS is activated in your IAM user account by default. If you previously deactivated
-        /// Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS
-        /// for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// Services STS is activated in your Amazon Web Services account by default. If you previously
+        /// deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web
+        /// Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
         /// and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
         /// <i>Amazon Web Services Identity and Access Management User Guide</i>.
         /// </para>

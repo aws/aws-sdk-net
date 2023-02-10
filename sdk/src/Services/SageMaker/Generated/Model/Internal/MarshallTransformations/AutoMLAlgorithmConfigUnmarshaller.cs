@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutoMLCandidateGenerationConfig Object
+    /// Response Unmarshaller for AutoMLAlgorithmConfig Object
     /// </summary>  
-    public class AutoMLCandidateGenerationConfigUnmarshaller : IUnmarshaller<AutoMLCandidateGenerationConfig, XmlUnmarshallerContext>, IUnmarshaller<AutoMLCandidateGenerationConfig, JsonUnmarshallerContext>
+    public class AutoMLAlgorithmConfigUnmarshaller : IUnmarshaller<AutoMLAlgorithmConfig, XmlUnmarshallerContext>, IUnmarshaller<AutoMLAlgorithmConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutoMLCandidateGenerationConfig IUnmarshaller<AutoMLCandidateGenerationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AutoMLAlgorithmConfig IUnmarshaller<AutoMLAlgorithmConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AutoMLCandidateGenerationConfig Unmarshall(JsonUnmarshallerContext context)
+        public AutoMLAlgorithmConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AutoMLCandidateGenerationConfig unmarshalledObject = new AutoMLCandidateGenerationConfig();
+            AutoMLAlgorithmConfig unmarshalledObject = new AutoMLAlgorithmConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AlgorithmsConfig", targetDepth))
+                if (context.TestExpression("AutoMLAlgorithms", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AutoMLAlgorithmConfig, AutoMLAlgorithmConfigUnmarshaller>(AutoMLAlgorithmConfigUnmarshaller.Instance);
-                    unmarshalledObject.AlgorithmsConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FeatureSpecificationS3Uri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FeatureSpecificationS3Uri = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AutoMLAlgorithms = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutoMLCandidateGenerationConfigUnmarshaller _instance = new AutoMLCandidateGenerationConfigUnmarshaller();        
+        private static AutoMLAlgorithmConfigUnmarshaller _instance = new AutoMLAlgorithmConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutoMLCandidateGenerationConfigUnmarshaller Instance
+        public static AutoMLAlgorithmConfigUnmarshaller Instance
         {
             get
             {
