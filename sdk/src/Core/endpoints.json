@@ -1661,6 +1661,7 @@
             "ap-south-1": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
+            "ap-southeast-3": {},
             "ca-central-1": {},
             "eu-central-1": {},
             "eu-north-1": {},
@@ -21529,6 +21530,17 @@
             }
           }
         },
+        "servicequotas": {
+          "defaults": {
+            "protocols": [
+              "https"
+            ]
+          },
+          "endpoints": {
+            "cn-north-1": {},
+            "cn-northwest-1": {}
+          }
+        },
         "sms": {
           "endpoints": {
             "cn-north-1": {},
@@ -23920,20 +23932,42 @@
         },
         "glacier": {
           "endpoints": {
-            "us-gov-east-1": {
+            "fips-us-gov-east-1": {
               "credentialScope": {
                 "region": "us-gov-east-1"
               },
+              "deprecated": true,
               "hostname": "glacier.us-gov-east-1.amazonaws.com"
             },
-            "us-gov-west-1": {
+            "fips-us-gov-west-1": {
               "credentialScope": {
                 "region": "us-gov-west-1"
               },
-              "hostname": "glacier.us-gov-west-1.amazonaws.com",
+              "deprecated": true,
+              "hostname": "glacier.us-gov-west-1.amazonaws.com"
+            },
+            "us-gov-east-1": {
+              "variants": [
+                {
+                  "hostname": "glacier.us-gov-east-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "us-gov-west-1": {
               "protocols": [
                 "http",
                 "https"
+              ],
+              "variants": [
+                {
+                  "hostname": "glacier.us-gov-west-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
               ]
             }
           }
@@ -25039,17 +25073,39 @@
         },
         "outposts": {
           "endpoints": {
-            "us-gov-east-1": {
+            "fips-us-gov-east-1": {
               "credentialScope": {
                 "region": "us-gov-east-1"
               },
+              "deprecated": true,
               "hostname": "outposts.us-gov-east-1.amazonaws.com"
             },
-            "us-gov-west-1": {
+            "fips-us-gov-west-1": {
               "credentialScope": {
                 "region": "us-gov-west-1"
               },
+              "deprecated": true,
               "hostname": "outposts.us-gov-west-1.amazonaws.com"
+            },
+            "us-gov-east-1": {
+              "variants": [
+                {
+                  "hostname": "outposts.us-gov-east-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "us-gov-west-1": {
+              "variants": [
+                {
+                  "hostname": "outposts.us-gov-west-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
             }
           }
         },
