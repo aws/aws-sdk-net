@@ -1,3 +1,20 @@
+### 3.7.481.0 (2023-02-10 19:22 UTC)
+* AutoScaling (3.7.103.0)
+	* You can now either terminate/replace, ignore, or wait for EC2 Auto Scaling instances on standby or protected from scale in. Also, you can also roll back changes from a failed instance refresh.
+* Connect (3.7.115.0)
+	* This update provides the Wisdom session ARN for contacts enabled for Wisdom in the chat channel.
+* EC2 (3.7.122.0)
+	* Adds support for waiters that automatically poll for an imported snapshot until it reaches the completed state.
+* Polly (3.7.106.0)
+	* Amazon Polly adds two new neural Japanese voices - Kazuha, Tomoko
+* SageMaker (3.7.119.0)
+	* Amazon SageMaker Autopilot adds support for selecting algorithms in CreateAutoMLJob API.
+* SimpleNotificationService (3.7.101.8)
+	* This release adds support for SNS X-Ray active tracing as well as other updates.
+* Core 3.7.105.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.480.0 (2023-02-10 01:18 UTC)
 * S3 (3.7.103.7)
 	* Fixed an issue where ListBucketMetricsConfigurations was not returning any result for existing bucket metrics configurations. Fix issue making S3 metadata be case insensitive.
