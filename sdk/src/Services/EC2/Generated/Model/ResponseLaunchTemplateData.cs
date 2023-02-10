@@ -650,6 +650,7 @@ namespace Amazon.EC2.Model
         /// The user data for the instance. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string UserData
         {
             get { return this._userData; }

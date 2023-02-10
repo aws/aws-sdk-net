@@ -333,6 +333,7 @@ namespace Amazon.EC2.Model
         /// The Base64-encoded user data for the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string UserData
         {
             get { return this._userData; }

@@ -2430,9 +2430,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Removes your Amazon Web Services account from the launch permissions for the specified
-        /// AMI. For more information, see <a href="https://docs.aws.amazon.com/">Cancel having
-        /// an AMI shared with your Amazon Web Services account</a> in the <i>Amazon EC2 User
-        /// Guide</i>.
+        /// AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cancel-sharing-an-AMI.html">
+        /// Cancel having an AMI shared with your Amazon Web Services account</a> in the <i>Amazon
+        /// EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelImageLaunchPermission service method.</param>
         /// <param name="cancellationToken">
@@ -14204,11 +14204,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you are describing a long list of snapshots, we recommend that you paginate the
-        /// output to make the list more manageable. The <code>MaxResults</code> parameter sets
-        /// the maximum number of results returned in a single page. If the list of results exceeds
-        /// your <code>MaxResults</code> value, then that number of results is returned along
-        /// with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code>
-        /// request to retrieve the remaining results.
+        /// output to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         ///  
         /// <para>
@@ -14294,11 +14290,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you are describing a long list of snapshots, we recommend that you paginate the
-        /// output to make the list more manageable. The <code>MaxResults</code> parameter sets
-        /// the maximum number of results returned in a single page. If the list of results exceeds
-        /// your <code>MaxResults</code> value, then that number of results is returned along
-        /// with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code>
-        /// request to retrieve the remaining results.
+        /// output to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         ///  
         /// <para>
@@ -15655,11 +15647,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you are describing a long list of volumes, we recommend that you paginate the output
-        /// to make the list more manageable. The <code>MaxResults</code> parameter sets the maximum
-        /// number of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
-        /// value, then that number of results is returned along with a <code>NextToken</code>
-        /// value that can be passed to a subsequent <code>DescribeVolumes</code> request to retrieve
-        /// the remaining results.
+        /// to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         ///  
         /// <para>
@@ -15686,11 +15674,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you are describing a long list of volumes, we recommend that you paginate the output
-        /// to make the list more manageable. The <code>MaxResults</code> parameter sets the maximum
-        /// number of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
-        /// value, then that number of results is returned along with a <code>NextToken</code>
-        /// value that can be passed to a subsequent <code>DescribeVolumes</code> request to retrieve
-        /// the remaining results.
+        /// to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         ///  
         /// <para>
@@ -26194,8 +26178,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Unassigns secondary private NAT gateway IPv4 addresses from a private NAT gateway.
-        /// You cannot unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+        /// Unassigns secondary private IPv4 addresses from a private NAT gateway. You cannot
+        /// unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
         /// secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud User
         /// Guide</i>.
         /// 
