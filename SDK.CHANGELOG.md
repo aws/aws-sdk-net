@@ -1,3 +1,9 @@
+### 3.7.480.0 (2023-02-10 01:18 UTC)
+* S3 (3.7.103.7)
+	* Fixed an issue where ListBucketMetricsConfigurations was not returning any result for existing bucket metrics configurations. Fix issue making S3 metadata be case insensitive.
+* Core 3.7.105.0
+	* Add support for AWS_CONFIG_FILE. Perform case-insensitive comparison for policy action names. Add missing obsolete message for DoesS3BucketExistAsync. Fix issue with updating credential profiles that are partial configured in both config and credentials file.
+
 ### 3.7.479.0 (2023-02-09 19:28 UTC)
 * ChimeSDKMeetings (3.7.100.71)
 	* Documentation updates for Chime Meetings SDK

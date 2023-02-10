@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.7.479.0",
-    "CoreVersion"    : "3.7.104.6",
+    "ProductVersion" : "3.7.480.0",
+    "CoreVersion"    : "3.7.105.0",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
     "ServiceVersions"     : {
@@ -314,7 +314,7 @@
             "InPreview"               : false
         },
         "S3"                   : {
-            "Version" : "3.7.103.6",
+            "Version" : "3.7.103.7",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.104.6"
