@@ -145,6 +145,14 @@ namespace Amazon.Connect.Model
         /// The inbound queues associated with the routing profile. If no queue is added, the
         /// agent can make only outbound calls.
         /// </para>
+        ///  
+        /// <para>
+        /// The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code>
+        /// objects that can be passed during a CreateRoutingProfile API request. It is different
+        /// from the quota of 50 queues per routing profile per instance that is listed in <a
+        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+        /// Connect service quotas</a>. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<RoutingProfileQueueConfig> QueueConfigs

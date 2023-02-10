@@ -154,6 +154,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScheduledTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WisdomInfo", targetDepth))
+                {
+                    var unmarshaller = WisdomInfoUnmarshaller.Instance;
+                    unmarshalledObject.WisdomInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

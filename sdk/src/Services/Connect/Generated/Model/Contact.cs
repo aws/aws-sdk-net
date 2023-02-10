@@ -48,6 +48,7 @@ namespace Amazon.Connect.Model
         private QueueInfo _queueInfo;
         private string _relatedContactId;
         private DateTime? _scheduledTimestamp;
+        private WisdomInfo _wisdomInfo;
 
         /// <summary>
         /// Gets and sets the property AgentInfo. 
@@ -329,6 +330,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetScheduledTimestamp()
         {
             return this._scheduledTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WisdomInfo. 
+        /// <para>
+        /// Information about Amazon Connect Wisdom.
+        /// </para>
+        /// </summary>
+        public WisdomInfo WisdomInfo
+        {
+            get { return this._wisdomInfo; }
+            set { this._wisdomInfo = value; }
+        }
+
+        // Check to see if WisdomInfo property is set
+        internal bool IsSetWisdomInfo()
+        {
+            return this._wisdomInfo != null;
         }
 
     }
