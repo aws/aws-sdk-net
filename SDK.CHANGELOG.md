@@ -1,3 +1,14 @@
+### 3.7.482.0 (2023-02-13 19:19 UTC)
+* Account (3.7.101.0)
+	* This release of the Account Management API enables customers to view and manage whether AWS Opt-In Regions are enabled or disabled for their Account. For more information, see https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html
+* AppConfigData (3.7.101.0)
+	* AWS AppConfig now offers the option to set a version label on hosted configuration versions. If a labeled hosted configuration version is deployed, its version label is available in the GetLatestConfiguration response.
+* Snowball (3.7.101.0)
+	* Adds support for EKS Anywhere on Snowball. AWS Snow Family customers can now install EKS Anywhere service on Snowball Edge Compute Optimized devices.
+* Core 3.7.105.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.481.0 (2023-02-10 19:22 UTC)
 * AutoScaling (3.7.103.0)
 	* You can now either terminate/replace, ignore, or wait for EC2 Auto Scaling instances on standby or protected from scale in. Also, you can also roll back changes from a failed instance refresh.

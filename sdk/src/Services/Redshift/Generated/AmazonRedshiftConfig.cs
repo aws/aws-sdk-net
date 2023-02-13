@@ -32,7 +32,7 @@ namespace Amazon.Redshift
     public partial class AmazonRedshiftConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.6");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.7");
 
         private string _userAgent = UserAgentString;
 
