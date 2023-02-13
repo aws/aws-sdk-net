@@ -44,8 +44,15 @@ namespace Amazon.AppConfigData.Model
         ///  <important> 
         /// <para>
         /// This token should only be used once in your first call to <code>GetLatestConfiguration</code>.
-        /// You MUST use the new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>)
-        /// in each subsequent call to <code>GetLatestConfiguration</code>.
+        /// You <i>must</i> use the new token in the <code>GetLatestConfiguration</code> response
+        /// (<code>NextPollConfigurationToken</code>) in each subsequent call to <code>GetLatestConfiguration</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>InitialConfigurationToken</code> and <code>NextPollConfigurationToken</code>
+        /// should only be used once. To support long poll use cases, the tokens are valid for
+        /// up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token,
+        /// the system returns <code>BadRequestException</code>.
         /// </para>
         ///  </important>
         /// </summary>
