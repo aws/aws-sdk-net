@@ -133,6 +133,16 @@ namespace Microsoft.Extensions.Configuration
                 options.DefaultConfigurationMode = mode;
             }
 
+            if (!string.IsNullOrEmpty(section["SessionRoleArn"]))
+            {
+                options.SessionRoleArn = section["SessionRoleArn"];
+            }
+
+            if (!string.IsNullOrEmpty(section["SessionName"]))
+            {
+                options.SessionName = section["SessionName"];
+            }
+
             var loggingSection = section.GetSection("Logging");
             if(loggingSection != null)
             {
