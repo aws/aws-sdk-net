@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OnDeviceServiceConfiguration Object
+    /// Response Unmarshaller for EKSOnDeviceServiceConfiguration Object
     /// </summary>  
-    public class OnDeviceServiceConfigurationUnmarshaller : IUnmarshaller<OnDeviceServiceConfiguration, XmlUnmarshallerContext>, IUnmarshaller<OnDeviceServiceConfiguration, JsonUnmarshallerContext>
+    public class EKSOnDeviceServiceConfigurationUnmarshaller : IUnmarshaller<EKSOnDeviceServiceConfiguration, XmlUnmarshallerContext>, IUnmarshaller<EKSOnDeviceServiceConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OnDeviceServiceConfiguration IUnmarshaller<OnDeviceServiceConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EKSOnDeviceServiceConfiguration IUnmarshaller<EKSOnDeviceServiceConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OnDeviceServiceConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public EKSOnDeviceServiceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OnDeviceServiceConfiguration unmarshalledObject = new OnDeviceServiceConfiguration();
+            EKSOnDeviceServiceConfiguration unmarshalledObject = new EKSOnDeviceServiceConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EKSOnDeviceService", targetDepth))
+                if (context.TestExpression("EKSAnywhereVersion", targetDepth))
                 {
-                    var unmarshaller = EKSOnDeviceServiceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EKSOnDeviceService = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EKSAnywhereVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NFSOnDeviceService", targetDepth))
+                if (context.TestExpression("KubernetesVersion", targetDepth))
                 {
-                    var unmarshaller = NFSOnDeviceServiceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NFSOnDeviceService = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TGWOnDeviceService", targetDepth))
-                {
-                    var unmarshaller = TGWOnDeviceServiceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TGWOnDeviceService = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KubernetesVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         }
 
 
-        private static OnDeviceServiceConfigurationUnmarshaller _instance = new OnDeviceServiceConfigurationUnmarshaller();        
+        private static EKSOnDeviceServiceConfigurationUnmarshaller _instance = new EKSOnDeviceServiceConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OnDeviceServiceConfigurationUnmarshaller Instance
+        public static EKSOnDeviceServiceConfigurationUnmarshaller Instance
         {
             get
             {

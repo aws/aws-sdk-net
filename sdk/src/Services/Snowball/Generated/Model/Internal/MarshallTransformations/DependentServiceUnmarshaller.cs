@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OnDeviceServiceConfiguration Object
+    /// Response Unmarshaller for DependentService Object
     /// </summary>  
-    public class OnDeviceServiceConfigurationUnmarshaller : IUnmarshaller<OnDeviceServiceConfiguration, XmlUnmarshallerContext>, IUnmarshaller<OnDeviceServiceConfiguration, JsonUnmarshallerContext>
+    public class DependentServiceUnmarshaller : IUnmarshaller<DependentService, XmlUnmarshallerContext>, IUnmarshaller<DependentService, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OnDeviceServiceConfiguration IUnmarshaller<OnDeviceServiceConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DependentService IUnmarshaller<DependentService, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OnDeviceServiceConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public DependentService Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OnDeviceServiceConfiguration unmarshalledObject = new OnDeviceServiceConfiguration();
+            DependentService unmarshalledObject = new DependentService();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EKSOnDeviceService", targetDepth))
+                if (context.TestExpression("ServiceName", targetDepth))
                 {
-                    var unmarshaller = EKSOnDeviceServiceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EKSOnDeviceService = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NFSOnDeviceService", targetDepth))
+                if (context.TestExpression("ServiceVersion", targetDepth))
                 {
-                    var unmarshaller = NFSOnDeviceServiceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NFSOnDeviceService = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TGWOnDeviceService", targetDepth))
-                {
-                    var unmarshaller = TGWOnDeviceServiceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TGWOnDeviceService = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ServiceVersionUnmarshaller.Instance;
+                    unmarshalledObject.ServiceVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         }
 
 
-        private static OnDeviceServiceConfigurationUnmarshaller _instance = new OnDeviceServiceConfigurationUnmarshaller();        
+        private static DependentServiceUnmarshaller _instance = new DependentServiceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OnDeviceServiceConfigurationUnmarshaller Instance
+        public static DependentServiceUnmarshaller Instance
         {
             get
             {

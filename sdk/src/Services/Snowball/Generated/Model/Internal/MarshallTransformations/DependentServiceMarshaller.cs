@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OnDeviceServiceConfiguration Marshaller
+    /// DependentService Marshaller
     /// </summary>
-    public class OnDeviceServiceConfigurationMarshaller : IRequestMarshaller<OnDeviceServiceConfiguration, JsonMarshallerContext> 
+    public class DependentServiceMarshaller : IRequestMarshaller<DependentService, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,37 +43,21 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OnDeviceServiceConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(DependentService requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEKSOnDeviceService())
+            if(requestObject.IsSetServiceName())
             {
-                context.Writer.WritePropertyName("EKSOnDeviceService");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EKSOnDeviceServiceConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.EKSOnDeviceService, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("ServiceName");
+                context.Writer.Write(requestObject.ServiceName);
             }
 
-            if(requestObject.IsSetNFSOnDeviceService())
+            if(requestObject.IsSetServiceVersion())
             {
-                context.Writer.WritePropertyName("NFSOnDeviceService");
+                context.Writer.WritePropertyName("ServiceVersion");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = NFSOnDeviceServiceConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.NFSOnDeviceService, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetTGWOnDeviceService())
-            {
-                context.Writer.WritePropertyName("TGWOnDeviceService");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = TGWOnDeviceServiceConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.TGWOnDeviceService, context);
+                var marshaller = ServiceVersionMarshaller.Instance;
+                marshaller.Marshall(requestObject.ServiceVersion, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -83,7 +67,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static OnDeviceServiceConfigurationMarshaller Instance = new OnDeviceServiceConfigurationMarshaller();
+        public readonly static DependentServiceMarshaller Instance = new DependentServiceMarshaller();
 
     }
 }

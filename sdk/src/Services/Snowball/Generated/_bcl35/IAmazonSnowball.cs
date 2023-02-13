@@ -371,18 +371,6 @@ namespace Amazon.Snowball
         /// </para>
         ///  </li> </ul>  </li> <li> 
         /// <para>
-        /// Device type: <b>V3_5C</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Capacity: T32
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Description: Snowball Edge Compute Optimized without GPU
-        /// </para>
-        ///  </li> </ul>  </li> <li> 
-        /// <para>
         /// Device type: <b>STANDARD</b> 
         /// </para>
         ///  <ul> <li> 
@@ -1306,6 +1294,56 @@ namespace Amazon.Snowball
         /// <returns>Returns a  ListLongTermPricingResult from Snowball.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListLongTermPricing">REST API Reference for ListLongTermPricing Operation</seealso>
         ListLongTermPricingResponse EndListLongTermPricing(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListServiceVersions
+
+
+        /// <summary>
+        /// Lists all supported versions for Snow on-device services. Returns an array of <code>ServiceVersion</code>
+        /// object containing the supported versions for a particular service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceVersions service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> string was altered unexpectedly, and the operation has
+        /// stopped. Run the operation without changing the <code>NextToken</code> string, and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListServiceVersions">REST API Reference for ListServiceVersions Operation</seealso>
+        ListServiceVersionsResponse ListServiceVersions(ListServiceVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServiceVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceVersions operation on AmazonSnowballClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServiceVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListServiceVersions">REST API Reference for ListServiceVersions Operation</seealso>
+        IAsyncResult BeginListServiceVersions(ListServiceVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListServiceVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListServiceVersions.</param>
+        /// 
+        /// <returns>Returns a  ListServiceVersionsResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListServiceVersions">REST API Reference for ListServiceVersions Operation</seealso>
+        ListServiceVersionsResponse EndListServiceVersions(IAsyncResult asyncResult);
 
         #endregion
         

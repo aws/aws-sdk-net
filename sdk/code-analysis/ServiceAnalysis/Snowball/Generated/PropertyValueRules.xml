@@ -285,6 +285,23 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Snowball.Model.ListServiceVersionsRequest.MaxResults</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Snowball.Model.ListServiceVersionsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Snowball.Model.ListServiceVersionsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Snowball.Model.UpdateClusterRequest.AddressId</property>
     <min>40</min>
     <max>40</max>
@@ -515,6 +532,18 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Snowball.Model.EKSOnDeviceServiceConfiguration.EKSAnywhereVersion</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Snowball.Model.EKSOnDeviceServiceConfiguration.KubernetesVersion</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Snowball.Model.EventTriggerDefinition.EventResourceARN</property>
     <max>255</max>
     <pattern>arn:aws.*:*</pattern>
@@ -661,6 +690,12 @@
     <property>Amazon.Snowball.Model.S3Resource.BucketArn</property>
     <max>255</max>
     <pattern>arn:aws.*:*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Snowball.Model.ServiceVersion.Version</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Shipment.Status</property>

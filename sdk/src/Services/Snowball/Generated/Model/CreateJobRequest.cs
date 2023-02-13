@@ -126,18 +126,6 @@ namespace Amazon.Snowball.Model
     /// </para>
     ///  </li> </ul>  </li> <li> 
     /// <para>
-    /// Device type: <b>V3_5C</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Capacity: T32
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Description: Snowball Edge Compute Optimized without GPU
-    /// </para>
-    ///  </li> </ul>  </li> <li> 
-    /// <para>
     /// Device type: <b>STANDARD</b> 
     /// </para>
     ///  <ul> <li> 

@@ -34,8 +34,27 @@ namespace Amazon.Snowball.Model
     /// </summary>
     public partial class OnDeviceServiceConfiguration
     {
+        private EKSOnDeviceServiceConfiguration _eksOnDeviceService;
         private NFSOnDeviceServiceConfiguration _nfsOnDeviceService;
         private TGWOnDeviceServiceConfiguration _tgwOnDeviceService;
+
+        /// <summary>
+        /// Gets and sets the property EKSOnDeviceService. 
+        /// <para>
+        /// The configuration of EKS Anywhere on the Snow Family device.
+        /// </para>
+        /// </summary>
+        public EKSOnDeviceServiceConfiguration EKSOnDeviceService
+        {
+            get { return this._eksOnDeviceService; }
+            set { this._eksOnDeviceService = value; }
+        }
+
+        // Check to see if EKSOnDeviceService property is set
+        internal bool IsSetEKSOnDeviceService()
+        {
+            return this._eksOnDeviceService != null;
+        }
 
         /// <summary>
         /// Gets and sets the property NFSOnDeviceService. 

@@ -653,18 +653,6 @@ namespace Amazon.Snowball
         /// </para>
         ///  </li> </ul>  </li> <li> 
         /// <para>
-        /// Device type: <b>V3_5C</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Capacity: T32
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Description: Snowball Edge Compute Optimized without GPU
-        /// </para>
-        ///  </li> </ul>  </li> <li> 
-        /// <para>
         /// Device type: <b>STANDARD</b> 
         /// </para>
         ///  <ul> <li> 
@@ -829,18 +817,6 @@ namespace Amazon.Snowball
         ///  </li> <li> 
         /// <para>
         /// Description: Snowball Edge Storage Optimized with EC2 Compute
-        /// </para>
-        ///  </li> </ul>  </li> <li> 
-        /// <para>
-        /// Device type: <b>V3_5C</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Capacity: T32
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Description: Snowball Edge Compute Optimized without GPU
         /// </para>
         ///  </li> </ul>  </li> <li> 
         /// <para>
@@ -1962,6 +1938,67 @@ namespace Amazon.Snowball
             options.ResponseUnmarshaller = ListLongTermPricingResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListLongTermPricingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListServiceVersions
+
+
+        /// <summary>
+        /// Lists all supported versions for Snow on-device services. Returns an array of <code>ServiceVersion</code>
+        /// object containing the supported versions for a particular service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceVersions service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> string was altered unexpectedly, and the operation has
+        /// stopped. Run the operation without changing the <code>NextToken</code> string, and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListServiceVersions">REST API Reference for ListServiceVersions Operation</seealso>
+        public virtual ListServiceVersionsResponse ListServiceVersions(ListServiceVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServiceVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServiceVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListServiceVersionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all supported versions for Snow on-device services. Returns an array of <code>ServiceVersion</code>
+        /// object containing the supported versions for a particular service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServiceVersions service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> string was altered unexpectedly, and the operation has
+        /// stopped. Run the operation without changing the <code>NextToken</code> string, and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListServiceVersions">REST API Reference for ListServiceVersions Operation</seealso>
+        public virtual Task<ListServiceVersionsResponse> ListServiceVersionsAsync(ListServiceVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServiceVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServiceVersionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListServiceVersionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
