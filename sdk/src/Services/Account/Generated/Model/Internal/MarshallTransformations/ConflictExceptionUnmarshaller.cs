@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Account.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ValidationException Object
+    /// Response Unmarshaller for ConflictException Object
     /// </summary>  
-    public class ValidationExceptionUnmarshaller : IErrorResponseUnmarshaller<ValidationException, JsonUnmarshallerContext>
+    public class ConflictExceptionUnmarshaller : IErrorResponseUnmarshaller<ConflictException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ValidationException Unmarshall(JsonUnmarshallerContext context)
+        public ConflictException Unmarshall(JsonUnmarshallerContext context)
         {
             return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
@@ -54,39 +54,27 @@ namespace Amazon.Account.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ValidationException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public ConflictException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             context.Read();
 
-            ValidationException unmarshalledObject = new ValidationException(errorResponse.Message, errorResponse.InnerException,
+            ConflictException unmarshalledObject = new ConflictException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("fieldList", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ValidationExceptionField, ValidationExceptionFieldUnmarshaller>(ValidationExceptionFieldUnmarshaller.Instance);
-                    unmarshalledObject.FieldList = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("reason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
-        private static ValidationExceptionUnmarshaller _instance = new ValidationExceptionUnmarshaller();        
+        private static ConflictExceptionUnmarshaller _instance = new ConflictExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ValidationExceptionUnmarshaller Instance
+        public static ConflictExceptionUnmarshaller Instance
         {
             get
             {

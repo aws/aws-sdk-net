@@ -29,43 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Account.Model
 {
     /// <summary>
-    /// The operation failed because one of the input parameters was invalid.
+    /// The request could not be processed because of a conflict in the current status of
+    /// the resource. For example, this happens if you try to enable a Region that is currently
+    /// being disabled (in a status of DISABLING).
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class ValidationException : AmazonAccountException
+    public partial class ConflictException : AmazonAccountException
     {
-        private List<ValidationExceptionField> _fieldList = new List<ValidationExceptionField>();
-        private ValidationExceptionReason _reason;
 
         /// <summary>
-        /// Constructs a new ValidationException with the specified error
+        /// Constructs a new ConflictException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public ValidationException(string message) 
+        public ConflictException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of ValidationException
+        /// Construct instance of ConflictException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public ValidationException(string message, Exception innerException) 
+        public ConflictException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of ValidationException
+        /// Construct instance of ConflictException
         /// </summary>
         /// <param name="innerException"></param>
-        public ValidationException(Exception innerException) 
+        public ConflictException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of ValidationException
+        /// Construct instance of ConflictException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -73,34 +73,32 @@ namespace Amazon.Account.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ValidationException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ConflictException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of ValidationException
+        /// Construct instance of ConflictException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ValidationException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ConflictException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the ValidationException class with serialized data.
+        /// Constructs a new instance of the ConflictException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected ValidationException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected ConflictException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
-            this.FieldList = (List<ValidationExceptionField>)info.GetValue("FieldList", typeof(List<ValidationExceptionField>));
-            this.Reason = (ValidationExceptionReason)info.GetValue("Reason", typeof(ValidationExceptionReason));
         }
 
         /// <summary>
@@ -121,46 +119,8 @@ namespace Amazon.Account.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
-            info.AddValue("FieldList", this.FieldList);
-            info.AddValue("Reason", this.Reason);
         }
 #endif
-
-        /// <summary>
-        /// Gets and sets the property FieldList. 
-        /// <para>
-        /// The field where the invalid entry was detected.
-        /// </para>
-        /// </summary>
-        public List<ValidationExceptionField> FieldList
-        {
-            get { return this._fieldList; }
-            set { this._fieldList = value; }
-        }
-
-        // Check to see if FieldList property is set
-        internal bool IsSetFieldList()
-        {
-            return this._fieldList != null && this._fieldList.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Reason. 
-        /// <para>
-        /// The reason that validation failed.
-        /// </para>
-        /// </summary>
-        public ValidationExceptionReason Reason
-        {
-            get { return this._reason; }
-            set { this._reason = value; }
-        }
-
-        // Check to see if Reason property is set
-        internal bool IsSetReason()
-        {
-            return this._reason != null;
-        }
 
     }
 }

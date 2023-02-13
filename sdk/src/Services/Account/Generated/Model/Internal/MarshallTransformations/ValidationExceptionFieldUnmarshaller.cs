@@ -34,46 +34,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Account.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ValidationException Object
+    /// Response Unmarshaller for ValidationExceptionField Object
     /// </summary>  
-    public class ValidationExceptionUnmarshaller : IErrorResponseUnmarshaller<ValidationException, JsonUnmarshallerContext>
+    public class ValidationExceptionFieldUnmarshaller : IUnmarshaller<ValidationExceptionField, XmlUnmarshallerContext>, IUnmarshaller<ValidationExceptionField, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ValidationException Unmarshall(JsonUnmarshallerContext context)
+        ValidationExceptionField IUnmarshaller<ValidationExceptionField, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ValidationException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public ValidationExceptionField Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            ValidationException unmarshalledObject = new ValidationException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            ValidationExceptionField unmarshalledObject = new ValidationExceptionField();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("fieldList", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ValidationExceptionField, ValidationExceptionFieldUnmarshaller>(ValidationExceptionFieldUnmarshaller.Instance);
-                    unmarshalledObject.FieldList = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("reason", targetDepth))
+                if (context.TestExpression("message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -81,12 +81,13 @@ namespace Amazon.Account.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ValidationExceptionUnmarshaller _instance = new ValidationExceptionUnmarshaller();        
+
+        private static ValidationExceptionFieldUnmarshaller _instance = new ValidationExceptionFieldUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ValidationExceptionUnmarshaller Instance
+        public static ValidationExceptionFieldUnmarshaller Instance
         {
             get
             {
