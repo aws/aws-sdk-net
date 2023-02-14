@@ -70,6 +70,9 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next_token", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetVersionLabel())
+                request.Parameters.Add("version_label", StringUtils.FromString(publicRequest.VersionLabel));
             request.ResourcePath = "/applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}/hostedconfigurationversions";
             request.UseQueryString = true;
 

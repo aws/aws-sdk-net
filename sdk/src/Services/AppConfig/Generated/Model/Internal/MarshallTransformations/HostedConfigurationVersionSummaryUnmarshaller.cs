@@ -88,6 +88,12 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VersionLabel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VersionLabel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VersionNumber", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
