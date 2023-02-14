@@ -557,12 +557,8 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Creates an endpoint for an Amazon S3 bucket that DataSync can access for a transfer.
-        /// 
-        ///  
-        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Create
-        /// an Amazon S3 location</a> in the <i>DataSync User Guide</i>.
-        /// </para>
+        /// an Amazon S3 location</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationS3 service method.</param>
         /// 
@@ -580,12 +576,8 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Creates an endpoint for an Amazon S3 bucket that DataSync can access for a transfer.
-        /// 
-        ///  
-        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Create
-        /// an Amazon S3 location</a> in the <i>DataSync User Guide</i>.
-        /// </para>
+        /// an Amazon S3 location</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationS3 service method.</param>
         /// <param name="cancellationToken">
@@ -608,8 +600,9 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Defines a file system on a Server Message Block (SMB) server that can be read from
-        /// or written to.
+        /// Creates an endpoint for a Server Message Block (SMB) file server that DataSync can
+        /// access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating
+        /// an SMB location</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationSmb service method.</param>
         /// 
@@ -626,8 +619,9 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Defines a file system on a Server Message Block (SMB) server that can be read from
-        /// or written to.
+        /// Creates an endpoint for a Server Message Block (SMB) file server that DataSync can
+        /// access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating
+        /// an SMB location</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationSmb service method.</param>
         /// <param name="cancellationToken">
@@ -830,9 +824,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata such as the name, the network interfaces, and the status (that is,
-        /// whether the agent is running or not) for an agent. To specify which agent to describe,
-        /// use the Amazon Resource Name (ARN) of the agent in your request.
+        /// Returns metadata about an DataSync agent, such as its name, endpoint type, and status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAgent service method.</param>
         /// 
@@ -849,9 +841,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata such as the name, the network interfaces, and the status (that is,
-        /// whether the agent is running or not) for an agent. To specify which agent to describe,
-        /// use the Amazon Resource Name (ARN) of the agent in your request.
+        /// Returns metadata about an DataSync agent, such as its name, endpoint type, and status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAgent service method.</param>
         /// <param name="cancellationToken">
@@ -1392,21 +1382,23 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns a list of agents owned by an Amazon Web Services account in the Amazon Web
-        /// Services Region specified in the request. The returned list is ordered by agent Amazon
-        /// Resource Name (ARN).
+        /// Returns a list of DataSync agents that belong to an Amazon Web Services account in
+        /// the Amazon Web Services Region specified in the request.
         /// 
         ///  
         /// <para>
-        /// By default, this operation returns a maximum of 100 agents. This operation supports
-        /// pagination that enables you to optionally reduce the number of agents returned in
-        /// a response.
+        /// With pagination, you can reduce the number of agents returned in a response. If you
+        /// get a truncated list of agents in a response, the response contains a marker that
+        /// you can specify in your next request to fetch the next page of agents.
         /// </para>
         ///  
         /// <para>
-        /// If you have more agents than are returned in a response (that is, the response returns
-        /// only a truncated list of your agents), the response contains a marker that you can
-        /// specify in your next request to fetch the next page of agents.
+        ///  <code>ListAgents</code> is eventually consistent. This means the result of running
+        /// the operation might not reflect that you just created or deleted an agent. For example,
+        /// if you create an agent with <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateAgent.html">CreateAgent</a>
+        /// and then immediately run <code>ListAgents</code>, that agent might not show up in
+        /// the list right away. In situations like this, you can always confirm whether an agent
+        /// has been created (or deleted) by using <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeAgent.html">DescribeAgent</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgents service method.</param>
@@ -1424,21 +1416,23 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns a list of agents owned by an Amazon Web Services account in the Amazon Web
-        /// Services Region specified in the request. The returned list is ordered by agent Amazon
-        /// Resource Name (ARN).
+        /// Returns a list of DataSync agents that belong to an Amazon Web Services account in
+        /// the Amazon Web Services Region specified in the request.
         /// 
         ///  
         /// <para>
-        /// By default, this operation returns a maximum of 100 agents. This operation supports
-        /// pagination that enables you to optionally reduce the number of agents returned in
-        /// a response.
+        /// With pagination, you can reduce the number of agents returned in a response. If you
+        /// get a truncated list of agents in a response, the response contains a marker that
+        /// you can specify in your next request to fetch the next page of agents.
         /// </para>
         ///  
         /// <para>
-        /// If you have more agents than are returned in a response (that is, the response returns
-        /// only a truncated list of your agents), the response contains a marker that you can
-        /// specify in your next request to fetch the next page of agents.
+        ///  <code>ListAgents</code> is eventually consistent. This means the result of running
+        /// the operation might not reflect that you just created or deleted an agent. For example,
+        /// if you create an agent with <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateAgent.html">CreateAgent</a>
+        /// and then immediately run <code>ListAgents</code>, that agent might not show up in
+        /// the list right away. In situations like this, you can always confirm whether an agent
+        /// has been created (or deleted) by using <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeAgent.html">DescribeAgent</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgents service method.</param>
