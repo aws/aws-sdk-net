@@ -82,7 +82,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// The URL of the upload.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4096)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=4096)]
         public string Url
         {
             get { return this._url; }

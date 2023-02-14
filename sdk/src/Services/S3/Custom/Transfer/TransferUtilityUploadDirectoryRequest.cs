@@ -28,6 +28,7 @@ using System.Text;
 using Amazon.S3.Model;
 using Amazon.Util;
 using System.Globalization;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.S3.Transfer
 {
@@ -260,6 +261,7 @@ namespace Amazon.S3.Transfer
         /// The id of the AWS Key Management Service key that Amazon S3 should use to encrypt and decrypt the object.
         /// If a key id is not specified, the default key will be used for encryption and decryption.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {
             get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
@@ -299,6 +301,7 @@ namespace Amazon.S3.Transfer
         /// Important: Amazon S3 does not store the encryption key you provide.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionCustomerProvidedKey
         {
             get { return this.serverSideEncryptionCustomerProvidedKey; }

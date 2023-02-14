@@ -93,7 +93,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The caller (either IAM user or IAM role) to all DataPlane operations (<code>PutRecord</code>,
+        /// The caller (either user or IAM role) to all DataPlane operations (<code>PutRecord</code>,
         /// <code>GetRecord</code>, <code>DeleteRecord</code>) must have the following permissions
         /// to the <code>KmsKeyId</code>:
         /// </para>

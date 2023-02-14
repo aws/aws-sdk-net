@@ -49,6 +49,7 @@ namespace Amazon.AppRunner.Model
         /// The command App Runner runs to build your application.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string BuildCommand
         {
             get { return this._buildCommand; }
@@ -163,6 +164,7 @@ namespace Amazon.AppRunner.Model
         /// The command App Runner runs to start your application.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string StartCommand
         {
             get { return this._startCommand; }

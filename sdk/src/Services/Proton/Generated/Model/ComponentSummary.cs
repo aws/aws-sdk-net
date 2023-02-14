@@ -114,6 +114,7 @@ namespace Amazon.Proton.Model
         /// The message associated with the component deployment status.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DeploymentStatusMessage
         {
             get { return this._deploymentStatusMessage; }

@@ -54,6 +54,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("defaultResourceDiscoveryAssociationId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DefaultResourceDiscoveryAssociationId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("defaultResourceDiscoveryId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DefaultResourceDiscoveryId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("description", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -101,6 +113,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.PublicDefaultScopeId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("resourceDiscoveryAssociationCount", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.ResourceDiscoveryAssociationCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("scopeCount", targetDepth))

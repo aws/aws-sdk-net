@@ -70,6 +70,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     unmarshalledObject.Auc = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("uncertaintyRange", targetDepth))
+                {
+                    var unmarshaller = UncertaintyRangeUnmarshaller.Instance;
+                    unmarshalledObject.UncertaintyRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

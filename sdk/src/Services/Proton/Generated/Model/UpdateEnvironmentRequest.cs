@@ -252,7 +252,7 @@ namespace Amazon.Proton.Model
         /// A description of the environment update.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -354,7 +354,7 @@ namespace Amazon.Proton.Model
         /// The formatted specification that defines the update.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=51200)]
+        [AWSProperty(Sensitive=true, Min=1, Max=51200)]
         public string Spec
         {
             get { return this._spec; }

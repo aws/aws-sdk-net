@@ -39,7 +39,7 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// The list of available extensions. The list includes Amazon Web Services-authored and
+        /// The list of available extensions. The list includes Amazon Web Services authored and
         /// user-created extensions.
         /// </para>
         /// </summary>

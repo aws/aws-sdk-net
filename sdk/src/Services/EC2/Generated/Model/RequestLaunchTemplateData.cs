@@ -152,7 +152,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Indicates whether to enable the instance for stop protection. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-        /// Protection</a>.
+        /// protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public bool DisableApiStop
@@ -313,7 +313,34 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The ID of the AMI.
+        /// The ID of the AMI. Alternatively, you can specify a Systems Manager parameter, which
+        /// will resolve to an AMI ID on launch.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid formats:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ami-17characters00000</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>resolve:ssm:parameter-name</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>resolve:ssm:parameter-name:version-number</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>resolve:ssm:parameter-name:label</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html#using-systems-manager-parameter-to-find-AMI">Use
+        /// a Systems Manager parameter to find an AMI</a> in the <i>Amazon Elastic Compute Cloud
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         public string ImageId

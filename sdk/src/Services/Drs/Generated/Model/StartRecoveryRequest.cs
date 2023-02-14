@@ -82,6 +82,7 @@ namespace Amazon.Drs.Model
         /// The tags to be associated with the Recovery Job.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

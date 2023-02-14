@@ -30,8 +30,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDashboard operation.
-    /// Creates a dashboard from a template. To first create a template, see the <code> <a
-    /// href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+    /// Creates a dashboard from either a template or directly with a <code>DashboardDefinition</code>.
+    /// To first create a template, see the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
     /// </code> API operation.
     /// 
     ///  
@@ -144,6 +144,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// A definition is the data model of all features in a Dashboard, Template, or Analysis.
         /// </para>
+        ///  
+        /// <para>
+        /// Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in
+        /// order for the request to be valid.
+        /// </para>
         /// </summary>
         public DashboardVersionDefinition Definition
         {
@@ -239,6 +244,11 @@ namespace Amazon.QuickSight.Model
         /// Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
         /// list the replacement datasets for the placeholders listed in the original. The schema
         /// in each dataset must match its placeholder. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in
+        /// order for the request to be valid.
         /// </para>
         /// </summary>
         public DashboardSourceEntity SourceEntity

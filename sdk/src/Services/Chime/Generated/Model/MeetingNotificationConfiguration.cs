@@ -44,7 +44,7 @@ namespace Amazon.Chime.Model
         /// The SNS topic ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string SnsTopicArn
         {
             get { return this._snsTopicArn; }
@@ -63,7 +63,7 @@ namespace Amazon.Chime.Model
         /// The SQS queue ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string SqsQueueArn
         {
             get { return this._sqsQueueArn; }

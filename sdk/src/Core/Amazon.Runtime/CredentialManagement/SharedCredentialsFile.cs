@@ -36,6 +36,7 @@ namespace Amazon.Runtime.CredentialManagement
     {
         public const string DefaultProfileName = "default";
         public const string SharedCredentialsFileEnvVar = "AWS_SHARED_CREDENTIALS_FILE";
+        public const string SharedConfigFileEnvVar = "AWS_CONFIG_FILE";
         private const string ToolkitArtifactGuidField = "toolkit_artifact_guid";
         private const string RegionField = "region";
         private const string EndpointDiscoveryEnabledField = "endpoint_discovery_enabled";
@@ -138,22 +139,43 @@ namespace Amazon.Runtime.CredentialManagement
 #endif
                 }
             );
-
+        /// <summary>
+        /// The default directory for the credentials file. By default it searches in ~/.aws. This behavior can be overridden.
+        /// </summary>
         public static readonly string DefaultDirectory;
+        /// <summary>
+        /// The default file path for the credentials file. By default it searches for ~/.aws/credentials. This behavior can be overriden.
+        /// </summary>
         public static string DefaultFilePath { get; private set; }
-
+        /// <summary>
+        /// The default directory for the config file. By default it searches in ~/.aws This behavior can be overriden.
+        /// </summary>
+        public static readonly string DefaultConfigDirectory;
+        /// <summary>
+        /// The default file path for the config file. By default it searches in ~/.aws/config
+        /// </summary>
+        public static string DefaultConfigFilePath { get; private set; }
         static SharedCredentialsFile()
         {
-            var environmentPath = Environment.GetEnvironmentVariable(SharedCredentialsFileEnvVar);
-            if (!string.IsNullOrEmpty(environmentPath))
+            var awsCredentialsEnvironmentPath = Environment.GetEnvironmentVariable(SharedCredentialsFileEnvVar);
+            var awsConfigEnvironmentPath = Environment.GetEnvironmentVariable(SharedConfigFileEnvVar);
+            if (!string.IsNullOrEmpty(awsConfigEnvironmentPath))
             {
-                if (File.Exists(environmentPath))
+                if (File.Exists(awsConfigEnvironmentPath))
                 {
-                    DefaultDirectory = Directory.GetParent(environmentPath).FullName;
-                    DefaultFilePath = environmentPath;
+                    DefaultConfigDirectory = Directory.GetParent(awsConfigEnvironmentPath).FullName;
+                    DefaultConfigFilePath = awsConfigEnvironmentPath;
                 }
             }
-            if(DefaultFilePath == null)
+            if (!string.IsNullOrEmpty(awsCredentialsEnvironmentPath))
+            {
+                if (File.Exists(awsCredentialsEnvironmentPath))
+                {
+                    DefaultDirectory = Directory.GetParent(awsCredentialsEnvironmentPath).FullName;
+                    DefaultFilePath = awsCredentialsEnvironmentPath;
+                }
+            }
+            if (DefaultFilePath == null || DefaultConfigFilePath == null)
             {
                 var baseDirectory = Environment.GetEnvironmentVariable("HOME");
 
@@ -166,16 +188,29 @@ namespace Amazon.Runtime.CredentialManagement
 #else
                 baseDirectory = Environment.CurrentDirectory;
 #endif
-                DefaultDirectory = Path.Combine(baseDirectory, DefaultDirectoryName);
-                DefaultFilePath = Path.Combine(DefaultDirectory, DefaultFileName);
+                if (DefaultFilePath == null)
+                {
+                    DefaultDirectory = Path.Combine(baseDirectory, DefaultDirectoryName);
+                    DefaultFilePath = Path.Combine(DefaultDirectory, DefaultFileName);
+                }
+                if (DefaultConfigFilePath == null)
+                {
+                    DefaultConfigDirectory = Path.Combine(baseDirectory, DefaultDirectoryName);
+                    DefaultConfigFilePath = Path.Combine(DefaultConfigDirectory, ConfigFileName);
+                }
             }
         }
 
         private ProfileIniFile _credentialsFile;
         private ProfileIniFile _configFile;
-
+        /// <summary>
+        /// The path to the credentials file
+        /// </summary>
         public string FilePath { get; private set; }
-
+        /// <summary>
+        /// The path to the config file
+        /// </summary>
+        public string ConfigFilePath { get; private set; }
         /// <summary>
         /// Construct a new SharedCredentialsFile in the default location.
         /// </summary>
@@ -194,19 +229,31 @@ namespace Amazon.Runtime.CredentialManagement
             SetUpFilePath(filePath);
             Refresh();
         }
-
+        /// <summary>
+        /// SetUpFilePath sets FilePath and ConfigFilePath using the DefaultFilePath and DefaultConfigFilePath set in
+        /// the static constructor. If AWSConfigs.AWSProfilesLocation is provided, FilePath supercedes DefaultFilePath
+        /// </summary>
+        /// <param name="filePath"></param>
         private void SetUpFilePath(string filePath)
         {
             if (string.IsNullOrEmpty(filePath))
             {
                 if (string.IsNullOrEmpty(AWSConfigs.AWSProfilesLocation))
+                {
                     FilePath = DefaultFilePath;
+                    ConfigFilePath = DefaultConfigFilePath;
+                }
+
                 else
+                {
                     FilePath = AWSConfigs.AWSProfilesLocation;
+                    ConfigFilePath = DefaultConfigFilePath;
+                }
             }
             else
             {
                 FilePath = filePath;
+                ConfigFilePath = DefaultConfigFilePath;
             }
         }
 
@@ -285,7 +332,7 @@ namespace Amazon.Runtime.CredentialManagement
 
             if (profile.S3UseArnRegion != null)
                 reservedProperties[S3UseArnRegionField] = profile.S3UseArnRegion.Value.ToString().ToLowerInvariant();
-                
+
             if (profile.S3RegionalEndpoint != null)
                 reservedProperties[S3RegionalEndpointField] = profile.S3RegionalEndpoint.ToString().ToLowerInvariant();
 
@@ -313,9 +360,48 @@ namespace Amazon.Runtime.CredentialManagement
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
 
+            // The config file might contain parts of the profile
+            // These parts are updated at the config file and removed from profileDictionary to avoid duplication
+            UpdateConfigSectionsFromProfile(profile, profileDictionary);
+
             _credentialsFile.EditSection(profile.Name, new SortedDictionary<string, string>(profileDictionary));
             _credentialsFile.Persist();
             profile.CredentialProfileStore = this;
+        }
+
+        private void UpdateConfigSectionsFromProfile(CredentialProfile profile, Dictionary<string, string> profileDictionary)
+        {
+            if (_configFile == null || !_configFile.TryGetSection(profile.Name, out var configProperties))
+                return;
+
+            var configPropertiesNames = configProperties.Keys.ToArray();
+            foreach (var propertyName in configPropertiesNames)
+            {
+                if (profileDictionary.ContainsKey(propertyName))
+                {
+                    configProperties[propertyName] = profileDictionary[propertyName];
+                    profileDictionary.Remove(propertyName); // Remove the property from profileDictionary as we updated it in the config
+                }
+                else
+                {
+                    configProperties[propertyName] = null;
+                }
+            }
+
+            _configFile.EditSection(profile.Name, new SortedDictionary<string, string>(configProperties));
+            _configFile.Persist();
+
+
+            if (configProperties.TryGetValue(SsoSession, out var session)
+                && _configFile.TryGetSection(session, true, out var ssoSessionProperties))
+            {
+                // Skip SsoSession properties as it might be used by other profiles
+                var ssoSessionPropertiesNames = ssoSessionProperties.Keys.ToArray();
+                foreach (var propertyName in ssoSessionPropertiesNames)
+                {
+                    profileDictionary.Remove(propertyName);
+                }
+            }
         }
 
         /// <summary>
@@ -373,27 +459,36 @@ namespace Amazon.Runtime.CredentialManagement
             Refresh();
             // Do the copy but make sure to replace the toolkitArtifactGuid with a new one, if it's there.
             _credentialsFile.CopySection(fromProfileName, toProfileName,
-                new Dictionary<string, string> { {ToolkitArtifactGuidField, Guid.NewGuid().ToString()} }, force);
+                new Dictionary<string, string> { { ToolkitArtifactGuidField, Guid.NewGuid().ToString() } }, force);
             _credentialsFile.Persist();
         }
 
         private void Refresh()
         {
-            _credentialsFile = new ProfileIniFile(FilePath,false);
-
-            // If a config file exists in the same location as the credentials file
-            // load it for use as a read-only source of profile properties.
-            var configPath = Path.Combine(Path.GetDirectoryName(FilePath), ConfigFileName);
-            if (File.Exists(configPath))
+            _credentialsFile = new ProfileIniFile(FilePath, false);
+            //Re-check if they set an explicit config file path, use that if it's set
+            var awsConfigEnvironmentPath = Environment.GetEnvironmentVariable(SharedConfigFileEnvVar);
+            if (!string.IsNullOrEmpty(awsConfigEnvironmentPath))
             {
-                _configFile = new ProfileIniFile(configPath,true);
+                _configFile = new ProfileIniFile(ConfigFilePath, true);
+            }
+
+            // If a config file exists in the same location as the credentials file and no env vars are set
+            // load it for use as a read-only source of profile properties.
+            else
+            {
+                var configPath = Path.Combine(Path.GetDirectoryName(FilePath), ConfigFileName);
+                if (File.Exists(configPath))
+                {
+                    _configFile = new ProfileIniFile(configPath, true);
+                }
             }
         }
 
         private HashSet<string> ListAllProfileNames()
         {
             var profileNames = _credentialsFile.ListSectionNames();
-            
+
             if (_configFile != null)
             {
                 profileNames.UnionWith(_configFile.ListSectionNames());
@@ -445,7 +540,7 @@ namespace Amazon.Runtime.CredentialManagement
                 if (reservedProperties.TryGetValue(EndpointDiscoveryEnabledField, out endpointDiscoveryEnabledString))
                 {
                     bool endpointDiscoveryEnabledOut;
-                    if(!bool.TryParse(endpointDiscoveryEnabledString, out endpointDiscoveryEnabledOut))
+                    if (!bool.TryParse(endpointDiscoveryEnabledString, out endpointDiscoveryEnabledOut))
                     {
                         Logger.GetLogger(GetType()).InfoFormat("Invalid value {0} for {1} in profile {2}. A boolean true/false is expected.", endpointDiscoveryEnabledString, EndpointDiscoveryEnabledField, profileName);
                         profile = null;
@@ -698,7 +793,7 @@ namespace Amazon.Runtime.CredentialManagement
             Dictionary<string, string> credentialsProperties = null;
             Dictionary<string, string> configProperties = null;
             var hasCredentialsProperties = _credentialsFile.TryGetSection(sectionName, isSsoSession, out credentialsProperties);
-           
+
             var hasConfigProperties = false;
             if (_configFile != null)
             {

@@ -139,7 +139,7 @@ namespace Amazon.WorkDocs.Model
         /// The status message.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string StatusMessage
         {
             get { return this._statusMessage; }

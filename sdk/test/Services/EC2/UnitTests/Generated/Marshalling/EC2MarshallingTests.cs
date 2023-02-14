@@ -381,6 +381,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void AssignPrivateNatGatewayAddressMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssignPrivateNatGatewayAddress");
+
+            var request = InstantiateClassGenerator.Execute<AssignPrivateNatGatewayAddressRequest>();
+            var marshaller = new AssignPrivateNatGatewayAddressRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = AssignPrivateNatGatewayAddressResponseUnmarshaller.Instance.Unmarshall(context)
+                as AssignPrivateNatGatewayAddressResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void AssociateAddressMarshallTest()
         {
             var operation = service_model.FindOperation("AssociateAddress");
@@ -511,6 +535,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = AssociateInstanceEventWindowResponseUnmarshaller.Instance.Unmarshall(context)
                 as AssociateInstanceEventWindowResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void AssociateIpamResourceDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateIpamResourceDiscovery");
+
+            var request = InstantiateClassGenerator.Execute<AssociateIpamResourceDiscoveryRequest>();
+            var marshaller = new AssociateIpamResourceDiscoveryRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = AssociateIpamResourceDiscoveryResponseUnmarshaller.Instance.Unmarshall(context)
+                as AssociateIpamResourceDiscoveryResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void AssociateNatGatewayAddressMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateNatGatewayAddress");
+
+            var request = InstantiateClassGenerator.Execute<AssociateNatGatewayAddressRequest>();
+            var marshaller = new AssociateNatGatewayAddressRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = AssociateNatGatewayAddressResponseUnmarshaller.Instance.Unmarshall(context)
+                as AssociateNatGatewayAddressResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -1744,6 +1816,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = CreateIpamPoolResponseUnmarshaller.Instance.Unmarshall(context)
                 as CreateIpamPoolResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void CreateIpamResourceDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateIpamResourceDiscovery");
+
+            var request = InstantiateClassGenerator.Execute<CreateIpamResourceDiscoveryRequest>();
+            var marshaller = new CreateIpamResourceDiscoveryRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateIpamResourceDiscoveryResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateIpamResourceDiscoveryResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -3490,6 +3586,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DeleteIpamPoolResponseUnmarshaller.Instance.Unmarshall(context)
                 as DeleteIpamPoolResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DeleteIpamResourceDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteIpamResourceDiscovery");
+
+            var request = InstantiateClassGenerator.Execute<DeleteIpamResourceDiscoveryRequest>();
+            var marshaller = new DeleteIpamResourceDiscoveryRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteIpamResourceDiscoveryResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteIpamResourceDiscoveryResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -6241,6 +6361,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeIpamResourceDiscoveriesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeIpamResourceDiscoveries");
+
+            var request = InstantiateClassGenerator.Execute<DescribeIpamResourceDiscoveriesRequest>();
+            var marshaller = new DescribeIpamResourceDiscoveriesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeIpamResourceDiscoveriesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeIpamResourceDiscoveriesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeIpamResourceDiscoveryAssociationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeIpamResourceDiscoveryAssociations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeIpamResourceDiscoveryAssociationsRequest>();
+            var marshaller = new DescribeIpamResourceDiscoveryAssociationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeIpamResourceDiscoveryAssociationsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeIpamResourceDiscoveryAssociationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeIpamsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeIpams");
@@ -8880,6 +9048,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DisassociateIpamResourceDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateIpamResourceDiscovery");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateIpamResourceDiscoveryRequest>();
+            var marshaller = new DisassociateIpamResourceDiscoveryRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisassociateIpamResourceDiscoveryResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisassociateIpamResourceDiscoveryResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DisassociateNatGatewayAddressMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateNatGatewayAddress");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateNatGatewayAddressRequest>();
+            var marshaller = new DisassociateNatGatewayAddressRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisassociateNatGatewayAddressResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisassociateNatGatewayAddressResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DisassociateRouteTableMarshallTest()
         {
             var operation = service_model.FindOperation("DisassociateRouteTable");
@@ -9840,6 +10056,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = GetIpamAddressHistoryResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetIpamAddressHistoryResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetIpamDiscoveredAccountsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIpamDiscoveredAccounts");
+
+            var request = InstantiateClassGenerator.Execute<GetIpamDiscoveredAccountsRequest>();
+            var marshaller = new GetIpamDiscoveredAccountsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetIpamDiscoveredAccountsResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetIpamDiscoveredAccountsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetIpamDiscoveredResourceCidrsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIpamDiscoveredResourceCidrs");
+
+            var request = InstantiateClassGenerator.Execute<GetIpamDiscoveredResourceCidrsRequest>();
+            var marshaller = new GetIpamDiscoveredResourceCidrsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetIpamDiscoveredResourceCidrsResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetIpamDiscoveredResourceCidrsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -11164,6 +11428,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = ModifyIpamResourceCidrResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifyIpamResourceCidrResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ModifyIpamResourceDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyIpamResourceDiscovery");
+
+            var request = InstantiateClassGenerator.Execute<ModifyIpamResourceDiscoveryRequest>();
+            var marshaller = new ModifyIpamResourceDiscoveryRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyIpamResourceDiscoveryResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyIpamResourceDiscoveryResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -13485,6 +13773,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void UnassignPrivateNatGatewayAddressMarshallTest()
+        {
+            var operation = service_model.FindOperation("UnassignPrivateNatGatewayAddress");
+
+            var request = InstantiateClassGenerator.Execute<UnassignPrivateNatGatewayAddressRequest>();
+            var marshaller = new UnassignPrivateNatGatewayAddressRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = UnassignPrivateNatGatewayAddressResponseUnmarshaller.Instance.Unmarshall(context)
+                as UnassignPrivateNatGatewayAddressResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         

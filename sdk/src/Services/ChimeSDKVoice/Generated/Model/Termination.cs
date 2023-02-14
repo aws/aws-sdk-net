@@ -88,6 +88,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property DefaultPhoneNumber.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DefaultPhoneNumber
         {
             get { return this._defaultPhoneNumber; }

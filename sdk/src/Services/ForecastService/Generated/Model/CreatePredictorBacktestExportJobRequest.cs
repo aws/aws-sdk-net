@@ -50,8 +50,8 @@ namespace Amazon.ForecastService.Model
     ///  
     /// <para>
     /// You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket
-    /// and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume
-    /// to access the Amazon S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
+    /// and an Identity and Access Management (IAM) role that Amazon Forecast can assume to
+    /// access the Amazon S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
     /// </para>
     ///  <note> 
     /// <para>

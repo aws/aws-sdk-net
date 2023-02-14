@@ -140,7 +140,7 @@ namespace Amazon.LocationService.Model
         /// <code>-123.1174</code> and latitude <code>49.2847</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]
         public List<double> Position
         {
             get { return this._position; }

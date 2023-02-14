@@ -1739,6 +1739,62 @@ namespace Amazon.Proton
 
         #endregion
                 
+        #region  GetResourcesSummary
+
+
+
+        /// <summary>
+        /// Get counts of Proton resources.
+        /// 
+        ///  
+        /// <para>
+        /// For infrastructure-provisioning resources (environments, services, service instances,
+        /// pipelines), the action returns staleness counts. A resource is stale when it's behind
+        /// the recommended version of the Proton template that it uses and it needs an update
+        /// to become current.
+        /// </para>
+        ///  
+        /// <para>
+        /// The action returns staleness counts (counts of resources that are up-to-date, behind
+        /// a template major version, or behind a template minor version), the total number of
+        /// resources, and the number of resources that are in a failed state, grouped by resource
+        /// type. Components, environments, and service templates are exceptions—see the <code>components</code>,
+        /// <code>environments</code>, and <code>serviceTemplates</code> field descriptions.
+        /// </para>
+        ///  
+        /// <para>
+        /// For context, the action also returns the total number of each type of Proton template
+        /// in the Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/monitoring-dashboard.html">Proton
+        /// dashboard</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcesSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcesSummary service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetResourcesSummary">REST API Reference for GetResourcesSummary Operation</seealso>
+        Task<GetResourcesSummaryResponse> GetResourcesSummaryAsync(GetResourcesSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetService
 
 

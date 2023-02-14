@@ -178,6 +178,7 @@ namespace Amazon.NimbleStudio.Model
         /// The URL to connect to this stream using the DCV client.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Url
         {
             get { return this._url; }

@@ -87,6 +87,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Marketo);
             }
 
+            if(requestObject.IsSetPardot())
+            {
+                context.Writer.WritePropertyName("Pardot");
+                context.Writer.Write(requestObject.Pardot);
+            }
+
             if(requestObject.IsSetS3())
             {
                 context.Writer.WritePropertyName("S3");

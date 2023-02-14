@@ -110,6 +110,7 @@ namespace Amazon.Organizations.Model
         /// the value string must match the requirements of the specified type.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Value
         {
             get { return this._value; }

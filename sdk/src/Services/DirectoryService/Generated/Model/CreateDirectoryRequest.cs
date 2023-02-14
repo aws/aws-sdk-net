@@ -136,7 +136,7 @@ namespace Amazon.DirectoryService.Model
         /// must meet complexity requirements</a> on the Microsoft website.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Password
         {
             get { return this._password; }

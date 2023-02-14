@@ -37,7 +37,11 @@ namespace Amazon.SsmSap.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Application.
+        /// Gets and sets the property Application. 
+        /// <para>
+        /// Returns all of the metadata of an application registered with AWS Systems Manager
+        /// for SAP.
+        /// </para>
         /// </summary>
         public Application Application
         {
@@ -52,7 +56,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags of a registered application.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

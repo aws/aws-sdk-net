@@ -74,7 +74,10 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ViolatedEntities.
+        /// Gets and sets the property ViolatedEntities. 
+        /// <para>
+        /// Lists the violated entities that caused the dashboard error.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=200)]
         public List<Entity> ViolatedEntities

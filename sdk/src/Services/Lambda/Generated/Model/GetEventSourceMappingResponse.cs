@@ -49,6 +49,7 @@ namespace Amazon.Lambda.Model
         private int? _maximumRetryAttempts;
         private int? _parallelizationFactor;
         private List<string> _queues = new List<string>();
+        private ScalingConfig _scalingConfig;
         private SelfManagedEventSource _selfManagedEventSource;
         private SelfManagedKafkaEventSourceConfig _selfManagedKafkaEventSourceConfig;
         private List<SourceAccessConfiguration> _sourceAccessConfigurations = new List<SourceAccessConfiguration>();
@@ -375,6 +376,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetQueues()
         {
             return this._queues != null && this._queues.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScalingConfig. 
+        /// <para>
+        /// (Amazon SQS only) The scaling configuration for the event source. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+        /// maximum concurrency for Amazon SQS event sources</a>.
+        /// </para>
+        /// </summary>
+        public ScalingConfig ScalingConfig
+        {
+            get { return this._scalingConfig; }
+            set { this._scalingConfig = value; }
+        }
+
+        // Check to see if ScalingConfig property is set
+        internal bool IsSetScalingConfig()
+        {
+            return this._scalingConfig != null;
         }
 
         /// <summary>

@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// The expression that determines the formatting configuration for gradient color.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4096)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=4096)]
         public string Expression
         {
             get { return this._expression; }

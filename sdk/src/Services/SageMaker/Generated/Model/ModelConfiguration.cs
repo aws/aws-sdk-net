@@ -33,8 +33,28 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ModelConfiguration
     {
+        private string _compilationJobName;
         private List<EnvironmentParameter> _environmentParameters = new List<EnvironmentParameter>();
         private string _inferenceSpecificationName;
+
+        /// <summary>
+        /// Gets and sets the property CompilationJobName. 
+        /// <para>
+        /// The name of the compilation job used to create the recommended model artifacts.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string CompilationJobName
+        {
+            get { return this._compilationJobName; }
+            set { this._compilationJobName = value; }
+        }
+
+        // Check to see if CompilationJobName property is set
+        internal bool IsSetCompilationJobName()
+        {
+            return this._compilationJobName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EnvironmentParameters. 

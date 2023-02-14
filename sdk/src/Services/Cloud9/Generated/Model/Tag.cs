@@ -46,7 +46,7 @@ namespace Amazon.Cloud9.Model
         /// The <b>name</b> part of a tag.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -65,7 +65,7 @@ namespace Amazon.Cloud9.Model
         /// The <b>value</b> part of a tag.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

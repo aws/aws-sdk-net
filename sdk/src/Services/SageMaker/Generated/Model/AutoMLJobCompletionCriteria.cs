@@ -47,7 +47,7 @@ namespace Amazon.SageMaker.Model
         /// If an AutoML job exceeds the maximum runtime, the job is stopped automatically and
         /// its processing is ended gracefully. The AutoML job identifies the best model whose
         /// training was completed and marks it as the best-performing model. Any unfinished steps
-        /// of the job, such as automatic one-click Autopilot model deployment, will not be completed.
+        /// of the job, such as automatic one-click Autopilot model deployment, are not completed.
         /// 
         /// </para>
         /// </summary>
@@ -70,7 +70,7 @@ namespace Amazon.SageMaker.Model
         /// The maximum number of times a training job is allowed to run.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=750)]
         public int MaxCandidates
         {
             get { return this._maxCandidates.GetValueOrDefault(); }

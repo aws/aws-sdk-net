@@ -2025,6 +2025,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly InferredWorkloadType ApacheHadoop = new InferredWorkloadType("ApacheHadoop");
         /// <summary>
+        /// Constant Kafka for InferredWorkloadType
+        /// </summary>
+        public static readonly InferredWorkloadType Kafka = new InferredWorkloadType("Kafka");
+        /// <summary>
         /// Constant Memcached for InferredWorkloadType
         /// </summary>
         public static readonly InferredWorkloadType Memcached = new InferredWorkloadType("Memcached");

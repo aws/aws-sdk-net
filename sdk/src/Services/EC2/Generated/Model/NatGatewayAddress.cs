@@ -34,9 +34,13 @@ namespace Amazon.EC2.Model
     public partial class NatGatewayAddress
     {
         private string _allocationId;
+        private string _associationId;
+        private string _failureMessage;
+        private bool? _isPrimary;
         private string _networkInterfaceId;
         private string _privateIp;
         private string _publicIp;
+        private NatGatewayAddressStatus _status;
 
         /// <summary>
         /// Gets and sets the property AllocationId. 
@@ -55,6 +59,61 @@ namespace Amazon.EC2.Model
         internal bool IsSetAllocationId()
         {
             return this._allocationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociationId. 
+        /// <para>
+        /// [Public NAT gateway only] The association ID of the Elastic IP address that's associated
+        /// with the NAT gateway.
+        /// </para>
+        /// </summary>
+        public string AssociationId
+        {
+            get { return this._associationId; }
+            set { this._associationId = value; }
+        }
+
+        // Check to see if AssociationId property is set
+        internal bool IsSetAssociationId()
+        {
+            return this._associationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureMessage. 
+        /// <para>
+        /// The address failure message.
+        /// </para>
+        /// </summary>
+        public string FailureMessage
+        {
+            get { return this._failureMessage; }
+            set { this._failureMessage = value; }
+        }
+
+        // Check to see if FailureMessage property is set
+        internal bool IsSetFailureMessage()
+        {
+            return this._failureMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsPrimary. 
+        /// <para>
+        /// Defines if the IP address is the primary address.
+        /// </para>
+        /// </summary>
+        public bool IsPrimary
+        {
+            get { return this._isPrimary.GetValueOrDefault(); }
+            set { this._isPrimary = value; }
+        }
+
+        // Check to see if IsPrimary property is set
+        internal bool IsSetIsPrimary()
+        {
+            return this._isPrimary.HasValue; 
         }
 
         /// <summary>
@@ -109,6 +168,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPublicIp()
         {
             return this._publicIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The address status.
+        /// </para>
+        /// </summary>
+        public NatGatewayAddressStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

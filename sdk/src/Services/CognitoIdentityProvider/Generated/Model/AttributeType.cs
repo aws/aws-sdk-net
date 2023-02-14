@@ -61,7 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The value of the attribute.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Sensitive=true, Max=2048)]
         public string Value
         {
             get { return this._value; }

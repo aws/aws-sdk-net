@@ -98,6 +98,11 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RecoveryPointArn. 
         /// <para>
+        ///  <i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB resources.</i>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         /// An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
         /// </para>
         /// </summary>

@@ -275,7 +275,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The ID of the client associated with the user pool.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -313,7 +313,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The client secret from the user pool request of the client type.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string ClientSecret
         {
             get { return this._clientSecret; }

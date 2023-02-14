@@ -47,7 +47,7 @@ namespace Amazon.LexModelsV2.Model
         /// string to filter on.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=2)]
         public List<BotFilter> Filters
         {
             get { return this._filters; }

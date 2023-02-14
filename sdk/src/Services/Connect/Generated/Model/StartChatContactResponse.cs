@@ -34,6 +34,7 @@ namespace Amazon.Connect.Model
     public partial class StartChatContactResponse : AmazonWebServiceResponse
     {
         private string _contactId;
+        private string _continuedFromContactId;
         private string _participantId;
         private string _participantToken;
 
@@ -54,6 +55,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetContactId()
         {
             return this._contactId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContinuedFromContactId. 
+        /// <para>
+        /// The contactId from which a persistent chat session is started. This field is populated
+        /// only for persistent chats.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ContinuedFromContactId
+        {
+            get { return this._continuedFromContactId; }
+            set { this._continuedFromContactId = value; }
+        }
+
+        // Check to see if ContinuedFromContactId property is set
+        internal bool IsSetContinuedFromContactId()
+        {
+            return this._continuedFromContactId != null;
         }
 
         /// <summary>

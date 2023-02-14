@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model
         /// updated content.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=100000)]
         public string Content
         {
             get { return this._content; }

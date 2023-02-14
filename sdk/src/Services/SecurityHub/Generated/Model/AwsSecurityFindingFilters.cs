@@ -42,6 +42,8 @@ namespace Amazon.SecurityHub.Model
     {
         private List<StringFilter> _awsAccountId = new List<StringFilter>();
         private List<StringFilter> _companyName = new List<StringFilter>();
+        private List<StringFilter> _complianceAssociatedStandardsId = new List<StringFilter>();
+        private List<StringFilter> _complianceSecurityControlId = new List<StringFilter>();
         private List<StringFilter> _complianceStatus = new List<StringFilter>();
         private List<NumberFilter> _confidence = new List<NumberFilter>();
         private List<DateFilter> _createdAt = new List<DateFilter>();
@@ -171,6 +173,46 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetCompanyName()
         {
             return this._companyName != null && this._companyName.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComplianceAssociatedStandardsId. 
+        /// <para>
+        ///  The unique identifier of a standard in which a control is enabled. This field consists
+        /// of the resource portion of the Amazon Resource Name (ARN) returned for a standard
+        /// in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
+        /// API response. 
+        /// </para>
+        /// </summary>
+        public List<StringFilter> ComplianceAssociatedStandardsId
+        {
+            get { return this._complianceAssociatedStandardsId; }
+            set { this._complianceAssociatedStandardsId = value; }
+        }
+
+        // Check to see if ComplianceAssociatedStandardsId property is set
+        internal bool IsSetComplianceAssociatedStandardsId()
+        {
+            return this._complianceAssociatedStandardsId != null && this._complianceAssociatedStandardsId.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComplianceSecurityControlId. 
+        /// <para>
+        ///  The unique identifier of a control across standards. Values for this field typically
+        /// consist of an Amazon Web Service and a number, such as APIGateway.5. 
+        /// </para>
+        /// </summary>
+        public List<StringFilter> ComplianceSecurityControlId
+        {
+            get { return this._complianceSecurityControlId; }
+            set { this._complianceSecurityControlId = value; }
+        }
+
+        // Check to see if ComplianceSecurityControlId property is set
+        internal bool IsSetComplianceSecurityControlId()
+        {
+            return this._complianceSecurityControlId != null && this._complianceSecurityControlId.Count > 0; 
         }
 
         /// <summary>

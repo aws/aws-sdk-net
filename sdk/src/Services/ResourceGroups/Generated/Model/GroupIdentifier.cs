@@ -61,7 +61,7 @@ namespace Amazon.ResourceGroups.Model
         /// The name of the resource group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=300)]
         public string GroupName
         {
             get { return this._groupName; }

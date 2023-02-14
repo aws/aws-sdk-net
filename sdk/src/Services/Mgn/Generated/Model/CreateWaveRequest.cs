@@ -82,6 +82,7 @@ namespace Amazon.Mgn.Model
         /// Wave tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

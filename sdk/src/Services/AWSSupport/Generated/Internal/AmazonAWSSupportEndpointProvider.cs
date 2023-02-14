@@ -68,6 +68,114 @@ namespace Amazon.AWSSupport.Internal
                     }
                     return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                 }
+                if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws"))
+                {
+                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                        {
+                            return new Endpoint(Interpolate(@"https://support-fips.{Region}.api.aws", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                    }
+                    if (Equals(refs["UseFIPS"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
+                        {
+                            return new Endpoint(Interpolate(@"https://support-fips.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                    }
+                    if (Equals(refs["UseDualStack"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                        {
+                            return new Endpoint(Interpolate(@"https://support.{Region}.api.aws", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                    }
+                    return new Endpoint("https://support.us-east-1.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""support""}]}", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn"))
+                {
+                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                        {
+                            return new Endpoint(Interpolate(@"https://support-fips.{Region}.api.amazonwebservices.com.cn", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                    }
+                    if (Equals(refs["UseFIPS"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
+                        {
+                            return new Endpoint(Interpolate(@"https://support-fips.{Region}.amazonaws.com.cn", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                    }
+                    if (Equals(refs["UseDualStack"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                        {
+                            return new Endpoint(Interpolate(@"https://support.{Region}.api.amazonwebservices.com.cn", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                    }
+                    return new Endpoint("https://support.cn-north-1.amazonaws.com.cn", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""cn-north-1"",""signingName"":""support""}]}", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
+                {
+                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                        {
+                            return new Endpoint(Interpolate(@"https://support-fips.{Region}.api.aws", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                    }
+                    if (Equals(refs["UseFIPS"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
+                        {
+                            return new Endpoint(Interpolate(@"https://support-fips.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                    }
+                    if (Equals(refs["UseDualStack"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                        {
+                            return new Endpoint(Interpolate(@"https://support.{Region}.api.aws", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                    }
+                    return new Endpoint("https://support.us-gov-west-1.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-gov-west-1"",""signingName"":""support""}]}", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso"))
+                {
+                    if (Equals(refs["UseFIPS"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
+                        {
+                            return new Endpoint(Interpolate(@"https://support-fips.{Region}.c2s.ic.gov", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                    }
+                    return new Endpoint("https://support.us-iso-east-1.c2s.ic.gov", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-iso-east-1"",""signingName"":""support""}]}", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-b"))
+                {
+                    if (Equals(refs["UseFIPS"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
+                        {
+                            return new Endpoint(Interpolate(@"https://support-fips.{Region}.sc2s.sgov.gov", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                    }
+                    return new Endpoint("https://support.us-isob-east-1.sc2s.sgov.gov", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-isob-east-1"",""signingName"":""support""}]}", refs), InterpolateJson(@"", refs));
+                }
                 if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                 {
                     if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
@@ -80,10 +188,6 @@ namespace Amazon.AWSSupport.Internal
                 {
                     if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
                     {
-                        if (Equals(refs["Region"], "us-gov-west-1"))
-                        {
-                            return new Endpoint("https://support.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
                         return new Endpoint(Interpolate(@"https://support-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");

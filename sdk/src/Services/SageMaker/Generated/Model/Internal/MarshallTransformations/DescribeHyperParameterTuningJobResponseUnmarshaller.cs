@@ -57,6 +57,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.BestTrainingJob = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ConsumedResources", targetDepth))
+                {
+                    var unmarshaller = HyperParameterTuningJobConsumedResourcesUnmarshaller.Instance;
+                    response.ConsumedResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -133,6 +139,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = TrainingJobStatusCountersUnmarshaller.Instance;
                     response.TrainingJobStatusCounters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TuningJobCompletionDetails", targetDepth))
+                {
+                    var unmarshaller = HyperParameterTuningJobCompletionDetailsUnmarshaller.Instance;
+                    response.TuningJobCompletionDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WarmStartConfig", targetDepth))

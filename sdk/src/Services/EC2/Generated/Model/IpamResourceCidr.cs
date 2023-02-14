@@ -131,7 +131,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For a resources that are VPCs, this is the percentage of IP address space in the VPC
+        /// For resources that are VPCs, this is the percentage of IP address space in the VPC
         /// that's taken up by subnet CIDRs. 
         /// </para>
         ///  </li> <li> 

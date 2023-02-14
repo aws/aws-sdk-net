@@ -103,6 +103,7 @@ namespace Amazon.Chime.Model
         /// Optional. The user email address used to filter results. Maximum 1.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string UserEmail
         {
             get { return this._userEmail; }

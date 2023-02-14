@@ -74,6 +74,7 @@ namespace Amazon.Backup.Model
         /// all backups created with this plan.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> BackupPlanTags
         {
             get { return this._backupPlanTags; }

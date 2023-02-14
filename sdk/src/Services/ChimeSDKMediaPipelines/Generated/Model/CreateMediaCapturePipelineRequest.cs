@@ -68,7 +68,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// Use a unique token for each media pipeline request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -87,7 +87,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// The ARN of the sink type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string SinkArn
         {
             get { return this._sinkArn; }
@@ -125,7 +125,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// ARN of the source from which the media artifacts are captured.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string SourceArn
         {
             get { return this._sourceArn; }

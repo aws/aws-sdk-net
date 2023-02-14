@@ -76,7 +76,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobName. 
         /// <para>
-        /// Identifies an Autopilot job. The name must be unique to your account and is case-insensitive.
+        /// Identifies an Autopilot job. The name must be unique to your account and is case insensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

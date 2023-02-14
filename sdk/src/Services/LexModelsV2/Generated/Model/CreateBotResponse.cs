@@ -34,9 +34,11 @@ namespace Amazon.LexModelsV2.Model
     public partial class CreateBotResponse : AmazonWebServiceResponse
     {
         private string _botId;
+        private List<BotMember> _botMembers = new List<BotMember>();
         private string _botName;
         private BotStatus _botStatus;
         private Dictionary<string, string> _botTags = new Dictionary<string, string>();
+        private BotType _botType;
         private DateTime? _creationDateTime;
         private DataPrivacy _dataPrivacy;
         private string _description;
@@ -65,6 +67,25 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BotMembers. 
+        /// <para>
+        /// The list of bots in a network that was created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<BotMember> BotMembers
+        {
+            get { return this._botMembers; }
+            set { this._botMembers = value; }
+        }
+
+        // Check to see if BotMembers property is set
+        internal bool IsSetBotMembers()
+        {
+            return this._botMembers != null && this._botMembers.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property BotName. 
         /// <para>
         /// The name specified for the bot.
@@ -88,7 +109,7 @@ namespace Amazon.LexModelsV2.Model
         /// <para>
         /// Shows the current status of the bot. The bot is first in the <code>Creating</code>
         /// status. Once the bot is read for use, it changes to the <code>Available</code> status.
-        /// After the bot is created, you can use the <code>Draft</code> version of the bot.
+        /// After the bot is created, you can use the <code>DRAFT</code> version of the bot.
         /// </para>
         /// </summary>
         public BotStatus BotStatus
@@ -120,6 +141,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetBotTags()
         {
             return this._botTags != null && this._botTags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BotType. 
+        /// <para>
+        /// The type of a bot that was created.
+        /// </para>
+        /// </summary>
+        public BotType BotType
+        {
+            get { return this._botType; }
+            set { this._botType = value; }
+        }
+
+        // Check to see if BotType property is set
+        internal bool IsSetBotType()
+        {
+            return this._botType != null;
         }
 
         /// <summary>

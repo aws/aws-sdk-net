@@ -974,8 +974,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC,
-        /// you must use security group IDs instead.
+        /// [EC2-Classic, default VPC] The names of the security groups.
         /// </para>
         ///  
         /// <para>
@@ -1079,6 +1078,7 @@ namespace Amazon.EC2.Model
         /// you must provide base64-encoded text. User data is limited to 16 KB.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string UserData
         {
             get { return this._userData; }

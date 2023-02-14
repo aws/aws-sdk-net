@@ -31,6 +31,12 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the ImportHubContent operation.
     /// Import hub content.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Hub APIs are only callable through SageMaker Studio.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ImportHubContentRequest : AmazonSageMakerRequest
     {
@@ -126,7 +132,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HubContentMarkdown. 
         /// <para>
-        /// Markdown files associated with the hub content to import.
+        /// A string that provides a description of the hub content. This string can include links,
+        /// tables, and standard markdown formating.
         /// </para>
         /// </summary>
         [AWSProperty(Max=65535)]

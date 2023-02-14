@@ -63,7 +63,7 @@ namespace Amazon.Chime.Model
         /// The idempotency token for the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -82,7 +82,7 @@ namespace Amazon.Chime.Model
         /// The room name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Name
         {
             get { return this._name; }

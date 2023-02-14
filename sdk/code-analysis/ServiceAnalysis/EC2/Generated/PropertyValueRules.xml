@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
-    <property>Amazon.EC2.Model.AssociateEnclaveCertificateIamRoleRequest.CertificateArn</property>
+    <property>Amazon.EC2.Model.AssignPrivateNatGatewayAddressRequest.PrivateIpAddressCount</property>
     <min>1</min>
-    <max>1283</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.AssociateEnclaveCertificateIamRoleRequest.RoleArn</property>
-    <min>1</min>
-    <max>1283</max>
+    <max>7</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CreateCapacityReservationRequest.OutpostArn</property>
@@ -54,6 +49,11 @@
     <property>Amazon.EC2.Model.CreateLaunchTemplateVersionRequest.VersionDescription</property>
     <min>0</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateNatGatewayRequest.SecondaryPrivateIpAddressCount</property>
+    <min>1</min>
+    <max>7</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CreateNetworkInsightsPathRequest.DestinationIp</property>
@@ -226,6 +226,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeIpamPoolsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeIpamResourceDiscoveriesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeIpamResourceDiscoveryAssociationsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
@@ -521,19 +531,9 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.EC2.Model.DisassociateEnclaveCertificateIamRoleRequest.CertificateArn</property>
+    <property>Amazon.EC2.Model.DisassociateNatGatewayAddressRequest.MaxDrainDurationSeconds</property>
     <min>1</min>
-    <max>1283</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DisassociateEnclaveCertificateIamRoleRequest.RoleArn</property>
-    <min>1</min>
-    <max>1283</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.GetAssociatedEnclaveCertificateIamRolesRequest.CertificateArn</property>
-    <min>1</min>
-    <max>1283</max>
+    <max>4000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.GetAssociatedIpv6PoolCidrsRequest.MaxResults</property>
@@ -558,6 +558,16 @@
   <property-value-rule>
     <property>Amazon.EC2.Model.GetIpamAddressHistoryRequest.MaxResults</property>
     <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamDiscoveredAccountsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamDiscoveredResourceCidrsRequest.MaxResults</property>
+    <min>5</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -690,6 +700,11 @@
     <property>Amazon.EC2.Model.SearchTransitGatewayRoutesRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.UnassignPrivateNatGatewayAddressRequest.MaxDrainDurationSeconds</property>
+    <min>1</min>
+    <max>4000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.AnalysisLoadBalancerListener.InstancePort</property>
@@ -846,6 +861,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.IpamPool.IpamScopeArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamResourceDiscoveryAssociation.IpamArn</property>
     <min>1</min>
     <max>1283</max>
   </property-value-rule>

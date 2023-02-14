@@ -40,7 +40,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property S3Bucket. 
         /// <para>
         /// The Amazon S3 bucket where the audio log files are stored. The IAM role specified
-        /// in the <code>roleArn</code> parameter of the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+        /// in the <code>roleArn</code> parameter of the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a>
         /// operation must have permission to write to this bucket.
         /// </para>
         /// </summary>

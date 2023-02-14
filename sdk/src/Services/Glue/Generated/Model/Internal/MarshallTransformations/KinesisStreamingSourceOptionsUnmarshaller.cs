@@ -70,6 +70,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.AddIdleTimeBetweenReads = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AddRecordTimestamp", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AddRecordTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AvoidEmptyBatches", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -92,6 +98,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
                     unmarshalledObject.DescribeShardInterval = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EmitConsumerLagMetrics", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EmitConsumerLagMetrics = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EndpointUrl", targetDepth))

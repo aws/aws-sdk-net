@@ -675,7 +675,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (attributeValue.IsSetL())
             {
                 var items = attributeValue.L;
-                var entries = items.Select(AttributeValueToDynamoDBEntry);
+                var entries = items.Select(AttributeValueToDynamoDBEntry).Where(item => item != null);
                 list = new DynamoDBList(entries);
             }
 

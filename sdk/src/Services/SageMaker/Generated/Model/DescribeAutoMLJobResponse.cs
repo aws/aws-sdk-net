@@ -282,7 +282,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
-        /// Returns the input data configuration for the AutoML job..
+        /// Returns the input data configuration for the AutoML job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2)]
@@ -413,7 +413,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResolvedAttributes. 
         /// <para>
-        /// This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>.
+        /// Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>.
         /// If you do not provide these values, they are auto-inferred. If you do provide them,
         /// the values used are the ones you provide.
         /// </para>

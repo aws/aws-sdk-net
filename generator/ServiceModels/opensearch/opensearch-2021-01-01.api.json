@@ -302,6 +302,22 @@
         {"shape":"ValidationException"}
       ]
     },
+    "DescribeDryRunProgress":{
+      "name":"DescribeDryRunProgress",
+      "http":{
+        "method":"GET",
+        "requestUri":"/2021-01-01/opensearch/domain/{DomainName}/dryRun"
+      },
+      "input":{"shape":"DescribeDryRunProgressRequest"},
+      "output":{"shape":"DescribeDryRunProgressResponse"},
+      "errors":[
+        {"shape":"BaseException"},
+        {"shape":"InternalException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"DisabledOperationException"}
+      ]
+    },
     "DescribeInboundConnections":{
       "name":"DescribeInboundConnections",
       "http":{
@@ -1214,6 +1230,19 @@
       "min":10,
       "pattern":"[a-z][a-z0-9\\-]+"
     },
+    "ConnectionMode":{
+      "type":"string",
+      "enum":[
+        "DIRECT",
+        "VPC_ENDPOINT"
+      ]
+    },
+    "ConnectionProperties":{
+      "type":"structure",
+      "members":{
+        "Endpoint":{"shape":"Endpoint"}
+      }
+    },
     "ConnectionStatusMessage":{"type":"string"},
     "CreateDomainRequest":{
       "type":"structure",
@@ -1253,7 +1282,8 @@
       "members":{
         "LocalDomainInfo":{"shape":"DomainInformationContainer"},
         "RemoteDomainInfo":{"shape":"DomainInformationContainer"},
-        "ConnectionAlias":{"shape":"ConnectionAlias"}
+        "ConnectionAlias":{"shape":"ConnectionAlias"},
+        "ConnectionMode":{"shape":"ConnectionMode"}
       }
     },
     "CreateOutboundConnectionResponse":{
@@ -1263,7 +1293,9 @@
         "RemoteDomainInfo":{"shape":"DomainInformationContainer"},
         "ConnectionAlias":{"shape":"ConnectionAlias"},
         "ConnectionStatus":{"shape":"OutboundConnectionStatus"},
-        "ConnectionId":{"shape":"ConnectionId"}
+        "ConnectionId":{"shape":"ConnectionId"},
+        "ConnectionMode":{"shape":"ConnectionMode"},
+        "ConnectionProperties":{"shape":"ConnectionProperties"}
       }
     },
     "CreatePackageRequest":{
@@ -1498,6 +1530,35 @@
       "required":["DomainStatusList"],
       "members":{
         "DomainStatusList":{"shape":"DomainStatusList"}
+      }
+    },
+    "DescribeDryRunProgressRequest":{
+      "type":"structure",
+      "required":["DomainName"],
+      "members":{
+        "DomainName":{
+          "shape":"DomainName",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "DryRunId":{
+          "shape":"GUID",
+          "location":"querystring",
+          "locationName":"dryRunId"
+        },
+        "LoadDryRunConfig":{
+          "shape":"Boolean",
+          "location":"querystring",
+          "locationName":"loadDryRunConfig"
+        }
+      }
+    },
+    "DescribeDryRunProgressResponse":{
+      "type":"structure",
+      "members":{
+        "DryRunProgressStatus":{"shape":"DryRunProgressStatus"},
+        "DryRunConfig":{"shape":"DomainStatus"},
+        "DryRunResults":{"shape":"DryRunResults"}
       }
     },
     "DescribeInboundConnectionsRequest":{
@@ -1863,6 +1924,29 @@
     },
     "Double":{"type":"double"},
     "DryRun":{"type":"boolean"},
+    "DryRunMode":{
+      "type":"string",
+      "enum":[
+        "Basic",
+        "Verbose"
+      ]
+    },
+    "DryRunProgressStatus":{
+      "type":"structure",
+      "required":[
+        "DryRunId",
+        "DryRunStatus",
+        "CreationDate",
+        "UpdateDate"
+      ],
+      "members":{
+        "DryRunId":{"shape":"GUID"},
+        "DryRunStatus":{"shape":"String"},
+        "CreationDate":{"shape":"String"},
+        "UpdateDate":{"shape":"String"},
+        "ValidationFailures":{"shape":"ValidationFailures"}
+      }
+    },
     "DryRunResults":{
       "type":"structure",
       "members":{
@@ -2067,7 +2151,8 @@
         "LocalDomainInfo":{"shape":"DomainInformationContainer"},
         "RemoteDomainInfo":{"shape":"DomainInformationContainer"},
         "ConnectionId":{"shape":"ConnectionId"},
-        "ConnectionStatus":{"shape":"InboundConnectionStatus"}
+        "ConnectionStatus":{"shape":"InboundConnectionStatus"},
+        "ConnectionMode":{"shape":"ConnectionMode"}
       }
     },
     "InboundConnectionStatus":{
@@ -2622,7 +2707,9 @@
         "RemoteDomainInfo":{"shape":"DomainInformationContainer"},
         "ConnectionId":{"shape":"ConnectionId"},
         "ConnectionAlias":{"shape":"ConnectionAlias"},
-        "ConnectionStatus":{"shape":"OutboundConnectionStatus"}
+        "ConnectionStatus":{"shape":"OutboundConnectionStatus"},
+        "ConnectionMode":{"shape":"ConnectionMode"},
+        "ConnectionProperties":{"shape":"ConnectionProperties"}
       }
     },
     "OutboundConnectionStatus":{
@@ -3137,7 +3224,8 @@
         "NodeToNodeEncryptionOptions":{"shape":"NodeToNodeEncryptionOptions"},
         "AdvancedSecurityOptions":{"shape":"AdvancedSecurityOptionsInput"},
         "AutoTuneOptions":{"shape":"AutoTuneOptions"},
-        "DryRun":{"shape":"DryRun"}
+        "DryRun":{"shape":"DryRun"},
+        "DryRunMode":{"shape":"DryRunMode"}
       }
     },
     "UpdateDomainConfigResponse":{
@@ -3145,7 +3233,8 @@
       "required":["DomainConfig"],
       "members":{
         "DomainConfig":{"shape":"DomainConfig"},
-        "DryRunResults":{"shape":"DryRunResults"}
+        "DryRunResults":{"shape":"DryRunResults"},
+        "DryRunProgressStatus":{"shape":"DryRunProgressStatus"}
       }
     },
     "UpdatePackageRequest":{
@@ -3300,6 +3389,17 @@
       },
       "error":{"httpStatusCode":400},
       "exception":true
+    },
+    "ValidationFailure":{
+      "type":"structure",
+      "members":{
+        "Code":{"shape":"String"},
+        "Message":{"shape":"String"}
+      }
+    },
+    "ValidationFailures":{
+      "type":"list",
+      "member":{"shape":"ValidationFailure"}
     },
     "ValueStringList":{
       "type":"list",

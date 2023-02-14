@@ -100,6 +100,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LogConfiguration", targetDepth))
+                {
+                    var unmarshaller = LogConfigurationForChannelUnmarshaller.Instance;
+                    unmarshalledObject.LogConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Outputs", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ResponseOutputItem, ResponseOutputItemUnmarshaller>(ResponseOutputItemUnmarshaller.Instance);

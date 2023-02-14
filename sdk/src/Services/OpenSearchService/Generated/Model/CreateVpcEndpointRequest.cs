@@ -60,7 +60,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the domain to grant access to.
+        /// The Amazon Resource Name (ARN) of the domain to create the endpoint for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

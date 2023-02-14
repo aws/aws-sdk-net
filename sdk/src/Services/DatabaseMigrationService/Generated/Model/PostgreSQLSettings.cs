@@ -272,6 +272,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Endpoint connection password.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Password
         {
             get { return this._password; }

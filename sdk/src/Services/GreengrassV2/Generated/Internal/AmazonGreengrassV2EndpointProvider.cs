@@ -40,6 +40,8 @@ namespace Amazon.GreengrassV2.Internal
             if (parameters == null) 
                 throw new ArgumentNullException("parameters");
 
+            if (parameters["Region"] == null)
+                throw new AmazonClientException("Region parameter must be set for endpoint resolution");
             if (parameters["UseDualStack"] == null)
                 throw new AmazonClientException("UseDualStack parameter must be set for endpoint resolution");
             if (parameters["UseFIPS"] == null)
@@ -54,7 +56,7 @@ namespace Amazon.GreengrassV2.Internal
             };
             if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
             {
-                if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
+                if (IsSet(refs["Endpoint"]))
                 {
                     if (Equals(refs["UseFIPS"], true))
                     {
@@ -78,6 +80,14 @@ namespace Amazon.GreengrassV2.Internal
                 {
                     if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
                     {
+                        if (Equals(refs["Region"], "us-gov-east-1"))
+                        {
+                            return new Endpoint("https://greengrass.us-gov-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        if (Equals(refs["Region"], "us-gov-west-1"))
+                        {
+                            return new Endpoint("https://greengrass.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
                         return new Endpoint(Interpolate(@"https://greengrass-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
@@ -92,11 +102,19 @@ namespace Amazon.GreengrassV2.Internal
                 }
                 if (Equals(refs["Region"], "dataplane-us-gov-east-1"))
                 {
-                    return new Endpoint("https://greengrass-ats.iot.us-gov-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    return new Endpoint("https://greengrass-ats.iot.us-gov-east-1.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-gov-east-1"",""signingName"":""greengrass""}]}", refs), InterpolateJson(@"", refs));
                 }
                 if (Equals(refs["Region"], "dataplane-us-gov-west-1"))
                 {
-                    return new Endpoint("https://greengrass-ats.iot.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    return new Endpoint("https://greengrass-ats.iot.us-gov-west-1.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-gov-west-1"",""signingName"":""greengrass""}]}", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(refs["Region"], "us-gov-east-1"))
+                {
+                    return new Endpoint("https://greengrass.us-gov-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(refs["Region"], "us-gov-west-1"))
+                {
+                    return new Endpoint("https://greengrass.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                 }
                 return new Endpoint(Interpolate(@"https://greengrass.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
             }

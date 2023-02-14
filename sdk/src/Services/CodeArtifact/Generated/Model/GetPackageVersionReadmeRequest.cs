@@ -30,10 +30,7 @@ namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPackageVersionReadme operation.
-    /// Gets the readme file or descriptive text for a package version. For packages that
-    /// do not contain a readme file, CodeArtifact extracts a description from a metadata
-    /// file. For example, from the <code>&lt;description&gt;</code> element in the <code>pom.xml</code>
-    /// file of a Maven package. 
+    /// Gets the readme file or descriptive text for a package version. 
     /// 
     ///  
     /// <para>
@@ -97,6 +94,12 @@ namespace Amazon.CodeArtifact.Model
         ///  A format that specifies the type of the package version with the requested readme
         /// file. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Although <code>maven</code> is listed as a valid value, CodeArtifact does not support
+        /// displaying readme files for Maven packages.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public PackageFormat Format

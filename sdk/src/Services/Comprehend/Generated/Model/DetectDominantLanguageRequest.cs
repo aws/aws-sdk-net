@@ -45,7 +45,7 @@ namespace Amazon.Comprehend.Model
         /// size is 100 KB.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string Text
         {
             get { return this._text; }

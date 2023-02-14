@@ -48,11 +48,11 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property AuthenticationToken. 
         /// <para>
-        /// Amazon WorkDocs authentication token. Not required when using AWS administrator credentials
-        /// to access the API.
+        /// Amazon WorkDocs authentication token. Not required when using Amazon Web Services
+        /// administrator credentials to access the API.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=8199)]
+        [AWSProperty(Sensitive=true, Min=1, Max=8199)]
         public string AuthenticationToken
         {
             get { return this._authenticationToken; }
@@ -87,7 +87,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property GrantPoweruserPrivileges. 
         /// <para>
-        /// Boolean value to determine whether the user is granted Poweruser privileges.
+        /// Boolean value to determine whether the user is granted Power user privileges.
         /// </para>
         /// </summary>
         public BooleanEnumType GrantPoweruserPrivileges

@@ -409,6 +409,10 @@ namespace Amazon.Outposts
         /// </summary>
         public static readonly LineItemStatus PREPARING = new LineItemStatus("PREPARING");
         /// <summary>
+        /// Constant REPLACED for LineItemStatus
+        /// </summary>
+        public static readonly LineItemStatus REPLACED = new LineItemStatus("REPLACED");
+        /// <summary>
         /// Constant SHIPPED for LineItemStatus
         /// </summary>
         public static readonly LineItemStatus SHIPPED = new LineItemStatus("SHIPPED");
@@ -912,6 +916,10 @@ namespace Amazon.Outposts
         /// Constant POWER_15_KVA for PowerDrawKva
         /// </summary>
         public static readonly PowerDrawKva POWER_15_KVA = new PowerDrawKva("POWER_15_KVA");
+        /// <summary>
+        /// Constant POWER_30_KVA for PowerDrawKva
+        /// </summary>
+        public static readonly PowerDrawKva POWER_30_KVA = new PowerDrawKva("POWER_30_KVA");
         /// <summary>
         /// Constant POWER_5_KVA for PowerDrawKva
         /// </summary>

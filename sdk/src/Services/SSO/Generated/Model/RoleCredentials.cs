@@ -85,6 +85,7 @@ namespace Amazon.SSO.Model
         /// IAM User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string SecretAccessKey
         {
             get { return this._secretAccessKey; }
@@ -105,6 +106,7 @@ namespace Amazon.SSO.Model
         /// IAM User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string SessionToken
         {
             get { return this._sessionToken; }

@@ -99,6 +99,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public SearchFilter Filters
         {
             get { return this._filters; }

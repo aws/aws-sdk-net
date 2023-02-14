@@ -49,7 +49,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// base64 encoding.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=20480)]
+        [AWSProperty(Sensitive=true, Min=1, Max=20480)]
         public string DomainSigningPrivateKey
         {
             get { return this._domainSigningPrivateKey; }

@@ -161,7 +161,7 @@ namespace Amazon.WorkDocs.Model
         /// The text of the comment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=1, Max=2048)]
         public string Text
         {
             get { return this._text; }

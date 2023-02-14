@@ -97,6 +97,10 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>public:nuget-org</code> - for the NuGet Gallery. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>public:pypi</code> - for the Python Package Index. 
         /// </para>
         ///  </li> <li> 

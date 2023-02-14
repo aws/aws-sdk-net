@@ -19,6 +19,36 @@
     <pattern>^[a-f0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.CreateChannelRequest.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9._\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.CreateChannelRequest.Source</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.CreateChannelResponse.ChannelArn</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.CreateChannelResponse.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9._\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.CreateChannelResponse.Source</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.CreateEventDataStoreRequest.KmsKeyId</property>
     <min>1</min>
     <max>350</max>
@@ -59,7 +89,19 @@
     <max>2557</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.DeleteChannelRequest.Channel</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.DeleteEventDataStoreRequest.EventDataStore</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.DeleteResourcePolicyRequest.ResourceArn</property>
     <min>3</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
@@ -206,6 +248,23 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GetResourcePolicyRequest.ResourceArn</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GetResourcePolicyResponse.ResourceArn</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GetResourcePolicyResponse.ResourcePolicy</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.ListChannelsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -314,6 +373,28 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.PutResourcePolicyRequest.ResourceArn</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.PutResourcePolicyRequest.ResourcePolicy</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.PutResourcePolicyResponse.ResourceArn</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.PutResourcePolicyResponse.ResourcePolicy</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.RegisterOrganizationDelegatedAdminRequest.MemberAccountId</property>
     <min>12</min>
     <max>16</max>
@@ -388,6 +469,36 @@
     <min>36</min>
     <max>36</max>
     <pattern>^[a-f0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.UpdateChannelRequest.Channel</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.UpdateChannelRequest.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9._\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.UpdateChannelResponse.ChannelArn</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.UpdateChannelResponse.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9._\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.UpdateChannelResponse.Source</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.UpdateEventDataStoreRequest.EventDataStore</property>
@@ -484,6 +595,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.ImportsListItem.ImportId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.IngestionStatus.LatestIngestionAttemptEventID</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.IngestionStatus.LatestIngestionErrorCode</property>
+    <min>4</min>
+    <max>1000</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.IngestionStatus.LatestIngestionSuccessEventID</property>
     <min>36</min>
     <max>36</max>
     <pattern>^[a-f0-9\-]+$</pattern>

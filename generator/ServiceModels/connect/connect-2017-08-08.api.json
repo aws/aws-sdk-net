@@ -506,6 +506,7 @@
         "requestUri":"/contact-flows/{InstanceId}/{ContactFlowId}"
       },
       "input":{"shape":"DeleteContactFlowRequest"},
+      "output":{"shape":"DeleteContactFlowResponse"},
       "errors":[
         {"shape":"AccessDeniedException"},
         {"shape":"InvalidRequestException"},
@@ -2209,6 +2210,7 @@
         "requestUri":"/contact-flows/{InstanceId}/{ContactFlowId}/content"
       },
       "input":{"shape":"UpdateContactFlowContentRequest"},
+      "output":{"shape":"UpdateContactFlowContentResponse"},
       "errors":[
         {"shape":"InvalidRequestException"},
         {"shape":"InvalidContactFlowException"},
@@ -2225,6 +2227,7 @@
         "requestUri":"/contact-flows/{InstanceId}/{ContactFlowId}/metadata"
       },
       "input":{"shape":"UpdateContactFlowMetadataRequest"},
+      "output":{"shape":"UpdateContactFlowMetadataResponse"},
       "errors":[
         {"shape":"InvalidRequestException"},
         {"shape":"InvalidParameterException"},
@@ -2276,6 +2279,7 @@
         "requestUri":"/contact-flows/{InstanceId}/{ContactFlowId}/name"
       },
       "input":{"shape":"UpdateContactFlowNameRequest"},
+      "output":{"shape":"UpdateContactFlowNameResponse"},
       "errors":[
         {"shape":"InvalidRequestException"},
         {"shape":"InvalidParameterException"},
@@ -3299,7 +3303,9 @@
         "InitiationTimestamp":{"shape":"timestamp"},
         "DisconnectTimestamp":{"shape":"timestamp"},
         "LastUpdateTimestamp":{"shape":"timestamp"},
-        "ScheduledTimestamp":{"shape":"timestamp"}
+        "ScheduledTimestamp":{"shape":"timestamp"},
+        "RelatedContactId":{"shape":"ContactId"},
+        "WisdomInfo":{"shape":"WisdomInfo"}
       }
     },
     "ContactFilter":{
@@ -4162,6 +4168,11 @@
           "location":"uri",
           "locationName":"ContactFlowId"
         }
+      }
+    },
+    "DeleteContactFlowResponse":{
+      "type":"structure",
+      "members":{
       }
     },
     "DeleteHoursOfOperationRequest":{
@@ -7233,6 +7244,13 @@
       "member":{"shape":"SecurityProfilePermission"},
       "max":500
     },
+    "PersistentChat":{
+      "type":"structure",
+      "members":{
+        "RehydrationType":{"shape":"RehydrationType"},
+        "SourceContactId":{"shape":"ContactId"}
+      }
+    },
     "PhoneNumber":{
       "type":"string",
       "pattern":"\\\\+[1-9]\\\\d{1,14}$"
@@ -7921,6 +7939,13 @@
       "max":4096,
       "min":0
     },
+    "RehydrationType":{
+      "type":"string",
+      "enum":[
+        "ENTIRE_PAST_SESSION",
+        "FROM_SEGMENT"
+      ]
+    },
     "ReleasePhoneNumberRequest":{
       "type":"structure",
       "required":["PhoneNumberId"],
@@ -8592,7 +8617,8 @@
           "idempotencyToken":true
         },
         "ChatDurationInMinutes":{"shape":"ChatDurationInMinutes"},
-        "SupportedMessagingContentTypes":{"shape":"SupportedMessagingContentTypes"}
+        "SupportedMessagingContentTypes":{"shape":"SupportedMessagingContentTypes"},
+        "PersistentChat":{"shape":"PersistentChat"}
       }
     },
     "StartChatContactResponse":{
@@ -8600,7 +8626,8 @@
       "members":{
         "ContactId":{"shape":"ContactId"},
         "ParticipantId":{"shape":"ParticipantId"},
-        "ParticipantToken":{"shape":"ParticipantToken"}
+        "ParticipantToken":{"shape":"ParticipantToken"},
+        "ContinuedFromContactId":{"shape":"ContactId"}
       }
     },
     "StartContactRecordingRequest":{
@@ -9269,6 +9296,11 @@
         "Content":{"shape":"ContactFlowContent"}
       }
     },
+    "UpdateContactFlowContentResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "UpdateContactFlowMetadataRequest":{
       "type":"structure",
       "required":[
@@ -9289,6 +9321,11 @@
         "Name":{"shape":"ContactFlowName"},
         "Description":{"shape":"ContactFlowDescription"},
         "ContactFlowState":{"shape":"ContactFlowState"}
+      }
+    },
+    "UpdateContactFlowMetadataResponse":{
+      "type":"structure",
+      "members":{
       }
     },
     "UpdateContactFlowModuleContentRequest":{
@@ -9363,6 +9400,11 @@
         },
         "Name":{"shape":"ContactFlowName"},
         "Description":{"shape":"ContactFlowDescription"}
+      }
+    },
+    "UpdateContactFlowNameResponse":{
+      "type":"structure",
+      "members":{
       }
     },
     "UpdateContactRequest":{
@@ -10348,6 +10390,12 @@
         "TO_AGENT",
         "ALL"
       ]
+    },
+    "WisdomInfo":{
+      "type":"structure",
+      "members":{
+        "SessionArn":{"shape":"ARN"}
+      }
     },
     "timestamp":{"type":"timestamp"}
   }

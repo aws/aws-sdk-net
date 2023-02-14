@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// This exception is thrown when when the specified account is not found or not part
-    /// of an organization.
+    /// This exception is thrown when the specified account is not found or not part of an
+    /// organization.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

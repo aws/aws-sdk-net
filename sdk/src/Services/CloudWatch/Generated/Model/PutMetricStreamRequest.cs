@@ -77,12 +77,20 @@ namespace Amazon.CloudWatch.Model
     /// is created in the <code>running</code> state. If you use it to update an existing
     /// stream, the state of the stream is not changed.
     /// </para>
+    ///  
+    /// <para>
+    /// If you are using CloudWatch cross-account observability and you create a metric stream
+    /// in a monitoring account, you can choose whether to include metrics from source accounts
+    /// in the stream. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+    /// cross-account observability</a>.
+    /// </para>
     /// </summary>
     public partial class PutMetricStreamRequest : AmazonCloudWatchRequest
     {
         private List<MetricStreamFilter> _excludeFilters = new List<MetricStreamFilter>();
         private string _firehoseArn;
         private List<MetricStreamFilter> _includeFilters = new List<MetricStreamFilter>();
+        private bool? _includeLinkedAccountsMetrics;
         private string _name;
         private MetricStreamOutputFormat _outputFormat;
         private string _roleArn;
@@ -156,6 +164,25 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetIncludeFilters()
         {
             return this._includeFilters != null && this._includeFilters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeLinkedAccountsMetrics. 
+        /// <para>
+        /// If you are creating a metric stream in a monitoring account, specify <code>true</code>
+        /// to include metrics from source accounts in the metric stream.
+        /// </para>
+        /// </summary>
+        public bool IncludeLinkedAccountsMetrics
+        {
+            get { return this._includeLinkedAccountsMetrics.GetValueOrDefault(); }
+            set { this._includeLinkedAccountsMetrics = value; }
+        }
+
+        // Check to see if IncludeLinkedAccountsMetrics property is set
+        internal bool IsSetIncludeLinkedAccountsMetrics()
+        {
+            return this._includeLinkedAccountsMetrics.HasValue; 
         }
 
         /// <summary>

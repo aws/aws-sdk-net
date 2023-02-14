@@ -70,6 +70,7 @@ namespace Amazon.AppConfig.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public MemoryStream Content
         {
             get { return this._content; }

@@ -111,6 +111,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     response.GeolocationFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ImportMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ImportMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModificationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         /// Sample configuration file for the specified customer gateway device.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string VpnConnectionDeviceSampleConfiguration
         {
             get { return this._vpnConnectionDeviceSampleConfiguration; }

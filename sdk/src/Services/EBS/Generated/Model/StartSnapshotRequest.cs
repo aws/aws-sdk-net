@@ -165,7 +165,7 @@ namespace Amazon.EBS.Model
         /// </para>
         ///  </important>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=1, Max=2048)]
         public string KmsKeyArn
         {
             get { return this._kmsKeyArn; }

@@ -33,7 +33,26 @@ namespace Amazon.Panorama.Model
     /// </summary>
     public partial class OTAJobConfig
     {
+        private bool? _allowMajorVersionUpdate;
         private string _imageVersion;
+
+        /// <summary>
+        /// Gets and sets the property AllowMajorVersionUpdate. 
+        /// <para>
+        /// Whether to apply the update if it is a major version change.
+        /// </para>
+        /// </summary>
+        public bool AllowMajorVersionUpdate
+        {
+            get { return this._allowMajorVersionUpdate.GetValueOrDefault(); }
+            set { this._allowMajorVersionUpdate = value; }
+        }
+
+        // Check to see if AllowMajorVersionUpdate property is set
+        internal bool IsSetAllowMajorVersionUpdate()
+        {
+            return this._allowMajorVersionUpdate.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ImageVersion. 

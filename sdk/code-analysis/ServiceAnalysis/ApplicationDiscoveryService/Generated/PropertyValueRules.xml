@@ -79,7 +79,7 @@
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.StartImportTaskRequest.Name</property>
     <min>1</min>
-    <max>100</max>
+    <max>255</max>
     <pattern>[\s\S]*\S[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -228,7 +228,7 @@
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.ImportTask.Name</property>
     <min>1</min>
-    <max>100</max>
+    <max>255</max>
     <pattern>[\s\S]*\S[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>

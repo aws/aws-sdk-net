@@ -465,6 +465,7 @@ namespace Amazon.S3.Model
         /// Important: Amazon S3 does not store the encryption key you provide.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionCustomerProvidedKey
         {
             get { return this.serverSideEncryptionCustomerProvidedKey; }

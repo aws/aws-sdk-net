@@ -198,6 +198,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* The Amazon Chime SDK Messaging APIs allow software developers to send and receive messages in custom messaging applications.
 * [AWSSDK.ChimeSDKVoice](https://www.nuget.org/packages/AWSSDK.ChimeSDKVoice/)
 	* Amazon Chime Voice Connector, Voice Connector Group and PSTN Audio Service APIs are now available in the Amazon Chime SDK Voice namespace. See https://docs.aws.amazon.com/chime-sdk/latest/dg/sdk-available-regions.html for more details.
+* [AWSSDK.CleanRooms](https://www.nuget.org/packages/AWSSDK.CleanRooms/)
+	* Initial release of AWS Clean Rooms
 * [AWSSDK.Cloud9](https://www.nuget.org/packages/AWSSDK.Cloud9/)
 	* Adds support for creating and managing AWS Cloud9 development environments. AWS Cloud9 is a cloud-based integrated development environment (IDE) that you use to write, run, and debug code.
 * [AWSSDK.CloudControlApi](https://www.nuget.org/packages/AWSSDK.CloudControlApi/)
@@ -218,6 +220,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon CloudSearch Domain encapsulates a collection of data you want to search, the search instances that process your search requests, and a configuration that controls how your data is indexed and searched.
 * [AWSSDK.CloudTrail](https://www.nuget.org/packages/AWSSDK.CloudTrail/)
 	* AWS CloudTrail is a web service that records AWS API calls for your account and delivers log files to you. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, the request parameters, and the response elements returned by the AWS service.
+* [AWSSDK.CloudTrailData](https://www.nuget.org/packages/AWSSDK.CloudTrailData/)
+	* Add CloudTrail Data Service to enable users to ingest activity events from non-AWS sources into CloudTrail Lake.
 * [AWSSDK.CloudWatch](https://www.nuget.org/packages/AWSSDK.CloudWatch/)
 	* Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms.
 * [AWSSDK.CloudWatchEvents](https://www.nuget.org/packages/AWSSDK.CloudWatchEvents/)

@@ -545,6 +545,18 @@ namespace Amazon.AutoScaling
         /// </summary>
         public static readonly InstanceRefreshStatus Pending = new InstanceRefreshStatus("Pending");
         /// <summary>
+        /// Constant RollbackFailed for InstanceRefreshStatus
+        /// </summary>
+        public static readonly InstanceRefreshStatus RollbackFailed = new InstanceRefreshStatus("RollbackFailed");
+        /// <summary>
+        /// Constant RollbackInProgress for InstanceRefreshStatus
+        /// </summary>
+        public static readonly InstanceRefreshStatus RollbackInProgress = new InstanceRefreshStatus("RollbackInProgress");
+        /// <summary>
+        /// Constant RollbackSuccessful for InstanceRefreshStatus
+        /// </summary>
+        public static readonly InstanceRefreshStatus RollbackSuccessful = new InstanceRefreshStatus("RollbackSuccessful");
+        /// <summary>
         /// Constant Successful for InstanceRefreshStatus
         /// </summary>
         public static readonly InstanceRefreshStatus Successful = new InstanceRefreshStatus("Successful");
@@ -1263,6 +1275,60 @@ namespace Amazon.AutoScaling
 
 
     /// <summary>
+    /// Constants used for properties of type ScaleInProtectedInstances.
+    /// </summary>
+    public class ScaleInProtectedInstances : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ignore for ScaleInProtectedInstances
+        /// </summary>
+        public static readonly ScaleInProtectedInstances Ignore = new ScaleInProtectedInstances("Ignore");
+        /// <summary>
+        /// Constant Refresh for ScaleInProtectedInstances
+        /// </summary>
+        public static readonly ScaleInProtectedInstances Refresh = new ScaleInProtectedInstances("Refresh");
+        /// <summary>
+        /// Constant Wait for ScaleInProtectedInstances
+        /// </summary>
+        public static readonly ScaleInProtectedInstances Wait = new ScaleInProtectedInstances("Wait");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScaleInProtectedInstances(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScaleInProtectedInstances FindValue(string value)
+        {
+            return FindValue<ScaleInProtectedInstances>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScaleInProtectedInstances(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ScalingActivityStatusCode.
     /// </summary>
     public class ScalingActivityStatusCode : ConstantClass
@@ -1346,6 +1412,60 @@ namespace Amazon.AutoScaling
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ScalingActivityStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StandbyInstances.
+    /// </summary>
+    public class StandbyInstances : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ignore for StandbyInstances
+        /// </summary>
+        public static readonly StandbyInstances Ignore = new StandbyInstances("Ignore");
+        /// <summary>
+        /// Constant Terminate for StandbyInstances
+        /// </summary>
+        public static readonly StandbyInstances Terminate = new StandbyInstances("Terminate");
+        /// <summary>
+        /// Constant Wait for StandbyInstances
+        /// </summary>
+        public static readonly StandbyInstances Wait = new StandbyInstances("Wait");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StandbyInstances(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StandbyInstances FindValue(string value)
+        {
+            return FindValue<StandbyInstances>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StandbyInstances(string value)
         {
             return FindValue(value);
         }

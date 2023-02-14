@@ -88,6 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobDurationInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ModelName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelPackageVersionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

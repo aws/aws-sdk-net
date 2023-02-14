@@ -3283,6 +3283,56 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type RehydrationType.
+    /// </summary>
+    public class RehydrationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENTIRE_PAST_SESSION for RehydrationType
+        /// </summary>
+        public static readonly RehydrationType ENTIRE_PAST_SESSION = new RehydrationType("ENTIRE_PAST_SESSION");
+        /// <summary>
+        /// Constant FROM_SEGMENT for RehydrationType
+        /// </summary>
+        public static readonly RehydrationType FROM_SEGMENT = new RehydrationType("FROM_SEGMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RehydrationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RehydrationType FindValue(string value)
+        {
+            return FindValue<RehydrationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RehydrationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass

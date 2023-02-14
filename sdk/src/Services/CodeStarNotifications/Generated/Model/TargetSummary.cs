@@ -43,7 +43,7 @@ namespace Amazon.CodeStarNotifications.Model
         /// The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=320)]
+        [AWSProperty(Sensitive=true, Min=1, Max=320)]
         public string TargetAddress
         {
             get { return this._targetAddress; }

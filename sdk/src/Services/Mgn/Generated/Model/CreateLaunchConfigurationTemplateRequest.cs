@@ -270,6 +270,7 @@ namespace Amazon.Mgn.Model
         /// Request to associate tags during creation of a Launch Configuration Template.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

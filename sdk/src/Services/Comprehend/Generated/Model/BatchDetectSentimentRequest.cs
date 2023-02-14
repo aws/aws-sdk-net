@@ -72,7 +72,7 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public List<string> TextList
         {
             get { return this._textList; }

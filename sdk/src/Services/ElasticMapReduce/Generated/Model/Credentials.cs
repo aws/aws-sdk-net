@@ -42,6 +42,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The username and password that you use to connect to cluster endpoints.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public UsernamePassword UsernamePassword
         {
             get { return this._usernamePassword; }

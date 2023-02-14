@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// The expression in the table calculation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4096)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=4096)]
         public string Expression
         {
             get { return this._expression; }

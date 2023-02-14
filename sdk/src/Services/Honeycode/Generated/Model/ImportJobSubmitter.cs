@@ -42,7 +42,7 @@ namespace Amazon.Honeycode.Model
         /// The email id of the submitter of the import job, if available.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=254)]
+        [AWSProperty(Sensitive=true, Min=3, Max=254)]
         public string Email
         {
             get { return this._email; }

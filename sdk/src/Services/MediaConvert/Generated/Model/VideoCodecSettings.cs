@@ -89,7 +89,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property Codec. Specifies the video codec. This must be equal to
-        /// one of the enum values defined by the object  VideoCodec.
+        /// one of the enum values defined by the object VideoCodec.
         /// </summary>
         public VideoCodec Codec
         {

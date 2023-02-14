@@ -60,7 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The password for the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Max=256)]
         public string Password
         {
             get { return this._password; }
@@ -97,7 +97,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user name of the user whose password you want to set.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }

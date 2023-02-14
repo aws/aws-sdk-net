@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
-    /// 
+    /// Describes the properties of the Dedicated Host.
     /// </summary>
     public partial class Host
     {
@@ -39,7 +39,10 @@ namespace Amazon.SsmSap.Model
         private string _instanceId;
 
         /// <summary>
-        /// Gets and sets the property HostIp.
+        /// Gets and sets the property HostIp. 
+        /// <para>
+        /// The IP address of the Dedicated Host. 
+        /// </para>
         /// </summary>
         public string HostIp
         {
@@ -54,7 +57,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HostName.
+        /// Gets and sets the property HostName. 
+        /// <para>
+        /// The name of the Dedicated Host.
+        /// </para>
         /// </summary>
         public string HostName
         {
@@ -69,7 +75,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HostRole.
+        /// Gets and sets the property HostRole. 
+        /// <para>
+        /// The role of the Dedicated Host.
+        /// </para>
         /// </summary>
         public HostRole HostRole
         {
@@ -84,7 +93,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceId.
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The instance ID of the instance on the Dedicated Host.
+        /// </para>
         /// </summary>
         public string InstanceId
         {

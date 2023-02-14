@@ -160,7 +160,7 @@ namespace Amazon.FSx.Model
         /// administer your file system using the NetApp ONTAP CLI and REST API.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=50)]
+        [AWSProperty(Sensitive=true, Min=8, Max=50)]
         public string FsxAdminPassword
         {
             get { return this._fsxAdminPassword; }

@@ -108,7 +108,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DateLastRun. 
         /// <para>
-        /// The date on which this image pipeline was last run.
+        /// This is no longer supported, and does not return a value.
         /// </para>
         /// </summary>
         public string DateLastRun
@@ -126,7 +126,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DateNextRun. 
         /// <para>
-        /// The date on which this image pipeline will next be run.
+        /// This is no longer supported, and does not return a value.
         /// </para>
         /// </summary>
         public string DateNextRun

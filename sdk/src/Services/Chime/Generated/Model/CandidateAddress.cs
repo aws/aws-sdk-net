@@ -47,6 +47,7 @@ namespace Amazon.Chime.Model
         /// The city of a candidate address.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string City
         {
             get { return this._city; }
@@ -65,6 +66,7 @@ namespace Amazon.Chime.Model
         /// The country of a candidate address.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Country
         {
             get { return this._country; }
@@ -83,6 +85,7 @@ namespace Amazon.Chime.Model
         /// The postal code of a candidate address.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PostalCode
         {
             get { return this._postalCode; }
@@ -101,6 +104,7 @@ namespace Amazon.Chime.Model
         /// The Zip + 4 or postal code + 4 of a candidate address.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PostalCodePlus4
         {
             get { return this._postalCodePlus4; }
@@ -119,6 +123,7 @@ namespace Amazon.Chime.Model
         /// The state of a candidate address.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string State
         {
             get { return this._state; }
@@ -137,6 +142,7 @@ namespace Amazon.Chime.Model
         /// The street information of a candidate address
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string StreetInfo
         {
             get { return this._streetInfo; }
@@ -155,6 +161,7 @@ namespace Amazon.Chime.Model
         /// The numeric portion of a candidate address.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string StreetNumber
         {
             get { return this._streetNumber; }

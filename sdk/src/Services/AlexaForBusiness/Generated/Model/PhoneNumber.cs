@@ -42,7 +42,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The raw value of the phone number.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=50)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=50)]
         public string Number
         {
             get { return this._number; }
@@ -61,7 +61,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The type of the phone number.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public PhoneNumberType Type
         {
             get { return this._type; }

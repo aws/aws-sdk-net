@@ -45,7 +45,7 @@ namespace Amazon.Appflow.Model
         /// The access token used to access the connector on your behalf.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4096)]
+        [AWSProperty(Sensitive=true, Max=4096)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -83,7 +83,7 @@ namespace Amazon.Appflow.Model
         /// The client secret used by the OAuth client to authenticate to the authorization server.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=512)]
+        [AWSProperty(Sensitive=true, Max=512)]
         public string ClientSecret
         {
             get { return this._clientSecret; }

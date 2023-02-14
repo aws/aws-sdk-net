@@ -69,10 +69,22 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     response.ChannelName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ClipRange", targetDepth))
+                {
+                    var unmarshaller = ClipRangeUnmarshaller.Instance;
+                    response.ClipRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DurationMillis", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.DurationMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LiveSourceName", targetDepth))

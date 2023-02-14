@@ -41,7 +41,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The token to use to refresh a previously issued access token that might have expired.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Token
         {
             get { return this._token; }

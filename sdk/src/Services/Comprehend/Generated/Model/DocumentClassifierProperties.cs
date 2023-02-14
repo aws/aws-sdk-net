@@ -60,6 +60,7 @@ namespace Amazon.Comprehend.Model
         /// and an accuracy rating.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public ClassifierMetadata ClassifierMetadata
         {
             get { return this._classifierMetadata; }

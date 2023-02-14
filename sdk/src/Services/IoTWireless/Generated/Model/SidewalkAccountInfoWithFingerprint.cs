@@ -80,7 +80,7 @@ namespace Amazon.IoTWireless.Model
         /// The fingerprint of the Sidewalk application server private key.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=64, Max=64)]
+        [AWSProperty(Sensitive=true, Min=64, Max=64)]
         public string Fingerprint
         {
             get { return this._fingerprint; }

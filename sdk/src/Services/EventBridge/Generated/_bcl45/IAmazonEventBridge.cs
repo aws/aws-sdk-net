@@ -2828,6 +2828,10 @@ namespace Amazon.EventBridge
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Redshift Serverless workgroup
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// SageMaker Pipeline
         /// </para>
         ///  </li> <li> 
@@ -2874,9 +2878,9 @@ namespace Amazon.EventBridge
         /// To be able to make API calls against the resources that you own, Amazon EventBridge
         /// needs the appropriate permissions. For Lambda and Amazon SNS resources, EventBridge
         /// relies on resource-based policies. For EC2 instances, Kinesis Data Streams, Step Functions
-        /// state machines and API Gateway REST APIs, EventBridge relies on IAM roles that you
-        /// specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
+        /// state machines and API Gateway APIs, EventBridge relies on IAM roles that you specify
+        /// in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
         /// and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         ///  
@@ -3092,6 +3096,10 @@ namespace Amazon.EventBridge
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Redshift Serverless workgroup
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// SageMaker Pipeline
         /// </para>
         ///  </li> <li> 
@@ -3138,9 +3146,9 @@ namespace Amazon.EventBridge
         /// To be able to make API calls against the resources that you own, Amazon EventBridge
         /// needs the appropriate permissions. For Lambda and Amazon SNS resources, EventBridge
         /// relies on resource-based policies. For EC2 instances, Kinesis Data Streams, Step Functions
-        /// state machines and API Gateway REST APIs, EventBridge relies on IAM roles that you
-        /// specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
+        /// state machines and API Gateway APIs, EventBridge relies on IAM roles that you specify
+        /// in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
         /// and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         ///  

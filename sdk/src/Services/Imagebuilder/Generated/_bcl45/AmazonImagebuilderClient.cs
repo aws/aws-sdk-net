@@ -3071,7 +3071,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Returns the list of component build versions for the specified semantic version.
+        /// Returns the list of components that can be filtered by name, or by using the listed
+        /// <code>filters</code> to streamline results. Newly created components can take up to
+        /// two minutes to appear in the ListComponents API Results.
         /// 
         ///  <note> 
         /// <para>
@@ -3125,7 +3127,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Returns the list of component build versions for the specified semantic version.
+        /// Returns the list of components that can be filtered by name, or by using the listed
+        /// <code>filters</code> to streamline results. Newly created components can take up to
+        /// two minutes to appear in the ListComponents API Results.
         /// 
         ///  <note> 
         /// <para>
@@ -3809,7 +3813,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Returns the list of images that you have access to.
+        /// Returns the list of images that you have access to. Newly created images can take
+        /// up to two minutes to appear in the ListImages API Results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImages service method.</param>
         /// 
@@ -3849,7 +3854,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Returns the list of images that you have access to.
+        /// Returns the list of images that you have access to. Newly created images can take
+        /// up to two minutes to appear in the ListImages API Results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImages service method.</param>
         /// <param name="cancellationToken">

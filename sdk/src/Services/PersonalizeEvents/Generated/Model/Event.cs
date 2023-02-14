@@ -135,7 +135,7 @@ namespace Amazon.PersonalizeEvents.Model
         /// schema.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string ItemId
         {
             get { return this._itemId; }
@@ -191,7 +191,7 @@ namespace Amazon.PersonalizeEvents.Model
         /// field defined in the Interactions schema.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Properties
         {
             get { return this._properties; }

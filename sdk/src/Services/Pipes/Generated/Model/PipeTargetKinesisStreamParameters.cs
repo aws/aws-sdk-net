@@ -47,7 +47,7 @@ namespace Amazon.Pipes.Model
         /// the same partition key map to the same shard within the stream.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=256)]
         public string PartitionKey
         {
             get { return this._partitionKey; }

@@ -34,6 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class FinalAutoMLJobObjectiveMetric
     {
         private AutoMLMetricEnum _metricName;
+        private AutoMLMetricEnum _standardMetricName;
         private AutoMLJobObjectiveType _type;
         private float? _value;
 
@@ -55,6 +56,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMetricName()
         {
             return this._metricName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StandardMetricName. 
+        /// <para>
+        /// The name of the standard metric. For a description of the standard metrics, see <a
+        /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
+        /// candidate metrics</a>.
+        /// </para>
+        /// </summary>
+        public AutoMLMetricEnum StandardMetricName
+        {
+            get { return this._standardMetricName; }
+            set { this._standardMetricName = value; }
+        }
+
+        // Check to see if StandardMetricName property is set
+        internal bool IsSetStandardMetricName()
+        {
+            return this._standardMetricName != null;
         }
 
         /// <summary>

@@ -30,7 +30,10 @@ namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateNamespace operation.
-    /// Updates a namespace with the specified settings.
+    /// Updates a namespace with the specified settings. Unless required, you can't update
+    /// multiple parameters in one request. For example, you must specify both <code>adminUsername</code>
+    /// and <code>adminUserPassword</code> to update either field, but you can't update both
+    /// <code>kmsKeyId</code> and <code>logExports</code> in a single request.
     /// </summary>
     public partial class UpdateNamespaceRequest : AmazonRedshiftServerlessRequest
     {
@@ -46,8 +49,10 @@ namespace Amazon.RedshiftServerless.Model
         /// Gets and sets the property AdminUsername. 
         /// <para>
         /// The username of the administrator for the first database created in the namespace.
+        /// This parameter must be updated together with <code>adminUserPassword</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AdminUsername
         {
             get { return this._adminUsername; }
@@ -64,8 +69,10 @@ namespace Amazon.RedshiftServerless.Model
         /// Gets and sets the property AdminUserPassword. 
         /// <para>
         /// The password of the administrator for the first database created in the namespace.
+        /// This parameter must be updated together with <code>adminUsername</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AdminUserPassword
         {
             get { return this._adminUserPassword; }
@@ -82,6 +89,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Gets and sets the property DefaultIamRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.
+        /// This parameter must be updated together with <code>iamRoles</code>.
         /// </para>
         /// </summary>
         public string DefaultIamRoleArn
@@ -99,7 +107,8 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property IamRoles. 
         /// <para>
-        /// A list of IAM roles to associate with the namespace.
+        /// A list of IAM roles to associate with the namespace. This parameter must be updated
+        /// together with <code>defaultIamRoleArn</code>.
         /// </para>
         /// </summary>
         public List<string> IamRoles
@@ -156,7 +165,8 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property NamespaceName. 
         /// <para>
-        /// The name of the namespace.
+        /// The name of the namespace to update. You can't update the name of a namespace once
+        /// it is created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=64)]

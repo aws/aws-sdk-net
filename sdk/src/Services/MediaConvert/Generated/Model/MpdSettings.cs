@@ -95,7 +95,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property CaptionContainerType. Use this setting only in DASH output
-        /// groups that include sidecar TTML or IMSC captions.  You specify sidecar captions in
+        /// groups that include sidecar TTML or IMSC captions. You specify sidecar captions in
         /// a separate output from your audio and video. Choose Raw (RAW) for captions in a single
         /// XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions
         /// in XML format contained within fragmented MP4 files. This set of fragmented MP4 files
@@ -139,7 +139,8 @@ namespace Amazon.MediaConvert.Model
         /// will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event
         /// messages, the InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin".
         /// To leave these elements out of your output MPD manifest, set Manifest metadata signaling
-        /// to Disabled.
+        /// to Disabled. To enable Manifest metadata signaling, you must also set SCTE-35 source
+        /// to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata (TimedMetadata) to Passthrough.
         /// </summary>
         public MpdManifestMetadataSignaling ManifestMetadataSignaling
         {

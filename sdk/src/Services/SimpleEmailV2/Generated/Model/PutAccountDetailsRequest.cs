@@ -48,7 +48,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// matters.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4)]
         public List<string> AdditionalContactEmailAddresses
         {
             get { return this._additionalContactEmailAddresses; }
@@ -137,7 +137,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// A description of the types of email that you plan to send.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=5000)]
         public string UseCaseDescription
         {
             get { return this._useCaseDescription; }
@@ -157,7 +157,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// that you plan to send.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1000)]
         public string WebsiteURL
         {
             get { return this._websiteURL; }

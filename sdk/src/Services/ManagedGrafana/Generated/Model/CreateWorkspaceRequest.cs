@@ -150,7 +150,7 @@ namespace Amazon.ManagedGrafana.Model
         /// Web Services data sources and notification channels in other accounts in an organization.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=1, Max=2048)]
         public string OrganizationRoleName
         {
             get { return this._organizationRoleName; }
@@ -297,7 +297,7 @@ namespace Amazon.ManagedGrafana.Model
         /// Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string WorkspaceDescription
         {
             get { return this._workspaceDescription; }
@@ -316,6 +316,7 @@ namespace Amazon.ManagedGrafana.Model
         /// The name for the workspace. It does not have to be unique.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string WorkspaceName
         {
             get { return this._workspaceName; }
@@ -355,6 +356,7 @@ namespace Amazon.ManagedGrafana.Model
         /// from, if this workspace is in an account that is part of an organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<string> WorkspaceOrganizationalUnits
         {
             get { return this._workspaceOrganizationalUnits; }
@@ -375,7 +377,7 @@ namespace Amazon.ManagedGrafana.Model
         /// you want to use, specify it here. The permission type should be set to <code>CUSTOMER_MANAGED</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=1, Max=2048)]
         public string WorkspaceRoleArn
         {
             get { return this._workspaceRoleArn; }

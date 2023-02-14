@@ -332,6 +332,22 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeIpamResourceDiscoveries operation
+        ///</summary>
+        public IDescribeIpamResourceDiscoveriesPaginator DescribeIpamResourceDiscoveries(DescribeIpamResourceDiscoveriesRequest request) 
+        {
+            return new DescribeIpamResourceDiscoveriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeIpamResourceDiscoveryAssociations operation
+        ///</summary>
+        public IDescribeIpamResourceDiscoveryAssociationsPaginator DescribeIpamResourceDiscoveryAssociations(DescribeIpamResourceDiscoveryAssociationsRequest request) 
+        {
+            return new DescribeIpamResourceDiscoveryAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeIpams operation
         ///</summary>
         public IDescribeIpamsPaginator DescribeIpams(DescribeIpamsRequest request) 
@@ -937,6 +953,22 @@ namespace Amazon.EC2.Model
         public IGetIpamAddressHistoryPaginator GetIpamAddressHistory(GetIpamAddressHistoryRequest request) 
         {
             return new GetIpamAddressHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetIpamDiscoveredAccounts operation
+        ///</summary>
+        public IGetIpamDiscoveredAccountsPaginator GetIpamDiscoveredAccounts(GetIpamDiscoveredAccountsRequest request) 
+        {
+            return new GetIpamDiscoveredAccountsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetIpamDiscoveredResourceCidrs operation
+        ///</summary>
+        public IGetIpamDiscoveredResourceCidrsPaginator GetIpamDiscoveredResourceCidrs(GetIpamDiscoveredResourceCidrsRequest request) 
+        {
+            return new GetIpamDiscoveredResourceCidrsPaginator(this.client, request);
         }
 
         /// <summary>

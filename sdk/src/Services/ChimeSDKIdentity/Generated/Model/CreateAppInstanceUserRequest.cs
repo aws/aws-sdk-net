@@ -67,7 +67,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The user ID of the <code>AppInstance</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=64)]
         public string AppInstanceUserId
         {
             get { return this._appInstanceUserId; }
@@ -86,7 +86,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The token assigned to the user requesting an <code>AppInstance</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -105,7 +105,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The request's metadata. Limited to a 1KB string in UTF-8.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Metadata
         {
             get { return this._metadata; }
@@ -124,7 +124,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The user's name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

@@ -75,7 +75,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Bitrate. Specify the average bitrate in bits per second.
         /// The bitrate that you specify must be a multiple of 8000 within the allowed minimum
-        /// and maximum values.  Leave blank to use the default bitrate for the coding mode you
+        /// and maximum values. Leave blank to use the default bitrate for the coding mode you
         /// select according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000.
         /// Minimum: 32000. Maximum: 3024000. Valid bitrates for coding mode 2/0: Default: 192000.
         /// Minimum: 96000. Maximum: 3024000. Valid bitrates for coding mode 3/2: Default: 384000.

@@ -143,6 +143,7 @@ namespace Amazon.Backup.Model
         /// with this rule when restored from backup.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> RecoveryPointTags
         {
             get { return this._recoveryPointTags; }

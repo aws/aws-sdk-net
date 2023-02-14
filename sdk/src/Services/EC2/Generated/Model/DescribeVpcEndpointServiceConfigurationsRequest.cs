@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -131,7 +131,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ServiceIds. 
         /// <para>
-        /// The IDs of one or more services.
+        /// The IDs of the endpoint services.
         /// </para>
         /// </summary>
         public List<string> ServiceIds

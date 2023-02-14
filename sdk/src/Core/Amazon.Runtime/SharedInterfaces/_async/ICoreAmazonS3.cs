@@ -106,6 +106,7 @@ namespace Amazon.Runtime.SharedInterfaces
         /// </summary>
         /// <param name="bucketName"></param>
         /// <returns></returns>
+        [Obsolete("This method is deprecated: its behavior is inconsistent and always uses HTTP. Please use Amazon.S3.Util.AmazonS3Util.DoesS3BucketExistV2Async instead.")]
         Task<bool> DoesS3BucketExistAsync(string bucketName);
     }
 }

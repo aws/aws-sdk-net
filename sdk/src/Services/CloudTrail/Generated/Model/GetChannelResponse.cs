@@ -35,6 +35,7 @@ namespace Amazon.CloudTrail.Model
     {
         private string _channelArn;
         private List<Destination> _destinations = new List<Destination>();
+        private IngestionStatus _ingestionStatus;
         private string _name;
         private string _source;
         private SourceConfig _sourceConfig;
@@ -61,7 +62,10 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Destinations. 
         /// <para>
-        /// The Amazon Web Services service that created the service-linked channel.
+        /// The destinations for the channel. For channels created for integrations, the destinations
+        /// are the event data stores that log events arriving through the channel. For service-linked
+        /// channels, the destination is the Amazon Web Services service that created the service-linked
+        /// channel to receive events.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -78,9 +82,28 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IngestionStatus. 
+        /// <para>
+        /// A table showing information about the most recent successful and failed attempts to
+        /// ingest events.
+        /// </para>
+        /// </summary>
+        public IngestionStatus IngestionStatus
+        {
+            get { return this._ingestionStatus; }
+            set { this._ingestionStatus = value; }
+        }
+
+        // Check to see if IngestionStatus property is set
+        internal bool IsSetIngestionStatus()
+        {
+            return this._ingestionStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the CloudTrail channel. For service-linked channels, the value is <code>aws-service-channel/service-name/custom-suffix</code>
+        ///  The name of the CloudTrail channel. For service-linked channels, the name is <code>aws-service-channel/service-name/custom-suffix</code>
         /// where <code>service-name</code> represents the name of the Amazon Web Services service
         /// that created the channel and <code>custom-suffix</code> represents the suffix generated
         /// by the Amazon Web Services service. 
@@ -102,7 +125,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The event source for the CloudTrail channel.
+        /// The source for the CloudTrail channel.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

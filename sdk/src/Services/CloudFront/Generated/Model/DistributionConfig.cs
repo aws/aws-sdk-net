@@ -143,7 +143,7 @@ namespace Amazon.CloudFront.Model
         /// A comment to describe the distribution. The comment cannot be longer than 128 characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Comment
         {
             get { return this._comment; }

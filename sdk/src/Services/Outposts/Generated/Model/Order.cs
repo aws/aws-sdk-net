@@ -37,8 +37,10 @@ namespace Amazon.Outposts.Model
         private DateTime? _orderFulfilledDate;
         private string _orderId;
         private DateTime? _orderSubmissionDate;
+        private OrderType _orderType;
         private string _outpostId;
         private PaymentOption _paymentOption;
+        private PaymentTerm _paymentTerm;
         private OrderStatus _status;
 
         /// <summary>
@@ -115,6 +117,24 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OrderType. 
+        /// <para>
+        /// The type of order.
+        /// </para>
+        /// </summary>
+        public OrderType OrderType
+        {
+            get { return this._orderType; }
+            set { this._orderType = value; }
+        }
+
+        // Check to see if OrderType property is set
+        internal bool IsSetOrderType()
+        {
+            return this._orderType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OutpostId. 
         /// <para>
         ///  The ID of the Outpost in the order. 
@@ -149,6 +169,24 @@ namespace Amazon.Outposts.Model
         internal bool IsSetPaymentOption()
         {
             return this._paymentOption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PaymentTerm. 
+        /// <para>
+        /// The payment term.
+        /// </para>
+        /// </summary>
+        public PaymentTerm PaymentTerm
+        {
+            get { return this._paymentTerm; }
+            set { this._paymentTerm = value; }
+        }
+
+        // Check to see if PaymentTerm property is set
+        internal bool IsSetPaymentTerm()
+        {
+            return this._paymentTerm != null;
         }
 
         /// <summary>

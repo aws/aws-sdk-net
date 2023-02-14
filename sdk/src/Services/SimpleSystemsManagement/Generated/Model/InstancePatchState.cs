@@ -400,7 +400,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// the service.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string OwnerInformation
         {
             get { return this._ownerInformation; }

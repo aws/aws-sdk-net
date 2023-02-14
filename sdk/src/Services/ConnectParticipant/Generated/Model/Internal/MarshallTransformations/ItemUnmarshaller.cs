@@ -76,6 +76,12 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
                     unmarshalledObject.Attachments = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ContactId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContactId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Content", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -116,6 +122,12 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParticipantRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RelatedContactId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RelatedContactId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Type", targetDepth))

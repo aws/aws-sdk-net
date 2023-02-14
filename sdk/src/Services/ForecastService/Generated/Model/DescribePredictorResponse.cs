@@ -99,8 +99,8 @@ namespace Amazon.ForecastService.Model
         /// Gets and sets the property AutoMLOverrideStrategy. <note> 
         /// <para>
         ///  The <code>LatencyOptimized</code> AutoML override strategy is only available in private
-        /// beta. Contact AWS Support or your account manager to learn more about access privileges.
-        /// 
+        /// beta. Contact Amazon Web Services Support or your account manager to learn more about
+        /// access privileges. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -164,8 +164,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property EncryptionConfig. 
         /// <para>
-        /// An AWS Key Management Service (KMS) key and the AWS Identity and Access Management
-        /// (IAM) role that Amazon Forecast can assume to access the key.
+        /// An Key Management Service (KMS) key and the Identity and Access Management (IAM) role
+        /// that Amazon Forecast can assume to access the key.
         /// </para>
         /// </summary>
         public EncryptionConfig EncryptionConfig

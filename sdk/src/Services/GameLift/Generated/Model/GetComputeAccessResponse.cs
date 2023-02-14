@@ -85,6 +85,7 @@ namespace Amazon.GameLift.Model
         /// The access credentials for the compute resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Credentials Credentials
         {
             get { return this._credentials; }

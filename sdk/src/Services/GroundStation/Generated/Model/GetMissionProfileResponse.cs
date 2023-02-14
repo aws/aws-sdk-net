@@ -41,6 +41,8 @@ namespace Amazon.GroundStation.Model
         private string _missionProfileId;
         private string _name;
         private string _region;
+        private KmsKey _streamsKmsKey;
+        private string _streamsKmsRole;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _trackingConfigArn;
 
@@ -197,6 +199,42 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetRegion()
         {
             return this._region != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamsKmsKey. 
+        /// <para>
+        /// KMS key to use for encrypting streams.
+        /// </para>
+        /// </summary>
+        public KmsKey StreamsKmsKey
+        {
+            get { return this._streamsKmsKey; }
+            set { this._streamsKmsKey = value; }
+        }
+
+        // Check to see if StreamsKmsKey property is set
+        internal bool IsSetStreamsKmsKey()
+        {
+            return this._streamsKmsKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamsKmsRole. 
+        /// <para>
+        /// Role to use for encrypting streams with KMS key.
+        /// </para>
+        /// </summary>
+        public string StreamsKmsRole
+        {
+            get { return this._streamsKmsRole; }
+            set { this._streamsKmsRole = value; }
+        }
+
+        // Check to see if StreamsKmsRole property is set
+        internal bool IsSetStreamsKmsRole()
+        {
+            return this._streamsKmsRole != null;
         }
 
         /// <summary>

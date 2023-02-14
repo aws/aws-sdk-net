@@ -111,7 +111,9 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property ReplicationConfig. 
         /// <para>
-        /// Enable or disable event replication.
+        /// Enable or disable event replication. The default state is <code>ENABLED</code> which
+        /// means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code>
+        /// or you don't want event replication enabled, set the state to <code>DISABLED</code>.
         /// </para>
         /// </summary>
         public ReplicationConfig ReplicationConfig

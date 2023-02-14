@@ -123,7 +123,7 @@ namespace Amazon.Lex.Model
         /// for the session. If you specify an empty list, all contexts for the session are cleared.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Sensitive=true, Min=0, Max=20)]
         public List<ActiveContext> ActiveContexts
         {
             get { return this._activeContexts; }
@@ -245,6 +245,7 @@ namespace Amazon.Lex.Model
         /// application information passed between Amazon Lex and a client application.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> SessionAttributes
         {
             get { return this._sessionAttributes; }

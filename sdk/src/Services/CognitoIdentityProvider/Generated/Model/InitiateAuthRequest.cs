@@ -176,6 +176,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> AuthParameters
         {
             get { return this._authParameters; }
@@ -194,7 +195,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The app client ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }

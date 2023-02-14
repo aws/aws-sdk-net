@@ -47,6 +47,7 @@ namespace Amazon.IdentityManagement.Model
         /// The <code>Base32StringSeed</code> is base64-encoded. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public MemoryStream Base32StringSeed
         {
             get { return this._base32StringSeed; }
@@ -87,6 +88,7 @@ namespace Amazon.IdentityManagement.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public MemoryStream QRCodePNG
         {
             get { return this._qrCodePNG; }

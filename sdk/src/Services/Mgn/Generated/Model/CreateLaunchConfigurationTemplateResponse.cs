@@ -329,6 +329,7 @@ namespace Amazon.Mgn.Model
         /// Tags of the Launch Configuration Template.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

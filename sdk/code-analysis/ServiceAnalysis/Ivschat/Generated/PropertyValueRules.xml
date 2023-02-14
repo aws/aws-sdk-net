@@ -48,7 +48,7 @@
   <property-value-rule>
     <property>Amazon.Ivschat.Model.CreateRoomRequest.MaximumMessageRatePerSecond</property>
     <min>1</min>
-    <max>10</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.CreateRoomRequest.Name</property>
@@ -76,7 +76,7 @@
   <property-value-rule>
     <property>Amazon.Ivschat.Model.CreateRoomResponse.MaximumMessageRatePerSecond</property>
     <min>1</min>
-    <max>10</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.CreateRoomResponse.Name</property>
@@ -185,7 +185,7 @@
   <property-value-rule>
     <property>Amazon.Ivschat.Model.GetRoomResponse.MaximumMessageRatePerSecond</property>
     <min>1</min>
-    <max>10</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.GetRoomResponse.Name</property>
@@ -320,7 +320,7 @@
   <property-value-rule>
     <property>Amazon.Ivschat.Model.UpdateRoomRequest.MaximumMessageRatePerSecond</property>
     <min>1</min>
-    <max>10</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.UpdateRoomRequest.Name</property>
@@ -348,7 +348,7 @@
   <property-value-rule>
     <property>Amazon.Ivschat.Model.UpdateRoomResponse.MaximumMessageRatePerSecond</property>
     <min>1</min>
-    <max>10</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.UpdateRoomResponse.Name</property>

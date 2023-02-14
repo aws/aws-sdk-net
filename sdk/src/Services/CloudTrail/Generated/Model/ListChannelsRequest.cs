@@ -30,10 +30,7 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the ListChannels operation.
-    /// Lists the channels in the current account, and their source names. Amazon Web Services
-    /// services create service-linked channels get information about CloudTrail events on
-    /// your behalf. For more information about service-linked channels, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
-    /// service-linked channels for CloudTrail by using the CLI</a>.
+    /// Lists the channels in the current account, and their source names.
     /// </summary>
     public partial class ListChannelsRequest : AmazonCloudTrailRequest
     {

@@ -569,6 +569,10 @@ namespace Amazon.AppSync
         /// </summary>
         public static readonly DataSourceType AMAZON_ELASTICSEARCH = new DataSourceType("AMAZON_ELASTICSEARCH");
         /// <summary>
+        /// Constant AMAZON_EVENTBRIDGE for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType AMAZON_EVENTBRIDGE = new DataSourceType("AMAZON_EVENTBRIDGE");
+        /// <summary>
         /// Constant AMAZON_OPENSEARCH_SERVICE for DataSourceType
         /// </summary>
         public static readonly DataSourceType AMAZON_OPENSEARCH_SERVICE = new DataSourceType("AMAZON_OPENSEARCH_SERVICE");

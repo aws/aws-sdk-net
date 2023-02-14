@@ -66,7 +66,7 @@ namespace Amazon.CloudControlApi.Model
         /// A list of the resource properties and their current values.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=65536)]
+        [AWSProperty(Sensitive=true, Min=1, Max=65536)]
         public string Properties
         {
             get { return this._properties; }

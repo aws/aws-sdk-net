@@ -30,7 +30,9 @@ namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateWorkgroup operation.
-    /// Updates a workgroup with the specified configuration settings.
+    /// Updates a workgroup with the specified configuration settings. You can't update multiple
+    /// parameters in one request. For example, you can update <code>baseCapacity</code> or
+    /// <code>port</code> in a single request, but you can't update both in the same request.
     /// </summary>
     public partial class UpdateWorkgroupRequest : AmazonRedshiftServerlessRequest
     {
@@ -65,8 +67,11 @@ namespace Amazon.RedshiftServerless.Model
         /// Gets and sets the property ConfigParameters. 
         /// <para>
         /// An array of parameters to set for advanced control over a database. The options are
-        /// <code>datestyle</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>,
-        /// <code>search_path</code>, and <code>max_query_execution_time</code>.
+        /// <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>,
+        /// <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>,
+        /// and query monitoring metrics that let you define performance boundaries. For more
+        /// information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless">
+        /// Query monitoring metrics for Amazon Redshift Serverless</a>.
         /// </para>
         /// </summary>
         public List<ConfigParameter> ConfigParameters
@@ -176,7 +181,8 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property WorkgroupName. 
         /// <para>
-        /// The name of the workgroup to update.
+        /// The name of the workgroup to update. You can't update the name of a workgroup once
+        /// it is created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=64)]

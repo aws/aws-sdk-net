@@ -65,7 +65,7 @@ namespace Amazon.QuickSight.Model
         /// as your match all value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string MatchAllValue
         {
             get { return this._matchAllValue; }

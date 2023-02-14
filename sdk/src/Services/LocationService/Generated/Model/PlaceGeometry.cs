@@ -51,7 +51,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=2, Max=2)]
+        [AWSProperty(Sensitive=true, Min=2, Max=2)]
         public List<double> Point
         {
             get { return this._point; }

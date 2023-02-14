@@ -63,7 +63,7 @@ namespace Amazon.Cloud9.Model
         /// The tag names of the tags to remove from the given Cloud9 development environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=200)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

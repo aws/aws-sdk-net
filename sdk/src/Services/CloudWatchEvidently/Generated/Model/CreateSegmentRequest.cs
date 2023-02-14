@@ -41,12 +41,17 @@ namespace Amazon.CloudWatchEvidently.Model
     /// who match the segment criteria. Using one or more segments in a launch allows you
     /// to define different traffic splits for the different audience segments.
     /// </para>
-    ///  <pre><code> &lt;p&gt;For more information about segment pattern syntax, see &lt;a
-    /// href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html&quot;&gt;
-    /// Segment rule pattern syntax&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;The pattern that you define
-    /// for a segment is matched against the value of &lt;code&gt;evaluationContext&lt;/code&gt;,
-    /// which is passed into Evidently in the &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html&quot;&gt;EvaluateFeature&lt;/a&gt;
-    /// operation, when Evidently assigns a feature variation to a user.&lt;/p&gt; </code></pre>
+    ///  
+    /// <para>
+    /// For more information about segment pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html">
+    /// Segment rule pattern syntax</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// The pattern that you define for a segment is matched against the value of <code>evaluationContext</code>,
+    /// which is passed into Evidently in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a>
+    /// operation, when Evidently assigns a feature variation to a user.
+    /// </para>
     /// </summary>
     public partial class CreateSegmentRequest : AmazonCloudWatchEvidentlyRequest
     {
@@ -130,9 +135,15 @@ namespace Amazon.CloudWatchEvidently.Model
         /// Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
         /// as strings of characters.
         /// </para>
-        ///  <pre><code> &lt;p&gt;You can associate as many as 50 tags with a segment.&lt;/p&gt;
-        /// &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging
-        /// Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+        ///  
+        /// <para>
+        /// You can associate as many as 50 tags with a segment.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services resources</a>.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

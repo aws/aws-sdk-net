@@ -35,8 +35,13 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// routes created within the environment. They are referred to as the <i>environment
     /// owner</i>. The environment owner has cross-account visibility and control of Refactor
     /// Spaces resources that are added to the environment by other accounts that the environment
-    /// is shared with. When creating an environment, Refactor Spaces provisions a transit
-    /// gateway in your account.
+    /// is shared with.
+    /// 
+    ///  
+    /// <para>
+    /// When creating an environment with a network fabric type of <code>TRANSIT_GATEWAY</code>,
+    /// Refactor Spaces provisions a transit gateway in your account.
+    /// </para>
     /// </summary>
     public partial class CreateEnvironmentRequest : AmazonMigrationHubRefactorSpacesRequest
     {
@@ -130,7 +135,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// Web Services resource. Each tag consists of a key-value pair.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

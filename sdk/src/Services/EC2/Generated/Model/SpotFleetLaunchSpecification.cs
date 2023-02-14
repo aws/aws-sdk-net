@@ -404,6 +404,7 @@ namespace Amazon.EC2.Model
         /// The Base64-encoded user data that instances use when starting up.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string UserData
         {
             get { return this._userData; }

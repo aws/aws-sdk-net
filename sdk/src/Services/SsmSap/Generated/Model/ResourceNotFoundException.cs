@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
-    /// 
+    /// The resource is not available.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

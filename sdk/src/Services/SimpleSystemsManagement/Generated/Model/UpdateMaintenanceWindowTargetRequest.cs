@@ -79,7 +79,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// An optional description for the update.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string Description
         {
             get { return this._description; }
@@ -118,7 +118,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// while running tasks for these targets in this maintenance window.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string OwnerInformation
         {
             get { return this._ownerInformation; }

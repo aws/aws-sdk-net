@@ -92,7 +92,7 @@ namespace Amazon.IdentityManagement.Model
         /// a password policy on the Amazon Web Services account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string Password
         {
             get { return this._password; }

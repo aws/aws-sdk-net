@@ -46,7 +46,7 @@ namespace Amazon.IdentityStore.Model
         /// The family name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string FamilyName
         {
             get { return this._familyName; }
@@ -65,7 +65,7 @@ namespace Amazon.IdentityStore.Model
         /// A string containing a formatted version of the name for display.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Formatted
         {
             get { return this._formatted; }
@@ -84,7 +84,7 @@ namespace Amazon.IdentityStore.Model
         /// The given name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string GivenName
         {
             get { return this._givenName; }
@@ -103,7 +103,7 @@ namespace Amazon.IdentityStore.Model
         /// The honorific prefix of the user. For example, "Dr."
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string HonorificPrefix
         {
             get { return this._honorificPrefix; }
@@ -122,7 +122,7 @@ namespace Amazon.IdentityStore.Model
         /// The honorific suffix of the user. For example, "M.D."
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string HonorificSuffix
         {
             get { return this._honorificSuffix; }
@@ -141,7 +141,7 @@ namespace Amazon.IdentityStore.Model
         /// The middle name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string MiddleName
         {
             get { return this._middleName; }

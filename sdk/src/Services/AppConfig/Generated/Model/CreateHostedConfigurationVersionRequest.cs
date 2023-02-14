@@ -85,7 +85,7 @@ namespace Amazon.AppConfig.Model
         /// The content of the configuration or the configuration data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public MemoryStream Content
         {
             get { return this._content; }

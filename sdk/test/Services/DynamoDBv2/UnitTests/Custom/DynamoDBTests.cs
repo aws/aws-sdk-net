@@ -92,6 +92,73 @@ namespace AWSSDK_DotNet35.UnitTests
             Assert.AreEqual("testvalue", dynamoDocument["testmap"].AsDocument()["test"].AsString());
         }
 
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestConvertingEmptyListToJson()
+        {
+            var initialAttributeMap = new Dictionary<string, AttributeValue>
+            {
+                { "Lists", new AttributeValue
+                    {
+                        L = new List<AttributeValue>
+                        {
+                            new AttributeValue
+                            {
+                                M = new Dictionary<string, AttributeValue>(),
+                            }
+                        }
+                    }
+                }
+            };
+
+            var document = Document.FromAttributeMap(initialAttributeMap);
+            Assert.AreEqual(document["Lists"].AsListOfDocument().Count, 0);
+
+            var jsonString = document.ToJson();
+            Assert.IsNotNull(jsonString);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        [DataRow(@"{
+            ""Lists"": {
+                ""L"": [
+                    {
+                        ""M"": {
+                            ""SubLists"": {
+                                ""L"": [
+                                    {
+                                        ""M"": {}
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }")]
+        [DataRow(@"{
+            ""Lists"": {
+                ""L"": [
+                    {
+                        ""M"": {}
+                    }
+                ]
+            }
+        }")]
+        public void TestJsonContainsEmptyMapToDocumentAndBackToJson(string json)
+        {
+            var initialDocument = Document.FromJson(json);
+            Assert.IsNotNull(initialDocument);
+
+            var initialAttributeMap = initialDocument.ToAttributeMap();
+            var convertedDocument = Document.FromAttributeMap(initialAttributeMap);
+            Assert.IsNotNull(convertedDocument);
+
+            var jsonString = convertedDocument.ToJson();
+            Assert.IsNotNull(jsonString);
+        }
+
         private static List<Type> GetSubTypes(Type baseType)
         {
             var assembly = baseType.Assembly;

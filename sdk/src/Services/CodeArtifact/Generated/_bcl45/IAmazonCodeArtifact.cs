@@ -812,6 +812,78 @@ namespace Amazon.CodeArtifact
 
         #endregion
         
+        #region  DeletePackage
+
+
+        /// <summary>
+        /// Deletes a package and all associated package versions. A deleted package cannot be
+        /// restored. To delete one or more package versions, use the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeletePackageVersions.html">DeletePackageVersions</a>
+        /// API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackage service method.</param>
+        /// 
+        /// <returns>The response from the DeletePackage service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ConflictException">
+        /// The operation did not succeed because prerequisites are not met.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
+        DeletePackageResponse DeletePackage(DeletePackageRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a package and all associated package versions. A deleted package cannot be
+        /// restored. To delete one or more package versions, use the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeletePackageVersions.html">DeletePackageVersions</a>
+        /// API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePackage service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ConflictException">
+        /// The operation did not succeed because prerequisites are not met.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
+        Task<DeletePackageResponse> DeletePackageAsync(DeletePackageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeletePackageVersions
 
 
@@ -1752,10 +1824,7 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Gets the readme file or descriptive text for a package version. For packages that
-        /// do not contain a readme file, CodeArtifact extracts a description from a metadata
-        /// file. For example, from the <code>&lt;description&gt;</code> element in the <code>pom.xml</code>
-        /// file of a Maven package. 
+        /// Gets the readme file or descriptive text for a package version. 
         /// 
         ///  
         /// <para>
@@ -1789,10 +1858,7 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Gets the readme file or descriptive text for a package version. For packages that
-        /// do not contain a readme file, CodeArtifact extracts a description from a metadata
-        /// file. For example, from the <code>&lt;description&gt;</code> element in the <code>pom.xml</code>
-        /// file of a Maven package. 
+        /// Gets the readme file or descriptive text for a package version. 
         /// 
         ///  
         /// <para>
@@ -2253,7 +2319,9 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
-        /// objects for package versions in a repository that match the request parameters.
+        /// objects for package versions in a repository that match the request parameters. Package
+        /// versions of all statuses will be returned by default when calling <code>list-package-versions</code>
+        /// with no <code>--status</code> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPackageVersions service method.</param>
         /// 
@@ -2282,7 +2350,9 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
-        /// objects for package versions in a repository that match the request parameters.
+        /// objects for package versions in a repository that match the request parameters. Package
+        /// versions of all statuses will be returned by default when calling <code>list-package-versions</code>
+        /// with no <code>--status</code> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPackageVersions service method.</param>
         /// <param name="cancellationToken">

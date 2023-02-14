@@ -50,7 +50,7 @@ namespace Amazon.Honeycode.Model
         /// or a formula. Formulas need to start with the equals (=) sign. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=8192)]
+        [AWSProperty(Sensitive=true, Min=0, Max=8192)]
         public string Fact
         {
             get { return this._fact; }

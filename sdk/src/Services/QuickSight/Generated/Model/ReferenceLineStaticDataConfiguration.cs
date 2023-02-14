@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// The double input of the static data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public double Value
         {
             get { return this._value.GetValueOrDefault(); }

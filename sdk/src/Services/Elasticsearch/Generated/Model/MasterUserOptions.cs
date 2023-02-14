@@ -62,7 +62,7 @@ namespace Amazon.Elasticsearch.Model
         /// internal database.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Sensitive=true, Min=1)]
         public string MasterUserName
         {
             get { return this._masterUserName; }
@@ -82,7 +82,7 @@ namespace Amazon.Elasticsearch.Model
         /// internal database.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8)]
+        [AWSProperty(Sensitive=true, Min=8)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }

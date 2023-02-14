@@ -82,7 +82,7 @@ namespace Amazon.CodeCatalyst.Model
         /// The secret value of the personal access token.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=4000)]
         public string Secret
         {
             get { return this._secret; }

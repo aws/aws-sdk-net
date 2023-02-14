@@ -201,7 +201,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// The text that the user entered. Amazon Lex V2 interprets this text.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string Text
         {
             get { return this._text; }

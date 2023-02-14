@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
         private Aggregate _aggregate;
         private ApplyMapping _applyMapping;
         private AthenaConnectorSource _athenaConnectorSource;
+        private CatalogHudiSource _catalogHudiSource;
         private CatalogKafkaSource _catalogKafkaSource;
         private CatalogKinesisSource _catalogKinesisSource;
         private CatalogSource _catalogSource;
@@ -71,11 +72,15 @@ namespace Amazon.Glue.Model
         private RedshiftTarget _redshiftTarget;
         private RelationalCatalogSource _relationalCatalogSource;
         private RenameField _renameField;
+        private S3CatalogHudiSource _s3CatalogHudiSource;
         private S3CatalogSource _s3CatalogSource;
         private S3CatalogTarget _s3CatalogTarget;
         private S3CsvSource _s3CsvSource;
         private S3DirectTarget _s3DirectTarget;
         private S3GlueParquetTarget _s3GlueParquetTarget;
+        private S3HudiCatalogTarget _s3HudiCatalogTarget;
+        private S3HudiDirectTarget _s3HudiDirectTarget;
+        private S3HudiSource _s3HudiSource;
         private S3JsonSource _s3JsonSource;
         private S3ParquetSource _s3ParquetSource;
         private SelectFields _selectFields;
@@ -142,6 +147,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetAthenaConnectorSource()
         {
             return this._athenaConnectorSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CatalogHudiSource. 
+        /// <para>
+        /// Specifies a Hudi data source that is registered in the Glue Data Catalog.
+        /// </para>
+        /// </summary>
+        public CatalogHudiSource CatalogHudiSource
+        {
+            get { return this._catalogHudiSource; }
+            set { this._catalogHudiSource = value; }
+        }
+
+        // Check to see if CatalogHudiSource property is set
+        internal bool IsSetCatalogHudiSource()
+        {
+            return this._catalogHudiSource != null;
         }
 
         /// <summary>
@@ -347,7 +370,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DynamoDBCatalogSource.
+        /// Gets and sets the property DynamoDBCatalogSource. 
+        /// <para>
+        /// Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.
+        /// </para>
         /// </summary>
         public DynamoDBCatalogSource DynamoDBCatalogSource
         {
@@ -729,7 +755,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RelationalCatalogSource.
+        /// Gets and sets the property RelationalCatalogSource. 
+        /// <para>
+        /// Specifies a relational catalog data store in the Glue Data Catalog.
+        /// </para>
         /// </summary>
         public RelationalCatalogSource RelationalCatalogSource
         {
@@ -759,6 +788,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetRenameField()
         {
             return this._renameField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3CatalogHudiSource. 
+        /// <para>
+        /// Specifies a Hudi data source that is registered in the Glue Data Catalog. The Hudi
+        /// data source must be stored in Amazon S3.
+        /// </para>
+        /// </summary>
+        public S3CatalogHudiSource S3CatalogHudiSource
+        {
+            get { return this._s3CatalogHudiSource; }
+            set { this._s3CatalogHudiSource = value; }
+        }
+
+        // Check to see if S3CatalogHudiSource property is set
+        internal bool IsSetS3CatalogHudiSource()
+        {
+            return this._s3CatalogHudiSource != null;
         }
 
         /// <summary>
@@ -849,6 +897,60 @@ namespace Amazon.Glue.Model
         internal bool IsSetS3GlueParquetTarget()
         {
             return this._s3GlueParquetTarget != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3HudiCatalogTarget. 
+        /// <para>
+        /// Specifies a target that writes to a Hudi data source in the Glue Data Catalog.
+        /// </para>
+        /// </summary>
+        public S3HudiCatalogTarget S3HudiCatalogTarget
+        {
+            get { return this._s3HudiCatalogTarget; }
+            set { this._s3HudiCatalogTarget = value; }
+        }
+
+        // Check to see if S3HudiCatalogTarget property is set
+        internal bool IsSetS3HudiCatalogTarget()
+        {
+            return this._s3HudiCatalogTarget != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3HudiDirectTarget. 
+        /// <para>
+        /// Specifies a target that writes to a Hudi data source in Amazon S3.
+        /// </para>
+        /// </summary>
+        public S3HudiDirectTarget S3HudiDirectTarget
+        {
+            get { return this._s3HudiDirectTarget; }
+            set { this._s3HudiDirectTarget = value; }
+        }
+
+        // Check to see if S3HudiDirectTarget property is set
+        internal bool IsSetS3HudiDirectTarget()
+        {
+            return this._s3HudiDirectTarget != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3HudiSource. 
+        /// <para>
+        /// Specifies a Hudi data source stored in Amazon S3.
+        /// </para>
+        /// </summary>
+        public S3HudiSource S3HudiSource
+        {
+            get { return this._s3HudiSource; }
+            set { this._s3HudiSource = value; }
+        }
+
+        // Check to see if S3HudiSource property is set
+        internal bool IsSetS3HudiSource()
+        {
+            return this._s3HudiSource != null;
         }
 
         /// <summary>

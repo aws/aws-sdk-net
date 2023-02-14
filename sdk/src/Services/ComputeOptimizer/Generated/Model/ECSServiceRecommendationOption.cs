@@ -43,7 +43,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Gets and sets the property ContainerRecommendations. 
         /// <para>
         ///  The CPU and memory size recommendations for the containers within the task of your
-        /// ECS service. 
+        /// Amazon ECS service. 
         /// </para>
         /// </summary>
         public List<ContainerRecommendation> ContainerRecommendations
@@ -61,7 +61,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Cpu. 
         /// <para>
-        ///  The CPU size of the ECS service recommendation option. 
+        ///  The CPU size of the Amazon ECS service recommendation option. 
         /// </para>
         /// </summary>
         public int Cpu
@@ -79,7 +79,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        ///  The memory size of the ECS service recommendation option. 
+        ///  The memory size of the Amazon ECS service recommendation option. 
         /// </para>
         /// </summary>
         public int Memory
@@ -97,8 +97,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property ProjectedUtilizationMetrics. 
         /// <para>
-        ///  An array of objects that describe the projected utilization metrics of the ECS service
-        /// recommendation option. 
+        ///  An array of objects that describe the projected utilization metrics of the Amazon
+        /// ECS service recommendation option. 
         /// </para>
         /// </summary>
         public List<ECSServiceProjectedUtilizationMetric> ProjectedUtilizationMetrics

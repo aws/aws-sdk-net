@@ -52,7 +52,7 @@ namespace Amazon.Chime.Model
         /// meetings.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -71,7 +71,7 @@ namespace Amazon.Chime.Model
         /// The external meeting ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ExternalMeetingId
         {
             get { return this._externalMeetingId; }
@@ -117,7 +117,7 @@ namespace Amazon.Chime.Model
         /// Reserved.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string MeetingHostId
         {
             get { return this._meetingHostId; }

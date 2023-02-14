@@ -20,6 +20,7 @@
 //  */
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using System;
 
 namespace Amazon.S3.Model
@@ -214,6 +215,7 @@ namespace Amazon.S3.Model
         /// algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
         /// data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionCustomerProvidedKey { get; set; }
 
         internal bool IsSetServerSideEncryptionCustomerProvidedKey() => ServerSideEncryptionCustomerProvidedKey != null;

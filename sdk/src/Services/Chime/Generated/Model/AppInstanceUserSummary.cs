@@ -62,7 +62,7 @@ namespace Amazon.Chime.Model
         /// The metadata of the <code>AppInstanceUser</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Metadata
         {
             get { return this._metadata; }
@@ -81,7 +81,7 @@ namespace Amazon.Chime.Model
         /// The name of an <code>AppInstanceUser</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

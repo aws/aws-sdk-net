@@ -108,6 +108,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property Name.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Name
         {
             get { return this._name; }

@@ -167,7 +167,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property DenoiseFilter. Enable Denoise (InputDenoiseFilter) to filter
-        /// noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265,
+        /// noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265,
         /// and uncompressed video inputs.
         /// </summary>
         public InputDenoiseFilter DenoiseFilter
@@ -250,9 +250,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property FilterStrength. Use Filter strength (FilterStrength) to
         /// adjust the magnitude the input filter settings (Deblock and Denoise). The range is
-        /// -5 to 5. Default is 0.
+        /// 0 to 5. Default is 0.
         /// </summary>
-        [AWSProperty(Min=-5, Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public int FilterStrength
         {
             get { return this._filterStrength.GetValueOrDefault(); }

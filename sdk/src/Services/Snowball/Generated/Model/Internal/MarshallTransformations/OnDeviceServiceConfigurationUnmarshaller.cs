@@ -64,6 +64,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EKSOnDeviceService", targetDepth))
+                {
+                    var unmarshaller = EKSOnDeviceServiceConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EKSOnDeviceService = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NFSOnDeviceService", targetDepth))
                 {
                     var unmarshaller = NFSOnDeviceServiceConfigurationUnmarshaller.Instance;

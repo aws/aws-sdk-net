@@ -87,7 +87,7 @@ namespace Amazon.Cloud9.Model
         /// The description for the environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=200)]
+        [AWSProperty(Sensitive=true, Max=200)]
         public string Description
         {
             get { return this._description; }

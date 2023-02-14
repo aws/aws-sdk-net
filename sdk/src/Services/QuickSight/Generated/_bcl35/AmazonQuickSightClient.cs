@@ -576,7 +576,8 @@ namespace Amazon.QuickSight
         #region  CreateAnalysis
 
         /// <summary>
-        /// Creates an analysis in Amazon QuickSight.
+        /// Creates an analysis in Amazon QuickSight. Analyses can be created either from a template
+        /// or from an <code>AnalysisDefinition</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAnalysis service method.</param>
         /// 
@@ -657,8 +658,8 @@ namespace Amazon.QuickSight
         #region  CreateDashboard
 
         /// <summary>
-        /// Creates a dashboard from a template. To first create a template, see the <code> <a
-        /// href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+        /// Creates a dashboard from either a template or directly with a <code>DashboardDefinition</code>.
+        /// To first create a template, see the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
         /// </code> API operation.
         /// 
         ///  
@@ -1534,8 +1535,9 @@ namespace Amazon.QuickSight
         #region  CreateTemplate
 
         /// <summary>
-        /// Creates a template from an existing Amazon QuickSight analysis or template. You can
-        /// use the resulting template to create a dashboard.
+        /// Creates a template either from a <code>TemplateDefinition</code> or from an existing
+        /// Amazon QuickSight analysis or template. You can use the resulting template to create
+        /// additional dashboards, templates, or analyses.
         /// 
         ///  
         /// <para>
@@ -7933,8 +7935,15 @@ namespace Amazon.QuickSight
         #region  RegisterUser
 
         /// <summary>
-        /// Creates an Amazon QuickSight user, whose identity is associated with the Identity
-        /// and Access Management (IAM) identity or role specified in the request.
+        /// Creates an Amazon QuickSight user whose identity is associated with the Identity and
+        /// Access Management (IAM) identity or role specified in the request. When you register
+        /// a new user from the Amazon QuickSight API, Amazon QuickSight generates a registration
+        /// URL. The user accesses this registration URL to create their account. Amazon QuickSight
+        /// doesn't send a registration email to users who are registered from the Amazon QuickSight
+        /// API. If you want new users to receive a registration email, then add those users in
+        /// the Amazon QuickSight console. For more information on registering a new user in the
+        /// Amazon QuickSight console, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/managing-users.html#inviting-users">
+        /// Inviting users to access Amazon QuickSight</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterUser service method.</param>
         /// 

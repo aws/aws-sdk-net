@@ -45,7 +45,7 @@ namespace Amazon.Kendra.Model
         /// The first name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string FirstName
         {
             get { return this._firstName; }
@@ -64,7 +64,7 @@ namespace Amazon.Kendra.Model
         /// The name of the group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string GroupName
         {
             get { return this._groupName; }
@@ -83,7 +83,7 @@ namespace Amazon.Kendra.Model
         /// The user name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string IdentifiedUserName
         {
             get { return this._identifiedUserName; }
@@ -102,7 +102,7 @@ namespace Amazon.Kendra.Model
         /// The last name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string LastName
         {
             get { return this._lastName; }
@@ -121,7 +121,7 @@ namespace Amazon.Kendra.Model
         /// The name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string UserName
         {
             get { return this._userName; }

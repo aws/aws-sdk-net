@@ -160,6 +160,7 @@ namespace Amazon.Honeycode.Model
         /// in a screen are required to be passed in the call. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, VariableValue> Variables
         {
             get { return this._variables; }

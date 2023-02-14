@@ -45,6 +45,17 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OnDeviceServiceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEKSOnDeviceService())
+            {
+                context.Writer.WritePropertyName("EKSOnDeviceService");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EKSOnDeviceServiceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EKSOnDeviceService, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNFSOnDeviceService())
             {
                 context.Writer.WritePropertyName("NFSOnDeviceService");

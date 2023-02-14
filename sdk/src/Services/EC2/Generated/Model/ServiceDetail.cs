@@ -294,7 +294,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Any tags assigned to the service.
+        /// The tags assigned to the service.
         /// </para>
         /// </summary>
         public List<Tag> Tags

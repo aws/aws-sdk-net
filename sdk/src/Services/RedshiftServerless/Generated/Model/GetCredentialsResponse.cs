@@ -45,6 +45,7 @@ namespace Amazon.RedshiftServerless.Model
         /// to log on to the database <code>DbName</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DbPassword
         {
             get { return this._dbPassword; }
@@ -66,6 +67,7 @@ namespace Amazon.RedshiftServerless.Model
         /// named in <code>DbUser</code>. By default, the user is added to PUBLIC.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DbUser
         {
             get { return this._dbUser; }

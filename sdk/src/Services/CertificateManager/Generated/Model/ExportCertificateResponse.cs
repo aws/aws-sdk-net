@@ -83,7 +83,7 @@ namespace Amazon.CertificateManager.Model
         /// is output in PKCS #8 format and is base64 PEM-encoded. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=524288)]
+        [AWSProperty(Sensitive=true, Min=1, Max=524288)]
         public string PrivateKey
         {
             get { return this._privateKey; }

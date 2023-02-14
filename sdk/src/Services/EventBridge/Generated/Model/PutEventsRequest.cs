@@ -46,7 +46,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property EndpointId. 
         /// <para>
-        /// The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com,
+        /// The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com,
         /// then the EndpointId is <code>abcde.veo</code>.
         /// </para>
         ///  <important> 

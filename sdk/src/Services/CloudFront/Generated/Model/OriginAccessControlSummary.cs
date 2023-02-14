@@ -100,8 +100,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property OriginAccessControlOriginType. 
         /// <para>
-        /// The type of origin that this origin access control is for. The only valid value is
-        /// <code>s3</code>.
+        /// The type of origin that this origin access control is for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

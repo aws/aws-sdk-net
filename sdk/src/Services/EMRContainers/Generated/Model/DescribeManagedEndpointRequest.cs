@@ -31,8 +31,8 @@ namespace Amazon.EMRContainers.Model
     /// <summary>
     /// Container for the parameters to the DescribeManagedEndpoint operation.
     /// Displays detailed information about a managed endpoint. A managed endpoint is a gateway
-    /// that connects EMR Studio to Amazon EMR on EKS so that EMR Studio can communicate with
-    /// your virtual cluster.
+    /// that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can
+    /// communicate with your virtual cluster.
     /// </summary>
     public partial class DescribeManagedEndpointRequest : AmazonEMRContainersRequest
     {

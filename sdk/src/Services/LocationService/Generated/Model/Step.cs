@@ -87,7 +87,7 @@ namespace Amazon.LocationService.Model
         /// is the same as the end position of the leg.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]
         public List<double> EndPosition
         {
             get { return this._endPosition; }
@@ -133,7 +133,7 @@ namespace Amazon.LocationService.Model
         /// position is the same as the start position of the leg.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]
         public List<double> StartPosition
         {
             get { return this._startPosition; }

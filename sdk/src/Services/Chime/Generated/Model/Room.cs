@@ -100,6 +100,7 @@ namespace Amazon.Chime.Model
         /// The room name.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Name
         {
             get { return this._name; }

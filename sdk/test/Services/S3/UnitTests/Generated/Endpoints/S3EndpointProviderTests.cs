@@ -1211,7 +1211,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("ForcePathStyle, aws-global region with fips is invalid")]
-        [ExpectedException(typeof(AmazonClientException), @"Path-style addressing cannot be used with FIPS")]
         public void ForcePathStyle_awsglobal_region_with_fips_is_invalid_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1222,6 +1221,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-fips.us-east-1.amazonaws.com/bucket-name", endpoint.URL);
         }
 
         [TestMethod]
@@ -1766,19 +1766,17 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("path style + fips@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Path-style addressing cannot be used with FIPS")]
-        public void Path_style_fipsuswest2_Test()
+        [Description("fips@us-gov-west-2, bucket is not S3-dns-compatible (subdomains)")]
+        public void Fipsusgovwest2_bucket_is_not_S3dnscompatible_subdomains_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Accelerate"] = false;
-            parameters["Bucket"] = "bucket-name";
-            parameters["ForcePathStyle"] = true;
-            parameters["Region"] = "us-west-2";
+            parameters["Bucket"] = "bucket.with.dots";
+            parameters["Region"] = "us-gov-west-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-fips.us-gov-west-1.amazonaws.com/bucket.with.dots", endpoint.URL);
         }
 
         [TestMethod]
@@ -1900,7 +1898,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("path style + fips@cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Path-style addressing cannot be used with FIPS")]
         public void Path_style_fipscnnorth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1910,8 +1907,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-fips.cn-north-1.amazonaws.com.cn/bucket-name", endpoint.URL);
         }
 
         [TestMethod]
@@ -2033,7 +2030,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("path style + fips@af-south-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Path-style addressing cannot be used with FIPS")]
         public void Path_style_fipsafsouth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -2043,8 +2039,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-fips.af-south-1.amazonaws.com/bucket-name", endpoint.URL);
         }
 
         [TestMethod]

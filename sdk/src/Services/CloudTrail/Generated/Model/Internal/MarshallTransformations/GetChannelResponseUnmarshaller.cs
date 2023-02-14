@@ -63,6 +63,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     response.Destinations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IngestionStatus", targetDepth))
+                {
+                    var unmarshaller = IngestionStatusUnmarshaller.Instance;
+                    response.IngestionStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

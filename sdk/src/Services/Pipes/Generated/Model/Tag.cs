@@ -63,7 +63,7 @@ namespace Amazon.Pipes.Model
         /// The value for the specified tag key.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

@@ -38,7 +38,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property LambdaArn.
         /// </summary>
-        [AWSProperty(Max=10000)]
+        [AWSProperty(Sensitive=true, Max=10000)]
         public string LambdaArn
         {
             get { return this._lambdaArn; }

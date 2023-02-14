@@ -57,6 +57,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     response.DomainConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DryRunProgressStatus", targetDepth))
+                {
+                    var unmarshaller = DryRunProgressStatusUnmarshaller.Instance;
+                    response.DryRunProgressStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DryRunResults", targetDepth))
                 {
                     var unmarshaller = DryRunResultsUnmarshaller.Instance;

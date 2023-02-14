@@ -166,7 +166,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property FixedAfd. Applies only if you set AFD Signaling(AfdSignaling)
         /// to Fixed (FIXED). Use Fixed (FixedAfd) to specify a four-bit AFD value which the service
-        /// will write on all  frames of this video output.
+        /// will write on all frames of this video output.
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
         public int FixedAfd

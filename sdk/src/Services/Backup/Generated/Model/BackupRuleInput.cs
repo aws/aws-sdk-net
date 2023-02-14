@@ -142,6 +142,7 @@ namespace Amazon.Backup.Model
         /// that you create. Each tag is a key-value pair.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> RecoveryPointTags
         {
             get { return this._recoveryPointTags; }

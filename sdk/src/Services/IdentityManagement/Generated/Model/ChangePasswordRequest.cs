@@ -66,7 +66,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters because they have special meaning within that tool.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string NewPassword
         {
             get { return this._newPassword; }
@@ -85,7 +85,7 @@ namespace Amazon.IdentityManagement.Model
         /// The IAM user's current password.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string OldPassword
         {
             get { return this._oldPassword; }

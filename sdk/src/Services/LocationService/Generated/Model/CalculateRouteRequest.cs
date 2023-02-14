@@ -177,7 +177,7 @@ namespace Amazon.LocationService.Model
         /// Valid Values: <code>[-180 to 180,-90 to 90]</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]
         public List<double> DeparturePosition
         {
             get { return this._departurePosition; }
@@ -242,7 +242,7 @@ namespace Amazon.LocationService.Model
         /// Valid Values: <code>[-180 to 180,-90 to 90]</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]
         public List<double> DestinationPosition
         {
             get { return this._destinationPosition; }

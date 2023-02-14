@@ -99,7 +99,7 @@ namespace Amazon.BillingConductor.Model
         ///  The new line item description of the custom line item. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Sensitive=true, Min=1, Max=255)]
         public string Description
         {
             get { return this._description; }
@@ -118,7 +118,7 @@ namespace Amazon.BillingConductor.Model
         ///  The new name for the custom line item. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

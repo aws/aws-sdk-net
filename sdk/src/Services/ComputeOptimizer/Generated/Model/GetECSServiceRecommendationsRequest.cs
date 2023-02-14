@@ -50,13 +50,14 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        ///  Return the ECS service recommendations to the specified Amazon Web Services account
-        /// IDs. 
+        ///  Return the Amazon ECS service recommendations to the specified Amazon Web Services
+        /// account IDs. 
         /// </para>
         ///  
         /// <para>
         /// If your account is the management account or the delegated administrator of an organization,
-        /// use this parameter to return the ECS service recommendations to specific member accounts.
+        /// use this parameter to return the Amazon ECS service recommendations to specific member
+        /// accounts.
         /// </para>
         ///  
         /// <para>
@@ -78,8 +79,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        ///  An array of objects to specify a filter that returns a more specific list of ECS
-        /// service recommendations. 
+        ///  An array of objects to specify a filter that returns a more specific list of Amazon
+        /// ECS service recommendations. 
         /// </para>
         /// </summary>
         public List<ECSServiceRecommendationFilter> Filters
@@ -97,8 +98,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of ECS service recommendations to return with a single request.
-        /// 
+        ///  The maximum number of Amazon ECS service recommendations to return with a single
+        /// request. 
         /// </para>
         ///  
         /// <para>
@@ -122,7 +123,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The token to advance to the next page of ECS service recommendations. 
+        ///  The token to advance to the next page of Amazon ECS service recommendations. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -140,7 +141,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property ServiceArns. 
         /// <para>
-        ///  The ARN that identifies the ECS service. 
+        ///  The ARN that identifies the Amazon ECS service. 
         /// </para>
         ///  
         /// <para>

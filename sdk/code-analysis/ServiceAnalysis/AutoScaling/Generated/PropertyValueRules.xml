@@ -535,6 +535,16 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.RollbackInstanceRefreshRequest.AutoScalingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.RollbackInstanceRefreshResponse.InstanceRefreshId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.SetDesiredCapacityRequest.AutoScalingGroupName</property>
     <min>1</min>
     <max>255</max>
@@ -1199,6 +1209,20 @@
     <property>Amazon.AutoScaling.Model.RefreshPreferences.MinHealthyPercentage</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.RollbackDetails.InstancesToUpdateOnRollback</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.RollbackDetails.PercentageCompleteOnRollback</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.RollbackDetails.RollbackReason</property>
+    <min>1</min>
+    <max>1023</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.ScalingPolicy.AdjustmentType</property>

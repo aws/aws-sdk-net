@@ -44,7 +44,7 @@ namespace Amazon.ManagedGrafana.Model
         /// workspace.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Key
         {
             get { return this._key; }

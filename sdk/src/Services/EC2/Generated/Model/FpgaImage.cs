@@ -141,7 +141,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceTypes.
+        /// Gets and sets the property InstanceTypes. 
+        /// <para>
+        /// The instance types supported by the AFI.
+        /// </para>
         /// </summary>
         public List<string> InstanceTypes
         {

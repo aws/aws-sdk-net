@@ -113,6 +113,7 @@ namespace Amazon.NetworkManager.Model
         /// The location of the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Location Location
         {
             get { return this._location; }

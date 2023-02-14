@@ -43,7 +43,7 @@ namespace Amazon.NimbleStudio.Model
         /// A collection of custom attributes for an Active Directory computer.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public List<ActiveDirectoryComputerAttribute> ComputerAttributes
         {
             get { return this._computerAttributes; }

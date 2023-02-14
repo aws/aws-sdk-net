@@ -126,7 +126,7 @@ namespace Amazon.BillingConductor.Model
         ///  The pricing rule description. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -182,7 +182,7 @@ namespace Amazon.BillingConductor.Model
         ///  The name of a pricing rule. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

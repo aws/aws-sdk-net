@@ -37,7 +37,10 @@ namespace Amazon.SsmSap.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Database.
+        /// Gets and sets the property Database. 
+        /// <para>
+        /// The SAP HANA database of an application registered with AWS Systems Manager for SAP.
+        /// </para>
         /// </summary>
         public Database Database
         {
@@ -52,7 +55,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags of a database.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

@@ -122,7 +122,7 @@ namespace Amazon.CodeStarNotifications.Model
         /// Amazon Web Services account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }

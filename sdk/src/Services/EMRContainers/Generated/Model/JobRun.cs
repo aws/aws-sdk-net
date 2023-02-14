@@ -46,6 +46,8 @@ namespace Amazon.EMRContainers.Model
         private JobDriver _jobDriver;
         private string _name;
         private string _releaseLabel;
+        private RetryPolicyConfiguration _retryPolicyConfiguration;
+        private RetryPolicyExecution _retryPolicyExecution;
         private JobRunState _state;
         private string _stateDetails;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -272,6 +274,42 @@ namespace Amazon.EMRContainers.Model
         internal bool IsSetReleaseLabel()
         {
             return this._releaseLabel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryPolicyConfiguration. 
+        /// <para>
+        /// The configuration of the retry policy that the job runs on.
+        /// </para>
+        /// </summary>
+        public RetryPolicyConfiguration RetryPolicyConfiguration
+        {
+            get { return this._retryPolicyConfiguration; }
+            set { this._retryPolicyConfiguration = value; }
+        }
+
+        // Check to see if RetryPolicyConfiguration property is set
+        internal bool IsSetRetryPolicyConfiguration()
+        {
+            return this._retryPolicyConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryPolicyExecution. 
+        /// <para>
+        /// The current status of the retry policy executed on the job.
+        /// </para>
+        /// </summary>
+        public RetryPolicyExecution RetryPolicyExecution
+        {
+            get { return this._retryPolicyExecution; }
+            set { this._retryPolicyExecution = value; }
+        }
+
+        // Check to see if RetryPolicyExecution property is set
+        internal bool IsSetRetryPolicyExecution()
+        {
+            return this._retryPolicyExecution != null;
         }
 
         /// <summary>

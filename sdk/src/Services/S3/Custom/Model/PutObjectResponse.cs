@@ -18,6 +18,7 @@ using System.Xml.Serialization;
 using System.Text;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.S3.Model
 {
@@ -114,6 +115,7 @@ namespace Amazon.S3.Model
         /// Web Services KMS) symmetric customer managed key that was used for the object. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {
             get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
@@ -157,6 +159,7 @@ namespace Amazon.S3.Model
         /// with the encryption context key-value pairs.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceEncryptionContext
         {
             get { return this.serverSideEncryptionKeyManagementServiceEncryptionContext; }

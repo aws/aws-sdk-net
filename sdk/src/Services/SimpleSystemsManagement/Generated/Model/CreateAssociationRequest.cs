@@ -390,6 +390,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The parameters for the runtime configuration of the document.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, List<string>> Parameters
         {
             get { return this._parameters; }

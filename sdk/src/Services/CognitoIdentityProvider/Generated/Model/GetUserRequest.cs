@@ -43,7 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A non-expired access token for the user whose information you want to query.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string AccessToken
         {
             get { return this._accessToken; }

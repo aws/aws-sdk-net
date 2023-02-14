@@ -77,6 +77,38 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetComplianceAssociatedStandardsId())
+            {
+                context.Writer.WritePropertyName("ComplianceAssociatedStandardsId");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectComplianceAssociatedStandardsIdListValue in requestObject.ComplianceAssociatedStandardsId)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectComplianceAssociatedStandardsIdListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetComplianceSecurityControlId())
+            {
+                context.Writer.WritePropertyName("ComplianceSecurityControlId");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectComplianceSecurityControlIdListValue in requestObject.ComplianceSecurityControlId)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectComplianceSecurityControlIdListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetComplianceStatus())
             {
                 context.Writer.WritePropertyName("ComplianceStatus");

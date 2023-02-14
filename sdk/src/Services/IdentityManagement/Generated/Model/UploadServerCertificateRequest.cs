@@ -239,7 +239,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=16384)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=16384)]
         public string PrivateKey
         {
             get { return this._privateKey; }

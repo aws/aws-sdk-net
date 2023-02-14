@@ -139,6 +139,17 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ReleaseLabel);
                 }
 
+                if(publicRequest.IsSetRetryPolicyConfiguration())
+                {
+                    context.Writer.WritePropertyName("retryPolicyConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RetryPolicyConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RetryPolicyConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

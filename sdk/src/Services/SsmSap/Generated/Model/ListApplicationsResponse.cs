@@ -37,7 +37,10 @@ namespace Amazon.SsmSap.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Applications.
+        /// Gets and sets the property Applications. 
+        /// <para>
+        /// The applications registered with AWS Systems Manager for SAP.
+        /// </para>
         /// </summary>
         public List<ApplicationSummary> Applications
         {
@@ -52,7 +55,11 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use to retrieve the next page of results. This value is null when there
+        /// are no more results to return.
+        /// </para>
         /// </summary>
         public string NextToken
         {

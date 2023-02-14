@@ -141,6 +141,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.Queues = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ScalingConfig", targetDepth))
+                {
+                    var unmarshaller = ScalingConfigUnmarshaller.Instance;
+                    response.ScalingConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SelfManagedEventSource", targetDepth))
                 {
                     var unmarshaller = SelfManagedEventSourceUnmarshaller.Instance;

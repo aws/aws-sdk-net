@@ -41,7 +41,12 @@ namespace Amazon.S3
         private readonly string legacyUSEast1GlobalRegionSystemName = RegionEndpoint.USEast1.SystemName;
 
         private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
-         
+
+        // we cache this per execution process to avoid excessive file I/O
+        private static CredentialProfile _profile;
+        private static object _triedToResolveProfileLock = new object();
+        private static bool _triedToResolveProfile = false;
+
         /// <summary>
         /// When true, requests will always use path style addressing.
         /// </summary>
@@ -71,6 +76,8 @@ namespace Amazon.S3
         }
 
         bool? _useArnRegion;
+        private object _useArnRegionLock = new object();
+
         /// <summary>
         /// If set to true and the service package supports it the region identified in the arn for a resource
         /// will be used when making the service request.
@@ -79,33 +86,58 @@ namespace Amazon.S3
         {
             get 
             {
-                if (!this._useArnRegion.HasValue)
+                if (_useArnRegion.HasValue)
                 {
-                    var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
-                    if (credentialProfileChain.TryGetProfile(profileName, out var profile))
-                    {
-                        this._useArnRegion = profile.S3UseArnRegion;
-                    }
+                    return _useArnRegion.GetValueOrDefault();
+                }
 
-                    if (!this._useArnRegion.HasValue && !string.IsNullOrEmpty(Environment.GetEnvironmentVariable(UseArnRegionEnvName)))
+                if (!_triedToResolveProfile)
+                {
+                    lock (_triedToResolveProfileLock)
                     {
-                        if (bool.TryParse(Environment.GetEnvironmentVariable(UseArnRegionEnvName), out var value))
+                        if (!_triedToResolveProfile)
                         {
-                            this._useArnRegion = value;
+                            var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
+                            credentialProfileChain.TryGetProfile(profileName, out _profile);
+                            _triedToResolveProfile = true;
                         }
-                    }
-
-                    if (!this._useArnRegion.HasValue)
-                    {
-                        // To maintain consistency with buckets default UseArnRegion to true when client configured for us-east-1.
-                        this._useArnRegion = this.RegionEndpoint?.SystemName == RegionEndpoint.USEast1.SystemName;
                     }
                 }
 
-                return this._useArnRegion.GetValueOrDefault(); 
+                lock (_useArnRegionLock)
+                {
+                    if (_useArnRegion.HasValue)
+                    {
+                        return _useArnRegion.Value;
+                    }
+
+                    _useArnRegion = _profile?.S3UseArnRegion;
+
+                    if (!_useArnRegion.HasValue && !string.IsNullOrEmpty(Environment.GetEnvironmentVariable(UseArnRegionEnvName)))
+                    {
+                        if (bool.TryParse(Environment.GetEnvironmentVariable(UseArnRegionEnvName), out var value))
+                        {
+                            _useArnRegion = value;
+                        }
+                    }
+
+                    if (!_useArnRegion.HasValue)
+                    {
+                        // To maintain consistency with buckets default UseArnRegion to true when client configured for us-east-1.
+                        _useArnRegion = RegionEndpoint?.SystemName == RegionEndpoint.USEast1.SystemName;
+                    }
+
+                    return _useArnRegion.Value;
+                }
             }
 
-            set { this._useArnRegion = value; }
+            set 
+            {
+                lock (_useArnRegionLock)
+                {
+                    _useArnRegion = value;
+                }
+            }
         }
 
         bool? _disableMultiregionAccessPoints;
@@ -291,10 +323,20 @@ namespace Amazon.S3
         /// <returns>A nullable of S3UsEast1RegionalEndpointValue</returns>
         private static S3UsEast1RegionalEndpointValue? CheckCredentialsFile()
         {
-            CredentialProfile profile;
-            var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
-            credentialProfileChain.TryGetProfile(profileName, out profile);
-            return profile?.S3RegionalEndpoint;
+            if (_triedToResolveProfile)
+            {
+                return _profile?.S3RegionalEndpoint;
+            }
+            lock (_triedToResolveProfileLock)
+            {
+                if (!_triedToResolveProfile)
+                {
+                    var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
+                    credentialProfileChain.TryGetProfile(profileName, out _profile);
+                    _triedToResolveProfile = true;
+                }
+            }
+            return _profile?.S3RegionalEndpoint;
         }
 
         /// <summary>
@@ -324,13 +366,20 @@ namespace Amazon.S3
         /// <returns>Value of s3_disable_multiregion_access_points if it is set, else null</returns>
         private static bool? CheckDisableMRAPCredentialsFile()
         {
-            bool? disableMultiregionAccessPoints = null;
-            var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
-            if (credentialProfileChain.TryGetProfile(profileName, out var profile))
+            if (_triedToResolveProfile)
             {
-                disableMultiregionAccessPoints = profile.S3DisableMultiRegionAccessPoints;
+                return _profile?.S3DisableMultiRegionAccessPoints;
             }
-            return disableMultiregionAccessPoints;
+            lock (_triedToResolveProfileLock)
+            {
+                if (!_triedToResolveProfile)
+                {
+                    var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
+                    credentialProfileChain.TryGetProfile(profileName, out _profile);
+                    _triedToResolveProfile = true;
+                }
+            }
+            return _profile?.S3DisableMultiRegionAccessPoints;
         }
 
         internal string AccelerateEndpoint

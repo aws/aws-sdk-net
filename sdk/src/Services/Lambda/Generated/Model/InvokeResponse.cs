@@ -102,6 +102,7 @@ namespace Amazon.Lambda.Model
         /// The response from the function, or an error object.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public MemoryStream Payload
         {
             get { return this._payload; }

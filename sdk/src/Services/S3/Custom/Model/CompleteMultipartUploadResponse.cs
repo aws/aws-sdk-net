@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.S3.Model
 {
@@ -279,6 +280,7 @@ namespace Amazon.S3.Model
         /// Web Services KMS) symmetric customer managed key that was used for the object.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {
             get { return this.serverSideEncryptionKeyManagementServiceKeyId; }

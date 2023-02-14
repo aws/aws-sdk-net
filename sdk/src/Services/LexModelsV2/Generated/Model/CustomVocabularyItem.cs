@@ -41,7 +41,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property DisplayAs. 
         /// <para>
-        /// The display as value for the custom vocabulary item from the custom vocabulary list.
+        /// The DisplayAs value for the custom vocabulary item from the custom vocabulary list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

@@ -41,7 +41,7 @@ namespace Amazon.QLDB.Model
         /// An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1048576)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1048576)]
         public string IonText
         {
             get { return this._ionText; }

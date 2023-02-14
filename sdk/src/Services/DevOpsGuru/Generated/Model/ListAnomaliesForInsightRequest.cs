@@ -36,6 +36,7 @@ namespace Amazon.DevOpsGuru.Model
     public partial class ListAnomaliesForInsightRequest : AmazonDevOpsGuruRequest
     {
         private string _accountId;
+        private ListAnomaliesForInsightFilters _filters;
         private string _insightId;
         private int? _maxResults;
         private string _nextToken;
@@ -58,6 +59,24 @@ namespace Amazon.DevOpsGuru.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        ///  Specifies one or more service names that are used to list anomalies. 
+        /// </para>
+        /// </summary>
+        public ListAnomaliesForInsightFilters Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null;
         }
 
         /// <summary>

@@ -150,7 +150,7 @@ namespace Amazon.NimbleStudio.Model
         /// The name for the launch profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }

@@ -103,7 +103,7 @@ namespace Amazon.Proton.Model
         /// An optional customer-provided description of the component.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -188,7 +188,7 @@ namespace Amazon.Proton.Model
         /// this only when the component is attached to a service instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=51200)]
+        [AWSProperty(Sensitive=true, Min=1, Max=51200)]
         public string ServiceSpec
         {
             get { return this._serviceSpec; }
@@ -213,7 +213,7 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=51200)]
+        [AWSProperty(Sensitive=true, Min=1, Max=51200)]
         public string TemplateFile
         {
             get { return this._templateFile; }

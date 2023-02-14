@@ -94,6 +94,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.JobDurationInSeconds);
             }
 
+            if(requestObject.IsSetModelName())
+            {
+                context.Writer.WritePropertyName("ModelName");
+                context.Writer.Write(requestObject.ModelName);
+            }
+
             if(requestObject.IsSetModelPackageVersionArn())
             {
                 context.Writer.WritePropertyName("ModelPackageVersionArn");

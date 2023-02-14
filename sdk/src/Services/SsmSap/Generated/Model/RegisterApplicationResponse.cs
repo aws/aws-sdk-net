@@ -37,7 +37,10 @@ namespace Amazon.SsmSap.Model
         private string _operationId;
 
         /// <summary>
-        /// Gets and sets the property Application.
+        /// Gets and sets the property Application. 
+        /// <para>
+        /// The application registered with AWS Systems Manager for SAP.
+        /// </para>
         /// </summary>
         public Application Application
         {
@@ -52,7 +55,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OperationId.
+        /// Gets and sets the property OperationId. 
+        /// <para>
+        /// The ID of the operation.
+        /// </para>
         /// </summary>
         public string OperationId
         {

@@ -66,6 +66,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property CallingName.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string CallingName
         {
             get { return this._callingName; }
@@ -156,6 +157,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property E164PhoneNumber.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string E164PhoneNumber
         {
             get { return this._e164PhoneNumber; }
@@ -186,6 +188,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property PhoneNumberId.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PhoneNumberId
         {
             get { return this._phoneNumberId; }

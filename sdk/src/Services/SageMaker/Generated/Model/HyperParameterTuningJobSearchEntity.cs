@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class HyperParameterTuningJobSearchEntity
     {
         private HyperParameterTrainingJobSummary _bestTrainingJob;
+        private HyperParameterTuningJobConsumedResources _consumedResources;
         private DateTime? _creationTime;
         private string _failureReason;
         private DateTime? _hyperParameterTuningEndTime;
@@ -49,6 +50,7 @@ namespace Amazon.SageMaker.Model
         private HyperParameterTrainingJobDefinition _trainingJobDefinition;
         private List<HyperParameterTrainingJobDefinition> _trainingJobDefinitions = new List<HyperParameterTrainingJobDefinition>();
         private TrainingJobStatusCounters _trainingJobStatusCounters;
+        private HyperParameterTuningJobCompletionDetails _tuningJobCompletionDetails;
         private HyperParameterTuningJobWarmStartConfig _warmStartConfig;
 
         /// <summary>
@@ -64,6 +66,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetBestTrainingJob()
         {
             return this._bestTrainingJob != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConsumedResources. 
+        /// <para>
+        /// The total amount of resources consumed by a hyperparameter tuning job.
+        /// </para>
+        /// </summary>
+        public HyperParameterTuningJobConsumedResources ConsumedResources
+        {
+            get { return this._consumedResources; }
+            set { this._consumedResources = value; }
+        }
+
+        // Check to see if ConsumedResources property is set
+        internal bool IsSetConsumedResources()
+        {
+            return this._consumedResources != null;
         }
 
         /// <summary>
@@ -308,6 +328,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTrainingJobStatusCounters()
         {
             return this._trainingJobStatusCounters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TuningJobCompletionDetails. 
+        /// <para>
+        /// Information about either a current or completed hyperparameter tuning job.
+        /// </para>
+        /// </summary>
+        public HyperParameterTuningJobCompletionDetails TuningJobCompletionDetails
+        {
+            get { return this._tuningJobCompletionDetails; }
+            set { this._tuningJobCompletionDetails = value; }
+        }
+
+        // Check to see if TuningJobCompletionDetails property is set
+        internal bool IsSetTuningJobCompletionDetails()
+        {
+            return this._tuningJobCompletionDetails != null;
         }
 
         /// <summary>

@@ -57,6 +57,7 @@ namespace Amazon.Lambda.Model
         private string _revisionId;
         private string _role;
         private Runtime _runtime;
+        private RuntimeVersionConfig _runtimeVersionConfig;
         private string _signingJobArn;
         private string _signingProfileVersionArn;
         private SnapStartResponse _snapStart;
@@ -515,6 +516,24 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RuntimeVersionConfig. 
+        /// <para>
+        /// The ARN of the runtime and any errors that occured.
+        /// </para>
+        /// </summary>
+        public RuntimeVersionConfig RuntimeVersionConfig
+        {
+            get { return this._runtimeVersionConfig; }
+            set { this._runtimeVersionConfig = value; }
+        }
+
+        // Check to see if RuntimeVersionConfig property is set
+        internal bool IsSetRuntimeVersionConfig()
+        {
+            return this._runtimeVersionConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SigningJobArn. 
         /// <para>
         /// The ARN of the signing job.
@@ -555,8 +574,8 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of
         /// the initialized execution environment when you publish a function version. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing
-        /// startup time with Lambda SnapStart</a>.
+        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving
+        /// startup performance with Lambda SnapStart</a>.
         /// </para>
         /// </summary>
         public SnapStartResponse SnapStart

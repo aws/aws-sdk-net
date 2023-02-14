@@ -110,7 +110,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// Data Formats-Inference</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=6291456)]
+        [AWSProperty(Required=true, Sensitive=true, Max=6291456)]
         public MemoryStream Body
         {
             get { return this._body; }
@@ -167,7 +167,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// Amazon SageMaker Python SDK.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Sensitive=true, Max=1024)]
         public string CustomAttributes
         {
             get { return this._customAttributes; }
@@ -184,7 +184,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// Gets and sets the property EnableExplanations. 
         /// <para>
         /// An optional JMESPath expression used to override the <code>EnableExplanations</code>
-        /// parameter of the <code>ClarifyExplainerConfig</code> API. See the <a href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a>
+        /// parameter of the <code>ClarifyExplainerConfig</code> API. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable">EnableExplanations</a>
         /// section in the developer guide for more information. 
         /// </para>
         /// </summary>

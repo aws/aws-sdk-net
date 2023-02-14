@@ -91,7 +91,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// An optional description of the update.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string Description
         {
             get { return this._description; }

@@ -53,7 +53,7 @@ namespace Amazon.Pipes.Model
         /// A description of the pipe.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=512)]
+        [AWSProperty(Sensitive=true, Min=0, Max=512)]
         public string Description
         {
             get { return this._description; }

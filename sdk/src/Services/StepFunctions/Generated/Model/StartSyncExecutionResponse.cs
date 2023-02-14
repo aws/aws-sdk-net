@@ -73,7 +73,7 @@ namespace Amazon.StepFunctions.Model
         /// A more detailed explanation of the cause of the failure.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=32768)]
+        [AWSProperty(Sensitive=true, Min=0, Max=32768)]
         public string Cause
         {
             get { return this._cause; }
@@ -92,7 +92,7 @@ namespace Amazon.StepFunctions.Model
         /// The error code of the failure.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string Error
         {
             get { return this._error; }
@@ -131,7 +131,7 @@ namespace Amazon.StepFunctions.Model
         /// apply to the payload size, and are expressed as bytes in UTF-8 encoding.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=262144)]
+        [AWSProperty(Sensitive=true, Max=262144)]
         public string Input
         {
             get { return this._input; }
@@ -191,7 +191,7 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Max=262144)]
+        [AWSProperty(Sensitive=true, Max=262144)]
         public string Output
         {
             get { return this._output; }

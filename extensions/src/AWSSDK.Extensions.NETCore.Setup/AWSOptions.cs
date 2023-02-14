@@ -45,6 +45,16 @@ namespace Amazon.Extensions.NETCore.Setup
         /// The AWS region the service client should use when making service operations.
         /// </summary>
         public RegionEndpoint Region { get; set; }
+     
+        /// <summary>
+        /// If set this role will be assumed using the resolved AWS credentials.
+        /// </summary>
+        public string SessionRoleArn { get; set; }
+
+        /// <summary>
+        /// The session name for the assumed session using the SessionRoleArn.
+        /// </summary>
+        public string SessionName { get; set; } = "DefaultSessionName";
 
         /// <summary>
         /// AWS Credentials used for creating service clients. If this is set it overrides the Profile property.

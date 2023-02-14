@@ -48,11 +48,11 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property AuthenticationToken. 
         /// <para>
-        /// Amazon WorkDocs authentication token. Not required when using AWS administrator credentials
-        /// to access the API.
+        /// Amazon WorkDocs authentication token. Not required when using Amazon Web Services
+        /// administrator credentials to access the API.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=8199)]
+        [AWSProperty(Sensitive=true, Min=1, Max=8199)]
         public string AuthenticationToken
         {
             get { return this._authenticationToken; }
@@ -71,7 +71,7 @@ namespace Amazon.WorkDocs.Model
         /// The email address of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string EmailAddress
         {
             get { return this._emailAddress; }
@@ -128,7 +128,7 @@ namespace Amazon.WorkDocs.Model
         /// The password of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=4, Max=32)]
+        [AWSProperty(Required=true, Sensitive=true, Min=4, Max=32)]
         public string Password
         {
             get { return this._password; }

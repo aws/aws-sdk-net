@@ -30,7 +30,7 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTags operation.
-    /// Lists the tags for the trail or event data store in the current region.
+    /// Lists the tags for the trail, event data store, or channel in the current region.
     /// </summary>
     public partial class ListTagsRequest : AmazonCloudTrailRequest
     {
@@ -58,8 +58,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property ResourceIdList. 
         /// <para>
-        /// Specifies a list of trail and event data store ARNs whose tags will be listed. The
-        /// list has a limit of 20 ARNs.
+        /// Specifies a list of trail, event data store, or channel ARNs whose tags will be listed.
+        /// The list has a limit of 20 ARNs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -53,7 +53,7 @@ namespace Amazon.SageMaker.Model
         /// card JSON schema</a> and provided as a string.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=100000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=100000)]
         public string Content
         {
             get { return this._content; }

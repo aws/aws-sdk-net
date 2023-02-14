@@ -39,7 +39,10 @@ namespace Amazon.SsmSap.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The ID of the application.
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -54,7 +57,16 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return with a single call. To retrieve the remaining
+        /// results, make another call with the returned nextToken value.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a value for MaxResults, the request returns 50 items per page
+        /// by default.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public int MaxResults
@@ -70,7 +82,10 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next page of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {

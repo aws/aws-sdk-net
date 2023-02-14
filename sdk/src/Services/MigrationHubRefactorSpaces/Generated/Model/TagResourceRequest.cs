@@ -71,7 +71,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// The new or modified tags for the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=50)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

@@ -56,24 +56,23 @@ namespace Amazon.EC2
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Amazon EC2: <a href="http://aws.amazon.com/ec2">AmazonEC2 product page</a>, <a href="http://aws.amazon.com/documentation/ec2">Amazon
+    /// Amazon EC2: <a href="http://aws.amazon.com/ec2">Amazon EC2 product page</a>, <a href="https://docs.aws.amazon.com/ec2/index.html">Amazon
     /// EC2 documentation</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon EBS: <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a>, <a href="http://aws.amazon.com/documentation/ebs">Amazon
+    /// Amazon EBS: <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a>, <a href="https://docs.aws.amazon.com/ebs/index.html">Amazon
     /// EBS documentation</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon VPC: <a href="http://aws.amazon.com/vpc">Amazon VPC product page</a>, <a href="http://aws.amazon.com/documentation/vpc">Amazon
+    /// Amazon VPC: <a href="http://aws.amazon.com/vpc">Amazon VPC product page</a>, <a href="https://docs.aws.amazon.com/vpc/index.html">Amazon
     /// VPC documentation</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon Web Services VPN: <a href="http://aws.amazon.com/vpn">Amazon Web Services VPN
-    /// product page</a>, <a href="http://aws.amazon.com/documentation/vpn">Amazon Web Services
-    /// VPN documentation</a> 
+    /// VPN: <a href="http://aws.amazon.com/vpn">VPN product page</a>, <a href="https://docs.aws.amazon.com/vpn/index.html">VPN
+    /// documentation</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -513,8 +512,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Accepts one or more interface VPC endpoint connection requests to your VPC endpoint
-        /// service.
+        /// Accepts connection requests to your VPC endpoint service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptVpcEndpointConnections service method.</param>
         /// <param name="cancellationToken">
@@ -827,7 +825,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR assignment from
-        /// an IPAM pool to another resource or IPAM pool. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
+        /// an IPAM pool to another IPAM pool or to a resource. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
         /// CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateIpamPoolCidr service method.</param>
@@ -1002,6 +1000,42 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = AssignPrivateIpAddressesResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssignPrivateIpAddressesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssignPrivateNatGatewayAddress
+
+        internal virtual AssignPrivateNatGatewayAddressResponse AssignPrivateNatGatewayAddress(AssignPrivateNatGatewayAddressRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssignPrivateNatGatewayAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssignPrivateNatGatewayAddressResponseUnmarshaller.Instance;
+
+            return Invoke<AssignPrivateNatGatewayAddressResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Assigns one or more private IPv4 addresses to a private NAT gateway. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
+        /// with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssignPrivateNatGatewayAddress service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssignPrivateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateNatGatewayAddress">REST API Reference for AssignPrivateNatGatewayAddress Operation</seealso>
+        public virtual Task<AssignPrivateNatGatewayAddressResponse> AssignPrivateNatGatewayAddressAsync(AssignPrivateNatGatewayAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssignPrivateNatGatewayAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssignPrivateNatGatewayAddressResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssignPrivateNatGatewayAddressResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1310,6 +1344,86 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = AssociateInstanceEventWindowResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateInstanceEventWindowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateIpamResourceDiscovery
+
+        internal virtual AssociateIpamResourceDiscoveryResponse AssociateIpamResourceDiscovery(AssociateIpamResourceDiscoveryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateIpamResourceDiscoveryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates an IPAM resource discovery with an Amazon VPC IPAM. A resource discovery
+        /// is an IPAM component that enables IPAM to manage and monitor resources that belong
+        /// to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIpamResourceDiscovery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamResourceDiscovery">REST API Reference for AssociateIpamResourceDiscovery Operation</seealso>
+        public virtual Task<AssociateIpamResourceDiscoveryResponse> AssociateIpamResourceDiscoveryAsync(AssociateIpamResourceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateIpamResourceDiscoveryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateNatGatewayAddress
+
+        internal virtual AssociateNatGatewayAddressResponse AssociateNatGatewayAddress(AssociateNatGatewayAddressRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateNatGatewayAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateNatGatewayAddressResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateNatGatewayAddressResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a public NAT
+        /// gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
+        /// with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// By default, you can associate up to 2 Elastic IP addresses per public NAT gateway.
+        /// You can increase the limit by requesting a quota adjustment. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-eips">Elastic
+        /// IP address quotas</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateNatGatewayAddress service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateNatGatewayAddress">REST API Reference for AssociateNatGatewayAddress Operation</seealso>
+        public virtual Task<AssociateNatGatewayAddressResponse> AssociateNatGatewayAddressAsync(AssociateNatGatewayAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateNatGatewayAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateNatGatewayAddressResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateNatGatewayAddressResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2316,9 +2430,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Removes your Amazon Web Services account from the launch permissions for the specified
-        /// AMI. For more information, see <a href="https://docs.aws.amazon.com/">Cancel having
-        /// an AMI shared with your Amazon Web Services account</a> in the <i>Amazon EC2 User
-        /// Guide</i>.
+        /// AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cancel-sharing-an-AMI.html">
+        /// Cancel having an AMI shared with your Amazon Web Services account</a> in the <i>Amazon
+        /// EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelImageLaunchPermission service method.</param>
         /// <param name="cancellationToken">
@@ -3721,6 +3835,41 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateIpamResourceDiscovery
+
+        internal virtual CreateIpamResourceDiscoveryResponse CreateIpamResourceDiscovery(CreateIpamResourceDiscoveryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIpamResourceDiscoveryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an IPAM resource discovery. A resource discovery is an IPAM component that
+        /// enables IPAM to manage and monitor resources that belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamResourceDiscovery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamResourceDiscovery">REST API Reference for CreateIpamResourceDiscovery Operation</seealso>
+        public virtual Task<CreateIpamResourceDiscoveryResponse> CreateIpamResourceDiscoveryAsync(CreateIpamResourceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateIpamResourceDiscoveryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateIpamScope
 
         internal virtual CreateIpamScopeResponse CreateIpamScope(CreateIpamScopeRequest request)
@@ -5081,26 +5230,30 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a subnet in a specified VPC.
+        /// Creates a subnet in the specified VPC. For an IPv4 only subnet, specify an IPv4 CIDR
+        /// block. If the VPC has an IPv6 CIDR block, you can create an IPv6 only subnet or a
+        /// dual stack subnet instead. For an IPv6 only subnet, specify an IPv6 CIDR block. For
+        /// a dual stack subnet, specify both an IPv4 CIDR block and an IPv6 CIDR block.
         /// 
         ///  
         /// <para>
-        /// You must specify an IPv4 CIDR block for the subnet. After you create a subnet, you
-        /// can't change its CIDR block. The allowed block size is between a /16 netmask (65,536
-        /// IP addresses) and /28 netmask (16 IP addresses). The CIDR block must not overlap with
-        /// the CIDR block of an existing subnet in the VPC.
+        /// A subnet CIDR block must not overlap the CIDR block of an existing subnet in the VPC.
+        /// After you create a subnet, you can't change its CIDR block.
         /// </para>
         ///  
         /// <para>
-        /// If you've associated an IPv6 CIDR block with your VPC, you can create a subnet with
-        /// an IPv6 CIDR block that uses a /64 prefix length. 
+        /// The allowed size for an IPv4 subnet is between a /28 netmask (16 IP addresses) and
+        /// a /16 netmask (65,536 IP addresses). Amazon Web Services reserves both the first four
+        /// and the last IPv4 address in each subnet's CIDR block. They're not available for your
+        /// use.
         /// </para>
-        ///  <important> 
+        ///  
         /// <para>
-        /// Amazon Web Services reserves both the first four and the last IPv4 address in each
-        /// subnet's CIDR block. They're not available for use.
+        /// If you've associated an IPv6 CIDR block with your VPC, you can associate an IPv6 CIDR
+        /// block with a subnet when you create it. The allowed block size for an IPv6 subnet
+        /// is a /64 netmask.
         /// </para>
-        ///  </important> 
+        ///  
         /// <para>
         /// If you add more than one subnet to a VPC, they're set up in a star topology with a
         /// logical router in the middle.
@@ -5113,8 +5266,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about subnets, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-        /// VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a>
+        /// in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubnet service method.</param>
@@ -6077,10 +6230,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create
-        /// uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
-        /// IPv4 addresses). For more information about how large to make your VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-        /// VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// Creates a VPC with the specified CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-your-vpc.html#vpc-cidr-blocks">VPC
+        /// CIDR blocks</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -6090,10 +6241,10 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// By default, each instance you launch in the VPC has the default DHCP options, which
-        /// include only a default DNS server that we provide (AmazonProvidedDNS). For more information,
-        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// By default, each instance that you launch in the VPC has the default DHCP options,
+        /// which include only a default DNS server that we provide (AmazonProvidedDNS). For more
+        /// information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
+        /// option sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6215,7 +6366,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a VPC endpoint service to which service consumers (Amazon Web Services accounts,
-        /// IAM users, and IAM roles) can connect.
+        /// users, and IAM roles) can connect.
         /// 
         ///  
         /// <para>
@@ -7049,6 +7200,41 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DeleteIpamPoolResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteIpamPoolResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteIpamResourceDiscovery
+
+        internal virtual DeleteIpamResourceDiscoveryResponse DeleteIpamResourceDiscovery(DeleteIpamResourceDiscoveryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIpamResourceDiscoveryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an IPAM resource discovery. A resource discovery is an IPAM component that
+        /// enables IPAM to manage and monitor resources that belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamResourceDiscovery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamResourceDiscovery">REST API Reference for DeleteIpamResourceDiscovery Operation</seealso>
+        public virtual Task<DeleteIpamResourceDiscoveryResponse> DeleteIpamResourceDiscoveryAsync(DeleteIpamResourceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIpamResourceDiscoveryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8876,7 +9062,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes one or more VPC endpoint connection notifications.
+        /// Deletes the specified VPC endpoint connection notifications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpointConnectionNotifications service method.</param>
         /// <param name="cancellationToken">
@@ -8910,45 +9096,23 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes one or more specified VPC endpoints. You can delete any of the following types
-        /// of VPC endpoints. 
+        /// Deletes the specified VPC endpoints.
         /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// Gateway endpoint,
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Gateway Load Balancer endpoint,
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Interface endpoint
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The following rules apply when you delete a VPC endpoint:
-        /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
         /// When you delete a gateway endpoint, we delete the endpoint routes in the route tables
-        /// that are associated with the endpoint.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// When you delete a Gateway Load Balancer endpoint, we delete the endpoint network interfaces.
-        /// 
+        /// for the endpoint.
         /// </para>
         ///  
         /// <para>
+        /// When you delete a Gateway Load Balancer endpoint, we delete its endpoint network interfaces.
         /// You can only delete Gateway Load Balancer endpoints when the routes that are associated
         /// with the endpoint are deleted.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// When you delete an interface endpoint, we delete the endpoint network interfaces.
+        /// When you delete an interface endpoint, we delete its endpoint network interfaces.
         /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoints service method.</param>
         /// <param name="cancellationToken">
@@ -8982,10 +9146,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes one or more VPC endpoint service configurations in your account. Before you
-        /// delete the endpoint service configuration, you must reject any <code>Available</code>
-        /// or <code>PendingAcceptance</code> interface endpoint connections that are attached
-        /// to the service.
+        /// Deletes the specified VPC endpoint service configurations. Before you can delete an
+        /// endpoint service configuration, you must reject any <code>Available</code> or <code>PendingAcceptance</code>
+        /// interface endpoint connections that are attached to the service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpointServiceConfigurations service method.</param>
         /// <param name="cancellationToken">
@@ -12036,6 +12199,76 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeIpamResourceDiscoveries
+
+        internal virtual DescribeIpamResourceDiscoveriesResponse DescribeIpamResourceDiscoveries(DescribeIpamResourceDiscoveriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamResourceDiscoveriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamResourceDiscoveriesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIpamResourceDiscoveriesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes IPAM resource discoveries. A resource discovery is an IPAM component that
+        /// enables IPAM to manage and monitor resources that belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamResourceDiscoveries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIpamResourceDiscoveries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveries">REST API Reference for DescribeIpamResourceDiscoveries Operation</seealso>
+        public virtual Task<DescribeIpamResourceDiscoveriesResponse> DescribeIpamResourceDiscoveriesAsync(DescribeIpamResourceDiscoveriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamResourceDiscoveriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamResourceDiscoveriesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeIpamResourceDiscoveriesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeIpamResourceDiscoveryAssociations
+
+        internal virtual DescribeIpamResourceDiscoveryAssociationsResponse DescribeIpamResourceDiscoveryAssociations(DescribeIpamResourceDiscoveryAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamResourceDiscoveryAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamResourceDiscoveryAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIpamResourceDiscoveryAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes resource discovery association with an Amazon VPC IPAM. An associated resource
+        /// discovery is a resource discovery that has been associated with an IPAM..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamResourceDiscoveryAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIpamResourceDiscoveryAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveryAssociations">REST API Reference for DescribeIpamResourceDiscoveryAssociations Operation</seealso>
+        public virtual Task<DescribeIpamResourceDiscoveryAssociationsResponse> DescribeIpamResourceDiscoveryAssociationsAsync(DescribeIpamResourceDiscoveryAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamResourceDiscoveryAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamResourceDiscoveryAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeIpamResourceDiscoveryAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeIpams
 
         internal virtual DescribeIpamsResponse DescribeIpams(DescribeIpamsRequest request)
@@ -13971,11 +14204,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you are describing a long list of snapshots, we recommend that you paginate the
-        /// output to make the list more manageable. The <code>MaxResults</code> parameter sets
-        /// the maximum number of results returned in a single page. If the list of results exceeds
-        /// your <code>MaxResults</code> value, then that number of results is returned along
-        /// with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code>
-        /// request to retrieve the remaining results.
+        /// output to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         ///  
         /// <para>
@@ -14061,11 +14290,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you are describing a long list of snapshots, we recommend that you paginate the
-        /// output to make the list more manageable. The <code>MaxResults</code> parameter sets
-        /// the maximum number of results returned in a single page. If the list of results exceeds
-        /// your <code>MaxResults</code> value, then that number of results is returned along
-        /// with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code>
-        /// request to retrieve the remaining results.
+        /// output to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         ///  
         /// <para>
@@ -15422,11 +15647,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you are describing a long list of volumes, we recommend that you paginate the output
-        /// to make the list more manageable. The <code>MaxResults</code> parameter sets the maximum
-        /// number of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
-        /// value, then that number of results is returned along with a <code>NextToken</code>
-        /// value that can be passed to a subsequent <code>DescribeVolumes</code> request to retrieve
-        /// the remaining results.
+        /// to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         ///  
         /// <para>
@@ -15453,11 +15674,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you are describing a long list of volumes, we recommend that you paginate the output
-        /// to make the list more manageable. The <code>MaxResults</code> parameter sets the maximum
-        /// number of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
-        /// value, then that number of results is returned along with a <code>NextToken</code>
-        /// value that can be passed to a subsequent <code>DescribeVolumes</code> request to retrieve
-        /// the remaining results.
+        /// to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         ///  
         /// <para>
@@ -15881,7 +16098,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your VPC endpoints.
+        /// Describes your VPC endpoints.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpoints service method.</param>
         /// <param name="cancellationToken">
@@ -17187,6 +17404,94 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DisassociateInstanceEventWindowResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateInstanceEventWindowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateIpamResourceDiscovery
+
+        internal virtual DisassociateIpamResourceDiscoveryResponse DisassociateIpamResourceDiscovery(DisassociateIpamResourceDiscoveryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateIpamResourceDiscoveryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates a resource discovery from an Amazon VPC IPAM. A resource discovery is
+        /// an IPAM component that enables IPAM to manage and monitor resources that belong to
+        /// the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIpamResourceDiscovery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamResourceDiscovery">REST API Reference for DisassociateIpamResourceDiscovery Operation</seealso>
+        public virtual Task<DisassociateIpamResourceDiscoveryResponse> DisassociateIpamResourceDiscoveryAsync(DisassociateIpamResourceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateIpamResourceDiscoveryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateNatGatewayAddress
+
+        internal virtual DisassociateNatGatewayAddressResponse DisassociateNatGatewayAddress(DisassociateNatGatewayAddressRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateNatGatewayAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateNatGatewayAddressResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateNatGatewayAddressResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates secondary Elastic IP addresses (EIPs) from a public NAT gateway. You
+        /// cannot disassociate your primary EIP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+        /// secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud User
+        /// Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// While disassociating is in progress, you cannot associate/disassociate additional
+        /// EIPs while the connections are being drained. You are, however, allowed to delete
+        /// the NAT gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// An EIP will only be released at the end of MaxDrainDurationSeconds. The EIPs stay
+        /// associated and support the existing connections but do not support any new connections
+        /// (new connections are distributed across the remaining associated EIPs). As the existing
+        /// connections drain out, the EIPs (and the corresponding private IPs mapped to them)
+        /// get released.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateNatGatewayAddress service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateNatGatewayAddress">REST API Reference for DisassociateNatGatewayAddress Operation</seealso>
+        public virtual Task<DisassociateNatGatewayAddressResponse> DisassociateNatGatewayAddressAsync(DisassociateNatGatewayAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateNatGatewayAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateNatGatewayAddressResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateNatGatewayAddressResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -18855,6 +19160,79 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetIpamDiscoveredAccounts
+
+        internal virtual GetIpamDiscoveredAccountsResponse GetIpamDiscoveredAccounts(GetIpamDiscoveredAccountsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamDiscoveredAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamDiscoveredAccountsResponseUnmarshaller.Instance;
+
+            return Invoke<GetIpamDiscoveredAccountsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets IPAM discovered accounts. A discovered account is an Amazon Web Services account
+        /// that is monitored under a resource discovery. If you have integrated IPAM with Amazon
+        /// Web Services Organizations, all accounts in the organization are discovered accounts.
+        /// Only the IPAM account can get all discovered accounts in the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamDiscoveredAccounts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamDiscoveredAccounts service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredAccounts">REST API Reference for GetIpamDiscoveredAccounts Operation</seealso>
+        public virtual Task<GetIpamDiscoveredAccountsResponse> GetIpamDiscoveredAccountsAsync(GetIpamDiscoveredAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamDiscoveredAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamDiscoveredAccountsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIpamDiscoveredAccountsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIpamDiscoveredResourceCidrs
+
+        internal virtual GetIpamDiscoveredResourceCidrsResponse GetIpamDiscoveredResourceCidrs(GetIpamDiscoveredResourceCidrsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamDiscoveredResourceCidrsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamDiscoveredResourceCidrsResponseUnmarshaller.Instance;
+
+            return Invoke<GetIpamDiscoveredResourceCidrsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the resource CIDRs that are monitored as part of a resource discovery. A discovered
+        /// resource is a resource CIDR monitored under a resource discovery. The following resources
+        /// can be discovered: VPCs, Public IPv4 pools, VPC subnets, and Elastic IP addresses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamDiscoveredResourceCidrs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamDiscoveredResourceCidrs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredResourceCidrs">REST API Reference for GetIpamDiscoveredResourceCidrs Operation</seealso>
+        public virtual Task<GetIpamDiscoveredResourceCidrsResponse> GetIpamDiscoveredResourceCidrsAsync(GetIpamDiscoveredResourceCidrsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamDiscoveredResourceCidrsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamDiscoveredResourceCidrsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIpamDiscoveredResourceCidrsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetIpamPoolAllocations
 
         internal virtual GetIpamPoolAllocationsResponse GetIpamPoolAllocations(GetIpamPoolAllocationsRequest request)
@@ -18937,7 +19315,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Get information about the resources in a scope.
+        /// Returns resource CIDRs managed by IPAM in a given scope. If an IPAM is associated
+        /// with more than one resource discovery, the resource CIDRs across all of the resource
+        /// discoveries is returned. A resource discovery is an IPAM component that enables IPAM
+        /// to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIpamResourceCidrs service method.</param>
         /// <param name="cancellationToken">
@@ -21185,6 +21566,41 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyIpamResourceDiscovery
+
+        internal virtual ModifyIpamResourceDiscoveryResponse ModifyIpamResourceDiscovery(ModifyIpamResourceDiscoveryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyIpamResourceDiscoveryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies a resource discovery. A resource discovery is an IPAM component that enables
+        /// IPAM to manage and monitor resources that belong to the owning account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamResourceDiscovery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIpamResourceDiscovery service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceDiscovery">REST API Reference for ModifyIpamResourceDiscovery Operation</seealso>
+        public virtual Task<ModifyIpamResourceDiscoveryResponse> ModifyIpamResourceDiscoveryAsync(ModifyIpamResourceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIpamResourceDiscoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamResourceDiscoveryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyIpamResourceDiscoveryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyIpamScope
 
         internal virtual ModifyIpamScopeResponse ModifyIpamScope(ModifyIpamScopeRequest request)
@@ -22490,8 +22906,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the permissions for your VPC endpoint service. You can add or remove permissions
-        /// for service consumers (IAM users, IAM roles, and Amazon Web Services accounts) to
-        /// connect to your endpoint service.
+        /// for service consumers (Amazon Web Services accounts, users, and IAM roles) to connect
+        /// to your endpoint service.
         /// 
         ///  
         /// <para>
@@ -22953,14 +23369,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Move an BYOIP IPv4 CIDR to IPAM from a public IPv4 pool.
+        /// Move a BYOIPv4 CIDR to IPAM from a public IPv4 pool.
         /// 
         ///  
         /// <para>
-        /// If you already have an IPv4 BYOIP CIDR with Amazon Web Services, you can move the
-        /// CIDR to IPAM from a public IPv4 pool. You cannot move an IPv6 CIDR to IPAM. If you
-        /// are bringing a new IP address to Amazon Web Services for the first time, complete
-        /// the steps in <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-ipam.html">Tutorial:
+        /// If you already have a BYOIPv4 CIDR with Amazon Web Services, you can move the CIDR
+        /// to IPAM from a public IPv4 pool. You cannot move an IPv6 CIDR to IPAM. If you are
+        /// bringing a new IP address to Amazon Web Services for the first time, complete the
+        /// steps in <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-ipam.html">Tutorial:
         /// BYOIP address CIDRs to IPAM</a>.
         /// </para>
         /// </summary>
@@ -23677,7 +24093,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Rejects one or more VPC endpoint connection requests to your VPC endpoint service.
+        /// Rejects VPC endpoint connection requests to your VPC endpoint service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectVpcEndpointConnections service method.</param>
         /// <param name="cancellationToken">
@@ -25744,6 +26160,58 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = UnassignPrivateIpAddressesResponseUnmarshaller.Instance;
 
             return InvokeAsync<UnassignPrivateIpAddressesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UnassignPrivateNatGatewayAddress
+
+        internal virtual UnassignPrivateNatGatewayAddressResponse UnassignPrivateNatGatewayAddress(UnassignPrivateNatGatewayAddressRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnassignPrivateNatGatewayAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnassignPrivateNatGatewayAddressResponseUnmarshaller.Instance;
+
+            return Invoke<UnassignPrivateNatGatewayAddressResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Unassigns secondary private IPv4 addresses from a private NAT gateway. You cannot
+        /// unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+        /// secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud User
+        /// Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// While unassigning is in progress, you cannot assign/unassign additional IP addresses
+        /// while the connections are being drained. You are, however, allowed to delete the NAT
+        /// gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// A private IP address will only be released at the end of MaxDrainDurationSeconds.
+        /// The private IP addresses stay associated and support the existing connections but
+        /// do not support any new connections (new connections are distributed across the remaining
+        /// assigned private IP address). After the existing connections drain out, the private
+        /// IP addresses get released. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnassignPrivateNatGatewayAddress service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UnassignPrivateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateNatGatewayAddress">REST API Reference for UnassignPrivateNatGatewayAddress Operation</seealso>
+        public virtual Task<UnassignPrivateNatGatewayAddressResponse> UnassignPrivateNatGatewayAddressAsync(UnassignPrivateNatGatewayAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnassignPrivateNatGatewayAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnassignPrivateNatGatewayAddressResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UnassignPrivateNatGatewayAddressResponse>(request, options, cancellationToken);
         }
 
         #endregion

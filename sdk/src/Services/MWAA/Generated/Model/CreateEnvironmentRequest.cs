@@ -63,6 +63,7 @@ namespace Amazon.MWAA.Model
         /// Airflow configuration options</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> AirflowConfigurationOptions
         {
             get { return this._airflowConfigurationOptions; }

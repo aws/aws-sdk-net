@@ -215,7 +215,7 @@ namespace Amazon.Runtime.Internal.Util
         /// </summary>
         /// <param name="sectionName">name of the section to operate on</param>
         /// <param name="properties">properties to add/update/delete</param>
-        public void EditSection(string sectionName, SortedDictionary<string, string> properties)
+        public virtual void EditSection(string sectionName, SortedDictionary<string, string> properties)
         {
             EnsureSectionExists(sectionName);
 
@@ -323,6 +323,18 @@ namespace Amazon.Runtime.Internal.Util
         {
             var lineNumber = 0;
             return TrySeekSection(sectionName, ref lineNumber);
+        }
+
+        /// <summary>
+        /// Determine if a section exists in the INI file.
+        /// </summary>
+        /// <param name="sectionNameRegex">Regex to match name of section to look for</param>
+        /// <param name="sectionName">name of section if regex matches</param>
+        /// <returns>true if the section exists, false otherwise</returns>
+        public bool SectionExists(Regex sectionNameRegex, out string sectionName)
+        {
+            var lineNumber = 0;
+            return TrySeekSection(sectionNameRegex, ref lineNumber, out sectionName);
         }
 
         /// <summary>

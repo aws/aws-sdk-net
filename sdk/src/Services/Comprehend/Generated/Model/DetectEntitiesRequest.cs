@@ -195,7 +195,7 @@ namespace Amazon.Comprehend.Model
         /// parameter, do not use the <code>Bytes</code> parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Sensitive=true, Min=1)]
         public string Text
         {
             get { return this._text; }

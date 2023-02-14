@@ -67,7 +67,7 @@ namespace Amazon.BillingConductor.Model
         /// The description of the pricing plan. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -86,7 +86,7 @@ namespace Amazon.BillingConductor.Model
         /// The name of the pricing plan. The names must be unique to each pricing plan. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

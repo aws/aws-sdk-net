@@ -59,7 +59,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property FromPhoneNumber.
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string FromPhoneNumber
         {
             get { return this._fromPhoneNumber; }
@@ -107,7 +107,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property ToPhoneNumber.
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string ToPhoneNumber
         {
             get { return this._toPhoneNumber; }

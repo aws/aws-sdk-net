@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// The specified channel was not found.
+    /// This exception is thrown when CloudTrail cannot find the specified channel.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

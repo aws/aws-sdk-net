@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Reports the progress of an instance refresh on an Auto Scaling group that has a warm
-    /// pool. This includes separate details for instances in the warm pool and instances
-    /// in the Auto Scaling group (the live pool).
+    /// Reports progress on replacing instances in an Auto Scaling group that has a warm pool.
+    /// This includes separate details for instances in the warm pool and instances in the
+    /// Auto Scaling group (the live pool).
     /// </summary>
     public partial class InstanceRefreshProgressDetails
     {
@@ -41,8 +41,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LivePoolProgress. 
         /// <para>
-        /// Indicates the progress of an instance refresh on instances that are in the Auto Scaling
-        /// group.
+        /// Reports progress on replacing instances that are in the Auto Scaling group.
         /// </para>
         /// </summary>
         public InstanceRefreshLivePoolProgress LivePoolProgress
@@ -60,7 +59,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property WarmPoolProgress. 
         /// <para>
-        /// Indicates the progress of an instance refresh on instances that are in the warm pool.
+        /// Reports progress on replacing instances that are in the warm pool.
         /// </para>
         /// </summary>
         public InstanceRefreshWarmPoolProgress WarmPoolProgress

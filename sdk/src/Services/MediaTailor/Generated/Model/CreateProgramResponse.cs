@@ -36,7 +36,9 @@ namespace Amazon.MediaTailor.Model
         private List<AdBreak> _adBreaks = new List<AdBreak>();
         private string _arn;
         private string _channelName;
+        private ClipRange _clipRange;
         private DateTime? _creationTime;
+        private long? _durationMillis;
         private string _liveSourceName;
         private string _programName;
         private DateTime? _scheduledStartTime;
@@ -98,6 +100,24 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClipRange. 
+        /// <para>
+        /// The clip range configuration settings.
+        /// </para>
+        /// </summary>
+        public ClipRange ClipRange
+        {
+            get { return this._clipRange; }
+            set { this._clipRange = value; }
+        }
+
+        // Check to see if ClipRange property is set
+        internal bool IsSetClipRange()
+        {
+            return this._clipRange != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// The time the program was created.
@@ -113,6 +133,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DurationMillis. 
+        /// <para>
+        /// The duration of the live program in milliseconds.
+        /// </para>
+        /// </summary>
+        public long DurationMillis
+        {
+            get { return this._durationMillis.GetValueOrDefault(); }
+            set { this._durationMillis = value; }
+        }
+
+        // Check to see if DurationMillis property is set
+        internal bool IsSetDurationMillis()
+        {
+            return this._durationMillis.HasValue; 
         }
 
         /// <summary>

@@ -47,7 +47,7 @@ namespace Amazon.MediaConvert.Model
         /// (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS
         /// managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys.
         /// You can optionally choose to specify a different, customer managed CMK. Do so by specifying
-        /// the Amazon Resource Name (ARN) of the key for the setting  KMS ARN (kmsKeyArn).
+        /// the Amazon Resource Name (ARN) of the key for the setting KMS ARN (kmsKeyArn).
         /// </summary>
         public S3ServerSideEncryptionType EncryptionType
         {

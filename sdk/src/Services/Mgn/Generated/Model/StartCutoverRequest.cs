@@ -64,6 +64,7 @@ namespace Amazon.Mgn.Model
         /// Start Cutover by Tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

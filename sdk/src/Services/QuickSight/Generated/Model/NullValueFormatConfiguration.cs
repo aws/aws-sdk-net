@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// Determines the null string of null values.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string NullString
         {
             get { return this._nullString; }

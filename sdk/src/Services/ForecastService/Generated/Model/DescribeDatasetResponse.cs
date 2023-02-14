@@ -164,8 +164,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property EncryptionConfig. 
         /// <para>
-        /// The AWS Key Management Service (KMS) key and the AWS Identity and Access Management
-        /// (IAM) role that Amazon Forecast can assume to access the key.
+        /// The Key Management Service (KMS) key and the Identity and Access Management (IAM)
+        /// role that Amazon Forecast can assume to access the key.
         /// </para>
         /// </summary>
         public EncryptionConfig EncryptionConfig

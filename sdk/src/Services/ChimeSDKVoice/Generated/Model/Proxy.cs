@@ -71,6 +71,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property FallBackPhoneNumber.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string FallBackPhoneNumber
         {
             get { return this._fallBackPhoneNumber; }

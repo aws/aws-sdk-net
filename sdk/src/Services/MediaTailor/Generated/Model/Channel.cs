@@ -41,6 +41,7 @@ namespace Amazon.MediaTailor.Model
         private DateTime? _creationTime;
         private SlateSource _fillerSlate;
         private DateTime? _lastModifiedTime;
+        private LogConfigurationForChannel _logConfiguration;
         private List<ResponseOutputItem> _outputs = new List<ResponseOutputItem>();
         private string _playbackMode;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -157,6 +158,25 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogConfiguration. 
+        /// <para>
+        /// The log configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public LogConfigurationForChannel LogConfiguration
+        {
+            get { return this._logConfiguration; }
+            set { this._logConfiguration = value; }
+        }
+
+        // Check to see if LogConfiguration property is set
+        internal bool IsSetLogConfiguration()
+        {
+            return this._logConfiguration != null;
         }
 
         /// <summary>

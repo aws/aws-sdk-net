@@ -65,7 +65,7 @@ namespace Amazon.NimbleStudio.Model
         /// The initialization script.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5120)]
+        [AWSProperty(Sensitive=true, Min=1, Max=5120)]
         public string Script
         {
             get { return this._script; }
@@ -124,7 +124,7 @@ namespace Amazon.NimbleStudio.Model
         /// The name for the studio component.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=64)]
+        [AWSProperty(Sensitive=true, Min=0, Max=64)]
         public string StudioComponentName
         {
             get { return this._studioComponentName; }

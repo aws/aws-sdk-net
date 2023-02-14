@@ -64,6 +64,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("awsGroundStationAgentEndpoint", targetDepth))
+                {
+                    var unmarshaller = AwsGroundStationAgentEndpointUnmarshaller.Instance;
+                    unmarshalledObject.AwsGroundStationAgentEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("endpoint", targetDepth))
                 {
                     var unmarshaller = DataflowEndpointUnmarshaller.Instance;

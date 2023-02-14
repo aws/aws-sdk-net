@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert.Model
         private AudioNormalizationLoudnessLogging _loudnessLogging;
         private AudioNormalizationPeakCalculation _peakCalculation;
         private double? _targetLkfs;
+        private double? _truePeakLimiterThreshold;
 
         /// <summary>
         /// Gets and sets the property Algorithm. Choose one of the following audio normalization
@@ -147,6 +148,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetTargetLkfs()
         {
             return this._targetLkfs.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TruePeakLimiterThreshold. Specify the True-peak limiter
+        /// threshold in decibels relative to full scale (dBFS). The peak inter-audio sample loudness
+        /// in your output will be limited to the value that you specify, without affecting the
+        /// overall target LKFS. Enter a value from 0 to -20. Leave blank to use the default value
+        /// 0.
+        /// </summary>
+        public double TruePeakLimiterThreshold
+        {
+            get { return this._truePeakLimiterThreshold.GetValueOrDefault(); }
+            set { this._truePeakLimiterThreshold = value; }
+        }
+
+        // Check to see if TruePeakLimiterThreshold property is set
+        internal bool IsSetTruePeakLimiterThreshold()
+        {
+            return this._truePeakLimiterThreshold.HasValue; 
         }
 
     }

@@ -94,7 +94,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The ID of the client associated with the user pool.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -169,7 +169,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The password of the user you want to register.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Max=256)]
         public string Password
         {
             get { return this._password; }
@@ -189,7 +189,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// a user pool client and username plus the client ID in the message.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string SecretHash
         {
             get { return this._secretHash; }
@@ -252,7 +252,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user name of the user you want to register.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }

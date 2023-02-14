@@ -46,7 +46,9 @@ namespace Amazon.Connect.Model
         private string _name;
         private string _previousContactId;
         private QueueInfo _queueInfo;
+        private string _relatedContactId;
         private DateTime? _scheduledTimestamp;
+        private WisdomInfo _wisdomInfo;
 
         /// <summary>
         /// Gets and sets the property AgentInfo. 
@@ -292,6 +294,26 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RelatedContactId. 
+        /// <para>
+        /// The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a>
+        /// to this contact.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string RelatedContactId
+        {
+            get { return this._relatedContactId; }
+            set { this._relatedContactId = value; }
+        }
+
+        // Check to see if RelatedContactId property is set
+        internal bool IsSetRelatedContactId()
+        {
+            return this._relatedContactId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ScheduledTimestamp. 
         /// <para>
         /// The timestamp, in Unix epoch time format, at which to start running the inbound flow.
@@ -308,6 +330,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetScheduledTimestamp()
         {
             return this._scheduledTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WisdomInfo. 
+        /// <para>
+        /// Information about Amazon Connect Wisdom.
+        /// </para>
+        /// </summary>
+        public WisdomInfo WisdomInfo
+        {
+            get { return this._wisdomInfo; }
+            set { this._wisdomInfo = value; }
+        }
+
+        // Check to see if WisdomInfo property is set
+        internal bool IsSetWisdomInfo()
+        {
+            return this._wisdomInfo != null;
         }
 
     }

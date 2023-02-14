@@ -88,6 +88,7 @@ namespace Amazon.Glue.Model
         /// component and Glue Studio code generation is based.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, CodeGenConfigurationNode> CodeGenConfigurationNodes
         {
             get { return this._codeGenConfigurationNodes; }

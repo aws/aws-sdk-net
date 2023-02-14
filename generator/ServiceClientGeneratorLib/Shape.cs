@@ -29,6 +29,7 @@ namespace ServiceClientGenerator
         public const string RequiredKey = "required";
         public const string MinKey = "min";
         public const string MaxKey = "max";
+        public const string SensitiveKey = "sensitive";
         public const string PatternKey = "pattern";
         public const string ErrorKey = "error";
         public const string ErrorCodeKey = "code";
@@ -556,6 +557,18 @@ namespace ServiceClientGenerator
                     return false;
 
                 return bool.Parse(streamingNode.ToString());
+            }
+        }
+
+        public bool Sensitive
+        {
+            get
+            {
+                var sensitiveNode = data[SensitiveKey];
+                if (sensitiveNode == null)
+                    return false;
+
+                return bool.Parse(sensitiveNode.ToString());
             }
         }
 

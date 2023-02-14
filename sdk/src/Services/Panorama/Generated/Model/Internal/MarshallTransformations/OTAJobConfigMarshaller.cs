@@ -45,6 +45,12 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OTAJobConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAllowMajorVersionUpdate())
+            {
+                context.Writer.WritePropertyName("AllowMajorVersionUpdate");
+                context.Writer.Write(requestObject.AllowMajorVersionUpdate);
+            }
+
             if(requestObject.IsSetImageVersion())
             {
                 context.Writer.WritePropertyName("ImageVersion");

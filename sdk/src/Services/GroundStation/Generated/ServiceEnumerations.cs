@@ -25,6 +25,64 @@ namespace Amazon.GroundStation
 {
 
     /// <summary>
+    /// Constants used for properties of type AgentStatus.
+    /// </summary>
+    public class AgentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AgentStatus
+        /// </summary>
+        public static readonly AgentStatus ACTIVE = new AgentStatus("ACTIVE");
+        /// <summary>
+        /// Constant FAILED for AgentStatus
+        /// </summary>
+        public static readonly AgentStatus FAILED = new AgentStatus("FAILED");
+        /// <summary>
+        /// Constant INACTIVE for AgentStatus
+        /// </summary>
+        public static readonly AgentStatus INACTIVE = new AgentStatus("INACTIVE");
+        /// <summary>
+        /// Constant SUCCESS for AgentStatus
+        /// </summary>
+        public static readonly AgentStatus SUCCESS = new AgentStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentStatus FindValue(string value)
+        {
+            return FindValue<AgentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AngleUnits.
     /// </summary>
     public class AngleUnits : ConstantClass
@@ -68,6 +126,56 @@ namespace Amazon.GroundStation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AngleUnits(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AuditResults.
+    /// </summary>
+    public class AuditResults : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HEALTHY for AuditResults
+        /// </summary>
+        public static readonly AuditResults HEALTHY = new AuditResults("HEALTHY");
+        /// <summary>
+        /// Constant UNHEALTHY for AuditResults
+        /// </summary>
+        public static readonly AuditResults UNHEALTHY = new AuditResults("UNHEALTHY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuditResults(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuditResults FindValue(string value)
+        {
+            return FindValue<AuditResults>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuditResults(string value)
         {
             return FindValue(value);
         }
@@ -122,6 +230,60 @@ namespace Amazon.GroundStation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BandwidthUnits(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ComponentType.
+    /// </summary>
+    public class ComponentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIGITIZER for ComponentType
+        /// </summary>
+        public static readonly ComponentType DIGITIZER = new ComponentType("DIGITIZER");
+        /// <summary>
+        /// Constant LAMINAR_FLOW for ComponentType
+        /// </summary>
+        public static readonly ComponentType LAMINAR_FLOW = new ComponentType("LAMINAR_FLOW");
+        /// <summary>
+        /// Constant PRISM for ComponentType
+        /// </summary>
+        public static readonly ComponentType PRISM = new ComponentType("PRISM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComponentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComponentType FindValue(string value)
+        {
+            return FindValue<ComponentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComponentType(string value)
         {
             return FindValue(value);
         }

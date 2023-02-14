@@ -38,8 +38,10 @@ namespace Amazon.Imagebuilder.Model
         private string _dateCreated;
         private string _description;
         private string _name;
+        private bool? _obfuscate;
         private string _owner;
         private Platform _platform;
+        private string _publisher;
         private ComponentState _state;
         private List<string> _supportedOsVersions = new List<string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -67,7 +69,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ChangeDescription. 
         /// <para>
-        /// The change description of the component.
+        /// The change description for the current version of the component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -86,7 +88,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DateCreated. 
         /// <para>
-        /// The date that the component was created.
+        /// The original creation date of the component.
         /// </para>
         /// </summary>
         public string DateCreated
@@ -139,6 +141,25 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Obfuscate. 
+        /// <para>
+        /// Indicates whether component source is hidden from view in the console, and from component
+        /// detail results for API, CLI, or SDK operations.
+        /// </para>
+        /// </summary>
+        public bool Obfuscate
+        {
+            get { return this._obfuscate.GetValueOrDefault(); }
+            set { this._obfuscate = value; }
+        }
+
+        // Check to see if Obfuscate property is set
+        internal bool IsSetObfuscate()
+        {
+            return this._obfuscate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
         /// The owner of the component.
@@ -160,7 +181,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform of the component.
+        /// The operating system platform of the component.
         /// </para>
         /// </summary>
         public Platform Platform
@@ -173,6 +194,26 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetPlatform()
         {
             return this._platform != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Publisher. 
+        /// <para>
+        /// Contains the name of the publisher if this is a third-party component. Otherwise,
+        /// this property is empty.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string Publisher
+        {
+            get { return this._publisher; }
+            set { this._publisher = value; }
+        }
+
+        // Check to see if Publisher property is set
+        internal bool IsSetPublisher()
+        {
+            return this._publisher != null;
         }
 
         /// <summary>
@@ -196,9 +237,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SupportedOsVersions. 
         /// <para>
-        /// The operating system (OS) version supported by the component. If the OS information
-        /// is available, a prefix match is performed against the base image OS version during
-        /// image recipe creation.
+        /// The operating system (OS) version that the component supports. If the OS information
+        /// is available, Image Builder performs a prefix match against the base image OS version
+        /// during image recipe creation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -217,7 +258,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags associated with the component.
+        /// The tags that apply to the component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -236,8 +277,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the component denotes whether the component is used to build the image
-        /// or only to test it.
+        /// The component type specifies whether Image Builder uses the component to build the
+        /// image or only to test it.
         /// </para>
         /// </summary>
         public ComponentType Type

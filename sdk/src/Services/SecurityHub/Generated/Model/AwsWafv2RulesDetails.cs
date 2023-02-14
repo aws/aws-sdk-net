@@ -31,8 +31,8 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Provides details about rules in a rule group. A rule identifies web requests that
     /// you want to allow, block, or count. Each rule includes one top-level Statement that
-    /// AWS WAF uses to identify matching web requests, and parameters that govern how AWS
-    /// WAF handles them.
+    /// WAF uses to identify matching web requests, and parameters that govern how WAF handles
+    /// them.
     /// </summary>
     public partial class AwsWafv2RulesDetails
     {

@@ -44,7 +44,7 @@ namespace Amazon.Appflow.Model
         ///  The Access Key portion of the credentials. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Max=256)]
         public string AccessKeyId
         {
             get { return this._accessKeyId; }

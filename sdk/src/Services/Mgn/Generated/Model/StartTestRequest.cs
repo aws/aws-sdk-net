@@ -64,6 +64,7 @@ namespace Amazon.Mgn.Model
         /// Start Test by Tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

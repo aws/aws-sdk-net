@@ -39,6 +39,12 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  
     /// <para>
+    /// To change a secret so that it is managed by another service, you need to recreate
+    /// the secret in that service. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+    /// Manager secrets managed by other Amazon Web Services services</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// We recommend you avoid calling <code>UpdateSecret</code> at a sustained rate of more
     /// than once every 10 minutes. When you call <code>UpdateSecret</code> to update the
     /// secret value, Secrets Manager creates a new version of the secret. Secrets Manager
@@ -207,7 +213,7 @@ namespace Amazon.SecretsManager.Model
         /// You can't access this parameter in the Secrets Manager console.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=65536)]
+        [AWSProperty(Sensitive=true, Min=0, Max=65536)]
         public MemoryStream SecretBinary
         {
             get { return this._secretBinary; }
@@ -257,7 +263,7 @@ namespace Amazon.SecretsManager.Model
         /// not both. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=65536)]
+        [AWSProperty(Sensitive=true, Min=0, Max=65536)]
         public string SecretString
         {
             get { return this._secretString; }

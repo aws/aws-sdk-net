@@ -630,7 +630,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Creates a Standby WorkSpace in a secondary region.
+        /// Creates a standby WorkSpace in a secondary Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStandbyWorkspaces service method.</param>
         /// 
@@ -656,7 +656,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Creates a Standby WorkSpace in a secondary region.
+        /// Creates a standby WorkSpace in a secondary Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStandbyWorkspaces service method.</param>
         /// <param name="cancellationToken">
@@ -746,7 +746,7 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// Only Windows 10, Windows Sever 2016, and Windows Server 2019 WorkSpace images can
+        /// Only Windows 10, Windows Server 2016, and Windows Server 2019 WorkSpace images can
         /// be programmatically updated at this time.
         /// </para>
         ///  </li> <li> 
@@ -803,7 +803,7 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// Only Windows 10, Windows Sever 2016, and Windows Server 2019 WorkSpace images can
+        /// Only Windows 10, Windows Server 2016, and Windows Server 2019 WorkSpace images can
         /// be programmatically updated at this time.
         /// </para>
         ///  </li> <li> 
@@ -2621,10 +2621,10 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Imports the specified Windows 10 Bring Your Own License (BYOL) or Windows Server 2016
-        /// BYOL image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2
-        /// image that is in your Amazon Web Services account, and you must own the image. For
-        /// more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+        /// Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces.
+        /// The image must be an already licensed Amazon EC2 image that is in your Amazon Web
+        /// Services account, and you must own the image. For more information about creating
+        /// BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
         /// Bring Your Own Windows Desktop Licenses</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceImage service method.</param>
@@ -2654,10 +2654,10 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Imports the specified Windows 10 Bring Your Own License (BYOL) or Windows Server 2016
-        /// BYOL image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2
-        /// image that is in your Amazon Web Services account, and you must own the image. For
-        /// more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+        /// Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces.
+        /// The image must be an already licensed Amazon EC2 image that is in your Amazon Web
+        /// Services account, and you must own the image. For more information about creating
+        /// BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
         /// Bring Your Own Windows Desktop Licenses</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceImage service method.</param>

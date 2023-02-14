@@ -102,7 +102,7 @@ namespace Amazon.EC2.Model
         /// and platform of the schedule that you purchased.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public ScheduledInstancesLaunchSpecification LaunchSpecification
         {
             get { return this._launchSpecification; }

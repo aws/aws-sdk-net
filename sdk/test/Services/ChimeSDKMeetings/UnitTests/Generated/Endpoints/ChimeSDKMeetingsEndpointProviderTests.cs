@@ -31,105 +31,15 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("ChimeSDKMeetings")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region ap-southeast-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime-fips.us-gov-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ChimeSDKMeetings")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ChimeSDKMeetings")]
-        [Description("For region us-gov-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime.us-gov-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ChimeSDKMeetings")]
-        [Description("For region us-gov-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
+            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime.us-gov-east-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ChimeSDKMeetings")]
-        [Description("For region eu-central-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime-fips.eu-central-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ChimeSDKMeetings")]
-        [Description("For region eu-central-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime-fips.eu-central-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ChimeSDKMeetings")]
-        [Description("For region eu-central-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime.eu-central-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://meetings-chime.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -151,195 +61,15 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("ChimeSDKMeetings")]
-        [Description("For region us-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime-fips.us-west-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ChimeSDKMeetings")]
-        [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime-fips.us-west-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ChimeSDKMeetings")]
-        [Description("For region us-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime.us-west-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ChimeSDKMeetings")]
-        [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime.us-west-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ChimeSDKMeetings")]
-        [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime-fips.us-gov-west-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ChimeSDKMeetings")]
-        [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime-fips.us-gov-west-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ChimeSDKMeetings")]
-        [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime.us-gov-west-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ChimeSDKMeetings")]
-        [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime.us-gov-west-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ChimeSDKMeetings")]
-        [Description("For region ap-southeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime-fips.ap-southeast-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ChimeSDKMeetings")]
-        [Description("For region ap-southeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime-fips.ap-southeast-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ChimeSDKMeetings")]
-        [Description("For region ap-southeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime.ap-southeast-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ChimeSDKMeetings")]
-        [Description("For region ap-southeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime.ap-southeast-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ChimeSDKMeetings")]
-        [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ChimeSDKMeetingsEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime-fips.us-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://meetings-chime.us-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -361,6 +91,51 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("ChimeSDKMeetings")]
+        [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ChimeSDKMeetingsEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://meetings-chime.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ChimeSDKMeetings")]
+        [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ChimeSDKMeetingsEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://meetings-chime-fips.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ChimeSDKMeetings")]
+        [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new ChimeSDKMeetingsEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://meetings-chime-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ChimeSDKMeetings")]
         [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
@@ -376,15 +151,210 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("ChimeSDKMeetings")]
-        [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For region cn-north-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ChimeSDKMeetingsEndpointParameters();
-            parameters["Region"] = "us-east-1";
+            parameters["Region"] = "cn-north-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://meetings-chime-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ChimeSDKMeetings")]
+        [Description("For region cn-north-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ChimeSDKMeetingsEndpointParameters();
+            parameters["Region"] = "cn-north-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://meetings-chime-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ChimeSDKMeetings")]
+        [Description("For region cn-north-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new ChimeSDKMeetingsEndpointParameters();
+            parameters["Region"] = "cn-north-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://meetings-chime.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ChimeSDKMeetings")]
+        [Description("For region cn-north-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ChimeSDKMeetingsEndpointParameters();
+            parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://meetings-chime.us-east-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://meetings-chime.cn-north-1.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ChimeSDKMeetings")]
+        [Description("For region us-gov-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ChimeSDKMeetingsEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://meetings-chime.us-gov-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ChimeSDKMeetings")]
+        [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ChimeSDKMeetingsEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://meetings-chime-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ChimeSDKMeetings")]
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ChimeSDKMeetingsEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://meetings-chime.us-gov-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ChimeSDKMeetings")]
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ChimeSDKMeetingsEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://meetings-chime-fips.us-gov-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ChimeSDKMeetings")]
+        [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new ChimeSDKMeetingsEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://meetings-chime-fips.us-gov-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ChimeSDKMeetings")]
+        [Description("For region us-gov-east-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new ChimeSDKMeetingsEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://meetings-chime.us-gov-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ChimeSDKMeetings")]
+        [Description("For region us-iso-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ChimeSDKMeetingsEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://meetings-chime-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ChimeSDKMeetings")]
+        [Description("For region us-iso-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ChimeSDKMeetingsEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://meetings-chime.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ChimeSDKMeetings")]
+        [Description("For region us-isob-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ChimeSDKMeetingsEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://meetings-chime-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ChimeSDKMeetings")]
+        [Description("For region us-isob-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new ChimeSDKMeetingsEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonChimeSDKMeetingsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://meetings-chime.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
 
         [TestMethod]

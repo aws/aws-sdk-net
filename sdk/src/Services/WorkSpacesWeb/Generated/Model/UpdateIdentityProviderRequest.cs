@@ -210,6 +210,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> IdentityProviderDetails
         {
             get { return this._identityProviderDetails; }
@@ -228,7 +229,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The name of the identity provider.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=32)]
+        [AWSProperty(Sensitive=true, Min=1, Max=32)]
         public string IdentityProviderName
         {
             get { return this._identityProviderName; }

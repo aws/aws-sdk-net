@@ -65,7 +65,7 @@ namespace Amazon.LakeFormation.Model
         /// A list of LF-tag conditions that apply to the resource's LF-tag policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5)]
+        [AWSProperty(Required=true)]
         public List<LFTag> Expression
         {
             get { return this._expression; }

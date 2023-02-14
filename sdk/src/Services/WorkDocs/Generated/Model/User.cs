@@ -73,7 +73,7 @@ namespace Amazon.WorkDocs.Model
         /// The email address of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string EmailAddress
         {
             get { return this._emailAddress; }

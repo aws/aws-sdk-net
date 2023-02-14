@@ -42,7 +42,7 @@ namespace Amazon.KeyManagementService.Model
         /// the value is Base64-encoded. Otherwise, it is not Base64-encoded.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public MemoryStream Plaintext
         {
             get { return this._plaintext; }

@@ -967,6 +967,65 @@ namespace Amazon.GroundStation
 
         #endregion
         
+        #region  GetAgentConfiguration
+
+
+        /// <summary>
+        /// Gets the latest configuration information for a registered agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetAgentConfiguration service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentConfiguration">REST API Reference for GetAgentConfiguration Operation</seealso>
+        public virtual GetAgentConfigurationResponse GetAgentConfiguration(GetAgentConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAgentConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAgentConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetAgentConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the latest configuration information for a registered agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAgentConfiguration service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentConfiguration">REST API Reference for GetAgentConfiguration Operation</seealso>
+        public virtual Task<GetAgentConfigurationResponse> GetAgentConfigurationAsync(GetAgentConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAgentConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAgentConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAgentConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetConfig
 
 
@@ -1756,6 +1815,65 @@ namespace Amazon.GroundStation
 
         #endregion
         
+        #region  RegisterAgent
+
+
+        /// <summary>
+        /// Registers a new agent with AWS Groundstation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterAgent service method.</param>
+        /// 
+        /// <returns>The response from the RegisterAgent service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/RegisterAgent">REST API Reference for RegisterAgent Operation</seealso>
+        public virtual RegisterAgentResponse RegisterAgent(RegisterAgentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterAgentResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterAgentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Registers a new agent with AWS Groundstation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterAgent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterAgent service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/RegisterAgent">REST API Reference for RegisterAgent Operation</seealso>
+        public virtual Task<RegisterAgentResponse> RegisterAgentAsync(RegisterAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterAgentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RegisterAgentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ReserveContact
 
 
@@ -1929,6 +2047,65 @@ namespace Amazon.GroundStation
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAgentStatus
+
+
+        /// <summary>
+        /// Update the status of the agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentStatus service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAgentStatus service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateAgentStatus">REST API Reference for UpdateAgentStatus Operation</seealso>
+        public virtual UpdateAgentStatusResponse UpdateAgentStatus(UpdateAgentStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAgentStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAgentStatusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAgentStatusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Update the status of the agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAgentStatus service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateAgentStatus">REST API Reference for UpdateAgentStatus Operation</seealso>
+        public virtual Task<UpdateAgentStatusResponse> UpdateAgentStatusAsync(UpdateAgentStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAgentStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAgentStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAgentStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -30,9 +30,9 @@ namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
     /// Container for the parameters to the GetGroupConfiguration operation.
-    /// Returns the service configuration associated with the specified resource group. For
-    /// details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-    /// configurations for resource groups</a>.
+    /// Retrieves the service configuration associated with the specified resource group.
+    /// For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+    /// configurations for Resource Groups</a>.
     /// 
     ///  
     /// <para>
@@ -55,7 +55,8 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// The name or the ARN of the resource group.
+        /// The name or the ARN of the resource group for which you want to retrive the service
+        /// configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]

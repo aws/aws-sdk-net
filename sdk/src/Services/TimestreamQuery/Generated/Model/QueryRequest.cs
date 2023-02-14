@@ -110,7 +110,7 @@ namespace Amazon.TimestreamQuery.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=32, Max=128)]
+        [AWSProperty(Sensitive=true, Min=32, Max=128)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -233,7 +233,7 @@ namespace Amazon.TimestreamQuery.Model
         ///  The query to be run by Timestream. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=262144)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=262144)]
         public string QueryString
         {
             get { return this._queryString; }

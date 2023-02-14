@@ -68,8 +68,8 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property ContainerProviderType. 
         /// <para>
-        /// The container provider type of the virtual cluster. EKS is the only supported type
-        /// as of now.
+        /// The container provider type of the virtual cluster. Amazon EKS is the only supported
+        /// type as of now.
         /// </para>
         /// </summary>
         public ContainerProviderType ContainerProviderType

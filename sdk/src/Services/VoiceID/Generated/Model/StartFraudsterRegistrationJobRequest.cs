@@ -131,7 +131,7 @@ namespace Amazon.VoiceID.Model
         /// The name of the new fraudster registration job.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string JobName
         {
             get { return this._jobName; }

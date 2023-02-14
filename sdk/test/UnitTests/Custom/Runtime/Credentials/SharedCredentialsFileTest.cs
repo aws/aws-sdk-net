@@ -127,6 +127,29 @@ namespace AWSSDK.UnitTests
             .AppendLine()
             .ToString();
 
+        private static readonly string SsoProfileCredentialsText = new StringBuilder()
+            .AppendLine("[sso]")
+            .AppendLine("aws_access_key_id=aws_access_key_id")
+            .AppendLine("aws_secret_access_key=aws_secret_access_key")
+            .ToString();
+
+        private static readonly string UpdatedCredentialsText = new StringBuilder()
+            .AppendLine("[sso]")
+            .AppendLine("aws_access_key_id=updated_aws_access_key_id")
+            .AppendLine("aws_secret_access_key=updated_aws_secret_access_key")
+            .ToString();
+
+        private static readonly string UpdatedSsoSplitProfileText = new StringBuilder()
+            .AppendLine("[profile sso]")
+            .AppendLine($"sso_account_id=updated_{SampleValues.SsoAccountId}")
+            .AppendLine($"sso_role_name=updated_{SampleValues.SsoRoleName}")
+            .AppendLine($"sso_session = {SampleValues.SsoSession}")
+            .AppendLine()
+            .AppendLine($"[sso-session {SampleValues.SsoSession}]")
+            .AppendLine($"sso_region={SampleValues.SsoRegion}")
+            .Append($"sso_start_url={SampleValues.SsoStartUrl}")
+            .ToString();
+
         private static readonly CredentialProfileOptions SsoProfileOptions = new CredentialProfileOptions
         {
             SsoAccountId = SampleValues.SsoAccountId,
@@ -142,6 +165,17 @@ namespace AWSSDK.UnitTests
             SsoRoleName = SampleValues.SsoRoleName,
             SsoStartUrl = SampleValues.SsoStartUrl,
             SsoSession = SampleValues.SsoSession
+        };
+
+        private static readonly CredentialProfileOptions UpdatedSsoSplitProfileWithCredentialsOptions = new CredentialProfileOptions
+        {
+            AccessKey = "updated_aws_access_key_id",
+            SecretKey = "updated_aws_secret_access_key",
+            SsoAccountId = $"updated_{SampleValues.SsoAccountId}",
+            SsoRoleName = $"updated_{SampleValues.SsoRoleName}",
+            SsoSession = SampleValues.SsoSession,
+            SsoRegion = SampleValues.SsoRegion,
+            SsoStartUrl = SampleValues.SsoStartUrl,
         };
 #endif
 
@@ -479,6 +513,15 @@ namespace AWSSDK.UnitTests
             using (var tester = new SharedCredentialsFileTestFixture("[sso]\r\n", SsoSplitProfileText))
             {
                 tester.ReadAndAssertProfile("sso", SsoProfileWithSessionOptions);
+            }
+        }
+
+        [TestMethod]
+        public void UpdateSsoSplitProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(SsoProfileCredentialsText, SsoSplitProfileText))
+            {
+                tester.AssertSsoSplitProfileWithCredentials("sso", UpdatedSsoSplitProfileWithCredentialsOptions, UpdatedCredentialsText, UpdatedSsoSplitProfileText);
             }
         }
 
@@ -869,6 +912,102 @@ namespace AWSSDK.UnitTests
                 sharedCredentialsFile.TypeInitializer.Invoke(null, null);
             }
 
+        }
+        [TestMethod]
+        public void ReadAWSConfigFileVariableFile()
+        {
+            try
+            {
+                using (var tester = new SharedCredentialsFileTestFixture(credentialsFileContents: null, configFileContents: BasicProfileConfigText,isSharedCredentialsVarProvided:true, isSharedConfigVarProvided: true))
+                {
+                    tester.TestTryGetProfile("basic_profile", true, true);
+                }
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_CONFIG_FILE", null);
+                //call static constructor again with reflection to reset the constructor
+                Type AWSConfigFile = typeof(SharedCredentialsFile);
+                AWSConfigFile.TypeInitializer.Invoke(null, null);
+            }
+        }
+
+        [TestMethod]
+        public void ReadAWSConfigAndCredentialFileVariable()
+        {
+            try
+            {
+                using (var tester = new SharedCredentialsFileTestFixture(credentialsFileContents: BasicProfileTextCredentialsPrecedence, configFileContents: BasicProfileTextConfigPrecedence, isSharedConfigVarProvided: true, isSharedCredentialsVarProvided: true))
+                {
+                    tester.ReadAndAssertProfile("basic_profile", BasicProfilePrecedenceOptions);
+                }
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_CONFIG_FILE", null);
+                Environment.SetEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE", null);
+                Type AWSConfigFile = typeof(SharedCredentialsFile);
+                AWSConfigFile.TypeInitializer.Invoke(null, null);
+                Type sharedCredentialsFile = typeof(SharedCredentialsFile);
+                sharedCredentialsFile.TypeInitializer.Invoke(null, null);
+            }
+        }
+
+        [TestMethod]
+        public void ReadBasicProfileSplitForAWSConfigAndCredentialFileVariable()
+        {
+            try
+            {
+                using (var tester = new SharedCredentialsFileTestFixture(BasicProfileTextCredentialsPartial, BasicProfileTextConfigPartial, isSharedCredentialsVarProvided: true, isSharedConfigVarProvided: true))
+                {
+                    tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions);
+                }
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_CONFIG_FILE", null);
+                Environment.SetEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE", null);
+                Type AWSConfigFile = typeof(SharedCredentialsFile);
+                AWSConfigFile.TypeInitializer.Invoke(null, null);
+                Type sharedCredentialsFile = typeof(SharedCredentialsFile);
+                sharedCredentialsFile.TypeInitializer.Invoke(null, null);
+            }
+        }
+
+        [TestMethod]
+        public void ReadBasicProfileSplitForAWSConfigVariable()
+        {
+            try
+            {
+                using (var tester = new SharedCredentialsFileTestFixture(credentialsFileContents: BasicProfileTextCredentialsPartial, configFileContents: BasicProfileTextConfigPartial, isSharedConfigVarProvided: true))
+                {
+                    tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions);
+                }
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_CONFIG_FILE", null);
+                Type AWSConfigFile = typeof(SharedCredentialsFile);
+                AWSConfigFile.TypeInitializer.Invoke(null, null);
+            }
+        }
+
+        [TestMethod]
+        public void ReadBasicProfileSplitForAWSCredentialsVariable()
+        {
+            try
+            {
+                using (var tester = new SharedCredentialsFileTestFixture(credentialsFileContents: BasicProfileTextCredentialsPartial,configFileContents: BasicProfileTextConfigPartial, isSharedCredentialsVarProvided: true))
+                {
+                    tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions);
+                }
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE", null);
+                Type sharedCredentialsFile = typeof(SharedCredentialsFile);
+                sharedCredentialsFile.TypeInitializer.Invoke(null, null);
+            }
         }
 
         [TestMethod]

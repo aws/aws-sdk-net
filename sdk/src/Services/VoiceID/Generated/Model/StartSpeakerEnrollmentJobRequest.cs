@@ -150,7 +150,7 @@ namespace Amazon.VoiceID.Model
         /// A name for your speaker enrollment job.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string JobName
         {
             get { return this._jobName; }

@@ -44,6 +44,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property City.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string City
         {
             get { return this._city; }
@@ -59,6 +60,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property Country.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Country
         {
             get { return this._country; }
@@ -74,6 +76,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property PostalCode.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PostalCode
         {
             get { return this._postalCode; }
@@ -89,6 +92,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property PostalCodePlus4.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PostalCodePlus4
         {
             get { return this._postalCodePlus4; }
@@ -104,6 +108,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property State.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string State
         {
             get { return this._state; }
@@ -119,6 +124,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property StreetInfo.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string StreetInfo
         {
             get { return this._streetInfo; }
@@ -134,6 +140,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property StreetNumber.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string StreetNumber
         {
             get { return this._streetNumber; }

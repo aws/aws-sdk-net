@@ -33,8 +33,27 @@ namespace Amazon.GroundStation.Model
     /// </summary>
     public partial class EndpointDetails
     {
+        private AwsGroundStationAgentEndpoint _awsGroundStationAgentEndpoint;
         private DataflowEndpoint _endpoint;
         private SecurityDetails _securityDetails;
+
+        /// <summary>
+        /// Gets and sets the property AwsGroundStationAgentEndpoint. 
+        /// <para>
+        /// An agent endpoint.
+        /// </para>
+        /// </summary>
+        public AwsGroundStationAgentEndpoint AwsGroundStationAgentEndpoint
+        {
+            get { return this._awsGroundStationAgentEndpoint; }
+            set { this._awsGroundStationAgentEndpoint = value; }
+        }
+
+        // Check to see if AwsGroundStationAgentEndpoint property is set
+        internal bool IsSetAwsGroundStationAgentEndpoint()
+        {
+            return this._awsGroundStationAgentEndpoint != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Endpoint. 

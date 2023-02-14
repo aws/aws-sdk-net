@@ -746,11 +746,20 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be 1 - 128 alphanumeric characters. The user name can't be <code>PUBLIC</code>.
+        /// Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// First character must be a letter.
+        /// Must contain only lowercase letters, numbers, underscore, plus sign, period (dot),
+        /// at symbol (@), or hyphen.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The first character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must not contain a colon (:) or a slash (/).
         /// </para>
         ///  </li> <li> 
         /// <para>

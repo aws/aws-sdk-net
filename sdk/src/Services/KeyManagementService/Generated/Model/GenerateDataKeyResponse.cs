@@ -85,7 +85,7 @@ namespace Amazon.KeyManagementService.Model
         /// to encrypt your data outside of KMS. Then, remove it from memory as soon as possible.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public MemoryStream Plaintext
         {
             get { return this._plaintext; }

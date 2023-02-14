@@ -89,7 +89,7 @@ namespace Amazon.DataSync.Model
         /// in the file system.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=104)]
+        [AWSProperty(Required=true, Sensitive=true, Max=104)]
         public string Password
         {
             get { return this._password; }

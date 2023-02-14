@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// An exception for missing / invalid input fields. Gives http status code of 400.
+    /// An exception for missing or invalid input fields.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

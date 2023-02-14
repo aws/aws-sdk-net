@@ -56,7 +56,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property NextToken.
         /// </summary>
-        [AWSProperty(Min=1, Max=1005)]
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

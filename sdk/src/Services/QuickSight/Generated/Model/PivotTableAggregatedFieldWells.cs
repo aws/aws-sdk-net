@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// The columns field well for a pivot table. Values are grouped by columns fields.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
+        [AWSProperty(Max=40)]
         public List<DimensionField> Columns
         {
             get { return this._columns; }
@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// The rows field well for a pivot table. Values are grouped by rows fields.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
+        [AWSProperty(Max=40)]
         public List<DimensionField> Rows
         {
             get { return this._rows; }
@@ -82,7 +82,7 @@ namespace Amazon.QuickSight.Model
         /// fields.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
+        [AWSProperty(Max=40)]
         public List<MeasureField> Values
         {
             get { return this._values; }

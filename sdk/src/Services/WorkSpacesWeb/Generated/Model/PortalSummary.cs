@@ -142,7 +142,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The name of the web portal.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string DisplayName
         {
             get { return this._displayName; }

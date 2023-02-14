@@ -46,6 +46,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A valid access token that Amazon Cognito issued to the user who you want to authenticate.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -82,6 +83,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The ID token.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string IdToken
         {
             get { return this._idToken; }
@@ -118,6 +120,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The refresh token.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string RefreshToken
         {
             get { return this._refreshToken; }

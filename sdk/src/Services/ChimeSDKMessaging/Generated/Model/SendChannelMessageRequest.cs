@@ -101,7 +101,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The <code>Idempotency</code> token for each client request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -120,7 +120,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The content of the message.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string Content
         {
             get { return this._content; }
@@ -158,7 +158,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The optional metadata for each message.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Metadata
         {
             get { return this._metadata; }

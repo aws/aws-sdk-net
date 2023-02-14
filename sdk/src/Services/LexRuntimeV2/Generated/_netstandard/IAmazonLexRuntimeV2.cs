@@ -31,7 +31,7 @@ namespace Amazon.LexRuntimeV2
     /// <summary>
     /// Interface for accessing LexRuntimeV2
     ///
-    /// 
+    /// This section contains documentation for the Amazon Lex V2 Runtime V2 API operations.
     /// </summary>
     public partial interface IAmazonLexRuntimeV2 : IAmazonService, IDisposable
     {

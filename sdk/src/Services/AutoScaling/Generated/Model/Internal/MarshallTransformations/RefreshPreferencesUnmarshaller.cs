@@ -54,6 +54,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AutoRollback", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.AutoRollback = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CheckpointDelay", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
@@ -79,10 +85,22 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.MinHealthyPercentage = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ScaleInProtectedInstances", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ScaleInProtectedInstances = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SkipMatching", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.SkipMatching = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StandbyInstances", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StandbyInstances = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

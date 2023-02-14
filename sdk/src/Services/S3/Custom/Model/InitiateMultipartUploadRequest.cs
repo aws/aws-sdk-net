@@ -608,6 +608,7 @@ namespace Amazon.S3.Model
         /// Specifying the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {
             get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
@@ -654,6 +655,7 @@ namespace Amazon.S3.Model
         /// Important: Amazon S3 does not store the encryption key you provide.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionCustomerProvidedKey
         {
             get { return this.serverSideEncryptionCustomerProvidedKey; }
@@ -697,6 +699,7 @@ namespace Amazon.S3.Model
         /// context key-value pairs.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceEncryptionContext
         {
             get { return this.serverSideEncryptionKeyManagementServiceEncryptionContext; }

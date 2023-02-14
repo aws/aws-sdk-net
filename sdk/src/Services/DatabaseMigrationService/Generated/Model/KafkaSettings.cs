@@ -265,6 +265,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// SASL-SSL authentication.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string SaslPassword
         {
             get { return this._saslPassword; }
@@ -382,6 +383,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string SslClientKeyPassword
         {
             get { return this._sslClientKeyPassword; }

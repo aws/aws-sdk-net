@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
         private EndpointOutputConfiguration _endpointConfiguration;
         private RecommendationMetrics _metrics;
         private ModelConfiguration _modelConfiguration;
+        private string _recommendationId;
 
         /// <summary>
         /// Gets and sets the property EndpointConfiguration. 
@@ -92,6 +93,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelConfiguration()
         {
             return this._modelConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommendationId. 
+        /// <para>
+        /// The recommendation ID which uniquely identifies each recommendation.
+        /// </para>
+        /// </summary>
+        public string RecommendationId
+        {
+            get { return this._recommendationId; }
+            set { this._recommendationId = value; }
+        }
+
+        // Check to see if RecommendationId property is set
+        internal bool IsSetRecommendationId()
+        {
+            return this._recommendationId != null;
         }
 
     }

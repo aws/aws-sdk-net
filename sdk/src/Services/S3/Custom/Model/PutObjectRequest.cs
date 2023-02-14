@@ -515,6 +515,7 @@ namespace Amazon.S3.Model
         /// Important: Amazon S3 does not store the encryption key you provide.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionCustomerProvidedKey
         {
             get { return this.serverSideEncryptionCustomerProvidedKey; }
@@ -558,6 +559,7 @@ namespace Amazon.S3.Model
         /// key-value pairs.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceEncryptionContext
         {
             get { return this.serverSideEncryptionKeyManagementServiceEncryptionContext; }
@@ -587,6 +589,7 @@ namespace Amazon.S3.Model
         /// use the full ARN and not just the ID. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {
             get { return this.serverSideEncryptionKeyManagementServiceKeyId; }

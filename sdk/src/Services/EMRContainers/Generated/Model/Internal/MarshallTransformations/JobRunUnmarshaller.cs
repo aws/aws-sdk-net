@@ -136,6 +136,18 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReleaseLabel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("retryPolicyConfiguration", targetDepth))
+                {
+                    var unmarshaller = RetryPolicyConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RetryPolicyConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("retryPolicyExecution", targetDepth))
+                {
+                    var unmarshaller = RetryPolicyExecutionUnmarshaller.Instance;
+                    unmarshalledObject.RetryPolicyExecution = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("state", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
