@@ -38,6 +38,24 @@ namespace NETCore.SetupTests
         }
 
         [Fact]
+        public void GetRoleNameAndSessionName()
+        {
+            var builder = new ConfigurationBuilder();
+            builder.AddJsonFile("./TestFiles/GetRoleNameAndSessionNameTest.json");
+
+            IConfiguration config = builder.Build();
+            var options = config.GetAWSOptions();
+
+            Assert.Equal(RegionEndpoint.USWest2, options.Region);
+            Assert.Equal("arn:aws:iam::123456789012:role/fake_role", options.SessionRoleArn);
+            Assert.Equal("TestSessionName", options.SessionName);
+
+            IAmazonS3 client = options.CreateServiceClient<IAmazonS3>();
+            Assert.NotNull(client);
+            Assert.Equal(RegionEndpoint.USWest2, client.Config.RegionEndpoint);
+        }
+
+        [Fact]
         public void LegacyNamesTest()
         {
             var builder = new ConfigurationBuilder();
