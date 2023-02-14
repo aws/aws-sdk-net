@@ -7,6 +7,7 @@ using Amazon;
 using Amazon.S3;
 using Amazon.Extensions.NETCore.Setup;
 using Moq;
+using System;
 
 namespace DependencyInjectionTests
 {
@@ -34,6 +35,7 @@ namespace DependencyInjectionTests
         [Fact]
         public void InjectS3ClientWithoutDefaultConfig()
         {
+            Environment.SetEnvironmentVariable("AWS_REGION", "us-east-1");
             ServiceCollection services = new ServiceCollection();
             services.AddAWSService<IAmazonS3>();
 
