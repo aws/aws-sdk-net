@@ -32,7 +32,8 @@ namespace DependencyInjectionTests
             Assert.Equal(RegionEndpoint.USWest2, controller.S3Client.Config.RegionEndpoint);
         }
 
-        [Fact]
+        [Fact(Skip = "Skip because CI build environment auto resolves region to us-west-2")]
+        
         public void InjectS3ClientWithoutDefaultConfig()
         {
             var savedRegion = Environment.GetEnvironmentVariable("AWS_REGION");
