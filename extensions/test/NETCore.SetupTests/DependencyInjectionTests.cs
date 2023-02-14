@@ -35,15 +35,24 @@ namespace DependencyInjectionTests
         [Fact]
         public void InjectS3ClientWithoutDefaultConfig()
         {
-            Environment.SetEnvironmentVariable("AWS_REGION", "us-east-1");
-            ServiceCollection services = new ServiceCollection();
-            services.AddAWSService<IAmazonS3>();
+            var savedRegion = Environment.GetEnvironmentVariable("AWS_REGION");
+            
+            try
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", "us-east-1");
+                ServiceCollection services = new ServiceCollection();
+                services.AddAWSService<IAmazonS3>();
 
-            var serviceProvider = services.BuildServiceProvider();
+                var serviceProvider = services.BuildServiceProvider();
 
-            var controller = ActivatorUtilities.CreateInstance<TestController>(serviceProvider);
-            Assert.NotNull(controller.S3Client);
-            Assert.Equal(RegionEndpoint.USEast1, controller.S3Client.Config.RegionEndpoint);
+                var controller = ActivatorUtilities.CreateInstance<TestController>(serviceProvider);
+                Assert.NotNull(controller.S3Client);
+                Assert.Equal(RegionEndpoint.USEast1, controller.S3Client.Config.RegionEndpoint);
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", savedRegion);
+            }
         }
 
         [Fact]
