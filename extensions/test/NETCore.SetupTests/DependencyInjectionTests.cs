@@ -43,6 +43,7 @@ namespace DependencyInjectionTests
 
             var controller = ActivatorUtilities.CreateInstance<TestController>(serviceProvider);
             Assert.NotNull(controller.S3Client);
+            Assert.Equal(RegionEndpoint.USEast1, controller.S3Client.Config.RegionEndpoint);
         }
 
         [Fact]
