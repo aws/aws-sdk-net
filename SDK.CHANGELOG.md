@@ -1,3 +1,11 @@
+### 3.7.483.0 (2023-02-14 21:28 UTC)
+* AppConfig (3.7.102.0)
+	* AWS AppConfig now offers the option to set a version label on hosted configuration versions. Version labels allow you to identify specific hosted configuration versions based on an alternate versioning scheme that you define.
+* DataSync (3.7.103.0)
+	* With this launch, we are giving customers the ability to use older SMB protocol versions, enabling them to use DataSync to copy data to and from their legacy storage arrays.
+* EC2 (3.7.123.0)
+	* With this release customers can turn host maintenance on or off when allocating or modifying a supported dedicated host. Host maintenance is turned on by default for supported hosts.
+
 ### 3.7.482.0 (2023-02-13 19:19 UTC)
 * Account (3.7.101.0)
 	* This release of the Account Management API enables customers to view and manage whether AWS Opt-In Regions are enabled or disabled for their Account. For more information, see https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html
