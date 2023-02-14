@@ -81,7 +81,7 @@ namespace Amazon.Extensions.NETCore.Setup
             PerformGlobalConfig(logger, options);
             var credentials = CreateCredentials(logger, options);
 
-            if (!string.IsNullOrEmpty(options.SessionRoleArn))
+            if (!string.IsNullOrEmpty(options?.SessionRoleArn))
             {
                 credentials = new AssumeRoleAWSCredentials(credentials, options.SessionRoleArn, options.SessionName);
             }

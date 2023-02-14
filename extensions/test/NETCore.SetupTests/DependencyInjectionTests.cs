@@ -32,6 +32,18 @@ namespace DependencyInjectionTests
         }
 
         [Fact]
+        public void InjectS3ClientWithoutDefaultConfig()
+        {
+            ServiceCollection services = new ServiceCollection();
+            services.AddAWSService<IAmazonS3>();
+
+            var serviceProvider = services.BuildServiceProvider();
+
+            var controller = ActivatorUtilities.CreateInstance<TestController>(serviceProvider);
+            Assert.NotNull(controller.S3Client);
+        }
+
+        [Fact]
         public void InjectS3ClientWithOverridingConfig()
         {
             var builder = new ConfigurationBuilder();
