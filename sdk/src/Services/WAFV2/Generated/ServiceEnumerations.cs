@@ -1841,6 +1841,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField ASSOCIABLE_RESOURCE = new ParameterExceptionField("ASSOCIABLE_RESOURCE");
         /// <summary>
+        /// Constant ATP_RULE_SET_RESPONSE_INSPECTION for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField ATP_RULE_SET_RESPONSE_INSPECTION = new ParameterExceptionField("ATP_RULE_SET_RESPONSE_INSPECTION");
+        /// <summary>
         /// Constant BODY_PARSING_FALLBACK_BEHAVIOR for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField BODY_PARSING_FALLBACK_BEHAVIOR = new ParameterExceptionField("BODY_PARSING_FALLBACK_BEHAVIOR");

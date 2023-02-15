@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ManagedRuleGroupConfig Marshaller
+    /// RequestInspection Marshaller
     /// </summary>
-    public class ManagedRuleGroupConfigMarshaller : IRequestMarshaller<ManagedRuleGroupConfig, JsonMarshallerContext> 
+    public class RequestInspectionMarshaller : IRequestMarshaller<RequestInspection, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,36 +43,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ManagedRuleGroupConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(RequestInspection requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAWSManagedRulesATPRuleSet())
-            {
-                context.Writer.WritePropertyName("AWSManagedRulesATPRuleSet");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AWSManagedRulesATPRuleSetMarshaller.Instance;
-                marshaller.Marshall(requestObject.AWSManagedRulesATPRuleSet, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetAWSManagedRulesBotControlRuleSet())
-            {
-                context.Writer.WritePropertyName("AWSManagedRulesBotControlRuleSet");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AWSManagedRulesBotControlRuleSetMarshaller.Instance;
-                marshaller.Marshall(requestObject.AWSManagedRulesBotControlRuleSet, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetLoginPath())
-            {
-                context.Writer.WritePropertyName("LoginPath");
-                context.Writer.Write(requestObject.LoginPath);
-            }
-
             if(requestObject.IsSetPasswordField())
             {
                 context.Writer.WritePropertyName("PasswordField");
@@ -106,7 +78,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ManagedRuleGroupConfigMarshaller Instance = new ManagedRuleGroupConfigMarshaller();
+        public readonly static RequestInspectionMarshaller Instance = new RequestInspectionMarshaller();
 
     }
 }

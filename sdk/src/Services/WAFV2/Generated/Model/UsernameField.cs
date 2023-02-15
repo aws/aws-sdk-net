@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Details about your login page username field, used in a <code>ManagedRuleGroupConfig</code>.
+    /// Details about your login page username field for request inspection, used in the <code>AWSManagedRulesATPRuleSet</code>
+    /// <code>RequestInspection</code> configuration.
     /// </summary>
     public partial class UsernameField
     {

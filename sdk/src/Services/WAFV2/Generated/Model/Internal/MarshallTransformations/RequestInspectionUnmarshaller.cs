@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ManagedRuleGroupConfig Object
+    /// Response Unmarshaller for RequestInspection Object
     /// </summary>  
-    public class ManagedRuleGroupConfigUnmarshaller : IUnmarshaller<ManagedRuleGroupConfig, XmlUnmarshallerContext>, IUnmarshaller<ManagedRuleGroupConfig, JsonUnmarshallerContext>
+    public class RequestInspectionUnmarshaller : IUnmarshaller<RequestInspection, XmlUnmarshallerContext>, IUnmarshaller<RequestInspection, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ManagedRuleGroupConfig IUnmarshaller<ManagedRuleGroupConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RequestInspection IUnmarshaller<RequestInspection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,35 +53,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ManagedRuleGroupConfig Unmarshall(JsonUnmarshallerContext context)
+        public RequestInspection Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ManagedRuleGroupConfig unmarshalledObject = new ManagedRuleGroupConfig();
+            RequestInspection unmarshalledObject = new RequestInspection();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AWSManagedRulesATPRuleSet", targetDepth))
-                {
-                    var unmarshaller = AWSManagedRulesATPRuleSetUnmarshaller.Instance;
-                    unmarshalledObject.AWSManagedRulesATPRuleSet = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("AWSManagedRulesBotControlRuleSet", targetDepth))
-                {
-                    var unmarshaller = AWSManagedRulesBotControlRuleSetUnmarshaller.Instance;
-                    unmarshalledObject.AWSManagedRulesBotControlRuleSet = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LoginPath", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LoginPath = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("PasswordField", targetDepth))
                 {
                     var unmarshaller = PasswordFieldUnmarshaller.Instance;
@@ -106,12 +88,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ManagedRuleGroupConfigUnmarshaller _instance = new ManagedRuleGroupConfigUnmarshaller();        
+        private static RequestInspectionUnmarshaller _instance = new RequestInspectionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ManagedRuleGroupConfigUnmarshaller Instance
+        public static RequestInspectionUnmarshaller Instance
         {
             get
             {

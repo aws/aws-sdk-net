@@ -354,7 +354,6 @@ namespace Amazon.WAFV2.Model
         /// <code>co.uk</code> as token domains.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public List<string> TokenDomains
         {
             get { return this._tokenDomains; }

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ManagedRuleGroupConfig Marshaller
+    /// ResponseInspection Marshaller
     /// </summary>
-    public class ManagedRuleGroupConfigMarshaller : IRequestMarshaller<ManagedRuleGroupConfig, JsonMarshallerContext> 
+    public class ResponseInspectionMarshaller : IRequestMarshaller<ResponseInspection, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,60 +43,48 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ManagedRuleGroupConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ResponseInspection requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAWSManagedRulesATPRuleSet())
+            if(requestObject.IsSetBodyContains())
             {
-                context.Writer.WritePropertyName("AWSManagedRulesATPRuleSet");
+                context.Writer.WritePropertyName("BodyContains");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = AWSManagedRulesATPRuleSetMarshaller.Instance;
-                marshaller.Marshall(requestObject.AWSManagedRulesATPRuleSet, context);
+                var marshaller = ResponseInspectionBodyContainsMarshaller.Instance;
+                marshaller.Marshall(requestObject.BodyContains, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetAWSManagedRulesBotControlRuleSet())
+            if(requestObject.IsSetHeader())
             {
-                context.Writer.WritePropertyName("AWSManagedRulesBotControlRuleSet");
+                context.Writer.WritePropertyName("Header");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = AWSManagedRulesBotControlRuleSetMarshaller.Instance;
-                marshaller.Marshall(requestObject.AWSManagedRulesBotControlRuleSet, context);
+                var marshaller = ResponseInspectionHeaderMarshaller.Instance;
+                marshaller.Marshall(requestObject.Header, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetLoginPath())
+            if(requestObject.IsSetJson())
             {
-                context.Writer.WritePropertyName("LoginPath");
-                context.Writer.Write(requestObject.LoginPath);
-            }
-
-            if(requestObject.IsSetPasswordField())
-            {
-                context.Writer.WritePropertyName("PasswordField");
+                context.Writer.WritePropertyName("Json");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = PasswordFieldMarshaller.Instance;
-                marshaller.Marshall(requestObject.PasswordField, context);
+                var marshaller = ResponseInspectionJsonMarshaller.Instance;
+                marshaller.Marshall(requestObject.Json, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetPayloadType())
+            if(requestObject.IsSetStatusCode())
             {
-                context.Writer.WritePropertyName("PayloadType");
-                context.Writer.Write(requestObject.PayloadType);
-            }
-
-            if(requestObject.IsSetUsernameField())
-            {
-                context.Writer.WritePropertyName("UsernameField");
+                context.Writer.WritePropertyName("StatusCode");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = UsernameFieldMarshaller.Instance;
-                marshaller.Marshall(requestObject.UsernameField, context);
+                var marshaller = ResponseInspectionStatusCodeMarshaller.Instance;
+                marshaller.Marshall(requestObject.StatusCode, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -106,7 +94,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ManagedRuleGroupConfigMarshaller Instance = new ManagedRuleGroupConfigMarshaller();
+        public readonly static ResponseInspectionMarshaller Instance = new ResponseInspectionMarshaller();
 
     }
 }

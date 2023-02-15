@@ -408,7 +408,6 @@ namespace Amazon.WAFV2.Model
         /// domain plus all domains in the token domain list, including their prefixed subdomains.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public List<string> TokenDomains
         {
             get { return this._tokenDomains; }

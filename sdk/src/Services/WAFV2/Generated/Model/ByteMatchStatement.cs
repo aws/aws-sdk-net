@@ -145,7 +145,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// A string value that you want WAF to search for. WAF searches only in the part of web
         /// requests that you designate for inspection in <a>FieldToMatch</a>. The maximum length
-        /// of the value is 50 bytes.
+        /// of the value is 200 bytes.
         /// </para>
         ///  
         /// <para>
@@ -173,7 +173,7 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// Specify a base64-encoded version of the value. The maximum length of the value before
-        /// you base64-encode it is 50 bytes.
+        /// you base64-encode it is 200 bytes.
         /// </para>
         ///  
         /// <para>
