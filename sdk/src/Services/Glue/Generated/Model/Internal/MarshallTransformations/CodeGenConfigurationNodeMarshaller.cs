@@ -144,6 +144,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDirectJDBCSource())
+            {
+                context.Writer.WritePropertyName("DirectJDBCSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DirectJDBCSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.DirectJDBCSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDirectKafkaSource())
             {
                 context.Writer.WritePropertyName("DirectKafkaSource");

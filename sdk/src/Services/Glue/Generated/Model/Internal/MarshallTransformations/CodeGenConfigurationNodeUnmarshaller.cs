@@ -118,6 +118,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DirectJDBCSource", targetDepth))
+                {
+                    var unmarshaller = DirectJDBCSourceUnmarshaller.Instance;
+                    unmarshalledObject.DirectJDBCSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DirectKafkaSource", targetDepth))
                 {
                     var unmarshaller = DirectKafkaSourceUnmarshaller.Instance;

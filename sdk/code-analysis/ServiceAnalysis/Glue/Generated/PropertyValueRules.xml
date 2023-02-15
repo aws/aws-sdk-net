@@ -3279,6 +3279,21 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DirectJDBCSource.ConnectionName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DirectJDBCSource.Database</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DirectJDBCSource.Name</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DirectJDBCSource.RedshiftTmpDir</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DirectJDBCSource.Table</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DirectKafkaSource.Name</property>
   </property-value-rule>
   <property-value-rule>

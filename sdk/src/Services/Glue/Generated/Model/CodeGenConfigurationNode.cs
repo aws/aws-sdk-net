@@ -43,6 +43,7 @@ namespace Amazon.Glue.Model
         private CatalogSource _catalogSource;
         private BasicCatalogTarget _catalogTarget;
         private CustomCode _customCode;
+        private DirectJDBCSource _directJDBCSource;
         private DirectKafkaSource _directKafkaSource;
         private DirectKinesisSource _directKinesisSource;
         private DropDuplicates _dropDuplicates;
@@ -256,6 +257,21 @@ namespace Amazon.Glue.Model
         internal bool IsSetCustomCode()
         {
             return this._customCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DirectJDBCSource.
+        /// </summary>
+        public DirectJDBCSource DirectJDBCSource
+        {
+            get { return this._directJDBCSource; }
+            set { this._directJDBCSource = value; }
+        }
+
+        // Check to see if DirectJDBCSource property is set
+        internal bool IsSetDirectJDBCSource()
+        {
+            return this._directJDBCSource != null;
         }
 
         /// <summary>
