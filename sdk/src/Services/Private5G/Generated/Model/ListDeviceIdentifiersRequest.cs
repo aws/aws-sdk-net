@@ -34,12 +34,10 @@ namespace Amazon.Private5G.Model
     /// of results. Use filters to match the Amazon Resource Name (ARN) of an order, the status
     /// of device identifiers, or the ARN of the traffic group.
     /// 
-    ///  <pre><code> &lt;p&gt;If you specify multiple filters, filters are joined with an
-    /// OR, and the request </code></pre> 
+    ///  
     /// <para>
-    /// returns results that match all of the specified filters.
-    /// </para>
-    /// 
+    /// If you specify multiple filters, filters are joined with an OR, and the request returns
+    /// results that match all of the specified filters.
     /// </para>
     /// </summary>
     public partial class ListDeviceIdentifiersRequest : AmazonPrivate5GRequest
