@@ -1,3 +1,22 @@
+### 3.7.484.0 (2023-02-15 20:11 UTC)
+* CloudTrail (3.7.104.0)
+	* This release adds an InsufficientEncryptionPolicyException type to the StartImport endpoint
+* ElasticFileSystem (3.7.101.51)
+	* Documentation update for EFS to support IAM best practices.
+* FraudDetector (3.7.102.0)
+	* This release introduces Lists feature which allows customers to reference a set of values in Fraud Detector's rules. With Lists, customers can dynamically manage these attributes in real time. Lists can be created/deleted and its contents can be modified using the Fraud Detector API.
+* Glue (3.7.108.0)
+	* Fix DirectJDBCSource not showing up in CLI code gen
+* Private5G (3.7.102.0)
+	* This release introduces a new StartNetworkResourceUpdate API, which enables return/replacement of hardware from a NetworkSite.
+* RDS (3.7.114.22)
+	* Database Activity Stream support for RDS for SQL Server.
+* WAFV2 (3.7.102.0)
+	* For protected CloudFront distributions, you can now use the AWS WAF Fraud Control account takeover prevention (ATP) managed rule group to block new login attempts from clients that have recently submitted too many failed login attempts.
+* Core 3.7.105.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.483.0 (2023-02-14 21:28 UTC)
 * AppConfig (3.7.102.0)
 	* AWS AppConfig now offers the option to set a version label on hosted configuration versions. Version labels allow you to identify specific hosted configuration versions based on an alternate versioning scheme that you define.
