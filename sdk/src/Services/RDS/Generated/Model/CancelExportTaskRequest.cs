@@ -30,8 +30,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelExportTask operation.
-    /// Cancels an export task in progress that is exporting a snapshot to Amazon S3. Any
-    /// data that has already been written to the S3 bucket isn't removed.
+    /// Cancels an export task in progress that is exporting a snapshot or cluster to Amazon
+    /// S3. Any data that has already been written to the S3 bucket isn't removed.
     /// </summary>
     public partial class CancelExportTaskRequest : AmazonRDSRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ExportTaskIdentifier. 
         /// <para>
-        /// The identifier of the snapshot export task to cancel.
+        /// The identifier of the snapshot or cluster export task to cancel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
