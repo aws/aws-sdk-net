@@ -271,8 +271,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The Amazon Web Services account that created the file system. If the file system was
-        /// created by an IAM user, the parent account to which the user belongs is the owner.
+        /// The Amazon Web Services account that created the file system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=14)]
