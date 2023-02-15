@@ -3606,6 +3606,10 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
         /// The event data store is inactive.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
+        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
+        /// sufficient permissions for the operation.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreCategoryException">
         /// This exception is thrown when event categories of specified event data stores are
         /// not valid.
