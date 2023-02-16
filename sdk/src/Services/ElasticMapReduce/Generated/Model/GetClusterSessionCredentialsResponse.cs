@@ -39,8 +39,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Credentials. 
         /// <para>
-        /// The credentials that you can use to connect to cluster endpoints that support username-based
-        /// and password-based authentication.
+        /// The credentials that you can use to connect to cluster endpoints that support username
+        /// and password authentication.
         /// </para>
         /// </summary>
         public Credentials Credentials

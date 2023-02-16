@@ -106,6 +106,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProvisionedSpotCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResizeSpecifications", targetDepth))
+                {
+                    var unmarshaller = InstanceFleetResizingSpecificationsUnmarshaller.Instance;
+                    unmarshalledObject.ResizeSpecifications = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = InstanceFleetStatusUnmarshaller.Instance;

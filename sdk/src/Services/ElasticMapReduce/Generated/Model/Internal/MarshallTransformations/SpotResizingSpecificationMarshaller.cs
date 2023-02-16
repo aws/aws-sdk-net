@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InstanceFleetModifyConfig Marshaller
+    /// SpotResizingSpecification Marshaller
     /// </summary>
-    public class InstanceFleetModifyConfigMarshaller : IRequestMarshaller<InstanceFleetModifyConfig, JsonMarshallerContext> 
+    public class SpotResizingSpecificationMarshaller : IRequestMarshaller<SpotResizingSpecification, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InstanceFleetModifyConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(SpotResizingSpecification requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetInstanceFleetId())
+            if(requestObject.IsSetTimeoutDurationMinutes())
             {
-                context.Writer.WritePropertyName("InstanceFleetId");
-                context.Writer.Write(requestObject.InstanceFleetId);
-            }
-
-            if(requestObject.IsSetResizeSpecifications())
-            {
-                context.Writer.WritePropertyName("ResizeSpecifications");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = InstanceFleetResizingSpecificationsMarshaller.Instance;
-                marshaller.Marshall(requestObject.ResizeSpecifications, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetTargetOnDemandCapacity())
-            {
-                context.Writer.WritePropertyName("TargetOnDemandCapacity");
-                context.Writer.Write(requestObject.TargetOnDemandCapacity);
-            }
-
-            if(requestObject.IsSetTargetSpotCapacity())
-            {
-                context.Writer.WritePropertyName("TargetSpotCapacity");
-                context.Writer.Write(requestObject.TargetSpotCapacity);
+                context.Writer.WritePropertyName("TimeoutDurationMinutes");
+                context.Writer.Write(requestObject.TimeoutDurationMinutes);
             }
 
         }
@@ -79,7 +56,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static InstanceFleetModifyConfigMarshaller Instance = new InstanceFleetModifyConfigMarshaller();
+        public readonly static SpotResizingSpecificationMarshaller Instance = new SpotResizingSpecificationMarshaller();
 
     }
 }

@@ -134,7 +134,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property TimeoutDurationMinutes. 
         /// <para>
-        /// The spot provisioning timeout period in minutes. If Spot Instances are not provisioned
+        /// The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned
         /// within this time period, the <code>TimeOutAction</code> is taken. Minimum value is
         /// 5 and maximum value is 1440. The timeout applies only during initial provisioning,
         /// when the cluster is first created.

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InstanceFleetModifyConfig Marshaller
+    /// InstanceFleetResizingSpecifications Marshaller
     /// </summary>
-    public class InstanceFleetModifyConfigMarshaller : IRequestMarshaller<InstanceFleetModifyConfig, JsonMarshallerContext> 
+    public class InstanceFleetResizingSpecificationsMarshaller : IRequestMarshaller<InstanceFleetResizingSpecifications, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,28 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InstanceFleetModifyConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(InstanceFleetResizingSpecifications requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetInstanceFleetId())
+            if(requestObject.IsSetOnDemandResizeSpecification())
             {
-                context.Writer.WritePropertyName("InstanceFleetId");
-                context.Writer.Write(requestObject.InstanceFleetId);
-            }
-
-            if(requestObject.IsSetResizeSpecifications())
-            {
-                context.Writer.WritePropertyName("ResizeSpecifications");
+                context.Writer.WritePropertyName("OnDemandResizeSpecification");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = InstanceFleetResizingSpecificationsMarshaller.Instance;
-                marshaller.Marshall(requestObject.ResizeSpecifications, context);
+                var marshaller = OnDemandResizingSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.OnDemandResizeSpecification, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetTargetOnDemandCapacity())
+            if(requestObject.IsSetSpotResizeSpecification())
             {
-                context.Writer.WritePropertyName("TargetOnDemandCapacity");
-                context.Writer.Write(requestObject.TargetOnDemandCapacity);
-            }
+                context.Writer.WritePropertyName("SpotResizeSpecification");
+                context.Writer.WriteObjectStart();
 
-            if(requestObject.IsSetTargetSpotCapacity())
-            {
-                context.Writer.WritePropertyName("TargetSpotCapacity");
-                context.Writer.Write(requestObject.TargetSpotCapacity);
+                var marshaller = SpotResizingSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SpotResizeSpecification, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -79,7 +72,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static InstanceFleetModifyConfigMarshaller Instance = new InstanceFleetModifyConfigMarshaller();
+        public readonly static InstanceFleetResizingSpecificationsMarshaller Instance = new InstanceFleetResizingSpecificationsMarshaller();
 
     }
 }
