@@ -47,8 +47,10 @@ namespace Amazon.ManagedGrafana.Model
     public partial class UpdateWorkspaceRequest : AmazonManagedGrafanaRequest
     {
         private AccountAccessType _accountAccessType;
+        private NetworkAccessConfiguration _networkAccessControl;
         private string _organizationRoleName;
         private PermissionType _permissionType;
+        private bool? _removeNetworkAccessConfiguration;
         private bool? _removeVpcConfiguration;
         private string _stackSetName;
         private VpcConfiguration _vpcConfiguration;
@@ -83,6 +85,35 @@ namespace Amazon.ManagedGrafana.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkAccessControl. 
+        /// <para>
+        /// The configuration settings for network access to your workspace.
+        /// </para>
+        ///  
+        /// <para>
+        /// When this is configured, only listed IP addresses and VPC endpoints will be able to
+        /// access your workspace. Standard Grafana authentication and authorization will still
+        /// be required.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this is not configured, or is removed, then all IP addresses and VPC endpoints
+        /// will be allowed. Standard Grafana authentication and authorization will still be required.
+        /// </para>
+        /// </summary>
+        public NetworkAccessConfiguration NetworkAccessControl
+        {
+            get { return this._networkAccessControl; }
+            set { this._networkAccessControl = value; }
+        }
+
+        // Check to see if NetworkAccessControl property is set
+        internal bool IsSetNetworkAccessControl()
+        {
+            return this._networkAccessControl != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OrganizationRoleName. 
         /// <para>
         /// The name of an IAM role that already exists to use to access resources through Organizations.
@@ -104,7 +135,7 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property PermissionType. 
         /// <para>
-        /// If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically
+        /// If you specify <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically
         /// creates the IAM roles and provisions the permissions that the workspace needs to use
         /// Amazon Web Services data sources and notification channels.
         /// </para>
@@ -133,6 +164,35 @@ namespace Amazon.ManagedGrafana.Model
         internal bool IsSetPermissionType()
         {
             return this._permissionType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoveNetworkAccessConfiguration. 
+        /// <para>
+        /// Whether to remove the network access configuration from the workspace.
+        /// </para>
+        ///  
+        /// <para>
+        /// Setting this to <code>true</code> and providing a <code>networkAccessControl</code>
+        /// to set will return an error.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you remove this configuration by setting this to <code>true</code>, then all IP
+        /// addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization
+        /// will still be required.
+        /// </para>
+        /// </summary>
+        public bool RemoveNetworkAccessConfiguration
+        {
+            get { return this._removeNetworkAccessConfiguration.GetValueOrDefault(); }
+            set { this._removeNetworkAccessConfiguration = value; }
+        }
+
+        // Check to see if RemoveNetworkAccessConfiguration property is set
+        internal bool IsSetRemoveNetworkAccessConfiguration()
+        {
+            return this._removeNetworkAccessConfiguration.HasValue; 
         }
 
         /// <summary>

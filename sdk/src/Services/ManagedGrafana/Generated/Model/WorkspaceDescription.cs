@@ -48,6 +48,7 @@ namespace Amazon.ManagedGrafana.Model
         private LicenseType _licenseType;
         private DateTime? _modified;
         private string _name;
+        private NetworkAccessConfiguration _networkAccessControl;
         private List<string> _notificationDestinations = new List<string>();
         private List<string> _organizationalUnits = new List<string>();
         private string _organizationRoleName;
@@ -331,6 +332,24 @@ namespace Amazon.ManagedGrafana.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkAccessControl. 
+        /// <para>
+        /// The configuration settings for network access to your workspace.
+        /// </para>
+        /// </summary>
+        public NetworkAccessConfiguration NetworkAccessControl
+        {
+            get { return this._networkAccessControl; }
+            set { this._networkAccessControl = value; }
+        }
+
+        // Check to see if NetworkAccessControl property is set
+        internal bool IsSetNetworkAccessControl()
+        {
+            return this._networkAccessControl != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NotificationDestinations. 
         /// <para>
         /// The Amazon Web Services notification channels that Amazon Managed Grafana can automatically
@@ -392,7 +411,7 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property PermissionType. 
         /// <para>
-        /// If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates
+        /// If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates
         /// the IAM roles and provisions the permissions that the workspace needs to use Amazon
         /// Web Services data sources and notification channels.
         /// </para>

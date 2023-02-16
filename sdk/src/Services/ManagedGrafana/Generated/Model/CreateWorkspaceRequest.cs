@@ -46,6 +46,7 @@ namespace Amazon.ManagedGrafana.Model
         private List<string> _authenticationProviders = new List<string>();
         private string _clientToken;
         private string _configuration;
+        private NetworkAccessConfiguration _networkAccessControl;
         private string _organizationRoleName;
         private PermissionType _permissionType;
         private string _stackSetName;
@@ -141,6 +142,35 @@ namespace Amazon.ManagedGrafana.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkAccessControl. 
+        /// <para>
+        /// Configuration for network access to your workspace.
+        /// </para>
+        ///  
+        /// <para>
+        /// When this is configured, only listed IP addresses and VPC endpoints will be able to
+        /// access your workspace. Standard Grafana authentication and authorization will still
+        /// be required.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this is not configured, or is removed, then all IP addresses and VPC endpoints
+        /// will be allowed. Standard Grafana authentication and authorization will still be required.
+        /// </para>
+        /// </summary>
+        public NetworkAccessConfiguration NetworkAccessControl
+        {
+            get { return this._networkAccessControl; }
+            set { this._networkAccessControl = value; }
+        }
+
+        // Check to see if NetworkAccessControl property is set
+        internal bool IsSetNetworkAccessControl()
+        {
+            return this._networkAccessControl != null;
         }
 
         /// <summary>
