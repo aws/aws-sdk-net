@@ -81,5 +81,31 @@ namespace AWSSDK.UnitTests
 
             Assert.AreEqual("https", endpoint.Scheme);
         }
+
+        /// <summary>
+        /// Asserts that ClientConfig can override AuthenticationRegion
+        /// </summary>
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        public void ClientConfigOverridesAuthenticationRegion()
+        {
+            var config = new MockClientConfig
+            {
+                EndpointProvider = new TestEndpointProvider(),
+                AuthenticationRegion = "authentication-region"
+            };
+
+            var requestContext = new RequestContext(false, new NullSigner())
+            {
+                ClientConfig = config,
+                Request = new DefaultRequest(new MockAmazonWebServiceRequest(), "test-service")
+            };
+
+            var executionContext = new ExecutionContext(requestContext, null);
+            var resolver = new BaseEndpointResolver();
+            resolver.ProcessRequestHandlers(executionContext);
+
+            Assert.AreEqual("authentication-region", executionContext.RequestContext.Request.AuthenticationRegion);
+        }
     }
 }
