@@ -1,3 +1,12 @@
+### 3.7.486.0 (2023-02-17 19:20 UTC)
+* AppRunner (3.7.104.0)
+	* This release supports removing MaxSize limit for AutoScalingConfiguration.
+* Glue (3.7.109.0)
+	* Release of Delta Lake Data Lake Format for Glue Studio Service
+* Core 3.7.105.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.485.0 (2023-02-16 20:41 UTC)
 * ElasticMapReduce (3.7.102.0)
 	* This release provides customers the ability to define a timeout period for procuring capacity during a resize operation for Instance Fleet clusters. Customers can specify this timeout using the ResizeSpecifications parameter supported by RunJobFlow, ModifyInstanceFleet and AddInstanceFleet APIs.
