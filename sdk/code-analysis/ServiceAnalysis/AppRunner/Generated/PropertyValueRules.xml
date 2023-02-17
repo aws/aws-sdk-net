@@ -38,7 +38,6 @@
   <property-value-rule>
     <property>Amazon.AppRunner.Model.CreateAutoScalingConfigurationRequest.MaxSize</property>
     <min>1</min>
-    <max>25</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRunner.Model.CreateAutoScalingConfigurationRequest.MinSize</property>
