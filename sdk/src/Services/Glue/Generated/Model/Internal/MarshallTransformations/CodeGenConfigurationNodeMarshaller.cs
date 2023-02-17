@@ -78,6 +78,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCatalogDeltaSource())
+            {
+                context.Writer.WritePropertyName("CatalogDeltaSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CatalogDeltaSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.CatalogDeltaSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCatalogHudiSource())
             {
                 context.Writer.WritePropertyName("CatalogHudiSource");
@@ -474,6 +485,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetS3CatalogDeltaSource())
+            {
+                context.Writer.WritePropertyName("S3CatalogDeltaSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3CatalogDeltaSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3CatalogDeltaSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3CatalogHudiSource())
             {
                 context.Writer.WritePropertyName("S3CatalogHudiSource");
@@ -514,6 +536,39 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
                 var marshaller = S3CsvSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3CsvSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetS3DeltaCatalogTarget())
+            {
+                context.Writer.WritePropertyName("S3DeltaCatalogTarget");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3DeltaCatalogTargetMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3DeltaCatalogTarget, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetS3DeltaDirectTarget())
+            {
+                context.Writer.WritePropertyName("S3DeltaDirectTarget");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3DeltaDirectTargetMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3DeltaDirectTarget, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetS3DeltaSource())
+            {
+                context.Writer.WritePropertyName("S3DeltaSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3DeltaSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3DeltaSource, context);
 
                 context.Writer.WriteObjectEnd();
             }

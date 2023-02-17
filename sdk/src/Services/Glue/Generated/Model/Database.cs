@@ -65,7 +65,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CreateTableDefaultPermissions. 
         /// <para>
-        /// Creates a set of default permissions on the table for principals. 
+        /// Creates a set of default permissions on the table for principals. Used by Lake Formation.
+        /// Not used in the normal course of Glue operations.
         /// </para>
         /// </summary>
         public List<PrincipalPermissions> CreateTableDefaultPermissions

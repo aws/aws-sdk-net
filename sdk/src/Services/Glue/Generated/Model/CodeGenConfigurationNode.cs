@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
         private Aggregate _aggregate;
         private ApplyMapping _applyMapping;
         private AthenaConnectorSource _athenaConnectorSource;
+        private CatalogDeltaSource _catalogDeltaSource;
         private CatalogHudiSource _catalogHudiSource;
         private CatalogKafkaSource _catalogKafkaSource;
         private CatalogKinesisSource _catalogKinesisSource;
@@ -73,10 +74,14 @@ namespace Amazon.Glue.Model
         private RedshiftTarget _redshiftTarget;
         private RelationalCatalogSource _relationalCatalogSource;
         private RenameField _renameField;
+        private S3CatalogDeltaSource _s3CatalogDeltaSource;
         private S3CatalogHudiSource _s3CatalogHudiSource;
         private S3CatalogSource _s3CatalogSource;
         private S3CatalogTarget _s3CatalogTarget;
         private S3CsvSource _s3CsvSource;
+        private S3DeltaCatalogTarget _s3DeltaCatalogTarget;
+        private S3DeltaDirectTarget _s3DeltaDirectTarget;
+        private S3DeltaSource _s3DeltaSource;
         private S3DirectTarget _s3DirectTarget;
         private S3GlueParquetTarget _s3GlueParquetTarget;
         private S3HudiCatalogTarget _s3HudiCatalogTarget;
@@ -148,6 +153,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetAthenaConnectorSource()
         {
             return this._athenaConnectorSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CatalogDeltaSource. 
+        /// <para>
+        /// Specifies a Delta Lake data source that is registered in the Glue Data Catalog.
+        /// </para>
+        /// </summary>
+        public CatalogDeltaSource CatalogDeltaSource
+        {
+            get { return this._catalogDeltaSource; }
+            set { this._catalogDeltaSource = value; }
+        }
+
+        // Check to see if CatalogDeltaSource property is set
+        internal bool IsSetCatalogDeltaSource()
+        {
+            return this._catalogDeltaSource != null;
         }
 
         /// <summary>
@@ -807,10 +830,29 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property S3CatalogDeltaSource. 
+        /// <para>
+        /// Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The
+        /// data source must be stored in Amazon S3.
+        /// </para>
+        /// </summary>
+        public S3CatalogDeltaSource S3CatalogDeltaSource
+        {
+            get { return this._s3CatalogDeltaSource; }
+            set { this._s3CatalogDeltaSource = value; }
+        }
+
+        // Check to see if S3CatalogDeltaSource property is set
+        internal bool IsSetS3CatalogDeltaSource()
+        {
+            return this._s3CatalogDeltaSource != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property S3CatalogHudiSource. 
         /// <para>
-        /// Specifies a Hudi data source that is registered in the Glue Data Catalog. The Hudi
-        /// data source must be stored in Amazon S3.
+        /// Specifies a Hudi data source that is registered in the Glue Data Catalog. The data
+        /// source must be stored in Amazon S3.
         /// </para>
         /// </summary>
         public S3CatalogHudiSource S3CatalogHudiSource
@@ -877,6 +919,60 @@ namespace Amazon.Glue.Model
         internal bool IsSetS3CsvSource()
         {
             return this._s3CsvSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3DeltaCatalogTarget. 
+        /// <para>
+        /// Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.
+        /// </para>
+        /// </summary>
+        public S3DeltaCatalogTarget S3DeltaCatalogTarget
+        {
+            get { return this._s3DeltaCatalogTarget; }
+            set { this._s3DeltaCatalogTarget = value; }
+        }
+
+        // Check to see if S3DeltaCatalogTarget property is set
+        internal bool IsSetS3DeltaCatalogTarget()
+        {
+            return this._s3DeltaCatalogTarget != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3DeltaDirectTarget. 
+        /// <para>
+        /// Specifies a target that writes to a Delta Lake data source in Amazon S3.
+        /// </para>
+        /// </summary>
+        public S3DeltaDirectTarget S3DeltaDirectTarget
+        {
+            get { return this._s3DeltaDirectTarget; }
+            set { this._s3DeltaDirectTarget = value; }
+        }
+
+        // Check to see if S3DeltaDirectTarget property is set
+        internal bool IsSetS3DeltaDirectTarget()
+        {
+            return this._s3DeltaDirectTarget != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3DeltaSource. 
+        /// <para>
+        /// Specifies a Delta Lake data source stored in Amazon S3.
+        /// </para>
+        /// </summary>
+        public S3DeltaSource S3DeltaSource
+        {
+            get { return this._s3DeltaSource; }
+            set { this._s3DeltaSource = value; }
+        }
+
+        // Check to see if S3DeltaSource property is set
+        internal bool IsSetS3DeltaSource()
+        {
+            return this._s3DeltaSource != null;
         }
 
         /// <summary>

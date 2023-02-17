@@ -6850,7 +6850,12 @@ namespace Amazon.Glue
 
 
         /// <summary>
+        /// Retrieves partition metadata from the Data Catalog that contains unfiltered metadata.
         /// 
+        ///  
+        /// <para>
+        /// For IAM authorization, the public IAM action associated with this API is <code>glue:GetPartition</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUnfilteredPartitionMetadata service method.</param>
         /// 
@@ -6908,7 +6913,12 @@ namespace Amazon.Glue
 
 
         /// <summary>
+        /// Retrieves partition metadata from the Data Catalog that contains unfiltered metadata.
         /// 
+        ///  
+        /// <para>
+        /// For IAM authorization, the public IAM action associated with this API is <code>glue:GetPartitions</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUnfilteredPartitionsMetadata service method.</param>
         /// 
@@ -6966,7 +6976,12 @@ namespace Amazon.Glue
 
 
         /// <summary>
+        /// Retrieves table metadata from the Data Catalog that contains unfiltered metadata.
         /// 
+        ///  
+        /// <para>
+        /// For IAM authorization, the public IAM action associated with this API is <code>glue:GetTable</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUnfilteredTableMetadata service method.</param>
         /// 

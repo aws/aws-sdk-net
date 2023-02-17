@@ -38,7 +38,10 @@ namespace Amazon.Glue.Model
         private Partition _partition;
 
         /// <summary>
-        /// Gets and sets the property AuthorizedColumns.
+        /// Gets and sets the property AuthorizedColumns. 
+        /// <para>
+        /// A list of column names that the user has been granted access to.
+        /// </para>
         /// </summary>
         public List<string> AuthorizedColumns
         {
@@ -53,7 +56,11 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsRegisteredWithLakeFormation.
+        /// Gets and sets the property IsRegisteredWithLakeFormation. 
+        /// <para>
+        /// A Boolean value that indicates whether the partition location is registered with Lake
+        /// Formation.
+        /// </para>
         /// </summary>
         public bool IsRegisteredWithLakeFormation
         {
@@ -68,7 +75,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Partition.
+        /// Gets and sets the property Partition. 
+        /// <para>
+        /// A Partition object containing the partition metadata.
+        /// </para>
         /// </summary>
         public Partition Partition
         {

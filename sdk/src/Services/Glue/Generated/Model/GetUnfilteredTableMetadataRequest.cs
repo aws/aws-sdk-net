@@ -30,7 +30,12 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the GetUnfilteredTableMetadata operation.
+    /// Retrieves table metadata from the Data Catalog that contains unfiltered metadata.
     /// 
+    ///  
+    /// <para>
+    /// For IAM authorization, the public IAM action associated with this API is <code>glue:GetTable</code>.
+    /// </para>
     /// </summary>
     public partial class GetUnfilteredTableMetadataRequest : AmazonGlueRequest
     {
@@ -41,7 +46,10 @@ namespace Amazon.Glue.Model
         private List<string> _supportedPermissionTypes = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property AuditContext.
+        /// Gets and sets the property AuditContext. 
+        /// <para>
+        /// A structure containing Lake Formation audit context information.
+        /// </para>
         /// </summary>
         public AuditContext AuditContext
         {
@@ -56,7 +64,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CatalogId.
+        /// Gets and sets the property CatalogId. 
+        /// <para>
+        /// The catalog ID where the table resides.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string CatalogId
@@ -72,7 +83,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DatabaseName.
+        /// Gets and sets the property DatabaseName. 
+        /// <para>
+        /// (Required) Specifies the name of a database that contains the table.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string DatabaseName
@@ -88,7 +102,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// (Required) Specifies the name of a table for which you are requesting metadata.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
@@ -104,7 +121,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SupportedPermissionTypes.
+        /// Gets and sets the property SupportedPermissionTypes. 
+        /// <para>
+        /// (Required) A list of supported permission types. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public List<string> SupportedPermissionTypes
