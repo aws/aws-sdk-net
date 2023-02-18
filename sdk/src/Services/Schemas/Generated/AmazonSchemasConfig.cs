@@ -32,7 +32,7 @@ namespace Amazon.Schemas
     public partial class AmazonSchemasConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.76");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.77");
 
         private string _userAgent = UserAgentString;
 

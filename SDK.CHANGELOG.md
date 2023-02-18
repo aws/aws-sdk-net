@@ -1,3 +1,10 @@
+### 3.7.486.1 (2023-02-18 00:42 UTC)
+* DynamoDBv2 (3.7.101.48)
+	* Fix: Fix DynamoDBContext.FromDocument conversion for DateTime string without milliseconds with unit tests
+* Core 3.7.105.6
+	* Fix: Generate new SSO token if refresh token and access token are expired and options.GenerateNewToken is true. Override AuthenticationRegion from ClientConfig if specified.
+	* All services packages updated to require new Core
+
 ### 3.7.486.0 (2023-02-17 19:20 UTC)
 * AppRunner (3.7.104.0)
 	* This release supports removing MaxSize limit for AutoScalingConfiguration.
