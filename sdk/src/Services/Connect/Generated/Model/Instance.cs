@@ -83,8 +83,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -142,7 +142,7 @@ namespace Amazon.Connect.Model
         /// The alias of instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=62)]
+        [AWSProperty(Sensitive=true, Min=1, Max=45)]
         public string InstanceAlias
         {
             get { return this._instanceAlias; }

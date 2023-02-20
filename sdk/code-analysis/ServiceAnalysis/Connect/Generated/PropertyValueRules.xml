@@ -189,7 +189,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateInstanceRequest.InstanceAlias</property>
     <min>1</min>
-    <max>62</max>
+    <max>45</max>
     <pattern>^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1221,7 +1221,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ReplicateInstanceRequest.ReplicaAlias</property>
     <min>1</min>
-    <max>62</max>
+    <max>45</max>
     <pattern>^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2231,7 +2231,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.Instance.InstanceAlias</property>
     <min>1</min>
-    <max>62</max>
+    <max>45</max>
     <pattern>^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2247,7 +2247,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.InstanceSummary.InstanceAlias</property>
     <min>1</min>
-    <max>62</max>
+    <max>45</max>
     <pattern>^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*$</pattern>
   </property-value-rule>
   <property-value-rule>

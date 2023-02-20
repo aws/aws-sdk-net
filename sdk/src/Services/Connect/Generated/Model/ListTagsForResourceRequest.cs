@@ -46,7 +46,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource.
+        /// The Amazon Resource Name (ARN) of the resource. All Amazon Connect resources (instances,
+        /// queues, flows, routing profiles, etc) have an ARN. To locate the ARN for an instance,
+        /// for example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">Find
+        /// your Amazon Connect instance ID/ARN</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
