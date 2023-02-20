@@ -1,3 +1,9 @@
+### 3.7.487.0 (2023-02-20 19:19 UTC)
+* AuditManager (3.7.103.0)
+	* This release introduces a ServiceQuotaExceededException to the UpdateAssessmentFrameworkShare API operation.
+* Connect (3.7.116.0)
+	* Reasons for failed diff has been approved by SDK Reviewer
+
 ### 3.7.486.1 (2023-02-18 00:42 UTC)
 * DynamoDBv2 (3.7.101.48)
 	* Fix: Fix DynamoDBContext.FromDocument conversion for DateTime string without milliseconds with unit tests

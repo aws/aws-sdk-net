@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.486.1",
+    "ProductVersion" : "3.7.487.0",
     "CoreVersion"    : "3.7.105.6",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -1058,7 +1058,7 @@
             "InPreview"               : false
         },
         "Connect"                         : {
-            "Version" : "3.7.115.5",
+            "Version" : "3.7.116.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.105.6"
@@ -1994,7 +1994,7 @@
             "InPreview"               : false
         },
         "AuditManager"                    : {
-            "Version" : "3.7.102.27",
+            "Version" : "3.7.103.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.105.6"
