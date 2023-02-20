@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSettings operation.
-    /// Updates Audit Manager settings for the current user account.
+    /// Updates Audit Manager settings for the current account.
     /// </summary>
     public partial class UpdateSettingsRequest : AmazonAuditManagerRequest
     {
