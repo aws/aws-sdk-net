@@ -30,7 +30,7 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists the tags for your resources in your Resilience Hub applications.
+    /// Lists the tags for your resources in your AWS Resilience Hub applications.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonResilienceHubRequest
     {
@@ -39,7 +39,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for a specific resource in your Resilience Hub application.
+        /// The Amazon Resource Name (ARN) for a specific resource in your AWS Resilience Hub
+        /// application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

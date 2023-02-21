@@ -57,7 +57,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property TestRecommendations. 
         /// <para>
-        /// The test recommendations for the Resilience Hub application.
+        /// The test recommendations for the AWS Resilience Hub application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

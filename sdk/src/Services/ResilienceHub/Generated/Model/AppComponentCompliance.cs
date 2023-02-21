@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// Defines the compliance of an application component against the resiliency policy.
+    /// Defines the compliance of an Application Component against the resiliency policy.
     /// </summary>
     public partial class AppComponentCompliance
     {
@@ -43,7 +43,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppComponentName. 
         /// <para>
-        /// The name of the application component.
+        /// The name of the Application Component.
         /// </para>
         /// </summary>
         public string AppComponentName
@@ -61,7 +61,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Compliance. 
         /// <para>
-        /// The compliance of the application component against the resiliency policy.
+        /// The compliance of the Application Component against the resiliency policy.
         /// </para>
         /// </summary>
         public Dictionary<string, DisruptionCompliance> Compliance

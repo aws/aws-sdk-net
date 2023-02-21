@@ -57,7 +57,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property RecommendationTemplates. 
         /// <para>
-        /// The recommendation templates for the Resilience Hub applications.
+        /// The recommendation templates for the AWS Resilience Hub applications.
         /// </para>
         /// </summary>
         public List<RecommendationTemplate> RecommendationTemplates

@@ -29,17 +29,71 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// Defines an application component.
+    /// Defines an Application Component.
     /// </summary>
     public partial class AppComponent
     {
+        private Dictionary<string, List<string>> _additionalInfo = new Dictionary<string, List<string>>();
+        private string _id;
         private string _name;
         private string _type;
 
         /// <summary>
+        /// Gets and sets the property AdditionalInfo. 
+        /// <para>
+        /// Additional configuration parameters for an AWS Resilience Hub application.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, this parameter accepts a key-value mapping (in a string format) of only
+        /// one failover region and one associated account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Key: <code>"failover-regions"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code>
+        /// 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public Dictionary<string, List<string>> AdditionalInfo
+        {
+            get { return this._additionalInfo; }
+            set { this._additionalInfo = value; }
+        }
+
+        // Check to see if AdditionalInfo property is set
+        internal bool IsSetAdditionalInfo()
+        {
+            return this._additionalInfo != null && this._additionalInfo.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// Unique identifier of the Application Component.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the application component.
+        /// The name of the Application Component.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -58,7 +112,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of application component.
+        /// The type of Application Component.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

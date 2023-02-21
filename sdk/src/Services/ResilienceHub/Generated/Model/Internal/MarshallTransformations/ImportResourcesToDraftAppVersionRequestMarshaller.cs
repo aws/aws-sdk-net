@@ -71,6 +71,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AppArn);
                 }
 
+                if(publicRequest.IsSetImportStrategy())
+                {
+                    context.Writer.WritePropertyName("importStrategy");
+                    context.Writer.Write(publicRequest.ImportStrategy);
+                }
+
                 if(publicRequest.IsSetSourceArns())
                 {
                     context.Writer.WritePropertyName("sourceArns");

@@ -30,21 +30,25 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportResourcesToDraftAppVersion operation.
-    /// Imports resources from sources such as a CloudFormation stack, resource-groups, or
-    /// application registry app to a draft application version.
+    /// Imports resources to AWS Resilience Hub application draft version from different input
+    /// sources. For more information about the input sources supported by AWS Resilience
+    /// Hub, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
+    /// the structure and describe your Resilience Hub application</a>.
     /// </summary>
     public partial class ImportResourcesToDraftAppVersionRequest : AmazonResilienceHubRequest
     {
         private string _appArn;
+        private ResourceImportStrategyType _importStrategy;
         private List<string> _sourceArns = new List<string>();
         private List<TerraformSource> _terraformSources = new List<TerraformSource>();
 
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+        /// The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The format for
+        /// this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,6 +62,25 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetAppArn()
         {
             return this._appArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportStrategy. 
+        /// <para>
+        /// The import strategy you would like to set to import resources into AWS Resilience
+        /// Hub application.
+        /// </para>
+        /// </summary>
+        public ResourceImportStrategyType ImportStrategy
+        {
+            get { return this._importStrategy; }
+            set { this._importStrategy = value; }
+        }
+
+        // Check to see if ImportStrategy property is set
+        internal bool IsSetImportStrategy()
+        {
+            return this._importStrategy != null;
         }
 
         /// <summary>

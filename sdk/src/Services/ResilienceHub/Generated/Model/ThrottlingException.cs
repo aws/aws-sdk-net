@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// The limit on the number of requests per second was exceeded.
+    /// This exception occurs when you have exceeded the limit on the number of requests per
+    /// second.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

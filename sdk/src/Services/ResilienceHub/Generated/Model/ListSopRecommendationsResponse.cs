@@ -57,7 +57,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property SopRecommendations. 
         /// <para>
-        /// The standard operating procedure (SOP) recommendations for the Resilience Hub applications.
+        /// The standard operating procedure (SOP) recommendations for the AWS Resilience Hub
+        /// applications.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

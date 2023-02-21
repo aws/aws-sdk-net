@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// Defines a resource that is not supported by Resilience Hub.
+    /// Defines a resource that is not supported by AWS Resilience Hub.
     /// </summary>
     public partial class UnsupportedResource
     {

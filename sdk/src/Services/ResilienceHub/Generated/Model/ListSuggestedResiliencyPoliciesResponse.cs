@@ -57,7 +57,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResiliencyPolicies. 
         /// <para>
-        /// The suggested resiliency policies for the Resilience Hub applications.
+        /// The suggested resiliency policies for the AWS Resilience Hub applications.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
