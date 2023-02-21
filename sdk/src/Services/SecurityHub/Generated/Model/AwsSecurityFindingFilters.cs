@@ -265,6 +265,13 @@ namespace Amazon.SecurityHub.Model
         /// An ISO8601-formatted timestamp that indicates when the security-findings provider
         /// captured the potential security issue that a finding captured.
         /// </para>
+        ///  
+        /// <para>
+        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
+        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>.
+        /// </para>
         /// </summary>
         public List<DateFilter> CreatedAt
         {
@@ -471,6 +478,13 @@ namespace Amazon.SecurityHub.Model
         /// An ISO8601-formatted timestamp that indicates when the security-findings provider
         /// first observed the potential security issue that a finding captured.
         /// </para>
+        ///  
+        /// <para>
+        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
+        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>.
+        /// </para>
         /// </summary>
         public List<DateFilter> FirstObservedAt
         {
@@ -546,6 +560,13 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// An ISO8601-formatted timestamp that indicates when the security-findings provider
         /// most recently observed the potential security issue that a finding captured.
+        /// </para>
+        ///  
+        /// <para>
+        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
+        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> LastObservedAt
@@ -888,7 +909,14 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProcessLaunchedAt. 
         /// <para>
-        /// The date/time that the process was launched.
+        /// A timestamp that identifies when the process was launched.
+        /// </para>
+        ///  
+        /// <para>
+        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
+        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> ProcessLaunchedAt
@@ -978,7 +1006,14 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProcessTerminatedAt. 
         /// <para>
-        /// The date/time that the process was terminated.
+        /// A timestamp that identifies when the process was terminated.
+        /// </para>
+        ///  
+        /// <para>
+        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
+        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> ProcessTerminatedAt
@@ -1468,7 +1503,14 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ResourceContainerLaunchedAt. 
         /// <para>
-        /// The date/time that the container was started.
+        /// A timestamp that identifies when the container was started.
+        /// </para>
+        ///  
+        /// <para>
+        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
+        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> ResourceContainerLaunchedAt
@@ -1726,7 +1768,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ThreatIntelIndicatorLastObservedAt. 
         /// <para>
-        /// The date/time of the last observation of a threat intelligence indicator.
+        /// A timestamp that identifies the last observation of a threat intelligence indicator.
         /// </para>
         /// </summary>
         public List<DateFilter> ThreatIntelIndicatorLastObservedAt
@@ -1855,6 +1897,13 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// An ISO8601-formatted timestamp that indicates when the security-findings provider
         /// last updated the finding record. 
+        /// </para>
+        ///  
+        /// <para>
+        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
+        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> UpdatedAt
