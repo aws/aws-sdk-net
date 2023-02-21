@@ -663,6 +663,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.TimestreamQuery.CodeAnalysis" Path="|AWSSDK.TimestreamQuery.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.TimestreamWrite.CodeAnalysis" Path="|AWSSDK.TimestreamWrite.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.TimestreamWrite.CodeAnalysis" Path="|AWSSDK.TimestreamWrite.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Tnb.CodeAnalysis" Path="|AWSSDK.Tnb.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Tnb.CodeAnalysis" Path="|AWSSDK.Tnb.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.TranscribeService.CodeAnalysis" Path="|AWSSDK.TranscribeService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.TranscribeService.CodeAnalysis" Path="|AWSSDK.TranscribeService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Transfer.CodeAnalysis" Path="|AWSSDK.Transfer.CodeAnalysis|"/>

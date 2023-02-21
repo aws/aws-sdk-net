@@ -1348,6 +1348,10 @@
       <Project>{98DF67C0-394D-47FF-82E7-D86EAA973B69}</Project>
       <Name>AWSSDK.TimestreamWrite.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Tnb/AWSSDK.Tnb.CodeAnalysis.csproj">
+      <Project>{FF5B64C8-5A93-4F22-A9A4-7DDD6076E118}</Project>
+      <Name>AWSSDK.Tnb.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/TranscribeService/AWSSDK.TranscribeService.CodeAnalysis.csproj">
       <Project>{1569BF27-B6F7-4B32-BD44-36D1D4E028BC}</Project>
       <Name>AWSSDK.TranscribeService.CodeAnalysis</Name>
