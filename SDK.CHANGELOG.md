@@ -1,3 +1,16 @@
+### 3.7.488.0 (2023-02-21 20:25 UTC)
+* QuickSight (3.7.105.0)
+	* S3 data sources now accept a custom IAM role.
+* ResilienceHub (3.7.101.0)
+	* In this release we improved resilience hub application creation and maintenance by introducing new resource and app component crud APIs, improving visibility and maintenance of application input sources and added support for additional information attributes to be provided by customers.
+* SecurityHub (3.7.104.15)
+	* Documentation updates for AWS Security Hub
+* Tnb (3.7.100.0)
+	* This is the initial SDK release for AWS Telco Network Builder (TNB). AWS Telco Network Builder is a network automation service that helps you deploy and manage telecom networks.
+* Core 3.7.105.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.487.0 (2023-02-20 19:19 UTC)
 * AuditManager (3.7.103.0)
 	* This release introduces a ServiceQuotaExceededException to the UpdateAssessmentFrameworkShare API operation.

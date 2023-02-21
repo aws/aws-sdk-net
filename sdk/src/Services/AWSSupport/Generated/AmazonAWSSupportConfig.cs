@@ -32,7 +32,7 @@ namespace Amazon.AWSSupport
     public partial class AmazonAWSSupportConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.14");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.15");
 
         private string _userAgent = UserAgentString;
 
