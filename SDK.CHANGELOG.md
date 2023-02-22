@@ -1,3 +1,17 @@
+### 3.7.489.0 (2023-02-22 19:26 UTC)
+* ChimeSDKVoice (3.7.101.0)
+	* This release introduces support for Voice Connector media metrics in the Amazon Chime SDK Voice namespace
+* CloudFront (3.7.105.0)
+	* CloudFront now supports block lists in origin request policies so that you can forward all headers, cookies, or query string from viewer requests to the origin *except* for those specified in the block list.
+* CloudWatchRUM (3.7.102.0)
+	* CloudWatch RUM now supports CloudWatch Custom Metrics
+* DataSync (3.7.104.0)
+	* AWS DataSync has relaxed the minimum length constraint of AccessKey for Object Storage locations to 1.
+* OpenSearchService (3.7.104.0)
+	* This release lets customers configure Off-peak window and software update related properties for a new/existing domain. It enhances the capabilities of StartServiceSoftwareUpdate API; adds 2 new APIs - ListScheduledActions & UpdateScheduledAction; and allows Auto-tune to make use of Off-peak window.
+* SimpleSystemsManagement (3.7.103.31)
+	* Document only update for Feb 2023
+
 ### 3.7.488.0 (2023-02-21 20:25 UTC)
 * QuickSight (3.7.105.0)
 	* S3 data sources now accept a custom IAM role.

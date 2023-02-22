@@ -32,7 +32,7 @@ namespace Amazon.CloudWatchRUM
     public partial class AmazonCloudWatchRUMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.58");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.0");
 
         private string _userAgent = UserAgentString;
 
