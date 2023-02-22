@@ -48,7 +48,9 @@ namespace Amazon.OpenSearchService.Model
         private string _engineVersion;
         private Dictionary<string, LogPublishingOption> _logPublishingOptions = new Dictionary<string, LogPublishingOption>();
         private NodeToNodeEncryptionOptions _nodeToNodeEncryptionOptions;
+        private OffPeakWindowOptions _offPeakWindowOptions;
         private SnapshotOptions _snapshotOptions;
+        private SoftwareUpdateOptions _softwareUpdateOptions;
         private List<Tag> _tagList = new List<Tag>();
         private VPCOptions _vpcOptions;
 
@@ -333,6 +335,27 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OffPeakWindowOptions. 
+        /// <para>
+        /// Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration
+        /// changes on the domain, including service software updates and Auto-Tune enhancements
+        /// that require a blue/green deployment. If no options are specified, the default start
+        /// time of 10:00 P.M. local time (for the Region that the domain is created in) is used.
+        /// </para>
+        /// </summary>
+        public OffPeakWindowOptions OffPeakWindowOptions
+        {
+            get { return this._offPeakWindowOptions; }
+            set { this._offPeakWindowOptions = value; }
+        }
+
+        // Check to see if OffPeakWindowOptions property is set
+        internal bool IsSetOffPeakWindowOptions()
+        {
+            return this._offPeakWindowOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SnapshotOptions. 
         /// <para>
         /// DEPRECATED. Container for the parameters required to configure automated snapshots
@@ -349,6 +372,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetSnapshotOptions()
         {
             return this._snapshotOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SoftwareUpdateOptions. 
+        /// <para>
+        /// Software update options for the domain.
+        /// </para>
+        /// </summary>
+        public SoftwareUpdateOptions SoftwareUpdateOptions
+        {
+            get { return this._softwareUpdateOptions; }
+            set { this._softwareUpdateOptions = value; }
+        }
+
+        // Check to see if SoftwareUpdateOptions property is set
+        internal bool IsSetSoftwareUpdateOptions()
+        {
+            return this._softwareUpdateOptions != null;
         }
 
         /// <summary>

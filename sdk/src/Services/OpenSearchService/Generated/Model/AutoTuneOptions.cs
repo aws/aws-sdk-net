@@ -37,6 +37,7 @@ namespace Amazon.OpenSearchService.Model
         private AutoTuneDesiredState _desiredState;
         private List<AutoTuneMaintenanceSchedule> _maintenanceSchedules = new List<AutoTuneMaintenanceSchedule>();
         private RollbackOnDisable _rollbackOnDisable;
+        private bool? _useOffPeakWindow;
 
         /// <summary>
         /// Gets and sets the property DesiredState. 
@@ -58,6 +59,11 @@ namespace Amazon.OpenSearchService.Model
 
         /// <summary>
         /// Gets and sets the property MaintenanceSchedules. 
+        /// <para>
+        /// DEPRECATED. Use <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+        /// window</a> instead.
+        /// </para>
+        ///  
         /// <para>
         /// A list of maintenance schedules during which Auto-Tune can deploy changes.
         /// </para>
@@ -94,6 +100,26 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetRollbackOnDisable()
         {
             return this._rollbackOnDisable != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseOffPeakWindow. 
+        /// <para>
+        /// Whether to use the domain's <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak
+        /// window</a> to deploy configuration changes on the domain rather than a maintenance
+        /// schedule.
+        /// </para>
+        /// </summary>
+        public bool UseOffPeakWindow
+        {
+            get { return this._useOffPeakWindow.GetValueOrDefault(); }
+            set { this._useOffPeakWindow = value; }
+        }
+
+        // Check to see if UseOffPeakWindow property is set
+        internal bool IsSetUseOffPeakWindow()
+        {
+            return this._useOffPeakWindow.HasValue; 
         }
 
     }

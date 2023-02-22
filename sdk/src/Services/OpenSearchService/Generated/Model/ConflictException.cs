@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// An error occurred because the client attempts to remove a resource that's currently
+    /// An error occurred because the client attempts to remove a resource that is currently
     /// in use.
     /// </summary>
     #if !NETSTANDARD
