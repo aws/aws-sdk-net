@@ -71,6 +71,12 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetNamespace())
+            {
+                context.Writer.WritePropertyName("Namespace");
+                context.Writer.Write(requestObject.Namespace);
+            }
+
             if(requestObject.IsSetUnitLabel())
             {
                 context.Writer.WritePropertyName("UnitLabel");
