@@ -58,7 +58,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property GuardDutyFindingId. 
         /// <para>
-        /// The ID of the GuardDuty finding that triggered the BirdDog scan.
+        /// The ID of the GuardDuty finding that triggered the malware scan.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

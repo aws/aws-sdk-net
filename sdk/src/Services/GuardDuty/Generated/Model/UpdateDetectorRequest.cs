@@ -31,6 +31,14 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Container for the parameters to the UpdateDetector operation.
     /// Updates the Amazon GuardDuty detector specified by the detectorId.
+    /// 
+    ///  
+    /// <para>
+    /// There might be regional differences because some data sources might not be available
+    /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+    /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+    /// and endpoints</a>.
+    /// </para>
     /// </summary>
     public partial class UpdateDetectorRequest : AmazonGuardDutyRequest
     {
@@ -43,6 +51,13 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property DataSources. 
         /// <para>
         /// Describes which data sources will be updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
         /// </para>
         /// </summary>
         public DataSourceConfigurations DataSources

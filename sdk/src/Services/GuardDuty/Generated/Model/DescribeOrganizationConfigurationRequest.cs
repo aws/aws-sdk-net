@@ -32,6 +32,14 @@ namespace Amazon.GuardDuty.Model
     /// Container for the parameters to the DescribeOrganizationConfiguration operation.
     /// Returns information about the account selected as the delegated administrator for
     /// GuardDuty.
+    /// 
+    ///  
+    /// <para>
+    /// There might be regional differences because some data sources might not be available
+    /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+    /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+    /// and endpoints</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeOrganizationConfigurationRequest : AmazonGuardDutyRequest
     {
