@@ -71,8 +71,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessibleCount. 
         /// <para>
-        /// The total number of buckets that are publicly accessible based on a combination of
-        /// permissions settings for each bucket.
+        /// The total number of buckets that are publicly accessible due to a combination of permissions
+        /// settings for each bucket.
         /// </para>
         /// </summary>
         public long PubliclyAccessibleCount

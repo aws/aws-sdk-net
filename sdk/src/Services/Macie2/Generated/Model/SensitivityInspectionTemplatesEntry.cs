@@ -59,7 +59,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the sensitivity inspection template for the account.
+        /// The name of the sensitivity inspection template for the account: automated-sensitive-data-discovery.
         /// </para>
         /// </summary>
         public string Name

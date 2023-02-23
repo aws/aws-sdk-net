@@ -105,6 +105,9 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, when the bucket was created.
+        /// This value can also indicate when changes such as edits to the bucket's policy were
+        /// most recently made to the bucket, relative to when the finding was created or last
+        /// updated.
         /// </para>
         /// </summary>
         public DateTime CreatedAt

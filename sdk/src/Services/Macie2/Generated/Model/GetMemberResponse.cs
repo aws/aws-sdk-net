@@ -100,7 +100,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Email. 
         /// <para>
-        /// The email address for the account.
+        /// The email address for the account. This value is null if the account is associated
+        /// with the administrator account through Organizations.
         /// </para>
         /// </summary>
         public string Email
@@ -119,8 +120,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property InvitedAt. 
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership
-        /// invitation was last sent to the account. This value is null if an invitation hasn't
-        /// been sent to the account.
+        /// invitation was last sent to the account. This value is null if a Macie membership
+        /// invitation hasn't been sent to the account.
         /// </para>
         /// </summary>
         public DateTime InvitedAt
