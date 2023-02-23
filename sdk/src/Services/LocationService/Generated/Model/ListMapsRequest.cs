@@ -30,7 +30,7 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMaps operation.
-    /// Lists map resources in your AWS account.
+    /// Lists map resources in your Amazon Web Services account.
     /// </summary>
     public partial class ListMapsRequest : AmazonLocationServiceRequest
     {

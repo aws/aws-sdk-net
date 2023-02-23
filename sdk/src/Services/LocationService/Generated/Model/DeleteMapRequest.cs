@@ -30,7 +30,7 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMap operation.
-    /// Deletes a map resource from your AWS account.
+    /// Deletes a map resource from your Amazon Web Services account.
     /// 
     ///  <note> 
     /// <para>

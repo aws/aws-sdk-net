@@ -30,7 +30,7 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRouteCalculators operation.
-    /// Lists route calculator resources in your AWS account.
+    /// Lists route calculator resources in your Amazon Web Services account.
     /// </summary>
     public partial class ListRouteCalculatorsRequest : AmazonLocationServiceRequest
     {
