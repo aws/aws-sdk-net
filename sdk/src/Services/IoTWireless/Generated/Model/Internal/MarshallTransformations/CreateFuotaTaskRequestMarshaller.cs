@@ -94,6 +94,18 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FirmwareUpdateRole);
                 }
 
+                if(publicRequest.IsSetFragmentIntervalMS())
+                {
+                    context.Writer.WritePropertyName("FragmentIntervalMS");
+                    context.Writer.Write(publicRequest.FragmentIntervalMS);
+                }
+
+                if(publicRequest.IsSetFragmentSizeBytes())
+                {
+                    context.Writer.WritePropertyName("FragmentSizeBytes");
+                    context.Writer.Write(publicRequest.FragmentSizeBytes);
+                }
+
                 if(publicRequest.IsSetLoRaWAN())
                 {
                     context.Writer.WritePropertyName("LoRaWAN");
@@ -109,6 +121,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetRedundancyPercent())
+                {
+                    context.Writer.WritePropertyName("RedundancyPercent");
+                    context.Writer.Write(publicRequest.RedundancyPercent);
                 }
 
                 if(publicRequest.IsSetTags())

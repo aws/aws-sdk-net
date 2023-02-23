@@ -103,7 +103,7 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property Timestamp. 
         /// <para>
         /// Optional information that specifies the time when the position information will be
-        /// resolved. It uses the UNIX timestamp format. If not specified, the time at which the
+        /// resolved. It uses the Unix timestamp format. If not specified, the time at which the
         /// request was received will be used.
         /// </para>
         /// </summary>
