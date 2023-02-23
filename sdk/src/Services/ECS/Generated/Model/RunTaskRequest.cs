@@ -531,13 +531,13 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// When you create an IAM policy for run-task, you can set the resource to be the latest
-        /// task definition revision, or a specific revision.
+        /// When you create a policy for run-task, you can set the resource to be the latest task
+        /// definition revision, or a specific revision.
         /// </para>
         ///  
         /// <para>
         /// The full ARN value must match the value that you specified as the <code>Resource</code>
-        /// of the IAM principal's permissions policy.
+        /// of the principal's permissions policy.
         /// </para>
         ///  
         /// <para>

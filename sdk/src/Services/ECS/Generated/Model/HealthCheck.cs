@@ -143,7 +143,7 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         ///  When you use the Amazon Web Services Management Console JSON panel, the Command Line
-        /// Interface, or the APIs, enclose the list of commands in brackets.
+        /// Interface, or the APIs, enclose the list of commands in double quotes and brackets.
         /// </para>
         ///  
         /// <para>
@@ -151,12 +151,12 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// You don't need to include the brackets when you use the Amazon Web Services Management
-        /// Console.
+        /// You don't include the double quotes and brackets when you use the Amazon Web Services
+        /// Management Console.
         /// </para>
         ///  
         /// <para>
-        ///  <code> "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> 
+        ///  <code> CMD-SHELL, curl -f http://localhost/ || exit 1</code> 
         /// </para>
         ///  
         /// <para>
@@ -222,7 +222,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The optional grace period to provide containers time to bootstrap before failed health
         /// checks count towards the maximum number of retries. You can specify between 0 and
-        /// 300 seconds. By default, the <code>startPeriod</code> is disabled.
+        /// 300 seconds. By default, the <code>startPeriod</code> is off.
         /// </para>
         ///  <note> 
         /// <para>

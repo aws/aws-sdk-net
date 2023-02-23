@@ -79,7 +79,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The managed termination protection setting to use for the Auto Scaling group capacity
         /// provider. This determines whether the Auto Scaling group has managed termination protection.
-        /// The default is disabled.
+        /// The default is off.
         /// </para>
         ///  <important> 
         /// <para>
@@ -88,17 +88,17 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// When managed termination protection is enabled, Amazon ECS prevents the Amazon EC2
-        /// instances in an Auto Scaling group that contain tasks from being terminated during
-        /// a scale-in action. The Auto Scaling group and each instance in the Auto Scaling group
-        /// must have instance protection from scale-in actions enabled as well. For more information,
-        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+        /// When managed termination protection is on, Amazon ECS prevents the Amazon EC2 instances
+        /// in an Auto Scaling group that contain tasks from being terminated during a scale-in
+        /// action. The Auto Scaling group and each instance in the Auto Scaling group must have
+        /// instance protection from scale-in actions enabled as well. For more information, see
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
         /// Protection</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// When managed termination protection is disabled, your Amazon EC2 instances aren't
-        /// protected from termination when the Auto Scaling group scales in.
+        /// When managed termination protection is off, your Amazon EC2 instances aren't protected
+        /// from termination when the Auto Scaling group scales in.
         /// </para>
         /// </summary>
         public ManagedTerminationProtection ManagedTerminationProtection

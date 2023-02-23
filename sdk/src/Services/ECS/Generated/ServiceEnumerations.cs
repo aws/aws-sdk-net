@@ -2779,6 +2779,10 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly TaskDefinitionStatus ACTIVE = new TaskDefinitionStatus("ACTIVE");
         /// <summary>
+        /// Constant DELETE_IN_PROGRESS for TaskDefinitionStatus
+        /// </summary>
+        public static readonly TaskDefinitionStatus DELETE_IN_PROGRESS = new TaskDefinitionStatus("DELETE_IN_PROGRESS");
+        /// <summary>
         /// Constant INACTIVE for TaskDefinitionStatus
         /// </summary>
         public static readonly TaskDefinitionStatus INACTIVE = new TaskDefinitionStatus("INACTIVE");

@@ -132,7 +132,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ContainerPortRange. 
         /// <para>
         /// The port number range on the container that's bound to the dynamically mapped host
-        /// port range.
+        /// port range. 
         /// </para>
         ///  
         /// <para>

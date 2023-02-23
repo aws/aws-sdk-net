@@ -309,7 +309,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Settings. 
         /// <para>
         /// The settings for the cluster. This parameter indicates whether CloudWatch Container
-        /// Insights is enabled or disabled for a cluster.
+        /// Insights is on or off for a cluster.
         /// </para>
         /// </summary>
         public List<ClusterSetting> Settings

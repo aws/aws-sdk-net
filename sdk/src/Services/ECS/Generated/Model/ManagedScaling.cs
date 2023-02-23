@@ -41,8 +41,7 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
-    /// If managed scaling is disabled, the user must manage the scaling of the Auto Scaling
-    /// group.
+    /// If managed scaling is off, the user must manage the scaling of the Auto Scaling group.
     /// </para>
     /// </summary>
     public partial class ManagedScaling
