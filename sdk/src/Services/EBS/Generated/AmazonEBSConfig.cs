@@ -32,7 +32,7 @@ namespace Amazon.EBS
     public partial class AmazonEBSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.78");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.79");
 
         private string _userAgent = UserAgentString;
 

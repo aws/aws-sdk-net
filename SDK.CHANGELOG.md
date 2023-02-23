@@ -1,3 +1,24 @@
+### 3.7.490.0 (2023-02-23 19:38 UTC)
+* Appflow (3.7.106.0)
+	* This release enables the customers to choose whether to use Private Link for Metadata and Authorization call when using a private Salesforce connections
+* ECS (3.7.105.0)
+	* This release supports deleting Amazon ECS task definitions that are in the INACTIVE state.
+* GuardDuty (3.7.100.79)
+	* Updated API and data types descriptions for CreateFilter, UpdateFilter, and TriggerDetails.
+* IoTWireless (3.7.102.0)
+	* In this release, we add additional capabilities for the FUOTA which allows user to configure the fragment size, the sending interval and the redundancy ratio of the FUOTA tasks
+* LocationService (3.7.102.0)
+	* This release adds support for using Maps APIs with an API Key in addition to AWS Cognito. This includes support for adding, listing, updating and deleting API Keys.
+* Macie2 (3.7.103.0)
+	* This release adds support for a new finding type, Policy:IAMUser/S3BucketSharedWithCloudFront, and S3 bucket metadata that indicates if a bucket is shared with an Amazon CloudFront OAI or OAC.
+* ManagedGrafana (3.7.102.4)
+	* Doc-only update. Updated information on attached role policies for customer provided roles
+* WAFV2 (3.7.103.0)
+	* You can now associate an AWS WAF v2 web ACL with an AWS App Runner service.
+* Core 3.7.105.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.489.0 (2023-02-22 19:26 UTC)
 * ChimeSDKVoice (3.7.101.0)
 	* This release introduces support for Voice Connector media metrics in the Amazon Chime SDK Voice namespace
