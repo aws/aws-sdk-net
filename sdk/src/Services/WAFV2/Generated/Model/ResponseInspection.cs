@@ -44,13 +44,6 @@ namespace Amazon.WAFV2.Model
     /// <para>
     /// Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.
     /// </para>
-    ///  </note> <note> 
-    /// <para>
-    /// For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to
-    /// configure response inspection through the APIs, but ATP response inspection will not
-    /// be enabled. You can only use the response inspection capabilities of the ATP managed
-    /// rule group in web ACLs that protect CloudFront distributions.
-    /// </para>
     ///  </note> 
     /// <para>
     /// This is part of the <code>AWSManagedRulesATPRuleSet</code> configuration in <code>ManagedRuleGroupConfig</code>.
@@ -72,7 +65,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property BodyContains. 
         /// <para>
-        /// Configures inspection of the response body. 
+        /// Configures inspection of the response body. WAF can inspect the first 65,536 bytes
+        /// (64 KB) of the response body. 
         /// </para>
         /// </summary>
         public ResponseInspectionBodyContains BodyContains
@@ -108,7 +102,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Json. 
         /// <para>
-        /// Configures inspection of the response JSON. 
+        /// Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes
+        /// (64 KB) of the response JSON. 
         /// </para>
         /// </summary>
         public ResponseInspectionJson Json

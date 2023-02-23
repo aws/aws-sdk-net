@@ -33,7 +33,7 @@ namespace Amazon.WAFV2.Model
     /// Disassociates the specified regional application resource from any existing web ACL
     /// association. A resource can have at most one web ACL association. A regional application
     /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync
-    /// GraphQL API, or an Amazon Cognito user pool. 
+    /// GraphQL API, a Amazon Cognito user pool, or an App Runner service. 
     /// 
     ///  
     /// <para>
@@ -73,6 +73,11 @@ namespace Amazon.WAFV2.Model
         ///  </li> <li> 
         /// <para>
         /// For an Amazon Cognito user pool: <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i>
+        /// </code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For an App Runner service: <code>arn:aws:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i>
         /// </code> 
         /// </para>
         ///  </li> </ul>

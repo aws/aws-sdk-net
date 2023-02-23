@@ -100,13 +100,6 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.
         /// </para>
-        ///  </note> <note> 
-        /// <para>
-        /// For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to
-        /// configure response inspection through the APIs, but ATP response inspection will not
-        /// be enabled. You can only use the response inspection capabilities of the ATP managed
-        /// rule group in web ACLs that protect CloudFront distributions.
-        /// </para>
         ///  </note>
         /// </summary>
         public ResponseInspection ResponseInspection

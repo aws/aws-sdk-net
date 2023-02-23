@@ -67,14 +67,7 @@ namespace Amazon.WAFV2.Model
         /// also provide the information about how your distribution responds to login requests.
         /// 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to
-        /// configure response inspection through the APIs, but ATP response inspection will not
-        /// be enabled. You can only use the response inspection capabilities of the ATP managed
-        /// rule group in web ACLs that protect CloudFront distributions.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// This configuration replaces the individual configuration fields in <code>ManagedRuleGroupConfig</code>
         /// and provides additional feature configuration. 

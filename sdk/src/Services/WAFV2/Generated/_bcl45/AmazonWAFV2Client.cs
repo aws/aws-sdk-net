@@ -63,12 +63,12 @@ namespace Amazon.WAFV2
     /// <para>
     /// WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests
     /// that are forwarded to an Amazon CloudFront distribution, Amazon API Gateway REST API,
-    /// Application Load Balancer, AppSync GraphQL API, or Amazon Cognito user pool. WAF also
-    /// lets you control access to your content, to protect the Amazon Web Services resource
-    /// that WAF is monitoring. Based on conditions that you specify, such as the IP addresses
-    /// that requests originate from or the values of query strings, the protected resource
-    /// responds to requests with either the requested content, an HTTP 403 status code (Forbidden),
-    /// or with a custom response. 
+    /// Application Load Balancer, AppSync GraphQL API, Amazon Cognito user pool, or App Runner
+    /// service. WAF also lets you control access to your content, to protect the Amazon Web
+    /// Services resource that WAF is monitoring. Based on conditions that you specify, such
+    /// as the IP addresses that requests originate from or the values of query strings, the
+    /// protected resource responds to requests with either the requested content, an HTTP
+    /// 403 status code (Forbidden), or with a custom response. 
     /// </para>
     ///  
     /// <para>
@@ -86,7 +86,8 @@ namespace Amazon.WAFV2
     /// <para>
     /// For regional applications, you can use any of the endpoints in the list. A regional
     /// application can be an Application Load Balancer (ALB), an Amazon API Gateway REST
-    /// API, an AppSync GraphQL API, or an Amazon Cognito user pool. 
+    /// API, an AppSync GraphQL API, a Amazon Cognito user pool, or an App Runner service.
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -338,7 +339,8 @@ namespace Amazon.WAFV2
         /// <summary>
         /// Associates a web ACL with a regional application resource, to protect the resource.
         /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway
-        /// REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. 
+        /// REST API, an AppSync GraphQL API, a Amazon Cognito user pool, or an App Runner service.
+        /// 
         /// 
         ///  
         /// <para>
@@ -424,7 +426,8 @@ namespace Amazon.WAFV2
         /// <summary>
         /// Associates a web ACL with a regional application resource, to protect the resource.
         /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway
-        /// REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. 
+        /// REST API, an AppSync GraphQL API, a Amazon Cognito user pool, or an App Runner service.
+        /// 
         /// 
         ///  
         /// <para>
@@ -1226,8 +1229,8 @@ namespace Amazon.WAFV2
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
         /// group. You can associate a web ACL with one or more Amazon Web Services resources
         /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
-        /// Cognito user pool. 
+        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, Amazon Cognito
+        /// user pool, or an App Runner service. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebACL service method.</param>
@@ -1355,8 +1358,8 @@ namespace Amazon.WAFV2
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
         /// group. You can associate a web ACL with one or more Amazon Web Services resources
         /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
-        /// Cognito user pool. 
+        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, Amazon Cognito
+        /// user pool, or an App Runner service. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebACL service method.</param>
@@ -2681,7 +2684,7 @@ namespace Amazon.WAFV2
         /// Disassociates the specified regional application resource from any existing web ACL
         /// association. A resource can have at most one web ACL association. A regional application
         /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync
-        /// GraphQL API, or an Amazon Cognito user pool. 
+        /// GraphQL API, a Amazon Cognito user pool, or an App Runner service. 
         /// 
         ///  
         /// <para>
@@ -2746,7 +2749,7 @@ namespace Amazon.WAFV2
         /// Disassociates the specified regional application resource from any existing web ACL
         /// association. A resource can have at most one web ACL association. A regional application
         /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync
-        /// GraphQL API, or an Amazon Cognito user pool. 
+        /// GraphQL API, a Amazon Cognito user pool, or an App Runner service. 
         /// 
         ///  
         /// <para>
@@ -7594,8 +7597,8 @@ namespace Amazon.WAFV2
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
         /// group. You can associate a web ACL with one or more Amazon Web Services resources
         /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
-        /// Cognito user pool. 
+        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, Amazon Cognito
+        /// user pool, or an App Runner service. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWebACL service method.</param>
@@ -7752,8 +7755,8 @@ namespace Amazon.WAFV2
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
         /// group. You can associate a web ACL with one or more Amazon Web Services resources
         /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
-        /// Cognito user pool. 
+        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, Amazon Cognito
+        /// user pool, or an App Runner service. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWebACL service method.</param>

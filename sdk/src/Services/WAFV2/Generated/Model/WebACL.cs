@@ -36,8 +36,8 @@ namespace Amazon.WAFV2.Model
     /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
     /// group. You can associate a web ACL with one or more Amazon Web Services resources
     /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-    /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
-    /// Cognito user pool.
+    /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, Amazon Cognito
+    /// user pool, or an App Runner service.
     /// </summary>
     public partial class WebACL
     {
