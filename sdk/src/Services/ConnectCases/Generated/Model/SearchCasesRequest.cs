@@ -32,6 +32,14 @@ namespace Amazon.ConnectCases.Model
     /// Container for the parameters to the SearchCases operation.
     /// Searches for cases within their associated Cases domain. Search results are returned
     /// as a paginated list of abridged case documents.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// For <code>customer_id</code> you must provide the full customer profile ARN in this
+    /// format: <code> arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles
+    /// domain name/profiles/profile ID</code>. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class SearchCasesRequest : AmazonConnectCasesRequest
     {
