@@ -535,7 +535,7 @@ namespace Amazon.Redshift.Model
         ///  <note> 
         /// <para>
         /// Operations never return the password, so this operation provides a way to regain access
-        /// to the admin user account for a cluster if the password is lost.
+        /// to the admin user for a cluster if the password is lost.
         /// </para>
         ///  </note> 
         /// <para>

@@ -783,8 +783,8 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property SnapshotClusterIdentifier. 
         /// <para>
         /// The name of the cluster the source snapshot was created from. This parameter is required
-        /// if your IAM user has a policy containing a snapshot resource element that specifies
-        /// anything other than * for the cluster name.
+        /// if your IAM user or role has a policy containing a snapshot resource element that
+        /// specifies anything other than * for the cluster name.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
