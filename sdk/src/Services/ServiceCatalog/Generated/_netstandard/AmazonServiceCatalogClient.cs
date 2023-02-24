@@ -1793,6 +1793,13 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Gets information about the specified product.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  Running this operation with administrator access results in a failure. <a>DescribeProductAsAdmin</a>
+        /// should be used instead. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProduct service method.</param>
         /// <param name="cancellationToken">
@@ -2783,30 +2790,36 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Requests the import of a resource as an Service Catalog provisioned product that is
-        /// associated to an Service Catalog product and provisioning artifact. Once imported,
-        /// all supported Service Catalog governance actions are supported on the provisioned
-        /// product.
+        /// Requests the import of a resource as an Service Catalog provisioned product that
+        /// is associated to an Service Catalog product and provisioning artifact. Once imported,
+        /// all supported governance actions are supported on the provisioned product. 
         /// 
         ///  
         /// <para>
-        /// Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets
-        /// and non-root nested stacks are not supported.
+        ///  Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets,
+        /// and non-root nested stacks are not supported. 
         /// </para>
         ///  
         /// <para>
-        /// The CloudFormation stack must have one of the following statuses to be imported: <code>CREATE_COMPLETE</code>,
-        /// <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>,
-        /// <code>IMPORT_ROLLBACK_COMPLETE</code>.
+        ///  The CloudFormation stack must have one of the following statuses to be imported:
+        /// <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>,
+        /// <code>IMPORT_COMPLETE</code>, and <code>IMPORT_ROLLBACK_COMPLETE</code>. 
         /// </para>
         ///  
         /// <para>
-        /// Import of the resource requires that the CloudFormation stack template matches the
+        ///  Import of the resource requires that the CloudFormation stack template matches the
         /// associated Service Catalog product provisioning artifact. 
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
+        ///  When you import an existing CloudFormation stack into a portfolio, constraints that
+        /// are associated with the product aren't applied during the import process. The constraints
+        /// are applied after you call <code>UpdateProvisionedProduct</code> for the provisioned
+        /// product. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
         /// and <code>cloudformation:DescribeStacks</code> IAM policy permissions. 
         /// </para>
         /// </summary>
@@ -2977,9 +2990,18 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Lists the paths to the specified product. A path is how the user has access to a specified
-        /// product, and is necessary when provisioning a product. A path also determines the
-        /// constraints put on the product.
+        /// Lists the paths to the specified product. A path describes how the user gets access
+        /// to a specified product and is necessary when provisioning a product. A path also determines
+        /// the constraints that are put on a product. A path is dependent on a specific product,
+        /// porfolio, and principal. 
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  When provisioning a product that's been added to a portfolio, you must grant your
+        /// user, group, or role access to the portfolio. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_users.html">Granting
+        /// users access</a> in the <i>Service Catalog User Guide</i>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLaunchPaths service method.</param>
         /// <param name="cancellationToken">
@@ -3599,20 +3621,29 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Provisions the specified product.
+        /// Provisions the specified product. 
         /// 
         ///  
         /// <para>
-        /// A provisioned product is a resourced instance of a product. For example, provisioning
-        /// a product based on a CloudFormation template launches a CloudFormation stack and its
-        /// underlying resources. You can check the status of this request using <a>DescribeRecord</a>.
+        ///  A provisioned product is a resourced instance of a product. For example, provisioning
+        /// a product that's based on an CloudFormation template launches an CloudFormation stack
+        /// and its underlying resources. You can check the status of this request using <a>DescribeRecord</a>.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// If the request contains a tag key with an empty list of values, there is a tag conflict
-        /// for that key. Do not include conflicted keys as tags, or this causes the error "Parameter
-        /// validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
+        ///  If the request contains a tag key with an empty list of values, there's a tag conflict
+        /// for that key. Don't include conflicted keys as tags, or this will cause the error
+        /// "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
+        /// 
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  When provisioning a product that's been added to a portfolio, you must grant your
+        /// user, group, or role access to the portfolio. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_users.html">Granting
+        /// users access</a> in the <i>Service Catalog User Guide</i>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ProvisionProduct service method.</param>
         /// <param name="cancellationToken">
@@ -3812,22 +3843,6 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Gets information about the provisioned products that meet the specified criteria.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// To ensure a complete list of provisioned products and remove duplicate products, use
-        /// <code>sort-by createdTime</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Here is a CLI example: <code> </code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws servicecatalog search-provisioned-products --sort-by createdTime </code>
-        /// 
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchProvisionedProducts service method.</param>
         /// <param name="cancellationToken">
