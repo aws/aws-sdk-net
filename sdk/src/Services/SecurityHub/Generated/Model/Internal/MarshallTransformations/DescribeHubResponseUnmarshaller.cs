@@ -57,6 +57,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     response.AutoEnableControls = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ControlFindingGenerator", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ControlFindingGenerator = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("HubArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

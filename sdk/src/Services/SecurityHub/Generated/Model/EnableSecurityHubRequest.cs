@@ -73,8 +73,43 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class EnableSecurityHubRequest : AmazonSecurityHubRequest
     {
+        private ControlFindingGenerator _controlFindingGenerator;
         private bool? _enableDefaultStandards;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property ControlFindingGenerator. 
+        /// <para>
+        /// This field, used when enabling Security Hub, specifies whether the calling account
+        /// has consolidated control findings turned on. If the value for this field is set to
+        /// <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control
+        /// check even when the check applies to multiple enabled standards.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub
+        /// generates separate findings for a control check when the check applies to multiple
+        /// enabled standards.
+        /// </para>
+        ///  
+        /// <para>
+        /// The value for this field in a member account matches the value in the administrator
+        /// account. For accounts that aren't part of an organization, the default value of this
+        /// field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February
+        /// 9, 2023.
+        /// </para>
+        /// </summary>
+        public ControlFindingGenerator ControlFindingGenerator
+        {
+            get { return this._controlFindingGenerator; }
+            set { this._controlFindingGenerator = value; }
+        }
+
+        // Check to see if ControlFindingGenerator property is set
+        internal bool IsSetControlFindingGenerator()
+        {
+            return this._controlFindingGenerator != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EnableDefaultStandards. 

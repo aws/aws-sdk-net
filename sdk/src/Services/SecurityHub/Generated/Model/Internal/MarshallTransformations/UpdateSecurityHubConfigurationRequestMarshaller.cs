@@ -71,6 +71,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AutoEnableControls);
                 }
 
+                if(publicRequest.IsSetControlFindingGenerator())
+                {
+                    context.Writer.WritePropertyName("ControlFindingGenerator");
+                    context.Writer.Write(publicRequest.ControlFindingGenerator);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

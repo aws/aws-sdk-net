@@ -130,5 +130,21 @@ namespace Amazon.SecurityHub.Model
         {
             return new ListOrganizationAdminAccountsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListSecurityControlDefinitions operation
+        ///</summary>
+        public IListSecurityControlDefinitionsPaginator ListSecurityControlDefinitions(ListSecurityControlDefinitionsRequest request) 
+        {
+            return new ListSecurityControlDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListStandardsControlAssociations operation
+        ///</summary>
+        public IListStandardsControlAssociationsPaginator ListStandardsControlAssociations(ListStandardsControlAssociationsRequest request) 
+        {
+            return new ListStandardsControlAssociationsPaginator(this.client, request);
+        }
     }
 }

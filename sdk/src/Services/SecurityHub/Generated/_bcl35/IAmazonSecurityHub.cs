@@ -35,8 +35,8 @@ namespace Amazon.SecurityHub
     /// Hub collects security data from Amazon Web Services accounts, services, and integrated
     /// third-party products and helps you analyze security trends in your environment to
     /// identify the highest priority security issues. For more information about Security
-    /// Hub, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">
-    /// <i>Security HubUser Guide</i> </a>.
+    /// Hub, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">Security
+    /// HubUser Guide</a>.
     /// 
     ///  
     /// <para>
@@ -44,8 +44,8 @@ namespace Amazon.SecurityHub
     /// the Amazon Web Services Region that is currently active or in the specific Amazon
     /// Web Services Region that you specify in your request. Any configuration or settings
     /// change that results from the operation is applied only to that Region. To make the
-    /// same change in other Regions, execute the same command for each Region to apply the
-    /// change to.
+    /// same change in other Regions, run the same command for each Region in which you want
+    /// to apply the change.
     /// </para>
     ///  
     /// <para>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>BatchEnableStandards</code> - <code>RateLimit</code> of 1 request per second,
+    ///  <code>BatchEnableStandards</code> - <code>RateLimit</code> of 1 request per second.
     /// <code>BurstLimit</code> of 1 request per second.
     /// </para>
     ///  </li> <li> 
@@ -81,7 +81,7 @@ namespace Amazon.SecurityHub
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdateStandardsControl</code> - <code>RateLimit</code> of 1 request per second,
+    ///  <code>UpdateStandardsControl</code> - <code>RateLimit</code> of 1 request per second.
     /// <code>BurstLimit</code> of 5 requests per second.
     /// </para>
     ///  </li> <li> 
@@ -380,6 +380,118 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  BatchGetSecurityControls
+
+
+        /// <summary>
+        /// Provides details about a batch of security controls for the current Amazon Web Services
+        /// account and Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSecurityControls service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetSecurityControls service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetSecurityControls">REST API Reference for BatchGetSecurityControls Operation</seealso>
+        BatchGetSecurityControlsResponse BatchGetSecurityControls(BatchGetSecurityControlsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetSecurityControls operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSecurityControls operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetSecurityControls
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetSecurityControls">REST API Reference for BatchGetSecurityControls Operation</seealso>
+        IAsyncResult BeginBatchGetSecurityControls(BatchGetSecurityControlsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetSecurityControls operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetSecurityControls.</param>
+        /// 
+        /// <returns>Returns a  BatchGetSecurityControlsResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetSecurityControls">REST API Reference for BatchGetSecurityControls Operation</seealso>
+        BatchGetSecurityControlsResponse EndBatchGetSecurityControls(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  BatchGetStandardsControlAssociations
+
+
+        /// <summary>
+        /// For a batch of security controls and standards, identifies whether each control is
+        /// currently enabled or disabled in a standard.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetStandardsControlAssociations service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetStandardsControlAssociations service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetStandardsControlAssociations">REST API Reference for BatchGetStandardsControlAssociations Operation</seealso>
+        BatchGetStandardsControlAssociationsResponse BatchGetStandardsControlAssociations(BatchGetStandardsControlAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetStandardsControlAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetStandardsControlAssociations operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetStandardsControlAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetStandardsControlAssociations">REST API Reference for BatchGetStandardsControlAssociations Operation</seealso>
+        IAsyncResult BeginBatchGetStandardsControlAssociations(BatchGetStandardsControlAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetStandardsControlAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetStandardsControlAssociations.</param>
+        /// 
+        /// <returns>Returns a  BatchGetStandardsControlAssociationsResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetStandardsControlAssociations">REST API Reference for BatchGetStandardsControlAssociations Operation</seealso>
+        BatchGetStandardsControlAssociationsResponse EndBatchGetStandardsControlAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  BatchImportFindings
 
 
@@ -623,6 +735,62 @@ namespace Amazon.SecurityHub
         /// <returns>Returns a  BatchUpdateFindingsResult from SecurityHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">REST API Reference for BatchUpdateFindings Operation</seealso>
         BatchUpdateFindingsResponse EndBatchUpdateFindings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  BatchUpdateStandardsControlAssociations
+
+
+        /// <summary>
+        /// For a batch of security controls and standards, this operation updates the enablement
+        /// status of a control in a standard.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateStandardsControlAssociations service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateStandardsControlAssociations service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateStandardsControlAssociations">REST API Reference for BatchUpdateStandardsControlAssociations Operation</seealso>
+        BatchUpdateStandardsControlAssociationsResponse BatchUpdateStandardsControlAssociations(BatchUpdateStandardsControlAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpdateStandardsControlAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateStandardsControlAssociations operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchUpdateStandardsControlAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateStandardsControlAssociations">REST API Reference for BatchUpdateStandardsControlAssociations Operation</seealso>
+        IAsyncResult BeginBatchUpdateStandardsControlAssociations(BatchUpdateStandardsControlAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchUpdateStandardsControlAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchUpdateStandardsControlAssociations.</param>
+        /// 
+        /// <returns>Returns a  BatchUpdateStandardsControlAssociationsResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateStandardsControlAssociations">REST API Reference for BatchUpdateStandardsControlAssociations Operation</seealso>
+        BatchUpdateStandardsControlAssociationsResponse EndBatchUpdateStandardsControlAssociations(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3207,6 +3375,117 @@ namespace Amazon.SecurityHub
         /// <returns>Returns a  ListOrganizationAdminAccountsResult from SecurityHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
         ListOrganizationAdminAccountsResponse EndListOrganizationAdminAccounts(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListSecurityControlDefinitions
+
+
+        /// <summary>
+        /// Lists all of the security controls that apply to a specified standard.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityControlDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListSecurityControlDefinitions service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListSecurityControlDefinitions">REST API Reference for ListSecurityControlDefinitions Operation</seealso>
+        ListSecurityControlDefinitionsResponse ListSecurityControlDefinitions(ListSecurityControlDefinitionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSecurityControlDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityControlDefinitions operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSecurityControlDefinitions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListSecurityControlDefinitions">REST API Reference for ListSecurityControlDefinitions Operation</seealso>
+        IAsyncResult BeginListSecurityControlDefinitions(ListSecurityControlDefinitionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSecurityControlDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSecurityControlDefinitions.</param>
+        /// 
+        /// <returns>Returns a  ListSecurityControlDefinitionsResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListSecurityControlDefinitions">REST API Reference for ListSecurityControlDefinitions Operation</seealso>
+        ListSecurityControlDefinitionsResponse EndListSecurityControlDefinitions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListStandardsControlAssociations
+
+
+        /// <summary>
+        /// Specifies whether a control is currently enabled or disabled in each enabled standard
+        /// in the calling account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStandardsControlAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListStandardsControlAssociations service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListStandardsControlAssociations">REST API Reference for ListStandardsControlAssociations Operation</seealso>
+        ListStandardsControlAssociationsResponse ListStandardsControlAssociations(ListStandardsControlAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStandardsControlAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStandardsControlAssociations operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStandardsControlAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListStandardsControlAssociations">REST API Reference for ListStandardsControlAssociations Operation</seealso>
+        IAsyncResult BeginListStandardsControlAssociations(ListStandardsControlAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStandardsControlAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStandardsControlAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListStandardsControlAssociationsResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListStandardsControlAssociations">REST API Reference for ListStandardsControlAssociations Operation</seealso>
+        ListStandardsControlAssociationsResponse EndListStandardsControlAssociations(IAsyncResult asyncResult);
 
         #endregion
         

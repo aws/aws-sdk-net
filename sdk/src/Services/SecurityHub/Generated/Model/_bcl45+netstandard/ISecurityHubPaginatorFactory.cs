@@ -84,5 +84,15 @@ namespace Amazon.SecurityHub.Model
         /// Paginator for ListOrganizationAdminAccounts operation
         ///</summary>
         IListOrganizationAdminAccountsPaginator ListOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSecurityControlDefinitions operation
+        ///</summary>
+        IListSecurityControlDefinitionsPaginator ListSecurityControlDefinitions(ListSecurityControlDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListStandardsControlAssociations operation
+        ///</summary>
+        IListStandardsControlAssociationsPaginator ListStandardsControlAssociations(ListStandardsControlAssociationsRequest request);
     }
 }

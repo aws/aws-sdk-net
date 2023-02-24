@@ -355,7 +355,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property OnDemandMaxPricePercentageOverLowestPrice. 
         /// <para>
-        ///  The price protection threshold for On-Demand Instances. This is the maximum you’ll
+        ///  The price protection threshold for On-Demand Instances. This is the maximum you'll
         /// pay for an On-Demand Instance, expressed as a percentage above the least expensive
         /// current generation M, C, or R instance type with your specified attributes. When Amazon
         /// EC2 selects instance types with your attributes, it excludes instance types priced
@@ -404,7 +404,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SpotMaxPricePercentageOverLowestPrice. 
         /// <para>
-        ///  The price protection threshold for Spot Instances. This is the maximum you’ll pay
+        ///  The price protection threshold for Spot Instances. This is the maximum you'll pay
         /// for a Spot Instance, expressed as a percentage above the least expensive current generation
         /// M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance
         /// types with your attributes, it excludes instance types priced above your threshold.
