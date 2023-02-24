@@ -1,3 +1,15 @@
+### 3.7.491.0 (2023-02-24 19:26 UTC)
+* Connect (3.7.117.0)
+	* StartTaskContact API now supports linked task creation with a new optional RelatedContactId parameter
+* ConnectCases (3.7.102.0)
+	* This release adds the ability to delete domains through the DeleteDomain API. For more information see https://docs.aws.amazon.com/cases/latest/APIReference/Welcome.html
+* Redshift (3.7.101.14)
+	* Documentation updates for Redshift API bringing it in line with IAM best practices.
+* SecurityHub (3.7.105.0)
+	* New Security Hub APIs and updates to existing APIs that help you consolidate control findings and enable and disable controls across all supported standards
+* ServiceCatalog (3.7.101.59)
+	* Documentation updates for Service Catalog
+
 ### 3.7.490.0 (2023-02-23 19:38 UTC)
 * Appflow (3.7.106.0)
 	* This release enables the customers to choose whether to use Private Link for Metadata and Authorization call when using a private Salesforce connections
