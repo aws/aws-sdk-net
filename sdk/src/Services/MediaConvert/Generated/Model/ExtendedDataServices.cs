@@ -40,9 +40,9 @@ namespace Amazon.MediaConvert.Model
         private VchipAction _vchipAction;
 
         /// <summary>
-        /// Gets and sets the property CopyProtectionAction. The action to take on content advisory
-        /// XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select
-        /// STRIP, any packets will be removed in output captions.
+        /// Gets and sets the property CopyProtectionAction. The action to take on copy and redistribution
+        /// control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you
+        /// select STRIP, any packets will be removed in output captions.
         /// </summary>
         public CopyProtectionAction CopyProtectionAction
         {
