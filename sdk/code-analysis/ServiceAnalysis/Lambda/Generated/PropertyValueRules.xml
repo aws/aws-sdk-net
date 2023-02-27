@@ -763,14 +763,18 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetRuntimeManagementConfigRequest.FunctionName</property>
     <min>1</min>
-    <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>170</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetRuntimeManagementConfigRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
     <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.GetRuntimeManagementConfigResponse.FunctionArn</property>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetRuntimeManagementConfigResponse.RuntimeVersionArn</property>
@@ -1572,6 +1576,18 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeadLetterConfig.TargetArn</property>
     <pattern>(arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.DocumentDBEventSourceConfig.CollectionName</property>
+    <min>1</min>
+    <max>57</max>
+    <pattern>(^(?!(system\x2e)))(^[_a-zA-Z0-9])([^$]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.DocumentDBEventSourceConfig.DatabaseName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[^ /\.$\x22]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.EphemeralStorage.Size</property>

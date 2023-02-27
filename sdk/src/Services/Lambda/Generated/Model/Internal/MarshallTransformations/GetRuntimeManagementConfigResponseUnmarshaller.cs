@@ -51,6 +51,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("FunctionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FunctionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RuntimeVersionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

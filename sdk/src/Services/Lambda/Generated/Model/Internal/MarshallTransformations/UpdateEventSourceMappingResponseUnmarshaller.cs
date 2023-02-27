@@ -75,6 +75,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.DestinationConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DocumentDBEventSourceConfig", targetDepth))
+                {
+                    var unmarshaller = DocumentDBEventSourceConfigUnmarshaller.Instance;
+                    response.DocumentDBEventSourceConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EventSourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
