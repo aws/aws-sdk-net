@@ -123,6 +123,39 @@ namespace NETCore.SetupTests
         }
 
         [Fact]
+        public void GetClientConfigSettingsCaseInsensitiveTest()
+        {
+            var builder = new ConfigurationBuilder();
+            builder.AddJsonFile("./TestFiles/GetClientConfigSettingsCaseInsensitiveTest.json");
+
+            IConfiguration config = builder.Build();
+            var options = config.GetAWSOptions();
+
+            Assert.True(options.DefaultClientConfig.UseHttp);
+            Assert.Equal(6, options.DefaultClientConfig.MaxErrorRetry);
+            Assert.Equal(TimeSpan.FromMilliseconds(1000), options.DefaultClientConfig.Timeout);
+            Assert.Equal("us-east-1", options.DefaultClientConfig.AuthenticationRegion);
+            Assert.Equal(DefaultConfigurationMode.Standard, options.DefaultConfigurationMode);
+            Assert.Equal("https://localhost:9021", options.DefaultClientConfig.ServiceURL);
+
+            IAmazonS3 client = options.CreateServiceClient<IAmazonS3>();
+            Assert.NotNull(client);
+            Assert.True(client.Config.UseHttp);
+            Assert.Equal(6, client.Config.MaxErrorRetry);
+            Assert.Equal(TimeSpan.FromMilliseconds(1000), client.Config.Timeout);
+            Assert.Equal("us-east-1", client.Config.AuthenticationRegion);
+            Assert.Equal(DefaultConfigurationMode.Standard, client.Config.DefaultConfigurationMode);
+            Assert.Equal(RequestRetryMode.Standard, client.Config.RetryMode);
+            Assert.Equal("https://localhost:9021", client.Config.ServiceURL);
+
+            // Verify that setting the standard mode doesn't override explicit settings of retry mode to a non-legacy mode.
+            options.DefaultClientConfig.RetryMode = RequestRetryMode.Adaptive;
+            client = options.CreateServiceClient<IAmazonS3>();
+            Assert.Equal(DefaultConfigurationMode.Standard, client.Config.DefaultConfigurationMode);
+            Assert.Equal(RequestRetryMode.Adaptive, client.Config.RetryMode);
+        }
+
+        [Fact]
         public void EnableLoggingTest()
         {
             var builder = new ConfigurationBuilder();

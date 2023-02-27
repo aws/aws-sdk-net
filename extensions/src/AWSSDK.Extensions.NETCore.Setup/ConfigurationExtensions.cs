@@ -20,6 +20,7 @@ using Amazon.Runtime;
 using Amazon.Util;
 
 using Amazon.Extensions.NETCore.Setup;
+using System.Linq;
 
 namespace Microsoft.Extensions.Configuration
 {
@@ -68,7 +69,7 @@ namespace Microsoft.Extensions.Configuration
             {
                 try
                 {
-                    var property = clientConfigTypeInfo.GetDeclaredProperty(element.Key);
+                    var property = clientConfigTypeInfo.DeclaredProperties.SingleOrDefault(p => p.Name.Equals(element.Key, StringComparison.OrdinalIgnoreCase));
                     if (property == null || property.SetMethod == null)
                         continue;
 
