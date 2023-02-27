@@ -664,6 +664,10 @@
       <Project>{E3F1E0D8-7798-43A6-ABD8-F20F80BA954E}</Project>
       <Name>AWSSDK.Inspector2.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/InternetMonitor/AWSSDK.InternetMonitor.CodeAnalysis.csproj">
+      <Project>{1D312186-61AA-4BD3-AAC4-173DF5A8EF4C}</Project>
+      <Name>AWSSDK.InternetMonitor.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IoT/AWSSDK.IoT.CodeAnalysis.csproj">
       <Project>{35387ADA-E9AE-401A-B7E7-D838BC4FCD73}</Project>
       <Name>AWSSDK.IoT.CodeAnalysis</Name>
