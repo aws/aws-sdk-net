@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Extensions.NETCore.Setup</id>
     <title>AWSSDK - Extensions for NETCore Setup</title>
-    <version>3.7.4</version>
+    <version>3.7.5</version>
     <authors>Amazon Web Services</authors>
     <description>Extensions for the AWS SDK for .NET to integrate with .NET Core configuration and dependency injection frameworks.</description>
     <language>en-US</language>
