@@ -37,6 +37,7 @@ namespace Amazon.DevOpsGuru.Model
         private List<AnomalyResource> _anomalyResources = new List<AnomalyResource>();
         private AnomalyTimeRange _anomalyTimeRange;
         private string _associatedInsightId;
+        private string _description;
         private string _id;
         private double? _limit;
         private PredictionTimeRange _predictionTimeRange;
@@ -117,6 +118,24 @@ namespace Amazon.DevOpsGuru.Model
         internal bool IsSetAssociatedInsightId()
         {
             return this._associatedInsightId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  A description of the proactive anomaly. 
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>
