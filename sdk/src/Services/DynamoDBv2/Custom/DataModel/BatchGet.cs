@@ -26,6 +26,29 @@ using System.Threading;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
+    public interface IBatchGet
+    {
+        /// <summary>
+        /// List of results retrieved from DynamoDB.
+        /// Populated after Execute is called.
+        /// </summary>
+        List<object> Results { get; }
+
+        /// <summary>
+        /// If set to true, a consistent read is issued. Otherwise eventually-consistent is used.
+        /// </summary>
+        bool ConsistentRead { get; set; }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Execute operation.
+        /// <seealso cref="Amazon.DynamoDBv2.DataModel.BatchGet.Execute"/>
+        /// </summary>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// 
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
     /// <summary>
     /// Represents a non-generic object for retrieving a batch of items
     /// from a single DynamoDB table
