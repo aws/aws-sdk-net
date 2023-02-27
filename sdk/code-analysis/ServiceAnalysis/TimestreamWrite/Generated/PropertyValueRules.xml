@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.CreateBatchLoadTaskRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.CreateBatchLoadTaskRequest.TargetDatabaseName</property>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.CreateBatchLoadTaskRequest.TargetTableName</property>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.CreateBatchLoadTaskResponse.TaskId</property>
+    <min>3</min>
+    <max>32</max>
+    <pattern>[A-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TimestreamWrite.Model.CreateDatabaseRequest.DatabaseName</property>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
@@ -18,6 +37,17 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.DescribeBatchLoadTaskRequest.TaskId</property>
+    <min>3</min>
+    <max>32</max>
+    <pattern>[A-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.ListBatchLoadTasksRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TimestreamWrite.Model.ListDatabasesRequest.MaxResults</property>
     <min>1</min>
     <max>20</max>
@@ -31,6 +61,12 @@
     <property>Amazon.TimestreamWrite.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.ResumeBatchLoadTaskRequest.TaskId</property>
+    <min>3</min>
+    <max>32</max>
+    <pattern>[A-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamWrite.Model.TagResourceRequest.ResourceARN</property>
@@ -48,12 +84,91 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.BatchLoadTask.TaskId</property>
+    <min>3</min>
+    <max>32</max>
+    <pattern>[A-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.BatchLoadTaskDescription.ErrorMessage</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.BatchLoadTaskDescription.TaskId</property>
+    <min>3</min>
+    <max>32</max>
+    <pattern>[A-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.CsvConfiguration.ColumnSeparator</property>
+    <min>1</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.CsvConfiguration.EscapeChar</property>
+    <min>1</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.CsvConfiguration.NullValue</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.CsvConfiguration.QuoteChar</property>
+    <min>1</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TimestreamWrite.Model.Database.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.DataModel.MeasureNameColumn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.DataModel.TimeColumn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.DataModelS3Configuration.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.DataModelS3Configuration.ObjectKey</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9|!\-_*'\(\)]([a-zA-Z0-9]|[!\-_*'\(\)\/.])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.DataSourceS3Configuration.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.DataSourceS3Configuration.ObjectKeyPrefix</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9|!\-_*'\(\)]([a-zA-Z0-9]|[!\-_*'\(\)\/.])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TimestreamWrite.Model.Dimension.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.DimensionMapping.DestinationColumn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.DimensionMapping.SourceColumn</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -64,6 +179,30 @@
     <property>Amazon.TimestreamWrite.Model.MeasureValue.Value</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.MixedMeasureMapping.MeasureName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.MixedMeasureMapping.SourceColumn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.MixedMeasureMapping.TargetMeasureName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.MultiMeasureAttributeMapping.SourceColumn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.MultiMeasureAttributeMapping.TargetMultiMeasureAttributeName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.MultiMeasureMappings.TargetMultiMeasureName</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamWrite.Model.Record.MeasureName</property>
@@ -78,6 +217,23 @@
     <property>Amazon.TimestreamWrite.Model.Record.Time</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.ReportS3Configuration.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.ReportS3Configuration.KmsKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.ReportS3Configuration.ObjectKeyPrefix</property>
+    <min>1</min>
+    <max>928</max>
+    <pattern>[a-zA-Z0-9|!\-_*'\(\)]([a-zA-Z0-9]|[!\-_*'\(\)\/.])+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamWrite.Model.RetentionProperties.MagneticStoreRetentionPeriodInDays</property>

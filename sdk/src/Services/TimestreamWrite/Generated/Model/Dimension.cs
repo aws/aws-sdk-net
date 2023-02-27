@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
-    /// Dimension represents the meta data attributes of the time series. For example, the
-    /// name and availability zone of an EC2 instance or the name of the manufacturer of a
-    /// wind turbine are dimensions.
+    /// Represents the metadata attributes of the time series. For example, the name and Availability
+    /// Zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions.
     /// </summary>
     public partial class Dimension
     {
@@ -42,7 +41,7 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property DimensionValueType. 
         /// <para>
-        /// The data type of the dimension for the time series data point.
+        /// The data type of the dimension for the time-series data point.
         /// </para>
         /// </summary>
         public DimensionValueType DimensionValueType
@@ -60,13 +59,13 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  Dimension represents the meta data attributes of the time series. For example, the
-        /// name and availability zone of an EC2 instance or the name of the manufacturer of a
+        ///  Dimension represents the metadata attributes of the time series. For example, the
+        /// name and Availability Zone of an EC2 instance or the name of the manufacturer of a
         /// wind turbine are dimensions. 
         /// </para>
         ///  
         /// <para>
-        /// For constraints on Dimension names, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
+        /// For constraints on dimension names, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
         /// Constraints</a>.
         /// </para>
         /// </summary>

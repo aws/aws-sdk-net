@@ -25,6 +25,118 @@ namespace Amazon.TimestreamWrite
 {
 
     /// <summary>
+    /// Constants used for properties of type BatchLoadDataFormat.
+    /// </summary>
+    public class BatchLoadDataFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CSV for BatchLoadDataFormat
+        /// </summary>
+        public static readonly BatchLoadDataFormat CSV = new BatchLoadDataFormat("CSV");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchLoadDataFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchLoadDataFormat FindValue(string value)
+        {
+            return FindValue<BatchLoadDataFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchLoadDataFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BatchLoadStatus.
+    /// </summary>
+    public class BatchLoadStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for BatchLoadStatus
+        /// </summary>
+        public static readonly BatchLoadStatus CREATED = new BatchLoadStatus("CREATED");
+        /// <summary>
+        /// Constant FAILED for BatchLoadStatus
+        /// </summary>
+        public static readonly BatchLoadStatus FAILED = new BatchLoadStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for BatchLoadStatus
+        /// </summary>
+        public static readonly BatchLoadStatus IN_PROGRESS = new BatchLoadStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING_RESUME for BatchLoadStatus
+        /// </summary>
+        public static readonly BatchLoadStatus PENDING_RESUME = new BatchLoadStatus("PENDING_RESUME");
+        /// <summary>
+        /// Constant PROGRESS_STOPPED for BatchLoadStatus
+        /// </summary>
+        public static readonly BatchLoadStatus PROGRESS_STOPPED = new BatchLoadStatus("PROGRESS_STOPPED");
+        /// <summary>
+        /// Constant SUCCEEDED for BatchLoadStatus
+        /// </summary>
+        public static readonly BatchLoadStatus SUCCEEDED = new BatchLoadStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchLoadStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchLoadStatus FindValue(string value)
+        {
+            return FindValue<BatchLoadStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchLoadStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DimensionValueType.
     /// </summary>
     public class DimensionValueType : ConstantClass
@@ -187,6 +299,68 @@ namespace Amazon.TimestreamWrite
 
 
     /// <summary>
+    /// Constants used for properties of type ScalarMeasureValueType.
+    /// </summary>
+    public class ScalarMeasureValueType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BIGINT for ScalarMeasureValueType
+        /// </summary>
+        public static readonly ScalarMeasureValueType BIGINT = new ScalarMeasureValueType("BIGINT");
+        /// <summary>
+        /// Constant BOOLEAN for ScalarMeasureValueType
+        /// </summary>
+        public static readonly ScalarMeasureValueType BOOLEAN = new ScalarMeasureValueType("BOOLEAN");
+        /// <summary>
+        /// Constant DOUBLE for ScalarMeasureValueType
+        /// </summary>
+        public static readonly ScalarMeasureValueType DOUBLE = new ScalarMeasureValueType("DOUBLE");
+        /// <summary>
+        /// Constant TIMESTAMP for ScalarMeasureValueType
+        /// </summary>
+        public static readonly ScalarMeasureValueType TIMESTAMP = new ScalarMeasureValueType("TIMESTAMP");
+        /// <summary>
+        /// Constant VARCHAR for ScalarMeasureValueType
+        /// </summary>
+        public static readonly ScalarMeasureValueType VARCHAR = new ScalarMeasureValueType("VARCHAR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScalarMeasureValueType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScalarMeasureValueType FindValue(string value)
+        {
+            return FindValue<ScalarMeasureValueType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScalarMeasureValueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TableStatus.
     /// </summary>
     public class TableStatus : ConstantClass
@@ -200,6 +374,10 @@ namespace Amazon.TimestreamWrite
         /// Constant DELETING for TableStatus
         /// </summary>
         public static readonly TableStatus DELETING = new TableStatus("DELETING");
+        /// <summary>
+        /// Constant RESTORING for TableStatus
+        /// </summary>
+        public static readonly TableStatus RESTORING = new TableStatus("RESTORING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

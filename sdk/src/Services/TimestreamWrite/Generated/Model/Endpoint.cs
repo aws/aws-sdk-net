@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
-    /// Represents an available endpoint against which to make API calls agaisnt, as well
+    /// Represents an available endpoint against which to make API calls against, as well
     /// as the TTL for that endpoint.
     /// </summary>
     public partial class Endpoint
