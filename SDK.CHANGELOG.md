@@ -1,3 +1,20 @@
+### 3.7.493.0 (2023-02-28 19:23 UTC)
+* Comprehend (3.7.102.0)
+	* Amazon Comprehend now supports flywheels to help you train and manage new model versions for custom models.
+* EC2 (3.7.124.0)
+	* This release allows IMDS support to be set to v2-only on an existing AMI, so that all future instances launched from that AMI will use IMDSv2 by default.
+* KeyManagementService (3.7.101.56)
+	* AWS KMS is deprecating the RSAES_PKCS1_V1_5 wrapping algorithm option in the GetParametersForImport API that is used in the AWS KMS Import Key Material feature. AWS KMS will end support for this wrapping algorithm by October 1, 2023.
+* Lightsail (3.7.102.0)
+	* This release adds Lightsail for Research feature support, such as GUI session access, cost estimates, stop instance on idle, and disk auto mount.
+* ManagedBlockchain (3.7.101.0)
+	* This release adds support for tagging to the accessor resource in Amazon Managed Blockchain
+* Omics (3.7.101.0)
+	* Minor model changes to accomodate batch imports feature
+* Core 3.7.105.10
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.492.0 (2023-02-27 19:23 UTC)
 * DevOpsGuru (3.7.102.0)
 	* This release adds the description field on ListAnomaliesForInsight and DescribeAnomaly API responses for proactive anomalies.
