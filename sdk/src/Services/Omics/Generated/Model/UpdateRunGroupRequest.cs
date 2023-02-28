@@ -81,7 +81,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property MaxDuration. 
         /// <para>
-        /// The maximum amount of time to run.
+        /// A maximum run time for the group in minutes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]

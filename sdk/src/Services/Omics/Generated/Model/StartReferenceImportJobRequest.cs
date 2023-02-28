@@ -99,7 +99,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Sources. 
         /// <para>
-        /// Sources for the job.
+        /// The job's source files.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

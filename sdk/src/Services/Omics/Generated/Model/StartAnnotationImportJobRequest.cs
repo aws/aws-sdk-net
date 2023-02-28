@@ -83,7 +83,7 @@ namespace Amazon.Omics.Model
         /// Items to import.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Required=true, Min=1)]
         public List<AnnotationImportItemSource> Items
         {
             get { return this._items; }

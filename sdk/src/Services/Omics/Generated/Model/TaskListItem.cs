@@ -82,7 +82,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// The task's memory.
+        /// The task's memory use in gigabyes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

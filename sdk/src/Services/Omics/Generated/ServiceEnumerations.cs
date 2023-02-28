@@ -275,6 +275,10 @@ namespace Amazon.Omics
         /// </summary>
         public static readonly JobStatus COMPLETED = new JobStatus("COMPLETED");
         /// <summary>
+        /// Constant COMPLETED_WITH_FAILURES for JobStatus
+        /// </summary>
+        public static readonly JobStatus COMPLETED_WITH_FAILURES = new JobStatus("COMPLETED_WITH_FAILURES");
+        /// <summary>
         /// Constant FAILED for JobStatus
         /// </summary>
         public static readonly JobStatus FAILED = new JobStatus("FAILED");
@@ -1603,6 +1607,10 @@ namespace Amazon.Omics
         /// </summary>
         public static readonly WorkflowStatus FAILED = new WorkflowStatus("FAILED");
         /// <summary>
+        /// Constant INACTIVE for WorkflowStatus
+        /// </summary>
+        public static readonly WorkflowStatus INACTIVE = new WorkflowStatus("INACTIVE");
+        /// <summary>
         /// Constant UPDATING for WorkflowStatus
         /// </summary>
         public static readonly WorkflowStatus UPDATING = new WorkflowStatus("UPDATING");
@@ -1652,6 +1660,10 @@ namespace Amazon.Omics
         /// Constant PRIVATE for WorkflowType
         /// </summary>
         public static readonly WorkflowType PRIVATE = new WorkflowType("PRIVATE");
+        /// <summary>
+        /// Constant SERVICE for WorkflowType
+        /// </summary>
+        public static readonly WorkflowType SERVICE = new WorkflowType("SERVICE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

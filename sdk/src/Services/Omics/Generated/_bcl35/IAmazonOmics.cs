@@ -3260,7 +3260,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Starts a read set activation job.
+        /// Activates an archived read set. To reduce storage charges, Amazon Omics archives unused
+        /// read sets after 30 days.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReadSetActivationJob service method.</param>
         /// 
@@ -3321,7 +3322,7 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Starts a read set export job.
+        /// Exports a read set to Amazon S3.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReadSetExportJob service method.</param>
         /// 

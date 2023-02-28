@@ -101,7 +101,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Reference. 
         /// <para>
-        /// The store's genome reference.
+        /// The store's genome reference. Required for all stores except TSV format with generic
+        /// annotations.
         /// </para>
         /// </summary>
         public ReferenceItem Reference
