@@ -31,7 +31,8 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Container for the parameters to the StartTargetedSentimentDetectionJob operation.
     /// Starts an asynchronous targeted sentiment detection job for a collection of documents.
-    /// Use the operation to track the status of a job.
+    /// Use the <code>DescribeTargetedSentimentDetectionJob</code> operation to track the
+    /// status of a job.
     /// </summary>
     public partial class StartTargetedSentimentDetectionJobRequest : AmazonComprehendRequest
     {
@@ -163,7 +164,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to be associated with the targeted sentiment detection job. A tag is a key-value
+        /// Tags to associate with the targeted sentiment detection job. A tag is a key-value
         /// pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag
         /// with "Sales" as the key might be added to a resource to indicate its use by the sales
         /// department.

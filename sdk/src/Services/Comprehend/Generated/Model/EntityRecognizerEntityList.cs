@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Describes the entity recognizer submitted with an entity recognizer.
+    /// Describes the entity list submitted with an entity recognizer.
     /// </summary>
     public partial class EntityRecognizerEntityList
     {

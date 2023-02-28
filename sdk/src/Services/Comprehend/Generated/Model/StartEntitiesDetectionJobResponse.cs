@@ -33,9 +33,29 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class StartEntitiesDetectionJobResponse : AmazonWebServiceResponse
     {
+        private string _entityRecognizerArn;
         private string _jobArn;
         private string _jobId;
         private JobStatus _jobStatus;
+
+        /// <summary>
+        /// Gets and sets the property EntityRecognizerArn. 
+        /// <para>
+        /// The ARN of the custom entity recognition model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string EntityRecognizerArn
+        {
+            get { return this._entityRecognizerArn; }
+            set { this._entityRecognizerArn = value; }
+        }
+
+        // Check to see if EntityRecognizerArn property is set
+        internal bool IsSetEntityRecognizerArn()
+        {
+            return this._entityRecognizerArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JobArn. 

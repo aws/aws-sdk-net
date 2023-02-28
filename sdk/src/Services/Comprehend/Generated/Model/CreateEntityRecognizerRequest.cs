@@ -31,7 +31,8 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Container for the parameters to the CreateEntityRecognizer operation.
     /// Creates an entity recognizer using submitted files. After your <code>CreateEntityRecognizer</code>
-    /// request is submitted, you can check job status using the API.
+    /// request is submitted, you can check job status using the <code>DescribeEntityRecognizer</code>
+    /// API.
     /// </summary>
     public partial class CreateEntityRecognizerRequest : AmazonComprehendRequest
     {
@@ -70,8 +71,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data.
+        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+        /// that grants Amazon Comprehend read access to your input data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -134,7 +135,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property ModelKmsKeyId. 
         /// <para>
         /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// trained custom models. The ModelKmsKeyId can be either of the following formats
+        /// trained custom models. The ModelKmsKeyId can be either of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -224,10 +225,10 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to be associated with the entity recognizer being created. A tag is a key-value
-        /// pair that adds as a metadata to a resource used by Amazon Comprehend. For example,
-        /// a tag with "Sales" as the key might be added to a resource to indicate its use by
-        /// the sales department. 
+        /// Tags to associate with the entity recognizer. A tag is a key-value pair that adds
+        /// as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales"
+        /// as the key might be added to a resource to indicate its use by the sales department.
+        /// 
         /// </para>
         /// </summary>
         public List<Tag> Tags

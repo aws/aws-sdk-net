@@ -125,6 +125,160 @@ namespace Amazon.Comprehend
 
 
     /// <summary>
+    /// Constants used for properties of type DatasetDataFormat.
+    /// </summary>
+    public class DatasetDataFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUGMENTED_MANIFEST for DatasetDataFormat
+        /// </summary>
+        public static readonly DatasetDataFormat AUGMENTED_MANIFEST = new DatasetDataFormat("AUGMENTED_MANIFEST");
+        /// <summary>
+        /// Constant COMPREHEND_CSV for DatasetDataFormat
+        /// </summary>
+        public static readonly DatasetDataFormat COMPREHEND_CSV = new DatasetDataFormat("COMPREHEND_CSV");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatasetDataFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasetDataFormat FindValue(string value)
+        {
+            return FindValue<DatasetDataFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasetDataFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DatasetStatus.
+    /// </summary>
+    public class DatasetStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus COMPLETED = new DatasetStatus("COMPLETED");
+        /// <summary>
+        /// Constant CREATING for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus CREATING = new DatasetStatus("CREATING");
+        /// <summary>
+        /// Constant FAILED for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus FAILED = new DatasetStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatasetStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasetStatus FindValue(string value)
+        {
+            return FindValue<DatasetStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DatasetType.
+    /// </summary>
+    public class DatasetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TEST for DatasetType
+        /// </summary>
+        public static readonly DatasetType TEST = new DatasetType("TEST");
+        /// <summary>
+        /// Constant TRAIN for DatasetType
+        /// </summary>
+        public static readonly DatasetType TRAIN = new DatasetType("TRAIN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatasetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasetType FindValue(string value)
+        {
+            return FindValue<DatasetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DocumentClassifierDataFormat.
     /// </summary>
     public class DocumentClassifierDataFormat : ConstantClass
@@ -635,6 +789,134 @@ namespace Amazon.Comprehend
 
 
     /// <summary>
+    /// Constants used for properties of type FlywheelIterationStatus.
+    /// </summary>
+    public class FlywheelIterationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for FlywheelIterationStatus
+        /// </summary>
+        public static readonly FlywheelIterationStatus COMPLETED = new FlywheelIterationStatus("COMPLETED");
+        /// <summary>
+        /// Constant EVALUATING for FlywheelIterationStatus
+        /// </summary>
+        public static readonly FlywheelIterationStatus EVALUATING = new FlywheelIterationStatus("EVALUATING");
+        /// <summary>
+        /// Constant FAILED for FlywheelIterationStatus
+        /// </summary>
+        public static readonly FlywheelIterationStatus FAILED = new FlywheelIterationStatus("FAILED");
+        /// <summary>
+        /// Constant STOP_REQUESTED for FlywheelIterationStatus
+        /// </summary>
+        public static readonly FlywheelIterationStatus STOP_REQUESTED = new FlywheelIterationStatus("STOP_REQUESTED");
+        /// <summary>
+        /// Constant STOPPED for FlywheelIterationStatus
+        /// </summary>
+        public static readonly FlywheelIterationStatus STOPPED = new FlywheelIterationStatus("STOPPED");
+        /// <summary>
+        /// Constant TRAINING for FlywheelIterationStatus
+        /// </summary>
+        public static readonly FlywheelIterationStatus TRAINING = new FlywheelIterationStatus("TRAINING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlywheelIterationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlywheelIterationStatus FindValue(string value)
+        {
+            return FindValue<FlywheelIterationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlywheelIterationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FlywheelStatus.
+    /// </summary>
+    public class FlywheelStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for FlywheelStatus
+        /// </summary>
+        public static readonly FlywheelStatus ACTIVE = new FlywheelStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for FlywheelStatus
+        /// </summary>
+        public static readonly FlywheelStatus CREATING = new FlywheelStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for FlywheelStatus
+        /// </summary>
+        public static readonly FlywheelStatus DELETING = new FlywheelStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for FlywheelStatus
+        /// </summary>
+        public static readonly FlywheelStatus FAILED = new FlywheelStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for FlywheelStatus
+        /// </summary>
+        public static readonly FlywheelStatus UPDATING = new FlywheelStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlywheelStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlywheelStatus FindValue(string value)
+        {
+            return FindValue<FlywheelStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlywheelStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InputFormat.
     /// </summary>
     public class InputFormat : ConstantClass
@@ -1008,6 +1290,56 @@ namespace Amazon.Comprehend
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ModelStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ModelType.
+    /// </summary>
+    public class ModelType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOCUMENT_CLASSIFIER for ModelType
+        /// </summary>
+        public static readonly ModelType DOCUMENT_CLASSIFIER = new ModelType("DOCUMENT_CLASSIFIER");
+        /// <summary>
+        /// Constant ENTITY_RECOGNIZER for ModelType
+        /// </summary>
+        public static readonly ModelType ENTITY_RECOGNIZER = new ModelType("ENTITY_RECOGNIZER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelType FindValue(string value)
+        {
+            return FindValue<ModelType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelType(string value)
         {
             return FindValue(value);
         }

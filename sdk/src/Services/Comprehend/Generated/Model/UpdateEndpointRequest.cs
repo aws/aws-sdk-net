@@ -40,6 +40,7 @@ namespace Amazon.Comprehend.Model
         private int? _desiredInferenceUnits;
         private string _desiredModelArn;
         private string _endpointArn;
+        private string _flywheelArn;
 
         /// <summary>
         /// Gets and sets the property DesiredDataAccessRoleArn. 
@@ -116,6 +117,25 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetEndpointArn()
         {
             return this._endpointArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FlywheelArn. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the flywheel
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string FlywheelArn
+        {
+            get { return this._flywheelArn; }
+            set { this._flywheelArn = value; }
+        }
+
+        // Check to see if FlywheelArn property is set
+        internal bool IsSetFlywheelArn()
+        {
+            return this._flywheelArn != null;
         }
 
     }

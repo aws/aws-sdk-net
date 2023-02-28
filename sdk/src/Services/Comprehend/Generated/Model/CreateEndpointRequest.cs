@@ -40,6 +40,7 @@ namespace Amazon.Comprehend.Model
         private string _dataAccessRoleArn;
         private int? _desiredInferenceUnits;
         private string _endpointName;
+        private string _flywheelArn;
         private string _modelArn;
         private List<Tag> _tags = new List<Tag>();
 
@@ -67,7 +68,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role
+        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
         /// that grants Amazon Comprehend read access to trained custom models encrypted with
         /// a customer managed key (ModelKmsKeyId).
         /// </para>
@@ -126,12 +127,31 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FlywheelArn. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the flywheel to which the endpoint will be attached.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string FlywheelArn
+        {
+            get { return this._flywheelArn; }
+            set { this._flywheelArn = value; }
+        }
+
+        // Check to see if FlywheelArn property is set
+        internal bool IsSetFlywheelArn()
+        {
+            return this._flywheelArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ModelArn. 
         /// <para>
         /// The Amazon Resource Number (ARN) of the model to which the endpoint will be attached.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Max=256)]
         public string ModelArn
         {
             get { return this._modelArn; }
@@ -147,9 +167,9 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags associated with the endpoint being created. A tag is a key-value pair that adds
-        /// metadata to the endpoint. For example, a tag with "Sales" as the key might be added
-        /// to an endpoint to indicate its use by the sales department. 
+        /// Tags to associate with the endpoint. A tag is a key-value pair that adds metadata
+        /// to the endpoint. For example, a tag with "Sales" as the key might be added to an endpoint
+        /// to indicate its use by the sales department. 
         /// </para>
         /// </summary>
         public List<Tag> Tags

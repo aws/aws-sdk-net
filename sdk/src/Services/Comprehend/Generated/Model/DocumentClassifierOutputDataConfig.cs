@@ -33,8 +33,28 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class DocumentClassifierOutputDataConfig
     {
+        private string _flywheelStatsS3Prefix;
         private string _kmsKeyId;
         private string _s3Uri;
+
+        /// <summary>
+        /// Gets and sets the property FlywheelStatsS3Prefix. 
+        /// <para>
+        /// The Amazon S3 prefix for the data lake location of the flywheel statistics.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string FlywheelStatsS3Prefix
+        {
+            get { return this._flywheelStatsS3Prefix; }
+            set { this._flywheelStatsS3Prefix = value; }
+        }
+
+        // Check to see if FlywheelStatsS3Prefix property is set
+        internal bool IsSetFlywheelStatsS3Prefix()
+        {
+            return this._flywheelStatsS3Prefix != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KmsKeyId. 

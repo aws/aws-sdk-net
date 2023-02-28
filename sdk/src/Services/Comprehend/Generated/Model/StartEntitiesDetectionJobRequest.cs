@@ -46,6 +46,7 @@ namespace Amazon.Comprehend.Model
         private string _clientRequestToken;
         private string _dataAccessRoleArn;
         private string _entityRecognizerArn;
+        private string _flywheelArn;
         private InputDataConfig _inputDataConfig;
         private string _jobName;
         private LanguageCode _languageCode;
@@ -114,6 +115,25 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetEntityRecognizerArn()
         {
             return this._entityRecognizerArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FlywheelArn. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the flywheel associated with the model to use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string FlywheelArn
+        {
+            get { return this._flywheelArn; }
+            set { this._flywheelArn = value; }
+        }
+
+        // Check to see if FlywheelArn property is set
+        internal bool IsSetFlywheelArn()
+        {
+            return this._flywheelArn != null;
         }
 
         /// <summary>
@@ -198,7 +218,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to be associated with the entities detection job. A tag is a key-value pair that
+        /// Tags to associate with the entities detection job. A tag is a key-value pair that
         /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales"
         /// as the key might be added to a resource to indicate its use by the sales department.
         /// </para>

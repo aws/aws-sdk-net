@@ -168,8 +168,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to be associated with the topics detection job. A tag is a key-value pair that
-        /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales"
+        /// Tags to associate with the topics detection job. A tag is a key-value pair that adds
+        /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales"
         /// as the key might be added to a resource to indicate its use by the sales department.
         /// </para>
         /// </summary>

@@ -34,6 +34,7 @@ namespace Amazon.Comprehend.Model
     public partial class CreateEndpointResponse : AmazonWebServiceResponse
     {
         private string _endpointArn;
+        private string _modelArn;
 
         /// <summary>
         /// Gets and sets the property EndpointArn. 
@@ -52,6 +53,25 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetEndpointArn()
         {
             return this._endpointArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelArn. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the model to which the endpoint is attached.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string ModelArn
+        {
+            get { return this._modelArn; }
+            set { this._modelArn = value; }
+        }
+
+        // Check to see if ModelArn property is set
+        internal bool IsSetModelArn()
+        {
+            return this._modelArn != null;
         }
 
     }

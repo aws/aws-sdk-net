@@ -30,7 +30,8 @@ namespace Amazon.Comprehend.Model
 {
     /// <summary>
     /// Provides information for filtering a list of document classifiers. You can only specify
-    /// one filtering parameter in a request. For more information, see the operation.
+    /// one filtering parameter in a request. For more information, see the <code>ListDocumentClassifiers</code>
+    /// operation.
     /// </summary>
     public partial class DocumentClassifierFilter
     {

@@ -57,6 +57,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     response.EndpointArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ModelArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

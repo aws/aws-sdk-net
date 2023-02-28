@@ -36,6 +36,7 @@ namespace Amazon.Comprehend.Model
         private string _dataAccessRoleArn;
         private string _documentClassifierArn;
         private DateTime? _endTime;
+        private string _flywheelArn;
         private InputDataConfig _inputDataConfig;
         private string _jobArn;
         private string _jobId;
@@ -50,7 +51,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role
+        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
         /// that grants Amazon Comprehend read access to your input data.
         /// </para>
         /// </summary>
@@ -102,6 +103,25 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FlywheelArn. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the flywheel
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string FlywheelArn
+        {
+            get { return this._flywheelArn; }
+            set { this._flywheelArn = value; }
+        }
+
+        // Check to see if FlywheelArn property is set
+        internal bool IsSetFlywheelArn()
+        {
+            return this._flywheelArn != null;
         }
 
         /// <summary>

@@ -91,6 +91,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EndpointArn);
                 }
 
+                if(publicRequest.IsSetFlywheelArn())
+                {
+                    context.Writer.WritePropertyName("FlywheelArn");
+                    context.Writer.Write(publicRequest.FlywheelArn);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

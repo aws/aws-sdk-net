@@ -75,8 +75,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data.
+        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+        /// that grants Amazon Comprehend read access to your input data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -133,9 +133,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language of the input documents. You can specify any of the following languages
-        /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French
-        /// ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.
+        /// The language of the input documents. You can specify any of the languages supported
+        /// by Amazon Comprehend. All documents must be in the same language.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -265,10 +264,10 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to be associated with the document classifier being created. A tag is a key-value
-        /// pair that adds as a metadata to a resource used by Amazon Comprehend. For example,
-        /// a tag with "Sales" as the key might be added to a resource to indicate its use by
-        /// the sales department. 
+        /// Tags to associate with the document classifier. A tag is a key-value pair that adds
+        /// as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales"
+        /// as the key might be added to a resource to indicate its use by the sales department.
+        /// 
         /// </para>
         /// </summary>
         public List<Tag> Tags

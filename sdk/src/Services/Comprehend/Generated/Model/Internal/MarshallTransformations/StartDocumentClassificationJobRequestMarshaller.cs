@@ -90,6 +90,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DocumentClassifierArn);
                 }
 
+                if(publicRequest.IsSetFlywheelArn())
+                {
+                    context.Writer.WritePropertyName("FlywheelArn");
+                    context.Writer.Write(publicRequest.FlywheelArn);
+                }
+
                 if(publicRequest.IsSetInputDataConfig())
                 {
                     context.Writer.WritePropertyName("InputDataConfig");

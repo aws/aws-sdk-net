@@ -51,6 +51,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DocumentClassifierArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DocumentClassifierArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JobArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

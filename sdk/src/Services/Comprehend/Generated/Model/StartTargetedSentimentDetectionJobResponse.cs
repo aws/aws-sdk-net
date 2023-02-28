@@ -76,7 +76,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property JobId. 
         /// <para>
         /// The identifier generated for the job. To get the status of a job, use this identifier
-        /// with the operation.
+        /// with the <code>DescribeTargetedSentimentDetectionJob</code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -111,7 +111,8 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FAILED - The job did not complete. To get details, use the operation.
+        /// FAILED - The job did not complete. To get details, use the <code>DescribeTargetedSentimentDetectionJob</code>
+        /// operation.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -33,9 +33,29 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class StartDocumentClassificationJobResponse : AmazonWebServiceResponse
     {
+        private string _documentClassifierArn;
         private string _jobArn;
         private string _jobId;
         private JobStatus _jobStatus;
+
+        /// <summary>
+        /// Gets and sets the property DocumentClassifierArn. 
+        /// <para>
+        /// The ARN of the custom classification model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string DocumentClassifierArn
+        {
+            get { return this._documentClassifierArn; }
+            set { this._documentClassifierArn = value; }
+        }
+
+        // Check to see if DocumentClassifierArn property is set
+        internal bool IsSetDocumentClassifierArn()
+        {
+            return this._documentClassifierArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JobArn. 
@@ -76,7 +96,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property JobId. 
         /// <para>
         /// The identifier generated for the job. To get the status of the job, use this identifier
-        /// with the operation.
+        /// with the <code>DescribeDocumentClassificationJob</code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -111,7 +131,8 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FAILED - The job did not complete. For details, use the operation.
+        /// FAILED - The job did not complete. For details, use the <code>DescribeDocumentClassificationJob</code>
+        /// operation.
         /// </para>
         ///  </li> <li> 
         /// <para>

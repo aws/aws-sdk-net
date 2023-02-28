@@ -714,6 +714,67 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  CreateDataset
+
+        internal virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDatasetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a dataset to upload training or test data for a model associated with a flywheel.
+        /// For more information about datasets, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+        /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataset service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
+        /// The maximum number of resources per account has been exceeded. Review the resources,
+        /// and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        public virtual Task<CreateDatasetResponse> CreateDatasetAsync(CreateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDatasetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDocumentClassifier
 
         internal virtual CreateDocumentClassifierResponse CreateDocumentClassifier(CreateDocumentClassifierRequest request)
@@ -863,7 +924,8 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Creates an entity recognizer using submitted files. After your <code>CreateEntityRecognizer</code>
-        /// request is submitted, you can check job status using the API.
+        /// request is submitted, you can check job status using the <code>DescribeEntityRecognizer</code>
+        /// API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEntityRecognizer service method.</param>
         /// <param name="cancellationToken">
@@ -911,6 +973,102 @@ namespace Amazon.Comprehend
             options.ResponseUnmarshaller = CreateEntityRecognizerResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateEntityRecognizerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateFlywheel
+
+        internal virtual CreateFlywheelResponse CreateFlywheel(CreateFlywheelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFlywheelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFlywheelResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFlywheelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// A flywheel is an AWS resource that orchestrates the ongoing training of a model for
+        /// custom classification or custom entity recognition. You can create a flywheel to start
+        /// with an existing trained model, or Comprehend can create and train a new model.
+        /// 
+        ///  
+        /// <para>
+        /// When you create the flywheel, Comprehend creates a data lake in your account. The
+        /// data lake holds the training data and test data for all versions of the model.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use a flywheel with an existing trained model, you specify the active model version.
+        /// Comprehend copies the model's training data and test data into the flywheel's data
+        /// lake.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use the flywheel with a new model, you need to provide a dataset for training data
+        /// (and optional test data) when you create the flywheel.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about flywheels, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+        /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFlywheel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateFlywheel service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
+        /// The maximum number of resources per account has been exceeded. Review the resources,
+        /// and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
+        /// The specified resource is not available. Check the resource and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateFlywheel">REST API Reference for CreateFlywheel Operation</seealso>
+        public virtual Task<CreateFlywheelResponse> CreateFlywheelAsync(CreateFlywheelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFlywheelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFlywheelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFlywheelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1100,6 +1258,66 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  DeleteFlywheel
+
+        internal virtual DeleteFlywheelResponse DeleteFlywheel(DeleteFlywheelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFlywheelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFlywheelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFlywheelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a flywheel. When you delete the flywheel, Amazon Comprehend does not delete
+        /// the data lake or the model associated with the flywheel.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about flywheels, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+        /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFlywheel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFlywheel service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
+        /// The specified resource is not available. Check the resource and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteFlywheel">REST API Reference for DeleteFlywheel Operation</seealso>
+        public virtual Task<DeleteFlywheelResponse> DeleteFlywheelAsync(DeleteFlywheelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFlywheelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFlywheelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFlywheelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteResourcePolicy
 
         internal virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
@@ -1139,6 +1357,54 @@ namespace Amazon.Comprehend
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDataset
+
+        internal virtual DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDatasetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about the dataset that you specify. For more information about
+        /// datasets, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+        /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDataset service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
+        public virtual Task<DescribeDatasetResponse> DescribeDatasetAsync(DescribeDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDatasetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1467,6 +1733,102 @@ namespace Amazon.Comprehend
             options.ResponseUnmarshaller = DescribeEventsDetectionJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEventsDetectionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFlywheel
+
+        internal virtual DescribeFlywheelResponse DescribeFlywheel(DescribeFlywheelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFlywheelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFlywheelResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFlywheelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides configuration information about the flywheel. For more information about
+        /// flywheels, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+        /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFlywheel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFlywheel service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeFlywheel">REST API Reference for DescribeFlywheel Operation</seealso>
+        public virtual Task<DescribeFlywheelResponse> DescribeFlywheelAsync(DescribeFlywheelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFlywheelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFlywheelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFlywheelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFlywheelIteration
+
+        internal virtual DescribeFlywheelIterationResponse DescribeFlywheelIteration(DescribeFlywheelIterationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFlywheelIterationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFlywheelIterationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFlywheelIterationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieve the configuration properties of a flywheel iteration. For more information
+        /// about flywheels, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+        /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFlywheelIteration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFlywheelIteration service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeFlywheelIteration">REST API Reference for DescribeFlywheelIteration Operation</seealso>
+        public virtual Task<DescribeFlywheelIterationResponse> DescribeFlywheelIterationAsync(DescribeFlywheelIterationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFlywheelIterationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFlywheelIterationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFlywheelIterationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2206,6 +2568,57 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  ListDatasets
+
+        internal virtual ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatasetsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List the datasets that you have configured in this region. For more information about
+        /// datasets, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+        /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDatasets service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the operation is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
+        public virtual Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDatasetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDocumentClassificationJobs
 
         internal virtual ListDocumentClassificationJobsResponse ListDocumentClassificationJobs(ListDocumentClassificationJobsRequest request)
@@ -2622,6 +3035,103 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  ListFlywheelIterationHistory
+
+        internal virtual ListFlywheelIterationHistoryResponse ListFlywheelIterationHistory(ListFlywheelIterationHistoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlywheelIterationHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlywheelIterationHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<ListFlywheelIterationHistoryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Information about the history of a flywheel iteration. For more information about
+        /// flywheels, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+        /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlywheelIterationHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFlywheelIterationHistory service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the operation is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheelIterationHistory">REST API Reference for ListFlywheelIterationHistory Operation</seealso>
+        public virtual Task<ListFlywheelIterationHistoryResponse> ListFlywheelIterationHistoryAsync(ListFlywheelIterationHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlywheelIterationHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlywheelIterationHistoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFlywheelIterationHistoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListFlywheels
+
+        internal virtual ListFlywheelsResponse ListFlywheels(ListFlywheelsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlywheelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlywheelsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFlywheelsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a list of the flywheels that you have created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlywheels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFlywheels service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the operation is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheels">REST API Reference for ListFlywheels Operation</seealso>
+        public virtual Task<ListFlywheelsResponse> ListFlywheelsAsync(ListFlywheelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlywheelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlywheelsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFlywheelsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListKeyPhrasesDetectionJobs
 
         internal virtual ListKeyPhrasesDetectionJobsResponse ListKeyPhrasesDetectionJobs(ListKeyPhrasesDetectionJobsRequest request)
@@ -2954,8 +3464,8 @@ namespace Amazon.Comprehend
 
 
         /// <summary>
-        /// Starts an asynchronous document classification job. Use the operation to track the
-        /// progress of the job.
+        /// Starts an asynchronous document classification job. Use the <code>DescribeDocumentClassificationJob</code>
+        /// operation to track the progress of the job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDocumentClassificationJob service method.</param>
         /// <param name="cancellationToken">
@@ -3171,6 +3681,58 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  StartFlywheelIteration
+
+        internal virtual StartFlywheelIterationResponse StartFlywheelIteration(StartFlywheelIterationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartFlywheelIterationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartFlywheelIterationResponseUnmarshaller.Instance;
+
+            return Invoke<StartFlywheelIterationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Start the flywheel iteration.This operation uses any new datasets to train a new model
+        /// version. For more information about flywheels, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+        /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartFlywheelIteration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartFlywheelIteration service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartFlywheelIteration">REST API Reference for StartFlywheelIteration Operation</seealso>
+        public virtual Task<StartFlywheelIterationResponse> StartFlywheelIterationAsync(StartFlywheelIterationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartFlywheelIterationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartFlywheelIterationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartFlywheelIterationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartKeyPhrasesDetectionJob
 
         internal virtual StartKeyPhrasesDetectionJobResponse StartKeyPhrasesDetectionJob(StartKeyPhrasesDetectionJobRequest request)
@@ -3344,7 +3906,8 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Starts an asynchronous targeted sentiment detection job for a collection of documents.
-        /// Use the operation to track the status of a job.
+        /// Use the <code>DescribeTargetedSentimentDetectionJob</code> operation to track the
+        /// status of a job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTargetedSentimentDetectionJob service method.</param>
         /// <param name="cancellationToken">
@@ -4097,6 +4660,56 @@ namespace Amazon.Comprehend
             options.ResponseUnmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateFlywheel
+
+        internal virtual UpdateFlywheelResponse UpdateFlywheel(UpdateFlywheelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFlywheelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFlywheelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFlywheelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update the configuration information for an existing flywheel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFlywheel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFlywheel service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UpdateFlywheel">REST API Reference for UpdateFlywheel Operation</seealso>
+        public virtual Task<UpdateFlywheelResponse> UpdateFlywheelAsync(UpdateFlywheelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFlywheelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFlywheelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateFlywheelResponse>(request, options, cancellationToken);
         }
 
         #endregion
