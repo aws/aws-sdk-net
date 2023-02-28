@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AddOn Object
+    /// Response Unmarshaller for ResourceBudgetEstimate Object
     /// </summary>  
-    public class AddOnUnmarshaller : IUnmarshaller<AddOn, XmlUnmarshallerContext>, IUnmarshaller<AddOn, JsonUnmarshallerContext>
+    public class ResourceBudgetEstimateUnmarshaller : IUnmarshaller<ResourceBudgetEstimate, XmlUnmarshallerContext>, IUnmarshaller<ResourceBudgetEstimate, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AddOn IUnmarshaller<AddOn, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ResourceBudgetEstimate IUnmarshaller<ResourceBudgetEstimate, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,45 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AddOn Unmarshall(JsonUnmarshallerContext context)
+        public ResourceBudgetEstimate Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AddOn unmarshalledObject = new AddOn();
+            ResourceBudgetEstimate unmarshalledObject = new ResourceBudgetEstimate();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("duration", targetDepth))
+                if (context.TestExpression("costEstimates", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<CostEstimate, CostEstimateUnmarshaller>(CostEstimateUnmarshaller.Instance);
+                    unmarshalledObject.CostEstimates = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("endTime", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("nextSnapshotTimeOfDay", targetDepth))
+                if (context.TestExpression("resourceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NextSnapshotTimeOfDay = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("snapshotTimeOfDay", targetDepth))
+                if (context.TestExpression("resourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SnapshotTimeOfDay = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("startTime", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("threshold", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +100,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         }
 
 
-        private static AddOnUnmarshaller _instance = new AddOnUnmarshaller();        
+        private static ResourceBudgetEstimateUnmarshaller _instance = new ResourceBudgetEstimateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AddOnUnmarshaller Instance
+        public static ResourceBudgetEstimateUnmarshaller Instance
         {
             get
             {

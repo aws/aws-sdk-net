@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetBundles Request Marshaller
+    /// StopGUISession Request Marshaller
     /// </summary>       
-    public class GetBundlesRequestMarshaller : IMarshaller<IRequest, GetBundlesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class StopGUISessionRequestMarshaller : IMarshaller<IRequest, StopGUISessionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetBundlesRequest)input);
+            return this.Marshall((StopGUISessionRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetBundlesRequest publicRequest)
+        public IRequest Marshall(StopGUISessionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lightsail");
-            string target = "Lightsail_20161128.GetBundles";
+            string target = "Lightsail_20161128.StopGUISession";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";
@@ -67,22 +67,10 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppCategory())
+                if(publicRequest.IsSetResourceName())
                 {
-                    context.Writer.WritePropertyName("appCategory");
-                    context.Writer.Write(publicRequest.AppCategory);
-                }
-
-                if(publicRequest.IsSetIncludeInactive())
-                {
-                    context.Writer.WritePropertyName("includeInactive");
-                    context.Writer.Write(publicRequest.IncludeInactive);
-                }
-
-                if(publicRequest.IsSetPageToken())
-                {
-                    context.Writer.WritePropertyName("pageToken");
-                    context.Writer.Write(publicRequest.PageToken);
+                    context.Writer.WritePropertyName("resourceName");
+                    context.Writer.Write(publicRequest.ResourceName);
                 }
 
                 writer.WriteObjectEnd();
@@ -93,9 +81,9 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetBundlesRequestMarshaller _instance = new GetBundlesRequestMarshaller();        
+        private static StopGUISessionRequestMarshaller _instance = new StopGUISessionRequestMarshaller();        
 
-        internal static GetBundlesRequestMarshaller GetInstance()
+        internal static StopGUISessionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +91,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetBundlesRequestMarshaller Instance
+        public static StopGUISessionRequestMarshaller Instance
         {
             get
             {

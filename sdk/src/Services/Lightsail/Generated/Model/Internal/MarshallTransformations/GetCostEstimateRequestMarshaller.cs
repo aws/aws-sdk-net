@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetBundles Request Marshaller
+    /// GetCostEstimate Request Marshaller
     /// </summary>       
-    public class GetBundlesRequestMarshaller : IMarshaller<IRequest, GetBundlesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetCostEstimateRequestMarshaller : IMarshaller<IRequest, GetCostEstimateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetBundlesRequest)input);
+            return this.Marshall((GetCostEstimateRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetBundlesRequest publicRequest)
+        public IRequest Marshall(GetCostEstimateRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lightsail");
-            string target = "Lightsail_20161128.GetBundles";
+            string target = "Lightsail_20161128.GetCostEstimate";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";
@@ -67,22 +67,22 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppCategory())
+                if(publicRequest.IsSetEndTime())
                 {
-                    context.Writer.WritePropertyName("appCategory");
-                    context.Writer.Write(publicRequest.AppCategory);
+                    context.Writer.WritePropertyName("endTime");
+                    context.Writer.Write(publicRequest.EndTime);
                 }
 
-                if(publicRequest.IsSetIncludeInactive())
+                if(publicRequest.IsSetResourceName())
                 {
-                    context.Writer.WritePropertyName("includeInactive");
-                    context.Writer.Write(publicRequest.IncludeInactive);
+                    context.Writer.WritePropertyName("resourceName");
+                    context.Writer.Write(publicRequest.ResourceName);
                 }
 
-                if(publicRequest.IsSetPageToken())
+                if(publicRequest.IsSetStartTime())
                 {
-                    context.Writer.WritePropertyName("pageToken");
-                    context.Writer.Write(publicRequest.PageToken);
+                    context.Writer.WritePropertyName("startTime");
+                    context.Writer.Write(publicRequest.StartTime);
                 }
 
                 writer.WriteObjectEnd();
@@ -93,9 +93,9 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetBundlesRequestMarshaller _instance = new GetBundlesRequestMarshaller();        
+        private static GetCostEstimateRequestMarshaller _instance = new GetCostEstimateRequestMarshaller();        
 
-        internal static GetBundlesRequestMarshaller GetInstance()
+        internal static GetCostEstimateRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +103,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetBundlesRequestMarshaller Instance
+        public static GetCostEstimateRequestMarshaller Instance
         {
             get
             {

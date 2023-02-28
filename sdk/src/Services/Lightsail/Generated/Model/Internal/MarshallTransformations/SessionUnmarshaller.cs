@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AddOn Object
+    /// Response Unmarshaller for Session Object
     /// </summary>  
-    public class AddOnUnmarshaller : IUnmarshaller<AddOn, XmlUnmarshallerContext>, IUnmarshaller<AddOn, JsonUnmarshallerContext>
+    public class SessionUnmarshaller : IUnmarshaller<Session, XmlUnmarshallerContext>, IUnmarshaller<Session, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AddOn IUnmarshaller<AddOn, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Session IUnmarshaller<Session, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,21 +53,21 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AddOn Unmarshall(JsonUnmarshallerContext context)
+        public Session Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AddOn unmarshalledObject = new AddOn();
+            Session unmarshalledObject = new Session();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("duration", targetDepth))
+                if (context.TestExpression("isPrimary", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsPrimary = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
@@ -76,28 +76,10 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("nextSnapshotTimeOfDay", targetDepth))
+                if (context.TestExpression("url", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NextSnapshotTimeOfDay = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("snapshotTimeOfDay", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SnapshotTimeOfDay = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("threshold", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +88,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         }
 
 
-        private static AddOnUnmarshaller _instance = new AddOnUnmarshaller();        
+        private static SessionUnmarshaller _instance = new SessionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AddOnUnmarshaller Instance
+        public static SessionUnmarshaller Instance
         {
             get
             {

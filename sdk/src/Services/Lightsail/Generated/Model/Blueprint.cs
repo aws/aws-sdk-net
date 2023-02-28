@@ -33,6 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class Blueprint
     {
+        private AppCategory _appCategory;
         private string _blueprintId;
         private string _description;
         private string _group;
@@ -45,6 +46,29 @@ namespace Amazon.Lightsail.Model
         private BlueprintType _type;
         private string _version;
         private string _versionCode;
+
+        /// <summary>
+        /// Gets and sets the property AppCategory. 
+        /// <para>
+        /// Virtual computer blueprints that are supported by Lightsail for Research.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This parameter only applies to Lightsail for Research resources.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public AppCategory AppCategory
+        {
+            get { return this._appCategory; }
+            set { this._appCategory = value; }
+        }
+
+        // Check to see if AppCategory property is set
+        internal bool IsSetAppCategory()
+        {
+            return this._appCategory != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BlueprintId. 

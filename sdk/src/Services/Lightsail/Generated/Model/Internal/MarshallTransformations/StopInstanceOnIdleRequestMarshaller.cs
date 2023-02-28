@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AddOnRequest Marshaller
+    /// StopInstanceOnIdleRequest Marshaller
     /// </summary>
-    public class AddOnRequestMarshaller : IRequestMarshaller<AddOnRequest, JsonMarshallerContext> 
+    public class StopInstanceOnIdleRequestMarshaller : IRequestMarshaller<StopInstanceOnIdleRequest, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,18 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AddOnRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(StopInstanceOnIdleRequest requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAddOnType())
+            if(requestObject.IsSetDuration())
             {
-                context.Writer.WritePropertyName("addOnType");
-                context.Writer.Write(requestObject.AddOnType);
+                context.Writer.WritePropertyName("duration");
+                context.Writer.Write(requestObject.Duration);
             }
 
-            if(requestObject.IsSetAutoSnapshotAddOnRequest())
+            if(requestObject.IsSetThreshold())
             {
-                context.Writer.WritePropertyName("autoSnapshotAddOnRequest");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AutoSnapshotAddOnRequestMarshaller.Instance;
-                marshaller.Marshall(requestObject.AutoSnapshotAddOnRequest, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetStopInstanceOnIdleRequest())
-            {
-                context.Writer.WritePropertyName("stopInstanceOnIdleRequest");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = StopInstanceOnIdleRequestMarshaller.Instance;
-                marshaller.Marshall(requestObject.StopInstanceOnIdleRequest, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("threshold");
+                context.Writer.Write(requestObject.Threshold);
             }
 
         }
@@ -78,7 +62,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AddOnRequestMarshaller Instance = new AddOnRequestMarshaller();
+        public readonly static StopInstanceOnIdleRequestMarshaller Instance = new StopInstanceOnIdleRequestMarshaller();
 
     }
 }

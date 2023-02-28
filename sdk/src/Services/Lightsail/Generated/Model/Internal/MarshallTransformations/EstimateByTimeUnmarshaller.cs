@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AddOn Object
+    /// Response Unmarshaller for EstimateByTime Object
     /// </summary>  
-    public class AddOnUnmarshaller : IUnmarshaller<AddOn, XmlUnmarshallerContext>, IUnmarshaller<AddOn, JsonUnmarshallerContext>
+    public class EstimateByTimeUnmarshaller : IUnmarshaller<EstimateByTime, XmlUnmarshallerContext>, IUnmarshaller<EstimateByTime, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AddOn IUnmarshaller<AddOn, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EstimateByTime IUnmarshaller<EstimateByTime, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,45 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AddOn Unmarshall(JsonUnmarshallerContext context)
+        public EstimateByTime Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AddOn unmarshalledObject = new AddOn();
+            EstimateByTime unmarshalledObject = new EstimateByTime();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("duration", targetDepth))
+                if (context.TestExpression("currency", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Currency = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("pricingUnit", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PricingUnit = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("nextSnapshotTimeOfDay", targetDepth))
+                if (context.TestExpression("timePeriod", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NextSnapshotTimeOfDay = unmarshaller.Unmarshall(context);
+                    var unmarshaller = TimePeriodUnmarshaller.Instance;
+                    unmarshalledObject.TimePeriod = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("snapshotTimeOfDay", targetDepth))
+                if (context.TestExpression("unit", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SnapshotTimeOfDay = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Unit = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("usageCost", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("threshold", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.UsageCost = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +100,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         }
 
 
-        private static AddOnUnmarshaller _instance = new AddOnUnmarshaller();        
+        private static EstimateByTimeUnmarshaller _instance = new EstimateByTimeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AddOnUnmarshaller Instance
+        public static EstimateByTimeUnmarshaller Instance
         {
             get
             {

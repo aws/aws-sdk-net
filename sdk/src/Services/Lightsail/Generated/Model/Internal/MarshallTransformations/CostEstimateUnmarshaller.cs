@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AddOn Object
+    /// Response Unmarshaller for CostEstimate Object
     /// </summary>  
-    public class AddOnUnmarshaller : IUnmarshaller<AddOn, XmlUnmarshallerContext>, IUnmarshaller<AddOn, JsonUnmarshallerContext>
+    public class CostEstimateUnmarshaller : IUnmarshaller<CostEstimate, XmlUnmarshallerContext>, IUnmarshaller<CostEstimate, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AddOn IUnmarshaller<AddOn, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CostEstimate IUnmarshaller<CostEstimate, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AddOn Unmarshall(JsonUnmarshallerContext context)
+        public CostEstimate Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AddOn unmarshalledObject = new AddOn();
+            CostEstimate unmarshalledObject = new CostEstimate();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("duration", targetDepth))
+                if (context.TestExpression("resultsByTime", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<EstimateByTime, EstimateByTimeUnmarshaller>(EstimateByTimeUnmarshaller.Instance);
+                    unmarshalledObject.ResultsByTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("usageType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("nextSnapshotTimeOfDay", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NextSnapshotTimeOfDay = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("snapshotTimeOfDay", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SnapshotTimeOfDay = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("threshold", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UsageType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         }
 
 
-        private static AddOnUnmarshaller _instance = new AddOnUnmarshaller();        
+        private static CostEstimateUnmarshaller _instance = new CostEstimateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AddOnUnmarshaller Instance
+        public static CostEstimateUnmarshaller Instance
         {
             get
             {
