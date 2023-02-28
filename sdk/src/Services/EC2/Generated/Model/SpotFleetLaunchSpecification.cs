@@ -401,7 +401,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        /// The Base64-encoded user data that instances use when starting up.
+        /// The base64-encoded user data that instances use when starting up. User data is limited
+        /// to 16 KB.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
