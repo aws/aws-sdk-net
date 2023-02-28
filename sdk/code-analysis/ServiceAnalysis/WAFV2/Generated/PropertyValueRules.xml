@@ -1181,6 +1181,18 @@
     <pattern>^[\w#:\.\-/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.ResponseInspectionHeader.Name</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ResponseInspectionJson.Identifier</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.Rule.Name</property>
     <min>1</min>
     <max>128</max>

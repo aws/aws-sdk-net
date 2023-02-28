@@ -77,7 +77,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResolutionId. 
         /// <para>
-        /// The identifier for a specific resolution.
+        /// The ID for a specific resolution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

@@ -30,8 +30,8 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the PutAccountSettingDefault operation.
-    /// Modifies an account setting for all IAM users on an account for whom no individual
-    /// account setting has been specified. Account settings are set on a per-Region basis.
+    /// Modifies an account setting for all users on an account for whom no individual account
+    /// setting has been specified. Account settings are set on a per-Region basis.
     /// </summary>
     public partial class PutAccountSettingDefaultRequest : AmazonECSRequest
     {

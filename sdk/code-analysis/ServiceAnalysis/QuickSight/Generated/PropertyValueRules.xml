@@ -3703,6 +3703,11 @@
     <max>10</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.S3Parameters.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.SankeyDiagramVisual.VisualId</property>
     <min>1</min>
     <max>512</max>

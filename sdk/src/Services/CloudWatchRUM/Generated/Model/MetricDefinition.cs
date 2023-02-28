@@ -39,6 +39,7 @@ namespace Amazon.CloudWatchRUM.Model
         private string _eventPattern;
         private string _metricDefinitionId;
         private string _name;
+        private string _awsNamespace;
         private string _unitLabel;
         private string _valueKey;
 
@@ -51,6 +52,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// the value of <code>DimensionKeys</code> is ignored.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=29)]
         public Dictionary<string, string> DimensionKeys
         {
             get { return this._dimensionKeys; }
@@ -125,6 +127,26 @@ namespace Amazon.CloudWatchRUM.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Namespace. 
+        /// <para>
+        /// If this metric definition is for a custom metric instead of an extended metric, this
+        /// field displays the metric namespace that the custom metric is published to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=237)]
+        public string Namespace
+        {
+            get { return this._awsNamespace; }
+            set { this._awsNamespace = value; }
+        }
+
+        // Check to see if Namespace property is set
+        internal bool IsSetNamespace()
+        {
+            return this._awsNamespace != null;
         }
 
         /// <summary>

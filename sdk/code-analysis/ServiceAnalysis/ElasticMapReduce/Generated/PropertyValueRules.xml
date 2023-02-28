@@ -828,6 +828,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.OnDemandResizingSpecification.TimeoutDurationMinutes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.PlacementType.AvailabilityZone</property>
     <min>0</min>
     <max>10280</max>
@@ -898,6 +902,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.SpotProvisioningSpecification.TimeoutDurationMinutes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.SpotResizingSpecification.TimeoutDurationMinutes</property>
     <min>0</min>
   </property-value-rule>
   <property-value-rule>

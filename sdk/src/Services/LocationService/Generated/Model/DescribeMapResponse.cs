@@ -124,7 +124,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property MapArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across
-        /// all AWS.
+        /// all Amazon Web Services.
         /// </para>
         ///  <ul> <li> 
         /// <para>

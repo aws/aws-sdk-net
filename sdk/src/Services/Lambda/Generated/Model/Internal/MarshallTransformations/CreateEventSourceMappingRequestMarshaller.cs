@@ -99,6 +99,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetDocumentDBEventSourceConfig())
+                {
+                    context.Writer.WritePropertyName("DocumentDBEventSourceConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DocumentDBEventSourceConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DocumentDBEventSourceConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEnabled())
                 {
                     context.Writer.WritePropertyName("Enabled");

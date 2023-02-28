@@ -66,6 +66,11 @@ namespace Amazon.WAFV2.Model
         /// For an Amazon Cognito user pool: <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i>
         /// </code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For an App Runner service: <code>arn:aws:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i>
+        /// </code> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

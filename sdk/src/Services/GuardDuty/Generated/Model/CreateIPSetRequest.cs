@@ -149,7 +149,7 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  
         /// <para>
-        ///  Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).
+        ///  Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

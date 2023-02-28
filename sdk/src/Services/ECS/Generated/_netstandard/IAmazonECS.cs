@@ -126,7 +126,7 @@ namespace Amazon.ECS
         /// When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create
         /// the Amazon ECS service-linked role for your account. This is so that it can manage
         /// required resources in other Amazon Web Services services on your behalf. However,
-        /// if the IAM user that makes the call doesn't have permissions to create the service-linked
+        /// if the user that makes the call doesn't have permissions to create the service-linked
         /// role, it isn't created. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
         /// service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
@@ -375,8 +375,7 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Disables an account setting for a specified IAM user, IAM role, or the root user for
-        /// an account.
+        /// Disables an account setting for a specified user, role, or the root user for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountSetting service method.</param>
         /// <param name="cancellationToken">
@@ -600,6 +599,64 @@ namespace Amazon.ECS
 
         #endregion
                 
+        #region  DeleteTaskDefinitions
+
+
+
+        /// <summary>
+        /// Deletes one or more task definitions.
+        /// 
+        ///  
+        /// <para>
+        /// You must deregister a task definition revision before you delete it. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeregisterTaskDefinition.html">DeregisterTaskDefinition</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete a task definition revision, it is immediately transitions from the
+        /// <code>INACTIVE</code> to <code>DELETE_IN_PROGRESS</code>. Existing tasks and services
+        /// that reference a <code>DELETE_IN_PROGRESS</code> task definition revision continue
+        /// to run without disruption. Existing services that reference a <code>DELETE_IN_PROGRESS</code>
+        /// task definition revision can still scale up or down by modifying the service's desired
+        /// count.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't use a <code>DELETE_IN_PROGRESS</code> task definition revision to run new
+        /// tasks or create new services. You also can't update an existing service to reference
+        /// a <code>DELETE_IN_PROGRESS</code> task definition revision.
+        /// </para>
+        ///  
+        /// <para>
+        ///  A task definition revision will stay in <code>DELETE_IN_PROGRESS</code> status until
+        /// all the associated tasks and services have been terminated.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTaskDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTaskDefinitions service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskDefinitions">REST API Reference for DeleteTaskDefinitions Operation</seealso>
+        Task<DeleteTaskDefinitionsResponse> DeleteTaskDefinitionsAsync(DeleteTaskDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteTaskSet
 
 
@@ -716,7 +773,8 @@ namespace Amazon.ECS
         /// the task definition is marked as <code>INACTIVE</code>. Existing tasks and services
         /// that reference an <code>INACTIVE</code> task definition continue to run without disruption.
         /// Existing services that reference an <code>INACTIVE</code> task definition can still
-        /// scale up or down by modifying the service's desired count.
+        /// scale up or down by modifying the service's desired count. If you want to delete a
+        /// task definition revision, you must first deregister the task definition revision.
         /// 
         ///  
         /// <para>
@@ -732,7 +790,11 @@ namespace Amazon.ECS
         /// recommend that you rely on <code>INACTIVE</code> task definitions persisting beyond
         /// the lifecycle of any associated tasks and services.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// You must deregister a task definition revision before you delete it. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteTaskDefinitions.html">DeleteTaskDefinitions</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterTaskDefinition service method.</param>
         /// <param name="cancellationToken">
@@ -1474,7 +1536,7 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// If you change the account setting for the root user, the default settings for all
-        /// of the IAM users and roles that no individual account setting was specified are reset
+        /// of the users and roles that no individual account setting was specified are reset
         /// for. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
         /// Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
@@ -1482,10 +1544,10 @@ namespace Amazon.ECS
         /// <para>
         /// When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or <code>containerInstanceLongArnFormat</code>
         /// are specified, the Amazon Resource Name (ARN) and resource ID format of the resource
-        /// type for a specified IAM user, IAM role, or the root user for an account is affected.
-        /// The opt-in and opt-out account setting must be set for each Amazon ECS resource separately.
+        /// type for a specified user, role, or the root user for an account is affected. The
+        /// opt-in and opt-out account setting must be set for each Amazon ECS resource separately.
         /// The ARN and resource ID format of a resource is defined by the opt-in status of the
-        /// IAM user or role that created the resource. You must turn on this setting to use Amazon
+        /// user or role that created the resource. You must turn on this setting to use Amazon
         /// ECS features such as resource tagging.
         /// </para>
         ///  
@@ -1533,8 +1595,8 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Modifies an account setting for all IAM users on an account for whom no individual
-        /// account setting has been specified. Account settings are set on a per-Region basis.
+        /// Modifies an account setting for all users on an account for whom no individual account
+        /// setting has been specified. Account settings are set on a per-Region basis.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountSettingDefault service method.</param>
         /// <param name="cancellationToken">
@@ -1673,11 +1735,11 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
-        /// You can specify an IAM role for your task with the <code>taskRoleArn</code> parameter.
-        /// When you specify an IAM role for a task, its containers can then use the latest versions
+        /// You can specify a role for your task with the <code>taskRoleArn</code> parameter.
+        /// When you specify a role for a task, its containers can then use the latest versions
         /// of the CLI or SDKs to make API requests to the Amazon Web Services services that are
-        /// specified in the IAM policy that's associated with the role. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+        /// specified in the policy that's associated with the role. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
         /// Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
@@ -2421,7 +2483,7 @@ namespace Amazon.ECS
         ///  </li> </ul> <note> 
         /// <para>
         /// You must have a service-linked role when you update any of the following service properties.
-        /// If you specified a custom IAM role when you created the service, Amazon ECS automatically
+        /// If you specified a custom role when you created the service, Amazon ECS automatically
         /// replaces the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Service.html#ECS-Type-Service-roleArn">roleARN</a>
         /// associated with the service with the ARN of your service-linked role. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Service-linked

@@ -120,8 +120,21 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.CreateFuotaTaskRequest.FragmentIntervalMS</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.CreateFuotaTaskRequest.FragmentSizeBytes</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.CreateFuotaTaskRequest.Name</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.CreateFuotaTaskRequest.RedundancyPercent</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.CreateFuotaTaskResponse.Arn</property>
@@ -410,12 +423,25 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.GetFuotaTaskResponse.FragmentIntervalMS</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.GetFuotaTaskResponse.FragmentSizeBytes</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.GetFuotaTaskResponse.Id</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.GetFuotaTaskResponse.Name</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.GetFuotaTaskResponse.RedundancyPercent</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.GetMulticastGroupRequest.Id</property>
@@ -971,12 +997,25 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.UpdateFuotaTaskRequest.FragmentIntervalMS</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.UpdateFuotaTaskRequest.FragmentSizeBytes</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.UpdateFuotaTaskRequest.Id</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.UpdateFuotaTaskRequest.Name</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.UpdateFuotaTaskRequest.RedundancyPercent</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.UpdateMulticastGroupRequest.Description</property>

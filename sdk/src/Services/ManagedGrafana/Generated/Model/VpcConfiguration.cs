@@ -31,6 +31,13 @@ namespace Amazon.ManagedGrafana.Model
     /// <summary>
     /// The configuration settings for an Amazon VPC that contains data sources for your Grafana
     /// workspace to connect to.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Provided <code>securityGroupIds</code> and <code>subnetIds</code> must be part of
+    /// the same VPC.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class VpcConfiguration
     {
@@ -41,7 +48,7 @@ namespace Amazon.ManagedGrafana.Model
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
         /// The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana
-        /// workspace to connect.
+        /// workspace to connect. Duplicates not allowed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -61,7 +68,7 @@ namespace Amazon.ManagedGrafana.Model
         /// Gets and sets the property SubnetIds. 
         /// <para>
         /// The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace
-        /// to connect.
+        /// to connect. Duplicates not allowed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

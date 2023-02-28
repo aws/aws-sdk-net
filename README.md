@@ -410,6 +410,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Inspector identifies security issues in your application deployments.
 * [AWSSDK.Inspector2](https://www.nuget.org/packages/AWSSDK.Inspector2/)
 	* This release adds support for the new Amazon Inspector API. The new Amazon Inspector can automatically discover and scan Amazon EC2 instances and Amazon ECR container images for software vulnerabilities and unintended network exposure, and report centralized findings across multiple AWS accounts.
+* [AWSSDK.InternetMonitor](https://www.nuget.org/packages/AWSSDK.InternetMonitor/)
+	* CloudWatch Internet Monitor is a a new service within CloudWatch that will help application developers and network engineers continuously monitor internet performance metrics such as availability and performance between their AWS-hosted applications and end-users of these applications
 * [AWSSDK.IoT](https://www.nuget.org/packages/AWSSDK.IoT/)
 	* AWS IoT allows you to leverage AWS to build your Internet of Things.
 * [AWSSDK.IoT1ClickDevicesService](https://www.nuget.org/packages/AWSSDK.IoT1ClickDevicesService/)
@@ -752,6 +754,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* (New Service) Amazon Timestream is a fast, scalable, fully managed, purpose-built time series database that makes it easy to store and analyze trillions of time series data points per day.
 * [AWSSDK.TimestreamWrite](https://www.nuget.org/packages/AWSSDK.TimestreamWrite/)
 	* (New Service) Amazon Timestream is a fast, scalable, fully managed, purpose-built time series database that makes it easy to store and analyze trillions of time series data points per day.
+* [AWSSDK.Tnb](https://www.nuget.org/packages/AWSSDK.Tnb/)
+	* This is the initial SDK release for AWS Telco Network Builder (TNB). AWS Telco Network Builder is a network automation service that helps you deploy and manage telecom networks.
 * [AWSSDK.TranscribeService](https://www.nuget.org/packages/AWSSDK.TranscribeService/)
 	* Amazon Transcribe Public Preview Release
 * [AWSSDK.Transfer](https://www.nuget.org/packages/AWSSDK.Transfer/)

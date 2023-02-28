@@ -379,8 +379,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Cancels an export task in progress that is exporting a snapshot to Amazon S3. Any
-        /// data that has already been written to the S3 bucket isn't removed.
+        /// Cancels an export task in progress that is exporting a snapshot or cluster to Amazon
+        /// S3. Any data that has already been written to the S3 bucket isn't removed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelExportTask service method.</param>
         /// <param name="cancellationToken">
@@ -485,8 +485,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide</i>.
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterSnapshot service method.</param>
@@ -747,18 +746,15 @@ namespace Amazon.RDS
         /// <para>
         /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create an Amazon
         /// Aurora DB cluster as a read replica of another DB cluster or Amazon RDS MySQL or PostgreSQL
-        /// DB instance.
+        /// DB instance. For more information about Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">What
+        /// is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide</i>.
+        /// You can also use the <code>ReplicationSourceIdentifier</code> parameter to create
+        /// a Multi-AZ DB cluster read replica with an RDS for PostgreSQL DB instance as the source.
+        /// For more information about Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">Multi-AZ
+        /// DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBCluster service method.</param>
@@ -929,8 +925,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide</i>.
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterParameterGroup service method.</param>
@@ -966,8 +961,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide</i>.
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterSnapshot service method.</param>
@@ -1663,8 +1657,8 @@ namespace Amazon.RDS
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.delete">
-        /// Deleting a CEV</a> in the <i>Amazon RDS User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.delete">Deleting
+        /// a CEV</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomDBEngineVersion service method.</param>
@@ -1701,8 +1695,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide</i>.
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBCluster service method.</param>
@@ -1781,8 +1774,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide</i>.
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterParameterGroup service method.</param>
@@ -1824,8 +1816,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide</i>.
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterSnapshot service method.</param>
@@ -2431,8 +2422,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide</i>.
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameterGroups service method.</param>
@@ -2464,8 +2454,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide</i>.
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameters service method.</param>
@@ -2498,8 +2487,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide</i>.
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2575,8 +2563,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide</i>.
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterSnapshots service method.</param>
@@ -3284,8 +3271,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Returns information about a snapshot export to Amazon S3. This API operation supports
-        /// pagination.
+        /// Returns information about a snapshot or cluster export to Amazon S3. This API operation
+        /// supports pagination.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks service method.</param>
         /// <param name="cancellationToken">
@@ -3635,8 +3622,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide</i>.
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FailoverDBCluster service method.</param>
@@ -3772,7 +3758,7 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// This operation is supported for RDS for Oracle only.
+        /// This operation is supported for RDS for Oracle and Microsoft SQL Server.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyActivityStream service method.</param>
@@ -3970,8 +3956,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide</i>.
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBCluster service method.</param>
@@ -4102,8 +4087,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBClusterParameterGroup service method.</param>
@@ -4748,8 +4732,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebootDBCluster service method.</param>
@@ -4919,8 +4902,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromDBCluster service method.</param>
@@ -5068,8 +5050,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetDBClusterParameterGroup service method.</param>
@@ -5244,8 +5225,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromSnapshot service method.</param>
@@ -5349,8 +5329,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterToPointInTime service method.</param>
@@ -6016,12 +5995,27 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Starts an export of a snapshot to Amazon S3. The provided IAM role must have access
-        /// to the S3 bucket.
+        /// Starts an export of DB snapshot or DB cluster data to Amazon S3. The provided IAM
+        /// role must have access to the S3 bucket.
         /// 
         ///  
         /// <para>
-        /// This command doesn't apply to RDS Custom.
+        /// You can't export snapshot data from RDS Custom DB instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't export cluster data from Multi-AZ DB clusters.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on exporting DB snapshot data, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ExportSnapshot.html">Exporting
+        /// DB snapshot data to Amazon S3</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-export-snapshot.html">Exporting
+        /// DB cluster snapshot data to Amazon S3</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on exporting DB cluster data, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/export-cluster-data.html">Exporting
+        /// DB cluster data to Amazon S3</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartExportTask service method.</param>

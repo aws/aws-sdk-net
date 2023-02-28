@@ -31,22 +31,6 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Container for the parameters to the SearchProvisionedProducts operation.
     /// Gets information about the provisioned products that meet the specified criteria.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// To ensure a complete list of provisioned products and remove duplicate products, use
-    /// <code>sort-by createdTime</code>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// Here is a CLI example: <code> </code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws servicecatalog search-provisioned-products --sort-by createdTime </code>
-    /// 
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class SearchProvisionedProductsRequest : AmazonServiceCatalogRequest
     {

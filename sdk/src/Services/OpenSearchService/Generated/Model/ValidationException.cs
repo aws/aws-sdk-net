@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// An exception for missing or invalid input fields.
+    /// An exception for accessing or deleting a resource that doesn't exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

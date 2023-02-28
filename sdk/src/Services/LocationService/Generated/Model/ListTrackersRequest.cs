@@ -30,7 +30,7 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTrackers operation.
-    /// Lists tracker resources in your AWS account.
+    /// Lists tracker resources in your Amazon Web Services account.
     /// </summary>
     public partial class ListTrackersRequest : AmazonLocationServiceRequest
     {

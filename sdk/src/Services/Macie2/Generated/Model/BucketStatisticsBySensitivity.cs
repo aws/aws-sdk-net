@@ -80,7 +80,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property NotSensitive. 
         /// <para>
-        /// The aggregated statistical data for all buckets that have a sensitivity score of 0-49.
+        /// The aggregated statistical data for all buckets that have a sensitivity score of 1-49.
         /// </para>
         /// </summary>
         public SensitivityAggregations NotSensitive

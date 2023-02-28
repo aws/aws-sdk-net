@@ -54,7 +54,7 @@ namespace Amazon.TimestreamWrite.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  Records with timestamps that lie outside the retention duration of the memory store
+    ///  Records with timestamps that lie outside the retention duration of the memory store.
     /// 
     /// </para>
     ///  </li> <li> 
@@ -64,7 +64,7 @@ namespace Amazon.TimestreamWrite.Model
     ///  </li> </ul> 
     /// <para>
     ///  For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Quotas</a>
-    /// in the Timestream Developer Guide. 
+    /// in the Amazon Timestream Developer Guide. 
     /// </para>
     /// </summary>
     #if !NETSTANDARD
@@ -160,7 +160,10 @@ namespace Amazon.TimestreamWrite.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property RejectedRecords.
+        /// Gets and sets the property RejectedRecords. 
+        /// <para>
+        ///  
+        /// </para>
         /// </summary>
         public List<RejectedRecord> RejectedRecords
         {

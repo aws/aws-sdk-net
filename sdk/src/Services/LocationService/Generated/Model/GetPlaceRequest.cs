@@ -40,11 +40,11 @@ namespace Amazon.LocationService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Customer AWS account
+    /// Customer Amazon Web Services account
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// AWS Region
+    /// Amazon Web Services Region
     /// </para>
     ///  </li> <li> 
     /// <para>

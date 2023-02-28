@@ -57,6 +57,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IsSandboxEnvironment);
             }
 
+            if(requestObject.IsSetUsePrivateLinkForMetadataAndAuthorization())
+            {
+                context.Writer.WritePropertyName("usePrivateLinkForMetadataAndAuthorization");
+                context.Writer.Write(requestObject.UsePrivateLinkForMetadataAndAuthorization);
+            }
+
         }
 
         /// <summary>

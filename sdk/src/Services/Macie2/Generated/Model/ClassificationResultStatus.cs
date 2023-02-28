@@ -87,8 +87,8 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted
         /// and analyzed only some or none of the files in the archive. To determine which files
-        /// Macie analyzed, if any, you can refer to the corresponding sensitive data discovery
-        /// result for the finding (ClassificationDetails.detailedResultsLocation).
+        /// Macie analyzed, if any, refer to the corresponding sensitive data discovery result
+        /// for the finding (ClassificationDetails.detailedResultsLocation).
         /// </para>
         /// </li> <li>
         /// <para>
@@ -121,18 +121,16 @@ namespace Amazon.Macie2.Model
         /// </li> <li>
         /// <para>
         /// INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie
-        /// isn’t allowed to use the key. Macie can’t decrypt and analyze the object.
+        /// isn't allowed to use the key. Macie can't decrypt and analyze the object.
         /// </para>
         /// </li> <li>
         /// <para>
         /// INVALID_KMS_KEY - The object is encrypted with an KMS key that was disabled or is
-        /// being deleted. Macie can’t decrypt and analyze the object.
+        /// being deleted. Macie can't decrypt and analyze the object.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// INVALID_OBJECT_STATE - The object doesn’t use a supported Amazon S3 storage class.
-        /// For more information, see <a href="https://docs.aws.amazon.com/macie/latest/user/data-classification.html">Discovering
-        /// sensitive data</a> in the <i>Amazon Macie User Guide</i>.
+        /// INVALID_OBJECT_STATE - The object doesn't use a supported Amazon S3 storage class.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -143,16 +141,7 @@ namespace Amazon.Macie2.Model
         /// </li> <li>
         /// <para>
         /// MALFORMED_FILE - The object is a malformed or corrupted file. An error occurred when
-        /// Macie attempted to detect the file’s type or extract data from the file.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before
-        /// or when Macie attempted to analyze the object.
+        /// Macie attempted to detect the file's type or extract data from the file.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -162,8 +151,12 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that
-        /// exceeds the size quota for this type of file.
+        /// NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before
+        /// or when Macie attempted to analyze the object.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -172,7 +165,12 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// PERMISSION_DENIED - Macie isn’t allowed to access the object. The object’s permissions
+        /// OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that
+        /// exceeds the size quota for this type of file.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// PERMISSION_DENIED - Macie isn't allowed to access the object. The object's permissions
         /// settings prevent Macie from analyzing the object.
         /// </para>
         /// </li> <li>
@@ -182,19 +180,25 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </li> <li>
         /// <para>
+        /// TIME_CUT_OFF_REACHED - Macie started analyzing the object but additional analysis
+        /// would exceed the time quota for analyzing an object.
+        /// </para>
+        /// </li> <li>
+        /// <para>
         /// UNABLE_TO_PARSE_FILE - The object is a file that contains structured data and an error
         /// occurred when Macie attempted to parse the data.
         /// </para>
         /// </li> <li>
         /// <para>
         /// UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file
-        /// or storage format. For more information, see <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-formats.html">Supported
-        /// file and storage formats</a> in the <i>Amazon Macie User Guide</i>.
+        /// or storage format.
         /// </para>
         /// </li></ul> 
         /// <para>
-        /// For information about sensitive data discovery quotas for files, see <a href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Amazon
-        /// Macie quotas</a> in the <i>Amazon Macie User Guide</i>.
+        /// For information about quotas, supported storage classes, and supported file and storage
+        /// formats, see <a href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Quotas</a>
+        /// and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-storage.html">Supported
+        /// storage classes and formats</a> in the <i>Amazon Macie User Guide</i>.
         /// </para>
         /// </summary>
         public string Reason

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// Indicates that a request was not valid.
+    /// This exception occurs when a request is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

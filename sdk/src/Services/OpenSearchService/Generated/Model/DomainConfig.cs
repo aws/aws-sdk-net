@@ -46,7 +46,9 @@ namespace Amazon.OpenSearchService.Model
         private VersionStatus _engineVersion;
         private LogPublishingOptionsStatus _logPublishingOptions;
         private NodeToNodeEncryptionOptionsStatus _nodeToNodeEncryptionOptions;
+        private OffPeakWindowOptionsStatus _offPeakWindowOptions;
         private SnapshotOptionsStatus _snapshotOptions;
+        private SoftwareUpdateOptionsStatus _softwareUpdateOptions;
         private VPCDerivedInfoStatus _vpcOptions;
 
         /// <summary>
@@ -199,7 +201,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EBSOptions. 
         /// <para>
-        /// Container for EBS options configured for an OpenSearch Service domain.
+        /// Container for EBS options configured for the domain.
         /// </para>
         /// </summary>
         public EBSOptionsStatus EBSOptions
@@ -287,6 +289,24 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OffPeakWindowOptions. 
+        /// <para>
+        /// Container for off-peak window options for the domain.
+        /// </para>
+        /// </summary>
+        public OffPeakWindowOptionsStatus OffPeakWindowOptions
+        {
+            get { return this._offPeakWindowOptions; }
+            set { this._offPeakWindowOptions = value; }
+        }
+
+        // Check to see if OffPeakWindowOptions property is set
+        internal bool IsSetOffPeakWindowOptions()
+        {
+            return this._offPeakWindowOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SnapshotOptions. 
         /// <para>
         /// DEPRECATED. Container for parameters required to configure automated snapshots of
@@ -303,6 +323,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetSnapshotOptions()
         {
             return this._snapshotOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SoftwareUpdateOptions. 
+        /// <para>
+        /// Software update options for the domain.
+        /// </para>
+        /// </summary>
+        public SoftwareUpdateOptionsStatus SoftwareUpdateOptions
+        {
+            get { return this._softwareUpdateOptions; }
+            set { this._softwareUpdateOptions = value; }
+        }
+
+        // Check to see if SoftwareUpdateOptions property is set
+        internal bool IsSetSoftwareUpdateOptions()
+        {
+            return this._softwareUpdateOptions != null;
         }
 
         /// <summary>

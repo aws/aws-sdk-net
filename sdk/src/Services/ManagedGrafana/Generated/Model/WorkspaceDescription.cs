@@ -48,6 +48,7 @@ namespace Amazon.ManagedGrafana.Model
         private LicenseType _licenseType;
         private DateTime? _modified;
         private string _name;
+        private NetworkAccessConfiguration _networkAccessControl;
         private List<string> _notificationDestinations = new List<string>();
         private List<string> _organizationalUnits = new List<string>();
         private string _organizationRoleName;
@@ -125,6 +126,11 @@ namespace Amazon.ManagedGrafana.Model
         /// Specifies the Amazon Web Services data sources that have been configured to have IAM
         /// roles and permissions created to allow Amazon Managed Grafana to read data from these
         /// sources.
+        /// </para>
+        ///  
+        /// <para>
+        /// This list is only used when the workspace was created through the Amazon Web Services
+        /// console, and the <code>permissionType</code> is <code>SERVICE_MANAGED</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -331,6 +337,24 @@ namespace Amazon.ManagedGrafana.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkAccessControl. 
+        /// <para>
+        /// The configuration settings for network access to your workspace.
+        /// </para>
+        /// </summary>
+        public NetworkAccessConfiguration NetworkAccessControl
+        {
+            get { return this._networkAccessControl; }
+            set { this._networkAccessControl = value; }
+        }
+
+        // Check to see if NetworkAccessControl property is set
+        internal bool IsSetNetworkAccessControl()
+        {
+            return this._networkAccessControl != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NotificationDestinations. 
         /// <para>
         /// The Amazon Web Services notification channels that Amazon Managed Grafana can automatically
@@ -392,21 +416,30 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property PermissionType. 
         /// <para>
-        /// If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates
+        /// If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the
+        /// Amazon Managed Grafana console, then Amazon Managed Grafana automatically creates
         /// the IAM roles and provisions the permissions that the workspace needs to use Amazon
         /// Web Services data sources and notification channels.
         /// </para>
         ///  
         /// <para>
-        /// If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself.
-        /// If you are creating this workspace in a member account of an organization and that
-        /// account is not a delegated administrator account, and you want the workspace to access
-        /// data sources in other Amazon Web Services accounts in the organization, you must choose
-        /// <code>CUSTOMER_MANAGED</code>.
+        /// If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions
+        /// yourself.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
+        /// If you are working with a workspace in a member account of an organization and that
+        /// account is not a delegated administrator account, and you want the workspace to access
+        /// data sources in other Amazon Web Services accounts in the organization, this parameter
+        /// must be set to <code>CUSTOMER_MANAGED</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about converting between customer and service managed, see <a
+        /// href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+        /// permissions for data sources and notification channels</a>. For more information about
+        /// the roles and permissions that must be managed for customer managed workspaces, see
+        /// <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
         /// Managed Grafana permissions and policies for Amazon Web Services data sources and
         /// notification channels</a> 
         /// </para>

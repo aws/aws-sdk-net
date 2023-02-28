@@ -1289,9 +1289,17 @@ namespace Amazon.DataSync
         /// </summary>
         public static readonly SmbVersion AUTOMATIC = new SmbVersion("AUTOMATIC");
         /// <summary>
+        /// Constant SMB1 for SmbVersion
+        /// </summary>
+        public static readonly SmbVersion SMB1 = new SmbVersion("SMB1");
+        /// <summary>
         /// Constant SMB2 for SmbVersion
         /// </summary>
         public static readonly SmbVersion SMB2 = new SmbVersion("SMB2");
+        /// <summary>
+        /// Constant SMB2_0 for SmbVersion
+        /// </summary>
+        public static readonly SmbVersion SMB2_0 = new SmbVersion("SMB2_0");
         /// <summary>
         /// Constant SMB3 for SmbVersion
         /// </summary>

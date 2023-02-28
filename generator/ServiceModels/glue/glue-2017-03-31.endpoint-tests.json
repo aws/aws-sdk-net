@@ -547,7 +547,7 @@
             }
         },
         {
-            "documentation": "For custom endpoint with fips disabled and dualstack disabled",
+            "documentation": "For custom endpoint with region set and fips disabled and dualstack disabled",
             "expect": {
                 "endpoint": {
                     "url": "https://example.com"
@@ -555,6 +555,19 @@
             },
             "params": {
                 "Region": "us-east-1",
+                "UseDualStack": false,
+                "UseFIPS": false,
+                "Endpoint": "https://example.com"
+            }
+        },
+        {
+            "documentation": "For custom endpoint with region not set and fips disabled and dualstack disabled",
+            "expect": {
+                "endpoint": {
+                    "url": "https://example.com"
+                }
+            },
+            "params": {
                 "UseDualStack": false,
                 "UseFIPS": false,
                 "Endpoint": "https://example.com"

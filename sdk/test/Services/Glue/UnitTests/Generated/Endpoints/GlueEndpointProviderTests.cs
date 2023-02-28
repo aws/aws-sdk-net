@@ -661,11 +661,26 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Glue")]
-        [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
+        [Description("For custom endpoint with region set and fips disabled and dualstack disabled")]
+        public void For_custom_endpoint_with_region_set_and_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new GlueEndpointParameters();
             parameters["Region"] = "us-east-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonGlueEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://example.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Glue")]
+        [Description("For custom endpoint with region not set and fips disabled and dualstack disabled")]
+        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_and_dualstack_disabled_Test()
+        {
+            var parameters = new GlueEndpointParameters();
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";

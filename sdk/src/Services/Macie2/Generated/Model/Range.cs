@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies the location of an occurrence of sensitive data in a non-binary text file,
-    /// such as an HTML, TXT, or XML file.
+    /// Specifies the location of an occurrence of sensitive data in an email message or a
+    /// non-binary text file such as an HTML, TXT, or XML file.
     /// </summary>
     public partial class Range
     {

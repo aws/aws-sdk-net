@@ -41,7 +41,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property IndexArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the upated place index resource. Used to specify
-        /// a resource across AWS.
+        /// a resource across Amazon Web Services.
         /// </para>
         ///  <ul> <li> 
         /// <para>

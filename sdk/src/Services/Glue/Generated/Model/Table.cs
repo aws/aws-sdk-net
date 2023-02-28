@@ -329,8 +329,23 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TableType. 
         /// <para>
-        /// The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).
+        /// The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code>
+        /// type. Other services, such as Athena, may create tables with additional table types.
+        /// 
         /// </para>
+        ///  
+        /// <para>
+        /// Glue related table types:
+        /// </para>
+        ///  <dl> <dt>EXTERNAL_TABLE</dt> <dd> 
+        /// <para>
+        /// Hive compatible attribute - indicates a non-Hive managed table.
+        /// </para>
+        ///  </dd> <dt>GOVERNED</dt> <dd> 
+        /// <para>
+        /// Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Max=255)]
         public string TableType
@@ -404,7 +419,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ViewExpandedText. 
         /// <para>
-        /// If the table is a view, the expanded text of the view; otherwise <code>null</code>.
+        /// Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
         /// </para>
         /// </summary>
         [AWSProperty(Max=409600)]
@@ -423,7 +438,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ViewOriginalText. 
         /// <para>
-        /// If the table is a view, the original text of the view; otherwise <code>null</code>.
+        /// Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
+        /// If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded
+        /// in base64.
         /// </para>
         /// </summary>
         [AWSProperty(Max=409600)]

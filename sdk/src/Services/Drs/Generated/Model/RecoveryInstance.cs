@@ -40,6 +40,7 @@ namespace Amazon.Drs.Model
         private RecoveryInstanceFailback _failback;
         private bool? _isDrill;
         private string _jobid;
+        private string _originAvailabilityZone;
         private OriginEnvironment _originEnvironment;
         private string _pointInTimeSnapshotDateTime;
         private string _recoveryInstanceID;
@@ -177,10 +178,29 @@ namespace Amazon.Drs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OriginAvailabilityZone. 
+        /// <para>
+        /// AWS availability zone associated with the recovery instance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=255)]
+        public string OriginAvailabilityZone
+        {
+            get { return this._originAvailabilityZone; }
+            set { this._originAvailabilityZone = value; }
+        }
+
+        // Check to see if OriginAvailabilityZone property is set
+        internal bool IsSetOriginAvailabilityZone()
+        {
+            return this._originAvailabilityZone != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OriginEnvironment. 
         /// <para>
         /// Environment (On Premises / AWS) of the instance that the recovery instance originated
-        /// from. 
+        /// from.
         /// </para>
         /// </summary>
         public OriginEnvironment OriginEnvironment

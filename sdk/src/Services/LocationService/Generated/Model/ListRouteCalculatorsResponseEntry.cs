@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// A route calculator resource listed in your AWS account.
+    /// A route calculator resource listed in your Amazon Web Services account.
     /// </summary>
     public partial class ListRouteCalculatorsResponseEntry
     {

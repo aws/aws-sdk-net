@@ -225,6 +225,56 @@ namespace Amazon.Lambda
 
 
     /// <summary>
+    /// Constants used for properties of type FullDocument.
+    /// </summary>
+    public class FullDocument : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for FullDocument
+        /// </summary>
+        public static readonly FullDocument Default = new FullDocument("Default");
+        /// <summary>
+        /// Constant UpdateLookup for FullDocument
+        /// </summary>
+        public static readonly FullDocument UpdateLookup = new FullDocument("UpdateLookup");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FullDocument(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FullDocument FindValue(string value)
+        {
+            return FindValue<FullDocument>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FullDocument(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FunctionResponseType.
     /// </summary>
     public class FunctionResponseType : ConstantClass

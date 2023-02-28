@@ -2,11 +2,11 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AddDraftAppVersionResourceMappingsRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AddDraftAppVersionResourceMappingsResponse.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AddDraftAppVersionResourceMappingsResponse.AppVersion</property>
@@ -29,11 +29,84 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.CreateAppRequest.PolicyArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.CreateAppVersionAppComponentRequest.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.CreateAppVersionAppComponentRequest.ClientToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.CreateAppVersionAppComponentRequest.Id</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.CreateAppVersionAppComponentRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.CreateAppVersionAppComponentRequest.Type</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.CreateAppVersionAppComponentResponse.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.CreateAppVersionAppComponentResponse.AppVersion</property>
+    <pattern>^\S{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.CreateAppVersionResourceRequest.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.CreateAppVersionResourceRequest.AwsAccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.CreateAppVersionResourceRequest.AwsRegion</property>
+    <pattern>^[a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.CreateAppVersionResourceRequest.ClientToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.CreateAppVersionResourceRequest.PhysicalResourceId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.CreateAppVersionResourceRequest.ResourceName</property>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9_\-]{1,59}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.CreateAppVersionResourceRequest.ResourceType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.CreateAppVersionResourceResponse.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.CreateAppVersionResourceResponse.AppVersion</property>
+    <pattern>^\S{1,50}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.CreateRecommendationTemplateRequest.AssessmentArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.CreateRecommendationTemplateRequest.BucketName</property>
@@ -66,7 +139,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DeleteAppRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DeleteAppRequest.ClientToken</property>
@@ -76,11 +149,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DeleteAppResponse.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DeleteAppAssessmentRequest.AssessmentArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DeleteAppAssessmentRequest.ClientToken</property>
@@ -90,7 +163,83 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DeleteAppAssessmentResponse.AssessmentArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DeleteAppInputSourceRequest.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DeleteAppInputSourceRequest.ClientToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DeleteAppInputSourceRequest.SourceArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DeleteAppInputSourceResponse.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DeleteAppVersionAppComponentRequest.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DeleteAppVersionAppComponentRequest.ClientToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DeleteAppVersionAppComponentRequest.Id</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DeleteAppVersionAppComponentResponse.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DeleteAppVersionAppComponentResponse.AppVersion</property>
+    <pattern>^\S{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DeleteAppVersionResourceRequest.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DeleteAppVersionResourceRequest.AwsAccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DeleteAppVersionResourceRequest.AwsRegion</property>
+    <pattern>^[a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DeleteAppVersionResourceRequest.ClientToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DeleteAppVersionResourceRequest.PhysicalResourceId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DeleteAppVersionResourceRequest.ResourceName</property>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9_\-]{1,59}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DeleteAppVersionResourceResponse.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DeleteAppVersionResourceResponse.AppVersion</property>
+    <pattern>^\S{1,50}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DeleteRecommendationTemplateRequest.ClientToken</property>
@@ -100,11 +249,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DeleteRecommendationTemplateRequest.RecommendationTemplateArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DeleteRecommendationTemplateResponse.RecommendationTemplateArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DeleteResiliencyPolicyRequest.ClientToken</property>
@@ -114,23 +263,93 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DeleteResiliencyPolicyRequest.PolicyArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DeleteResiliencyPolicyResponse.PolicyArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DescribeAppRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DescribeAppAssessmentRequest.AssessmentArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DescribeAppVersionRequest.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DescribeAppVersionRequest.AppVersion</property>
+    <pattern>^\S{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DescribeAppVersionResponse.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DescribeAppVersionResponse.AppVersion</property>
+    <pattern>^\S{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DescribeAppVersionAppComponentRequest.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DescribeAppVersionAppComponentRequest.AppVersion</property>
+    <pattern>^\S{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DescribeAppVersionAppComponentRequest.Id</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DescribeAppVersionAppComponentResponse.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DescribeAppVersionAppComponentResponse.AppVersion</property>
+    <pattern>^\S{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DescribeAppVersionResourceRequest.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DescribeAppVersionResourceRequest.AppVersion</property>
+    <pattern>^\S{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DescribeAppVersionResourceRequest.AwsAccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DescribeAppVersionResourceRequest.AwsRegion</property>
+    <pattern>^[a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DescribeAppVersionResourceRequest.PhysicalResourceId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DescribeAppVersionResourceRequest.ResourceName</property>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9_\-]{1,59}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DescribeAppVersionResourceResponse.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.DescribeAppVersionResourceResponse.AppVersion</property>
+    <pattern>^\S{1,50}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DescribeAppVersionResourcesResolutionStatusRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DescribeAppVersionResourcesResolutionStatusRequest.AppVersion</property>
@@ -143,7 +362,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DescribeAppVersionResourcesResolutionStatusResponse.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DescribeAppVersionResourcesResolutionStatusResponse.AppVersion</property>
@@ -161,7 +380,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DescribeAppVersionTemplateRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DescribeAppVersionTemplateRequest.AppVersion</property>
@@ -169,7 +388,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DescribeAppVersionTemplateResponse.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DescribeAppVersionTemplateResponse.AppTemplateBody</property>
@@ -183,11 +402,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DescribeDraftAppVersionResourcesImportStatusRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DescribeDraftAppVersionResourcesImportStatusResponse.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DescribeDraftAppVersionResourcesImportStatusResponse.AppVersion</property>
@@ -200,15 +419,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DescribeResiliencyPolicyRequest.PolicyArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ImportResourcesToDraftAppVersionRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ImportResourcesToDraftAppVersionResponse.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ImportResourcesToDraftAppVersionResponse.AppVersion</property>
@@ -216,7 +435,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListAlarmRecommendationsRequest.AssessmentArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListAlarmRecommendationsRequest.MaxResults</property>
@@ -233,7 +452,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListAppAssessmentsRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListAppAssessmentsRequest.AssessmentName</property>
@@ -254,7 +473,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListAppComponentCompliancesRequest.AssessmentArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListAppComponentCompliancesRequest.MaxResults</property>
@@ -271,7 +490,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListAppComponentRecommendationsRequest.AssessmentArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListAppComponentRecommendationsRequest.MaxResults</property>
@@ -287,8 +506,29 @@
     <pattern>^\S{1,2000}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ListAppInputSourcesRequest.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ListAppInputSourcesRequest.AppVersion</property>
+    <pattern>^\S{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ListAppInputSourcesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ListAppInputSourcesRequest.NextToken</property>
+    <pattern>^\S{1,2000}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ListAppInputSourcesResponse.NextToken</property>
+    <pattern>^\S{1,2000}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListAppsRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListAppsRequest.MaxResults</property>
@@ -308,8 +548,37 @@
     <pattern>^\S{1,2000}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ListAppVersionAppComponentsRequest.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ListAppVersionAppComponentsRequest.AppVersion</property>
+    <pattern>^\S{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ListAppVersionAppComponentsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ListAppVersionAppComponentsRequest.NextToken</property>
+    <pattern>^\S{1,2000}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ListAppVersionAppComponentsResponse.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ListAppVersionAppComponentsResponse.AppVersion</property>
+    <pattern>^\S{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ListAppVersionAppComponentsResponse.NextToken</property>
+    <pattern>^\S{1,2000}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListAppVersionResourceMappingsRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListAppVersionResourceMappingsRequest.AppVersion</property>
@@ -330,7 +599,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListAppVersionResourcesRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListAppVersionResourcesRequest.AppVersion</property>
@@ -361,7 +630,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListAppVersionsRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListAppVersionsRequest.MaxResults</property>
@@ -378,7 +647,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListRecommendationTemplatesRequest.AssessmentArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListRecommendationTemplatesRequest.MaxResults</property>
@@ -395,7 +664,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListRecommendationTemplatesRequest.RecommendationTemplateArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListRecommendationTemplatesResponse.NextToken</property>
@@ -420,7 +689,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListSopRecommendationsRequest.AssessmentArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListSopRecommendationsRequest.MaxResults</property>
@@ -450,11 +719,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListTagsForResourceRequest.ResourceArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListTestRecommendationsRequest.AssessmentArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListTestRecommendationsRequest.MaxResults</property>
@@ -471,7 +740,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListUnsupportedAppVersionResourcesRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListUnsupportedAppVersionResourcesRequest.AppVersion</property>
@@ -502,11 +771,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.PublishAppVersionRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.PublishAppVersionResponse.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.PublishAppVersionResponse.AppVersion</property>
@@ -514,7 +783,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.PutDraftAppVersionTemplateRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.PutDraftAppVersionTemplateRequest.AppTemplateBody</property>
@@ -524,7 +793,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.PutDraftAppVersionTemplateResponse.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.PutDraftAppVersionTemplateResponse.AppVersion</property>
@@ -532,11 +801,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.RemoveDraftAppVersionResourceMappingsRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.RemoveDraftAppVersionResourceMappingsResponse.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.RemoveDraftAppVersionResourceMappingsResponse.AppVersion</property>
@@ -544,7 +813,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ResolveAppVersionResourcesRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ResolveAppVersionResourcesRequest.AppVersion</property>
@@ -552,7 +821,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ResolveAppVersionResourcesResponse.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ResolveAppVersionResourcesResponse.AppVersion</property>
@@ -565,7 +834,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.StartAppAssessmentRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.StartAppAssessmentRequest.AppVersion</property>
@@ -583,15 +852,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.TagResourceRequest.ResourceArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.UntagResourceRequest.ResourceArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.UpdateAppRequest.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.UpdateAppRequest.Description</property>
@@ -600,11 +869,84 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.UpdateAppRequest.PolicyArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateAppVersionRequest.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateAppVersionResponse.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateAppVersionResponse.AppVersion</property>
+    <pattern>^\S{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateAppVersionAppComponentRequest.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateAppVersionAppComponentRequest.Id</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateAppVersionAppComponentRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateAppVersionAppComponentRequest.Type</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateAppVersionAppComponentResponse.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateAppVersionAppComponentResponse.AppVersion</property>
+    <pattern>^\S{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateAppVersionResourceRequest.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateAppVersionResourceRequest.AwsAccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateAppVersionResourceRequest.AwsRegion</property>
+    <pattern>^[a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateAppVersionResourceRequest.PhysicalResourceId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateAppVersionResourceRequest.ResourceName</property>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9_\-]{1,59}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateAppVersionResourceRequest.ResourceType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateAppVersionResourceResponse.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateAppVersionResourceResponse.AppVersion</property>
+    <pattern>^\S{1,50}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.UpdateResiliencyPolicyRequest.PolicyArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.UpdateResiliencyPolicyRequest.PolicyDescription</property>
@@ -617,7 +959,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AlarmRecommendation.AppComponentName</property>
-    <pattern>^\S{1,100}$</pattern>
+    <pattern>^\S{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AlarmRecommendation.Description</property>
@@ -645,7 +987,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.App.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.App.Description</property>
@@ -658,11 +1000,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.App.PolicyArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AppAssessment.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AppAssessment.AppVersion</property>
@@ -670,7 +1012,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AppAssessment.AssessmentArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AppAssessment.AssessmentName</property>
@@ -683,7 +1025,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AppAssessmentSummary.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AppAssessmentSummary.AppVersion</property>
@@ -691,7 +1033,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AppAssessmentSummary.AssessmentArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AppAssessmentSummary.AssessmentName</property>
@@ -701,6 +1043,11 @@
     <property>Amazon.ResilienceHub.Model.AppAssessmentSummary.Message</property>
     <min>1</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.AppComponent.Id</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AppComponent.Name</property>
@@ -714,7 +1061,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AppComponentCompliance.AppComponentName</property>
-    <pattern>^\S{1,100}$</pattern>
+    <pattern>^\S{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AppComponentCompliance.Message</property>
@@ -722,8 +1069,17 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.AppInputSource.SourceArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.AppInputSource.SourceName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AppSummary.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AppSummary.Description</property>
@@ -740,11 +1096,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ComponentRecommendation.AppComponentName</property>
-    <pattern>^\S{1,100}$</pattern>
+    <pattern>^\S{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ConfigRecommendation.AppComponentName</property>
-    <pattern>^\S{1,100}$</pattern>
+    <pattern>^\S{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ConfigRecommendation.Description</property>
@@ -896,11 +1252,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.RecommendationTemplate.AppArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.RecommendationTemplate.AssessmentArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.RecommendationTemplate.Message</property>
@@ -913,11 +1269,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.RecommendationTemplate.RecommendationTemplateArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ResiliencyPolicy.PolicyArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ResiliencyPolicy.PolicyDescription</property>
@@ -985,7 +1341,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.SopRecommendation.AppComponentName</property>
-    <pattern>^\S{1,100}$</pattern>
+    <pattern>^\S{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.SopRecommendation.Description</property>
@@ -1019,7 +1375,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.TestRecommendation.AppComponentName</property>
-    <pattern>^\S{1,100}$</pattern>
+    <pattern>^\S{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.TestRecommendation.Description</property>

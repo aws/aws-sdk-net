@@ -489,6 +489,10 @@ namespace Amazon.Private5G
         /// </summary>
         public static readonly NetworkResourceStatus AVAILABLE = new NetworkResourceStatus("AVAILABLE");
         /// <summary>
+        /// Constant CREATING_SHIPPING_LABEL for NetworkResourceStatus
+        /// </summary>
+        public static readonly NetworkResourceStatus CREATING_SHIPPING_LABEL = new NetworkResourceStatus("CREATING_SHIPPING_LABEL");
+        /// <summary>
         /// Constant DELETED for NetworkResourceStatus
         /// </summary>
         public static readonly NetworkResourceStatus DELETED = new NetworkResourceStatus("DELETED");
@@ -812,6 +816,56 @@ namespace Amazon.Private5G
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OrderFilterKeys(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UpdateType.
+    /// </summary>
+    public class UpdateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant REPLACE for UpdateType
+        /// </summary>
+        public static readonly UpdateType REPLACE = new UpdateType("REPLACE");
+        /// <summary>
+        /// Constant RETURN for UpdateType
+        /// </summary>
+        public static readonly UpdateType RETURN = new UpdateType("RETURN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UpdateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdateType FindValue(string value)
+        {
+            return FindValue<UpdateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdateType(string value)
         {
             return FindValue(value);
         }

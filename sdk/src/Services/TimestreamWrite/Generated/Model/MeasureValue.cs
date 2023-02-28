@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
-    /// MeasureValue represents the data attribute of the time series. For example, the CPU
-    /// utilization of an EC2 instance or the RPM of a wind turbine are measures. MeasureValue
-    /// has both name and value. 
+    /// Represents the data attribute of the time series. For example, the CPU utilization
+    /// of an EC2 instance or the RPM of a wind turbine are measures. MeasureValue has both
+    /// name and value. 
     /// 
     ///  
     /// <para>
@@ -49,12 +49,12 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  Name of the MeasureValue. 
+        ///  The name of the MeasureValue. 
         /// </para>
         ///  
         /// <para>
-        ///  For constraints on MeasureValue names, refer to <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">
-        /// Naming Constraints</a> in the Timestream developer guide.
+        ///  For constraints on MeasureValue names, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">
+        /// Naming Constraints</a> in the Amazon Timestream Developer Guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -73,7 +73,7 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Contains the data type of the MeasureValue for the time series data point.
+        /// Contains the data type of the MeasureValue for the time-series data point.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -92,7 +92,7 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  Value for the MeasureValue. 
+        ///  The value for the MeasureValue. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

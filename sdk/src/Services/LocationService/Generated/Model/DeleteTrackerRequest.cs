@@ -30,7 +30,7 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTracker operation.
-    /// Deletes a tracker resource from your AWS account.
+    /// Deletes a tracker resource from your Amazon Web Services account.
     /// 
     ///  <note> 
     /// <para>

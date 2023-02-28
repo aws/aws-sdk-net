@@ -74,6 +74,17 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AccountAccessType);
                 }
 
+                if(publicRequest.IsSetNetworkAccessControl())
+                {
+                    context.Writer.WritePropertyName("networkAccessControl");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NetworkAccessConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NetworkAccessControl, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetOrganizationRoleName())
                 {
                     context.Writer.WritePropertyName("organizationRoleName");
@@ -84,6 +95,12 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("permissionType");
                     context.Writer.Write(publicRequest.PermissionType);
+                }
+
+                if(publicRequest.IsSetRemoveNetworkAccessConfiguration())
+                {
+                    context.Writer.WritePropertyName("removeNetworkAccessConfiguration");
+                    context.Writer.Write(publicRequest.RemoveNetworkAccessConfiguration);
                 }
 
                 if(publicRequest.IsSetRemoveVpcConfiguration())

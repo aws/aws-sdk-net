@@ -91,11 +91,17 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
+        /// Use the <code>AWSManagedRulesATPRuleSet</code> configuration object for the account
+        /// takeover prevention managed rule group, to provide information such as the sign-in
+        /// page of your application and the type of content to accept or reject from the client.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         /// Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure
         /// the protection level that you want the Bot Control rule group to use. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public List<ManagedRuleGroupConfig> ManagedRuleGroupConfigs
         {
             get { return this._managedRuleGroupConfigs; }

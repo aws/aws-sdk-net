@@ -3129,7 +3129,7 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Get the position information for a given wireless device or a wireless gateway resource.
-        /// The postion information uses the <a href="https://gisgeography.com/wgs84-world-geodetic-system/">
+        /// The position information uses the <a href="https://gisgeography.com/wgs84-world-geodetic-system/">
         /// World Geodetic System (WGS84)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePosition service method.</param>
@@ -3157,7 +3157,7 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Get the position information for a given wireless device or a wireless gateway resource.
-        /// The postion information uses the <a href="https://gisgeography.com/wgs84-world-geodetic-system/">
+        /// The position information uses the <a href="https://gisgeography.com/wgs84-world-geodetic-system/">
         /// World Geodetic System (WGS84)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePosition service method.</param>
@@ -5931,7 +5931,7 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Update the position information of a given wireless device or a wireless gateway resource.
-        /// The postion coordinates are based on the <a href="https://gisgeography.com/wgs84-world-geodetic-system/">
+        /// The position coordinates are based on the <a href="https://gisgeography.com/wgs84-world-geodetic-system/">
         /// World Geodetic System (WGS84)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResourcePosition service method.</param>
@@ -5959,7 +5959,7 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Update the position information of a given wireless device or a wireless gateway resource.
-        /// The postion coordinates are based on the <a href="https://gisgeography.com/wgs84-world-geodetic-system/">
+        /// The position coordinates are based on the <a href="https://gisgeography.com/wgs84-world-geodetic-system/">
         /// World Geodetic System (WGS84)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResourcePosition service method.</param>

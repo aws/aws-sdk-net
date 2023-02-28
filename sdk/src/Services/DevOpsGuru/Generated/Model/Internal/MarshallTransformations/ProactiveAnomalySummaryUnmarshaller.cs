@@ -88,6 +88,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssociatedInsightId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

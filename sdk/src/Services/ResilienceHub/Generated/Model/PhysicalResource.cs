@@ -30,16 +30,51 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Defines a physical resource. A physical resource is a resource that exists in your
-    /// account. It can be identified using an Amazon Resource Name (ARN) or a Resilience
+    /// account. It can be identified using an Amazon Resource Name (ARN) or an AWS Resilience
     /// Hub-native identifier.
     /// </summary>
     public partial class PhysicalResource
     {
+        private Dictionary<string, List<string>> _additionalInfo = new Dictionary<string, List<string>>();
         private List<AppComponent> _appComponents = new List<AppComponent>();
+        private bool? _excluded;
         private LogicalResourceId _logicalResourceId;
         private PhysicalResourceId _physicalResourceId;
         private string _resourceName;
         private string _resourceType;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalInfo. 
+        /// <para>
+        /// Additional configuration parameters for an AWS Resilience Hub application.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, this parameter accepts a key-value mapping (in a string format) of only
+        /// one failover region and one associated account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Key: <code>"failover-regions"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code>
+        /// 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public Dictionary<string, List<string>> AdditionalInfo
+        {
+            get { return this._additionalInfo; }
+            set { this._additionalInfo = value; }
+        }
+
+        // Check to see if AdditionalInfo property is set
+        internal bool IsSetAdditionalInfo()
+        {
+            return this._additionalInfo != null && this._additionalInfo.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AppComponents. 
@@ -57,6 +92,24 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetAppComponents()
         {
             return this._appComponents != null && this._appComponents.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Excluded. 
+        /// <para>
+        /// Indicates if a resource is included or excluded from the assessment.
+        /// </para>
+        /// </summary>
+        public bool Excluded
+        {
+            get { return this._excluded.GetValueOrDefault(); }
+            set { this._excluded = value; }
+        }
+
+        // Check to see if Excluded property is set
+        internal bool IsSetExcluded()
+        {
+            return this._excluded.HasValue; 
         }
 
         /// <summary>

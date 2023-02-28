@@ -353,6 +353,60 @@ namespace Amazon.FraudDetector
 
 
     /// <summary>
+    /// Constants used for properties of type ListUpdateMode.
+    /// </summary>
+    public class ListUpdateMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPEND for ListUpdateMode
+        /// </summary>
+        public static readonly ListUpdateMode APPEND = new ListUpdateMode("APPEND");
+        /// <summary>
+        /// Constant REMOVE for ListUpdateMode
+        /// </summary>
+        public static readonly ListUpdateMode REMOVE = new ListUpdateMode("REMOVE");
+        /// <summary>
+        /// Constant REPLACE for ListUpdateMode
+        /// </summary>
+        public static readonly ListUpdateMode REPLACE = new ListUpdateMode("REPLACE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListUpdateMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListUpdateMode FindValue(string value)
+        {
+            return FindValue<ListUpdateMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListUpdateMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ModelEndpointStatus.
     /// </summary>
     public class ModelEndpointStatus : ConstantClass

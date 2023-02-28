@@ -2581,6 +2581,126 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type BandwidthReductionFilterSharpening.
+    /// </summary>
+    public class BandwidthReductionFilterSharpening : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for BandwidthReductionFilterSharpening
+        /// </summary>
+        public static readonly BandwidthReductionFilterSharpening HIGH = new BandwidthReductionFilterSharpening("HIGH");
+        /// <summary>
+        /// Constant LOW for BandwidthReductionFilterSharpening
+        /// </summary>
+        public static readonly BandwidthReductionFilterSharpening LOW = new BandwidthReductionFilterSharpening("LOW");
+        /// <summary>
+        /// Constant MEDIUM for BandwidthReductionFilterSharpening
+        /// </summary>
+        public static readonly BandwidthReductionFilterSharpening MEDIUM = new BandwidthReductionFilterSharpening("MEDIUM");
+        /// <summary>
+        /// Constant OFF for BandwidthReductionFilterSharpening
+        /// </summary>
+        public static readonly BandwidthReductionFilterSharpening OFF = new BandwidthReductionFilterSharpening("OFF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BandwidthReductionFilterSharpening(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BandwidthReductionFilterSharpening FindValue(string value)
+        {
+            return FindValue<BandwidthReductionFilterSharpening>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BandwidthReductionFilterSharpening(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BandwidthReductionFilterStrength.
+    /// </summary>
+    public class BandwidthReductionFilterStrength : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for BandwidthReductionFilterStrength
+        /// </summary>
+        public static readonly BandwidthReductionFilterStrength AUTO = new BandwidthReductionFilterStrength("AUTO");
+        /// <summary>
+        /// Constant HIGH for BandwidthReductionFilterStrength
+        /// </summary>
+        public static readonly BandwidthReductionFilterStrength HIGH = new BandwidthReductionFilterStrength("HIGH");
+        /// <summary>
+        /// Constant LOW for BandwidthReductionFilterStrength
+        /// </summary>
+        public static readonly BandwidthReductionFilterStrength LOW = new BandwidthReductionFilterStrength("LOW");
+        /// <summary>
+        /// Constant MEDIUM for BandwidthReductionFilterStrength
+        /// </summary>
+        public static readonly BandwidthReductionFilterStrength MEDIUM = new BandwidthReductionFilterStrength("MEDIUM");
+        /// <summary>
+        /// Constant OFF for BandwidthReductionFilterStrength
+        /// </summary>
+        public static readonly BandwidthReductionFilterStrength OFF = new BandwidthReductionFilterStrength("OFF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BandwidthReductionFilterStrength(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BandwidthReductionFilterStrength FindValue(string value)
+        {
+            return FindValue<BandwidthReductionFilterStrength>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BandwidthReductionFilterStrength(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BillingTagsSource.
     /// </summary>
     public class BillingTagsSource : ConstantClass
@@ -11446,6 +11566,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator H265WriteMp4PackagingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HDRToSDRToneMapper.
+    /// </summary>
+    public class HDRToSDRToneMapper : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRESERVE_DETAILS for HDRToSDRToneMapper
+        /// </summary>
+        public static readonly HDRToSDRToneMapper PRESERVE_DETAILS = new HDRToSDRToneMapper("PRESERVE_DETAILS");
+        /// <summary>
+        /// Constant VIBRANT for HDRToSDRToneMapper
+        /// </summary>
+        public static readonly HDRToSDRToneMapper VIBRANT = new HDRToSDRToneMapper("VIBRANT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HDRToSDRToneMapper(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HDRToSDRToneMapper FindValue(string value)
+        {
+            return FindValue<HDRToSDRToneMapper>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HDRToSDRToneMapper(string value)
         {
             return FindValue(value);
         }

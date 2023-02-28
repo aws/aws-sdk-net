@@ -30,7 +30,10 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Provides information about the number of S3 buckets that are or aren't shared with
-    /// other Amazon Web Services accounts.
+    /// other Amazon Web Services accounts, Amazon CloudFront origin access identities (OAIs),
+    /// or CloudFront origin access controls (OACs). In this data, an <i>Amazon Macie organization</i>
+    /// is defined as a set of Macie accounts that are centrally managed as a group of related
+    /// accounts through Organizations or by Macie invitation.
     /// </summary>
     public partial class BucketCountBySharedAccessType
     {
@@ -42,8 +45,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property External. 
         /// <para>
-        /// The total number of buckets that are shared with an Amazon Web Services account that
-        /// isn't part of the same Amazon Macie organization.
+        /// The total number of buckets that are shared with one or more of the following or any
+        /// combination of the following: an Amazon Web Services account that isn't in the same
+        /// Amazon Macie organization, an Amazon CloudFront OAI, or a CloudFront OAC.
         /// </para>
         /// </summary>
         public long External
@@ -61,8 +65,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Internal. 
         /// <para>
-        /// The total number of buckets that are shared with an Amazon Web Services account that's
-        /// part of the same Amazon Macie organization.
+        /// The total number of buckets that are shared with one or more Amazon Web Services accounts
+        /// in the same Amazon Macie organization. These buckets aren't shared with Amazon CloudFront
+        /// OAIs or OACs.
         /// </para>
         /// </summary>
         public long Internal
@@ -80,7 +85,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property NotShared. 
         /// <para>
-        /// The total number of buckets that aren't shared with other Amazon Web Services accounts.
+        /// The total number of buckets that aren't shared with other Amazon Web Services accounts,
+        /// Amazon CloudFront OAIs, or CloudFront OACs.
         /// </para>
         /// </summary>
         public long NotShared
@@ -100,7 +106,7 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// The total number of buckets that Amazon Macie wasn't able to evaluate shared access
         /// settings for. Macie can't determine whether these buckets are shared with other Amazon
-        /// Web Services accounts.
+        /// Web Services accounts, Amazon CloudFront OAIs, or CloudFront OACs.
         /// </para>
         /// </summary>
         public long Unknown

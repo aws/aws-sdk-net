@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Details for your use of the Bot Control managed rule group, used in <code>ManagedRuleGroupConfig</code>.
+    /// Details for your use of the Bot Control managed rule group, <code>AWSManagedRulesBotControlRuleSet</code>.
+    /// This configuration is used in <code>ManagedRuleGroupConfig</code>.
     /// </summary>
     public partial class AWSManagedRulesBotControlRuleSet
     {

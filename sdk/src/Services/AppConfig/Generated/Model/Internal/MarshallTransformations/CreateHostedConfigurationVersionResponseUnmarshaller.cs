@@ -59,6 +59,8 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 response.ContentType = context.ResponseData.GetHeaderValue("Content-Type");
             if (context.ResponseData.IsHeaderPresent("Description"))
                 response.Description = context.ResponseData.GetHeaderValue("Description");
+            if (context.ResponseData.IsHeaderPresent("VersionLabel"))
+                response.VersionLabel = context.ResponseData.GetHeaderValue("VersionLabel");
             if (context.ResponseData.IsHeaderPresent("Version-Number"))
                 response.VersionNumber = int.Parse(context.ResponseData.GetHeaderValue("Version-Number"), CultureInfo.InvariantCulture);
 

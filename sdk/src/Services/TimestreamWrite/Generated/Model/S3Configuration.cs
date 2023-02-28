@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
-    /// Configuration specifing an S3 location.
+    /// The configuration that specifies an S3 location.
     /// </summary>
     public partial class S3Configuration
     {
@@ -41,7 +41,7 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        /// &gt;Bucket name of the customer S3 bucket.
+        /// The bucket name of the customer S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=63)]
@@ -60,8 +60,8 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property EncryptionOption. 
         /// <para>
-        /// Encryption option for the customer s3 location. Options are S3 server side encryption
-        /// with an S3-managed key or KMS managed key.
+        /// The encryption option for the customer S3 location. Options are S3 server-side encryption
+        /// with an S3 managed key or Amazon Web Services managed key.
         /// </para>
         /// </summary>
         public S3EncryptionOption EncryptionOption
@@ -79,7 +79,8 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// KMS key id for the customer s3 location when encrypting with a KMS managed key.
+        /// The KMS key ID for the customer S3 location when encrypting with an Amazon Web Services
+        /// managed key.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -98,7 +99,7 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property ObjectKeyPrefix. 
         /// <para>
-        /// Object key preview for the customer S3 location.
+        /// The object key preview for the customer S3 location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=928)]

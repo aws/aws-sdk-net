@@ -42,12 +42,12 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// 
     ///  
     /// <para>
-    /// In order to call this API operation, your Identity and Access Management (IAM) user
-    /// account, group, or role must be configured with permission to call the <a>DescribeAssociation</a>
-    /// API operation. If you don't have permission to call <code>DescribeAssociation</code>,
-    /// then you receive the following error: <code>An error occurred (AccessDeniedException)
-    /// when calling the UpdateAssociation operation: User: &lt;user_arn&gt; isn't authorized
-    /// to perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> 
+    /// In order to call this API operation, a user, group, or role must be granted permission
+    /// to call the <a>DescribeAssociation</a> API operation. If you don't have permission
+    /// to call <code>DescribeAssociation</code>, then you receive the following error: <code>An
+    /// error occurred (AccessDeniedException) when calling the UpdateAssociation operation:
+    /// User: &lt;user_arn&gt; isn't authorized to perform: ssm:DescribeAssociation on resource:
+    /// &lt;resource_arn&gt;</code> 
     /// </para>
     ///  <important> 
     /// <para>

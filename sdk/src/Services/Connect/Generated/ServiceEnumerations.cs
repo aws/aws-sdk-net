@@ -1389,6 +1389,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly InstanceStorageResourceType AGENT_EVENTS = new InstanceStorageResourceType("AGENT_EVENTS");
         /// <summary>
+        /// Constant ATTACHMENTS for InstanceStorageResourceType
+        /// </summary>
+        public static readonly InstanceStorageResourceType ATTACHMENTS = new InstanceStorageResourceType("ATTACHMENTS");
+        /// <summary>
         /// Constant CALL_RECORDINGS for InstanceStorageResourceType
         /// </summary>
         public static readonly InstanceStorageResourceType CALL_RECORDINGS = new InstanceStorageResourceType("CALL_RECORDINGS");
@@ -1396,6 +1400,10 @@ namespace Amazon.Connect
         /// Constant CHAT_TRANSCRIPTS for InstanceStorageResourceType
         /// </summary>
         public static readonly InstanceStorageResourceType CHAT_TRANSCRIPTS = new InstanceStorageResourceType("CHAT_TRANSCRIPTS");
+        /// <summary>
+        /// Constant CONTACT_EVALUATIONS for InstanceStorageResourceType
+        /// </summary>
+        public static readonly InstanceStorageResourceType CONTACT_EVALUATIONS = new InstanceStorageResourceType("CONTACT_EVALUATIONS");
         /// <summary>
         /// Constant CONTACT_TRACE_RECORDS for InstanceStorageResourceType
         /// </summary>

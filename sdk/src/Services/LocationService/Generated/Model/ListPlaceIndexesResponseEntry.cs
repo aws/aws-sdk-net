@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// A place index resource listed in your AWS account.
+    /// A place index resource listed in your Amazon Web Services account.
     /// </summary>
     public partial class ListPlaceIndexesResponseEntry
     {

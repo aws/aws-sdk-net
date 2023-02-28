@@ -88,6 +88,12 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Namespace", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UnitLabel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

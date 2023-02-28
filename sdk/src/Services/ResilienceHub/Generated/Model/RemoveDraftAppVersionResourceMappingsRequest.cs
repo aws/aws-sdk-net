@@ -44,9 +44,10 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+        /// The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The format for
+        /// this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +66,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppRegistryAppNames. 
         /// <para>
-        /// The names of the registered applications to remove from the resource mappings.
+        /// The names of the registered applications you want to remove from the resource mappings.
         /// </para>
         /// </summary>
         public List<string> AppRegistryAppNames
@@ -83,7 +84,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property LogicalStackNames. 
         /// <para>
-        /// The names of the CloudFormation stacks to remove from the resource mappings.
+        /// The names of the CloudFormation stacks you want to remove from the resource mappings.
         /// </para>
         /// </summary>
         public List<string> LogicalStackNames
@@ -101,7 +102,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResourceGroupNames. 
         /// <para>
-        /// The names of the resource groups to remove from the resource mappings.
+        /// The names of the resource groups you want to remove from the resource mappings.
         /// </para>
         /// </summary>
         public List<string> ResourceGroupNames
@@ -119,7 +120,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResourceNames. 
         /// <para>
-        /// The names of the resources to remove from the resource mappings.
+        /// The names of the resources you want to remove from the resource mappings.
         /// </para>
         /// </summary>
         public List<string> ResourceNames
@@ -137,7 +138,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property TerraformSourceNames. 
         /// <para>
-        ///  <pre><code>&lt;/p&gt; </code></pre>
+        /// The names of the Terraform sources you want to remove from the resource mappings.
+        /// </para>
         /// </summary>
         public List<string> TerraformSourceNames
         {

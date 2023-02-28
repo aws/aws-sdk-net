@@ -41,6 +41,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class InstanceFleetModifyConfig
     {
         private string _instanceFleetId;
+        private InstanceFleetResizingSpecifications _resizeSpecifications;
         private int? _targetOnDemandCapacity;
         private int? _targetSpotCapacity;
 
@@ -61,6 +62,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetInstanceFleetId()
         {
             return this._instanceFleetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResizeSpecifications. 
+        /// <para>
+        /// The resize specification for the instance fleet.
+        /// </para>
+        /// </summary>
+        public InstanceFleetResizingSpecifications ResizeSpecifications
+        {
+            get { return this._resizeSpecifications; }
+            set { this._resizeSpecifications = value; }
+        }
+
+        // Check to see if ResizeSpecifications property is set
+        internal bool IsSetResizeSpecifications()
+        {
+            return this._resizeSpecifications != null;
         }
 
         /// <summary>

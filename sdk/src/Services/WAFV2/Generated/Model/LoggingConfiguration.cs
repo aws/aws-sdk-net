@@ -157,7 +157,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// The parts of the request that you want to keep out of the logs. For example, if you
         /// redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs
-        /// will be <code>xxx</code>. 
+        /// will be <code>REDACTED</code>. 
         /// </para>
         ///  <note> 
         /// <para>

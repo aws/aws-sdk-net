@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private AutoPlacement _autoPlacement;
         private string _availabilityZone;
         private string _clientToken;
+        private HostMaintenance _hostMaintenance;
         private HostRecovery _hostRecovery;
         private string _instanceFamily;
         private string _instanceType;
@@ -108,6 +109,30 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostMaintenance. 
+        /// <para>
+        /// Indicates whether to enable or disable host maintenance for the Dedicated Host. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">
+        /// Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>on</code> 
+        /// </para>
+        /// </summary>
+        public HostMaintenance HostMaintenance
+        {
+            get { return this._hostMaintenance; }
+            set { this._hostMaintenance = value; }
+        }
+
+        // Check to see if HostMaintenance property is set
+        internal bool IsSetHostMaintenance()
+        {
+            return this._hostMaintenance != null;
         }
 
         /// <summary>

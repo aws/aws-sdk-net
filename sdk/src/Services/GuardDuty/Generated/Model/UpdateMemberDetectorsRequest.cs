@@ -31,6 +31,14 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Container for the parameters to the UpdateMemberDetectors operation.
     /// Contains information on member accounts to be updated.
+    /// 
+    ///  
+    /// <para>
+    /// There might be regional differences because some data sources might not be available
+    /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+    /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+    /// and endpoints</a>.
+    /// </para>
     /// </summary>
     public partial class UpdateMemberDetectorsRequest : AmazonGuardDutyRequest
     {

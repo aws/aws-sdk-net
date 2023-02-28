@@ -43,9 +43,8 @@ namespace Amazon.GuardDuty.Model
     /// </para>
     ///  
     /// <para>
-    /// If you are adding accounts by invitation use this action after GuardDuty has been
-    /// enabled in potential member accounts and before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
-    /// <code>Invite Members</code> </a>.
+    /// If you are adding accounts by invitation, use this action after GuardDuty has bee
+    /// enabled in potential member accounts and before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>.
     /// </para>
     /// </summary>
     public partial class CreateMembersRequest : AmazonGuardDutyRequest

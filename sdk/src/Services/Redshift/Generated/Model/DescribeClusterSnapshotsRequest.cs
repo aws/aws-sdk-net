@@ -191,7 +191,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: minimum 20, maximum 100.
+        /// Constraints: minimum 20, maximum 500.
         /// </para>
         /// </summary>
         public int MaxRecords

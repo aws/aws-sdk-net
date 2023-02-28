@@ -212,6 +212,14 @@ namespace Amazon.GuardDuty
         /// the GuardDuty service. To start using GuardDuty, you must create a detector in each
         /// Region where you enable the service. You can have only one detector per account per
         /// Region. All data sources are enabled in a new detector by default.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDetector service method.</param>
         /// 
@@ -232,6 +240,14 @@ namespace Amazon.GuardDuty
         /// the GuardDuty service. To start using GuardDuty, you must create a detector in each
         /// Region where you enable the service. You can have only one detector per account per
         /// Region. All data sources are enabled in a new detector by default.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDetector service method.</param>
         /// <param name="cancellationToken">
@@ -355,9 +371,8 @@ namespace Amazon.GuardDuty
         /// </para>
         ///  
         /// <para>
-        /// If you are adding accounts by invitation use this action after GuardDuty has been
-        /// enabled in potential member accounts and before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
-        /// <code>Invite Members</code> </a>.
+        /// If you are adding accounts by invitation, use this action after GuardDuty has bee
+        /// enabled in potential member accounts and before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembers service method.</param>
@@ -388,9 +403,8 @@ namespace Amazon.GuardDuty
         /// </para>
         ///  
         /// <para>
-        /// If you are adding accounts by invitation use this action after GuardDuty has been
-        /// enabled in potential member accounts and before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
-        /// <code>Invite Members</code> </a>.
+        /// If you are adding accounts by invitation, use this action after GuardDuty has bee
+        /// enabled in potential member accounts and before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembers service method.</param>
@@ -456,9 +470,9 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Generates example findings of types specified by the list of finding types. If 'NULL'
-        /// is specified for <code>findingTypes</code>, the API generates example findings of
-        /// all supported finding types.
+        /// Generates sample findings of types specified by the list of finding types. If 'NULL'
+        /// is specified for <code>findingTypes</code>, the API generates sample findings of all
+        /// supported finding types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSampleFindings service method.</param>
         /// 
@@ -475,9 +489,9 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Generates example findings of types specified by the list of finding types. If 'NULL'
-        /// is specified for <code>findingTypes</code>, the API generates example findings of
-        /// all supported finding types.
+        /// Generates sample findings of types specified by the list of finding types. If 'NULL'
+        /// is specified for <code>findingTypes</code>, the API generates sample findings of all
+        /// supported finding types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSampleFindings service method.</param>
         /// <param name="cancellationToken">
@@ -875,6 +889,14 @@ namespace Amazon.GuardDuty
         /// Returns a list of malware scans. Each member account can view the malware scans for
         /// their own accounts. An administrator can view the malware scans for all the member
         /// accounts.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMalwareScans service method.</param>
         /// 
@@ -894,6 +916,14 @@ namespace Amazon.GuardDuty
         /// Returns a list of malware scans. Each member account can view the malware scans for
         /// their own accounts. An administrator can view the malware scans for all the member
         /// accounts.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMalwareScans service method.</param>
         /// <param name="cancellationToken">
@@ -918,6 +948,14 @@ namespace Amazon.GuardDuty
         /// <summary>
         /// Returns information about the account selected as the delegated administrator for
         /// GuardDuty.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfiguration service method.</param>
         /// 
@@ -936,6 +974,14 @@ namespace Amazon.GuardDuty
         /// <summary>
         /// Returns information about the account selected as the delegated administrator for
         /// GuardDuty.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1249,6 +1295,14 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Retrieves an Amazon GuardDuty detector specified by the detectorId.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDetector service method.</param>
         /// 
@@ -1266,6 +1320,14 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Retrieves an Amazon GuardDuty detector specified by the detectorId.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDetector service method.</param>
         /// <param name="cancellationToken">
@@ -1491,6 +1553,14 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Returns the details of the malware scan settings.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMalwareScanSettings service method.</param>
         /// 
@@ -1508,6 +1578,14 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Returns the details of the malware scan settings.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMalwareScanSettings service method.</param>
         /// <param name="cancellationToken">
@@ -1575,6 +1653,14 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Describes which data sources are enabled for the member account's detector.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMemberDetectors service method.</param>
         /// 
@@ -1592,6 +1678,14 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Describes which data sources are enabled for the member account's detector.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMemberDetectors service method.</param>
         /// <param name="cancellationToken">
@@ -2453,6 +2547,14 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Updates the Amazon GuardDuty detector specified by the detectorId.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDetector service method.</param>
         /// 
@@ -2470,6 +2572,14 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Updates the Amazon GuardDuty detector specified by the detectorId.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDetector service method.</param>
         /// <param name="cancellationToken">
@@ -2613,6 +2723,14 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Updates the malware scan settings.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMalwareScanSettings service method.</param>
         /// 
@@ -2630,6 +2748,14 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Updates the malware scan settings.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMalwareScanSettings service method.</param>
         /// <param name="cancellationToken">
@@ -2653,6 +2779,14 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Contains information on member accounts to be updated.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMemberDetectors service method.</param>
         /// 
@@ -2670,6 +2804,14 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Contains information on member accounts to be updated.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMemberDetectors service method.</param>
         /// <param name="cancellationToken">
@@ -2693,6 +2835,14 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Updates the delegated administrator account with the values provided.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationConfiguration service method.</param>
         /// 
@@ -2710,6 +2860,14 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Updates the delegated administrator account with the values provided.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationConfiguration service method.</param>
         /// <param name="cancellationToken">

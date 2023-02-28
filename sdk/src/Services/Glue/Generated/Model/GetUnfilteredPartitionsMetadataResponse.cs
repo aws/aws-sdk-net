@@ -37,7 +37,11 @@ namespace Amazon.Glue.Model
         private List<UnfilteredPartition> _unfilteredPartitions = new List<UnfilteredPartition>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A continuation token, if the returned list of partitions does not include the last
+        /// one.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -52,7 +56,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UnfilteredPartitions.
+        /// Gets and sets the property UnfilteredPartitions. 
+        /// <para>
+        /// A list of requested partitions.
+        /// </para>
         /// </summary>
         public List<UnfilteredPartition> UnfilteredPartitions
         {

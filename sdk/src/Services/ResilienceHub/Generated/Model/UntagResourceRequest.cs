@@ -59,7 +59,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The keys of the tags to remove.
+        /// The keys of the tags you want to remove.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=50)]

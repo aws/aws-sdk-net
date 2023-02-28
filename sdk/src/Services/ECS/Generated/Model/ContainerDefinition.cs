@@ -222,7 +222,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DisableNetworking. 
         /// <para>
-        /// When this parameter is true, networking is disabled within the container. This parameter
+        /// When this parameter is true, networking is off within the container. This parameter
         /// maps to <code>NetworkDisabled</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a>.
@@ -1295,7 +1295,7 @@ namespace Amazon.ECS.Model
         /// operating system with the exception of the <code>nofile</code> resource limit parameter
         /// which Fargate overrides. The <code>nofile</code> resource limit sets a restriction
         /// on the number of open files that a container can use. The default <code>nofile</code>
-        /// soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+        /// soft limit is <code>1024</code> and the default hard limit is <code>4096</code>.
         /// </para>
         ///  
         /// <para>

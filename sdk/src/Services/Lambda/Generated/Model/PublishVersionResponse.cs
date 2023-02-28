@@ -297,8 +297,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property KMSKeyArn. 
         /// <para>
-        /// The KMS key that's used to encrypt the function's environment variables. This key
-        /// is returned only if you've configured a customer managed key.
+        /// The KMS key that's used to encrypt the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+        /// variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+        /// SnapStart</a> is activated, this key is also used to encrypt the function's snapshot.
+        /// This key is returned only if you've configured a customer managed key.
         /// </para>
         /// </summary>
         public string KMSKeyArn

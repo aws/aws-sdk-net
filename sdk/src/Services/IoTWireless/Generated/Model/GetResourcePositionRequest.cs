@@ -31,7 +31,7 @@ namespace Amazon.IoTWireless.Model
     /// <summary>
     /// Container for the parameters to the GetResourcePosition operation.
     /// Get the position information for a given wireless device or a wireless gateway resource.
-    /// The postion information uses the <a href="https://gisgeography.com/wgs84-world-geodetic-system/">
+    /// The position information uses the <a href="https://gisgeography.com/wgs84-world-geodetic-system/">
     /// World Geodetic System (WGS84)</a>.
     /// </summary>
     public partial class GetResourcePositionRequest : AmazonIoTWirelessRequest
@@ -43,7 +43,7 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
         /// The identifier of the resource for which position information is retrieved. It can
-        /// be the wireless device ID or the wireless gateway ID depending on the resource type.
+        /// be the wireless device ID or the wireless gateway ID, depending on the resource type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

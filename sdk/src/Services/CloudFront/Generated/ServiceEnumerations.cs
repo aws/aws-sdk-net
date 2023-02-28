@@ -1169,6 +1169,10 @@ namespace Amazon.CloudFront
         /// </summary>
         public static readonly OriginRequestPolicyCookieBehavior All = new OriginRequestPolicyCookieBehavior("all");
         /// <summary>
+        /// Constant AllExcept for OriginRequestPolicyCookieBehavior
+        /// </summary>
+        public static readonly OriginRequestPolicyCookieBehavior AllExcept = new OriginRequestPolicyCookieBehavior("allExcept");
+        /// <summary>
         /// Constant None for OriginRequestPolicyCookieBehavior
         /// </summary>
         public static readonly OriginRequestPolicyCookieBehavior None = new OriginRequestPolicyCookieBehavior("none");
@@ -1218,6 +1222,10 @@ namespace Amazon.CloudFront
     public class OriginRequestPolicyHeaderBehavior : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AllExcept for OriginRequestPolicyHeaderBehavior
+        /// </summary>
+        public static readonly OriginRequestPolicyHeaderBehavior AllExcept = new OriginRequestPolicyHeaderBehavior("allExcept");
         /// <summary>
         /// Constant AllViewer for OriginRequestPolicyHeaderBehavior
         /// </summary>
@@ -1280,6 +1288,10 @@ namespace Amazon.CloudFront
         /// Constant All for OriginRequestPolicyQueryStringBehavior
         /// </summary>
         public static readonly OriginRequestPolicyQueryStringBehavior All = new OriginRequestPolicyQueryStringBehavior("all");
+        /// <summary>
+        /// Constant AllExcept for OriginRequestPolicyQueryStringBehavior
+        /// </summary>
+        public static readonly OriginRequestPolicyQueryStringBehavior AllExcept = new OriginRequestPolicyQueryStringBehavior("allExcept");
         /// <summary>
         /// Constant None for OriginRequestPolicyQueryStringBehavior
         /// </summary>

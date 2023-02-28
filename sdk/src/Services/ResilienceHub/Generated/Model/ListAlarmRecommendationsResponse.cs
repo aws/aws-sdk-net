@@ -40,7 +40,7 @@ namespace Amazon.ResilienceHub.Model
         /// Gets and sets the property AlarmRecommendations. 
         /// <para>
         /// The alarm recommendations for an AWS Resilience Hub application, returned as an object.
-        /// This object includes application component names, descriptions, information about
+        /// This object includes Application Component names, descriptions, information about
         /// whether a recommendation has already been implemented or not, prerequisites, and more.
         /// </para>
         /// </summary>

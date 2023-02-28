@@ -62,8 +62,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Iam. 
         /// <para>
-        /// Determines whether to use the Amazon ECS task IAM role defined in a task definition
-        /// when mounting the Amazon EFS file system. If enabled, transit encryption must be enabled
+        /// Determines whether to use the Amazon ECS task role defined in a task definition when
+        /// mounting the Amazon EFS file system. If enabled, transit encryption must be enabled
         /// in the <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default
         /// value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
         /// Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer

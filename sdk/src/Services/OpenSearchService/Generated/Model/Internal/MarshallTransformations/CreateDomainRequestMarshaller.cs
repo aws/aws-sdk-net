@@ -204,6 +204,17 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOffPeakWindowOptions())
+                {
+                    context.Writer.WritePropertyName("OffPeakWindowOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OffPeakWindowOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OffPeakWindowOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSnapshotOptions())
                 {
                     context.Writer.WritePropertyName("SnapshotOptions");
@@ -211,6 +222,17 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 
                     var marshaller = SnapshotOptionsMarshaller.Instance;
                     marshaller.Marshall(publicRequest.SnapshotOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSoftwareUpdateOptions())
+                {
+                    context.Writer.WritePropertyName("SoftwareUpdateOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SoftwareUpdateOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SoftwareUpdateOptions, context);
 
                     context.Writer.WriteObjectEnd();
                 }

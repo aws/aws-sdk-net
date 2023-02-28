@@ -2723,6 +2723,15 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CatalogDeltaSource.Database</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CatalogDeltaSource.Name</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CatalogDeltaSource.Table</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CatalogEntry.DatabaseName</property>
     <min>1</min>
     <max>255</max>
@@ -3277,6 +3286,21 @@
     <property>Amazon.Glue.Model.DevEndpoint.SecurityConfiguration</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DirectJDBCSource.ConnectionName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DirectJDBCSource.Database</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DirectJDBCSource.Name</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DirectJDBCSource.RedshiftTmpDir</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DirectJDBCSource.Table</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DirectKafkaSource.Name</property>
@@ -4187,6 +4211,15 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.S3CatalogDeltaSource.Database</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3CatalogDeltaSource.Name</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3CatalogDeltaSource.Table</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.S3CatalogHudiSource.Database</property>
   </property-value-rule>
   <property-value-rule>
@@ -4235,6 +4268,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3CsvSource.Name</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3DeltaCatalogTarget.Database</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3DeltaCatalogTarget.Name</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3DeltaCatalogTarget.Table</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3DeltaDirectTarget.Name</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3DeltaDirectTarget.Path</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3DeltaSource.Name</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3DirectSourceAdditionalOptions.SamplePath</property>

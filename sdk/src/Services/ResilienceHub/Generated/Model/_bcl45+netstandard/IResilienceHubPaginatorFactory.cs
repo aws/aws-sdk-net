@@ -46,9 +46,19 @@ namespace Amazon.ResilienceHub.Model
         IListAppComponentRecommendationsPaginator ListAppComponentRecommendations(ListAppComponentRecommendationsRequest request);
 
         /// <summary>
+        /// Paginator for ListAppInputSources operation
+        ///</summary>
+        IListAppInputSourcesPaginator ListAppInputSources(ListAppInputSourcesRequest request);
+
+        /// <summary>
         /// Paginator for ListApps operation
         ///</summary>
         IListAppsPaginator ListApps(ListAppsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAppVersionAppComponents operation
+        ///</summary>
+        IListAppVersionAppComponentsPaginator ListAppVersionAppComponents(ListAppVersionAppComponentsRequest request);
 
         /// <summary>
         /// Paginator for ListAppVersionResourceMappings operation

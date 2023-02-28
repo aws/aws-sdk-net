@@ -64,6 +64,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>/ssm/managed-instance/default-ec2-instance-management-role</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>/ssm/automation/customer-script-log-destination</code> 
         /// </para>
         ///  </li> <li> 

@@ -1,3 +1,142 @@
+### 3.7.492.0 (2023-02-27 19:23 UTC)
+* DevOpsGuru (3.7.102.0)
+	* This release adds the description field on ListAnomaliesForInsight and DescribeAnomaly API responses for proactive anomalies.
+* Drs (3.7.102.0)
+	* New fields were added to reflect availability zone data in source server and recovery instance description commands responses, as well as source server launch status.
+* InternetMonitor (3.7.100.0)
+	* CloudWatch Internet Monitor is a a new service within CloudWatch that will help application developers and network engineers continuously monitor internet performance metrics such as availability and performance between their AWS-hosted applications and end-users of these applications
+* Lambda (3.7.105.0)
+	* This release adds the ability to create ESMs with Document DB change streams as event source. For more information see  https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html.
+* MediaConvert (3.7.106.0)
+	* The AWS Elemental MediaConvert SDK has added support for HDR10 to SDR tone mapping, and animated GIF video input sources.
+* TimestreamWrite (3.7.101.0)
+	* This release adds the ability to ingest batched historical data or migrate data in bulk from S3 into Timestream using CSV files.
+* Core 3.7.105.9
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.491.0 (2023-02-24 19:26 UTC)
+* Connect (3.7.117.0)
+	* StartTaskContact API now supports linked task creation with a new optional RelatedContactId parameter
+* ConnectCases (3.7.102.0)
+	* This release adds the ability to delete domains through the DeleteDomain API. For more information see https://docs.aws.amazon.com/cases/latest/APIReference/Welcome.html
+* Redshift (3.7.101.14)
+	* Documentation updates for Redshift API bringing it in line with IAM best practices.
+* SecurityHub (3.7.105.0)
+	* New Security Hub APIs and updates to existing APIs that help you consolidate control findings and enable and disable controls across all supported standards
+* ServiceCatalog (3.7.101.59)
+	* Documentation updates for Service Catalog
+
+### 3.7.490.0 (2023-02-23 19:38 UTC)
+* Appflow (3.7.106.0)
+	* This release enables the customers to choose whether to use Private Link for Metadata and Authorization call when using a private Salesforce connections
+* ECS (3.7.105.0)
+	* This release supports deleting Amazon ECS task definitions that are in the INACTIVE state.
+* GuardDuty (3.7.100.79)
+	* Updated API and data types descriptions for CreateFilter, UpdateFilter, and TriggerDetails.
+* IoTWireless (3.7.102.0)
+	* In this release, we add additional capabilities for the FUOTA which allows user to configure the fragment size, the sending interval and the redundancy ratio of the FUOTA tasks
+* LocationService (3.7.102.0)
+	* This release adds support for using Maps APIs with an API Key in addition to AWS Cognito. This includes support for adding, listing, updating and deleting API Keys.
+* Macie2 (3.7.103.0)
+	* This release adds support for a new finding type, Policy:IAMUser/S3BucketSharedWithCloudFront, and S3 bucket metadata that indicates if a bucket is shared with an Amazon CloudFront OAI or OAC.
+* ManagedGrafana (3.7.102.4)
+	* Doc-only update. Updated information on attached role policies for customer provided roles
+* WAFV2 (3.7.103.0)
+	* You can now associate an AWS WAF v2 web ACL with an AWS App Runner service.
+* Core 3.7.105.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.489.0 (2023-02-22 19:26 UTC)
+* ChimeSDKVoice (3.7.101.0)
+	* This release introduces support for Voice Connector media metrics in the Amazon Chime SDK Voice namespace
+* CloudFront (3.7.105.0)
+	* CloudFront now supports block lists in origin request policies so that you can forward all headers, cookies, or query string from viewer requests to the origin *except* for those specified in the block list.
+* CloudWatchRUM (3.7.102.0)
+	* CloudWatch RUM now supports CloudWatch Custom Metrics
+* DataSync (3.7.104.0)
+	* AWS DataSync has relaxed the minimum length constraint of AccessKey for Object Storage locations to 1.
+* OpenSearchService (3.7.104.0)
+	* This release lets customers configure Off-peak window and software update related properties for a new/existing domain. It enhances the capabilities of StartServiceSoftwareUpdate API; adds 2 new APIs - ListScheduledActions & UpdateScheduledAction; and allows Auto-tune to make use of Off-peak window.
+* SimpleSystemsManagement (3.7.103.31)
+	* Document only update for Feb 2023
+
+### 3.7.488.0 (2023-02-21 20:25 UTC)
+* QuickSight (3.7.105.0)
+	* S3 data sources now accept a custom IAM role.
+* ResilienceHub (3.7.101.0)
+	* In this release we improved resilience hub application creation and maintenance by introducing new resource and app component crud APIs, improving visibility and maintenance of application input sources and added support for additional information attributes to be provided by customers.
+* SecurityHub (3.7.104.15)
+	* Documentation updates for AWS Security Hub
+* Tnb (3.7.100.0)
+	* This is the initial SDK release for AWS Telco Network Builder (TNB). AWS Telco Network Builder is a network automation service that helps you deploy and manage telecom networks.
+* Core 3.7.105.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.487.0 (2023-02-20 19:19 UTC)
+* AuditManager (3.7.103.0)
+	* This release introduces a ServiceQuotaExceededException to the UpdateAssessmentFrameworkShare API operation.
+* Connect (3.7.116.0)
+	* Reasons for failed diff has been approved by SDK Reviewer
+
+### 3.7.486.1 (2023-02-18 00:42 UTC)
+* DynamoDBv2 (3.7.101.48)
+	* Fix: Fix DynamoDBContext.FromDocument conversion for DateTime string without milliseconds with unit tests
+* Core 3.7.105.6
+	* Fix: Generate new SSO token if refresh token and access token are expired and options.GenerateNewToken is true. Override AuthenticationRegion from ClientConfig if specified.
+	* All services packages updated to require new Core
+
+### 3.7.486.0 (2023-02-17 19:20 UTC)
+* AppRunner (3.7.104.0)
+	* This release supports removing MaxSize limit for AutoScalingConfiguration.
+* Glue (3.7.109.0)
+	* Release of Delta Lake Data Lake Format for Glue Studio Service
+* Core 3.7.105.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.485.0 (2023-02-16 20:41 UTC)
+* ElasticMapReduce (3.7.102.0)
+	* This release provides customers the ability to define a timeout period for procuring capacity during a resize operation for Instance Fleet clusters. Customers can specify this timeout using the ResizeSpecifications parameter supported by RunJobFlow, ModifyInstanceFleet and AddInstanceFleet APIs.
+* IVS (3.7.101.17)
+	* Doc-only update. Updated text description in DeleteChannel, Stream, and StreamSummary.
+* ManagedGrafana (3.7.102.0)
+	* With this release Amazon Managed Grafana now supports inbound Network Access Control that helps you to restrict user access to your Grafana workspaces
+* WAFV2 (3.7.102.1)
+	* Added a notice for account takeover prevention (ATP). The interface incorrectly lets you to configure ATP response inspection in regional web ACLs in Region US East (N. Virginia), without returning an error. ATP response inspection is only available in web ACLs that protect CloudFront distributions.
+* Core 3.7.105.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.484.0 (2023-02-15 20:11 UTC)
+* CloudTrail (3.7.104.0)
+	* This release adds an InsufficientEncryptionPolicyException type to the StartImport endpoint
+* ElasticFileSystem (3.7.101.51)
+	* Documentation update for EFS to support IAM best practices.
+* FraudDetector (3.7.102.0)
+	* This release introduces Lists feature which allows customers to reference a set of values in Fraud Detector's rules. With Lists, customers can dynamically manage these attributes in real time. Lists can be created/deleted and its contents can be modified using the Fraud Detector API.
+* Glue (3.7.108.0)
+	* Fix DirectJDBCSource not showing up in CLI code gen
+* Private5G (3.7.102.0)
+	* This release introduces a new StartNetworkResourceUpdate API, which enables return/replacement of hardware from a NetworkSite.
+* RDS (3.7.114.22)
+	* Database Activity Stream support for RDS for SQL Server.
+* WAFV2 (3.7.102.0)
+	* For protected CloudFront distributions, you can now use the AWS WAF Fraud Control account takeover prevention (ATP) managed rule group to block new login attempts from clients that have recently submitted too many failed login attempts.
+* Core 3.7.105.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.483.0 (2023-02-14 21:28 UTC)
+* AppConfig (3.7.102.0)
+	* AWS AppConfig now offers the option to set a version label on hosted configuration versions. Version labels allow you to identify specific hosted configuration versions based on an alternate versioning scheme that you define.
+* DataSync (3.7.103.0)
+	* With this launch, we are giving customers the ability to use older SMB protocol versions, enabling them to use DataSync to copy data to and from their legacy storage arrays.
+* EC2 (3.7.123.0)
+	* With this release customers can turn host maintenance on or off when allocating or modifying a supported dedicated host. Host maintenance is turned on by default for supported hosts.
+
 ### 3.7.482.0 (2023-02-13 19:19 UTC)
 * Account (3.7.101.0)
 	* This release of the Account Management API enables customers to view and manage whether AWS Opt-In Regions are enabled or disabled for their Account. For more information, see https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html

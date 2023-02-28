@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// Defines recommendations for a Resilience Hub application component, returned as an
-    /// object. This object contains component names, configuration recommendations, and recommendation
-    /// statuses.
+    /// Defines recommendations for an AWS Resilience Hub Application Component, returned
+    /// as an object. This object contains component names, configuration recommendations,
+    /// and recommendation statuses.
     /// </summary>
     public partial class ComponentRecommendation
     {
@@ -42,7 +42,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppComponentName. 
         /// <para>
-        /// The name of the application component.
+        /// The name of the Application Component.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

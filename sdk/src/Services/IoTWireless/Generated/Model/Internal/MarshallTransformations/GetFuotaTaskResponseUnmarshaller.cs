@@ -81,6 +81,18 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     response.FirmwareUpdateRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FragmentIntervalMS", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.FragmentIntervalMS = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FragmentSizeBytes", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.FragmentSizeBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -97,6 +109,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RedundancyPercent", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.RedundancyPercent = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

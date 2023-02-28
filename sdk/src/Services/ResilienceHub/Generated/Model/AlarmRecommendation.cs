@@ -45,7 +45,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppComponentName. 
         /// <para>
-        /// The application component for the CloudWatch alarm recommendation.
+        /// The Application Component for the CloudWatch alarm recommendation.
         /// </para>
         /// </summary>
         public string AppComponentName

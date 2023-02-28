@@ -74,7 +74,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// A unique identifier for this batch of RUM event data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string BatchId
         {
             get { return this._batchId; }

@@ -30,7 +30,8 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the AddDraftAppVersionResourceMappings operation.
-    /// Adds the resource mapping for the draft application version.
+    /// Adds the resource mapping for the draft application version. You can also update an
+    /// existing resource mapping to a new physical resource.
     /// </summary>
     public partial class AddDraftAppVersionResourceMappingsRequest : AmazonResilienceHubRequest
     {
@@ -40,9 +41,10 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+        /// The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The format for
+        /// this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +63,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResourceMappings. 
         /// <para>
-        ///  Mappings used to map logical resources from the template to physical resources. You
+        /// Mappings used to map logical resources from the template to physical resources. You
         /// can use the mapping type <code>CFN_STACK</code> if the application template uses a
         /// logical stack name. Or you can map individual resources by using the mapping type
         /// <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code>

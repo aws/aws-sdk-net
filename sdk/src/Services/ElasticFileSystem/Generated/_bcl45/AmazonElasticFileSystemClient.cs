@@ -1443,8 +1443,9 @@ namespace Amazon.ElasticFileSystem
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Throughput mode</b> - The destination file system uses the Bursting Throughput
-        /// mode by default. After the file system is created, you can modify the throughput mode.
+        ///  <b>Throughput mode</b> - The destination file system's throughput mode matches that
+        /// of the source file system. After the file system is created, you can modify the throughput
+        /// mode.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1578,8 +1579,9 @@ namespace Amazon.ElasticFileSystem
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Throughput mode</b> - The destination file system uses the Bursting Throughput
-        /// mode by default. After the file system is created, you can modify the throughput mode.
+        ///  <b>Throughput mode</b> - The destination file system's throughput mode matches that
+        /// of the source file system. After the file system is created, you can modify the throughput
+        /// mode.
         /// </para>
         ///  </li> </ul> 
         /// <para>

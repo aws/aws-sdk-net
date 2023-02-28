@@ -29,14 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
-    /// Record represents a time series data point being written into Timestream. Each record
-    /// contains an array of dimensions. Dimensions represent the meta data attributes of
-    /// a time series data point such as the instance name or availability zone of an EC2
-    /// instance. A record also contains the measure name which is the name of the measure
-    /// being collected for example the CPU utilization of an EC2 instance. A record also
-    /// contains the measure value and the value type which is the data type of the measure
-    /// value. In addition, the record contains the timestamp when the measure was collected
-    /// that the timestamp unit which represents the granularity of the timestamp. 
+    /// Represents a time-series data point being written into Timestream. Each record contains
+    /// an array of dimensions. Dimensions represent the metadata attributes of a time-series
+    /// data point, such as the instance name or Availability Zone of an EC2 instance. A record
+    /// also contains the measure name, which is the name of the measure being collected (for
+    /// example, the CPU utilization of an EC2 instance). Additionally, a record contains
+    /// the measure value and the value type, which is the data type of the measure value.
+    /// Also, the record contains the timestamp of when the measure was collected and the
+    /// timestamp unit, which represents the granularity of the timestamp. 
     /// 
     ///  
     /// <para>
@@ -62,7 +62,7 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// Contains the list of dimensions for time series data points.
+        /// Contains the list of dimensions for time-series data points.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -101,7 +101,7 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property MeasureValue. 
         /// <para>
-        ///  Contains the measure value for the time series data point. 
+        ///  Contains the measure value for the time-series data point. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -120,12 +120,12 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property MeasureValues. 
         /// <para>
-        ///  Contains the list of MeasureValue for time series data points. 
+        ///  Contains the list of MeasureValue for time-series data points. 
         /// </para>
         ///  
         /// <para>
         ///  This is only allowed for type <code>MULTI</code>. For scalar values, use <code>MeasureValue</code>
-        /// attribute of the Record directly. 
+        /// attribute of the record directly. 
         /// </para>
         /// </summary>
         public List<MeasureValue> MeasureValues
@@ -143,7 +143,7 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property MeasureValueType. 
         /// <para>
-        ///  Contains the data type of the measure value for the time series data point. Default
+        ///  Contains the data type of the measure value for the time-series data point. Default
         /// type is <code>DOUBLE</code>. 
         /// </para>
         /// </summary>
@@ -185,7 +185,7 @@ namespace Amazon.TimestreamWrite.Model
         /// Gets and sets the property TimeUnit. 
         /// <para>
         ///  The granularity of the timestamp unit. It indicates if the time value is in seconds,
-        /// milliseconds, nanoseconds or other supported values. Default is <code>MILLISECONDS</code>.
+        /// milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>.
         /// 
         /// </para>
         /// </summary>
@@ -206,8 +206,8 @@ namespace Amazon.TimestreamWrite.Model
         /// <para>
         /// 64-bit attribute used for record updates. Write requests for duplicate data with a
         /// higher version number will update the existing measure value and version. In cases
-        /// where the measure value is the same, <code>Version</code> will still be updated .
-        /// Default value is <code>1</code>.
+        /// where the measure value is the same, <code>Version</code> will still be updated. Default
+        /// value is <code>1</code>.
         /// </para>
         ///  <note> 
         /// <para>

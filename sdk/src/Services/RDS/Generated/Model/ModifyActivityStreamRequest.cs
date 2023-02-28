@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This operation is supported for RDS for Oracle only.
+    /// This operation is supported for RDS for Oracle and Microsoft SQL Server.
     /// </para>
     /// </summary>
     public partial class ModifyActivityStreamRequest : AmazonRDSRequest
@@ -70,7 +70,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the RDS for Oracle DB instance, for example, <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.
+        /// The Amazon Resource Name (ARN) of the RDS for Oracle or Microsoft SQL Server DB instance.
+        /// For example, <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.
         /// </para>
         /// </summary>
         public string ResourceArn

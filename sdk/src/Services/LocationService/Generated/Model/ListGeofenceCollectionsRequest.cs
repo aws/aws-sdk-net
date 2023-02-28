@@ -30,7 +30,7 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGeofenceCollections operation.
-    /// Lists geofence collections in your AWS account.
+    /// Lists geofence collections in your Amazon Web Services account.
     /// </summary>
     public partial class ListGeofenceCollectionsRequest : AmazonLocationServiceRequest
     {

@@ -112,8 +112,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the task execution IAM role override for the task.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+        /// The Amazon Resource Name (ARN) of the task execution role override for the task. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
         /// ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
@@ -169,7 +169,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume.
+        /// The Amazon Resource Name (ARN) of the role that containers in this task can assume.
         /// All containers in this task are granted the permissions that are specified in this
         /// role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
         /// Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.

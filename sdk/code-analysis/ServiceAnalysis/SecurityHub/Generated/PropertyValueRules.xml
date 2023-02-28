@@ -219,6 +219,24 @@
     <max>10</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ListSecurityControlDefinitionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ListSecurityControlDefinitionsRequest.StandardsArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ListStandardsControlAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ListStandardsControlAssociationsRequest.SecurityControlId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.ListTagsForResourceRequest.ResourceArn</property>
     <pattern>^arn:aws:securityhub:.*</pattern>
   </property-value-rule>
@@ -5381,6 +5399,42 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SecurityControl.Description</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SecurityControl.RemediationUrl</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SecurityControl.SecurityControlArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SecurityControl.SecurityControlId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SecurityControl.Title</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SecurityControlDefinition.Description</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SecurityControlDefinition.RemediationUrl</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SecurityControlDefinition.SecurityControlId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SecurityControlDefinition.Title</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.SensitiveDataDetections.Type</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -5482,6 +5536,74 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControlAssociationDetail.SecurityControlArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControlAssociationDetail.SecurityControlId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControlAssociationDetail.StandardsArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControlAssociationDetail.StandardsControlDescription</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControlAssociationDetail.StandardsControlTitle</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControlAssociationDetail.UpdatedReason</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControlAssociationId.SecurityControlId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControlAssociationId.StandardsArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControlAssociationSummary.SecurityControlArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControlAssociationSummary.SecurityControlId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControlAssociationSummary.StandardsArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControlAssociationSummary.StandardsControlDescription</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControlAssociationSummary.StandardsControlTitle</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControlAssociationSummary.UpdatedReason</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControlAssociationUpdate.SecurityControlId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControlAssociationUpdate.StandardsArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControlAssociationUpdate.UpdatedReason</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.StandardsManagedBy.Company</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -5539,6 +5661,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.ThreatIntelIndicator.Value</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UnprocessedSecurityControl.ErrorReason</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UnprocessedSecurityControl.SecurityControlId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UnprocessedStandardsControlAssociation.ErrorReason</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UnprocessedStandardsControlAssociationUpdate.ErrorReason</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

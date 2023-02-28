@@ -142,6 +142,7 @@ namespace Amazon.Lambda.Model
         private int? _batchSize;
         private bool? _bisectBatchOnFunctionError;
         private DestinationConfig _destinationConfig;
+        private DocumentDBEventSourceConfig _documentDBEventSourceConfig;
         private bool? _enabled;
         private string _eventSourceArn;
         private FilterCriteria _filterCriteria;
@@ -262,6 +263,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetDestinationConfig()
         {
             return this._destinationConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentDBEventSourceConfig. 
+        /// <para>
+        /// Specific configuration settings for a DocumentDB event source.
+        /// </para>
+        /// </summary>
+        public DocumentDBEventSourceConfig DocumentDBEventSourceConfig
+        {
+            get { return this._documentDBEventSourceConfig; }
+            set { this._documentDBEventSourceConfig = value; }
+        }
+
+        // Check to see if DocumentDBEventSourceConfig property is set
+        internal bool IsSetDocumentDBEventSourceConfig()
+        {
+            return this._documentDBEventSourceConfig != null;
         }
 
         /// <summary>

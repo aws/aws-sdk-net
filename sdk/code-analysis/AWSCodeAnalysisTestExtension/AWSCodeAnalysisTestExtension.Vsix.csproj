@@ -664,6 +664,10 @@
       <Project>{E3F1E0D8-7798-43A6-ABD8-F20F80BA954E}</Project>
       <Name>AWSSDK.Inspector2.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/InternetMonitor/AWSSDK.InternetMonitor.CodeAnalysis.csproj">
+      <Project>{1D312186-61AA-4BD3-AAC4-173DF5A8EF4C}</Project>
+      <Name>AWSSDK.InternetMonitor.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IoT/AWSSDK.IoT.CodeAnalysis.csproj">
       <Project>{35387ADA-E9AE-401A-B7E7-D838BC4FCD73}</Project>
       <Name>AWSSDK.IoT.CodeAnalysis</Name>
@@ -1347,6 +1351,10 @@
     <ProjectReference Include="../ServiceAnalysis/TimestreamWrite/AWSSDK.TimestreamWrite.CodeAnalysis.csproj">
       <Project>{98DF67C0-394D-47FF-82E7-D86EAA973B69}</Project>
       <Name>AWSSDK.TimestreamWrite.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Tnb/AWSSDK.Tnb.CodeAnalysis.csproj">
+      <Project>{FF5B64C8-5A93-4F22-A9A4-7DDD6076E118}</Project>
+      <Name>AWSSDK.Tnb.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/TranscribeService/AWSSDK.TranscribeService.CodeAnalysis.csproj">
       <Project>{1569BF27-B6F7-4B32-BD44-36D1D4E028BC}</Project>

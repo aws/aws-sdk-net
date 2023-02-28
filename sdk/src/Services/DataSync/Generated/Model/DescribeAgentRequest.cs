@@ -30,9 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAgent operation.
-    /// Returns metadata such as the name, the network interfaces, and the status (that is,
-    /// whether the agent is running or not) for an agent. To specify which agent to describe,
-    /// use the Amazon Resource Name (ARN) of the agent in your request.
+    /// Returns metadata about an DataSync agent, such as its name, endpoint type, and status.
     /// </summary>
     public partial class DescribeAgentRequest : AmazonDataSyncRequest
     {
@@ -41,7 +39,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the agent to describe.
+        /// Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

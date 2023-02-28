@@ -776,6 +776,81 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  CreateList
+
+        /// <summary>
+        /// Creates a list. 
+        /// 
+        ///  
+        /// <para>
+        /// List is a set of input data for a variable in your event dataset. You use the input
+        /// data in a rule that's associated with your detector. For more information, see <a
+        /// href="https://docs.aws.amazon.com/frauddetector/latest/ug/lists.html">Lists</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateList service method.</param>
+        /// 
+        /// <returns>The response from the CreateList service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateList">REST API Reference for CreateList Operation</seealso>
+        public virtual CreateListResponse CreateList(CreateListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateListResponseUnmarshaller.Instance;
+
+            return Invoke<CreateListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateList operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateList">REST API Reference for CreateList Operation</seealso>
+        public virtual IAsyncResult BeginCreateList(CreateListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateList.</param>
+        /// 
+        /// <returns>Returns a  CreateListResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateList">REST API Reference for CreateList Operation</seealso>
+        public virtual CreateListResponse EndCreateList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateListResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateModel
 
         /// <summary>
@@ -1812,6 +1887,83 @@ namespace Amazon.FraudDetector
         public virtual DeleteLabelResponse EndDeleteLabel(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLabelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteList
+
+        /// <summary>
+        /// Deletes the list, provided it is not used in a rule. 
+        /// 
+        ///  
+        /// <para>
+        ///  When you delete a list, Amazon Fraud Detector permanently deletes that list and the
+        /// elements in the list.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteList service method.</param>
+        /// 
+        /// <returns>The response from the DeleteList service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteList">REST API Reference for DeleteList Operation</seealso>
+        public virtual DeleteListResponse DeleteList(DeleteListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteListResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteList operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteList">REST API Reference for DeleteList Operation</seealso>
+        public virtual IAsyncResult BeginDeleteList(DeleteListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteList.</param>
+        /// 
+        /// <returns>Returns a  DeleteListResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteList">REST API Reference for DeleteList Operation</seealso>
+        public virtual DeleteListResponse EndDeleteList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteListResponse>(asyncResult);
         }
 
         #endregion
@@ -3328,6 +3480,148 @@ namespace Amazon.FraudDetector
         public virtual GetLabelsResponse EndGetLabels(IAsyncResult asyncResult)
         {
             return EndInvoke<GetLabelsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetListElements
+
+        /// <summary>
+        /// Gets all the elements in the specified list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetListElements service method.</param>
+        /// 
+        /// <returns>The response from the GetListElements service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListElements">REST API Reference for GetListElements Operation</seealso>
+        public virtual GetListElementsResponse GetListElements(GetListElementsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetListElementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetListElementsResponseUnmarshaller.Instance;
+
+            return Invoke<GetListElementsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetListElements operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetListElements operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetListElements
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListElements">REST API Reference for GetListElements Operation</seealso>
+        public virtual IAsyncResult BeginGetListElements(GetListElementsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetListElementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetListElementsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetListElements operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetListElements.</param>
+        /// 
+        /// <returns>Returns a  GetListElementsResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListElements">REST API Reference for GetListElements Operation</seealso>
+        public virtual GetListElementsResponse EndGetListElements(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetListElementsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetListsMetadata
+
+        /// <summary>
+        /// Gets the metadata of either all the lists under the account or the specified list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetListsMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetListsMetadata service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListsMetadata">REST API Reference for GetListsMetadata Operation</seealso>
+        public virtual GetListsMetadataResponse GetListsMetadata(GetListsMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetListsMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetListsMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<GetListsMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetListsMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetListsMetadata operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetListsMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListsMetadata">REST API Reference for GetListsMetadata Operation</seealso>
+        public virtual IAsyncResult BeginGetListsMetadata(GetListsMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetListsMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetListsMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetListsMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetListsMetadata.</param>
+        /// 
+        /// <returns>Returns a  GetListsMetadataResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListsMetadata">REST API Reference for GetListsMetadata Operation</seealso>
+        public virtual GetListsMetadataResponse EndGetListsMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetListsMetadataResponse>(asyncResult);
         }
 
         #endregion
@@ -4890,6 +5184,80 @@ namespace Amazon.FraudDetector
         public virtual UpdateEventLabelResponse EndUpdateEventLabel(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateEventLabelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateList
+
+        /// <summary>
+        /// Updates a list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateList service method.</param>
+        /// 
+        /// <returns>The response from the UpdateList service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateList">REST API Reference for UpdateList Operation</seealso>
+        public virtual UpdateListResponse UpdateList(UpdateListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateListResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateList operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateList">REST API Reference for UpdateList Operation</seealso>
+        public virtual IAsyncResult BeginUpdateList(UpdateListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateList.</param>
+        /// 
+        /// <returns>Returns a  UpdateListResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateList">REST API Reference for UpdateList Operation</seealso>
+        public virtual UpdateListResponse EndUpdateList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateListResponse>(asyncResult);
         }
 
         #endregion

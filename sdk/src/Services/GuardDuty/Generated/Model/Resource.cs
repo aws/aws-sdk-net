@@ -47,7 +47,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AccessKeyDetails. 
         /// <para>
-        /// The IAM access key details (IAM user information) of a user that engaged in the activity
+        /// The IAM access key details (user information) of a user that engaged in the activity
         /// that prompted GuardDuty to generate a finding.
         /// </para>
         /// </summary>

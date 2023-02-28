@@ -124,6 +124,12 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
                     unmarshalledObject.Position = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("returnInformation", targetDepth))
+                {
+                    var unmarshaller = ReturnInformationUnmarshaller.Instance;
+                    unmarshalledObject.ReturnInformation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serialNumber", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

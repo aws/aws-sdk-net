@@ -48,7 +48,9 @@ namespace Amazon.OpenSearchService.Model
         private EncryptionAtRestOptions _encryptionAtRestOptions;
         private Dictionary<string, LogPublishingOption> _logPublishingOptions = new Dictionary<string, LogPublishingOption>();
         private NodeToNodeEncryptionOptions _nodeToNodeEncryptionOptions;
+        private OffPeakWindowOptions _offPeakWindowOptions;
         private SnapshotOptions _snapshotOptions;
+        private SoftwareUpdateOptions _softwareUpdateOptions;
         private VPCOptions _vpcOptions;
 
         /// <summary>
@@ -322,7 +324,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property LogPublishingOptions. 
         /// <para>
-        /// Options to publish OpenSearch lots to Amazon CloudWatch Logs.
+        /// Options to publish OpenSearch logs to Amazon CloudWatch Logs.
         /// </para>
         /// </summary>
         public Dictionary<string, LogPublishingOption> LogPublishingOptions
@@ -340,7 +342,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NodeToNodeEncryptionOptions. 
         /// <para>
-        /// Node-To-Node Encryption options for the domain.
+        /// Node-to-node encryption options for the domain.
         /// </para>
         /// </summary>
         public NodeToNodeEncryptionOptions NodeToNodeEncryptionOptions
@@ -353,6 +355,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetNodeToNodeEncryptionOptions()
         {
             return this._nodeToNodeEncryptionOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OffPeakWindowOptions. 
+        /// <para>
+        /// Off-peak window options for the domain.
+        /// </para>
+        /// </summary>
+        public OffPeakWindowOptions OffPeakWindowOptions
+        {
+            get { return this._offPeakWindowOptions; }
+            set { this._offPeakWindowOptions = value; }
+        }
+
+        // Check to see if OffPeakWindowOptions property is set
+        internal bool IsSetOffPeakWindowOptions()
+        {
+            return this._offPeakWindowOptions != null;
         }
 
         /// <summary>
@@ -372,6 +392,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetSnapshotOptions()
         {
             return this._snapshotOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SoftwareUpdateOptions. 
+        /// <para>
+        /// Service software update options for the domain.
+        /// </para>
+        /// </summary>
+        public SoftwareUpdateOptions SoftwareUpdateOptions
+        {
+            get { return this._softwareUpdateOptions; }
+            set { this._softwareUpdateOptions = value; }
+        }
+
+        // Check to see if SoftwareUpdateOptions property is set
+        internal bool IsSetSoftwareUpdateOptions()
+        {
+            return this._softwareUpdateOptions != null;
         }
 
         /// <summary>

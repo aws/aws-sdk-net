@@ -204,8 +204,8 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KAFKA_SASL_MECHANISM</code> - <code>"SCRAM-SHA-512"</code> or <code>"GSSAPI"</code>.
-        /// These are the two supported <a href="https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml">SASL
+        ///  <code>KAFKA_SASL_MECHANISM</code> - <code>"SCRAM-SHA-512"</code>, <code>"GSSAPI"</code>,
+        /// or <code>"AWS_MSK_IAM"</code>. These are the supported <a href="https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml">SASL
         /// Mechanisms</a>.
         /// </para>
         ///  </li> <li> 

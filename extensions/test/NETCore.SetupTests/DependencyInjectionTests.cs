@@ -7,6 +7,7 @@ using Amazon;
 using Amazon.S3;
 using Amazon.Extensions.NETCore.Setup;
 using Moq;
+using System;
 
 namespace DependencyInjectionTests
 {
@@ -29,6 +30,30 @@ namespace DependencyInjectionTests
             var controller = ActivatorUtilities.CreateInstance<TestController>(serviceProvider);
             Assert.NotNull(controller.S3Client);
             Assert.Equal(RegionEndpoint.USWest2, controller.S3Client.Config.RegionEndpoint);
+        }
+
+        [Fact(Skip = "Skip because CI build environment auto resolves region to us-west-2")]
+        
+        public void InjectS3ClientWithoutDefaultConfig()
+        {
+            var savedRegion = Environment.GetEnvironmentVariable("AWS_REGION");
+            
+            try
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", "us-east-1");
+                ServiceCollection services = new ServiceCollection();
+                services.AddAWSService<IAmazonS3>();
+
+                var serviceProvider = services.BuildServiceProvider();
+
+                var controller = ActivatorUtilities.CreateInstance<TestController>(serviceProvider);
+                Assert.NotNull(controller.S3Client);
+                Assert.Equal(RegionEndpoint.USEast1, controller.S3Client.Config.RegionEndpoint);
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", savedRegion);
+            }
         }
 
         [Fact]

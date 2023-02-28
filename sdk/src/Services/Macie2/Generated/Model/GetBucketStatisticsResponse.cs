@@ -69,8 +69,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property BucketCountByEffectivePermission. 
         /// <para>
-        /// The total number of buckets that are publicly accessible based on a combination of
-        /// permissions settings for each bucket.
+        /// The total number of buckets that are publicly accessible due to a combination of permissions
+        /// settings for each bucket.
         /// </para>
         /// </summary>
         public BucketCountByEffectivePermission BucketCountByEffectivePermission
@@ -127,8 +127,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property BucketCountBySharedAccessType. 
         /// <para>
-        /// The total number of buckets that are or aren't shared with another Amazon Web Services
-        /// account.
+        /// The total number of buckets that are or aren't shared with other Amazon Web Services
+        /// accounts, Amazon CloudFront origin access identities (OAIs), or CloudFront origin
+        /// access controls (OACs).
         /// </para>
         /// </summary>
         public BucketCountBySharedAccessType BucketCountBySharedAccessType
@@ -213,7 +214,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property LastUpdated. 
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently
-        /// retrieved both bucket and object metadata from Amazon S3 for the buckets.
+        /// retrieved bucket or object metadata from Amazon S3 for the buckets.
         /// </para>
         /// </summary>
         public DateTime LastUpdated

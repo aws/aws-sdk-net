@@ -64,6 +64,12 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EnableMediaMetricLogs", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableMediaMetricLogs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EnableSIPLogs", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

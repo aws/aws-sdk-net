@@ -1061,6 +1061,10 @@ namespace Amazon.Macie2
         /// </summary>
         public static readonly FindingType PolicyIAMUserS3BucketSharedExternally = new FindingType("Policy:IAMUser/S3BucketSharedExternally");
         /// <summary>
+        /// Constant PolicyIAMUserS3BucketSharedWithCloudFront for FindingType
+        /// </summary>
+        public static readonly FindingType PolicyIAMUserS3BucketSharedWithCloudFront = new FindingType("Policy:IAMUser/S3BucketSharedWithCloudFront");
+        /// <summary>
         /// Constant SensitiveDataS3ObjectCredentials for FindingType
         /// </summary>
         public static readonly FindingType SensitiveDataS3ObjectCredentials = new FindingType("SensitiveData:S3Object/Credentials");

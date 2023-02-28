@@ -33,7 +33,23 @@ namespace Amazon.ChimeSDKVoice.Model
     /// </summary>
     public partial class LoggingConfiguration
     {
+        private bool? _enableMediaMetricLogs;
         private bool? _enableSIPLogs;
+
+        /// <summary>
+        /// Gets and sets the property EnableMediaMetricLogs.
+        /// </summary>
+        public bool EnableMediaMetricLogs
+        {
+            get { return this._enableMediaMetricLogs.GetValueOrDefault(); }
+            set { this._enableMediaMetricLogs = value; }
+        }
+
+        // Check to see if EnableMediaMetricLogs property is set
+        internal bool IsSetEnableMediaMetricLogs()
+        {
+            return this._enableMediaMetricLogs.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property EnableSIPLogs.

@@ -39,7 +39,16 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Artifacts. 
         /// <para>
-        /// An array of objects, one for each S3 object that Amazon Macie selected for analysis.
+        /// An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for
+        /// analysis.
+        /// </para>
+        ///  
+        /// <para>
+        /// If Macie has analyzed more than 100 objects in the bucket, Macie populates the array
+        /// based on the value for the ResourceProfileArtifact.sensitive field for an object:
+        /// true (sensitive), followed by false (not sensitive). Macie then populates any remaining
+        /// items in the array with information about objects where the value for the ResourceProfileArtifact.classificationResultStatus
+        /// field is SKIPPED.
         /// </para>
         /// </summary>
         public List<ResourceProfileArtifact> Artifacts

@@ -99,6 +99,17 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Configuration);
                 }
 
+                if(publicRequest.IsSetNetworkAccessControl())
+                {
+                    context.Writer.WritePropertyName("networkAccessControl");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NetworkAccessConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NetworkAccessControl, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetOrganizationRoleName())
                 {
                     context.Writer.WritePropertyName("organizationRoleName");

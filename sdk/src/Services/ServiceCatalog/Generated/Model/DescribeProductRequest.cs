@@ -31,6 +31,13 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Container for the parameters to the DescribeProduct operation.
     /// Gets information about the specified product.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  Running this operation with administrator access results in a failure. <a>DescribeProductAsAdmin</a>
+    /// should be used instead. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeProductRequest : AmazonServiceCatalogRequest
     {

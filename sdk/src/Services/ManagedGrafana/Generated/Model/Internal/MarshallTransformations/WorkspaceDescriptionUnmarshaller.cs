@@ -148,6 +148,12 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("networkAccessControl", targetDepth))
+                {
+                    var unmarshaller = NetworkAccessConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkAccessControl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("notificationDestinations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

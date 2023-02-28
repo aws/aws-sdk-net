@@ -108,6 +108,23 @@
     <pattern>^([1-9][0-9]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FraudDetector.Model.CreateListRequest.Description</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.CreateListRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.CreateListRequest.VariableType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Z_]{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FraudDetector.Model.CreateModelRequest.Description</property>
     <min>1</min>
     <max>128</max>
@@ -235,6 +252,12 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.DeleteListRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.DeleteModelRequest.ModelId</property>
@@ -501,6 +524,52 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetListElementsRequest.MaxResults</property>
+    <min>500</min>
+    <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetListElementsRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetListElementsRequest.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetListElementsResponse.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetListsMetadataRequest.MaxResults</property>
+    <min>5</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetListsMetadataRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetListsMetadataRequest.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetListsMetadataResponse.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.GetModelsRequest.MaxResults</property>
@@ -781,6 +850,23 @@
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FraudDetector.Model.UpdateListRequest.Description</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.UpdateListRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.UpdateListRequest.VariableType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Z_]{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FraudDetector.Model.UpdateModelRequest.Description</property>
     <min>1</min>
     <max>128</max>
@@ -841,6 +927,39 @@
     <property>Amazon.FraudDetector.Model.UpdateRuleVersionRequest.Expression</property>
     <min>1</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.AllowDenyList.Arn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn\:aws[a-z-]{0,15}\:frauddetector\:[a-z0-9-]{3,20}\:[0-9]{12}\:[^\s]{2,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.AllowDenyList.CreatedTime</property>
+    <min>11</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.AllowDenyList.Description</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.AllowDenyList.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.AllowDenyList.UpdatedTime</property>
+    <min>11</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.AllowDenyList.VariableType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Z_]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.BatchImport.Arn</property>

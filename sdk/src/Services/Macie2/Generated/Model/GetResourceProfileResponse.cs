@@ -61,10 +61,10 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property SensitivityScore. 
         /// <para>
-        /// The current sensitivity score for the bucket, ranging from -1 (no analysis due to
-        /// an error) to 100 (sensitive). By default, this score is calculated automatically based
-        /// on the amount of data that Amazon Macie has analyzed in the bucket and the amount
-        /// of sensitive data that Macie has found in the bucket.
+        /// The current sensitivity score for the bucket, ranging from -1 (classification error)
+        /// to 100 (sensitive). By default, this score is calculated automatically based on the
+        /// amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive
+        /// data that Macie has found in the bucket.
         /// </para>
         /// </summary>
         public int SensitivityScore

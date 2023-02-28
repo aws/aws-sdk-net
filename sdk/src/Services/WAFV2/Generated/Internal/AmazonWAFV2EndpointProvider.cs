@@ -40,8 +40,6 @@ namespace Amazon.WAFV2.Internal
             if (parameters == null) 
                 throw new ArgumentNullException("parameters");
 
-            if (parameters["Region"] == null)
-                throw new AmazonClientException("Region parameter must be set for endpoint resolution");
             if (parameters["UseDualStack"] == null)
                 throw new AmazonClientException("UseDualStack parameter must be set for endpoint resolution");
             if (parameters["UseFIPS"] == null)
@@ -54,46 +52,154 @@ namespace Amazon.WAFV2.Internal
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
             };
-            if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
+            if (IsSet(refs["Endpoint"]))
             {
-                if (IsSet(refs["Endpoint"]))
-                {
-                    if (Equals(refs["UseFIPS"], true))
-                    {
-                        throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                    }
-                    if (Equals(refs["UseDualStack"], true))
-                    {
-                        throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
-                    }
-                    return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
-                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                {
-                    if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                    {
-                        return new Endpoint(Interpolate(@"https://wafv2-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
-                }
                 if (Equals(refs["UseFIPS"], true))
                 {
-                    if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
-                    {
-                        return new Endpoint(Interpolate(@"https://wafv2-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                    throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
                 }
                 if (Equals(refs["UseDualStack"], true))
                 {
-                    if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                    {
-                        return new Endpoint(Interpolate(@"https://wafv2.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                    throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
                 }
-                return new Endpoint(Interpolate(@"https://wafv2.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
             }
+            if (IsSet(refs["Region"]))
+            {
+                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
+                {
+                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                        {
+                            return new Endpoint(Interpolate(@"https://wafv2-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                    }
+                    if (Equals(refs["UseFIPS"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
+                        {
+                            return new Endpoint(Interpolate(@"https://wafv2-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                    }
+                    if (Equals(refs["UseDualStack"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                        {
+                            return new Endpoint(Interpolate(@"https://wafv2.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                    }
+                    if (Equals(refs["Region"], "af-south-1"))
+                    {
+                        return new Endpoint("https://wafv2.af-south-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "ap-east-1"))
+                    {
+                        return new Endpoint("https://wafv2.ap-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "ap-northeast-1"))
+                    {
+                        return new Endpoint("https://wafv2.ap-northeast-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "ap-northeast-2"))
+                    {
+                        return new Endpoint("https://wafv2.ap-northeast-2.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "ap-northeast-3"))
+                    {
+                        return new Endpoint("https://wafv2.ap-northeast-3.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "ap-south-1"))
+                    {
+                        return new Endpoint("https://wafv2.ap-south-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "ap-southeast-1"))
+                    {
+                        return new Endpoint("https://wafv2.ap-southeast-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "ap-southeast-2"))
+                    {
+                        return new Endpoint("https://wafv2.ap-southeast-2.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "ap-southeast-3"))
+                    {
+                        return new Endpoint("https://wafv2.ap-southeast-3.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "ca-central-1"))
+                    {
+                        return new Endpoint("https://wafv2.ca-central-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "eu-central-1"))
+                    {
+                        return new Endpoint("https://wafv2.eu-central-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "eu-north-1"))
+                    {
+                        return new Endpoint("https://wafv2.eu-north-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "eu-south-1"))
+                    {
+                        return new Endpoint("https://wafv2.eu-south-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "eu-west-1"))
+                    {
+                        return new Endpoint("https://wafv2.eu-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "eu-west-2"))
+                    {
+                        return new Endpoint("https://wafv2.eu-west-2.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "eu-west-3"))
+                    {
+                        return new Endpoint("https://wafv2.eu-west-3.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "me-south-1"))
+                    {
+                        return new Endpoint("https://wafv2.me-south-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "sa-east-1"))
+                    {
+                        return new Endpoint("https://wafv2.sa-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "us-east-1"))
+                    {
+                        return new Endpoint("https://wafv2.us-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "us-east-2"))
+                    {
+                        return new Endpoint("https://wafv2.us-east-2.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "us-west-1"))
+                    {
+                        return new Endpoint("https://wafv2.us-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "us-west-2"))
+                    {
+                        return new Endpoint("https://wafv2.us-west-2.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "cn-north-1"))
+                    {
+                        return new Endpoint("https://wafv2.cn-north-1.amazonaws.com.cn", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "cn-northwest-1"))
+                    {
+                        return new Endpoint("https://wafv2.cn-northwest-1.amazonaws.com.cn", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "us-gov-east-1"))
+                    {
+                        return new Endpoint("https://wafv2.us-gov-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["Region"], "us-gov-west-1"))
+                    {
+                        return new Endpoint("https://wafv2.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    return new Endpoint(Interpolate(@"https://wafv2.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                }
+            }
+            throw new AmazonClientException("Invalid Configuration: Missing Region");
 
             throw new AmazonClientException("Cannot resolve endpoint");
         }

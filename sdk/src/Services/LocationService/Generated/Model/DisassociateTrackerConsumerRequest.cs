@@ -48,7 +48,8 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property ConsumerArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the geofence collection to be disassociated from
-        /// the tracker resource. Used when you need to specify a resource across all AWS. 
+        /// the tracker resource. Used when you need to specify a resource across all Amazon Web
+        /// Services. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
