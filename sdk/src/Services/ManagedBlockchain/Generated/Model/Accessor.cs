@@ -29,16 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// <important> 
-    /// <para>
-    /// The token based access feature is in preview release for Ethereum on Amazon Managed
-    /// Blockchain and is subject to change. We recommend that you use this feature only with
-    /// test scenarios, and not in production environments.
-    /// </para>
-    ///  </important> 
-    /// <para>
     /// The properties of the Accessor.
-    /// </para>
     /// </summary>
     public partial class Accessor
     {
@@ -47,6 +38,7 @@ namespace Amazon.ManagedBlockchain.Model
         private DateTime? _creationDate;
         private string _id;
         private AccessorStatus _status;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private AccessorType _type;
 
         /// <summary>
@@ -144,6 +136,32 @@ namespace Amazon.ManagedBlockchain.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags assigned to the Accessor.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+        /// Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or
+        /// <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+        /// Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

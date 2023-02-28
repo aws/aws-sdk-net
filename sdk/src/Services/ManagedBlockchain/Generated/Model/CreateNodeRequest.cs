@@ -152,12 +152,12 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to assign to the node. Each tag consists of a key and optional value.
+        /// Tags to assign to the node.
         /// </para>
         ///  
         /// <para>
-        /// When specifying tags during creation, you can specify multiple key-value pairs in
-        /// a single request, with an overall maximum of 50 tags added to each resource.
+        ///  Each tag consists of a key and an optional value. You can specify multiple key-value
+        /// pairs in a single request with an overall maximum of 50 tags allowed per resource.
         /// </para>
         ///  
         /// <para>
