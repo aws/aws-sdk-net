@@ -33,9 +33,29 @@ namespace Amazon.CodeCatalyst.Model
     /// </summary>
     public partial class CreateAccessTokenResponse : AmazonWebServiceResponse
     {
+        private string _accessTokenId;
         private DateTime? _expiresTime;
         private string _name;
         private string _secret;
+
+        /// <summary>
+        /// Gets and sets the property AccessTokenId. 
+        /// <para>
+        /// The system-generated unique ID of the access token.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
+        public string AccessTokenId
+        {
+            get { return this._accessTokenId; }
+            set { this._accessTokenId = value; }
+        }
+
+        // Check to see if AccessTokenId property is set
+        internal bool IsSetAccessTokenId()
+        {
+            return this._accessTokenId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExpiresTime. 
@@ -45,6 +65,7 @@ namespace Amazon.CodeCatalyst.Model
         /// 3339</a>. If not specified, the default is one year from creation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime ExpiresTime
         {
             get { return this._expiresTime.GetValueOrDefault(); }
@@ -63,7 +84,7 @@ namespace Amazon.CodeCatalyst.Model
         /// The friendly name of the personal access token.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

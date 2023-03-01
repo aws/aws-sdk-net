@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateAccessToken operation
+    /// Response Unmarshaller for StopDevEnvironmentSession operation
     /// </summary>  
-    public class CreateAccessTokenResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StopDevEnvironmentSessionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,34 +45,34 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateAccessTokenResponse response = new CreateAccessTokenResponse();
+            StopDevEnvironmentSessionResponse response = new StopDevEnvironmentSessionResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accessTokenId", targetDepth))
+                if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AccessTokenId = unmarshaller.Unmarshall(context);
+                    response.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("expiresTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.ExpiresTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("projectName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
+                    response.ProjectName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("secret", targetDepth))
+                if (context.TestExpression("sessionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Secret = unmarshaller.Unmarshall(context);
+                    response.SessionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("spaceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SpaceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -126,9 +126,9 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
             return new AmazonCodeCatalystException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateAccessTokenResponseUnmarshaller _instance = new CreateAccessTokenResponseUnmarshaller();        
+        private static StopDevEnvironmentSessionResponseUnmarshaller _instance = new StopDevEnvironmentSessionResponseUnmarshaller();        
 
-        internal static CreateAccessTokenResponseUnmarshaller GetInstance()
+        internal static StopDevEnvironmentSessionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -136,7 +136,7 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateAccessTokenResponseUnmarshaller Instance
+        public static StopDevEnvironmentSessionResponseUnmarshaller Instance
         {
             get
             {

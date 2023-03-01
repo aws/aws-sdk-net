@@ -132,6 +132,10 @@ namespace Amazon.CodeCatalyst
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>StopDevEnvironmentSession</a>, which stops a session for a specified Dev Environment.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>UpdateDevEnvironment</a>, which changes one or more values for a Dev Environment.
     /// </para>
     ///  </li> <li> 
@@ -477,8 +481,15 @@ namespace Amazon.CodeCatalyst
         /// <summary>
         /// Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development Dev Environment
         /// that you can use to quickly work on the code stored in the source repositories of
-        /// your project. By default, a Dev Environment is configured to have a 2 core processor,
-        /// 4GB of RAM, and 16GB of persistent storage.
+        /// your project. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When created in the Amazon CodeCatalyst console, by default a Dev Environment is configured
+        /// to have a 2 core processor, 4GB of RAM, and 16GB of persistent storage. None of these
+        /// defaults apply to a Dev Environment created programmatically.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDevEnvironment service method.</param>
         /// 
@@ -2165,6 +2176,86 @@ namespace Amazon.CodeCatalyst
         public virtual StopDevEnvironmentResponse EndStopDevEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<StopDevEnvironmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopDevEnvironmentSession
+
+        /// <summary>
+        /// Stops a session for a specified Dev Environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopDevEnvironmentSession service method.</param>
+        /// 
+        /// <returns>The response from the StopDevEnvironmentSession service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StopDevEnvironmentSession">REST API Reference for StopDevEnvironmentSession Operation</seealso>
+        public virtual StopDevEnvironmentSessionResponse StopDevEnvironmentSession(StopDevEnvironmentSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopDevEnvironmentSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopDevEnvironmentSessionResponseUnmarshaller.Instance;
+
+            return Invoke<StopDevEnvironmentSessionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopDevEnvironmentSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopDevEnvironmentSession operation on AmazonCodeCatalystClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopDevEnvironmentSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StopDevEnvironmentSession">REST API Reference for StopDevEnvironmentSession Operation</seealso>
+        public virtual IAsyncResult BeginStopDevEnvironmentSession(StopDevEnvironmentSessionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopDevEnvironmentSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopDevEnvironmentSessionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopDevEnvironmentSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopDevEnvironmentSession.</param>
+        /// 
+        /// <returns>Returns a  StopDevEnvironmentSessionResult from CodeCatalyst.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StopDevEnvironmentSession">REST API Reference for StopDevEnvironmentSession Operation</seealso>
+        public virtual StopDevEnvironmentSessionResponse EndStopDevEnvironmentSession(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopDevEnvironmentSessionResponse>(asyncResult);
         }
 
         #endregion

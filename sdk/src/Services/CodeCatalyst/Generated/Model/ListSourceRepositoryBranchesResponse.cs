@@ -42,6 +42,7 @@ namespace Amazon.CodeCatalyst.Model
         /// Information about the source branches.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ListSourceRepositoryBranchesItem> Items
         {
             get { return this._items; }

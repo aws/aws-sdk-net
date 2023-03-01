@@ -135,6 +135,10 @@ namespace Amazon.CodeCatalyst
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>StopDevEnvironmentSession</a>, which stops a session for a specified Dev Environment.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>UpdateDevEnvironment</a>, which changes one or more values for a Dev Environment.
     /// </para>
     ///  </li> <li> 
@@ -495,8 +499,15 @@ namespace Amazon.CodeCatalyst
         /// <summary>
         /// Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development Dev Environment
         /// that you can use to quickly work on the code stored in the source repositories of
-        /// your project. By default, a Dev Environment is configured to have a 2 core processor,
-        /// 4GB of RAM, and 16GB of persistent storage.
+        /// your project. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When created in the Amazon CodeCatalyst console, by default a Dev Environment is configured
+        /// to have a 2 core processor, 4GB of RAM, and 16GB of persistent storage. None of these
+        /// defaults apply to a Dev Environment created programmatically.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDevEnvironment service method.</param>
         /// 
@@ -541,8 +552,15 @@ namespace Amazon.CodeCatalyst
         /// <summary>
         /// Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development Dev Environment
         /// that you can use to quickly work on the code stored in the source repositories of
-        /// your project. By default, a Dev Environment is configured to have a 2 core processor,
-        /// 4GB of RAM, and 16GB of persistent storage.
+        /// your project. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When created in the Amazon CodeCatalyst console, by default a Dev Environment is configured
+        /// to have a 2 core processor, 4GB of RAM, and 16GB of persistent storage. None of these
+        /// defaults apply to a Dev Environment created programmatically.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDevEnvironment service method.</param>
         /// <param name="cancellationToken">
@@ -2472,6 +2490,99 @@ namespace Amazon.CodeCatalyst
             options.ResponseUnmarshaller = StopDevEnvironmentResponseUnmarshaller.Instance;
             
             return InvokeAsync<StopDevEnvironmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopDevEnvironmentSession
+
+
+        /// <summary>
+        /// Stops a session for a specified Dev Environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopDevEnvironmentSession service method.</param>
+        /// 
+        /// <returns>The response from the StopDevEnvironmentSession service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StopDevEnvironmentSession">REST API Reference for StopDevEnvironmentSession Operation</seealso>
+        public virtual StopDevEnvironmentSessionResponse StopDevEnvironmentSession(StopDevEnvironmentSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopDevEnvironmentSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopDevEnvironmentSessionResponseUnmarshaller.Instance;
+
+            return Invoke<StopDevEnvironmentSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops a session for a specified Dev Environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopDevEnvironmentSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopDevEnvironmentSession service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StopDevEnvironmentSession">REST API Reference for StopDevEnvironmentSession Operation</seealso>
+        public virtual Task<StopDevEnvironmentSessionResponse> StopDevEnvironmentSessionAsync(StopDevEnvironmentSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopDevEnvironmentSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopDevEnvironmentSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopDevEnvironmentSessionResponse>(request, options, cancellationToken);
         }
 
         #endregion
