@@ -182,9 +182,13 @@
             ]
         },
         "UploadPartCopyRequest": {
+            "modify": [
+                {
+                    "Bucket": { "emitPropertyName": "DestinationBucket" }
+                }
+            ],
             "exclude": [
                 "CopySource",
-                "Bucket",
                 "Key"
             ],
             "inject": [
