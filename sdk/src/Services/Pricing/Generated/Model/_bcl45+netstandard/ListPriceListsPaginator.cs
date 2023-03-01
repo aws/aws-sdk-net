@@ -28,32 +28,32 @@ using Amazon.Runtime;
 namespace Amazon.Pricing.Model
 {
     /// <summary>
-    /// Base class for GetAttributeValues paginators.
+    /// Base class for ListPriceLists paginators.
     /// </summary>
-    internal sealed partial class GetAttributeValuesPaginator : IPaginator<GetAttributeValuesResponse>, IGetAttributeValuesPaginator
+    internal sealed partial class ListPriceListsPaginator : IPaginator<ListPriceListsResponse>, IListPriceListsPaginator
     {
         private readonly IAmazonPricing _client;
-        private readonly GetAttributeValuesRequest _request;
+        private readonly ListPriceListsRequest _request;
         private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<GetAttributeValuesResponse> Responses => new PaginatedResponse<GetAttributeValuesResponse>(this);
+        public IPaginatedEnumerable<ListPriceListsResponse> Responses => new PaginatedResponse<ListPriceListsResponse>(this);
 
         /// <summary>
-        /// Enumerable containing all of the AttributeValues
+        /// Enumerable containing all of the PriceLists
         /// </summary>
-        public IPaginatedEnumerable<AttributeValue> AttributeValues => 
-            new PaginatedResultKeyResponse<GetAttributeValuesResponse, AttributeValue>(this, (i) => i.AttributeValues);
+        public IPaginatedEnumerable<PriceList> PriceLists => 
+            new PaginatedResultKeyResponse<ListPriceListsResponse, PriceList>(this, (i) => i.PriceLists);
 
-        internal GetAttributeValuesPaginator(IAmazonPricing client, GetAttributeValuesRequest request)
+        internal ListPriceListsPaginator(IAmazonPricing client, ListPriceListsRequest request)
         {
             this._client = client;
             this._request = request;
         }
 #if BCL
-        IEnumerable<GetAttributeValuesResponse> IPaginator<GetAttributeValuesResponse>.Paginate()
+        IEnumerable<ListPriceListsResponse> IPaginator<ListPriceListsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -61,11 +61,11 @@ namespace Amazon.Pricing.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            GetAttributeValuesResponse response;
+            ListPriceListsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = _client.GetAttributeValues(_request);
+                response = _client.ListPriceLists(_request);
                 nextToken = response.NextToken;
                 yield return response;
             }
@@ -73,7 +73,7 @@ namespace Amazon.Pricing.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetAttributeValuesResponse> IPaginator<GetAttributeValuesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPriceListsResponse> IPaginator<ListPriceListsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -81,11 +81,11 @@ namespace Amazon.Pricing.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            GetAttributeValuesResponse response;
+            ListPriceListsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = await _client.GetAttributeValuesAsync(_request, cancellationToken).ConfigureAwait(false);
+                response = await _client.ListPriceListsAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;

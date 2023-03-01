@@ -39,5 +39,10 @@ namespace Amazon.Pricing.Model
         /// Paginator for GetProducts operation
         ///</summary>
         IGetProductsPaginator GetProducts(GetProductsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPriceLists operation
+        ///</summary>
+        IListPriceListsPaginator ListPriceLists(ListPriceListsRequest request);
     }
 }

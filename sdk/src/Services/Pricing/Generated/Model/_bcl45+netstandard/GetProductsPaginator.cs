@@ -41,6 +41,12 @@ namespace Amazon.Pricing.Model
         /// </summary>
         public IPaginatedEnumerable<GetProductsResponse> Responses => new PaginatedResponse<GetProductsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the PriceList
+        /// </summary>
+        public IPaginatedEnumerable<string> PriceList => 
+            new PaginatedResultKeyResponse<GetProductsResponse, string>(this, (i) => i.PriceList);
+
         internal GetProductsPaginator(IAmazonPricing client, GetProductsRequest request)
         {
             this._client = client;

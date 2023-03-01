@@ -16,23 +16,42 @@
 /*
  * Do not modify this file. This file is generated from the pricing-2017-10-15.normal.json service model.
  */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Pricing.Model
 {
     /// <summary>
-    /// Paginator for the DescribeServices operation
-    ///</summary>
-    public interface IDescribeServicesPaginator
+    /// This is the response object from the GetPriceListFileUrl operation.
+    /// </summary>
+    public partial class GetPriceListFileUrlResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Enumerable containing all full responses for the operation
-        /// </summary>
-        IPaginatedEnumerable<DescribeServicesResponse> Responses { get; }
+        private string _url;
 
         /// <summary>
-        /// Enumerable containing all of the Services
+        /// Gets and sets the property Url. 
+        /// <para>
+        /// The URL to download your Price List file from. 
+        /// </para>
         /// </summary>
-        IPaginatedEnumerable<Service> Services { get; }
+        public string Url
+        {
+            get { return this._url; }
+            set { this._url = value; }
+        }
+
+        // Check to see if Url property is set
+        internal bool IsSetUrl()
+        {
+            return this._url != null;
+        }
+
     }
 }

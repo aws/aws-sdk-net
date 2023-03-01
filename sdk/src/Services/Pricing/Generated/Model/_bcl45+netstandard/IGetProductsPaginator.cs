@@ -29,5 +29,10 @@ namespace Amazon.Pricing.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<GetProductsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the PriceList
+        /// </summary>
+        IPaginatedEnumerable<string> PriceList { get; }
     }
 }

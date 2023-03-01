@@ -21,18 +21,18 @@ using Amazon.Runtime;
 namespace Amazon.Pricing.Model
 {
     /// <summary>
-    /// Paginator for the DescribeServices operation
+    /// Paginator for the ListPriceLists operation
     ///</summary>
-    public interface IDescribeServicesPaginator
+    public interface IListPriceListsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        IPaginatedEnumerable<DescribeServicesResponse> Responses { get; }
+        IPaginatedEnumerable<ListPriceListsResponse> Responses { get; }
 
         /// <summary>
-        /// Enumerable containing all of the Services
+        /// Enumerable containing all of the PriceLists
         /// </summary>
-        IPaginatedEnumerable<Service> Services { get; }
+        IPaginatedEnumerable<PriceList> PriceLists { get; }
     }
 }
