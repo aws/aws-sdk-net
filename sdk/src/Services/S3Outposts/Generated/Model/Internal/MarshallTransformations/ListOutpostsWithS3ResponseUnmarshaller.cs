@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListEndpoints operation
+    /// Response Unmarshaller for ListOutpostsWithS3 operation
     /// </summary>  
-    public class ListEndpointsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListOutpostsWithS3ResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListEndpointsResponse response = new ListEndpointsResponse();
+            ListOutpostsWithS3Response response = new ListOutpostsWithS3Response();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Endpoints", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Endpoint, EndpointUnmarshaller>(EndpointUnmarshaller.Instance);
-                    response.Endpoints = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Outposts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Outpost, OutpostUnmarshaller>(OutpostUnmarshaller.Instance);
+                    response.Outposts = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,10 +94,6 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -110,9 +106,9 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
             return new AmazonS3OutpostsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ListEndpointsResponseUnmarshaller _instance = new ListEndpointsResponseUnmarshaller();        
+        private static ListOutpostsWithS3ResponseUnmarshaller _instance = new ListOutpostsWithS3ResponseUnmarshaller();        
 
-        internal static ListEndpointsResponseUnmarshaller GetInstance()
+        internal static ListOutpostsWithS3ResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -120,7 +116,7 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListEndpointsResponseUnmarshaller Instance
+        public static ListOutpostsWithS3ResponseUnmarshaller Instance
         {
             get
             {

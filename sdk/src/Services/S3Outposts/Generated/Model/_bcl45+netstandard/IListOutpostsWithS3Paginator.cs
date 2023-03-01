@@ -16,28 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the s3outposts-2017-07-25.normal.json service model.
  */
+using Amazon.Runtime;
 
 namespace Amazon.S3Outposts.Model
 {
     /// <summary>
-    /// Paginators for the S3Outposts service
+    /// Paginator for the ListOutpostsWithS3 operation
     ///</summary>
-    public interface IS3OutpostsPaginatorFactory
+    public interface IListOutpostsWithS3Paginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListOutpostsWithS3Response> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListEndpoints operation
-        ///</summary>
-        IListEndpointsPaginator ListEndpoints(ListEndpointsRequest request);
-
-        /// <summary>
-        /// Paginator for ListOutpostsWithS3 operation
-        ///</summary>
-        IListOutpostsWithS3Paginator ListOutpostsWithS3(ListOutpostsWithS3Request request);
-
-        /// <summary>
-        /// Paginator for ListSharedEndpoints operation
-        ///</summary>
-        IListSharedEndpointsPaginator ListSharedEndpoints(ListSharedEndpointsRequest request);
+        /// Enumerable containing all of the Outposts
+        /// </summary>
+        IPaginatedEnumerable<Outpost> Outposts { get; }
     }
 }

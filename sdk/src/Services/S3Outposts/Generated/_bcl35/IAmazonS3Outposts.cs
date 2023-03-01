@@ -85,6 +85,9 @@ namespace Amazon.S3Outposts
         /// <exception cref="Amazon.S3Outposts.Model.ResourceNotFoundException">
         /// The requested resource was not found.
         /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ValidationException">
         /// There was an exception validating this data.
         /// </exception>
@@ -157,6 +160,9 @@ namespace Amazon.S3Outposts
         /// <exception cref="Amazon.S3Outposts.Model.ResourceNotFoundException">
         /// The requested resource was not found.
         /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ValidationException">
         /// There was an exception validating this data.
         /// </exception>
@@ -225,6 +231,9 @@ namespace Amazon.S3Outposts
         /// <exception cref="Amazon.S3Outposts.Model.ResourceNotFoundException">
         /// The requested resource was not found.
         /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ValidationException">
         /// There was an exception validating this data.
         /// </exception>
@@ -256,6 +265,60 @@ namespace Amazon.S3Outposts
         /// <returns>Returns a  ListEndpointsResult from S3Outposts.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListEndpoints">REST API Reference for ListEndpoints Operation</seealso>
         ListEndpointsResponse EndListEndpoints(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListOutpostsWithS3
+
+
+        /// <summary>
+        /// Lists the Outposts with S3 on Outposts capacity for your Amazon Web Services account.
+        /// Includes S3 on Outposts that you have access to as the Outposts owner, or as a shared
+        /// user from Resource Access Manager (RAM).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOutpostsWithS3 service method.</param>
+        /// 
+        /// <returns>The response from the ListOutpostsWithS3 service method, as returned by S3Outposts.</returns>
+        /// <exception cref="Amazon.S3Outposts.Model.AccessDeniedException">
+        /// Access was denied for this action.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.InternalServerException">
+        /// There was an exception with the internal server.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ValidationException">
+        /// There was an exception validating this data.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListOutpostsWithS3">REST API Reference for ListOutpostsWithS3 Operation</seealso>
+        ListOutpostsWithS3Response ListOutpostsWithS3(ListOutpostsWithS3Request request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOutpostsWithS3 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOutpostsWithS3 operation on AmazonS3OutpostsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOutpostsWithS3
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListOutpostsWithS3">REST API Reference for ListOutpostsWithS3 Operation</seealso>
+        IAsyncResult BeginListOutpostsWithS3(ListOutpostsWithS3Request request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOutpostsWithS3 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOutpostsWithS3.</param>
+        /// 
+        /// <returns>Returns a  ListOutpostsWithS3Result from S3Outposts.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListOutpostsWithS3">REST API Reference for ListOutpostsWithS3 Operation</seealso>
+        ListOutpostsWithS3Response EndListOutpostsWithS3(IAsyncResult asyncResult);
 
         #endregion
         
@@ -293,6 +356,9 @@ namespace Amazon.S3Outposts
         /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ResourceNotFoundException">
         /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ValidationException">
         /// There was an exception validating this data.
