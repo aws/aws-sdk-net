@@ -1,3 +1,14 @@
+### 3.7.494.0 (2023-03-01 19:22 UTC)
+* CodeCatalyst (3.7.101.0)
+	* Published Dev Environments StopDevEnvironmentSession API
+* Pricing (3.7.101.0)
+	* This release adds 2 new APIs - ListPriceLists which returns a list of applicable price lists, and GetPriceListFileUrl which outputs a URL to retrieve your price lists from the generated file from ListPriceLists
+* S3Outposts (3.7.101.0)
+	* S3 on Outposts introduces a new API ListOutpostsWithS3, with this API you can list all your Outposts with S3 capacity.
+* Core 3.7.105.11
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.493.0 (2023-02-28 19:23 UTC)
 * Comprehend (3.7.102.0)
 	* Amazon Comprehend now supports flywheels to help you train and manage new model versions for custom models.
