@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SchedulingConfig Marshaller
+    /// MaintenanceWindow Marshaller
     /// </summary>
-    public class SchedulingConfigMarshaller : IRequestMarshaller<SchedulingConfig, JsonMarshallerContext> 
+    public class MaintenanceWindowMarshaller : IRequestMarshaller<MaintenanceWindow, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SchedulingConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(MaintenanceWindow requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEndBehavior())
+            if(requestObject.IsSetDurationInMinutes())
             {
-                context.Writer.WritePropertyName("endBehavior");
-                context.Writer.Write(requestObject.EndBehavior);
-            }
-
-            if(requestObject.IsSetEndTime())
-            {
-                context.Writer.WritePropertyName("endTime");
-                context.Writer.Write(requestObject.EndTime);
-            }
-
-            if(requestObject.IsSetMaintenanceWindows())
-            {
-                context.Writer.WritePropertyName("maintenanceWindows");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectMaintenanceWindowsListValue in requestObject.MaintenanceWindows)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MaintenanceWindowMarshaller.Instance;
-                    marshaller.Marshall(requestObjectMaintenanceWindowsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("durationInMinutes");
+                context.Writer.Write(requestObject.DurationInMinutes);
             }
 
             if(requestObject.IsSetStartTime())
@@ -84,7 +62,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SchedulingConfigMarshaller Instance = new SchedulingConfigMarshaller();
+        public readonly static MaintenanceWindowMarshaller Instance = new MaintenanceWindowMarshaller();
 
     }
 }

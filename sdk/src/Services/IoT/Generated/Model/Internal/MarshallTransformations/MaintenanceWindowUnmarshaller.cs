@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SchedulingConfig Object
+    /// Response Unmarshaller for MaintenanceWindow Object
     /// </summary>  
-    public class SchedulingConfigUnmarshaller : IUnmarshaller<SchedulingConfig, XmlUnmarshallerContext>, IUnmarshaller<SchedulingConfig, JsonUnmarshallerContext>
+    public class MaintenanceWindowUnmarshaller : IUnmarshaller<MaintenanceWindow, XmlUnmarshallerContext>, IUnmarshaller<MaintenanceWindow, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SchedulingConfig IUnmarshaller<SchedulingConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MaintenanceWindow IUnmarshaller<MaintenanceWindow, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SchedulingConfig Unmarshall(JsonUnmarshallerContext context)
+        public MaintenanceWindow Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SchedulingConfig unmarshalledObject = new SchedulingConfig();
+            MaintenanceWindow unmarshalledObject = new MaintenanceWindow();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("endBehavior", targetDepth))
+                if (context.TestExpression("durationInMinutes", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndBehavior = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("endTime", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("maintenanceWindows", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<MaintenanceWindow, MaintenanceWindowUnmarshaller>(MaintenanceWindowUnmarshaller.Instance);
-                    unmarshalledObject.MaintenanceWindows = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.DurationInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startTime", targetDepth))
@@ -94,12 +82,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static SchedulingConfigUnmarshaller _instance = new SchedulingConfigUnmarshaller();        
+        private static MaintenanceWindowUnmarshaller _instance = new MaintenanceWindowUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SchedulingConfigUnmarshaller Instance
+        public static MaintenanceWindowUnmarshaller Instance
         {
             get
             {

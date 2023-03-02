@@ -37,6 +37,7 @@ namespace Amazon.IoT.Model
     {
         private JobEndBehavior _endBehavior;
         private string _endTime;
+        private List<MaintenanceWindow> _maintenanceWindows = new List<MaintenanceWindow>();
         private string _startTime;
 
         /// <summary>
@@ -67,7 +68,8 @@ namespace Amazon.IoT.Model
         /// from the current time and be scheduled a minimum of thirty minutes from the current
         /// time. The minimum duration between <code>startTime</code> and <code>endTime</code>
         /// is thirty minutes. The maximum duration between <code>startTime</code> and <code>endTime</code>
-        /// is two years. 
+        /// is two years. The date and time format for the <code>endTime</code> is YYYY-MM-DD
+        /// for the date and HH:MM for the time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -84,11 +86,33 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaintenanceWindows. 
+        /// <para>
+        /// An optional configuration within the <code>SchedulingConfig</code> to setup a recurring
+        /// maintenance window with a predetermined start time and duration for the rollout of
+        /// a job document to all devices in a target group for a job.
+        /// </para>
+        /// </summary>
+        public List<MaintenanceWindow> MaintenanceWindows
+        {
+            get { return this._maintenanceWindows; }
+            set { this._maintenanceWindows = value; }
+        }
+
+        // Check to see if MaintenanceWindows property is set
+        internal bool IsSetMaintenanceWindows()
+        {
+            return this._maintenanceWindows != null && this._maintenanceWindows.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The time a job will begin rollout of the job document to all devices in the target
         /// group for a job. The <code>startTime</code> can be scheduled up to a year in advance
-        /// and must be scheduled a minimum of thirty minutes from the current time.
+        /// and must be scheduled a minimum of thirty minutes from the current time. The date
+        /// and time format for the <code>startTime</code> is YYYY-MM-DD for the date and HH:MM
+        /// for the time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
