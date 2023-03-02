@@ -34,6 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class RecommendationJobInferenceBenchmark
     {
         private EndpointOutputConfiguration _endpointConfiguration;
+        private InferenceMetrics _endpointMetrics;
         private string _failureReason;
         private RecommendationMetrics _metrics;
         private ModelConfiguration _modelConfiguration;
@@ -51,6 +52,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEndpointConfiguration()
         {
             return this._endpointConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointMetrics.
+        /// </summary>
+        public InferenceMetrics EndpointMetrics
+        {
+            get { return this._endpointMetrics; }
+            set { this._endpointMetrics = value; }
+        }
+
+        // Check to see if EndpointMetrics property is set
+        internal bool IsSetEndpointMetrics()
+        {
+            return this._endpointMetrics != null;
         }
 
         /// <summary>

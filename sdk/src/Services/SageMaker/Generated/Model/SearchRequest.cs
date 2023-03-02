@@ -30,14 +30,21 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the Search operation.
-    /// Finds Amazon SageMaker resources that match a search query. Matching resources are
-    /// returned as a list of <code>SearchRecord</code> objects in the response. You can sort
-    /// the search results by any resource property in a ascending or descending order.
+    /// Finds SageMaker resources that match a search query. Matching resources are returned
+    /// as a list of <code>SearchRecord</code> objects in the response. You can sort the search
+    /// results by any resource property in a ascending or descending order.
     /// 
     ///  
     /// <para>
     /// You can query against the following value types: numeric, text, Boolean, and timestamp.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// The Search API may provide access to otherwise restricted data. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/api-permissions-reference.html">Amazon
+    /// SageMaker API Permissions: Actions, Permissions, and Resources Reference</a> for more
+    /// information.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class SearchRequest : AmazonSageMakerRequest
     {
@@ -91,7 +98,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The name of the Amazon SageMaker resource to search for.
+        /// The name of the SageMaker resource to search for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

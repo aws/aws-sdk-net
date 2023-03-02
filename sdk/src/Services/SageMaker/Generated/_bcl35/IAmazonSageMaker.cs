@@ -2449,7 +2449,7 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a schedule that regularly starts Amazon SageMaker Processing Jobs to monitor
-        /// the data captured for an Amazon SageMaker Endoint.
+        /// the data captured for an Amazon SageMaker Endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMonitoringSchedule service method.</param>
         /// 
@@ -8453,8 +8453,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// An auto-complete API for the search functionality in the Amazon SageMaker console.
-        /// It returns suggestions of possible matches for the property name to use in <code>Search</code>
+        /// An auto-complete API for the search functionality in the SageMaker console. It returns
+        /// suggestions of possible matches for the property name to use in <code>Search</code>
         /// queries. Provides suggestions for <code>HyperParameters</code>, <code>Tags</code>,
         /// and <code>Metrics</code>.
         /// </summary>
@@ -11783,14 +11783,21 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Finds Amazon SageMaker resources that match a search query. Matching resources are
-        /// returned as a list of <code>SearchRecord</code> objects in the response. You can sort
-        /// the search results by any resource property in a ascending or descending order.
+        /// Finds SageMaker resources that match a search query. Matching resources are returned
+        /// as a list of <code>SearchRecord</code> objects in the response. You can sort the search
+        /// results by any resource property in a ascending or descending order.
         /// 
         ///  
         /// <para>
         /// You can query against the following value types: numeric, text, Boolean, and timestamp.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The Search API may provide access to otherwise restricted data. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/api-permissions-reference.html">Amazon
+        /// SageMaker API Permissions: Actions, Permissions, and Resources Reference</a> for more
+        /// information.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Search service method.</param>
         /// 

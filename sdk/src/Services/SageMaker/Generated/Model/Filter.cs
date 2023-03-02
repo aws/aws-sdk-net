@@ -35,8 +35,8 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker
-    /// uses the equals operator.
+    /// If you specify a <code>Value</code>, but not an <code>Operator</code>, SageMaker uses
+    /// the equals operator.
     /// </para>
     ///  
     /// <para>
