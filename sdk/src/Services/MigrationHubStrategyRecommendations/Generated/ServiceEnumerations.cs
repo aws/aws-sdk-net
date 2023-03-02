@@ -737,6 +737,10 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// </summary>
         public static readonly DataSourceType ApplicationDiscoveryService = new DataSourceType("ApplicationDiscoveryService");
         /// <summary>
+        /// Constant Import for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType Import = new DataSourceType("Import");
+        /// <summary>
         /// Constant MPA for DataSourceType
         /// </summary>
         public static readonly DataSourceType MPA = new DataSourceType("MPA");
@@ -786,6 +790,10 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// Constant ExternalId for GroupName
         /// </summary>
         public static readonly GroupName ExternalId = new GroupName("ExternalId");
+        /// <summary>
+        /// Constant ExternalSourceType for GroupName
+        /// </summary>
+        public static readonly GroupName ExternalSourceType = new GroupName("ExternalSourceType");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
