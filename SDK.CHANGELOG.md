@@ -1,3 +1,20 @@
+### 3.7.495.0 (2023-03-02 19:22 UTC)
+* IoT (3.7.105.0)
+	* A recurring maintenance window is an optional configuration used for rolling out the job document to all devices in the target group observing a predetermined start time, duration, and frequency that the maintenance window occurs.
+* MigrationHubStrategyRecommendations (3.7.102.0)
+	* This release updates the File Import API to allow importing servers already discovered by customers with reduced pre-requisites.
+* Organizations (3.7.102.0)
+	* This release introduces a new reason code, ACCOUNT_CREATION_NOT_COMPLETE, to ConstraintViolationException in CreateOrganization API.
+* PI (3.7.101.0)
+	* This release adds a new field PeriodAlignment to allow the customer specifying the returned timestamp of time periods to be either the start or end time.
+* Pipes (3.7.101.0)
+	* This release fixes some input parameter range and patterns.
+* SageMaker (3.7.120.0)
+	* Add a new field "EndpointMetrics" in SageMaker Inference Recommender "ListInferenceRecommendationsJobSteps" API response.
+* Core 3.7.105.12
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.494.1 (2023-03-02 01:40 UTC)
 * S3 (3.7.103.19)
 	* Fix for S3 UploadPartCopyRequest/CopyPart endpoint resolution
