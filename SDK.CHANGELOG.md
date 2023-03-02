@@ -1,3 +1,7 @@
+### 3.7.494.1 (2023-03-02 01:40 UTC)
+* S3 (3.7.103.19)
+	* Fix for S3 UploadPartCopyRequest/CopyPart endpoint resolution
+
 ### 3.7.494.0 (2023-03-01 19:22 UTC)
 * CodeCatalyst (3.7.101.0)
 	* Published Dev Environments StopDevEnvironmentSession API
