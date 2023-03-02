@@ -62,6 +62,11 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+    /// fully active. You must complete the account setup before you create an organization.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
     /// accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon
     /// Web Services Support</a> to request an increase in your limit. 

@@ -775,6 +775,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon
         /// Web Services Support</a> to request an increase in your limit. 
@@ -1396,12 +1401,14 @@ namespace Amazon.Organizations
         #region  CloseAccount
 
         /// <summary>
-        /// Closes an Amazon Web Services member account within an organization. You can't close
-        /// the management account with this API. This is an asynchronous request that Amazon
-        /// Web Services performs in the background. Because <code>CloseAccount</code> operates
-        /// asynchronously, it can return a successful completion message even though account
-        /// closure might still be in progress. You need to wait a few minutes before the account
-        /// is fully closed. To check the status of the request, do one of the following:
+        /// Closes an Amazon Web Services member account within an organization. You can close
+        /// an account when <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
+        /// features are enabled </a>. You can't close the management account with this API. This
+        /// is an asynchronous request that Amazon Web Services performs in the background. Because
+        /// <code>CloseAccount</code> operates asynchronously, it can return a successful completion
+        /// message even though account closure might still be in progress. You need to wait a
+        /// few minutes before the account is fully closed. To check the status of the request,
+        /// do one of the following:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -1422,10 +1429,15 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
-        /// You can only close 10% of active member accounts within a rolling 30 day period. This
-        /// quota is not bound by a calendar month, but starts when you close an account. Within
-        /// 30 days of that initial account closure, you can't exceed the 10% account closure
-        /// limit.
+        /// You can close only 10% of member accounts, between 10 and 200, within a rolling 30
+        /// day period. This quota is not bound by a calendar month, but starts when you close
+        /// an account.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you reach this limit, you can close additional accounts in the Billing console.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/close-account.html">Closing
+        /// an account</a> in the Amazon Web Services Billing and Cost Management User Guide.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1505,6 +1517,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
         /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2025,6 +2042,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
         /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2614,6 +2636,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon
         /// Web Services Support</a> to request an increase in your limit. 
@@ -3073,6 +3100,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon
         /// Web Services Support</a> to request an increase in your limit. 
@@ -3516,6 +3548,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
         /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3965,6 +4002,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
         /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5286,6 +5328,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon
         /// Web Services Support</a> to request an increase in your limit. 
@@ -5625,6 +5672,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
         /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6492,6 +6544,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
         /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7615,7 +7672,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// You can only call this operation from the organization's management account or by
-        /// a member account that is a delegated administrator for an AWS service.
+        /// a member account that is a delegated administrator for an Amazon Web Services service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePolicy service method.</param>
@@ -7662,6 +7719,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
         /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7997,6 +8059,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
         /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8516,6 +8583,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon
         /// Web Services Support</a> to request an increase in your limit. 
@@ -8965,6 +9037,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
         /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9745,6 +9822,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon
         /// Web Services Support</a> to request an increase in your limit. 
@@ -10191,6 +10273,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
         /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10673,6 +10760,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
         /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11255,6 +11347,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
         /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12135,6 +12232,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon
         /// Web Services Support</a> to request an increase in your limit. 
@@ -13003,6 +13105,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon
         /// Web Services Support</a> to request an increase in your limit. 
@@ -13442,6 +13549,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
         /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16098,6 +16210,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon
         /// Web Services Support</a> to request an increase in your limit. 
@@ -16550,6 +16667,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
         /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17030,6 +17152,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon
         /// Web Services Support</a> to request an increase in your limit. 
@@ -17487,6 +17614,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon
         /// Web Services Support</a> to request an increase in your limit. 
@@ -17940,6 +18072,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
         /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18592,6 +18729,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
         /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
