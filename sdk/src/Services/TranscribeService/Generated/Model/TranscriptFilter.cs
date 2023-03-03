@@ -51,7 +51,7 @@ namespace Amazon.TranscribeService.Model
     ///  </li> </ul> 
     /// <para>
     /// See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule
-    /// criteria for batch categories</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html#tca-rules-stream">Rule
+    /// criteria for post-call categories</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html#tca-rules-stream">Rule
     /// criteria for streaming categories</a> for usage examples.
     /// </para>
     /// </summary>

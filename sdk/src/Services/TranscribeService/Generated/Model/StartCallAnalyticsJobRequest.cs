@@ -48,14 +48,18 @@ namespace Amazon.TranscribeService.Model
     /// submitting your job request. Categories cannot be retroactively applied to a job.
     /// To create a new category, use the operation. To learn more about Call Analytics categories,
     /// see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating
-    /// categories for batch transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
-    /// categories for streaming transcriptions</a>.
+    /// categories for post-call transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
+    /// categories for real-time transcriptions</a>.
     /// </para>
     ///  
     /// <para>
     /// To make a <code>StartCallAnalyticsJob</code> request, you must first upload your media
     /// file into an Amazon S3 bucket; you can then specify the Amazon S3 location of the
     /// file using the <code>Media</code> parameter.
+    /// </para>
+    ///  
+    /// <para>
+    /// Note that job queuing is enabled by default for Call Analytics jobs.
     /// </para>
     ///  
     /// <para>
@@ -254,7 +258,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Note that the user making the request must have permission to use the specified KMS
+        /// Note that the role making the request must have permission to use the specified KMS
         /// key.
         /// </para>
         /// </summary>

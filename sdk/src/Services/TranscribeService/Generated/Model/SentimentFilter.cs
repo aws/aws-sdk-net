@@ -59,7 +59,7 @@ namespace Amazon.TranscribeService.Model
     ///  </li> </ul> 
     /// <para>
     /// See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule
-    /// criteria for batch categories</a> for usage examples.
+    /// criteria for post-call categories</a> for usage examples.
     /// </para>
     /// </summary>
     public partial class SentimentFilter
