@@ -1,3 +1,20 @@
+### 3.7.496.0 (2023-03-03 19:25 UTC)
+* DynamoDBv2 (3.7.101.55)
+	* Documentation updates for DynamoDB.
+* EC2 (3.7.125.0)
+	* This release adds support for a new boot mode for EC2 instances called 'UEFI Preferred'.
+* Macie2 (3.7.103.5)
+	* Documentation updates for Amazon Macie
+* MediaConvert (3.7.107.0)
+	* The AWS Elemental MediaConvert SDK has improved handling for different input and output color space combinations.
+* MediaLive (3.7.105.0)
+	* AWS Elemental MediaLive adds support for Nielsen watermark timezones.
+* TranscribeService (3.7.104.0)
+	* Amazon Transcribe now supports role access for these API operations: CreateVocabulary, UpdateVocabulary, CreateVocabularyFilter, and UpdateVocabularyFilter.
+* Core 3.7.105.13
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.495.0 (2023-03-02 19:22 UTC)
 * IoT (3.7.105.0)
 	* A recurring maintenance window is an optional configuration used for rolling out the job document to all devices in the target group observing a predetermined start time, duration, and frequency that the maintenance window occurs.
