@@ -88,9 +88,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property BucketCountByEncryptionType. 
         /// <para>
-        /// The total number of buckets that use certain types of server-side encryption to encrypt
-        /// new objects by default. This object also reports the total number of buckets that
-        /// don't encrypt new objects by default.
+        /// The total number of buckets whose settings do or don't specify default server-side
+        /// encryption behavior for objects that are added to the buckets.
         /// </para>
         /// </summary>
         public BucketCountByEncryptionType BucketCountByEncryptionType
@@ -109,7 +108,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property BucketCountByObjectEncryptionRequirement. 
         /// <para>
         /// The total number of buckets whose bucket policies do or don't require server-side
-        /// encryption of objects when objects are uploaded to the buckets.
+        /// encryption of objects when objects are added to the buckets.
         /// </para>
         /// </summary>
         public BucketCountPolicyAllowsUnencryptedObjectUploads BucketCountByObjectEncryptionRequirement

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about the server-side encryption settings for an S3 bucket or
-    /// S3 object.
+    /// Provides information about the default server-side encryption settings for an S3 bucket
+    /// or the encryption settings for an S3 object.
     /// </summary>
     public partial class ServerSideEncryption
     {
@@ -41,8 +41,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property EncryptionType. 
         /// <para>
         /// The server-side encryption algorithm that's used when storing data in the bucket or
-        /// object. If default encryption is disabled for the bucket or the object isn't encrypted
-        /// using server-side encryption, this value is NONE.
+        /// object. If default encryption settings aren't configured for the bucket or the object
+        /// isn't encrypted using server-side encryption, this value is NONE.
         /// </para>
         /// </summary>
         public EncryptionType EncryptionType
