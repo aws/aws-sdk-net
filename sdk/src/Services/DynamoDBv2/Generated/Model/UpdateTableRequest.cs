@@ -33,7 +33,12 @@ namespace Amazon.DynamoDBv2.Model
     /// Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB
     /// Streams settings for a given table.
     /// 
-    ///  
+    ///  <important> 
+    /// <para>
+    /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+    /// 2019.11.21 (Current)</a> of global tables. 
+    /// </para>
+    ///  </important> 
     /// <para>
     /// You can only perform one of the following operations at once:
     /// </para>
@@ -211,7 +216,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  <note> 
         /// <para>
         /// This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21</a> of global tables.
+        /// 2019.11.21 (Current)</a> of global tables. 
         /// </para>
         ///  </note>
         /// </summary>
