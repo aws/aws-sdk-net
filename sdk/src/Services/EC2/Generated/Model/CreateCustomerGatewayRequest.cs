@@ -91,7 +91,6 @@ namespace Amazon.EC2.Model
         /// Default: 65000
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public int BgpAsn
         {
             get { return this._bgpAsn.GetValueOrDefault(); }

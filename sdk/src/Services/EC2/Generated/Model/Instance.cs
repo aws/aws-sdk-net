@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private CapacityReservationSpecificationResponse _capacityReservationSpecification;
         private string _clientToken;
         private CpuOptions _cpuOptions;
+        private InstanceBootModeValues _currentInstanceBootMode;
         private bool? _ebsOptimized;
         private List<ElasticGpuAssociation> _elasticGpuAssociations = new List<ElasticGpuAssociation>();
         private List<ElasticInferenceAcceleratorAssociation> _elasticInferenceAcceleratorAssociations = new List<ElasticInferenceAcceleratorAssociation>();
@@ -147,7 +148,18 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BootMode. 
         /// <para>
-        /// The boot mode of the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+        /// The boot mode that was specified by the AMI. If the value is <code>uefi-preferred</code>,
+        /// the AMI supports both UEFI and Legacy BIOS. The <code>currentInstanceBootMode</code>
+        /// parameter is the boot mode that is used to boot the instance at launch or start.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The operating system contained in the AMI must be configured to support the specified
+        /// boot mode.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
         /// modes</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -233,6 +245,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetCpuOptions()
         {
             return this._cpuOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentInstanceBootMode. 
+        /// <para>
+        /// The boot mode that is used to boot the instance at launch or start. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+        /// modes</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public InstanceBootModeValues CurrentInstanceBootMode
+        {
+            get { return this._currentInstanceBootMode; }
+            set { this._currentInstanceBootMode = value; }
+        }
+
+        // Check to see if CurrentInstanceBootMode property is set
+        internal bool IsSetCurrentInstanceBootMode()
+        {
+            return this._currentInstanceBootMode != null;
         }
 
         /// <summary>
