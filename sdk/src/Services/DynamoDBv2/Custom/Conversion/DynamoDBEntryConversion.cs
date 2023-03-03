@@ -239,8 +239,9 @@ namespace Amazon.DynamoDBv2
             if (inputType == null) throw new ArgumentNullException("inputType");
             if (value == null) throw new ArgumentNullException("value");
 
-            var converter = ConverterCache.GetConverter(inputType);
-            return converter.TryToEntry(value, out entry);
+            entry = null;
+            ConverterCache.TryGetConverter(inputType, out var converter);
+            return converter?.TryToEntry(value, out entry) ?? false;
         }
 
         /// <summary>
@@ -289,9 +290,8 @@ namespace Amazon.DynamoDBv2
             output = default(TOutput);
 
             var outputType = typeof(TOutput);
-            object converted;
 
-            if (TryConvertFromEntry(outputType, entry, out converted))
+            if (TryConvertFromEntry(outputType, entry, out var converted))
             {
                 if (converted != null)
                     output = (TOutput)converted;
@@ -315,8 +315,9 @@ namespace Amazon.DynamoDBv2
             if (outputType == null) throw new ArgumentNullException("outputType");
             if (entry == null) throw new ArgumentNullException("entry");
 
-            var converter = ConverterCache.GetConverter(outputType);
-            return converter.TryFromEntry(entry, outputType, out value);
+            value = null;
+            ConverterCache.TryGetConverter(outputType, out var converter);
+            return converter?.TryFromEntry(entry, outputType, out value) ?? false;
         }
 
         #endregion
