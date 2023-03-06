@@ -1,3 +1,9 @@
+### 3.7.497.0 (2023-03-06 19:17 UTC)
+* Account (3.7.102.0)
+	* AWS Account alternate contact email addresses can now have a length of 254 characters and contain the character "|".
+* IVS (3.7.101.27)
+	* Updated text description in DeleteChannel, Stream, and StreamSummary.
+
 ### 3.7.496.0 (2023-03-03 19:25 UTC)
 * DynamoDBv2 (3.7.101.55)
 	* Documentation updates for DynamoDB.
