@@ -923,7 +923,11 @@ namespace Amazon.Runtime
                     return _httpClientCacheSize.Value;
                 }
 
+#if NETCOREAPP3_1_OR_GREATER
                 return 1;
+#else
+                return RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? 1 : Environment.ProcessorCount;
+#endif
             }
             set => _httpClientCacheSize = value;
         }
