@@ -64,7 +64,7 @@ namespace Amazon.Account.Model
         /// The email address associated with this alternate contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=254)]
         public string EmailAddress
         {
             get { return this._emailAddress; }

@@ -65,8 +65,8 @@
   <property-value-rule>
     <property>Amazon.Account.Model.PutAlternateContactRequest.EmailAddress</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>^[\s]*[\w+=.#!&amp;-]+@[\w.-]+\.[\w]+[\s]*$</pattern>
+    <max>254</max>
+    <pattern>^[\s]*[\w+=.#|!&amp;-]+@[\w.-]+\.[\w]+[\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.PutAlternateContactRequest.Name</property>
@@ -91,8 +91,8 @@
   <property-value-rule>
     <property>Amazon.Account.Model.AlternateContact.EmailAddress</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>^[\s]*[\w+=.#!&amp;-]+@[\w.-]+\.[\w]+[\s]*$</pattern>
+    <max>254</max>
+    <pattern>^[\s]*[\w+=.#|!&amp;-]+@[\w.-]+\.[\w]+[\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.AlternateContact.Name</property>

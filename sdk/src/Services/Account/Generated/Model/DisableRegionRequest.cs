@@ -79,10 +79,10 @@ namespace Amazon.Account.Model
         /// Gets and sets the property RegionName. 
         /// <para>
         /// Specifies the Region-code for a given Region name (for example, <code>af-south-1</code>).
-        /// When you disable a Region, AWS performs actions to deactivate that Region in your
-        /// account, such as destroying IAM resources in the Region. This process takes a few
-        /// minutes for most accounts, but this can take several hours. You cannot enable the
-        /// Region until the disabling process is fully completed.
+        /// When you disable a Region, Amazon Web Services performs actions to deactivate that
+        /// Region in your account, such as destroying IAM resources in the Region. This process
+        /// takes a few minutes for most accounts, but this can take several hours. You cannot
+        /// enable the Region until the disabling process is fully completed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
