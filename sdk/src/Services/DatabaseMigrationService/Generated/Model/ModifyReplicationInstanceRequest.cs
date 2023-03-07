@@ -139,7 +139,18 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// DMS has enabled automatic patching for the given engine version. 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default
+        /// engine version when you modify a replication instance. For example, if you set <code>EngineVersion</code>
+        /// to a lower version number than the current default version, DMS uses the default version.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>AutoMinorVersionUpgrade</code> <i>isn’t</i> enabled when you modify a replication
+        /// instance, DMS uses the engine version specified by the <code>EngineVersion</code>
+        /// parameter.
+        /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
         {

@@ -281,7 +281,7 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Adds metadata tags to an DMS resource, including replication instance, endpoint, security
+        /// Adds metadata tags to an DMS resource, including replication instance, endpoint, subnet
         /// group, and migration task. These tags can also be used with cost allocation reporting
         /// to track cost associated with DMS resources, or used in a Condition statement in an
         /// IAM policy for DMS. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
@@ -305,7 +305,7 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Adds metadata tags to an DMS resource, including replication instance, endpoint, security
+        /// Adds metadata tags to an DMS resource, including replication instance, endpoint, subnet
         /// group, and migration task. These tags can also be used with cost allocation reporting
         /// to track cost associated with DMS resources, or used in a Condition statement in an
         /// IAM policy for DMS. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
@@ -377,6 +377,83 @@ namespace Amazon.DatabaseMigrationService
             options.ResponseUnmarshaller = ApplyPendingMaintenanceActionResponseUnmarshaller.Instance;
             
             return InvokeAsync<ApplyPendingMaintenanceActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchStartRecommendations
+
+
+        /// <summary>
+        /// Starts the analysis of up to 20 source databases to recommend target engines for each
+        /// source database. This is a batch version of <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartRecommendations.html">StartRecommendations</a>.
+        /// 
+        ///  
+        /// <para>
+        /// The result of analysis of each source database is reported individually in the response.
+        /// Because the batch request can result in a combination of successful and unsuccessful
+        /// actions, you should check for batch errors even when the call returns an HTTP status
+        /// code of <code>200</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchStartRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the BatchStartRecommendations service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/BatchStartRecommendations">REST API Reference for BatchStartRecommendations Operation</seealso>
+        public virtual BatchStartRecommendationsResponse BatchStartRecommendations(BatchStartRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchStartRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchStartRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchStartRecommendationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts the analysis of up to 20 source databases to recommend target engines for each
+        /// source database. This is a batch version of <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartRecommendations.html">StartRecommendations</a>.
+        /// 
+        ///  
+        /// <para>
+        /// The result of analysis of each source database is reported individually in the response.
+        /// Because the batch request can result in a combination of successful and unsuccessful
+        /// actions, you should check for batch errors even when the call returns an HTTP status
+        /// code of <code>200</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchStartRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchStartRecommendations service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/BatchStartRecommendations">REST API Reference for BatchStartRecommendations Operation</seealso>
+        public virtual Task<BatchStartRecommendationsResponse> BatchStartRecommendationsAsync(BatchStartRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchStartRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchStartRecommendationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchStartRecommendationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2529,6 +2606,114 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DescribeRecommendationLimitations
+
+
+        /// <summary>
+        /// Returns a paginated list of limitations for recommendations of target Amazon Web Services
+        /// engines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRecommendationLimitations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRecommendationLimitations service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRecommendationLimitations">REST API Reference for DescribeRecommendationLimitations Operation</seealso>
+        public virtual DescribeRecommendationLimitationsResponse DescribeRecommendationLimitations(DescribeRecommendationLimitationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRecommendationLimitationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRecommendationLimitationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRecommendationLimitationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of limitations for recommendations of target Amazon Web Services
+        /// engines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRecommendationLimitations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRecommendationLimitations service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRecommendationLimitations">REST API Reference for DescribeRecommendationLimitations Operation</seealso>
+        public virtual Task<DescribeRecommendationLimitationsResponse> DescribeRecommendationLimitationsAsync(DescribeRecommendationLimitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRecommendationLimitationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRecommendationLimitationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeRecommendationLimitationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeRecommendations
+
+
+        /// <summary>
+        /// Returns a paginated list of target engine recommendations for your source databases.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRecommendations service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRecommendations">REST API Reference for DescribeRecommendations Operation</seealso>
+        public virtual DescribeRecommendationsResponse DescribeRecommendations(DescribeRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRecommendationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of target engine recommendations for your source databases.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRecommendations service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRecommendations">REST API Reference for DescribeRecommendations Operation</seealso>
+        public virtual Task<DescribeRecommendationsResponse> DescribeRecommendationsAsync(DescribeRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRecommendationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeRecommendationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeRefreshSchemasStatus
 
 
@@ -3153,7 +3338,7 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Lists all metadata tags attached to an DMS resource, including replication instance,
-        /// endpoint, security group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
+        /// endpoint, subnet group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
         /// <code>Tag</code> </a> data type description.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -3175,7 +3360,7 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Lists all metadata tags attached to an DMS resource, including replication instance,
-        /// endpoint, security group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
+        /// endpoint, subnet group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
         /// <code>Tag</code> </a> data type description.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -3917,7 +4102,7 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Removes metadata tags from an DMS resource, including replication instance, endpoint,
-        /// security group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
+        /// subnet group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
         /// <code>Tag</code> </a> data type description.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
@@ -3939,7 +4124,7 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Removes metadata tags from an DMS resource, including replication instance, endpoint,
-        /// security group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
+        /// subnet group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
         /// <code>Tag</code> </a> data type description.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
@@ -4014,6 +4199,75 @@ namespace Amazon.DatabaseMigrationService
             options.ResponseUnmarshaller = RunFleetAdvisorLsaAnalysisResponseUnmarshaller.Instance;
             
             return InvokeAsync<RunFleetAdvisorLsaAnalysisResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartRecommendations
+
+
+        /// <summary>
+        /// Starts the analysis of your source database to provide recommendations of target engines.
+        /// 
+        ///  
+        /// <para>
+        /// You can create recommendations for multiple source databases using <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_BatchStartRecommendations.html">BatchStartRecommendations</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the StartRecommendations service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartRecommendations">REST API Reference for StartRecommendations Operation</seealso>
+        public virtual StartRecommendationsResponse StartRecommendations(StartRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<StartRecommendationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts the analysis of your source database to provide recommendations of target engines.
+        /// 
+        ///  
+        /// <para>
+        /// You can create recommendations for multiple source databases using <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_BatchStartRecommendations.html">BatchStartRecommendations</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartRecommendations service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartRecommendations">REST API Reference for StartRecommendations Operation</seealso>
+        public virtual Task<StartRecommendationsResponse> StartRecommendationsAsync(StartRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRecommendationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartRecommendationsResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -1180,6 +1180,10 @@ namespace Amazon.DatabaseMigrationService
         /// Constant Beta for ReleaseStatusValues
         /// </summary>
         public static readonly ReleaseStatusValues Beta = new ReleaseStatusValues("beta");
+        /// <summary>
+        /// Constant Prod for ReleaseStatusValues
+        /// </summary>
+        public static readonly ReleaseStatusValues Prod = new ReleaseStatusValues("prod");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

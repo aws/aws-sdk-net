@@ -377,7 +377,18 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerName. 
         /// <para>
-        /// Fully qualified domain name of the endpoint.
+        /// The host name of the endpoint database. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For an Amazon RDS PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+        /// in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+        /// field.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an Aurora PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>,
+        /// in the <code>Endpoint</code> field.
         /// </para>
         /// </summary>
         public string ServerName

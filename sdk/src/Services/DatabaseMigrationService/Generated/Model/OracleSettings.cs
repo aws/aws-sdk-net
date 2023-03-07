@@ -796,6 +796,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Fully qualified domain name of the endpoint.
         /// </para>
+        ///  
+        /// <para>
+        /// For an Amazon RDS Oracle instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+        /// in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+        /// field.
+        /// </para>
         /// </summary>
         public string ServerName
         {
