@@ -157,6 +157,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
         // Checks if the IndexName is set on the config
         internal bool IsIndexOperation { get { return !string.IsNullOrEmpty(IndexName); } }
+
+        /// <summary>
+        /// Instructs the context to not attempt to do any describe table or validation of the data model being mapped.
+        /// </summary>
+        internal bool? ConvertOnly { get; set; }
     }
 
     /// <summary>
@@ -283,7 +288,8 @@ namespace Amazon.DynamoDBv2.DataModel
             IndexName = null,
             ConditionalOperator = ConditionalOperatorValues.And,
             Conversion = null,
-            IsEmptyStringValueEnabled = null
+            IsEmptyStringValueEnabled = null,
+            ConvertOnly = null
         };
         private static DynamoDBContextConfig _emptyContextConfig = new DynamoDBContextConfig
         {
@@ -314,6 +320,7 @@ namespace Amazon.DynamoDBv2.DataModel
             bool backwardQuery = operationConfig.BackwardQuery ?? false;
             string indexName =
                 !string.IsNullOrEmpty(operationConfig.IndexName) ? operationConfig.IndexName : DefaultIndexName;
+            bool convertOnly = operationConfig.ConvertOnly ?? false;
             List<ScanCondition> queryFilter = operationConfig.QueryFilter ?? new List<ScanCondition>();
             ConditionalOperatorValues conditionalOperator = operationConfig.ConditionalOperator;
             DynamoDBEntryConversion conversion = operationConfig.Conversion ?? contextConfig.Conversion ?? DynamoDBEntryConversion.CurrentConversion;
@@ -329,6 +336,7 @@ namespace Amazon.DynamoDBv2.DataModel
             QueryFilter = queryFilter;
             ConditionalOperator = conditionalOperator;
             Conversion = conversion;
+            ConvertOnly = convertOnly;
 
             State = new OperationState();
         }
@@ -410,6 +418,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// .NET and DynamoDB types happens.
         /// </summary>
         public DynamoDBEntryConversion Conversion { get; set; }
+
+        /// <summary>
+        /// Instructs the context to not attempt to do any describe table or validation of the data model being mapped.
+        /// </summary>
+        public bool? ConvertOnly { get; set; }
 
         // Checks if the IndexName is set on the config
         internal bool IsIndexOperation { get { return !string.IsNullOrEmpty(IndexName); } }

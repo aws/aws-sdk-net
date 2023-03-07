@@ -322,6 +322,11 @@ namespace Amazon.DynamoDBv2.DataModel
             if (value == null) return null;
 
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
+            if (flatConfig.ConvertOnly.GetValueOrDefault(false))
+            {
+                return SerializeToDocument(value, typeof(T), flatConfig);
+            }
+
             ItemStorage storage = ObjectToItemStorage<T>(value, false, flatConfig);
             if (storage == null) return null;
 
@@ -427,6 +432,10 @@ namespace Amazon.DynamoDBv2.DataModel
         public T FromDocument<T>(Document document, DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
+            if (flatConfig.ConvertOnly.GetValueOrDefault(false))
+            {
+                return (T)DeserializeFromDocument(document, typeof(T), flatConfig);
+            }
             return FromDocumentHelper<T>(document, flatConfig);
         }
 
