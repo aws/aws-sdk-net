@@ -237,7 +237,6 @@ namespace Amazon.DynamoDBv2.DataModel
             return new MultiTableBatchWrite(batches);
         }
 
-
         #endregion
 
         #region Save/serialize
