@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UserContext Object
+    /// Response Unmarshaller for IamIdentity Object
     /// </summary>  
-    public class UserContextUnmarshaller : IUnmarshaller<UserContext, XmlUnmarshallerContext>, IUnmarshaller<UserContext, JsonUnmarshallerContext>
+    public class IamIdentityUnmarshaller : IUnmarshaller<IamIdentity, XmlUnmarshallerContext>, IUnmarshaller<IamIdentity, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        UserContext IUnmarshaller<UserContext, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IamIdentity IUnmarshaller<IamIdentity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public UserContext Unmarshall(JsonUnmarshallerContext context)
+        public IamIdentity Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            UserContext unmarshalledObject = new UserContext();
+            IamIdentity unmarshalledObject = new IamIdentity();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DomainId", targetDepth))
+                if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("IamIdentity", targetDepth))
-                {
-                    var unmarshaller = IamIdentityUnmarshaller.Instance;
-                    unmarshalledObject.IamIdentity = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UserProfileArn", targetDepth))
+                if (context.TestExpression("PrincipalId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserProfileArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrincipalId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("UserProfileName", targetDepth))
+                if (context.TestExpression("SourceIdentity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserProfileName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceIdentity = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static UserContextUnmarshaller _instance = new UserContextUnmarshaller();        
+        private static IamIdentityUnmarshaller _instance = new IamIdentityUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UserContextUnmarshaller Instance
+        public static IamIdentityUnmarshaller Instance
         {
             get
             {

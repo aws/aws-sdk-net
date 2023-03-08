@@ -12768,7 +12768,7 @@ namespace Amazon.SageMaker
         ///  
         /// <para>
         /// To restrict access to all the workers in public internet, add the <code>SourceIpConfig</code>
-        /// CIDR value as "0.0.0.0/0".
+        /// CIDR value as "10.0.0.0/16".
         /// </para>
         ///  <important> 
         /// <para>
