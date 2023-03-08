@@ -2497,6 +2497,13 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Lists the data catalogs in the current Amazon Web Services account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// In the Athena console, data catalogs are listed as "data sources" on the <b>Data sources</b>
+        /// page under the <b>Data source name</b> column.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataCatalogs service method.</param>
         /// 

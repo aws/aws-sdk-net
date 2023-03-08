@@ -43,6 +43,7 @@ namespace Amazon.Athena.Model
         private StatementType _statementType;
         private QueryExecutionStatistics _statistics;
         private QueryExecutionStatus _status;
+        private string _substatementType;
         private string _workGroup;
 
         /// <summary>
@@ -236,6 +237,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubstatementType. 
+        /// <para>
+        /// The kind of query statement that was run.
+        /// </para>
+        /// </summary>
+        public string SubstatementType
+        {
+            get { return this._substatementType; }
+            set { this._substatementType = value; }
+        }
+
+        // Check to see if SubstatementType property is set
+        internal bool IsSetSubstatementType()
+        {
+            return this._substatementType != null;
         }
 
         /// <summary>
