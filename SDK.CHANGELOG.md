@@ -1,3 +1,24 @@
+### 3.7.499.0 (2023-03-08 19:27 UTC)
+* Athena (3.7.104.0)
+	* A new field SubstatementType is added to GetQueryExecution API, so customers have an error free way to detect the query type and interpret the result.
+* DynamoDBv2 (3.7.102.0)
+	* Adds deletion protection support to DynamoDB tables. Tables with deletion protection enabled cannot be deleted. Deletion protection is disabled by default, can be enabled via the CreateTable or UpdateTable APIs, and is visible in TableDescription. This setting is not replicated for Global Tables.
+* EC2 (3.7.126.0)
+	* Introducing Amazon EC2 C7g, M7g and R7g instances, powered by the latest generation AWS Graviton3 processors and deliver up to 25% better performance over Graviton2-based instances.
+* LakeFormation (3.7.103.0)
+	* This release adds two new API support "GetDataCellsFiler" and "UpdateDataCellsFilter", and also updates the corresponding documentation.
+* MediaPackage (3.7.101.0)
+	* This release provides the date and time live resources were created.
+* MediaPackageVod (3.7.103.0)
+	* This release provides the date and time VOD resources were created.
+* Route53Resolver (3.7.101.0)
+	* Add dual-stack and IPv6 support for Route 53 Resolver Endpoint,Add IPv6 target IP in Route 53 Resolver Forwarding Rule
+* SageMaker (3.7.121.0)
+	* There needs to be a user identity to specify the SageMaker user who perform each action regarding the entity. However, these is a not a unified concept of user identity across SageMaker service that could be used today.
+* Core 3.7.105.15
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.498.0 (2023-03-07 19:21 UTC)
 * DatabaseMigrationService (3.7.102.0)
 	* This release adds DMS Fleet Advisor Target Recommendation APIs and exposes functionality for DMS Fleet Advisor. It adds functionality to start Target Recommendation calculation.
