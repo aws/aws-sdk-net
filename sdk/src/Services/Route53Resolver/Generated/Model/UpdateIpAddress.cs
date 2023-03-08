@@ -29,41 +29,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// In a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html">CreateResolverRule</a>
-    /// request, an array of the IPs that you want to forward DNS queries to.
+    /// Provides information about the IP address type in response to <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html">UpdateResolverEndpoint</a>.
     /// </summary>
-    public partial class TargetAddress
+    public partial class UpdateIpAddress
     {
-        private string _ip;
+        private string _ipId;
         private string _ipv6;
-        private int? _port;
 
         /// <summary>
-        /// Gets and sets the property Ip. 
+        /// Gets and sets the property IpId. 
         /// <para>
-        /// One IPv4 address that you want to forward DNS queries to.
+        ///  The ID of the IP address, specified by the <code>ResolverEndpointId</code>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7, Max=36)]
-        public string Ip
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string IpId
         {
-            get { return this._ip; }
-            set { this._ip = value; }
+            get { return this._ipId; }
+            set { this._ipId = value; }
         }
 
-        // Check to see if Ip property is set
-        internal bool IsSetIp()
+        // Check to see if IpId property is set
+        internal bool IsSetIpId()
         {
-            return this._ip != null;
+            return this._ipId != null;
         }
 
         /// <summary>
         /// Gets and sets the property Ipv6. 
         /// <para>
-        ///  One IPv6 address that you want to forward DNS queries to. 
+        ///  The IPv6 address that you want to use for DNS queries. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7, Max=39)]
+        [AWSProperty(Required=true, Min=7, Max=39)]
         public string Ipv6
         {
             get { return this._ipv6; }
@@ -74,25 +72,6 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetIpv6()
         {
             return this._ipv6 != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Port. 
-        /// <para>
-        /// The port at <code>Ip</code> that you want to forward DNS queries to.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=65535)]
-        public int Port
-        {
-            get { return this._port.GetValueOrDefault(); }
-            set { this._port = value; }
-        }
-
-        // Check to see if Port property is set
-        internal bool IsSetPort()
-        {
-            return this._port.HasValue; 
         }
 
     }

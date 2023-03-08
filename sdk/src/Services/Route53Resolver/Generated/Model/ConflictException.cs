@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// 
+    /// The requested state transition isn't valid. For example, you can't delete a firewall
+    /// domain list if it is in the process of being deleted, or you can't import domains
+    /// into a domain list that is in the process of being deleted.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

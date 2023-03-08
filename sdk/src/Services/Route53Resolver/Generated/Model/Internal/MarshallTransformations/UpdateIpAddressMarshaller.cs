@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TargetAddress Marshaller
+    /// UpdateIpAddress Marshaller
     /// </summary>
-    public class TargetAddressMarshaller : IRequestMarshaller<TargetAddress, JsonMarshallerContext> 
+    public class UpdateIpAddressMarshaller : IRequestMarshaller<UpdateIpAddress, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,12 +43,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TargetAddress requestObject, JsonMarshallerContext context)
+        public void Marshall(UpdateIpAddress requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetIp())
+            if(requestObject.IsSetIpId())
             {
-                context.Writer.WritePropertyName("Ip");
-                context.Writer.Write(requestObject.Ip);
+                context.Writer.WritePropertyName("IpId");
+                context.Writer.Write(requestObject.IpId);
             }
 
             if(requestObject.IsSetIpv6())
@@ -57,18 +57,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Ipv6);
             }
 
-            if(requestObject.IsSetPort())
-            {
-                context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TargetAddressMarshaller Instance = new TargetAddressMarshaller();
+        public readonly static UpdateIpAddressMarshaller Instance = new UpdateIpAddressMarshaller();
 
     }
 }

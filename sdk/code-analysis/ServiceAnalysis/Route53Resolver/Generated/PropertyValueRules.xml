@@ -291,7 +291,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.GetResolverRulePolicyResponse.ResolverRulePolicy</property>
-    <max>5000</max>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ImportFirewallDomainsRequest.DomainFileUrl</property>
@@ -477,7 +477,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.PutResolverRulePolicyRequest.ResolverRulePolicy</property>
-    <max>5000</max>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.TagResourceRequest.ResourceArn</property>
@@ -811,6 +811,11 @@
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.IpAddressRequest.Ipv6</property>
+    <min>7</min>
+    <max>39</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Resolver.Model.IpAddressRequest.SubnetId</property>
     <min>1</min>
     <max>32</max>
@@ -829,6 +834,11 @@
     <property>Amazon.Route53Resolver.Model.IpAddressResponse.IpId</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.IpAddressResponse.Ipv6</property>
+    <min>7</min>
+    <max>39</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.IpAddressResponse.ModificationTime</property>
@@ -853,6 +863,11 @@
     <property>Amazon.Route53Resolver.Model.IpAddressUpdate.IpId</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.IpAddressUpdate.Ipv6</property>
+    <min>7</min>
+    <max>39</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.IpAddressUpdate.SubnetId</property>
@@ -1083,8 +1098,23 @@
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.TargetAddress.Ipv6</property>
+    <min>7</min>
+    <max>39</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Resolver.Model.TargetAddress.Port</property>
     <min>0</min>
     <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.UpdateIpAddress.IpId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.UpdateIpAddress.Ipv6</property>
+    <min>7</min>
+    <max>39</max>
   </property-value-rule>
 </property-value-rules>

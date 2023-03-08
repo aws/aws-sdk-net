@@ -82,6 +82,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     unmarshalledObject.IpId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Ipv6", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Ipv6 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModificationTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
