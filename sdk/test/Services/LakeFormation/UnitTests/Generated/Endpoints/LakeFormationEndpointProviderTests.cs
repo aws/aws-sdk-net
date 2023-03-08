@@ -35,9 +35,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_afsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "af-south-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.af-south-1.amazonaws.com", endpoint.URL);
         }
@@ -50,9 +50,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "ap-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-east-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.ap-east-1.amazonaws.com", endpoint.URL);
         }
@@ -65,9 +65,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "ap-northeast-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-northeast-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -80,9 +80,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "ap-northeast-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-northeast-2";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.ap-northeast-2.amazonaws.com", endpoint.URL);
         }
@@ -95,9 +95,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast3_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "ap-northeast-3";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-northeast-3";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.ap-northeast-3.amazonaws.com", endpoint.URL);
         }
@@ -110,9 +110,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "ap-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-south-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.ap-south-1.amazonaws.com", endpoint.URL);
         }
@@ -125,9 +125,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-southeast-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -140,9 +140,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "ap-southeast-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "ap-southeast-2";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -155,9 +155,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "ca-central-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "ca-central-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.ca-central-1.amazonaws.com", endpoint.URL);
         }
@@ -170,9 +170,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -185,9 +185,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eunorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "eu-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "eu-north-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.eu-north-1.amazonaws.com", endpoint.URL);
         }
@@ -200,9 +200,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eusouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "eu-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "eu-south-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.eu-south-1.amazonaws.com", endpoint.URL);
         }
@@ -215,9 +215,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "eu-west-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -230,9 +230,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "eu-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "eu-west-2";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.eu-west-2.amazonaws.com", endpoint.URL);
         }
@@ -245,9 +245,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest3_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "eu-west-3";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "eu-west-3";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.eu-west-3.amazonaws.com", endpoint.URL);
         }
@@ -260,9 +260,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_mesouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "me-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "me-south-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.me-south-1.amazonaws.com", endpoint.URL);
         }
@@ -275,9 +275,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_saeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "sa-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "sa-east-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.sa-east-1.amazonaws.com", endpoint.URL);
         }
@@ -290,9 +290,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -305,9 +305,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -320,9 +320,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-east-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-east-2";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -335,9 +335,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-east-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-east-2";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation-fips.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -350,9 +350,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_uswest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-west-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-west-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.us-west-1.amazonaws.com", endpoint.URL);
         }
@@ -365,9 +365,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_uswest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-west-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-west-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation-fips.us-west-1.amazonaws.com", endpoint.URL);
         }
@@ -380,9 +380,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -395,9 +395,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation-fips.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -410,9 +410,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -425,9 +425,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.us-east-1.api.aws", endpoint.URL);
         }
@@ -440,9 +440,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "cn-north-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -455,9 +455,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "cn-northwest-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "cn-northwest-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -470,9 +470,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "cn-north-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -485,9 +485,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "cn-north-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -500,9 +500,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "cn-north-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -515,9 +515,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-gov-east-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -530,9 +530,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-gov-east-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -545,9 +545,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-gov-west-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
@@ -560,9 +560,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-gov-west-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation-fips.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
@@ -575,9 +575,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-gov-east-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation-fips.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -590,9 +590,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-gov-east-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -605,9 +605,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
@@ -620,9 +620,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
@@ -635,9 +635,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-isob-east-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -650,9 +650,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-isob-east-1";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lakeformation.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -661,11 +661,26 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("LakeFormation")]
-        [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
+        [Description("For custom endpoint with region set and fips disabled and dualstack disabled")]
+        public void For_custom_endpoint_with_region_set_and_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
+            parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://example.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("LakeFormation")]
+        [Description("For custom endpoint with region not set and fips disabled and dualstack disabled")]
+        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_and_dualstack_disabled_Test()
+        {
+            var parameters = new LakeFormationEndpointParameters();
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
@@ -682,9 +697,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -698,9 +713,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new LakeFormationEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonLakeFormationEndpointProvider().ResolveEndpoint(parameters);
         }

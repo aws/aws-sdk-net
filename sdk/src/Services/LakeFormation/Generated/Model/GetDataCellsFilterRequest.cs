@@ -29,59 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
-    /// A structure that describes certain columns on certain rows.
+    /// Container for the parameters to the GetDataCellsFilter operation.
+    /// Returns a data cells filter.
     /// </summary>
-    public partial class DataCellsFilter
+    public partial class GetDataCellsFilterRequest : AmazonLakeFormationRequest
     {
-        private List<string> _columnNames = new List<string>();
-        private ColumnWildcard _columnWildcard;
         private string _databaseName;
         private string _name;
-        private RowFilter _rowFilter;
         private string _tableCatalogId;
         private string _tableName;
-        private string _versionId;
-
-        /// <summary>
-        /// Gets and sets the property ColumnNames. 
-        /// <para>
-        /// A list of column names.
-        /// </para>
-        /// </summary>
-        public List<string> ColumnNames
-        {
-            get { return this._columnNames; }
-            set { this._columnNames = value; }
-        }
-
-        // Check to see if ColumnNames property is set
-        internal bool IsSetColumnNames()
-        {
-            return this._columnNames != null && this._columnNames.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ColumnWildcard. 
-        /// <para>
-        /// A wildcard with exclusions.
-        /// </para>
-        ///  
-        /// <para>
-        /// You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>.
-        /// 
-        /// </para>
-        /// </summary>
-        public ColumnWildcard ColumnWildcard
-        {
-            get { return this._columnWildcard; }
-            set { this._columnWildcard = value; }
-        }
-
-        // Check to see if ColumnWildcard property is set
-        internal bool IsSetColumnWildcard()
-        {
-            return this._columnWildcard != null;
-        }
 
         /// <summary>
         /// Gets and sets the property DatabaseName. 
@@ -122,24 +78,6 @@ namespace Amazon.LakeFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RowFilter. 
-        /// <para>
-        /// A PartiQL predicate.
-        /// </para>
-        /// </summary>
-        public RowFilter RowFilter
-        {
-            get { return this._rowFilter; }
-            set { this._rowFilter = value; }
-        }
-
-        // Check to see if RowFilter property is set
-        internal bool IsSetRowFilter()
-        {
-            return this._rowFilter != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property TableCatalogId. 
         /// <para>
         /// The ID of the catalog to which the table belongs.
@@ -175,22 +113,6 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetTableName()
         {
             return this._tableName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VersionId.
-        /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string VersionId
-        {
-            get { return this._versionId; }
-            set { this._versionId = value; }
-        }
-
-        // Check to see if VersionId property is set
-        internal bool IsSetVersionId()
-        {
-            return this._versionId != null;
         }
 
     }
