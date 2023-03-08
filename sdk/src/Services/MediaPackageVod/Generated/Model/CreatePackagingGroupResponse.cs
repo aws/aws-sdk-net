@@ -35,6 +35,7 @@ namespace Amazon.MediaPackageVod.Model
     {
         private string _arn;
         private Authorization _authorization;
+        private string _createdAt;
         private string _domainName;
         private EgressAccessLogs _egressAccessLogs;
         private string _id;
@@ -68,6 +69,21 @@ namespace Amazon.MediaPackageVod.Model
         internal bool IsSetAuthorization()
         {
             return this._authorization != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. The time the PackagingGroup was created.
+        /// </summary>
+        public string CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt != null;
         }
 
         /// <summary>
