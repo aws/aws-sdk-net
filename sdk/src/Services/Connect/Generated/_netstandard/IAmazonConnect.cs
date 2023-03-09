@@ -3064,6 +3064,58 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  GetMetricDataV2
+
+
+
+        /// <summary>
+        /// Gets metric data from the specified Amazon Connect instance. 
+        /// 
+        ///  
+        /// <para>
+        ///  <code>GetMetricDataV2</code> offers more features than <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html">GetMetricData</a>,
+        /// the previous version of this API. It has new metrics, offers filtering at a metric
+        /// level, and offers the ability to filter and group data by channels, queues, routing
+        /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
+        /// last the 14 days, in 24-hour intervals.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a description of the historical metrics that are supported by <code>GetMetricDataV2</code>
+        /// and <code>GetMetricData</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+        /// metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This API is not available in the Amazon Web Services GovCloud (US) Regions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricDataV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMetricDataV2 service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricDataV2">REST API Reference for GetMetricDataV2 Operation</seealso>
+        Task<GetMetricDataV2Response> GetMetricDataV2Async(GetMetricDataV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetTaskTemplate
 
 

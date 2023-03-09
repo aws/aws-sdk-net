@@ -60,6 +60,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for GetMetricDataV2 operation
+        ///</summary>
+        public IGetMetricDataV2Paginator GetMetricDataV2(GetMetricDataV2Request request) 
+        {
+            return new GetMetricDataV2Paginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAgentStatuses operation
         ///</summary>
         public IListAgentStatusesPaginator ListAgentStatuses(ListAgentStatusesRequest request) 
