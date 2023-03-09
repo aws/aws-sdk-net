@@ -231,11 +231,12 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// <summary>
         /// Gets and sets the property WorkgroupName. 
         /// <para>
-        /// The serverless workgroup name. This parameter is required when connecting to a serverless
-        /// workgroup and authenticating using either Secrets Manager or temporary credentials.
+        /// The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required
+        /// when connecting to a serverless workgroup and authenticating using either Secrets
+        /// Manager or temporary credentials.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=64)]
+        [AWSProperty(Min=3, Max=128)]
         public string WorkgroupName
         {
             get { return this._workgroupName; }
