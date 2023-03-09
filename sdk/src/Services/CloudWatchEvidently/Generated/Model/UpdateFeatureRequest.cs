@@ -120,6 +120,11 @@ namespace Amazon.CloudWatchEvidently.Model
         /// user ID, account ID, or some other identifier. For the value, specify the name of
         /// the variation that they are to be served.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes
+        /// an overhead of 6 bytes per override.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2500)]
         public Dictionary<string, string> EntityOverrides
