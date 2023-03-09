@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RegisteredUserQuickSightConsoleEmbeddingConfiguration Marshaller
+    /// RegisteredUserDashboardFeatureConfigurations Marshaller
     /// </summary>
-    public class RegisteredUserQuickSightConsoleEmbeddingConfigurationMarshaller : IRequestMarshaller<RegisteredUserQuickSightConsoleEmbeddingConfiguration, JsonMarshallerContext> 
+    public class RegisteredUserDashboardFeatureConfigurationsMarshaller : IRequestMarshaller<RegisteredUserDashboardFeatureConfigurations, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RegisteredUserQuickSightConsoleEmbeddingConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(RegisteredUserDashboardFeatureConfigurations requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFeatureConfigurations())
+            if(requestObject.IsSetStatePersistence())
             {
-                context.Writer.WritePropertyName("FeatureConfigurations");
+                context.Writer.WritePropertyName("StatePersistence");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = RegisteredUserConsoleFeatureConfigurationsMarshaller.Instance;
-                marshaller.Marshall(requestObject.FeatureConfigurations, context);
+                var marshaller = StatePersistenceConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.StatePersistence, context);
 
                 context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetInitialPath())
-            {
-                context.Writer.WritePropertyName("InitialPath");
-                context.Writer.Write(requestObject.InitialPath);
             }
 
         }
@@ -67,7 +61,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RegisteredUserQuickSightConsoleEmbeddingConfigurationMarshaller Instance = new RegisteredUserQuickSightConsoleEmbeddingConfigurationMarshaller();
+        public readonly static RegisteredUserDashboardFeatureConfigurationsMarshaller Instance = new RegisteredUserDashboardFeatureConfigurationsMarshaller();
 
     }
 }

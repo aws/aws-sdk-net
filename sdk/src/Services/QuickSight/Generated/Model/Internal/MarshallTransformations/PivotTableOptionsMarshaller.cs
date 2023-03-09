@@ -56,6 +56,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCollapsedRowDimensionsVisibility())
+            {
+                context.Writer.WritePropertyName("CollapsedRowDimensionsVisibility");
+                context.Writer.Write(requestObject.CollapsedRowDimensionsVisibility);
+            }
+
             if(requestObject.IsSetColumnHeaderStyle())
             {
                 context.Writer.WritePropertyName("ColumnHeaderStyle");

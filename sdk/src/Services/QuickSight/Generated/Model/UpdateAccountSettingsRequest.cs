@@ -63,9 +63,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property DefaultNamespace. 
         /// <para>
         /// The default namespace for this Amazon Web Services account. Currently, the default
-        /// is <code>default</code>. Identity and Access Management (IAM) users that register
-        /// for the first time with Amazon QuickSight provide an email address that becomes associated
-        /// with the default namespace. 
+        /// is <code>default</code>. IAM users that register for the first time with Amazon QuickSight
+        /// provide an email address that becomes associated with the default namespace. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

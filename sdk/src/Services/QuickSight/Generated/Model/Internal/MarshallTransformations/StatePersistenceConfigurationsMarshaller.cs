@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RegisteredUserQuickSightConsoleEmbeddingConfiguration Marshaller
+    /// StatePersistenceConfigurations Marshaller
     /// </summary>
-    public class RegisteredUserQuickSightConsoleEmbeddingConfigurationMarshaller : IRequestMarshaller<RegisteredUserQuickSightConsoleEmbeddingConfiguration, JsonMarshallerContext> 
+    public class StatePersistenceConfigurationsMarshaller : IRequestMarshaller<StatePersistenceConfigurations, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RegisteredUserQuickSightConsoleEmbeddingConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(StatePersistenceConfigurations requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFeatureConfigurations())
+            if(requestObject.IsSetEnabled())
             {
-                context.Writer.WritePropertyName("FeatureConfigurations");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RegisteredUserConsoleFeatureConfigurationsMarshaller.Instance;
-                marshaller.Marshall(requestObject.FeatureConfigurations, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetInitialPath())
-            {
-                context.Writer.WritePropertyName("InitialPath");
-                context.Writer.Write(requestObject.InitialPath);
+                context.Writer.WritePropertyName("Enabled");
+                context.Writer.Write(requestObject.Enabled);
             }
 
         }
@@ -67,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RegisteredUserQuickSightConsoleEmbeddingConfigurationMarshaller Instance = new RegisteredUserQuickSightConsoleEmbeddingConfigurationMarshaller();
+        public readonly static StatePersistenceConfigurationsMarshaller Instance = new StatePersistenceConfigurationsMarshaller();
 
     }
 }
