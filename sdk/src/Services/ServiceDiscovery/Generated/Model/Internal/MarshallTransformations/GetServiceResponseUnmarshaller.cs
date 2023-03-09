@@ -84,6 +84,10 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                 {
                     return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("RequestLimitExceeded"))
+                {
+                    return RequestLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceNotFound"))
                 {
                     return ServiceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

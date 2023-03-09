@@ -92,6 +92,10 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                 {
                     return NamespaceAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("RequestLimitExceeded"))
+                {
+                    return RequestLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceLimitExceeded"))
                 {
                     return ResourceLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
