@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Shows the final value for the objective metric for a training job that was launched
-    /// by a hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code>
+    /// Shows the latest objective metric emitted by a training job that was launched by a
+    /// hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code>
     /// parameter of <a>HyperParameterTuningJobConfig</a>.
     /// </summary>
     public partial class FinalHyperParameterTuningJobObjectiveMetric
@@ -42,7 +42,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// The name of the objective metric.
+        /// The name of the objective metric. For SageMaker built-in algorithms, metrics are defined
+        /// per algorithm. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics
+        /// for XGBoost</a> as an example. You can also use a custom algorithm for training and
+        /// define your own metrics. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define
+        /// metrics and environment variables</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -61,8 +65,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Whether to minimize or maximize the objective metric. Valid values are Minimize and
-        /// Maximize.
+        /// Select if you want to minimize or maximize the objective metric during hyperparameter
+        /// tuning. 
         /// </para>
         /// </summary>
         public HyperParameterTuningJobObjectiveType Type

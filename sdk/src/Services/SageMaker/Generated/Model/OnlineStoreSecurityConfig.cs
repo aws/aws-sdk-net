@@ -38,9 +38,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS)
-        /// key that SageMaker Feature Store uses to encrypt the Amazon S3 objects at rest using
-        /// Amazon S3 server-side encryption.
+        /// The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature
+        /// Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.
         /// </para>
         ///  
         /// <para>

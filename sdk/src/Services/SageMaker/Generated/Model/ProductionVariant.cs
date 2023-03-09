@@ -31,13 +31,16 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Identifies a model that you want to host and the resources chosen to deploy for hosting
     /// it. If you are deploying multiple models, tell SageMaker how to distribute traffic
-    /// among the models by specifying variant weights.
+    /// among the models by specifying variant weights. For more information on production
+    /// variants, check <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">
+    /// Production variants</a>.
     /// </summary>
     public partial class ProductionVariant
     {
         private ProductionVariantAcceleratorType _acceleratorType;
         private int? _containerStartupHealthCheckTimeoutInSeconds;
         private ProductionVariantCoreDumpConfig _coreDumpConfig;
+        private bool? _enableSSMAccess;
         private int? _initialInstanceCount;
         private float? _initialVariantWeight;
         private ProductionVariantInstanceType _instanceType;
@@ -106,6 +109,28 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCoreDumpConfig()
         {
             return this._coreDumpConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableSSMAccess. 
+        /// <para>
+        ///  You can use this parameter to turn on native Amazon Web Services Systems Manager
+        /// (SSM) access for a production variant behind an endpoint. By default, SSM access is
+        /// disabled for all production variants behind an endpoints. You can turn on or turn
+        /// off SSM access for a production variant behind an existing endpoint by creating a
+        /// new endpoint configuration and calling <code>UpdateEndpoint</code>. 
+        /// </para>
+        /// </summary>
+        public bool EnableSSMAccess
+        {
+            get { return this._enableSSMAccess.GetValueOrDefault(); }
+            set { this._enableSSMAccess = value; }
+        }
+
+        // Check to see if EnableSSMAccess property is set
+        internal bool IsSetEnableSSMAccess()
+        {
+            return this._enableSSMAccess.HasValue; 
         }
 
         /// <summary>
