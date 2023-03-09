@@ -171,6 +171,10 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>DeletePackage</code>: Deletes a package and all associated package versions.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>DeletePackageVersions</code>: Deletes versions of a package. After a package
     /// has been deleted, it can be republished, but its assets and metadata cannot be restored
     /// because they have been permanently removed from storage.
@@ -294,6 +298,11 @@ namespace Amazon.CodeArtifact
     ///  </li> <li> 
     /// <para>
     ///  <code>ListRepositoriesInDomain</code>: Returns a list of the repositories in a domain.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>PublishPackageVersion</code>: Creates a new package version containing one
+    /// or more assets.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -1114,7 +1123,7 @@ namespace Amazon.CodeArtifact
         /// in your repository. If you want to remove a package version from your repository and
         /// be able to restore it later, set its status to <code>Archived</code>. Archived packages
         /// cannot be downloaded from a repository and don't show up with list package APIs (for
-        /// example, <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a>),
+        /// example, <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>),
         /// but you can restore them using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionsStatus</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePackageVersions service method.</param>
@@ -2863,6 +2872,100 @@ namespace Amazon.CodeArtifact
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PublishPackageVersion
+
+        /// <summary>
+        /// Creates a new package version containing one or more assets (or files).
+        /// 
+        ///  
+        /// <para>
+        /// The <code>unfinished</code> flag can be used to keep the package version in the <code>Unfinished</code>
+        /// state until all of it’s assets have been uploaded (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package
+        /// version status</a> in the <i>CodeArtifact user guide</i>). To set the package version’s
+        /// status to <code>Published</code>, omit the <code>unfinished</code> flag when uploading
+        /// the final asset, or set the status using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionStatus</a>.
+        /// Once a package version’s status is set to <code>Published</code>, it cannot change
+        /// back to <code>Unfinished</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only generic packages can be published using this API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishPackageVersion service method.</param>
+        /// 
+        /// <returns>The response from the PublishPackageVersion service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ConflictException">
+        /// The operation did not succeed because prerequisites are not met.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ServiceQuotaExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for
+        /// your account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PublishPackageVersion">REST API Reference for PublishPackageVersion Operation</seealso>
+        public virtual PublishPackageVersionResponse PublishPackageVersion(PublishPackageVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PublishPackageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PublishPackageVersionResponseUnmarshaller.Instance;
+
+            return Invoke<PublishPackageVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PublishPackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PublishPackageVersion operation on AmazonCodeArtifactClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPublishPackageVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PublishPackageVersion">REST API Reference for PublishPackageVersion Operation</seealso>
+        public virtual IAsyncResult BeginPublishPackageVersion(PublishPackageVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PublishPackageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PublishPackageVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PublishPackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPublishPackageVersion.</param>
+        /// 
+        /// <returns>Returns a  PublishPackageVersionResult from CodeArtifact.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PublishPackageVersion">REST API Reference for PublishPackageVersion Operation</seealso>
+        public virtual PublishPackageVersionResponse EndPublishPackageVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PublishPackageVersionResponse>(asyncResult);
         }
 
         #endregion

@@ -285,6 +285,10 @@ namespace Amazon.CodeArtifact
     {
 
         /// <summary>
+        /// Constant Generic for PackageFormat
+        /// </summary>
+        public static readonly PackageFormat Generic = new PackageFormat("generic");
+        /// <summary>
         /// Constant Maven for PackageFormat
         /// </summary>
         public static readonly PackageFormat Maven = new PackageFormat("maven");

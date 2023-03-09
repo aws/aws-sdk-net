@@ -127,9 +127,14 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace used to filter requested packages. Only packages with the provided namespace
-        /// will be returned. The package component that specifies its namespace depends on its
-        /// type. For example:
+        /// The namespace prefix used to filter requested packages. Only packages with a namespace
+        /// that starts with the provided string value are returned. Note that although this option
+        /// is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has
+        /// prefix-matching behavior.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each package format uses namespace as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -143,6 +148,10 @@ namespace Amazon.CodeArtifact.Model
         /// <para>
         ///  Python and NuGet packages do not contain a corresponding component, packages of those
         /// formats do not have a namespace. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The namespace of a generic package is it’s <code>namespace</code>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

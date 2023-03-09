@@ -92,7 +92,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        ///  The format of the returned package versions. 
+        ///  The format of the package versions you want to list. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -145,6 +145,10 @@ namespace Amazon.CodeArtifact.Model
         /// <para>
         ///  Python and NuGet packages do not contain a corresponding component, packages of those
         /// formats do not have a namespace. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The namespace of a generic package is it’s <code>namespace</code>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -143,6 +143,10 @@ namespace Amazon.CodeArtifact.Model
         ///  Python and NuGet package versions do not contain a corresponding component, package
         /// versions of those formats do not have a namespace. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The namespace of a generic package is it’s <code>namespace</code>. 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
