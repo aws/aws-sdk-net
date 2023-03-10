@@ -113,7 +113,7 @@ namespace Amazon.SecretsManager.Model
         /// appears in <code>SecretString</code> instead.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=65536)]
+        [AWSProperty(Sensitive=true, Min=1, Max=65536)]
         public MemoryStream SecretBinary
         {
             get { return this._secretBinary; }
@@ -138,7 +138,7 @@ namespace Amazon.SecretsManager.Model
         /// as a JSON structure of key/value pairs. 
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=65536)]
+        [AWSProperty(Sensitive=true, Min=1, Max=65536)]
         public string SecretString
         {
             get { return this._secretString; }
