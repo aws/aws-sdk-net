@@ -1566,6 +1566,9 @@ namespace Amazon.Ivschat
         /// <exception cref="Amazon.Ivschat.Model.AccessDeniedException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.Ivschat.Model.PendingVerificationException">
         /// 
         /// </exception>
@@ -1596,6 +1599,9 @@ namespace Amazon.Ivschat
         /// 
         /// <returns>The response from the UpdateLoggingConfiguration service method, as returned by Ivschat.</returns>
         /// <exception cref="Amazon.Ivschat.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.Ivschat.Model.PendingVerificationException">
