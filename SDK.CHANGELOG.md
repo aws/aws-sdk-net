@@ -1,3 +1,12 @@
+### 3.7.501.0 (2023-03-10 19:26 UTC)
+* Ivschat (3.7.104.0)
+	* This release adds a new exception returned when calling AWS IVS chat UpdateLoggingConfiguration. Now UpdateLoggingConfiguration can return ConflictException when invalid updates are made in sequence to Logging Configurations.
+* SecretsManager (3.7.102.0)
+	* The type definitions of SecretString and SecretBinary now have a minimum length of 1 in the model to match the exception thrown when you pass in empty values.
+* Core 3.7.105.17
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.500.0 (2023-03-09 19:28 UTC)
 * CloudWatchEvidently (3.7.102.0)
 	* Updated entity override documentation
