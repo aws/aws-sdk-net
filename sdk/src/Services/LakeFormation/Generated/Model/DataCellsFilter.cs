@@ -178,7 +178,10 @@ namespace Amazon.LakeFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VersionId.
+        /// Gets and sets the property VersionId. 
+        /// <para>
+        /// The ID of the data cells filter version.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string VersionId
