@@ -39,15 +39,30 @@ namespace Amazon.ConnectWisdomService.Model
     /// and ServiceNow. If you do, you'll get an <code>InvalidRequestException</code> error.
     /// 
     /// </para>
-    ///  <pre><code> &lt;p&gt;For example, you're programmatically managing your external
-    /// knowledge base, and you want to add or remove one of the fields that is being ingested
-    /// from Salesforce. Do the following:&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;Call &lt;a
-    /// href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteKnowledgeBase.html&quot;&gt;DeleteKnowledgeBase&lt;/a&gt;.&lt;/p&gt;
-    /// &lt;/li&gt; &lt;li&gt; &lt;p&gt;Call &lt;a href=&quot;https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html&quot;&gt;DeleteDataIntegration&lt;/a&gt;.&lt;/p&gt;
-    /// &lt;/li&gt; &lt;li&gt; &lt;p&gt;Call &lt;a href=&quot;https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html&quot;&gt;CreateDataIntegration&lt;/a&gt;
-    /// to recreate the DataIntegration or a create different one.&lt;/p&gt; &lt;/li&gt; &lt;li&gt;
-    /// &lt;p&gt;Call CreateKnowledgeBase.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;/note&gt;
-    /// </code></pre>
+    ///  
+    /// <para>
+    /// For example, you're programmatically managing your external knowledge base, and you
+    /// want to add or remove one of the fields that is being ingested from Salesforce. Do
+    /// the following:
+    /// </para>
+    ///  <ol> <li> 
+    /// <para>
+    /// Call <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteKnowledgeBase.html">DeleteKnowledgeBase</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Call <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html">DeleteDataIntegration</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Call <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a>
+    /// to recreate the DataIntegration or a create different one.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Call CreateKnowledgeBase.
+    /// </para>
+    ///  </li> </ol> </note>
     /// </summary>
     public partial class CreateKnowledgeBaseRequest : AmazonConnectWisdomServiceRequest
     {
@@ -64,7 +79,9 @@ namespace Amazon.ConnectWisdomService.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request.
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
