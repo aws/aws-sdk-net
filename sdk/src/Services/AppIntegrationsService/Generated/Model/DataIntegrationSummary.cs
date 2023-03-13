@@ -81,7 +81,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// The URI of the data source.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=1000)]
         public string SourceURI
         {
             get { return this._sourceURI; }

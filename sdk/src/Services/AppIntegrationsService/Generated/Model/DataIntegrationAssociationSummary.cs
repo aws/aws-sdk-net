@@ -40,7 +40,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The identifier for teh client that is associated with the DataIntegration association.
+        /// The identifier for the client that is associated with the DataIntegration association.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -59,7 +59,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// <summary>
         /// Gets and sets the property DataIntegrationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN)of the DataIntegration.
+        /// The Amazon Resource Name (ARN) of the DataIntegration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

@@ -44,8 +44,10 @@ namespace Amazon.AppIntegrationsService.Model
     {
         private string _clientToken;
         private string _description;
+        private FileConfiguration _fileConfiguration;
         private string _kmsKey;
         private string _name;
+        private Dictionary<string, Dictionary<string, List<string>>> _objectConfiguration = new Dictionary<string, Dictionary<string, List<string>>>();
         private ScheduleConfiguration _scheduleConfig;
         private string _sourceURI;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -54,7 +56,9 @@ namespace Amazon.AppIntegrationsService.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request.
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -90,12 +94,30 @@ namespace Amazon.AppIntegrationsService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FileConfiguration. 
+        /// <para>
+        /// The configuration for what files should be pulled from the source.
+        /// </para>
+        /// </summary>
+        public FileConfiguration FileConfiguration
+        {
+            get { return this._fileConfiguration; }
+            set { this._fileConfiguration = value; }
+        }
+
+        // Check to see if FileConfiguration property is set
+        internal bool IsSetFileConfiguration()
+        {
+            return this._fileConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKey. 
         /// <para>
         /// The KMS key for the DataIntegration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string KmsKey
         {
             get { return this._kmsKey; }
@@ -128,11 +150,30 @@ namespace Amazon.AppIntegrationsService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ObjectConfiguration. 
+        /// <para>
+        /// The configuration for what data should be pulled from the source.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, Dictionary<string, List<string>>> ObjectConfiguration
+        {
+            get { return this._objectConfiguration; }
+            set { this._objectConfiguration = value; }
+        }
+
+        // Check to see if ObjectConfiguration property is set
+        internal bool IsSetObjectConfiguration()
+        {
+            return this._objectConfiguration != null && this._objectConfiguration.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ScheduleConfig. 
         /// <para>
         /// The name of the data and how often it should be pulled from the source.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScheduleConfiguration ScheduleConfig
         {
             get { return this._scheduleConfig; }
@@ -151,7 +192,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// The URI of the data source.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public string SourceURI
         {
             get { return this._sourceURI; }
@@ -167,7 +208,8 @@ namespace Amazon.AppIntegrationsService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// One or more tags.
+        /// The tags used to organize, track, or control access for this resource. For example,
+        /// { "tags": {"key1":"value1", "key2":"value2"} }.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
