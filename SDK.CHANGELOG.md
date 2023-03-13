@@ -1,3 +1,18 @@
+### 3.7.502.0 (2023-03-13 18:23 UTC)
+* AppIntegrationsService (3.7.101.0)
+	* Adds FileConfiguration to Amazon AppIntegrations CreateDataIntegration supporting scheduled downloading of third party files into Amazon Connect from sources such as Microsoft SharePoint.
+* ConnectWisdomService (3.7.102.0)
+	* This release extends Wisdom CreateKnowledgeBase API to support SharePoint connector type by removing the @required trait for objectField
+* LakeFormation (3.7.103.3)
+	* This release updates the documentation regarding Get/Update DataCellsFilter
+* S3Control (3.7.107.0)
+	* Added support for cross-account Multi-Region Access Points. Added support for S3 Replication for S3 on Outposts.
+* Tnb (3.7.101.0)
+	* This release adds tagging support to the following Network Instance APIs : Instantiate, Update, Terminate.
+* Core 3.7.105.18
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.501.0 (2023-03-10 19:26 UTC)
 * Ivschat (3.7.104.0)
 	* This release adds a new exception returned when calling AWS IVS chat UpdateLoggingConfiguration. Now UpdateLoggingConfiguration can return ConflictException when invalid updates are made in sequence to Logging Configurations.
