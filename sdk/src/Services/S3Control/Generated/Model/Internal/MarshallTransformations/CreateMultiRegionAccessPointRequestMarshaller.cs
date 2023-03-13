@@ -110,6 +110,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             if(publicRequestDetailsRegionsValue.IsSetBucket())
                                 xmlWriter.WriteElementString("Bucket", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestDetailsRegionsValue.Bucket));                 
             
+                            if(publicRequestDetailsRegionsValue.IsSetBucketAccountId())
+                                xmlWriter.WriteElementString("BucketAccountId", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestDetailsRegionsValue.BucketAccountId));                 
+            
                             xmlWriter.WriteEndElement();
                         }
                         }            

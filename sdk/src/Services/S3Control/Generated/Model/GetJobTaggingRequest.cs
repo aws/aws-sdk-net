@@ -30,9 +30,9 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the GetJobTagging operation.
-    /// Returns the tags on an S3 Batch Operations job. To use this operation, you must have
-    /// permission to perform the <code>s3:GetJobTagging</code> action. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
+    /// Returns the tags on an S3 Batch Operations job. To use the <code>GetJobTagging</code>
+    /// operation, you must have permission to perform the <code>s3:GetJobTagging</code> action.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
     /// access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
     /// 
     ///   

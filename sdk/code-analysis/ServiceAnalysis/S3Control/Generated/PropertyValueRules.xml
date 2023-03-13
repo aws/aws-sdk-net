@@ -18,7 +18,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.CreateAccessPointRequest.Name</property>
     <min>3</min>
-    <max>63</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.CreateAccessPointResponse.AccessPointArn</property>
@@ -117,7 +117,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.DeleteAccessPointRequest.Name</property>
     <min>3</min>
-    <max>63</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.DeleteAccessPointForObjectLambdaRequest.AccountId</property>
@@ -138,7 +138,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.DeleteAccessPointPolicyRequest.Name</property>
     <min>3</min>
-    <max>63</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.DeleteAccessPointPolicyForObjectLambdaRequest.AccountId</property>
@@ -178,6 +178,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.DeleteBucketPolicyRequest.Bucket</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.DeleteBucketReplicationRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.DeleteBucketReplicationRequest.Bucket</property>
     <min>3</min>
     <max>255</max>
   </property-value-rule>
@@ -271,7 +281,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetAccessPointRequest.Name</property>
     <min>3</min>
-    <max>63</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetAccessPointResponse.AccessPointArn</property>
@@ -296,7 +306,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetAccessPointResponse.Name</property>
     <min>3</min>
-    <max>63</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetAccessPointConfigurationForObjectLambdaRequest.AccountId</property>
@@ -334,7 +344,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetAccessPointPolicyRequest.Name</property>
     <min>3</min>
-    <max>63</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetAccessPointPolicyForObjectLambdaRequest.AccountId</property>
@@ -355,7 +365,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetAccessPointPolicyStatusRequest.Name</property>
     <min>3</min>
-    <max>63</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetAccessPointPolicyStatusForObjectLambdaRequest.AccountId</property>
@@ -400,6 +410,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetBucketPolicyRequest.Bucket</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetBucketReplicationRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetBucketReplicationRequest.Bucket</property>
     <min>3</min>
     <max>255</max>
   </property-value-rule>
@@ -639,7 +659,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.PutAccessPointPolicyRequest.Name</property>
     <min>3</min>
-    <max>63</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.PutAccessPointPolicyForObjectLambdaRequest.AccountId</property>
@@ -669,6 +689,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.PutBucketPolicyRequest.Bucket</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.PutBucketReplicationRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.PutBucketReplicationRequest.Bucket</property>
     <min>3</min>
     <max>255</max>
   </property-value-rule>
@@ -826,7 +856,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.AccessPoint.Name</property>
     <min>3</min>
-    <max>63</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.AsyncErrorDetails.Code</property>
@@ -865,6 +895,11 @@
     <property>Amazon.S3Control.Model.DeleteMultiRegionAccessPointInput.Name</property>
     <max>50</max>
     <pattern>^[a-z0-9][-a-z0-9]{1,48}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.Destination.Account</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.JobDescriptor.Description</property>
@@ -1053,6 +1088,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.Region.BucketAccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.RegionalBucket.Bucket</property>
     <min>3</min>
     <max>255</max>
@@ -1071,6 +1111,11 @@
     <property>Amazon.S3Control.Model.RegionReport.Bucket</property>
     <min>3</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.RegionReport.BucketAccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.RegionReport.Region</property>

@@ -273,6 +273,106 @@ namespace Amazon.S3Control
 
 
     /// <summary>
+    /// Constants used for properties of type DeleteMarkerReplicationStatus.
+    /// </summary>
+    public class DeleteMarkerReplicationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for DeleteMarkerReplicationStatus
+        /// </summary>
+        public static readonly DeleteMarkerReplicationStatus Disabled = new DeleteMarkerReplicationStatus("Disabled");
+        /// <summary>
+        /// Constant Enabled for DeleteMarkerReplicationStatus
+        /// </summary>
+        public static readonly DeleteMarkerReplicationStatus Enabled = new DeleteMarkerReplicationStatus("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeleteMarkerReplicationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeleteMarkerReplicationStatus FindValue(string value)
+        {
+            return FindValue<DeleteMarkerReplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeleteMarkerReplicationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExistingObjectReplicationStatus.
+    /// </summary>
+    public class ExistingObjectReplicationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for ExistingObjectReplicationStatus
+        /// </summary>
+        public static readonly ExistingObjectReplicationStatus Disabled = new ExistingObjectReplicationStatus("Disabled");
+        /// <summary>
+        /// Constant Enabled for ExistingObjectReplicationStatus
+        /// </summary>
+        public static readonly ExistingObjectReplicationStatus Enabled = new ExistingObjectReplicationStatus("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExistingObjectReplicationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExistingObjectReplicationStatus FindValue(string value)
+        {
+            return FindValue<ExistingObjectReplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExistingObjectReplicationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExpirationStatus.
     /// </summary>
     public class ExpirationStatus : ConstantClass
@@ -710,6 +810,56 @@ namespace Amazon.S3Control
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator JobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MetricsStatus.
+    /// </summary>
+    public class MetricsStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for MetricsStatus
+        /// </summary>
+        public static readonly MetricsStatus Disabled = new MetricsStatus("Disabled");
+        /// <summary>
+        /// Constant Enabled for MetricsStatus
+        /// </summary>
+        public static readonly MetricsStatus Enabled = new MetricsStatus("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricsStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricsStatus FindValue(string value)
+        {
+            return FindValue<MetricsStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricsStatus(string value)
         {
             return FindValue(value);
         }
@@ -1173,6 +1323,152 @@ namespace Amazon.S3Control
 
 
     /// <summary>
+    /// Constants used for properties of type OwnerOverride.
+    /// </summary>
+    public class OwnerOverride : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Destination for OwnerOverride
+        /// </summary>
+        public static readonly OwnerOverride Destination = new OwnerOverride("Destination");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OwnerOverride(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OwnerOverride FindValue(string value)
+        {
+            return FindValue<OwnerOverride>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OwnerOverride(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReplicaModificationsStatus.
+    /// </summary>
+    public class ReplicaModificationsStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for ReplicaModificationsStatus
+        /// </summary>
+        public static readonly ReplicaModificationsStatus Disabled = new ReplicaModificationsStatus("Disabled");
+        /// <summary>
+        /// Constant Enabled for ReplicaModificationsStatus
+        /// </summary>
+        public static readonly ReplicaModificationsStatus Enabled = new ReplicaModificationsStatus("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplicaModificationsStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicaModificationsStatus FindValue(string value)
+        {
+            return FindValue<ReplicaModificationsStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicaModificationsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReplicationRuleStatus.
+    /// </summary>
+    public class ReplicationRuleStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for ReplicationRuleStatus
+        /// </summary>
+        public static readonly ReplicationRuleStatus Disabled = new ReplicationRuleStatus("Disabled");
+        /// <summary>
+        /// Constant Enabled for ReplicationRuleStatus
+        /// </summary>
+        public static readonly ReplicationRuleStatus Enabled = new ReplicationRuleStatus("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplicationRuleStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicationRuleStatus FindValue(string value)
+        {
+            return FindValue<ReplicationRuleStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicationRuleStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReplicationStatus.
     /// </summary>
     public class ReplicationStatus : ConstantClass
@@ -1224,6 +1520,134 @@ namespace Amazon.S3Control
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReplicationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReplicationStorageClass.
+    /// </summary>
+    public class ReplicationStorageClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEEP_ARCHIVE for ReplicationStorageClass
+        /// </summary>
+        public static readonly ReplicationStorageClass DEEP_ARCHIVE = new ReplicationStorageClass("DEEP_ARCHIVE");
+        /// <summary>
+        /// Constant GLACIER for ReplicationStorageClass
+        /// </summary>
+        public static readonly ReplicationStorageClass GLACIER = new ReplicationStorageClass("GLACIER");
+        /// <summary>
+        /// Constant GLACIER_IR for ReplicationStorageClass
+        /// </summary>
+        public static readonly ReplicationStorageClass GLACIER_IR = new ReplicationStorageClass("GLACIER_IR");
+        /// <summary>
+        /// Constant INTELLIGENT_TIERING for ReplicationStorageClass
+        /// </summary>
+        public static readonly ReplicationStorageClass INTELLIGENT_TIERING = new ReplicationStorageClass("INTELLIGENT_TIERING");
+        /// <summary>
+        /// Constant ONEZONE_IA for ReplicationStorageClass
+        /// </summary>
+        public static readonly ReplicationStorageClass ONEZONE_IA = new ReplicationStorageClass("ONEZONE_IA");
+        /// <summary>
+        /// Constant OUTPOSTS for ReplicationStorageClass
+        /// </summary>
+        public static readonly ReplicationStorageClass OUTPOSTS = new ReplicationStorageClass("OUTPOSTS");
+        /// <summary>
+        /// Constant REDUCED_REDUNDANCY for ReplicationStorageClass
+        /// </summary>
+        public static readonly ReplicationStorageClass REDUCED_REDUNDANCY = new ReplicationStorageClass("REDUCED_REDUNDANCY");
+        /// <summary>
+        /// Constant STANDARD for ReplicationStorageClass
+        /// </summary>
+        public static readonly ReplicationStorageClass STANDARD = new ReplicationStorageClass("STANDARD");
+        /// <summary>
+        /// Constant STANDARD_IA for ReplicationStorageClass
+        /// </summary>
+        public static readonly ReplicationStorageClass STANDARD_IA = new ReplicationStorageClass("STANDARD_IA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplicationStorageClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicationStorageClass FindValue(string value)
+        {
+            return FindValue<ReplicationStorageClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicationStorageClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReplicationTimeStatus.
+    /// </summary>
+    public class ReplicationTimeStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for ReplicationTimeStatus
+        /// </summary>
+        public static readonly ReplicationTimeStatus Disabled = new ReplicationTimeStatus("Disabled");
+        /// <summary>
+        /// Constant Enabled for ReplicationTimeStatus
+        /// </summary>
+        public static readonly ReplicationTimeStatus Enabled = new ReplicationTimeStatus("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplicationTimeStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicationTimeStatus FindValue(string value)
+        {
+            return FindValue<ReplicationTimeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicationTimeStatus(string value)
         {
             return FindValue(value);
         }
@@ -1888,6 +2312,56 @@ namespace Amazon.S3Control
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator S3StorageClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SseKmsEncryptedObjectsStatus.
+    /// </summary>
+    public class SseKmsEncryptedObjectsStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for SseKmsEncryptedObjectsStatus
+        /// </summary>
+        public static readonly SseKmsEncryptedObjectsStatus Disabled = new SseKmsEncryptedObjectsStatus("Disabled");
+        /// <summary>
+        /// Constant Enabled for SseKmsEncryptedObjectsStatus
+        /// </summary>
+        public static readonly SseKmsEncryptedObjectsStatus Enabled = new SseKmsEncryptedObjectsStatus("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SseKmsEncryptedObjectsStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SseKmsEncryptedObjectsStatus FindValue(string value)
+        {
+            return FindValue<SseKmsEncryptedObjectsStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SseKmsEncryptedObjectsStatus(string value)
         {
             return FindValue(value);
         }
