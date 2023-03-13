@@ -41,7 +41,7 @@ namespace Amazon.Tnb.Model
     ///  
     /// <para>
     /// To delete a network package, the package must be in a disable state. To disable a
-    /// network package, see <a href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_UpdateSolNetworkPackage.html">UpdateSolNetworkPackage</a>.
+    /// network package, see <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_UpdateSolNetworkPackage.html">UpdateSolNetworkPackage</a>.
     /// </para>
     /// </summary>
     public partial class DeleteSolNetworkPackageRequest : AmazonTnbRequest

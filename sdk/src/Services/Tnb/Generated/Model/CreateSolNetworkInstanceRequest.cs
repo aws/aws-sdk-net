@@ -43,7 +43,7 @@ namespace Amazon.Tnb.Model
     ///  
     /// <para>
     /// Once you create a network instance, you can instantiate it. To instantiate a network,
-    /// see <a href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_InstantiateSolNetworkInstance.html">InstantiateSolNetworkInstance</a>.
+    /// see <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_InstantiateSolNetworkInstance.html">InstantiateSolNetworkInstance</a>.
     /// </para>
     /// </summary>
     public partial class CreateSolNetworkInstanceRequest : AmazonTnbRequest
@@ -59,7 +59,7 @@ namespace Amazon.Tnb.Model
         /// Network instance description.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=124)]
+        [AWSProperty(Min=0, Max=255)]
         public string NsDescription
         {
             get { return this._nsDescription; }
@@ -97,7 +97,7 @@ namespace Amazon.Tnb.Model
         /// Network instance name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=80)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string NsName
         {
             get { return this._nsName; }

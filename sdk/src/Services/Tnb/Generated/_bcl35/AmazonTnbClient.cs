@@ -361,7 +361,7 @@ namespace Amazon.Tnb
         /// Creating a function package is the first step for creating a network in AWS TNB. This
         /// request creates an empty container with an ID. The next step is to upload the actual
         /// CSAR zip file into that empty container. To upload function package content, see <a
-        /// href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_PutSolFunctionPackageContent.html">PutSolFunctionPackageContent</a>.
+        /// href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_PutSolFunctionPackageContent.html">PutSolFunctionPackageContent</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSolFunctionPackage service method.</param>
@@ -445,7 +445,7 @@ namespace Amazon.Tnb
         ///  
         /// <para>
         /// Once you create a network instance, you can instantiate it. To instantiate a network,
-        /// see <a href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_InstantiateSolNetworkInstance.html">InstantiateSolNetworkInstance</a>.
+        /// see <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_InstantiateSolNetworkInstance.html">InstantiateSolNetworkInstance</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSolNetworkInstance service method.</param>
@@ -539,7 +539,7 @@ namespace Amazon.Tnb
         ///  
         /// <para>
         /// This request creates an empty network package container with an ID. Once you create
-        /// a network package, you can upload the network package content using <a href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_PutSolNetworkPackageContent.html">PutSolNetworkPackageContent</a>.
+        /// a network package, you can upload the network package content using <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_PutSolNetworkPackageContent.html">PutSolNetworkPackageContent</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSolNetworkPackage service method.</param>
@@ -622,7 +622,7 @@ namespace Amazon.Tnb
         ///  
         /// <para>
         /// To delete a function package, the package must be in a disabled state. To disable
-        /// a function package, see <a href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_UpdateSolFunctionPackage.html">UpdateSolFunctionPackage</a>.
+        /// a function package, see <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_UpdateSolFunctionPackage.html">UpdateSolFunctionPackage</a>.
         /// 
         /// </para>
         /// </summary>
@@ -705,7 +705,7 @@ namespace Amazon.Tnb
         ///  
         /// <para>
         /// To delete a network instance, the instance must be in a stopped or terminated state.
-        /// To terminate a network instance, see <a href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_TerminateSolNetworkInstance.html">TerminateSolNetworkInstance</a>.
+        /// To terminate a network instance, see <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_TerminateSolNetworkInstance.html">TerminateSolNetworkInstance</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSolNetworkInstance service method.</param>
@@ -787,7 +787,7 @@ namespace Amazon.Tnb
         ///  
         /// <para>
         /// To delete a network package, the package must be in a disable state. To disable a
-        /// network package, see <a href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_UpdateSolNetworkPackage.html">UpdateSolNetworkPackage</a>.
+        /// network package, see <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_UpdateSolNetworkPackage.html">UpdateSolNetworkPackage</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSolNetworkPackage service method.</param>
@@ -1571,7 +1571,7 @@ namespace Amazon.Tnb
         ///  
         /// <para>
         /// Before you can instantiate a network instance, you have to create a network instance.
-        /// For more information, see <a href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_CreateSolNetworkInstance.html">CreateSolNetworkInstance</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_CreateSolNetworkInstance.html">CreateSolNetworkInstance</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InstantiateSolNetworkInstance service method.</param>
@@ -2719,7 +2719,7 @@ namespace Amazon.Tnb
 
         /// <summary>
         /// Validates function package content. This can be used as a dry run before uploading
-        /// function package content with <a href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_PutSolFunctionPackageContent.html">PutSolFunctionPackageContent</a>.
+        /// function package content with <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_PutSolFunctionPackageContent.html">PutSolFunctionPackageContent</a>.
         /// 
         ///  
         /// <para>
@@ -2798,7 +2798,7 @@ namespace Amazon.Tnb
 
         /// <summary>
         /// Validates network package content. This can be used as a dry run before uploading
-        /// network package content with <a href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_PutSolNetworkPackageContent.html">PutSolNetworkPackageContent</a>.
+        /// network package content with <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_PutSolNetworkPackageContent.html">PutSolNetworkPackageContent</a>.
         /// 
         ///  
         /// <para>

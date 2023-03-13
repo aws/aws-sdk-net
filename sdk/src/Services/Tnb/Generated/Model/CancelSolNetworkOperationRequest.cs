@@ -45,7 +45,7 @@ namespace Amazon.Tnb.Model
         /// <summary>
         /// Gets and sets the property NsLcmOpOccId. 
         /// <para>
-        /// The ID of a network operation occurrence.
+        /// The identifier of the network operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
