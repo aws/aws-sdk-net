@@ -226,6 +226,12 @@ namespace Amazon.IdentityManagement.Model
         /// not distinguished by case. For example, you cannot create resources named both "MyResource"
         /// and "myresource".
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+        /// pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
         public string RoleName

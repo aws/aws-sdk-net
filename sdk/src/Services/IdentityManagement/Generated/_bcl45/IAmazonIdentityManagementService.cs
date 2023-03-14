@@ -1209,6 +1209,10 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// A list of tags that are attached to the specified IAM OIDC provider
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// A list of thumbprints of one or more server certificates that the IdP uses
         /// </para>
         ///  </li> </ul> 
@@ -1290,6 +1294,10 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// A list of client IDs (also known as audiences) that identify the application or applications
         /// allowed to authenticate using the OIDC provider
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A list of tags that are attached to the specified IAM OIDC provider
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6062,7 +6070,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// For each service that principals in an account (root users, IAM users, or IAM roles)
+        /// For each service that principals in an account (root user, IAM users, or IAM roles)
         /// could access using SCPs, the operation returns details about the most recent access
         /// attempt. If there was no attempt, the service is listed without details about the
         /// most recent attempt to access the service. If the operation fails, it returns the
@@ -6104,7 +6112,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// For each service that principals in an account (root users, IAM users, or IAM roles)
+        /// For each service that principals in an account (root user, IAM users, or IAM roles)
         /// could access using SCPs, the operation returns details about the most recent access
         /// attempt. If there was no attempt, the service is listed without details about the
         /// most recent attempt to access the service. If the operation fails, it returns the
@@ -11714,7 +11722,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Access control</b> - Include tags in IAM user-based and resource-based policies.
+        ///  <b>Access control</b> - Include tags in IAM identity-based and resource-based policies.
         /// You can use tags to restrict access to only an OIDC provider that has a specified
         /// tag attached. For examples of policies that show how to use tags to control access,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
@@ -11782,7 +11790,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Access control</b> - Include tags in IAM user-based and resource-based policies.
+        ///  <b>Access control</b> - Include tags in IAM identity-based and resource-based policies.
         /// You can use tags to restrict access to only an OIDC provider that has a specified
         /// tag attached. For examples of policies that show how to use tags to control access,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
@@ -12456,7 +12464,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Access control</b> - Include tags in IAM user-based and resource-based policies.
+        ///  <b>Access control</b> - Include tags in IAM identity-based and resource-based policies.
         /// You can use tags to restrict access to only an IAM requesting user that has a specified
         /// tag attached. You can also restrict access to only those resources that have a certain
         /// tag attached. For examples of policies that show how to use tags to control access,
@@ -12532,7 +12540,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Access control</b> - Include tags in IAM user-based and resource-based policies.
+        ///  <b>Access control</b> - Include tags in IAM identity-based and resource-based policies.
         /// You can use tags to restrict access to only an IAM requesting user that has a specified
         /// tag attached. You can also restrict access to only those resources that have a certain
         /// tag attached. For examples of policies that show how to use tags to control access,
