@@ -125,6 +125,11 @@
     <pattern>arn:aws:iam::(\d{12}):role\/.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataExchange.Model.KmsKeyToGrant.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataExchange.Model.LakeFormationDataPermissionAsset.RoleArn</property>
     <pattern>arn:aws:iam::(\d{12}):role\/.+</pattern>
   </property-value-rule>

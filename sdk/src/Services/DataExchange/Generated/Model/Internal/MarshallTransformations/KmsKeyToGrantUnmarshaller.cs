@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3DataAccessAssetSourceEntry Object
+    /// Response Unmarshaller for KmsKeyToGrant Object
     /// </summary>  
-    public class S3DataAccessAssetSourceEntryUnmarshaller : IUnmarshaller<S3DataAccessAssetSourceEntry, XmlUnmarshallerContext>, IUnmarshaller<S3DataAccessAssetSourceEntry, JsonUnmarshallerContext>
+    public class KmsKeyToGrantUnmarshaller : IUnmarshaller<KmsKeyToGrant, XmlUnmarshallerContext>, IUnmarshaller<KmsKeyToGrant, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        S3DataAccessAssetSourceEntry IUnmarshaller<S3DataAccessAssetSourceEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        KmsKeyToGrant IUnmarshaller<KmsKeyToGrant, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3DataAccessAssetSourceEntry Unmarshall(JsonUnmarshallerContext context)
+        public KmsKeyToGrant Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            S3DataAccessAssetSourceEntry unmarshalledObject = new S3DataAccessAssetSourceEntry();
+            KmsKeyToGrant unmarshalledObject = new KmsKeyToGrant();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Bucket", targetDepth))
+                if (context.TestExpression("KmsKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KeyPrefixes", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.KeyPrefixes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Keys", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Keys = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KmsKeysToGrant", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<KmsKeyToGrant, KmsKeyToGrantUnmarshaller>(KmsKeyToGrantUnmarshaller.Instance);
-                    unmarshalledObject.KmsKeysToGrant = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         }
 
 
-        private static S3DataAccessAssetSourceEntryUnmarshaller _instance = new S3DataAccessAssetSourceEntryUnmarshaller();        
+        private static KmsKeyToGrantUnmarshaller _instance = new KmsKeyToGrantUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3DataAccessAssetSourceEntryUnmarshaller Instance
+        public static KmsKeyToGrantUnmarshaller Instance
         {
             get
             {
