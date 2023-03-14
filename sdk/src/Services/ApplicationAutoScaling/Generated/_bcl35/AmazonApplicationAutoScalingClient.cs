@@ -96,6 +96,11 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// To learn more about Application Auto Scaling, see the <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html">Application
+    /// Auto Scaling User Guide</a>.
+    /// </para>
+    ///  
+    /// <para>
     ///  <b>API Summary</b> 
     /// </para>
     ///  
@@ -123,12 +128,7 @@ namespace Amazon.ApplicationAutoScaling
     /// policy, scale-in activities that are triggered by a scaling policy, and scheduled
     /// scaling.
     /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// To learn more about Application Auto Scaling, including information about granting
-    /// IAM users required permissions for Application Auto Scaling actions, see the <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html">Application
-    /// Auto Scaling User Guide</a>.
-    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AmazonApplicationAutoScalingClient : AmazonServiceClient, IAmazonApplicationAutoScaling
     {

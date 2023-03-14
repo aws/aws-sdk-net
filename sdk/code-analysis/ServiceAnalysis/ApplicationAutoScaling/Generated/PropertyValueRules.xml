@@ -195,4 +195,45 @@
     <min>1</min>
     <max>1600</max>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.TargetTrackingMetric.MetricName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.TargetTrackingMetric.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.TargetTrackingMetricDataQuery.Expression</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.TargetTrackingMetricDataQuery.Id</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.TargetTrackingMetricDataQuery.Label</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.TargetTrackingMetricDimension.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.TargetTrackingMetricDimension.Value</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.TargetTrackingMetricStat.Stat</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.TargetTrackingMetricStat.Unit</property>
+    <min>1</min>
+    <max>1023</max>
+  </property-value-rule>
 </property-value-rules>

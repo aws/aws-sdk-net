@@ -367,7 +367,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SuspendedState.
+        /// Gets and sets the property SuspendedState. 
+        /// <para>
+        /// Specifies whether the scaling activities for a scalable target are in a suspended
+        /// state.
+        /// </para>
         /// </summary>
         public SuspendedState SuspendedState
         {

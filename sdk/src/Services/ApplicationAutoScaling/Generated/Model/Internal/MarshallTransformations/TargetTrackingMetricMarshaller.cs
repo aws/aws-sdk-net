@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CustomizedMetricSpecification Marshaller
+    /// TargetTrackingMetric Marshaller
     /// </summary>
-    public class CustomizedMetricSpecificationMarshaller : IRequestMarshaller<CustomizedMetricSpecification, JsonMarshallerContext> 
+    public class TargetTrackingMetricMarshaller : IRequestMarshaller<TargetTrackingMetric, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CustomizedMetricSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(TargetTrackingMetric requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetDimensions())
             {
@@ -53,7 +53,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = MetricDimensionMarshaller.Instance;
+                    var marshaller = TargetTrackingMetricDimensionMarshaller.Instance;
                     marshaller.Marshall(requestObjectDimensionsListValue, context);
 
                     context.Writer.WriteObjectEnd();
@@ -67,38 +67,10 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MetricName);
             }
 
-            if(requestObject.IsSetMetrics())
-            {
-                context.Writer.WritePropertyName("Metrics");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectMetricsListValue in requestObject.Metrics)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TargetTrackingMetricDataQueryMarshaller.Instance;
-                    marshaller.Marshall(requestObjectMetricsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
             if(requestObject.IsSetNamespace())
             {
                 context.Writer.WritePropertyName("Namespace");
                 context.Writer.Write(requestObject.Namespace);
-            }
-
-            if(requestObject.IsSetStatistic())
-            {
-                context.Writer.WritePropertyName("Statistic");
-                context.Writer.Write(requestObject.Statistic);
-            }
-
-            if(requestObject.IsSetUnit())
-            {
-                context.Writer.WritePropertyName("Unit");
-                context.Writer.Write(requestObject.Unit);
             }
 
         }
@@ -106,7 +78,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CustomizedMetricSpecificationMarshaller Instance = new CustomizedMetricSpecificationMarshaller();
+        public readonly static TargetTrackingMetricMarshaller Instance = new TargetTrackingMetricMarshaller();
 
     }
 }
