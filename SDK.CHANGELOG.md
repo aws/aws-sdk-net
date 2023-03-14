@@ -1,3 +1,20 @@
+### 3.7.503.0 (2023-03-14 18:29 UTC)
+* ApplicationAutoScaling (3.7.103.0)
+	* Application Auto Scaling customers can now use mathematical functions to customize the metric used with Target Tracking policies within the policy configuration itself, saving the cost and effort of publishing the customizations as a separate metric.
+* DataExchange (3.7.102.0)
+	* This release enables data providers to license direct access to S3 objects encrypted with Customer Managed Keys (CMK) in AWS KMS through AWS Data Exchange. Subscribers can use these keys to decrypt, then use the encrypted S3 objects shared with them, without creating or managing copies.
+* DirectConnect (3.7.100.90)
+	* describe-direct-connect-gateway-associations includes a new status, updating, indicating that the association is currently in-process of updating.
+* EC2 (3.7.127.0)
+	* This release adds a new DnsOptions key (PrivateDnsOnlyForInboundResolverEndpoint) to CreateVpcEndpoint and ModifyVpcEndpoint APIs.
+* IdentityManagement (3.7.100.91)
+	* Documentation only updates to correct customer-reported issues
+* Keyspaces (3.7.102.0)
+	* Adding support for client-side timestamps
+* Core 3.7.105.19
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.502.0 (2023-03-13 18:23 UTC)
 * AppIntegrationsService (3.7.101.0)
 	* Adds FileConfiguration to Amazon AppIntegrations CreateDataIntegration supporting scheduled downloading of third party files into Amazon Connect from sources such as Microsoft SharePoint.
