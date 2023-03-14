@@ -123,6 +123,12 @@ namespace Amazon.DirectConnect.Model
         /// from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and
         /// virtual private gateway or transit gateway is stopped.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>updating</code>: The CIDR blocks for the virtual private gateway or transit
+        /// gateway are currently being updated. This could be new CIDR blocks added or current
+        /// CIDR blocks removed.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public DirectConnectGatewayAssociationState AssociationState
