@@ -38,6 +38,7 @@ namespace Amazon.Keyspaces.Model
     {
         private List<ColumnDefinition> _addColumns = new List<ColumnDefinition>();
         private CapacitySpecification _capacitySpecification;
+        private ClientSideTimestamps _clientSideTimestamps;
         private int? _defaultTimeToLive;
         private EncryptionSpecification _encryptionSpecification;
         private string _keyspaceName;
@@ -50,16 +51,16 @@ namespace Amazon.Keyspaces.Model
         /// <para>
         /// For each column to be added to the specified table:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • <code>name</code> - The name of the column.
+        ///  <code>name</code> - The name of the column.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>type</code> - An Amazon Keyspaces data type. For more information, see <a
-        /// href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data
+        ///  <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data
         /// types</a> in the <i>Amazon Keyspaces Developer Guide</i>.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<ColumnDefinition> AddColumns
@@ -79,16 +80,16 @@ namespace Amazon.Keyspaces.Model
         /// <para>
         /// Modifies the read/write throughput capacity mode for the table. The options are:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • <code>throughputMode:PAY_PER_REQUEST</code> and 
+        ///  <code>throughputMode:PAY_PER_REQUEST</code> and 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code>
+        ///  <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code>
         /// and <code>writeCapacityUnits</code> as input.
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
         /// The default is <code>throughput_mode:PAY_PER_REQUEST</code>.
         /// </para>
@@ -108,6 +109,33 @@ namespace Amazon.Keyspaces.Model
         internal bool IsSetCapacitySpecification()
         {
             return this._capacitySpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientSideTimestamps. 
+        /// <para>
+        /// Enables client-side timestamps for the table. By default, the setting is disabled.
+        /// You can enable client-side timestamps with the following option:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>status: "enabled"</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Once client-side timestamps are enabled for a table, this setting cannot be disabled.
+        /// </para>
+        /// </summary>
+        public ClientSideTimestamps ClientSideTimestamps
+        {
+            get { return this._clientSideTimestamps; }
+            set { this._clientSideTimestamps = value; }
+        }
+
+        // Check to see if ClientSideTimestamps property is set
+        internal bool IsSetClientSideTimestamps()
+        {
+            return this._clientSideTimestamps != null;
         }
 
         /// <summary>
@@ -140,17 +168,17 @@ namespace Amazon.Keyspaces.Model
         /// Modifies the encryption settings of the table. You can choose one of the following
         /// KMS key (KMS key):
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. 
+        ///  <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account
-        /// and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code>
+        ///  <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and
+        /// is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code>
         /// of the KMS key in Amazon Resource Name (ARN) format as input. 
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
         /// The default is <code>AWS_OWNED_KMS_KEY</code>.
         /// </para>
@@ -196,17 +224,17 @@ namespace Amazon.Keyspaces.Model
         /// <para>
         /// Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • <code>ENABLED</code> 
+        ///  <code>status=ENABLED</code> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>DISABLED</code> 
+        ///  <code>status=DISABLED</code> 
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
-        /// If it's not specified, the default is <code>DISABLED</code>.
+        /// If it's not specified, the default is <code>status=DISABLED</code>.
         /// </para>
         ///  
         /// <para>
@@ -250,15 +278,15 @@ namespace Amazon.Keyspaces.Model
         /// <para>
         /// Modifies Time to Live custom settings for the table. The options are:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • <code>status:enabled</code> 
+        ///  <code>status:enabled</code> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>status:disabled</code> 
+        ///  <code>status:disabled</code> 
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
         /// The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you
         /// can't disable it for the table.

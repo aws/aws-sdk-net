@@ -57,6 +57,12 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                     response.CapacitySpecification = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("clientSideTimestamps", targetDepth))
+                {
+                    var unmarshaller = ClientSideTimestampsUnmarshaller.Instance;
+                    response.ClientSideTimestamps = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("comment", targetDepth))
                 {
                     var unmarshaller = CommentUnmarshaller.Instance;

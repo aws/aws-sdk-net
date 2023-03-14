@@ -29,36 +29,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Keyspaces.Model
 {
     /// <summary>
-    /// Point-in-time recovery (PITR) helps protect your Amazon Keyspaces tables from accidental
-    /// write or delete operations by providing you continuous backups of your table data.
+    /// The client-side timestamp setting of the table.
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time
-    /// recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/client-side-timestamps-how-it-works.html">How
+    /// it works: Amazon Keyspaces client-side timestamps</a> in the <i>Amazon Keyspaces Developer
+    /// Guide</i>.
     /// </para>
     /// </summary>
-    public partial class PointInTimeRecovery
+    public partial class ClientSideTimestamps
     {
-        private PointInTimeRecoveryStatus _status;
+        private ClientSideTimestampsStatus _status;
 
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The options are:
+        /// Shows how to enable client-side timestamps settings for the specified table.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>status=ENABLED</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>status=DISABLED</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
-        public PointInTimeRecoveryStatus Status
+        public ClientSideTimestampsStatus Status
         {
             get { return this._status; }
             set { this._status = value; }
