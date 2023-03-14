@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DnsOptions
     {
         private DnsRecordIpType _dnsRecordIpType;
+        private bool? _privateDnsOnlyForInboundResolverEndpoint;
 
         /// <summary>
         /// Gets and sets the property DnsRecordIpType. 
@@ -51,6 +52,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDnsRecordIpType()
         {
             return this._dnsRecordIpType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsOnlyForInboundResolverEndpoint. 
+        /// <para>
+        /// Indicates whether to enable private DNS only for inbound endpoints.
+        /// </para>
+        /// </summary>
+        public bool PrivateDnsOnlyForInboundResolverEndpoint
+        {
+            get { return this._privateDnsOnlyForInboundResolverEndpoint.GetValueOrDefault(); }
+            set { this._privateDnsOnlyForInboundResolverEndpoint = value; }
+        }
+
+        // Check to see if PrivateDnsOnlyForInboundResolverEndpoint property is set
+        internal bool IsSetPrivateDnsOnlyForInboundResolverEndpoint()
+        {
+            return this._privateDnsOnlyForInboundResolverEndpoint.HasValue; 
         }
 
     }
