@@ -1,3 +1,14 @@
+### 3.7.504.0 (2023-03-15 18:21 UTC)
+* MigrationHubStrategyRecommendations (3.7.103.0)
+	* This release adds the binary analysis that analyzes IIS application DLLs on Windows and Java applications on Linux to provide anti-pattern report without configuring access to the source code.
+* S3Control (3.7.108.0)
+	* Added support for S3 Object Lambda aliases.
+* SecurityLake (3.7.102.0)
+	* Make Create/Get/ListSubscribers APIs return resource share ARN and name so they can be used to validate the RAM resource share to accept. GetDatalake can be used to track status of UpdateDatalake and DeleteDatalake requests.
+* Core 3.7.105.20
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.503.0 (2023-03-14 18:29 UTC)
 * ApplicationAutoScaling (3.7.103.0)
 	* Application Auto Scaling customers can now use mathematical functions to customize the metric used with Target Tracking policies within the policy configuration itself, saving the cost and effort of publishing the customizations as a separate metric.
