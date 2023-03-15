@@ -88,6 +88,18 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("resourceShareArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceShareArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resourceShareName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceShareName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -34,40 +34,52 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AccessDeniedException Object
+    /// Response Unmarshaller for UpdateStatus Object
     /// </summary>  
-    public class AccessDeniedExceptionUnmarshaller : IErrorResponseUnmarshaller<AccessDeniedException, JsonUnmarshallerContext>
+    public class UpdateStatusUnmarshaller : IUnmarshaller<UpdateStatus, XmlUnmarshallerContext>, IUnmarshaller<UpdateStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AccessDeniedException Unmarshall(JsonUnmarshallerContext context)
+        UpdateStatus IUnmarshaller<UpdateStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public AccessDeniedException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public UpdateStatus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            AccessDeniedException unmarshalledObject = new AccessDeniedException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            UpdateStatus unmarshalledObject = new UpdateStatus();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("errorCode", targetDepth))
+                if (context.TestExpression("lastUpdateFailure", targetDepth))
+                {
+                    var unmarshaller = LastUpdateFailureUnmarshaller.Instance;
+                    unmarshalledObject.LastUpdateFailure = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastUpdateRequestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUpdateRequestId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastUpdateStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastUpdateStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -75,12 +87,13 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static AccessDeniedExceptionUnmarshaller _instance = new AccessDeniedExceptionUnmarshaller();        
+
+        private static UpdateStatusUnmarshaller _instance = new UpdateStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AccessDeniedExceptionUnmarshaller Instance
+        public static UpdateStatusUnmarshaller Instance
         {
             get
             {
