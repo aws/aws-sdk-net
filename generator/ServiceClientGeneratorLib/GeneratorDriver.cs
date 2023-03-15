@@ -712,12 +712,9 @@ namespace ServiceClientGenerator
 
             var generator = new DefaultConfigurationModeGenerator
             {
-                Session = new Dictionary<string, object>
-                {
-                    ["defaultConfigurationModel"] = generationManifest.DefaultConfiguration
-                }
+                DefaultConfigurationModel = generationManifest.DefaultConfiguration
             };
-            generator.Initialize();
+
             var text = generator.TransformText();
             WriteFile(defaultConfigurationModeFilesRoot, null, fileName, text);
         }
@@ -798,11 +795,9 @@ namespace ServiceClientGenerator
 
             var generator = new PartitionsTemplate
             {
-                Session = new Dictionary<string, object> {
-                    ["partitions"] = partitions
-                }
+                Partitions = partitions
             };
-            generator.Initialize();
+
             var text = generator.TransformText();
             WriteFile(writeToFolder, null, "Partition.generated.cs", text);
         }
@@ -1478,15 +1473,11 @@ namespace ServiceClientGenerator
             const string fileName = "RegionEndpoint.generated.cs";
 
             var endpoints = ExtractEndpoints(options, ConstructEndpointName);
-
             var generator = new EndpointsGenerator
             {
-                Session = new Dictionary<string, object>
-                {
-                    ["endpoints"] = endpoints
-                }
+                Endpoints = endpoints
             };
-            generator.Initialize();
+
             var text = generator.TransformText();
             WriteFile(endpointsFilesRoot, null, fileName, text);
         }
@@ -1517,15 +1508,11 @@ namespace ServiceClientGenerator
             const string fileName = "S3Enumerations.cs";
 
             var endpoints = ExtractEndpoints(options, ConstructEndpointName, ConvertS3RegionCode);
-
             var generator = new S3EnumerationsGenerator()
             {
-                Session = new Dictionary<string, object>
-                {
-                    ["endpoints"] = endpoints
-                }
+                Endpoints = endpoints
             };
-            generator.Initialize();
+            
             var text = generator.TransformText();
             WriteFile(generatedFileRoot, null, fileName, text);
         }

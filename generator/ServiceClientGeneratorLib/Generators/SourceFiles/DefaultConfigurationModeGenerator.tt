@@ -1,6 +1,5 @@
 ﻿<#@ template language="C#" #>
 <#@ import namespace="System.Linq" #>
-<#@ parameter name="defaultConfigurationModel" type="ServiceClientGenerator.DefaultConfiguration.DefaultConfigurationModel" #>
 /*******************************************************************************
  *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
@@ -33,9 +32,9 @@ namespace Amazon.Runtime
     /// </summary>
     public enum DefaultConfigurationMode
     {
-<# foreach (var mode in defaultConfigurationModel.Modes) 
+<# foreach (var mode in DefaultConfigurationModel.Modes) 
 { 
-    var trailingComma = defaultConfigurationModel.Modes.Last() == mode ? "" : ",";
+    var trailingComma = DefaultConfigurationModel.Modes.Last() == mode ? "" : ",";
 #>
         /// <summary>
         /// <#= mode.Documentation #>
@@ -44,3 +43,7 @@ namespace Amazon.Runtime
 <# } #>
     }
 }
+
+<#+
+public ServiceClientGenerator.DefaultConfiguration.DefaultConfigurationModel DefaultConfigurationModel { get; set; }
+#>
