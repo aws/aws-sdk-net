@@ -25,6 +25,64 @@ namespace Amazon.MigrationHubStrategyRecommendations
 {
 
     /// <summary>
+    /// Constants used for properties of type AnalysisType.
+    /// </summary>
+    public class AnalysisType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BINARY_ANALYSIS for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType BINARY_ANALYSIS = new AnalysisType("BINARY_ANALYSIS");
+        /// <summary>
+        /// Constant DATABASE_ANALYSIS for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType DATABASE_ANALYSIS = new AnalysisType("DATABASE_ANALYSIS");
+        /// <summary>
+        /// Constant RUNTIME_ANALYSIS for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType RUNTIME_ANALYSIS = new AnalysisType("RUNTIME_ANALYSIS");
+        /// <summary>
+        /// Constant SOURCE_CODE_ANALYSIS for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType SOURCE_CODE_ANALYSIS = new AnalysisType("SOURCE_CODE_ANALYSIS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalysisType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisType FindValue(string value)
+        {
+            return FindValue<AnalysisType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AntipatternReportStatus.
     /// </summary>
     public class AntipatternReportStatus : ConstantClass
@@ -558,6 +616,56 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AwsManagedTargetDestination(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BinaryAnalyzerName.
+    /// </summary>
+    public class BinaryAnalyzerName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BYTECODE_ANALYZER for BinaryAnalyzerName
+        /// </summary>
+        public static readonly BinaryAnalyzerName BYTECODE_ANALYZER = new BinaryAnalyzerName("BYTECODE_ANALYZER");
+        /// <summary>
+        /// Constant DLL_ANALYZER for BinaryAnalyzerName
+        /// </summary>
+        public static readonly BinaryAnalyzerName DLL_ANALYZER = new BinaryAnalyzerName("DLL_ANALYZER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BinaryAnalyzerName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BinaryAnalyzerName FindValue(string value)
+        {
+            return FindValue<BinaryAnalyzerName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BinaryAnalyzerName(string value)
         {
             return FindValue(value);
         }
@@ -1461,6 +1569,68 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
 
     /// <summary>
+    /// Constants used for properties of type RunTimeAnalyzerName.
+    /// </summary>
+    public class RunTimeAnalyzerName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant A2C_ANALYZER for RunTimeAnalyzerName
+        /// </summary>
+        public static readonly RunTimeAnalyzerName A2C_ANALYZER = new RunTimeAnalyzerName("A2C_ANALYZER");
+        /// <summary>
+        /// Constant DATABASE_ANALYZER for RunTimeAnalyzerName
+        /// </summary>
+        public static readonly RunTimeAnalyzerName DATABASE_ANALYZER = new RunTimeAnalyzerName("DATABASE_ANALYZER");
+        /// <summary>
+        /// Constant EMP_PA_ANALYZER for RunTimeAnalyzerName
+        /// </summary>
+        public static readonly RunTimeAnalyzerName EMP_PA_ANALYZER = new RunTimeAnalyzerName("EMP_PA_ANALYZER");
+        /// <summary>
+        /// Constant REHOST_ANALYZER for RunTimeAnalyzerName
+        /// </summary>
+        public static readonly RunTimeAnalyzerName REHOST_ANALYZER = new RunTimeAnalyzerName("REHOST_ANALYZER");
+        /// <summary>
+        /// Constant SCT_ANALYZER for RunTimeAnalyzerName
+        /// </summary>
+        public static readonly RunTimeAnalyzerName SCT_ANALYZER = new RunTimeAnalyzerName("SCT_ANALYZER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RunTimeAnalyzerName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RunTimeAnalyzerName FindValue(string value)
+        {
+            return FindValue<RunTimeAnalyzerName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RunTimeAnalyzerName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RunTimeAssessmentStatus.
     /// </summary>
     public class RunTimeAssessmentStatus : ConstantClass
@@ -1880,6 +2050,64 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SourceCodeAnalyzerName.
+    /// </summary>
+    public class SourceCodeAnalyzerName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BYTECODE_ANALYZER for SourceCodeAnalyzerName
+        /// </summary>
+        public static readonly SourceCodeAnalyzerName BYTECODE_ANALYZER = new SourceCodeAnalyzerName("BYTECODE_ANALYZER");
+        /// <summary>
+        /// Constant CSHARP_ANALYZER for SourceCodeAnalyzerName
+        /// </summary>
+        public static readonly SourceCodeAnalyzerName CSHARP_ANALYZER = new SourceCodeAnalyzerName("CSHARP_ANALYZER");
+        /// <summary>
+        /// Constant JAVA_ANALYZER for SourceCodeAnalyzerName
+        /// </summary>
+        public static readonly SourceCodeAnalyzerName JAVA_ANALYZER = new SourceCodeAnalyzerName("JAVA_ANALYZER");
+        /// <summary>
+        /// Constant PORTING_ASSISTANT for SourceCodeAnalyzerName
+        /// </summary>
+        public static readonly SourceCodeAnalyzerName PORTING_ASSISTANT = new SourceCodeAnalyzerName("PORTING_ASSISTANT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SourceCodeAnalyzerName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceCodeAnalyzerName FindValue(string value)
+        {
+            return FindValue<SourceCodeAnalyzerName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceCodeAnalyzerName(string value)
         {
             return FindValue(value);
         }

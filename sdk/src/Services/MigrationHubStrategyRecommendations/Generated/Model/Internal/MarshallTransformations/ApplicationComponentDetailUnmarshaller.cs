@@ -172,6 +172,12 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                     unmarshalledObject.ResourceSubType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("resultList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Result, ResultUnmarshaller>(ResultUnmarshaller.Instance);
+                    unmarshalledObject.ResultList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("runtimeStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
