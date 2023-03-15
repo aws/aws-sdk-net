@@ -61,6 +61,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("Alias", targetDepth))
+                    {
+                        var unmarshaller = ObjectLambdaAccessPointAliasUnmarshaller.Instance;
+                        response.Alias = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ObjectLambdaAccessPointArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

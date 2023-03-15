@@ -1072,6 +1072,17 @@
     <pattern>arn:[^:]+:s3-object-lambda:[^:]*:\d{12}:accesspoint/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.ObjectLambdaAccessPointAlias.Status</property>
+    <min>2</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ObjectLambdaAccessPointAlias.Value</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>^[0-9a-z\\-]{3,63}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.ObjectLambdaConfiguration.SupportingAccessPoint</property>
     <min>1</min>
     <max>2048</max>

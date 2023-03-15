@@ -73,11 +73,11 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  
     /// <para>
-    /// If you have an object expiration lifecycle policy in your non-versioned bucket and
-    /// you want to maintain the same permanent delete behavior when you enable versioning,
-    /// you must add a noncurrent expiration policy. The noncurrent expiration lifecycle policy
-    /// will manage the deletions of the noncurrent object versions in the version-enabled
-    /// bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html">Versioning</a>
+    /// If you have an object expiration lifecycle configuration in your non-versioned bucket
+    /// and you want to maintain the same permanent delete behavior when you enable versioning,
+    /// you must add a noncurrent expiration policy. The noncurrent expiration lifecycle configuration
+    /// will manage the deletes of the noncurrent object versions in the version-enabled bucket.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html">Versioning</a>
     /// in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  

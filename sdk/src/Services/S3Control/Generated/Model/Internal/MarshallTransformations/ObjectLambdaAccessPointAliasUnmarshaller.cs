@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ObjectLambdaAccessPoint Object
+    /// Response Unmarshaller for ObjectLambdaAccessPointAlias Object
     /// </summary>  
-    public class ObjectLambdaAccessPointUnmarshaller : IUnmarshaller<ObjectLambdaAccessPoint, XmlUnmarshallerContext>
+    public class ObjectLambdaAccessPointAliasUnmarshaller : IUnmarshaller<ObjectLambdaAccessPointAlias, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ObjectLambdaAccessPoint Unmarshall(XmlUnmarshallerContext context)
+        public ObjectLambdaAccessPointAlias Unmarshall(XmlUnmarshallerContext context)
         {
-            ObjectLambdaAccessPoint unmarshalledObject = new ObjectLambdaAccessPoint();
+            ObjectLambdaAccessPointAlias unmarshalledObject = new ObjectLambdaAccessPointAlias();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,22 +55,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Alias", targetDepth))
-                    {
-                        var unmarshaller = ObjectLambdaAccessPointAliasUnmarshaller.Instance;
-                        unmarshalledObject.Alias = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Name", targetDepth))
+                    if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ObjectLambdaAccessPointArn", targetDepth))
+                    if (context.TestExpression("Value", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ObjectLambdaAccessPointArn = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -82,12 +76,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ObjectLambdaAccessPointUnmarshaller _instance = new ObjectLambdaAccessPointUnmarshaller();        
+        private static ObjectLambdaAccessPointAliasUnmarshaller _instance = new ObjectLambdaAccessPointAliasUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ObjectLambdaAccessPointUnmarshaller Instance
+        public static ObjectLambdaAccessPointAliasUnmarshaller Instance
         {
             get
             {

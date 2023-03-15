@@ -34,8 +34,27 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class ObjectLambdaAccessPoint
     {
+        private ObjectLambdaAccessPointAlias _alias;
         private string _name;
         private string _objectLambdaAccessPointArn;
+
+        /// <summary>
+        /// Gets and sets the property Alias. 
+        /// <para>
+        /// The alias of the Object Lambda Access Point.
+        /// </para>
+        /// </summary>
+        public ObjectLambdaAccessPointAlias Alias
+        {
+            get { return this._alias; }
+            set { this._alias = value; }
+        }
+
+        // Check to see if Alias property is set
+        internal bool IsSetAlias()
+        {
+            return this._alias != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

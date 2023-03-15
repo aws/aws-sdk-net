@@ -212,7 +212,7 @@ namespace Amazon.S3Control.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-between-outposts.html">Creating
-        /// replication rules between Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// replication rules on Outposts</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public int Priority

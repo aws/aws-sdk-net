@@ -1755,7 +1755,7 @@ namespace Amazon.S3Control
         ///  
         /// <para>
         /// For information about S3 replication on Outposts configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html">Replicating
-        /// objects for Amazon Web Services Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// objects for S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1828,7 +1828,7 @@ namespace Amazon.S3Control
         ///  
         /// <para>
         /// For information about S3 replication on Outposts configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html">Replicating
-        /// objects for Amazon Web Services Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// objects for S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3614,7 +3614,7 @@ namespace Amazon.S3Control
         /// about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
         /// Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>. For information about
         /// S3 replication on Outposts configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html">Replicating
-        /// objects for Amazon Web Services Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// objects for S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -3697,7 +3697,7 @@ namespace Amazon.S3Control
         /// about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
         /// Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>. For information about
         /// S3 replication on Outposts configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html">Replicating
-        /// objects for Amazon Web Services Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// objects for S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -5849,8 +5849,8 @@ namespace Amazon.S3Control
         ///  </note> 
         /// <para>
         /// Creates a replication configuration or replaces an existing one. For information about
-        /// S3 replication on Outposts configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AmazonS3/latest/userguide/S3OutpostsReplication.html">Replicating
-        /// objects for Amazon Web Services Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// S3 replication on Outposts configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html">Replicating
+        /// objects for S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -5933,8 +5933,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  <note> 
         /// <para>
-        /// To perform this operation, the user or role must also have the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
-        /// permission.
+        /// To perform this operation, the user or role must also have the <code>iam:CreateRole</code>
+        /// and <code>iam:PassRole</code> permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
+        /// a user permissions to pass a role to an Amazon Web Services service</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5943,7 +5944,7 @@ namespace Amazon.S3Control
         /// you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>.
         /// For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
         /// Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by
-        /// using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html#API_control_GetBucketLifecycleConfiguration_Examples">Examples</a>
+        /// using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketReplication.html#API_control_PutBucketReplication_Examples">Examples</a>
         /// section.
         /// </para>
         ///  
@@ -5986,8 +5987,8 @@ namespace Amazon.S3Control
         ///  </note> 
         /// <para>
         /// Creates a replication configuration or replaces an existing one. For information about
-        /// S3 replication on Outposts configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AmazonS3/latest/userguide/S3OutpostsReplication.html">Replicating
-        /// objects for Amazon Web Services Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// S3 replication on Outposts configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html">Replicating
+        /// objects for S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -6070,8 +6071,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  <note> 
         /// <para>
-        /// To perform this operation, the user or role must also have the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
-        /// permission.
+        /// To perform this operation, the user or role must also have the <code>iam:CreateRole</code>
+        /// and <code>iam:PassRole</code> permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
+        /// a user permissions to pass a role to an Amazon Web Services service</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6080,7 +6082,7 @@ namespace Amazon.S3Control
         /// you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>.
         /// For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
         /// Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by
-        /// using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html#API_control_GetBucketLifecycleConfiguration_Examples">Examples</a>
+        /// using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketReplication.html#API_control_PutBucketReplication_Examples">Examples</a>
         /// section.
         /// </para>
         ///  
@@ -6405,11 +6407,11 @@ namespace Amazon.S3Control
         /// </para>
         ///  
         /// <para>
-        /// If you have an object expiration lifecycle policy in your non-versioned bucket and
-        /// you want to maintain the same permanent delete behavior when you enable versioning,
-        /// you must add a noncurrent expiration policy. The noncurrent expiration lifecycle policy
-        /// will manage the deletions of the noncurrent object versions in the version-enabled
-        /// bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html">Versioning</a>
+        /// If you have an object expiration lifecycle configuration in your non-versioned bucket
+        /// and you want to maintain the same permanent delete behavior when you enable versioning,
+        /// you must add a noncurrent expiration policy. The noncurrent expiration lifecycle configuration
+        /// will manage the deletes of the noncurrent object versions in the version-enabled bucket.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html">Versioning</a>
         /// in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -6502,11 +6504,11 @@ namespace Amazon.S3Control
         /// </para>
         ///  
         /// <para>
-        /// If you have an object expiration lifecycle policy in your non-versioned bucket and
-        /// you want to maintain the same permanent delete behavior when you enable versioning,
-        /// you must add a noncurrent expiration policy. The noncurrent expiration lifecycle policy
-        /// will manage the deletions of the noncurrent object versions in the version-enabled
-        /// bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html">Versioning</a>
+        /// If you have an object expiration lifecycle configuration in your non-versioned bucket
+        /// and you want to maintain the same permanent delete behavior when you enable versioning,
+        /// you must add a noncurrent expiration policy. The noncurrent expiration lifecycle configuration
+        /// will manage the deletes of the noncurrent object versions in the version-enabled bucket.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html">Versioning</a>
         /// in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
