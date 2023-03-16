@@ -49,10 +49,6 @@ div#toc {
 	margin-left:-25px;
 }
 
-.awstoc a.nav {
-    text-decoration: none;
-}
-
 .awstoc a.activeTopic {
     color: black;
     cursor: default;
