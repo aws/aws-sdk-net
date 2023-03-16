@@ -1,3 +1,14 @@
+### 3.7.505.0 (2023-03-16 18:22 UTC)
+* GuardDuty (3.7.101.0)
+	* Updated 9 APIs for feature enablement to reflect expansion of GuardDuty to features. Added new APIs and updated existing APIs to support RDS Protection GA.
+* ResourceExplorer2 (3.7.101.51)
+	* Documentation updates for APIs.
+* SageMakerRuntime (3.7.101.30)
+	* Documentation updates for SageMaker Runtime
+* Core 3.7.105.21
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.504.0 (2023-03-15 18:21 UTC)
 * MigrationHubStrategyRecommendations (3.7.103.0)
 	* This release adds the binary analysis that analyzes IIS application DLLs on Windows and Java applications on Linux to provide anti-pattern report without configuring access to the source code.
