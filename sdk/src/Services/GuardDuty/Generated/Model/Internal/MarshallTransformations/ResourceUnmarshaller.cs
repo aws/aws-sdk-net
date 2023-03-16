@@ -106,6 +106,18 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.KubernetesDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("rdsDbInstanceDetails", targetDepth))
+                {
+                    var unmarshaller = RdsDbInstanceDetailsUnmarshaller.Instance;
+                    unmarshalledObject.RdsDbInstanceDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rdsDbUserDetails", targetDepth))
+                {
+                    var unmarshaller = RdsDbUserDetailsUnmarshaller.Instance;
+                    unmarshalledObject.RdsDbUserDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

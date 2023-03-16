@@ -44,6 +44,8 @@ namespace Amazon.GuardDuty.Model
     public partial class DescribeOrganizationConfigurationRequest : AmazonGuardDutyRequest
     {
         private string _detectorId;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property DetectorId. 
@@ -62,6 +64,47 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetDetectorId()
         {
             return this._detectorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// You can use this parameter to indicate the maximum number of items that you want in
+        /// the response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// You can use this parameter when paginating results. Set the value of this parameter
+        /// to null on your first call to the list action. For subsequent calls to the action,
+        /// fill <code>nextToken</code> in the request with the value of <code>NextToken</code>
+        /// from the previous response to continue listing data.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

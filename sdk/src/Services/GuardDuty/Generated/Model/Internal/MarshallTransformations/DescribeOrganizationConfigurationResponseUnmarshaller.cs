@@ -63,10 +63,22 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     response.DataSources = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("features", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<OrganizationFeatureConfigurationResult, OrganizationFeatureConfigurationResultUnmarshaller>(OrganizationFeatureConfigurationResultUnmarshaller.Instance);
+                    response.Features = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("memberAccountLimitReached", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     response.MemberAccountLimitReached = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -45,6 +45,7 @@ namespace Amazon.GuardDuty.Model
         private bool? _autoEnable;
         private OrganizationDataSourceConfigurations _dataSources;
         private string _detectorId;
+        private List<OrganizationFeatureConfiguration> _features = new List<OrganizationFeatureConfiguration>();
 
         /// <summary>
         /// Gets and sets the property AutoEnable. 
@@ -71,6 +72,7 @@ namespace Amazon.GuardDuty.Model
         /// Describes which data sources will be updated.
         /// </para>
         /// </summary>
+        [Obsolete("This parameter is deprecated, use Features instead")]
         public OrganizationDataSourceConfigurations DataSources
         {
             get { return this._dataSources; }
@@ -100,6 +102,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetDetectorId()
         {
             return this._detectorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Features. 
+        /// <para>
+        /// A list of features that will be configured for the organization.
+        /// </para>
+        /// </summary>
+        public List<OrganizationFeatureConfiguration> Features
+        {
+            get { return this._features; }
+            set { this._features = value; }
+        }
+
+        // Check to see if Features property is set
+        internal bool IsSetFeatures()
+        {
+            return this._features != null && this._features.Count > 0; 
         }
 
     }

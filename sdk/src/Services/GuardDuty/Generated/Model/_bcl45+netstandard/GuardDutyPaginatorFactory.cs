@@ -44,6 +44,14 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeOrganizationConfiguration operation
+        ///</summary>
+        public IDescribeOrganizationConfigurationPaginator DescribeOrganizationConfiguration(DescribeOrganizationConfigurationRequest request) 
+        {
+            return new DescribeOrganizationConfigurationPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetUsageStatistics operation
         ///</summary>
         public IGetUsageStatisticsPaginator GetUsageStatistics(GetUsageStatisticsRequest request) 

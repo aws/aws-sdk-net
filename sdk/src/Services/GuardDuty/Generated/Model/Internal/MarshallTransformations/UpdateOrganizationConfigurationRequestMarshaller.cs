@@ -85,6 +85,22 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetFeatures())
+                {
+                    context.Writer.WritePropertyName("features");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFeaturesListValue in publicRequest.Features)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OrganizationFeatureConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFeaturesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

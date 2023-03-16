@@ -35,7 +35,9 @@ namespace Amazon.GuardDuty.Model
     {
         private bool? _autoEnable;
         private OrganizationDataSourceConfigurationsResult _dataSources;
+        private List<OrganizationFeatureConfigurationResult> _features = new List<OrganizationFeatureConfigurationResult>();
         private bool? _memberAccountLimitReached;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property AutoEnable. 
@@ -62,6 +64,7 @@ namespace Amazon.GuardDuty.Model
         /// Describes which data sources are enabled automatically for member accounts.
         /// </para>
         /// </summary>
+        [Obsolete("This parameter is deprecated, use Features instead")]
         public OrganizationDataSourceConfigurationsResult DataSources
         {
             get { return this._dataSources; }
@@ -72,6 +75,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetDataSources()
         {
             return this._dataSources != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Features. 
+        /// <para>
+        /// A list of features that are configured for this organization.
+        /// </para>
+        /// </summary>
+        public List<OrganizationFeatureConfigurationResult> Features
+        {
+            get { return this._features; }
+            set { this._features = value; }
+        }
+
+        // Check to see if Features property is set
+        internal bool IsSetFeatures()
+        {
+            return this._features != null && this._features.Count > 0; 
         }
 
         /// <summary>
@@ -92,6 +113,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetMemberAccountLimitReached()
         {
             return this._memberAccountLimitReached.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination parameter to be used on the next list operation to retrieve more items.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

@@ -93,6 +93,22 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Enable);
                 }
 
+                if(publicRequest.IsSetFeatures())
+                {
+                    context.Writer.WritePropertyName("features");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFeaturesListValue in publicRequest.Features)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DetectorFeatureConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFeaturesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetFindingPublishingFrequency())
                 {
                     context.Writer.WritePropertyName("findingPublishingFrequency");

@@ -39,6 +39,7 @@ namespace Amazon.GuardDuty.Model
         private KubernetesApiCallAction _kubernetesApiCallAction;
         private NetworkConnectionAction _networkConnectionAction;
         private PortProbeAction _portProbeAction;
+        private RdsLoginAttemptAction _rdsLoginAttemptAction;
 
         /// <summary>
         /// Gets and sets the property ActionType. 
@@ -146,6 +147,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetPortProbeAction()
         {
             return this._portProbeAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RdsLoginAttemptAction. 
+        /// <para>
+        /// Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.
+        /// </para>
+        /// </summary>
+        public RdsLoginAttemptAction RdsLoginAttemptAction
+        {
+            get { return this._rdsLoginAttemptAction; }
+            set { this._rdsLoginAttemptAction = value; }
+        }
+
+        // Check to see if RdsLoginAttemptAction property is set
+        internal bool IsSetRdsLoginAttemptAction()
+        {
+            return this._rdsLoginAttemptAction != null;
         }
 
     }

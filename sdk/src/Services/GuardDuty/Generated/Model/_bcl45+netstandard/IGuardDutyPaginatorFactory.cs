@@ -31,6 +31,11 @@ namespace Amazon.GuardDuty.Model
         IDescribeMalwareScansPaginator DescribeMalwareScans(DescribeMalwareScansRequest request);
 
         /// <summary>
+        /// Paginator for DescribeOrganizationConfiguration operation
+        ///</summary>
+        IDescribeOrganizationConfigurationPaginator DescribeOrganizationConfiguration(DescribeOrganizationConfigurationRequest request);
+
+        /// <summary>
         /// Paginator for GetUsageStatistics operation
         ///</summary>
         IGetUsageStatisticsPaginator GetUsageStatistics(GetUsageStatisticsRequest request);

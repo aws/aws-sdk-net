@@ -48,6 +48,7 @@ namespace Amazon.GuardDuty.Model
         private string _clientToken;
         private DataSourceConfigurations _dataSources;
         private bool? _enable;
+        private List<DetectorFeatureConfiguration> _features = new List<DetectorFeatureConfiguration>();
         private FindingPublishingFrequency _findingPublishingFrequency;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
@@ -83,6 +84,7 @@ namespace Amazon.GuardDuty.Model
         /// and endpoints</a>.
         /// </para>
         /// </summary>
+        [Obsolete("This parameter is deprecated, use Features instead")]
         public DataSourceConfigurations DataSources
         {
             get { return this._dataSources; }
@@ -112,6 +114,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetEnable()
         {
             return this._enable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Features. 
+        /// <para>
+        /// A list of features that will be configured for the detector.
+        /// </para>
+        /// </summary>
+        public List<DetectorFeatureConfiguration> Features
+        {
+            get { return this._features; }
+            set { this._features = value; }
+        }
+
+        // Check to see if Features property is set
+        internal bool IsSetFeatures()
+        {
+            return this._features != null && this._features.Count > 0; 
         }
 
         /// <summary>

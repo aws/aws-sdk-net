@@ -41,6 +41,8 @@ namespace Amazon.GuardDuty.Model
         private EksClusterDetails _eksClusterDetails;
         private InstanceDetails _instanceDetails;
         private KubernetesDetails _kubernetesDetails;
+        private RdsDbInstanceDetails _rdsDbInstanceDetails;
+        private RdsDbUserDetails _rdsDbUserDetails;
         private string _resourceType;
         private List<S3BucketDetail> _s3BucketDetails = new List<S3BucketDetail>();
 
@@ -167,6 +169,44 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetKubernetesDetails()
         {
             return this._kubernetesDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RdsDbInstanceDetails. 
+        /// <para>
+        /// Contains information about the database instance to which an anomalous login attempt
+        /// was made.
+        /// </para>
+        /// </summary>
+        public RdsDbInstanceDetails RdsDbInstanceDetails
+        {
+            get { return this._rdsDbInstanceDetails; }
+            set { this._rdsDbInstanceDetails = value; }
+        }
+
+        // Check to see if RdsDbInstanceDetails property is set
+        internal bool IsSetRdsDbInstanceDetails()
+        {
+            return this._rdsDbInstanceDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RdsDbUserDetails. 
+        /// <para>
+        /// Contains information about the user details through which anomalous login attempt
+        /// was made.
+        /// </para>
+        /// </summary>
+        public RdsDbUserDetails RdsDbUserDetails
+        {
+            get { return this._rdsDbUserDetails; }
+            set { this._rdsDbUserDetails = value; }
+        }
+
+        // Check to see if RdsDbUserDetails property is set
+        internal bool IsSetRdsDbUserDetails()
+        {
+            return this._rdsDbUserDetails != null;
         }
 
         /// <summary>

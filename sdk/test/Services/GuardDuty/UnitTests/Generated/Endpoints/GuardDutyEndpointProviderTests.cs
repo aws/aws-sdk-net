@@ -36,8 +36,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "af-south-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.af-south-1.amazonaws.com", endpoint.URL);
         }
@@ -51,8 +51,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "ap-east-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.ap-east-1.amazonaws.com", endpoint.URL);
         }
@@ -66,8 +66,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -81,8 +81,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.ap-northeast-2.amazonaws.com", endpoint.URL);
         }
@@ -96,8 +96,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "ap-northeast-3";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.ap-northeast-3.amazonaws.com", endpoint.URL);
         }
@@ -111,8 +111,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "ap-south-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.ap-south-1.amazonaws.com", endpoint.URL);
         }
@@ -126,8 +126,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -141,8 +141,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -156,8 +156,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "ap-southeast-3";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.ap-southeast-3.amazonaws.com", endpoint.URL);
         }
@@ -171,8 +171,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "ca-central-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.ca-central-1.amazonaws.com", endpoint.URL);
         }
@@ -186,8 +186,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "eu-central-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -201,8 +201,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "eu-north-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.eu-north-1.amazonaws.com", endpoint.URL);
         }
@@ -216,8 +216,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "eu-south-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.eu-south-1.amazonaws.com", endpoint.URL);
         }
@@ -231,8 +231,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "eu-west-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -246,8 +246,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "eu-west-2";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.eu-west-2.amazonaws.com", endpoint.URL);
         }
@@ -261,8 +261,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "eu-west-3";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.eu-west-3.amazonaws.com", endpoint.URL);
         }
@@ -276,8 +276,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "me-south-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.me-south-1.amazonaws.com", endpoint.URL);
         }
@@ -291,8 +291,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "sa-east-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.sa-east-1.amazonaws.com", endpoint.URL);
         }
@@ -306,8 +306,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -321,8 +321,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -336,8 +336,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-east-2";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -351,8 +351,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-east-2";
-            parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty-fips.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -366,8 +366,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-west-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.us-west-1.amazonaws.com", endpoint.URL);
         }
@@ -381,8 +381,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-west-1";
-            parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty-fips.us-west-1.amazonaws.com", endpoint.URL);
         }
@@ -396,8 +396,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-west-2";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -411,8 +411,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-west-2";
-            parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty-fips.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -426,8 +426,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -441,8 +441,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.us-east-1.api.aws", endpoint.URL);
         }
@@ -456,8 +456,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -471,8 +471,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "cn-northwest-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -486,8 +486,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -501,8 +501,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -516,8 +516,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -531,8 +531,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -546,8 +546,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -561,8 +561,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
@@ -576,8 +576,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
-            parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
@@ -591,8 +591,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty-fips.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -606,8 +606,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -621,8 +621,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
-            parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
@@ -636,8 +636,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
@@ -651,8 +651,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -666,8 +666,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://guardduty.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -681,8 +681,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -696,8 +696,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_region_not_set_and_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new GuardDutyEndpointParameters();
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -713,8 +713,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -729,8 +729,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GuardDutyEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonGuardDutyEndpointProvider().ResolveEndpoint(parameters);
         }

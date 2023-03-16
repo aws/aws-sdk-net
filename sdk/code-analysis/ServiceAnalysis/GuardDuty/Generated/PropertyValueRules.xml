@@ -181,6 +181,11 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.DescribeOrganizationConfigurationRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.DescribePublishingDestinationRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
