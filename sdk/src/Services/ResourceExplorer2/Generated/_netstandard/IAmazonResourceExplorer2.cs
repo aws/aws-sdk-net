@@ -245,8 +245,9 @@ namespace Amazon.ResourceExplorer2
         /// permissions.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ConflictException">
-        /// You tried to create a new view or index when one already exists, and you either didn't
-        /// specify or specified a different idempotency token as the original request.
+        /// The request failed because either you specified parameters that didn’t match the original
+        /// request, or you attempted to create a view with a name that already exists in this
+        /// Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
         /// The request failed because of internal service error. Try your request again later.
@@ -295,8 +296,9 @@ namespace Amazon.ResourceExplorer2
         /// permissions.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ConflictException">
-        /// You tried to create a new view or index when one already exists, and you either didn't
-        /// specify or specified a different idempotency token as the original request.
+        /// The request failed because either you specified parameters that didn’t match the original
+        /// request, or you attempted to create a view with a name that already exists in this
+        /// Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
         /// The request failed because of internal service error. Try your request again later.
@@ -824,8 +826,9 @@ namespace Amazon.ResourceExplorer2
         /// permissions.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ConflictException">
-        /// You tried to create a new view or index when one already exists, and you either didn't
-        /// specify or specified a different idempotency token as the original request.
+        /// The request failed because either you specified parameters that didn’t match the original
+        /// request, or you attempted to create a view with a name that already exists in this
+        /// Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
         /// The request failed because of internal service error. Try your request again later.
@@ -972,8 +975,9 @@ namespace Amazon.ResourceExplorer2
         /// permissions.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ConflictException">
-        /// You tried to create a new view or index when one already exists, and you either didn't
-        /// specify or specified a different idempotency token as the original request.
+        /// The request failed because either you specified parameters that didn’t match the original
+        /// request, or you attempted to create a view with a name that already exists in this
+        /// Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
         /// The request failed because of internal service error. Try your request again later.

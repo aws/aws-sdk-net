@@ -40,8 +40,6 @@ namespace Amazon.ResourceExplorer2.Internal
             if (parameters == null) 
                 throw new ArgumentNullException("parameters");
 
-            if (parameters["Region"] == null)
-                throw new AmazonClientException("Region parameter must be set for endpoint resolution");
             if (parameters["UseFIPS"] == null)
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
 
@@ -51,38 +49,42 @@ namespace Amazon.ResourceExplorer2.Internal
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
             };
-            if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
+            if (IsSet(refs["Endpoint"]))
             {
-                if (IsSet(refs["Endpoint"]))
+                if (Equals(refs["UseFIPS"], true))
                 {
-                    if (Equals(refs["UseFIPS"], true))
-                    {
-                        throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                    }
-                    return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
                 }
-                if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+            }
+            if (IsSet(refs["Region"]))
+            {
+                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
                 {
+                    if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                    {
+                        if (Equals(refs["UseFIPS"], true))
+                        {
+                            if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
+                            {
+                                return new Endpoint(Interpolate(@"https://resource-explorer-2-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
+                            throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                        }
+                        return new Endpoint(Interpolate(@"https://resource-explorer-2.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
                     if (Equals(refs["UseFIPS"], true))
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
                         {
-                            return new Endpoint(Interpolate(@"https://resource-explorer-2-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            return new Endpoint(Interpolate(@"https://resource-explorer-2-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
                     }
-                    return new Endpoint(Interpolate(@"https://resource-explorer-2.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    return new Endpoint(Interpolate(@"https://resource-explorer-2.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                 }
-                if (Equals(refs["UseFIPS"], true))
-                {
-                    if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
-                    {
-                        return new Endpoint(Interpolate(@"https://resource-explorer-2-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                }
-                return new Endpoint(Interpolate(@"https://resource-explorer-2.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
             }
+            throw new AmazonClientException("Invalid Configuration: Missing Region");
 
             throw new AmazonClientException("Cannot resolve endpoint");
         }
