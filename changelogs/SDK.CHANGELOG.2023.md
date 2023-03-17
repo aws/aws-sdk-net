@@ -1,3 +1,8 @@
+### 3.7.506.0 (2023-03-17 13:51 UTC)
+* Core 3.7.106.0
+	* Align the default of HttpClientCacheSize to 1 across all the platforms; Configure ECSTaskCredentials to refresh 5 minutes before expiration time
+	* All services packages updated to require new Core
+
 ### 3.7.505.0 (2023-03-16 18:22 UTC)
 * GuardDuty (3.7.101.0)
 	* Updated 9 APIs for feature enablement to reflect expansion of GuardDuty to features. Added new APIs and updated existing APIs to support RDS Protection GA.
