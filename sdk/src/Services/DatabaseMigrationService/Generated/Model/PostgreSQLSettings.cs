@@ -42,6 +42,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private bool? _heartbeatEnable;
         private int? _heartbeatFrequency;
         private string _heartbeatSchema;
+        private bool? _mapBooleanAsBoolean;
         private int? _maxFileSize;
         private string _password;
         private PluginNameValue _pluginName;
@@ -242,6 +243,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetHeartbeatSchema()
         {
             return this._heartbeatSchema != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapBooleanAsBoolean. 
+        /// <para>
+        /// When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL
+        /// migrates booleans as <code>varchar(5)</code>.
+        /// </para>
+        /// </summary>
+        public bool MapBooleanAsBoolean
+        {
+            get { return this._mapBooleanAsBoolean.GetValueOrDefault(); }
+            set { this._mapBooleanAsBoolean = value; }
+        }
+
+        // Check to see if MapBooleanAsBoolean property is set
+        internal bool IsSetMapBooleanAsBoolean()
+        {
+            return this._mapBooleanAsBoolean.HasValue; 
         }
 
         /// <summary>

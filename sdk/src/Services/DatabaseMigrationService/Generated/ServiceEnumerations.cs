@@ -747,6 +747,56 @@ namespace Amazon.DatabaseMigrationService
 
 
     /// <summary>
+    /// Constants used for properties of type KafkaSaslMechanism.
+    /// </summary>
+    public class KafkaSaslMechanism : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Plain for KafkaSaslMechanism
+        /// </summary>
+        public static readonly KafkaSaslMechanism Plain = new KafkaSaslMechanism("plain");
+        /// <summary>
+        /// Constant ScramSha512 for KafkaSaslMechanism
+        /// </summary>
+        public static readonly KafkaSaslMechanism ScramSha512 = new KafkaSaslMechanism("scram-sha-512");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KafkaSaslMechanism(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KafkaSaslMechanism FindValue(string value)
+        {
+            return FindValue<KafkaSaslMechanism>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KafkaSaslMechanism(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KafkaSecurityProtocol.
     /// </summary>
     public class KafkaSecurityProtocol : ConstantClass
@@ -1568,6 +1618,64 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TargetDbType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TlogAccessMode.
+    /// </summary>
+    public class TlogAccessMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BackupOnly for TlogAccessMode
+        /// </summary>
+        public static readonly TlogAccessMode BackupOnly = new TlogAccessMode("BackupOnly");
+        /// <summary>
+        /// Constant PreferBackup for TlogAccessMode
+        /// </summary>
+        public static readonly TlogAccessMode PreferBackup = new TlogAccessMode("PreferBackup");
+        /// <summary>
+        /// Constant PreferTlog for TlogAccessMode
+        /// </summary>
+        public static readonly TlogAccessMode PreferTlog = new TlogAccessMode("PreferTlog");
+        /// <summary>
+        /// Constant TlogOnly for TlogAccessMode
+        /// </summary>
+        public static readonly TlogAccessMode TlogOnly = new TlogAccessMode("TlogOnly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TlogAccessMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TlogAccessMode FindValue(string value)
+        {
+            return FindValue<TlogAccessMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TlogAccessMode(string value)
         {
             return FindValue(value);
         }

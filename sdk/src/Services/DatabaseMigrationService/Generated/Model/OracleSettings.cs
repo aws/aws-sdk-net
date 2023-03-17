@@ -43,6 +43,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _asmServer;
         private string _asmUser;
         private CharLengthSemantics _charLengthSemantics;
+        private bool? _convertTimestampWithZoneToUTC;
         private string _databaseName;
         private bool? _directPathNoLog;
         private bool? _directPathParallelLoad;
@@ -299,6 +300,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetCharLengthSemantics()
         {
             return this._charLengthSemantics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConvertTimestampWithZoneToUTC. 
+        /// <para>
+        /// When true, converts timestamps with the <code>timezone</code> datatype to their UTC
+        /// value.
+        /// </para>
+        /// </summary>
+        public bool ConvertTimestampWithZoneToUTC
+        {
+            get { return this._convertTimestampWithZoneToUTC.GetValueOrDefault(); }
+            set { this._convertTimestampWithZoneToUTC = value; }
+        }
+
+        // Check to see if ConvertTimestampWithZoneToUTC property is set
+        internal bool IsSetConvertTimestampWithZoneToUTC()
+        {
+            return this._convertTimestampWithZoneToUTC.HasValue; 
         }
 
         /// <summary>
