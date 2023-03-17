@@ -1,3 +1,14 @@
+### 3.7.507.0 (2023-03-17 18:22 UTC)
+* BillingConductor (3.7.105.0)
+	* This release adds a new filter to ListAccountAssociations API and a new filter to ListBillingGroups API.
+* ConfigService (3.7.102.0)
+	* This release adds resourceType enums for types released from October 2022 through February 2023.
+* DatabaseMigrationService (3.7.103.0)
+	* S3 setting to create AWS Glue Data Catalog. Oracle setting to control conversion of timestamp column. Support for Kafka SASL Plain authentication. Setting to map boolean from PostgreSQL to Redshift. SQL Server settings to force lob lookup on inline LOBs and to control access of database logs.
+* Core 3.7.106.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.506.0 (2023-03-17 13:51 UTC)
 * Core 3.7.106.0
 	* Align the default of HttpClientCacheSize to 1 across all the platforms; Configure ECSTaskCredentials to refresh 5 minutes before expiration time
