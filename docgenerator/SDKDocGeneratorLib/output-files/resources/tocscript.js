@@ -58,6 +58,8 @@
         g.children("ul").addClass("expanded");
         g.addClass("expanded");
     },
-    
+    setFrameFocus: function (name) {
+        window.top.frames[name].focus();
+    },
     dummy: null
 };
