@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The specified time range is invalid. The earlier time is not chronologically before
+    /// The specified time range is not valid. The earlier time is not chronologically before
     /// the later time.
     /// </summary>
     #if !NETSTANDARD

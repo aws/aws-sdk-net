@@ -30,7 +30,7 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Config throws an exception if the recording group does not contain a valid list of
-    /// resource types. Invalid values might also be incorrectly formatted.
+    /// resource types. Values that are not valid might also be incorrectly formatted.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

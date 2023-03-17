@@ -168,9 +168,10 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you set this option to <code>false</code>, when Config adds support for a new type
-        /// of resource, it will not record resources of that type unless you manually add that
-        /// type to your recording group.
+        /// If you set the <code>AllSupported</code> option to false and populate the <code>ResourceTypes</code>
+        /// option with values, when Config adds support for a new type of resource, it will not
+        /// record resources of that type unless you manually add that type to your recording
+        /// group.
         /// </para>
         ///  
         /// <para>

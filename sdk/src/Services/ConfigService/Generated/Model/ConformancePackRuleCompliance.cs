@@ -43,10 +43,6 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// Compliance of the Config rule.
         /// </para>
-        ///  
-        /// <para>
-        /// The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
-        /// </para>
         /// </summary>
         public ConformancePackComplianceType ComplianceType
         {

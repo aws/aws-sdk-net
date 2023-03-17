@@ -61,8 +61,10 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Returns a list of Detecive or Proactive Config rules. By default, this API returns
-        /// an unfiltered list.
+        /// Returns a list of Detective or Proactive Config rules. By default, this API returns
+        /// an unfiltered list. For more information on Detective or Proactive Config rules, see
+        /// <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
+        /// <b>Evaluation Mode</b> </a> in the Config Developer Guide.
         /// </para>
         /// </summary>
         public DescribeConfigRulesFilters Filters
