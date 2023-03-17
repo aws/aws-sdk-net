@@ -33,6 +33,7 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class CustomLineItemVersionListElement
     {
+        private string _arn;
         private long? _associationSize;
         private string _billingGroupArn;
         private ListCustomLineItemChargeDetails _chargeDetails;
@@ -44,6 +45,26 @@ namespace Amazon.BillingConductor.Model
         private string _name;
         private string _productCode;
         private string _startBillingPeriod;
+        private long? _startTime;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        ///  A list of custom line item Amazon Resource Names (ARNs) to retrieve information.
+        /// 
+        /// </para>
+        /// </summary>
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AssociationSize. 
@@ -243,6 +264,24 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetStartBillingPeriod()
         {
             return this._startBillingPeriod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        ///  The inclusive start time. 
+        /// </para>
+        /// </summary>
+        public long StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
         }
 
     }

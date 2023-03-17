@@ -62,6 +62,17 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PricingPlan);
             }
 
+            if(requestObject.IsSetStatuses())
+            {
+                context.Writer.WritePropertyName("Statuses");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectStatusesListValue in requestObject.Statuses)
+                {
+                        context.Writer.Write(requestObjectStatusesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

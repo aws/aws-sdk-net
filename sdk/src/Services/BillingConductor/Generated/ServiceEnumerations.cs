@@ -366,6 +366,10 @@ namespace Amazon.BillingConductor
         /// Constant SERVICE for PricingRuleScope
         /// </summary>
         public static readonly PricingRuleScope SERVICE = new PricingRuleScope("SERVICE");
+        /// <summary>
+        /// Constant SKU for PricingRuleScope
+        /// </summary>
+        public static readonly PricingRuleScope SKU = new PricingRuleScope("SKU");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -539,6 +543,10 @@ namespace Amazon.BillingConductor
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_MODIFIER_PERCENTAGE = new ValidationExceptionReason("ILLEGAL_MODIFIER_PERCENTAGE");
         /// <summary>
+        /// Constant ILLEGAL_OPERATION for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason ILLEGAL_OPERATION = new ValidationExceptionReason("ILLEGAL_OPERATION");
+        /// <summary>
         /// Constant ILLEGAL_PRIMARY_ACCOUNT for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_PRIMARY_ACCOUNT = new ValidationExceptionReason("ILLEGAL_PRIMARY_ACCOUNT");
@@ -567,6 +575,10 @@ namespace Amazon.BillingConductor
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_UPDATE_CHARGE_DETAILS = new ValidationExceptionReason("ILLEGAL_UPDATE_CHARGE_DETAILS");
         /// <summary>
+        /// Constant ILLEGAL_USAGE_TYPE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason ILLEGAL_USAGE_TYPE = new ValidationExceptionReason("ILLEGAL_USAGE_TYPE");
+        /// <summary>
         /// Constant INVALID_ARN for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason INVALID_ARN = new ValidationExceptionReason("INVALID_ARN");
@@ -586,6 +598,14 @@ namespace Amazon.BillingConductor
         /// Constant INVALID_BILLINGVIEW_ARN for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason INVALID_BILLINGVIEW_ARN = new ValidationExceptionReason("INVALID_BILLINGVIEW_ARN");
+        /// <summary>
+        /// Constant INVALID_FILTER for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_FILTER = new ValidationExceptionReason("INVALID_FILTER");
+        /// <summary>
+        /// Constant INVALID_SKU_COMBO for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_SKU_COMBO = new ValidationExceptionReason("INVALID_SKU_COMBO");
         /// <summary>
         /// Constant INVALID_TIME_RANGE for ValidationExceptionReason
         /// </summary>

@@ -64,6 +64,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Arn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AssociationSize", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -128,6 +134,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StartBillingPeriod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartTime", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

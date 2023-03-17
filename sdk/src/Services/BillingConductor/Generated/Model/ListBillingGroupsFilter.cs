@@ -36,6 +36,7 @@ namespace Amazon.BillingConductor.Model
     {
         private List<string> _arns = new List<string>();
         private string _pricingPlan;
+        private List<string> _statuses = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Arns. 
@@ -72,6 +73,26 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetPricingPlan()
         {
             return this._pricingPlan != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Statuses. 
+        /// <para>
+        ///  A list of billing groups to retrieve their current status for a specific time range
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> Statuses
+        {
+            get { return this._statuses; }
+            set { this._statuses = value; }
+        }
+
+        // Check to see if Statuses property is set
+        internal bool IsSetStatuses()
+        {
+            return this._statuses != null && this._statuses.Count > 0; 
         }
 
     }
