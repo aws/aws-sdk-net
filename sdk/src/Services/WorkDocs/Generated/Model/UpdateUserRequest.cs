@@ -71,7 +71,7 @@ namespace Amazon.WorkDocs.Model
         /// The given name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string GivenName
         {
             get { return this._givenName; }
@@ -144,7 +144,7 @@ namespace Amazon.WorkDocs.Model
         /// The surname of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string Surname
         {
             get { return this._surname; }

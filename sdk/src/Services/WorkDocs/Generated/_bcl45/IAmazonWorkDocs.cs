@@ -2618,6 +2618,9 @@ namespace Amazon.WorkDocs
         /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
+        /// The pagination marker or limit fields are not valid.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidPasswordException">
         /// The password is invalid.
         /// </exception>
@@ -2684,6 +2687,9 @@ namespace Amazon.WorkDocs
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
+        /// The pagination marker or limit fields are not valid.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidPasswordException">
         /// The password is invalid.
@@ -2900,6 +2906,58 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RestoreDocumentVersions">REST API Reference for RestoreDocumentVersions Operation</seealso>
         Task<RestoreDocumentVersionsResponse> RestoreDocumentVersionsAsync(RestoreDocumentVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SearchResources
+
+
+        /// <summary>
+        /// Searches metadata and the content of folders, documents, document versions, and comments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchResources service method.</param>
+        /// 
+        /// <returns>The response from the SearchResources service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
+        /// The pagination marker or limit fields are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
+        /// One or more of the dependencies is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/SearchResources">REST API Reference for SearchResources Operation</seealso>
+        SearchResourcesResponse SearchResources(SearchResourcesRequest request);
+
+
+
+        /// <summary>
+        /// Searches metadata and the content of folders, documents, document versions, and comments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchResources service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
+        /// The pagination marker or limit fields are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
+        /// One or more of the dependencies is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/SearchResources">REST API Reference for SearchResources Operation</seealso>
+        Task<SearchResourcesResponse> SearchResourcesAsync(SearchResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

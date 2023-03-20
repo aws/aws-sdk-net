@@ -66,7 +66,7 @@ namespace Amazon.WorkDocs.Model
         /// The name of the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Sensitive=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -85,7 +85,7 @@ namespace Amazon.WorkDocs.Model
         /// The original name of the resource before a rename operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Sensitive=true, Min=1, Max=255)]
         public string OriginalName
         {
             get { return this._originalName; }

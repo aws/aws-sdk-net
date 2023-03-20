@@ -3000,6 +3000,9 @@ namespace Amazon.WorkDocs
         /// The Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
+        /// The pagination marker or limit fields are not valid.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidPasswordException">
         /// The password is invalid.
         /// </exception>
@@ -3282,6 +3285,72 @@ namespace Amazon.WorkDocs
         public virtual RestoreDocumentVersionsResponse EndRestoreDocumentVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<RestoreDocumentVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchResources
+
+        /// <summary>
+        /// Searches metadata and the content of folders, documents, document versions, and comments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchResources service method.</param>
+        /// 
+        /// <returns>The response from the SearchResources service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
+        /// The pagination marker or limit fields are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
+        /// One or more of the dependencies is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/SearchResources">REST API Reference for SearchResources Operation</seealso>
+        public virtual SearchResourcesResponse SearchResources(SearchResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchResourcesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchResources operation on AmazonWorkDocsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchResources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/SearchResources">REST API Reference for SearchResources Operation</seealso>
+        public virtual IAsyncResult BeginSearchResources(SearchResourcesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchResourcesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchResources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchResources.</param>
+        /// 
+        /// <returns>Returns a  SearchResourcesResult from WorkDocs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/SearchResources">REST API Reference for SearchResources Operation</seealso>
+        public virtual SearchResourcesResponse EndSearchResources(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchResourcesResponse>(asyncResult);
         }
 
         #endregion
