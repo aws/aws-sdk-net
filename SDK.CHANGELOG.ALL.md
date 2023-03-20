@@ -1,3 +1,16 @@
+### 3.7.508.0 (2023-03-20 18:22 UTC)
+* ApplicationAutoScaling (3.7.104.0)
+	* With this release customers can now tag their Application Auto Scaling registered targets with key-value pairs and manage IAM permissions for all the tagged resources centrally.
+* Neptune (3.7.102.0)
+	* This release makes following few changes. db-cluster-identifier is now a required parameter of create-db-instance. describe-db-cluster will now return PendingModifiedValues and GlobalClusterIdentifier fields in the response.
+* S3Outposts (3.7.102.0)
+	* S3 On Outposts added support for endpoint status, and a failed endpoint reason, if any
+* WorkDocs (3.7.102.0)
+	* This release adds a new API, SearchResources, which enable users to search through metadata and content of folders, documents, document versions and comments in a WorkDocs site.
+* Core 3.7.106.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.507.0 (2023-03-17 18:22 UTC)
 * BillingConductor (3.7.105.0)
 	* This release adds a new filter to ListAccountAssociations API and a new filter to ListBillingGroups API.

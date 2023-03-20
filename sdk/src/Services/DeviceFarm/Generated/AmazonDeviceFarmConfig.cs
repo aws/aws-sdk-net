@@ -32,7 +32,7 @@ namespace Amazon.DeviceFarm
     public partial class AmazonDeviceFarmConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.94");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.95");
 
         private string _userAgent = UserAgentString;
 
