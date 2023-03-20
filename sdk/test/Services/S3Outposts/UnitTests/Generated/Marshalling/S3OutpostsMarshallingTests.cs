@@ -171,6 +171,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("S3Outposts")]
+        public void CreateEndpoint_OutpostOfflineExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<CreateEndpointRequest>();
+            var marshaller = new CreateEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateEndpoint", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("OutpostOfflineException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","OutpostOfflineException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateEndpointResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("S3Outposts")]
         public void CreateEndpoint_ResourceNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateEndpoint");
@@ -332,6 +364,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
                     {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteEndpointResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("S3Outposts")]
+        public void DeleteEndpoint_OutpostOfflineExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<DeleteEndpointRequest>();
+            var marshaller = new DeleteEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteEndpoint", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("OutpostOfflineException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","OutpostOfflineException"},
                 }
             };
 

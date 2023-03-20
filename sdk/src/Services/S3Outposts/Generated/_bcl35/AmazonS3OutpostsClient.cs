@@ -301,6 +301,10 @@ namespace Amazon.S3Outposts
         /// <exception cref="Amazon.S3Outposts.Model.InternalServerException">
         /// There was an exception with the internal server.
         /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.OutpostOfflineException">
+        /// The service link connection to your Outposts home Region is down. Check your connection
+        /// and try again.
+        /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ResourceNotFoundException">
         /// The requested resource was not found.
         /// </exception>
@@ -389,6 +393,10 @@ namespace Amazon.S3Outposts
         /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.InternalServerException">
         /// There was an exception with the internal server.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.OutpostOfflineException">
+        /// The service link connection to your Outposts home Region is down. Check your connection
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ResourceNotFoundException">
         /// The requested resource was not found.
