@@ -74,7 +74,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// The most commonly used metrics for scaling is <code>Average</code> 
+        /// The most commonly used metric for scaling is <code>Average</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

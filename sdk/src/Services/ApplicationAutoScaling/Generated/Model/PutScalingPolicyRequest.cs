@@ -69,8 +69,8 @@ namespace Amazon.ApplicationAutoScaling.Model
     ///  <note> 
     /// <para>
     /// If a scalable target is deregistered, the scalable target is no longer available to
-    /// execute scaling policies. Any scaling policies that were specified for the scalable
-    /// target are deleted.
+    /// use scaling policies. Any scaling policies that were specified for the scalable target
+    /// are deleted.
     /// </para>
     ///  </note>
     /// </summary>

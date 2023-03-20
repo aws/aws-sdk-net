@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RegisterScalableTarget Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class RegisterScalableTargetRequestMarshaller : IMarshaller<IRequest, RegisterScalableTargetRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((RegisterScalableTargetRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(RegisterScalableTargetRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ApplicationAutoScaling");
-            string target = "AnyScaleFrontendService.RegisterScalableTarget";
+            string target = "AnyScaleFrontendService.TagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-02-06";
@@ -67,51 +67,10 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxCapacity())
+                if(publicRequest.IsSetResourceARN())
                 {
-                    context.Writer.WritePropertyName("MaxCapacity");
-                    context.Writer.Write(publicRequest.MaxCapacity);
-                }
-
-                if(publicRequest.IsSetMinCapacity())
-                {
-                    context.Writer.WritePropertyName("MinCapacity");
-                    context.Writer.Write(publicRequest.MinCapacity);
-                }
-
-                if(publicRequest.IsSetResourceId())
-                {
-                    context.Writer.WritePropertyName("ResourceId");
-                    context.Writer.Write(publicRequest.ResourceId);
-                }
-
-                if(publicRequest.IsSetRoleARN())
-                {
-                    context.Writer.WritePropertyName("RoleARN");
-                    context.Writer.Write(publicRequest.RoleARN);
-                }
-
-                if(publicRequest.IsSetScalableDimension())
-                {
-                    context.Writer.WritePropertyName("ScalableDimension");
-                    context.Writer.Write(publicRequest.ScalableDimension);
-                }
-
-                if(publicRequest.IsSetServiceNamespace())
-                {
-                    context.Writer.WritePropertyName("ServiceNamespace");
-                    context.Writer.Write(publicRequest.ServiceNamespace);
-                }
-
-                if(publicRequest.IsSetSuspendedState())
-                {
-                    context.Writer.WritePropertyName("SuspendedState");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SuspendedStateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SuspendedState, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("ResourceARN");
+                    context.Writer.Write(publicRequest.ResourceARN);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -136,9 +95,9 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static RegisterScalableTargetRequestMarshaller _instance = new RegisterScalableTargetRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static RegisterScalableTargetRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -146,7 +105,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RegisterScalableTargetRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

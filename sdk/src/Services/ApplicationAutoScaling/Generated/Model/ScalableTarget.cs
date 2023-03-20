@@ -39,6 +39,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         private string _resourceId;
         private string _roleARN;
         private ScalableDimension _scalableDimension;
+        private string _scalableTargetARN;
         private ServiceNamespace _serviceNamespace;
         private SuspendedState _suspendedState;
 
@@ -344,6 +345,24 @@ namespace Amazon.ApplicationAutoScaling.Model
         internal bool IsSetScalableDimension()
         {
             return this._scalableDimension != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScalableTargetARN. 
+        /// <para>
+        /// The ARN of the scalable target.
+        /// </para>
+        /// </summary>
+        public string ScalableTargetARN
+        {
+            get { return this._scalableTargetARN; }
+            set { this._scalableTargetARN = value; }
+        }
+
+        // Check to see if ScalableTargetARN property is set
+        internal bool IsSetScalableTargetARN()
+        {
+            return this._scalableTargetARN != null;
         }
 
         /// <summary>

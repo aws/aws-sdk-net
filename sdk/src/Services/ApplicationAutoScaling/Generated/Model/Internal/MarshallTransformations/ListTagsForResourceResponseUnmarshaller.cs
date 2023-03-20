@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RegisterScalableTarget operation
+    /// Response Unmarshaller for ListTagsForResource operation
     /// </summary>  
-    public class RegisterScalableTargetResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListTagsForResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            RegisterScalableTargetResponse response = new RegisterScalableTargetResponse();
+            ListTagsForResourceResponse response = new ListTagsForResourceResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ScalableTargetARN", targetDepth))
+                if (context.TestExpression("Tags", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ScalableTargetARN = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -80,29 +80,17 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentUpdateException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ConcurrentUpdateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
-                {
-                    return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
-                {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonApplicationAutoScalingException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static RegisterScalableTargetResponseUnmarshaller _instance = new RegisterScalableTargetResponseUnmarshaller();        
+        private static ListTagsForResourceResponseUnmarshaller _instance = new ListTagsForResourceResponseUnmarshaller();        
 
-        internal static RegisterScalableTargetResponseUnmarshaller GetInstance()
+        internal static ListTagsForResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -110,7 +98,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RegisterScalableTargetResponseUnmarshaller Instance
+        public static ListTagsForResourceResponseUnmarshaller Instance
         {
             get
             {

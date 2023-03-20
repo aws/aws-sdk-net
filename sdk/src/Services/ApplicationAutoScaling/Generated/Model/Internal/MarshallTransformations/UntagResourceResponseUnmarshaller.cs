@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RegisterScalableTarget operation
+    /// Response Unmarshaller for UntagResource operation
     /// </summary>  
-    public class RegisterScalableTargetResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UntagResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,19 +45,8 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            RegisterScalableTargetResponse response = new RegisterScalableTargetResponse();
+            UntagResourceResponse response = new UntagResourceResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("ScalableTargetARN", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ScalableTargetARN = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -80,17 +69,9 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentUpdateException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ConcurrentUpdateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
-                {
-                    return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
@@ -100,9 +81,9 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             return new AmazonApplicationAutoScalingException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static RegisterScalableTargetResponseUnmarshaller _instance = new RegisterScalableTargetResponseUnmarshaller();        
+        private static UntagResourceResponseUnmarshaller _instance = new UntagResourceResponseUnmarshaller();        
 
-        internal static RegisterScalableTargetResponseUnmarshaller GetInstance()
+        internal static UntagResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -110,7 +91,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RegisterScalableTargetResponseUnmarshaller Instance
+        public static UntagResourceResponseUnmarshaller Instance
         {
             get
             {

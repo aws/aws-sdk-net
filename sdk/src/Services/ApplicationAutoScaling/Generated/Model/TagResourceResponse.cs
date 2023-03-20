@@ -29,29 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the RegisterScalableTarget operation.
+    /// This is the response object from the TagResource operation.
     /// </summary>
-    public partial class RegisterScalableTargetResponse : AmazonWebServiceResponse
+    public partial class TagResourceResponse : AmazonWebServiceResponse
     {
-        private string _scalableTargetARN;
-
-        /// <summary>
-        /// Gets and sets the property ScalableTargetARN. 
-        /// <para>
-        /// The ARN of the scalable target.
-        /// </para>
-        /// </summary>
-        public string ScalableTargetARN
-        {
-            get { return this._scalableTargetARN; }
-            set { this._scalableTargetARN = value; }
-        }
-
-        // Check to see if ScalableTargetARN property is set
-        internal bool IsSetScalableTargetARN()
-        {
-            return this._scalableTargetARN != null;
-        }
 
     }
 }

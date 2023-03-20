@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RegisterScalableTarget operation
+    /// Response Unmarshaller for TagResource operation
     /// </summary>  
-    public class RegisterScalableTargetResponseUnmarshaller : JsonResponseUnmarshaller
+    public class TagResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,19 +45,8 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            RegisterScalableTargetResponse response = new RegisterScalableTargetResponse();
+            TagResourceResponse response = new TagResourceResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("ScalableTargetARN", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ScalableTargetARN = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -80,17 +69,13 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentUpdateException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ConcurrentUpdateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyTagsException"))
                 {
-                    return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return TooManyTagsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
@@ -100,9 +85,9 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             return new AmazonApplicationAutoScalingException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static RegisterScalableTargetResponseUnmarshaller _instance = new RegisterScalableTargetResponseUnmarshaller();        
+        private static TagResourceResponseUnmarshaller _instance = new TagResourceResponseUnmarshaller();        
 
-        internal static RegisterScalableTargetResponseUnmarshaller GetInstance()
+        internal static TagResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -110,7 +95,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RegisterScalableTargetResponseUnmarshaller Instance
+        public static TagResourceResponseUnmarshaller Instance
         {
             get
             {

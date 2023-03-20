@@ -65,6 +65,12 @@
     <property>Amazon.ApplicationAutoScaling.Model.DescribeScheduledActionsResponse.NextToken</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:application-autoscaling:.+:[0-9]+:scalable-target\/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest.PolicyName</property>
     <min>1</min>
     <max>256</max>
@@ -111,6 +117,21 @@
     <max>1600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetResponse.ScalableTargetARN</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.TagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:application-autoscaling:.+:[0-9]+:scalable-target\/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.UntagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:application-autoscaling:.+:[0-9]+:scalable-target\/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationAutoScaling.Model.Alarm.AlarmARN</property>
   </property-value-rule>
   <property-value-rule>
@@ -125,6 +146,12 @@
     <max>1023</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.ResourceNotFoundException.ResourceName</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:application-autoscaling:.+:[0-9]+:scalable-target\/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationAutoScaling.Model.ScalableTarget.ResourceId</property>
     <min>1</min>
     <max>1600</max>
@@ -133,6 +160,9 @@
     <property>Amazon.ApplicationAutoScaling.Model.ScalableTarget.RoleARN</property>
     <min>1</min>
     <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.ScalableTarget.ScalableTargetARN</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationAutoScaling.Model.ScalingActivity.ActivityId</property>
@@ -235,5 +265,11 @@
     <property>Amazon.ApplicationAutoScaling.Model.TargetTrackingMetricStat.Unit</property>
     <min>1</min>
     <max>1023</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.TooManyTagsException.ResourceName</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:application-autoscaling:.+:[0-9]+:scalable-target\/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
 </property-value-rules>

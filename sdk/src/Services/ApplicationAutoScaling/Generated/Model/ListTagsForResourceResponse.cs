@@ -29,28 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the RegisterScalableTarget operation.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class RegisterScalableTargetResponse : AmazonWebServiceResponse
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _scalableTargetARN;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property ScalableTargetARN. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The ARN of the scalable target.
+        /// A list of tags. Each tag consists of a tag key and a tag value.
         /// </para>
         /// </summary>
-        public string ScalableTargetARN
+        public Dictionary<string, string> Tags
         {
-            get { return this._scalableTargetARN; }
-            set { this._scalableTargetARN = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if ScalableTargetARN property is set
-        internal bool IsSetScalableTargetARN()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._scalableTargetARN != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

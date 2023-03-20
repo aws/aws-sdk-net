@@ -99,7 +99,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// The name of the metric. To get the exact metric name, namespace, and dimensions, inspect
         /// the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a>
-        /// object that is returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.
+        /// object that's returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.
         /// </para>
         /// </summary>
         public string MetricName
