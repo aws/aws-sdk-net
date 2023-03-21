@@ -45,11 +45,23 @@ namespace Microsoft.Extensions.Configuration
             return GetAWSOptions(config, DEFAULT_CONFIG_SECTION);
         }
 
+        /// <summary>
+        /// Constructs an AWSOptions class with the options specified in the "AWS" section in the IConfiguration object.
+        /// </summary>
+        /// <param name="config"></param>
+        /// <param name="configSection">The config section to extract AWS options from.</param>
+        /// <returns>The AWSOptions containing the values set in configuration system.</returns>
         public static AWSOptions GetAWSOptions(this IConfiguration config, string configSection)
         {
             return GetAWSOptions<DefaultClientConfig>(config, configSection);
         }
 
+        /// <summary>
+        /// Constructs an AWSOptions class with the options specified in the "AWS" section in the IConfiguration object.
+        /// </summary>
+        /// <typeparam name="TConfig">The AWS client config to be used in creating clients, like AmazonS3Config.</typeparam>
+        /// <param name="config"></param>
+        /// <returns>The AWSOptions containing the values set in configuration system.</returns>
         public static AWSOptions GetAWSOptions<TConfig>(this IConfiguration config) where TConfig : ClientConfig, new()
         {
             return GetAWSOptions<TConfig>(config, DEFAULT_CONFIG_SECTION);
@@ -58,6 +70,7 @@ namespace Microsoft.Extensions.Configuration
         /// <summary>
         /// Constructs an AWSOptions class with the options specified in the "AWS" section in the IConfiguration object.
         /// </summary>
+        /// <typeparam name="TConfig">The AWS client config to be used in creating clients, like AmazonS3Config.</typeparam>
         /// <param name="config"></param>
         /// <param name="configSection">The config section to extract AWS options from.</param>
         /// <returns>The AWSOptions containing the values set in configuration system.</returns>
