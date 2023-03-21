@@ -60,8 +60,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// To create a snapshot for Amazon EBS volumes that serve as root devices, you should
-    /// stop the instance before taking the snapshot.
+    /// When you create a snapshot for an EBS volume that serves as a root device, we recommend
+    /// that you stop the instance before taking the snapshot.
     /// </para>
     ///  
     /// <para>

@@ -827,6 +827,13 @@ namespace Amazon.EC2
         /// Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR assignment from
         /// an IPAM pool to another IPAM pool or to a resource. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
         /// CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action creates an allocation with strong consistency. The returned CIDR will
+        /// not overlap with any other allocations from the same pool.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateIpamPoolCidr service method.</param>
         /// <param name="cancellationToken">
@@ -4470,8 +4477,9 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// Reachability Analyzer enables you to analyze and debug network reachability between
-        /// two resources in your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/reachability/">What
-        /// is Reachability Analyzer</a>.
+        /// two resources in your virtual private cloud (VPC). For more information, see the <a
+        /// href="https://docs.aws.amazon.com/vpc/latest/reachability/">Reachability Analyzer
+        /// Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInsightsPath service method.</param>
@@ -5046,8 +5054,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// To create a snapshot for Amazon EBS volumes that serve as root devices, you should
-        /// stop the instance before taking the snapshot.
+        /// When you create a snapshot for an EBS volume that serves as a root device, we recommend
+        /// that you stop the instance before taking the snapshot.
         /// </para>
         ///  
         /// <para>
@@ -19251,6 +19259,15 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Get a list of all the CIDR allocations in an IPAM pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you use this action after <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AllocateIpamPoolCidr.html">AllocateIpamPoolCidr</a>
+        /// or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>,
+        /// note that all EC2 API actions follow an <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#eventual-consistency">eventual
+        /// consistency</a> model.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIpamPoolAllocations service method.</param>
         /// <param name="cancellationToken">
@@ -24306,7 +24323,14 @@ namespace Amazon.EC2
         /// manual allocations. To remove an allocation for a resource without deleting the resource,
         /// set its monitored state to false using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html">ModifyIpamResourceCidr</a>.
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/release-pool-alloc-ipam.html">Release
-        /// an allocation</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// an allocation</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// All EC2 API actions follow an <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#eventual-consistency">eventual
+        /// consistency</a> model.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReleaseIpamPoolAllocation service method.</param>
         /// <param name="cancellationToken">

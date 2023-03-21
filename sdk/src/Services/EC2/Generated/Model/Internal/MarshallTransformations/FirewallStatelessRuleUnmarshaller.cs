@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AdditionalDetail Object
+    /// Response Unmarshaller for FirewallStatelessRule Object
     /// </summary>  
-    public class AdditionalDetailUnmarshaller : IUnmarshaller<AdditionalDetail, XmlUnmarshallerContext>, IUnmarshaller<AdditionalDetail, JsonUnmarshallerContext>
+    public class FirewallStatelessRuleUnmarshaller : IUnmarshaller<FirewallStatelessRule, XmlUnmarshallerContext>, IUnmarshaller<FirewallStatelessRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AdditionalDetail Unmarshall(XmlUnmarshallerContext context)
+        public FirewallStatelessRule Unmarshall(XmlUnmarshallerContext context)
         {
-            AdditionalDetail unmarshalledObject = new AdditionalDetail();
+            FirewallStatelessRule unmarshalledObject = new FirewallStatelessRule();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,56 +54,57 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("additionalDetailType", targetDepth))
+                    if (context.TestExpression("destinationPortSet/item", targetDepth))
+                    {
+                        var unmarshaller = PortRangeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DestinationPorts.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("destinationSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AdditionalDetailType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("component", targetDepth))
-                    {
-                        var unmarshaller = AnalysisComponentUnmarshaller.Instance;
-                        unmarshalledObject.Component = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("loadBalancerSet/item", targetDepth))
-                    {
-                        var unmarshaller = AnalysisComponentUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.LoadBalancers.Add(item);
+                        unmarshalledObject.Destinations.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("ruleGroupRuleOptionsPairSet/item", targetDepth))
+                    if (context.TestExpression("priority", targetDepth))
                     {
-                        var unmarshaller = RuleGroupRuleOptionsPairUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.RuleGroupRuleOptionsPairs.Add(item);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ruleGroupTypePairSet/item", targetDepth))
+                    if (context.TestExpression("protocolSet/item", targetDepth))
                     {
-                        var unmarshaller = RuleGroupTypePairUnmarshaller.Instance;
+                        var unmarshaller = IntUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.RuleGroupTypePairs.Add(item);
+                        unmarshalledObject.Protocols.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("ruleOptionSet/item", targetDepth))
-                    {
-                        var unmarshaller = RuleOptionUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.RuleOptions.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("serviceName", targetDepth))
+                    if (context.TestExpression("ruleAction", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.RuleAction = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("vpcEndpointService", targetDepth))
+                    if (context.TestExpression("ruleGroupArn", targetDepth))
                     {
-                        var unmarshaller = AnalysisComponentUnmarshaller.Instance;
-                        unmarshalledObject.VpcEndpointService = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RuleGroupArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("sourcePortSet/item", targetDepth))
+                    {
+                        var unmarshaller = PortRangeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SourcePorts.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("sourceSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Sources.Add(item);
                         continue;
                     }
                 }
@@ -121,18 +122,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AdditionalDetail Unmarshall(JsonUnmarshallerContext context)
+        public FirewallStatelessRule Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static AdditionalDetailUnmarshaller _instance = new AdditionalDetailUnmarshaller();        
+        private static FirewallStatelessRuleUnmarshaller _instance = new FirewallStatelessRuleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AdditionalDetailUnmarshaller Instance
+        public static FirewallStatelessRuleUnmarshaller Instance
         {
             get
             {
