@@ -1,3 +1,18 @@
+### 3.7.509.0 (2023-03-21 18:24 UTC)
+* ChimeSDKMessaging (3.7.101.0)
+	* Amazon Chime SDK messaging customers can now manage streaming configuration for messaging data for archival and analysis.
+* CleanRooms (3.7.101.0)
+	* GA Release of AWS Clean Rooms, Added Tagging Functionality
+* EC2 (3.7.128.0)
+	* This release adds support for AWS Network Firewall, AWS PrivateLink, and Gateway Load Balancers to Amazon VPC Reachability Analyzer, and it makes the path destination optional as long as a destination address in the filter at source is provided.
+* IoTSiteWise (3.7.102.0)
+	* Provide support for tagging of data streams and enabling tag based authorization for property alias
+* Mgn (3.7.102.0)
+	* This release introduces the Import and export feature and expansion of the post-launch actions
+* Core 3.7.106.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.508.0 (2023-03-20 18:22 UTC)
 * ApplicationAutoScaling (3.7.104.0)
 	* With this release customers can now tag their Application Auto Scaling registered targets with key-value pairs and manage IAM permissions for all the tagged resources centrally.
