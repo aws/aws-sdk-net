@@ -45,15 +45,28 @@ namespace Microsoft.Extensions.Configuration
             return GetAWSOptions(config, DEFAULT_CONFIG_SECTION);
         }
 
+        public static AWSOptions GetAWSOptions(this IConfiguration config, string configSection)
+        {
+            return GetAWSOptions<DefaultClientConfig>(config, configSection);
+        }
+
+        public static AWSOptions GetAWSOptions<TConfig>(this IConfiguration config) where TConfig : ClientConfig, new()
+        {
+            return GetAWSOptions<TConfig>(config, DEFAULT_CONFIG_SECTION);
+        }
+
         /// <summary>
         /// Constructs an AWSOptions class with the options specified in the "AWS" section in the IConfiguration object.
         /// </summary>
         /// <param name="config"></param>
         /// <param name="configSection">The config section to extract AWS options from.</param>
         /// <returns>The AWSOptions containing the values set in configuration system.</returns>
-        public static AWSOptions GetAWSOptions(this IConfiguration config, string configSection)
+        public static AWSOptions GetAWSOptions<TConfig>(this IConfiguration config, string configSection) where TConfig : ClientConfig, new()
         {
-            var options = new AWSOptions();
+            var options = new AWSOptions
+            {
+                DefaultClientConfig = new TConfig(),
+            };
 
             IConfiguration section;
             if (string.IsNullOrEmpty(configSection))
@@ -64,12 +77,13 @@ namespace Microsoft.Extensions.Configuration
             if (section == null)
                 return options;
 
-            var clientConfigTypeInfo = typeof(ClientConfig).GetTypeInfo();
-            foreach(var element in section.GetChildren())
+            var clientConfigType = typeof(TConfig);
+            var properties = clientConfigType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            foreach (var element in section.GetChildren())
             {
                 try
                 {
-                    var property = clientConfigTypeInfo.DeclaredProperties.SingleOrDefault(p => p.Name.Equals(element.Key, StringComparison.OrdinalIgnoreCase));
+                    var property = properties.SingleOrDefault(p => p.Name.Equals(element.Key, StringComparison.OrdinalIgnoreCase));
                     if (property == null || property.SetMethod == null)
                         continue;
 
