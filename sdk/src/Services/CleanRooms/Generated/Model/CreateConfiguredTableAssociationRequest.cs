@@ -40,6 +40,7 @@ namespace Amazon.CleanRooms.Model
         private string _membershipIdentifier;
         private string _name;
         private string _roleArn;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property ConfiguredTableIdentifier. 
@@ -138,6 +139,27 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An optional label that you can assign to a resource when you create it. Each tag consists
+        /// of a key and an optional value, both of which you define. When you use tagging, you
+        /// can also use tag-based access control in IAM policies to control access to this resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

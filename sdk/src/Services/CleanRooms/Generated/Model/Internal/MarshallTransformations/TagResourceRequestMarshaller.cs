@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateMembership Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateMembershipRequestMarshaller : IMarshaller<IRequest, CreateMembershipRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateMembershipRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,31 +52,22 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateMembershipRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CleanRooms");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-02-17";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/memberships";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonCleanRoomsException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/tags/{resourceArn}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCollaborationIdentifier())
-                {
-                    context.Writer.WritePropertyName("collaborationIdentifier");
-                    context.Writer.Write(publicRequest.CollaborationIdentifier);
-                }
-
-                if(publicRequest.IsSetQueryLogStatus())
-                {
-                    context.Writer.WritePropertyName("queryLogStatus");
-                    context.Writer.Write(publicRequest.QueryLogStatus);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -99,9 +90,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateMembershipRequestMarshaller _instance = new CreateMembershipRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateMembershipRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -109,7 +100,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateMembershipRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

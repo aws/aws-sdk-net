@@ -29,30 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// A pointer to the dataset that underlies this table. Currently, this can only be an
-    /// AWS Glue table.
+    /// This is the response object from the UntagResource operation.
     /// </summary>
-    public partial class TableReference
+    public partial class UntagResourceResponse : AmazonWebServiceResponse
     {
-        private GlueTableReference _glue;
-
-        /// <summary>
-        /// Gets and sets the property Glue. 
-        /// <para>
-        /// If present, a reference to the AWS Glue table referred to by this table reference.
-        /// </para>
-        /// </summary>
-        public GlueTableReference Glue
-        {
-            get { return this._glue; }
-            set { this._glue = value; }
-        }
-
-        // Check to see if Glue property is set
-        internal bool IsSetGlue()
-        {
-            return this._glue != null;
-        }
 
     }
 }

@@ -29,29 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// A pointer to the dataset that underlies this table. Currently, this can only be an
-    /// AWS Glue table.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Lists all of the tags that have been added to a resource.
     /// </summary>
-    public partial class TableReference
+    public partial class ListTagsForResourceRequest : AmazonCleanRoomsRequest
     {
-        private GlueTableReference _glue;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property Glue. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// If present, a reference to the AWS Glue table referred to by this table reference.
+        /// The Amazon Resource Name (ARN) associated with the resource you want to list tags
+        /// on.
         /// </para>
         /// </summary>
-        public GlueTableReference Glue
+        [AWSProperty(Required=true, Min=0, Max=100)]
+        public string ResourceArn
         {
-            get { return this._glue; }
-            set { this._glue = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Glue property is set
-        internal bool IsSetGlue()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._glue != null;
+            return this._resourceArn != null;
         }
 
     }

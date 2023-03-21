@@ -29,29 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// A pointer to the dataset that underlies this table. Currently, this can only be an
-    /// AWS Glue table.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class TableReference
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private GlueTableReference _glue;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Glue. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// If present, a reference to the AWS Glue table referred to by this table reference.
+        /// A map of objects specifying each key name and value.
         /// </para>
         /// </summary>
-        public GlueTableReference Glue
+        [AWSProperty(Required=true, Min=0, Max=200)]
+        public Dictionary<string, string> Tags
         {
-            get { return this._glue; }
-            set { this._glue = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if Glue property is set
-        internal bool IsSetGlue()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._glue != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
