@@ -51,6 +51,25 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ActionName);
             }
 
+            if(requestObject.IsSetExternalParameters())
+            {
+                context.Writer.WritePropertyName("externalParameters");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectExternalParametersKvp in requestObject.ExternalParameters)
+                {
+                    context.Writer.WritePropertyName(requestObjectExternalParametersKvp.Key);
+                    var requestObjectExternalParametersValue = requestObjectExternalParametersKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SsmExternalParameterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectExternalParametersValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMustSucceedForCutover())
             {
                 context.Writer.WritePropertyName("mustSucceedForCutover");

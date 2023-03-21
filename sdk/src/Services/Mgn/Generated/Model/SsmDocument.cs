@@ -34,6 +34,7 @@ namespace Amazon.Mgn.Model
     public partial class SsmDocument
     {
         private string _actionName;
+        private Dictionary<string, SsmExternalParameter> _externalParameters = new Dictionary<string, SsmExternalParameter>();
         private bool? _mustSucceedForCutover;
         private Dictionary<string, List<SsmParameterStoreParameter>> _parameters = new Dictionary<string, List<SsmParameterStoreParameter>>();
         private string _ssmDocumentName;
@@ -56,6 +57,25 @@ namespace Amazon.Mgn.Model
         internal bool IsSetActionName()
         {
             return this._actionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalParameters. 
+        /// <para>
+        /// AWS Systems Manager Document external parameters.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public Dictionary<string, SsmExternalParameter> ExternalParameters
+        {
+            get { return this._externalParameters; }
+            set { this._externalParameters = value; }
+        }
+
+        // Check to see if ExternalParameters property is set
+        internal bool IsSetExternalParameters()
+        {
+            return this._externalParameters != null && this._externalParameters.Count > 0; 
         }
 
         /// <summary>
