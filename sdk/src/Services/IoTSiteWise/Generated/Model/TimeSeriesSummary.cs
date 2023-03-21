@@ -38,6 +38,7 @@ namespace Amazon.IoTSiteWise.Model
         private PropertyDataType _dataType;
         private string _dataTypeSpec;
         private string _propertyId;
+        private string _timeSeriesArn;
         private DateTime? _timeSeriesCreationDate;
         private string _timeSeriesId;
         private DateTime? _timeSeriesLastUpdateDate;
@@ -147,6 +148,31 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetPropertyId()
         {
             return this._propertyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeSeriesArn. 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+        /// of the time series, which has the following format.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
+        public string TimeSeriesArn
+        {
+            get { return this._timeSeriesArn; }
+            set { this._timeSeriesArn = value; }
+        }
+
+        // Check to see if TimeSeriesArn property is set
+        internal bool IsSetTimeSeriesArn()
+        {
+            return this._timeSeriesArn != null;
         }
 
         /// <summary>

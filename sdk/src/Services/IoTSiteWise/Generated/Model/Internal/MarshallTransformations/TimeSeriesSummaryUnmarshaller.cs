@@ -94,6 +94,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.PropertyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("timeSeriesArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimeSeriesArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("timeSeriesCreationDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
