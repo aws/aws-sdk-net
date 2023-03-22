@@ -41,7 +41,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property ExternalId. 
         /// <para>
-        /// The external Id.
+        /// The external ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -60,7 +60,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The sync resource filter resource Id.
+        /// The sync resource filter resource ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -79,7 +79,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The sync resource filter resoucre type
+        /// The sync resource filter resource type
         /// </para>
         /// </summary>
         public SyncResourceType ResourceType

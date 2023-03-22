@@ -97,6 +97,20 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SceneId);
                 }
 
+                if(publicRequest.IsSetSceneMetadata())
+                {
+                    context.Writer.WritePropertyName("sceneMetadata");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestSceneMetadataKvp in publicRequest.SceneMetadata)
+                    {
+                        context.Writer.WritePropertyName(publicRequestSceneMetadataKvp.Key);
+                        var publicRequestSceneMetadataValue = publicRequestSceneMetadataKvp.Value;
+
+                            context.Writer.Write(publicRequestSceneMetadataValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

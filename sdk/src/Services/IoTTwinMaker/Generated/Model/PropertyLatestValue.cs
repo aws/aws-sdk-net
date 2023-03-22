@@ -39,7 +39,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property PropertyReference. 
         /// <para>
-        /// An object that specifies information about a property.&gt;
+        /// An object that specifies information about a property.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

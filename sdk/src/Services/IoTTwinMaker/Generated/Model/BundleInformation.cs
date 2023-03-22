@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
-    /// Information about pricing bundle.
+    /// Information about the pricing bundle.
     /// </summary>
     public partial class BundleInformation
     {
