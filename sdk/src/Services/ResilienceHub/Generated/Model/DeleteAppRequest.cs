@@ -30,8 +30,8 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApp operation.
-    /// Deletes an AWS Resilience Hub application. This is a destructive action that can't
-    /// be undone.
+    /// Deletes an Resilience Hub application. This is a destructive action that can't be
+    /// undone.
     /// </summary>
     public partial class DeleteAppRequest : AmazonResilienceHubRequest
     {
@@ -85,7 +85,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ForceDelete. 
         /// <para>
-        /// A boolean option to force the deletion of an AWS Resilience Hub application. 
+        /// A boolean option to force the deletion of an Resilience Hub application. 
         /// </para>
         /// </summary>
         public bool ForceDelete

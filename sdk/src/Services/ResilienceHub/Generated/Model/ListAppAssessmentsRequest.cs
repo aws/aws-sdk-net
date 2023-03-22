@@ -30,7 +30,7 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAppAssessments operation.
-    /// Lists the assessments for an AWS Resilience Hub application. You can use request parameters
+    /// Lists the assessments for an Resilience Hub application. You can use request parameters
     /// to refine the results for the response object.
     /// </summary>
     public partial class ListAppAssessmentsRequest : AmazonResilienceHubRequest

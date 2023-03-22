@@ -60,7 +60,10 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AppComponent.
+        /// Gets and sets the property AppComponent. 
+        /// <para>
+        /// The list of Application Components that belong to this resource.
+        /// </para>
         /// </summary>
         public AppComponent AppComponent
         {

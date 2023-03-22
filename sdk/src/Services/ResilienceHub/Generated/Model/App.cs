@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// Defines an AWS Resilience Hub application.
+    /// Defines an Resilience Hub application.
     /// </summary>
     public partial class App
     {

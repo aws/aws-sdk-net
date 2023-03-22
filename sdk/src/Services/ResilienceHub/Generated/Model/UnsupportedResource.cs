@@ -29,13 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// Defines a resource that is not supported by AWS Resilience Hub.
+    /// Defines a resource that is not supported by Resilience Hub.
     /// </summary>
     public partial class UnsupportedResource
     {
         private LogicalResourceId _logicalResourceId;
         private PhysicalResourceId _physicalResourceId;
         private string _resourceType;
+        private string _unsupportedResourceStatus;
 
         /// <summary>
         /// Gets and sets the property LogicalResourceId. 
@@ -92,6 +93,25 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnsupportedResourceStatus. 
+        /// <para>
+        /// The status of unsupported resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string UnsupportedResourceStatus
+        {
+            get { return this._unsupportedResourceStatus; }
+            set { this._unsupportedResourceStatus = value; }
+        }
+
+        // Check to see if UnsupportedResourceStatus property is set
+        internal bool IsSetUnsupportedResourceStatus()
+        {
+            return this._unsupportedResourceStatus != null;
         }
 
     }

@@ -30,18 +30,18 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAppVersionResource operation.
-    /// Adds a resource to the AWS Resilience Hub applicationand assigns it to the specified
-    /// Application Components. If you specify a new Application Component, AWS Resilience
-    /// Hub will automatically create the Application Component.
+    /// Adds a resource to the Resilience Hub application and assigns it to the specified
+    /// Application Components. If you specify a new Application Component, Resilience Hub
+    /// will automatically create the Application Component.
     /// 
     ///  <note> <ul> <li> 
     /// <para>
-    /// This action has no effect outside AWS Resilience Hub.
+    /// This action has no effect outside Resilience Hub.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// This API updates the AWS Resilience Hub application draft version. To use this resource
-    /// for running resiliency assessments, you must publish the AWS Resilience Hub application
+    /// This API updates the Resilience Hub application draft version. To use this resource
+    /// for running resiliency assessments, you must publish the Resilience Hub application
     /// using the <code>PublishAppVersion</code> API.
     /// </para>
     ///  </li> <li> 

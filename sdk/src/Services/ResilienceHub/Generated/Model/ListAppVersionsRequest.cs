@@ -30,7 +30,7 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAppVersions operation.
-    /// Lists the different versions for the AWS Resilience Hub applications.
+    /// Lists the different versions for the Resilience Hub applications.
     /// </summary>
     public partial class ListAppVersionsRequest : AmazonResilienceHubRequest
     {

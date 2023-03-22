@@ -38,12 +38,12 @@ namespace Amazon.ResilienceHub
     /// <summary>
     /// Implementation for accessing ResilienceHub
     ///
-    /// AWS Resilience Hub helps you proactively prepare and protect your Amazon Web Services
-    /// applications from disruptions. Resilience Hub offers continuous resiliency assessment
-    /// and validation that integrates into your software development lifecycle. This enables
-    /// you to uncover resiliency weaknesses, ensure recovery time objective (RTO) and recovery
-    /// point objective (RPO) targets for your applications are met, and resolve issues before
-    /// they are released into production.
+    /// Resilience Hub helps you proactively prepare and protect your Amazon Web Services
+    /// applications from disruptions. It offers continual resiliency assessment and validation
+    /// that integrates into your software development lifecycle. This enables you to uncover
+    /// resiliency weaknesses, ensure recovery time objective (RTO) and recovery point objective
+    /// (RPO) targets for your applications are met, and resolve issues before they are released
+    /// into production.
     /// </summary>
     public partial class AmazonResilienceHubClient : AmazonServiceClient, IAmazonResilienceHub
     {
@@ -290,8 +290,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -336,8 +335,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -365,16 +363,16 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Creates an AWS Resilience Hub application. An AWS Resilience Hub application is a
-        /// collection of Amazon Web Services resources structured to prevent and recover Amazon
-        /// Web Services application disruptions. To describe a AWS Resilience Hub application,
-        /// you provide an application name, resources from one or more–up to five–CloudFormation
-        /// stacks, and an appropriate resiliency policy.
+        /// Creates an Resilience Hub application. An Resilience Hub application is a collection
+        /// of Amazon Web Services resources structured to prevent and recover Amazon Web Services
+        /// application disruptions. To describe a Resilience Hub application, you provide an
+        /// application name, resources from one or more–up to five–CloudFormation stacks, and
+        /// an appropriate resiliency policy.
         /// 
         ///  
         /// <para>
-        /// After you create an AWS Resilience Hub application, you publish it so that you can
-        /// run a resiliency assessment on it. You can then use recommendations from the assessment
+        /// After you create an Resilience Hub application, you publish it so that you can run
+        /// a resiliency assessment on it. You can then use recommendations from the assessment
         /// to improve resiliency by running another assessment, comparing results, and then iterating
         /// the process until you achieve your goals for recovery time objective (RTO) and recovery
         /// point objective (RPO).
@@ -395,8 +393,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -425,16 +422,16 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Creates an AWS Resilience Hub application. An AWS Resilience Hub application is a
-        /// collection of Amazon Web Services resources structured to prevent and recover Amazon
-        /// Web Services application disruptions. To describe a AWS Resilience Hub application,
-        /// you provide an application name, resources from one or more–up to five–CloudFormation
-        /// stacks, and an appropriate resiliency policy.
+        /// Creates an Resilience Hub application. An Resilience Hub application is a collection
+        /// of Amazon Web Services resources structured to prevent and recover Amazon Web Services
+        /// application disruptions. To describe a Resilience Hub application, you provide an
+        /// application name, resources from one or more–up to five–CloudFormation stacks, and
+        /// an appropriate resiliency policy.
         /// 
         ///  
         /// <para>
-        /// After you create an AWS Resilience Hub application, you publish it so that you can
-        /// run a resiliency assessment on it. You can then use recommendations from the assessment
+        /// After you create an Resilience Hub application, you publish it so that you can run
+        /// a resiliency assessment on it. You can then use recommendations from the assessment
         /// to improve resiliency by running another assessment, comparing results, and then iterating
         /// the process until you achieve your goals for recovery time objective (RTO) and recovery
         /// point objective (RPO).
@@ -458,8 +455,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -492,12 +488,12 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Creates a new Application Component in the AWS Resilience Hub application.
+        /// Creates a new Application Component in the Resilience Hub application.
         /// 
         ///  <note> 
         /// <para>
-        /// This API updates the AWS Resilience Hub application draft version. To use this Application
-        /// Component for running assessments, you must publish the AWS Resilience Hub application
+        /// This API updates the Resilience Hub application draft version. To use this Application
+        /// Component for running assessments, you must publish the Resilience Hub application
         /// using the <code>PublishAppVersion</code> API.
         /// </para>
         ///  </note>
@@ -517,8 +513,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -547,12 +542,12 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Creates a new Application Component in the AWS Resilience Hub application.
+        /// Creates a new Application Component in the Resilience Hub application.
         /// 
         ///  <note> 
         /// <para>
-        /// This API updates the AWS Resilience Hub application draft version. To use this Application
-        /// Component for running assessments, you must publish the AWS Resilience Hub application
+        /// This API updates the Resilience Hub application draft version. To use this Application
+        /// Component for running assessments, you must publish the Resilience Hub application
         /// using the <code>PublishAppVersion</code> API.
         /// </para>
         ///  </note>
@@ -575,8 +570,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -609,18 +603,18 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Adds a resource to the AWS Resilience Hub applicationand assigns it to the specified
-        /// Application Components. If you specify a new Application Component, AWS Resilience
-        /// Hub will automatically create the Application Component.
+        /// Adds a resource to the Resilience Hub application and assigns it to the specified
+        /// Application Components. If you specify a new Application Component, Resilience Hub
+        /// will automatically create the Application Component.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
-        /// This action has no effect outside AWS Resilience Hub.
+        /// This action has no effect outside Resilience Hub.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// This API updates the AWS Resilience Hub application draft version. To use this resource
-        /// for running resiliency assessments, you must publish the AWS Resilience Hub application
+        /// This API updates the Resilience Hub application draft version. To use this resource
+        /// for running resiliency assessments, you must publish the Resilience Hub application
         /// using the <code>PublishAppVersion</code> API.
         /// </para>
         ///  </li> <li> 
@@ -645,8 +639,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -675,18 +668,18 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Adds a resource to the AWS Resilience Hub applicationand assigns it to the specified
-        /// Application Components. If you specify a new Application Component, AWS Resilience
-        /// Hub will automatically create the Application Component.
+        /// Adds a resource to the Resilience Hub application and assigns it to the specified
+        /// Application Components. If you specify a new Application Component, Resilience Hub
+        /// will automatically create the Application Component.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
-        /// This action has no effect outside AWS Resilience Hub.
+        /// This action has no effect outside Resilience Hub.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// This API updates the AWS Resilience Hub application draft version. To use this resource
-        /// for running resiliency assessments, you must publish the AWS Resilience Hub application
+        /// This API updates the Resilience Hub application draft version. To use this resource
+        /// for running resiliency assessments, you must publish the Resilience Hub application
         /// using the <code>PublishAppVersion</code> API.
         /// </para>
         ///  </li> <li> 
@@ -714,8 +707,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -748,7 +740,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Creates a new recommendation template for the AWS Resilience Hub application.
+        /// Creates a new recommendation template for the Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRecommendationTemplate service method.</param>
         /// 
@@ -765,8 +757,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -795,7 +786,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Creates a new recommendation template for the AWS Resilience Hub application.
+        /// Creates a new recommendation template for the Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRecommendationTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -815,8 +806,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -866,8 +856,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ServiceQuotaExceededException">
         /// This exception occurs when you have exceeded your service quota. To perform the requested
@@ -913,8 +902,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ServiceQuotaExceededException">
         /// This exception occurs when you have exceeded your service quota. To perform the requested
@@ -944,8 +932,8 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Deletes an AWS Resilience Hub application. This is a destructive action that can't
-        /// be undone.
+        /// Deletes an Resilience Hub application. This is a destructive action that can't be
+        /// undone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApp service method.</param>
         /// 
@@ -957,8 +945,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -982,8 +969,8 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Deletes an AWS Resilience Hub application. This is a destructive action that can't
-        /// be undone.
+        /// Deletes an Resilience Hub application. This is a destructive action that can't be
+        /// undone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApp service method.</param>
         /// <param name="cancellationToken">
@@ -998,8 +985,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1027,8 +1013,8 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Deletes an AWS Resilience Hub application assessment. This is a destructive action
-        /// that can't be undone.
+        /// Deletes an Resilience Hub application assessment. This is a destructive action that
+        /// can't be undone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAppAssessment service method.</param>
         /// 
@@ -1045,8 +1031,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1070,8 +1055,8 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Deletes an AWS Resilience Hub application assessment. This is a destructive action
-        /// that can't be undone.
+        /// Deletes an Resilience Hub application assessment. This is a destructive action that
+        /// can't be undone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAppAssessment service method.</param>
         /// <param name="cancellationToken">
@@ -1091,8 +1076,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1120,8 +1104,8 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Deletes the input source and all of its imported resources from the AWS Resilience
-        /// Hub application.
+        /// Deletes the input source and all of its imported resources from the Resilience Hub
+        /// application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAppInputSource service method.</param>
         /// 
@@ -1138,8 +1122,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1163,8 +1146,8 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Deletes the input source and all of its imported resources from the AWS Resilience
-        /// Hub application.
+        /// Deletes the input source and all of its imported resources from the Resilience Hub
+        /// application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAppInputSource service method.</param>
         /// <param name="cancellationToken">
@@ -1184,8 +1167,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1213,12 +1195,12 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Deletes an Application Component from the AWS Resilience Hub application.
+        /// Deletes an Application Component from the Resilience Hub application.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
-        /// This API updates the AWS Resilience Hub application draft version. To use this Application
-        /// Component for running assessments, you must publish the AWS Resilience Hub application
+        /// This API updates the Resilience Hub application draft version. To use this Application
+        /// Component for running assessments, you must publish the Resilience Hub application
         /// using the <code>PublishAppVersion</code> API.
         /// </para>
         ///  </li> <li> 
@@ -1243,8 +1225,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1268,12 +1249,12 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Deletes an Application Component from the AWS Resilience Hub application.
+        /// Deletes an Application Component from the Resilience Hub application.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
-        /// This API updates the AWS Resilience Hub application draft version. To use this Application
-        /// Component for running assessments, you must publish the AWS Resilience Hub application
+        /// This API updates the Resilience Hub application draft version. To use this Application
+        /// Component for running assessments, you must publish the Resilience Hub application
         /// using the <code>PublishAppVersion</code> API.
         /// </para>
         ///  </li> <li> 
@@ -1301,8 +1282,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1330,7 +1310,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Deletes a resource from the AWS Resilience Hub application.
+        /// Deletes a resource from the Resilience Hub application.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -1339,12 +1319,12 @@ namespace Amazon.ResilienceHub
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// This action has no effect outside AWS Resilience Hub.
+        /// This action has no effect outside Resilience Hub.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// This API updates the AWS Resilience Hub application draft version. To use this resource
-        /// for running resiliency assessments, you must publish the AWS Resilience Hub application
+        /// This API updates the Resilience Hub application draft version. To use this resource
+        /// for running resiliency assessments, you must publish the Resilience Hub application
         /// using the <code>PublishAppVersion</code> API.
         /// </para>
         ///  </li> </ul> </note>
@@ -1364,8 +1344,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1389,7 +1368,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Deletes a resource from the AWS Resilience Hub application.
+        /// Deletes a resource from the Resilience Hub application.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -1398,12 +1377,12 @@ namespace Amazon.ResilienceHub
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// This action has no effect outside AWS Resilience Hub.
+        /// This action has no effect outside Resilience Hub.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// This API updates the AWS Resilience Hub application draft version. To use this resource
-        /// for running resiliency assessments, you must publish the AWS Resilience Hub application
+        /// This API updates the Resilience Hub application draft version. To use this resource
+        /// for running resiliency assessments, you must publish the Resilience Hub application
         /// using the <code>PublishAppVersion</code> API.
         /// </para>
         ///  </li> </ul> </note>
@@ -1426,8 +1405,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1466,8 +1444,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1505,8 +1482,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1551,8 +1527,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1596,8 +1571,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1625,7 +1599,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Describes an AWS Resilience Hub application.
+        /// Describes an Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeApp service method.</param>
         /// 
@@ -1636,8 +1610,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1661,7 +1634,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Describes an AWS Resilience Hub application.
+        /// Describes an Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeApp service method.</param>
         /// <param name="cancellationToken">
@@ -1675,8 +1648,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1704,7 +1676,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Describes an assessment for an AWS Resilience Hub application.
+        /// Describes an assessment for an Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAppAssessment service method.</param>
         /// 
@@ -1715,8 +1687,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1740,7 +1711,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Describes an assessment for an AWS Resilience Hub application.
+        /// Describes an assessment for an Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAppAssessment service method.</param>
         /// <param name="cancellationToken">
@@ -1754,8 +1725,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1783,7 +1753,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Describes the AWS Resilience Hub application version.
+        /// Describes the Resilience Hub application version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAppVersion service method.</param>
         /// 
@@ -1794,8 +1764,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1819,7 +1788,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Describes the AWS Resilience Hub application version.
+        /// Describes the Resilience Hub application version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAppVersion service method.</param>
         /// <param name="cancellationToken">
@@ -1833,8 +1802,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1862,7 +1830,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Describes an Application Component in the AWS Resilience Hub application.
+        /// Describes an Application Component in the Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAppVersionAppComponent service method.</param>
         /// 
@@ -1879,8 +1847,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1904,7 +1871,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Describes an Application Component in the AWS Resilience Hub application.
+        /// Describes an Application Component in the Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAppVersionAppComponent service method.</param>
         /// <param name="cancellationToken">
@@ -1924,8 +1891,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -1953,7 +1919,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Describes a resource of the AWS Resilience Hub application.
+        /// Describes a resource of the Resilience Hub application.
         /// 
         ///  <note> 
         /// <para>
@@ -1989,8 +1955,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2014,7 +1979,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Describes a resource of the AWS Resilience Hub application.
+        /// Describes a resource of the Resilience Hub application.
         /// 
         ///  <note> 
         /// <para>
@@ -2053,8 +2018,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2095,8 +2059,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2136,8 +2099,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2165,7 +2127,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Describes details about an AWS Resilience Hub application.
+        /// Describes details about an Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAppVersionTemplate service method.</param>
         /// 
@@ -2176,8 +2138,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2201,7 +2162,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Describes details about an AWS Resilience Hub application.
+        /// Describes details about an Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAppVersionTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -2215,8 +2176,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2264,8 +2224,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2312,8 +2271,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2341,9 +2299,9 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Describes a specified resiliency policy for an AWS Resilience Hub application. The
-        /// returned policy object includes creation time, data location constraints, the Amazon
-        /// Resource Name (ARN) for the policy, tags, tier, and more.
+        /// Describes a specified resiliency policy for an Resilience Hub application. The returned
+        /// policy object includes creation time, data location constraints, the Amazon Resource
+        /// Name (ARN) for the policy, tags, tier, and more.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeResiliencyPolicy service method.</param>
         /// 
@@ -2354,8 +2312,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2379,9 +2336,9 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Describes a specified resiliency policy for an AWS Resilience Hub application. The
-        /// returned policy object includes creation time, data location constraints, the Amazon
-        /// Resource Name (ARN) for the policy, tags, tier, and more.
+        /// Describes a specified resiliency policy for an Resilience Hub application. The returned
+        /// policy object includes creation time, data location constraints, the Amazon Resource
+        /// Name (ARN) for the policy, tags, tier, and more.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeResiliencyPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2395,8 +2352,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2424,9 +2380,9 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Imports resources to AWS Resilience Hub application draft version from different input
-        /// sources. For more information about the input sources supported by AWS Resilience
-        /// Hub, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
+        /// Imports resources to Resilience Hub application draft version from different input
+        /// sources. For more information about the input sources supported by Resilience Hub,
+        /// see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
         /// the structure and describe your Resilience Hub application</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportResourcesToDraftAppVersion service method.</param>
@@ -2444,8 +2400,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2469,9 +2424,9 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Imports resources to AWS Resilience Hub application draft version from different input
-        /// sources. For more information about the input sources supported by AWS Resilience
-        /// Hub, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
+        /// Imports resources to Resilience Hub application draft version from different input
+        /// sources. For more information about the input sources supported by Resilience Hub,
+        /// see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
         /// the structure and describe your Resilience Hub application</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportResourcesToDraftAppVersion service method.</param>
@@ -2492,8 +2447,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2521,7 +2475,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the alarm recommendations for an AWS Resilience Hub application.
+        /// Lists the alarm recommendations for an Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAlarmRecommendations service method.</param>
         /// 
@@ -2532,8 +2486,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2557,7 +2510,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the alarm recommendations for an AWS Resilience Hub application.
+        /// Lists the alarm recommendations for an Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAlarmRecommendations service method.</param>
         /// <param name="cancellationToken">
@@ -2571,8 +2524,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2600,7 +2552,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the assessments for an AWS Resilience Hub application. You can use request parameters
+        /// Lists the assessments for an Resilience Hub application. You can use request parameters
         /// to refine the results for the response object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppAssessments service method.</param>
@@ -2612,8 +2564,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2637,7 +2588,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the assessments for an AWS Resilience Hub application. You can use request parameters
+        /// Lists the assessments for an Resilience Hub application. You can use request parameters
         /// to refine the results for the response object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppAssessments service method.</param>
@@ -2652,8 +2603,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2681,7 +2631,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the compliances for an AWS Resilience Hub Application Component.
+        /// Lists the compliances for an Resilience Hub Application Component.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppComponentCompliances service method.</param>
         /// 
@@ -2692,8 +2642,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2717,7 +2666,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the compliances for an AWS Resilience Hub Application Component.
+        /// Lists the compliances for an Resilience Hub Application Component.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppComponentCompliances service method.</param>
         /// <param name="cancellationToken">
@@ -2731,8 +2680,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2760,7 +2708,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the recommendations for an AWS Resilience Hub Application Component.
+        /// Lists the recommendations for an Resilience Hub Application Component.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppComponentRecommendations service method.</param>
         /// 
@@ -2771,8 +2719,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2796,7 +2743,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the recommendations for an AWS Resilience Hub Application Component.
+        /// Lists the recommendations for an Resilience Hub Application Component.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppComponentRecommendations service method.</param>
         /// <param name="cancellationToken">
@@ -2810,8 +2757,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2839,8 +2785,8 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists all the input sources of the AWS Resilience Hub application. For more information
-        /// about the input sources supported by AWS Resilience Hub, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
+        /// Lists all the input sources of the Resilience Hub application. For more information
+        /// about the input sources supported by Resilience Hub, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
         /// the structure and describe your Resilience Hub application</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppInputSources service method.</param>
@@ -2852,8 +2798,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2877,8 +2822,8 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists all the input sources of the AWS Resilience Hub application. For more information
-        /// about the input sources supported by AWS Resilience Hub, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
+        /// Lists all the input sources of the Resilience Hub application. For more information
+        /// about the input sources supported by Resilience Hub, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
         /// the structure and describe your Resilience Hub application</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppInputSources service method.</param>
@@ -2893,8 +2838,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -2922,7 +2866,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists your AWS Resilience Hub applications.
+        /// Lists your Resilience Hub applications.
         /// 
         ///  <note> 
         /// <para>
@@ -2946,8 +2890,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
         /// This exception occurs when you have exceeded the limit on the number of requests per
@@ -2968,7 +2911,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists your AWS Resilience Hub applications.
+        /// Lists your Resilience Hub applications.
         /// 
         ///  <note> 
         /// <para>
@@ -2995,8 +2938,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
         /// This exception occurs when you have exceeded the limit on the number of requests per
@@ -3021,7 +2963,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists all the Application Components in the AWS Resilience Hub application.
+        /// Lists all the Application Components in the Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppVersionAppComponents service method.</param>
         /// 
@@ -3038,8 +2980,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3063,7 +3004,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists all the Application Components in the AWS Resilience Hub application.
+        /// Lists all the Application Components in the Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppVersionAppComponents service method.</param>
         /// <param name="cancellationToken">
@@ -3083,8 +3024,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3125,8 +3065,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3166,8 +3105,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3195,7 +3133,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists all the resources in an AWS Resilience Hub application.
+        /// Lists all the resources in an Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppVersionResources service method.</param>
         /// 
@@ -3212,8 +3150,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3237,7 +3174,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists all the resources in an AWS Resilience Hub application.
+        /// Lists all the resources in an Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppVersionResources service method.</param>
         /// <param name="cancellationToken">
@@ -3257,8 +3194,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3286,7 +3222,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the different versions for the AWS Resilience Hub applications.
+        /// Lists the different versions for the Resilience Hub applications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppVersions service method.</param>
         /// 
@@ -3297,8 +3233,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3318,7 +3253,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the different versions for the AWS Resilience Hub applications.
+        /// Lists the different versions for the Resilience Hub applications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppVersions service method.</param>
         /// <param name="cancellationToken">
@@ -3332,8 +3267,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3357,7 +3291,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the recommendation templates for the AWS Resilience Hub applications.
+        /// Lists the recommendation templates for the Resilience Hub applications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecommendationTemplates service method.</param>
         /// 
@@ -3368,8 +3302,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
         /// This exception occurs when you have exceeded the limit on the number of requests per
@@ -3390,7 +3323,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the recommendation templates for the AWS Resilience Hub applications.
+        /// Lists the recommendation templates for the Resilience Hub applications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecommendationTemplates service method.</param>
         /// <param name="cancellationToken">
@@ -3404,8 +3337,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
         /// This exception occurs when you have exceeded the limit on the number of requests per
@@ -3430,7 +3362,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the resiliency policies for the AWS Resilience Hub applications.
+        /// Lists the resiliency policies for the Resilience Hub applications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResiliencyPolicies service method.</param>
         /// 
@@ -3441,8 +3373,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3466,7 +3397,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the resiliency policies for the AWS Resilience Hub applications.
+        /// Lists the resiliency policies for the Resilience Hub applications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResiliencyPolicies service method.</param>
         /// <param name="cancellationToken">
@@ -3480,8 +3411,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3509,8 +3439,8 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the standard operating procedure (SOP) recommendations for the AWS Resilience
-        /// Hub applications.
+        /// Lists the standard operating procedure (SOP) recommendations for the Resilience Hub
+        /// applications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSopRecommendations service method.</param>
         /// 
@@ -3527,8 +3457,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3552,8 +3481,8 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the standard operating procedure (SOP) recommendations for the AWS Resilience
-        /// Hub applications.
+        /// Lists the standard operating procedure (SOP) recommendations for the Resilience Hub
+        /// applications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSopRecommendations service method.</param>
         /// <param name="cancellationToken">
@@ -3573,8 +3502,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3602,7 +3530,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the suggested resiliency policies for the AWS Resilience Hub applications.
+        /// Lists the suggested resiliency policies for the Resilience Hub applications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSuggestedResiliencyPolicies service method.</param>
         /// 
@@ -3613,8 +3541,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3638,7 +3565,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the suggested resiliency policies for the AWS Resilience Hub applications.
+        /// Lists the suggested resiliency policies for the Resilience Hub applications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSuggestedResiliencyPolicies service method.</param>
         /// <param name="cancellationToken">
@@ -3652,8 +3579,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3681,7 +3607,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the tags for your resources in your AWS Resilience Hub applications.
+        /// Lists the tags for your resources in your Resilience Hub applications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -3692,8 +3618,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3717,7 +3642,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the tags for your resources in your AWS Resilience Hub applications.
+        /// Lists the tags for your resources in your Resilience Hub applications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -3731,8 +3656,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3760,7 +3684,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the test recommendations for the AWS Resilience Hub application.
+        /// Lists the test recommendations for the Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTestRecommendations service method.</param>
         /// 
@@ -3777,8 +3701,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3802,7 +3725,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the test recommendations for the AWS Resilience Hub application.
+        /// Lists the test recommendations for the Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTestRecommendations service method.</param>
         /// <param name="cancellationToken">
@@ -3822,8 +3745,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3851,9 +3773,9 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the resources that are not currently supported in AWS Resilience Hub. An unsupported
+        /// Lists the resources that are not currently supported in Resilience Hub. An unsupported
         /// resource is a resource that exists in the object that was used to create an app, but
-        /// is not supported by AWS Resilience Hub.
+        /// is not supported by Resilience Hub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUnsupportedAppVersionResources service method.</param>
         /// 
@@ -3870,8 +3792,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3895,9 +3816,9 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the resources that are not currently supported in AWS Resilience Hub. An unsupported
+        /// Lists the resources that are not currently supported in Resilience Hub. An unsupported
         /// resource is a resource that exists in the object that was used to create an app, but
-        /// is not supported by AWS Resilience Hub.
+        /// is not supported by Resilience Hub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUnsupportedAppVersionResources service method.</param>
         /// <param name="cancellationToken">
@@ -3917,8 +3838,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3946,7 +3866,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Publishes a new version of a specific AWS Resilience Hub application.
+        /// Publishes a new version of a specific Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PublishAppVersion service method.</param>
         /// 
@@ -3963,8 +3883,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -3988,7 +3907,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Publishes a new version of a specific AWS Resilience Hub application.
+        /// Publishes a new version of a specific Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PublishAppVersion service method.</param>
         /// <param name="cancellationToken">
@@ -4008,8 +3927,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4037,7 +3955,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Adds or updates the app template for an AWS Resilience Hub application draft version.
+        /// Adds or updates the app template for an Resilience Hub application draft version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDraftAppVersionTemplate service method.</param>
         /// 
@@ -4054,8 +3972,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4079,7 +3996,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Adds or updates the app template for an AWS Resilience Hub application draft version.
+        /// Adds or updates the app template for an Resilience Hub application draft version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDraftAppVersionTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -4099,8 +4016,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4145,8 +4061,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4190,8 +4105,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4236,8 +4150,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4281,8 +4194,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4327,8 +4239,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4377,8 +4288,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4422,8 +4332,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4461,8 +4370,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4501,8 +4409,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4540,8 +4447,7 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4586,8 +4492,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4631,8 +4536,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4660,12 +4564,12 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Updates the AWS Resilience Hub application version.
+        /// Updates the Resilience Hub application version.
         /// 
         ///  <note> 
         /// <para>
-        /// This API updates the AWS Resilience Hub application draft version. To use this information
-        /// for running resiliency assessments, you must publish the AWS Resilience Hub application
+        /// This API updates the Resilience Hub application draft version. To use this information
+        /// for running resiliency assessments, you must publish the Resilience Hub application
         /// using the <code>PublishAppVersion</code> API.
         /// </para>
         ///  </note>
@@ -4685,8 +4589,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4710,12 +4613,12 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Updates the AWS Resilience Hub application version.
+        /// Updates the Resilience Hub application version.
         /// 
         ///  <note> 
         /// <para>
-        /// This API updates the AWS Resilience Hub application draft version. To use this information
-        /// for running resiliency assessments, you must publish the AWS Resilience Hub application
+        /// This API updates the Resilience Hub application draft version. To use this information
+        /// for running resiliency assessments, you must publish the Resilience Hub application
         /// using the <code>PublishAppVersion</code> API.
         /// </para>
         ///  </note>
@@ -4738,8 +4641,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4767,12 +4669,12 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Updates an existing Application Component in the AWS Resilience Hub application.
+        /// Updates an existing Application Component in the Resilience Hub application.
         /// 
         ///  <note> 
         /// <para>
-        /// This API updates the AWS Resilience Hub application draft version. To use this Application
-        /// Component for running assessments, you must publish the AWS Resilience Hub application
+        /// This API updates the Resilience Hub application draft version. To use this Application
+        /// Component for running assessments, you must publish the Resilience Hub application
         /// using the <code>PublishAppVersion</code> API.
         /// </para>
         ///  </note>
@@ -4792,8 +4694,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4817,12 +4718,12 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Updates an existing Application Component in the AWS Resilience Hub application.
+        /// Updates an existing Application Component in the Resilience Hub application.
         /// 
         ///  <note> 
         /// <para>
-        /// This API updates the AWS Resilience Hub application draft version. To use this Application
-        /// Component for running assessments, you must publish the AWS Resilience Hub application
+        /// This API updates the Resilience Hub application draft version. To use this Application
+        /// Component for running assessments, you must publish the Resilience Hub application
         /// using the <code>PublishAppVersion</code> API.
         /// </para>
         ///  </note>
@@ -4845,8 +4746,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4874,16 +4774,16 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Updates the resource details in the AWS Resilience Hub application.
+        /// Updates the resource details in the Resilience Hub application.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
-        /// This action has no effect outside AWS Resilience Hub.
+        /// This action has no effect outside Resilience Hub.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// This API updates the AWS Resilience Hub application draft version. To use this resource
-        /// for running resiliency assessments, you must publish the AWS Resilience Hub application
+        /// This API updates the Resilience Hub application draft version. To use this resource
+        /// for running resiliency assessments, you must publish the Resilience Hub application
         /// using the <code>PublishAppVersion</code> API.
         /// </para>
         ///  </li> <li> 
@@ -4908,8 +4808,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -4938,16 +4837,16 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Updates the resource details in the AWS Resilience Hub application.
+        /// Updates the resource details in the Resilience Hub application.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
-        /// This action has no effect outside AWS Resilience Hub.
+        /// This action has no effect outside Resilience Hub.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// This API updates the AWS Resilience Hub application draft version. To use this resource
-        /// for running resiliency assessments, you must publish the AWS Resilience Hub application
+        /// This API updates the Resilience Hub application draft version. To use this resource
+        /// for running resiliency assessments, you must publish the Resilience Hub application
         /// using the <code>PublishAppVersion</code> API.
         /// </para>
         ///  </li> <li> 
@@ -4975,8 +4874,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -5026,8 +4924,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
@@ -5071,8 +4968,7 @@ namespace Amazon.ResilienceHub
         /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.

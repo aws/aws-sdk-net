@@ -30,7 +30,7 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Defines a physical resource. A physical resource is a resource that exists in your
-    /// account. It can be identified using an Amazon Resource Name (ARN) or an AWS Resilience
+    /// account. It can be identified using an Amazon Resource Name (ARN) or an Resilience
     /// Hub-native identifier.
     /// </summary>
     public partial class PhysicalResource

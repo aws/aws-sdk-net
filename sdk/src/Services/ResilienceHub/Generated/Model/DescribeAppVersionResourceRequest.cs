@@ -30,7 +30,7 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAppVersionResource operation.
-    /// Describes a resource of the AWS Resilience Hub application.
+    /// Describes a resource of the Resilience Hub application.
     /// 
     ///  <note> 
     /// <para>

@@ -29,55 +29,53 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteAppAssessment operation.
-    /// Deletes an Resilience Hub application assessment. This is a destructive action that
-    /// can't be undone.
+    /// The input source of the namespace that is located on your Amazon Elastic Kubernetes
+    /// Service cluster.
     /// </summary>
-    public partial class DeleteAppAssessmentRequest : AmazonResilienceHubRequest
+    public partial class EksSourceClusterNamespace
     {
-        private string _assessmentArn;
-        private string _clientToken;
+        private string _eksClusterArn;
+        private string _awsNamespace;
 
         /// <summary>
-        /// Gets and sets the property AssessmentArn. 
+        /// Gets and sets the property EksClusterArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
+        /// The Amazon Resource Name (ARN) of the Amazon Elastic Kubernetes Service cluster. The
+        /// format for this ARN is: arn:<code>aws</code>:eks:<code>region</code>:<code>account-id</code>:cluster/<code>cluster-name</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string AssessmentArn
+        public string EksClusterArn
         {
-            get { return this._assessmentArn; }
-            set { this._assessmentArn = value; }
+            get { return this._eksClusterArn; }
+            set { this._eksClusterArn = value; }
         }
 
-        // Check to see if AssessmentArn property is set
-        internal bool IsSetAssessmentArn()
+        // Check to see if EksClusterArn property is set
+        internal bool IsSetEksClusterArn()
         {
-            return this._assessmentArn != null;
+            return this._eksClusterArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ClientToken. 
+        /// Gets and sets the property Namespace. 
         /// <para>
-        /// Used for an idempotency token. A client token is a unique, case-sensitive string of
-        /// up to 64 ASCII characters. You should not reuse the same client token for other API
-        /// requests.
+        /// Name of the namespace that is located on your Amazon Elastic Kubernetes Service cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=63)]
-        public string ClientToken
+        [AWSProperty(Required=true, Min=1, Max=63)]
+        public string Namespace
         {
-            get { return this._clientToken; }
-            set { this._clientToken = value; }
+            get { return this._awsNamespace; }
+            set { this._awsNamespace = value; }
         }
 
-        // Check to see if ClientToken property is set
-        internal bool IsSetClientToken()
+        // Check to see if Namespace property is set
+        internal bool IsSetNamespace()
         {
-            return this._clientToken != null;
+            return this._awsNamespace != null;
         }
 
     }

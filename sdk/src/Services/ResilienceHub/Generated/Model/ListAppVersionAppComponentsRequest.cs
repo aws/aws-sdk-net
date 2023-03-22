@@ -30,7 +30,7 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAppVersionAppComponents operation.
-    /// Lists all the Application Components in the AWS Resilience Hub application.
+    /// Lists all the Application Components in the Resilience Hub application.
     /// </summary>
     public partial class ListAppVersionAppComponentsRequest : AmazonResilienceHubRequest
     {

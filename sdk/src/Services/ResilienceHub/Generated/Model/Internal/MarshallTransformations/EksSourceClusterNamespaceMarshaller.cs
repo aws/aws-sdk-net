@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LogicalResourceId Marshaller
+    /// EksSourceClusterNamespace Marshaller
     /// </summary>
-    public class LogicalResourceIdMarshaller : IRequestMarshaller<LogicalResourceId, JsonMarshallerContext> 
+    public class EksSourceClusterNamespaceMarshaller : IRequestMarshaller<EksSourceClusterNamespace, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,36 +43,18 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LogicalResourceId requestObject, JsonMarshallerContext context)
+        public void Marshall(EksSourceClusterNamespace requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEksSourceName())
+            if(requestObject.IsSetEksClusterArn())
             {
-                context.Writer.WritePropertyName("eksSourceName");
-                context.Writer.Write(requestObject.EksSourceName);
+                context.Writer.WritePropertyName("eksClusterArn");
+                context.Writer.Write(requestObject.EksClusterArn);
             }
 
-            if(requestObject.IsSetIdentifier())
+            if(requestObject.IsSetNamespace())
             {
-                context.Writer.WritePropertyName("identifier");
-                context.Writer.Write(requestObject.Identifier);
-            }
-
-            if(requestObject.IsSetLogicalStackName())
-            {
-                context.Writer.WritePropertyName("logicalStackName");
-                context.Writer.Write(requestObject.LogicalStackName);
-            }
-
-            if(requestObject.IsSetResourceGroupName())
-            {
-                context.Writer.WritePropertyName("resourceGroupName");
-                context.Writer.Write(requestObject.ResourceGroupName);
-            }
-
-            if(requestObject.IsSetTerraformSourceName())
-            {
-                context.Writer.WritePropertyName("terraformSourceName");
-                context.Writer.Write(requestObject.TerraformSourceName);
+                context.Writer.WritePropertyName("namespace");
+                context.Writer.Write(requestObject.Namespace);
             }
 
         }
@@ -80,7 +62,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static LogicalResourceIdMarshaller Instance = new LogicalResourceIdMarshaller();
+        public readonly static EksSourceClusterNamespaceMarshaller Instance = new EksSourceClusterNamespaceMarshaller();
 
     }
 }

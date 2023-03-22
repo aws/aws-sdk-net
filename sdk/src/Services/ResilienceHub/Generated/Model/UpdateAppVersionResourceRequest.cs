@@ -30,16 +30,16 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAppVersionResource operation.
-    /// Updates the resource details in the AWS Resilience Hub application.
+    /// Updates the resource details in the Resilience Hub application.
     /// 
     ///  <note> <ul> <li> 
     /// <para>
-    /// This action has no effect outside AWS Resilience Hub.
+    /// This action has no effect outside Resilience Hub.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// This API updates the AWS Resilience Hub application draft version. To use this resource
-    /// for running resiliency assessments, you must publish the AWS Resilience Hub application
+    /// This API updates the Resilience Hub application draft version. To use this resource
+    /// for running resiliency assessments, you must publish the Resilience Hub application
     /// using the <code>PublishAppVersion</code> API.
     /// </para>
     ///  </li> <li> 
@@ -160,11 +160,11 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Excluded. 
         /// <para>
-        /// Indicates if a resource is excluded from an AWS Resilience Hub application.
+        /// Indicates if a resource is excluded from an Resilience Hub application.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can exclude only imported resources from an AWS Resilience Hub application.
+        /// You can exclude only imported resources from an Resilience Hub application.
         /// </para>
         ///  </note>
         /// </summary>

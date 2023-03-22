@@ -30,7 +30,7 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTestRecommendations operation.
-    /// Lists the test recommendations for the AWS Resilience Hub application.
+    /// Lists the test recommendations for the Resilience Hub application.
     /// </summary>
     public partial class ListTestRecommendationsRequest : AmazonResilienceHubRequest
     {

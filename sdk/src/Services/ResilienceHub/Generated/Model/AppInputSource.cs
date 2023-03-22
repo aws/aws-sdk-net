@@ -29,15 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// The list of AWS Resilience Hub application input sources.
+    /// The list of Resilience Hub application input sources.
     /// </summary>
     public partial class AppInputSource
     {
+        private EksSourceClusterNamespace _eksSourceClusterNamespace;
         private ResourceMappingType _importType;
         private int? _resourceCount;
         private string _sourceArn;
         private string _sourceName;
         private TerraformSource _terraformSource;
+
+        /// <summary>
+        /// Gets and sets the property EksSourceClusterNamespace. 
+        /// <para>
+        /// The namespace on your Amazon Elastic Kubernetes Service cluster.
+        /// </para>
+        /// </summary>
+        public EksSourceClusterNamespace EksSourceClusterNamespace
+        {
+            get { return this._eksSourceClusterNamespace; }
+            set { this._eksSourceClusterNamespace = value; }
+        }
+
+        // Check to see if EksSourceClusterNamespace property is set
+        internal bool IsSetEksSourceClusterNamespace()
+        {
+            return this._eksSourceClusterNamespace != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ImportType. 
@@ -61,7 +80,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResourceCount. 
         /// <para>
-        /// The number of resources that were imported.
+        /// The number of resources.
         /// </para>
         /// </summary>
         public int ResourceCount

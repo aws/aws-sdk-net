@@ -30,8 +30,8 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAppInputSources operation.
-    /// Lists all the input sources of the AWS Resilience Hub application. For more information
-    /// about the input sources supported by AWS Resilience Hub, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
+    /// Lists all the input sources of the Resilience Hub application. For more information
+    /// about the input sources supported by Resilience Hub, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
     /// the structure and describe your Resilience Hub application</a>.
     /// </summary>
     public partial class ListAppInputSourcesRequest : AmazonResilienceHubRequest
@@ -85,7 +85,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of input sources to be displayed per AWS Resilience Hub application.
+        /// Maximum number of input sources to be displayed per Resilience Hub application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

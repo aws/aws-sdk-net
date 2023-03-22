@@ -39,7 +39,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ComponentCompliances. 
         /// <para>
-        /// The compliances for an AWS Resilience Hub Application Component, returned as an object.
+        /// The compliances for an Resilience Hub Application Component, returned as an object.
         /// This object contains the names of the Application Components, compliances, costs,
         /// resiliency scores, outage scores, and more.
         /// </para>

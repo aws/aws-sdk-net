@@ -76,7 +76,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The list of logical resources that needs to be included in the application.
+        /// The list of logical resources that needs to be included in the Resilience Hub application.
         /// </para>
         ///  
         /// <para>
@@ -178,7 +178,29 @@ namespace Amazon.ResilienceHub.Model
         /// <para>
         /// Type: String
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>additionalInfo</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Additional configuration parameters for an AWS Resilience Hub application.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, this parameter accepts a key-value mapping (in a string format) of only
+        /// one failover region and one associated account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Key: <code>"failover-regions"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code>
+        /// 
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         ///  <b> <code>appComponents</code> </b> 
         /// </para>
@@ -355,7 +377,37 @@ namespace Amazon.ResilienceHub.Model
         /// <para>
         /// Type: String
         /// </para>
-        ///  </li> </ul> </li> </ul> </li> </ul>
+        ///  </li> </ul> </li> </ul> </li> <li> 
+        /// <para>
+        ///  <b> <code>version</code> </b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The AWS Resilience Hub application version.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>additionalInfo</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Additional configuration parameters for an AWS Resilience Hub application.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, this parameter accepts a key-value mapping (in a string format) of only
+        /// one failover region and one associated account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Key: <code>"failover-regions"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code>
+        /// 
+        /// </para>
+        ///  </note> </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=204800)]
         public string AppTemplateBody

@@ -30,7 +30,7 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the PublishAppVersion operation.
-    /// Publishes a new version of a specific AWS Resilience Hub application.
+    /// Publishes a new version of a specific Resilience Hub application.
     /// </summary>
     public partial class PublishAppVersionRequest : AmazonResilienceHubRequest
     {

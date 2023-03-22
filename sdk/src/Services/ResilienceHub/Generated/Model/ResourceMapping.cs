@@ -34,6 +34,7 @@ namespace Amazon.ResilienceHub.Model
     public partial class ResourceMapping
     {
         private string _appRegistryAppName;
+        private string _eksSourceName;
         private string _logicalStackName;
         private ResourceMappingType _mappingType;
         private PhysicalResourceId _physicalResourceId;
@@ -57,6 +58,31 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetAppRegistryAppName()
         {
             return this._appRegistryAppName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EksSourceName. 
+        /// <para>
+        /// The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource
+        /// belongs to.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter accepts values in "eks-cluster/namespace" format.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string EksSourceName
+        {
+            get { return this._eksSourceName; }
+            set { this._eksSourceName = value; }
+        }
+
+        // Check to see if EksSourceName property is set
+        internal bool IsSetEksSourceName()
+        {
+            return this._eksSourceName != null;
         }
 
         /// <summary>
@@ -100,7 +126,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </dd> <dt>ResourceGroup</dt> <dd> 
         /// <para>
-        /// The resource is mapped to a resource group. The name of the resource group is contained
+        /// The resource is mapped to an Resource Groups. The name of the resource group is contained
         /// in the <code>resourceGroupName</code> property.
         /// </para>
         ///  </dd> </dl>

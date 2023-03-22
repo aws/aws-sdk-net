@@ -30,7 +30,7 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResiliencyPolicies operation.
-    /// Lists the resiliency policies for the AWS Resilience Hub applications.
+    /// Lists the resiliency policies for the Resilience Hub applications.
     /// </summary>
     public partial class ListResiliencyPoliciesRequest : AmazonResilienceHubRequest
     {

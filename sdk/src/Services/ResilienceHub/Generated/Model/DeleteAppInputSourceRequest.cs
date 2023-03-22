@@ -30,13 +30,14 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAppInputSource operation.
-    /// Deletes the input source and all of its imported resources from the AWS Resilience
-    /// Hub application.
+    /// Deletes the input source and all of its imported resources from the Resilience Hub
+    /// application.
     /// </summary>
     public partial class DeleteAppInputSourceRequest : AmazonResilienceHubRequest
     {
         private string _appArn;
         private string _clientToken;
+        private EksSourceClusterNamespace _eksSourceClusterNamespace;
         private string _sourceArn;
         private TerraformSource _terraformSource;
 
@@ -84,10 +85,29 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EksSourceClusterNamespace. 
+        /// <para>
+        /// The namespace on your Amazon Elastic Kubernetes Service cluster that you want to delete
+        /// from the Resilience Hub application.
+        /// </para>
+        /// </summary>
+        public EksSourceClusterNamespace EksSourceClusterNamespace
+        {
+            get { return this._eksSourceClusterNamespace; }
+            set { this._eksSourceClusterNamespace = value; }
+        }
+
+        // Check to see if EksSourceClusterNamespace property is set
+        internal bool IsSetEksSourceClusterNamespace()
+        {
+            return this._eksSourceClusterNamespace != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the imported resource you want to remove from the
-        /// AWS Resilience Hub application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+        /// Resilience Hub application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>
         /// </summary>
@@ -106,8 +126,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property TerraformSource. 
         /// <para>
-        /// The imported Terraform s3 state ﬁle you want to remove from the AWS Resilience Hub
-        /// application.
+        /// The imported Terraform s3 state ﬁle you want to remove from the Resilience Hub application.
         /// </para>
         /// </summary>
         public TerraformSource TerraformSource

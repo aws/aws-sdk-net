@@ -35,6 +35,7 @@ namespace Amazon.ResilienceHub.Model
     {
         private string _appArn;
         private string _appVersion;
+        private List<EksSource> _eksSources = new List<EksSource>();
         private List<string> _sourceArns = new List<string>();
         private ResourceImportStatusType _status;
         private List<TerraformSource> _terraformSources = new List<TerraformSource>();
@@ -81,9 +82,27 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EksSources. 
+        /// <para>
+        /// The input sources of the Amazon Elastic Kubernetes Service resources you have imported.
+        /// </para>
+        /// </summary>
+        public List<EksSource> EksSources
+        {
+            get { return this._eksSources; }
+            set { this._eksSources = value; }
+        }
+
+        // Check to see if EksSources property is set
+        internal bool IsSetEksSources()
+        {
+            return this._eksSources != null && this._eksSources.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) for the resources that you imported.
+        /// The Amazon Resource Names (ARNs) for the resources you have imported.
         /// </para>
         /// </summary>
         public List<string> SourceArns
@@ -120,7 +139,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property TerraformSources. 
         /// <para>
-        ///  A list of terraform file s3 URLs you need to import. 
+        ///  A list of terraform file s3 URLs you have imported. 
         /// </para>
         /// </summary>
         public List<TerraformSource> TerraformSources

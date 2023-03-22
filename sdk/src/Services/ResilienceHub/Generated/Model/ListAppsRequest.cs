@@ -30,7 +30,7 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListApps operation.
-    /// Lists your AWS Resilience Hub applications.
+    /// Lists your Resilience Hub applications.
     /// 
     ///  <note> 
     /// <para>

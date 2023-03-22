@@ -38,8 +38,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Assessment. 
         /// <para>
-        /// The assessment for an AWS Resilience Hub application, returned as an object. This
-        /// object includes Amazon Resource Names (ARNs), compliance information, compliance status,
+        /// The assessment for an Resilience Hub application, returned as an object. This object
+        /// includes Amazon Resource Names (ARNs), compliance information, compliance status,
         /// cost, messages, resiliency scores, and more.
         /// </para>
         /// </summary>

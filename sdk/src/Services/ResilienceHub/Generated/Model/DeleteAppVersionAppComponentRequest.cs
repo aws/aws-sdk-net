@@ -30,12 +30,12 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAppVersionAppComponent operation.
-    /// Deletes an Application Component from the AWS Resilience Hub application.
+    /// Deletes an Application Component from the Resilience Hub application.
     /// 
     ///  <note> <ul> <li> 
     /// <para>
-    /// This API updates the AWS Resilience Hub application draft version. To use this Application
-    /// Component for running assessments, you must publish the AWS Resilience Hub application
+    /// This API updates the Resilience Hub application draft version. To use this Application
+    /// Component for running assessments, you must publish the Resilience Hub application
     /// using the <code>PublishAppVersion</code> API.
     /// </para>
     ///  </li> <li> 

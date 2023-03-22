@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AppInputSource Object
+    /// Response Unmarshaller for EksSource Object
     /// </summary>  
-    public class AppInputSourceUnmarshaller : IUnmarshaller<AppInputSource, XmlUnmarshallerContext>, IUnmarshaller<AppInputSource, JsonUnmarshallerContext>
+    public class EksSourceUnmarshaller : IUnmarshaller<EksSource, XmlUnmarshallerContext>, IUnmarshaller<EksSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AppInputSource IUnmarshaller<AppInputSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EksSource IUnmarshaller<EksSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AppInputSource Unmarshall(JsonUnmarshallerContext context)
+        public EksSource Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AppInputSource unmarshalledObject = new AppInputSource();
+            EksSource unmarshalledObject = new EksSource();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("eksSourceClusterNamespace", targetDepth))
-                {
-                    var unmarshaller = EksSourceClusterNamespaceUnmarshaller.Instance;
-                    unmarshalledObject.EksSourceClusterNamespace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("importType", targetDepth))
+                if (context.TestExpression("eksClusterArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImportType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EksClusterArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("resourceCount", targetDepth))
+                if (context.TestExpression("namespaces", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ResourceCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("terraformSource", targetDepth))
-                {
-                    var unmarshaller = TerraformSourceUnmarshaller.Instance;
-                    unmarshalledObject.TerraformSource = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Namespaces = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static AppInputSourceUnmarshaller _instance = new AppInputSourceUnmarshaller();        
+        private static EksSourceUnmarshaller _instance = new EksSourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AppInputSourceUnmarshaller Instance
+        public static EksSourceUnmarshaller Instance
         {
             get
             {
