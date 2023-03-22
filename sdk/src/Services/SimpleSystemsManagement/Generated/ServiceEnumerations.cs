@@ -2963,6 +2963,10 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant ALMA_LINUX for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem ALMA_LINUX = new OperatingSystem("ALMA_LINUX");
+        /// <summary>
         /// Constant AMAZON_LINUX for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem AMAZON_LINUX = new OperatingSystem("AMAZON_LINUX");
@@ -2974,6 +2978,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant AMAZON_LINUX_2022 for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem AMAZON_LINUX_2022 = new OperatingSystem("AMAZON_LINUX_2022");
+        /// <summary>
+        /// Constant AMAZON_LINUX_2023 for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem AMAZON_LINUX_2023 = new OperatingSystem("AMAZON_LINUX_2023");
         /// <summary>
         /// Constant CENTOS for OperatingSystem
         /// </summary>
