@@ -1,3 +1,20 @@
+### 3.7.510.0 (2023-03-22 18:24 UTC)
+* IdentityManagement (3.7.100.98)
+	* Documentation updates for AWS Identity and Access Management (IAM).
+* IoTTwinMaker (3.7.103.0)
+	* This release adds support of adding metadata when creating a new scene or updating an existing scene.
+* NetworkManager (3.7.101.61)
+	* This release includes an update to create-transit-gateway-route-table-attachment, showing example usage for TransitGatewayRouteTableArn.
+* Pipes (3.7.102.0)
+	* This release improves validation on the ARNs in the API model
+* ResilienceHub (3.7.102.0)
+	* This release provides customers with the ability to import resources from within an EKS cluster and assess the resiliency of EKS cluster workloads.
+* SimpleSystemsManagement (3.7.104.0)
+	* This Patch Manager release supports creating, updating, and deleting Patch Baselines for AmazonLinux2023, AlmaLinux.
+* Core 3.7.106.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.509.0 (2023-03-21 18:24 UTC)
 * ChimeSDKMessaging (3.7.101.0)
 	* Amazon Chime SDK messaging customers can now manage streaming configuration for messaging data for archival and analysis.
