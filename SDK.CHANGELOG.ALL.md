@@ -1,3 +1,32 @@
+### 3.7.511.0 (2023-03-23 18:27 UTC)
+* Batch (3.7.103.0)
+	* This feature allows Batch to support configuration of ephemeral storage size for jobs running on FARGATE
+* ChimeSDKIdentity (3.7.101.0)
+	* AppInstanceBots can be used to add a bot powered by Amazon Lex to chat channels.  ExpirationSettings provides automatic resource deletion for AppInstanceUsers.
+* ChimeSDKMediaPipelines (3.7.101.0)
+	* This release adds Amazon Chime SDK call analytics. Call analytics include voice analytics, which provides speaker search and voice tone analysis. These capabilities can be used with Amazon Transcribe and Transcribe Call Analytics to generate machine-learning-powered insights from real-time audio.
+* ChimeSDKMessaging (3.7.102.0)
+	* ExpirationSettings provides automatic resource deletion for Channels.
+* ChimeSDKVoice (3.7.102.0)
+	* This release adds Amazon Chime SDK call analytics. Call analytics include voice analytics, which provides speaker search and voice tone analysis. These capabilities can be used with Amazon Transcribe and Transcribe Call Analytics to generate machine-learning-powered insights from real-time audio.
+* CodeArtifact (3.7.104.0)
+	* Repository CreationTime is added to the CreateRepository and ListRepositories API responses.
+* GuardDuty (3.7.102.0)
+	* Adds AutoEnableOrganizationMembers attribute to DescribeOrganizationConfiguration and UpdateOrganizationConfiguration APIs.
+* IVSRealTime (3.7.100.0)
+	* Initial release of the Amazon Interactive Video Service RealTime API.
+* MediaConvert (3.7.108.0)
+	* AWS Elemental MediaConvert SDK now supports passthrough of ID3v2 tags for audio inputs to audio-only HLS outputs.
+* SageMaker (3.7.123.0)
+	* Amazon SageMaker Autopilot adds two new APIs - CreateAutoMLJobV2 and DescribeAutoMLJobV2. Amazon SageMaker Notebook Instances now supports the ml.geospatial.interactive instance type.
+* ServiceDiscovery (3.7.102.0)
+	* Reverted the throttling exception RequestLimitExceeded for AWS Cloud Map APIs introduced in SDK version 1.12.424 2023-03-09 to previous exception specified in the ErrorCode.
+* Textract (3.7.105.0)
+	* The AnalyzeDocument - Tables feature adds support for new elements in the API: table titles, footers, section titles, summary cells/tables, and table type.
+* Core 3.7.106.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.510.0 (2023-03-22 18:24 UTC)
 * IdentityManagement (3.7.100.98)
 	* Documentation updates for AWS Identity and Access Management (IAM).
