@@ -917,6 +917,83 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateAutoMLJobV2
+
+        /// <summary>
+        /// Creates an Amazon SageMaker AutoML job that uses non-tabular data such as images or
+        /// text for Computer Vision or Natural Language Processing problems.
+        /// 
+        ///  
+        /// <para>
+        /// Find the resulting model after you run an AutoML job V2 by calling .
+        /// </para>
+        ///  
+        /// <para>
+        /// To create an <code>AutoMLJob</code> using tabular data, see .
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This API action is callable through SageMaker Canvas only. Calling it directly from
+        /// the CLI or an SDK results in an error.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutoMLJobV2 service method.</param>
+        /// 
+        /// <returns>The response from the CreateAutoMLJobV2 service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAutoMLJobV2">REST API Reference for CreateAutoMLJobV2 Operation</seealso>
+        public virtual CreateAutoMLJobV2Response CreateAutoMLJobV2(CreateAutoMLJobV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAutoMLJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutoMLJobV2ResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAutoMLJobV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAutoMLJobV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutoMLJobV2 operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAutoMLJobV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAutoMLJobV2">REST API Reference for CreateAutoMLJobV2 Operation</seealso>
+        public virtual IAsyncResult BeginCreateAutoMLJobV2(CreateAutoMLJobV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAutoMLJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutoMLJobV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAutoMLJobV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAutoMLJobV2.</param>
+        /// 
+        /// <returns>Returns a  CreateAutoMLJobV2Result from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAutoMLJobV2">REST API Reference for CreateAutoMLJobV2 Operation</seealso>
+        public virtual CreateAutoMLJobV2Response EndCreateAutoMLJobV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAutoMLJobV2Response>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateCodeRepository
 
         /// <summary>
@@ -7673,6 +7750,70 @@ namespace Amazon.SageMaker
         public virtual DescribeAutoMLJobResponse EndDescribeAutoMLJob(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAutoMLJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeAutoMLJobV2
+
+        /// <summary>
+        /// Returns information about an Amazon SageMaker AutoML V2 job.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API action is callable through SageMaker Canvas only. Calling it directly from
+        /// the CLI or an SDK results in an error.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAutoMLJobV2 service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAutoMLJobV2 service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAutoMLJobV2">REST API Reference for DescribeAutoMLJobV2 Operation</seealso>
+        public virtual DescribeAutoMLJobV2Response DescribeAutoMLJobV2(DescribeAutoMLJobV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutoMLJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutoMLJobV2ResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAutoMLJobV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAutoMLJobV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAutoMLJobV2 operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAutoMLJobV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAutoMLJobV2">REST API Reference for DescribeAutoMLJobV2 Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAutoMLJobV2(DescribeAutoMLJobV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutoMLJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutoMLJobV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAutoMLJobV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAutoMLJobV2.</param>
+        /// 
+        /// <returns>Returns a  DescribeAutoMLJobV2Result from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAutoMLJobV2">REST API Reference for DescribeAutoMLJobV2 Operation</seealso>
+        public virtual DescribeAutoMLJobV2Response EndDescribeAutoMLJobV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAutoMLJobV2Response>(asyncResult);
         }
 
         #endregion

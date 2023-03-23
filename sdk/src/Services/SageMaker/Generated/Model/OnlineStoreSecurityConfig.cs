@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// The caller (either IAM user or IAM role) of <code>CreateFeatureGroup</code> must have
+        /// The caller (either user or IAM role) of <code>CreateFeatureGroup</code> must have
         /// below permissions to the <code>OnlineStore</code> <code>KmsKeyId</code>:
         /// </para>
         ///  <ul> <li> 

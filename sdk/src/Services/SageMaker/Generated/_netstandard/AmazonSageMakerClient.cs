@@ -720,6 +720,63 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateAutoMLJobV2
+
+        internal virtual CreateAutoMLJobV2Response CreateAutoMLJobV2(CreateAutoMLJobV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAutoMLJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutoMLJobV2ResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAutoMLJobV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Amazon SageMaker AutoML job that uses non-tabular data such as images or
+        /// text for Computer Vision or Natural Language Processing problems.
+        /// 
+        ///  
+        /// <para>
+        /// Find the resulting model after you run an AutoML job V2 by calling .
+        /// </para>
+        ///  
+        /// <para>
+        /// To create an <code>AutoMLJob</code> using tabular data, see .
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This API action is callable through SageMaker Canvas only. Calling it directly from
+        /// the CLI or an SDK results in an error.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutoMLJobV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAutoMLJobV2 service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAutoMLJobV2">REST API Reference for CreateAutoMLJobV2 Operation</seealso>
+        public virtual Task<CreateAutoMLJobV2Response> CreateAutoMLJobV2Async(CreateAutoMLJobV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAutoMLJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutoMLJobV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAutoMLJobV2Response>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateCodeRepository
 
         internal virtual CreateCodeRepositoryResponse CreateCodeRepository(CreateCodeRepositoryRequest request)
@@ -5496,6 +5553,50 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DescribeAutoMLJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAutoMLJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAutoMLJobV2
+
+        internal virtual DescribeAutoMLJobV2Response DescribeAutoMLJobV2(DescribeAutoMLJobV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutoMLJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutoMLJobV2ResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAutoMLJobV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about an Amazon SageMaker AutoML V2 job.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API action is callable through SageMaker Canvas only. Calling it directly from
+        /// the CLI or an SDK results in an error.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAutoMLJobV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAutoMLJobV2 service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAutoMLJobV2">REST API Reference for DescribeAutoMLJobV2 Operation</seealso>
+        public virtual Task<DescribeAutoMLJobV2Response> DescribeAutoMLJobV2Async(DescribeAutoMLJobV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutoMLJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutoMLJobV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAutoMLJobV2Response>(request, options, cancellationToken);
         }
 
         #endregion

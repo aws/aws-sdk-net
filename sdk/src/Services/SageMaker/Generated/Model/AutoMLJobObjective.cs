@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies a metric to minimize or maximize as the objective of a job.
+    /// Specifies a metric to minimize or maximize as the objective of a job. V2 API jobs
+    /// (for example jobs created by calling <code>CreateAutoMLJobV2</code>), support <code>Accuracy</code>
+    /// only.
     /// </summary>
     public partial class AutoMLJobObjective
     {

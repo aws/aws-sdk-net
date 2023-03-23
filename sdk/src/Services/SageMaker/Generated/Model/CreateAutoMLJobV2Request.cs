@@ -29,48 +29,68 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateAutoMLJob operation.
-    /// Creates an Autopilot job.
+    /// Container for the parameters to the CreateAutoMLJobV2 operation.
+    /// Creates an Amazon SageMaker AutoML job that uses non-tabular data such as images or
+    /// text for Computer Vision or Natural Language Processing problems.
     /// 
     ///  
     /// <para>
-    /// Find the best-performing model after you run an Autopilot job by calling .
+    /// Find the resulting model after you run an AutoML job V2 by calling .
     /// </para>
     ///  
     /// <para>
-    /// For information about how to use Autopilot, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Automate
-    /// Model Development with Amazon SageMaker Autopilot</a>.
+    /// To create an <code>AutoMLJob</code> using tabular data, see .
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// This API action is callable through SageMaker Canvas only. Calling it directly from
+    /// the CLI or an SDK results in an error.
+    /// </para>
+    ///  </note>
     /// </summary>
-    public partial class CreateAutoMLJobRequest : AmazonSageMakerRequest
+    public partial class CreateAutoMLJobV2Request : AmazonSageMakerRequest
     {
-        private AutoMLJobConfig _autoMLJobConfig;
+        private List<AutoMLJobChannel> _autoMLJobInputDataConfig = new List<AutoMLJobChannel>();
         private string _autoMLJobName;
         private AutoMLJobObjective _autoMLJobObjective;
-        private bool? _generateCandidateDefinitionsOnly;
-        private List<AutoMLChannel> _inputDataConfig = new List<AutoMLChannel>();
+        private AutoMLProblemTypeConfig _autoMLProblemTypeConfig;
+        private AutoMLDataSplitConfig _dataSplitConfig;
         private ModelDeployConfig _modelDeployConfig;
         private AutoMLOutputDataConfig _outputDataConfig;
-        private ProblemType _problemType;
         private string _roleArn;
+        private AutoMLSecurityConfig _securityConfig;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property AutoMLJobConfig. 
+        /// Gets and sets the property AutoMLJobInputDataConfig. 
         /// <para>
-        /// A collection of settings used to configure an AutoML job.
+        /// An array of channel objects describing the input data and their location. Each channel
+        /// is a named input source. Similar to <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
+        /// supported by <code>CreateAutoMLJob</code>. The supported formats depend on the problem
+        /// type:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ImageClassification: S3Prefix, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TextClassification: S3Prefix
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        public AutoMLJobConfig AutoMLJobConfig
+        [AWSProperty(Required=true, Min=1, Max=2)]
+        public List<AutoMLJobChannel> AutoMLJobInputDataConfig
         {
-            get { return this._autoMLJobConfig; }
-            set { this._autoMLJobConfig = value; }
+            get { return this._autoMLJobInputDataConfig; }
+            set { this._autoMLJobInputDataConfig = value; }
         }
 
-        // Check to see if AutoMLJobConfig property is set
-        internal bool IsSetAutoMLJobConfig()
+        // Check to see if AutoMLJobInputDataConfig property is set
+        internal bool IsSetAutoMLJobInputDataConfig()
         {
-            return this._autoMLJobConfig != null;
+            return this._autoMLJobInputDataConfig != null && this._autoMLJobInputDataConfig.Count > 0; 
         }
 
         /// <summary>
@@ -95,9 +115,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobObjective. 
         /// <para>
-        /// Defines the objective metric used to measure the predictive quality of an AutoML job.
-        /// You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to
-        /// minimize or maximize it. For , only <code>Accuracy</code> is supported.
+        /// Specifies a metric to minimize or maximize as the objective of a job. For , only <code>Accuracy</code>
+        /// is supported.
         /// </para>
         /// </summary>
         public AutoMLJobObjective AutoMLJobObjective
@@ -113,44 +132,48 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GenerateCandidateDefinitionsOnly. 
+        /// Gets and sets the property AutoMLProblemTypeConfig. 
         /// <para>
-        /// Generates possible candidates without training the models. A candidate is a combination
-        /// of data preprocessors, algorithms, and algorithm parameter settings.
+        /// Defines the configuration settings of one of the supported problem types.
         /// </para>
         /// </summary>
-        public bool GenerateCandidateDefinitionsOnly
+        [AWSProperty(Required=true)]
+        public AutoMLProblemTypeConfig AutoMLProblemTypeConfig
         {
-            get { return this._generateCandidateDefinitionsOnly.GetValueOrDefault(); }
-            set { this._generateCandidateDefinitionsOnly = value; }
+            get { return this._autoMLProblemTypeConfig; }
+            set { this._autoMLProblemTypeConfig = value; }
         }
 
-        // Check to see if GenerateCandidateDefinitionsOnly property is set
-        internal bool IsSetGenerateCandidateDefinitionsOnly()
+        // Check to see if AutoMLProblemTypeConfig property is set
+        internal bool IsSetAutoMLProblemTypeConfig()
         {
-            return this._generateCandidateDefinitionsOnly.HasValue; 
+            return this._autoMLProblemTypeConfig != null;
         }
 
         /// <summary>
-        /// Gets and sets the property InputDataConfig. 
+        /// Gets and sets the property DataSplitConfig. 
         /// <para>
-        /// An array of channel objects that describes the input data and its location. Each channel
-        /// is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s)
-        /// supported: CSV, Parquet. A minimum of 500 rows is required for the training dataset.
-        /// There is not a minimum number of rows required for the validation dataset.
+        /// This structure specifies how to split the data into train and validation datasets.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using the V1 API (for example <code>CreateAutoMLJob</code>) or the V2 API
+        /// for Natural Language Processing problems (for example <code>CreateAutoMLJobV2</code>
+        /// with a <code>TextClassificationJobConfig</code> problem type), the validation and
+        /// training datasets must contain the same headers. Also, for V1 API jobs, the validation
+        /// dataset must be less than 2 GB in size.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2)]
-        public List<AutoMLChannel> InputDataConfig
+        public AutoMLDataSplitConfig DataSplitConfig
         {
-            get { return this._inputDataConfig; }
-            set { this._inputDataConfig = value; }
+            get { return this._dataSplitConfig; }
+            set { this._dataSplitConfig = value; }
         }
 
-        // Check to see if InputDataConfig property is set
-        internal bool IsSetInputDataConfig()
+        // Check to see if DataSplitConfig property is set
+        internal bool IsSetDataSplitConfig()
         {
-            return this._inputDataConfig != null && this._inputDataConfig.Count > 0; 
+            return this._dataSplitConfig != null;
         }
 
         /// <summary>
@@ -176,7 +199,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
         /// Provides information about encryption and the Amazon S3 output path needed to store
-        /// artifacts from an AutoML job. Format(s) supported: CSV.
+        /// artifacts from an AutoML job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -190,26 +213,6 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetOutputDataConfig()
         {
             return this._outputDataConfig != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ProblemType. 
-        /// <para>
-        /// Defines the type of supervised learning problem available for the candidates. For
-        /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
-        /// Amazon SageMaker Autopilot problem types and algorithm support</a>.
-        /// </para>
-        /// </summary>
-        public ProblemType ProblemType
-        {
-            get { return this._problemType; }
-            set { this._problemType = value; }
-        }
-
-        // Check to see if ProblemType property is set
-        internal bool IsSetProblemType()
-        {
-            return this._problemType != null;
         }
 
         /// <summary>
@@ -232,11 +235,29 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SecurityConfig. 
+        /// <para>
+        /// The security configuration for traffic encryption or Amazon VPC settings.
+        /// </para>
+        /// </summary>
+        public AutoMLSecurityConfig SecurityConfig
+        {
+            get { return this._securityConfig; }
+            set { this._securityConfig = value; }
+        }
+
+        // Check to see if SecurityConfig property is set
+        internal bool IsSetSecurityConfig()
+        {
+            return this._securityConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// An array of key-value pairs. You can use tags to categorize your Amazon Web Services
-        /// resources in different ways, for example, by purpose, owner, or environment. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// resources in different ways, such as by purpose, owner, or environment. For more information,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
         /// Amazon Web ServicesResources</a>. Tag keys must be unique per resource.
         /// </para>
         /// </summary>
