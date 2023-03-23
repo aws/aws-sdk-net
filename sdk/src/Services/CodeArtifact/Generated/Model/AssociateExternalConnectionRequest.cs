@@ -119,6 +119,10 @@ namespace Amazon.CodeArtifact.Model
         /// <para>
         ///  <code>public:maven-commonsware</code> - for the CommonsWare Android repository. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>public:maven-clojars</code> - for the Clojars repository. 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=100)]
