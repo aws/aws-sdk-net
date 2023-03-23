@@ -32,6 +32,13 @@ namespace Amazon.GuardDuty.Model
     /// Container for the parameters to the DeleteMembers operation.
     /// Deletes GuardDuty member accounts (to the current GuardDuty administrator account)
     /// specified by the account IDs.
+    /// 
+    ///  
+    /// <para>
+    /// With <code>autoEnableOrganizationMembers</code> configuration for your organization
+    /// set to <code>ALL</code>, you'll receive an error if you attempt to disable GuardDuty
+    /// for a member account in your organization.
+    /// </para>
     /// </summary>
     public partial class DeleteMembersRequest : AmazonGuardDutyRequest
     {

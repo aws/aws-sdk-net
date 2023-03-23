@@ -75,6 +75,60 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type AutoEnableMembers.
+    /// </summary>
+    public class AutoEnableMembers : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for AutoEnableMembers
+        /// </summary>
+        public static readonly AutoEnableMembers ALL = new AutoEnableMembers("ALL");
+        /// <summary>
+        /// Constant NEW for AutoEnableMembers
+        /// </summary>
+        public static readonly AutoEnableMembers NEW = new AutoEnableMembers("NEW");
+        /// <summary>
+        /// Constant NONE for AutoEnableMembers
+        /// </summary>
+        public static readonly AutoEnableMembers NONE = new AutoEnableMembers("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoEnableMembers(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoEnableMembers FindValue(string value)
+        {
+            return FindValue<AutoEnableMembers>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoEnableMembers(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CriterionKey.
     /// </summary>
     public class CriterionKey : ConstantClass

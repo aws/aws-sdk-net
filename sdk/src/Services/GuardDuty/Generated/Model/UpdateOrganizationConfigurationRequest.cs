@@ -30,7 +30,9 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateOrganizationConfiguration operation.
-    /// Updates the delegated administrator account with the values provided.
+    /// Configures the delegated administrator account with the provided values. You must
+    /// provide the value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.
+    /// 
     /// 
     ///  
     /// <para>
@@ -43,6 +45,7 @@ namespace Amazon.GuardDuty.Model
     public partial class UpdateOrganizationConfigurationRequest : AmazonGuardDutyRequest
     {
         private bool? _autoEnable;
+        private AutoEnableMembers _autoEnableOrganizationMembers;
         private OrganizationDataSourceConfigurations _dataSources;
         private string _detectorId;
         private List<OrganizationFeatureConfiguration> _features = new List<OrganizationFeatureConfiguration>();
@@ -53,7 +56,7 @@ namespace Amazon.GuardDuty.Model
         /// Indicates whether to automatically enable member accounts in the organization.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("This field is deprecated, use AutoEnableOrganizationMembers instead")]
         public bool AutoEnable
         {
             get { return this._autoEnable.GetValueOrDefault(); }
@@ -64,6 +67,41 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetAutoEnable()
         {
             return this._autoEnable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoEnableOrganizationMembers. 
+        /// <para>
+        /// Indicates the auto-enablement configuration of GuardDuty for the member accounts in
+        /// the organization. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>NEW</code>: Indicates that new accounts joining the organization are configured
+        /// to have GuardDuty enabled automatically.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ALL</code>: Indicates that all accounts (new and existing members) in the organization
+        /// are configured to have GuardDuty enabled automatically.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NONE</code>: Indicates that no account in the organization will be configured
+        /// to have GuardDuty enabled automatically.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public AutoEnableMembers AutoEnableOrganizationMembers
+        {
+            get { return this._autoEnableOrganizationMembers; }
+            set { this._autoEnableOrganizationMembers = value; }
+        }
+
+        // Check to see if AutoEnableOrganizationMembers property is set
+        internal bool IsSetAutoEnableOrganizationMembers()
+        {
+            return this._autoEnableOrganizationMembers != null;
         }
 
         /// <summary>
@@ -88,7 +126,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The ID of the detector to update the delegated administrator for.
+        /// The ID of the detector that configures the delegated administrator.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

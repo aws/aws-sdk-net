@@ -34,6 +34,7 @@ namespace Amazon.GuardDuty.Model
     public partial class DescribeOrganizationConfigurationResponse : AmazonWebServiceResponse
     {
         private bool? _autoEnable;
+        private AutoEnableMembers _autoEnableOrganizationMembers;
         private OrganizationDataSourceConfigurationsResult _dataSources;
         private List<OrganizationFeatureConfigurationResult> _features = new List<OrganizationFeatureConfigurationResult>();
         private bool? _memberAccountLimitReached;
@@ -45,7 +46,7 @@ namespace Amazon.GuardDuty.Model
         /// Indicates whether GuardDuty is automatically enabled for accounts added to the organization.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("This field is deprecated, use AutoEnableOrganizationMembers instead")]
         public bool AutoEnable
         {
             get { return this._autoEnable.GetValueOrDefault(); }
@@ -56,6 +57,41 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetAutoEnable()
         {
             return this._autoEnable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoEnableOrganizationMembers. 
+        /// <para>
+        /// Indicates the auto-enablement configuration of GuardDuty for the member accounts in
+        /// the organization.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>NEW</code>: Indicates that new accounts joining the organization are configured
+        /// to have GuardDuty enabled automatically.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ALL</code>: Indicates that all accounts (new and existing members) in the organization
+        /// are configured to have GuardDuty enabled automatically.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NONE</code>: Indicates that no account in the organization will be configured
+        /// to have GuardDuty enabled automatically.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public AutoEnableMembers AutoEnableOrganizationMembers
+        {
+            get { return this._autoEnableOrganizationMembers; }
+            set { this._autoEnableOrganizationMembers = value; }
+        }
+
+        // Check to see if AutoEnableOrganizationMembers property is set
+        internal bool IsSetAutoEnableOrganizationMembers()
+        {
+            return this._autoEnableOrganizationMembers != null;
         }
 
         /// <summary>
