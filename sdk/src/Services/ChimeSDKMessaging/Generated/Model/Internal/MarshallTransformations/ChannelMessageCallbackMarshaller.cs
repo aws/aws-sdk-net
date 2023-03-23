@@ -51,6 +51,12 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Content);
             }
 
+            if(requestObject.IsSetContentType())
+            {
+                context.Writer.WritePropertyName("ContentType");
+                context.Writer.Write(requestObject.ContentType);
+            }
+
             if(requestObject.IsSetMessageAttributes())
             {
                 context.Writer.WritePropertyName("MessageAttributes");

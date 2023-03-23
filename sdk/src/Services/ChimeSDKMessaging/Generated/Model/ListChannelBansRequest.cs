@@ -30,12 +30,13 @@ namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
     /// Container for the parameters to the ListChannelBans operation.
-    /// Lists all the users banned from a particular channel.
+    /// Lists all the users and bots banned from a particular channel.
     /// 
     ///  <note> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header.
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+    /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+    /// as the value in the header.
     /// </para>
     ///  </note>
     /// </summary>
@@ -68,7 +69,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
+        /// the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

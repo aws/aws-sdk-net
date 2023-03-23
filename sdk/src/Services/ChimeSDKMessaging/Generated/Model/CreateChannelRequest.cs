@@ -38,8 +38,9 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header.
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+    /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+    /// as the value in the header.
     /// </para>
     ///  </note>
     /// </summary>
@@ -50,6 +51,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         private string _chimeBearer;
         private string _clientRequestToken;
         private ElasticChannelConfiguration _elasticChannelConfiguration;
+        private ExpirationSettings _expirationSettings;
         private List<string> _memberArns = new List<string>();
         private string _metadata;
         private ChannelMode _mode;
@@ -99,7 +101,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
+        /// the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -151,6 +154,24 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetElasticChannelConfiguration()
         {
             return this._elasticChannelConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpirationSettings. 
+        /// <para>
+        /// Settings that control the interval after which the channel is automatically deleted.
+        /// </para>
+        /// </summary>
+        public ExpirationSettings ExpirationSettings
+        {
+            get { return this._expirationSettings; }
+            set { this._expirationSettings = value; }
+        }
+
+        // Check to see if ExpirationSettings property is set
+        internal bool IsSetExpirationSettings()
+        {
+            return this._expirationSettings != null;
         }
 
         /// <summary>

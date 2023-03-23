@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateChannelMessage Request Marshaller
+    /// PutChannelExpirationSettings Request Marshaller
     /// </summary>       
-    public class UpdateChannelMessageRequestMarshaller : IMarshaller<IRequest, UpdateChannelMessageRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutChannelExpirationSettingsRequestMarshaller : IMarshaller<IRequest, PutChannelExpirationSettingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateChannelMessageRequest)input);
+            return this.Marshall((PutChannelExpirationSettingsRequest)input);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateChannelMessageRequest publicRequest)
+        public IRequest Marshall(PutChannelExpirationSettingsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKMessaging");
             request.Headers["Content-Type"] = "application/json";
@@ -62,37 +62,21 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetChannelArn())
                 throw new AmazonChimeSDKMessagingException("Request object does not have required field ChannelArn set");
             request.AddPathResource("{channelArn}", StringUtils.FromString(publicRequest.ChannelArn));
-            if (!publicRequest.IsSetMessageId())
-                throw new AmazonChimeSDKMessagingException("Request object does not have required field MessageId set");
-            request.AddPathResource("{messageId}", StringUtils.FromString(publicRequest.MessageId));
-            request.ResourcePath = "/channels/{channelArn}/messages/{messageId}";
+            request.ResourcePath = "/channels/{channelArn}/expiration-settings";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContent())
+                if(publicRequest.IsSetExpirationSettings())
                 {
-                    context.Writer.WritePropertyName("Content");
-                    context.Writer.Write(publicRequest.Content);
-                }
+                    context.Writer.WritePropertyName("ExpirationSettings");
+                    context.Writer.WriteObjectStart();
 
-                if(publicRequest.IsSetContentType())
-                {
-                    context.Writer.WritePropertyName("ContentType");
-                    context.Writer.Write(publicRequest.ContentType);
-                }
+                    var marshaller = ExpirationSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExpirationSettings, context);
 
-                if(publicRequest.IsSetMetadata())
-                {
-                    context.Writer.WritePropertyName("Metadata");
-                    context.Writer.Write(publicRequest.Metadata);
-                }
-
-                if(publicRequest.IsSetSubChannelId())
-                {
-                    context.Writer.WritePropertyName("SubChannelId");
-                    context.Writer.Write(publicRequest.SubChannelId);
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -108,9 +92,9 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateChannelMessageRequestMarshaller _instance = new UpdateChannelMessageRequestMarshaller();        
+        private static PutChannelExpirationSettingsRequestMarshaller _instance = new PutChannelExpirationSettingsRequestMarshaller();        
 
-        internal static UpdateChannelMessageRequestMarshaller GetInstance()
+        internal static PutChannelExpirationSettingsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -118,7 +102,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateChannelMessageRequestMarshaller Instance
+        public static PutChannelExpirationSettingsRequestMarshaller Instance
         {
             get
             {

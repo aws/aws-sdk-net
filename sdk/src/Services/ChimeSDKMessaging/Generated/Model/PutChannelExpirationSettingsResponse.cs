@@ -29,29 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeChannel operation.
-    /// Returns the full details of a channel in an Amazon Chime <code>AppInstance</code>.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
-    /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
-    /// as the value in the header.
-    /// </para>
-    ///  </note>
+    /// This is the response object from the PutChannelExpirationSettings operation.
     /// </summary>
-    public partial class DescribeChannelRequest : AmazonChimeSDKMessagingRequest
+    public partial class PutChannelExpirationSettingsResponse : AmazonWebServiceResponse
     {
         private string _channelArn;
-        private string _chimeBearer;
+        private ExpirationSettings _expirationSettings;
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
         /// <para>
-        /// The ARN of the channel.
+        /// The channel ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=1600)]
+        [AWSProperty(Min=5, Max=1600)]
         public string ChannelArn
         {
             get { return this._channelArn; }
@@ -65,23 +56,21 @@ namespace Amazon.ChimeSDKMessaging.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ChimeBearer. 
+        /// Gets and sets the property ExpirationSettings. 
         /// <para>
-        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
-        /// the API call.
+        /// Settings that control the interval after which a channel is deleted.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=1600)]
-        public string ChimeBearer
+        public ExpirationSettings ExpirationSettings
         {
-            get { return this._chimeBearer; }
-            set { this._chimeBearer = value; }
+            get { return this._expirationSettings; }
+            set { this._expirationSettings = value; }
         }
 
-        // Check to see if ChimeBearer property is set
-        internal bool IsSetChimeBearer()
+        // Check to see if ExpirationSettings property is set
+        internal bool IsSetExpirationSettings()
         {
-            return this._chimeBearer != null;
+            return this._expirationSettings != null;
         }
 
     }

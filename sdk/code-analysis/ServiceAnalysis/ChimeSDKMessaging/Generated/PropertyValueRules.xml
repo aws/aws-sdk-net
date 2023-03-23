@@ -864,6 +864,24 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.PutChannelExpirationSettingsRequest.ChannelArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.PutChannelExpirationSettingsRequest.ChimeBearer</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.PutChannelExpirationSettingsResponse.ChannelArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMessaging.Model.PutChannelMembershipPreferencesRequest.ChannelArn</property>
     <min>5</min>
     <max>1600</max>
@@ -982,6 +1000,12 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.SendChannelMessageRequest.ContentType</property>
+    <min>0</min>
+    <max>45</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMessaging.Model.SendChannelMessageRequest.Metadata</property>
     <min>0</min>
     <max>1024</max>
@@ -1085,8 +1109,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMessaging.Model.UpdateChannelMessageRequest.Content</property>
+    <min>1</min>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.UpdateChannelMessageRequest.ContentType</property>
     <min>0</min>
-    <max>4096</max>
+    <max>45</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1276,6 +1305,12 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.ChannelMessage.ContentType</property>
+    <min>0</min>
+    <max>45</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMessaging.Model.ChannelMessage.MessageId</property>
     <min>1</min>
     <max>128</max>
@@ -1296,6 +1331,12 @@
   <property-value-rule>
     <property>Amazon.ChimeSDKMessaging.Model.ChannelMessageCallback.Content</property>
     <min>1</min>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.ChannelMessageCallback.ContentType</property>
+    <min>0</min>
+    <max>45</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1326,6 +1367,12 @@
     <property>Amazon.ChimeSDKMessaging.Model.ChannelMessageSummary.Content</property>
     <min>0</min>
     <max>4096</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.ChannelMessageSummary.ContentType</property>
+    <min>0</min>
+    <max>45</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1378,6 +1425,11 @@
     <min>2</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.ExpirationSettings.ExpirationDays</property>
+    <min>1</min>
+    <max>5475</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMessaging.Model.Identity.Arn</property>
     <min>5</min>
     <max>1600</max>
@@ -1412,13 +1464,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMessaging.Model.PushNotificationConfiguration.Body</property>
-    <min>0</min>
+    <min>1</min>
     <max>150</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMessaging.Model.PushNotificationConfiguration.Title</property>
-    <min>0</min>
+    <min>1</min>
     <max>50</max>
     <pattern>.*</pattern>
   </property-value-rule>

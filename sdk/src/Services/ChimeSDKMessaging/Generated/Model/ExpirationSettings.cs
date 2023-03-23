@@ -29,49 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
-    /// The details of a user or bot.
+    /// Settings that control the interval after which a channel is deleted.
     /// </summary>
-    public partial class Identity
+    public partial class ExpirationSettings
     {
-        private string _arn;
-        private string _name;
+        private ExpirationCriterion _expirationCriterion;
+        private int? _expirationDays;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property ExpirationCriterion. 
         /// <para>
-        /// The ARN in an Identity.
+        /// The conditions that must be met for a channel to expire.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=1600)]
-        public string Arn
+        [AWSProperty(Required=true)]
+        public ExpirationCriterion ExpirationCriterion
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._expirationCriterion; }
+            set { this._expirationCriterion = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if ExpirationCriterion property is set
+        internal bool IsSetExpirationCriterion()
         {
-            return this._arn != null;
+            return this._expirationCriterion != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property ExpirationDays. 
         /// <para>
-        /// The name in an Identity.
+        /// The period in days after which the system automatically deletes a channel.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=256)]
-        public string Name
+        [AWSProperty(Required=true, Min=1, Max=5475)]
+        public int ExpirationDays
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._expirationDays.GetValueOrDefault(); }
+            set { this._expirationDays = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if ExpirationDays property is set
+        internal bool IsSetExpirationDays()
         {
-            return this._name != null;
+            return this._expirationDays.HasValue; 
         }
 
     }

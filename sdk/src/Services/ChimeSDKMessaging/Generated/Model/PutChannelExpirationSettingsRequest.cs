@@ -29,27 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteChannelMembership operation.
-    /// Removes a member from a channel.
+    /// Container for the parameters to the PutChannelExpirationSettings operation.
+    /// Sets the number of days before the channel is automatically deleted.
     /// 
-    ///  <note> 
+    ///  <note> <ul> <li> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header.
+    /// A background process deletes expired channels within 6 hours of expiration. Actual
+    /// deletion times may vary.
     /// </para>
-    ///  </note>
+    ///  </li> <li> 
+    /// <para>
+    /// Expired channels that have not yet been deleted appear as active, and you can update
+    /// their expiration settings. The system honors the new settings.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+    /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+    /// as the value in the header.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
-    public partial class DeleteChannelMembershipRequest : AmazonChimeSDKMessagingRequest
+    public partial class PutChannelExpirationSettingsRequest : AmazonChimeSDKMessagingRequest
     {
         private string _channelArn;
         private string _chimeBearer;
-        private string _memberArn;
-        private string _subChannelId;
+        private ExpirationSettings _expirationSettings;
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
         /// <para>
-        /// The ARN of the channel from which you want to remove the user.
+        /// The ARN of the channel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -72,7 +82,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// the API call.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=1600)]
+        [AWSProperty(Min=5, Max=1600)]
         public string ChimeBearer
         {
             get { return this._chimeBearer; }
@@ -86,46 +96,21 @@ namespace Amazon.ChimeSDKMessaging.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MemberArn. 
+        /// Gets and sets the property ExpirationSettings. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the member that you're removing from the channel.
+        /// Settings that control the interval after which a channel is deleted.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=1600)]
-        public string MemberArn
+        public ExpirationSettings ExpirationSettings
         {
-            get { return this._memberArn; }
-            set { this._memberArn = value; }
+            get { return this._expirationSettings; }
+            set { this._expirationSettings = value; }
         }
 
-        // Check to see if MemberArn property is set
-        internal bool IsSetMemberArn()
+        // Check to see if ExpirationSettings property is set
+        internal bool IsSetExpirationSettings()
         {
-            return this._memberArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SubChannelId. 
-        /// <para>
-        /// The ID of the SubChannel in the request.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// Only for use by moderators.
-        /// </para>
-        ///  </note>
-        /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string SubChannelId
-        {
-            get { return this._subChannelId; }
-            set { this._subChannelId = value; }
-        }
-
-        // Check to see if SubChannelId property is set
-        internal bool IsSetSubChannelId()
-        {
-            return this._subChannelId != null;
+            return this._expirationSettings != null;
         }
 
     }
