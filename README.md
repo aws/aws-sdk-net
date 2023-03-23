@@ -450,6 +450,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Introducing Amazon Interactive Video Service - a managed live streaming solution that is quick and easy to set up, and ideal for creating interactive video experiences.
 * [AWSSDK.Ivschat](https://www.nuget.org/packages/AWSSDK.Ivschat/)
 	* Adds new APIs for IVS Chat, a feature for building interactive chat experiences alongside an IVS broadcast.
+* [AWSSDK.IVSRealTime](https://www.nuget.org/packages/AWSSDK.IVSRealTime/)
+	* Initial release of the Amazon Interactive Video Service RealTime API.
 * [AWSSDK.Kafka](https://www.nuget.org/packages/AWSSDK.Kafka/)
 	* Amazon Managed Streaming for Kafka (Amazon MSK). Amazon MSK is a service that you can use to easily build, monitor, and manage Apache Kafka clusters in the cloud.
 * [AWSSDK.KafkaConnect](https://www.nuget.org/packages/AWSSDK.KafkaConnect/)
