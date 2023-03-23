@@ -1119,6 +1119,174 @@ namespace Amazon.ChimeSDKVoice
 
         #endregion
         
+        #region  CreateVoiceProfile
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVoiceProfile service method.</param>
+        /// 
+        /// <returns>The response from the CreateVoiceProfile service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.GoneException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ResourceLimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceProfile">REST API Reference for CreateVoiceProfile Operation</seealso>
+        public virtual CreateVoiceProfileResponse CreateVoiceProfile(CreateVoiceProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVoiceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVoiceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVoiceProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVoiceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVoiceProfile operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVoiceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceProfile">REST API Reference for CreateVoiceProfile Operation</seealso>
+        public virtual IAsyncResult BeginCreateVoiceProfile(CreateVoiceProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVoiceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVoiceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVoiceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVoiceProfile.</param>
+        /// 
+        /// <returns>Returns a  CreateVoiceProfileResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceProfile">REST API Reference for CreateVoiceProfile Operation</seealso>
+        public virtual CreateVoiceProfileResponse EndCreateVoiceProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateVoiceProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateVoiceProfileDomain
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVoiceProfileDomain service method.</param>
+        /// 
+        /// <returns>The response from the CreateVoiceProfileDomain service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ResourceLimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceProfileDomain">REST API Reference for CreateVoiceProfileDomain Operation</seealso>
+        public virtual CreateVoiceProfileDomainResponse CreateVoiceProfileDomain(CreateVoiceProfileDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVoiceProfileDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVoiceProfileDomainResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVoiceProfileDomainResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVoiceProfileDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVoiceProfileDomain operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVoiceProfileDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceProfileDomain">REST API Reference for CreateVoiceProfileDomain Operation</seealso>
+        public virtual IAsyncResult BeginCreateVoiceProfileDomain(CreateVoiceProfileDomainRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVoiceProfileDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVoiceProfileDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVoiceProfileDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVoiceProfileDomain.</param>
+        /// 
+        /// <returns>Returns a  CreateVoiceProfileDomainResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceProfileDomain">REST API Reference for CreateVoiceProfileDomain Operation</seealso>
+        public virtual CreateVoiceProfileDomainResponse EndCreateVoiceProfileDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateVoiceProfileDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeletePhoneNumber
 
         /// <summary>
@@ -2031,6 +2199,168 @@ namespace Amazon.ChimeSDKVoice
 
         #endregion
         
+        #region  DeleteVoiceProfile
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVoiceProfile service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceProfile">REST API Reference for DeleteVoiceProfile Operation</seealso>
+        public virtual DeleteVoiceProfileResponse DeleteVoiceProfile(DeleteVoiceProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVoiceProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVoiceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceProfile operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVoiceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceProfile">REST API Reference for DeleteVoiceProfile Operation</seealso>
+        public virtual IAsyncResult BeginDeleteVoiceProfile(DeleteVoiceProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVoiceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVoiceProfile.</param>
+        /// 
+        /// <returns>Returns a  DeleteVoiceProfileResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceProfile">REST API Reference for DeleteVoiceProfile Operation</seealso>
+        public virtual DeleteVoiceProfileResponse EndDeleteVoiceProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVoiceProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteVoiceProfileDomain
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceProfileDomain service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVoiceProfileDomain service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceProfileDomain">REST API Reference for DeleteVoiceProfileDomain Operation</seealso>
+        public virtual DeleteVoiceProfileDomainResponse DeleteVoiceProfileDomain(DeleteVoiceProfileDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceProfileDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceProfileDomainResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVoiceProfileDomainResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVoiceProfileDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceProfileDomain operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVoiceProfileDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceProfileDomain">REST API Reference for DeleteVoiceProfileDomain Operation</seealso>
+        public virtual IAsyncResult BeginDeleteVoiceProfileDomain(DeleteVoiceProfileDomainRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceProfileDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceProfileDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVoiceProfileDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVoiceProfileDomain.</param>
+        /// 
+        /// <returns>Returns a  DeleteVoiceProfileDomainResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceProfileDomain">REST API Reference for DeleteVoiceProfileDomain Operation</seealso>
+        public virtual DeleteVoiceProfileDomainResponse EndDeleteVoiceProfileDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVoiceProfileDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociatePhoneNumbersFromVoiceConnector
 
         /// <summary>
@@ -2850,6 +3180,87 @@ namespace Amazon.ChimeSDKVoice
 
         #endregion
         
+        #region  GetSpeakerSearchTask
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSpeakerSearchTask service method.</param>
+        /// 
+        /// <returns>The response from the GetSpeakerSearchTask service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSpeakerSearchTask">REST API Reference for GetSpeakerSearchTask Operation</seealso>
+        public virtual GetSpeakerSearchTaskResponse GetSpeakerSearchTask(GetSpeakerSearchTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSpeakerSearchTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSpeakerSearchTaskResponseUnmarshaller.Instance;
+
+            return Invoke<GetSpeakerSearchTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSpeakerSearchTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSpeakerSearchTask operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSpeakerSearchTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSpeakerSearchTask">REST API Reference for GetSpeakerSearchTask Operation</seealso>
+        public virtual IAsyncResult BeginGetSpeakerSearchTask(GetSpeakerSearchTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSpeakerSearchTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSpeakerSearchTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSpeakerSearchTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSpeakerSearchTask.</param>
+        /// 
+        /// <returns>Returns a  GetSpeakerSearchTaskResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSpeakerSearchTask">REST API Reference for GetSpeakerSearchTask Operation</seealso>
+        public virtual GetSpeakerSearchTaskResponse EndGetSpeakerSearchTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSpeakerSearchTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetVoiceConnector
 
         /// <summary>
@@ -3525,6 +3936,243 @@ namespace Amazon.ChimeSDKVoice
 
         #endregion
         
+        #region  GetVoiceProfile
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceProfile service method.</param>
+        /// 
+        /// <returns>The response from the GetVoiceProfile service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceProfile">REST API Reference for GetVoiceProfile Operation</seealso>
+        public virtual GetVoiceProfileResponse GetVoiceProfile(GetVoiceProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<GetVoiceProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVoiceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceProfile operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVoiceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceProfile">REST API Reference for GetVoiceProfile Operation</seealso>
+        public virtual IAsyncResult BeginGetVoiceProfile(GetVoiceProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVoiceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVoiceProfile.</param>
+        /// 
+        /// <returns>Returns a  GetVoiceProfileResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceProfile">REST API Reference for GetVoiceProfile Operation</seealso>
+        public virtual GetVoiceProfileResponse EndGetVoiceProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetVoiceProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetVoiceProfileDomain
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceProfileDomain service method.</param>
+        /// 
+        /// <returns>The response from the GetVoiceProfileDomain service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceProfileDomain">REST API Reference for GetVoiceProfileDomain Operation</seealso>
+        public virtual GetVoiceProfileDomainResponse GetVoiceProfileDomain(GetVoiceProfileDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceProfileDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceProfileDomainResponseUnmarshaller.Instance;
+
+            return Invoke<GetVoiceProfileDomainResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVoiceProfileDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceProfileDomain operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVoiceProfileDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceProfileDomain">REST API Reference for GetVoiceProfileDomain Operation</seealso>
+        public virtual IAsyncResult BeginGetVoiceProfileDomain(GetVoiceProfileDomainRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceProfileDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceProfileDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVoiceProfileDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVoiceProfileDomain.</param>
+        /// 
+        /// <returns>Returns a  GetVoiceProfileDomainResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceProfileDomain">REST API Reference for GetVoiceProfileDomain Operation</seealso>
+        public virtual GetVoiceProfileDomainResponse EndGetVoiceProfileDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetVoiceProfileDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetVoiceToneAnalysisTask
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceToneAnalysisTask service method.</param>
+        /// 
+        /// <returns>The response from the GetVoiceToneAnalysisTask service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceToneAnalysisTask">REST API Reference for GetVoiceToneAnalysisTask Operation</seealso>
+        public virtual GetVoiceToneAnalysisTaskResponse GetVoiceToneAnalysisTask(GetVoiceToneAnalysisTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceToneAnalysisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
+
+            return Invoke<GetVoiceToneAnalysisTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVoiceToneAnalysisTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceToneAnalysisTask operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVoiceToneAnalysisTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceToneAnalysisTask">REST API Reference for GetVoiceToneAnalysisTask Operation</seealso>
+        public virtual IAsyncResult BeginGetVoiceToneAnalysisTask(GetVoiceToneAnalysisTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceToneAnalysisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVoiceToneAnalysisTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVoiceToneAnalysisTask.</param>
+        /// 
+        /// <returns>Returns a  GetVoiceToneAnalysisTaskResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceToneAnalysisTask">REST API Reference for GetVoiceToneAnalysisTask Operation</seealso>
+        public virtual GetVoiceToneAnalysisTaskResponse EndGetVoiceToneAnalysisTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetVoiceToneAnalysisTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAvailableVoiceConnectorRegions
 
         /// <summary>
@@ -4038,6 +4686,78 @@ namespace Amazon.ChimeSDKVoice
 
         #endregion
         
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListVoiceConnectorGroups
 
         /// <summary>
@@ -4253,6 +4973,156 @@ namespace Amazon.ChimeSDKVoice
         public virtual ListVoiceConnectorTerminationCredentialsResponse EndListVoiceConnectorTerminationCredentials(IAsyncResult asyncResult)
         {
             return EndInvoke<ListVoiceConnectorTerminationCredentialsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListVoiceProfileDomains
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVoiceProfileDomains service method.</param>
+        /// 
+        /// <returns>The response from the ListVoiceProfileDomains service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceProfileDomains">REST API Reference for ListVoiceProfileDomains Operation</seealso>
+        public virtual ListVoiceProfileDomainsResponse ListVoiceProfileDomains(ListVoiceProfileDomainsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVoiceProfileDomainsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVoiceProfileDomainsResponseUnmarshaller.Instance;
+
+            return Invoke<ListVoiceProfileDomainsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVoiceProfileDomains operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVoiceProfileDomains operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVoiceProfileDomains
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceProfileDomains">REST API Reference for ListVoiceProfileDomains Operation</seealso>
+        public virtual IAsyncResult BeginListVoiceProfileDomains(ListVoiceProfileDomainsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVoiceProfileDomainsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVoiceProfileDomainsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVoiceProfileDomains operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVoiceProfileDomains.</param>
+        /// 
+        /// <returns>Returns a  ListVoiceProfileDomainsResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceProfileDomains">REST API Reference for ListVoiceProfileDomains Operation</seealso>
+        public virtual ListVoiceProfileDomainsResponse EndListVoiceProfileDomains(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListVoiceProfileDomainsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListVoiceProfiles
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVoiceProfiles service method.</param>
+        /// 
+        /// <returns>The response from the ListVoiceProfiles service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceProfiles">REST API Reference for ListVoiceProfiles Operation</seealso>
+        public virtual ListVoiceProfilesResponse ListVoiceProfiles(ListVoiceProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVoiceProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVoiceProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListVoiceProfilesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVoiceProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVoiceProfiles operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVoiceProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceProfiles">REST API Reference for ListVoiceProfiles Operation</seealso>
+        public virtual IAsyncResult BeginListVoiceProfiles(ListVoiceProfilesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVoiceProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVoiceProfilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVoiceProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVoiceProfiles.</param>
+        /// 
+        /// <returns>Returns a  ListVoiceProfilesResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceProfiles">REST API Reference for ListVoiceProfiles Operation</seealso>
+        public virtual ListVoiceProfilesResponse EndListVoiceProfiles(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListVoiceProfilesResponse>(asyncResult);
         }
 
         #endregion
@@ -5091,6 +5961,501 @@ namespace Amazon.ChimeSDKVoice
 
         #endregion
         
+        #region  StartSpeakerSearchTask
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSpeakerSearchTask service method.</param>
+        /// 
+        /// <returns>The response from the StartSpeakerSearchTask service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.GoneException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ResourceLimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnprocessableEntityException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StartSpeakerSearchTask">REST API Reference for StartSpeakerSearchTask Operation</seealso>
+        public virtual StartSpeakerSearchTaskResponse StartSpeakerSearchTask(StartSpeakerSearchTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSpeakerSearchTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSpeakerSearchTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartSpeakerSearchTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSpeakerSearchTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSpeakerSearchTask operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSpeakerSearchTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StartSpeakerSearchTask">REST API Reference for StartSpeakerSearchTask Operation</seealso>
+        public virtual IAsyncResult BeginStartSpeakerSearchTask(StartSpeakerSearchTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSpeakerSearchTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSpeakerSearchTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSpeakerSearchTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSpeakerSearchTask.</param>
+        /// 
+        /// <returns>Returns a  StartSpeakerSearchTaskResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StartSpeakerSearchTask">REST API Reference for StartSpeakerSearchTask Operation</seealso>
+        public virtual StartSpeakerSearchTaskResponse EndStartSpeakerSearchTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartSpeakerSearchTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartVoiceToneAnalysisTask
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartVoiceToneAnalysisTask service method.</param>
+        /// 
+        /// <returns>The response from the StartVoiceToneAnalysisTask service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.GoneException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ResourceLimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnprocessableEntityException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StartVoiceToneAnalysisTask">REST API Reference for StartVoiceToneAnalysisTask Operation</seealso>
+        public virtual StartVoiceToneAnalysisTaskResponse StartVoiceToneAnalysisTask(StartVoiceToneAnalysisTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartVoiceToneAnalysisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartVoiceToneAnalysisTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartVoiceToneAnalysisTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartVoiceToneAnalysisTask operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartVoiceToneAnalysisTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StartVoiceToneAnalysisTask">REST API Reference for StartVoiceToneAnalysisTask Operation</seealso>
+        public virtual IAsyncResult BeginStartVoiceToneAnalysisTask(StartVoiceToneAnalysisTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartVoiceToneAnalysisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartVoiceToneAnalysisTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartVoiceToneAnalysisTask.</param>
+        /// 
+        /// <returns>Returns a  StartVoiceToneAnalysisTaskResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StartVoiceToneAnalysisTask">REST API Reference for StartVoiceToneAnalysisTask Operation</seealso>
+        public virtual StartVoiceToneAnalysisTaskResponse EndStartVoiceToneAnalysisTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartVoiceToneAnalysisTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopSpeakerSearchTask
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSpeakerSearchTask service method.</param>
+        /// 
+        /// <returns>The response from the StopSpeakerSearchTask service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnprocessableEntityException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StopSpeakerSearchTask">REST API Reference for StopSpeakerSearchTask Operation</seealso>
+        public virtual StopSpeakerSearchTaskResponse StopSpeakerSearchTask(StopSpeakerSearchTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSpeakerSearchTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSpeakerSearchTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StopSpeakerSearchTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopSpeakerSearchTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopSpeakerSearchTask operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopSpeakerSearchTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StopSpeakerSearchTask">REST API Reference for StopSpeakerSearchTask Operation</seealso>
+        public virtual IAsyncResult BeginStopSpeakerSearchTask(StopSpeakerSearchTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSpeakerSearchTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSpeakerSearchTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopSpeakerSearchTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopSpeakerSearchTask.</param>
+        /// 
+        /// <returns>Returns a  StopSpeakerSearchTaskResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StopSpeakerSearchTask">REST API Reference for StopSpeakerSearchTask Operation</seealso>
+        public virtual StopSpeakerSearchTaskResponse EndStopSpeakerSearchTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopSpeakerSearchTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopVoiceToneAnalysisTask
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopVoiceToneAnalysisTask service method.</param>
+        /// 
+        /// <returns>The response from the StopVoiceToneAnalysisTask service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnprocessableEntityException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StopVoiceToneAnalysisTask">REST API Reference for StopVoiceToneAnalysisTask Operation</seealso>
+        public virtual StopVoiceToneAnalysisTaskResponse StopVoiceToneAnalysisTask(StopVoiceToneAnalysisTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopVoiceToneAnalysisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StopVoiceToneAnalysisTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopVoiceToneAnalysisTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopVoiceToneAnalysisTask operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopVoiceToneAnalysisTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StopVoiceToneAnalysisTask">REST API Reference for StopVoiceToneAnalysisTask Operation</seealso>
+        public virtual IAsyncResult BeginStopVoiceToneAnalysisTask(StopVoiceToneAnalysisTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopVoiceToneAnalysisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopVoiceToneAnalysisTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopVoiceToneAnalysisTask.</param>
+        /// 
+        /// <returns>Returns a  StopVoiceToneAnalysisTaskResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StopVoiceToneAnalysisTask">REST API Reference for StopVoiceToneAnalysisTask Operation</seealso>
+        public virtual StopVoiceToneAnalysisTaskResponse EndStopVoiceToneAnalysisTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopVoiceToneAnalysisTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ResourceLimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateGlobalSettings
 
         /// <summary>
@@ -5774,6 +7139,168 @@ namespace Amazon.ChimeSDKVoice
         public virtual UpdateVoiceConnectorGroupResponse EndUpdateVoiceConnectorGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateVoiceConnectorGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateVoiceProfile
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceProfile service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVoiceProfile service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.GoneException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceProfile">REST API Reference for UpdateVoiceProfile Operation</seealso>
+        public virtual UpdateVoiceProfileResponse UpdateVoiceProfile(UpdateVoiceProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVoiceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVoiceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVoiceProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVoiceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceProfile operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVoiceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceProfile">REST API Reference for UpdateVoiceProfile Operation</seealso>
+        public virtual IAsyncResult BeginUpdateVoiceProfile(UpdateVoiceProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVoiceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVoiceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateVoiceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVoiceProfile.</param>
+        /// 
+        /// <returns>Returns a  UpdateVoiceProfileResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceProfile">REST API Reference for UpdateVoiceProfile Operation</seealso>
+        public virtual UpdateVoiceProfileResponse EndUpdateVoiceProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateVoiceProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateVoiceProfileDomain
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceProfileDomain service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVoiceProfileDomain service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceProfileDomain">REST API Reference for UpdateVoiceProfileDomain Operation</seealso>
+        public virtual UpdateVoiceProfileDomainResponse UpdateVoiceProfileDomain(UpdateVoiceProfileDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVoiceProfileDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVoiceProfileDomainResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVoiceProfileDomainResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVoiceProfileDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceProfileDomain operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVoiceProfileDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceProfileDomain">REST API Reference for UpdateVoiceProfileDomain Operation</seealso>
+        public virtual IAsyncResult BeginUpdateVoiceProfileDomain(UpdateVoiceProfileDomainRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVoiceProfileDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVoiceProfileDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateVoiceProfileDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVoiceProfileDomain.</param>
+        /// 
+        /// <returns>Returns a  UpdateVoiceProfileDomainResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceProfileDomain">REST API Reference for UpdateVoiceProfileDomain Operation</seealso>
+        public virtual UpdateVoiceProfileDomainResponse EndUpdateVoiceProfileDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateVoiceProfileDomainResponse>(asyncResult);
         }
 
         #endregion

@@ -35,6 +35,7 @@ namespace Amazon.ChimeSDKVoice.Model
     {
         private int? _dataRetentionInHours;
         private bool? _disabled;
+        private MediaInsightsConfiguration _mediaInsightsConfiguration;
         private List<StreamingNotificationTarget> _streamingNotificationTargets = new List<StreamingNotificationTarget>();
 
         /// <summary>
@@ -67,6 +68,21 @@ namespace Amazon.ChimeSDKVoice.Model
         internal bool IsSetDisabled()
         {
             return this._disabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaInsightsConfiguration.
+        /// </summary>
+        public MediaInsightsConfiguration MediaInsightsConfiguration
+        {
+            get { return this._mediaInsightsConfiguration; }
+            set { this._mediaInsightsConfiguration = value; }
+        }
+
+        // Check to see if MediaInsightsConfiguration property is set
+        internal bool IsSetMediaInsightsConfiguration()
+        {
+            return this._mediaInsightsConfiguration != null;
         }
 
         /// <summary>

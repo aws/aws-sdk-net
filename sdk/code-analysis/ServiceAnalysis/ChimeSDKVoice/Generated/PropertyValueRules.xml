@@ -26,6 +26,7 @@
     <property>Amazon.ChimeSDKVoice.Model.CreateSipMediaApplicationRequest.Name</property>
     <min>1</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9 _.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.CreateSipMediaApplicationCallRequest.FromPhoneNumber</property>
@@ -43,6 +44,7 @@
     <property>Amazon.ChimeSDKVoice.Model.CreateSipRuleRequest.Name</property>
     <min>1</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9 _.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.CreateSipRuleRequest.TriggerValue</property>
@@ -52,11 +54,34 @@
     <property>Amazon.ChimeSDKVoice.Model.CreateVoiceConnectorRequest.Name</property>
     <min>1</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9 _.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.CreateVoiceConnectorGroupRequest.Name</property>
     <min>1</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.CreateVoiceProfileRequest.SpeakerSearchTaskId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.CreateVoiceProfileDomainRequest.ClientRequestToken</property>
+    <pattern>^[-_a-zA-Z0-9]*${2,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.CreateVoiceProfileDomainRequest.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.CreateVoiceProfileDomainRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9 _.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DeletePhoneNumberRequest.PhoneNumberId</property>
@@ -117,6 +142,18 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.DeleteVoiceProfileRequest.VoiceProfileId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.DeleteVoiceProfileDomainRequest.VoiceProfileDomainId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DisassociatePhoneNumbersFromVoiceConnectorRequest.VoiceConnectorId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -165,6 +202,18 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.GetSpeakerSearchTaskRequest.SpeakerSearchTaskId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.GetSpeakerSearchTaskRequest.VoiceConnectorId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetVoiceConnectorRequest.VoiceConnectorId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -200,6 +249,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetVoiceConnectorTerminationHealthRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.GetVoiceProfileRequest.VoiceProfileId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.GetVoiceProfileDomainRequest.VoiceProfileDomainId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.GetVoiceToneAnalysisTaskRequest.VoiceConnectorId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.GetVoiceToneAnalysisTaskRequest.VoiceToneAnalysisTaskId</property>
+    <min>1</min>
+    <max>256</max>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -262,6 +335,11 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.ListVoiceConnectorGroupsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -273,6 +351,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.ListVoiceConnectorTerminationCredentialsRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.ListVoiceProfileDomainsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.ListVoiceProfilesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.ListVoiceProfilesRequest.VoiceProfileDomainId</property>
+    <min>1</min>
+    <max>256</max>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -337,6 +431,78 @@
     <pattern>^8(00|33|44|55|66|77|88)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.StartSpeakerSearchTaskRequest.ClientRequestToken</property>
+    <pattern>^[-_a-zA-Z0-9]*${2,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.StartSpeakerSearchTaskRequest.TransactionId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.StartSpeakerSearchTaskRequest.VoiceConnectorId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.StartSpeakerSearchTaskRequest.VoiceProfileDomainId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.StartVoiceToneAnalysisTaskRequest.ClientRequestToken</property>
+    <pattern>^[-_a-zA-Z0-9]*${2,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.StartVoiceToneAnalysisTaskRequest.TransactionId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.StartVoiceToneAnalysisTaskRequest.VoiceConnectorId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.StopSpeakerSearchTaskRequest.SpeakerSearchTaskId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.StopSpeakerSearchTaskRequest.VoiceConnectorId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.StopVoiceToneAnalysisTaskRequest.VoiceConnectorId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.StopVoiceToneAnalysisTaskRequest.VoiceToneAnalysisTaskId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.TagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.UntagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.UpdatePhoneNumberRequest.CallingName</property>
     <pattern>^$|^[a-zA-Z0-9 ]{2,15}$</pattern>
   </property-value-rule>
@@ -368,6 +534,7 @@
     <property>Amazon.ChimeSDKVoice.Model.UpdateSipMediaApplicationRequest.Name</property>
     <min>1</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9 _.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.UpdateSipMediaApplicationRequest.SipMediaApplicationId</property>
@@ -385,6 +552,7 @@
     <property>Amazon.ChimeSDKVoice.Model.UpdateSipRuleRequest.Name</property>
     <min>1</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9 _.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.UpdateSipRuleRequest.SipRuleId</property>
@@ -394,6 +562,7 @@
     <property>Amazon.ChimeSDKVoice.Model.UpdateVoiceConnectorRequest.Name</property>
     <min>1</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9 _.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.UpdateVoiceConnectorRequest.VoiceConnectorId</property>
@@ -403,9 +572,39 @@
     <property>Amazon.ChimeSDKVoice.Model.UpdateVoiceConnectorGroupRequest.Name</property>
     <min>1</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9 _.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.UpdateVoiceConnectorGroupRequest.VoiceConnectorGroupId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.UpdateVoiceProfileRequest.SpeakerSearchTaskId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.UpdateVoiceProfileRequest.VoiceProfileId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.UpdateVoiceProfileDomainRequest.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.UpdateVoiceProfileDomainRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.UpdateVoiceProfileDomainRequest.VoiceProfileDomainId</property>
+    <min>1</min>
+    <max>256</max>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -482,6 +681,18 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.CallDetails.TransactionId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.CallDetails.VoiceConnectorId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.CandidateAddress.City</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -528,6 +739,11 @@
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GeoMatchParams.Country</property>
     <pattern>^$|^[A-Z]{2,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.MediaInsightsConfiguration.ConfigurationArn</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.OrderedPhoneNumber.E164PhoneNumber</property>
@@ -613,9 +829,15 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.ServerSideEncryptionConfiguration.KmsKeyArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.SipMediaApplication.Name</property>
     <min>1</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9 _.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.SipMediaApplication.SipMediaApplicationId</property>
@@ -634,6 +856,7 @@
     <property>Amazon.ChimeSDKVoice.Model.SipRule.Name</property>
     <min>1</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9 _.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.SipRule.SipRuleId</property>
@@ -652,8 +875,45 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.SpeakerSearchDetails.VoiceprintGenerationStatus</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.SpeakerSearchResult.ConfidenceScore</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.SpeakerSearchResult.VoiceProfileId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.SpeakerSearchTask.SpeakerSearchTaskId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.SpeakerSearchTask.SpeakerSearchTaskStatus</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.StreamingConfiguration.DataRetentionInHours</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.Termination.CpsLimit</property>
@@ -675,6 +935,7 @@
     <property>Amazon.ChimeSDKVoice.Model.VoiceConnector.Name</property>
     <min>1</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9 _.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.VoiceConnector.VoiceConnectorArn</property>
@@ -688,6 +949,7 @@
     <property>Amazon.ChimeSDKVoice.Model.VoiceConnectorGroup.Name</property>
     <min>1</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9 _.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.VoiceConnectorGroup.VoiceConnectorGroupArn</property>
@@ -704,6 +966,94 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.VoiceConnectorItem.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.VoiceProfile.VoiceProfileArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.VoiceProfile.VoiceProfileDomainId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.VoiceProfile.VoiceProfileId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.VoiceProfileDomain.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.VoiceProfileDomain.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.VoiceProfileDomain.VoiceProfileDomainArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.VoiceProfileDomain.VoiceProfileDomainId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.VoiceProfileDomainSummary.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.VoiceProfileDomainSummary.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.VoiceProfileDomainSummary.VoiceProfileDomainArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.VoiceProfileDomainSummary.VoiceProfileDomainId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.VoiceProfileSummary.VoiceProfileArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.VoiceProfileSummary.VoiceProfileDomainId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.VoiceProfileSummary.VoiceProfileId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.VoiceToneAnalysisTask.VoiceToneAnalysisTaskId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.VoiceToneAnalysisTask.VoiceToneAnalysisTaskStatus</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
 </property-value-rules>
