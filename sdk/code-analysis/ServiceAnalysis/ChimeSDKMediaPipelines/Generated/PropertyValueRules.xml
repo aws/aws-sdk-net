@@ -23,6 +23,34 @@
     <pattern>[-_a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.CreateMediaInsightsPipelineRequest.ClientRequestToken</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>[-_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.CreateMediaInsightsPipelineRequest.MediaInsightsPipelineConfigurationArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.CreateMediaInsightsPipelineConfigurationRequest.ClientRequestToken</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>[-_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.CreateMediaInsightsPipelineConfigurationRequest.MediaInsightsPipelineConfigurationName</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.CreateMediaInsightsPipelineConfigurationRequest.ResourceAccessRoleArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.CreateMediaLiveConnectorPipelineRequest.ClientRequestToken</property>
     <min>2</min>
     <max>64</max>
@@ -35,6 +63,11 @@
     <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.DeleteMediaInsightsPipelineConfigurationRequest.Identifier</property>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.DeleteMediaPipelineRequest.MediaPipelineId</property>
     <min>36</min>
     <max>36</max>
@@ -45,6 +78,11 @@
     <min>36</min>
     <max>36</max>
     <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.GetMediaInsightsPipelineConfigurationRequest.Identifier</property>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.GetMediaPipelineRequest.MediaPipelineId</property>
@@ -64,6 +102,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.ListMediaCapturePipelinesResponse.NextToken</property>
+    <max>4096</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.ListMediaInsightsPipelineConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.ListMediaInsightsPipelineConfigurationsRequest.NextToken</property>
+    <max>4096</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.ListMediaInsightsPipelineConfigurationsResponse.NextToken</property>
     <max>4096</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -98,9 +151,77 @@
     <max>1011</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.UpdateMediaInsightsPipelineConfigurationRequest.Identifier</property>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.UpdateMediaInsightsPipelineConfigurationRequest.ResourceAccessRoleArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.UpdateMediaInsightsPipelineStatusRequest.Identifier</property>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.AmazonTranscribeCallAnalyticsProcessorConfiguration.LanguageModelName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.AmazonTranscribeCallAnalyticsProcessorConfiguration.PiiEntityTypes</property>
+    <min>1</min>
+    <max>300</max>
+    <pattern>^[A-Z_, ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.AmazonTranscribeCallAnalyticsProcessorConfiguration.VocabularyFilterName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.AmazonTranscribeCallAnalyticsProcessorConfiguration.VocabularyName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.AmazonTranscribeProcessorConfiguration.LanguageModelName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.AmazonTranscribeProcessorConfiguration.PiiEntityTypes</property>
+    <min>1</min>
+    <max>300</max>
+    <pattern>^[A-Z_, ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.AmazonTranscribeProcessorConfiguration.VocabularyFilterName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.AmazonTranscribeProcessorConfiguration.VocabularyName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.BadRequestException.RequestId</property>
     <max>4096</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.ChannelDefinition.ChannelId</property>
+    <min>0</min>
+    <max>1</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.ChimeSdkMeetingLiveConnectorConfiguration.Arn</property>
@@ -108,9 +229,41 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.ConflictException.RequestId</property>
+    <max>4096</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException.RequestId</property>
     <max>4096</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.IssueDetectionConfiguration.RuleName</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.KeywordMatchConfiguration.RuleName</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.KinesisDataStreamSinkConfiguration.InsightsTarget</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.KinesisVideoStreamSourceRuntimeConfiguration.MediaSampleRate</property>
+    <min>8000</min>
+    <max>48000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.LambdaFunctionSinkConfiguration.InsightsTarget</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.LiveConnectorRTMPConfiguration.AudioSampleRate</property>
@@ -170,6 +323,61 @@
     <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.MediaInsightsPipeline.MediaInsightsPipelineConfigurationArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.MediaInsightsPipeline.MediaPipelineArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.MediaInsightsPipeline.MediaPipelineId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.MediaInsightsPipelineConfiguration.MediaInsightsPipelineConfigurationArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.MediaInsightsPipelineConfiguration.MediaInsightsPipelineConfigurationId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.MediaInsightsPipelineConfiguration.MediaInsightsPipelineConfigurationName</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.MediaInsightsPipelineConfiguration.ResourceAccessRoleArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.MediaInsightsPipelineConfigurationSummary.MediaInsightsPipelineConfigurationArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.MediaInsightsPipelineConfigurationSummary.MediaInsightsPipelineConfigurationId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.MediaInsightsPipelineConfigurationSummary.MediaInsightsPipelineConfigurationName</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.MediaLiveConnectorPipeline.MediaPipelineArn</property>
     <min>1</min>
     <max>1011</max>
@@ -197,6 +405,27 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.PostCallAnalyticsSettings.DataAccessRoleArn</property>
+    <max>4096</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.PostCallAnalyticsSettings.OutputEncryptionKMSKeyId</property>
+    <max>4096</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.PostCallAnalyticsSettings.OutputLocation</property>
+    <max>4096</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.RecordingStreamConfiguration.StreamArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.ResourceLimitExceededException.RequestId</property>
     <max>4096</max>
     <pattern>.*</pattern>
@@ -207,6 +436,27 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.S3RecordingSinkConfiguration.Destination</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.S3RecordingSinkRuntimeConfiguration.Destination</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.SentimentConfiguration.RuleName</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.SentimentConfiguration.TimePeriod</property>
+    <min>60</min>
+    <max>1800</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException.RequestId</property>
     <max>4096</max>
     <pattern>.*</pattern>
@@ -215,6 +465,33 @@
     <property>Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException.RequestId</property>
     <max>4096</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.SnsTopicSinkConfiguration.InsightsTarget</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.SqsQueueSinkConfiguration.InsightsTarget</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.StreamChannelDefinition.NumberOfChannels</property>
+    <min>1</min>
+    <max>2</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.StreamConfiguration.FragmentNumber</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.StreamConfiguration.StreamArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.Tag.Key</property>

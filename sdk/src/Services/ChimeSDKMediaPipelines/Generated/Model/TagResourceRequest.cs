@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// The ARN of the media pipeline that you want to tag. Consists of he pipeline's endpoint
+    /// The ARN of the media pipeline that you want to tag. Consists of the pipeline's endpoint
     /// region, resource ID, and pipeline ID.
     /// </summary>
     public partial class TagResourceRequest : AmazonChimeSDKMediaPipelinesRequest
@@ -64,7 +64,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// The tags associated with the specified media pipeline.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

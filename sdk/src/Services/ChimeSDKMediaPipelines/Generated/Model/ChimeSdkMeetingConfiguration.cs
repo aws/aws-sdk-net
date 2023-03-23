@@ -58,7 +58,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property SourceConfiguration. 
         /// <para>
-        /// The source configuration for a specified media pipline.
+        /// The source configuration for a specified media pipeline.
         /// </para>
         /// </summary>
         public SourceConfiguration SourceConfiguration
