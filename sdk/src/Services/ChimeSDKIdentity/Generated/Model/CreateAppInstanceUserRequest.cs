@@ -38,6 +38,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         private string _appInstanceArn;
         private string _appInstanceUserId;
         private string _clientRequestToken;
+        private ExpirationSettings _expirationSettings;
         private string _metadata;
         private string _name;
         private List<Tag> _tags = new List<Tag>();
@@ -83,10 +84,10 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The token assigned to the user requesting an <code>AppInstance</code>.
+        /// The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=2, Max=64)]
+        [AWSProperty(Min=2, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -97,6 +98,25 @@ namespace Amazon.ChimeSDKIdentity.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpirationSettings. 
+        /// <para>
+        /// Settings that control the interval after which the <code>AppInstanceUser</code> is
+        /// automatically deleted.
+        /// </para>
+        /// </summary>
+        public ExpirationSettings ExpirationSettings
+        {
+            get { return this._expirationSettings; }
+            set { this._expirationSettings = value; }
+        }
+
+        // Check to see if ExpirationSettings property is set
+        internal bool IsSetExpirationSettings()
+        {
+            return this._expirationSettings != null;
         }
 
         /// <summary>
