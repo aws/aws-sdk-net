@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EksPodPropertiesOverride Marshaller
+    /// EksMetadata Marshaller
     /// </summary>
-    public class EksPodPropertiesOverrideMarshaller : IRequestMarshaller<EksPodPropertiesOverride, JsonMarshallerContext> 
+    public class EksMetadataMarshaller : IRequestMarshaller<EksMetadata, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,32 +43,19 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EksPodPropertiesOverride requestObject, JsonMarshallerContext context)
+        public void Marshall(EksMetadata requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetContainers())
+            if(requestObject.IsSetLabels())
             {
-                context.Writer.WritePropertyName("containers");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectContainersListValue in requestObject.Containers)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EksContainerOverrideMarshaller.Instance;
-                    marshaller.Marshall(requestObjectContainersListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetMetadata())
-            {
-                context.Writer.WritePropertyName("metadata");
+                context.Writer.WritePropertyName("labels");
                 context.Writer.WriteObjectStart();
+                foreach (var requestObjectLabelsKvp in requestObject.Labels)
+                {
+                    context.Writer.WritePropertyName(requestObjectLabelsKvp.Key);
+                    var requestObjectLabelsValue = requestObjectLabelsKvp.Value;
 
-                var marshaller = EksMetadataMarshaller.Instance;
-                marshaller.Marshall(requestObject.Metadata, context);
-
+                        context.Writer.Write(requestObjectLabelsValue);
+                }
                 context.Writer.WriteObjectEnd();
             }
 
@@ -77,7 +64,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EksPodPropertiesOverrideMarshaller Instance = new EksPodPropertiesOverrideMarshaller();
+        public readonly static EksMetadataMarshaller Instance = new EksMetadataMarshaller();
 
     }
 }

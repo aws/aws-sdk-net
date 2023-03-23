@@ -34,6 +34,7 @@ namespace Amazon.Batch.Model
     public partial class EksPodPropertiesOverride
     {
         private List<EksContainerOverride> _containers = new List<EksContainerOverride>();
+        private EksMetadata _metadata;
 
         /// <summary>
         /// Gets and sets the property Containers. 
@@ -51,6 +52,21 @@ namespace Amazon.Batch.Model
         internal bool IsSetContainers()
         {
             return this._containers != null && this._containers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata.
+        /// </summary>
+        public EksMetadata Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null;
         }
 
     }

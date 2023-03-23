@@ -36,6 +36,7 @@ namespace Amazon.Batch.Model
         private List<EksContainer> _containers = new List<EksContainer>();
         private string _dnsPolicy;
         private bool? _hostNetwork;
+        private EksMetadata _metadata;
         private string _serviceAccountName;
         private List<EksVolume> _volumes = new List<EksVolume>();
 
@@ -106,6 +107,21 @@ namespace Amazon.Batch.Model
         internal bool IsSetHostNetwork()
         {
             return this._hostNetwork.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata.
+        /// </summary>
+        public EksMetadata Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null;
         }
 
         /// <summary>

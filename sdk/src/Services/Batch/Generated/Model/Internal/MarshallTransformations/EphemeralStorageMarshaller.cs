@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EksPodPropertiesOverride Marshaller
+    /// EphemeralStorage Marshaller
     /// </summary>
-    public class EksPodPropertiesOverrideMarshaller : IRequestMarshaller<EksPodPropertiesOverride, JsonMarshallerContext> 
+    public class EphemeralStorageMarshaller : IRequestMarshaller<EphemeralStorage, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,33 +43,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EksPodPropertiesOverride requestObject, JsonMarshallerContext context)
+        public void Marshall(EphemeralStorage requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetContainers())
+            if(requestObject.IsSetSizeInGiB())
             {
-                context.Writer.WritePropertyName("containers");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectContainersListValue in requestObject.Containers)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EksContainerOverrideMarshaller.Instance;
-                    marshaller.Marshall(requestObjectContainersListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetMetadata())
-            {
-                context.Writer.WritePropertyName("metadata");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EksMetadataMarshaller.Instance;
-                marshaller.Marshall(requestObject.Metadata, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("sizeInGiB");
+                context.Writer.Write(requestObject.SizeInGiB);
             }
 
         }
@@ -77,7 +56,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EksPodPropertiesOverrideMarshaller Instance = new EksPodPropertiesOverrideMarshaller();
+        public readonly static EphemeralStorageMarshaller Instance = new EphemeralStorageMarshaller();
 
     }
 }

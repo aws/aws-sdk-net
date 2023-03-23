@@ -36,6 +36,7 @@ namespace Amazon.Batch.Model
         private List<string> _command = new List<string>();
         private string _containerInstanceArn;
         private List<KeyValuePair> _environment = new List<KeyValuePair>();
+        private EphemeralStorage _ephemeralStorage;
         private string _executionRoleArn;
         private int? _exitCode;
         private FargatePlatformConfiguration _fargatePlatformConfiguration;
@@ -119,6 +120,21 @@ namespace Amazon.Batch.Model
         internal bool IsSetEnvironment()
         {
             return this._environment != null && this._environment.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EphemeralStorage.
+        /// </summary>
+        public EphemeralStorage EphemeralStorage
+        {
+            get { return this._ephemeralStorage; }
+            set { this._ephemeralStorage = value; }
+        }
+
+        // Check to see if EphemeralStorage property is set
+        internal bool IsSetEphemeralStorage()
+        {
+            return this._ephemeralStorage != null;
         }
 
         /// <summary>
