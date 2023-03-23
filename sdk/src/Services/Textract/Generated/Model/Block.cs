@@ -122,8 +122,23 @@ namespace Amazon.Textract.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <i>TABLE_TITLE</i> - The title of a table. A title is typically a line of text above
+        /// or below a table, or embedded as the first row of a table. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>TABLE_FOOTER</i> - The footer associated with a table. A footer is typically a
+        /// line or lines of text below a table or embedded as the last row of a table. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <i>CELL</i> - A cell within a detected table. The cell is the parent of the block
         /// that contains the text in the cell.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>MERGED_CELL</i> - A cell in a table whose content spans more than one row or column.
+        /// The <code>Relationships</code> array for this cell contain data from individual cells.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -184,10 +199,8 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property ColumnSpan. 
         /// <para>
-        /// The number of columns that a table cell spans. Currently this value is always 1, even
-        /// if the number of columns spanned is greater than 1. <code>ColumnSpan</code> isn't
-        /// returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
-        /// 
+        /// The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned
+        /// by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -226,7 +239,11 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property EntityTypes. 
         /// <para>
-        /// The type of entity. The following can be returned:
+        /// The type of entity. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following entity types can be returned by FORMS analysis:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -235,6 +252,43 @@ namespace Amazon.Textract.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>VALUE</i> - The field text.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following entity types can be returned by TABLES analysis:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>TABLE_TITLE</i> - Identifies a cell that is a title within the table. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>TABLE_SECTION_TITLE</i> - Identifies a cell that is a title of a section within
+        /// a table. A section title is a cell that typically spans an entire row above a section.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>TABLE_FOOTER</i> - Identifies a cell that is a footer of a table. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can be
+        /// a row of a table or an additional, smaller table that contains summary information
+        /// for another table. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>STRUCTURED_TABLE </i> - Identifies a table with column headers where the content
+        /// of each row corresponds to the headers. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -300,8 +354,8 @@ namespace Amazon.Textract.Model
         /// documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an
         /// asynchronous operation, even if it contains multiple document pages, is considered
         /// a single-page document. This means that for scanned images the value of <code>Page</code>
-        /// is always 1. Synchronous operations operations will also return a <code>Page</code>
-        /// value of 1 because every input document is considered to be a single-page document.
+        /// is always 1. Synchronous operations will also return a <code>Page</code> value of
+        /// 1 because every input document is considered to be a single-page document.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -335,20 +389,11 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Relationships. 
         /// <para>
-        /// A list of child blocks of the current block. For example, a LINE object has child
-        /// blocks for each WORD block that's part of the line of text. There aren't Relationship
-        /// objects in the list for relationships that don't exist, such as when the current block
-        /// has no child blocks. The list size can be the following:
+        /// A list of relationship objects that describe how blocks are related to each other.
+        /// For example, a LINE block object contains a CHILD relationship type with the WORD
+        /// blocks that make up the line of text. There aren't Relationship objects in the list
+        /// for relationships that don't exist, such as when the current block has no child blocks.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// 0 - The block has no child blocks.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// 1 - The block has child blocks.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<Relationship> Relationships
         {
@@ -385,9 +430,8 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property RowSpan. 
         /// <para>
-        /// The number of rows that a table cell spans. Currently this value is always 1, even
-        /// if the number of rows spanned is greater than 1. <code>RowSpan</code> isn't returned
-        /// by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
+        /// The number of rows that a table cell spans. <code>RowSpan</code> isn't returned by
+        /// <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
