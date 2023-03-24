@@ -575,17 +575,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version of the database engine to use for the new DB cluster.
-        /// </para>
-        ///  
-        /// <para>
-        /// To list all of the available engine versions for MySQL 5.6-compatible Aurora, use
-        /// the following command:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
-        /// 
+        /// The version of the database engine to use for the new DB cluster. If you don't specify
+        /// an engine version, the default version for the database engine in the Amazon Web Services
+        /// Region is used.
         /// </para>
         ///  
         /// <para>
@@ -633,8 +625,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL
-        /// on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide</i>.
+        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">Database
+        /// engine updates for Amazon Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -651,8 +643,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-        /// on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> 
+        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">Amazon
+        /// RDS for MySQL</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
         /// <para>
