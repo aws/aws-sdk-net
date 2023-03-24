@@ -1,3 +1,14 @@
+### 3.7.512.0 (2023-03-24 18:21 UTC)
+* CloudWatch (3.7.103.43)
+	* Doc-only update to correct alarm actions list
+* Comprehend (3.7.103.0)
+	* This release adds a new field (FlywheelArn) to the EntitiesDetectionJobProperties object. The FlywheelArn field is returned in the DescribeEntitiesDetectionJob and ListEntitiesDetectionJobs responses when the EntitiesDetection job is started with a FlywheelArn instead of an EntityRecognizerArn .
+* RDS (3.7.115.0)
+	* Added error code CreateCustomDBEngineVersionFault for when the create custom engine version for Custom engines fails.
+* Core 3.7.106.6
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.511.0 (2023-03-23 18:27 UTC)
 * Batch (3.7.103.0)
 	* This feature allows Batch to support configuration of ephemeral storage size for jobs running on FARGATE
