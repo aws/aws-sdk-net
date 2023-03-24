@@ -73,7 +73,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// The dimensions associated with the metric.
+        /// The dimensions associated with the metric. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=30)]
