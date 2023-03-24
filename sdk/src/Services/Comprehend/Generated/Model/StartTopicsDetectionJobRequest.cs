@@ -68,9 +68,9 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that grants Amazon Comprehend read access to your input data. For more information,
-        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.
+        /// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read
+        /// access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions">Role-based
+        /// permissions</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -188,9 +188,9 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property VolumeKmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the
-        /// analysis job. The VolumeKmsKeyId can be either of the following formats:
+        /// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend
+        /// uses to encrypt data on the storage volume attached to the ML compute instance(s)
+        /// that process the analysis job. The VolumeKmsKeyId can be either of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>

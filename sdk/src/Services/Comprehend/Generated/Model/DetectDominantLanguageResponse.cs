@@ -38,11 +38,16 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Languages. 
         /// <para>
-        /// The languages that Amazon Comprehend detected in the input text. For each language,
-        /// the response returns the RFC 5646 language code and the level of confidence that Amazon
-        /// Comprehend has in the accuracy of its inference. For more information about RFC 5646,
-        /// see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a>
-        /// on the <i>IETF Tools</i> web site.
+        /// Array of languages that Amazon Comprehend detected in the input text. The array is
+        /// sorted in descending order of the score (the dominant language is always the first
+        /// element in the array).
+        /// </para>
+        ///  
+        /// <para>
+        /// For each language, the response returns the RFC 5646 language code and the level of
+        /// confidence that Amazon Comprehend has in the accuracy of its inference. For more information
+        /// about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying
+        /// Languages</a> on the <i>IETF Tools</i> web site.
         /// </para>
         /// </summary>
         public List<DominantLanguage> Languages

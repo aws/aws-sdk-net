@@ -30,9 +30,10 @@ namespace Amazon.Comprehend.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFlywheel operation.
-    /// A flywheel is an AWS resource that orchestrates the ongoing training of a model for
-    /// custom classification or custom entity recognition. You can create a flywheel to start
-    /// with an existing trained model, or Comprehend can create and train a new model.
+    /// A flywheel is an Amazon Web Services resource that orchestrates the ongoing training
+    /// of a model for custom classification or custom entity recognition. You can create
+    /// a flywheel to start with an existing trained model, or Comprehend can create and train
+    /// a new model.
     /// 
     ///  
     /// <para>
@@ -111,9 +112,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that grants Amazon Comprehend the permissions required to access the flywheel data
-        /// in the data lake.
+        /// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend the permissions
+        /// required to access the flywheel data in the data lake.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

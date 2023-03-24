@@ -61,8 +61,8 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property JobArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the document classification job. It is a unique,
-        /// fully qualified identifier for the job. It includes the AWS account, Region, and the
-        /// job ID. The format of the ARN is as follows:
+        /// fully qualified identifier for the job. It includes the Amazon Web Services account,
+        /// Amazon Web Services Region, and the job ID. The format of the ARN is as follows:
         /// </para>
         ///  
         /// <para>

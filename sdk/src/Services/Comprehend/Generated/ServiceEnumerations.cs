@@ -1257,6 +1257,10 @@ namespace Amazon.Comprehend
         /// </summary>
         public static readonly ModelStatus TRAINED = new ModelStatus("TRAINED");
         /// <summary>
+        /// Constant TRAINED_WITH_WARNING for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus TRAINED_WITH_WARNING = new ModelStatus("TRAINED_WITH_WARNING");
+        /// <summary>
         /// Constant TRAINING for ModelStatus
         /// </summary>
         public static readonly ModelStatus TRAINING = new ModelStatus("TRAINING");

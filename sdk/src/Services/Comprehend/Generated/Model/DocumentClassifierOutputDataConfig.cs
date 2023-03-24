@@ -59,9 +59,9 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// the output results from an analysis job. The KmsKeyId can be one of the following
-        /// formats:
+        /// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend
+        /// uses to encrypt the output results from an analysis job. The KmsKeyId can be one of
+        /// the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -101,7 +101,7 @@ namespace Amazon.Comprehend.Model
         /// <para>
         /// When you use the <code>OutputDataConfig</code> object while creating a custom classifier,
         /// you specify the Amazon S3 location where you want to write the confusion matrix. The
-        /// URI must be in the same region as the API endpoint that you are calling. The location
+        /// URI must be in the same Region as the API endpoint that you are calling. The location
         /// is used as the prefix for the actual location of this output file.
         /// </para>
         ///  

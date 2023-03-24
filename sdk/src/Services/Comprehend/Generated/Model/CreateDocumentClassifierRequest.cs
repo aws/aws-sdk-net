@@ -75,8 +75,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that grants Amazon Comprehend read access to your input data.
+        /// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read
+        /// access to your input data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -175,8 +175,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property ModelKmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// trained custom models. The ModelKmsKeyId can be either of the following formats:
+        /// ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The
+        /// ModelKmsKeyId can be either of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -206,7 +206,8 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property ModelPolicy. 
         /// <para>
         /// The resource-based policy to attach to your custom document classifier model. You
-        /// can use this policy to allow another AWS account to import your custom model.
+        /// can use this policy to allow another Amazon Web Services account to import your custom
+        /// model.
         /// </para>
         ///  
         /// <para>
@@ -288,7 +289,7 @@ namespace Amazon.Comprehend.Model
         /// The version name given to the newly created classifier. Version names can have a maximum
         /// of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
         /// The version name must be unique among all models with the same classifier name in
-        /// the account/AWS Region.
+        /// the Amazon Web Services account/Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]
@@ -307,9 +308,9 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property VolumeKmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the
-        /// analysis job. The VolumeKmsKeyId can be either of the following formats:
+        /// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend
+        /// uses to encrypt data on the storage volume attached to the ML compute instance(s)
+        /// that process the analysis job. The VolumeKmsKeyId can be either of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>

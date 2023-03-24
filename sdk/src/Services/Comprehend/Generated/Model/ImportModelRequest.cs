@@ -31,17 +31,17 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Container for the parameters to the ImportModel operation.
     /// Creates a new custom model that replicates a source custom model that you import.
-    /// The source model can be in your AWS account or another one.
+    /// The source model can be in your Amazon Web Services account or another one.
     /// 
     ///  
     /// <para>
-    /// If the source model is in another AWS account, then it must have a resource-based
-    /// policy that authorizes you to import it.
+    /// If the source model is in another Amazon Web Services account, then it must have a
+    /// resource-based policy that authorizes you to import it.
     /// </para>
     ///  
     /// <para>
-    /// The source model must be in the same AWS region that you're using when you import.
-    /// You can't import a model that's in a different region.
+    /// The source model must be in the same Amazon Web Services Region that you're using
+    /// when you import. You can't import a model that's in a different Region.
     /// </para>
     /// </summary>
     public partial class ImportModelRequest : AmazonComprehendRequest
@@ -56,9 +56,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that grants Amazon Comprehend permission to use Amazon Key Management Service (KMS)
-        /// to encrypt or decrypt the custom model.
+        /// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission
+        /// to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -77,8 +76,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property ModelKmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// trained custom models. The ModelKmsKeyId can be either of the following formats:
+        /// ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The
+        /// ModelKmsKeyId can be either of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -170,7 +169,7 @@ namespace Amazon.Comprehend.Model
         /// The version name given to the custom model that is created by this import. Version
         /// names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
         /// underscores (_) are allowed. The version name must be unique among all models with
-        /// the same classifier name in the account/AWS Region.
+        /// the same classifier name in the account/Region.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]
