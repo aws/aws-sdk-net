@@ -30,16 +30,18 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// The configuration information that will be updated for this workgroup, which includes
-    /// the location in Amazon S3 where query results are stored, the encryption option, if
-    /// any, used for query results, whether the Amazon CloudWatch Metrics are enabled for
-    /// the workgroup, whether the workgroup settings override the client-side settings, and
-    /// the data usage limit for the amount of bytes scanned per query, if it is specified.
+    /// the location in Amazon S3 where query and calculation results are stored, the encryption
+    /// option, if any, used for query results, whether the Amazon CloudWatch Metrics are
+    /// enabled for the workgroup, whether the workgroup settings override the client-side
+    /// settings, and the data usage limit for the amount of bytes scanned per query, if it
+    /// is specified.
     /// </summary>
     public partial class WorkGroupConfigurationUpdates
     {
         private string _additionalConfiguration;
         private long? _bytesScannedCutoffPerQuery;
         private CustomerContentEncryptionConfiguration _customerContentEncryptionConfiguration;
+        private bool? _enableMinimumEncryptionConfiguration;
         private bool? _enforceWorkGroupConfiguration;
         private EngineVersion _engineVersion;
         private string _executionRole;
@@ -101,6 +103,33 @@ namespace Amazon.Athena.Model
         internal bool IsSetCustomerContentEncryptionConfiguration()
         {
             return this._customerContentEncryptionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableMinimumEncryptionConfiguration. 
+        /// <para>
+        /// Enforces a minimal level of encryption for the workgroup for query and calculation
+        /// results that are written to Amazon S3. When enabled, workgroup users can set encryption
+        /// only to the minimum level set by the administrator or higher when they submit queries.
+        /// This setting does not apply to Spark-enabled workgroups.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the <code>EnableMinimumEncryptionConfiguration</code>
+        /// flag. This means that if <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code>
+        /// flag is ignored, and the workgroup configuration for encryption is used.
+        /// </para>
+        /// </summary>
+        public bool EnableMinimumEncryptionConfiguration
+        {
+            get { return this._enableMinimumEncryptionConfiguration.GetValueOrDefault(); }
+            set { this._enableMinimumEncryptionConfiguration = value; }
+        }
+
+        // Check to see if EnableMinimumEncryptionConfiguration property is set
+        internal bool IsSetEnableMinimumEncryptionConfiguration()
+        {
+            return this._enableMinimumEncryptionConfiguration.HasValue; 
         }
 
         /// <summary>

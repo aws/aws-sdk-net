@@ -43,10 +43,10 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property AdditionalConfigs. 
         /// <para>
         /// Contains additional notebook engine <code>MAP&lt;string, string&gt;</code> parameter
-        /// mappings in the form of key-value pairs. To specify an Amazon S3 URI that the Jupyter
+        /// mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter
         /// server will download and serve, specify a value for the <a>StartSessionRequest$NotebookVersion</a>
-        /// field, and then add a key named <code>NotebookFileURI</code> to <code>AdditionalConfigs</code>
-        /// that has value of the Amazon S3 URI.
+        /// field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code>
+        /// that has the value of the Athena notebook ID.
         /// </para>
         /// </summary>
         public Dictionary<string, string> AdditionalConfigs

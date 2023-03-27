@@ -68,6 +68,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEnableMinimumEncryptionConfiguration())
+            {
+                context.Writer.WritePropertyName("EnableMinimumEncryptionConfiguration");
+                context.Writer.Write(requestObject.EnableMinimumEncryptionConfiguration);
+            }
+
             if(requestObject.IsSetEnforceWorkGroupConfiguration())
             {
                 context.Writer.WritePropertyName("EnforceWorkGroupConfiguration");

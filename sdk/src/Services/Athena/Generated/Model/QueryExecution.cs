@@ -143,10 +143,11 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property ResultConfiguration. 
         /// <para>
-        /// The location in Amazon S3 where query results were stored and the encryption option,
-        /// if any, used for query results. These are known as "client-side settings". If workgroup
-        /// settings override client-side settings, then the query uses the location for the query
-        /// results and the encryption configuration that are specified for the workgroup.
+        /// The location in Amazon S3 where query and calculation results are stored and the encryption
+        /// option, if any, used for query results. These are known as "client-side settings".
+        /// If workgroup settings override client-side settings, then the query uses the location
+        /// for the query results and the encryption configuration that are specified for the
+        /// workgroup.
         /// </para>
         /// </summary>
         public ResultConfiguration ResultConfiguration
