@@ -190,6 +190,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsEc2NetworkInterface = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsEc2RouteTable", targetDepth))
+                {
+                    var unmarshaller = AwsEc2RouteTableDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsEc2RouteTable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsEc2SecurityGroup", targetDepth))
                 {
                     var unmarshaller = AwsEc2SecurityGroupDetailsUnmarshaller.Instance;

@@ -96,7 +96,7 @@ namespace Amazon.SecurityHub.Model
         /// The value for this field in a member account matches the value in the administrator
         /// account. For accounts that aren't part of an organization, the default value of this
         /// field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February
-        /// 9, 2023.
+        /// 23, 2023.
         /// </para>
         /// </summary>
         public ControlFindingGenerator ControlFindingGenerator

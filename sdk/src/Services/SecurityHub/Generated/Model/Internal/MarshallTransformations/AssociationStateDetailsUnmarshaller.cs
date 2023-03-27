@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AwsEksClusterResourcesVpcConfigDetails Object
+    /// Response Unmarshaller for AssociationStateDetails Object
     /// </summary>  
-    public class AwsEksClusterResourcesVpcConfigDetailsUnmarshaller : IUnmarshaller<AwsEksClusterResourcesVpcConfigDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEksClusterResourcesVpcConfigDetails, JsonUnmarshallerContext>
+    public class AssociationStateDetailsUnmarshaller : IUnmarshaller<AssociationStateDetails, XmlUnmarshallerContext>, IUnmarshaller<AssociationStateDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AwsEksClusterResourcesVpcConfigDetails IUnmarshaller<AwsEksClusterResourcesVpcConfigDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AssociationStateDetails IUnmarshaller<AssociationStateDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AwsEksClusterResourcesVpcConfigDetails Unmarshall(JsonUnmarshallerContext context)
+        public AssociationStateDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsEksClusterResourcesVpcConfigDetails unmarshalledObject = new AwsEksClusterResourcesVpcConfigDetails();
+            AssociationStateDetails unmarshalledObject = new AssociationStateDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EndpointPublicAccess", targetDepth))
+                if (context.TestExpression("State", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EndpointPublicAccess = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SecurityGroupIds", targetDepth))
+                if (context.TestExpression("StatusMessage", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SubnetIds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static AwsEksClusterResourcesVpcConfigDetailsUnmarshaller _instance = new AwsEksClusterResourcesVpcConfigDetailsUnmarshaller();        
+        private static AssociationStateDetailsUnmarshaller _instance = new AssociationStateDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AwsEksClusterResourcesVpcConfigDetailsUnmarshaller Instance
+        public static AssociationStateDetailsUnmarshaller Instance
         {
             get
             {

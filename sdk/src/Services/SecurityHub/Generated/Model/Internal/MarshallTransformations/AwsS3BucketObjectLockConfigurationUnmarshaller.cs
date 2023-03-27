@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AwsEksClusterResourcesVpcConfigDetails Object
+    /// Response Unmarshaller for AwsS3BucketObjectLockConfiguration Object
     /// </summary>  
-    public class AwsEksClusterResourcesVpcConfigDetailsUnmarshaller : IUnmarshaller<AwsEksClusterResourcesVpcConfigDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEksClusterResourcesVpcConfigDetails, JsonUnmarshallerContext>
+    public class AwsS3BucketObjectLockConfigurationUnmarshaller : IUnmarshaller<AwsS3BucketObjectLockConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AwsS3BucketObjectLockConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AwsEksClusterResourcesVpcConfigDetails IUnmarshaller<AwsEksClusterResourcesVpcConfigDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AwsS3BucketObjectLockConfiguration IUnmarshaller<AwsS3BucketObjectLockConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AwsEksClusterResourcesVpcConfigDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsS3BucketObjectLockConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsEksClusterResourcesVpcConfigDetails unmarshalledObject = new AwsEksClusterResourcesVpcConfigDetails();
+            AwsS3BucketObjectLockConfiguration unmarshalledObject = new AwsS3BucketObjectLockConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EndpointPublicAccess", targetDepth))
+                if (context.TestExpression("ObjectLockEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EndpointPublicAccess = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ObjectLockEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SecurityGroupIds", targetDepth))
+                if (context.TestExpression("Rule", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SubnetIds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AwsS3BucketObjectLockConfigurationRuleDetailsUnmarshaller.Instance;
+                    unmarshalledObject.Rule = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static AwsEksClusterResourcesVpcConfigDetailsUnmarshaller _instance = new AwsEksClusterResourcesVpcConfigDetailsUnmarshaller();        
+        private static AwsS3BucketObjectLockConfigurationUnmarshaller _instance = new AwsS3BucketObjectLockConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AwsEksClusterResourcesVpcConfigDetailsUnmarshaller Instance
+        public static AwsS3BucketObjectLockConfigurationUnmarshaller Instance
         {
             get
             {

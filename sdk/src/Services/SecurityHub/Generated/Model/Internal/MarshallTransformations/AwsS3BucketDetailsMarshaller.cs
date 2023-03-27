@@ -112,6 +112,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CreatedAt);
             }
 
+            if(requestObject.IsSetObjectLockConfiguration())
+            {
+                context.Writer.WritePropertyName("ObjectLockConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsS3BucketObjectLockConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ObjectLockConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOwnerAccountId())
             {
                 context.Writer.WritePropertyName("OwnerAccountId");

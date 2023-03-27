@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AwsEksClusterResourcesVpcConfigDetails Object
+    /// Response Unmarshaller for AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails Object
     /// </summary>  
-    public class AwsEksClusterResourcesVpcConfigDetailsUnmarshaller : IUnmarshaller<AwsEksClusterResourcesVpcConfigDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEksClusterResourcesVpcConfigDetails, JsonUnmarshallerContext>
+    public class AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetailsUnmarshaller : IUnmarshaller<AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AwsEksClusterResourcesVpcConfigDetails IUnmarshaller<AwsEksClusterResourcesVpcConfigDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails IUnmarshaller<AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AwsEksClusterResourcesVpcConfigDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsEksClusterResourcesVpcConfigDetails unmarshalledObject = new AwsEksClusterResourcesVpcConfigDetails();
+            AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails unmarshalledObject = new AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EndpointPublicAccess", targetDepth))
+                if (context.TestExpression("Days", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EndpointPublicAccess = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Days = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SecurityGroupIds", targetDepth))
+                if (context.TestExpression("Mode", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SubnetIds", targetDepth))
+                if (context.TestExpression("Years", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Years = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static AwsEksClusterResourcesVpcConfigDetailsUnmarshaller _instance = new AwsEksClusterResourcesVpcConfigDetailsUnmarshaller();        
+        private static AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetailsUnmarshaller _instance = new AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AwsEksClusterResourcesVpcConfigDetailsUnmarshaller Instance
+        public static AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetailsUnmarshaller Instance
         {
             get
             {

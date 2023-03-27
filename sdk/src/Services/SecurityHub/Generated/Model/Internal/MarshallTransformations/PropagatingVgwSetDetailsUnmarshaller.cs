@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AwsEksClusterResourcesVpcConfigDetails Object
+    /// Response Unmarshaller for PropagatingVgwSetDetails Object
     /// </summary>  
-    public class AwsEksClusterResourcesVpcConfigDetailsUnmarshaller : IUnmarshaller<AwsEksClusterResourcesVpcConfigDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEksClusterResourcesVpcConfigDetails, JsonUnmarshallerContext>
+    public class PropagatingVgwSetDetailsUnmarshaller : IUnmarshaller<PropagatingVgwSetDetails, XmlUnmarshallerContext>, IUnmarshaller<PropagatingVgwSetDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AwsEksClusterResourcesVpcConfigDetails IUnmarshaller<AwsEksClusterResourcesVpcConfigDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PropagatingVgwSetDetails IUnmarshaller<PropagatingVgwSetDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AwsEksClusterResourcesVpcConfigDetails Unmarshall(JsonUnmarshallerContext context)
+        public PropagatingVgwSetDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsEksClusterResourcesVpcConfigDetails unmarshalledObject = new AwsEksClusterResourcesVpcConfigDetails();
+            PropagatingVgwSetDetails unmarshalledObject = new PropagatingVgwSetDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EndpointPublicAccess", targetDepth))
+                if (context.TestExpression("GatewayId", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EndpointPublicAccess = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SecurityGroupIds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SubnetIds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GatewayId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static AwsEksClusterResourcesVpcConfigDetailsUnmarshaller _instance = new AwsEksClusterResourcesVpcConfigDetailsUnmarshaller();        
+        private static PropagatingVgwSetDetailsUnmarshaller _instance = new PropagatingVgwSetDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AwsEksClusterResourcesVpcConfigDetailsUnmarshaller Instance
+        public static PropagatingVgwSetDetailsUnmarshaller Instance
         {
             get
             {

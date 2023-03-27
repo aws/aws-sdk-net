@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AwsEksClusterResourcesVpcConfigDetails Marshaller
+    /// AwsS3BucketObjectLockConfiguration Marshaller
     /// </summary>
-    public class AwsEksClusterResourcesVpcConfigDetailsMarshaller : IRequestMarshaller<AwsEksClusterResourcesVpcConfigDetails, JsonMarshallerContext> 
+    public class AwsS3BucketObjectLockConfigurationMarshaller : IRequestMarshaller<AwsS3BucketObjectLockConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,23 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AwsEksClusterResourcesVpcConfigDetails requestObject, JsonMarshallerContext context)
+        public void Marshall(AwsS3BucketObjectLockConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEndpointPublicAccess())
+            if(requestObject.IsSetObjectLockEnabled())
             {
-                context.Writer.WritePropertyName("EndpointPublicAccess");
-                context.Writer.Write(requestObject.EndpointPublicAccess);
+                context.Writer.WritePropertyName("ObjectLockEnabled");
+                context.Writer.Write(requestObject.ObjectLockEnabled);
             }
 
-            if(requestObject.IsSetSecurityGroupIds())
+            if(requestObject.IsSetRule())
             {
-                context.Writer.WritePropertyName("SecurityGroupIds");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
-                {
-                        context.Writer.Write(requestObjectSecurityGroupIdsListValue);
-                }
-                context.Writer.WriteArrayEnd();
-            }
+                context.Writer.WritePropertyName("Rule");
+                context.Writer.WriteObjectStart();
 
-            if(requestObject.IsSetSubnetIds())
-            {
-                context.Writer.WritePropertyName("SubnetIds");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectSubnetIdsListValue in requestObject.SubnetIds)
-                {
-                        context.Writer.Write(requestObjectSubnetIdsListValue);
-                }
-                context.Writer.WriteArrayEnd();
+                var marshaller = AwsS3BucketObjectLockConfigurationRuleDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Rule, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -78,7 +67,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AwsEksClusterResourcesVpcConfigDetailsMarshaller Instance = new AwsEksClusterResourcesVpcConfigDetailsMarshaller();
+        public readonly static AwsS3BucketObjectLockConfigurationMarshaller Instance = new AwsS3BucketObjectLockConfigurationMarshaller();
 
     }
 }

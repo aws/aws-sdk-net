@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AwsEksClusterResourcesVpcConfigDetails Object
+    /// Response Unmarshaller for AwsEc2InstanceMonitoringDetails Object
     /// </summary>  
-    public class AwsEksClusterResourcesVpcConfigDetailsUnmarshaller : IUnmarshaller<AwsEksClusterResourcesVpcConfigDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEksClusterResourcesVpcConfigDetails, JsonUnmarshallerContext>
+    public class AwsEc2InstanceMonitoringDetailsUnmarshaller : IUnmarshaller<AwsEc2InstanceMonitoringDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2InstanceMonitoringDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AwsEksClusterResourcesVpcConfigDetails IUnmarshaller<AwsEksClusterResourcesVpcConfigDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AwsEc2InstanceMonitoringDetails IUnmarshaller<AwsEc2InstanceMonitoringDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AwsEksClusterResourcesVpcConfigDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2InstanceMonitoringDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsEksClusterResourcesVpcConfigDetails unmarshalledObject = new AwsEksClusterResourcesVpcConfigDetails();
+            AwsEc2InstanceMonitoringDetails unmarshalledObject = new AwsEc2InstanceMonitoringDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EndpointPublicAccess", targetDepth))
+                if (context.TestExpression("State", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EndpointPublicAccess = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SecurityGroupIds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SubnetIds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static AwsEksClusterResourcesVpcConfigDetailsUnmarshaller _instance = new AwsEksClusterResourcesVpcConfigDetailsUnmarshaller();        
+        private static AwsEc2InstanceMonitoringDetailsUnmarshaller _instance = new AwsEc2InstanceMonitoringDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AwsEksClusterResourcesVpcConfigDetailsUnmarshaller Instance
+        public static AwsEc2InstanceMonitoringDetailsUnmarshaller Instance
         {
             get
             {
