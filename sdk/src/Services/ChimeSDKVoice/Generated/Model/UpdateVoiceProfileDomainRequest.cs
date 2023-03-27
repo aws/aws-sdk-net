@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateVoiceProfileDomain operation.
-    /// 
+    /// Updates the settings for the specified voice profile domain.
     /// </summary>
     public partial class UpdateVoiceProfileDomainRequest : AmazonChimeSDKVoiceRequest
     {
@@ -39,7 +39,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceProfileDomainId;
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the voice profile domain.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
         public string Description
@@ -55,7 +58,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the voice profile domain.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string Name
@@ -71,7 +77,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceProfileDomainId.
+        /// Gets and sets the property VoiceProfileDomainId. 
+        /// <para>
+        /// The domain ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string VoiceProfileDomainId

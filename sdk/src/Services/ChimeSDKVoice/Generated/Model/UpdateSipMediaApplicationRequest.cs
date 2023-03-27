@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSipMediaApplication operation.
-    /// 
+    /// Updates the details of the specified SIP media application.
     /// </summary>
     public partial class UpdateSipMediaApplicationRequest : AmazonChimeSDKVoiceRequest
     {
@@ -39,7 +39,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _sipMediaApplicationId;
 
         /// <summary>
-        /// Gets and sets the property Endpoints.
+        /// Gets and sets the property Endpoints. 
+        /// <para>
+        /// The new set of endpoints for the specified SIP media application.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<SipMediaApplicationEndpoint> Endpoints
@@ -55,7 +58,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The new name for the specified SIP media application.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string Name
@@ -71,7 +77,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SipMediaApplicationId.
+        /// Gets and sets the property SipMediaApplicationId. 
+        /// <para>
+        /// The SIP media application ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SipMediaApplicationId

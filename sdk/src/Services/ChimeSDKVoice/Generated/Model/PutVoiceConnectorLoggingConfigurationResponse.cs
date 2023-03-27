@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private LoggingConfiguration _loggingConfiguration;
 
         /// <summary>
-        /// Gets and sets the property LoggingConfiguration.
+        /// Gets and sets the property LoggingConfiguration. 
+        /// <para>
+        /// The updated logging configuration.
+        /// </para>
         /// </summary>
         public LoggingConfiguration LoggingConfiguration
         {

@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSipRule operation.
-    /// 
+    /// Updates the details of the specified SIP rule.
     /// </summary>
     public partial class UpdateSipRuleRequest : AmazonChimeSDKVoiceRequest
     {
@@ -40,7 +40,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private List<SipRuleTargetApplication> _targetApplications = new List<SipRuleTargetApplication>();
 
         /// <summary>
-        /// Gets and sets the property Disabled.
+        /// Gets and sets the property Disabled. 
+        /// <para>
+        /// The new value that indicates whether the rule is disabled.
+        /// </para>
         /// </summary>
         public bool Disabled
         {
@@ -55,7 +58,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The new name for the specified SIP rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
@@ -71,7 +77,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SipRuleId.
+        /// Gets and sets the property SipRuleId. 
+        /// <para>
+        /// The SIP rule ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SipRuleId
@@ -87,7 +96,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetApplications.
+        /// Gets and sets the property TargetApplications. 
+        /// <para>
+        /// The new list of target applications.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
         public List<SipRuleTargetApplication> TargetApplications

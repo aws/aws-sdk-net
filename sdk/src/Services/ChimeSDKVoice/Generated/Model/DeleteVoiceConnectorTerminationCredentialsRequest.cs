@@ -30,7 +30,8 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVoiceConnectorTerminationCredentials operation.
-    /// 
+    /// Deletes the specified SIP credentials used by your equipment to authenticate during
+    /// call termination.
     /// </summary>
     public partial class DeleteVoiceConnectorTerminationCredentialsRequest : AmazonChimeSDKVoiceRequest
     {
@@ -38,7 +39,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property Usernames.
+        /// Gets and sets the property Usernames. 
+        /// <para>
+        /// The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Usernames
@@ -54,7 +58,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VoiceConnectorId

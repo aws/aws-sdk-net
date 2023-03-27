@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the ListVoiceProfiles operation.
-    /// 
+    /// Lists the voice profiles in a voice profile domain.
     /// </summary>
     public partial class ListVoiceProfilesRequest : AmazonChimeSDKVoiceRequest
     {
@@ -39,7 +39,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceProfileDomainId;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results in the request.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults
@@ -55,7 +58,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token used to retrieve the next page of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -70,7 +76,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceProfileDomainId.
+        /// Gets and sets the property VoiceProfileDomainId. 
+        /// <para>
+        /// The ID of the voice profile domain.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string VoiceProfileDomainId

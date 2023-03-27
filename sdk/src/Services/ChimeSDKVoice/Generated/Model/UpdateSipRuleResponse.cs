@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private SipRule _sipRule;
 
         /// <summary>
-        /// Gets and sets the property SipRule.
+        /// Gets and sets the property SipRule. 
+        /// <para>
+        /// The updated SIP rule details.
+        /// </para>
         /// </summary>
         public SipRule SipRule
         {

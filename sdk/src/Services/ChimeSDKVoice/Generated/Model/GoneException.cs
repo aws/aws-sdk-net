@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// Access to the target resource is no longer available at the origin server. This condition
+    /// is likely to be permanent.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

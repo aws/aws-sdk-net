@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// A well-formed request couldn't be followed due to semantic errors.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

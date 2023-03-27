@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The phone number capabilities for Amazon Chime SDK phone numbers, such as enabled
+    /// inbound and outbound calling, and text messaging.
     /// </summary>
     public partial class PhoneNumberCapabilities
     {
@@ -41,7 +42,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private bool? _outboundSMS;
 
         /// <summary>
-        /// Gets and sets the property InboundCall.
+        /// Gets and sets the property InboundCall. 
+        /// <para>
+        /// Allows or denies inbound calling for the specified phone number.
+        /// </para>
         /// </summary>
         public bool InboundCall
         {
@@ -56,7 +60,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InboundMMS.
+        /// Gets and sets the property InboundMMS. 
+        /// <para>
+        /// Allows or denies inbound MMS messaging for the specified phone number.
+        /// </para>
         /// </summary>
         public bool InboundMMS
         {
@@ -71,7 +78,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InboundSMS.
+        /// Gets and sets the property InboundSMS. 
+        /// <para>
+        /// Allows or denies inbound SMS messaging for the specified phone number.
+        /// </para>
         /// </summary>
         public bool InboundSMS
         {
@@ -86,7 +96,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutboundCall.
+        /// Gets and sets the property OutboundCall. 
+        /// <para>
+        /// Allows or denies outbound calling for the specified phone number.
+        /// </para>
         /// </summary>
         public bool OutboundCall
         {
@@ -101,7 +114,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutboundMMS.
+        /// Gets and sets the property OutboundMMS. 
+        /// <para>
+        /// Allows or denies inbound MMS messaging for the specified phone number.
+        /// </para>
         /// </summary>
         public bool OutboundMMS
         {
@@ -116,7 +132,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutboundSMS.
+        /// Gets and sets the property OutboundSMS. 
+        /// <para>
+        /// Allows or denies outbound SMS messaging for the specified phone number.
+        /// </para>
         /// </summary>
         public bool OutboundSMS
         {

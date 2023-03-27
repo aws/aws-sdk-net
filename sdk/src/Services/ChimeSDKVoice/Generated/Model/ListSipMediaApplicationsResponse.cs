@@ -37,7 +37,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private List<SipMediaApplication> _sipMediaApplications = new List<SipMediaApplication>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token used to return the next page of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=65535)]
         public string NextToken
@@ -53,7 +56,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SipMediaApplications.
+        /// Gets and sets the property SipMediaApplications. 
+        /// <para>
+        /// The list of SIP media applications and application details.
+        /// </para>
         /// </summary>
         public List<SipMediaApplication> SipMediaApplications
         {

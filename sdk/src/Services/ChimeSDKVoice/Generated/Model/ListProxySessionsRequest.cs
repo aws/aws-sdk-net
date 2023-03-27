@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProxySessions operation.
-    /// 
+    /// Lists the proxy sessions for the specified Amazon Chime SDK Voice Connector.
     /// </summary>
     public partial class ListProxySessionsRequest : AmazonChimeSDKVoiceRequest
     {
@@ -40,7 +40,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return in a single call.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults
@@ -56,7 +59,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token used to retrieve the next page of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=65535)]
         public string NextToken
@@ -72,7 +78,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The proxy session status.
+        /// </para>
         /// </summary>
         public ProxySessionStatus Status
         {
@@ -87,7 +96,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string VoiceConnectorId

@@ -30,7 +30,9 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSipMediaApplication operation.
-    /// 
+    /// Creates a SIP media application. For more information about SIP media applications,
+    /// see <a href="https://docs.aws.amazon.com/chime-sdk/latest/ag/manage-sip-applications.html">Managing
+    /// SIP media applications and rules</a> in the <i>Amazon Chime SDK Administrator Guide</i>.
     /// </summary>
     public partial class CreateSipMediaApplicationRequest : AmazonChimeSDKVoiceRequest
     {
@@ -39,7 +41,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property AwsRegion.
+        /// Gets and sets the property AwsRegion. 
+        /// <para>
+        /// The AWS Region assigned to the SIP media application.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AwsRegion
@@ -55,7 +60,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Endpoints.
+        /// Gets and sets the property Endpoints. 
+        /// <para>
+        /// List of endpoints (Lambda ARNs) specified for the SIP media application.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
         public List<SipMediaApplicationEndpoint> Endpoints
@@ -71,7 +79,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The SIP media application's name.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name

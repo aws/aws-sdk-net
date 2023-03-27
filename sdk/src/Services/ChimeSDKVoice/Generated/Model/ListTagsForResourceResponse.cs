@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags in the list.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags

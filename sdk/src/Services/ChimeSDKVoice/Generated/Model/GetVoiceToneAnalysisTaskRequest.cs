@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the GetVoiceToneAnalysisTask operation.
-    /// 
+    /// Retrieves the details of a voice tone analysis task.
     /// </summary>
     public partial class GetVoiceToneAnalysisTaskRequest : AmazonChimeSDKVoiceRequest
     {
@@ -39,7 +39,11 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceToneAnalysisTaskId;
 
         /// <summary>
-        /// Gets and sets the property IsCaller.
+        /// Gets and sets the property IsCaller. 
+        /// <para>
+        /// Specifies whether the voice being analyzed is the caller (originator) or the callee
+        /// (responder).
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public bool IsCaller
@@ -55,7 +59,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string VoiceConnectorId
@@ -71,7 +78,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceToneAnalysisTaskId.
+        /// Gets and sets the property VoiceToneAnalysisTaskId. 
+        /// <para>
+        /// The ID of the voice tone anlysis task.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string VoiceToneAnalysisTaskId

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// A representation of an asynchronous request to perform speaker search analysis on
+    /// a Voice Connector call.
     /// </summary>
     public partial class SpeakerSearchTask
     {
@@ -43,7 +44,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private DateTime? _updatedTimestamp;
 
         /// <summary>
-        /// Gets and sets the property CallDetails.
+        /// Gets and sets the property CallDetails. 
+        /// <para>
+        /// The call details of a speaker search task.
+        /// </para>
         /// </summary>
         public CallDetails CallDetails
         {
@@ -58,7 +62,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedTimestamp.
+        /// Gets and sets the property CreatedTimestamp. 
+        /// <para>
+        /// The time at which a speaker search task was created.
+        /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
         {
@@ -73,7 +80,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SpeakerSearchDetails.
+        /// Gets and sets the property SpeakerSearchDetails. 
+        /// <para>
+        /// The details of a speaker search task.
+        /// </para>
         /// </summary>
         public SpeakerSearchDetails SpeakerSearchDetails
         {
@@ -88,7 +98,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SpeakerSearchTaskId.
+        /// Gets and sets the property SpeakerSearchTaskId. 
+        /// <para>
+        /// The speaker search task ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string SpeakerSearchTaskId
@@ -104,7 +117,11 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SpeakerSearchTaskStatus.
+        /// Gets and sets the property SpeakerSearchTaskStatus. 
+        /// <para>
+        /// The status of the speaker search task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>,
+        /// <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.
+        /// </para>
         /// </summary>
         public string SpeakerSearchTaskStatus
         {
@@ -119,7 +136,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartedTimestamp.
+        /// Gets and sets the property StartedTimestamp. 
+        /// <para>
+        /// The time at which the speaker search task began.
+        /// </para>
         /// </summary>
         public DateTime StartedTimestamp
         {
@@ -134,7 +154,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusMessage.
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// A detailed message about the status of a speaker search.
+        /// </para>
         /// </summary>
         public string StatusMessage
         {
@@ -149,7 +172,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedTimestamp.
+        /// Gets and sets the property UpdatedTimestamp. 
+        /// <para>
+        /// The time at which a speaker search task was updated.
+        /// </para>
         /// </summary>
         public DateTime UpdatedTimestamp
         {

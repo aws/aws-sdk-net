@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The result of a speaker search analysis.
     /// </summary>
     public partial class SpeakerSearchResult
     {
@@ -37,7 +37,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceProfileId;
 
         /// <summary>
-        /// Gets and sets the property ConfidenceScore.
+        /// Gets and sets the property ConfidenceScore. 
+        /// <para>
+        /// The confidence score in the speaker search analysis.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public float ConfidenceScore
@@ -53,7 +56,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceProfileId.
+        /// Gets and sets the property VoiceProfileId. 
+        /// <para>
+        /// The voice profile ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string VoiceProfileId

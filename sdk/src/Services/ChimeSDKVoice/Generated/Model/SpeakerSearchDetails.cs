@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The details of a speaker search task.
     /// </summary>
     public partial class SpeakerSearchDetails
     {
@@ -37,7 +37,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceprintGenerationStatus;
 
         /// <summary>
-        /// Gets and sets the property Results.
+        /// Gets and sets the property Results. 
+        /// <para>
+        /// The result value in the speaker search details.
+        /// </para>
         /// </summary>
         public List<SpeakerSearchResult> Results
         {
@@ -52,7 +55,11 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceprintGenerationStatus.
+        /// Gets and sets the property VoiceprintGenerationStatus. 
+        /// <para>
+        /// The status of a voice print generation operation, <code>VoiceprintGenerationSuccess</code>
+        /// or <code>VoiceprintGenerationFailure</code>..
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string VoiceprintGenerationStatus

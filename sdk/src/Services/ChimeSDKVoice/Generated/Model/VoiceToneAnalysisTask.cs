@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// A representation of an asynchronous request to perform voice tone analysis on a Voice
+    /// Connector call.
     /// </summary>
     public partial class VoiceToneAnalysisTask
     {
@@ -42,7 +43,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceToneAnalysisTaskStatus;
 
         /// <summary>
-        /// Gets and sets the property CallDetails.
+        /// Gets and sets the property CallDetails. 
+        /// <para>
+        /// The call details of a voice tone analysis task.
+        /// </para>
         /// </summary>
         public CallDetails CallDetails
         {
@@ -57,7 +61,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedTimestamp.
+        /// Gets and sets the property CreatedTimestamp. 
+        /// <para>
+        /// The time at which a voice tone analysis task was created.
+        /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
         {
@@ -72,7 +79,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartedTimestamp.
+        /// Gets and sets the property StartedTimestamp. 
+        /// <para>
+        /// The time at which a voice tone analysis task started.
+        /// </para>
         /// </summary>
         public DateTime StartedTimestamp
         {
@@ -87,7 +97,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusMessage.
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// The status of a voice tone analysis task.
+        /// </para>
         /// </summary>
         public string StatusMessage
         {
@@ -102,7 +115,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedTimestamp.
+        /// Gets and sets the property UpdatedTimestamp. 
+        /// <para>
+        /// The time at which a voice tone analysis task was updated.
+        /// </para>
         /// </summary>
         public DateTime UpdatedTimestamp
         {
@@ -117,7 +133,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceToneAnalysisTaskId.
+        /// Gets and sets the property VoiceToneAnalysisTaskId. 
+        /// <para>
+        /// The ID of the voice tone analysis task.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string VoiceToneAnalysisTaskId
@@ -133,7 +152,11 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceToneAnalysisTaskStatus.
+        /// Gets and sets the property VoiceToneAnalysisTaskStatus. 
+        /// <para>
+        /// The status of a voice tone analysis task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>,
+        /// <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.
+        /// </para>
         /// </summary>
         public string VoiceToneAnalysisTaskStatus
         {

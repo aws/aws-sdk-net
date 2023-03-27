@@ -30,7 +30,9 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSipRule operation.
-    /// 
+    /// Creates a SIP rule, which can be used to run a SIP media application as a target for
+    /// a specific trigger type. For more information about SIP rules, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/ag/manage-sip-applications.html">Managing
+    /// SIP media applications and rules</a> in the <i>Amazon Chime SDK Administrator Guide</i>.
     /// </summary>
     public partial class CreateSipRuleRequest : AmazonChimeSDKVoiceRequest
     {
@@ -41,7 +43,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _triggerValue;
 
         /// <summary>
-        /// Gets and sets the property Disabled.
+        /// Gets and sets the property Disabled. 
+        /// <para>
+        /// Disables or enables a SIP rule. You must disable SIP rules before you can delete them.
+        /// </para>
         /// </summary>
         public bool Disabled
         {
@@ -56,7 +61,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the SIP rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
@@ -72,7 +80,11 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetApplications.
+        /// Gets and sets the property TargetApplications. 
+        /// <para>
+        /// List of SIP media applications, with priority and AWS Region. Only one SIP application
+        /// per AWS Region can be used.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
         public List<SipRuleTargetApplication> TargetApplications
@@ -88,7 +100,11 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TriggerType.
+        /// Gets and sets the property TriggerType. 
+        /// <para>
+        /// The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently
+        /// <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public SipRuleTriggerType TriggerType
@@ -104,7 +120,15 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TriggerValue.
+        /// Gets and sets the property TriggerValue. 
+        /// <para>
+        /// If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the
+        /// outbound host name of a Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>,
+        /// the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code>
+        /// specified in the <code>SipRule</code> is triggered if the request URI in an incoming
+        /// SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code>
+        /// header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string TriggerValue

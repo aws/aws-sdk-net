@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the StopVoiceToneAnalysisTask operation.
-    /// 
+    /// Stops a voice tone analysis task.
     /// </summary>
     public partial class StopVoiceToneAnalysisTaskRequest : AmazonChimeSDKVoiceRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceToneAnalysisTaskId;
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string VoiceConnectorId
@@ -54,7 +57,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceToneAnalysisTaskId.
+        /// Gets and sets the property VoiceToneAnalysisTaskId. 
+        /// <para>
+        /// The ID of the voice tone analysis task.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string VoiceToneAnalysisTaskId

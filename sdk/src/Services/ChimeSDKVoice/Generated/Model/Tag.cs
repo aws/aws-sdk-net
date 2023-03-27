@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// Describes a tag applied to a resource.
     /// </summary>
     public partial class Tag
     {
@@ -37,7 +37,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Key.
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The tag's key.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Key
@@ -53,7 +56,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The tag's value.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=256)]
         public string Value

@@ -30,7 +30,8 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociatePhoneNumbersFromVoiceConnectorGroup operation.
-    /// 
+    /// Disassociates the specified phone numbers from the specified Amazon Chime SDK Voice
+    /// Connector group.
     /// </summary>
     public partial class DisassociatePhoneNumbersFromVoiceConnectorGroupRequest : AmazonChimeSDKVoiceRequest
     {
@@ -38,7 +39,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceConnectorGroupId;
 
         /// <summary>
-        /// Gets and sets the property E164PhoneNumbers.
+        /// Gets and sets the property E164PhoneNumbers. 
+        /// <para>
+        /// The list of phone numbers, in E.164 format.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> E164PhoneNumbers
@@ -54,7 +58,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorGroupId.
+        /// Gets and sets the property VoiceConnectorGroupId. 
+        /// <para>
+        /// The Voice Connector group ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VoiceConnectorGroupId

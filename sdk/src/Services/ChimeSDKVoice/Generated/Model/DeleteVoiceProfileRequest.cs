@@ -30,14 +30,18 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVoiceProfile operation.
-    /// 
+    /// Deletes a voice profile, including its voice print and enrollment data. WARNING: This
+    /// action is not reversible.
     /// </summary>
     public partial class DeleteVoiceProfileRequest : AmazonChimeSDKVoiceRequest
     {
         private string _voiceProfileId;
 
         /// <summary>
-        /// Gets and sets the property VoiceProfileId.
+        /// Gets and sets the property VoiceProfileId. 
+        /// <para>
+        /// The voice profile ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string VoiceProfileId

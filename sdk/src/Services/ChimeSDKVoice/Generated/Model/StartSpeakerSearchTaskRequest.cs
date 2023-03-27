@@ -30,7 +30,16 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the StartSpeakerSearchTask operation.
+    /// Starts a speaker search task.
     /// 
+    ///  <important> 
+    /// <para>
+    /// Before starting any speaker search tasks, you must provide all notices and obtain
+    /// all consents from the speaker as required under applicable privacy and biometrics
+    /// laws, and as required under the <a href="https://aws.amazon.com/service-terms/">AWS
+    /// service terms</a> for the Amazon Chime SDK.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class StartSpeakerSearchTaskRequest : AmazonChimeSDKVoiceRequest
     {
@@ -40,7 +49,11 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceProfileDomainId;
 
         /// <summary>
-        /// Gets and sets the property ClientRequestToken.
+        /// Gets and sets the property ClientRequestToken. 
+        /// <para>
+        /// The unique identifier for the client request. Use a different token for different
+        /// speaker search tasks.
+        /// </para>
         /// </summary>
         public string ClientRequestToken
         {
@@ -55,7 +68,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TransactionId.
+        /// Gets and sets the property TransactionId. 
+        /// <para>
+        /// The transaction ID of the call being analyzed.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string TransactionId
@@ -71,7 +87,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string VoiceConnectorId
@@ -87,7 +106,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceProfileDomainId.
+        /// Gets and sets the property VoiceProfileDomainId. 
+        /// <para>
+        /// The ID of the voice profile domain that will store the voice profile.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string VoiceProfileDomainId

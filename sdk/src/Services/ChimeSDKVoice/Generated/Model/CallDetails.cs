@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The details of an Amazon Chime SDK Voice Connector call.
     /// </summary>
     public partial class CallDetails
     {
@@ -38,7 +38,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property IsCaller.
+        /// Gets and sets the property IsCaller. 
+        /// <para>
+        /// Identifies a person as the caller or the callee.
+        /// </para>
         /// </summary>
         public bool IsCaller
         {
@@ -53,7 +56,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TransactionId.
+        /// Gets and sets the property TransactionId. 
+        /// <para>
+        /// The transaction ID of a Voice Connector call.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string TransactionId
@@ -69,7 +75,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string VoiceConnectorId

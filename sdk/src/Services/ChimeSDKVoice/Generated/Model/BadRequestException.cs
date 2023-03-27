@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The input parameters don't match the service's restrictions.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

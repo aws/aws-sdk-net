@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The service is currently unavailable.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

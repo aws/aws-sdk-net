@@ -30,14 +30,17 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the GetVoiceConnectorEmergencyCallingConfiguration operation.
-    /// 
+    /// Retrieves the emergency calling configuration details for the specified Voice Connector.
     /// </summary>
     public partial class GetVoiceConnectorEmergencyCallingConfigurationRequest : AmazonChimeSDKVoiceRequest
     {
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VoiceConnectorId

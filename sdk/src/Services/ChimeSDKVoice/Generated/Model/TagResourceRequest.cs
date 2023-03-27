@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// 
+    /// Adds a tag to the specified resource.
     /// </summary>
     public partial class TagResourceRequest : AmazonChimeSDKVoiceRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property ResourceARN.
+        /// Gets and sets the property ResourceARN. 
+        /// <para>
+        /// The ARN of the resource being tagged. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string ResourceARN
@@ -54,7 +57,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of the tags being added to the resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
         public List<Tag> Tags

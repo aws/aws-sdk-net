@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private List<PhoneNumberError> _phoneNumberErrors = new List<PhoneNumberError>();
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberErrors.
+        /// Gets and sets the property PhoneNumberErrors. 
+        /// <para>
+        /// A list of failed phone numbers and their error messages.
+        /// </para>
         /// </summary>
         public List<PhoneNumberError> PhoneNumberErrors
         {

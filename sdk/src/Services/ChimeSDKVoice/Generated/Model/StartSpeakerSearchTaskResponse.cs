@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private SpeakerSearchTask _speakerSearchTask;
 
         /// <summary>
-        /// Gets and sets the property SpeakerSearchTask.
+        /// Gets and sets the property SpeakerSearchTask. 
+        /// <para>
+        /// The details of the speaker search task.
+        /// </para>
         /// </summary>
         public SpeakerSearchTask SpeakerSearchTask
         {

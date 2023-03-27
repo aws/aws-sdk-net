@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private VoiceToneAnalysisTask _voiceToneAnalysisTask;
 
         /// <summary>
-        /// Gets and sets the property VoiceToneAnalysisTask.
+        /// Gets and sets the property VoiceToneAnalysisTask. 
+        /// <para>
+        /// The details of the voice tone analysis task.
+        /// </para>
         /// </summary>
         public VoiceToneAnalysisTask VoiceToneAnalysisTask
         {

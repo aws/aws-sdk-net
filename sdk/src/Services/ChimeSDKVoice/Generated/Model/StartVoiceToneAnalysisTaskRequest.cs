@@ -30,7 +30,18 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the StartVoiceToneAnalysisTask operation.
+    /// Starts a voice tone analysis task. For more information about voice tone analysis,
+    /// see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/pstn-voice-analytics.html">Using
+    /// Amazon Chime SDK voice analytics</a> in the <i>Amazon Chime SDK Developer Guide</i>.
     /// 
+    ///  <important> 
+    /// <para>
+    /// Before starting any voice tone analysis tasks, you must provide all notices and obtain
+    /// all consents from the speaker as required under applicable privacy and biometrics
+    /// laws, and as required under the <a href="https://aws.amazon.com/service-terms/">AWS
+    /// service terms</a> for the Amazon Chime SDK.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class StartVoiceToneAnalysisTaskRequest : AmazonChimeSDKVoiceRequest
     {
@@ -40,7 +51,11 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property ClientRequestToken.
+        /// Gets and sets the property ClientRequestToken. 
+        /// <para>
+        /// The unique identifier for the client request. Use a different token for different
+        /// voice tone analysis tasks.
+        /// </para>
         /// </summary>
         public string ClientRequestToken
         {
@@ -55,7 +70,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LanguageCode.
+        /// Gets and sets the property LanguageCode. 
+        /// <para>
+        /// The language code.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public LanguageCode LanguageCode
@@ -71,7 +89,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TransactionId.
+        /// Gets and sets the property TransactionId. 
+        /// <para>
+        /// The transaction ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string TransactionId
@@ -87,7 +108,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string VoiceConnectorId

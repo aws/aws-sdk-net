@@ -30,14 +30,17 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVoiceConnectorStreamingConfiguration operation.
-    /// 
+    /// Deletes a Voice Connector's streaming configuration.
     /// </summary>
     public partial class DeleteVoiceConnectorStreamingConfigurationRequest : AmazonChimeSDKVoiceRequest
     {
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VoiceConnectorId

@@ -30,14 +30,17 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// 
+    /// Returns a list of the tags in a given resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonChimeSDKVoiceRequest
     {
         private string _resourceARN;
 
         /// <summary>
-        /// Gets and sets the property ResourceARN.
+        /// Gets and sets the property ResourceARN. 
+        /// <para>
+        /// The resource ARN.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string ResourceARN

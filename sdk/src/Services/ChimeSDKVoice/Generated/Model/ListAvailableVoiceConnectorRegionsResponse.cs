@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private List<string> _voiceConnectorRegions = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorRegions.
+        /// Gets and sets the property VoiceConnectorRegions. 
+        /// <para>
+        /// The list of AWS Regions.
+        /// </para>
         /// </summary>
         public List<string> VoiceConnectorRegions
         {

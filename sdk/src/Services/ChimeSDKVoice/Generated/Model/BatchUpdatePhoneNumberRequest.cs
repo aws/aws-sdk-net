@@ -30,14 +30,17 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchUpdatePhoneNumber operation.
-    /// 
+    /// Updates one or more phone numbers.
     /// </summary>
     public partial class BatchUpdatePhoneNumberRequest : AmazonChimeSDKVoiceRequest
     {
         private List<UpdatePhoneNumberRequestItem> _updatePhoneNumberRequestItems = new List<UpdatePhoneNumberRequestItem>();
 
         /// <summary>
-        /// Gets and sets the property UpdatePhoneNumberRequestItems.
+        /// Gets and sets the property UpdatePhoneNumberRequestItems. 
+        /// <para>
+        /// Lists the phone numbers in the update request.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<UpdatePhoneNumberRequestItem> UpdatePhoneNumberRequestItems

@@ -30,14 +30,31 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVoiceProfile operation.
+    /// Creates a voice profile, which consists of an enrolled user and their latest voice
+    /// print.
     /// 
+    ///  <important> 
+    /// <para>
+    /// Before creating any voice profiles, you must provide all notices and obtain all consents
+    /// from the speaker as required under applicable privacy and biometrics laws, and as
+    /// required under the <a href="https://aws.amazon.com/service-terms/">AWS service terms</a>
+    /// for the Amazon Chime SDK.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// For more information about voice profiles and voice analytics, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/pstn-voice-analytics.html">Using
+    /// Amazon Chime SDK Voice Analytics</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateVoiceProfileRequest : AmazonChimeSDKVoiceRequest
     {
         private string _speakerSearchTaskId;
 
         /// <summary>
-        /// Gets and sets the property SpeakerSearchTaskId.
+        /// Gets and sets the property SpeakerSearchTaskId. 
+        /// <para>
+        /// The ID of the speaker search task.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string SpeakerSearchTaskId

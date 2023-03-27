@@ -30,14 +30,17 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVoiceProfileDomain operation.
-    /// 
+    /// Deletes all voice profiles in the domain. WARNING: This action is not reversible.
     /// </summary>
     public partial class DeleteVoiceProfileDomainRequest : AmazonChimeSDKVoiceRequest
     {
         private string _voiceProfileDomainId;
 
         /// <summary>
-        /// Gets and sets the property VoiceProfileDomainId.
+        /// Gets and sets the property VoiceProfileDomainId. 
+        /// <para>
+        /// The voice profile domain ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string VoiceProfileDomainId

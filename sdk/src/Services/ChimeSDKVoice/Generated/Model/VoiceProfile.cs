@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The combination of a voice print and caller ID.
     /// </summary>
     public partial class VoiceProfile
     {
@@ -41,7 +41,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceProfileId;
 
         /// <summary>
-        /// Gets and sets the property CreatedTimestamp.
+        /// Gets and sets the property CreatedTimestamp. 
+        /// <para>
+        /// The time at which the voice profile was created and enrolled.
+        /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
         {
@@ -56,7 +59,11 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExpirationTimestamp.
+        /// Gets and sets the property ExpirationTimestamp. 
+        /// <para>
+        /// The time at which a voice profile expires unless you re-enroll the caller via the
+        /// <code>UpdateVoiceProfile</code> API.
+        /// </para>
         /// </summary>
         public DateTime ExpirationTimestamp
         {
@@ -71,7 +78,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedTimestamp.
+        /// Gets and sets the property UpdatedTimestamp. 
+        /// <para>
+        /// The time at which the voice profile was last updated.
+        /// </para>
         /// </summary>
         public DateTime UpdatedTimestamp
         {
@@ -86,7 +96,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceProfileArn.
+        /// Gets and sets the property VoiceProfileArn. 
+        /// <para>
+        /// The ARN of the voice profile.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string VoiceProfileArn
@@ -102,7 +115,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceProfileDomainId.
+        /// Gets and sets the property VoiceProfileDomainId. 
+        /// <para>
+        /// The ID of the domain that contains the voice profile.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string VoiceProfileDomainId
@@ -118,7 +134,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceProfileId.
+        /// Gets and sets the property VoiceProfileId. 
+        /// <para>
+        /// The ID of the voice profile.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string VoiceProfileId

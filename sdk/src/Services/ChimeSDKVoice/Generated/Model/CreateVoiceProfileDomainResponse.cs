@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private VoiceProfileDomain _voiceProfileDomain;
 
         /// <summary>
-        /// Gets and sets the property VoiceProfileDomain.
+        /// Gets and sets the property VoiceProfileDomain. 
+        /// <para>
+        /// The requested voice profile domain.
+        /// </para>
         /// </summary>
         public VoiceProfileDomain VoiceProfileDomain
         {

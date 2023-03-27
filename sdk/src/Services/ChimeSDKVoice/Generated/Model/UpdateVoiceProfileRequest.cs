@@ -30,7 +30,23 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateVoiceProfile operation.
+    /// Updates the specified voice profile’s voice print and refreshes its expiration timestamp.
     /// 
+    ///  <important> 
+    /// <para>
+    /// As a condition of using this feature, you acknowledge that the collection, use, storage,
+    /// and retention of your caller’s biometric identifiers and biometric information (“biometric
+    /// data”) in the form of a digital voiceprint requires the caller’s informed consent
+    /// via a written release. Such consent is required under various state laws, including
+    /// biometrics laws in Illinois, Texas, Washington and other state privacy laws.
+    /// </para>
+    ///  
+    /// <para>
+    /// You must provide a written release to each caller through a process that clearly reflects
+    /// each caller’s informed consent before using Amazon Chime SDK Voice Insights service,
+    /// as required under the terms of your agreement with AWS governing your use of the service.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UpdateVoiceProfileRequest : AmazonChimeSDKVoiceRequest
     {
@@ -38,7 +54,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceProfileId;
 
         /// <summary>
-        /// Gets and sets the property SpeakerSearchTaskId.
+        /// Gets and sets the property SpeakerSearchTaskId. 
+        /// <para>
+        /// The ID of the speaker search task.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string SpeakerSearchTaskId
@@ -54,7 +73,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceProfileId.
+        /// Gets and sets the property VoiceProfileId. 
+        /// <para>
+        /// The profile ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string VoiceProfileId

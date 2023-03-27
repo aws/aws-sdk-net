@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The details of the SIP media application, including name and endpoints. An AWS account
+    /// can have multiple SIP media applications.
     /// </summary>
     public partial class SipMediaApplication
     {
@@ -41,7 +42,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private DateTime? _updatedTimestamp;
 
         /// <summary>
-        /// Gets and sets the property AwsRegion.
+        /// Gets and sets the property AwsRegion. 
+        /// <para>
+        /// The AWS Region in which the SIP media application is created.
+        /// </para>
         /// </summary>
         public string AwsRegion
         {
@@ -56,7 +60,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedTimestamp.
+        /// Gets and sets the property CreatedTimestamp. 
+        /// <para>
+        /// The SIP media application creation timestamp, in ISO 8601 format.
+        /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
         {
@@ -71,7 +78,11 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Endpoints.
+        /// Gets and sets the property Endpoints. 
+        /// <para>
+        /// List of endpoints for SIP media application. Currently, only one endpoint per SIP
+        /// media application is permitted.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<SipMediaApplicationEndpoint> Endpoints
@@ -87,7 +98,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The SIP media application's name.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string Name
@@ -103,7 +117,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SipMediaApplicationId.
+        /// Gets and sets the property SipMediaApplicationId. 
+        /// <para>
+        /// A SIP media application's ID.
+        /// </para>
         /// </summary>
         public string SipMediaApplicationId
         {
@@ -118,7 +135,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedTimestamp.
+        /// Gets and sets the property UpdatedTimestamp. 
+        /// <para>
+        /// The time at which the SIP media application was updated.
+        /// </para>
         /// </summary>
         public DateTime UpdatedTimestamp
         {

@@ -30,14 +30,17 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the GetVoiceProfile operation.
-    /// 
+    /// Retrieves the details of the specified voice profile.
     /// </summary>
     public partial class GetVoiceProfileRequest : AmazonChimeSDKVoiceRequest
     {
         private string _voiceProfileId;
 
         /// <summary>
-        /// Gets and sets the property VoiceProfileId.
+        /// Gets and sets the property VoiceProfileId. 
+        /// <para>
+        /// The voice profile ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string VoiceProfileId

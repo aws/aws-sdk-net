@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// Multiple instances of the same request were made simultaneously.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

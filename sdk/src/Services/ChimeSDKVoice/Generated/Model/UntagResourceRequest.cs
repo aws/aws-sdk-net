@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// 
+    /// Removes tags from a resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonChimeSDKVoiceRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ResourceARN.
+        /// Gets and sets the property ResourceARN. 
+        /// <para>
+        /// The ARN of the resource having its tags removed.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string ResourceARN
@@ -54,7 +57,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys.
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// The keys of the tags being removed from the resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> TagKeys

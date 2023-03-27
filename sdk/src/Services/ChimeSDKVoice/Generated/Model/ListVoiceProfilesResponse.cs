@@ -37,7 +37,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private List<VoiceProfileSummary> _voiceProfiles = new List<VoiceProfileSummary>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token used to retrieve the next page of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -52,7 +55,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceProfiles.
+        /// Gets and sets the property VoiceProfiles. 
+        /// <para>
+        /// The list of voice profiles.
+        /// </para>
         /// </summary>
         public List<VoiceProfileSummary> VoiceProfiles
         {

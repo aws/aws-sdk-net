@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private List<string> _usernames = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Usernames.
+        /// Gets and sets the property Usernames. 
+        /// <para>
+        /// A list of user names.
+        /// </para>
         /// </summary>
         public List<string> Usernames
         {

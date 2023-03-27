@@ -30,7 +30,21 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVoiceProfileDomain operation.
+    /// Creates a voice profile domain, a collection of voice profiles, their voice prints,
+    /// and encrypted enrollment audio.
     /// 
+    ///  <important> 
+    /// <para>
+    /// Before creating any voice profiles, you must provide all notices and obtain all consents
+    /// from the speaker as required under applicable privacy and biometrics laws, and as
+    /// required under the <a href="https://aws.amazon.com/service-terms/">AWS service terms</a>
+    /// for the Amazon Chime SDK.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// For more information about voice profile domains, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/pstn-voice-analytics.html">Using
+    /// Amazon Chime SDK Voice Analytics</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateVoiceProfileDomainRequest : AmazonChimeSDKVoiceRequest
     {
@@ -41,7 +55,11 @@ namespace Amazon.ChimeSDKVoice.Model
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property ClientRequestToken.
+        /// Gets and sets the property ClientRequestToken. 
+        /// <para>
+        /// The unique identifier for the client request. Use a different token for different
+        /// domain creation requests.
+        /// </para>
         /// </summary>
         public string ClientRequestToken
         {
@@ -56,7 +74,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the voice profile domain.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
         public string Description
@@ -72,7 +93,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the voice profile domain.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
@@ -88,7 +112,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerSideEncryptionConfiguration.
+        /// Gets and sets the property ServerSideEncryptionConfiguration. 
+        /// <para>
+        /// The server-side encryption configuration for the request.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ServerSideEncryptionConfiguration ServerSideEncryptionConfiguration
@@ -104,7 +131,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags assigned to the domain.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags

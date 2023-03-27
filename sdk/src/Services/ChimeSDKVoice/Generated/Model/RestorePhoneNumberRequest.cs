@@ -30,14 +30,17 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the RestorePhoneNumber operation.
-    /// 
+    /// Restores a deleted phone number.
     /// </summary>
     public partial class RestorePhoneNumberRequest : AmazonChimeSDKVoiceRequest
     {
         private string _phoneNumberId;
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberId.
+        /// Gets and sets the property PhoneNumberId. 
+        /// <para>
+        /// The ID of the phone number being restored.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
         public string PhoneNumberId

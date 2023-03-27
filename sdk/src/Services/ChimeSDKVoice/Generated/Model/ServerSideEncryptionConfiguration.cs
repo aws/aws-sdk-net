@@ -29,14 +29,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
+    /// A structure that contains the configuration settings for server-side encryption.
     /// 
+    ///  <note> 
+    /// <para>
+    /// We only support symmetric keys. Do not use asymmetric or HMAC keys, or KMS aliases.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ServerSideEncryptionConfiguration
     {
         private string _kmsKeyArn;
 
         /// <summary>
-        /// Gets and sets the property KmsKeyArn.
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The ARN of the KMS key used to encrypt the enrollment data in a voice profile domain.
+        /// Asymmetric customer managed keys are not supported.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string KmsKeyArn

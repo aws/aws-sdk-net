@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The configuration for a call analytics task.
     /// </summary>
     public partial class MediaInsightsConfiguration
     {
@@ -37,7 +37,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private bool? _disabled;
 
         /// <summary>
-        /// Gets and sets the property ConfigurationArn.
+        /// Gets and sets the property ConfigurationArn. 
+        /// <para>
+        /// The configuration's ARN.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string ConfigurationArn
@@ -53,7 +56,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Disabled.
+        /// Gets and sets the property Disabled. 
+        /// <para>
+        /// Denotes the configration as enabled or disabled.
+        /// </para>
         /// </summary>
         public bool Disabled
         {
