@@ -1411,6 +1411,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.StartChatContactRequest.RelatedContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.StartChatContactResponse.ContactId</property>
     <min>1</min>
     <max>256</max>

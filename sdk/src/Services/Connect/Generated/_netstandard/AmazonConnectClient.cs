@@ -4527,7 +4527,7 @@ namespace Amazon.Connect
         /// the previous version of this API. It has new metrics, offers filtering at a metric
         /// level, and offers the ability to filter and group data by channels, queues, routing
         /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
-        /// last the 14 days, in 24-hour intervals.
+        /// the last 14 days, in 24-hour intervals.
         /// </para>
         ///  
         /// <para>
