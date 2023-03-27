@@ -31,7 +31,8 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// A channel is a named input source that training algorithms can consume. The validation
     /// dataset size is limited to less than 2 GB. The training dataset size must be less
-    /// than 100 GB. For more information, see .
+    /// than 100 GB. For more information, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html">
+    /// Channel</a> </code>.
     /// 
     ///  <note> 
     /// <para>

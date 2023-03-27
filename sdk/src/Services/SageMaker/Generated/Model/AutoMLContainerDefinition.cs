@@ -30,7 +30,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// A list of container definitions that describe the different containers that make up
-    /// an AutoML candidate. For more information, see .
+    /// an AutoML candidate. For more information, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
+    /// ContainerDefinition</a> </code>.
     /// </summary>
     public partial class AutoMLContainerDefinition
     {
@@ -41,7 +42,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// The environment variables to set in the container. For more information, see .
+        /// The environment variables to set in the container. For more information, see <code>
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
+        /// ContainerDefinition</a> </code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=16)]
@@ -61,7 +64,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Image. 
         /// <para>
         /// The Amazon Elastic Container Registry (Amazon ECR) path of the container. For more
-        /// information, see .
+        /// information, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
+        /// ContainerDefinition</a> </code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -80,7 +84,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelDataUrl. 
         /// <para>
-        /// The location of the model artifacts. For more information, see .
+        /// The location of the model artifacts. For more information, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
+        /// ContainerDefinition</a> </code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
