@@ -1552,6 +1552,64 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  DeleteWirelessDeviceImportTask
+
+
+        /// <summary>
+        /// Delete an import task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWirelessDeviceImportTask service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWirelessDeviceImportTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessDeviceImportTask">REST API Reference for DeleteWirelessDeviceImportTask Operation</seealso>
+        DeleteWirelessDeviceImportTaskResponse DeleteWirelessDeviceImportTask(DeleteWirelessDeviceImportTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWirelessDeviceImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWirelessDeviceImportTask operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWirelessDeviceImportTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessDeviceImportTask">REST API Reference for DeleteWirelessDeviceImportTask Operation</seealso>
+        IAsyncResult BeginDeleteWirelessDeviceImportTask(DeleteWirelessDeviceImportTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWirelessDeviceImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWirelessDeviceImportTask.</param>
+        /// 
+        /// <returns>Returns a  DeleteWirelessDeviceImportTaskResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessDeviceImportTask">REST API Reference for DeleteWirelessDeviceImportTask Operation</seealso>
+        DeleteWirelessDeviceImportTaskResponse EndDeleteWirelessDeviceImportTask(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteWirelessGateway
 
 
@@ -1715,6 +1773,58 @@ namespace Amazon.IoTWireless
         /// <returns>Returns a  DeleteWirelessGatewayTaskDefinitionResult from IoTWireless.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessGatewayTaskDefinition">REST API Reference for DeleteWirelessGatewayTaskDefinition Operation</seealso>
         DeleteWirelessGatewayTaskDefinitionResponse EndDeleteWirelessGatewayTaskDefinition(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeregisterWirelessDevice
+
+
+        /// <summary>
+        /// Deregister a wireless device from AWS IoT Wireless.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterWirelessDevice service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterWirelessDevice service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeregisterWirelessDevice">REST API Reference for DeregisterWirelessDevice Operation</seealso>
+        DeregisterWirelessDeviceResponse DeregisterWirelessDevice(DeregisterWirelessDeviceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterWirelessDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterWirelessDevice operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterWirelessDevice
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeregisterWirelessDevice">REST API Reference for DeregisterWirelessDevice Operation</seealso>
+        IAsyncResult BeginDeregisterWirelessDevice(DeregisterWirelessDeviceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeregisterWirelessDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterWirelessDevice.</param>
+        /// 
+        /// <returns>Returns a  DeregisterWirelessDeviceResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeregisterWirelessDevice">REST API Reference for DeregisterWirelessDevice Operation</seealso>
+        DeregisterWirelessDeviceResponse EndDeregisterWirelessDevice(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3118,6 +3228,65 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  GetWirelessDeviceImportTask
+
+
+        /// <summary>
+        /// Get information about an import task and count of device onboarding summary information
+        /// for the import task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWirelessDeviceImportTask service method.</param>
+        /// 
+        /// <returns>The response from the GetWirelessDeviceImportTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessDeviceImportTask">REST API Reference for GetWirelessDeviceImportTask Operation</seealso>
+        GetWirelessDeviceImportTaskResponse GetWirelessDeviceImportTask(GetWirelessDeviceImportTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetWirelessDeviceImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetWirelessDeviceImportTask operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetWirelessDeviceImportTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessDeviceImportTask">REST API Reference for GetWirelessDeviceImportTask Operation</seealso>
+        IAsyncResult BeginGetWirelessDeviceImportTask(GetWirelessDeviceImportTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetWirelessDeviceImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetWirelessDeviceImportTask.</param>
+        /// 
+        /// <returns>Returns a  GetWirelessDeviceImportTaskResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessDeviceImportTask">REST API Reference for GetWirelessDeviceImportTask Operation</seealso>
+        GetWirelessDeviceImportTaskResponse EndGetWirelessDeviceImportTask(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetWirelessDeviceStatistics
 
 
@@ -3604,6 +3773,64 @@ namespace Amazon.IoTWireless
         /// <returns>Returns a  ListDeviceProfilesResult from IoTWireless.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListDeviceProfiles">REST API Reference for ListDeviceProfiles Operation</seealso>
         ListDeviceProfilesResponse EndListDeviceProfiles(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDevicesForWirelessDeviceImportTask
+
+
+        /// <summary>
+        /// List the Sidewalk devices in an import task and their onboarding status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDevicesForWirelessDeviceImportTask service method.</param>
+        /// 
+        /// <returns>The response from the ListDevicesForWirelessDeviceImportTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListDevicesForWirelessDeviceImportTask">REST API Reference for ListDevicesForWirelessDeviceImportTask Operation</seealso>
+        ListDevicesForWirelessDeviceImportTaskResponse ListDevicesForWirelessDeviceImportTask(ListDevicesForWirelessDeviceImportTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDevicesForWirelessDeviceImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDevicesForWirelessDeviceImportTask operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDevicesForWirelessDeviceImportTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListDevicesForWirelessDeviceImportTask">REST API Reference for ListDevicesForWirelessDeviceImportTask Operation</seealso>
+        IAsyncResult BeginListDevicesForWirelessDeviceImportTask(ListDevicesForWirelessDeviceImportTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDevicesForWirelessDeviceImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDevicesForWirelessDeviceImportTask.</param>
+        /// 
+        /// <returns>Returns a  ListDevicesForWirelessDeviceImportTaskResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListDevicesForWirelessDeviceImportTask">REST API Reference for ListDevicesForWirelessDeviceImportTask Operation</seealso>
+        ListDevicesForWirelessDeviceImportTaskResponse EndListDevicesForWirelessDeviceImportTask(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4144,6 +4371,64 @@ namespace Amazon.IoTWireless
         /// <returns>Returns a  ListTagsForResourceResult from IoTWireless.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListWirelessDeviceImportTasks
+
+
+        /// <summary>
+        /// List wireless devices that have been added to an import task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWirelessDeviceImportTasks service method.</param>
+        /// 
+        /// <returns>The response from the ListWirelessDeviceImportTasks service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListWirelessDeviceImportTasks">REST API Reference for ListWirelessDeviceImportTasks Operation</seealso>
+        ListWirelessDeviceImportTasksResponse ListWirelessDeviceImportTasks(ListWirelessDeviceImportTasksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWirelessDeviceImportTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWirelessDeviceImportTasks operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWirelessDeviceImportTasks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListWirelessDeviceImportTasks">REST API Reference for ListWirelessDeviceImportTasks Operation</seealso>
+        IAsyncResult BeginListWirelessDeviceImportTasks(ListWirelessDeviceImportTasksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWirelessDeviceImportTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWirelessDeviceImportTasks.</param>
+        /// 
+        /// <returns>Returns a  ListWirelessDeviceImportTasksResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListWirelessDeviceImportTasks">REST API Reference for ListWirelessDeviceImportTasks Operation</seealso>
+        ListWirelessDeviceImportTasksResponse EndListWirelessDeviceImportTasks(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4871,6 +5156,122 @@ namespace Amazon.IoTWireless
         /// <returns>Returns a  StartMulticastGroupSessionResult from IoTWireless.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartMulticastGroupSession">REST API Reference for StartMulticastGroupSession Operation</seealso>
         StartMulticastGroupSessionResponse EndStartMulticastGroupSession(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartSingleWirelessDeviceImportTask
+
+
+        /// <summary>
+        /// Start import task for a single wireless device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSingleWirelessDeviceImportTask service method.</param>
+        /// 
+        /// <returns>The response from the StartSingleWirelessDeviceImportTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartSingleWirelessDeviceImportTask">REST API Reference for StartSingleWirelessDeviceImportTask Operation</seealso>
+        StartSingleWirelessDeviceImportTaskResponse StartSingleWirelessDeviceImportTask(StartSingleWirelessDeviceImportTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSingleWirelessDeviceImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSingleWirelessDeviceImportTask operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSingleWirelessDeviceImportTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartSingleWirelessDeviceImportTask">REST API Reference for StartSingleWirelessDeviceImportTask Operation</seealso>
+        IAsyncResult BeginStartSingleWirelessDeviceImportTask(StartSingleWirelessDeviceImportTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSingleWirelessDeviceImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSingleWirelessDeviceImportTask.</param>
+        /// 
+        /// <returns>Returns a  StartSingleWirelessDeviceImportTaskResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartSingleWirelessDeviceImportTask">REST API Reference for StartSingleWirelessDeviceImportTask Operation</seealso>
+        StartSingleWirelessDeviceImportTaskResponse EndStartSingleWirelessDeviceImportTask(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartWirelessDeviceImportTask
+
+
+        /// <summary>
+        /// Start import task for provisioning Sidewalk devices in bulk using an S3 CSV file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartWirelessDeviceImportTask service method.</param>
+        /// 
+        /// <returns>The response from the StartWirelessDeviceImportTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartWirelessDeviceImportTask">REST API Reference for StartWirelessDeviceImportTask Operation</seealso>
+        StartWirelessDeviceImportTaskResponse StartWirelessDeviceImportTask(StartWirelessDeviceImportTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartWirelessDeviceImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartWirelessDeviceImportTask operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartWirelessDeviceImportTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartWirelessDeviceImportTask">REST API Reference for StartWirelessDeviceImportTask Operation</seealso>
+        IAsyncResult BeginStartWirelessDeviceImportTask(StartWirelessDeviceImportTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartWirelessDeviceImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartWirelessDeviceImportTask.</param>
+        /// 
+        /// <returns>Returns a  StartWirelessDeviceImportTaskResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartWirelessDeviceImportTask">REST API Reference for StartWirelessDeviceImportTask Operation</seealso>
+        StartWirelessDeviceImportTaskResponse EndStartWirelessDeviceImportTask(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5662,6 +6063,64 @@ namespace Amazon.IoTWireless
         /// <returns>Returns a  UpdateWirelessDeviceResult from IoTWireless.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateWirelessDevice">REST API Reference for UpdateWirelessDevice Operation</seealso>
         UpdateWirelessDeviceResponse EndUpdateWirelessDevice(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateWirelessDeviceImportTask
+
+
+        /// <summary>
+        /// Update an import task to add more devices to the task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWirelessDeviceImportTask service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWirelessDeviceImportTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateWirelessDeviceImportTask">REST API Reference for UpdateWirelessDeviceImportTask Operation</seealso>
+        UpdateWirelessDeviceImportTaskResponse UpdateWirelessDeviceImportTask(UpdateWirelessDeviceImportTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWirelessDeviceImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWirelessDeviceImportTask operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateWirelessDeviceImportTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateWirelessDeviceImportTask">REST API Reference for UpdateWirelessDeviceImportTask Operation</seealso>
+        IAsyncResult BeginUpdateWirelessDeviceImportTask(UpdateWirelessDeviceImportTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateWirelessDeviceImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateWirelessDeviceImportTask.</param>
+        /// 
+        /// <returns>Returns a  UpdateWirelessDeviceImportTaskResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateWirelessDeviceImportTask">REST API Reference for UpdateWirelessDeviceImportTask Operation</seealso>
+        UpdateWirelessDeviceImportTaskResponse EndUpdateWirelessDeviceImportTask(IAsyncResult asyncResult);
 
         #endregion
         

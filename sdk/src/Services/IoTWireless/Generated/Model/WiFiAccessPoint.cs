@@ -58,7 +58,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Rss. 
         /// <para>
-        /// Recived signal strength of the WLAN measurement data.
+        /// Received signal strength (dBm) of the WLAN measurement data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=-128, Max=0)]
