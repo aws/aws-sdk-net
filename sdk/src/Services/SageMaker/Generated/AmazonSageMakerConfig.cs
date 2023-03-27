@@ -32,7 +32,7 @@ namespace Amazon.SageMaker
     public partial class AmazonSageMakerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.123.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.123.2");
 
         private string _userAgent = UserAgentString;
 

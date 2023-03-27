@@ -1,3 +1,25 @@
+### 3.7.513.0 (2023-03-27 18:28 UTC)
+* AppRegistry (3.7.102.0)
+	* In this release, we started supporting ARN in applicationSpecifier and attributeGroupSpecifier. GetAttributeGroup, ListAttributeGroups and ListAttributeGroupsForApplication APIs will now have CreatedBy field in the response.
+* Athena (3.7.105.0)
+	* Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or higher when they submit queries.
+* ChimeSDKVoice (3.7.103.0)
+	* Documentation updates for Amazon Chime SDK Voice.
+* Connect (3.7.119.0)
+	* This release introduces support for RelatedContactId in the StartChatContact API. Interactive message and interactive message response have been added to the list of supported message content types for this API as well.
+* ConnectParticipant (3.7.104.37)
+	* This release provides an update to the SendMessage API to handle interactive message response content-types.
+* IoTWireless (3.7.103.0)
+	* Introducing new APIs that enable Sidewalk devices to communicate with AWS IoT Core through Sidewalk gateways. This will empower AWS customers to connect Sidewalk devices with other AWS IoT Services, creating  possibilities for seamless integration and advanced device management.
+* MediaLive (3.7.106.0)
+	* AWS Elemental MediaLive now supports ID3 tag insertion for audio only HLS output groups. AWS Elemental Link devices now support tagging.
+* SageMaker (3.7.123.2)
+	* Fixed some improperly rendered links in SDK documentation.
+* SecurityHub (3.7.106.0)
+	* Added new resource detail objects to ASFF, including resources for AwsEksCluster, AWSS3Bucket, AwsEc2RouteTable and AwsEC2Instance.
+* VoiceID (3.7.101.0)
+	* Amazon Connect Voice ID now supports multiple fraudster watchlists. Every domain has a default watchlist where all existing fraudsters are placed by default. Custom watchlists may now be created, managed, and evaluated against for known fraudster detection.
+
 ### 3.7.512.0 (2023-03-24 18:21 UTC)
 * CloudWatch (3.7.103.43)
 	* Doc-only update to correct alarm actions list
