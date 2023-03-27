@@ -34,58 +34,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AttributeGroupDetails Object
+    /// Response Unmarshaller for ThrottlingException Object
     /// </summary>  
-    public class AttributeGroupDetailsUnmarshaller : IUnmarshaller<AttributeGroupDetails, XmlUnmarshallerContext>, IUnmarshaller<AttributeGroupDetails, JsonUnmarshallerContext>
+    public class ThrottlingExceptionUnmarshaller : IErrorResponseUnmarshaller<ThrottlingException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AttributeGroupDetails IUnmarshaller<AttributeGroupDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public ThrottlingException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public AttributeGroupDetails Unmarshall(JsonUnmarshallerContext context)
+        public ThrottlingException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
-            AttributeGroupDetails unmarshalledObject = new AttributeGroupDetails();
+            ThrottlingException unmarshalledObject = new ThrottlingException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("serviceCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("createdBy", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreatedBy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -93,13 +75,12 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-
-        private static AttributeGroupDetailsUnmarshaller _instance = new AttributeGroupDetailsUnmarshaller();        
+        private static ThrottlingExceptionUnmarshaller _instance = new ThrottlingExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AttributeGroupDetailsUnmarshaller Instance
+        public static ThrottlingExceptionUnmarshaller Instance
         {
             get
             {

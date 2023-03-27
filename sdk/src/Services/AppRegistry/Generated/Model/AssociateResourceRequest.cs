@@ -30,8 +30,8 @@ namespace Amazon.AppRegistry.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateResource operation.
-    /// Associates a resource with an application. Both the resource and the application can
-    /// be specified either by ID or name.
+    /// Associates a resource with an application. The resource can be specified by its ARN
+    /// or name. The application can be specified by ARN, ID, or name.
     /// </summary>
     public partial class AssociateResourceRequest : AmazonAppRegistryRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Application. 
         /// <para>
-        /// The name or ID of the application.
+        ///  The name, ID, or ARN of the application. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
