@@ -118,6 +118,12 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WatchlistDetails", targetDepth))
+                {
+                    var unmarshaller = WatchlistDetailsUnmarshaller.Instance;
+                    unmarshalledObject.WatchlistDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

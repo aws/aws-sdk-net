@@ -40,7 +40,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The identifier for the domain containing the fraudster registration job.
+        /// The identifier of the domain that contains the fraudster registration job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=22, Max=22)]
@@ -59,7 +59,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The identifier for the fraudster registration job you are describing.
+        /// The identifier of the fraudster registration job you are describing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=22, Max=22)]

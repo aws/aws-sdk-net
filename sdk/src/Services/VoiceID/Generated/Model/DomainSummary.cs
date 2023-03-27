@@ -42,6 +42,7 @@ namespace Amazon.VoiceID.Model
         private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
         private ServerSideEncryptionUpdateDetails _serverSideEncryptionUpdateDetails;
         private DateTime? _updatedAt;
+        private WatchlistDetails _watchlistDetails;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -64,7 +65,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp showing when the domain is created.
+        /// The timestamp of when the domain was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -82,7 +83,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The client-provided description of the domain.
+        /// The description of the domain.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]
@@ -101,7 +102,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The service-generated identifier for the domain.
+        /// The identifier of the domain.
         /// </para>
         /// </summary>
         [AWSProperty(Min=22, Max=22)]
@@ -197,7 +198,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The timestamp showing the domain's last update.
+        /// The timestamp of when the domain was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt
@@ -210,6 +211,25 @@ namespace Amazon.VoiceID.Model
         internal bool IsSetUpdatedAt()
         {
             return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WatchlistDetails. 
+        /// <para>
+        /// Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public WatchlistDetails WatchlistDetails
+        {
+            get { return this._watchlistDetails; }
+            set { this._watchlistDetails = value; }
+        }
+
+        // Check to see if WatchlistDetails property is set
+        internal bool IsSetWatchlistDetails()
+        {
+            return this._watchlistDetails != null;
         }
 
     }

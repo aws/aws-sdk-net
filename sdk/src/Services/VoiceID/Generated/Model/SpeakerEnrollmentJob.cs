@@ -49,7 +49,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// A timestamp showing the creation of the speaker enrollment job.
+        /// A timestamp of when the speaker enrollment job was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -106,7 +106,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property EndedAt. 
         /// <para>
-        /// A timestamp showing when the speaker enrollment job ended. 
+        /// A timestamp of when the speaker enrollment job ended. 
         /// </para>
         /// </summary>
         public DateTime EndedAt

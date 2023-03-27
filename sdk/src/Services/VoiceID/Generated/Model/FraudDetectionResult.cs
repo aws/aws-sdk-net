@@ -45,7 +45,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property AudioAggregationEndedAt. 
         /// <para>
-        /// A timestamp indicating when audio aggregation ended for this fraud detection result.
+        /// A timestamp of when audio aggregation ended for this fraud detection result.
         /// </para>
         /// </summary>
         public DateTime AudioAggregationEndedAt
@@ -63,7 +63,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property AudioAggregationStartedAt. 
         /// <para>
-        /// A timestamp indicating when audio aggregation started for this fraud detection result.
+        /// A timestamp of when audio aggregation started for this fraud detection result.
         /// </para>
         /// </summary>
         public DateTime AudioAggregationStartedAt

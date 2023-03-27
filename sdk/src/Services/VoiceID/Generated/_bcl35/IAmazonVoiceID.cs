@@ -29,8 +29,8 @@ namespace Amazon.VoiceID
     /// <summary>
     /// Interface for accessing VoiceID
     ///
-    /// Amazon Connect Voice ID provides real-time caller authentication and fraud screening.
-    /// This guide describes the APIs used for this service.
+    /// Amazon Connect Voice ID provides real-time caller authentication and fraud risk detection,
+    /// which make voice interactions in contact centers more secure and efficient.
     /// </summary>
     public partial interface IAmazonVoiceID : IAmazonService, IDisposable
     {
@@ -45,12 +45,80 @@ namespace Amazon.VoiceID
 
 
         
+        #region  AssociateFraudster
+
+
+        /// <summary>
+        /// Associates the fraudsters with the watchlist specified in the same domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateFraudster service method.</param>
+        /// 
+        /// <returns>The response from the AssociateFraudster service method, as returned by VoiceID.</returns>
+        /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Check the error message
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ConflictException">
+        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
+        /// The request failed due to an unknown error on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ServiceQuotaExceededException">
+        /// The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice
+        /// ID Service Quotas</a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please slow down your request rate.
+        /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
+        /// Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ValidationException">
+        /// The request failed one or more validations; check the error message for more details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/AssociateFraudster">REST API Reference for AssociateFraudster Operation</seealso>
+        AssociateFraudsterResponse AssociateFraudster(AssociateFraudsterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateFraudster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateFraudster operation on AmazonVoiceIDClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateFraudster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/AssociateFraudster">REST API Reference for AssociateFraudster Operation</seealso>
+        IAsyncResult BeginAssociateFraudster(AssociateFraudsterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateFraudster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateFraudster.</param>
+        /// 
+        /// <returns>Returns a  AssociateFraudsterResult from VoiceID.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/AssociateFraudster">REST API Reference for AssociateFraudster Operation</seealso>
+        AssociateFraudsterResponse EndAssociateFraudster(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateDomain
 
 
         /// <summary>
         /// Creates a domain that contains all Amazon Connect Voice ID data, such as speakers,
-        /// fraudsters, customer audio, and voiceprints.
+        /// fraudsters, customer audio, and voiceprints. Every domain is created with a default
+        /// watchlist that fraudsters can be a part of.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
         /// 
@@ -110,6 +178,73 @@ namespace Amazon.VoiceID
         /// <returns>Returns a  CreateDomainResult from VoiceID.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         CreateDomainResponse EndCreateDomain(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateWatchlist
+
+
+        /// <summary>
+        /// Creates a watchlist that fraudsters can be a part of.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWatchlist service method.</param>
+        /// 
+        /// <returns>The response from the CreateWatchlist service method, as returned by VoiceID.</returns>
+        /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Check the error message
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ConflictException">
+        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
+        /// The request failed due to an unknown error on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ServiceQuotaExceededException">
+        /// The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice
+        /// ID Service Quotas</a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please slow down your request rate.
+        /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
+        /// Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ValidationException">
+        /// The request failed one or more validations; check the error message for more details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/CreateWatchlist">REST API Reference for CreateWatchlist Operation</seealso>
+        CreateWatchlistResponse CreateWatchlist(CreateWatchlistRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWatchlist operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWatchlist operation on AmazonVoiceIDClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWatchlist
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/CreateWatchlist">REST API Reference for CreateWatchlist Operation</seealso>
+        IAsyncResult BeginCreateWatchlist(CreateWatchlistRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateWatchlist operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateWatchlist.</param>
+        /// 
+        /// <returns>Returns a  CreateWatchlistResult from VoiceID.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/CreateWatchlist">REST API Reference for CreateWatchlist Operation</seealso>
+        CreateWatchlistResponse EndCreateWatchlist(IAsyncResult asyncResult);
 
         #endregion
         
@@ -180,7 +315,8 @@ namespace Amazon.VoiceID
 
 
         /// <summary>
-        /// Deletes the specified fraudster from Voice ID.
+        /// Deletes the specified fraudster from Voice ID. This action disassociates the fraudster
+        /// from any watchlists it is a part of.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFraudster service method.</param>
         /// 
@@ -299,6 +435,72 @@ namespace Amazon.VoiceID
         /// <returns>Returns a  DeleteSpeakerResult from VoiceID.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteSpeaker">REST API Reference for DeleteSpeaker Operation</seealso>
         DeleteSpeakerResponse EndDeleteSpeaker(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteWatchlist
+
+
+        /// <summary>
+        /// Deletes the specified watchlist from Voice ID. This API throws an exception when there
+        /// are fraudsters in the watchlist that you are trying to delete. You must delete the
+        /// fraudsters, and then delete the watchlist. Every domain has a default watchlist which
+        /// cannot be deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWatchlist service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWatchlist service method, as returned by VoiceID.</returns>
+        /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Check the error message
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ConflictException">
+        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
+        /// The request failed due to an unknown error on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please slow down your request rate.
+        /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
+        /// Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ValidationException">
+        /// The request failed one or more validations; check the error message for more details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteWatchlist">REST API Reference for DeleteWatchlist Operation</seealso>
+        DeleteWatchlistResponse DeleteWatchlist(DeleteWatchlistRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWatchlist operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWatchlist operation on AmazonVoiceIDClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWatchlist
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteWatchlist">REST API Reference for DeleteWatchlist Operation</seealso>
+        IAsyncResult BeginDeleteWatchlist(DeleteWatchlistRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWatchlist operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWatchlist.</param>
+        /// 
+        /// <returns>Returns a  DeleteWatchlistResult from VoiceID.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteWatchlist">REST API Reference for DeleteWatchlist Operation</seealso>
+        DeleteWatchlistResponse EndDeleteWatchlist(IAsyncResult asyncResult);
 
         #endregion
         
@@ -597,6 +799,130 @@ namespace Amazon.VoiceID
 
         #endregion
         
+        #region  DescribeWatchlist
+
+
+        /// <summary>
+        /// Describes the specified watchlist.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWatchlist service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWatchlist service method, as returned by VoiceID.</returns>
+        /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Check the error message
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
+        /// The request failed due to an unknown error on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please slow down your request rate.
+        /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
+        /// Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ValidationException">
+        /// The request failed one or more validations; check the error message for more details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DescribeWatchlist">REST API Reference for DescribeWatchlist Operation</seealso>
+        DescribeWatchlistResponse DescribeWatchlist(DescribeWatchlistRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWatchlist operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWatchlist operation on AmazonVoiceIDClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWatchlist
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DescribeWatchlist">REST API Reference for DescribeWatchlist Operation</seealso>
+        IAsyncResult BeginDescribeWatchlist(DescribeWatchlistRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeWatchlist operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWatchlist.</param>
+        /// 
+        /// <returns>Returns a  DescribeWatchlistResult from VoiceID.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DescribeWatchlist">REST API Reference for DescribeWatchlist Operation</seealso>
+        DescribeWatchlistResponse EndDescribeWatchlist(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DisassociateFraudster
+
+
+        /// <summary>
+        /// Disassociates the fraudsters from the watchlist specified. Voice ID always expects
+        /// a fraudster to be a part of at least one watchlist. If you try to disassociate a fraudster
+        /// from its only watchlist, a <code>ValidationException</code> is thrown.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFraudster service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateFraudster service method, as returned by VoiceID.</returns>
+        /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Check the error message
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ConflictException">
+        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
+        /// The request failed due to an unknown error on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please slow down your request rate.
+        /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
+        /// Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ValidationException">
+        /// The request failed one or more validations; check the error message for more details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DisassociateFraudster">REST API Reference for DisassociateFraudster Operation</seealso>
+        DisassociateFraudsterResponse DisassociateFraudster(DisassociateFraudsterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateFraudster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFraudster operation on AmazonVoiceIDClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateFraudster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DisassociateFraudster">REST API Reference for DisassociateFraudster Operation</seealso>
+        IAsyncResult BeginDisassociateFraudster(DisassociateFraudsterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateFraudster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateFraudster.</param>
+        /// 
+        /// <returns>Returns a  DisassociateFraudsterResult from VoiceID.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DisassociateFraudster">REST API Reference for DisassociateFraudster Operation</seealso>
+        DisassociateFraudsterResponse EndDisassociateFraudster(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  EvaluateSession
 
 
@@ -777,6 +1103,65 @@ namespace Amazon.VoiceID
 
         #endregion
         
+        #region  ListFraudsters
+
+
+        /// <summary>
+        /// Lists all fraudsters in a specified watchlist or domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFraudsters service method.</param>
+        /// 
+        /// <returns>The response from the ListFraudsters service method, as returned by VoiceID.</returns>
+        /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Check the error message
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
+        /// The request failed due to an unknown error on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please slow down your request rate.
+        /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
+        /// Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ValidationException">
+        /// The request failed one or more validations; check the error message for more details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListFraudsters">REST API Reference for ListFraudsters Operation</seealso>
+        ListFraudstersResponse ListFraudsters(ListFraudstersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFraudsters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFraudsters operation on AmazonVoiceIDClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFraudsters
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListFraudsters">REST API Reference for ListFraudsters Operation</seealso>
+        IAsyncResult BeginListFraudsters(ListFraudstersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFraudsters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFraudsters.</param>
+        /// 
+        /// <returns>Returns a  ListFraudstersResult from VoiceID.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListFraudsters">REST API Reference for ListFraudsters Operation</seealso>
+        ListFraudstersResponse EndListFraudsters(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListSpeakerEnrollmentJobs
 
 
@@ -953,6 +1338,65 @@ namespace Amazon.VoiceID
         /// <returns>Returns a  ListTagsForResourceResult from VoiceID.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListWatchlists
+
+
+        /// <summary>
+        /// Lists all watchlists in a specified domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWatchlists service method.</param>
+        /// 
+        /// <returns>The response from the ListWatchlists service method, as returned by VoiceID.</returns>
+        /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Check the error message
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
+        /// The request failed due to an unknown error on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please slow down your request rate.
+        /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
+        /// Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ValidationException">
+        /// The request failed one or more validations; check the error message for more details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListWatchlists">REST API Reference for ListWatchlists Operation</seealso>
+        ListWatchlistsResponse ListWatchlists(ListWatchlistsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWatchlists operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWatchlists operation on AmazonVoiceIDClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWatchlists
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListWatchlists">REST API Reference for ListWatchlists Operation</seealso>
+        IAsyncResult BeginListWatchlists(ListWatchlistsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWatchlists operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWatchlists.</param>
+        /// 
+        /// <returns>Returns a  ListWatchlistsResult from VoiceID.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListWatchlists">REST API Reference for ListWatchlists Operation</seealso>
+        ListWatchlistsResponse EndListWatchlists(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1350,6 +1794,70 @@ namespace Amazon.VoiceID
         /// <returns>Returns a  UpdateDomainResult from VoiceID.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/UpdateDomain">REST API Reference for UpdateDomain Operation</seealso>
         UpdateDomainResponse EndUpdateDomain(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateWatchlist
+
+
+        /// <summary>
+        /// Updates the specified watchlist. Every domain has a default watchlist which cannot
+        /// be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWatchlist service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWatchlist service method, as returned by VoiceID.</returns>
+        /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Check the error message
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ConflictException">
+        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
+        /// The request failed due to an unknown error on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please slow down your request rate.
+        /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
+        /// Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ValidationException">
+        /// The request failed one or more validations; check the error message for more details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/UpdateWatchlist">REST API Reference for UpdateWatchlist Operation</seealso>
+        UpdateWatchlistResponse UpdateWatchlist(UpdateWatchlistRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWatchlist operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWatchlist operation on AmazonVoiceIDClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateWatchlist
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/UpdateWatchlist">REST API Reference for UpdateWatchlist Operation</seealso>
+        IAsyncResult BeginUpdateWatchlist(UpdateWatchlistRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateWatchlist operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateWatchlist.</param>
+        /// 
+        /// <returns>Returns a  UpdateWatchlistResult from VoiceID.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/UpdateWatchlist">REST API Reference for UpdateWatchlist Operation</seealso>
+        UpdateWatchlistResponse EndUpdateWatchlist(IAsyncResult asyncResult);
 
         #endregion
         

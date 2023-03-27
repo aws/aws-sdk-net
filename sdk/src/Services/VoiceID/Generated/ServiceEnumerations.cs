@@ -109,6 +109,10 @@ namespace Amazon.VoiceID
         /// </summary>
         public static readonly ConflictType CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT = new ConflictType("CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT");
         /// <summary>
+        /// Constant CANNOT_DELETE_NON_EMPTY_WATCHLIST for ConflictType
+        /// </summary>
+        public static readonly ConflictType CANNOT_DELETE_NON_EMPTY_WATCHLIST = new ConflictType("CANNOT_DELETE_NON_EMPTY_WATCHLIST");
+        /// <summary>
         /// Constant CONCURRENT_CHANGES for ConflictType
         /// </summary>
         public static readonly ConflictType CONCURRENT_CHANGES = new ConflictType("CONCURRENT_CHANGES");
@@ -124,6 +128,10 @@ namespace Amazon.VoiceID
         /// Constant ENROLLMENT_ALREADY_EXISTS for ConflictType
         /// </summary>
         public static readonly ConflictType ENROLLMENT_ALREADY_EXISTS = new ConflictType("ENROLLMENT_ALREADY_EXISTS");
+        /// <summary>
+        /// Constant FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST for ConflictType
+        /// </summary>
+        public static readonly ConflictType FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST = new ConflictType("FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST");
         /// <summary>
         /// Constant SPEAKER_NOT_SET for ConflictType
         /// </summary>
@@ -568,6 +576,10 @@ namespace Amazon.VoiceID
         /// Constant SPEAKER for ResourceType
         /// </summary>
         public static readonly ResourceType SPEAKER = new ResourceType("SPEAKER");
+        /// <summary>
+        /// Constant WATCHLIST for ResourceType
+        /// </summary>
+        public static readonly ResourceType WATCHLIST = new ResourceType("WATCHLIST");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
