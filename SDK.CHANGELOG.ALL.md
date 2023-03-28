@@ -1,3 +1,14 @@
+### 3.7.514.0 (2023-03-28 18:20 UTC)
+* IotData (3.7.102.0)
+	* Add endpoint ruleset support for cn-north-1.
+* SSMContacts (3.7.101.0)
+	* This release adds 12 new APIs as part of Oncall Schedule feature release, adds support for a new contact type: ONCALL_SCHEDULE. Check public documentation for AWS ssm-contacts for more information
+* SSMIncidents (3.7.104.0)
+	* Increased maximum length of "TriggerDetails.rawData" to 10K characters and "IncidentSummary" to 8K characters.
+* Core 3.7.106.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.513.0 (2023-03-27 18:28 UTC)
 * AppRegistry (3.7.102.0)
 	* In this release, we started supporting ARN in applicationSpecifier and attributeGroupSpecifier. GetAttributeGroup, ListAttributeGroups and ListAttributeGroupsForApplication APIs will now have CreatedBy field in the response.

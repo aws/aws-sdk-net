@@ -32,7 +32,7 @@ namespace Amazon.ARCZonalShift
     public partial class AmazonARCZonalShiftConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.75");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.76");
 
         private string _userAgent = UserAgentString;
 
