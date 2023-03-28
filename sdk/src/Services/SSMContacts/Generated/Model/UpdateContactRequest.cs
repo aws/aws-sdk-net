@@ -80,7 +80,7 @@ namespace Amazon.SSMContacts.Model
         /// Gets and sets the property Plan. 
         /// <para>
         /// A list of stages. A contact has an engagement plan with stages for specified contact
-        /// channels. An escalation plan uses these stages to contact specified contacts. 
+        /// channels. An escalation plan uses these stages to contact specified contacts.
         /// </para>
         /// </summary>
         public Plan Plan

@@ -68,6 +68,14 @@ namespace Amazon.SSMContacts.Model
         }
 
         /// <summary>
+        /// Paginator for ListPageResolutions operation
+        ///</summary>
+        public IListPageResolutionsPaginator ListPageResolutions(ListPageResolutionsRequest request) 
+        {
+            return new ListPageResolutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPagesByContact operation
         ///</summary>
         public IListPagesByContactPaginator ListPagesByContact(ListPagesByContactRequest request) 
@@ -81,6 +89,38 @@ namespace Amazon.SSMContacts.Model
         public IListPagesByEngagementPaginator ListPagesByEngagement(ListPagesByEngagementRequest request) 
         {
             return new ListPagesByEngagementPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPreviewRotationShifts operation
+        ///</summary>
+        public IListPreviewRotationShiftsPaginator ListPreviewRotationShifts(ListPreviewRotationShiftsRequest request) 
+        {
+            return new ListPreviewRotationShiftsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRotationOverrides operation
+        ///</summary>
+        public IListRotationOverridesPaginator ListRotationOverrides(ListRotationOverridesRequest request) 
+        {
+            return new ListRotationOverridesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRotations operation
+        ///</summary>
+        public IListRotationsPaginator ListRotations(ListRotationsRequest request) 
+        {
+            return new ListRotationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRotationShifts operation
+        ///</summary>
+        public IListRotationShiftsPaginator ListRotationShifts(ListRotationShiftsRequest request) 
+        {
+            return new ListRotationShiftsPaginator(this.client, request);
         }
     }
 }

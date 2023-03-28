@@ -83,6 +83,46 @@
     <pattern>arn:(aws|aws-cn|aws-us-gov):ssm-contacts:[-\w+=\/,.@]*:[0-9]+:([\w+=\/,.@:-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SSMContacts.Model.CreateRotationRequest.IdempotencyToken</property>
+    <max>2048</max>
+    <pattern>^[\\\/a-zA-Z0-9_+=\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.CreateRotationRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_\-\s\.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.CreateRotationRequest.TimeZoneId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[:a-zA-Z0-9_\-\s\.\\/]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.CreateRotationResponse.RotationArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):ssm-contacts:[-\w+=\/,.@]*:[0-9]+:([\w+=\/,.@:-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.CreateRotationOverrideRequest.IdempotencyToken</property>
+    <max>2048</max>
+    <pattern>^[\\\/a-zA-Z0-9_+=\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.CreateRotationOverrideRequest.RotationId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):ssm-contacts:[-\w+=\/,.@]*:[0-9]+:([\w+=\/,.@:-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.CreateRotationOverrideResponse.RotationOverrideId</property>
+    <min>36</min>
+    <max>39</max>
+    <pattern>([a-fA-Z0-9]{8,11}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}){1}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SSMContacts.Model.DeactivateContactChannelRequest.ContactChannelId</property>
     <min>1</min>
     <max>2048</max>
@@ -99,6 +139,24 @@
     <min>1</min>
     <max>2048</max>
     <pattern>arn:(aws|aws-cn|aws-us-gov):ssm-contacts:[-\w+=\/,.@]*:[0-9]+:([\w+=\/,.@:-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.DeleteRotationRequest.RotationId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):ssm-contacts:[-\w+=\/,.@]*:[0-9]+:([\w+=\/,.@:-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.DeleteRotationOverrideRequest.RotationId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):ssm-contacts:[-\w+=\/,.@]*:[0-9]+:([\w+=\/,.@:-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.DeleteRotationOverrideRequest.RotationOverrideId</property>
+    <min>36</min>
+    <max>39</max>
+    <pattern>([a-fA-Z0-9]{8,11}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}){1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMContacts.Model.DescribeEngagementRequest.EngagementId</property>
@@ -277,6 +335,54 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SSMContacts.Model.GetRotationRequest.RotationId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):ssm-contacts:[-\w+=\/,.@]*:[0-9]+:([\w+=\/,.@:-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.GetRotationResponse.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_\-\s\.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.GetRotationResponse.RotationArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):ssm-contacts:[-\w+=\/,.@]*:[0-9]+:([\w+=\/,.@:-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.GetRotationResponse.TimeZoneId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[:a-zA-Z0-9_\-\s\.\\/]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.GetRotationOverrideRequest.RotationId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):ssm-contacts:[-\w+=\/,.@]*:[0-9]+:([\w+=\/,.@:-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.GetRotationOverrideRequest.RotationOverrideId</property>
+    <min>36</min>
+    <max>39</max>
+    <pattern>([a-fA-Z0-9]{8,11}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}){1}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.GetRotationOverrideResponse.RotationArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):ssm-contacts:[-\w+=\/,.@]*:[0-9]+:([\w+=\/,.@:-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.GetRotationOverrideResponse.RotationOverrideId</property>
+    <min>36</min>
+    <max>39</max>
+    <pattern>([a-fA-Z0-9]{8,11}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}){1}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SSMContacts.Model.ListContactChannelsRequest.ContactId</property>
     <min>1</min>
     <max>2048</max>
@@ -360,6 +466,22 @@
     <pattern>^[\\\/a-zA-Z0-9_+=\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListPageResolutionsRequest.NextToken</property>
+    <max>2048</max>
+    <pattern>^[\\\/a-zA-Z0-9_+=\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListPageResolutionsRequest.PageId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):ssm-contacts:[-\w+=\/,.@]*:[0-9]+:([\w+=\/,.@:-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListPageResolutionsResponse.NextToken</property>
+    <max>2048</max>
+    <pattern>^[\\\/a-zA-Z0-9_+=\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SSMContacts.Model.ListPagesByContactRequest.ContactId</property>
     <min>1</min>
     <max>2048</max>
@@ -398,6 +520,90 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMContacts.Model.ListPagesByEngagementResponse.NextToken</property>
+    <max>2048</max>
+    <pattern>^[\\\/a-zA-Z0-9_+=\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListPreviewRotationShiftsRequest.MaxResults</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListPreviewRotationShiftsRequest.NextToken</property>
+    <max>2048</max>
+    <pattern>^[\\\/a-zA-Z0-9_+=\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListPreviewRotationShiftsRequest.TimeZoneId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[:a-zA-Z0-9_\-\s\.\\/]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListPreviewRotationShiftsResponse.NextToken</property>
+    <max>2048</max>
+    <pattern>^[\\\/a-zA-Z0-9_+=\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListRotationOverridesRequest.MaxResults</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListRotationOverridesRequest.NextToken</property>
+    <max>2048</max>
+    <pattern>^[\\\/a-zA-Z0-9_+=\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListRotationOverridesRequest.RotationId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):ssm-contacts:[-\w+=\/,.@]*:[0-9]+:([\w+=\/,.@:-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListRotationOverridesResponse.NextToken</property>
+    <max>2048</max>
+    <pattern>^[\\\/a-zA-Z0-9_+=\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListRotationsRequest.MaxResults</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListRotationsRequest.NextToken</property>
+    <max>2048</max>
+    <pattern>^[\\\/a-zA-Z0-9_+=\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListRotationsRequest.RotationNamePrefix</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_\-\s\.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListRotationsResponse.NextToken</property>
+    <max>2048</max>
+    <pattern>^[\\\/a-zA-Z0-9_+=\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListRotationShiftsRequest.MaxResults</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListRotationShiftsRequest.NextToken</property>
+    <max>2048</max>
+    <pattern>^[\\\/a-zA-Z0-9_+=\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListRotationShiftsRequest.RotationId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):ssm-contacts:[-\w+=\/,.@]*:[0-9]+:([\w+=\/,.@:-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ListRotationShiftsResponse.NextToken</property>
     <max>2048</max>
     <pattern>^[\\\/a-zA-Z0-9_+=\-]*$</pattern>
   </property-value-rule>
@@ -521,6 +727,18 @@
     <pattern>^[\p{L}\p{Z}\p{N}_.\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SSMContacts.Model.UpdateRotationRequest.RotationId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):ssm-contacts:[-\w+=\/,.@]*:[0-9]+:([\w+=\/,.@:-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.UpdateRotationRequest.TimeZoneId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[:a-zA-Z0-9_\-\s\.\\/]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SSMContacts.Model.ChannelTargetInfo.ContactChannelId</property>
     <min>1</min>
     <max>2048</max>
@@ -601,6 +819,21 @@
     <pattern>^[\\a-zA-Z0-9_@#%*+=:?.\/!\s-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SSMContacts.Model.HandOffTime.HourOfDay</property>
+    <min>0</min>
+    <max>23</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.HandOffTime.MinuteOfHour</property>
+    <min>0</min>
+    <max>59</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.MonthlySetting.DayOfMonth</property>
+    <min>1</min>
+    <max>31</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SSMContacts.Model.Page.ContactArn</property>
     <min>1</min>
     <max>2048</max>
@@ -639,6 +872,50 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^[.\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.RecurrenceSettings.NumberOfOnCalls</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.RecurrenceSettings.RecurrenceMultiplier</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ResolutionContact.ContactArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):ssm-contacts:[-\w+=\/,.@]*:[0-9]+:([\w+=\/,.@:-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.ResolutionContact.StageIndex</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.Rotation.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_\-\s\.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.Rotation.RotationArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):ssm-contacts:[-\w+=\/,.@]*:[0-9]+:([\w+=\/,.@:-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.Rotation.TimeZoneId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[:a-zA-Z0-9_\-\s\.\\/]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMContacts.Model.RotationOverride.RotationOverrideId</property>
+    <min>36</min>
+    <max>39</max>
+    <pattern>([a-fA-Z0-9]{8,11}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}){1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMContacts.Model.Stage.DurationInMinutes</property>

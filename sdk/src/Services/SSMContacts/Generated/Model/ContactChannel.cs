@@ -45,7 +45,7 @@ namespace Amazon.SSMContacts.Model
         /// <para>
         /// A Boolean value describing if the contact channel has been activated or not. If the
         /// contact channel isn't activated, Incident Manager can't engage the contact through
-        /// it. 
+        /// it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
