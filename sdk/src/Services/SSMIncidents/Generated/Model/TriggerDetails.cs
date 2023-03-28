@@ -45,7 +45,7 @@ namespace Amazon.SSMIncidents.Model
         /// when an incident is created.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4000)]
+        [AWSProperty(Min=0, Max=10000)]
         public string RawData
         {
             get { return this._rawData; }
