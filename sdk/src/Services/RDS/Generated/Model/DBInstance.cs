@@ -110,6 +110,7 @@ namespace Amazon.RDS.Model
         private bool? _publiclyAccessible;
         private List<string> _readReplicaDBClusterIdentifiers = new List<string>();
         private List<string> _readReplicaDBInstanceIdentifiers = new List<string>();
+        private string _readReplicaSourceDBClusterIdentifier;
         private string _readReplicaSourceDBInstanceIdentifier;
         private ReplicaMode _replicaMode;
         private DateTime? _resumeFullAutomationModeTime;
@@ -1597,6 +1598,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetReadReplicaDBInstanceIdentifiers()
         {
             return this._readReplicaDBInstanceIdentifiers != null && this._readReplicaDBInstanceIdentifiers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadReplicaSourceDBClusterIdentifier. 
+        /// <para>
+        /// Contains the identifier of the source DB cluster if this DB instance is a read replica.
+        /// </para>
+        /// </summary>
+        public string ReadReplicaSourceDBClusterIdentifier
+        {
+            get { return this._readReplicaSourceDBClusterIdentifier; }
+            set { this._readReplicaSourceDBClusterIdentifier = value; }
+        }
+
+        // Check to see if ReadReplicaSourceDBClusterIdentifier property is set
+        internal bool IsSetReadReplicaSourceDBClusterIdentifier()
+        {
+            return this._readReplicaSourceDBClusterIdentifier != null;
         }
 
         /// <summary>

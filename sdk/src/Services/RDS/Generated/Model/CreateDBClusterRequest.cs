@@ -42,15 +42,15 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create an Amazon
-    /// Aurora DB cluster as a read replica of another DB cluster or Amazon RDS MySQL or PostgreSQL
-    /// DB instance. For more information about Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">What
+    /// Aurora DB cluster as a read replica of another DB cluster or Amazon RDS for MySQL
+    /// or PostgreSQL DB instance. For more information about Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">What
     /// is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// You can also use the <code>ReplicationSourceIdentifier</code> parameter to create
-    /// a Multi-AZ DB cluster read replica with an RDS for PostgreSQL DB instance as the source.
-    /// For more information about Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">Multi-AZ
+    /// a Multi-AZ DB cluster read replica with an RDS for MySQL or PostgreSQL DB instance
+    /// as the source. For more information about Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">Multi-AZ
     /// DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
     /// </para>
     /// </summary>
@@ -1737,7 +1737,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for: Aurora DB clusters and RDS for PostgreSQL Multi-AZ DB clusters
+        /// Valid for: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public string ReplicationSourceIdentifier

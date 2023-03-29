@@ -1680,15 +1680,15 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create an Amazon
-        /// Aurora DB cluster as a read replica of another DB cluster or Amazon RDS MySQL or PostgreSQL
-        /// DB instance. For more information about Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">What
+        /// Aurora DB cluster as a read replica of another DB cluster or Amazon RDS for MySQL
+        /// or PostgreSQL DB instance. For more information about Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">What
         /// is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// You can also use the <code>ReplicationSourceIdentifier</code> parameter to create
-        /// a Multi-AZ DB cluster read replica with an RDS for PostgreSQL DB instance as the source.
-        /// For more information about Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">Multi-AZ
+        /// a Multi-AZ DB cluster read replica with an RDS for MySQL or PostgreSQL DB instance
+        /// as the source. For more information about Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">Multi-AZ
         /// DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
@@ -1782,15 +1782,15 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create an Amazon
-        /// Aurora DB cluster as a read replica of another DB cluster or Amazon RDS MySQL or PostgreSQL
-        /// DB instance. For more information about Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">What
+        /// Aurora DB cluster as a read replica of another DB cluster or Amazon RDS for MySQL
+        /// or PostgreSQL DB instance. For more information about Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">What
         /// is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// You can also use the <code>ReplicationSourceIdentifier</code> parameter to create
-        /// a Multi-AZ DB cluster read replica with an RDS for PostgreSQL DB instance as the source.
-        /// For more information about Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">Multi-AZ
+        /// a Multi-AZ DB cluster read replica with an RDS for MySQL or PostgreSQL DB instance
+        /// as the source. For more information about Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">Multi-AZ
         /// DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
@@ -2439,10 +2439,13 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a new DB instance that acts as a read replica for an existing source DB instance.
-        /// You can create a read replica for a DB instance running MySQL, MariaDB, Oracle, PostgreSQL,
-        /// or SQL Server. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
-        /// with Read Replicas</a> in the <i>Amazon RDS User Guide</i>.
+        /// Creates a new DB instance that acts as a read replica for an existing source DB instance
+        /// or Multi-AZ DB cluster. You can create a read replica for a DB instance running MySQL,
+        /// MariaDB, Oracle, PostgreSQL, or SQL Server. You can create a read replica for a Multi-AZ
+        /// DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
+        /// with read replicas</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html#multi-az-db-clusters-migrating-to-instance-with-read-replica">Migrating
+        /// from a Multi-AZ DB cluster to a DB instance using a read replica</a> in the <i>Amazon
+        /// RDS User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -2451,19 +2454,22 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// All read replica DB instances are created with backups disabled. All other DB instance
-        /// attributes (including DB security groups and DB parameter groups) are inherited from
-        /// the source DB instance, except as specified.
+        /// All read replica DB instances are created with backups disabled. All other attributes
+        /// (including DB security groups and DB parameter groups) are inherited from the source
+        /// DB instance or cluster, except as specified.
         /// </para>
         ///  <important> 
         /// <para>
-        /// Your source DB instance must have backup retention enabled.
+        /// Your source DB instance or cluster must have backup retention enabled.
         /// </para>
         ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBInstanceReadReplica service method.</param>
         /// 
         /// <returns>The response from the CreateDBInstanceReadReplica service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
@@ -2495,6 +2501,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
@@ -2544,10 +2553,13 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a new DB instance that acts as a read replica for an existing source DB instance.
-        /// You can create a read replica for a DB instance running MySQL, MariaDB, Oracle, PostgreSQL,
-        /// or SQL Server. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
-        /// with Read Replicas</a> in the <i>Amazon RDS User Guide</i>.
+        /// Creates a new DB instance that acts as a read replica for an existing source DB instance
+        /// or Multi-AZ DB cluster. You can create a read replica for a DB instance running MySQL,
+        /// MariaDB, Oracle, PostgreSQL, or SQL Server. You can create a read replica for a Multi-AZ
+        /// DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
+        /// with read replicas</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html#multi-az-db-clusters-migrating-to-instance-with-read-replica">Migrating
+        /// from a Multi-AZ DB cluster to a DB instance using a read replica</a> in the <i>Amazon
+        /// RDS User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -2556,13 +2568,13 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// All read replica DB instances are created with backups disabled. All other DB instance
-        /// attributes (including DB security groups and DB parameter groups) are inherited from
-        /// the source DB instance, except as specified.
+        /// All read replica DB instances are created with backups disabled. All other attributes
+        /// (including DB security groups and DB parameter groups) are inherited from the source
+        /// DB instance or cluster, except as specified.
         /// </para>
         ///  <important> 
         /// <para>
-        /// Your source DB instance must have backup retention enabled.
+        /// Your source DB instance or cluster must have backup retention enabled.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2572,6 +2584,9 @@ namespace Amazon.RDS
         /// </param>
         /// 
         /// <returns>The response from the CreateDBInstanceReadReplica service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
@@ -2603,6 +2618,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
@@ -3659,6 +3677,11 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
+        /// If you're deleting a Multi-AZ DB cluster with read replicas, all cluster members are
+        /// terminated and read replicas are promoted to standalone instances.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
         /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
@@ -3702,6 +3725,11 @@ namespace Amazon.RDS
         /// a DB cluster, all automated backups for that DB cluster are deleted and can't be recovered.
         /// Manual DB cluster snapshots of the specified DB cluster are not deleted.
         /// 
+        ///  
+        /// <para>
+        /// If you're deleting a Multi-AZ DB cluster with read replicas, all cluster members are
+        /// terminated and read replicas are promoted to standalone instances.
+        /// </para>
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">

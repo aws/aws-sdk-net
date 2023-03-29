@@ -692,7 +692,12 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The version number of the database engine to which you want to upgrade. Changing this
         /// parameter results in an outage. The change is applied during the next maintenance
-        /// window unless <code>ApplyImmediately</code> is enabled.
+        /// window unless <code>ApplyImmediately</code> is enabled. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the cluster that you're modifying has one or more read replicas, all replicas must
+        /// be running an engine version that's the same or later than the version you specify.
         /// </para>
         ///  
         /// <para>
@@ -702,6 +707,16 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// To list all of the available engine versions for MySQL 5.6-compatible Aurora, use
+        /// the following command:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
         /// 
         /// </para>
         ///  

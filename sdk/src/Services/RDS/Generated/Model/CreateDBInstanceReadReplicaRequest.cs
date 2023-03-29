@@ -30,10 +30,13 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBInstanceReadReplica operation.
-    /// Creates a new DB instance that acts as a read replica for an existing source DB instance.
-    /// You can create a read replica for a DB instance running MySQL, MariaDB, Oracle, PostgreSQL,
-    /// or SQL Server. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
-    /// with Read Replicas</a> in the <i>Amazon RDS User Guide</i>.
+    /// Creates a new DB instance that acts as a read replica for an existing source DB instance
+    /// or Multi-AZ DB cluster. You can create a read replica for a DB instance running MySQL,
+    /// MariaDB, Oracle, PostgreSQL, or SQL Server. You can create a read replica for a Multi-AZ
+    /// DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
+    /// with read replicas</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html#multi-az-db-clusters-migrating-to-instance-with-read-replica">Migrating
+    /// from a Multi-AZ DB cluster to a DB instance using a read replica</a> in the <i>Amazon
+    /// RDS User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -42,13 +45,13 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  
     /// <para>
-    /// All read replica DB instances are created with backups disabled. All other DB instance
-    /// attributes (including DB security groups and DB parameter groups) are inherited from
-    /// the source DB instance, except as specified.
+    /// All read replica DB instances are created with backups disabled. All other attributes
+    /// (including DB security groups and DB parameter groups) are inherited from the source
+    /// DB instance or cluster, except as specified.
     /// </para>
     ///  <important> 
     /// <para>
-    /// Your source DB instance must have backup retention enabled.
+    /// Your source DB instance or cluster must have backup retention enabled.
     /// </para>
     ///  </important>
     /// </summary>
@@ -85,6 +88,7 @@ namespace Amazon.RDS.Model
         private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
         private bool? _publiclyAccessible;
         private ReplicaMode _replicaMode;
+        private string _sourceDBClusterIdentifier;
         private string _sourceDBInstanceIdentifier;
         private int? _storageThroughput;
         private string _storageType;
@@ -101,7 +105,7 @@ namespace Amazon.RDS.Model
         /// Instantiates CreateDBInstanceReadReplicaRequest with the parameterized properties
         /// </summary>
         /// <param name="dbInstanceIdentifier">The DB instance identifier of the read replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string.</param>
-        /// <param name="sourceDBInstanceIdentifier">The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to five read replicas. Constraints: <ul> <li> Must be the identifier of an existing MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server DB instance. </li> <li> Can specify a DB instance that is a MySQL read replica only if the source is running MySQL 5.6 or later. </li> <li> For the limitations of Oracle read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read Replica Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>. </li> <li> For the limitations of SQL Server read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.ReadReplicas.Limitations.html">Read Replica Limitations with Microsoft SQL Server</a> in the <i>Amazon RDS User Guide</i>. </li> <li> Can specify a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross-Region replication). </li> <li> The specified DB instance must have automatic backups enabled, that is, its backup retention period must be greater than 0. </li> <li> If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid DB instance identifier. </li> <li> If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a valid DB instance ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server or RDS Custom, which don't support cross-Region replicas. </li> </ul></param>
+        /// <param name="sourceDBInstanceIdentifier">The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to 15 read replicas, with the exception of Oracle and SQL Server, which can have up to five. Constraints: <ul> <li> Must be the identifier of an existing MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server DB instance. </li> <li> Can't be specified if the <code>SourceDBClusterIdentifier</code> parameter is also specified. </li> <li> For the limitations of Oracle read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.limitations.html#oracle-read-replicas.limitations.versions-and-licenses">Version and licensing considerations for RDS for Oracle replicas</a> in the <i>Amazon RDS User Guide</i>. </li> <li> For the limitations of SQL Server read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.ReadReplicas.html#SQLServer.ReadReplicas.Limitations">Read replica limitations with SQL Server</a> in the <i>Amazon RDS User Guide</i>. </li> <li> The specified DB instance must have automatic backups enabled, that is, its backup retention period must be greater than 0. </li> <li> If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid DB instance identifier. </li> <li> If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a valid DB instance ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server or RDS Custom, which don't support cross-Region replicas. </li> </ul></param>
         public CreateDBInstanceReadReplicaRequest(string dbInstanceIdentifier, string sourceDBInstanceIdentifier)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
@@ -450,8 +454,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DomainIAMRoleName. 
         /// <para>
-        /// Specify the name of the IAM role to be used when making API calls to the Directory
-        /// Service.
+        /// The name of the IAM role to be used when making API calls to the Directory Service.
         /// </para>
         ///  
         /// <para>
@@ -618,9 +621,9 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// If you create an encrypted read replica in the same Amazon Web Services Region as
-        /// the source DB instance, then do not specify a value for this parameter. A read replica
-        /// in the same Amazon Web Services Region is always encrypted with the same KMS key as
-        /// the source DB instance.
+        /// the source DB instance or Multi-AZ DB cluster, don't specify a value for this parameter.
+        /// A read replica in the same Amazon Web Services Region is always encrypted with the
+        /// same KMS key as the source DB instance or cluster.
         /// </para>
         ///  
         /// <para>
@@ -632,7 +635,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// You can't create an encrypted read replica from an unencrypted DB instance.
+        /// You can't create an encrypted read replica from an unencrypted DB instance or Multi-AZ
+        /// DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -751,8 +755,8 @@ namespace Amazon.RDS.Model
         /// <para>
         /// You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of
         /// your replica in another Availability Zone for failover support for the replica. Creating
-        /// your read replica as a Multi-AZ DB instance is independent of whether the source database
-        /// is a Multi-AZ DB instance.
+        /// your read replica as a Multi-AZ DB instance is independent of whether the source is
+        /// a Multi-AZ DB instance or a Multi-AZ DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -816,11 +820,11 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property OptionGroupName. 
         /// <para>
         /// The option group the DB instance is associated with. If omitted, the option group
-        /// associated with the source instance is used.
+        /// associated with the source instance or cluster is used.
         /// </para>
         ///  <note> 
         /// <para>
-        /// For SQL Server, you must use the option group associated with the source instance.
+        /// For SQL Server, you must use the option group associated with the source.
         /// </para>
         ///  </note> 
         /// <para>
@@ -973,6 +977,12 @@ namespace Amazon.RDS.Model
         /// <para>
         /// This setting applies only to Amazon Web Services GovCloud (US) Regions and China Amazon
         /// Web Services Regions. It's ignored in other Amazon Web Services Regions.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting applies only when replicating from a source DB <i>instance</i>. Source
+        /// DB clusters aren't supported in Amazon Web Services GovCloud (US) Regions and China
+        /// Amazon Web Services Regions.
         /// </para>
         ///  
         /// <para>
@@ -1158,10 +1168,54 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceDBClusterIdentifier. 
+        /// <para>
+        /// The identifier of the Multi-AZ DB cluster that will act as the source for the read
+        /// replica. Each DB cluster can have up to 15 read replicas.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be the identifier of an existing Multi-AZ DB cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be specified if the <code>SourceDBInstanceIdentifier</code> parameter is also
+        /// specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The specified DB cluster must have automatic backups enabled, that is, its backup
+        /// retention period must be greater than 0.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The source DB cluster must be in the same Amazon Web Services Region as the read replica.
+        /// Cross-Region replication isn't supported.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string SourceDBClusterIdentifier
+        {
+            get { return this._sourceDBClusterIdentifier; }
+            set { this._sourceDBClusterIdentifier = value; }
+        }
+
+        // Check to see if SourceDBClusterIdentifier property is set
+        internal bool IsSetSourceDBClusterIdentifier()
+        {
+            return this._sourceDBClusterIdentifier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceDBInstanceIdentifier. 
         /// <para>
         /// The identifier of the DB instance that will act as the source for the read replica.
-        /// Each DB instance can have up to five read replicas.
+        /// Each DB instance can have up to 15 read replicas, with the exception of Oracle and
+        /// SQL Server, which can have up to five.
         /// </para>
         ///  
         /// <para>
@@ -1174,23 +1228,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can specify a DB instance that is a MySQL read replica only if the source is running
-        /// MySQL 5.6 or later.
+        /// Can't be specified if the <code>SourceDBClusterIdentifier</code> parameter is also
+        /// specified.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the limitations of Oracle read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read
-        /// Replica Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>.
+        /// For the limitations of Oracle read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.limitations.html#oracle-read-replicas.limitations.versions-and-licenses">Version
+        /// and licensing considerations for RDS for Oracle replicas</a> in the <i>Amazon RDS
+        /// User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the limitations of SQL Server read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.ReadReplicas.Limitations.html">Read
-        /// Replica Limitations with Microsoft SQL Server</a> in the <i>Amazon RDS User Guide</i>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Can specify a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5
-        /// or later (9.4.7 and higher for cross-Region replication).
+        /// For the limitations of SQL Server read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.ReadReplicas.html#SQLServer.ReadReplicas.Limitations">Read
+        /// replica limitations with SQL Server</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1211,7 +1261,6 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string SourceDBInstanceIdentifier
         {
             get { return this._sourceDBInstanceIdentifier; }
