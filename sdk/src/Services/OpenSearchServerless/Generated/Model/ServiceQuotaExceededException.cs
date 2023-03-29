@@ -29,43 +29,46 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
-    /// When creating a resource, thrown when a resource with the same name already exists
-    /// or is being created. When deleting a resource, thrown when the resource is not in
-    /// the ACTIVE or FAILED state.
+    /// Thrown when you attempt to create more resources than the service allows based on
+    /// service quotas.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class ConflictException : AmazonOpenSearchServerlessException
+    public partial class ServiceQuotaExceededException : AmazonOpenSearchServerlessException
     {
+        private string _quotaCode;
+        private string _resourceId;
+        private string _resourceType;
+        private string _serviceCode;
 
         /// <summary>
-        /// Constructs a new ConflictException with the specified error
+        /// Constructs a new ServiceQuotaExceededException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public ConflictException(string message) 
+        public ServiceQuotaExceededException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of ConflictException
+        /// Construct instance of ServiceQuotaExceededException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public ConflictException(string message, Exception innerException) 
+        public ServiceQuotaExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of ConflictException
+        /// Construct instance of ServiceQuotaExceededException
         /// </summary>
         /// <param name="innerException"></param>
-        public ConflictException(Exception innerException) 
+        public ServiceQuotaExceededException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of ConflictException
+        /// Construct instance of ServiceQuotaExceededException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -73,32 +76,36 @@ namespace Amazon.OpenSearchServerless.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ConflictException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ServiceQuotaExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of ConflictException
+        /// Construct instance of ServiceQuotaExceededException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ConflictException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ServiceQuotaExceededException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the ConflictException class with serialized data.
+        /// Constructs a new instance of the ServiceQuotaExceededException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected ConflictException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected ServiceQuotaExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.QuotaCode = (string)info.GetValue("QuotaCode", typeof(string));
+            this.ResourceId = (string)info.GetValue("ResourceId", typeof(string));
+            this.ResourceType = (string)info.GetValue("ResourceType", typeof(string));
+            this.ServiceCode = (string)info.GetValue("ServiceCode", typeof(string));
         }
 
         /// <summary>
@@ -119,8 +126,85 @@ namespace Amazon.OpenSearchServerless.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("QuotaCode", this.QuotaCode);
+            info.AddValue("ResourceId", this.ResourceId);
+            info.AddValue("ResourceType", this.ResourceType);
+            info.AddValue("ServiceCode", this.ServiceCode);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property QuotaCode. 
+        /// <para>
+        /// Service Quotas requirement to identify originating quota.
+        /// </para>
+        /// </summary>
+        public string QuotaCode
+        {
+            get { return this._quotaCode; }
+            set { this._quotaCode = value; }
+        }
+
+        // Check to see if QuotaCode property is set
+        internal bool IsSetQuotaCode()
+        {
+            return this._quotaCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        /// Identifier of the resource affected.
+        /// </para>
+        /// </summary>
+        public string ResourceId
+        {
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
+        }
+
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
+        {
+            return this._resourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// Type of the resource affected.
+        /// </para>
+        /// </summary>
+        public string ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceCode. 
+        /// <para>
+        /// Service Quotas requirement to identify originating service.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string ServiceCode
+        {
+            get { return this._serviceCode; }
+            set { this._serviceCode = value; }
+        }
+
+        // Check to see if ServiceCode property is set
+        internal bool IsSetServiceCode()
+        {
+            return this._serviceCode != null;
+        }
 
     }
 }
