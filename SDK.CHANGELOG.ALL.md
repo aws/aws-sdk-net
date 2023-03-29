@@ -1,3 +1,12 @@
+### 3.7.515.0 (2023-03-29 18:21 UTC)
+* OpenSearchServerless (3.7.101.0)
+	* This release includes two new exception types "ServiceQuotaExceededException" and "OcuLimitExceededException".
+* RDS (3.7.116.0)
+	* Add support for creating a read replica DB instance from a Multi-AZ DB cluster.
+* Core 3.7.106.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.514.0 (2023-03-28 18:20 UTC)
 * IotData (3.7.102.0)
 	* Add endpoint ruleset support for cn-north-1.

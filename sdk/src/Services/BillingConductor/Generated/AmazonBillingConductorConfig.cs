@@ -32,7 +32,7 @@ namespace Amazon.BillingConductor
     public partial class AmazonBillingConductorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.105.6");
+            InternalSDKUtils.BuildUserAgentString("3.7.105.7");
 
         private string _userAgent = UserAgentString;
 
