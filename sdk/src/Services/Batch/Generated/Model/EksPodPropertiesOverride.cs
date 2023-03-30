@@ -55,7 +55,10 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Metadata.
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Metadata about the overrides for the container that's used on the Amazon EKS pod.
+        /// </para>
         /// </summary>
         public EksMetadata Metadata
         {

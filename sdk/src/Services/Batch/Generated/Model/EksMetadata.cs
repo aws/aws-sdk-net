@@ -29,14 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// 
+    /// Describes and uniquely identifies Kubernetes resources. For example, the compute environment
+    /// that a pod runs in or the <code>jobID</code> for a job running in the pod. For more
+    /// information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding
+    /// Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.
     /// </summary>
     public partial class EksMetadata
     {
         private Dictionary<string, string> _labels = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Labels.
+        /// Gets and sets the property Labels. 
+        /// <para>
+        /// Key-value pairs used to identify, sort, and organize cube resources. Can contain up
+        /// to 63 uppercase letters, lowercase letters, numbers, hyphens (-), and underscores
+        /// (_). Labels can be added or modified at any time. Each resource can have multiple
+        /// labels, but each key must be unique for a given object.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Labels
         {

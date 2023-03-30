@@ -123,7 +123,12 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EphemeralStorage.
+        /// Gets and sets the property EphemeralStorage. 
+        /// <para>
+        /// The amount of ephemeral storage allocated for the task. This parameter is used to
+        /// expand the total amount of ephemeral storage available, beyond the default amount,
+        /// for tasks hosted on Fargate.
+        /// </para>
         /// </summary>
         public EphemeralStorage EphemeralStorage
         {

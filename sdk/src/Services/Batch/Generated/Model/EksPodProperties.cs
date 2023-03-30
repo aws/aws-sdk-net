@@ -110,7 +110,11 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Metadata.
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Metadata about the Kubernetes pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding
+        /// Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.
+        /// </para>
         /// </summary>
         public EksMetadata Metadata
         {
