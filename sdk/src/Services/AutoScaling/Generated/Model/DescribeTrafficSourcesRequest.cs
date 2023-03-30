@@ -30,13 +30,17 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTrafficSources operation.
-    /// <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject to change.
-    /// Do not use this API for production workloads. This API is also subject to change.</b>
-    /// 
+    /// Gets information about the traffic sources for the specified Auto Scaling group.
     /// 
     ///  
     /// <para>
-    /// Gets information about the traffic sources for the specified Auto Scaling group.
+    /// You can optionally provide a traffic source type. If you provide a traffic source
+    /// type, then the results only include that traffic source type.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you do not provide a traffic source type, then the results include all the traffic
+    /// sources for the specified Auto Scaling group. 
     /// </para>
     /// </summary>
     public partial class DescribeTrafficSourcesRequest : AmazonAutoScalingRequest
@@ -105,11 +109,28 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TrafficSourceType. 
         /// <para>
-        /// The type of traffic source you are describing. Currently, the only valid value is
-        /// <code>vpc-lattice</code>.
+        /// The traffic source type that you want to describe.
         /// </para>
+        ///  
+        /// <para>
+        /// The following lists the valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>elb</code> if the traffic source is a Classic Load Balancer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway
+        /// Load Balancer, or Network Load Balancer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>vpc-lattice</code> if the traffic source is VPC Lattice.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
         public string TrafficSourceType
         {
             get { return this._trafficSourceType; }

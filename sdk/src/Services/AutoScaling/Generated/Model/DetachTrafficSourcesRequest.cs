@@ -30,13 +30,14 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachTrafficSources operation.
-    /// <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject to change.
-    /// Do not use this API for production workloads. This API is also subject to change.</b>
-    /// 
+    /// Detaches one or more traffic sources from the specified Auto Scaling group.
     /// 
     ///  
     /// <para>
-    /// Detaches one or more traffic sources from the specified Auto Scaling group.
+    /// When you detach a taffic, it enters the <code>Removing</code> state while deregistering
+    /// the instances in the group. When all instances are deregistered, then you can no longer
+    /// describe the traffic source using the <a>DescribeTrafficSources</a> API call. The
+    /// instances continue to run.
     /// </para>
     /// </summary>
     public partial class DetachTrafficSourcesRequest : AmazonAutoScalingRequest
@@ -68,14 +69,6 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The unique identifiers of one or more traffic sources you are detaching. You can specify
         /// up to 10 traffic sources.
-        /// </para>
-        ///  
-        /// <para>
-        /// Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice
-        /// target group. When you detach a target group, it enters the <code>Removing</code>
-        /// state while deregistering the instances in the group. When all instances are deregistered,
-        /// then you can no longer describe the target group using the <a>DescribeTrafficSources</a>
-        /// API call. The instances continue to run.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

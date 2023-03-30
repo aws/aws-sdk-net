@@ -334,14 +334,14 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckType. 
         /// <para>
-        /// Determines whether any additional health checks are performed on the instances in
-        /// this group. Amazon EC2 health checks are always on.
+        /// A comma-separated list of one or more health check types.
         /// </para>
         ///  
         /// <para>
-        /// The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>.
-        /// The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice,
-        /// which is in preview release and is subject to change.
+        /// The valid values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+        /// <code>EC2</code> is the default health check and cannot be disabled. For more information,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+        /// checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]

@@ -104,8 +104,12 @@ namespace Amazon.AutoScaling
         /// <summary>
         /// <note> 
         /// <para>
-        /// To attach an Application Load Balancer, Network Load Balancer, or Gateway Load Balancer,
-        /// use the <a>AttachLoadBalancerTargetGroups</a> API operation instead.
+        /// This API call has been replaced with a new "traffic sources" API call (<code>AttachTrafficSources</code>)
+        /// that can attach multiple traffic sources types. While we continue to support <code>AttachLoadBalancers</code>,
+        /// and you can use both the original <code>AttachLoadBalancers</code> API call and the
+        /// new <code>AttachTrafficSources</code> API call on the same Auto Scaling group, we
+        /// recommend using the new "traffic sources" API call to simplify how you manage traffic
+        /// sources.
         /// </para>
         ///  </note> 
         /// <para>
@@ -153,8 +157,19 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This API call has been replaced with a new "traffic sources" API call (<code>AttachTrafficSources</code>)
+        /// that can attach multiple traffic sources types. While we continue to support <code>AttachLoadBalancerTargetGroups</code>,
+        /// and you can use both the original <code>AttachLoadBalancerTargetGroups</code> API
+        /// call and the new <code>AttachTrafficSources</code> API call on the same Auto Scaling
+        /// group, we recommend using the new "traffic sources" API call to simplify how you manage
+        /// traffic sources.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Attaches one or more target groups to the specified Auto Scaling group.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation is used with the following load balancer types: 
@@ -214,24 +229,43 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject to change.
-        /// Do not use this API for production workloads. This API is also subject to change.</b>
-        /// 
-        /// 
-        ///  
-        /// <para>
         /// Attaches one or more traffic sources to the specified Auto Scaling group.
-        /// </para>
+        /// 
         ///  
         /// <para>
-        /// To describe the traffic sources for an Auto Scaling group, call the <a>DescribeTrafficSources</a>
-        /// API. To detach a traffic source from the Auto Scaling group, call the <a>DetachTrafficSources</a>
-        /// API.
+        /// You can use any of the following as traffic sources for an Auto Scaling group:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// Application Load Balancer
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Classic Load Balancer
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Network Load Balancer
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Gateway Load Balancer
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// VPC Lattice
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// This operation is additive and does not detach existing traffic sources from the Auto
-        /// Scaling group.
+        /// Scaling group. 
+        /// </para>
+        ///  
+        /// <para>
+        /// After the operation completes, use the <a>DescribeTrafficSources</a> API to return
+        /// details about the state of the attachments between traffic sources and your Auto Scaling
+        /// group. To detach a traffic source from the Auto Scaling group, call the <a>DetachTrafficSources</a>
+        /// API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachTrafficSources service method.</param>
@@ -1273,12 +1307,23 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This API call has been replaced with a new "traffic sources" API call (<code>DescribeTrafficSources</code>)
+        /// that can describe multiple traffic sources types. While we continue to support <code>DescribeLoadBalancers</code>,
+        /// and you can use both the original <code>DescribeLoadBalancers</code> API call and
+        /// the new <code>DescribeTrafficSources</code> API call on the same Auto Scaling group,
+        /// we recommend using the new "traffic sources" API call to simplify how you manage traffic
+        /// sources.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Gets information about the load balancers for the specified Auto Scaling group.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation describes only Classic Load Balancers. If you have Application Load
-        /// Balancers, Network Load Balancers, or Gateway Load Balancer, use the <a>DescribeLoadBalancerTargetGroups</a>
+        /// Balancers, Network Load Balancers, or Gateway Load Balancers, use the <a>DescribeLoadBalancerTargetGroups</a>
         /// API instead.
         /// </para>
         ///  
@@ -1333,9 +1378,20 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This API call has been replaced with a new "traffic sources" API call (<code>DescribeTrafficSources</code>)
+        /// that can describe multiple traffic sources types. While we continue to support <code>DescribeLoadBalancerTargetGroups</code>,
+        /// and you can use both the original <code>DescribeLoadBalancerTargetGroups</code> API
+        /// call and the new <code>DescribeTrafficSources</code> API call on the same Auto Scaling
+        /// group, we recommend using the new "traffic sources" API call to simplify how you manage
+        /// traffic sources.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Gets information about the Elastic Load Balancing target groups for the specified
         /// Auto Scaling group.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To determine the attachment status of the target group, use the <code>State</code>
@@ -1836,13 +1892,17 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject to change.
-        /// Do not use this API for production workloads. This API is also subject to change.</b>
-        /// 
+        /// Gets information about the traffic sources for the specified Auto Scaling group.
         /// 
         ///  
         /// <para>
-        /// Gets information about the traffic sources for the specified Auto Scaling group.
+        /// You can optionally provide a traffic source type. If you provide a traffic source
+        /// type, then the results only include that traffic source type.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not provide a traffic source type, then the results include all the traffic
+        /// sources for the specified Auto Scaling group. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrafficSources service method.</param>
@@ -1950,12 +2010,23 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This API call has been replaced with a new "traffic sources" API call (<code>DetachTrafficSources</code>)
+        /// that can detach multiple traffic sources types. While we continue to support <code>DetachLoadBalancers</code>,
+        /// and you can use both the original <code>DetachLoadBalancers</code> API call and the
+        /// new <code>DetachTrafficSources</code> API call on the same Auto Scaling group, we
+        /// recommend using the new "traffic sources" API call to simplify how you manage traffic
+        /// sources.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Detaches one or more Classic Load Balancers from the specified Auto Scaling group.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation detaches only Classic Load Balancers. If you have Application Load
-        /// Balancers, Network Load Balancers, or Gateway Load Balancer, use the <a>DetachLoadBalancerTargetGroups</a>
+        /// Balancers, Network Load Balancers, or Gateway Load Balancers, use the <a>DetachLoadBalancerTargetGroups</a>
         /// API instead.
         /// </para>
         ///  
@@ -1986,8 +2057,19 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This API call has been replaced with a new "traffic sources" API call (<code>DetachTrafficSources</code>)
+        /// that can detach multiple traffic sources types. While we continue to support <code>DetachLoadBalancerTargetGroups</code>,
+        /// and you can use both the original <code>DetachLoadBalancerTargetGroups</code> API
+        /// call and the new <code>DetachTrafficSources</code> API call on the same Auto Scaling
+        /// group, we recommend using the new "traffic sources" API call to simplify how you manage
+        /// traffic sources.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Detaches one or more target groups from the specified Auto Scaling group.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// When you detach a target group, it enters the <code>Removing</code> state while deregistering
@@ -2022,13 +2104,14 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject to change.
-        /// Do not use this API for production workloads. This API is also subject to change.</b>
-        /// 
+        /// Detaches one or more traffic sources from the specified Auto Scaling group.
         /// 
         ///  
         /// <para>
-        /// Detaches one or more traffic sources from the specified Auto Scaling group.
+        /// When you detach a taffic, it enters the <code>Removing</code> state while deregistering
+        /// the instances in the group. When all instances are deregistered, then you can no longer
+        /// describe the traffic source using the <a>DescribeTrafficSources</a> API call. The
+        /// instances continue to run.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachTrafficSources service method.</param>

@@ -62,6 +62,23 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             #endregion
         }
 
+        public void AutoScalingAttachTrafficSources()
+        {
+            #region to-attach-a-target-group-to-an-auto-scaling-group-1680036570089
+
+            var client = new AmazonAutoScalingClient();
+            var response = client.AttachTrafficSources(new AttachTrafficSourcesRequest 
+            {
+                AutoScalingGroupName = "my-auto-scaling-group",
+                TrafficSources = new List<TrafficSourceIdentifier> {
+                    new TrafficSourceIdentifier { Identifier = "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067" }
+                }
+            });
+
+
+            #endregion
+        }
+
         public void AutoScalingCancelInstanceRefresh()
         {
             #region to-cancel-an-instance-refresh-1592960979817
@@ -654,6 +671,22 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             #endregion
         }
 
+        public void AutoScalingDescribeTrafficSources()
+        {
+            #region to-describe-the-target-groups-for-an-auto-scaling-group-1680040714521
+
+            var client = new AmazonAutoScalingClient();
+            var response = client.DescribeTrafficSources(new DescribeTrafficSourcesRequest 
+            {
+                AutoScalingGroupName = "my-auto-scaling-group"
+            });
+
+            string nextToken = response.NextToken;
+            List<TrafficSourceState> trafficSources = response.TrafficSources;
+
+            #endregion
+        }
+
         public void AutoScalingDetachInstances()
         {
             #region autoscaling-detach-instances-1
@@ -700,6 +733,23 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
                 AutoScalingGroupName = "my-auto-scaling-group",
                 TargetGroupARNs = new List<string> {
                     "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067"
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void AutoScalingDetachTrafficSources()
+        {
+            #region to-detach-a-target-group-from-an-auto-scaling-group-1680040404169
+
+            var client = new AmazonAutoScalingClient();
+            var response = client.DetachTrafficSources(new DetachTrafficSourcesRequest 
+            {
+                AutoScalingGroupName = "my-auto-scaling-group",
+                TrafficSources = new List<TrafficSourceIdentifier> {
+                    new TrafficSourceIdentifier { Identifier = "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067" }
                 }
             });
 

@@ -175,7 +175,10 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Preferences.
+        /// Gets and sets the property Preferences. 
+        /// <para>
+        /// The preferences for an instance refresh.
+        /// </para>
         /// </summary>
         public RefreshPreferences Preferences
         {
