@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// A list of PropertyFilter objects.
     /// </summary>
     public partial class PropertyFilters
     {
@@ -37,7 +37,10 @@ namespace Amazon.SageMakerGeospatial.Model
         private List<PropertyFilter> _properties = new List<PropertyFilter>();
 
         /// <summary>
-        /// Gets and sets the property LogicalOperator.
+        /// Gets and sets the property LogicalOperator. 
+        /// <para>
+        /// The Logical Operator used to combine the Property Filters.
+        /// </para>
         /// </summary>
         public LogicalOperator LogicalOperator
         {
@@ -52,7 +55,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Properties.
+        /// Gets and sets the property Properties. 
+        /// <para>
+        /// A list of Property Filters.
+        /// </para>
         /// </summary>
         public List<PropertyFilter> Properties
         {

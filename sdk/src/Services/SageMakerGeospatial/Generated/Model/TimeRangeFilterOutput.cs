@@ -29,47 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// A GeoJSON object representing the geographic extent in the coordinate space.
+    /// The output structure of the time range filter.
     /// </summary>
-    public partial class AreaOfInterestGeometry
+    public partial class TimeRangeFilterOutput
     {
-        private MultiPolygonGeometryInput _multiPolygonGeometry;
-        private PolygonGeometryInput _polygonGeometry;
+        private DateTime? _endTime;
+        private DateTime? _startTime;
 
         /// <summary>
-        /// Gets and sets the property MultiPolygonGeometry. 
+        /// Gets and sets the property EndTime. 
         /// <para>
-        /// The structure representing the MultiPolygon Geometry.
+        /// The ending time for the time range filter.
         /// </para>
         /// </summary>
-        public MultiPolygonGeometryInput MultiPolygonGeometry
+        [AWSProperty(Required=true)]
+        public DateTime EndTime
         {
-            get { return this._multiPolygonGeometry; }
-            set { this._multiPolygonGeometry = value; }
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
         }
 
-        // Check to see if MultiPolygonGeometry property is set
-        internal bool IsSetMultiPolygonGeometry()
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
         {
-            return this._multiPolygonGeometry != null;
+            return this._endTime.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property PolygonGeometry. 
+        /// Gets and sets the property StartTime. 
         /// <para>
-        /// The structure representing Polygon Geometry.
+        /// The starting time for the time range filter.
         /// </para>
         /// </summary>
-        public PolygonGeometryInput PolygonGeometry
+        [AWSProperty(Required=true)]
+        public DateTime StartTime
         {
-            get { return this._polygonGeometry; }
-            set { this._polygonGeometry = value; }
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
         }
 
-        // Check to see if PolygonGeometry property is set
-        internal bool IsSetPolygonGeometry()
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
         {
-            return this._polygonGeometry != null;
+            return this._startTime.HasValue; 
         }
 
     }

@@ -37,7 +37,11 @@ namespace Amazon.SageMakerGeospatial.Model
         private ExportErrorDetailsOutput _exportSourceImages;
 
         /// <summary>
-        /// Gets and sets the property ExportResults.
+        /// Gets and sets the property ExportResults. 
+        /// <para>
+        /// The structure for returning the export error details while exporting results of an
+        /// Earth Observation job.
+        /// </para>
         /// </summary>
         public ExportErrorDetailsOutput ExportResults
         {
@@ -52,7 +56,11 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExportSourceImages.
+        /// Gets and sets the property ExportSourceImages. 
+        /// <para>
+        /// The structure for returning the export error details while exporting the source images
+        /// of an Earth Observation job.
+        /// </para>
         /// </summary>
         public ExportErrorDetailsOutput ExportSourceImages
         {

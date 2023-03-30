@@ -118,7 +118,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OperationType.
+        /// Gets and sets the property OperationType. 
+        /// <para>
+        /// The operation type for an Earth Observation job.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string OperationType

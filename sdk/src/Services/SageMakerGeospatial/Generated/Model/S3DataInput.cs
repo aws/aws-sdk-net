@@ -40,9 +40,10 @@ namespace Amazon.SageMakerGeospatial.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Amazon Key Management Service (KMS) key ID for server-side encryption.
+        /// The Key Management Service key ID for server-side encryption.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -56,7 +57,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MetadataProvider.
+        /// Gets and sets the property MetadataProvider. 
+        /// <para>
+        /// Metadata provider from whom the Amazon S3 data has been acquired.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public MetadataProvider MetadataProvider

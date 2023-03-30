@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The input structure for Map Matching operation type.
     /// </summary>
     public partial class MapMatchingConfig
     {
@@ -39,7 +39,11 @@ namespace Amazon.SageMakerGeospatial.Model
         private string _yAttributeName;
 
         /// <summary>
-        /// Gets and sets the property IdAttributeName.
+        /// Gets and sets the property IdAttributeName. 
+        /// <para>
+        /// The field name for the data that describes the identifier representing a collection
+        /// of GPS points belonging to an individual trace.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string IdAttributeName

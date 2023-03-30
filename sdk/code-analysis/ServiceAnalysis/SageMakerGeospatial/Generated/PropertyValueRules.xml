@@ -13,20 +13,65 @@
     <pattern>^arn:aws[a-z-]{0,12}:sagemaker-geospatial:[a-z0-9-]{1,25}:[0-9]{12}:earth-observation-job/[a-z0-9]{12,}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.ExportEarthObservationJobRequest.ClientToken</property>
+    <min>36</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.ExportEarthObservationJobRequest.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-z-]*):iam::([0-9]{12}):role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMakerGeospatial.Model.ExportEarthObservationJobResponse.Arn</property>
     <pattern>^arn:aws[a-z-]{0,12}:sagemaker-geospatial:[a-z0-9-]{1,25}:[0-9]{12}:earth-observation-job/[a-z0-9]{12,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.ExportEarthObservationJobResponse.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-z-]*):iam::([0-9]{12}):role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerGeospatial.Model.ExportVectorEnrichmentJobRequest.Arn</property>
     <pattern>^arn:aws[a-z-]{0,12}:sagemaker-geospatial:[a-z0-9-]{1,25}:[0-9]{12}:vector-enrichment-job/[a-z0-9]{12,}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.ExportVectorEnrichmentJobRequest.ClientToken</property>
+    <min>36</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.ExportVectorEnrichmentJobRequest.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-z-]*):iam::([0-9]{12}):role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMakerGeospatial.Model.ExportVectorEnrichmentJobResponse.Arn</property>
     <pattern>^arn:aws[a-z-]{0,12}:sagemaker-geospatial:[a-z0-9-]{1,25}:[0-9]{12}:vector-enrichment-job/[a-z0-9]{12,}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.ExportVectorEnrichmentJobResponse.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-z-]*):iam::([0-9]{12}):role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMakerGeospatial.Model.GetEarthObservationJobRequest.Arn</property>
     <pattern>^arn:aws[a-z-]{0,12}:sagemaker-geospatial:[a-z0-9-]{1,25}:[0-9]{12}:earth-observation-job/[a-z0-9]{12,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.GetEarthObservationJobResponse.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-z-]*):iam::([0-9]{12}):role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.GetEarthObservationJobResponse.KmsKeyId</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerGeospatial.Model.GetRasterDataCollectionRequest.Arn</property>
@@ -41,8 +86,25 @@
     <pattern>^arn:aws[a-z-]{0,12}:sagemaker-geospatial:[a-z0-9-]{1,25}:[0-9]{12}:earth-observation-job/[a-z0-9]{12,}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.GetTileRequest.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-z-]*):iam::([0-9]{12}):role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMakerGeospatial.Model.GetVectorEnrichmentJobRequest.Arn</property>
     <pattern>^arn:aws[a-z-]{0,12}:sagemaker-geospatial:[a-z0-9-]{1,25}:[0-9]{12}:vector-enrichment-job/[a-z0-9]{12,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.GetVectorEnrichmentJobResponse.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-z-]*):iam::([0-9]{12}):role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.GetVectorEnrichmentJobResponse.KmsKeyId</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerGeospatial.Model.ListEarthObservationJobsRequest.MaxResults</property>
@@ -109,8 +171,72 @@
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.StartEarthObservationJobRequest.ClientToken</property>
+    <min>36</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.StartEarthObservationJobRequest.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-z-]*):iam::([0-9]{12}):role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.StartEarthObservationJobRequest.KmsKeyId</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.StartEarthObservationJobRequest.Name</property>
+    <min>0</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.StartEarthObservationJobResponse.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-z-]*):iam::([0-9]{12}):role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.StartEarthObservationJobResponse.KmsKeyId</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.StartVectorEnrichmentJobRequest.ClientToken</property>
+    <min>36</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.StartVectorEnrichmentJobRequest.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-z-]*):iam::([0-9]{12}):role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.StartVectorEnrichmentJobRequest.KmsKeyId</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.StartVectorEnrichmentJobRequest.Name</property>
+    <min>0</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMakerGeospatial.Model.StartVectorEnrichmentJobResponse.Arn</property>
     <pattern>^arn:aws[a-z-]{0,12}:sagemaker-geospatial:[a-z0-9-]{1,25}:[0-9]{12}:vector-enrichment-job/[a-z0-9]{12,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.StartVectorEnrichmentJobResponse.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-z-]*):iam::([0-9]{12}):role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.StartVectorEnrichmentJobResponse.KmsKeyId</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerGeospatial.Model.StopEarthObservationJobRequest.Arn</property>
@@ -131,11 +257,63 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.ExportS3DataInput.KmsKeyId</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.ExportS3DataInput.S3Uri</property>
+    <pattern>^s3://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.InputConfigInput.PreviousEarthObservationJobArn</property>
+    <pattern>^arn:aws[a-z-]{0,12}:sagemaker-geospatial:[a-z0-9-]{1,25}:[0-9]{12}:earth-observation-job/[a-z0-9]{12,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.InputConfigOutput.PreviousEarthObservationJobArn</property>
+    <pattern>^arn:aws[a-z-]{0,12}:sagemaker-geospatial:[a-z0-9-]{1,25}:[0-9]{12}:earth-observation-job/[a-z0-9]{12,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMakerGeospatial.Model.ListVectorEnrichmentJobOutputConfig.Arn</property>
     <pattern>^arn:aws[a-z-]{0,12}:sagemaker-geospatial:[a-z0-9-]{1,25}:[0-9]{12}:vector-enrichment-job/[a-z0-9]{12,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerGeospatial.Model.RasterDataCollectionMetadata.Arn</property>
     <pattern>^arn:aws[a-z-]{0,12}:sagemaker-geospatial:[a-z0-9-]{1,25}:[0-9]{12}:raster-data-collection/(public|premium|user)/[a-z0-9]{12,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.RasterDataCollectionQueryInput.RasterDataCollectionArn</property>
+    <pattern>^arn:aws[a-z-]{0,12}:sagemaker-geospatial:[a-z0-9-]{1,25}:[0-9]{12}:raster-data-collection/(public|premium|user)/[a-z0-9]{12,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.RasterDataCollectionQueryOutput.RasterDataCollectionArn</property>
+    <pattern>^arn:aws[a-z-]{0,12}:sagemaker-geospatial:[a-z0-9-]{1,25}:[0-9]{12}:raster-data-collection/(public|premium|user)/[a-z0-9]{12,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.S3DataInput.KmsKeyId</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.S3DataInput.S3Uri</property>
+    <pattern>^s3://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.VectorEnrichmentJobS3Data.KmsKeyId</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.VectorEnrichmentJobS3Data.S3Uri</property>
+    <pattern>^s3://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.ZonalStatisticsConfigInput.ZoneS3Path</property>
+    <pattern>^s3://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGeospatial.Model.ZonalStatisticsConfigInput.ZoneS3PathKmsKeyId</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
 </property-value-rules>

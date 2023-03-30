@@ -37,7 +37,11 @@ namespace Amazon.SageMakerGeospatial.Model
         private VectorEnrichmentJobDocumentType _documentType;
 
         /// <summary>
-        /// Gets and sets the property DataSourceConfig.
+        /// Gets and sets the property DataSourceConfig. 
+        /// <para>
+        /// The input structure for the data source that represents the storage type of the input
+        /// data objects.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public VectorEnrichmentJobDataSourceConfigInput DataSourceConfig
@@ -53,7 +57,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DocumentType.
+        /// Gets and sets the property DocumentType. 
+        /// <para>
+        /// The input structure that defines the data source file type.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public VectorEnrichmentJobDocumentType DocumentType

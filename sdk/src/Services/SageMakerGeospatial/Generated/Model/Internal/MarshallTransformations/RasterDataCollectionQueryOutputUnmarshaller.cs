@@ -90,7 +90,7 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TimeRangeFilter", targetDepth))
                 {
-                    var unmarshaller = TimeRangeFilterInputUnmarshaller.Instance;
+                    var unmarshaller = TimeRangeFilterOutputUnmarshaller.Instance;
                     unmarshalledObject.TimeRangeFilter = unmarshaller.Unmarshall(context);
                     continue;
                 }

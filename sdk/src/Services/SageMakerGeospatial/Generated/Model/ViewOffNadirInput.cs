@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The input structure for specifying ViewOffNadir property filter. ViewOffNadir refers
+    /// to the angle from the sensor between nadir (straight down) and the scene center. Measured
+    /// in degrees (0-90).
     /// </summary>
     public partial class ViewOffNadirInput
     {
@@ -37,7 +39,11 @@ namespace Amazon.SageMakerGeospatial.Model
         private float? _upperBound;
 
         /// <summary>
-        /// Gets and sets the property LowerBound.
+        /// Gets and sets the property LowerBound. 
+        /// <para>
+        /// The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir
+        /// greater than or equal to this value. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public float LowerBound
@@ -53,7 +59,11 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpperBound.
+        /// Gets and sets the property UpperBound. 
+        /// <para>
+        /// The maximum value for ViewOffNadir property filter. This filters items having ViewOffNadir
+        /// lesser than or equal to this value.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public float UpperBound

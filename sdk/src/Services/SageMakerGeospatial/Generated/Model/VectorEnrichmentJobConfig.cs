@@ -37,7 +37,10 @@ namespace Amazon.SageMakerGeospatial.Model
         private ReverseGeocodingConfig _reverseGeocodingConfig;
 
         /// <summary>
-        /// Gets and sets the property MapMatchingConfig.
+        /// Gets and sets the property MapMatchingConfig. 
+        /// <para>
+        /// The input structure for Map Matching operation type.
+        /// </para>
         /// </summary>
         public MapMatchingConfig MapMatchingConfig
         {
@@ -52,7 +55,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReverseGeocodingConfig.
+        /// Gets and sets the property ReverseGeocodingConfig. 
+        /// <para>
+        /// The input structure for Reverse Geocoding operation type.
+        /// </para>
         /// </summary>
         public ReverseGeocodingConfig ReverseGeocodingConfig
         {

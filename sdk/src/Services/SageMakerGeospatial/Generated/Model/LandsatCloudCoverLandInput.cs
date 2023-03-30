@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The structure representing Land Cloud Cover property for Landsat data collection.
     /// </summary>
     public partial class LandsatCloudCoverLandInput
     {
@@ -37,7 +37,11 @@ namespace Amazon.SageMakerGeospatial.Model
         private float? _upperBound;
 
         /// <summary>
-        /// Gets and sets the property LowerBound.
+        /// Gets and sets the property LowerBound. 
+        /// <para>
+        /// The minimum value for Land Cloud Cover property filter. This will filter items having
+        /// Land Cloud Cover greater than or equal to this value.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public float LowerBound
@@ -53,7 +57,11 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpperBound.
+        /// Gets and sets the property UpperBound. 
+        /// <para>
+        /// The maximum value for Land Cloud Cover property filter. This will filter items having
+        /// Land Cloud Cover less than or equal to this value.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public float UpperBound

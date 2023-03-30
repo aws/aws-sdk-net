@@ -73,6 +73,12 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ZoneS3Path);
             }
 
+            if(requestObject.IsSetZoneS3PathKmsKeyId())
+            {
+                context.Writer.WritePropertyName("ZoneS3PathKmsKeyId");
+                context.Writer.Write(requestObject.ZoneS3PathKmsKeyId);
+            }
+
         }
 
         /// <summary>

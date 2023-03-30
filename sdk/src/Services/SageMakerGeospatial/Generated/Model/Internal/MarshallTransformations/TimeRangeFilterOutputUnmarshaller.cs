@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TimeRangeFilterInput Object
+    /// Response Unmarshaller for TimeRangeFilterOutput Object
     /// </summary>  
-    public class TimeRangeFilterInputUnmarshaller : IUnmarshaller<TimeRangeFilterInput, XmlUnmarshallerContext>, IUnmarshaller<TimeRangeFilterInput, JsonUnmarshallerContext>
+    public class TimeRangeFilterOutputUnmarshaller : IUnmarshaller<TimeRangeFilterOutput, XmlUnmarshallerContext>, IUnmarshaller<TimeRangeFilterOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TimeRangeFilterInput IUnmarshaller<TimeRangeFilterInput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TimeRangeFilterOutput IUnmarshaller<TimeRangeFilterOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public TimeRangeFilterInput Unmarshall(JsonUnmarshallerContext context)
+        public TimeRangeFilterOutput Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TimeRangeFilterInput unmarshalledObject = new TimeRangeFilterInput();
+            TimeRangeFilterOutput unmarshalledObject = new TimeRangeFilterOutput();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -82,12 +82,12 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         }
 
 
-        private static TimeRangeFilterInputUnmarshaller _instance = new TimeRangeFilterInputUnmarshaller();        
+        private static TimeRangeFilterOutputUnmarshaller _instance = new TimeRangeFilterOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TimeRangeFilterInputUnmarshaller Instance
+        public static TimeRangeFilterOutputUnmarshaller Instance
         {
             get
             {
