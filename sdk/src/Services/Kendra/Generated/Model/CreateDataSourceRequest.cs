@@ -44,12 +44,6 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  
     /// <para>
-    /// Amazon S3 and <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-custom.html">custom</a>
-    /// data sources are the only supported data sources in the Amazon Web Services GovCloud
-    /// (US-West) region.
-    /// </para>
-    ///  
-    /// <para>
     /// For an example of creating an index and data source using the Python SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-python.html">Getting
     /// started with Python SDK</a>. For an example of creating an index and data source using
     /// the Java SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-java.html">Getting
@@ -227,9 +221,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a role with permission to access the data source
+        /// The Amazon Resource Name (ARN) of an IAM role with permission to access the data source
         /// and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
-        /// roles for Amazon Kendra</a>.
+        /// access roles for Amazon Kendra.</a>.
         /// </para>
         ///  
         /// <para>
@@ -265,6 +259,11 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
+        /// Specify a <code>cron-</code> format schedule string or an empty string to indicate
+        /// that the index is updated on demand.
+        /// </para>
+        ///  
+        /// <para>
         /// You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter
         /// is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code>
         /// exception.
@@ -285,8 +284,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of key-value pairs that identify the data source connector. You can use the
-        /// tags to identify and organize your resources and to control access to resources.
+        /// A list of key-value pairs that identify or categorize the data source connector. You
+        /// can also use tags to help control access to the data source connector. Tag keys and
+        /// values can consist of Unicode letters, digits, white space, and any of the following
+        /// symbols: _ . : / = + - @.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

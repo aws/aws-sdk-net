@@ -55,7 +55,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The date-time summary information for a query suggestions block list was last created.
+        /// The Unix timestamp when the block list was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -147,7 +147,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The date-time the block list was last updated.
+        /// The Unix timestamp when the block list was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

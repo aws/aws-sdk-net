@@ -69,7 +69,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Shows the date-time your Amazon Kendra experience was created.
+        /// The Unix timestamp when your Amazon Kendra experience was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -244,7 +244,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// Shows the date-time your Amazon Kendra experience was last updated.
+        /// The Unix timestamp when your Amazon Kendra experience was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

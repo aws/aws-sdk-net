@@ -31,6 +31,12 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.BatchDeleteFeaturedResultsSetRequest.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.BatchGetDocumentStatusRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
@@ -199,6 +205,29 @@
     <min>1</min>
     <max>100</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.CreateFeaturedResultsSetRequest.ClientToken</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.CreateFeaturedResultsSetRequest.Description</property>
+    <min>0</min>
+    <max>1000</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.CreateFeaturedResultsSetRequest.FeaturedResultsSetName</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>[a-zA-Z0-9][ a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.CreateFeaturedResultsSetRequest.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.CreateIndexRequest.ClientToken</property>
@@ -585,6 +614,36 @@
     <min>0</min>
     <max>1284</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DescribeFeaturedResultsSetRequest.FeaturedResultsSetId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z-0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DescribeFeaturedResultsSetRequest.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DescribeFeaturedResultsSetResponse.Description</property>
+    <min>0</min>
+    <max>1000</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DescribeFeaturedResultsSetResponse.FeaturedResultsSetId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z-0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DescribeFeaturedResultsSetResponse.FeaturedResultsSetName</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>[a-zA-Z0-9][ a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.DescribeIndexRequest.Id</property>
@@ -986,6 +1045,27 @@
     <max>800</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.ListFeaturedResultsSetsRequest.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ListFeaturedResultsSetsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ListFeaturedResultsSetsRequest.NextToken</property>
+    <min>1</min>
+    <max>800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ListFeaturedResultsSetsResponse.NextToken</property>
+    <min>1</min>
+    <max>800</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.ListGroupsOlderThanOrderingIdRequest.DataSourceId</property>
     <min>1</min>
     <max>100</max>
@@ -1273,6 +1353,30 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.UpdateFeaturedResultsSetRequest.Description</property>
+    <min>0</min>
+    <max>1000</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.UpdateFeaturedResultsSetRequest.FeaturedResultsSetId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z-0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.UpdateFeaturedResultsSetRequest.FeaturedResultsSetName</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>[a-zA-Z0-9][ a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.UpdateFeaturedResultsSetRequest.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.UpdateIndexRequest.Description</property>
     <min>0</min>
     <max>1000</max>
@@ -1441,6 +1545,18 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.BatchDeleteFeaturedResultsSetError.ErrorMessage</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.BatchDeleteFeaturedResultsSetError.Id</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z-0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.BatchGetDocumentStatusResponseError.DocumentId</property>
     <min>1</min>
     <max>2048</max>
@@ -1504,6 +1620,21 @@
     <min>1</min>
     <max>100</max>
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ConflictingItem.QueryText</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ConflictingItem.SetId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ConflictingItem.SetName</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.ConfluenceAttachmentToIndexFieldMapping.DateFieldFormat</property>
@@ -1875,6 +2006,84 @@
     <min>1</min>
     <max>100</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.FeaturedDocument.Id</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.FeaturedDocumentMissing.Id</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.FeaturedDocumentWithMetadata.Id</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.FeaturedDocumentWithMetadata.Title</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.FeaturedDocumentWithMetadata.URI</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(https?|ftp|file):\/\/([^\s]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.FeaturedResultsItem.DocumentId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.FeaturedResultsItem.DocumentURI</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(https?|ftp|file):\/\/([^\s]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.FeaturedResultsItem.FeedbackToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\P{C}*.\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.FeaturedResultsItem.Id</property>
+    <min>1</min>
+    <max>73</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.FeaturedResultsSet.Description</property>
+    <min>0</min>
+    <max>1000</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.FeaturedResultsSet.FeaturedResultsSetId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z-0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.FeaturedResultsSet.FeaturedResultsSetName</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>[a-zA-Z0-9][ a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.FeaturedResultsSetSummary.FeaturedResultsSetId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z-0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.FeaturedResultsSetSummary.FeaturedResultsSetName</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>[a-zA-Z0-9][ a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.FsxConfiguration.FileSystemId</property>

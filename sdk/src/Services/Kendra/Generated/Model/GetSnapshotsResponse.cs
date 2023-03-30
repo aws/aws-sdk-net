@@ -97,7 +97,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SnapShotTimeFilter. 
         /// <para>
-        /// The date-time for the beginning and end of the time window for the search metrics
+        /// The Unix timestamp for the beginning and end of the time window for the search metrics
         /// data.
         /// </para>
         /// </summary>

@@ -92,7 +92,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A user-friendly description for the block list.
+        /// A description for the block list.
         /// </para>
         ///  
         /// <para>
@@ -135,12 +135,12 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A user friendly name for the block list.
+        /// A name for the block list.
         /// </para>
         ///  
         /// <para>
-        /// For example, the block list named 'offensive-words' includes all offensive words that
-        /// could appear in user queries and need to be blocked from suggestions.
+        /// For example, the name 'offensive-words', which includes all offensive words that could
+        /// appear in user queries and need to be blocked from suggestions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -159,14 +159,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The IAM (Identity and Access Management) role used by Amazon Kendra to access the
-        /// block list text file in your S3 bucket.
-        /// </para>
-        ///  
-        /// <para>
-        /// You need permissions to the role ARN (Amazon Web Services Resource Name). The role
-        /// needs S3 read permissions to your file in S3 and needs to give STS (Security Token
-        /// Service) assume role permissions to Amazon Kendra.
+        /// The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket
+        /// that contains the block list text file. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
+        /// access roles for Amazon Kendra</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1284)]
@@ -213,7 +208,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A tag that you can assign to a block list that categorizes the block list.
+        /// A list of key-value pairs that identify or categorize the block list. Tag keys and
+        /// values can consist of Unicode letters, digits, white space, and any of the following
+        /// symbols: _ . : / = + - @.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

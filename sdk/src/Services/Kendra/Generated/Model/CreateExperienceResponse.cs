@@ -38,7 +38,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier for your created Amazon Kendra experience.
+        /// The identifier of your Amazon Kendra experience.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]
