@@ -27313,6 +27313,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetVpnTunnelReplacementStatus
+
+
+        /// <summary>
+        /// Get details of available tunnel endpoint maintenance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpnTunnelReplacementStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetVpnTunnelReplacementStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnTunnelReplacementStatus">REST API Reference for GetVpnTunnelReplacementStatus Operation</seealso>
+        public virtual GetVpnTunnelReplacementStatusResponse GetVpnTunnelReplacementStatus(GetVpnTunnelReplacementStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVpnTunnelReplacementStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVpnTunnelReplacementStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetVpnTunnelReplacementStatusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Get details of available tunnel endpoint maintenance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpnTunnelReplacementStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVpnTunnelReplacementStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnTunnelReplacementStatus">REST API Reference for GetVpnTunnelReplacementStatus Operation</seealso>
+        public virtual Task<GetVpnTunnelReplacementStatusResponse> GetVpnTunnelReplacementStatusAsync(GetVpnTunnelReplacementStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVpnTunnelReplacementStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVpnTunnelReplacementStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetVpnTunnelReplacementStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ImportClientVpnClientCertificateRevocationList
 
 
@@ -33527,6 +33568,47 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ReplaceTransitGatewayRouteResponseUnmarshaller.Instance;
             
             return InvokeAsync<ReplaceTransitGatewayRouteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ReplaceVpnTunnel
+
+
+        /// <summary>
+        /// Trigger replacement of specified VPN tunnel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceVpnTunnel service method.</param>
+        /// 
+        /// <returns>The response from the ReplaceVpnTunnel service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceVpnTunnel">REST API Reference for ReplaceVpnTunnel Operation</seealso>
+        public virtual ReplaceVpnTunnelResponse ReplaceVpnTunnel(ReplaceVpnTunnelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReplaceVpnTunnelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReplaceVpnTunnelResponseUnmarshaller.Instance;
+
+            return Invoke<ReplaceVpnTunnelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Trigger replacement of specified VPN tunnel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceVpnTunnel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ReplaceVpnTunnel service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceVpnTunnel">REST API Reference for ReplaceVpnTunnel Operation</seealso>
+        public virtual Task<ReplaceVpnTunnelResponse> ReplaceVpnTunnelAsync(ReplaceVpnTunnelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReplaceVpnTunnelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReplaceVpnTunnelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ReplaceVpnTunnelResponse>(request, options, cancellationToken);
         }
 
         #endregion

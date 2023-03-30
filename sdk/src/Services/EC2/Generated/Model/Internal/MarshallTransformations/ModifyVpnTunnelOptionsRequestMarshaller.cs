@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetSkipTunnelReplacement())
+                {
+                    request.Parameters.Add("SkipTunnelReplacement", StringUtils.FromBool(publicRequest.SkipTunnelReplacement));
+                }
                 if(publicRequest.IsSetTunnelOptions())
                 {
                     if(publicRequest.TunnelOptions.IsSetDPDTimeoutAction())
@@ -67,6 +71,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.TunnelOptions.IsSetDPDTimeoutSeconds())
                     {
                         request.Parameters.Add("TunnelOptions" + "." + "DPDTimeoutSeconds", StringUtils.FromInt(publicRequest.TunnelOptions.DPDTimeoutSeconds));
+                    }
+                    if(publicRequest.TunnelOptions.IsSetEnableTunnelLifecycleControl())
+                    {
+                        request.Parameters.Add("TunnelOptions" + "." + "EnableTunnelLifecycleControl", StringUtils.FromBool(publicRequest.TunnelOptions.EnableTunnelLifecycleControl));
                     }
                     if(publicRequest.TunnelOptions.IsSetIKEVersions())
                     {

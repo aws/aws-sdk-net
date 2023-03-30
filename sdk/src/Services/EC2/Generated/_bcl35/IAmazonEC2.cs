@@ -22184,6 +22184,46 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetVpnTunnelReplacementStatus
+
+
+        /// <summary>
+        /// Get details of available tunnel endpoint maintenance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpnTunnelReplacementStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetVpnTunnelReplacementStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnTunnelReplacementStatus">REST API Reference for GetVpnTunnelReplacementStatus Operation</seealso>
+        GetVpnTunnelReplacementStatusResponse GetVpnTunnelReplacementStatus(GetVpnTunnelReplacementStatusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVpnTunnelReplacementStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVpnTunnelReplacementStatus operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVpnTunnelReplacementStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnTunnelReplacementStatus">REST API Reference for GetVpnTunnelReplacementStatus Operation</seealso>
+        IAsyncResult BeginGetVpnTunnelReplacementStatus(GetVpnTunnelReplacementStatusRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVpnTunnelReplacementStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVpnTunnelReplacementStatus.</param>
+        /// 
+        /// <returns>Returns a  GetVpnTunnelReplacementStatusResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnTunnelReplacementStatus">REST API Reference for GetVpnTunnelReplacementStatus Operation</seealso>
+        GetVpnTunnelReplacementStatusResponse EndGetVpnTunnelReplacementStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ImportClientVpnClientCertificateRevocationList
 
 
@@ -27240,6 +27280,46 @@ namespace Amazon.EC2
         /// <returns>Returns a  ReplaceTransitGatewayRouteResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceTransitGatewayRoute">REST API Reference for ReplaceTransitGatewayRoute Operation</seealso>
         ReplaceTransitGatewayRouteResponse EndReplaceTransitGatewayRoute(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ReplaceVpnTunnel
+
+
+        /// <summary>
+        /// Trigger replacement of specified VPN tunnel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceVpnTunnel service method.</param>
+        /// 
+        /// <returns>The response from the ReplaceVpnTunnel service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceVpnTunnel">REST API Reference for ReplaceVpnTunnel Operation</seealso>
+        ReplaceVpnTunnelResponse ReplaceVpnTunnel(ReplaceVpnTunnelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReplaceVpnTunnel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceVpnTunnel operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReplaceVpnTunnel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceVpnTunnel">REST API Reference for ReplaceVpnTunnel Operation</seealso>
+        IAsyncResult BeginReplaceVpnTunnel(ReplaceVpnTunnelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ReplaceVpnTunnel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReplaceVpnTunnel.</param>
+        /// 
+        /// <returns>Returns a  ReplaceVpnTunnelResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceVpnTunnel">REST API Reference for ReplaceVpnTunnel Operation</seealso>
+        ReplaceVpnTunnelResponse EndReplaceVpnTunnel(IAsyncResult asyncResult);
 
         #endregion
         

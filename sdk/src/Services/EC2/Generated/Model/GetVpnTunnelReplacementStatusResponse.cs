@@ -29,68 +29,77 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the ModifyVpnTunnelOptions operation.
-    /// Modifies the options for a VPN tunnel in an Amazon Web Services Site-to-Site VPN connection.
-    /// You can modify multiple options for a tunnel in a single request, but you can only
-    /// modify one tunnel at a time. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site
-    /// VPN tunnel options for your Site-to-Site VPN connection</a> in the <i>Amazon Web Services
-    /// Site-to-Site VPN User Guide</i>.
+    /// This is the response object from the GetVpnTunnelReplacementStatus operation.
     /// </summary>
-    public partial class ModifyVpnTunnelOptionsRequest : AmazonEC2Request
+    public partial class GetVpnTunnelReplacementStatusResponse : AmazonWebServiceResponse
     {
-        private bool? _skipTunnelReplacement;
-        private ModifyVpnTunnelOptionsSpecification _tunnelOptions;
+        private string _customerGatewayId;
+        private MaintenanceDetails _maintenanceDetails;
+        private string _transitGatewayId;
         private string _vpnConnectionId;
+        private string _vpnGatewayId;
         private string _vpnTunnelOutsideIpAddress;
 
         /// <summary>
-        /// Gets and sets the property SkipTunnelReplacement. 
+        /// Gets and sets the property CustomerGatewayId. 
         /// <para>
-        /// Choose whether or not to trigger immediate tunnel replacement.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>True</code> | <code>False</code> 
+        /// The ID of the customer gateway.
         /// </para>
         /// </summary>
-        public bool SkipTunnelReplacement
+        public string CustomerGatewayId
         {
-            get { return this._skipTunnelReplacement.GetValueOrDefault(); }
-            set { this._skipTunnelReplacement = value; }
+            get { return this._customerGatewayId; }
+            set { this._customerGatewayId = value; }
         }
 
-        // Check to see if SkipTunnelReplacement property is set
-        internal bool IsSetSkipTunnelReplacement()
+        // Check to see if CustomerGatewayId property is set
+        internal bool IsSetCustomerGatewayId()
         {
-            return this._skipTunnelReplacement.HasValue; 
+            return this._customerGatewayId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TunnelOptions. 
+        /// Gets and sets the property MaintenanceDetails. 
         /// <para>
-        /// The tunnel options to modify.
+        /// Get details of pending tunnel endpoint maintenance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public ModifyVpnTunnelOptionsSpecification TunnelOptions
+        public MaintenanceDetails MaintenanceDetails
         {
-            get { return this._tunnelOptions; }
-            set { this._tunnelOptions = value; }
+            get { return this._maintenanceDetails; }
+            set { this._maintenanceDetails = value; }
         }
 
-        // Check to see if TunnelOptions property is set
-        internal bool IsSetTunnelOptions()
+        // Check to see if MaintenanceDetails property is set
+        internal bool IsSetMaintenanceDetails()
         {
-            return this._tunnelOptions != null;
+            return this._maintenanceDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayId. 
+        /// <para>
+        /// The ID of the transit gateway associated with the VPN connection.
+        /// </para>
+        /// </summary>
+        public string TransitGatewayId
+        {
+            get { return this._transitGatewayId; }
+            set { this._transitGatewayId = value; }
+        }
+
+        // Check to see if TransitGatewayId property is set
+        internal bool IsSetTransitGatewayId()
+        {
+            return this._transitGatewayId != null;
         }
 
         /// <summary>
         /// Gets and sets the property VpnConnectionId. 
         /// <para>
-        /// The ID of the Amazon Web Services Site-to-Site VPN connection.
+        /// The ID of the Site-to-Site VPN connection. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string VpnConnectionId
         {
             get { return this._vpnConnectionId; }
@@ -104,12 +113,29 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property VpnGatewayId. 
+        /// <para>
+        /// The ID of the virtual private gateway.
+        /// </para>
+        /// </summary>
+        public string VpnGatewayId
+        {
+            get { return this._vpnGatewayId; }
+            set { this._vpnGatewayId = value; }
+        }
+
+        // Check to see if VpnGatewayId property is set
+        internal bool IsSetVpnGatewayId()
+        {
+            return this._vpnGatewayId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VpnTunnelOutsideIpAddress. 
         /// <para>
         /// The external IP address of the VPN tunnel.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string VpnTunnelOutsideIpAddress
         {
             get { return this._vpnTunnelOutsideIpAddress; }
