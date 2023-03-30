@@ -59,7 +59,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageBuildVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image whose creation has been cancelled.
+        /// The ARN of the image whose creation this request canceled.
         /// </para>
         /// </summary>
         public string ImageBuildVersionArn

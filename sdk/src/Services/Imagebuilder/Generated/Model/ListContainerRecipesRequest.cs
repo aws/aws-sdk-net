@@ -78,7 +78,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in the list.
+        /// The maximum items to return in a request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -97,8 +97,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Provides a token for pagination, which determines where to begin the next set of results
-        /// when the current set reaches the maximum for one request.
+        /// A token to specify where to start paginating. This is the NextToken from a previously
+        /// truncated response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

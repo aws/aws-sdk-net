@@ -50,8 +50,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ChangeDescription. 
         /// <para>
-        /// The change description of the component. Describes what change has been made in this
-        /// version, or what makes this version different from other versions of this component.
+        /// The change description of the component. This description indicates the change that
+        /// has been made in this version, or what makes this version different from other versions
+        /// of this component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -166,7 +167,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the component.
+        /// The name of the component.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

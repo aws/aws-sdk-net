@@ -59,7 +59,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ComponentBuildVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the component that was created by this request.
+        /// The Amazon Resource Name (ARN) of the component that this request created.
         /// </para>
         /// </summary>
         public string ComponentBuildVersionArn

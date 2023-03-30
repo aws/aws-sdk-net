@@ -44,7 +44,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        ///  The idempotency token of the distribution configuration.
+        /// The idempotency token of the distribution configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -63,7 +63,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the distribution configuration.
+        /// The description of the distribution configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -82,7 +82,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Distributions. 
         /// <para>
-        ///  The distributions of the distribution configuration.
+        /// The distributions of the distribution configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,7 +101,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the distribution configuration.
+        /// The name of the distribution configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -120,7 +120,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The tags of the distribution configuration.
+        /// The tags of the distribution configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

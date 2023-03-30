@@ -30,8 +30,8 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDistributionConfiguration operation.
-    /// Updates a new distribution configuration. Distribution configurations define and
-    /// configure the outputs of your pipeline.
+    /// Updates a new distribution configuration. Distribution configurations define and configure
+    /// the outputs of your pipeline.
     /// </summary>
     public partial class UpdateDistributionConfigurationRequest : AmazonImagebuilderRequest
     {
