@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClusterStatus Object
+    /// Response Unmarshaller for ErrorDetail Object
     /// </summary>  
-    public class ClusterStatusUnmarshaller : IUnmarshaller<ClusterStatus, XmlUnmarshallerContext>, IUnmarshaller<ClusterStatus, JsonUnmarshallerContext>
+    public class ErrorDetailUnmarshaller : IUnmarshaller<ErrorDetail, XmlUnmarshallerContext>, IUnmarshaller<ErrorDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ClusterStatus IUnmarshaller<ClusterStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ErrorDetail IUnmarshaller<ErrorDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ClusterStatus Unmarshall(JsonUnmarshallerContext context)
+        public ErrorDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ClusterStatus unmarshalledObject = new ClusterStatus();
+            ErrorDetail unmarshalledObject = new ErrorDetail();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ErrorDetails", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ErrorDetail, ErrorDetailUnmarshaller>(ErrorDetailUnmarshaller.Instance);
-                    unmarshalledObject.ErrorDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth))
+                if (context.TestExpression("ErrorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("StateChangeReason", targetDepth))
+                if (context.TestExpression("ErrorData", targetDepth))
                 {
-                    var unmarshaller = ClusterStateChangeReasonUnmarshaller.Instance;
-                    unmarshalledObject.StateChangeReason = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Dictionary<string, string>, DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
+                    unmarshalledObject.ErrorData = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Timeline", targetDepth))
+                if (context.TestExpression("ErrorMessage", targetDepth))
                 {
-                    var unmarshaller = ClusterTimelineUnmarshaller.Instance;
-                    unmarshalledObject.Timeline = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClusterStatusUnmarshaller _instance = new ClusterStatusUnmarshaller();        
+        private static ErrorDetailUnmarshaller _instance = new ErrorDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClusterStatusUnmarshaller Instance
+        public static ErrorDetailUnmarshaller Instance
         {
             get
             {
