@@ -766,6 +766,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Public preview release of Amazon Translate and the Amazon Translate Developer Guide. For more information, see the Amazon Translate Developer Guide.
 * [AWSSDK.VoiceID](https://www.nuget.org/packages/AWSSDK.VoiceID/)
 	* Released the Amazon Voice ID SDK, for usage with the Amazon Connect Voice ID feature released for Amazon Connect.
+* [AWSSDK.VPCLattice](https://www.nuget.org/packages/AWSSDK.VPCLattice/)
+	* General Availability (GA) release of Amazon VPC Lattice
 * [AWSSDK.WAF](https://www.nuget.org/packages/AWSSDK.WAF/)
 	* AWS WAF (Web Application Firewall) protects web applications from attack by allowing customers to block bad actors and provides filters against common web exploits like SQL injection.
 * [AWSSDK.WAFRegional](https://www.nuget.org/packages/AWSSDK.WAFRegional/)
