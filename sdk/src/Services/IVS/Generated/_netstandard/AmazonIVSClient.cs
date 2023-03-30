@@ -88,29 +88,29 @@ namespace Amazon.IVS
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Channel — Stores configuration data related to your live stream. You first create
-    /// a channel and then use the channel’s stream key to start your live stream. See the
-    /// Channel endpoints for more information. 
+    ///  <b>Channel</b> — Stores configuration data related to your live stream. You first
+    /// create a channel and then use the channel’s stream key to start your live stream.
+    /// See the Channel endpoints for more information. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Stream key — An identifier assigned by Amazon IVS when you create a channel, which
-    /// is then used to authorize streaming. See the StreamKey endpoints for more information.
+    ///  <b>Stream key</b> — An identifier assigned by Amazon IVS when you create a channel,
+    /// which is then used to authorize streaming. See the StreamKey endpoints for more information.
     /// <i> <b>Treat the stream key like a secret, since it allows anyone to stream to the
     /// channel.</b> </i> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Playback key pair — Video playback may be restricted using playback-authorization
+    ///  <b>Playback key pair</b> — Video playback may be restricted using playback-authorization
     /// tokens, which use public-key encryption. A playback key pair is the public-private
     /// pair of keys used to sign and validate the playback-authorization token. See the PlaybackKeyPair
     /// endpoints for more information.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Recording configuration — Stores configuration related to recording a live stream
-    /// and where to store the recorded content. Multiple channels can reference the same
-    /// recording configuration. See the Recording Configuration endpoints for more information.
+    ///  <b>Recording configuration</b> — Stores configuration related to recording a live
+    /// stream and where to store the recorded content. Multiple channels can reference the
+    /// same recording configuration. See the Recording Configuration endpoints for more information.
     /// </para>
     ///  </li> </ul> 
     /// <para>
