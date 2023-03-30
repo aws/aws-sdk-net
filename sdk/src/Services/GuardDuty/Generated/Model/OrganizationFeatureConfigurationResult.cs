@@ -33,8 +33,28 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class OrganizationFeatureConfigurationResult
     {
+        private List<OrganizationAdditionalConfigurationResult> _additionalConfiguration = new List<OrganizationAdditionalConfigurationResult>();
         private OrgFeatureStatus _autoEnable;
         private OrgFeature _name;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalConfiguration. 
+        /// <para>
+        /// The additional configuration that is configured for the member accounts within the
+        /// organization.
+        /// </para>
+        /// </summary>
+        public List<OrganizationAdditionalConfigurationResult> AdditionalConfiguration
+        {
+            get { return this._additionalConfiguration; }
+            set { this._additionalConfiguration = value; }
+        }
+
+        // Check to see if AdditionalConfiguration property is set
+        internal bool IsSetAdditionalConfiguration()
+        {
+            return this._additionalConfiguration != null && this._additionalConfiguration.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AutoEnable. 

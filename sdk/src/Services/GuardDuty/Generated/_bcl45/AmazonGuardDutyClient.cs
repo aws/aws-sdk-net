@@ -1910,6 +1910,65 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  GetCoverageStatistics
+
+
+        /// <summary>
+        /// Retrieves aggregated statistics for your account. If you are a GuardDuty administrator,
+        /// you can retrieve the statistics for all the resources associated with the active member
+        /// accounts in your organization who have enabled EKS Runtime Monitoring and have the
+        /// GuardDuty agent running on their EKS nodes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoverageStatistics service method.</param>
+        /// 
+        /// <returns>The response from the GetCoverageStatistics service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCoverageStatistics">REST API Reference for GetCoverageStatistics Operation</seealso>
+        public virtual GetCoverageStatisticsResponse GetCoverageStatistics(GetCoverageStatisticsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCoverageStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCoverageStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCoverageStatisticsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves aggregated statistics for your account. If you are a GuardDuty administrator,
+        /// you can retrieve the statistics for all the resources associated with the active member
+        /// accounts in your organization who have enabled EKS Runtime Monitoring and have the
+        /// GuardDuty agent running on their EKS nodes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoverageStatistics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCoverageStatistics service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCoverageStatistics">REST API Reference for GetCoverageStatistics Operation</seealso>
+        public virtual Task<GetCoverageStatisticsResponse> GetCoverageStatisticsAsync(GetCoverageStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCoverageStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCoverageStatisticsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetCoverageStatisticsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDetector
 
 
@@ -2720,6 +2779,75 @@ namespace Amazon.GuardDuty
             options.ResponseUnmarshaller = InviteMembersResponseUnmarshaller.Instance;
             
             return InvokeAsync<InviteMembersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCoverage
+
+
+        /// <summary>
+        /// Lists coverage details for your GuardDuty account. If you're a GuardDuty administrator,
+        /// you can retrieve all resources associated with the active member accounts in your
+        /// organization.
+        /// 
+        ///  
+        /// <para>
+        /// Make sure the accounts have EKS Runtime Monitoring enabled and GuardDuty agent running
+        /// on their EKS nodes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoverage service method.</param>
+        /// 
+        /// <returns>The response from the ListCoverage service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCoverage">REST API Reference for ListCoverage Operation</seealso>
+        public virtual ListCoverageResponse ListCoverage(ListCoverageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCoverageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCoverageResponseUnmarshaller.Instance;
+
+            return Invoke<ListCoverageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists coverage details for your GuardDuty account. If you're a GuardDuty administrator,
+        /// you can retrieve all resources associated with the active member accounts in your
+        /// organization.
+        /// 
+        ///  
+        /// <para>
+        /// Make sure the accounts have EKS Runtime Monitoring enabled and GuardDuty agent running
+        /// on their EKS nodes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoverage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCoverage service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCoverage">REST API Reference for ListCoverage Operation</seealso>
+        public virtual Task<ListCoverageResponse> ListCoverageAsync(ListCoverageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCoverageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCoverageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCoverageResponse>(request, options, cancellationToken);
         }
 
         #endregion

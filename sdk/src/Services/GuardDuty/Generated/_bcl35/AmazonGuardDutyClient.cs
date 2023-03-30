@@ -2008,6 +2008,69 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  GetCoverageStatistics
+
+        /// <summary>
+        /// Retrieves aggregated statistics for your account. If you are a GuardDuty administrator,
+        /// you can retrieve the statistics for all the resources associated with the active member
+        /// accounts in your organization who have enabled EKS Runtime Monitoring and have the
+        /// GuardDuty agent running on their EKS nodes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoverageStatistics service method.</param>
+        /// 
+        /// <returns>The response from the GetCoverageStatistics service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCoverageStatistics">REST API Reference for GetCoverageStatistics Operation</seealso>
+        public virtual GetCoverageStatisticsResponse GetCoverageStatistics(GetCoverageStatisticsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCoverageStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCoverageStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCoverageStatisticsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCoverageStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCoverageStatistics operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCoverageStatistics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCoverageStatistics">REST API Reference for GetCoverageStatistics Operation</seealso>
+        public virtual IAsyncResult BeginGetCoverageStatistics(GetCoverageStatisticsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCoverageStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCoverageStatisticsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCoverageStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCoverageStatistics.</param>
+        /// 
+        /// <returns>Returns a  GetCoverageStatisticsResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCoverageStatistics">REST API Reference for GetCoverageStatistics Operation</seealso>
+        public virtual GetCoverageStatisticsResponse EndGetCoverageStatistics(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCoverageStatisticsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetDetector
 
         /// <summary>
@@ -2882,6 +2945,74 @@ namespace Amazon.GuardDuty
         public virtual InviteMembersResponse EndInviteMembers(IAsyncResult asyncResult)
         {
             return EndInvoke<InviteMembersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCoverage
+
+        /// <summary>
+        /// Lists coverage details for your GuardDuty account. If you're a GuardDuty administrator,
+        /// you can retrieve all resources associated with the active member accounts in your
+        /// organization.
+        /// 
+        ///  
+        /// <para>
+        /// Make sure the accounts have EKS Runtime Monitoring enabled and GuardDuty agent running
+        /// on their EKS nodes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoverage service method.</param>
+        /// 
+        /// <returns>The response from the ListCoverage service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCoverage">REST API Reference for ListCoverage Operation</seealso>
+        public virtual ListCoverageResponse ListCoverage(ListCoverageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCoverageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCoverageResponseUnmarshaller.Instance;
+
+            return Invoke<ListCoverageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCoverage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCoverage operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCoverage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCoverage">REST API Reference for ListCoverage Operation</seealso>
+        public virtual IAsyncResult BeginListCoverage(ListCoverageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCoverageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCoverageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCoverage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCoverage.</param>
+        /// 
+        /// <returns>Returns a  ListCoverageResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCoverage">REST API Reference for ListCoverage Operation</seealso>
+        public virtual ListCoverageResponse EndListCoverage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCoverageResponse>(asyncResult);
         }
 
         #endregion

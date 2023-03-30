@@ -45,6 +45,22 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OrganizationFeatureConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAdditionalConfiguration())
+            {
+                context.Writer.WritePropertyName("additionalConfiguration");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAdditionalConfigurationListValue in requestObject.AdditionalConfiguration)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OrganizationAdditionalConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAdditionalConfigurationListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetAutoEnable())
             {
                 context.Writer.WritePropertyName("autoEnable");

@@ -33,8 +33,27 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class MemberFeaturesConfiguration
     {
+        private List<MemberAdditionalConfiguration> _additionalConfiguration = new List<MemberAdditionalConfiguration>();
         private OrgFeature _name;
         private FeatureStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalConfiguration. 
+        /// <para>
+        /// Additional configuration of the feature for the member account.
+        /// </para>
+        /// </summary>
+        public List<MemberAdditionalConfiguration> AdditionalConfiguration
+        {
+            get { return this._additionalConfiguration; }
+            set { this._additionalConfiguration = value; }
+        }
+
+        // Check to see if AdditionalConfiguration property is set
+        internal bool IsSetAdditionalConfiguration()
+        {
+            return this._additionalConfiguration != null && this._additionalConfiguration.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
