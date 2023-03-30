@@ -29,46 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListLensReviews operation.
-    /// List lens reviews for a particular workload.
+    /// This is the response object from the GetConsolidatedReport operation.
     /// </summary>
-    public partial class ListLensReviewsRequest : AmazonWellArchitectedRequest
+    public partial class GetConsolidatedReportResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
-        private int? _milestoneNumber;
+        private string _base64String;
+        private List<ConsolidatedReportMetric> _metrics = new List<ConsolidatedReportMetric>();
         private string _nextToken;
-        private string _workloadId;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property Base64String.
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
+        public string Base64String
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._base64String; }
+            set { this._base64String = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if Base64String property is set
+        internal bool IsSetBase64String()
         {
-            return this._maxResults.HasValue; 
+            return this._base64String != null;
         }
 
         /// <summary>
-        /// Gets and sets the property MilestoneNumber.
+        /// Gets and sets the property Metrics. 
+        /// <para>
+        /// The metrics that make up the consolidated report.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only returned when <code>JSON</code> format is requested.
+        /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int MilestoneNumber
+        public List<ConsolidatedReportMetric> Metrics
         {
-            get { return this._milestoneNumber.GetValueOrDefault(); }
-            set { this._milestoneNumber = value; }
+            get { return this._metrics; }
+            set { this._metrics = value; }
         }
 
-        // Check to see if MilestoneNumber property is set
-        internal bool IsSetMilestoneNumber()
+        // Check to see if Metrics property is set
+        internal bool IsSetMetrics()
         {
-            return this._milestoneNumber.HasValue; 
+            return this._metrics != null && this._metrics.Count > 0; 
         }
 
         /// <summary>
@@ -84,22 +87,6 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property WorkloadId.
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string WorkloadId
-        {
-            get { return this._workloadId; }
-            set { this._workloadId = value; }
-        }
-
-        // Check to see if WorkloadId property is set
-        internal bool IsSetWorkloadId()
-        {
-            return this._workloadId != null;
         }
 
     }

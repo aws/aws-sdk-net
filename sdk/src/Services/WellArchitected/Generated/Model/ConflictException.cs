@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
-    /// The resource already exists.
+    /// The resource has already been processed, was deleted, or is too large.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

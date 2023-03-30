@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateWorkload operation
+    /// Response Unmarshaller for GetConsolidatedReport operation
     /// </summary>  
-    public class CreateWorkloadResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetConsolidatedReportResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,28 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateWorkloadResponse response = new CreateWorkloadResponse();
+            GetConsolidatedReportResponse response = new GetConsolidatedReportResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("WorkloadArn", targetDepth))
+                if (context.TestExpression("Base64String", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.WorkloadArn = unmarshaller.Unmarshall(context);
+                    response.Base64String = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("WorkloadId", targetDepth))
+                if (context.TestExpression("Metrics", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ConsolidatedReportMetric, ConsolidatedReportMetricUnmarshaller>(ConsolidatedReportMetricUnmarshaller.Instance);
+                    response.Metrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.WorkloadId = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -98,14 +104,6 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
-                {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -118,9 +116,9 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             return new AmazonWellArchitectedException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateWorkloadResponseUnmarshaller _instance = new CreateWorkloadResponseUnmarshaller();        
+        private static GetConsolidatedReportResponseUnmarshaller _instance = new GetConsolidatedReportResponseUnmarshaller();        
 
-        internal static CreateWorkloadResponseUnmarshaller GetInstance()
+        internal static GetConsolidatedReportResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -128,7 +126,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateWorkloadResponseUnmarshaller Instance
+        public static GetConsolidatedReportResponseUnmarshaller Instance
         {
             get
             {

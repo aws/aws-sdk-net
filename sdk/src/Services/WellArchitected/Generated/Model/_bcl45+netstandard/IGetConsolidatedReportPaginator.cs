@@ -16,43 +16,18 @@
 /*
  * Do not modify this file. This file is generated from the wellarchitected-2020-03-31.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.Net;
-
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
-    /// This is the response object from the ExportLens operation.
-    /// </summary>
-    public partial class ExportLensResponse : AmazonWebServiceResponse
+    /// Paginator for the GetConsolidatedReport operation
+    ///</summary>
+    public interface IGetConsolidatedReportPaginator
     {
-        private string _lensJSON;
-
         /// <summary>
-        /// Gets and sets the property LensJSON. 
-        /// <para>
-        /// The JSON representation of a lens.
-        /// </para>
+        /// Enumerable containing all full responses for the operation
         /// </summary>
-        [AWSProperty(Min=2, Max=500000)]
-        public string LensJSON
-        {
-            get { return this._lensJSON; }
-            set { this._lensJSON = value; }
-        }
-
-        // Check to see if LensJSON property is set
-        internal bool IsSetLensJSON()
-        {
-            return this._lensJSON != null;
-        }
-
+        IPaginatedEnumerable<GetConsolidatedReportResponse> Responses { get; }
     }
 }

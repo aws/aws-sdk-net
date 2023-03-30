@@ -29,14 +29,62 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListWorkloads operation.
-    /// Paginated list of workloads.
+    /// Container for the parameters to the GetConsolidatedReport operation.
+    /// Get a consolidated report of your workloads.
+    /// 
+    ///  
+    /// <para>
+    /// You can optionally choose to include workloads that have been shared with you.
+    /// </para>
     /// </summary>
-    public partial class ListWorkloadsRequest : AmazonWellArchitectedRequest
+    public partial class GetConsolidatedReportRequest : AmazonWellArchitectedRequest
     {
+        private ReportFormat _format;
+        private bool? _includeSharedResources;
         private int? _maxResults;
         private string _nextToken;
-        private string _workloadNamePrefix;
+
+        /// <summary>
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// The format of the consolidated report.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>,
+        /// <code>Metrics</code> is returned.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public ReportFormat Format
+        {
+            get { return this._format; }
+            set { this._format = value; }
+        }
+
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
+        {
+            return this._format != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeSharedResources. 
+        /// <para>
+        /// Set to <code>true</code> to have shared resources included in the report.
+        /// </para>
+        /// </summary>
+        public bool IncludeSharedResources
+        {
+            get { return this._includeSharedResources.GetValueOrDefault(); }
+            set { this._includeSharedResources = value; }
+        }
+
+        // Check to see if IncludeSharedResources property is set
+        internal bool IsSetIncludeSharedResources()
+        {
+            return this._includeSharedResources.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -44,7 +92,7 @@ namespace Amazon.WellArchitected.Model
         /// The maximum number of results to return for this request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=15)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -70,22 +118,6 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property WorkloadNamePrefix.
-        /// </summary>
-        [AWSProperty(Max=100)]
-        public string WorkloadNamePrefix
-        {
-            get { return this._workloadNamePrefix; }
-            set { this._workloadNamePrefix = value; }
-        }
-
-        // Check to see if WorkloadNamePrefix property is set
-        internal bool IsSetWorkloadNamePrefix()
-        {
-            return this._workloadNamePrefix != null;
         }
 
     }

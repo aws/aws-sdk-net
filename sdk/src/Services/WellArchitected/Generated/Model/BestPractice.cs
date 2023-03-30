@@ -29,29 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
-    /// This is the response object from the ExportLens operation.
+    /// A best practice, or question choice, that has been identified as a risk in this question.
     /// </summary>
-    public partial class ExportLensResponse : AmazonWebServiceResponse
+    public partial class BestPractice
     {
-        private string _lensJSON;
+        private string _choiceId;
+        private string _choiceTitle;
 
         /// <summary>
-        /// Gets and sets the property LensJSON. 
-        /// <para>
-        /// The JSON representation of a lens.
-        /// </para>
+        /// Gets and sets the property ChoiceId.
         /// </summary>
-        [AWSProperty(Min=2, Max=500000)]
-        public string LensJSON
+        [AWSProperty(Min=1, Max=64)]
+        public string ChoiceId
         {
-            get { return this._lensJSON; }
-            set { this._lensJSON = value; }
+            get { return this._choiceId; }
+            set { this._choiceId = value; }
         }
 
-        // Check to see if LensJSON property is set
-        internal bool IsSetLensJSON()
+        // Check to see if ChoiceId property is set
+        internal bool IsSetChoiceId()
         {
-            return this._lensJSON != null;
+            return this._choiceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChoiceTitle.
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public string ChoiceTitle
+        {
+            get { return this._choiceTitle; }
+            set { this._choiceTitle = value; }
+        }
+
+        // Check to see if ChoiceTitle property is set
+        internal bool IsSetChoiceTitle()
+        {
+            return this._choiceTitle != null;
         }
 
     }

@@ -30,7 +30,7 @@ namespace Amazon.WellArchitected.Model
 {
     /// <summary>
     /// Container for the parameters to the UpgradeLensReview operation.
-    /// Upgrade lens review.
+    /// Upgrade lens review for a particular workload.
     /// </summary>
     public partial class UpgradeLensReviewRequest : AmazonWellArchitectedRequest
     {

@@ -29,17 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
-    /// This is the response object from the ImportLens operation.
+    /// A metric for a particular lens in a workload.
     /// </summary>
-    public partial class ImportLensResponse : AmazonWebServiceResponse
+    public partial class LensMetric
     {
         private string _lensArn;
-        private ImportLensStatus _status;
+        private List<PillarMetric> _pillars = new List<PillarMetric>();
+        private Dictionary<string, int> _riskCounts = new Dictionary<string, int>();
 
         /// <summary>
         /// Gets and sets the property LensArn. 
         /// <para>
-        /// The ARN for the lens that was created or updated.
+        /// The lens ARN.
         /// </para>
         /// </summary>
         public string LensArn
@@ -55,21 +56,36 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property Pillars. 
         /// <para>
-        /// The status of the imported lens.
+        /// The metrics for the pillars in a lens.
         /// </para>
         /// </summary>
-        public ImportLensStatus Status
+        public List<PillarMetric> Pillars
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._pillars; }
+            set { this._pillars = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if Pillars property is set
+        internal bool IsSetPillars()
         {
-            return this._status != null;
+            return this._pillars != null && this._pillars.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RiskCounts.
+        /// </summary>
+        public Dictionary<string, int> RiskCounts
+        {
+            get { return this._riskCounts; }
+            set { this._riskCounts = value; }
+        }
+
+        // Check to see if RiskCounts property is set
+        internal bool IsSetRiskCounts()
+        {
+            return this._riskCounts != null && this._riskCounts.Count > 0; 
         }
 
     }

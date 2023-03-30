@@ -29,7 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
-    /// The choice level additional resources.
+    /// The choice level additional resources for a custom lens.
+    /// 
+    ///  
+    /// <para>
+    /// This field does not apply to Amazon Web Services official lenses.
+    /// </para>
     /// </summary>
     public partial class AdditionalResources
     {
@@ -39,8 +44,8 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The URLs for additional resources, either helpful resources or improvement plans.
-        /// Up to five additional URLs can be specified.
+        /// The URLs for additional resources, either helpful resources or improvement plans,
+        /// for a custom lens. Up to five additional URLs can be specified.
         /// </para>
         /// </summary>
         public List<ChoiceContent> Content
@@ -58,7 +63,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Type of additional resource.
+        /// Type of additional resource for a custom lens.
         /// </para>
         /// </summary>
         public AdditionalResourceType Type
