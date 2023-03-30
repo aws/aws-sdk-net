@@ -68,7 +68,7 @@ namespace Amazon.Athena.Model
         /// that orchestrates processing work and manages other executors in a notebook session.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5000)]
+        [AWSProperty(Min=1, Max=1)]
         public int CoordinatorDpuSize
         {
             get { return this._coordinatorDpuSize.GetValueOrDefault(); }
@@ -88,7 +88,7 @@ namespace Amazon.Athena.Model
         /// of compute that a notebook session can request from Athena.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5000)]
+        [AWSProperty(Min=1, Max=1)]
         public int DefaultExecutorDpuSize
         {
             get { return this._defaultExecutorDpuSize.GetValueOrDefault(); }
