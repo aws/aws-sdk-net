@@ -42,6 +42,7 @@ namespace Amazon.ComputeOptimizer.Model
         private List<string> _inferredWorkloadTypes = new List<string>();
         private string _instanceArn;
         private string _instanceName;
+        private InstanceState _instanceState;
         private DateTime? _lastRefreshTimestamp;
         private double? _lookBackPeriodInDays;
         private List<InstanceRecommendationOption> _recommendationOptions = new List<InstanceRecommendationOption>();
@@ -219,8 +220,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput
         /// configuration can be sized down while still meeting the performance requirements of
-        /// your workload. This is identified by analyzing the <code>VolumeReadOps</code> and
-        /// <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current instance
+        /// your workload. This is identified by analyzing the <code>VolumeReadBytes</code> and
+        /// <code>VolumeWriteBytes</code> metrics of EBS volumes attached to the current instance
         /// during the look-back period.
         /// </para>
         ///  </li> <li> 
@@ -228,14 +229,14 @@ namespace Amazon.ComputeOptimizer.Model
         ///  <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput
         /// configuration doesn't meet the performance requirements of your workload and there
         /// is an alternative instance type that provides better EBS throughput performance. This
-        /// is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code>
+        /// is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt;
         /// metrics of EBS volumes attached to the current instance during the look-back period.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration
         /// can be sized down while still meeting the performance requirements of your workload.
-        /// This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>
+        /// This is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code>
         /// metric of EBS volumes attached to the current instance during the look-back period.
         /// </para>
         ///  </li> <li> 
@@ -243,7 +244,7 @@ namespace Amazon.ComputeOptimizer.Model
         ///  <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration
         /// doesn't meet the performance requirements of your workload and there is an alternative
         /// instance type that provides better EBS IOPS performance. This is identified by analyzing
-        /// the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metric of EBS volumes
+        /// the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes
         /// attached to the current instance during the look-back period.
         /// </para>
         ///  </li> <li> 
@@ -422,6 +423,24 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetInstanceName()
         {
             return this._instanceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceState. 
+        /// <para>
+        ///  The state of the instance when the recommendation was generated. 
+        /// </para>
+        /// </summary>
+        public InstanceState InstanceState
+        {
+            get { return this._instanceState; }
+            set { this._instanceState = value; }
+        }
+
+        // Check to see if InstanceState property is set
+        internal bool IsSetInstanceState()
+        {
+            return this._instanceState != null;
         }
 
         /// <summary>

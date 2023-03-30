@@ -64,6 +64,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("rootVolume", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RootVolume = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("volumeBaselineIOPS", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

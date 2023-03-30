@@ -118,6 +118,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("instanceState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastRefreshTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

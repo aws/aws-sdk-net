@@ -1269,6 +1269,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableInstanceField InstanceName = new ExportableInstanceField("InstanceName");
         /// <summary>
+        /// Constant InstanceState for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField InstanceState = new ExportableInstanceField("InstanceState");
+        /// <summary>
         /// Constant LastRefreshTimestamp for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField LastRefreshTimestamp = new ExportableInstanceField("LastRefreshTimestamp");
@@ -1684,6 +1688,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant RecommendationOptionsSavingsOpportunityPercentage for ExportableVolumeField
         /// </summary>
         public static readonly ExportableVolumeField RecommendationOptionsSavingsOpportunityPercentage = new ExportableVolumeField("RecommendationOptionsSavingsOpportunityPercentage");
+        /// <summary>
+        /// Constant RootVolume for ExportableVolumeField
+        /// </summary>
+        public static readonly ExportableVolumeField RootVolume = new ExportableVolumeField("RootVolume");
         /// <summary>
         /// Constant UtilizationMetricsVolumeReadBytesPerSecondMaximum for ExportableVolumeField
         /// </summary>
@@ -2230,6 +2238,72 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InstanceRecommendationFindingReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceState.
+    /// </summary>
+    public class InstanceState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Pending for InstanceState
+        /// </summary>
+        public static readonly InstanceState Pending = new InstanceState("pending");
+        /// <summary>
+        /// Constant Running for InstanceState
+        /// </summary>
+        public static readonly InstanceState Running = new InstanceState("running");
+        /// <summary>
+        /// Constant ShuttingDown for InstanceState
+        /// </summary>
+        public static readonly InstanceState ShuttingDown = new InstanceState("shutting-down");
+        /// <summary>
+        /// Constant Stopped for InstanceState
+        /// </summary>
+        public static readonly InstanceState Stopped = new InstanceState("stopped");
+        /// <summary>
+        /// Constant Stopping for InstanceState
+        /// </summary>
+        public static readonly InstanceState Stopping = new InstanceState("stopping");
+        /// <summary>
+        /// Constant Terminated for InstanceState
+        /// </summary>
+        public static readonly InstanceState Terminated = new InstanceState("terminated");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceState FindValue(string value)
+        {
+            return FindValue<InstanceState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceState(string value)
         {
             return FindValue(value);
         }
