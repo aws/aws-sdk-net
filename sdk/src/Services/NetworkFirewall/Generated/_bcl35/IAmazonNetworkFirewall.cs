@@ -582,6 +582,99 @@ namespace Amazon.NetworkFirewall
 
         #endregion
         
+        #region  CreateTLSInspectionConfiguration
+
+
+        /// <summary>
+        /// Creates an Network Firewall TLS inspection configuration. A TLS inspection configuration
+        /// contains the Certificate Manager certificate references that Network Firewall uses
+        /// to decrypt and re-encrypt inbound traffic.
+        /// 
+        ///  
+        /// <para>
+        /// After you create a TLS inspection configuration, you associate it with a firewall
+        /// policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// To update the settings for a TLS inspection configuration, use <a>UpdateTLSInspectionConfiguration</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To manage a TLS inspection configuration's tags, use the standard Amazon Web Services
+        /// resource tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve information about TLS inspection configurations, use <a>ListTLSInspectionConfigurations</a>
+        /// and <a>DescribeTLSInspectionConfiguration</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information about TLS inspection configurations, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting
+        /// SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network Firewall
+        /// Developer Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTLSInspectionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateTLSInspectionConfiguration">REST API Reference for CreateTLSInspectionConfiguration Operation</seealso>
+        CreateTLSInspectionConfigurationResponse CreateTLSInspectionConfiguration(CreateTLSInspectionConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTLSInspectionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTLSInspectionConfiguration operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTLSInspectionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateTLSInspectionConfiguration">REST API Reference for CreateTLSInspectionConfiguration Operation</seealso>
+        IAsyncResult BeginCreateTLSInspectionConfiguration(CreateTLSInspectionConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTLSInspectionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTLSInspectionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateTLSInspectionConfigurationResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateTLSInspectionConfiguration">REST API Reference for CreateTLSInspectionConfiguration Operation</seealso>
+        CreateTLSInspectionConfigurationResponse EndCreateTLSInspectionConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteFirewall
 
 
@@ -892,6 +985,78 @@ namespace Amazon.NetworkFirewall
         /// <returns>Returns a  DeleteRuleGroupResult from NetworkFirewall.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteRuleGroup">REST API Reference for DeleteRuleGroup Operation</seealso>
         DeleteRuleGroupResponse EndDeleteRuleGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteTLSInspectionConfiguration
+
+
+        /// <summary>
+        /// Deletes the specified <a>TLSInspectionConfiguration</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTLSInspectionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
+        /// The operation failed because it's not valid. For example, you might have tried to
+        /// delete a rule group or firewall policy that's in use.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteTLSInspectionConfiguration">REST API Reference for DeleteTLSInspectionConfiguration Operation</seealso>
+        DeleteTLSInspectionConfigurationResponse DeleteTLSInspectionConfiguration(DeleteTLSInspectionConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTLSInspectionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTLSInspectionConfiguration operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTLSInspectionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteTLSInspectionConfiguration">REST API Reference for DeleteTLSInspectionConfiguration Operation</seealso>
+        IAsyncResult BeginDeleteTLSInspectionConfiguration(DeleteTLSInspectionConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTLSInspectionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTLSInspectionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteTLSInspectionConfigurationResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteTLSInspectionConfiguration">REST API Reference for DeleteTLSInspectionConfiguration Operation</seealso>
+        DeleteTLSInspectionConfigurationResponse EndDeleteTLSInspectionConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1305,6 +1470,74 @@ namespace Amazon.NetworkFirewall
 
         #endregion
         
+        #region  DescribeTLSInspectionConfiguration
+
+
+        /// <summary>
+        /// Returns the data objects for the specified TLS inspection configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTLSInspectionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeTLSInspectionConfiguration">REST API Reference for DescribeTLSInspectionConfiguration Operation</seealso>
+        DescribeTLSInspectionConfigurationResponse DescribeTLSInspectionConfiguration(DescribeTLSInspectionConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTLSInspectionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTLSInspectionConfiguration operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTLSInspectionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeTLSInspectionConfiguration">REST API Reference for DescribeTLSInspectionConfiguration Operation</seealso>
+        IAsyncResult BeginDescribeTLSInspectionConfiguration(DescribeTLSInspectionConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTLSInspectionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTLSInspectionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeTLSInspectionConfigurationResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeTLSInspectionConfiguration">REST API Reference for DescribeTLSInspectionConfiguration Operation</seealso>
+        DescribeTLSInspectionConfigurationResponse EndDescribeTLSInspectionConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisassociateSubnets
 
 
@@ -1663,6 +1896,73 @@ namespace Amazon.NetworkFirewall
         /// <returns>Returns a  ListTagsForResourceResult from NetworkFirewall.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTLSInspectionConfigurations
+
+
+        /// <summary>
+        /// Retrieves the metadata for the TLS inspection configurations that you have defined.
+        /// Depending on your setting for max results and the number of TLS inspection configurations,
+        /// a single call might not return the full list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTLSInspectionConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListTLSInspectionConfigurations service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTLSInspectionConfigurations">REST API Reference for ListTLSInspectionConfigurations Operation</seealso>
+        ListTLSInspectionConfigurationsResponse ListTLSInspectionConfigurations(ListTLSInspectionConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTLSInspectionConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTLSInspectionConfigurations operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTLSInspectionConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTLSInspectionConfigurations">REST API Reference for ListTLSInspectionConfigurations Operation</seealso>
+        IAsyncResult BeginListTLSInspectionConfigurations(ListTLSInspectionConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTLSInspectionConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTLSInspectionConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListTLSInspectionConfigurationsResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTLSInspectionConfigurations">REST API Reference for ListTLSInspectionConfigurations Operation</seealso>
+        ListTLSInspectionConfigurationsResponse EndListTLSInspectionConfigurations(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2554,6 +2854,87 @@ namespace Amazon.NetworkFirewall
         /// <returns>Returns a  UpdateSubnetChangeProtectionResult from NetworkFirewall.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateSubnetChangeProtection">REST API Reference for UpdateSubnetChangeProtection Operation</seealso>
         UpdateSubnetChangeProtectionResponse EndUpdateSubnetChangeProtection(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateTLSInspectionConfiguration
+
+
+        /// <summary>
+        /// Updates the TLS inspection configuration settings for the specified TLS inspection
+        /// configuration. You use a TLS inspection configuration by reference in one or more
+        /// firewall policies. When you modify a TLS inspection configuration, you modify all
+        /// firewall policies that use the TLS inspection configuration. 
+        /// 
+        ///  
+        /// <para>
+        /// To update a TLS inspection configuration, first call <a>DescribeTLSInspectionConfiguration</a>
+        /// to retrieve the current <a>TLSInspectionConfiguration</a> object, update the object
+        /// as needed, and then provide the updated object to this call. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTLSInspectionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
+        /// The token you provided is stale or isn't valid for the operation.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateTLSInspectionConfiguration">REST API Reference for UpdateTLSInspectionConfiguration Operation</seealso>
+        UpdateTLSInspectionConfigurationResponse UpdateTLSInspectionConfiguration(UpdateTLSInspectionConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTLSInspectionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTLSInspectionConfiguration operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTLSInspectionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateTLSInspectionConfiguration">REST API Reference for UpdateTLSInspectionConfiguration Operation</seealso>
+        IAsyncResult BeginUpdateTLSInspectionConfiguration(UpdateTLSInspectionConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTLSInspectionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTLSInspectionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateTLSInspectionConfigurationResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateTLSInspectionConfiguration">REST API Reference for UpdateTLSInspectionConfiguration Operation</seealso>
+        UpdateTLSInspectionConfigurationResponse EndUpdateTLSInspectionConfiguration(IAsyncResult asyncResult);
 
         #endregion
         

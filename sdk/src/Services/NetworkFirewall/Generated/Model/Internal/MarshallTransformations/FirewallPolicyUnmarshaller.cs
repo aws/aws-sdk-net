@@ -106,6 +106,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     unmarshalledObject.StatelessRuleGroupReferences = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TLSInspectionConfigurationArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TLSInspectionConfigurationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
