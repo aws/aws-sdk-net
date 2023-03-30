@@ -1,3 +1,40 @@
+### 3.7.516.0 (2023-03-30 18:33 UTC)
+* Athena (3.7.106.0)
+	* Make DefaultExecutorDpuSize and CoordinatorDpuSize  fields optional  in StartSession
+* AutoScaling (3.7.104.0)
+	* Amazon EC2 Auto Scaling now supports Elastic Load Balancing traffic sources with the AttachTrafficSources, DetachTrafficSources, and DescribeTrafficSources APIs. This release also introduces a new activity status, "WaitingForConnectionDraining", for VPC Lattice to the DescribeScalingActivities API.
+* Batch (3.7.104.0)
+	* This feature allows Batch on EKS to support configuration of Pod Labels through Metadata for Batch on EKS Jobs.
+* ComputeOptimizer (3.7.104.0)
+	* This release adds support for HDD EBS volume types and io2 Block Express. We are also adding support for 61 new instance types and instances that have non consecutive runtime.
+* Drs (3.7.103.0)
+	* Adding a field to the replication configuration APIs to support the auto replicate new disks feature. We also deprecated RetryDataReplication.
+* EC2 (3.7.129.0)
+	* This release adds support for Tunnel Endpoint Lifecycle control, a new feature that provides Site-to-Site VPN customers with better visibility and control of their VPN tunnel maintenance updates.
+* ElasticMapReduce (3.7.103.0)
+	* Updated DescribeCluster and ListClusters API responses to include ErrorDetail that specifies error code, programmatically accessible error data,and an error message. ErrorDetail provides the underlying reason for cluster failure and recommends actions to simplify troubleshooting of EMR clusters.
+* Glue (3.7.110.0)
+	* This release adds support for AWS Glue Data Quality, which helps you evaluate and monitor the quality of your data and includes the API for creating, deleting, or updating data quality rulesets, runs and evaluations.
+* GuardDuty (3.7.103.0)
+	* Added EKS Runtime Monitoring feature support to existing detector, finding APIs and introducing new Coverage APIs
+* Imagebuilder (3.7.103.0)
+	* Adds support for new image workflow details and image vulnerability detection.
+* IVS (3.7.102.0)
+	* Amazon Interactive Video Service (IVS) now offers customers the ability to configure IVS channels to allow insecure RTMP ingest.
+* Kendra (3.7.103.0)
+	* AWS Kendra now supports featured results for a query.
+* NetworkFirewall (3.7.104.0)
+	* AWS Network Firewall added TLS inspection configurations to allow TLS traffic inspection.
+* SageMakerGeospatial (3.7.101.0)
+	* Amazon SageMaker geospatial capabilities now supports server-side encryption with customer managed KMS key and SageMaker notebooks with a SageMaker geospatial image in a Amazon SageMaker Domain with VPC only mode.
+* VPCLattice (3.7.100.0)
+	* General Availability (GA) release of Amazon VPC Lattice
+* WellArchitected (3.7.102.0)
+	* AWS Well-Architected SDK now supports getting consolidated report metrics and generating a consolidated report PDF.
+* Core 3.7.106.9
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.515.0 (2023-03-29 18:21 UTC)
 * OpenSearchServerless (3.7.101.0)
 	* This release includes two new exception types "ServiceQuotaExceededException" and "OcuLimitExceededException".
