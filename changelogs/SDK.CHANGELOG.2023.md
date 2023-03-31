@@ -1,3 +1,20 @@
+### 3.7.517.0 (2023-03-31 18:25 UTC)
+* EC2 (3.7.129.1)
+	* Documentation updates for EC2 On Demand Capacity Reservations
+* InternetMonitor (3.7.101.0)
+	* This release adds a new feature for Amazon CloudWatch Internet Monitor that enables customers to deliver internet measurements to Amazon S3 buckets as well as CloudWatch Logs.
+* ResilienceHub (3.7.102.6)
+	* Adding EKS related documentation for appTemplateBody
+* S3 (3.7.103.40)
+	* Documentation updates for Amazon S3
+* SageMakerFeatureStoreRuntime (3.7.102.0)
+	* In this release, you can now chose between soft delete and hard delete when calling the DeleteRecord API, so you have more flexibility when it comes to managing online store data.
+* ServerMigrationService (3.7.101.0)
+	* Deprecating AWS Server Migration Service.
+* Core 3.7.106.10
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.516.0 (2023-03-30 18:33 UTC)
 * Athena (3.7.106.0)
 	* Make DefaultExecutorDpuSize and CoordinatorDpuSize  fields optional  in StartSession
