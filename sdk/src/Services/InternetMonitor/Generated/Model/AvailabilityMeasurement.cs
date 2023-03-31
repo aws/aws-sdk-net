@@ -47,9 +47,9 @@ namespace Amazon.InternetMonitor.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-    /// How Internet Monitor calculates performance and availability scores</a> in the Amazon
-    /// CloudWatch Internet Monitor section of the Amazon CloudWatch User Guide.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+    /// Internet Monitor calculates performance and availability scores</a> in the Amazon
+    /// CloudWatch Internet Monitor section of the <i>Amazon CloudWatch User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AvailabilityMeasurement
@@ -69,12 +69,12 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         ///  
         /// <para>
-        /// The Amazon CloudWatch Internet Monitor chapter in the CloudWatch User Guide includes
-        /// detailed information about how Internet Monitor calculates health scores, including
-        /// performance and availability scores, and when it creates and resolves health events.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-        /// How Amazon Web Services calculates performance and availability scores</a> in the
-        /// Amazon CloudWatch Internet Monitor section of the CloudWatch User Guide.
+        /// The Amazon CloudWatch Internet Monitor chapter in the <i>CloudWatch User Guide</i>
+        /// includes detailed information about how Internet Monitor calculates health scores,
+        /// including performance and availability scores, and when it creates and resolves health
+        /// events. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+        /// Amazon Web Services calculates performance and availability scores</a> in the Amazon
+        /// CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
         public double ExperienceScore
@@ -96,9 +96,9 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about how Internet Monitor calculates impact, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">
-        /// Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the
-        /// Amazon CloudWatch User Guide.
+        /// For information about how Internet Monitor calculates impact, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside
+        /// Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the Amazon
+        /// CloudWatch User Guide.
         /// </para>
         /// </summary>
         public double PercentOfClientLocationImpacted
@@ -120,9 +120,9 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about how Internet Monitor calculates impact, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">
-        /// Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the
-        /// Amazon CloudWatch User Guide.
+        /// For information about how Internet Monitor calculates impact, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside
+        /// Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the Amazon
+        /// CloudWatch User Guide.
         /// </para>
         /// </summary>
         public double PercentOfTotalTrafficImpacted

@@ -76,6 +76,17 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetInternetMeasurementsLogDelivery())
+                {
+                    context.Writer.WritePropertyName("InternetMeasurementsLogDelivery");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InternetMeasurementsLogDeliveryMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InternetMeasurementsLogDelivery, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMaxCityNetworksToMonitor())
                 {
                     context.Writer.WritePropertyName("MaxCityNetworksToMonitor");

@@ -34,6 +34,7 @@ namespace Amazon.InternetMonitor.Model
     public partial class GetMonitorResponse : AmazonWebServiceResponse
     {
         private DateTime? _createdAt;
+        private InternetMeasurementsLogDelivery _internetMeasurementsLogDelivery;
         private int? _maxCityNetworksToMonitor;
         private DateTime? _modifiedAt;
         private string _monitorArn;
@@ -64,10 +65,37 @@ namespace Amazon.InternetMonitor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InternetMeasurementsLogDelivery. 
+        /// <para>
+        /// Publish internet measurements for Internet Monitor to another location, such as an
+        /// Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.
+        /// </para>
+        /// </summary>
+        public InternetMeasurementsLogDelivery InternetMeasurementsLogDelivery
+        {
+            get { return this._internetMeasurementsLogDelivery; }
+            set { this._internetMeasurementsLogDelivery = value; }
+        }
+
+        // Check to see if InternetMeasurementsLogDelivery property is set
+        internal bool IsSetInternetMeasurementsLogDelivery()
+        {
+            return this._internetMeasurementsLogDelivery != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxCityNetworksToMonitor. 
         /// <para>
-        /// The maximum number of city-network combinations (that is, combinations of a city location
-        /// and network, such as an ISP) to be monitored for your resources.
+        /// The maximum number of city-networks to monitor for your resources. A city-network
+        /// is the location (city) where clients access your application resources from and the
+        /// network or ASN, such as an internet service provider (ISP), that clients access the
+        /// resources through. This limit helps control billing costs.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing
+        /// a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section
+        /// of the <i>CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500000)]

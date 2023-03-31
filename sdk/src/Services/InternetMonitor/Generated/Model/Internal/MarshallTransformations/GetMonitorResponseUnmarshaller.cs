@@ -57,6 +57,12 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InternetMeasurementsLogDelivery", targetDepth))
+                {
+                    var unmarshaller = InternetMeasurementsLogDeliveryUnmarshaller.Instance;
+                    response.InternetMeasurementsLogDelivery = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxCityNetworksToMonitor", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -155,5 +155,17 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             var endpoint = new AmazonInternetMonitorEndpointProvider().ResolveEndpoint(parameters);
         }
 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("InternetMonitor")]
+        [Description("Missing region")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
+        public void Missing_region_Test()
+        {
+            var parameters = new InternetMonitorEndpointParameters();
+            var endpoint = new AmazonInternetMonitorEndpointProvider().ResolveEndpoint(parameters);
+        }
+
     }
 }

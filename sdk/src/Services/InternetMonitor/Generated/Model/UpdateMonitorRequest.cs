@@ -30,12 +30,21 @@ namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMonitor operation.
-    /// Updates a monitor. You can update a monitor to add or remove resources, or to change
-    /// the status of the monitor. You can't change the name of a monitor.
+    /// Updates a monitor. You can update a monitor to change the maximum number of city-networks
+    /// (locations and ASNs or internet service providers), to add or remove resources, or
+    /// to change the status of the monitor. Note that you can't change the name of a monitor.
+    /// 
+    ///  
+    /// <para>
+    /// The city-network maximum that you choose is the limit, but you only pay for the number
+    /// of city-networks that are actually monitored. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing
+    /// a city-network maximum value</a> in the <i>Amazon CloudWatch User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class UpdateMonitorRequest : AmazonInternetMonitorRequest
     {
         private string _clientToken;
+        private InternetMeasurementsLogDelivery _internetMeasurementsLogDelivery;
         private int? _maxCityNetworksToMonitor;
         private string _monitorName;
         private List<string> _resourcesToAdd = new List<string>();
@@ -63,10 +72,31 @@ namespace Amazon.InternetMonitor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InternetMeasurementsLogDelivery. 
+        /// <para>
+        /// Publish internet measurements for Internet Monitor to another location, such as an
+        /// Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.
+        /// </para>
+        /// </summary>
+        public InternetMeasurementsLogDelivery InternetMeasurementsLogDelivery
+        {
+            get { return this._internetMeasurementsLogDelivery; }
+            set { this._internetMeasurementsLogDelivery = value; }
+        }
+
+        // Check to see if InternetMeasurementsLogDelivery property is set
+        internal bool IsSetInternetMeasurementsLogDelivery()
+        {
+            return this._internetMeasurementsLogDelivery != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxCityNetworksToMonitor. 
         /// <para>
-        /// The maximum number of city-network combinations (that is, combinations of a city location
-        /// and network, such as an ISP) to be monitored for your resources.
+        /// The maximum number of city-networks to monitor for your resources. A city-network
+        /// is the location (city) where clients access your application resources from and the
+        /// network or ASN, such as an internet service provider, that clients access the resources
+        /// through.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500000)]
