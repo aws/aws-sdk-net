@@ -278,12 +278,12 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
-        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-        /// When using this action using S3 on Outposts through the Amazon Web Services SDKs,
-        /// you provide the Outposts bucket ARN in place of the bucket name. For more information
-        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// When you use this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
+        /// you provide the Outposts access point ARN in place of the bucket name. For more information
+        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+        /// is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string BucketName
@@ -469,8 +469,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The Server-side encryption algorithm used when storing this object in S3.
-        ///  
+        /// <para>
+        /// The server-side encryption algorithm used when storing this object in Amazon S3 (for
+        /// example, AES256, <code>aws:kms</code>).
+        /// </para>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
@@ -551,12 +553,14 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Specifies the AWS KMS Encryption Context to use for object encryption.
+        /// Specifies the Amazon Web Services KMS Encryption Context to use for object encryption.
         /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.
         /// <para>
-        /// Specifies the AWS KMS Encryption Context to use for object encryption. The value of
-        /// this header is a base64-encoded UTF-8 string holding JSON with the encryption context
-        /// key-value pairs.
+        /// Specifies the Amazon Web Services KMS Encryption Context to use for object encryption.
+        /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
+        /// context key-value pairs. This value is stored as object metadata and automatically
+        /// gets passed on to Amazon Web Services KMS for future <code>GetObject</code> or <code>CopyObject</code>
+        /// operations on this object.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -579,14 +583,14 @@ namespace Amazon.S3.Model
         /// The id of the AWS Key Management Service key that Amazon S3 should use to encrypt and decrypt the object.
         /// If a key id is not specified, the default key will be used for encryption and decryption.
         /// <para>
-        /// If <code>x-amz-server-side-encryption</code> is present and has the value of <code>aws:kms</code>,
+        /// If <code>x-amz-server-side-encryption</code> has a valid value of <code>aws:kms</code>,
         /// this header specifies the ID of the Amazon Web Services Key Management Service (Amazon
-        /// Web Services KMS) symmetrical customer managed key that was
-        /// used for the object. If you specify <code>x-amz-server-side-encryption:aws:kms</code>,
-        /// but do not provide<code> x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon
-        /// S3 uses the Amazon Web Services managed key to protect the
-        /// data. If the KMS key does not exist in the same account issuing the command, you must
-        /// use the full ARN and not just the ID. 
+        /// Web Services KMS) symmetric encryption customer managed key that was used for the
+        /// object. If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but do not
+        /// provide<code> x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the
+        /// Amazon Web Services managed key to protect the data. If the KMS key does not exist
+        /// in the same account issuing the command, you must use the full ARN and not just the
+        /// ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

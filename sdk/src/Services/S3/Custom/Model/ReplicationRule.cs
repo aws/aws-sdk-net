@@ -174,8 +174,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// A container that specifies information about existing object replication. 
-        /// You can choose whether to enable or disable the replication of existing objects.
+        /// <para>
+        /// Optional configuration to replicate existing source bucket objects. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">
+        /// Replicating Existing Objects</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         /// </summary>
         public ExistingObjectReplication ExistingObjectReplication
         {

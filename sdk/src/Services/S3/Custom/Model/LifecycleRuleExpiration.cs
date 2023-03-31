@@ -20,7 +20,14 @@ using System.IO;
 
 namespace Amazon.S3.Model
 {
-    /// <summary>Expiration
+    /// <summary>
+    /// <para>
+    /// Container for the expiration for the lifecycle of the object.
+    /// </para>
+    /// <para>
+    /// For more information see, <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing
+    /// your storage lifecycle</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
     /// </summary>
     public class LifecycleRuleExpiration
     {

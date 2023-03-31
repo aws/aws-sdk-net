@@ -588,7 +588,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, aws:kms).</para>
+        /// <para>
+        ///  The server-side encryption algorithm used when storing requested object in Amazon
+        /// S3 (for example, AES256, <code>aws:kms</code>).
+        /// </para>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
@@ -619,7 +622,8 @@ namespace Amazon.S3.Model
         /// Gets and sets the property SSEKMSKeyId. 
         /// <para>
         ///  If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon
-        /// Web Services KMS) symmetric customer managed key that was used for stored in Amazon S3 object. 
+        /// Web Services KMS) symmetric encryption customer managed key that was used for stored
+        /// in Amazon S3 object. 
         /// </para>
         /// </summary>
         public string SSEKMSKeyId

@@ -34,7 +34,14 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Single character used to indicate a row should be ignored when present at the start of a row.
+        /// <para>
+        /// A single character used to indicate that a row should be ignored when the character
+        /// is present at the start of that row. You can specify any character to indicate a comment line.
+        /// The default character is <code>#</code>.
+        /// </para>
+        /// <para>
+        /// Default: <code>#</code>
+        /// </para>
         /// </summary>
         public string Comments { get; set; }
 
