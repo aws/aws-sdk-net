@@ -98,7 +98,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property UnsupportedResourceStatus. 
         /// <para>
-        /// The status of unsupported resource.
+        /// The status of the unsupported resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

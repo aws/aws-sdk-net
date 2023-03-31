@@ -46,7 +46,10 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AdditionalInfo. 
         /// <para>
-        /// Additional configuration parameters for an AWS Resilience Hub application.
+        /// Additional configuration parameters for an Resilience Hub application. If you want
+        /// to implement <code>additionalInfo</code> through the Resilience Hub console rather
+        /// than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure
+        /// the application configuration parameters</a>.
         /// </para>
         ///  <note> 
         /// <para>

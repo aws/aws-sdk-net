@@ -40,8 +40,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The format for
-        /// this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+        /// The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
+        /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>
@@ -76,7 +76,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The list of logical resources that needs to be included in the Resilience Hub application.
+        /// The list of logical resources that must be included in the Resilience Hub application.
         /// </para>
         ///  
         /// <para>
@@ -154,6 +154,23 @@ namespace Amazon.ResilienceHub.Model
         /// <para>
         /// Type: String
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>eksSourceName</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource
+        /// belongs to.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter accepts values in "eks-cluster/namespace" format.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Type: String
+        /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <i> <code>type</code> </i> 
@@ -184,7 +201,10 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Additional configuration parameters for an AWS Resilience Hub application.
+        /// Additional configuration parameters for an Resilience Hub application. If you want
+        /// to implement <code>additionalInfo</code> through the Resilience Hub console rather
+        /// than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure
+        /// the application configuration parameters</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -207,7 +227,7 @@ namespace Amazon.ResilienceHub.Model
         ///  
         /// <para>
         /// The list of Application Components that this resource belongs to. If an Application
-        /// Component is not part of the AWS Resilience Hub application, it will be added.
+        /// Component is not part of the Resilience Hub application, it will be added.
         /// </para>
         ///  
         /// <para>
@@ -261,7 +281,10 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Additional configuration parameters for an AWS Resilience Hub application.
+        /// Additional configuration parameters for an Resilience Hub application. If you want
+        /// to implement <code>additionalInfo</code> through the Resilience Hub console rather
+        /// than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure
+        /// the application configuration parameters</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -325,6 +348,10 @@ namespace Amazon.ResilienceHub.Model
         /// <para>
         ///  <code>terraformSourceName</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>eksSourceName</code> 
+        /// </para>
         ///  </li> </ul> </note> 
         /// <para>
         /// Each <code>logicalResourceIds</code> object includes the following fields:
@@ -377,13 +404,30 @@ namespace Amazon.ResilienceHub.Model
         /// <para>
         /// Type: String
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>eksSourceName</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource
+        /// belongs to.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter accepts values in "eks-cluster/namespace" format.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Type: String
+        /// </para>
         ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
         ///  <b> <code>version</code> </b> 
         /// </para>
         ///  
         /// <para>
-        /// The AWS Resilience Hub application version.
+        /// The Resilience Hub application version.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -391,7 +435,10 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Additional configuration parameters for an AWS Resilience Hub application.
+        /// Additional configuration parameters for an Resilience Hub application. If you want
+        /// to implement <code>additionalInfo</code> through the Resilience Hub console rather
+        /// than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure
+        /// the application configuration parameters</a>.
         /// </para>
         ///  <note> 
         /// <para>

@@ -126,7 +126,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </dd> <dt>ResourceGroup</dt> <dd> 
         /// <para>
-        /// The resource is mapped to an Resource Groups. The name of the resource group is contained
+        /// The resource is mapped to Resource Groups. The name of the resource group is contained
         /// in the <code>resourceGroupName</code> property.
         /// </para>
         ///  </dd> </dl>
