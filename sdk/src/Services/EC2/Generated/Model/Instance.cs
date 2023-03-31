@@ -309,7 +309,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ElasticInferenceAcceleratorAssociations. 
         /// <para>
-        ///  The elastic inference accelerator associated with the instance.
+        /// The elastic inference accelerator associated with the instance.
         /// </para>
         /// </summary>
         public List<ElasticInferenceAcceleratorAssociation> ElasticInferenceAcceleratorAssociations
