@@ -29,47 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// This is the response object from the GetColumnStatisticsForTable operation.
+    /// A database that points to an entity outside the Glue Data Catalog.
     /// </summary>
-    public partial class GetColumnStatisticsForTableResponse : AmazonWebServiceResponse
+    public partial class FederatedDatabase
     {
-        private List<ColumnStatistics> _columnStatisticsList = new List<ColumnStatistics>();
-        private List<ColumnError> _errors = new List<ColumnError>();
+        private string _connectionName;
+        private string _identifier;
 
         /// <summary>
-        /// Gets and sets the property ColumnStatisticsList. 
+        /// Gets and sets the property ConnectionName. 
         /// <para>
-        /// List of ColumnStatistics.
+        /// The name of the connection to the external metastore.
         /// </para>
         /// </summary>
-        public List<ColumnStatistics> ColumnStatisticsList
+        [AWSProperty(Min=1, Max=255)]
+        public string ConnectionName
         {
-            get { return this._columnStatisticsList; }
-            set { this._columnStatisticsList = value; }
+            get { return this._connectionName; }
+            set { this._connectionName = value; }
         }
 
-        // Check to see if ColumnStatisticsList property is set
-        internal bool IsSetColumnStatisticsList()
+        // Check to see if ConnectionName property is set
+        internal bool IsSetConnectionName()
         {
-            return this._columnStatisticsList != null && this._columnStatisticsList.Count > 0; 
+            return this._connectionName != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Errors. 
+        /// Gets and sets the property Identifier. 
         /// <para>
-        /// List of ColumnStatistics that failed to be retrieved.
+        /// A unique identifier for the federated database.
         /// </para>
         /// </summary>
-        public List<ColumnError> Errors
+        [AWSProperty(Min=1, Max=512)]
+        public string Identifier
         {
-            get { return this._errors; }
-            set { this._errors = value; }
+            get { return this._identifier; }
+            set { this._identifier = value; }
         }
 
-        // Check to see if Errors property is set
-        internal bool IsSetErrors()
+        // Check to see if Identifier property is set
+        internal bool IsSetIdentifier()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._identifier != null;
         }
 
     }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InvalidInputException Object
+    /// Response Unmarshaller for FederationSourceException Object
     /// </summary>  
-    public class InvalidInputExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidInputException, JsonUnmarshallerContext>
+    public class FederationSourceExceptionUnmarshaller : IErrorResponseUnmarshaller<FederationSourceException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InvalidInputException Unmarshall(JsonUnmarshallerContext context)
+        public FederationSourceException Unmarshall(JsonUnmarshallerContext context)
         {
             return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
@@ -54,20 +54,20 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public InvalidInputException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public FederationSourceException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             context.Read();
 
-            InvalidInputException unmarshalledObject = new InvalidInputException(errorResponse.Message, errorResponse.InnerException,
+            FederationSourceException unmarshalledObject = new FederationSourceException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FromFederationSource", targetDepth))
+                if (context.TestExpression("FederationSourceErrorCode", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.FromFederationSource = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FederationSourceErrorCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -75,12 +75,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static InvalidInputExceptionUnmarshaller _instance = new InvalidInputExceptionUnmarshaller();        
+        private static FederationSourceExceptionUnmarshaller _instance = new FederationSourceExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InvalidInputExceptionUnmarshaller Instance
+        public static FederationSourceExceptionUnmarshaller Instance
         {
             get
             {

@@ -29,41 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// The operation timed out.
+    /// A federated resource already exists.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class PermissionTypeMismatchException : AmazonGlueException
+    public partial class FederatedResourceAlreadyExistsException : AmazonGlueException
     {
+        private string _associatedGlueResource;
 
         /// <summary>
-        /// Constructs a new PermissionTypeMismatchException with the specified error
+        /// Constructs a new FederatedResourceAlreadyExistsException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public PermissionTypeMismatchException(string message) 
+        public FederatedResourceAlreadyExistsException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of PermissionTypeMismatchException
+        /// Construct instance of FederatedResourceAlreadyExistsException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public PermissionTypeMismatchException(string message, Exception innerException) 
+        public FederatedResourceAlreadyExistsException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of PermissionTypeMismatchException
+        /// Construct instance of FederatedResourceAlreadyExistsException
         /// </summary>
         /// <param name="innerException"></param>
-        public PermissionTypeMismatchException(Exception innerException) 
+        public FederatedResourceAlreadyExistsException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of PermissionTypeMismatchException
+        /// Construct instance of FederatedResourceAlreadyExistsException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -71,32 +72,33 @@ namespace Amazon.Glue.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public PermissionTypeMismatchException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public FederatedResourceAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of PermissionTypeMismatchException
+        /// Construct instance of FederatedResourceAlreadyExistsException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public PermissionTypeMismatchException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public FederatedResourceAlreadyExistsException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the PermissionTypeMismatchException class with serialized data.
+        /// Constructs a new instance of the FederatedResourceAlreadyExistsException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected PermissionTypeMismatchException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected FederatedResourceAlreadyExistsException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.AssociatedGlueResource = (string)info.GetValue("AssociatedGlueResource", typeof(string));
         }
 
         /// <summary>
@@ -117,8 +119,28 @@ namespace Amazon.Glue.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("AssociatedGlueResource", this.AssociatedGlueResource);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property AssociatedGlueResource. 
+        /// <para>
+        /// The associated Glue resource already exists.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10240)]
+        public string AssociatedGlueResource
+        {
+            get { return this._associatedGlueResource; }
+            set { this._associatedGlueResource = value; }
+        }
+
+        // Check to see if AssociatedGlueResource property is set
+        internal bool IsSetAssociatedGlueResource()
+        {
+            return this._associatedGlueResource != null;
+        }
 
     }
 }

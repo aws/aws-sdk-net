@@ -38,6 +38,7 @@ namespace Amazon.Glue.Model
         private DateTime? _createTime;
         private string _databaseName;
         private string _description;
+        private FederatedTable _federatedTable;
         private bool? _isRegisteredWithLakeFormation;
         private DateTime? _lastAccessTime;
         private DateTime? _lastAnalyzedTime;
@@ -147,6 +148,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FederatedTable. 
+        /// <para>
+        /// A <code>FederatedTable</code> structure that references an entity outside the Glue
+        /// Data Catalog.
+        /// </para>
+        /// </summary>
+        public FederatedTable FederatedTable
+        {
+            get { return this._federatedTable; }
+            set { this._federatedTable = value; }
+        }
+
+        // Check to see if FederatedTable property is set
+        internal bool IsSetFederatedTable()
+        {
+            return this._federatedTable != null;
         }
 
         /// <summary>

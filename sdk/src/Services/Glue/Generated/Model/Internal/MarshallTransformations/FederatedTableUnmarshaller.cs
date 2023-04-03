@@ -34,40 +34,52 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InvalidInputException Object
+    /// Response Unmarshaller for FederatedTable Object
     /// </summary>  
-    public class InvalidInputExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidInputException, JsonUnmarshallerContext>
+    public class FederatedTableUnmarshaller : IUnmarshaller<FederatedTable, XmlUnmarshallerContext>, IUnmarshaller<FederatedTable, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InvalidInputException Unmarshall(JsonUnmarshallerContext context)
+        FederatedTable IUnmarshaller<FederatedTable, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public InvalidInputException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public FederatedTable Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            InvalidInputException unmarshalledObject = new InvalidInputException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            FederatedTable unmarshalledObject = new FederatedTable();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FromFederationSource", targetDepth))
+                if (context.TestExpression("ConnectionName", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.FromFederationSource = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DatabaseIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatabaseIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Identifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Identifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -75,12 +87,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static InvalidInputExceptionUnmarshaller _instance = new InvalidInputExceptionUnmarshaller();        
+
+        private static FederatedTableUnmarshaller _instance = new FederatedTableUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InvalidInputExceptionUnmarshaller Instance
+        public static FederatedTableUnmarshaller Instance
         {
             get
             {

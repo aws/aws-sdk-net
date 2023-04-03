@@ -29,41 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// The operation timed out.
+    /// A federation source failed.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class PermissionTypeMismatchException : AmazonGlueException
+    public partial class FederationSourceException : AmazonGlueException
     {
+        private FederationSourceErrorCode _federationSourceErrorCode;
 
         /// <summary>
-        /// Constructs a new PermissionTypeMismatchException with the specified error
+        /// Constructs a new FederationSourceException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public PermissionTypeMismatchException(string message) 
+        public FederationSourceException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of PermissionTypeMismatchException
+        /// Construct instance of FederationSourceException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public PermissionTypeMismatchException(string message, Exception innerException) 
+        public FederationSourceException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of PermissionTypeMismatchException
+        /// Construct instance of FederationSourceException
         /// </summary>
         /// <param name="innerException"></param>
-        public PermissionTypeMismatchException(Exception innerException) 
+        public FederationSourceException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of PermissionTypeMismatchException
+        /// Construct instance of FederationSourceException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -71,32 +72,33 @@ namespace Amazon.Glue.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public PermissionTypeMismatchException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public FederationSourceException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of PermissionTypeMismatchException
+        /// Construct instance of FederationSourceException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public PermissionTypeMismatchException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public FederationSourceException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the PermissionTypeMismatchException class with serialized data.
+        /// Constructs a new instance of the FederationSourceException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected PermissionTypeMismatchException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected FederationSourceException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.FederationSourceErrorCode = (FederationSourceErrorCode)info.GetValue("FederationSourceErrorCode", typeof(FederationSourceErrorCode));
         }
 
         /// <summary>
@@ -117,8 +119,27 @@ namespace Amazon.Glue.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("FederationSourceErrorCode", this.FederationSourceErrorCode);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property FederationSourceErrorCode. 
+        /// <para>
+        /// The error code of the problem.
+        /// </para>
+        /// </summary>
+        public FederationSourceErrorCode FederationSourceErrorCode
+        {
+            get { return this._federationSourceErrorCode; }
+            set { this._federationSourceErrorCode = value; }
+        }
+
+        // Check to see if FederationSourceErrorCode property is set
+        internal bool IsSetFederationSourceErrorCode()
+        {
+            return this._federationSourceErrorCode != null;
+        }
 
     }
 }
