@@ -444,7 +444,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property UserArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM user.
+        /// The Amazon Resource Name (ARN) of the user.
         /// </para>
         /// </summary>
         public string UserArn
@@ -462,7 +462,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property UserArnSession. 
         /// <para>
-        /// The ARN of the IAM user in the session. This ARN might contain a session ID.
+        /// The ARN of the user in the session. This ARN might contain a session ID.
         /// </para>
         /// </summary>
         public string UserArnSession

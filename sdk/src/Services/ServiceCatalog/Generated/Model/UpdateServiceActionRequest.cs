@@ -47,10 +47,6 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>en</code> - English (default)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>jp</code> - Japanese
         /// </para>
         ///  </li> <li> 

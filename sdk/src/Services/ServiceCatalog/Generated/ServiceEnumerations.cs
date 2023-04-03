@@ -345,6 +345,56 @@ namespace Amazon.ServiceCatalog
 
 
     /// <summary>
+    /// Constants used for properties of type EngineWorkflowStatus.
+    /// </summary>
+    public class EngineWorkflowStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for EngineWorkflowStatus
+        /// </summary>
+        public static readonly EngineWorkflowStatus FAILED = new EngineWorkflowStatus("FAILED");
+        /// <summary>
+        /// Constant SUCCEEDED for EngineWorkflowStatus
+        /// </summary>
+        public static readonly EngineWorkflowStatus SUCCEEDED = new EngineWorkflowStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EngineWorkflowStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EngineWorkflowStatus FindValue(string value)
+        {
+            return FindValue<EngineWorkflowStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EngineWorkflowStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EvaluationType.
     /// </summary>
     public class EvaluationType : ConstantClass
@@ -659,9 +709,17 @@ namespace Amazon.ServiceCatalog
         /// </summary>
         public static readonly ProductType CLOUD_FORMATION_TEMPLATE = new ProductType("CLOUD_FORMATION_TEMPLATE");
         /// <summary>
+        /// Constant DEFAULT_CUSTOM for ProductType
+        /// </summary>
+        public static readonly ProductType DEFAULT_CUSTOM = new ProductType("DEFAULT_CUSTOM");
+        /// <summary>
         /// Constant MARKETPLACE for ProductType
         /// </summary>
         public static readonly ProductType MARKETPLACE = new ProductType("MARKETPLACE");
+        /// <summary>
+        /// Constant TERRAFORM_OPEN_SOURCE for ProductType
+        /// </summary>
+        public static readonly ProductType TERRAFORM_OPEN_SOURCE = new ProductType("TERRAFORM_OPEN_SOURCE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1187,6 +1245,10 @@ namespace Amazon.ServiceCatalog
         /// </summary>
         public static readonly ProvisioningArtifactType CLOUD_FORMATION_TEMPLATE = new ProvisioningArtifactType("CLOUD_FORMATION_TEMPLATE");
         /// <summary>
+        /// Constant DEFAULT_CUSTOM for ProvisioningArtifactType
+        /// </summary>
+        public static readonly ProvisioningArtifactType DEFAULT_CUSTOM = new ProvisioningArtifactType("DEFAULT_CUSTOM");
+        /// <summary>
         /// Constant MARKETPLACE_AMI for ProvisioningArtifactType
         /// </summary>
         public static readonly ProvisioningArtifactType MARKETPLACE_AMI = new ProvisioningArtifactType("MARKETPLACE_AMI");
@@ -1194,6 +1256,10 @@ namespace Amazon.ServiceCatalog
         /// Constant MARKETPLACE_CAR for ProvisioningArtifactType
         /// </summary>
         public static readonly ProvisioningArtifactType MARKETPLACE_CAR = new ProvisioningArtifactType("MARKETPLACE_CAR");
+        /// <summary>
+        /// Constant TERRAFORM_OPEN_SOURCE for ProvisioningArtifactType
+        /// </summary>
+        public static readonly ProvisioningArtifactType TERRAFORM_OPEN_SOURCE = new ProvisioningArtifactType("TERRAFORM_OPEN_SOURCE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1480,6 +1546,10 @@ namespace Amazon.ServiceCatalog
         /// Constant INTERNAL_FAILURE for ServiceActionAssociationErrorCode
         /// </summary>
         public static readonly ServiceActionAssociationErrorCode INTERNAL_FAILURE = new ServiceActionAssociationErrorCode("INTERNAL_FAILURE");
+        /// <summary>
+        /// Constant INVALID_PARAMETER for ServiceActionAssociationErrorCode
+        /// </summary>
+        public static readonly ServiceActionAssociationErrorCode INVALID_PARAMETER = new ServiceActionAssociationErrorCode("INVALID_PARAMETER");
         /// <summary>
         /// Constant LIMIT_EXCEEDED for ServiceActionAssociationErrorCode
         /// </summary>

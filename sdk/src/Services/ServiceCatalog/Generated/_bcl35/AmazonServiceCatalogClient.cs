@@ -576,6 +576,9 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.DuplicateResourceException">
         /// The specified resource is a duplicate.
         /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
         /// The current limits of the service would have been exceeded by this operation. Decrease
         /// your resource use or increase your service limits and retry the operation.
@@ -5020,6 +5023,186 @@ namespace Amazon.ServiceCatalog
         public virtual ListTagOptionsResponse EndListTagOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagOptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  NotifyProvisionProductEngineWorkflowResult
+
+        /// <summary>
+        /// Notifies the result of the provisioning engine execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NotifyProvisionProductEngineWorkflowResult service method.</param>
+        /// 
+        /// <returns>The response from the NotifyProvisionProductEngineWorkflowResult service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyProvisionProductEngineWorkflowResult">REST API Reference for NotifyProvisionProductEngineWorkflowResult Operation</seealso>
+        public virtual NotifyProvisionProductEngineWorkflowResultResponse NotifyProvisionProductEngineWorkflowResult(NotifyProvisionProductEngineWorkflowResultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyProvisionProductEngineWorkflowResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyProvisionProductEngineWorkflowResultResponseUnmarshaller.Instance;
+
+            return Invoke<NotifyProvisionProductEngineWorkflowResultResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the NotifyProvisionProductEngineWorkflowResult operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the NotifyProvisionProductEngineWorkflowResult operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndNotifyProvisionProductEngineWorkflowResult
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyProvisionProductEngineWorkflowResult">REST API Reference for NotifyProvisionProductEngineWorkflowResult Operation</seealso>
+        public virtual IAsyncResult BeginNotifyProvisionProductEngineWorkflowResult(NotifyProvisionProductEngineWorkflowResultRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyProvisionProductEngineWorkflowResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyProvisionProductEngineWorkflowResultResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  NotifyProvisionProductEngineWorkflowResult operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginNotifyProvisionProductEngineWorkflowResult.</param>
+        /// 
+        /// <returns>Returns a  NotifyProvisionProductEngineWorkflowResultResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyProvisionProductEngineWorkflowResult">REST API Reference for NotifyProvisionProductEngineWorkflowResult Operation</seealso>
+        public virtual NotifyProvisionProductEngineWorkflowResultResponse EndNotifyProvisionProductEngineWorkflowResult(IAsyncResult asyncResult)
+        {
+            return EndInvoke<NotifyProvisionProductEngineWorkflowResultResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  NotifyTerminateProvisionedProductEngineWorkflowResult
+
+        /// <summary>
+        /// Notifies the result of the terminate engine execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NotifyTerminateProvisionedProductEngineWorkflowResult service method.</param>
+        /// 
+        /// <returns>The response from the NotifyTerminateProvisionedProductEngineWorkflowResult service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyTerminateProvisionedProductEngineWorkflowResult">REST API Reference for NotifyTerminateProvisionedProductEngineWorkflowResult Operation</seealso>
+        public virtual NotifyTerminateProvisionedProductEngineWorkflowResultResponse NotifyTerminateProvisionedProductEngineWorkflowResult(NotifyTerminateProvisionedProductEngineWorkflowResultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyTerminateProvisionedProductEngineWorkflowResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyTerminateProvisionedProductEngineWorkflowResultResponseUnmarshaller.Instance;
+
+            return Invoke<NotifyTerminateProvisionedProductEngineWorkflowResultResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the NotifyTerminateProvisionedProductEngineWorkflowResult operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the NotifyTerminateProvisionedProductEngineWorkflowResult operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndNotifyTerminateProvisionedProductEngineWorkflowResult
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyTerminateProvisionedProductEngineWorkflowResult">REST API Reference for NotifyTerminateProvisionedProductEngineWorkflowResult Operation</seealso>
+        public virtual IAsyncResult BeginNotifyTerminateProvisionedProductEngineWorkflowResult(NotifyTerminateProvisionedProductEngineWorkflowResultRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyTerminateProvisionedProductEngineWorkflowResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyTerminateProvisionedProductEngineWorkflowResultResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  NotifyTerminateProvisionedProductEngineWorkflowResult operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginNotifyTerminateProvisionedProductEngineWorkflowResult.</param>
+        /// 
+        /// <returns>Returns a  NotifyTerminateProvisionedProductEngineWorkflowResultResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyTerminateProvisionedProductEngineWorkflowResult">REST API Reference for NotifyTerminateProvisionedProductEngineWorkflowResult Operation</seealso>
+        public virtual NotifyTerminateProvisionedProductEngineWorkflowResultResponse EndNotifyTerminateProvisionedProductEngineWorkflowResult(IAsyncResult asyncResult)
+        {
+            return EndInvoke<NotifyTerminateProvisionedProductEngineWorkflowResultResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  NotifyUpdateProvisionedProductEngineWorkflowResult
+
+        /// <summary>
+        /// Notifies the result of the update engine execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NotifyUpdateProvisionedProductEngineWorkflowResult service method.</param>
+        /// 
+        /// <returns>The response from the NotifyUpdateProvisionedProductEngineWorkflowResult service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyUpdateProvisionedProductEngineWorkflowResult">REST API Reference for NotifyUpdateProvisionedProductEngineWorkflowResult Operation</seealso>
+        public virtual NotifyUpdateProvisionedProductEngineWorkflowResultResponse NotifyUpdateProvisionedProductEngineWorkflowResult(NotifyUpdateProvisionedProductEngineWorkflowResultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyUpdateProvisionedProductEngineWorkflowResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyUpdateProvisionedProductEngineWorkflowResultResponseUnmarshaller.Instance;
+
+            return Invoke<NotifyUpdateProvisionedProductEngineWorkflowResultResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the NotifyUpdateProvisionedProductEngineWorkflowResult operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the NotifyUpdateProvisionedProductEngineWorkflowResult operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndNotifyUpdateProvisionedProductEngineWorkflowResult
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyUpdateProvisionedProductEngineWorkflowResult">REST API Reference for NotifyUpdateProvisionedProductEngineWorkflowResult Operation</seealso>
+        public virtual IAsyncResult BeginNotifyUpdateProvisionedProductEngineWorkflowResult(NotifyUpdateProvisionedProductEngineWorkflowResultRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyUpdateProvisionedProductEngineWorkflowResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyUpdateProvisionedProductEngineWorkflowResultResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  NotifyUpdateProvisionedProductEngineWorkflowResult operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginNotifyUpdateProvisionedProductEngineWorkflowResult.</param>
+        /// 
+        /// <returns>Returns a  NotifyUpdateProvisionedProductEngineWorkflowResultResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyUpdateProvisionedProductEngineWorkflowResult">REST API Reference for NotifyUpdateProvisionedProductEngineWorkflowResult Operation</seealso>
+        public virtual NotifyUpdateProvisionedProductEngineWorkflowResultResponse EndNotifyUpdateProvisionedProductEngineWorkflowResult(IAsyncResult asyncResult)
+        {
+            return EndInvoke<NotifyUpdateProvisionedProductEngineWorkflowResultResponse>(asyncResult);
         }
 
         #endregion
