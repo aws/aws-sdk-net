@@ -35,7 +35,11 @@
                     AWSTOCObj.setActiveTopic(tocLink);
                     AWSTOCObj.toggleTOCGroup(this);
                 }
-                AWSTOCObj.setFrameFocus("contentpane");
+                if($(event.target)[0].hasAttribute("aria-label")) {
+                    $(this).focus();
+                } else {
+                    AWSTOCObj.setFrameFocus("contentpane");
+                }
             });
 
 
