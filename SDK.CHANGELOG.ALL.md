@@ -1,3 +1,20 @@
+### 3.7.518.0 (2023-04-03 18:22 UTC)
+* Glue (3.7.111.0)
+	* Add support for database-level federation
+* LakeFormation (3.7.104.0)
+	* Add support for database-level federation
+* LicenseManager (3.7.102.0)
+	* This release adds grant override options to the CreateGrantVersion API. These options can be used to specify grant replacement behavior during grant activation.
+* MWAA (3.7.101.0)
+	* This Amazon MWAA release adds the ability to customize the Apache Airflow environment by launching a shell script at startup. This shell script is hosted in your environment's Amazon S3 bucket. Amazon MWAA runs the script before installing requirements and initializing the Apache Airflow process.
+* ServiceCatalog (3.7.102.0)
+	* This release introduces Service Catalog support for Terraform open source. It enables 1. The notify* APIs to Service Catalog. These APIs are used by the terraform engine to notify the result of the provisioning engine execution. 2. Adds a new TERRAFORM_OPEN_SOURCE product type in CreateProduct API.
+* WAFV2 (3.7.104.0)
+	* For web ACLs that protect CloudFront protections, the default request body inspection size is now 16 KB, and you can use the new association configuration to increase the inspection size further, up to 64 KB. Sizes over 16 KB can incur additional costs.
+* Core 3.7.106.11
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.517.0 (2023-03-31 18:25 UTC)
 * EC2 (3.7.129.1)
 	* Documentation updates for EC2 On Demand Capacity Reservations
