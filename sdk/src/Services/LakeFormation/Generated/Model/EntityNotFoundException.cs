@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
-    /// A specified entity does not exist
+    /// A specified entity does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
