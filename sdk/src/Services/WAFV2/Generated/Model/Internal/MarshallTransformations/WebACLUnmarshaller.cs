@@ -70,12 +70,6 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("AssociationConfig", targetDepth))
-                {
-                    var unmarshaller = AssociationConfigUnmarshaller.Instance;
-                    unmarshalledObject.AssociationConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Capacity", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

@@ -97,13 +97,15 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-        /// web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. 
+        /// web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+        /// Developer Guide</a>. 
         /// </para>
         ///  
         /// <para>
         /// For information about the limits on count and size for custom request and response
         /// settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-        /// quotas</a> in the <i>WAF Developer Guide</i>. 
+        /// quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+        /// Developer Guide</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -229,8 +231,8 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
         /// application. A regional application can be an Application Load Balancer (ALB), an
-        /// Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
-        /// or an App Runner service. 
+        /// Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito user pool, or
+        /// an App Runner service. 
         /// </para>
         ///  
         /// <para>

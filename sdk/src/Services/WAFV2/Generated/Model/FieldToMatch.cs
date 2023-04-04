@@ -93,16 +93,9 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// A limited amount of the request body is forwarded to WAF for inspection by the underlying
-        /// host service. For regional resources, the limit is 8 KB (8,192 kilobytes) and for
-        /// CloudFront distributions, the limit is 16 KB (16,384 kilobytes). For CloudFront distributions,
-        /// you can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional
-        /// processing fees. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about how to handle oversized request bodies, see the <code>Body</code>
-        /// object configuration. 
+        /// Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection
+        /// by the underlying host service. For information about how to handle oversized request
+        /// bodies, see the <code>Body</code> object configuration. 
         /// </para>
         /// </summary>
         public Body Body
@@ -183,16 +176,9 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// A limited amount of the request body is forwarded to WAF for inspection by the underlying
-        /// host service. For regional resources, the limit is 8 KB (8,192 kilobytes) and for
-        /// CloudFront distributions, the limit is 16 KB (16,384 kilobytes). For CloudFront distributions,
-        /// you can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional
-        /// processing fees. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about how to handle oversized request bodies, see the <code>JsonBody</code>
-        /// object configuration. 
+        /// Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection
+        /// by the underlying host service. For information about how to handle oversized request
+        /// bodies, see the <code>JsonBody</code> object configuration. 
         /// </para>
         /// </summary>
         public JsonBody JsonBody

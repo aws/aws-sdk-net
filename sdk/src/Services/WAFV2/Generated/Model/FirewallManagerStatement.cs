@@ -30,7 +30,7 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// The processing guidance for an Firewall Manager rule. This is like a regular rule
-    /// <a>Statement</a>, but it can only contain a single rule group reference.
+    /// <a>Statement</a>, but it can only contain a rule group reference.
     /// </summary>
     public partial class FirewallManagerStatement
     {
@@ -40,9 +40,24 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ManagedRuleGroupStatement. 
         /// <para>
-        /// A statement used by Firewall Manager to run the rules that are defined in a managed
-        /// rule group. This is managed by Firewall Manager for an Firewall Manager WAF policy.
+        /// A rule statement used to run the rules that are defined in a managed rule group. To
+        /// use this, provide the vendor name and the name of the rule group in this statement.
+        /// You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside
+        /// a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
+        /// as a top-level statement within a rule.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You are charged additional fees when you use the WAF Bot Control managed rule group
+        /// <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover
+        /// prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>. For more
+        /// information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ManagedRuleGroupStatement ManagedRuleGroupStatement
         {
@@ -59,8 +74,15 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property RuleGroupReferenceStatement. 
         /// <para>
-        /// A statement used by Firewall Manager to run the rules that are defined in a rule group.
-        /// This is managed by Firewall Manager for an Firewall Manager WAF policy.
+        /// A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To
+        /// use this, create a rule group with your rules, then provide the ARN of the rule group
+        /// in this statement.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside
+        /// a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group
+        /// reference statement at the top level inside a web ACL. 
         /// </para>
         /// </summary>
         public RuleGroupReferenceStatement RuleGroupReferenceStatement

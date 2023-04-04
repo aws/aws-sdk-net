@@ -36,13 +36,12 @@ namespace Amazon.WAFV2.Model
     /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
     /// group. You can associate a web ACL with one or more Amazon Web Services resources
     /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-    /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
-    /// Cognito user pool, or an App Runner service.
+    /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, Amazon Cognito
+    /// user pool, or an App Runner service.
     /// </summary>
     public partial class WebACL
     {
         private string _arn;
-        private AssociationConfig _associationConfig;
         private long? _capacity;
         private CaptchaConfig _captchaConfig;
         private ChallengeConfig _challengeConfig;
@@ -80,38 +79,6 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AssociationConfig. 
-        /// <para>
-        /// Specifies custom configurations for the associations between the web ACL and protected
-        /// resources. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Use this to customize the maximum size of the request body that your protected CloudFront
-        /// distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes).
-        /// 
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// You are charged additional fees when your protected resources forward body sizes that
-        /// are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
-        /// Pricing</a>.
-        /// </para>
-        ///  </note>
-        /// </summary>
-        public AssociationConfig AssociationConfig
-        {
-            get { return this._associationConfig; }
-            set { this._associationConfig = value; }
-        }
-
-        // Check to see if AssociationConfig property is set
-        internal bool IsSetAssociationConfig()
-        {
-            return this._associationConfig != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Capacity. 
         /// <para>
         /// The web ACL capacity units (WCUs) currently being used by this web ACL. 
@@ -123,8 +90,7 @@ namespace Amazon.WAFV2.Model
         /// rule type, to reflect the relative cost of each rule. Simple rules that cost little
         /// to run use fewer WCUs than more complex rules that use more processing power. Rule
         /// group capacity is fixed at creation, which helps users plan their web ACL WCU usage
-        /// when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF
-        /// web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. 
+        /// when they use a rule group. The WCU limit for web ACLs is 1,500. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -191,13 +157,15 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-        /// web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. 
+        /// web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+        /// Developer Guide</a>. 
         /// </para>
         ///  
         /// <para>
         /// For information about the limits on count and size for custom request and response
         /// settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-        /// quotas</a> in the <i>WAF Developer Guide</i>. 
+        /// quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+        /// Developer Guide</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

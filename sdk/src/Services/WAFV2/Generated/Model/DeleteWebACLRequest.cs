@@ -53,8 +53,7 @@ namespace Amazon.WAFV2.Model
     ///  </li> <li> 
     /// <para>
     /// For Amazon CloudFront distributions, use the CloudFront call <code>ListDistributionsByWebACLId</code>.
-    /// For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>
-    /// in the <i>Amazon CloudFront API Reference</i>. 
+    /// For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -67,8 +66,7 @@ namespace Amazon.WAFV2.Model
     ///  </li> <li> 
     /// <para>
     /// For Amazon CloudFront distributions, provide an empty web ACL ID in the CloudFront
-    /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
-    /// in the <i>Amazon CloudFront API Reference</i>. 
+    /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
     /// </para>
     ///  </li> </ul> </li> </ul> </note>
     /// </summary>
@@ -150,8 +148,8 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
         /// application. A regional application can be an Application Load Balancer (ALB), an
-        /// Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
-        /// or an App Runner service. 
+        /// Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito user pool, or
+        /// an App Runner service. 
         /// </para>
         ///  
         /// <para>

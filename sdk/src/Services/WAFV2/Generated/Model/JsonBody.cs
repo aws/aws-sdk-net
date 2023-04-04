@@ -162,16 +162,9 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property OversizeHandling. 
         /// <para>
         /// What WAF should do if the body is larger than WAF can inspect. WAF does not support
-        /// inspecting the entire contents of the web request body if the body exceeds the limit
-        /// for the resource type. If the body is larger than the limit, the underlying host service
-        /// only forwards the contents that are below the limit to WAF for inspection. 
-        /// </para>
-        ///  
-        /// <para>
-        /// The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384
-        /// kilobytes) for CloudFront distributions. For CloudFront distributions, you can increase
-        /// the limit in the web ACL <code>AssociationConfig</code>, for additional processing
-        /// fees. 
+        /// inspecting the entire contents of the body of a web request when the body exceeds
+        /// 8 KB (8192 bytes). Only the first 8 KB of the request body are forwarded to WAF by
+        /// the underlying host service. 
         /// </para>
         ///  
         /// <para>
@@ -195,7 +188,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize
         /// handling with your rule and web ACL action settings, so that you block any request
-        /// whose body is over the limit. 
+        /// whose body is over 8 KB. 
         /// </para>
         ///  
         /// <para>

@@ -44,7 +44,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Used for web ACLs that are scoped for regional applications. A regional application
         /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync
-        /// GraphQL API, an Amazon Cognito user pool, or an App Runner service. 
+        /// GraphQL API, a Amazon Cognito user pool, or an App Runner service. 
         /// </para>
         ///  <note> 
         /// <para>
