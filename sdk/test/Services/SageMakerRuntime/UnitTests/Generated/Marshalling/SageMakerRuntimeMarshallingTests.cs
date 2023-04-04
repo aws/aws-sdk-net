@@ -301,6 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"X-Amzn-SageMaker-FailureLocation","X-Amzn-SageMaker-FailureLocation_Value"},
                     {"X-Amzn-SageMaker-OutputLocation","X-Amzn-SageMaker-OutputLocation_Value"},
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"}
@@ -333,6 +334,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"X-Amzn-SageMaker-FailureLocation","X-Amzn-SageMaker-FailureLocation_Value"},
                     {"X-Amzn-SageMaker-OutputLocation","X-Amzn-SageMaker-OutputLocation_Value"},
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
@@ -366,6 +368,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"X-Amzn-SageMaker-FailureLocation","X-Amzn-SageMaker-FailureLocation_Value"},
                     {"X-Amzn-SageMaker-OutputLocation","X-Amzn-SageMaker-OutputLocation_Value"},
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
@@ -399,6 +402,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"X-Amzn-SageMaker-FailureLocation","X-Amzn-SageMaker-FailureLocation_Value"},
                     {"X-Amzn-SageMaker-OutputLocation","X-Amzn-SageMaker-OutputLocation_Value"},
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},

@@ -102,6 +102,10 @@
     <max>21600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMakerRuntime.Model.InvokeEndpointAsyncResponse.FailureLocation</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMakerRuntime.Model.InvokeEndpointAsyncResponse.InferenceId</property>
     <max>1024</max>
   </property-value-rule>
