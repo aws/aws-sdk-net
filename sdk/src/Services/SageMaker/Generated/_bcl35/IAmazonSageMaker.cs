@@ -508,9 +508,7 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
-        /// Find the best-performing model after you run an Autopilot job by calling <code> <a
-        /// href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>
-        /// </code>.
+        /// Find the best-performing model after you run an Autopilot job by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>.
         /// </para>
         ///  
         /// <para>
@@ -568,13 +566,11 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
-        /// Find the resulting model after you run an AutoML job V2 by calling <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>
-        /// </code>.
+        /// Find the resulting model after you run an AutoML job V2 by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>.
         /// </para>
         ///  
         /// <para>
-        /// To create an <code>AutoMLJob</code> using tabular data, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>
-        /// </code>.
+        /// To create an <code>AutoMLJob</code> using tabular data, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.
         /// </para>
         ///  <note> 
         /// <para>

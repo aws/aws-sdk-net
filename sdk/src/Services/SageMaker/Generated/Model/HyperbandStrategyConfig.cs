@@ -49,8 +49,7 @@ namespace Amazon.SageMaker.Model
         /// value, it is stopped. If a value for <code>MaxResource</code> is not provided, and
         /// <code>Hyperband</code> is selected as the hyperparameter tuning strategy, <code>HyperbandTrainingJ</code>
         /// attempts to infer <code>MaxResource</code> from the following keys (if present) in
-        /// <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters">StaticsHyperParameters</a>
-        /// </code>:
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters">StaticsHyperParameters</a>:
         /// </para>
         ///  <ul> <li> 
         /// <para>

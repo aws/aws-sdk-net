@@ -76,6 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.NotificationConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("S3FailurePath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3FailurePath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3OutputPath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

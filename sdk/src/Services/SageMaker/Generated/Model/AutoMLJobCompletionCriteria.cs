@@ -92,9 +92,9 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The maximum time, in seconds, that each training job executed inside hyperparameter
         /// tuning is allowed to run as part of a hyperparameter tuning job. For more information,
-        /// see the <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a>
-        /// </code> used by the <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a>
-        /// </code> action.
+        /// see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a>
+        /// used by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a>
+        /// action.
         /// </para>
         ///  
         /// <para>

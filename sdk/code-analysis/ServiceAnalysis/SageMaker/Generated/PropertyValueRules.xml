@@ -6133,6 +6133,11 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.AsyncInferenceOutputConfig.S3FailurePath</property>
+    <max>512</max>
+    <pattern>^(https|s3)://([^/])/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.AsyncInferenceOutputConfig.S3OutputPath</property>
     <max>512</max>
     <pattern>^(https|s3)://([^/])/?(.*)$</pattern>

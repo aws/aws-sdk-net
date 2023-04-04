@@ -34,9 +34,7 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// Find the best-performing model after you run an Autopilot job by calling <code> <a
-    /// href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>
-    /// </code>.
+    /// Find the best-performing model after you run an Autopilot job by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>.
     /// </para>
     ///  
     /// <para>
@@ -98,9 +96,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property AutoMLJobObjective. 
         /// <para>
         /// Defines the objective metric used to measure the predictive quality of an AutoML job.
-        /// You provide an <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>
-        /// </code> and Autopilot infers whether to minimize or maximize it. For <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
-        /// </code>, only <code>Accuracy</code> is supported.
+        /// You provide an <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>
+        /// and Autopilot infers whether to minimize or maximize it. For <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>,
+        /// only <code>Accuracy</code> is supported.
         /// </para>
         /// </summary>
         public AutoMLJobObjective AutoMLJobObjective
@@ -138,11 +136,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property InputDataConfig. 
         /// <para>
         /// An array of channel objects that describes the input data and its location. Each channel
-        /// is a named input source. Similar to <code>InputDataConfig</code> supported by <code>
-        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
-        /// </code>. Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for
-        /// the training dataset. There is not a minimum number of rows required for the validation
-        /// dataset.
+        /// is a named input source. Similar to <code>InputDataConfig</code> supported by <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>.
+        /// Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the training
+        /// dataset. There is not a minimum number of rows required for the validation dataset.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2)]

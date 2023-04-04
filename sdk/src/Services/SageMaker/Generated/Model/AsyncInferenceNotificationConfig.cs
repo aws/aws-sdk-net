@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class AsyncInferenceNotificationConfig
     {
         private string _errorTopic;
+        private List<string> _includeInferenceResponseIn = new List<string>();
         private string _successTopic;
 
         /// <summary>
@@ -55,6 +56,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetErrorTopic()
         {
             return this._errorTopic != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeInferenceResponseIn. 
+        /// <para>
+        /// The Amazon SNS topics where you want the inference response to be included.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2)]
+        public List<string> IncludeInferenceResponseIn
+        {
+            get { return this._includeInferenceResponseIn; }
+            set { this._includeInferenceResponseIn = value; }
+        }
+
+        // Check to see if IncludeInferenceResponseIn property is set
+        internal bool IsSetIncludeInferenceResponseIn()
+        {
+            return this._includeInferenceResponseIn != null && this._includeInferenceResponseIn.Count > 0; 
         }
 
         /// <summary>

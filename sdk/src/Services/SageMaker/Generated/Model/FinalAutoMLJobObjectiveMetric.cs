@@ -42,8 +42,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property MetricName. 
         /// <para>
         /// The name of the metric with the best result. For a description of the possible objective
-        /// metrics, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>
-        /// </code>.
+        /// metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

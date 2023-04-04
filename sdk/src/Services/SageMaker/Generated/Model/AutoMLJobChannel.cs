@@ -31,9 +31,9 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// A channel is a named input source that training algorithms can consume. This channel
     /// is used for the non tabular training data of an AutoML job using the V2 API. For tabular
-    /// training data, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLChannel.html">
-    /// AutoMLChannel</a> </code>. For more information, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html">
-    /// Channel</a> </code>.
+    /// training data, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLChannel.html">
+    /// AutoMLChannel</a>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html">
+    /// Channel</a>.
     /// </summary>
     public partial class AutoMLJobChannel
     {

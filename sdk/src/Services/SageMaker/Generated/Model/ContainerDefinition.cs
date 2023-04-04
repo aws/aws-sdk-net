@@ -105,8 +105,15 @@ namespace Amazon.SageMaker.Model
         /// provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker
         /// supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code>
         /// image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
-        /// Your Own Algorithms with Amazon SageMaker</a> 
+        /// Your Own Algorithms with Amazon SageMaker</a>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The model artifacts in an Amazon S3 bucket and the Docker image for inference container
+        /// in Amazon EC2 Container Registry must be in the same region as the model or endpoint
+        /// you are creating.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=255)]
         public string Image
@@ -127,8 +134,15 @@ namespace Amazon.SageMaker.Model
         /// Specifies whether the model container is in Amazon ECR or a private Docker registry
         /// accessible from your Amazon Virtual Private Cloud (VPC). For information about storing
         /// containers in a private Docker registry, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
-        /// a Private Docker Registry for Real-Time Inference Containers</a> 
+        /// a Private Docker Registry for Real-Time Inference Containers</a>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The model artifacts in an Amazon S3 bucket and the Docker image for inference container
+        /// in Amazon EC2 Container Registry must be in the same region as the model or endpoint
+        /// you are creating.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ImageConfig ImageConfig
         {
