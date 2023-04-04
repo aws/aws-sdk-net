@@ -7795,6 +7795,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C6inLarge = new InstanceType("c6in.large");
         /// <summary>
+        /// Constant C6inMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6inMetal = new InstanceType("c6in.metal");
+        /// <summary>
         /// Constant C6inXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C6inXlarge = new InstanceType("c6in.xlarge");
@@ -8775,6 +8779,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M6idnLarge = new InstanceType("m6idn.large");
         /// <summary>
+        /// Constant M6idnMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6idnMetal = new InstanceType("m6idn.metal");
+        /// <summary>
         /// Constant M6idnXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M6idnXlarge = new InstanceType("m6idn.xlarge");
@@ -8822,6 +8830,10 @@ namespace Amazon.EC2
         /// Constant M6inLarge for InstanceType
         /// </summary>
         public static readonly InstanceType M6inLarge = new InstanceType("m6in.large");
+        /// <summary>
+        /// Constant M6inMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6inMetal = new InstanceType("m6in.metal");
         /// <summary>
         /// Constant M6inXlarge for InstanceType
         /// </summary>
@@ -9411,6 +9423,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R6idnLarge = new InstanceType("r6idn.large");
         /// <summary>
+        /// Constant R6idnMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6idnMetal = new InstanceType("r6idn.metal");
+        /// <summary>
         /// Constant R6idnXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R6idnXlarge = new InstanceType("r6idn.xlarge");
@@ -9458,6 +9474,10 @@ namespace Amazon.EC2
         /// Constant R6inLarge for InstanceType
         /// </summary>
         public static readonly InstanceType R6inLarge = new InstanceType("r6in.large");
+        /// <summary>
+        /// Constant R6inMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6inMetal = new InstanceType("r6in.metal");
         /// <summary>
         /// Constant R6inXlarge for InstanceType
         /// </summary>
