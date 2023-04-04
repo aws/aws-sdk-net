@@ -64,6 +64,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("excluded", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Excluded = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("level", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

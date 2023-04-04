@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FormInputValueProperty Marshaller
+    /// FormInputBindingPropertiesValue Marshaller
     /// </summary>
-    public class FormInputValuePropertyMarshaller : IRequestMarshaller<FormInputValueProperty, JsonMarshallerContext> 
+    public class FormInputBindingPropertiesValueMarshaller : IRequestMarshaller<FormInputBindingPropertiesValue, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,23 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FormInputValueProperty requestObject, JsonMarshallerContext context)
+        public void Marshall(FormInputBindingPropertiesValue requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetBindingProperties())
             {
                 context.Writer.WritePropertyName("bindingProperties");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = FormInputValuePropertyBindingPropertiesMarshaller.Instance;
+                var marshaller = FormInputBindingPropertiesValuePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.BindingProperties, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetConcat())
+            if(requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("concat");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectConcatListValue in requestObject.Concat)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FormInputValuePropertyMarshaller.Instance;
-                    marshaller.Marshall(requestObjectConcatListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetValue())
-            {
-                context.Writer.WritePropertyName("value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.WritePropertyName("type");
+                context.Writer.Write(requestObject.Type);
             }
 
         }
@@ -83,7 +67,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FormInputValuePropertyMarshaller Instance = new FormInputValuePropertyMarshaller();
+        public readonly static FormInputBindingPropertiesValueMarshaller Instance = new FormInputBindingPropertiesValueMarshaller();
 
     }
 }

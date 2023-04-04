@@ -37,6 +37,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         private string _defaultCountryCode;
         private string _defaultValue;
         private string _descriptiveText;
+        private FileUploaderFieldConfig _fileUploaderConfig;
         private bool? _isArray;
         private float? _maxValue;
         private float? _minValue;
@@ -119,6 +120,24 @@ namespace Amazon.AmplifyUIBuilder.Model
         internal bool IsSetDescriptiveText()
         {
             return this._descriptiveText != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileUploaderConfig. 
+        /// <para>
+        /// The configuration for the file uploader field.
+        /// </para>
+        /// </summary>
+        public FileUploaderFieldConfig FileUploaderConfig
+        {
+            get { return this._fileUploaderConfig; }
+            set { this._fileUploaderConfig = value; }
+        }
+
+        // Check to see if FileUploaderConfig property is set
+        internal bool IsSetFileUploaderConfig()
+        {
+            return this._fileUploaderConfig != null;
         }
 
         /// <summary>

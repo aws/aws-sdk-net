@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Predicate Object
+    /// Response Unmarshaller for FileUploaderFieldConfig Object
     /// </summary>  
-    public class PredicateUnmarshaller : IUnmarshaller<Predicate, XmlUnmarshallerContext>, IUnmarshaller<Predicate, JsonUnmarshallerContext>
+    public class FileUploaderFieldConfigUnmarshaller : IUnmarshaller<FileUploaderFieldConfig, XmlUnmarshallerContext>, IUnmarshaller<FileUploaderFieldConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Predicate IUnmarshaller<Predicate, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FileUploaderFieldConfig IUnmarshaller<FileUploaderFieldConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,51 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Predicate Unmarshall(JsonUnmarshallerContext context)
+        public FileUploaderFieldConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Predicate unmarshalledObject = new Predicate();
+            FileUploaderFieldConfig unmarshalledObject = new FileUploaderFieldConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("and", targetDepth))
+                if (context.TestExpression("acceptedFileTypes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Predicate, PredicateUnmarshaller>(PredicateUnmarshaller.Instance);
-                    unmarshalledObject.And = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AcceptedFileTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("field", targetDepth))
+                if (context.TestExpression("accessLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Field = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("operand", targetDepth))
+                if (context.TestExpression("isResumable", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Operand = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsResumable = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("operandType", targetDepth))
+                if (context.TestExpression("maxFileCount", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OperandType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxFileCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("operator", targetDepth))
+                if (context.TestExpression("maxSize", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Operator = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("or", targetDepth))
+                if (context.TestExpression("showThumbnails", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Predicate, PredicateUnmarshaller>(PredicateUnmarshaller.Instance);
-                    unmarshalledObject.Or = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ShowThumbnails = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +106,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         }
 
 
-        private static PredicateUnmarshaller _instance = new PredicateUnmarshaller();        
+        private static FileUploaderFieldConfigUnmarshaller _instance = new FileUploaderFieldConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PredicateUnmarshaller Instance
+        public static FileUploaderFieldConfigUnmarshaller Instance
         {
             get
             {

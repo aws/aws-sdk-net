@@ -37,6 +37,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         private FormDataTypeConfig _dataType;
         private Dictionary<string, FieldConfig> _fields = new Dictionary<string, FieldConfig>();
         private FormActionType _formActionType;
+        private LabelDecorator _labelDecorator;
         private string _name;
         private string _schemaVersion;
         private Dictionary<string, SectionalElement> _sectionalElements = new Dictionary<string, SectionalElement>();
@@ -117,6 +118,24 @@ namespace Amazon.AmplifyUIBuilder.Model
         internal bool IsSetFormActionType()
         {
             return this._formActionType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LabelDecorator. 
+        /// <para>
+        /// Specifies an icon or decoration to display on the form.
+        /// </para>
+        /// </summary>
+        public LabelDecorator LabelDecorator
+        {
+            get { return this._labelDecorator; }
+            set { this._labelDecorator = value; }
+        }
+
+        // Check to see if LabelDecorator property is set
+        internal bool IsSetLabelDecorator()
+        {
+            return this._labelDecorator != null;
         }
 
         /// <summary>

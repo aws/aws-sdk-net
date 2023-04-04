@@ -1016,7 +1016,7 @@ namespace Amazon.AmplifyUIBuilder
 
 
         /// <summary>
-        /// Stores the metadata information about a feature on a form or view.
+        /// Stores the metadata information about a feature on a form.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMetadataFlag service method.</param>
         /// <param name="cancellationToken">

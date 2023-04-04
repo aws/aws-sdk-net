@@ -73,6 +73,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Operand);
             }
 
+            if(requestObject.IsSetOperandType())
+            {
+                context.Writer.WritePropertyName("operandType");
+                context.Writer.Write(requestObject.OperandType);
+            }
+
             if(requestObject.IsSetOperator())
             {
                 context.Writer.WritePropertyName("operator");

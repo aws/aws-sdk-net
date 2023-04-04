@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ExchangeCodeForTokenRequestBody Marshaller
+    /// FormInputBindingPropertiesValueProperties Marshaller
     /// </summary>
-    public class ExchangeCodeForTokenRequestBodyMarshaller : IRequestMarshaller<ExchangeCodeForTokenRequestBody, JsonMarshallerContext> 
+    public class FormInputBindingPropertiesValuePropertiesMarshaller : IRequestMarshaller<FormInputBindingPropertiesValueProperties, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,24 +43,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ExchangeCodeForTokenRequestBody requestObject, JsonMarshallerContext context)
+        public void Marshall(FormInputBindingPropertiesValueProperties requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetClientId())
+            if(requestObject.IsSetModel())
             {
-                context.Writer.WritePropertyName("clientId");
-                context.Writer.Write(requestObject.ClientId);
-            }
-
-            if(requestObject.IsSetCode())
-            {
-                context.Writer.WritePropertyName("code");
-                context.Writer.Write(requestObject.Code);
-            }
-
-            if(requestObject.IsSetRedirectUri())
-            {
-                context.Writer.WritePropertyName("redirectUri");
-                context.Writer.Write(requestObject.RedirectUri);
+                context.Writer.WritePropertyName("model");
+                context.Writer.Write(requestObject.Model);
             }
 
         }
@@ -68,7 +56,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ExchangeCodeForTokenRequestBodyMarshaller Instance = new ExchangeCodeForTokenRequestBodyMarshaller();
+        public readonly static FormInputBindingPropertiesValuePropertiesMarshaller Instance = new FormInputBindingPropertiesValuePropertiesMarshaller();
 
     }
 }

@@ -29,49 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
-    /// Describes a refresh token.
+    /// Associates a form property to a binding property. This enables exposed properties
+    /// on the top level form to propagate data to the form's property values.
     /// </summary>
-    public partial class RefreshTokenRequestBody
+    public partial class FormInputValuePropertyBindingProperties
     {
-        private string _clientId;
-        private string _token;
+        private string _field;
+        private string _property;
 
         /// <summary>
-        /// Gets and sets the property ClientId. 
+        /// Gets and sets the property Field. 
         /// <para>
-        /// The ID of the client to request the token from.
+        /// The data field to bind the property to.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public string ClientId
+        public string Field
         {
-            get { return this._clientId; }
-            set { this._clientId = value; }
+            get { return this._field; }
+            set { this._field = value; }
         }
 
-        // Check to see if ClientId property is set
-        internal bool IsSetClientId()
+        // Check to see if Field property is set
+        internal bool IsSetField()
         {
-            return this._clientId != null;
+            return this._field != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Token. 
+        /// Gets and sets the property Property. 
         /// <para>
-        /// The token to use to refresh a previously issued access token that might have expired.
+        /// The form property to bind to the data field.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
-        public string Token
+        [AWSProperty(Required=true)]
+        public string Property
         {
-            get { return this._token; }
-            set { this._token = value; }
+            get { return this._property; }
+            set { this._property = value; }
         }
 
-        // Check to see if Token property is set
-        internal bool IsSetToken()
+        // Check to see if Property property is set
+        internal bool IsSetProperty()
         {
-            return this._token != null;
+            return this._property != null;
         }
 
     }

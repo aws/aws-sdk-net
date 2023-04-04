@@ -225,6 +225,60 @@ namespace Amazon.AmplifyUIBuilder
 
 
     /// <summary>
+    /// Constants used for properties of type LabelDecorator.
+    /// </summary>
+    public class LabelDecorator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant None for LabelDecorator
+        /// </summary>
+        public static readonly LabelDecorator None = new LabelDecorator("none");
+        /// <summary>
+        /// Constant Optional for LabelDecorator
+        /// </summary>
+        public static readonly LabelDecorator Optional = new LabelDecorator("optional");
+        /// <summary>
+        /// Constant Required for LabelDecorator
+        /// </summary>
+        public static readonly LabelDecorator Required = new LabelDecorator("required");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LabelDecorator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LabelDecorator FindValue(string value)
+        {
+            return FindValue<LabelDecorator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LabelDecorator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SortDirection.
     /// </summary>
     public class SortDirection : ConstantClass
@@ -268,6 +322,60 @@ namespace Amazon.AmplifyUIBuilder
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageAccessLevel.
+    /// </summary>
+    public class StorageAccessLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Private for StorageAccessLevel
+        /// </summary>
+        public static readonly StorageAccessLevel Private = new StorageAccessLevel("private");
+        /// <summary>
+        /// Constant Protected for StorageAccessLevel
+        /// </summary>
+        public static readonly StorageAccessLevel Protected = new StorageAccessLevel("protected");
+        /// <summary>
+        /// Constant Public for StorageAccessLevel
+        /// </summary>
+        public static readonly StorageAccessLevel Public = new StorageAccessLevel("public");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageAccessLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageAccessLevel FindValue(string value)
+        {
+            return FindValue<StorageAccessLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageAccessLevel(string value)
         {
             return FindValue(value);
         }

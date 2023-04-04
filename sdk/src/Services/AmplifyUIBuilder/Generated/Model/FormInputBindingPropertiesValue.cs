@@ -29,20 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
-    /// Represents the data binding configuration for a value map.
+    /// Represents the data binding configuration for a form's input fields at runtime.You
+    /// can use <code>FormInputBindingPropertiesValue</code> to add exposed properties to
+    /// a form to allow different values to be entered when a form is reused in different
+    /// places in an app.
     /// </summary>
-    public partial class ValueMappings
+    public partial class FormInputBindingPropertiesValue
     {
-        private Dictionary<string, FormInputBindingPropertiesValue> _bindingProperties = new Dictionary<string, FormInputBindingPropertiesValue>();
-        private List<ValueMapping> _values = new List<ValueMapping>();
+        private FormInputBindingPropertiesValueProperties _bindingProperties;
+        private string _type;
 
         /// <summary>
         /// Gets and sets the property BindingProperties. 
         /// <para>
-        /// The information to bind fields to data at runtime.
+        /// Describes the properties to customize with data at runtime.
         /// </para>
         /// </summary>
-        public Dictionary<string, FormInputBindingPropertiesValue> BindingProperties
+        public FormInputBindingPropertiesValueProperties BindingProperties
         {
             get { return this._bindingProperties; }
             set { this._bindingProperties = value; }
@@ -51,26 +54,25 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if BindingProperties property is set
         internal bool IsSetBindingProperties()
         {
-            return this._bindingProperties != null && this._bindingProperties.Count > 0; 
+            return this._bindingProperties != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Values. 
+        /// Gets and sets the property Type. 
         /// <para>
-        /// The value and display value pairs.
+        /// The property type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<ValueMapping> Values
+        public string Type
         {
-            get { return this._values; }
-            set { this._values = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if Values property is set
-        internal bool IsSetValues()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._type != null;
         }
 
     }

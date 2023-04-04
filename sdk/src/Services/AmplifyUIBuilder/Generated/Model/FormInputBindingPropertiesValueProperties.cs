@@ -29,49 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
-    /// Describes a refresh token.
+    /// Represents the data binding configuration for a specific property using data stored
+    /// in Amazon Web Services. For Amazon Web Services connected properties, you can bind
+    /// a property to data stored in an Amplify DataStore model.
     /// </summary>
-    public partial class RefreshTokenRequestBody
+    public partial class FormInputBindingPropertiesValueProperties
     {
-        private string _clientId;
-        private string _token;
+        private string _model;
 
         /// <summary>
-        /// Gets and sets the property ClientId. 
+        /// Gets and sets the property Model. 
         /// <para>
-        /// The ID of the client to request the token from.
+        /// An Amplify DataStore model.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public string ClientId
+        public string Model
         {
-            get { return this._clientId; }
-            set { this._clientId = value; }
+            get { return this._model; }
+            set { this._model = value; }
         }
 
-        // Check to see if ClientId property is set
-        internal bool IsSetClientId()
+        // Check to see if Model property is set
+        internal bool IsSetModel()
         {
-            return this._clientId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Token. 
-        /// <para>
-        /// The token to use to refresh a previously issued access token that might have expired.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
-        public string Token
-        {
-            get { return this._token; }
-            set { this._token = value; }
-        }
-
-        // Check to see if Token property is set
-        internal bool IsSetToken()
-        {
-            return this._token != null;
+            return this._model != null;
         }
 
     }

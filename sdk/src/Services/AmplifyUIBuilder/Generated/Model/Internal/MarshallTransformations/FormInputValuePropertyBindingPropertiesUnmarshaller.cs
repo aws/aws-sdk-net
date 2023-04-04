@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ValueMappings Object
+    /// Response Unmarshaller for FormInputValuePropertyBindingProperties Object
     /// </summary>  
-    public class ValueMappingsUnmarshaller : IUnmarshaller<ValueMappings, XmlUnmarshallerContext>, IUnmarshaller<ValueMappings, JsonUnmarshallerContext>
+    public class FormInputValuePropertyBindingPropertiesUnmarshaller : IUnmarshaller<FormInputValuePropertyBindingProperties, XmlUnmarshallerContext>, IUnmarshaller<FormInputValuePropertyBindingProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ValueMappings IUnmarshaller<ValueMappings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FormInputValuePropertyBindingProperties IUnmarshaller<FormInputValuePropertyBindingProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ValueMappings Unmarshall(JsonUnmarshallerContext context)
+        public FormInputValuePropertyBindingProperties Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ValueMappings unmarshalledObject = new ValueMappings();
+            FormInputValuePropertyBindingProperties unmarshalledObject = new FormInputValuePropertyBindingProperties();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("bindingProperties", targetDepth))
+                if (context.TestExpression("field", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, FormInputBindingPropertiesValue, StringUnmarshaller, FormInputBindingPropertiesValueUnmarshaller>(StringUnmarshaller.Instance, FormInputBindingPropertiesValueUnmarshaller.Instance);
-                    unmarshalledObject.BindingProperties = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Field = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("values", targetDepth))
+                if (context.TestExpression("property", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ValueMapping, ValueMappingUnmarshaller>(ValueMappingUnmarshaller.Instance);
-                    unmarshalledObject.Values = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Property = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         }
 
 
-        private static ValueMappingsUnmarshaller _instance = new ValueMappingsUnmarshaller();        
+        private static FormInputValuePropertyBindingPropertiesUnmarshaller _instance = new FormInputValuePropertyBindingPropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ValueMappingsUnmarshaller Instance
+        public static FormInputValuePropertyBindingPropertiesUnmarshaller Instance
         {
             get
             {
