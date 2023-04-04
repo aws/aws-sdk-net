@@ -1,3 +1,24 @@
+### 3.7.519.0 (2023-04-04 18:27 UTC)
+* AmplifyUIBuilder (3.7.101.0)
+	* Support StorageField and custom displays for data-bound options in form builder. Support non-string operands for predicates in collections. Support choosing client to get token from.
+* AutoScaling (3.7.104.3)
+	* Documentation updates for Amazon EC2 Auto Scaling
+* DataExchange (3.7.103.0)
+	* This release updates the value of MaxResults.
+* EC2 (3.7.130.0)
+	* C6in, M6in, M6idn, R6in and R6idn bare metal instances are powered by 3rd Generation Intel Xeon Scalable processors and offer up to 200 Gbps of network bandwidth.
+* ElasticInference (3.7.101.0)
+	* Updated public documentation for the Describe and Tagging APIs.
+* SageMaker (3.7.124.0)
+	* Amazon SageMaker Asynchronous Inference now allows customer's to receive failure model responses in S3 and receive success/failure model responses in SNS notifications.
+* SageMakerRuntime (3.7.102.0)
+	* Amazon SageMaker Asynchronous Inference now provides customers a FailureLocation as a response parameter in InvokeEndpointAsync API to capture the model failure responses.
+* WAFV2 (3.7.105.0)
+	* This release rolls back association config feature for webACLs that protect CloudFront protections.
+* Core 3.7.106.12
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.518.0 (2023-04-03 18:22 UTC)
 * Glue (3.7.111.0)
 	* Add support for database-level federation

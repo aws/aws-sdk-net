@@ -32,7 +32,7 @@ namespace Amazon.ApiGatewayManagementApi
     public partial class AmazonApiGatewayManagementApiConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.104");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.105");
 
         private string _userAgent = UserAgentString;
 
