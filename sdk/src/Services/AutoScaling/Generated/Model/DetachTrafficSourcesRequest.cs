@@ -67,8 +67,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TrafficSources. 
         /// <para>
-        /// The unique identifiers of one or more traffic sources you are detaching. You can specify
-        /// up to 10 traffic sources.
+        /// The unique identifiers of one or more traffic sources. You can specify up to 10 traffic
+        /// sources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

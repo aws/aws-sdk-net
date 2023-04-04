@@ -334,7 +334,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckType. 
         /// <para>
-        /// A comma-separated list of one or more health check types.
+        /// A comma-separated value string of one or more health check types.
         /// </para>
         ///  
         /// <para>
@@ -342,6 +342,10 @@ namespace Amazon.AutoScaling.Model
         /// <code>EC2</code> is the default health check and cannot be disabled. For more information,
         /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
         /// checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only specify <code>EC2</code> if you must clear a value that was previously set.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]

@@ -46,11 +46,11 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Network Load Balancer
+    /// Gateway Load Balancer
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Gateway Load Balancer
+    /// Network Load Balancer
     /// </para>
     ///  </li> <li> 
     /// <para>

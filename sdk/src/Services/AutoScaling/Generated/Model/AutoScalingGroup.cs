@@ -296,7 +296,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckType. 
         /// <para>
-        /// A comma-separated list of one or more health check types.
+        /// A comma-separated value string of one or more health check types.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
