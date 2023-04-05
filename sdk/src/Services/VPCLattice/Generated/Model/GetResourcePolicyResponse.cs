@@ -38,7 +38,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the service network or service.
+        /// An IAM policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]

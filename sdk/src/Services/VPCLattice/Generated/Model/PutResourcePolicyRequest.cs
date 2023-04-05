@@ -42,7 +42,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// An IAM policy.
+        /// An IAM policy. The policy string in JSON must not contain newlines or blank lines.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10000)]

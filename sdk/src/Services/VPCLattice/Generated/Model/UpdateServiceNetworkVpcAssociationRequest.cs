@@ -30,8 +30,11 @@ namespace Amazon.VPCLattice.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateServiceNetworkVpcAssociation operation.
-    /// Updates the service network and VPC association. Once you add a security group, it
-    /// cannot be removed.
+    /// Updates the service network and VPC association. If you add a security group to the
+    /// service network and VPC association, the association must continue to always have
+    /// at least one security group. You can add or edit security groups at any time. However,
+    /// to remove all security groups, you must first delete the association and recreate
+    /// it without security groups.
     /// </summary>
     public partial class UpdateServiceNetworkVpcAssociationRequest : AmazonVPCLatticeRequest
     {
@@ -41,7 +44,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The IDs of the security groups. Once you add a security group, it cannot be removed.
+        /// The IDs of the security groups. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

@@ -31,7 +31,7 @@ namespace Amazon.VPCLattice.Model
     /// <summary>
     /// Container for the parameters to the GetResourcePolicy operation.
     /// Retrieves information about the resource policy. The resource policy is an IAM policy
-    /// created by AWS RAM on behalf of the resource owner when they share a resource.
+    /// created on behalf of the resource owner when they share a resource.
     /// </summary>
     public partial class GetResourcePolicyRequest : AmazonVPCLatticeRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// An IAM policy.
+        /// The Amazon Resource Name (ARN) of the service network or service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=200)]

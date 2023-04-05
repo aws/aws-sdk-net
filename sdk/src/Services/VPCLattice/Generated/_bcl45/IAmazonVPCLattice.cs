@@ -642,9 +642,10 @@ namespace Amazon.VPCLattice
         /// </para>
         ///  
         /// <para>
-        /// Once a security group is added to the VPC association it cannot be removed. You can
-        /// add or update the security groups being used for the VPC association once a security
-        /// group is attached. To remove all security groups you must reassociate the VPC.
+        /// If you add a security group to the service network and VPC association, the association
+        /// must continue to always have at least one security group. You can add or edit security
+        /// groups at any time. However, to remove all security groups, you must first delete
+        /// the association and recreate it without security groups.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServiceNetworkVpcAssociation service method.</param>
@@ -695,9 +696,10 @@ namespace Amazon.VPCLattice
         /// </para>
         ///  
         /// <para>
-        /// Once a security group is added to the VPC association it cannot be removed. You can
-        /// add or update the security groups being used for the VPC association once a security
-        /// group is attached. To remove all security groups you must reassociate the VPC.
+        /// If you add a security group to the service network and VPC association, the association
+        /// must continue to always have at least one security group. You can add or edit security
+        /// groups at any time. However, to remove all security groups, you must first delete
+        /// the association and recreate it without security groups.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServiceNetworkVpcAssociation service method.</param>
@@ -883,9 +885,9 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Deletes the specified auth policy. If an auth is set to <code>Amazon Web Services_IAM</code>
-        /// and the auth policy is deleted, all requests will be denied by default. If you are
-        /// trying to remove the auth policy completely, you must set the auth_type to <code>NONE</code>.
+        /// Deletes the specified auth policy. If an auth is set to <code>AWS_IAM</code> and the
+        /// auth policy is deleted, all requests will be denied by default. If you are trying
+        /// to remove the auth policy completely, you must set the auth_type to <code>NONE</code>.
         /// If auth is enabled on the resource, but no auth policy is set, all requests will be
         /// denied.
         /// </summary>
@@ -913,9 +915,9 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Deletes the specified auth policy. If an auth is set to <code>Amazon Web Services_IAM</code>
-        /// and the auth policy is deleted, all requests will be denied by default. If you are
-        /// trying to remove the auth policy completely, you must set the auth_type to <code>NONE</code>.
+        /// Deletes the specified auth policy. If an auth is set to <code>AWS_IAM</code> and the
+        /// auth policy is deleted, all requests will be denied by default. If you are trying
+        /// to remove the auth policy completely, you must set the auth_type to <code>NONE</code>.
         /// If auth is enabled on the resource, but no auth policy is set, all requests will be
         /// denied.
         /// </summary>
@@ -1744,7 +1746,7 @@ namespace Amazon.VPCLattice
 
         /// <summary>
         /// Retrieves information about the resource policy. The resource policy is an IAM policy
-        /// created by AWS RAM on behalf of the resource owner when they share a resource.
+        /// created on behalf of the resource owner when they share a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
         /// 
@@ -1771,7 +1773,7 @@ namespace Amazon.VPCLattice
 
         /// <summary>
         /// Retrieves information about the resource policy. The resource policy is an IAM policy
-        /// created by AWS RAM on behalf of the resource owner when they share a resource.
+        /// created on behalf of the resource owner when they share a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2711,7 +2713,8 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Creates or updates the auth policy.
+        /// Creates or updates the auth policy. The policy string in JSON must not contain newlines
+        /// or blank lines.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAuthPolicy service method.</param>
         /// 
@@ -2737,7 +2740,8 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Creates or updates the auth policy.
+        /// Creates or updates the auth policy. The policy string in JSON must not contain newlines
+        /// or blank lines.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAuthPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -3341,8 +3345,11 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Updates the service network and VPC association. Once you add a security group, it
-        /// cannot be removed.
+        /// Updates the service network and VPC association. If you add a security group to the
+        /// service network and VPC association, the association must continue to always have
+        /// at least one security group. You can add or edit security groups at any time. However,
+        /// to remove all security groups, you must first delete the association and recreate
+        /// it without security groups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateServiceNetworkVpcAssociation service method.</param>
         /// 
@@ -3372,8 +3379,11 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Updates the service network and VPC association. Once you add a security group, it
-        /// cannot be removed.
+        /// Updates the service network and VPC association. If you add a security group to the
+        /// service network and VPC association, the association must continue to always have
+        /// at least one security group. You can add or edit security groups at any time. However,
+        /// to remove all security groups, you must first delete the association and recreate
+        /// it without security groups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateServiceNetworkVpcAssociation service method.</param>
         /// <param name="cancellationToken">
