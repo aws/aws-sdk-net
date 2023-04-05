@@ -31,7 +31,7 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// The type and amount of a resource to assign to a container. The supported resource
     /// types are GPUs and Elastic Inference accelerators. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working
-    /// with GPUs on Amazon ECS</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html">Working
+    /// with GPUs on Amazon ECS</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/url-ecs-dev;ecs-inference.html">Working
     /// with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container
     /// Service Developer Guide</i>
     /// </summary>
@@ -75,8 +75,8 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// If the <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-        /// the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a task
-        /// definition.
+        /// the <code>deviceName</code> for an <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
+        /// specified in a task definition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

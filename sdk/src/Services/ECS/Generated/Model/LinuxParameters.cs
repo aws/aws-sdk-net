@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Linux-specific options that are applied to the container, such as Linux <a>KernelCapabilities</a>.
+    /// The Linux-specific options that are applied to the container, such as Linux <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.
     /// </summary>
     public partial class LinuxParameters
     {

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Details on a service within a cluster
+    /// Details on a service within a cluster.
     /// </summary>
     public partial class Service
     {

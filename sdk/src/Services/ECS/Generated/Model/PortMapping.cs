@@ -279,10 +279,10 @@ namespace Amazon.ECS.Model
         /// Amazon ECS container agent ports 51678-51680. Any host port that was previously specified
         /// in a running task is also reserved while the task is running. That is, after a task
         /// stops, the host port is released. The current reserved ports are displayed in the
-        /// <code>remainingResources</code> of <a>DescribeContainerInstances</a> output. A container
-        /// instance can have up to 100 reserved ports at a time. This number includes the default
-        /// reserved ports. Automatically assigned ports aren't included in the 100 reserved ports
-        /// quota.
+        /// <code>remainingResources</code> of <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html">DescribeContainerInstances</a>
+        /// output. A container instance can have up to 100 reserved ports at a time. This number
+        /// includes the default reserved ports. Automatically assigned ports aren't included
+        /// in the 100 reserved ports quota.
         /// </para>
         /// </summary>
         public int HostPort
