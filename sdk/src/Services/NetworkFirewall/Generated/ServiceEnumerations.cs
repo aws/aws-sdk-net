@@ -304,6 +304,10 @@ namespace Amazon.NetworkFirewall
         /// Constant IPV4 for IPAddressType
         /// </summary>
         public static readonly IPAddressType IPV4 = new IPAddressType("IPV4");
+        /// <summary>
+        /// Constant IPV6 for IPAddressType
+        /// </summary>
+        public static readonly IPAddressType IPV6 = new IPAddressType("IPV6");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
