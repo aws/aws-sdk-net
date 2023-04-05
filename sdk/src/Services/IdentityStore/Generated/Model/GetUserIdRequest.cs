@@ -42,7 +42,8 @@ namespace Amazon.IdentityStore.Model
         /// <para>
         /// A unique identifier for a user or group that is not the primary identifier. This value
         /// can be an identifier from an external identity provider (IdP) that is associated with
-        /// the user, the group, or a unique attribute. For example, a unique <code>UserDisplayName</code>.
+        /// the user, the group, or a unique attribute. For the unique attribute, the only valid
+        /// paths are <code>userName</code> and <code>emails.value</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

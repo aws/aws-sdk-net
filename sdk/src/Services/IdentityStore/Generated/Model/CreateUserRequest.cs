@@ -30,7 +30,7 @@ namespace Amazon.IdentityStore.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUser operation.
-    /// Creates a new user within the specified identity store.
+    /// Creates a user within the specified identity store.
     /// </summary>
     public partial class CreateUserRequest : AmazonIdentityStoreRequest
     {
@@ -71,8 +71,8 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// A string containing the user's name. This value is typically formatted for display
-        /// when the user is referenced. For example, "John Doe."
+        /// A string containing the name of the user. This value is typically formatted for display
+        /// when the user is referenced. For example, "John Doe." 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]
@@ -130,7 +130,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// A string containing the user's geographical region or location.
+        /// A string containing the geographical region or location of the user.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]
@@ -149,7 +149,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// An object containing the user's name.
+        /// An object containing the name of the user.
         /// </para>
         /// </summary>
         public Name Name
@@ -226,7 +226,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property ProfileUrl. 
         /// <para>
-        /// A string containing a URL that may be associated with the user.
+        /// A string containing a URL that might be associated with the user.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]
@@ -245,7 +245,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Timezone. 
         /// <para>
-        /// A string containing the user's time zone.
+        /// A string containing the time zone of the user.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]
@@ -264,8 +264,8 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// A string containing the user's title. Possible values are left unspecified given that
-        /// they depend on each customer's specific needs.
+        /// A string containing the title of the user. Possible values are left unspecified. The
+        /// value can vary based on your specific use case.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]
@@ -287,7 +287,8 @@ namespace Amazon.IdentityStore.Model
         /// A unique string used to identify the user. The length limit is 128 characters. This
         /// value can consist of letters, accented characters, symbols, numbers, and punctuation.
         /// This value is specified at the time the user is created and stored as an attribute
-        /// of the user object in the identity store.
+        /// of the user object in the identity store. "Administrator" and "AWSAdministrators"
+        /// are reserved names and can't be used for users or groups.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -306,8 +307,8 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property UserType. 
         /// <para>
-        /// A string indicating the user's type. Possible values depend on each customer's specific
-        /// needs, so they are left unspecified.
+        /// A string indicating the type of user. Possible values are left unspecified. The value
+        /// can vary based on your specific use case.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]
