@@ -47,7 +47,7 @@ namespace Amazon.AppRunner.Model
         /// Default: <code>1 vCPU</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=4, Max=6)]
+        [AWSProperty(Min=3, Max=9)]
         public string Cpu
         {
             get { return this._cpu; }
@@ -91,7 +91,7 @@ namespace Amazon.AppRunner.Model
         /// Default: <code>2 GB</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=4, Max=4)]
+        [AWSProperty(Min=3, Max=6)]
         public string Memory
         {
             get { return this._memory; }
