@@ -1,3 +1,24 @@
+### 3.7.520.0 (2023-04-05 18:25 UTC)
+* AppRunner (3.7.105.0)
+	* App Runner adds support for seven new vCPU and memory configurations.
+* ConfigService (3.7.103.0)
+	* This release adds resourceType enums for types released in March 2023.
+* ECS (3.7.105.27)
+	* This is a document only updated to add information about Amazon Elastic Inference (EI).
+* IdentityStore (3.7.100.106)
+	* Documentation updates for Identity Store CLI command reference.
+* IVSRealTime (3.7.101.0)
+	* Fix ParticipantToken ExpirationTime format
+* NetworkFirewall (3.7.105.0)
+	* AWS Network Firewall now supports IPv6-only subnets.
+* ServiceCatalog (3.7.103.0)
+	* removed incorrect product type value
+* VPCLattice (3.7.100.4)
+	* This release removes the entities in the API doc model package for auth policies.
+* Core 3.7.106.13
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.519.0 (2023-04-04 18:27 UTC)
 * AmplifyUIBuilder (3.7.101.0)
 	* Support StorageField and custom displays for data-bound options in form builder. Support non-string operands for predicates in collections. Support choosing client to get token from.
