@@ -1551,6 +1551,151 @@ namespace Amazon.Proton
 
         #endregion
         
+        #region  CreateServiceInstance
+
+        /// <summary>
+        /// Create a service instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceInstance service method.</param>
+        /// 
+        /// <returns>The response from the CreateServiceInstance service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceInstance">REST API Reference for CreateServiceInstance Operation</seealso>
+        public virtual CreateServiceInstanceResponse CreateServiceInstance(CreateServiceInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServiceInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServiceInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateServiceInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateServiceInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceInstance operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateServiceInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceInstance">REST API Reference for CreateServiceInstance Operation</seealso>
+        public virtual IAsyncResult BeginCreateServiceInstance(CreateServiceInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServiceInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServiceInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateServiceInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateServiceInstance.</param>
+        /// 
+        /// <returns>Returns a  CreateServiceInstanceResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceInstance">REST API Reference for CreateServiceInstance Operation</seealso>
+        public virtual CreateServiceInstanceResponse EndCreateServiceInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateServiceInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateServiceSyncConfig
+
+        /// <summary>
+        /// Create the Proton Ops configuration file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceSyncConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateServiceSyncConfig service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceSyncConfig">REST API Reference for CreateServiceSyncConfig Operation</seealso>
+        public virtual CreateServiceSyncConfigResponse CreateServiceSyncConfig(CreateServiceSyncConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServiceSyncConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServiceSyncConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateServiceSyncConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateServiceSyncConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceSyncConfig operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateServiceSyncConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceSyncConfig">REST API Reference for CreateServiceSyncConfig Operation</seealso>
+        public virtual IAsyncResult BeginCreateServiceSyncConfig(CreateServiceSyncConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServiceSyncConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServiceSyncConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateServiceSyncConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateServiceSyncConfig.</param>
+        /// 
+        /// <returns>Returns a  CreateServiceSyncConfigResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceSyncConfig">REST API Reference for CreateServiceSyncConfig Operation</seealso>
+        public virtual CreateServiceSyncConfigResponse EndCreateServiceSyncConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateServiceSyncConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateServiceTemplate
 
         /// <summary>
@@ -2337,6 +2482,78 @@ namespace Amazon.Proton
         public virtual DeleteServiceResponse EndDeleteService(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteServiceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteServiceSyncConfig
+
+        /// <summary>
+        /// Delete the Proton Ops file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceSyncConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteServiceSyncConfig service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceSyncConfig">REST API Reference for DeleteServiceSyncConfig Operation</seealso>
+        public virtual DeleteServiceSyncConfigResponse DeleteServiceSyncConfig(DeleteServiceSyncConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServiceSyncConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServiceSyncConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteServiceSyncConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteServiceSyncConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceSyncConfig operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServiceSyncConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceSyncConfig">REST API Reference for DeleteServiceSyncConfig Operation</seealso>
+        public virtual IAsyncResult BeginDeleteServiceSyncConfig(DeleteServiceSyncConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServiceSyncConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServiceSyncConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteServiceSyncConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteServiceSyncConfig.</param>
+        /// 
+        /// <returns>Returns a  DeleteServiceSyncConfigResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceSyncConfig">REST API Reference for DeleteServiceSyncConfig Operation</seealso>
+        public virtual DeleteServiceSyncConfigResponse EndDeleteServiceSyncConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteServiceSyncConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -3166,8 +3383,9 @@ namespace Amazon.Proton
         /// The action returns staleness counts (counts of resources that are up-to-date, behind
         /// a template major version, or behind a template minor version), the total number of
         /// resources, and the number of resources that are in a failed state, grouped by resource
-        /// type. Components, environments, and service templates are exceptions—see the <code>components</code>,
-        /// <code>environments</code>, and <code>serviceTemplates</code> field descriptions.
+        /// type. Components, environments, and service templates return less information - see
+        /// the <code>components</code>, <code>environments</code>, and <code>serviceTemplates</code>
+        /// field descriptions.
         /// </para>
         ///  
         /// <para>
@@ -3376,6 +3594,213 @@ namespace Amazon.Proton
         public virtual GetServiceInstanceResponse EndGetServiceInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<GetServiceInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetServiceInstanceSyncStatus
+
+        /// <summary>
+        /// Get the status of the synced service instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceInstanceSyncStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetServiceInstanceSyncStatus service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstanceSyncStatus">REST API Reference for GetServiceInstanceSyncStatus Operation</seealso>
+        public virtual GetServiceInstanceSyncStatusResponse GetServiceInstanceSyncStatus(GetServiceInstanceSyncStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceInstanceSyncStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceInstanceSyncStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetServiceInstanceSyncStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetServiceInstanceSyncStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceInstanceSyncStatus operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceInstanceSyncStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstanceSyncStatus">REST API Reference for GetServiceInstanceSyncStatus Operation</seealso>
+        public virtual IAsyncResult BeginGetServiceInstanceSyncStatus(GetServiceInstanceSyncStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceInstanceSyncStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceInstanceSyncStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetServiceInstanceSyncStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetServiceInstanceSyncStatus.</param>
+        /// 
+        /// <returns>Returns a  GetServiceInstanceSyncStatusResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstanceSyncStatus">REST API Reference for GetServiceInstanceSyncStatus Operation</seealso>
+        public virtual GetServiceInstanceSyncStatusResponse EndGetServiceInstanceSyncStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetServiceInstanceSyncStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetServiceSyncBlockerSummary
+
+        /// <summary>
+        /// Get detailed data for the service sync blocker summary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceSyncBlockerSummary service method.</param>
+        /// 
+        /// <returns>The response from the GetServiceSyncBlockerSummary service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncBlockerSummary">REST API Reference for GetServiceSyncBlockerSummary Operation</seealso>
+        public virtual GetServiceSyncBlockerSummaryResponse GetServiceSyncBlockerSummary(GetServiceSyncBlockerSummaryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceSyncBlockerSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceSyncBlockerSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<GetServiceSyncBlockerSummaryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetServiceSyncBlockerSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceSyncBlockerSummary operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceSyncBlockerSummary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncBlockerSummary">REST API Reference for GetServiceSyncBlockerSummary Operation</seealso>
+        public virtual IAsyncResult BeginGetServiceSyncBlockerSummary(GetServiceSyncBlockerSummaryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceSyncBlockerSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceSyncBlockerSummaryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetServiceSyncBlockerSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetServiceSyncBlockerSummary.</param>
+        /// 
+        /// <returns>Returns a  GetServiceSyncBlockerSummaryResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncBlockerSummary">REST API Reference for GetServiceSyncBlockerSummary Operation</seealso>
+        public virtual GetServiceSyncBlockerSummaryResponse EndGetServiceSyncBlockerSummary(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetServiceSyncBlockerSummaryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetServiceSyncConfig
+
+        /// <summary>
+        /// Get detailed information for the service sync configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceSyncConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetServiceSyncConfig service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncConfig">REST API Reference for GetServiceSyncConfig Operation</seealso>
+        public virtual GetServiceSyncConfigResponse GetServiceSyncConfig(GetServiceSyncConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceSyncConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceSyncConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetServiceSyncConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetServiceSyncConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceSyncConfig operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceSyncConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncConfig">REST API Reference for GetServiceSyncConfig Operation</seealso>
+        public virtual IAsyncResult BeginGetServiceSyncConfig(GetServiceSyncConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceSyncConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceSyncConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetServiceSyncConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetServiceSyncConfig.</param>
+        /// 
+        /// <returns>Returns a  GetServiceSyncConfigResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncConfig">REST API Reference for GetServiceSyncConfig Operation</seealso>
+        public virtual GetServiceSyncConfigResponse EndGetServiceSyncConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetServiceSyncConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -6224,6 +6649,150 @@ namespace Amazon.Proton
         public virtual UpdateServicePipelineResponse EndUpdateServicePipeline(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateServicePipelineResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateServiceSyncBlocker
+
+        /// <summary>
+        /// Update the service sync blocker by resolving it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSyncBlocker service method.</param>
+        /// 
+        /// <returns>The response from the UpdateServiceSyncBlocker service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncBlocker">REST API Reference for UpdateServiceSyncBlocker Operation</seealso>
+        public virtual UpdateServiceSyncBlockerResponse UpdateServiceSyncBlocker(UpdateServiceSyncBlockerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceSyncBlockerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceSyncBlockerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateServiceSyncBlockerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateServiceSyncBlocker operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSyncBlocker operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServiceSyncBlocker
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncBlocker">REST API Reference for UpdateServiceSyncBlocker Operation</seealso>
+        public virtual IAsyncResult BeginUpdateServiceSyncBlocker(UpdateServiceSyncBlockerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceSyncBlockerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceSyncBlockerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateServiceSyncBlocker operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateServiceSyncBlocker.</param>
+        /// 
+        /// <returns>Returns a  UpdateServiceSyncBlockerResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncBlocker">REST API Reference for UpdateServiceSyncBlocker Operation</seealso>
+        public virtual UpdateServiceSyncBlockerResponse EndUpdateServiceSyncBlocker(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateServiceSyncBlockerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateServiceSyncConfig
+
+        /// <summary>
+        /// Update the Proton Ops config file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSyncConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateServiceSyncConfig service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncConfig">REST API Reference for UpdateServiceSyncConfig Operation</seealso>
+        public virtual UpdateServiceSyncConfigResponse UpdateServiceSyncConfig(UpdateServiceSyncConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceSyncConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceSyncConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateServiceSyncConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateServiceSyncConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSyncConfig operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServiceSyncConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncConfig">REST API Reference for UpdateServiceSyncConfig Operation</seealso>
+        public virtual IAsyncResult BeginUpdateServiceSyncConfig(UpdateServiceSyncConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceSyncConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceSyncConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateServiceSyncConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateServiceSyncConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateServiceSyncConfigResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncConfig">REST API Reference for UpdateServiceSyncConfig Operation</seealso>
+        public virtual UpdateServiceSyncConfigResponse EndUpdateServiceSyncConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateServiceSyncConfigResponse>(asyncResult);
         }
 
         #endregion

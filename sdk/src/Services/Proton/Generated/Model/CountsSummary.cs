@@ -89,7 +89,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property EnvironmentTemplates. 
         /// <para>
-        /// The total number of environment templates in the Amazon Web Services account.
+        /// The total number of environment templates in the Amazon Web Services account. The
+        /// <code>environmentTemplates</code> object will only contain <code>total</code> members.
         /// </para>
         /// </summary>
         public ResourceCountsSummary EnvironmentTemplates

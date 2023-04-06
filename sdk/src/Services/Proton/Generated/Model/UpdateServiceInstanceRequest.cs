@@ -51,12 +51,32 @@ namespace Amazon.Proton.Model
     /// </summary>
     public partial class UpdateServiceInstanceRequest : AmazonProtonRequest
     {
+        private string _clientToken;
         private DeploymentUpdateType _deploymentType;
         private string _name;
         private string _serviceName;
         private string _spec;
         private string _templateMajorVersion;
         private string _templateMinorVersion;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// The client token of the service instance to update.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=64)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DeploymentType. 

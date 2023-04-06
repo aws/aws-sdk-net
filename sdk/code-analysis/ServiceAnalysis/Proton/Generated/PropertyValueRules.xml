@@ -35,6 +35,12 @@
     <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.CreateComponentRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[!-~]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.CreateComponentRequest.Description</property>
     <min>0</min>
     <max>500</max>
@@ -282,6 +288,63 @@
     <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceInstanceRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[!-~]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceInstanceRequest.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceInstanceRequest.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceInstanceRequest.Spec</property>
+    <min>1</min>
+    <max>51200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceInstanceRequest.TemplateMajorVersion</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^(0|([1-9]{1}\d*))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceInstanceRequest.TemplateMinorVersion</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^(0|([1-9]{1}\d*))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceSyncConfigRequest.Branch</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceSyncConfigRequest.FilePath</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceSyncConfigRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9_.-].*/[A-Za-z0-9_.-].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceSyncConfigRequest.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.CreateServiceTemplateRequest.Description</property>
     <min>0</min>
     <max>500</max>
@@ -401,6 +464,12 @@
     <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.DeleteServiceSyncConfigRequest.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.DeleteServiceTemplateRequest.Name</property>
     <min>1</min>
     <max>100</max>
@@ -501,6 +570,36 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.GetServiceInstanceRequest.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.GetServiceInstanceSyncStatusRequest.ServiceInstanceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.GetServiceInstanceSyncStatusRequest.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.GetServiceSyncBlockerSummaryRequest.ServiceInstanceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.GetServiceSyncBlockerSummaryRequest.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.GetServiceSyncConfigRequest.ServiceName</property>
     <min>1</min>
     <max>100</max>
     <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
@@ -942,6 +1041,12 @@
     <pattern>(^$)|(^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateComponentRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[!-~]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.UpdateComponentRequest.Description</property>
     <min>0</min>
     <max>500</max>
@@ -1102,6 +1207,12 @@
     <max>51200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateServiceInstanceRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[!-~]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.UpdateServiceInstanceRequest.Name</property>
     <min>1</min>
     <max>100</max>
@@ -1152,6 +1263,40 @@
     <min>1</min>
     <max>20</max>
     <pattern>^(0|([1-9]{1}\d*))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateServiceSyncBlockerResponse.ServiceInstanceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateServiceSyncBlockerResponse.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateServiceSyncConfigRequest.Branch</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateServiceSyncConfigRequest.FilePath</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateServiceSyncConfigRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9_.-].*/[A-Za-z0-9_.-].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateServiceSyncConfigRequest.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.UpdateServiceTemplateRequest.Description</property>
@@ -1669,6 +1814,12 @@
     <pattern>[A-Za-z0-9_.-].*/[A-Za-z0-9_.-].*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.RepositorySummary.ConnectionArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.RepositorySummary.Name</property>
     <min>1</min>
     <max>100</max>
@@ -1863,6 +2014,28 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.ServiceSummary.TemplateName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ServiceSyncConfig.Branch</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ServiceSyncConfig.FilePath</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ServiceSyncConfig.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9_.-].*/[A-Za-z0-9_.-].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ServiceSyncConfig.ServiceName</property>
     <min>1</min>
     <max>100</max>
     <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
