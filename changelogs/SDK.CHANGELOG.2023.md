@@ -1,3 +1,16 @@
+### 3.7.521.0 (2023-04-06 18:24 UTC)
+* CloudFormation (3.7.105.0)
+	* Including UPDATE_COMPLETE as a failed status for DeleteStack waiter.
+* GreengrassV2 (3.7.103.0)
+	* Add support for SUCCEEDED value in coreDeviceExecutionStatus field. Documentation updates for Greengrass V2.
+* Proton (3.7.105.0)
+	* This release adds support for the AWS Proton service sync feature. Service sync enables managing an AWS Proton service (creating and updating instances) and all of it's corresponding service instances from a Git repository.
+* RDS (3.7.116.6)
+	* Adds and updates the SDK examples
+* Core 3.7.106.14
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.520.0 (2023-04-05 18:25 UTC)
 * AppRunner (3.7.105.0)
 	* App Runner adds support for seven new vCPU and memory configurations.
