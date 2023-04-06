@@ -152,12 +152,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>,
-        /// <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If
-        /// the <code>ApplyImmediately</code> parameter is disabled, then changes to the <code>EnableIAMDatabaseAuthentication</code>,
-        /// <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values are
-        /// applied during the next maintenance window. All other changes are applied immediately,
-        /// regardless of the value of the <code>ApplyImmediately</code> parameter.
+        /// Most modifications can be applied immediately or during the next scheduled maintenance
+        /// window. Some modifications, such as turning on deletion protection and changing the
+        /// master password, are applied immediately—regardless of when you choose to apply them.
         /// </para>
         ///  
         /// <para>
@@ -692,7 +689,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The version number of the database engine to which you want to upgrade. Changing this
         /// parameter results in an outage. The change is applied during the next maintenance
-        /// window unless <code>ApplyImmediately</code> is enabled. 
+        /// window unless <code>ApplyImmediately</code> is enabled.
         /// </para>
         ///  
         /// <para>

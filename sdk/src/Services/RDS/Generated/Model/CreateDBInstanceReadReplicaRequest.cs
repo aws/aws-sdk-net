@@ -357,11 +357,6 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Can only be specified if the source DB instance identifier specifies a DB instance
-        /// in another Amazon Web Services Region.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// If supplied, must match the name of an existing DBSubnetGroup.
         /// </para>
         ///  </li> <li> 
