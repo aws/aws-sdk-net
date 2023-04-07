@@ -1,3 +1,8 @@
+### 3.7.521.1 (2023-04-07 14:00 UTC)
+* Core 3.7.106.15
+	* Fixed issue with .NET Core 3.1 not using the same HttpClient cache across OS platforms.
+	* All services packages updated to require new Core
+
 ### 3.7.521.0 (2023-04-06 18:24 UTC)
 * CloudFormation (3.7.105.0)
 	* Including UPDATE_COMPLETE as a failed status for DeleteStack waiter.
