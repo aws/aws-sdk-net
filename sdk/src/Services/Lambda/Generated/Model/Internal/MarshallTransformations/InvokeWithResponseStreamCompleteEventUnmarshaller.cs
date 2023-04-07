@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FunctionUrlConfig Object
+    /// Response Unmarshaller for InvokeWithResponseStreamCompleteEvent Object
     /// </summary>  
-    public class FunctionUrlConfigUnmarshaller : IUnmarshaller<FunctionUrlConfig, XmlUnmarshallerContext>, IUnmarshaller<FunctionUrlConfig, JsonUnmarshallerContext>
+    public class InvokeWithResponseStreamCompleteEventUnmarshaller : IUnmarshaller<InvokeWithResponseStreamCompleteEvent, XmlUnmarshallerContext>, IUnmarshaller<InvokeWithResponseStreamCompleteEvent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FunctionUrlConfig IUnmarshaller<FunctionUrlConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InvokeWithResponseStreamCompleteEvent IUnmarshaller<InvokeWithResponseStreamCompleteEvent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,33 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FunctionUrlConfig Unmarshall(JsonUnmarshallerContext context)
+        public InvokeWithResponseStreamCompleteEvent Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FunctionUrlConfig unmarshalledObject = new FunctionUrlConfig();
+            InvokeWithResponseStreamCompleteEvent unmarshalledObject = new InvokeWithResponseStreamCompleteEvent();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AuthType", targetDepth))
+                if (context.TestExpression("ErrorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Cors", targetDepth))
-                {
-                    var unmarshaller = CorsUnmarshaller.Instance;
-                    unmarshalledObject.Cors = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("ErrorDetails", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("FunctionArn", targetDepth))
+                if (context.TestExpression("LogResult", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FunctionArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FunctionUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FunctionUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InvokeMode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InvokeMode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogResult = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +88,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         }
 
 
-        private static FunctionUrlConfigUnmarshaller _instance = new FunctionUrlConfigUnmarshaller();        
+        private static InvokeWithResponseStreamCompleteEventUnmarshaller _instance = new InvokeWithResponseStreamCompleteEventUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FunctionUrlConfigUnmarshaller Instance
+        public static InvokeWithResponseStreamCompleteEventUnmarshaller Instance
         {
             get
             {

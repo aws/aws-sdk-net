@@ -6865,6 +6865,922 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Lambda")]
+        public void InvokeWithResponseStreamMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = InvokeWithResponseStreamResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as InvokeWithResponseStreamResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_EC2AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("EC2AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","EC2AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_EC2ThrottledExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("EC2ThrottledException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","EC2ThrottledException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_EC2UnexpectedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("EC2UnexpectedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","EC2UnexpectedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_EFSIOExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("EFSIOException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","EFSIOException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_EFSMountConnectivityExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("EFSMountConnectivityException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","EFSMountConnectivityException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_EFSMountFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("EFSMountFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","EFSMountFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_EFSMountTimeoutExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("EFSMountTimeoutException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","EFSMountTimeoutException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_ENILimitReachedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ENILimitReachedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ENILimitReachedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_InvalidParameterValueExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidParameterValueException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidParameterValueException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_InvalidRequestContentExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidRequestContentException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidRequestContentException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_InvalidRuntimeExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidRuntimeException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidRuntimeException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_InvalidSecurityGroupIDExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSecurityGroupIDException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSecurityGroupIDException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_InvalidSubnetIDExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSubnetIDException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSubnetIDException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_InvalidZipFileExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidZipFileException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidZipFileException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_KMSAccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KMSAccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KMSAccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_KMSDisabledExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KMSDisabledException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KMSDisabledException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_KMSInvalidStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KMSInvalidStateException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KMSInvalidStateException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_KMSNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KMSNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KMSNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_RequestTooLargeExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestTooLargeException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestTooLargeException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_ResourceConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_ResourceNotReadyExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotReadyException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotReadyException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_ServiceExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_SubnetIPAddressLimitReachedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SubnetIPAddressLimitReachedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","SubnetIPAddressLimitReachedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_TooManyRequestsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_UnsupportedMediaTypeExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedMediaTypeException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedMediaTypeException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
         public void ListAliasesMarshallTest()
         {
             var operation = service_model.FindOperation("ListAliases");

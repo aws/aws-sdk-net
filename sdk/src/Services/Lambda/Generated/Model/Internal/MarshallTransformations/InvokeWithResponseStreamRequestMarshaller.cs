@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateFunctionUrlConfig Request Marshaller
+    /// InvokeWithResponseStream Request Marshaller
     /// </summary>       
-    public class CreateFunctionUrlConfigRequestMarshaller : IMarshaller<IRequest, CreateFunctionUrlConfigRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class InvokeWithResponseStreamRequestMarshaller : IMarshaller<IRequest, InvokeWithResponseStreamRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateFunctionUrlConfigRequest)input);
+            return this.Marshall((InvokeWithResponseStreamRequest)input);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateFunctionUrlConfigRequest publicRequest)
+        public IRequest Marshall(InvokeWithResponseStreamRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lambda");
             request.Headers["Content-Type"] = "application/json";
@@ -65,47 +65,37 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetQualifier())
                 request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));
-            request.ResourcePath = "/2021-10-31/functions/{FunctionName}/url";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            request.ResourcePath = "/2021-11-15/functions/{FunctionName}/response-streaming-invocations";
+            request.ContentStream =  publicRequest.Payload ?? new MemoryStream();
+            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
+                request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
+            if (request.ContentStream != null && request.ContentStream.Length == 0)
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthType())
-                {
-                    context.Writer.WritePropertyName("AuthType");
-                    context.Writer.Write(publicRequest.AuthType);
-                }
-
-                if(publicRequest.IsSetCors())
-                {
-                    context.Writer.WritePropertyName("Cors");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CorsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Cors, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInvokeMode())
-                {
-                    context.Writer.WritePropertyName("InvokeMode");
-                    context.Writer.Write(publicRequest.InvokeMode);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
             }
-
+        
+            if (publicRequest.IsSetClientContext()) 
+            {
+                request.Headers["X-Amz-Client-Context"] = publicRequest.ClientContext;
+            }
+        
+            if (publicRequest.IsSetInvocationType()) 
+            {
+                request.Headers["X-Amz-Invocation-Type"] = publicRequest.InvocationType;
+            }
+        
+            if (publicRequest.IsSetLogType()) 
+            {
+                request.Headers["X-Amz-Log-Type"] = publicRequest.LogType;
+            }
             request.UseQueryString = true;
 
             return request;
         }
-        private static CreateFunctionUrlConfigRequestMarshaller _instance = new CreateFunctionUrlConfigRequestMarshaller();        
+        private static InvokeWithResponseStreamRequestMarshaller _instance = new InvokeWithResponseStreamRequestMarshaller();        
 
-        internal static CreateFunctionUrlConfigRequestMarshaller GetInstance()
+        internal static InvokeWithResponseStreamRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +103,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateFunctionUrlConfigRequestMarshaller Instance
+        public static InvokeWithResponseStreamRequestMarshaller Instance
         {
             get
             {
