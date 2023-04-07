@@ -1,3 +1,19 @@
+### 3.7.522.0 (2023-04-07 18:26 UTC)
+* DLM (3.7.102.0)
+	* Updated timestamp format for GetLifecyclePolicy API
+* DocDB (3.7.101.0)
+	* This release adds a new parameter 'DBClusterParameterGroupName' to 'RestoreDBClusterFromSnapshot' API to associate the name of the DB cluster parameter group while performing restore.
+* FSx (3.7.102.65)
+	* Amazon FSx for Lustre now supports creating data repository associations on Persistent_1 and Scratch_2 file systems.
+* Lambda (3.7.106.0)
+	* This release adds a new Lambda InvokeWithResponseStream API to support streaming Lambda function responses. The release also adds a new InvokeMode parameter to Function Url APIs to control whether the response will be streamed or buffered.
+* QuickSight (3.7.107.0)
+	* This release has two changes: adding the OR condition to tag-based RLS rules in CreateDataSet and UpdateDataSet; adding RefreshSchedule and Incremental RefreshProperties operations for users to programmatically configure SPICE dataset ingestions.
+* RedshiftDataAPIService (3.7.102.22)
+	* Update documentation of API descriptions as needed in support of temporary credentials with IAM identity.
+* ServiceCatalog (3.7.103.3)
+	* Updates description for property
+
 ### 3.7.521.1 (2023-04-07 14:00 UTC)
 * Core 3.7.106.15
 	* Fixed issue with .NET Core 3.1 not using the same HttpClient cache across OS platforms.

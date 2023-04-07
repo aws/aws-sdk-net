@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.521.1",
+    "ProductVersion" : "3.7.522.0",
     "CoreVersion"    : "3.7.106.15",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -242,7 +242,7 @@
             "InPreview"               : false
         },
         "Lambda"               : {
-            "Version" : "3.7.105.28",
+            "Version" : "3.7.106.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.106.15"
@@ -562,7 +562,7 @@
             "InPreview"               : false
         },
         "ServiceCatalog"                  : {
-            "Version" : "3.7.103.2",
+            "Version" : "3.7.103.3",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.106.15"
@@ -1154,7 +1154,7 @@
             "InPreview"               : false
         },
         "DLM"                             : {
-            "Version" : "3.7.101.46",
+            "Version" : "3.7.102.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.106.15"
@@ -1226,7 +1226,7 @@
             "InPreview"               : false
         },
         "QuickSight"                      : {
-            "Version" : "3.7.106.21",
+            "Version" : "3.7.107.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.106.15"
@@ -1298,7 +1298,7 @@
             "InPreview"               : false
         },
         "FSx"                             : {
-            "Version" : "3.7.102.64",
+            "Version" : "3.7.102.65",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.106.15"
@@ -1354,7 +1354,7 @@
             "InPreview"               : false
         },
         "DocDB"                           : {
-            "Version" : "3.7.100.108",
+            "Version" : "3.7.101.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.106.15"
@@ -1834,7 +1834,7 @@
             "InPreview"               : false
         },
         "RedshiftDataAPIService"          : {
-            "Version" : "3.7.102.21",
+            "Version" : "3.7.102.22",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.106.15"
