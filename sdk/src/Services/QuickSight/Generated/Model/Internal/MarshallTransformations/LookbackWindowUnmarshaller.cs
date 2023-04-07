@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RowLevelPermissionTagConfiguration Object
+    /// Response Unmarshaller for LookbackWindow Object
     /// </summary>  
-    public class RowLevelPermissionTagConfigurationUnmarshaller : IUnmarshaller<RowLevelPermissionTagConfiguration, XmlUnmarshallerContext>, IUnmarshaller<RowLevelPermissionTagConfiguration, JsonUnmarshallerContext>
+    public class LookbackWindowUnmarshaller : IUnmarshaller<LookbackWindow, XmlUnmarshallerContext>, IUnmarshaller<LookbackWindow, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RowLevelPermissionTagConfiguration IUnmarshaller<RowLevelPermissionTagConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LookbackWindow IUnmarshaller<LookbackWindow, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RowLevelPermissionTagConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public LookbackWindow Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RowLevelPermissionTagConfiguration unmarshalledObject = new RowLevelPermissionTagConfiguration();
+            LookbackWindow unmarshalledObject = new LookbackWindow();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("ColumnName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColumnName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TagRuleConfigurations", targetDepth))
+                if (context.TestExpression("Size", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<List<string>, ListUnmarshaller<string, StringUnmarshaller>>(new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
-                    unmarshalledObject.TagRuleConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TagRules", targetDepth))
+                if (context.TestExpression("SizeUnit", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RowLevelPermissionTagRule, RowLevelPermissionTagRuleUnmarshaller>(RowLevelPermissionTagRuleUnmarshaller.Instance);
-                    unmarshalledObject.TagRules = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SizeUnit = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static RowLevelPermissionTagConfigurationUnmarshaller _instance = new RowLevelPermissionTagConfigurationUnmarshaller();        
+        private static LookbackWindowUnmarshaller _instance = new LookbackWindowUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RowLevelPermissionTagConfigurationUnmarshaller Instance
+        public static LookbackWindowUnmarshaller Instance
         {
             get
             {

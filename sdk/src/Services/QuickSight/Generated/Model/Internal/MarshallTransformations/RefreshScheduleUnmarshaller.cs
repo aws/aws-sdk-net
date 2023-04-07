@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RowLevelPermissionTagConfiguration Object
+    /// Response Unmarshaller for RefreshSchedule Object
     /// </summary>  
-    public class RowLevelPermissionTagConfigurationUnmarshaller : IUnmarshaller<RowLevelPermissionTagConfiguration, XmlUnmarshallerContext>, IUnmarshaller<RowLevelPermissionTagConfiguration, JsonUnmarshallerContext>
+    public class RefreshScheduleUnmarshaller : IUnmarshaller<RefreshSchedule, XmlUnmarshallerContext>, IUnmarshaller<RefreshSchedule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RowLevelPermissionTagConfiguration IUnmarshaller<RowLevelPermissionTagConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RefreshSchedule IUnmarshaller<RefreshSchedule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,45 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RowLevelPermissionTagConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public RefreshSchedule Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RowLevelPermissionTagConfiguration unmarshalledObject = new RowLevelPermissionTagConfiguration();
+            RefreshSchedule unmarshalledObject = new RefreshSchedule();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TagRuleConfigurations", targetDepth))
+                if (context.TestExpression("RefreshType", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<List<string>, ListUnmarshaller<string, StringUnmarshaller>>(new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
-                    unmarshalledObject.TagRuleConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RefreshType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TagRules", targetDepth))
+                if (context.TestExpression("ScheduleFrequency", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RowLevelPermissionTagRule, RowLevelPermissionTagRuleUnmarshaller>(RowLevelPermissionTagRuleUnmarshaller.Instance);
-                    unmarshalledObject.TagRules = unmarshaller.Unmarshall(context);
+                    var unmarshaller = RefreshFrequencyUnmarshaller.Instance;
+                    unmarshalledObject.ScheduleFrequency = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ScheduleId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScheduleId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartAfterDateTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartAfterDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +100,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static RowLevelPermissionTagConfigurationUnmarshaller _instance = new RowLevelPermissionTagConfigurationUnmarshaller();        
+        private static RefreshScheduleUnmarshaller _instance = new RefreshScheduleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RowLevelPermissionTagConfigurationUnmarshaller Instance
+        public static RefreshScheduleUnmarshaller Instance
         {
             get
             {

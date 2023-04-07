@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RowLevelPermissionTagConfiguration Object
+    /// Response Unmarshaller for RefreshConfiguration Object
     /// </summary>  
-    public class RowLevelPermissionTagConfigurationUnmarshaller : IUnmarshaller<RowLevelPermissionTagConfiguration, XmlUnmarshallerContext>, IUnmarshaller<RowLevelPermissionTagConfiguration, JsonUnmarshallerContext>
+    public class RefreshConfigurationUnmarshaller : IUnmarshaller<RefreshConfiguration, XmlUnmarshallerContext>, IUnmarshaller<RefreshConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RowLevelPermissionTagConfiguration IUnmarshaller<RowLevelPermissionTagConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RefreshConfiguration IUnmarshaller<RefreshConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RowLevelPermissionTagConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public RefreshConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RowLevelPermissionTagConfiguration unmarshalledObject = new RowLevelPermissionTagConfiguration();
+            RefreshConfiguration unmarshalledObject = new RefreshConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("IncrementalRefresh", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TagRuleConfigurations", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<List<string>, ListUnmarshaller<string, StringUnmarshaller>>(new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
-                    unmarshalledObject.TagRuleConfigurations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TagRules", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<RowLevelPermissionTagRule, RowLevelPermissionTagRuleUnmarshaller>(RowLevelPermissionTagRuleUnmarshaller.Instance);
-                    unmarshalledObject.TagRules = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IncrementalRefreshUnmarshaller.Instance;
+                    unmarshalledObject.IncrementalRefresh = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static RowLevelPermissionTagConfigurationUnmarshaller _instance = new RowLevelPermissionTagConfigurationUnmarshaller();        
+        private static RefreshConfigurationUnmarshaller _instance = new RefreshConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RowLevelPermissionTagConfigurationUnmarshaller Instance
+        public static RefreshConfigurationUnmarshaller Instance
         {
             get
             {
