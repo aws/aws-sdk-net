@@ -424,16 +424,25 @@ namespace Amazon.S3.Transfer
             get
             {
                 long length;
-                if (this.IsSetFilePath())
+                try
                 {
-                    //System.IO.
-                    FileInfo fileInfo = new FileInfo(this.FilePath);
-                    length = fileInfo.Length;
+                    if (this.IsSetFilePath())
+                    {
+                        //System.IO.
+                        FileInfo fileInfo = new FileInfo(this.FilePath);
+                        length = fileInfo.Length;
+                    }
+                    else
+                    {
+                        length = this.InputStream.Length - this.InputStream.Position;
+                    }
                 }
-                else
+                catch (NotSupportedException)
                 {
-                    length = this.InputStream.Length - this.InputStream.Position;
+                    //length is unknown
+                    length = -1;
                 }
+
 
                 return length;
             }

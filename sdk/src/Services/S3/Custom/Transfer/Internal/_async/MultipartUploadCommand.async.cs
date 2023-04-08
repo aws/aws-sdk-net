@@ -13,7 +13,10 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime;
 using Amazon.S3.Model;
+using Amazon.S3.Util;
+using Amazon.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,7 +24,9 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
+#if NETCOREAPP3_1 || NETCOREAPP3_1_OR_GREATER
+using System.Buffers;
+#endif
 namespace Amazon.S3.Transfer.Internal
 {
     internal partial class MultipartUploadCommand : BaseCommand
@@ -30,96 +35,103 @@ namespace Amazon.S3.Transfer.Internal
 
         public override async Task ExecuteAsync(CancellationToken cancellationToken)
         {
-            var initRequest = ConstructInitiateMultipartUploadRequest();
-            var initResponse = await _s3Client.InitiateMultipartUploadAsync(initRequest, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            Logger.DebugFormat("Initiated upload: {0}", initResponse.UploadId);
-
-            var pendingUploadPartTasks = new List<Task<UploadPartResponse>>();
-            
-            SemaphoreSlim localThrottler = null;
-            CancellationTokenSource internalCts = null;
-            try
+            if ( (this._fileTransporterRequest.InputStream != null && !this._fileTransporterRequest.InputStream.CanSeek) || this._fileTransporterRequest.ContentLength == -1)
             {
-                Logger.DebugFormat("Queue up the UploadPartRequests to be executed");
-                long filePosition = 0;
-                for (int i = 1; filePosition < this._contentLength; i++)
+                await UploadNonSeekableStreamAsync(this._fileTransporterRequest, cancellationToken).ConfigureAwait(false);
+            }
+            else
+            {
+                var initRequest = ConstructInitiateMultipartUploadRequest();
+                var initResponse = await _s3Client.InitiateMultipartUploadAsync(initRequest, cancellationToken)
+                    .ConfigureAwait(continueOnCapturedContext: false);
+                Logger.DebugFormat("Initiated upload: {0}", initResponse.UploadId);
+
+                var pendingUploadPartTasks = new List<Task<UploadPartResponse>>();
+
+                SemaphoreSlim localThrottler = null;
+                CancellationTokenSource internalCts = null;
+                try
                 {
-                    cancellationToken.ThrowIfCancellationRequested();
-
-                    var uploadRequest = ConstructUploadPartRequest(i, filePosition, initResponse);
-                    this._partsToUpload.Enqueue(uploadRequest);
-                    filePosition += this._partSize;
-                }
-
-                this._totalNumberOfParts = this._partsToUpload.Count;
-
-                Logger.DebugFormat("Scheduling the {0} UploadPartRequests in the queue", this._totalNumberOfParts);
-
-                internalCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
-                var concurrencyLevel = CalculateConcurrentServiceRequests();
-                localThrottler = this.AsyncThrottler == null ?
-                    // Use local throttler if global throttler is not set.
-                    // Global throttler is not set if multipart upload was not called by upload directory command
-                    // or if S3EncryptionClient is used and upload directory command doesn't the global throttler
-                    // so that for each file, parts are serially uploaded CalculateConcurrencyLevel() will return 1.
-                    new SemaphoreSlim(concurrencyLevel) :
-                    // Use the global throttler that is shared by all concurrent file uploads.                              
-                    this.AsyncThrottler;
-
-                foreach (var uploadRequest in _partsToUpload)
-                {
-                    await localThrottler.WaitAsync(cancellationToken)
-                        .ConfigureAwait(continueOnCapturedContext: false);
-
-                    cancellationToken.ThrowIfCancellationRequested();
-                    if (internalCts.IsCancellationRequested)
+                    Logger.DebugFormat("Queue up the UploadPartRequests to be executed");
+                    long filePosition = 0;
+                    for (int i = 1; filePosition < this._contentLength; i++)
                     {
-                        // Operation cancelled as one of the UploadParts requests failed with an exception,
-                        // don't schedule any more UploadPart tasks.
-                        // Don't throw an OperationCanceledException here as we want to process the 
-                        // responses and throw the original exception.
-                        break;
+                        cancellationToken.ThrowIfCancellationRequested();
+
+                        var uploadRequest = ConstructUploadPartRequest(i, filePosition, initResponse);
+                        this._partsToUpload.Enqueue(uploadRequest);
+                        filePosition += this._partSize;
                     }
 
-                    var task = UploadPartAsync(uploadRequest, internalCts, localThrottler);                    
-                    pendingUploadPartTasks.Add(task);
+                    this._totalNumberOfParts = this._partsToUpload.Count;
+
+                    Logger.DebugFormat("Scheduling the {0} UploadPartRequests in the queue", this._totalNumberOfParts);
+
+                    internalCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+                    var concurrencyLevel = CalculateConcurrentServiceRequests();
+                    localThrottler = this.AsyncThrottler == null ?
+                        // Use local throttler if global throttler is not set.
+                        // Global throttler is not set if multipart upload was not called by upload directory command
+                        // or if S3EncryptionClient is used and upload directory command doesn't the global throttler
+                        // so that for each file, parts are serially uploaded CalculateConcurrencyLevel() will return 1.
+                        new SemaphoreSlim(concurrencyLevel) :
+                        // Use the global throttler that is shared by all concurrent file uploads.                              
+                        this.AsyncThrottler;
+
+                    foreach (var uploadRequest in _partsToUpload)
+                    {
+                        await localThrottler.WaitAsync(cancellationToken)
+                            .ConfigureAwait(continueOnCapturedContext: false);
+
+                        cancellationToken.ThrowIfCancellationRequested();
+                        if (internalCts.IsCancellationRequested)
+                        {
+                            // Operation cancelled as one of the UploadParts requests failed with an exception,
+                            // don't schedule any more UploadPart tasks.
+                            // Don't throw an OperationCanceledException here as we want to process the 
+                            // responses and throw the original exception.
+                            break;
+                        }
+
+                        var task = UploadPartAsync(uploadRequest, internalCts, localThrottler);
+                        pendingUploadPartTasks.Add(task);
+                    }
+
+                    Logger.DebugFormat("Waiting for upload part requests to complete. ({0})", initResponse.UploadId);
+                    _uploadResponses = await WhenAllOrFirstExceptionAsync(pendingUploadPartTasks, cancellationToken)
+                        .ConfigureAwait(continueOnCapturedContext: false);
+
+                    Logger.DebugFormat("Beginning completing multipart. ({0})", initResponse.UploadId);
+                    var compRequest = ConstructCompleteMultipartUploadRequest(initResponse);
+                    await this._s3Client.CompleteMultipartUploadAsync(compRequest, cancellationToken)
+                        .ConfigureAwait(continueOnCapturedContext: false);
+                    Logger.DebugFormat("Done completing multipart. ({0})", initResponse.UploadId);
+
                 }
-
-                Logger.DebugFormat("Waiting for upload part requests to complete. ({0})", initResponse.UploadId);
-                _uploadResponses = await WhenAllOrFirstExceptionAsync(pendingUploadPartTasks, cancellationToken)
-                    .ConfigureAwait(continueOnCapturedContext: false);
-
-                Logger.DebugFormat("Beginning completing multipart. ({0})", initResponse.UploadId);
-                var compRequest = ConstructCompleteMultipartUploadRequest(initResponse);
-                await this._s3Client.CompleteMultipartUploadAsync(compRequest, cancellationToken)
-                    .ConfigureAwait(continueOnCapturedContext: false);
-                Logger.DebugFormat("Done completing multipart. ({0})", initResponse.UploadId);
-
-            }
-            catch (Exception e)
-            {
-                Logger.Error(e, "Exception while uploading. ({0})", initResponse.UploadId);
-                // Can't do async invocation in the catch block, doing cleanup synchronously.
-                Cleanup(initResponse.UploadId, pendingUploadPartTasks);
-                throw;
-            }
-            finally
-            {                
-                if (internalCts!= null)                
-                    internalCts.Dispose();
-                
-                if (localThrottler != null && localThrottler!=this.AsyncThrottler)
-                    localThrottler.Dispose();
-
-                if (this._fileTransporterRequest.InputStream != null && !this._fileTransporterRequest.IsSetFilePath() && this._fileTransporterRequest.AutoCloseStream)
+                catch (Exception e)
                 {
-                    this._fileTransporterRequest.InputStream.Dispose();
+                    Logger.Error(e, "Exception while uploading. ({0})", initResponse.UploadId);
+                    // Can't do async invocation in the catch block, doing cleanup synchronously.
+                    Cleanup(initResponse.UploadId, pendingUploadPartTasks);
+                    throw;
                 }
-                if (Logger != null)
+                finally
                 {
-                    Logger.Flush();
-                }
+                    if (internalCts != null)
+                        internalCts.Dispose();
+
+                    if (localThrottler != null && localThrottler != this.AsyncThrottler)
+                        localThrottler.Dispose();
+
+                    if (this._fileTransporterRequest.InputStream != null && !this._fileTransporterRequest.IsSetFilePath() && this._fileTransporterRequest.AutoCloseStream)
+                    {
+                        this._fileTransporterRequest.InputStream.Dispose();
+                    }
+                    if (Logger != null)
+                    {
+                        Logger.Flush();
+                    }
+                } 
             }
         }
 
@@ -176,6 +188,109 @@ namespace Amazon.S3.Transfer.Internal
             catch (Exception e)
             {
                 Logger.InfoFormat("Error attempting to abort multipart for key {0}: {1}", this._fileTransporterRequest.Key, e.Message);
+            }
+        }
+        private async Task UploadNonSeekableStreamAsync(TransferUtilityUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+
+            int READ_BUFFER_SIZE = this._s3Client.Config.BufferSize;
+
+            var initiateRequest = new InitiateMultipartUploadRequest()
+            {
+                BucketName = request.BucketName,
+                Key = request.Key
+            };
+
+            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)initiateRequest).AddBeforeRequestHandler((o, args) =>
+            {
+                WebServiceRequestEventArgs wsArgs = args as WebServiceRequestEventArgs;
+                if (wsArgs != null)
+                {
+                    string currentUserAgent = wsArgs.Headers[AWSSDKUtils.UserAgentHeader];
+                    wsArgs.Headers[AWSSDKUtils.UserAgentHeader] =
+                        currentUserAgent + " TransferManager/UploadNonSeekableStream";
+                }
+            });
+            var initiateResponse = await _s3Client.InitiateMultipartUploadAsync(initiateRequest).ConfigureAwait(false);
+
+            try
+            {
+                var partETags = new List<PartETag>();
+
+#if NETCOREAPP3_1 || NETCOREAPP3_1_OR_GREATER
+                var readBuffer = ArrayPool<byte>.Shared.Rent(READ_BUFFER_SIZE);
+                var partBuffer = ArrayPool<byte>.Shared.Rent((int)S3Constants.MinPartSize + (READ_BUFFER_SIZE) );
+#else
+                var readBuffer = new byte[READ_BUFFER_SIZE];
+                var partBuffer = new byte[(int)S3Constants.MinPartSize + (READ_BUFFER_SIZE)];
+#endif
+                MemoryStream nextUploadBuffer = new MemoryStream(partBuffer);
+                using (var stream = request.InputStream)
+                {
+                    try
+                    {
+                        int partNumber = 1;
+                        int readBytesCount;
+                        while (true)
+                        {
+                            readBytesCount = await stream.ReadAsync(readBuffer, 0, readBuffer.Length).ConfigureAwait(false);
+                            await nextUploadBuffer.WriteAsync(readBuffer, 0, readBytesCount).ConfigureAwait(false);
+                            if (nextUploadBuffer.Position > S3Constants.MinPartSize || readBytesCount == 0)
+                            {
+                                bool isLastPart = readBytesCount == 0;
+                                var partSize = nextUploadBuffer.Position;
+                                nextUploadBuffer.Position = 0;
+                                var partResponse = await _s3Client.UploadPartAsync(new UploadPartRequest()
+                                {
+                                    BucketName = request.BucketName,
+                                    Key = request.Key,
+                                    UploadId = initiateResponse.UploadId,
+                                    InputStream = nextUploadBuffer,
+                                    PartSize = partSize,
+                                    PartNumber = partNumber,
+                                    IsLastPart = isLastPart
+                                }).ConfigureAwait(false);
+                                Logger.DebugFormat($"Uploaded part {partNumber}. (Last part = {isLastPart}, Part size = {partSize}, Upload Id: {initiateResponse.UploadId}");
+                                partETags.Add(new PartETag { PartNumber = partResponse.PartNumber, ETag = partResponse.ETag });
+                                partNumber++;
+                                nextUploadBuffer = new MemoryStream(partBuffer);
+                            }
+                            if(readBytesCount == 0)
+                            {
+                                break;
+                            }
+                        }
+                    }
+                    finally
+                    {
+
+#if NETCOREAPP3_1 || NETCOREAPP3_1_OR_GREATER
+                        ArrayPool<byte>.Shared.Return(partBuffer);
+                        ArrayPool<byte>.Shared.Return(readBuffer);
+#endif  
+                    }
+                    await _s3Client.CompleteMultipartUploadAsync(new CompleteMultipartUploadRequest()
+                    {
+                        BucketName = request.BucketName,
+                        Key = request.Key,
+                        UploadId = initiateResponse.UploadId,
+                        PartETags = partETags
+                    }).ConfigureAwait(false);
+                    Logger.DebugFormat($"Completed multi part upload. (Part count: {partETags.Count}, Upload Id:" +
+                    $"{initiateResponse.UploadId})");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                await _s3Client.AbortMultipartUploadAsync(new AbortMultipartUploadRequest()
+                {
+                    BucketName = request.BucketName,
+                    Key = request.Key,
+                    UploadId = initiateResponse.UploadId
+                }).ConfigureAwait(false);
+                Logger.Error(ex, ex.Message);
+                throw;
             }
         }
     }
