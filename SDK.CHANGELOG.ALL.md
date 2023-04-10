@@ -1,3 +1,20 @@
+### 3.7.523.0 (2023-04-10 18:25 UTC)
+* Connect (3.7.120.0)
+	* This release adds the ability to configure an agent's routing profile to receive contacts from multiple channels at the same time via extending the UpdateRoutingProfileConcurrency, CreateRoutingProfile and DescribeRoutingProfile APIs.
+* ECS (3.7.106.0)
+	* This release adds support for enabling FIPS compliance on Amazon ECS Fargate tasks
+* MarketplaceCatalog (3.7.102.0)
+	* Added three new APIs to support resource sharing: GetResourcePolicy, PutResourcePolicy, and DeleteResourcePolicy. Added new OwnershipType field to ListEntities request to let users filter on entities that are shared with them. Increased max page size of ListEntities response from 20 to 50 results.
+* MediaConvert (3.7.109.0)
+	* AWS Elemental MediaConvert SDK now supports conversion of 608 paint-on captions to pop-on captions for SCC sources.
+* Omics (3.7.102.0)
+	* Remove unexpected API changes.
+* Rekognition (3.7.103.0)
+	* This release adds support for Face Liveness APIs in Amazon Rekognition. Updates UpdateStreamProcessor to return ResourceInUseException Exception. Minor updates to API documentation.
+* Core 3.7.106.16
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.522.0 (2023-04-07 18:26 UTC)
 * DLM (3.7.102.0)
 	* Updated timestamp format for GetLifecyclePolicy API

@@ -32,7 +32,7 @@ namespace Amazon.MemoryDB
     public partial class AmazonMemoryDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.64");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.65");
 
         private string _userAgent = UserAgentString;
 
