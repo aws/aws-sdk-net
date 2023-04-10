@@ -30,6 +30,11 @@ namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
     /// An error occurred during validation.
+    /// 
+    ///  
+    /// <para>
+    /// HTTP status code: 422
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

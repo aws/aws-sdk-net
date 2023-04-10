@@ -29,20 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// This is the response object from the ListTagsForResource operation.
+    /// Container for the parameters to the DeleteResourcePolicy operation.
+    /// Deletes a resource-based policy on an Entity that is identified by its resource ARN.
     /// </summary>
-    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
+    public partial class DeleteResourcePolicyRequest : AmazonMarketplaceCatalogRequest
     {
         private string _resourceArn;
-        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Required. The ARN associated with the resource you want to list tags on.
+        /// The Amazon Resource Name (ARN) of the Entity resource that is associated with the
+        /// resource policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -53,26 +54,6 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetResourceArn()
         {
             return this._resourceArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// Required. A list of objects specifying each key name and value. Number of objects
-        /// allowed: 1-50.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=200)]
-        public List<Tag> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

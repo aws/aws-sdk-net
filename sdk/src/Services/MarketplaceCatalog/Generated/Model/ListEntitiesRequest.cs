@@ -39,6 +39,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private List<Filter> _filterList = new List<Filter>();
         private int? _maxResults;
         private string _nextToken;
+        private OwnershipType _ownershipType;
         private Sort _sort;
 
         /// <summary>
@@ -106,7 +107,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// the default value is 20.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=20)]
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -136,6 +137,21 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnershipType.
+        /// </summary>
+        public OwnershipType OwnershipType
+        {
+            get { return this._ownershipType; }
+            set { this._ownershipType = value; }
+        }
+
+        // Check to see if OwnershipType property is set
+        internal bool IsSetOwnershipType()
+        {
+            return this._ownershipType != null;
         }
 
         /// <summary>
