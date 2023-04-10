@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateStreamProcessor operation
+    /// Response Unmarshaller for CreateFaceLivenessSession operation
     /// </summary>  
-    public class UpdateStreamProcessorResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateFaceLivenessSessionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,19 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateStreamProcessorResponse response = new UpdateStreamProcessorResponse();
+            CreateFaceLivenessSessionResponse response = new CreateFaceLivenessSessionResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("SessionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SessionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -85,14 +96,6 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 {
                     return ProvisionedThroughputExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
-                {
-                    return ResourceInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -101,9 +104,9 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             return new AmazonRekognitionException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateStreamProcessorResponseUnmarshaller _instance = new UpdateStreamProcessorResponseUnmarshaller();        
+        private static CreateFaceLivenessSessionResponseUnmarshaller _instance = new CreateFaceLivenessSessionResponseUnmarshaller();        
 
-        internal static UpdateStreamProcessorResponseUnmarshaller GetInstance()
+        internal static CreateFaceLivenessSessionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -111,7 +114,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateStreamProcessorResponseUnmarshaller Instance
+        public static CreateFaceLivenessSessionResponseUnmarshaller Instance
         {
             get
             {

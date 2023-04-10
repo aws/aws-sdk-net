@@ -64,6 +64,24 @@
     <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.CreateFaceLivenessSessionRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.CreateFaceLivenessSessionRequest.KmsKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.CreateFaceLivenessSessionResponse.SessionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateProjectRequest.ProjectName</property>
     <min>1</min>
     <max>255</max>
@@ -336,6 +354,23 @@
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetFaceDetectionResponse.NextToken</property>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetFaceLivenessSessionResultsRequest.SessionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetFaceLivenessSessionResultsResponse.Confidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetFaceLivenessSessionResultsResponse.SessionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetFaceSearchRequest.JobId</property>
@@ -864,6 +899,11 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.AuditImage.Bytes</property>
+    <min>1</min>
+    <max>204800</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.Beard.Confidence</property>
     <min>0</min>
     <max>100</max>
@@ -925,6 +965,11 @@
     <property>Amazon.Rekognition.Model.CoversBodyPart.Confidence</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.CreateFaceLivenessSessionRequestSettings.AuditImagesLimit</property>
+    <min>0</min>
+    <max>4</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CustomLabel.Confidence</property>
@@ -1152,6 +1197,17 @@
   <property-value-rule>
     <property>Amazon.Rekognition.Model.LabelDetection.StartTimestampMillis</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.LivenessOutputConfig.S3Bucket</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[0-9A-Za-z\.\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.LivenessOutputConfig.S3KeyPrefix</property>
+    <max>950</max>
+    <pattern>\S*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ModerationLabel.Confidence</property>
