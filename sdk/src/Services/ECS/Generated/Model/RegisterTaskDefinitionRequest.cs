@@ -192,8 +192,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is only supported for tasks hosted on Fargate using the following platform
-        /// versions:
+        /// For tasks using the Fargate launch type, the task requires the following platforms:
         /// </para>
         ///  <ul> <li> 
         /// <para>

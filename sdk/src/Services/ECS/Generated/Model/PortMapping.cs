@@ -247,7 +247,7 @@ namespace Amazon.ECS.Model
         ///  </li> <li> 
         /// <para>
         /// For containers in a task with the <code>bridge</code> network mode, the Amazon ECS
-        /// agent finds open ports on the host and automaticaly binds them to the container ports.
+        /// agent finds open ports on the host and automatically binds them to the container ports.
         /// This is a dynamic mapping strategy.
         /// </para>
         ///  </li> </ul> 

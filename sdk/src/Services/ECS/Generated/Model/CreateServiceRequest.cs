@@ -328,9 +328,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableExecuteCommand. 
         /// <para>
-        /// Determines whether the execute command functionality is enabled for the service. If
-        /// <code>true</code>, this enables execute command functionality on all containers in
-        /// the service tasks.
+        /// Determines whether the execute command functionality is turned on for the service.
+        /// If <code>true</code>, this enables execute command functionality on all containers
+        /// in the service tasks.
         /// </para>
         /// </summary>
         public bool EnableExecuteCommand
@@ -836,6 +836,11 @@ namespace Amazon.ECS.Model
         /// <para>
         /// A task definition must be specified if the service uses either the <code>ECS</code>
         /// or <code>CODE_DEPLOY</code> deployment controllers.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about deployment types, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+        /// ECS deployment types</a>.
         /// </para>
         /// </summary>
         public string TaskDefinition

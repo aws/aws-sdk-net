@@ -1950,7 +1950,7 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// For information about required permissions and considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.htm">Using
+        /// For information about required permissions and considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Using
         /// Amazon ECS Exec for debugging</a> in the <i>Amazon ECS Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -1990,7 +1990,7 @@ namespace Amazon.ECS
         ///  </li> <li> 
         /// <para>
         ///  There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for
-        /// for Systems Manager Session Manager
+        /// Systems Manager Session Manager
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2015,7 +2015,7 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// For information about required permissions and considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.htm">Using
+        /// For information about required permissions and considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Using
         /// Amazon ECS Exec for debugging</a> in the <i>Amazon ECS Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -2058,7 +2058,7 @@ namespace Amazon.ECS
         ///  </li> <li> 
         /// <para>
         ///  There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for
-        /// for Systems Manager Session Manager
+        /// Systems Manager Session Manager
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2761,9 +2761,9 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
-        /// If you change the account setting for the root user, the default settings for all
-        /// of the users and roles that no individual account setting was specified are reset
-        /// for. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
+        /// If you change the root user account setting, the default settings are reset for users
+        /// and roles that do not have specified individual account settings. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
         /// Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
@@ -2780,7 +2780,7 @@ namespace Amazon.ECS
         /// <para>
         /// When <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
         /// limit for any new container instances that support the feature is changed. If <code>awsvpcTrunking</code>
-        /// is enabled, any new container instances that support the feature are launched have
+        /// is turned on, any new container instances that support the feature are launched have
         /// the increased ENI limits available to them. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic
         /// Network Interface Trunking</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
@@ -2788,9 +2788,10 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// When <code>containerInsights</code> is specified, the default setting indicating whether
-        /// CloudWatch Container Insights is enabled for your clusters is changed. If <code>containerInsights</code>
-        /// is enabled, any new clusters that are created will have Container Insights enabled
-        /// unless you disable it during cluster creation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
+        /// Amazon Web Services CloudWatch Container Insights is turned on for your clusters is
+        /// changed. If <code>containerInsights</code> is turned on, any new clusters that are
+        /// created will have Container Insights turned on unless you disable it during cluster
+        /// creation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
         /// Container Insights</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2818,9 +2819,9 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
-        /// If you change the account setting for the root user, the default settings for all
-        /// of the users and roles that no individual account setting was specified are reset
-        /// for. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
+        /// If you change the root user account setting, the default settings are reset for users
+        /// and roles that do not have specified individual account settings. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
         /// Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
@@ -2837,7 +2838,7 @@ namespace Amazon.ECS
         /// <para>
         /// When <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
         /// limit for any new container instances that support the feature is changed. If <code>awsvpcTrunking</code>
-        /// is enabled, any new container instances that support the feature are launched have
+        /// is turned on, any new container instances that support the feature are launched have
         /// the increased ENI limits available to them. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic
         /// Network Interface Trunking</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
@@ -2845,9 +2846,10 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// When <code>containerInsights</code> is specified, the default setting indicating whether
-        /// CloudWatch Container Insights is enabled for your clusters is changed. If <code>containerInsights</code>
-        /// is enabled, any new clusters that are created will have Container Insights enabled
-        /// unless you disable it during cluster creation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
+        /// Amazon Web Services CloudWatch Container Insights is turned on for your clusters is
+        /// changed. If <code>containerInsights</code> is turned on, any new clusters that are
+        /// created will have Container Insights turned on unless you disable it during cluster
+        /// creation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
         /// Container Insights</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4810,7 +4812,7 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
-        /// Task-protection, by default, expires after 2 hours at which point Amazon ECS unsets
+        /// Task-protection, by default, expires after 2 hours at which point Amazon ECS clears
         /// the <code>protectionEnabled</code> property making the task eligible for termination
         /// by a subsequent scale-in event.
         /// </para>
@@ -4884,7 +4886,7 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
-        /// Task-protection, by default, expires after 2 hours at which point Amazon ECS unsets
+        /// Task-protection, by default, expires after 2 hours at which point Amazon ECS clears
         /// the <code>protectionEnabled</code> property making the task eligible for termination
         /// by a subsequent scale-in event.
         /// </para>
