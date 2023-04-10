@@ -79,7 +79,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property WaitMinutes. Required for setting up a job to use queue
         /// hopping. Minimum wait time in minutes until the job can hop to the destination queue.
-        /// Valid range is 1 to 1440 minutes, inclusive.
+        /// Valid range is 1 to 4320 minutes, inclusive.
         /// </summary>
         public int WaitMinutes
         {
