@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MediaConcurrency Marshaller
+    /// CrossChannelBehavior Marshaller
     /// </summary>
-    public class MediaConcurrencyMarshaller : IRequestMarshaller<MediaConcurrency, JsonMarshallerContext> 
+    public class CrossChannelBehaviorMarshaller : IRequestMarshaller<CrossChannelBehavior, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MediaConcurrency requestObject, JsonMarshallerContext context)
+        public void Marshall(CrossChannelBehavior requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetChannel())
+            if(requestObject.IsSetBehaviorType())
             {
-                context.Writer.WritePropertyName("Channel");
-                context.Writer.Write(requestObject.Channel);
-            }
-
-            if(requestObject.IsSetConcurrency())
-            {
-                context.Writer.WritePropertyName("Concurrency");
-                context.Writer.Write(requestObject.Concurrency);
-            }
-
-            if(requestObject.IsSetCrossChannelBehavior())
-            {
-                context.Writer.WritePropertyName("CrossChannelBehavior");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CrossChannelBehaviorMarshaller.Instance;
-                marshaller.Marshall(requestObject.CrossChannelBehavior, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("BehaviorType");
+                context.Writer.Write(requestObject.BehaviorType);
             }
 
         }
@@ -73,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MediaConcurrencyMarshaller Instance = new MediaConcurrencyMarshaller();
+        public readonly static CrossChannelBehaviorMarshaller Instance = new CrossChannelBehaviorMarshaller();
 
     }
 }

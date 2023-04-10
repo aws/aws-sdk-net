@@ -67,7 +67,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The timestamp, in UNIX Epoch time format, at which to end the reporting interval for
         /// the retrieval of historical metrics data. The time must be later than the start time
-        /// timestamp.
+        /// timestamp. It cannot be later than the current timestamp.
         /// </para>
         ///  
         /// <para>
@@ -450,6 +450,12 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile
         /// </para>
+        ///  
+        /// <para>
+        /// Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+        /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code>
+        /// (for "Less than"). 
+        /// </para>
         ///  </dd> <dt>SUM_CONTACTS_ABANDONED_IN_X</dt> <dd> 
         /// <para>
         /// Unit: Count
@@ -457,6 +463,12 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile
+        /// </para>
+        ///  
+        /// <para>
+        /// Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+        /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code>
+        /// (for "Less than"). 
         /// </para>
         ///  </dd> <dt>SUM_CONTACTS_DISCONNECTED </dt> <dd> 
         /// <para>

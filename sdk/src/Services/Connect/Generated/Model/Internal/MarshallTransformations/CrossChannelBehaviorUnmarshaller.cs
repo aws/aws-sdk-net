@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MediaConcurrency Object
+    /// Response Unmarshaller for CrossChannelBehavior Object
     /// </summary>  
-    public class MediaConcurrencyUnmarshaller : IUnmarshaller<MediaConcurrency, XmlUnmarshallerContext>, IUnmarshaller<MediaConcurrency, JsonUnmarshallerContext>
+    public class CrossChannelBehaviorUnmarshaller : IUnmarshaller<CrossChannelBehavior, XmlUnmarshallerContext>, IUnmarshaller<CrossChannelBehavior, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MediaConcurrency IUnmarshaller<MediaConcurrency, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CrossChannelBehavior IUnmarshaller<CrossChannelBehavior, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MediaConcurrency Unmarshall(JsonUnmarshallerContext context)
+        public CrossChannelBehavior Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MediaConcurrency unmarshalledObject = new MediaConcurrency();
+            CrossChannelBehavior unmarshalledObject = new CrossChannelBehavior();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Channel", targetDepth))
+                if (context.TestExpression("BehaviorType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Channel = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Concurrency", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Concurrency = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CrossChannelBehavior", targetDepth))
-                {
-                    var unmarshaller = CrossChannelBehaviorUnmarshaller.Instance;
-                    unmarshalledObject.CrossChannelBehavior = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BehaviorType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static MediaConcurrencyUnmarshaller _instance = new MediaConcurrencyUnmarshaller();        
+        private static CrossChannelBehaviorUnmarshaller _instance = new CrossChannelBehaviorUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MediaConcurrencyUnmarshaller Instance
+        public static CrossChannelBehaviorUnmarshaller Instance
         {
             get
             {
