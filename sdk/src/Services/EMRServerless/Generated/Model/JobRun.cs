@@ -40,6 +40,7 @@ namespace Amazon.EMRServerless.Model
         private DateTime? _createdAt;
         private string _createdBy;
         private string _executionRole;
+        private long? _executionTimeoutMinutes;
         private JobDriver _jobDriver;
         private string _jobRunId;
         private string _name;
@@ -163,6 +164,26 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetExecutionRole()
         {
             return this._executionRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionTimeoutMinutes. 
+        /// <para>
+        /// Maximum duration for the job run to run. If the job run runs beyond this duration,
+        /// it will be automatically cancelled.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1000000)]
+        public long ExecutionTimeoutMinutes
+        {
+            get { return this._executionTimeoutMinutes.GetValueOrDefault(); }
+            set { this._executionTimeoutMinutes = value; }
+        }
+
+        // Check to see if ExecutionTimeoutMinutes property is set
+        internal bool IsSetExecutionTimeoutMinutes()
+        {
+            return this._executionTimeoutMinutes.HasValue; 
         }
 
         /// <summary>

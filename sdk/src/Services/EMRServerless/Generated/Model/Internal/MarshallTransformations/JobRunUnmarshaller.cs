@@ -100,6 +100,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("executionTimeoutMinutes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionTimeoutMinutes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobDriver", targetDepth))
                 {
                     var unmarshaller = JobDriverUnmarshaller.Instance;

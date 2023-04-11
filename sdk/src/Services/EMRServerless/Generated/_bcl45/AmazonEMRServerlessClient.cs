@@ -306,7 +306,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/CancelJobRun">REST API Reference for CancelJobRun Operation</seealso>
         public virtual CancelJobRunResponse CancelJobRun(CancelJobRunRequest request)
@@ -335,7 +335,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/CancelJobRun">REST API Reference for CancelJobRun Operation</seealso>
         public virtual Task<CancelJobRunResponse> CancelJobRunAsync(CancelJobRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -369,7 +369,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
@@ -402,7 +402,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -433,7 +433,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
@@ -463,7 +463,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -493,7 +493,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual GetApplicationResponse GetApplication(GetApplicationRequest request)
@@ -522,7 +522,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual Task<GetApplicationResponse> GetApplicationAsync(GetApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -552,7 +552,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/GetDashboardForJobRun">REST API Reference for GetDashboardForJobRun Operation</seealso>
         public virtual GetDashboardForJobRunResponse GetDashboardForJobRun(GetDashboardForJobRunRequest request)
@@ -581,7 +581,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/GetDashboardForJobRun">REST API Reference for GetDashboardForJobRun Operation</seealso>
         public virtual Task<GetDashboardForJobRunResponse> GetDashboardForJobRunAsync(GetDashboardForJobRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -611,7 +611,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/GetJobRun">REST API Reference for GetJobRun Operation</seealso>
         public virtual GetJobRunResponse GetJobRun(GetJobRunRequest request)
@@ -640,7 +640,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/GetJobRun">REST API Reference for GetJobRun Operation</seealso>
         public virtual Task<GetJobRunResponse> GetJobRunAsync(GetJobRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -667,7 +667,7 @@ namespace Amazon.EMRServerless
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
@@ -693,7 +693,7 @@ namespace Amazon.EMRServerless
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -720,7 +720,7 @@ namespace Amazon.EMRServerless
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/ListJobRuns">REST API Reference for ListJobRuns Operation</seealso>
         public virtual ListJobRunsResponse ListJobRuns(ListJobRunsRequest request)
@@ -746,7 +746,7 @@ namespace Amazon.EMRServerless
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/ListJobRuns">REST API Reference for ListJobRuns Operation</seealso>
         public virtual Task<ListJobRunsResponse> ListJobRunsAsync(ListJobRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -776,7 +776,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -805,7 +805,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -838,7 +838,7 @@ namespace Amazon.EMRServerless
         /// The maximum number of resources per account has been reached.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/StartApplication">REST API Reference for StartApplication Operation</seealso>
         public virtual StartApplicationResponse StartApplication(StartApplicationRequest request)
@@ -870,7 +870,7 @@ namespace Amazon.EMRServerless
         /// The maximum number of resources per account has been reached.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/StartApplication">REST API Reference for StartApplication Operation</seealso>
         public virtual Task<StartApplicationResponse> StartApplicationAsync(StartApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -904,7 +904,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/StartJobRun">REST API Reference for StartJobRun Operation</seealso>
         public virtual StartJobRunResponse StartJobRun(StartJobRunRequest request)
@@ -937,7 +937,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/StartJobRun">REST API Reference for StartJobRun Operation</seealso>
         public virtual Task<StartJobRunResponse> StartJobRunAsync(StartJobRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -968,7 +968,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/StopApplication">REST API Reference for StopApplication Operation</seealso>
         public virtual StopApplicationResponse StopApplication(StopApplicationRequest request)
@@ -998,7 +998,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/StopApplication">REST API Reference for StopApplication Operation</seealso>
         public virtual Task<StopApplicationResponse> StopApplicationAsync(StopApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1016,11 +1016,12 @@ namespace Amazon.EMRServerless
 
 
         /// <summary>
-        /// Assigns tags to resources. A tag is a label that you assign to an AWS resource. Each
-        /// tag consists of a key and an optional value, both of which you define. Tags enable
-        /// you to categorize your AWS resources by attributes such as purpose, owner, or environment.
-        /// When you have many resources of the same type, you can quickly identify a specific
-        /// resource based on the tags you've assigned to it.
+        /// Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services
+        /// resource. Each tag consists of a key and an optional value, both of which you define.
+        /// Tags enable you to categorize your Amazon Web Services resources by attributes such
+        /// as purpose, owner, or environment. When you have many resources of the same type,
+        /// you can quickly identify a specific resource based on the tags you've assigned to
+        /// it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1032,7 +1033,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -1046,11 +1047,12 @@ namespace Amazon.EMRServerless
 
 
         /// <summary>
-        /// Assigns tags to resources. A tag is a label that you assign to an AWS resource. Each
-        /// tag consists of a key and an optional value, both of which you define. Tags enable
-        /// you to categorize your AWS resources by attributes such as purpose, owner, or environment.
-        /// When you have many resources of the same type, you can quickly identify a specific
-        /// resource based on the tags you've assigned to it.
+        /// Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services
+        /// resource. Each tag consists of a key and an optional value, both of which you define.
+        /// Tags enable you to categorize your Amazon Web Services resources by attributes such
+        /// as purpose, owner, or environment. When you have many resources of the same type,
+        /// you can quickly identify a specific resource based on the tags you've assigned to
+        /// it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1065,7 +1067,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1095,7 +1097,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -1124,7 +1126,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1155,7 +1157,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
@@ -1185,7 +1187,7 @@ namespace Amazon.EMRServerless
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
