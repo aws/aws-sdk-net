@@ -73,11 +73,12 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The Amazon Web Services account ID that's associated with the registry that contains
-        /// the image to delete. If you do not specify a registry, the default public registry
-        /// is assumed.
+        /// The Amazon Web Services account ID, or registry alias, that's associated with the
+        /// registry that contains the image to delete. If you do not specify a registry, the
+        /// default public registry is assumed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=50)]
         public string RegistryId
         {
             get { return this._registryId; }
