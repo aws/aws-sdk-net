@@ -83,7 +83,7 @@ namespace Amazon.WAFV2
     /// <para>
     /// For regional applications, you can use any of the endpoints in the list. A regional
     /// application can be an Application Load Balancer (ALB), an Amazon API Gateway REST
-    /// API, an AppSync GraphQL API, a Amazon Cognito user pool, or an App Runner service.
+    /// API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service.
     /// 
     /// </para>
     ///  </li> <li> 
@@ -337,7 +337,7 @@ namespace Amazon.WAFV2
         /// <summary>
         /// Associates a web ACL with a regional application resource, to protect the resource.
         /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway
-        /// REST API, an AppSync GraphQL API, a Amazon Cognito user pool, or an App Runner service.
+        /// REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service.
         /// 
         /// 
         ///  
@@ -345,7 +345,8 @@ namespace Amazon.WAFV2
         /// For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution
         /// configuration. To associate a web ACL, in the CloudFront call <code>UpdateDistribution</code>,
         /// set the web ACL ID to the Amazon Resource Name (ARN) of the web ACL. For information,
-        /// see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
+        /// see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+        /// in the <i>Amazon CloudFront Developer Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -470,7 +471,8 @@ namespace Amazon.WAFV2
         /// rule type, to reflect the relative cost of each rule. Simple rules that cost little
         /// to run use fewer WCUs than more complex rules that use more processing power. Rule
         /// group capacity is fixed at creation, which helps users plan their web ACL WCU usage
-        /// when they use a rule group. The WCU limit for web ACLs is 1,500. 
+        /// when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF
+        /// web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CheckCapacity service method.</param>
@@ -954,8 +956,8 @@ namespace Amazon.WAFV2
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
         /// group. You can associate a web ACL with one or more Amazon Web Services resources
         /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, Amazon Cognito
-        /// user pool, or an App Runner service. 
+        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
+        /// Cognito user pool, or an App Runner service. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebACL service method.</param>
@@ -1751,7 +1753,8 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// For Amazon CloudFront distributions, use the CloudFront call <code>ListDistributionsByWebACLId</code>.
-        /// For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>.
+        /// For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>
+        /// in the <i>Amazon CloudFront API Reference</i>. 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -1764,7 +1767,8 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// For Amazon CloudFront distributions, provide an empty web ACL ID in the CloudFront
-        /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
+        /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+        /// in the <i>Amazon CloudFront API Reference</i>. 
         /// </para>
         ///  </li> </ul> </li> </ul> </note>
         /// </summary>
@@ -1979,13 +1983,14 @@ namespace Amazon.WAFV2
         /// Disassociates the specified regional application resource from any existing web ACL
         /// association. A resource can have at most one web ACL association. A regional application
         /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync
-        /// GraphQL API, a Amazon Cognito user pool, or an App Runner service. 
+        /// GraphQL API, an Amazon Cognito user pool, or an App Runner service. 
         /// 
         ///  
         /// <para>
         /// For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution
         /// configuration. To disassociate a web ACL, provide an empty web ACL ID in the CloudFront
-        /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
+        /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+        /// in the <i>Amazon CloudFront API Reference</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateWebACL service method.</param>
@@ -4635,7 +4640,7 @@ namespace Amazon.WAFV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.
+        /// The policy must be composed using IAM Policy version 2012-10-17.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5563,8 +5568,8 @@ namespace Amazon.WAFV2
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
         /// group. You can associate a web ACL with one or more Amazon Web Services resources
         /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, Amazon Cognito
-        /// user pool, or an App Runner service. 
+        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
+        /// Cognito user pool, or an App Runner service. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWebACL service method.</param>
