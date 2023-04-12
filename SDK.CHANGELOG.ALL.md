@@ -1,3 +1,12 @@
+### 3.7.525.0 (2023-04-12 18:22 UTC)
+* GroundStation (3.7.104.0)
+	* AWS Ground Station Wideband DigIF GA Release
+* ManagedBlockchain (3.7.101.30)
+	* Removal of the Ropsten network. The Ethereum foundation ceased support of Ropsten on December 31st, 2022..
+* Core 3.7.106.18
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.524.0 (2023-04-11 19:30 UTC)
 * ECRPublic (3.7.102.0)
 	* This release will allow using registry alias as registryId in BatchDeleteImage request.
