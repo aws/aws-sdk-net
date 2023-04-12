@@ -237,23 +237,19 @@ namespace Amazon.GroundStation
 
 
     /// <summary>
-    /// Constants used for properties of type ComponentType.
+    /// Constants used for properties of type CapabilityHealth.
     /// </summary>
-    public class ComponentType : ConstantClass
+    public class CapabilityHealth : ConstantClass
     {
 
         /// <summary>
-        /// Constant DIGITIZER for ComponentType
+        /// Constant HEALTHY for CapabilityHealth
         /// </summary>
-        public static readonly ComponentType DIGITIZER = new ComponentType("DIGITIZER");
+        public static readonly CapabilityHealth HEALTHY = new CapabilityHealth("HEALTHY");
         /// <summary>
-        /// Constant LAMINAR_FLOW for ComponentType
+        /// Constant UNHEALTHY for CapabilityHealth
         /// </summary>
-        public static readonly ComponentType LAMINAR_FLOW = new ComponentType("LAMINAR_FLOW");
-        /// <summary>
-        /// Constant PRISM for ComponentType
-        /// </summary>
-        public static readonly ComponentType PRISM = new ComponentType("PRISM");
+        public static readonly CapabilityHealth UNHEALTHY = new CapabilityHealth("UNHEALTHY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -263,7 +259,7 @@ namespace Amazon.GroundStation
         /// defined as statics, for instance if attempting to use a feature that is
         /// newer than the current version of the SDK.
         /// </summary>
-        public ComponentType(string value)
+        public CapabilityHealth(string value)
             : base(value)
         {
         }
@@ -273,9 +269,9 @@ namespace Amazon.GroundStation
         /// </summary>
         /// <param name="value">The unique value for the constant</param>
         /// <returns>The constant for the unique value</returns>
-        public static ComponentType FindValue(string value)
+        public static CapabilityHealth FindValue(string value)
         {
-            return FindValue<ComponentType>(value);
+            return FindValue<CapabilityHealth>(value);
         }
 
         /// <summary>
@@ -283,7 +279,77 @@ namespace Amazon.GroundStation
         /// </summary>
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
-        public static implicit operator ComponentType(string value)
+        public static implicit operator CapabilityHealth(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapabilityHealthReason.
+    /// </summary>
+    public class CapabilityHealthReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATAPLANE_FAILURE for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason DATAPLANE_FAILURE = new CapabilityHealthReason("DATAPLANE_FAILURE");
+        /// <summary>
+        /// Constant HEALTHY for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason HEALTHY = new CapabilityHealthReason("HEALTHY");
+        /// <summary>
+        /// Constant INITIALIZING_DATAPLANE for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason INITIALIZING_DATAPLANE = new CapabilityHealthReason("INITIALIZING_DATAPLANE");
+        /// <summary>
+        /// Constant INVALID_IP_OWNERSHIP for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason INVALID_IP_OWNERSHIP = new CapabilityHealthReason("INVALID_IP_OWNERSHIP");
+        /// <summary>
+        /// Constant NO_REGISTERED_AGENT for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason NO_REGISTERED_AGENT = new CapabilityHealthReason("NO_REGISTERED_AGENT");
+        /// <summary>
+        /// Constant NOT_AUTHORIZED_TO_CREATE_SLR for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason NOT_AUTHORIZED_TO_CREATE_SLR = new CapabilityHealthReason("NOT_AUTHORIZED_TO_CREATE_SLR");
+        /// <summary>
+        /// Constant UNVERIFIED_IP_OWNERSHIP for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason UNVERIFIED_IP_OWNERSHIP = new CapabilityHealthReason("UNVERIFIED_IP_OWNERSHIP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapabilityHealthReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapabilityHealthReason FindValue(string value)
+        {
+            return FindValue<CapabilityHealthReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapabilityHealthReason(string value)
         {
             return FindValue(value);
         }

@@ -36,7 +36,7 @@ namespace Amazon.GroundStation.Model
         private long? _bytesReceived;
         private long? _bytesSent;
         private string _capabilityArn;
-        private ComponentType _componentType;
+        private string _componentType;
         private string _dataflowId;
         private long? _packetsDropped;
         private AgentStatus _status;
@@ -103,7 +103,7 @@ namespace Amazon.GroundStation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public ComponentType ComponentType
+        public string ComponentType
         {
             get { return this._componentType; }
             set { this._componentType = value; }

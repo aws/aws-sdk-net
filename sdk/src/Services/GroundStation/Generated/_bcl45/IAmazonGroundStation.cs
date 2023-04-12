@@ -607,7 +607,14 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        ///  For use by AWS Ground Station Agent and shouldn't be called directly.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Gets the latest configuration information for a registered agent.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgentConfiguration service method.</param>
         /// 
@@ -627,7 +634,14 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        ///  For use by AWS Ground Station Agent and shouldn't be called directly.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Gets the latest configuration information for a registered agent.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgentConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1273,7 +1287,14 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Registers a new agent with AWS Groundstation.
+        /// <note> 
+        /// <para>
+        ///  For use by AWS Ground Station Agent and shouldn't be called directly.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Registers a new agent with AWS Ground Station. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterAgent service method.</param>
         /// 
@@ -1293,7 +1314,14 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Registers a new agent with AWS Groundstation.
+        /// <note> 
+        /// <para>
+        ///  For use by AWS Ground Station Agent and shouldn't be called directly.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Registers a new agent with AWS Ground Station. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterAgent service method.</param>
         /// <param name="cancellationToken">
@@ -1457,7 +1485,14 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        ///  For use by AWS Ground Station Agent and shouldn't be called directly.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Update the status of the agent.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgentStatus service method.</param>
         /// 
@@ -1477,7 +1512,14 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        ///  For use by AWS Ground Station Agent and shouldn't be called directly.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Update the status of the agent.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgentStatus service method.</param>
         /// <param name="cancellationToken">
