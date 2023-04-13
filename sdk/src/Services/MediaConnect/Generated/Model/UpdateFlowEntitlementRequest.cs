@@ -62,7 +62,8 @@ namespace Amazon.MediaConnect.Model
 
         /// <summary>
         /// Gets and sets the property Encryption. The type of encryption that will be used on
-        /// the output associated with this entitlement.
+        /// the output associated with this entitlement. Allowable encryption types: static-key,
+        /// speke.
         /// </summary>
         public UpdateEncryption Encryption
         {

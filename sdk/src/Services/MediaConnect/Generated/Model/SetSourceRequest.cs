@@ -36,6 +36,7 @@ namespace Amazon.MediaConnect.Model
         private Encryption _decryption;
         private string _description;
         private string _entitlementArn;
+        private SetGatewayBridgeSourceRequest _gatewayBridgeSource;
         private int? _ingestPort;
         private int? _maxBitrate;
         private int? _maxLatency;
@@ -54,7 +55,7 @@ namespace Amazon.MediaConnect.Model
 
         /// <summary>
         /// Gets and sets the property Decryption. The type of encryption that is used on the
-        /// content ingested from this source.
+        /// content ingested from this source. Allowable encryption types: static-key.
         /// </summary>
         public Encryption Decryption
         {
@@ -102,6 +103,22 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GatewayBridgeSource. The source configuration for cloud
+        /// flows receiving a stream from a bridge.
+        /// </summary>
+        public SetGatewayBridgeSourceRequest GatewayBridgeSource
+        {
+            get { return this._gatewayBridgeSource; }
+            set { this._gatewayBridgeSource = value; }
+        }
+
+        // Check to see if GatewayBridgeSource property is set
+        internal bool IsSetGatewayBridgeSource()
+        {
+            return this._gatewayBridgeSource != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IngestPort. The port that the flow will be listening on
         /// for incoming content.
         /// </summary>
@@ -118,8 +135,8 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxBitrate. The smoothing max bitrate for RIST, RTP, and
-        /// RTP-FEC streams.
+        /// Gets and sets the property MaxBitrate. The smoothing max bitrate (in bps) for RIST,
+        /// RTP, and RTP-FEC streams.
         /// </summary>
         public int MaxBitrate
         {
@@ -295,7 +312,7 @@ namespace Amazon.MediaConnect.Model
 
         /// <summary>
         /// Gets and sets the property StreamId. The stream ID that you want to use for this transport.
-        /// This parameter applies only to Zixi-based streams.
+        /// This parameter applies only to Zixi and SRT caller-based streams.
         /// </summary>
         public string StreamId
         {

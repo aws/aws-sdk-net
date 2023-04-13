@@ -94,6 +94,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EntitlementArn);
                 }
 
+                if(publicRequest.IsSetGatewayBridgeSource())
+                {
+                    context.Writer.WritePropertyName("gatewayBridgeSource");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateGatewayBridgeSourceRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.GatewayBridgeSource, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetIngestPort())
                 {
                     context.Writer.WritePropertyName("ingestPort");

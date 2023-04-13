@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// The settings for attaching a VPC interface to an output.
+    /// The settings for attaching a VPC interface to an resource.
     /// </summary>
     public partial class VpcInterfaceAttachment
     {
@@ -37,7 +37,7 @@ namespace Amazon.MediaConnect.Model
 
         /// <summary>
         /// Gets and sets the property VpcInterfaceName. The name of the VPC interface to use
-        /// for this output.
+        /// for this resource.
         /// </summary>
         public string VpcInterfaceName
         {

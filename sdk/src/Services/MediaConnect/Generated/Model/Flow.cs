@@ -115,8 +115,7 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The Amazon Resource Name (ARN), a unique identifier
-        /// for any AWS resource, of the flow.
+        /// Gets and sets the property FlowArn. The Amazon Resource Name (ARN) of the flow.
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn
