@@ -58,7 +58,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property Country. 
         /// <para>
-        /// The country. 
+        /// The country.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -38,6 +38,7 @@ namespace Amazon.ChimeSDKVoice.Model
         private DateTime? _createdTimestamp;
         private List<SipMediaApplicationEndpoint> _endpoints = new List<SipMediaApplicationEndpoint>();
         private string _name;
+        private string _sipMediaApplicationArn;
         private string _sipMediaApplicationId;
         private DateTime? _updatedTimestamp;
 
@@ -80,7 +81,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property Endpoints. 
         /// <para>
-        /// List of endpoints for SIP media application. Currently, only one endpoint per SIP
+        /// List of endpoints for a SIP media application. Currently, only one endpoint per SIP
         /// media application is permitted.
         /// </para>
         /// </summary>
@@ -114,6 +115,24 @@ namespace Amazon.ChimeSDKVoice.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SipMediaApplicationArn. 
+        /// <para>
+        /// The ARN of the SIP media application.
+        /// </para>
+        /// </summary>
+        public string SipMediaApplicationArn
+        {
+            get { return this._sipMediaApplicationArn; }
+            set { this._sipMediaApplicationArn = value; }
+        }
+
+        // Check to see if SipMediaApplicationArn property is set
+        internal bool IsSetSipMediaApplicationArn()
+        {
+            return this._sipMediaApplicationArn != null;
         }
 
         /// <summary>

@@ -39,6 +39,7 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _awsRegion;
         private List<SipMediaApplicationEndpoint> _endpoints = new List<SipMediaApplicationEndpoint>();
         private string _name;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AwsRegion. 
@@ -95,6 +96,25 @@ namespace Amazon.ChimeSDKVoice.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags assigned to the SIP media application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

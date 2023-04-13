@@ -88,6 +88,12 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SipMediaApplicationArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SipMediaApplicationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SipMediaApplicationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

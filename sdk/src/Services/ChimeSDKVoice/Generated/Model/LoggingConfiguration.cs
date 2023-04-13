@@ -58,7 +58,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property EnableSIPLogs. 
         /// <para>
-        /// Boolean that enables sending SIP message logs to Amazon CloudWatch logs.
+        /// Boolean that enables sending SIP message logs to Amazon CloudWatch.
         /// </para>
         /// </summary>
         public bool EnableSIPLogs
