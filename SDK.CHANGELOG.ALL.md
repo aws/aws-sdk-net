@@ -1,3 +1,12 @@
+### 3.7.526.0 (2023-04-13 18:21 UTC)
+* ChimeSDKVoice (3.7.104.0)
+	* This release adds tagging support for Voice Connectors and SIP Media Applications
+* MediaConnect (3.7.101.0)
+	* Gateway is a new feature of AWS Elemental MediaConnect. Gateway allows the deployment of on-premises resources for the purpose of transporting live video to and from the AWS Cloud.
+* Core 3.7.106.19
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.525.0 (2023-04-12 18:22 UTC)
 * GroundStation (3.7.104.0)
 	* AWS Ground Station Wideband DigIF GA Release
