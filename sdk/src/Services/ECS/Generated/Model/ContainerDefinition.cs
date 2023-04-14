@@ -327,15 +327,23 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DockerSecurityOptions. 
         /// <para>
-        /// A list of strings to provide custom labels for SELinux and AppArmor multi-level security
-        /// systems. This field isn't valid for containers in tasks using the Fargate launch type.
+        /// A list of strings to provide custom configuration for multiple security systems. For
+        /// more information about valid values, see <a href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker
+        /// Run Security Configuration</a>. This field isn't valid for containers in tasks using
+        /// the Fargate launch type.
         /// </para>
         ///  
         /// <para>
-        /// With Windows containers, this parameter can be used to reference a credential spec
-        /// file when configuring a container for Active Directory authentication. For more information,
+        /// For Linux tasks on EC2, this parameter can be used to reference custom labels for
+        /// SELinux and AppArmor multi-level security systems.
+        /// </para>
+        ///  
+        /// <para>
+        /// For any tasks on EC2, this parameter can be used to reference a credential spec file
+        /// that configures a container for Active Directory authentication. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
-        /// gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service Developer
+        /// gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
+        /// gMSAs for Linux Containers</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
         ///  
