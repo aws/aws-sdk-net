@@ -1,3 +1,16 @@
+### 3.7.527.0 (2023-04-14 18:23 UTC)
+* ECS (3.7.106.4)
+	* This release supports  ephemeral storage for AWS Fargate Windows containers.
+* Lambda (3.7.107.0)
+	* This release adds SnapStart related exceptions to InvokeWithResponseStream API. IAM access related documentation is also added for this API.
+* MigrationHubRefactorSpaces (3.7.102.42)
+	* Doc only update for Refactor Spaces environments without network bridge feature.
+* RDS (3.7.117.0)
+	* This release adds support of modifying the engine mode of database clusters.
+* Core 3.7.106.20
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.526.0 (2023-04-13 18:21 UTC)
 * ChimeSDKVoice (3.7.104.0)
 	* This release adds tagging support for Voice Connectors and SIP Media Applications
