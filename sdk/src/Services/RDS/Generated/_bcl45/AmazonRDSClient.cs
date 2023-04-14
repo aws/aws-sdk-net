@@ -8572,6 +8572,9 @@ namespace Amazon.RDS
         /// <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster
         /// parameter group.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
+        /// The user already has a DB instance with the given identifier.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
@@ -8644,6 +8647,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterParameterGroupNotFoundException">
         /// <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster
         /// parameter group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
+        /// The user already has a DB instance with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.

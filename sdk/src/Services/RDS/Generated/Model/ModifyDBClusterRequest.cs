@@ -48,6 +48,7 @@ namespace Amazon.RDS.Model
     public partial class ModifyDBClusterRequest : AmazonRDSRequest
     {
         private int? _allocatedStorage;
+        private bool? _allowEngineModeChange;
         private bool? _allowMajorVersionUpgrade;
         private bool? _applyImmediately;
         private bool? _autoMinorVersionUpgrade;
@@ -66,6 +67,7 @@ namespace Amazon.RDS.Model
         private bool? _enableHttpEndpoint;
         private bool? _enableIAMDatabaseAuthentication;
         private bool? _enablePerformanceInsights;
+        private string _engineMode;
         private string _engineVersion;
         private int? _iops;
         private bool? _manageMasterUserPassword;
@@ -95,10 +97,6 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Type: Integer
-        /// </para>
-        ///  
-        /// <para>
         /// Valid for: Multi-AZ DB clusters only
         /// </para>
         /// </summary>
@@ -112,6 +110,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetAllocatedStorage()
         {
             return this._allocatedStorage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllowEngineModeChange. 
+        /// <para>
+        /// A value that indicates whether engine mode changes from <code>serverless</code> to
+        /// <code>provisioned</code> are allowed.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: You must allow engine mode changes when specifying a different value
+        /// for the <code>EngineMode</code> parameter from the DB cluster's current engine mode.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for: Aurora Serverless v1 DB clusters only
+        /// </para>
+        /// </summary>
+        public bool AllowEngineModeChange
+        {
+            get { return this._allowEngineModeChange.GetValueOrDefault(); }
+            set { this._allowEngineModeChange = value; }
+        }
+
+        // Check to see if AllowEngineModeChange property is set
+        internal bool IsSetAllowEngineModeChange()
+        {
+            return this._allowEngineModeChange.HasValue; 
         }
 
         /// <summary>
@@ -682,6 +708,37 @@ namespace Amazon.RDS.Model
         internal bool IsSetEnablePerformanceInsights()
         {
             return this._enablePerformanceInsights.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineMode. 
+        /// <para>
+        /// The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The DB engine mode can be modified only from <code>serverless</code> to <code>provisioned</code>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+        /// CreateDBCluster</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for: Aurora DB clusters only
+        /// </para>
+        /// </summary>
+        public string EngineMode
+        {
+            get { return this._engineMode; }
+            set { this._engineMode = value; }
+        }
+
+        // Check to see if EngineMode property is set
+        internal bool IsSetEngineMode()
+        {
+            return this._engineMode != null;
         }
 
         /// <summary>
