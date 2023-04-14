@@ -76,7 +76,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.PartNumberMarker = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Part/member", targetDepth))
+                    if (context.TestExpression("Part", targetDepth))
                     {
                         var unmarshaller = ObjectPartUnmarshaller.Instance;
                         unmarshalledObject.Parts.Add(unmarshaller.Unmarshall(context));
