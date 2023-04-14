@@ -7679,6 +7679,108 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_SnapStartExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SnapStartException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","SnapStartException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_SnapStartNotReadyExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SnapStartNotReadyException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","SnapStartNotReadyException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_SnapStartTimeoutExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SnapStartTimeoutException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","SnapStartTimeoutException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
         public void InvokeWithResponseStream_SubnetIPAddressLimitReachedExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("InvokeWithResponseStream");

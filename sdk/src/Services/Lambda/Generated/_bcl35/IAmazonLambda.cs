@@ -2588,6 +2588,14 @@ namespace Amazon.Lambda
         /// Configure your Lambda functions to stream response payloads back to clients. For more
         /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-response-streaming.html">Configuring
         /// a Lambda function to stream responses</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permission for the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a>
+        /// action. For details on how to set up permissions for cross-account invocations, see
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html#permissions-resource-xaccountinvoke">Granting
+        /// function access to other accounts</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeWithResponseStream service method.</param>
         /// 
@@ -2674,6 +2682,17 @@ namespace Amazon.Lambda
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SnapStartException">
+        /// The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime
+        /// hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SnapStartNotReadyException">
+        /// Lambda is initializing your function. You can invoke the function when the <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function
+        /// state</a> becomes <code>Active</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SnapStartTimeoutException">
+        /// Lambda couldn't restore the snapshot within the timeout limit.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SubnetIPAddressLimitReachedException">
         /// Lambda couldn't set up VPC access for the Lambda function because one or more configured

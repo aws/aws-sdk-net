@@ -322,8 +322,13 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// (Kinesis and DynamoDB Streams only) Discard records older than the specified age.
         /// The default value is -1, which sets the maximum age to infinite. When the value is
-        /// set to infinite, Lambda never discards old records. 
+        /// set to infinite, Lambda never discards old records.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The minimum value that can be set is 60 seconds.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=-1, Max=604800)]
         public int MaximumRecordAgeInSeconds
