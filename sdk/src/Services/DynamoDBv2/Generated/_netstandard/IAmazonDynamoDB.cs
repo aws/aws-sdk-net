@@ -165,8 +165,8 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// In order to minimize response latency, <code>BatchGetItem</code> retrieves items in
-        /// parallel.
+        /// In order to minimize response latency, <code>BatchGetItem</code> may retrieve items
+        /// in parallel.
         /// </para>
         ///  
         /// <para>
@@ -266,8 +266,8 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// In order to minimize response latency, <code>BatchGetItem</code> retrieves items in
-        /// parallel.
+        /// In order to minimize response latency, <code>BatchGetItem</code> may retrieve items
+        /// in parallel.
         /// </para>
         ///  
         /// <para>
@@ -367,8 +367,8 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// In order to minimize response latency, <code>BatchGetItem</code> retrieves items in
-        /// parallel.
+        /// In order to minimize response latency, <code>BatchGetItem</code> may retrieve items
+        /// in parallel.
         /// </para>
         ///  
         /// <para>
@@ -3501,7 +3501,7 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Creates a new table from an existing backup. Any number of users can execute up to
-        /// 4 concurrent restores (any type of restore) in a given account. 
+        /// 50 concurrent restores (any type of restore) in a given account. 
         /// 
         ///  
         /// <para>
