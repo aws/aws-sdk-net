@@ -36,6 +36,7 @@ namespace Amazon.EMRServerless.Model
     {
         private string _applicationId;
         private string _arn;
+        private ResourceUtilization _billedResourceUtilization;
         private ConfigurationOverrides _configurationOverrides;
         private DateTime? _createdAt;
         private string _createdBy;
@@ -89,6 +90,27 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BilledResourceUtilization. 
+        /// <para>
+        /// The aggregate vCPU, memory, and storage that AWS has billed for the job run. The billed
+        /// resources include a 1-minute minimum usage for workers, plus additional storage over
+        /// 20 GB per worker. Note that billed resources do not include usage for idle pre-initialized
+        /// workers.
+        /// </para>
+        /// </summary>
+        public ResourceUtilization BilledResourceUtilization
+        {
+            get { return this._billedResourceUtilization; }
+            set { this._billedResourceUtilization = value; }
+        }
+
+        // Check to see if BilledResourceUtilization property is set
+        internal bool IsSetBilledResourceUtilization()
+        {
+            return this._billedResourceUtilization != null;
         }
 
         /// <summary>
@@ -169,8 +191,8 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property ExecutionTimeoutMinutes. 
         /// <para>
-        /// Maximum duration for the job run to run. If the job run runs beyond this duration,
-        /// it will be automatically cancelled.
+        /// Returns the job run timeout value from the <code>StartJobRun</code> call. If no timeout
+        /// was specified, then it returns the default timeout of 720 minutes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000)]
@@ -357,8 +379,8 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property TotalResourceUtilization. 
         /// <para>
-        /// The aggregate vCPU, memory, and storage resources used from the time job start executing
-        /// till the time job is terminated, rounded up to the nearest second.
+        /// The aggregate vCPU, memory, and storage resources used from the time the job starts
+        /// to execute, until the time the job terminates, rounded up to the nearest second.
         /// </para>
         /// </summary>
         public TotalResourceUtilization TotalResourceUtilization

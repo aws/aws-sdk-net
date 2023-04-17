@@ -76,6 +76,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("billedResourceUtilization", targetDepth))
+                {
+                    var unmarshaller = ResourceUtilizationUnmarshaller.Instance;
+                    unmarshalledObject.BilledResourceUtilization = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("configurationOverrides", targetDepth))
                 {
                     var unmarshaller = ConfigurationOverridesUnmarshaller.Instance;

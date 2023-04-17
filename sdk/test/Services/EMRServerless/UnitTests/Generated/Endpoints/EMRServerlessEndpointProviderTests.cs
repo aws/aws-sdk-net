@@ -36,8 +36,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -51,8 +51,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -66,8 +66,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -81,8 +81,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -96,8 +96,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -111,8 +111,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless-fips.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -126,8 +126,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -141,8 +141,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless.us-east-1.api.aws", endpoint.URL);
         }
@@ -156,8 +156,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -171,8 +171,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -186,8 +186,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -201,8 +201,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -216,8 +216,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless-fips.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -231,8 +231,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -246,8 +246,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -261,8 +261,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -277,8 +277,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -291,8 +291,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
@@ -307,8 +307,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -321,8 +321,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
@@ -337,8 +337,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-isob-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -351,8 +351,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-isob-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -367,8 +367,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-isob-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -381,8 +381,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-isob-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-serverless.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -396,8 +396,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -411,8 +411,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_region_not_set_and_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new EMRServerlessEndpointParameters();
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -428,8 +428,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -444,8 +444,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new EMRServerlessEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonEMRServerlessEndpointProvider().ResolveEndpoint(parameters);
         }
