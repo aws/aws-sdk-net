@@ -36,6 +36,11 @@ namespace Amazon.Drs.Model
         IDescribeJobsPaginator DescribeJobs(DescribeJobsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeLaunchConfigurationTemplates operation
+        ///</summary>
+        IDescribeLaunchConfigurationTemplatesPaginator DescribeLaunchConfigurationTemplates(DescribeLaunchConfigurationTemplatesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeRecoveryInstances operation
         ///</summary>
         IDescribeRecoveryInstancesPaginator DescribeRecoveryInstances(DescribeRecoveryInstancesRequest request);
