@@ -999,6 +999,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly Runtime Python27 = new Runtime("python2.7");
         /// <summary>
+        /// Constant Python310 for Runtime
+        /// </summary>
+        public static readonly Runtime Python310 = new Runtime("python3.10");
+        /// <summary>
         /// Constant Python36 for Runtime
         /// </summary>
         public static readonly Runtime Python36 = new Runtime("python3.6");
