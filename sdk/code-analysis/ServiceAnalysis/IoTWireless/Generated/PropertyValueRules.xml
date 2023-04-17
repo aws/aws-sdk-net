@@ -1183,6 +1183,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.UpdateWirelessGatewayRequest.MaxEirp</property>
+    <min>0</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.UpdateWirelessGatewayRequest.Name</property>
     <max>256</max>
   </property-value-rule>
@@ -1513,7 +1518,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.LoRaWANDeviceProfile.PingSlotPeriod</property>
-    <min>128</min>
+    <min>32</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -1551,6 +1556,11 @@
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.LoRaWANGateway.GatewayEui</property>
     <pattern>^(([0-9A-Fa-f]{2}-){7}|([0-9A-Fa-f]{2}:){7}|([0-9A-Fa-f]{2}\s){7}|([0-9A-Fa-f]{2}){7})([0-9A-Fa-f]{2})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANGateway.MaxEirp</property>
+    <min>0</min>
+    <max>30</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.LoRaWANGateway.RfRegion</property>
@@ -1658,6 +1668,11 @@
     <property>Amazon.IoTWireless.Model.LoRaWANMulticastSession.DlFreq</property>
     <min>100000000</min>
     <max>1000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANMulticastSession.PingSlotPeriod</property>
+    <min>32</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.LoRaWANMulticastSession.SessionTimeout</property>

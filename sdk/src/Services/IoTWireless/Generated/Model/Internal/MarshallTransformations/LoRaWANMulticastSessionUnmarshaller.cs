@@ -76,6 +76,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     unmarshalledObject.DlFreq = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PingSlotPeriod", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PingSlotPeriod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SessionStartTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
