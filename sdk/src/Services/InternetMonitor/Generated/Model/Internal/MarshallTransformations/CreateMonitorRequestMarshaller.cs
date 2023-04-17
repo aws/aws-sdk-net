@@ -124,6 +124,12 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTrafficPercentageToMonitor())
+                {
+                    context.Writer.WritePropertyName("TrafficPercentageToMonitor");
+                    context.Writer.Write(publicRequest.TrafficPercentageToMonitor);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

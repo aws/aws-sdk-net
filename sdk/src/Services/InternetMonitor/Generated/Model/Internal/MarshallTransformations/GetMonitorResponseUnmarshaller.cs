@@ -117,6 +117,12 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                     response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TrafficPercentageToMonitor", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.TrafficPercentageToMonitor = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

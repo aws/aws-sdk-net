@@ -29,9 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
-    /// Configuration information for other locations that you choose to publish Amazon CloudWatch
-    /// Internet Monitor internet measurements to, such as Amazon S3. The measurements are
-    /// also published to Amazon CloudWatch Logs.
+    /// Publish internet measurements to an Amazon S3 bucket in addition to CloudWatch Logs.
     /// </summary>
     public partial class InternetMeasurementsLogDelivery
     {

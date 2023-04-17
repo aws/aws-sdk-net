@@ -57,6 +57,7 @@ namespace Amazon.InternetMonitor.Model
         private string _monitorName;
         private List<string> _resources = new List<string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private int? _trafficPercentageToMonitor;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -80,8 +81,8 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property InternetMeasurementsLogDelivery. 
         /// <para>
-        /// Publish internet measurements for Internet Monitor to another location, such as an
-        /// Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.
+        /// Publish internet measurements for Internet Monitor to an Amazon S3 bucket in addition
+        /// to CloudWatch Logs.
         /// </para>
         /// </summary>
         public InternetMeasurementsLogDelivery InternetMeasurementsLogDelivery
@@ -111,7 +112,7 @@ namespace Amazon.InternetMonitor.Model
         /// of the <i>CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=500000)]
+        [AWSProperty(Min=1, Max=500000)]
         public int MaxCityNetworksToMonitor
         {
             get { return this._maxCityNetworksToMonitor.GetValueOrDefault(); }
@@ -191,6 +192,26 @@ namespace Amazon.InternetMonitor.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrafficPercentageToMonitor. 
+        /// <para>
+        /// The percentage of the internet-facing traffic for your application that you want to
+        /// monitor with this monitor.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int TrafficPercentageToMonitor
+        {
+            get { return this._trafficPercentageToMonitor.GetValueOrDefault(); }
+            set { this._trafficPercentageToMonitor = value; }
+        }
+
+        // Check to see if TrafficPercentageToMonitor property is set
+        internal bool IsSetTrafficPercentageToMonitor()
+        {
+            return this._trafficPercentageToMonitor.HasValue; 
         }
 
     }

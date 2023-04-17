@@ -50,6 +50,7 @@ namespace Amazon.InternetMonitor.Model
         private List<string> _resourcesToAdd = new List<string>();
         private List<string> _resourcesToRemove = new List<string>();
         private MonitorConfigState _status;
+        private int? _trafficPercentageToMonitor;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -199,6 +200,26 @@ namespace Amazon.InternetMonitor.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrafficPercentageToMonitor. 
+        /// <para>
+        /// The percentage of the internet-facing traffic for your application that you want to
+        /// monitor with this monitor.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int TrafficPercentageToMonitor
+        {
+            get { return this._trafficPercentageToMonitor.GetValueOrDefault(); }
+            set { this._trafficPercentageToMonitor = value; }
+        }
+
+        // Check to see if TrafficPercentageToMonitor property is set
+        internal bool IsSetTrafficPercentageToMonitor()
+        {
+            return this._trafficPercentageToMonitor.HasValue; 
         }
 
     }

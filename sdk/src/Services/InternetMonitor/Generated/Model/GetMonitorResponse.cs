@@ -44,6 +44,7 @@ namespace Amazon.InternetMonitor.Model
         private List<string> _resources = new List<string>();
         private MonitorConfigState _status;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private int? _trafficPercentageToMonitor;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -98,7 +99,7 @@ namespace Amazon.InternetMonitor.Model
         /// of the <i>CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=500000)]
+        [AWSProperty(Min=1, Max=500000)]
         public int MaxCityNetworksToMonitor
         {
             get { return this._maxCityNetworksToMonitor.GetValueOrDefault(); }
@@ -260,6 +261,26 @@ namespace Amazon.InternetMonitor.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrafficPercentageToMonitor. 
+        /// <para>
+        /// The percentage of the internet-facing traffic for your application that you want to
+        /// monitor with this monitor.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int TrafficPercentageToMonitor
+        {
+            get { return this._trafficPercentageToMonitor.GetValueOrDefault(); }
+            set { this._trafficPercentageToMonitor = value; }
+        }
+
+        // Check to see if TrafficPercentageToMonitor property is set
+        internal bool IsSetTrafficPercentageToMonitor()
+        {
+            return this._trafficPercentageToMonitor.HasValue; 
         }
 
     }
