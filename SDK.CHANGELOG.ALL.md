@@ -1,3 +1,22 @@
+### 3.7.528.0 (2023-04-17 18:26 UTC)
+* Appflow (3.7.107.0)
+	* This release adds a Client Token parameter to the following AppFlow APIs: Create/Update Connector Profile, Create/Update Flow, Start Flow, Register Connector, Update Connector Registration. The Client Token parameter allows idempotent operations for these APIs.
+* Drs (3.7.104.0)
+	* Changed existing APIs and added new APIs to support using an account-level launch configuration template with AWS Elastic Disaster Recovery.
+* DynamoDBv2 (3.7.102.28)
+	* Documentation updates for DynamoDB API
+* EMRServerless (3.7.104.0)
+	* The GetJobRun API has been updated to include the job's billed resource utilization. This utilization shows the aggregate vCPU, memory and storage that AWS has billed for the job run. The billed resources include a 1-minute minimum usage for workers, plus additional storage over 20 GB per worker.
+* InternetMonitor (3.7.102.0)
+	* This release includes a new configurable value, TrafficPercentageToMonitor, which allows users to adjust the amount of traffic monitored by percentage
+* IoTWireless (3.7.104.0)
+	* Supports the new feature of LoRaWAN roaming, allows to configure MaxEirp for LoRaWAN gateway, and allows to configure PingSlotPeriod for LoRaWAN multicast group
+* Lambda (3.7.108.0)
+	* Add Python 3.10 (python3.10) support to AWS Lambda
+* Core 3.7.106.21
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.527.0 (2023-04-14 18:23 UTC)
 * ECS (3.7.106.4)
 	* This release supports  ephemeral storage for AWS Fargate Windows containers.
