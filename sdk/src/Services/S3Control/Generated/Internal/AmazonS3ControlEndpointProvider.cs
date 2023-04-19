@@ -60,6 +60,22 @@ namespace Amazon.S3Control.Internal
             };
             if (IsSet(refs["Region"]))
             {
+                if (Equals(refs["Region"], "snow") && IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
+                {
+                    if ((refs["partitionResult"] = Partition((string)refs["Region"])) != null)
+                    {
+                        if (Equals(refs["UseDualStack"], true))
+                        {
+                            throw new AmazonClientException("S3 Snow does not support Dual-stack");
+                        }
+                        if (Equals(refs["UseFIPS"], true))
+                        {
+                            throw new AmazonClientException("S3 Snow does not support FIPS");
+                        }
+                        return new Endpoint(Interpolate(@"{url#scheme}://{url#authority}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                    }
+                    throw new AmazonClientException("A valid partition could not be determined");
+                }
                 if (IsSet(refs["OutpostId"]))
                 {
                     if ((refs["partitionResult"] = Partition((string)refs["Region"])) != null)
