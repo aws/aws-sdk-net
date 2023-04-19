@@ -7,6 +7,17 @@
     margin: 8px 4px 4px 8px;
 }
 
+#skipToMain {
+    position: absolute;
+    z-index: -1;
+    top: -40px;
+}
+
+#skipToMain:focus {
+    z-index: 500;
+    top: 10px;
+}
+
 div#toc {
     padding-left: 3px;
     width: auto;
