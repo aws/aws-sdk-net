@@ -76,6 +76,24 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DocumentReaderConfig", targetDepth))
+                {
+                    var unmarshaller = DocumentReaderConfigUnmarshaller.Instance;
+                    unmarshalledObject.DocumentReaderConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Documents", targetDepth))
+                {
+                    var unmarshaller = DocumentClassifierDocumentsUnmarshaller.Instance;
+                    unmarshalledObject.Documents = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DocumentType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DocumentType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LabelDelimiter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

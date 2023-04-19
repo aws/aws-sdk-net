@@ -41,6 +41,9 @@ namespace Amazon.Comprehend.Model
     {
         private List<AugmentedManifestsListItem> _augmentedManifests = new List<AugmentedManifestsListItem>();
         private DocumentClassifierDataFormat _dataFormat;
+        private DocumentReaderConfig _documentReaderConfig;
+        private DocumentClassifierDocuments _documents;
+        private DocumentClassifierDocumentTypeFormat _documentType;
         private string _labelDelimiter;
         private string _s3Uri;
         private string _testS3Uri;
@@ -107,6 +110,60 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetDataFormat()
         {
             return this._dataFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentReaderConfig.
+        /// </summary>
+        public DocumentReaderConfig DocumentReaderConfig
+        {
+            get { return this._documentReaderConfig; }
+            set { this._documentReaderConfig = value; }
+        }
+
+        // Check to see if DocumentReaderConfig property is set
+        internal bool IsSetDocumentReaderConfig()
+        {
+            return this._documentReaderConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Documents. 
+        /// <para>
+        /// The S3 location of the training documents. This parameter is required in a request
+        /// to create a native classifier model.
+        /// </para>
+        /// </summary>
+        public DocumentClassifierDocuments Documents
+        {
+            get { return this._documents; }
+            set { this._documents = value; }
+        }
+
+        // Check to see if Documents property is set
+        internal bool IsSetDocuments()
+        {
+            return this._documents != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentType. 
+        /// <para>
+        /// The type of input documents for training the model. Provide plain-text documents to
+        /// create a plain-text model, and provide semi-structured documents to create a native
+        /// model.
+        /// </para>
+        /// </summary>
+        public DocumentClassifierDocumentTypeFormat DocumentType
+        {
+            get { return this._documentType; }
+            set { this._documentType = value; }
+        }
+
+        // Check to see if DocumentType property is set
+        internal bool IsSetDocumentType()
+        {
+            return this._documentType != null;
         }
 
         /// <summary>

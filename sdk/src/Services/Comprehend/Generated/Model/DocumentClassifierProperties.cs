@@ -300,8 +300,14 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the document classifier. If the status is <code>TRAINED</code> the classifier
-        /// is ready to use. If the status is <code>FAILED</code> you can see additional information
-        /// about why the classifier wasn't trained in the <code>Message</code> field.
+        /// is ready to use. If the status is <code>TRAINED_WITH_WARNINGS</code> the classifier
+        /// training succeeded, but you should review the warnings returned in the <code>CreateDocumentClassifier</code>
+        /// response.
+        /// </para>
+        ///  
+        /// <para>
+        ///  If the status is <code>FAILED</code> you can see additional information about why
+        /// the classifier wasn't trained in the <code>Message</code> field.
         /// </para>
         /// </summary>
         public ModelStatus Status
