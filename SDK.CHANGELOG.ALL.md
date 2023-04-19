@@ -1,3 +1,24 @@
+### 3.7.529.0 (2023-04-19 18:27 UTC)
+* Comprehend (3.7.104.0)
+	* This release supports native document models for custom classification, in addition to plain-text models. You train native document models using documents (PDF, Word, images) in their native format.
+* ECS (3.7.107.0)
+	* This release supports the Account Setting "TagResourceAuthorization" that allows for enhanced Tagging security controls.
+* RAM (3.7.102.0)
+	* This release adds support for customer managed permissions. Customer managed permissions enable customers to author and manage tailored permissions for resources shared using RAM.
+* RDS (3.7.117.2)
+	* Adds support for the ImageId parameter of CreateCustomDBEngineVersion to RDS Custom for Oracle
+* S3 (3.7.104.0)
+	* Provides support for "Snow" Storage class.
+* S3Control (3.7.109.0)
+	* Provides support for overriding endpoint when region is "snow". This will enable bucket APIs for Amazon S3 Compatible storage on Snow Family devices.
+* SecretsManager (3.7.102.27)
+	* Documentation updates for Secrets Manager
+* SecurityHub (3.7.106.16)
+	* Update that adds SDK code examples for Security Hub
+* Core 3.7.106.22
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.528.0 (2023-04-17 18:26 UTC)
 * Appflow (3.7.107.0)
 	* This release adds a Client Token parameter to the following AppFlow APIs: Create/Update Connector Profile, Create/Update Flow, Start Flow, Register Connector, Update Connector Registration. The Client Token parameter allows idempotent operations for these APIs.
