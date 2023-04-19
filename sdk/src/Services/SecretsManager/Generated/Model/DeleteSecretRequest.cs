@@ -98,7 +98,7 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// Specifies whether to delete the secret without any recovery window. You can't use
         /// both this parameter and <code>RecoveryWindowInDays</code> in the same call. If you
-        /// don't use either, then Secrets Manager defaults to a 30 day recovery window.
+        /// don't use either, then by default Secrets Manager uses a 30 day recovery window.
         /// </para>
         ///  
         /// <para>
@@ -134,8 +134,8 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// The number of days from 7 to 30 that Secrets Manager waits before permanently deleting
         /// the secret. You can't use both this parameter and <code>ForceDeleteWithoutRecovery</code>
-        /// in the same call. If you don't use either, then Secrets Manager defaults to a 30 day
-        /// recovery window.
+        /// in the same call. If you don't use either, then by default Secrets Manager uses a
+        /// 30 day recovery window.
         /// </para>
         /// </summary>
         public long RecoveryWindowInDays
