@@ -38,6 +38,7 @@ namespace Amazon.RAM.Model
         private string _name;
         private string _nextToken;
         private string _permissionArn;
+        private int? _permissionVersion;
         private ResourceOwner _resourceOwner;
         private List<string> _resourceShareArns = new List<string>();
         private ResourceShareStatus _resourceShareStatus;
@@ -113,8 +114,8 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property PermissionArn. 
         /// <para>
         /// Specifies that you want to retrieve details of only those resource shares that use
-        /// the RAM permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a>.
+        /// the managed permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a>.
         /// </para>
         /// </summary>
         public string PermissionArn
@@ -127,6 +128,25 @@ namespace Amazon.RAM.Model
         internal bool IsSetPermissionArn()
         {
             return this._permissionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PermissionVersion. 
+        /// <para>
+        /// Specifies that you want to retrieve details for only those resource shares that use
+        /// the specified version of the managed permission.
+        /// </para>
+        /// </summary>
+        public int PermissionVersion
+        {
+            get { return this._permissionVersion.GetValueOrDefault(); }
+            set { this._permissionVersion = value; }
+        }
+
+        // Check to see if PermissionVersion property is set
+        internal bool IsSetPermissionVersion()
+        {
+            return this._permissionVersion.HasValue; 
         }
 
         /// <summary>

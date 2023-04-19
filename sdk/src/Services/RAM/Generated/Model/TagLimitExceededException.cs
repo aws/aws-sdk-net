@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// This request would exceed the limit for tags for your account.
+    /// The operation failed because it would exceed the limit for tags for your Amazon Web
+    /// Services account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

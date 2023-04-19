@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// The specified value for <code>MaxResults</code> is not valid.
+    /// The operation failed because the specified value for <code>MaxResults</code> isn't
+    /// valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

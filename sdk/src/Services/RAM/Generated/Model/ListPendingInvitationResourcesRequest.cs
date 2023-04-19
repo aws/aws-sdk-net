@@ -128,7 +128,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ResourceShareInvitationArn. 
         /// <para>
         /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the invitation. You can use <a>GetResourceShareInvitations</a>
+        /// Resource Name (ARN)</a> of the invitation. You can use <a>GetResourceShareInvitations</a>
         /// to find the ARN of the invitation.
         /// </para>
         /// </summary>

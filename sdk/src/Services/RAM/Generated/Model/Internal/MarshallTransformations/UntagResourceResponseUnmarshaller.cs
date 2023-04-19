@@ -73,6 +73,10 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("MalformedArnException"))
+                {
+                    return MalformedArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServerInternalException"))
                 {
                     return ServerInternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -80,6 +84,10 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
                 {
                     return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnknownResourceException"))
+                {
+                    return UnknownResourceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonRAMException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

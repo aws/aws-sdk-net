@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// The client token is not valid.
+    /// The operation failed because the specified client token isn't valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
