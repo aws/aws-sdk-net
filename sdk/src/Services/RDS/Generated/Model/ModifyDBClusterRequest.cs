@@ -755,22 +755,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// To list all of the available engine versions for Aurora MySQL version 2 (5.7-compatible)
-        /// and version 3 (MySQL 8.0-compatible), use the following command:
+        /// To list all of the available engine versions for Aurora MySQL, use the following command:
         /// </para>
         ///  
         /// <para>
         ///  <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// To list all of the available engine versions for MySQL 5.6-compatible Aurora, use
-        /// the following command:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
         /// 
         /// </para>
         ///  

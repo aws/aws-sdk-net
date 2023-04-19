@@ -280,7 +280,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
         /// The name of the DB cluster parameter group to associate with the restored DB cluster.
-        /// If this argument is omitted, <code>default.aurora5.6</code> is used.
+        /// If this argument is omitted, the default parameter group for the engine version is
+        /// used.
         /// </para>
         ///  
         /// <para>
@@ -458,8 +459,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
-        /// Aurora)
+        /// Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -482,8 +482,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// To list all of the available engine versions for <code>aurora-mysql</code> (MySQL
-        /// 5.7-compatible and MySQL 8.0-compatible Aurora), use the following command:
+        /// To list all of the available engine versions for <code>aurora-mysql</code> (Aurora
+        /// MySQL), use the following command:
         /// </para>
         ///  
         /// <para>

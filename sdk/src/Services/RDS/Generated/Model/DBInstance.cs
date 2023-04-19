@@ -985,20 +985,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// IAM database authentication can be enabled for the following database engines
+        /// IAM database authentication can be enabled for the following database engines:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For MySQL 5.6, minor version 5.6.34 or higher
+        /// For MySQL 5.7, minor version 5.7.16 or higher.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For MySQL 5.7, minor version 5.7.16 or higher
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster
-        /// Type.
+        /// For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
         /// </para>
         ///  </li> </ul>
         /// </summary>
