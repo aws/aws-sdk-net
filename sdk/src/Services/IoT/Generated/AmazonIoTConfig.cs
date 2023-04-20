@@ -42,7 +42,7 @@ namespace Amazon.IoT
         public AmazonIoTConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTDefaultConfiguration.GetAllConfigurations()))
         {
-            this.AuthenticationServiceName = "execute-api";
+            this.AuthenticationServiceName = "iot";
             this.EndpointProvider = new AmazonIoTEndpointProvider();
         }
 
