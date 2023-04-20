@@ -63,7 +63,8 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The token assigned to the client making the pipeline request.
+        /// The unique identifier for the client request. The token makes the API request idempotent.
+        /// Use a different token for different media pipeline requests.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=2, Max=64)]

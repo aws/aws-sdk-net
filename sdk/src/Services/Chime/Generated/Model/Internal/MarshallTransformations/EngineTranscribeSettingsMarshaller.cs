@@ -63,6 +63,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EnablePartialResultsStabilization);
             }
 
+            if(requestObject.IsSetIdentifyLanguage())
+            {
+                context.Writer.WritePropertyName("IdentifyLanguage");
+                context.Writer.Write(requestObject.IdentifyLanguage);
+            }
+
             if(requestObject.IsSetLanguageCode())
             {
                 context.Writer.WritePropertyName("LanguageCode");
@@ -75,6 +81,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LanguageModelName);
             }
 
+            if(requestObject.IsSetLanguageOptions())
+            {
+                context.Writer.WritePropertyName("LanguageOptions");
+                context.Writer.Write(requestObject.LanguageOptions);
+            }
+
             if(requestObject.IsSetPartialResultsStability())
             {
                 context.Writer.WritePropertyName("PartialResultsStability");
@@ -85,6 +97,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("PiiEntityTypes");
                 context.Writer.Write(requestObject.PiiEntityTypes);
+            }
+
+            if(requestObject.IsSetPreferredLanguage())
+            {
+                context.Writer.WritePropertyName("PreferredLanguage");
+                context.Writer.Write(requestObject.PreferredLanguage);
             }
 
             if(requestObject.IsSetRegion())
@@ -105,10 +123,22 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.VocabularyFilterName);
             }
 
+            if(requestObject.IsSetVocabularyFilterNames())
+            {
+                context.Writer.WritePropertyName("VocabularyFilterNames");
+                context.Writer.Write(requestObject.VocabularyFilterNames);
+            }
+
             if(requestObject.IsSetVocabularyName())
             {
                 context.Writer.WritePropertyName("VocabularyName");
                 context.Writer.Write(requestObject.VocabularyName);
+            }
+
+            if(requestObject.IsSetVocabularyNames())
+            {
+                context.Writer.WritePropertyName("VocabularyNames");
+                context.Writer.Write(requestObject.VocabularyNames);
             }
 
         }

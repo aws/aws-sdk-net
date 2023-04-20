@@ -75,7 +75,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Meeting.
+        /// Gets and sets the property Meeting. 
+        /// <para>
+        /// A meeting created using the Amazon Chime SDK.
+        /// </para>
         /// </summary>
         public Meeting Meeting
         {
