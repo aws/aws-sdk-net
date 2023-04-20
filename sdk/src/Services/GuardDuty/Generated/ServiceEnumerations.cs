@@ -603,6 +603,10 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly DetectorFeature EKS_RUNTIME_MONITORING = new DetectorFeature("EKS_RUNTIME_MONITORING");
         /// <summary>
+        /// Constant LAMBDA_NETWORK_LOGS for DetectorFeature
+        /// </summary>
+        public static readonly DetectorFeature LAMBDA_NETWORK_LOGS = new DetectorFeature("LAMBDA_NETWORK_LOGS");
+        /// <summary>
         /// Constant RDS_LOGIN_EVENTS for DetectorFeature
         /// </summary>
         public static readonly DetectorFeature RDS_LOGIN_EVENTS = new DetectorFeature("RDS_LOGIN_EVENTS");
@@ -676,6 +680,10 @@ namespace Amazon.GuardDuty
         /// Constant FLOW_LOGS for DetectorFeatureResult
         /// </summary>
         public static readonly DetectorFeatureResult FLOW_LOGS = new DetectorFeatureResult("FLOW_LOGS");
+        /// <summary>
+        /// Constant LAMBDA_NETWORK_LOGS for DetectorFeatureResult
+        /// </summary>
+        public static readonly DetectorFeatureResult LAMBDA_NETWORK_LOGS = new DetectorFeatureResult("LAMBDA_NETWORK_LOGS");
         /// <summary>
         /// Constant RDS_LOGIN_EVENTS for DetectorFeatureResult
         /// </summary>
@@ -1147,6 +1155,10 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly FreeTrialFeatureResult FLOW_LOGS = new FreeTrialFeatureResult("FLOW_LOGS");
         /// <summary>
+        /// Constant LAMBDA_NETWORK_LOGS for FreeTrialFeatureResult
+        /// </summary>
+        public static readonly FreeTrialFeatureResult LAMBDA_NETWORK_LOGS = new FreeTrialFeatureResult("LAMBDA_NETWORK_LOGS");
+        /// <summary>
         /// Constant RDS_LOGIN_EVENTS for FreeTrialFeatureResult
         /// </summary>
         public static readonly FreeTrialFeatureResult RDS_LOGIN_EVENTS = new FreeTrialFeatureResult("RDS_LOGIN_EVENTS");
@@ -1394,6 +1406,10 @@ namespace Amazon.GuardDuty
         /// Constant EKS_RUNTIME_MONITORING for OrgFeature
         /// </summary>
         public static readonly OrgFeature EKS_RUNTIME_MONITORING = new OrgFeature("EKS_RUNTIME_MONITORING");
+        /// <summary>
+        /// Constant LAMBDA_NETWORK_LOGS for OrgFeature
+        /// </summary>
+        public static readonly OrgFeature LAMBDA_NETWORK_LOGS = new OrgFeature("LAMBDA_NETWORK_LOGS");
         /// <summary>
         /// Constant RDS_LOGIN_EVENTS for OrgFeature
         /// </summary>
