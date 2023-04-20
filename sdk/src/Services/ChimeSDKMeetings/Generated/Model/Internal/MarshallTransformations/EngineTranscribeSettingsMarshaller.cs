@@ -123,10 +123,22 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.VocabularyFilterName);
             }
 
+            if(requestObject.IsSetVocabularyFilterNames())
+            {
+                context.Writer.WritePropertyName("VocabularyFilterNames");
+                context.Writer.Write(requestObject.VocabularyFilterNames);
+            }
+
             if(requestObject.IsSetVocabularyName())
             {
                 context.Writer.WritePropertyName("VocabularyName");
                 context.Writer.Write(requestObject.VocabularyName);
+            }
+
+            if(requestObject.IsSetVocabularyNames())
+            {
+                context.Writer.WritePropertyName("VocabularyNames");
+                context.Writer.Write(requestObject.VocabularyNames);
             }
 
         }
