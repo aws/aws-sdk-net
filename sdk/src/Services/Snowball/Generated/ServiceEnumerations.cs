@@ -291,6 +291,10 @@ namespace Amazon.Snowball
     {
 
         /// <summary>
+        /// Constant OneMonth for LongTermPricingType
+        /// </summary>
+        public static readonly LongTermPricingType OneMonth = new LongTermPricingType("OneMonth");
+        /// <summary>
         /// Constant OneYear for LongTermPricingType
         /// </summary>
         public static readonly LongTermPricingType OneYear = new LongTermPricingType("OneYear");
@@ -619,6 +623,10 @@ namespace Amazon.Snowball
         /// </summary>
         public static readonly SnowballCapacity T14 = new SnowballCapacity("T14");
         /// <summary>
+        /// Constant T240 for SnowballCapacity
+        /// </summary>
+        public static readonly SnowballCapacity T240 = new SnowballCapacity("T240");
+        /// <summary>
         /// Constant T32 for SnowballCapacity
         /// </summary>
         public static readonly SnowballCapacity T32 = new SnowballCapacity("T32");
@@ -716,6 +724,10 @@ namespace Amazon.Snowball
         /// Constant V3_5C for SnowballType
         /// </summary>
         public static readonly SnowballType V3_5C = new SnowballType("V3_5C");
+        /// <summary>
+        /// Constant V3_5S for SnowballType
+        /// </summary>
+        public static readonly SnowballType V3_5S = new SnowballType("V3_5S");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

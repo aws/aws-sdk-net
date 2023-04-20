@@ -67,6 +67,17 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetS3OnDeviceService())
+            {
+                context.Writer.WritePropertyName("S3OnDeviceService");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3OnDeviceServiceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3OnDeviceService, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTGWOnDeviceService())
             {
                 context.Writer.WritePropertyName("TGWOnDeviceService");
