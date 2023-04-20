@@ -30,8 +30,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTrainingJobsForHyperParameterTuningJob operation.
-    /// Gets a list of <a>TrainingJobSummary</a> objects that describe the training jobs that
-    /// a hyperparameter tuning job launched.
+    /// Gets a list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+    /// objects that describe the training jobs that a hyperparameter tuning job launched.
     /// </summary>
     public partial class ListTrainingJobsForHyperParameterTuningJobRequest : AmazonSageMakerRequest
     {

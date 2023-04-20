@@ -29,43 +29,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Time series forecast settings for the SageMaker Canvas application.
+    /// The model registry settings for the SageMaker Canvas application.
     /// </summary>
-    public partial class TimeSeriesForecastingSettings
+    public partial class ModelRegisterSettings
     {
-        private string _amazonForecastRoleArn;
+        private string _crossAccountModelRegisterRoleArn;
         private FeatureStatus _status;
 
         /// <summary>
-        /// Gets and sets the property AmazonForecastRoleArn. 
+        /// Gets and sets the property CrossAccountModelRegisterRoleArn. 
         /// <para>
-        /// The IAM role that Canvas passes to Amazon Forecast for time series forecasting. By
-        /// default, Canvas uses the execution role specified in the <code>UserProfile</code>
-        /// that launches the Canvas application. If an execution role is not specified in the
-        /// <code>UserProfile</code>, Canvas uses the execution role specified in the Domain that
-        /// owns the <code>UserProfile</code>. To allow time series forecasting, this IAM role
-        /// should have the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess">
-        /// AmazonSageMakerCanvasForecastAccess</a> policy attached and <code>forecast.amazonaws.com</code>
-        /// added in the trust relationship as a service principal.
+        /// The Amazon Resource Name (ARN) of the SageMaker model registry account. Required only
+        /// to register model versions created by a different SageMaker Canvas AWS account than
+        /// the AWS account in which SageMaker model registry is set up.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
-        public string AmazonForecastRoleArn
+        public string CrossAccountModelRegisterRoleArn
         {
-            get { return this._amazonForecastRoleArn; }
-            set { this._amazonForecastRoleArn = value; }
+            get { return this._crossAccountModelRegisterRoleArn; }
+            set { this._crossAccountModelRegisterRoleArn = value; }
         }
 
-        // Check to see if AmazonForecastRoleArn property is set
-        internal bool IsSetAmazonForecastRoleArn()
+        // Check to see if CrossAccountModelRegisterRoleArn property is set
+        internal bool IsSetCrossAccountModelRegisterRoleArn()
         {
-            return this._amazonForecastRoleArn != null;
+            return this._crossAccountModelRegisterRoleArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Describes whether time series forecasting is enabled or disabled in the Canvas application.
+        /// Describes whether the integration to the model registry is enabled or disabled in
+        /// the Canvas application.
         /// </para>
         /// </summary>
         public FeatureStatus Status

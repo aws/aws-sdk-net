@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CanvasAppSettings Object
+    /// Response Unmarshaller for ModelRegisterSettings Object
     /// </summary>  
-    public class CanvasAppSettingsUnmarshaller : IUnmarshaller<CanvasAppSettings, XmlUnmarshallerContext>, IUnmarshaller<CanvasAppSettings, JsonUnmarshallerContext>
+    public class ModelRegisterSettingsUnmarshaller : IUnmarshaller<ModelRegisterSettings, XmlUnmarshallerContext>, IUnmarshaller<ModelRegisterSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CanvasAppSettings IUnmarshaller<CanvasAppSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ModelRegisterSettings IUnmarshaller<ModelRegisterSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CanvasAppSettings Unmarshall(JsonUnmarshallerContext context)
+        public ModelRegisterSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CanvasAppSettings unmarshalledObject = new CanvasAppSettings();
+            ModelRegisterSettings unmarshalledObject = new ModelRegisterSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ModelRegisterSettings", targetDepth))
+                if (context.TestExpression("CrossAccountModelRegisterRoleArn", targetDepth))
                 {
-                    var unmarshaller = ModelRegisterSettingsUnmarshaller.Instance;
-                    unmarshalledObject.ModelRegisterSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CrossAccountModelRegisterRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TimeSeriesForecastingSettings", targetDepth))
+                if (context.TestExpression("Status", targetDepth))
                 {
-                    var unmarshaller = TimeSeriesForecastingSettingsUnmarshaller.Instance;
-                    unmarshalledObject.TimeSeriesForecastingSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static CanvasAppSettingsUnmarshaller _instance = new CanvasAppSettingsUnmarshaller();        
+        private static ModelRegisterSettingsUnmarshaller _instance = new ModelRegisterSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CanvasAppSettingsUnmarshaller Instance
+        public static ModelRegisterSettingsUnmarshaller Instance
         {
             get
             {

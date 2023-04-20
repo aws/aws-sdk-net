@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CanvasAppSettings Marshaller
+    /// ModelRegisterSettings Marshaller
     /// </summary>
-    public class CanvasAppSettingsMarshaller : IRequestMarshaller<CanvasAppSettings, JsonMarshallerContext> 
+    public class ModelRegisterSettingsMarshaller : IRequestMarshaller<ModelRegisterSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CanvasAppSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(ModelRegisterSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetModelRegisterSettings())
+            if(requestObject.IsSetCrossAccountModelRegisterRoleArn())
             {
-                context.Writer.WritePropertyName("ModelRegisterSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ModelRegisterSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.ModelRegisterSettings, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("CrossAccountModelRegisterRoleArn");
+                context.Writer.Write(requestObject.CrossAccountModelRegisterRoleArn);
             }
 
-            if(requestObject.IsSetTimeSeriesForecastingSettings())
+            if(requestObject.IsSetStatus())
             {
-                context.Writer.WritePropertyName("TimeSeriesForecastingSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = TimeSeriesForecastingSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.TimeSeriesForecastingSettings, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Status");
+                context.Writer.Write(requestObject.Status);
             }
 
         }
@@ -72,7 +62,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CanvasAppSettingsMarshaller Instance = new CanvasAppSettingsMarshaller();
+        public readonly static ModelRegisterSettingsMarshaller Instance = new ModelRegisterSettingsMarshaller();
 
     }
 }

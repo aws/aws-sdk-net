@@ -80,7 +80,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property EndpointStatus. 
         /// <para>
         ///  The status of the endpoint. For possible values of the status of an endpoint, see
-        /// <a>EndpointSummary$EndpointStatus</a>. 
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_EndpointSummary.html">EndpointSummary</a>.
+        /// 
         /// </para>
         /// </summary>
         public EndpointStatus EndpointStatus

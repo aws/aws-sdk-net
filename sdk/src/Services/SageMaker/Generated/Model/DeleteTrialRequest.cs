@@ -31,7 +31,8 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the DeleteTrial operation.
     /// Deletes the specified trial. All trial components that make up the trial must be deleted
-    /// first. Use the <a>DescribeTrialComponent</a> API to get the list of trial components.
+    /// first. Use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrialComponent.html">DescribeTrialComponent</a>
+    /// API to get the list of trial components.
     /// </summary>
     public partial class DeleteTrialRequest : AmazonSageMakerRequest
     {

@@ -176,7 +176,8 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         /// Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set
-        /// to <code>VpcOnly</code>.
+        /// to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code>
+        /// for the domain.
         /// </para>
         ///  
         /// <para>

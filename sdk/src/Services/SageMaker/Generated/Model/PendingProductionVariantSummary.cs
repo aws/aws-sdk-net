@@ -30,7 +30,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// The production variant summary for a deployment when an endpoint is creating or updating
-    /// with the <code> <a>CreateEndpoint</a> </code> or <code> <a>UpdateEndpoint</a> </code>
+    /// with the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+    /// or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a>
     /// operations. Describes the <code>VariantStatus </code>, weight and capacity for a production
     /// variant associated with an endpoint.
     /// </summary>
@@ -148,8 +149,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property DesiredInstanceCount. 
         /// <para>
         /// The number of instances requested in this deployment, as specified in the endpoint
-        /// configuration for the endpoint. The value is taken from the request to the <code>
-        /// <a>CreateEndpointConfig</a> </code> operation.
+        /// configuration for the endpoint. The value is taken from the request to the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+        /// operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -188,8 +189,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property DesiredWeight. 
         /// <para>
         /// The requested weight for the variant in this deployment, as specified in the endpoint
-        /// configuration for the endpoint. The value is taken from the request to the <code>
-        /// <a>CreateEndpointConfig</a> </code> operation.
+        /// configuration for the endpoint. The value is taken from the request to the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+        /// operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

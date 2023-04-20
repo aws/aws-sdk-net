@@ -61,8 +61,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProductionVariants. 
         /// <para>
-        /// An array of <a>PendingProductionVariantSummary</a> objects, one for each model hosted
-        /// behind this endpoint for the in-progress deployment.
+        /// An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+        /// objects, one for each model hosted behind this endpoint for the in-progress deployment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -81,9 +81,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ShadowProductionVariants. 
         /// <para>
-        /// An array of <a>PendingProductionVariantSummary</a> objects, one for each model hosted
-        /// behind this endpoint in shadow mode with production traffic replicated from the model
-        /// specified on <code>ProductionVariants</code> for the in-progress deployment.
+        /// An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+        /// objects, one for each model hosted behind this endpoint in shadow mode with production
+        /// traffic replicated from the model specified on <code>ProductionVariants</code> for
+        /// the in-progress deployment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

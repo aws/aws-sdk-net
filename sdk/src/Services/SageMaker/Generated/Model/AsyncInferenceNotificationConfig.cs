@@ -63,6 +63,12 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The Amazon SNS topics where you want the inference response to be included.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The inference response is included only if the response size is less than or equal
+        /// to 128 KB.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=2)]
         public List<string> IncludeInferenceResponseIn
