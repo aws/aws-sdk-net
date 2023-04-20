@@ -29,17 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
-    /// The structure that holds the settings for transmitting audio and video to the Amazon
-    /// S3 bucket.
+    /// The structure that holds the settings for transmitting media to the Amazon S3 bucket.
+    /// These values are used as defaults if <code>S3RecordingSinkRuntimeConfiguration</code>
+    /// is not specified.
     /// </summary>
     public partial class S3RecordingSinkConfiguration
     {
         private string _destination;
+        private RecordingFileFormat _recordingFileFormat;
 
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The URL of the Amazon S3 bucket used as the recording sink.
+        /// The default URI of the Amazon S3 bucket used as the recording sink.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]
@@ -53,6 +55,24 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         internal bool IsSetDestination()
         {
             return this._destination != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecordingFileFormat. 
+        /// <para>
+        /// The default file format for the media files sent to the Amazon S3 bucket.
+        /// </para>
+        /// </summary>
+        public RecordingFileFormat RecordingFileFormat
+        {
+            get { return this._recordingFileFormat; }
+            set { this._recordingFileFormat = value; }
+        }
+
+        // Check to see if RecordingFileFormat property is set
+        internal bool IsSetRecordingFileFormat()
+        {
+            return this._recordingFileFormat != null;
         }
 
     }

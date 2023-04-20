@@ -266,7 +266,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// </para>
         ///  
         /// <para>
-        /// Length Constraints: Minimum length of 1. Maximum length of 300.
+        /// If you leave this parameter empty, the default behavior is equivalent to <code>ALL</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]

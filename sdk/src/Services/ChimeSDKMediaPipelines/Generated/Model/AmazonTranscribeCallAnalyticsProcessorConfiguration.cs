@@ -51,9 +51,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property CallAnalyticsStreamCategories. 
         /// <para>
-        /// By default, all <code>CategoryEvents</code> will be sent to the insights target. If
-        /// this parameter is specified, only included categories will be sent to the insights
-        /// target. 
+        /// By default, all <code>CategoryEvents</code> are sent to the insights target. If this
+        /// parameter is specified, only included categories are sent to the insights target.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

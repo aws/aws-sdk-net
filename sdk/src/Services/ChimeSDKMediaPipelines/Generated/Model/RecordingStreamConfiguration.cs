@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
-    /// A structure the holds the settings for recording audio and video.
+    /// A structure that holds the settings for recording media.
     /// </summary>
     public partial class RecordingStreamConfiguration
     {

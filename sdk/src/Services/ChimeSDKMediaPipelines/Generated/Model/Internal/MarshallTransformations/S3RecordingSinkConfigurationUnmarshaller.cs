@@ -70,6 +70,12 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                     unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RecordingFileFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecordingFileFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

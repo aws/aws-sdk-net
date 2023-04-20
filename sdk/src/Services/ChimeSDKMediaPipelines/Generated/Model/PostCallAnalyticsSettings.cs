@@ -29,7 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
-    /// The settings for a post-call voice analytics task.
+    /// Allows you to specify additional settings for your Call Analytics post-call request,
+    /// including output locations for your redacted transcript, which IAM role to use, and
+    /// which encryption key to use.
+    /// 
+    ///  
+    /// <para>
+    ///  <code>DataAccessRoleArn</code> and <code>OutputLocation</code> are required fields.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>PostCallAnalyticsSettings</code> provides the same insights as a Call Analytics
+    /// post-call transcription. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call
+    /// analytics with real-time transcriptions</a> in the <i>Amazon Transcribe Developer
+    /// Guide</i>.
+    /// </para>
     /// </summary>
     public partial class PostCallAnalyticsSettings
     {
@@ -81,7 +95,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property OutputEncryptionKMSKeyId. 
         /// <para>
-        /// The ID of the KMS (Key Management System) key used to encrypt the output.
+        /// The ID of the KMS (Key Management Service) key used to encrypt the output.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]

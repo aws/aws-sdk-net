@@ -51,6 +51,12 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Destination);
             }
 
+            if(requestObject.IsSetRecordingFileFormat())
+            {
+                context.Writer.WritePropertyName("RecordingFileFormat");
+                context.Writer.Write(requestObject.RecordingFileFormat);
+            }
+
         }
 
         /// <summary>

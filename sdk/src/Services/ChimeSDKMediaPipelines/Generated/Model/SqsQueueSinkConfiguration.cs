@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
-    /// The URL of the SQS sink.
+    /// The configuration settings for the SQS sink.
     /// </summary>
     public partial class SqsQueueSinkConfiguration
     {
@@ -38,7 +38,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property InsightsTarget. 
         /// <para>
-        /// The URL of the SQS sink, <a href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.
+        /// The ARN of the SQS sink.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]

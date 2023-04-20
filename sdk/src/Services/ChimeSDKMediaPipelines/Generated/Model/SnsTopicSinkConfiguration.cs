@@ -38,7 +38,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property InsightsTarget. 
         /// <para>
-        /// The URL of the SNS sink, <a href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.
+        /// The ARN of the SNS sink.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]

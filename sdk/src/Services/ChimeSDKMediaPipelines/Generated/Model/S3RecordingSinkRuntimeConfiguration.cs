@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
-    /// A structure that holds the settings for transmitting audio and video recordings to
-    /// the runtime Amazon S3 bucket.
+    /// A structure that holds the settings for transmitting media files to the Amazon S3
+    /// bucket. If specified, the settings in this structure override any settings in <code>S3RecordingSinkConfiguration</code>.
     /// </summary>
     public partial class S3RecordingSinkRuntimeConfiguration
     {
@@ -40,7 +40,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The URL of the S3 bucket used as the runtime sink.
+        /// The URI of the S3 bucket used as the sink.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
@@ -59,7 +59,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property RecordingFileFormat. 
         /// <para>
-        /// The file formats for the audio and video files sent to the Amazon S3 bucket.
+        /// The file format for the media files sent to the Amazon S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
