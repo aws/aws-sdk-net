@@ -142,9 +142,8 @@ namespace ServiceClientGenerator
                         new System.Text.RegularExpressions.Regex(memberShape.Pattern);
                         writer.WriteElementString("pattern", memberShape.Pattern);
                     }
-                    catch(Exception e)
+                    catch(Exception)
                     {
-                        Console.Error.WriteLine("Failed to compile regex {0} for property {1}: {2}", memberShape.Pattern, propertyName, e.Message);
                     }
                 }
 

@@ -1259,6 +1259,20 @@ namespace ServiceClientGenerator
                 var existingContent = File.ReadAllText(outputFilePath);
                 if (string.Equals(existingContent, cleanContent))
                     return false;
+
+                // Handle Windows being case insensitive when a service makes a case change for shape name.
+                // Get a FileInfo that represents the casing of the file on disk
+                var fi = Directory.GetFiles(new FileInfo(outputFilePath).DirectoryName)
+                                .Select(x => new FileInfo(x))
+                                .FirstOrDefault(x => string.Equals(x.Name, filename, StringComparison.OrdinalIgnoreCase));
+
+                // Compare the casing on disk versus the computed value.
+                if(fi.FullName != new FileInfo(outputFilePath).FullName)
+                {
+                    // Casing is different so delete the on disk file so we can create a new file with the correct casing.
+                    File.Delete(outputFilePath);
+                    Console.WriteLine("...deleting existing file that is different by case from new file: {0}", filename);
+                }
             }
 
             File.WriteAllText(outputFilePath, cleanContent);
