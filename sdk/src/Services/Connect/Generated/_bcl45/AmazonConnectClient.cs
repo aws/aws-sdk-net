@@ -1859,6 +1859,87 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateParticipant
+
+
+        /// <summary>
+        /// Adds a new participant into an on-going chat contact. For more information, see <a
+        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html">Customize
+        /// chat flow experiences by integrating custom participants</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateParticipant service method.</param>
+        /// 
+        /// <returns>The response from the CreateParticipant service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateParticipant">REST API Reference for CreateParticipant Operation</seealso>
+        public virtual CreateParticipantResponse CreateParticipant(CreateParticipantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateParticipantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateParticipantResponseUnmarshaller.Instance;
+
+            return Invoke<CreateParticipantResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Adds a new participant into an on-going chat contact. For more information, see <a
+        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html">Customize
+        /// chat flow experiences by integrating custom participants</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateParticipant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateParticipant service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateParticipant">REST API Reference for CreateParticipant Operation</seealso>
+        public virtual Task<CreateParticipantResponse> CreateParticipantAsync(CreateParticipantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateParticipantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateParticipantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateParticipantResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateQueue
 
 

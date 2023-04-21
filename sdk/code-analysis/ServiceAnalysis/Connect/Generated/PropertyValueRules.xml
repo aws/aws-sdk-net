@@ -219,6 +219,25 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.CreateParticipantRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateParticipantRequest.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateParticipantRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateParticipantResponse.ParticipantId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.CreateQueueRequest.Description</property>
     <min>1</min>
     <max>250</max>
@@ -2358,9 +2377,19 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ParticipantDetailsToAdd.DisplayName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ParticipantTimerValue.ParticipantTimerDurationInMinutes</property>
     <min>2</min>
     <max>480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ParticipantTokenCredentials.ParticipantToken</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PersistentChat.SourceContactId</property>

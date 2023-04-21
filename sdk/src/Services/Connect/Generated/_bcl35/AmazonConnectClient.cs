@@ -1642,6 +1642,80 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateParticipant
+
+        /// <summary>
+        /// Adds a new participant into an on-going chat contact. For more information, see <a
+        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html">Customize
+        /// chat flow experiences by integrating custom participants</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateParticipant service method.</param>
+        /// 
+        /// <returns>The response from the CreateParticipant service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateParticipant">REST API Reference for CreateParticipant Operation</seealso>
+        public virtual CreateParticipantResponse CreateParticipant(CreateParticipantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateParticipantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateParticipantResponseUnmarshaller.Instance;
+
+            return Invoke<CreateParticipantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateParticipant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateParticipant operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateParticipant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateParticipant">REST API Reference for CreateParticipant Operation</seealso>
+        public virtual IAsyncResult BeginCreateParticipant(CreateParticipantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateParticipantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateParticipantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateParticipant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateParticipant.</param>
+        /// 
+        /// <returns>Returns a  CreateParticipantResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateParticipant">REST API Reference for CreateParticipant Operation</seealso>
+        public virtual CreateParticipantResponse EndCreateParticipant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateParticipantResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateQueue
 
         /// <summary>

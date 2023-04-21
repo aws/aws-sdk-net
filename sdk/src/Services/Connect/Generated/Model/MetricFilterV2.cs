@@ -45,8 +45,10 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid metric filter keys: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>
-        /// 
+        /// Valid metric filter keys: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>.
+        /// These are the same values as the <code>InitiationMethod</code> and <code>DisconnectReason</code>
+        /// in the contact record. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+        /// in the <i>Amazon Connect Administrator's Guide</i>. 
         /// </para>
         /// </summary>
         public string MetricFilterKey
