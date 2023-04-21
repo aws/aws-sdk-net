@@ -1260,11 +1260,12 @@ namespace ServiceClientGenerator
                 if (string.Equals(existingContent, cleanContent))
                     return false;
 
+                var outputFilePathFi = new FileInfo(outputFilePath);
                 // Handle Windows being case insensitive when a service makes a case change for shape name.
                 // Get a FileInfo that represents the casing of the file on disk
-                var fi = Directory.GetFiles(new FileInfo(outputFilePath).DirectoryName)
+                var fi = Directory.GetFiles(outputFilePathFi.DirectoryName)
                                 .Select(x => new FileInfo(x))
-                                .FirstOrDefault(x => string.Equals(x.Name, filename, StringComparison.OrdinalIgnoreCase));
+                                .FirstOrDefault(x => string.Equals(x.Name, outputFilePathFi.Name, StringComparison.OrdinalIgnoreCase));
 
                 // Compare the casing on disk versus the computed value.
                 if(fi.FullName != new FileInfo(outputFilePath).FullName)
