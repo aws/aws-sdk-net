@@ -40,6 +40,7 @@ namespace Amazon.FMS.Model
         private string _policyDescription;
         private string _policyId;
         private string _policyName;
+        private CustomerPolicyStatus _policyStatus;
         private string _policyUpdateToken;
         private bool? _remediationEnabled;
         private List<string> _resourceSetIds = new List<string>();
@@ -255,6 +256,35 @@ namespace Amazon.FMS.Model
         internal bool IsSetPolicyName()
         {
             return this._policyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyStatus. 
+        /// <para>
+        /// Indicates whether the policy is in or out of an admin's policy or Region scope.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ACTIVE</code> - The administrator can manage and delete the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they
+        /// can't edit or delete the policy. Existing policy protections stay in place. Any new
+        /// resources that come into scope of the policy won't be protected.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public CustomerPolicyStatus PolicyStatus
+        {
+            get { return this._policyStatus; }
+            set { this._policyStatus = value; }
+        }
+
+        // Check to see if PolicyStatus property is set
+        internal bool IsSetPolicyStatus()
+        {
+            return this._policyStatus != null;
         }
 
         /// <summary>

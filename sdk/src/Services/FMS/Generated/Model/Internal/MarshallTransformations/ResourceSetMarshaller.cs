@@ -69,6 +69,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetResourceSetStatus())
+            {
+                context.Writer.WritePropertyName("ResourceSetStatus");
+                context.Writer.Write(requestObject.ResourceSetStatus);
+            }
+
             if(requestObject.IsSetResourceTypeList())
             {
                 context.Writer.WritePropertyName("ResourceTypeList");

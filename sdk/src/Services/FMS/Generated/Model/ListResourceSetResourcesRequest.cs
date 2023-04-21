@@ -41,7 +41,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// A unique identifier for the resource set, used in a TODO to refer to the resource
+        /// A unique identifier for the resource set, used in a request to refer to the resource
         /// set.
         /// </para>
         /// </summary>

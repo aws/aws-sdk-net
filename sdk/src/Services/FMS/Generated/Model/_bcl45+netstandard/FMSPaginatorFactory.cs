@@ -36,6 +36,22 @@ namespace Amazon.FMS.Model
         }
 
         /// <summary>
+        /// Paginator for ListAdminAccountsForOrganization operation
+        ///</summary>
+        public IListAdminAccountsForOrganizationPaginator ListAdminAccountsForOrganization(ListAdminAccountsForOrganizationRequest request) 
+        {
+            return new ListAdminAccountsForOrganizationPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAdminsManagingAccount operation
+        ///</summary>
+        public IListAdminsManagingAccountPaginator ListAdminsManagingAccount(ListAdminsManagingAccountRequest request) 
+        {
+            return new ListAdminsManagingAccountPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAppsLists operation
         ///</summary>
         public IListAppsListsPaginator ListAppsLists(ListAppsListsRequest request) 
