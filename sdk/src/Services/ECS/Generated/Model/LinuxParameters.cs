@@ -139,6 +139,11 @@ namespace Amazon.ECS.Model
         /// If you're using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter
         /// isn't supported.
         /// </para>
+        ///  
+        /// <para>
+        /// If you're using tasks on Amazon Linux 2023 the <code>swappiness</code> parameter isn't
+        /// supported.
+        /// </para>
         ///  </note>
         /// </summary>
         public int MaxSwap
@@ -196,6 +201,11 @@ namespace Amazon.ECS.Model
         /// <para>
         /// If you're using tasks that use the Fargate launch type, the <code>swappiness</code>
         /// parameter isn't supported.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you're using tasks on Amazon Linux 2023 the <code>swappiness</code> parameter isn't
+        /// supported.
         /// </para>
         ///  </note>
         /// </summary>

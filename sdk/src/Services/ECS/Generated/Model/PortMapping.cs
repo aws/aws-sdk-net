@@ -38,6 +38,15 @@ namespace Amazon.ECS.Model
     /// network mode, specify the exposed ports using <code>containerPort</code>. The <code>hostPort</code>
     /// can be left blank or it must be the same value as the <code>containerPort</code>.
     /// </para>
+    ///  
+    /// <para>
+    /// Most fields of this parameter (<code>containerPort</code>, <code>hostPort</code>,
+    /// <code>protocol</code>) maps to <code>PortBindings</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+    /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
+    /// Remote API</a> and the <code>--publish</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/">
+    /// <code>docker run</code> </a>. If the network mode of a task definition is set to <code>host</code>,
+    /// host ports must either be undefined or match the container port in the port mapping.
+    /// </para>
     ///  <note> 
     /// <para>
     /// You can't expose the same container port for multiple protocols. If you attempt this,
