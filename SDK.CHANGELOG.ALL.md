@@ -1,3 +1,26 @@
+### 3.7.530.0 (2023-04-21 00:01 UTC)
+* Chime (3.7.101.0)
+	* Adds support for Hindi and Thai languages and additional Amazon Transcribe parameters to the StartMeetingTranscription API.
+* ChimeSDKMediaPipelines (3.7.102.0)
+	* This release adds support for specifying the recording file format in an S3 recording sink configuration.
+* ChimeSDKMeetings (3.7.101.0)
+	* Adds support for Hindi and Thai languages and additional Amazon Transcribe parameters to the StartMeetingTranscription API.
+* GameLift (3.7.103.0)
+	* Amazon GameLift supports creating Builds for Windows 2016 operating system.
+* GuardDuty (3.7.104.0)
+	* This release adds support for the new Lambda Protection feature.
+* IoT (3.7.107.0)
+	* Support additional OTA states in GetOTAUpdate API
+* SageMaker (3.7.125.0)
+	* Amazon SageMaker Canvas adds ModelRegisterSettings support for CanvasAppSettings.
+* Snowball (3.7.102.0)
+	* Adds support for Amazon S3 compatible storage. AWS Snow Family customers can now use Amazon S3 compatible storage on Snowball Edge devices. Also adds support for V3_5S. This is a refreshed AWS Snowball Edge Storage Optimized device type with 210TB SSD (customer usable).
+* WAFV2 (3.7.107.0)
+	* You can now create encrypted API keys to use in a client application integration of the JavaScript CAPTCHA API . You can also retrieve a list of your API keys and the JavaScript application integration URL.
+* Core 3.7.106.23
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.529.0 (2023-04-19 18:27 UTC)
 * Comprehend (3.7.104.0)
 	* This release supports native document models for custom classification, in addition to plain-text models. You train native document models using documents (PDF, Word, images) in their native format.
