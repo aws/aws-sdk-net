@@ -13,6 +13,7 @@ using AWSSDK_DotNet.IntegrationTests.Utils;
 using Amazon.Util;
 using System.Globalization;
 using System.Threading;
+using System.Collections.Generic;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -69,6 +70,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var client = new AmazonS3Client(region))
             {
                 var bucketName = S3TestUtils.CreateBucketWithWait(client);
+
+                client.PutBucketOwnershipControls(new PutBucketOwnershipControlsRequest
+                {
+                    BucketName = bucketName,
+                    OwnershipControls = new OwnershipControls
+                    {
+                        Rules = new List<OwnershipControlsRule>
+                        {
+                            new OwnershipControlsRule{ObjectOwnership = ObjectOwnership.BucketOwnerPreferred}
+                        }
+                    }
+                });
+
+                client.PutPublicAccessBlock(new PutPublicAccessBlockRequest
+                {
+                    BucketName = bucketName,
+                    PublicAccessBlockConfiguration = new PublicAccessBlockConfiguration
+                    {
+                        BlockPublicAcls = false
+                    }
+                });
+
                 client.PutACL(new PutACLRequest
                 {
                     BucketName = bucketName,
