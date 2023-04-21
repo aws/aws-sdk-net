@@ -708,10 +708,14 @@ namespace ServiceClientGenerator
                 case "float":
                     return "FloatUnmarshaller.Instance";
                 case "integer":
+                    if (this.UseNullable)
+                        return "NullableIntUnmarshaller.Instance";
                     return "IntUnmarshaller.Instance";
                 case "long":
                     return "LongUnmarshaller.Instance";
                 case "timestamp":
+                    if (this.UseNullable)
+                        return "NullableDateTimeUnmarshaller.Instance";
                     return "DateTimeUnmarshaller.Instance";
                 case "structure":
                     return (renameShape ?? extendsNode) + "Unmarshaller.Instance";

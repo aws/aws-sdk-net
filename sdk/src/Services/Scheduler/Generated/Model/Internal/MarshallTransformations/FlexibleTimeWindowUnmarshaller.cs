@@ -66,7 +66,7 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaximumWindowInMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumWindowInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
