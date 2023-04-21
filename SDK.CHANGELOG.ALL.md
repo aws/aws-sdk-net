@@ -1,3 +1,14 @@
+### 3.7.531.0 (2023-04-21 19:21 UTC)
+* Connect (3.7.121.0)
+	* This release adds a new API CreateParticipant. For Amazon Connect Chat, you can use this new API to customize chat flow experiences.
+* ECS (3.7.107.2)
+	* Documentation update to address various Amazon ECS tickets.
+* FMS (3.7.104.0)
+	* AWS Firewall Manager adds support for multiple administrators. You can now delegate more than one administrator per organization.
+* Core 3.7.106.24
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.530.0 (2023-04-21 00:01 UTC)
 * Chime (3.7.101.0)
 	* Adds support for Hindi and Thai languages and additional Amazon Transcribe parameters to the StartMeetingTranscription API.
