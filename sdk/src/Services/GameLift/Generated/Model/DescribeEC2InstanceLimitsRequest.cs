@@ -35,8 +35,8 @@ namespace Amazon.GameLift.Model
     /// location, that your Amazon Web Services account can use. Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
     /// EC2 Instance Types</a>. The information returned includes the maximum number of instances
     /// allowed and your account's current usage across all fleets. This information can affect
-    /// your ability to scale your GameLift fleets. You can request a limit increase for your
-    /// account by using the <b>Service limits</b> page in the GameLift console.
+    /// your ability to scale your Amazon GameLift fleets. You can request a limit increase
+    /// for your account by using the <b>Service limits</b> page in the Amazon GameLift console.
     /// 
     ///  
     /// <para>
@@ -95,7 +95,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-    /// up GameLift fleets</a> 
+    /// up Amazon GameLift fleets</a> 
     /// </para>
     /// </summary>
     public partial class DescribeEC2InstanceLimitsRequest : AmazonGameLiftRequest
@@ -106,9 +106,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property EC2InstanceType. 
         /// <para>
-        /// Name of an Amazon EC2 instance type that is supported in GameLift. A fleet instance
-        /// type determines the computing resources of each instance in the fleet, including CPU,
-        /// memory, storage, and networking capacity. Do not specify a value for this parameter
+        /// Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A fleet
+        /// instance type determines the computing resources of each instance in the fleet, including
+        /// CPU, memory, storage, and networking capacity. Do not specify a value for this parameter
         /// to retrieve limits for all instance types.
         /// </para>
         /// </summary>

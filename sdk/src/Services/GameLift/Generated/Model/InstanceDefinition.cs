@@ -29,12 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type is used with the GameLift FleetIQ and game server groups.</b> 
+    /// <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b>
+    /// 
     /// 
     ///  
     /// <para>
     /// An allowed instance type for a game server group. All game server groups must have
-    /// at least two instance types defined for it. GameLift FleetIQ periodically evaluates
+    /// at least two instance types defined for it. Amazon GameLift FleetIQ periodically evaluates
     /// each defined instance type for viability. It then updates the Auto Scaling group with
     /// the list of viable instance types.
     /// </para>
@@ -67,8 +68,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property WeightedCapacity. 
         /// <para>
         /// Instance weighting that indicates how much this instance type contributes to the total
-        /// capacity of a game server group. Instance weights are used by GameLift FleetIQ to
-        /// calculate the instance type's cost per unit hour and better identify the most cost-effective
+        /// capacity of a game server group. Instance weights are used by Amazon GameLift FleetIQ
+        /// to calculate the instance type's cost per unit hour and better identify the most cost-effective
         /// options. For detailed information on weighting instance capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
         /// Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>.
         /// Default value is "1".

@@ -31,9 +31,9 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the RegisterCompute operation.
     /// Registers your compute resources in a fleet you previously created. After you register
-    /// a compute to your fleet, you can monitor and manage your compute using GameLift. The
-    /// operation returns the compute resource containing SDK endpoint you can use to connect
-    /// your game server to GameLift.
+    /// a compute to your fleet, you can monitor and manage your compute using Amazon GameLift.
+    /// The operation returns the compute resource containing SDK endpoint you can use to
+    /// connect your game server to Amazon GameLift.
     /// 
     ///  
     /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property CertificatePath. 
         /// <para>
         /// The path to the TLS certificate on your compute resource. The path and certificate
-        /// are not validated by GameLift.
+        /// are not validated by Amazon GameLift.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -103,8 +103,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property DnsName. 
         /// <para>
-        /// The DNS name of the compute resource. GameLift requires the DNS name or IP address
-        /// to manage your compute resource.
+        /// The DNS name of the compute resource. Amazon GameLift requires the DNS name or IP
+        /// address to manage your compute resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -143,8 +143,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// The IP address of the compute resource. GameLift requires the DNS name or IP address
-        /// to manage your compute resource.
+        /// The IP address of the compute resource. Amazon GameLift requires the DNS name or IP
+        /// address to manage your compute resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

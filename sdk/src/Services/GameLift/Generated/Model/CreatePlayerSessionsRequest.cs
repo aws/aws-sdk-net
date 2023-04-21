@@ -46,8 +46,8 @@ namespace Amazon.GameLift.Model
     /// If successful, a slot is reserved in the game session for each player, and new <code>PlayerSession</code>
     /// objects are returned with player session IDs. Each player references their player
     /// session ID when sending a connection request to the game session, and the game server
-    /// can use it to validate the player reservation with the GameLift service. Player sessions
-    /// cannot be updated.
+    /// can use it to validate the player reservation with the Amazon GameLift service. Player
+    /// sessions cannot be updated.
     /// </para>
     ///  
     /// <para>

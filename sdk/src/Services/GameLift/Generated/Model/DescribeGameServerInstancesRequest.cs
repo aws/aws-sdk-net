@@ -30,14 +30,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeGameServerInstances operation.
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// 
+    /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
+    /// groups.</b> 
     /// 
     ///  
     /// <para>
-    /// Retrieves status information about the Amazon EC2 instances associated with a GameLift
-    /// FleetIQ game server group. Use this operation to detect when instances are active
-    /// or not available to host new game servers.
+    /// Retrieves status information about the Amazon EC2 instances associated with a Amazon
+    /// GameLift FleetIQ game server group. Use this operation to detect when instances are
+    /// active or not available to host new game servers.
     /// </para>
     ///  
     /// <para>
@@ -60,8 +60,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift
-    /// FleetIQ Guide</a> 
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
+    /// GameLift FleetIQ Guide</a> 
     /// </para>
     /// </summary>
     public partial class DescribeGameServerInstancesRequest : AmazonGameLiftRequest
