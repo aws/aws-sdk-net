@@ -29,31 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// This is the response object from the ListAvailableManagedRuleGroupVersions operation.
+    /// Container for the parameters to the ListAPIKeys operation.
+    /// Retrieves a list of the API keys that you've defined for the specified scope.
     /// </summary>
-    public partial class ListAvailableManagedRuleGroupVersionsResponse : AmazonWebServiceResponse
+    public partial class ListAPIKeysRequest : AmazonWAFV2Request
     {
-        private string _currentDefaultVersion;
+        private int? _limit;
         private string _nextMarker;
-        private List<ManagedRuleGroupVersion> _versions = new List<ManagedRuleGroupVersion>();
+        private Scope _scope;
 
         /// <summary>
-        /// Gets and sets the property CurrentDefaultVersion. 
+        /// Gets and sets the property Limit. 
         /// <para>
-        /// The name of the version that's currently set as the default. 
+        /// The maximum number of objects that you want WAF to return for this request. If more
+        /// objects are available, in the response, WAF provides a <code>NextMarker</code> value
+        /// that you can use in a subsequent call to get the next batch of objects.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string CurrentDefaultVersion
+        [AWSProperty(Min=1, Max=100)]
+        public int Limit
         {
-            get { return this._currentDefaultVersion; }
-            set { this._currentDefaultVersion = value; }
+            get { return this._limit.GetValueOrDefault(); }
+            set { this._limit = value; }
         }
 
-        // Check to see if CurrentDefaultVersion property is set
-        internal bool IsSetCurrentDefaultVersion()
+        // Check to see if Limit property is set
+        internal bool IsSetLimit()
         {
-            return this._currentDefaultVersion != null;
+            return this._limit.HasValue; 
         }
 
         /// <summary>
@@ -79,23 +82,40 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Versions. 
+        /// Gets and sets the property Scope. 
         /// <para>
-        /// The versions that are currently available for the specified managed rule group. If
-        /// you specified a <code>Limit</code> in your request, this might not be the full list.
-        /// 
+        /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
+        /// application. A regional application can be an Application Load Balancer (ALB), an
+        /// Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
+        /// or an App Runner service. 
         /// </para>
+        ///  
+        /// <para>
+        /// To work with CloudFront, you must also specify the Region US East (N. Virginia) as
+        /// follows: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+        /// --region=us-east-1</code>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// API and SDKs - For all calls, use the Region endpoint us-east-1. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        public List<ManagedRuleGroupVersion> Versions
+        [AWSProperty(Required=true)]
+        public Scope Scope
         {
-            get { return this._versions; }
-            set { this._versions = value; }
+            get { return this._scope; }
+            set { this._scope = value; }
         }
 
-        // Check to see if Versions property is set
-        internal bool IsSetVersions()
+        // Check to see if Scope property is set
+        internal bool IsSetScope()
         {
-            return this._versions != null && this._versions.Count > 0; 
+            return this._scope != null;
         }
 
     }

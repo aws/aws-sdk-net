@@ -29,31 +29,56 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// This is the response object from the ListAvailableManagedRuleGroupVersions operation.
+    /// This is the response object from the ListAPIKeys operation.
     /// </summary>
-    public partial class ListAvailableManagedRuleGroupVersionsResponse : AmazonWebServiceResponse
+    public partial class ListAPIKeysResponse : AmazonWebServiceResponse
     {
-        private string _currentDefaultVersion;
+        private List<APIKeySummary> _apiKeySummaries = new List<APIKeySummary>();
+        private string _applicationIntegrationURL;
         private string _nextMarker;
-        private List<ManagedRuleGroupVersion> _versions = new List<ManagedRuleGroupVersion>();
 
         /// <summary>
-        /// Gets and sets the property CurrentDefaultVersion. 
+        /// Gets and sets the property APIKeySummaries. 
         /// <para>
-        /// The name of the version that's currently set as the default. 
+        /// The array of key summaries. If you specified a <code>Limit</code> in your request,
+        /// this might not be the full list. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string CurrentDefaultVersion
+        public List<APIKeySummary> APIKeySummaries
         {
-            get { return this._currentDefaultVersion; }
-            set { this._currentDefaultVersion = value; }
+            get { return this._apiKeySummaries; }
+            set { this._apiKeySummaries = value; }
         }
 
-        // Check to see if CurrentDefaultVersion property is set
-        internal bool IsSetCurrentDefaultVersion()
+        // Check to see if APIKeySummaries property is set
+        internal bool IsSetAPIKeySummaries()
         {
-            return this._currentDefaultVersion != null;
+            return this._apiKeySummaries != null && this._apiKeySummaries.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApplicationIntegrationURL. 
+        /// <para>
+        /// The CAPTCHA application integration URL, for use in your JavaScript implementation.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about how to use this in your CAPTCHA JavaScript integration, see
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// client application integration</a> in the <i>WAF Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ApplicationIntegrationURL
+        {
+            get { return this._applicationIntegrationURL; }
+            set { this._applicationIntegrationURL = value; }
+        }
+
+        // Check to see if ApplicationIntegrationURL property is set
+        internal bool IsSetApplicationIntegrationURL()
+        {
+            return this._applicationIntegrationURL != null;
         }
 
         /// <summary>
@@ -76,26 +101,6 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetNextMarker()
         {
             return this._nextMarker != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Versions. 
-        /// <para>
-        /// The versions that are currently available for the specified managed rule group. If
-        /// you specified a <code>Limit</code> in your request, this might not be the full list.
-        /// 
-        /// </para>
-        /// </summary>
-        public List<ManagedRuleGroupVersion> Versions
-        {
-            get { return this._versions; }
-            set { this._versions = value; }
-        }
-
-        // Check to see if Versions property is set
-        internal bool IsSetVersions()
-        {
-            return this._versions != null && this._versions.Count > 0; 
         }
 
     }

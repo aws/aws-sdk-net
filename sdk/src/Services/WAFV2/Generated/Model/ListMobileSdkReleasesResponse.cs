@@ -61,7 +61,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ReleaseSummaries. 
         /// <para>
-        /// High level information for the available SDK releases. 
+        /// The high level information for the available SDK releases. If you specified a <code>Limit</code>
+        /// in your request, this might not be the full list. 
         /// </para>
         /// </summary>
         public List<ReleaseSummary> ReleaseSummaries

@@ -588,6 +588,109 @@ namespace Amazon.WAFV2
 
         #endregion
         
+        #region  CreateAPIKey
+
+        /// <summary>
+        /// Creates an API key for use in the integration of the CAPTCHA API in your JavaScript
+        /// client applications. The integration lets you customize the placement and characteristics
+        /// of the CAPTCHA puzzle for your end users. For more information about the CAPTCHA JavaScript
+        /// integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// client application integration</a> in the <i>WAF Developer Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// The CAPTCHA API requires a key that authorizes CAPTCHA use from the client application
+        /// domain. You can use a single key for up to 5 domains. After you generate a key, you
+        /// can copy it for use in your JavaScript integration. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAPIKey service method.</param>
+        /// 
+        /// <returns>The response from the CreateAPIKey service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+        /// quotas</a> in the <i>WAF Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateAPIKey">REST API Reference for CreateAPIKey Operation</seealso>
+        public virtual CreateAPIKeyResponse CreateAPIKey(CreateAPIKeyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAPIKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAPIKeyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAPIKeyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAPIKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAPIKey operation on AmazonWAFV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAPIKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateAPIKey">REST API Reference for CreateAPIKey Operation</seealso>
+        public virtual IAsyncResult BeginCreateAPIKey(CreateAPIKeyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAPIKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAPIKeyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAPIKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAPIKey.</param>
+        /// 
+        /// <returns>Returns a  CreateAPIKeyResult from WAFV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateAPIKey">REST API Reference for CreateAPIKey Operation</seealso>
+        public virtual CreateAPIKeyResponse EndCreateAPIKey(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAPIKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateIPSet
 
         /// <summary>
@@ -2180,6 +2283,97 @@ namespace Amazon.WAFV2
 
         #endregion
         
+        #region  GetDecryptedAPIKey
+
+        /// <summary>
+        /// Returns your API key in decrypted form. Use this to check the token domains that you
+        /// have defined for the key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDecryptedAPIKey service method.</param>
+        /// 
+        /// <returns>The response from the GetDecryptedAPIKey service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidResourceException">
+        /// WAF couldn’t perform the operation because the resource that you requested isn’t valid.
+        /// Check the resource, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetDecryptedAPIKey">REST API Reference for GetDecryptedAPIKey Operation</seealso>
+        public virtual GetDecryptedAPIKeyResponse GetDecryptedAPIKey(GetDecryptedAPIKeyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDecryptedAPIKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDecryptedAPIKeyResponseUnmarshaller.Instance;
+
+            return Invoke<GetDecryptedAPIKeyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDecryptedAPIKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDecryptedAPIKey operation on AmazonWAFV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDecryptedAPIKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetDecryptedAPIKey">REST API Reference for GetDecryptedAPIKey Operation</seealso>
+        public virtual IAsyncResult BeginGetDecryptedAPIKey(GetDecryptedAPIKeyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDecryptedAPIKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDecryptedAPIKeyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDecryptedAPIKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDecryptedAPIKey.</param>
+        /// 
+        /// <returns>Returns a  GetDecryptedAPIKeyResult from WAFV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetDecryptedAPIKey">REST API Reference for GetDecryptedAPIKey Operation</seealso>
+        public virtual GetDecryptedAPIKeyResponse EndGetDecryptedAPIKey(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDecryptedAPIKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetIPSet
 
         /// <summary>
@@ -3248,6 +3442,96 @@ namespace Amazon.WAFV2
         public virtual GetWebACLForResourceResponse EndGetWebACLForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<GetWebACLForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAPIKeys
+
+        /// <summary>
+        /// Retrieves a list of the API keys that you've defined for the specified scope.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAPIKeys service method.</param>
+        /// 
+        /// <returns>The response from the ListAPIKeys service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidResourceException">
+        /// WAF couldn’t perform the operation because the resource that you requested isn’t valid.
+        /// Check the resource, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAPIKeys">REST API Reference for ListAPIKeys Operation</seealso>
+        public virtual ListAPIKeysResponse ListAPIKeys(ListAPIKeysRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAPIKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAPIKeysResponseUnmarshaller.Instance;
+
+            return Invoke<ListAPIKeysResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAPIKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAPIKeys operation on AmazonWAFV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAPIKeys
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAPIKeys">REST API Reference for ListAPIKeys Operation</seealso>
+        public virtual IAsyncResult BeginListAPIKeys(ListAPIKeysRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAPIKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAPIKeysResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAPIKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAPIKeys.</param>
+        /// 
+        /// <returns>Returns a  ListAPIKeysResult from WAFV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAPIKeys">REST API Reference for ListAPIKeys Operation</seealso>
+        public virtual ListAPIKeysResponse EndListAPIKeys(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAPIKeysResponse>(asyncResult);
         }
 
         #endregion
