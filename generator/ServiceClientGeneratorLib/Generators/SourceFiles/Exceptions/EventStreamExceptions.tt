@@ -1,0 +1,48 @@
+﻿<#@ template language="C#" inherits="BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+using Amazon.Runtime.EventStreams.Internal;
+using System;
+
+namespace <#=this.Config.Namespace#>
+{
+#if !PCL && !CORECLR
+	[Serializable]
+#endif
+	public class <#=this.Config.ClassName#>EventStreamException : EventStreamException
+	{
+		public <#=this.Config.ClassName#>EventStreamException()
+		{
+		}
+
+		public <#=this.Config.ClassName#>EventStreamException(string message) : base (message)
+		{
+		}
+		public <#=this.Config.ClassName#>EventStreamException(string message, Exception innerException) : base(message, innerException)
+		{
+		}
+#if NETSTANDARD
+		protected <#=this.Config.ClassName#>EventStreamException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+		{
+		}
+#endif
+
+#if !NETSTANDARD
+        /// <summary>
+        /// Constructs a new instance of the <#=this.Config.ClassName#>EventStreamException class with serialized data.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
+        protected <#=this.Config.ClassName#>EventStreamException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+            : base(info, context)
+        {
+        }
+#endif
+	}
+}
+

@@ -29,12 +29,19 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
     var payload = this.Operation.ResponsePayloadMember;
     var unmarshallPayload = payload != null && payload.IsStructure;
-    var payloadIsStream= payload != null && !unmarshallPayload;
+    var payloadIsStream = payload != null && !unmarshallPayload;
+    bool isEventStreamOutput = this.Operation.IsEventStreamOutput;
     if (this.Operation.ResponseHasBodyMembers || payload != null)
     {
         if (this.Operation.AllowEmptyResult)
         {
             throw new NotImplementedException("AllowEmptyResult is not implemented for JSON unmarshallers");
+        }
+        if (isEventStreamOutput)
+        {
+#>
+            response.<#=payload.PropertyName#> = new <#=payload.Shape.Name#>(context.Stream);
+<#
         }
         else if (payloadIsStream)
         {
@@ -196,6 +203,21 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
 	}
     this.AddResponseSingletonMethod();
+#>
+<#
+    if(isEventStreamOutput)
+    {
+#>
+        protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse)
+        {
+            return false;
+        }
+        /// <summary>
+        /// Specifies that the response should be streamed
+        /// </summary>
+        public override bool HasStreamingProperty => true;
+<#
+    }
 #>
     }
 }

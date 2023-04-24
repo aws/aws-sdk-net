@@ -23,7 +23,7 @@ namespace ServiceClientGenerator
         public const string RequiredKey = "required";
         public const string DeprecatedMessageKey = "deprecatedMessage";
         public const string HostLabelKey = "hostLabel";
-
+        public const string EventPayloadKey = "eventpayload";
         private const string UnhandledTypeDecimalErrorMessage = "Unhandled type 'decimal' : using .net's decimal type for modeled decimal type may result in loss of data.  decimal type members should explicitly opt-in via shape customization.";
 
         private const string BackwardsCompatibleDateTimePropertySuffix = "Utc";
@@ -920,7 +920,18 @@ namespace ServiceClientGenerator
         {
             get { return this.model.Customizations.IsExcludedProperty(this.BasePropertyName, this.OwningShape.Name); }
         }
-
+        /// <summary>
+        /// Determines if the member is an event payload type
+        /// </summary>
+        public bool IsEventPayload
+        {
+            get
+            {
+                if (data[EventPayloadKey] != null && data[EventPayloadKey].IsBoolean)
+                    return (bool)data[EventPayloadKey];
+                return false;
+            }
+        }
         public bool IsBackwardsCompatibleDateTimeProperty
         {
             get { return this.model.Customizations.IsBackwardsCompatibleDateTimeProperty(this.BasePropertyName, this.OwningShape.Name); }
