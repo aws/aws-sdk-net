@@ -41,7 +41,7 @@ namespace Amazon.Rekognition.Model
         /// A unique 128-bit UUID identifying a Face Liveness session.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string SessionId
         {
             get { return this._sessionId; }

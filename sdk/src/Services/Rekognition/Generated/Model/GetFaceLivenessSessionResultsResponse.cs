@@ -109,7 +109,7 @@ namespace Amazon.Rekognition.Model
         /// The sessionId for which this request was called.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string SessionId
         {
             get { return this._sessionId; }

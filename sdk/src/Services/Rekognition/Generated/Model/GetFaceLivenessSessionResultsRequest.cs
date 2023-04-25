@@ -48,7 +48,7 @@ namespace Amazon.Rekognition.Model
         /// as an idempotency token for all operations associated with the session.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string SessionId
         {
             get { return this._sessionId; }

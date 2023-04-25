@@ -1111,6 +1111,10 @@ namespace Amazon.Rekognition
         /// </summary>
         public static readonly LivenessSessionStatus CREATED = new LivenessSessionStatus("CREATED");
         /// <summary>
+        /// Constant EXPIRED for LivenessSessionStatus
+        /// </summary>
+        public static readonly LivenessSessionStatus EXPIRED = new LivenessSessionStatus("EXPIRED");
+        /// <summary>
         /// Constant FAILED for LivenessSessionStatus
         /// </summary>
         public static readonly LivenessSessionStatus FAILED = new LivenessSessionStatus("FAILED");

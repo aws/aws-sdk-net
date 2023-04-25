@@ -61,7 +61,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property S3KeyPrefix. 
         /// <para>
-        /// The prefix appended to the output files for the Face Liveness session results.
+        /// The prefix prepended to the output files for the Face Liveness session results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=950)]
