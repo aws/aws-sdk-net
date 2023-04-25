@@ -30,7 +30,7 @@ namespace Amazon.CodeCatalyst.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDevEnvironment operation.
-    /// Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development Dev Environment
+    /// Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development environment
     /// that you can use to quickly work on the code stored in the source repositories of
     /// your project. 
     /// 

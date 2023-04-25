@@ -31,7 +31,7 @@ namespace Amazon.CodeCatalyst.Model
     /// <summary>
     /// Container for the parameters to the ListAccessTokens operation.
     /// Lists all personal access tokens (PATs) associated with the user who calls the API.
-    /// You can only list PATs associated with your user account.
+    /// You can only list PATs associated with your Amazon Web Services Builder ID.
     /// </summary>
     public partial class ListAccessTokensRequest : AmazonCodeCatalystRequest
     {
