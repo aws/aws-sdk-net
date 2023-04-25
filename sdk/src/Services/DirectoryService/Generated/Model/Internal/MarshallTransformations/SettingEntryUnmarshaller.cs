@@ -76,6 +76,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AppliedValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastRequestedDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
