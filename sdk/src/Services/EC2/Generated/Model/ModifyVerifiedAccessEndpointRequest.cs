@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyVerifiedAccessEndpoint operation.
-    /// Modifies the configuration of an Amazon Web Services Verified Access endpoint.
+    /// Modifies the configuration of the specified Amazon Web Services Verified Access endpoint.
     /// </summary>
     public partial class ModifyVerifiedAccessEndpointRequest : AmazonEC2Request
     {
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the Amazon Web Services Verified Access endpoint.
+        /// A description for the Verified Access endpoint.
         /// </para>
         /// </summary>
         public string Description
@@ -82,8 +82,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerOptions. 
         /// <para>
-        /// The load balancer details if creating the Amazon Web Services Verified Access endpoint
-        /// as <code>load-balancer</code>type.
+        /// The load balancer details if creating the Verified Access endpoint as <code>load-balancer</code>type.
         /// </para>
         /// </summary>
         public ModifyVerifiedAccessEndpointLoadBalancerOptions LoadBalancerOptions
@@ -119,7 +118,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessEndpointId. 
         /// <para>
-        /// The ID of the Amazon Web Services Verified Access endpoint.
+        /// The ID of the Verified Access endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -138,7 +137,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessGroupId. 
         /// <para>
-        /// The ID of the Amazon Web Services Verified Access group.
+        /// The ID of the Verified Access group.
         /// </para>
         /// </summary>
         public string VerifiedAccessGroupId

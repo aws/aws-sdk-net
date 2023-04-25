@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessEndpointId. 
         /// <para>
-        /// The ID of the Amazon Web Services Verified Access endpoint.
+        /// The ID of the Verified Access endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

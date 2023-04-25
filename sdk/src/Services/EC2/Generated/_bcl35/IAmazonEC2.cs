@@ -1805,9 +1805,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// A trust provider is a third-party entity that creates, maintains, and manages identity
-        /// information for users and devices. One or more trust providers can be attached to
-        /// an Amazon Web Services Verified Access instance.
+        /// Attaches the specified Amazon Web Services Verified Access trust provider to the specified
+        /// Amazon Web Services Verified Access instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachVerifiedAccessTrustProvider service method.</param>
         /// 
@@ -6542,10 +6541,9 @@ namespace Amazon.EC2
         /// <summary>
         /// An Amazon Web Services Verified Access group is a collection of Amazon Web Services
         /// Verified Access endpoints who's associated applications have similar security requirements.
-        /// Each instance within an Amazon Web Services Verified Access group shares an Amazon
-        /// Web Services Verified Access policy. For example, you can group all Amazon Web Services
-        /// Verified Access instances associated with “sales” applications together and use one
-        /// common Amazon Web Services Verified Access policy.
+        /// Each instance within a Verified Access group shares an Verified Access policy. For
+        /// example, you can group all Verified Access instances associated with "sales" applications
+        /// together and use one common Verified Access policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessGroup service method.</param>
         /// 
@@ -6628,8 +6626,8 @@ namespace Amazon.EC2
         /// <summary>
         /// A trust provider is a third-party entity that creates, maintains, and manages identity
         /// information for users and devices. When an application request is made, the identity
-        /// information sent by the trust provider will be evaluated by Amazon Web Services Verified
-        /// Access, before allowing or denying the application request.
+        /// information sent by the trust provider is evaluated by Verified Access before allowing
+        /// or denying the application request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessTrustProvider service method.</param>
         /// 
@@ -16860,7 +16858,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describe Amazon Web Services Verified Access endpoints.
+        /// Describes the specified Amazon Web Services Verified Access endpoints.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessEndpoints service method.</param>
         /// 
@@ -16900,7 +16898,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describe details of existing Verified Access groups.
+        /// Describes the specified Verified Access groups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessGroups service method.</param>
         /// 
@@ -16940,8 +16938,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the current logging configuration for the Amazon Web Services Verified Access
-        /// instances.
+        /// Describes the specified Amazon Web Services Verified Access instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessInstanceLoggingConfigurations service method.</param>
         /// 
@@ -16981,7 +16978,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describe Verified Access instances.
+        /// Describes the specified Amazon Web Services Verified Access instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessInstances service method.</param>
         /// 
@@ -17021,7 +17018,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describe details of existing Verified Access trust providers.
+        /// Describes the specified Amazon Web Services Verified Access trust providers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessTrustProviders service method.</param>
         /// 
@@ -18117,7 +18114,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Detach a trust provider from an Amazon Web Services Verified Access instance.
+        /// Detaches the specified Amazon Web Services Verified Access trust provider from the
+        /// specified Amazon Web Services Verified Access instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachVerifiedAccessTrustProvider service method.</param>
         /// 
@@ -24787,7 +24785,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the configuration of an Amazon Web Services Verified Access endpoint.
+        /// Modifies the configuration of the specified Amazon Web Services Verified Access endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessEndpoint service method.</param>
         /// 
@@ -24827,7 +24825,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the specified Verified Access endpoint policy.
+        /// Modifies the specified Amazon Web Services Verified Access endpoint policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessEndpointPolicy service method.</param>
         /// 
@@ -24867,7 +24865,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the specified Verified Access group configuration.
+        /// Modifies the specified Amazon Web Services Verified Access group configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessGroup service method.</param>
         /// 
@@ -24907,7 +24905,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the specified Verified Access group policy.
+        /// Modifies the specified Amazon Web Services Verified Access group policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessGroupPolicy service method.</param>
         /// 
@@ -24947,7 +24945,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the configuration of the specified Verified Access instance.
+        /// Modifies the configuration of the specified Amazon Web Services Verified Access instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessInstance service method.</param>
         /// 

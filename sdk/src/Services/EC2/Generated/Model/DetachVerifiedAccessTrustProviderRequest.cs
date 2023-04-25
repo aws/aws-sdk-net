@@ -30,7 +30,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachVerifiedAccessTrustProvider operation.
-    /// Detach a trust provider from an Amazon Web Services Verified Access instance.
+    /// Detaches the specified Amazon Web Services Verified Access trust provider from the
+    /// specified Amazon Web Services Verified Access instance.
     /// </summary>
     public partial class DetachVerifiedAccessTrustProviderRequest : AmazonEC2Request
     {
@@ -61,7 +62,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessInstanceId. 
         /// <para>
-        /// The ID of the Amazon Web Services Verified Access instance.
+        /// The ID of the Verified Access instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +81,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessTrustProviderId. 
         /// <para>
-        /// The ID of the Amazon Web Services Verified Access trust provider.
+        /// The ID of the Verified Access trust provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

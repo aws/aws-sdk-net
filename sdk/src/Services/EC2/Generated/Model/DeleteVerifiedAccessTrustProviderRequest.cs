@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessTrustProviderId. 
         /// <para>
-        /// The ID of the Amazon Web Services Verified Access trust provider.
+        /// The ID of the Verified Access trust provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

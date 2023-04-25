@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AttachmentType. 
         /// <para>
-        /// The Amazon Web Services network component Verified Access attaches to.
+        /// The type of attachment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -110,7 +110,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the Amazon Web Services Verified Access endpoint.
+        /// A description for the Verified Access endpoint.
         /// </para>
         /// </summary>
         public string Description
@@ -149,7 +149,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EndpointDomainPrefix. 
         /// <para>
-        /// A custom identifier that gets prepended to a DNS name that is generated for the endpoint.
+        /// A custom identifier that is prepended to the DNS name that is generated for the endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -168,7 +168,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of Amazon Web Services Verified Access endpoint to create.
+        /// The type of Verified Access endpoint to create.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -187,8 +187,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerOptions. 
         /// <para>
-        /// The load balancer details if creating the Amazon Web Services Verified Access endpoint
-        /// as <code>load-balancer</code>type.
+        /// The load balancer details. This parameter is required if the endpoint type is <code>load-balancer</code>.
         /// </para>
         /// </summary>
         public CreateVerifiedAccessEndpointLoadBalancerOptions LoadBalancerOptions
@@ -206,8 +205,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaceOptions. 
         /// <para>
-        /// The network interface details if creating the Amazon Web Services Verified Access
-        /// endpoint as <code>network-interface</code>type.
+        /// The network interface details. This parameter is required if the endpoint type is
+        /// <code>network-interface</code>.
         /// </para>
         /// </summary>
         public CreateVerifiedAccessEndpointEniOptions NetworkInterfaceOptions
@@ -225,7 +224,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PolicyDocument. 
         /// <para>
-        /// The Amazon Web Services Verified Access policy document.
+        /// The Verified Access policy document.
         /// </para>
         /// </summary>
         public string PolicyDocument
@@ -243,8 +242,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The Amazon EC2 security groups to associate with the Amazon Web Services Verified
-        /// Access endpoint.
+        /// The IDs of the security groups to associate with the Verified Access endpoint.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -262,7 +260,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TagSpecifications. 
         /// <para>
-        /// The tags to assign to the Amazon Web Services Verified Access endpoint.
+        /// The tags to assign to the Verified Access endpoint.
         /// </para>
         /// </summary>
         public List<TagSpecification> TagSpecifications

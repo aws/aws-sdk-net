@@ -72,9 +72,33 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetOidcOptions())
                 {
+                    if(publicRequest.OidcOptions.IsSetAuthorizationEndpoint())
+                    {
+                        request.Parameters.Add("OidcOptions" + "." + "AuthorizationEndpoint", StringUtils.FromString(publicRequest.OidcOptions.AuthorizationEndpoint));
+                    }
+                    if(publicRequest.OidcOptions.IsSetClientId())
+                    {
+                        request.Parameters.Add("OidcOptions" + "." + "ClientId", StringUtils.FromString(publicRequest.OidcOptions.ClientId));
+                    }
+                    if(publicRequest.OidcOptions.IsSetClientSecret())
+                    {
+                        request.Parameters.Add("OidcOptions" + "." + "ClientSecret", StringUtils.FromString(publicRequest.OidcOptions.ClientSecret));
+                    }
+                    if(publicRequest.OidcOptions.IsSetIssuer())
+                    {
+                        request.Parameters.Add("OidcOptions" + "." + "Issuer", StringUtils.FromString(publicRequest.OidcOptions.Issuer));
+                    }
                     if(publicRequest.OidcOptions.IsSetScope())
                     {
                         request.Parameters.Add("OidcOptions" + "." + "Scope", StringUtils.FromString(publicRequest.OidcOptions.Scope));
+                    }
+                    if(publicRequest.OidcOptions.IsSetTokenEndpoint())
+                    {
+                        request.Parameters.Add("OidcOptions" + "." + "TokenEndpoint", StringUtils.FromString(publicRequest.OidcOptions.TokenEndpoint));
+                    }
+                    if(publicRequest.OidcOptions.IsSetUserInfoEndpoint())
+                    {
+                        request.Parameters.Add("OidcOptions" + "." + "UserInfoEndpoint", StringUtils.FromString(publicRequest.OidcOptions.UserInfoEndpoint));
                     }
                 }
                 if(publicRequest.IsSetVerifiedAccessTrustProviderId())
