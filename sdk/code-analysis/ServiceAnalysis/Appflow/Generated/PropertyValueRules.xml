@@ -527,7 +527,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorOAuthRequest.AuthCode</property>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -761,7 +761,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.GoogleAnalyticsConnectorProfileCredentials.RefreshToken</property>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -776,7 +776,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.HoneycodeConnectorProfileCredentials.RefreshToken</property>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -876,7 +876,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuth2Credentials.RefreshToken</property>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -916,7 +916,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuthCredentials.RefreshToken</property>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -942,7 +942,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.PardotConnectorProfileCredentials.RefreshToken</property>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1077,7 +1077,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SalesforceConnectorProfileCredentials.RefreshToken</property>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
