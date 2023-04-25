@@ -1,3 +1,18 @@
+### 3.7.532.0 (2023-04-25 06:03 UTC)
+* Appflow (3.7.108.0)
+	* Increased the max length for RefreshToken and AuthCode from 2048 to 4096.
+* CodeCatalyst (3.7.101.36)
+	* Documentation updates for Amazon CodeCatalyst.
+* EC2 (3.7.131.0)
+	* API changes to AWS Verified Access related to identity providers' information.
+* MediaConvert (3.7.110.0)
+	* This release introduces a noise reduction pre-filter, linear interpolation deinterlace mode, video pass-through, updated default job settings, and expanded LC-AAC Stereo audio bitrate ranges.
+* Rekognition (3.7.104.0)
+	* Added new status result to Liveness session status.
+* Core 3.7.106.25
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.531.0 (2023-04-21 19:21 UTC)
 * Connect (3.7.121.0)
 	* This release adds a new API CreateParticipant. For Amazon Connect Chat, you can use this new API to customize chat flow experiences.
