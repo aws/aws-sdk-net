@@ -71,27 +71,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 var bucketName = S3TestUtils.CreateBucketWithWait(client);
 
-                client.PutBucketOwnershipControls(new PutBucketOwnershipControlsRequest
-                {
-                    BucketName = bucketName,
-                    OwnershipControls = new OwnershipControls
-                    {
-                        Rules = new List<OwnershipControlsRule>
-                        {
-                            new OwnershipControlsRule{ObjectOwnership = ObjectOwnership.BucketOwnerPreferred}
-                        }
-                    }
-                });
-
-                client.PutPublicAccessBlock(new PutPublicAccessBlockRequest
-                {
-                    BucketName = bucketName,
-                    PublicAccessBlockConfiguration = new PublicAccessBlockConfiguration
-                    {
-                        BlockPublicAcls = false
-                    }
-                });
-
                 client.PutACL(new PutACLRequest
                 {
                     BucketName = bucketName,

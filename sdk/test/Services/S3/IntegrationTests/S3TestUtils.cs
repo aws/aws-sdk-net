@@ -44,6 +44,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             string bucketName = CreateBucket(s3Client);
             WaitForBucket(s3Client, bucketName);
+            SetPublicBucketACLs(s3Client, bucketName);
             return bucketName;
         }
 
@@ -51,7 +52,32 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             string bucketName = CreateBucket(s3Client, bucketRequest);
             WaitForBucket(s3Client, bucketName);
+            SetPublicBucketACLs(s3Client, bucketName);
             return bucketName;
+        }
+
+        private static void SetPublicBucketACLs(IAmazonS3 client, string bucketName)
+        {
+            client.PutBucketOwnershipControls(new PutBucketOwnershipControlsRequest
+            {
+                BucketName = bucketName,
+                OwnershipControls = new OwnershipControls
+                {
+                    Rules = new List<OwnershipControlsRule>
+                        {
+                            new OwnershipControlsRule{ObjectOwnership = ObjectOwnership.BucketOwnerPreferred}
+                        }
+                }
+            });
+
+            client.PutPublicAccessBlock(new Amazon.S3.Model.PutPublicAccessBlockRequest
+            {
+                BucketName = bucketName,
+                PublicAccessBlockConfiguration = new Amazon.S3.Model.PublicAccessBlockConfiguration
+                {
+                    BlockPublicAcls = false
+                }
+            });
         }
 
         public static void WaitForBucket(IAmazonS3 client, string bucketName)
