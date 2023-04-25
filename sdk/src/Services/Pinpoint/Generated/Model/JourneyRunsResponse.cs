@@ -29,47 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Specifies the start and end time for OpenHours.
+    /// Provides information from all runs of a journey.
     /// </summary>
-    public partial class OpenHoursRule
+    public partial class JourneyRunsResponse
     {
-        private string _endTime;
-        private string _startTime;
+        private List<JourneyRunResponse> _item = new List<JourneyRunResponse>();
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property EndTime. 
+        /// Gets and sets the property Item. 
         /// <para>
-        /// The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.
+        /// An array of responses, one for each run of the journey
         /// </para>
         /// </summary>
-        public string EndTime
+        [AWSProperty(Required=true)]
+        public List<JourneyRunResponse> Item
         {
-            get { return this._endTime; }
-            set { this._endTime = value; }
+            get { return this._item; }
+            set { this._item = value; }
         }
 
-        // Check to see if EndTime property is set
-        internal bool IsSetEndTime()
+        // Check to see if Item property is set
+        internal bool IsSetItem()
         {
-            return this._endTime != null;
+            return this._item != null && this._item.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property StartTime. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The start of the scheduled time, in ISO 8601 format, when the channel can send messages.
+        /// The string to use in a subsequent request to get the next page of results in a paginated
+        /// response. This value is null if there are no additional pages.
         /// </para>
         /// </summary>
-        public string StartTime
+        public string NextToken
         {
-            get { return this._startTime; }
-            set { this._startTime = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._startTime != null;
+            return this._nextToken != null;
         }
 
     }

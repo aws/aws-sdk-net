@@ -29,17 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetJourneyExecutionActivityMetrics operation.
-    /// Retrieves (queries) pre-aggregated data for a standard execution metric that applies
-    /// to a journey activity.
+    /// Container for the parameters to the GetJourneyRunExecutionMetrics operation.
+    /// Retrieves (queries) pre-aggregated data for a standard run execution metric that applies
+    /// to a journey.
     /// </summary>
-    public partial class GetJourneyExecutionActivityMetricsRequest : AmazonPinpointRequest
+    public partial class GetJourneyRunExecutionMetricsRequest : AmazonPinpointRequest
     {
         private string _applicationId;
-        private string _journeyActivityId;
         private string _journeyId;
         private string _nextToken;
         private string _pageSize;
+        private string _runId;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -59,25 +59,6 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetApplicationId()
         {
             return this._applicationId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property JourneyActivityId. 
-        /// <para>
-        /// The unique identifier for the journey activity.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string JourneyActivityId
-        {
-            get { return this._journeyActivityId; }
-            set { this._journeyActivityId = value; }
-        }
-
-        // Check to see if JourneyActivityId property is set
-        internal bool IsSetJourneyActivityId()
-        {
-            return this._journeyActivityId != null;
         }
 
         /// <summary>
@@ -135,6 +116,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetPageSize()
         {
             return this._pageSize != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RunId. 
+        /// <para>
+        /// The unique identifier for the journey run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string RunId
+        {
+            get { return this._runId; }
+            set { this._runId = value; }
+        }
+
+        // Check to see if RunId property is set
+        internal bool IsSetRunId()
+        {
+            return this._runId != null;
         }
 
     }

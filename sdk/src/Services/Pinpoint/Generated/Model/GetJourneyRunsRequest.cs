@@ -29,17 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetJourneyExecutionActivityMetrics operation.
-    /// Retrieves (queries) pre-aggregated data for a standard execution metric that applies
-    /// to a journey activity.
+    /// Container for the parameters to the GetJourneyRuns operation.
+    /// Provides information about the runs of a journey.
     /// </summary>
-    public partial class GetJourneyExecutionActivityMetricsRequest : AmazonPinpointRequest
+    public partial class GetJourneyRunsRequest : AmazonPinpointRequest
     {
         private string _applicationId;
-        private string _journeyActivityId;
         private string _journeyId;
-        private string _nextToken;
         private string _pageSize;
+        private string _token;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -62,25 +60,6 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property JourneyActivityId. 
-        /// <para>
-        /// The unique identifier for the journey activity.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string JourneyActivityId
-        {
-            get { return this._journeyActivityId; }
-            set { this._journeyActivityId = value; }
-        }
-
-        // Check to see if JourneyActivityId property is set
-        internal bool IsSetJourneyActivityId()
-        {
-            return this._journeyActivityId != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property JourneyId. 
         /// <para>
         /// The unique identifier for the journey.
@@ -100,25 +79,6 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// The <code/> string that specifies which page of results to return in a paginated response.
-        /// This parameter is not supported for application, campaign, and journey metrics.
-        /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this._nextToken != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property PageSize. 
         /// <para>
         /// The maximum number of items to include in each page of a paginated response. This
@@ -135,6 +95,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetPageSize()
         {
             return this._pageSize != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Token. 
+        /// <para>
+        /// The NextToken string that specifies which page of results to return in a paginated
+        /// response.
+        /// </para>
+        /// </summary>
+        public string Token
+        {
+            get { return this._token; }
+            set { this._token = value; }
+        }
+
+        // Check to see if Token property is set
+        internal bool IsSetToken()
+        {
+            return this._token != null;
         }
 
     }

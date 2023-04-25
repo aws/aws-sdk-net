@@ -30,9 +30,10 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Provides the results of a query that retrieved the data for a standard execution metric
-    /// that applies to a journey activity, and provides information about that query.
+    /// that applies to a journey activity for a particular journey run, and provides information
+    /// about that query.
     /// </summary>
-    public partial class JourneyExecutionActivityMetricsResponse
+    public partial class JourneyRunExecutionActivityMetricsResponse
     {
         private string _activityType;
         private string _applicationId;
@@ -40,6 +41,7 @@ namespace Amazon.Pinpoint.Model
         private string _journeyId;
         private string _lastEvaluatedTime;
         private Dictionary<string, string> _metrics = new Dictionary<string, string>();
+        private string _runId;
 
         /// <summary>
         /// Gets and sets the property ActivityType. 
@@ -153,7 +155,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property LastEvaluatedTime. 
         /// <para>
         /// The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated the execution
-        /// status of the activity and updated the data for the metric.
+        /// status of the activity for this journey run and updated the data for the metric.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -172,10 +174,9 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        /// A JSON object that contains the results of the query. The results vary depending on
-        /// the type of activity (ActivityType). For information about the structure and contents
-        /// of the results, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
-        /// Pinpoint Developer Guide</a>.
+        /// A JSON object that contains the results of the query. For information about the structure
+        /// and contents of the results, see see <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+        /// Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -189,6 +190,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetMetrics()
         {
             return this._metrics != null && this._metrics.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RunId. 
+        /// <para>
+        /// The unique identifier for the journey run that the metric applies to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string RunId
+        {
+            get { return this._runId; }
+            set { this._runId = value; }
+        }
+
+        // Check to see if RunId property is set
+        internal bool IsSetRunId()
+        {
+            return this._runId != null;
         }
 
     }

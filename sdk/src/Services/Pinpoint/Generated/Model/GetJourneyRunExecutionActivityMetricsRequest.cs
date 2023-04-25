@@ -29,17 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetJourneyExecutionActivityMetrics operation.
-    /// Retrieves (queries) pre-aggregated data for a standard execution metric that applies
+    /// Container for the parameters to the GetJourneyRunExecutionActivityMetrics operation.
+    /// Retrieves (queries) pre-aggregated data for a standard run execution metric that applies
     /// to a journey activity.
     /// </summary>
-    public partial class GetJourneyExecutionActivityMetricsRequest : AmazonPinpointRequest
+    public partial class GetJourneyRunExecutionActivityMetricsRequest : AmazonPinpointRequest
     {
         private string _applicationId;
         private string _journeyActivityId;
         private string _journeyId;
         private string _nextToken;
         private string _pageSize;
+        private string _runId;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -135,6 +136,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetPageSize()
         {
             return this._pageSize != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RunId. 
+        /// <para>
+        /// The unique identifier for the journey run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string RunId
+        {
+            get { return this._runId; }
+            set { this._runId = value; }
+        }
+
+        // Check to see if RunId property is set
+        internal bool IsSetRunId()
+        {
+            return this._runId != null;
         }
 
     }

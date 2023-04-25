@@ -1065,6 +1065,64 @@ namespace Amazon.Pinpoint
 
 
     /// <summary>
+    /// Constants used for properties of type JourneyRunStatus.
+    /// </summary>
+    public class JourneyRunStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for JourneyRunStatus
+        /// </summary>
+        public static readonly JourneyRunStatus CANCELLED = new JourneyRunStatus("CANCELLED");
+        /// <summary>
+        /// Constant COMPLETED for JourneyRunStatus
+        /// </summary>
+        public static readonly JourneyRunStatus COMPLETED = new JourneyRunStatus("COMPLETED");
+        /// <summary>
+        /// Constant RUNNING for JourneyRunStatus
+        /// </summary>
+        public static readonly JourneyRunStatus RUNNING = new JourneyRunStatus("RUNNING");
+        /// <summary>
+        /// Constant SCHEDULED for JourneyRunStatus
+        /// </summary>
+        public static readonly JourneyRunStatus SCHEDULED = new JourneyRunStatus("SCHEDULED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JourneyRunStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JourneyRunStatus FindValue(string value)
+        {
+            return FindValue<JourneyRunStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JourneyRunStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Layout.
     /// </summary>
     public class Layout : ConstantClass
