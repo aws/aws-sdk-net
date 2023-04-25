@@ -193,6 +193,27 @@ namespace S3UnitTest
                 }
             };
 
+            Client.PutBucketOwnershipControls(new PutBucketOwnershipControlsRequest
+            {
+                BucketName = bucketName,
+                OwnershipControls = new OwnershipControls
+                {
+                    Rules = new List<OwnershipControlsRule>
+                        {
+                            new OwnershipControlsRule{ObjectOwnership = ObjectOwnership.BucketOwnerPreferred}
+                        }
+                }
+            });
+
+            Client.PutPublicAccessBlock(new PutPublicAccessBlockRequest
+            {
+                BucketName = bucketName,
+                PublicAccessBlockConfiguration = new PublicAccessBlockConfiguration
+                {
+                    BlockPublicAcls = false
+                }
+            });
+
             Client.PutLifecycleConfiguration(new PutLifecycleConfigurationRequest
             {
                 BucketName = bucketName,

@@ -41,6 +41,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             bucketName = S3TestUtils.CreateBucketWithWait(s3Client);
             BucketAccelerateStatus bucketStatus = null;
 
+            s3Client.PutBucketOwnershipControls(new PutBucketOwnershipControlsRequest
+            {
+                BucketName = bucketName,
+                OwnershipControls = new OwnershipControls
+                {
+                    Rules = new List<OwnershipControlsRule>
+                        {
+                            new OwnershipControlsRule{ObjectOwnership = ObjectOwnership.BucketOwnerPreferred}
+                        }
+                }
+            });
+
+            s3Client.PutPublicAccessBlock(new PutPublicAccessBlockRequest
+            {
+                BucketName = bucketName,
+                PublicAccessBlockConfiguration = new PublicAccessBlockConfiguration
+                {
+                    BlockPublicAcls = false
+                }
+            });
+
             s3Client.PutBucketAccelerateConfiguration(new PutBucketAccelerateConfigurationRequest
             {
                 BucketName = bucketName,

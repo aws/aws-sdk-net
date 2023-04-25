@@ -18,6 +18,7 @@ using Amazon.S3.Model;
 using Amazon.S3.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using System.Net;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
@@ -46,6 +47,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void TestGetBucketPolicyStatus_IsPublic()
         {
+            Client.PutBucketOwnershipControls(new PutBucketOwnershipControlsRequest
+            {
+                BucketName = bucketName,
+                OwnershipControls = new OwnershipControls
+                {
+                    Rules = new List<OwnershipControlsRule>
+                        {
+                            new OwnershipControlsRule{ObjectOwnership = ObjectOwnership.BucketOwnerPreferred}
+                        }
+                }
+            });
+
+            Client.PutPublicAccessBlock(new PutPublicAccessBlockRequest
+            {
+                BucketName = bucketName,
+                PublicAccessBlockConfiguration = new PublicAccessBlockConfiguration
+                {
+                    BlockPublicAcls = false
+                }
+            });
+
             //Set the bucket policy to public
             var putRequest = new PutBucketPolicyRequest
             {
