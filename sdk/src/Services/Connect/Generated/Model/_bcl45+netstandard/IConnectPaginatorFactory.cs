@@ -61,6 +61,11 @@ namespace Amazon.Connect.Model
         IListBotsPaginator ListBots(ListBotsRequest request);
 
         /// <summary>
+        /// Paginator for ListContactEvaluations operation
+        ///</summary>
+        IListContactEvaluationsPaginator ListContactEvaluations(ListContactEvaluationsRequest request);
+
+        /// <summary>
         /// Paginator for ListContactFlowModules operation
         ///</summary>
         IListContactFlowModulesPaginator ListContactFlowModules(ListContactFlowModulesRequest request);
@@ -79,6 +84,16 @@ namespace Amazon.Connect.Model
         /// Paginator for ListDefaultVocabularies operation
         ///</summary>
         IListDefaultVocabulariesPaginator ListDefaultVocabularies(ListDefaultVocabulariesRequest request);
+
+        /// <summary>
+        /// Paginator for ListEvaluationForms operation
+        ///</summary>
+        IListEvaluationFormsPaginator ListEvaluationForms(ListEvaluationFormsRequest request);
+
+        /// <summary>
+        /// Paginator for ListEvaluationFormVersions operation
+        ///</summary>
+        IListEvaluationFormVersionsPaginator ListEvaluationFormVersions(ListEvaluationFormVersionsRequest request);
 
         /// <summary>
         /// Paginator for ListHoursOfOperations operation

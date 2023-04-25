@@ -92,6 +92,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListContactEvaluations operation
+        ///</summary>
+        public IListContactEvaluationsPaginator ListContactEvaluations(ListContactEvaluationsRequest request) 
+        {
+            return new ListContactEvaluationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListContactFlowModules operation
         ///</summary>
         public IListContactFlowModulesPaginator ListContactFlowModules(ListContactFlowModulesRequest request) 
@@ -121,6 +129,22 @@ namespace Amazon.Connect.Model
         public IListDefaultVocabulariesPaginator ListDefaultVocabularies(ListDefaultVocabulariesRequest request) 
         {
             return new ListDefaultVocabulariesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEvaluationForms operation
+        ///</summary>
+        public IListEvaluationFormsPaginator ListEvaluationForms(ListEvaluationFormsRequest request) 
+        {
+            return new ListEvaluationFormsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEvaluationFormVersions operation
+        ///</summary>
+        public IListEvaluationFormVersionsPaginator ListEvaluationFormVersions(ListEvaluationFormVersionsRequest request) 
+        {
+            return new ListEvaluationFormVersionsPaginator(this.client, request);
         }
 
         /// <summary>
