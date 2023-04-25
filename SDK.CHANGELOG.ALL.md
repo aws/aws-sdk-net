@@ -1,3 +1,18 @@
+### 3.7.533.0 (2023-04-25 18:23 UTC)
+* ChimeSDKMessaging (3.7.103.0)
+	* Remove non actionable field from UpdateChannelReadMarker and DeleteChannelRequest.  Add precise exceptions to DeleteChannel and DeleteStreamingConfigurations error cases.
+* Connect (3.7.122.0)
+	* Amazon Connect, Contact Lens Evaluation API release including ability to manage forms and to submit contact evaluations.
+* DataSync (3.7.105.0)
+	* This release adds 13 new APIs to support AWS DataSync Discovery GA.
+* DirectoryService (3.7.101.0)
+	* New field added in AWS Managed Microsoft AD DescribeSettings response and regex pattern update for UpdateSettings value.  Added length validation to RemoteDomainName.
+* Pinpoint (3.7.101.0)
+	* Adds support for journey runs and querying journey execution metrics based on journey runs. Adds execution metrics to campaign activities. Updates docs for Advanced Quiet Time.
+* Core 3.7.106.26
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.532.0 (2023-04-25 06:03 UTC)
 * Appflow (3.7.108.0)
 	* Increased the max length for RefreshToken and AuthCode from 2048 to 4096.
