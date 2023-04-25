@@ -220,12 +220,6 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ChimeSDKMessaging.Model.DeleteChannelRequest.SubChannelId</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[-_a-zA-Z0-9]*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ChimeSDKMessaging.Model.DeleteChannelBanRequest.ChannelArn</property>
     <min>5</min>
     <max>1600</max>
@@ -1167,22 +1161,10 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ChimeSDKMessaging.Model.UpdateChannelReadMarkerRequest.SubChannelId</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[-_a-zA-Z0-9]*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ChimeSDKMessaging.Model.UpdateChannelReadMarkerResponse.ChannelArn</property>
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ChimeSDKMessaging.Model.UpdateChannelReadMarkerResponse.SubChannelId</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[-_a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMessaging.Model.AppInstanceUserMembershipSummary.SubChannelId</property>

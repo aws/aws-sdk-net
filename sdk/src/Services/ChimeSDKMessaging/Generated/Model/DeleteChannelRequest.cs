@@ -45,7 +45,6 @@ namespace Amazon.ChimeSDKMessaging.Model
     {
         private string _channelArn;
         private string _chimeBearer;
-        private string _subChannelId;
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
@@ -84,25 +83,6 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetChimeBearer()
         {
             return this._chimeBearer != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SubChannelId. 
-        /// <para>
-        /// The ID of the SubChannel in the request.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string SubChannelId
-        {
-            get { return this._subChannelId; }
-            set { this._subChannelId = value; }
-        }
-
-        // Check to see if SubChannelId property is set
-        internal bool IsSetSubChannelId()
-        {
-            return this._subChannelId != null;
         }
 
     }

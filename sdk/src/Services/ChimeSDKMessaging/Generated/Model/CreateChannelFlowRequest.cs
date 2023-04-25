@@ -92,7 +92,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The client token for the request. An Idempotency token.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }

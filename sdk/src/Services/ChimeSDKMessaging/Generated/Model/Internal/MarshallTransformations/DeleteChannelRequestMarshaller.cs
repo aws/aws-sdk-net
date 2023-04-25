@@ -61,16 +61,12 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetChannelArn())
                 throw new AmazonChimeSDKMessagingException("Request object does not have required field ChannelArn set");
             request.AddPathResource("{channelArn}", StringUtils.FromString(publicRequest.ChannelArn));
-            
-            if (publicRequest.IsSetSubChannelId())
-                request.Parameters.Add("sub-channel-id", StringUtils.FromString(publicRequest.SubChannelId));
             request.ResourcePath = "/channels/{channelArn}";
         
             if (publicRequest.IsSetChimeBearer()) 
             {
                 request.Headers["x-amz-chime-bearer"] = publicRequest.ChimeBearer;
             }
-            request.UseQueryString = true;
 
             return request;
         }
