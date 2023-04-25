@@ -45,6 +45,23 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputTemplate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAdvancedInputFilter())
+            {
+                context.Writer.WritePropertyName("advancedInputFilter");
+                context.Writer.Write(requestObject.AdvancedInputFilter);
+            }
+
+            if(requestObject.IsSetAdvancedInputFilterSettings())
+            {
+                context.Writer.WritePropertyName("advancedInputFilterSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AdvancedInputFilterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AdvancedInputFilterSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAudioSelectorGroups())
             {
                 context.Writer.WritePropertyName("audioSelectorGroups");

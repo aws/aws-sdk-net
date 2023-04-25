@@ -154,7 +154,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property TruePeakLimiterThreshold. Specify the True-peak limiter
         /// threshold in decibels relative to full scale (dBFS). The peak inter-audio sample loudness
         /// in your output will be limited to the value that you specify, without affecting the
-        /// overall target LKFS. Enter a value from 0 to -20. Leave blank to use the default value
+        /// overall target LKFS. Enter a value from 0 to -8. Leave blank to use the default value
         /// 0.
         /// </summary>
         public double TruePeakLimiterThreshold

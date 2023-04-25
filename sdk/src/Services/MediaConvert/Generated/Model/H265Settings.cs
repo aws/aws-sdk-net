@@ -167,11 +167,13 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DynamicSubGop. Choose Adaptive to improve subjective video
-        /// quality for high-motion content. This will cause the service to use fewer B-frames
-        /// (which infer information based on other frames) for high-motion portions of the video
-        /// and more B-frames for low-motion portions. The maximum number of B-frames is limited
-        /// by the value you provide for the setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
+        /// Gets and sets the property DynamicSubGop. Specify whether to allow the number of B-frames
+        /// in your output GOP structure to vary or not depending on your input video content.
+        /// To improve the subjective video quality of your output that has high-motion content:
+        /// Leave blank or keep the default value Adaptive. MediaConvert will use fewer B-frames
+        /// for high-motion video content than low-motion content. The maximum number of B- frames
+        /// is limited by the value that you choose for B-frames between reference frames. To
+        /// use the same number B-frames for all types of content: Choose Static.
         /// </summary>
         public H265DynamicSubGop DynamicSubGop
         {
@@ -233,15 +235,15 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property FramerateConversionAlgorithm. Choose the method that you
-        /// want MediaConvert to use when increasing or decreasing the frame rate. We recommend
-        /// using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as
-        /// 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE)
-        /// to avoid stutter. This results in a smooth picture, but might introduce undesirable
-        /// video artifacts. For complex frame rate conversions, especially if your source video
-        /// has already been converted from its original cadence, use FrameFormer (FRAMEFORMER)
-        /// to do motion-compensated interpolation. FrameFormer chooses the best conversion method
-        /// frame by frame. Note that using FrameFormer increases the transcoding time and incurs
-        /// a significant add-on cost.
+        /// want MediaConvert to use when increasing or decreasing the frame rate. For numerically
+        /// simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default
+        /// value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose
+        /// Interpolate. This results in a smooth picture, but might introduce undesirable video
+        /// artifacts. For complex frame rate conversions, especially if your source video has
+        /// already been converted from its original cadence: Choose FrameFormer to do motion-compensated
+        /// interpolation. FrameFormer uses the best conversion method frame by frame. Note that
+        /// using FrameFormer increases the transcoding time and incurs a significant add-on cost.
+        /// When you choose FrameFormer, your input video resolution must be at least 128x96.
         /// </summary>
         public H265FramerateConversionAlgorithm FramerateConversionAlgorithm
         {
@@ -298,8 +300,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GopBReference. If enable, use reference B frames for GOP
-        /// structures that have B frames > 1.
+        /// Gets and sets the property GopBReference. Specify whether to allow B-frames to be
+        /// referenced by other frame types. To use reference B-frames when your GOP structure
+        /// has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend
+        /// that you choose Enabled to help improve the video quality of your output relative
+        /// to its bitrate. To not use reference B-frames: Choose Disabled.
         /// </summary>
         public H265GopBReference GopBReference
         {
@@ -508,9 +513,10 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property NumberBFramesBetweenReferenceFrames. Specify the number
-        /// of B-frames that MediaConvert puts between reference frames in this output. Valid
-        /// values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert
-        /// defaults to 2.
+        /// of B-frames between reference frames in this output. For the best video quality: Leave
+        /// blank. MediaConvert automatically determines the number of B-frames to use based on
+        /// the characteristics of your input video. To manually specify the number of B-frames
+        /// between reference frames: Enter an integer from 0 to 7.
         /// </summary>
         [AWSProperty(Min=0, Max=7)]
         public int NumberBFramesBetweenReferenceFrames

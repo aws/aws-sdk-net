@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FileSourceSettings Object
+    /// Response Unmarshaller for AdvancedInputFilterSettings Object
     /// </summary>  
-    public class FileSourceSettingsUnmarshaller : IUnmarshaller<FileSourceSettings, XmlUnmarshallerContext>, IUnmarshaller<FileSourceSettings, JsonUnmarshallerContext>
+    public class AdvancedInputFilterSettingsUnmarshaller : IUnmarshaller<AdvancedInputFilterSettings, XmlUnmarshallerContext>, IUnmarshaller<AdvancedInputFilterSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FileSourceSettings IUnmarshaller<FileSourceSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AdvancedInputFilterSettings IUnmarshaller<AdvancedInputFilterSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FileSourceSettings Unmarshall(JsonUnmarshallerContext context)
+        public AdvancedInputFilterSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FileSourceSettings unmarshalledObject = new FileSourceSettings();
+            AdvancedInputFilterSettings unmarshalledObject = new AdvancedInputFilterSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("convert608To708", targetDepth))
+                if (context.TestExpression("addTexture", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Convert608To708 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AddTexture = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("convertPaintToPop", targetDepth))
+                if (context.TestExpression("sharpening", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConvertPaintToPop = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("framerate", targetDepth))
-                {
-                    var unmarshaller = CaptionSourceFramerateUnmarshaller.Instance;
-                    unmarshalledObject.Framerate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceFile", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceFile = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("timeDelta", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TimeDelta = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("timeDeltaUnits", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimeDeltaUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Sharpening = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static FileSourceSettingsUnmarshaller _instance = new FileSourceSettingsUnmarshaller();        
+        private static AdvancedInputFilterSettingsUnmarshaller _instance = new AdvancedInputFilterSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FileSourceSettingsUnmarshaller Instance
+        public static AdvancedInputFilterSettingsUnmarshaller Instance
         {
             get
             {
