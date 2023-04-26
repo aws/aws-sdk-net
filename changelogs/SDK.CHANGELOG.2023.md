@@ -1,3 +1,10 @@
+### 3.7.534.0 (2023-04-26 18:21 UTC)
+* OSIS (3.7.100.0)
+	* Initial release for OpenSearch Ingestion
+* Core 3.7.106.27
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.533.0 (2023-04-25 18:23 UTC)
 * ChimeSDKMessaging (3.7.103.0)
 	* Remove non actionable field from UpdateChannelReadMarker and DeleteChannelRequest.  Add precise exceptions to DeleteChannel and DeleteStreamingConfigurations error cases.
