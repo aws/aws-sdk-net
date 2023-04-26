@@ -135,8 +135,8 @@ namespace ServiceClientGenerator
             if (checkResponse && configOption == null)
             {
                 configOption = CheckResponseForNode(m => m.ModeledName.Equals(node.ToString()) || m.MarshallName.Equals(node.ToString()));
-                /// foundOptionInResponse is used for wrapped result members which need to be
-                /// handled differently for the SWF service.
+                // foundOptionInResponse is used for wrapped result members which need to be
+                // handled differently for the SWF service.
                 foundOptionInResponse = configOption != null;
             }
             if (configOption == null)

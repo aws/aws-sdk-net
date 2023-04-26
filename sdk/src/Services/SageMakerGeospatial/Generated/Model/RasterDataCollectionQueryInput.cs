@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The input structure for Raster Data Collection Query containing the Area of Interest,
+    /// TimeRange Filters, and Property Filters.
     /// </summary>
     public partial class RasterDataCollectionQueryInput
     {
@@ -57,7 +58,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PropertyFilters.
+        /// Gets and sets the property PropertyFilters. 
+        /// <para>
+        /// The list of Property filters used in the Raster Data Collection Query.
+        /// </para>
         /// </summary>
         public PropertyFilters PropertyFilters
         {
@@ -91,7 +95,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimeRangeFilter.
+        /// Gets and sets the property TimeRangeFilter. 
+        /// <para>
+        /// The TimeRange Filter used in the RasterDataCollection Query.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
         public TimeRangeFilterInput TimeRangeFilter

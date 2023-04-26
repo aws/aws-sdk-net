@@ -33,9 +33,8 @@ namespace Amazon.FSx.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The following parameters are not supported for file systems with the <code>Persistent_2</code>
-    /// deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create
-    /// a data repository association to link your Lustre file system to a data repository.
+    /// The following parameters are not supported for file systems with a data repository
+    /// association created with .
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -75,10 +74,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property AutoImportPolicy. 
         /// <para>
-        ///  (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code> deployment
-        /// types. When you create your file system, your existing S3 objects appear as file and
-        /// directory listings. Use this property to choose how Amazon FSx keeps your file and
-        /// directory listings up to date as you add or modify objects in your linked S3 bucket.
+        ///  (Optional) When you create your file system, your existing S3 objects appear as file
+        /// and directory listings. Use this parameter to choose how Amazon FSx keeps your file
+        /// and directory listings up to date as you add or modify objects in your linked S3 bucket.
         /// <code>AutoImportPolicy</code> can have the following values:
         /// </para>
         ///  <ul> <li> 
@@ -114,9 +112,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is not supported for file systems with the <code>Persistent_2</code>
-        /// deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create
-        /// a data repository association to link your Lustre file system to a data repository.
+        /// This parameter is not supported for file systems with a data repository association.
         /// </para>
         ///  </note>
         /// </summary>
@@ -266,10 +262,9 @@ namespace Amazon.FSx.Model
         /// <para>
         /// Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>,
         /// <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2
-        /// instances that <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-
-        /// protection.html">support automatic encryption</a> in the Amazon Web Services Regions
-        /// where they are available. For more information about encryption in transit for FSx
-        /// for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
+        /// instances that support automatic encryption in the Amazon Web Services Regions where
+        /// they are available. For more information about encryption in transit for FSx for Lustre
+        /// file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
         /// data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>. 
         /// </para>
         ///  
@@ -317,9 +312,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ExportPath. 
         /// <para>
-        /// (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code> deployment
-        /// types. Specifies the path in the Amazon S3 bucket where the root of your Amazon FSx
-        /// file system is exported. The path must use the same Amazon S3 bucket as specified
+        /// (Optional) Specifies the path in the Amazon S3 bucket where the root of your Amazon
+        /// FSx file system is exported. The path must use the same Amazon S3 bucket as specified
         /// in ImportPath. You can provide an optional prefix to which new and changed data is
         /// to be exported from your Amazon FSx for Lustre file system. If an <code>ExportPath</code>
         /// value is not provided, Amazon FSx sets a default export path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>.
@@ -337,9 +331,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is not supported for file systems with the <code>Persistent_2</code>
-        /// deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create
-        /// a data repository association to link your Lustre file system to a data repository.
+        /// This parameter is not supported for file systems with a data repository association.
         /// </para>
         ///  </note>
         /// </summary>
@@ -369,12 +361,11 @@ namespace Amazon.FSx.Model
         /// The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
         /// GiB). Amazon S3 objects have a maximum size of 5 TB.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// This parameter is not supported for file systems with the <code>Persistent_2</code>
-        /// deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create
-        /// a data repository association to link your Lustre file system to a data repository.
+        /// This parameter is not supported for file systems with a data repository association.
         /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=512000)]
         public int ImportedFileChunkSize
@@ -401,9 +392,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is not supported for file systems with the <code>Persistent_2</code>
-        /// deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create
-        /// a data repository association to link your Lustre file system to a data repository.
+        /// This parameter is not supported for file systems with a data repository association.
         /// </para>
         ///  </note>
         /// </summary>

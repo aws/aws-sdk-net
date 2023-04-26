@@ -76,6 +76,18 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("healthReasons", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.HealthReasons = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("healthStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HealthStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("securityDetails", targetDepth))
                 {
                     var unmarshaller = SecurityDetailsUnmarshaller.Instance;

@@ -1641,6 +1641,68 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type FederationSourceErrorCode.
+    /// </summary>
+    public class FederationSourceErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InternalServiceException for FederationSourceErrorCode
+        /// </summary>
+        public static readonly FederationSourceErrorCode InternalServiceException = new FederationSourceErrorCode("InternalServiceException");
+        /// <summary>
+        /// Constant InvalidResponseException for FederationSourceErrorCode
+        /// </summary>
+        public static readonly FederationSourceErrorCode InvalidResponseException = new FederationSourceErrorCode("InvalidResponseException");
+        /// <summary>
+        /// Constant OperationNotSupportedException for FederationSourceErrorCode
+        /// </summary>
+        public static readonly FederationSourceErrorCode OperationNotSupportedException = new FederationSourceErrorCode("OperationNotSupportedException");
+        /// <summary>
+        /// Constant OperationTimeoutException for FederationSourceErrorCode
+        /// </summary>
+        public static readonly FederationSourceErrorCode OperationTimeoutException = new FederationSourceErrorCode("OperationTimeoutException");
+        /// <summary>
+        /// Constant ThrottlingException for FederationSourceErrorCode
+        /// </summary>
+        public static readonly FederationSourceErrorCode ThrottlingException = new FederationSourceErrorCode("ThrottlingException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FederationSourceErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FederationSourceErrorCode FindValue(string value)
+        {
+            return FindValue<FederationSourceErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FederationSourceErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FieldName.
     /// </summary>
     public class FieldName : ConstantClass
@@ -3488,6 +3550,10 @@ namespace Amazon.Glue
         /// Constant ALL for ResourceShareType
         /// </summary>
         public static readonly ResourceShareType ALL = new ResourceShareType("ALL");
+        /// <summary>
+        /// Constant FEDERATED for ResourceShareType
+        /// </summary>
+        public static readonly ResourceShareType FEDERATED = new ResourceShareType("FEDERATED");
         /// <summary>
         /// Constant FOREIGN for ResourceShareType
         /// </summary>

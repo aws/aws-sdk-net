@@ -82,6 +82,12 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                     unmarshalledObject.Contributor = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ContributorId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContributorId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

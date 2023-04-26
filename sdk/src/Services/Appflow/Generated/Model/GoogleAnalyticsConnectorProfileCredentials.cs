@@ -123,7 +123,7 @@ namespace Amazon.Appflow.Model
         /// access tokens, and is not required for OAuth1 access tokens. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Max=4096)]
         public string RefreshToken
         {
             get { return this._refreshToken; }

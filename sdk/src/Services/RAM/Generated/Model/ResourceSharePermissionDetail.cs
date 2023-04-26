@@ -29,25 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Information about an RAM permission.
+    /// Information about a RAM managed permission.
     /// </summary>
     public partial class ResourceSharePermissionDetail
     {
         private string _arn;
         private DateTime? _creationTime;
         private bool? _defaultVersion;
+        private PermissionFeatureSet _featureSet;
         private bool? _isResourceTypeDefault;
         private DateTime? _lastUpdatedTime;
         private string _name;
         private string _permission;
+        private PermissionType _permissionType;
         private string _resourceType;
+        private PermissionStatus _status;
+        private List<Tag> _tags = new List<Tag>();
         private string _version;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of this RAM permission.
+        /// Resource Name (ARN)</a> of this RAM managed permission.
         /// </para>
         /// </summary>
         public string Arn
@@ -83,7 +87,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property DefaultVersion. 
         /// <para>
-        /// Specifies whether the version of the permission represented in this structure is the
+        /// Specifies whether the version of the permission represented in this response is the
         /// default version for this permission.
         /// </para>
         /// </summary>
@@ -100,9 +104,52 @@ namespace Amazon.RAM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FeatureSet. 
+        /// <para>
+        /// Indicates what features are available for this resource share. This parameter can
+        /// have one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>STANDARD</b> – A resource share that supports all functionality. These resource
+        /// shares are visible to all principals you share the resource share with. You can modify
+        /// these resource shares in RAM using the console or APIs. This resource share might
+        /// have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then
+        /// promoted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching
+        /// a resource-based policy. That policy did not match any existing managed permissions,
+        /// so RAM created this customer managed permission automatically on the customer's behalf
+        /// based on the attached policy document. This type of resource share is visible only
+        /// to the Amazon Web Services account that created it. You can't modify it in RAM unless
+        /// you promote it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>,
+        /// but the customer ran the <a>PromoteResourceShareCreatedFromPolicy</a> and that operation
+        /// is still in progress. This value changes to <code>STANDARD</code> when complete.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PermissionFeatureSet FeatureSet
+        {
+            get { return this._featureSet; }
+            set { this._featureSet = value; }
+        }
+
+        // Check to see if FeatureSet property is set
+        internal bool IsSetFeatureSet()
+        {
+            return this._featureSet != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IsResourceTypeDefault. 
         /// <para>
-        /// Specifies whether the version of the permission represented in this structure is the
+        /// Specifies whether the version of the permission represented in this response is the
         /// default version for all resources of this resource type.
         /// </para>
         /// </summary>
@@ -175,6 +222,36 @@ namespace Amazon.RAM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PermissionType. 
+        /// <para>
+        /// The type of managed permission. This can be one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission.
+        /// You can associate it with your resource shares, but you can't modify it.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created
+        /// this managed permission. You can associate it with your resource shares and create
+        /// new versions that have different permissions.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PermissionType PermissionType
+        {
+            get { return this._permissionType; }
+            set { this._permissionType = value; }
+        }
+
+        // Check to see if PermissionType property is set
+        internal bool IsSetPermissionType()
+        {
+            return this._permissionType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The resource type to which this permission applies.
@@ -193,9 +270,65 @@ namespace Amazon.RAM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the association between the permission and the resource share.
+        /// The following are the possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ATTACHABLE</code> – This permission or version can be associated with resource
+        /// shares.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UNATTACHABLE</code> – This permission or version can't currently be associated
+        /// with resource shares.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETING</code> – This permission or version is in the process of being deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETED</code> – This permission or version is deleted.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PermissionStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tag key and value pairs attached to the resource share.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the permission represented in this structure.
+        /// The version of the permission described in this response.
         /// </para>
         /// </summary>
         public string Version

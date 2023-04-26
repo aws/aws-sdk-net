@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Account.Model
 {
     /// <summary>
-    /// The input failed to meet the constraints specified by the AWS service in a specified
-    /// field.
+    /// The input failed to meet the constraints specified by the Amazon Web Services service
+    /// in a specified field.
     /// </summary>
     public partial class ValidationExceptionField
     {

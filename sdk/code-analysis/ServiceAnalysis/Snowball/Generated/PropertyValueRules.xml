@@ -37,6 +37,11 @@
     <pattern>ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Snowball.Model.CreateClusterRequest.InitialClusterSize</property>
+    <min>0</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Snowball.Model.CreateClusterRequest.KmsKeyARN</property>
     <max>255</max>
     <pattern>arn:aws.*:kms:.*:[0-9]{12}:key/.*</pattern>
@@ -685,6 +690,20 @@
     <property>Amazon.Snowball.Model.Notification.SnsTopicARN</property>
     <max>255</max>
     <pattern>arn:aws.*:sns:.*:[0-9]{12}:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Snowball.Model.S3OnDeviceServiceConfiguration.FaultTolerance</property>
+    <min>1</min>
+    <max>4</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Snowball.Model.S3OnDeviceServiceConfiguration.ServiceSize</property>
+    <min>3</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Snowball.Model.S3OnDeviceServiceConfiguration.StorageLimit</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.S3Resource.BucketArn</property>

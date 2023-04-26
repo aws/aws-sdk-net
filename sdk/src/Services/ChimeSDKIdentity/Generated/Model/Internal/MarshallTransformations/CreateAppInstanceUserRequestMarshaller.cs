@@ -88,6 +88,17 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetExpirationSettings())
+                {
+                    context.Writer.WritePropertyName("ExpirationSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExpirationSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExpirationSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMetadata())
                 {
                     context.Writer.WritePropertyName("Metadata");

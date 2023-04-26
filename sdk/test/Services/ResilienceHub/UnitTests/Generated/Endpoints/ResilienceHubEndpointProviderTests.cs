@@ -496,6 +496,21 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("ResilienceHub")]
+        [Description("For region us-iso-east-1 with FIPS enabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new ResilienceHubEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonResilienceHubEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ResilienceHub")]
         [Description("For region us-iso-east-1 with FIPS enabled and DualStack disabled")]
         public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
@@ -505,6 +520,21 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonResilienceHubEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://resiliencehub-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ResilienceHub")]
+        [Description("For region us-iso-east-1 with FIPS disabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new ResilienceHubEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonResilienceHubEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -526,6 +556,21 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("ResilienceHub")]
+        [Description("For region us-isob-east-1 with FIPS enabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
+        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new ResilienceHubEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonResilienceHubEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ResilienceHub")]
         [Description("For region us-isob-east-1 with FIPS enabled and DualStack disabled")]
         public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
@@ -535,6 +580,21 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonResilienceHubEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://resiliencehub-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ResilienceHub")]
+        [Description("For region us-isob-east-1 with FIPS disabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
+        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new ResilienceHubEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonResilienceHubEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -612,6 +672,18 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonResilienceHubEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ResilienceHub")]
+        [Description("Missing region")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
+        public void Missing_region_Test()
+        {
+            var parameters = new ResilienceHubEndpointParameters();
             var endpoint = new AmazonResilienceHubEndpointProvider().ResolveEndpoint(parameters);
         }
 

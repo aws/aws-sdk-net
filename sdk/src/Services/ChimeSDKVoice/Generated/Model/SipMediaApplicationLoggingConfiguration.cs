@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The logging configuration of a SIP media application.
     /// </summary>
     public partial class SipMediaApplicationLoggingConfiguration
     {
         private bool? _enableSipMediaApplicationMessageLogs;
 
         /// <summary>
-        /// Gets and sets the property EnableSipMediaApplicationMessageLogs.
+        /// Gets and sets the property EnableSipMediaApplicationMessageLogs. 
+        /// <para>
+        /// Enables message logging for the specified SIP media application.
+        /// </para>
         /// </summary>
         public bool EnableSipMediaApplicationMessageLogs
         {

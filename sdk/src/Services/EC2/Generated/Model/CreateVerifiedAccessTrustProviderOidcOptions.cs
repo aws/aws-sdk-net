@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Options for an OIDC-based, user-identity type trust provider.
+    /// Describes the options when creating an Amazon Web Services Verified Access trust provider
+    /// using the <code>user</code> type.
     /// </summary>
     public partial class CreateVerifiedAccessTrustProviderOidcOptions
     {
@@ -83,6 +84,7 @@ namespace Amazon.EC2.Model
         /// The client secret.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ClientSecret
         {
             get { return this._clientSecret; }

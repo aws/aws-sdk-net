@@ -31,7 +31,9 @@ namespace Amazon.LicenseManager.Model
     /// <summary>
     /// Container for the parameters to the CreateGrant operation.
     /// Creates a grant for the specified license. A grant shares the use of license entitlements
-    /// with specific Amazon Web Services accounts.
+    /// with a specific Amazon Web Services account, an organization, or an organizational
+    /// unit (OU). For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html">Granted
+    /// licenses in License Manager</a> in the <i>License Manager User Guide</i>.
     /// </summary>
     public partial class CreateGrantRequest : AmazonLicenseManagerRequest
     {
@@ -141,8 +143,22 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Principals. 
         /// <para>
-        /// The grant principals. This value should be specified as an Amazon Resource Name (ARN).
+        /// The grant principals. You can specify one of the following as an Amazon Resource Name
+        /// (ARN):
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// An Amazon Web Services account, which includes only the account specified.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        /// An organizational unit (OU), which includes all accounts in the OU.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        /// An organization, which will include all accounts across your organization.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
         public List<string> Principals

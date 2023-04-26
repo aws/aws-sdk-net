@@ -57,6 +57,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IpId);
             }
 
+            if(requestObject.IsSetIpv6())
+            {
+                context.Writer.WritePropertyName("Ipv6");
+                context.Writer.Write(requestObject.Ipv6);
+            }
+
             if(requestObject.IsSetSubnetId())
             {
                 context.Writer.WritePropertyName("SubnetId");

@@ -29,11 +29,90 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// OpenID Connect options for an <code>oidc</code>-type, user-identity based trust provider.
+    /// Options for an OpenID Connect-compatible user-identity trust provider.
     /// </summary>
     public partial class ModifyVerifiedAccessTrustProviderOidcOptions
     {
+        private string _authorizationEndpoint;
+        private string _clientId;
+        private string _clientSecret;
+        private string _issuer;
         private string _scope;
+        private string _tokenEndpoint;
+        private string _userInfoEndpoint;
+
+        /// <summary>
+        /// Gets and sets the property AuthorizationEndpoint. 
+        /// <para>
+        /// The OIDC authorization endpoint.
+        /// </para>
+        /// </summary>
+        public string AuthorizationEndpoint
+        {
+            get { return this._authorizationEndpoint; }
+            set { this._authorizationEndpoint = value; }
+        }
+
+        // Check to see if AuthorizationEndpoint property is set
+        internal bool IsSetAuthorizationEndpoint()
+        {
+            return this._authorizationEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientId. 
+        /// <para>
+        /// The client identifier.
+        /// </para>
+        /// </summary>
+        public string ClientId
+        {
+            get { return this._clientId; }
+            set { this._clientId = value; }
+        }
+
+        // Check to see if ClientId property is set
+        internal bool IsSetClientId()
+        {
+            return this._clientId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientSecret. 
+        /// <para>
+        /// The client secret.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string ClientSecret
+        {
+            get { return this._clientSecret; }
+            set { this._clientSecret = value; }
+        }
+
+        // Check to see if ClientSecret property is set
+        internal bool IsSetClientSecret()
+        {
+            return this._clientSecret != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Issuer. 
+        /// <para>
+        /// The OIDC issuer.
+        /// </para>
+        /// </summary>
+        public string Issuer
+        {
+            get { return this._issuer; }
+            set { this._issuer = value; }
+        }
+
+        // Check to see if Issuer property is set
+        internal bool IsSetIssuer()
+        {
+            return this._issuer != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Scope. 
@@ -52,6 +131,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetScope()
         {
             return this._scope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TokenEndpoint. 
+        /// <para>
+        /// The OIDC token endpoint.
+        /// </para>
+        /// </summary>
+        public string TokenEndpoint
+        {
+            get { return this._tokenEndpoint; }
+            set { this._tokenEndpoint = value; }
+        }
+
+        // Check to see if TokenEndpoint property is set
+        internal bool IsSetTokenEndpoint()
+        {
+            return this._tokenEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserInfoEndpoint. 
+        /// <para>
+        /// The OIDC user info endpoint.
+        /// </para>
+        /// </summary>
+        public string UserInfoEndpoint
+        {
+            get { return this._userInfoEndpoint; }
+            set { this._userInfoEndpoint = value; }
+        }
+
+        // Check to see if UserInfoEndpoint property is set
+        internal bool IsSetUserInfoEndpoint()
+        {
+            return this._userInfoEndpoint != null;
         }
 
     }

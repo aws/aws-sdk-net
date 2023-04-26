@@ -82,6 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CoreDumpConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EnableSSMAccess", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableSSMAccess = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InitialInstanceCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

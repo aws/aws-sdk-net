@@ -39,7 +39,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppSummaries. 
         /// <para>
-        /// Summaries for the AWS Resilience Hub application.
+        /// Summaries for the Resilience Hub application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

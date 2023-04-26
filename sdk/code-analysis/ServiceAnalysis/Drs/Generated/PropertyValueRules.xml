@@ -67,6 +67,12 @@
     <pattern>^drsjob-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Drs.Model.DeleteLaunchConfigurationTemplateRequest.LaunchConfigurationTemplateID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^lct-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Drs.Model.DeleteRecoveryInstanceRequest.RecoveryInstanceID</property>
     <min>10</min>
     <max>19</max>
@@ -115,6 +121,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DescribeJobsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.DescribeLaunchConfigurationTemplatesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.DescribeLaunchConfigurationTemplatesRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.DescribeLaunchConfigurationTemplatesResponse.NextToken</property>
     <min>0</min>
     <max>2048</max>
   </property-value-rule>
@@ -452,6 +473,12 @@
     <min>19</min>
     <max>19</max>
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.UpdateLaunchConfigurationTemplateRequest.LaunchConfigurationTemplateID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^lct-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationRequest.BandwidthThrottling</property>
@@ -798,6 +825,18 @@
     <min>0</min>
     <max>255</max>
     <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.LaunchConfigurationTemplate.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:.{16,2044}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.LaunchConfigurationTemplate.LaunchConfigurationTemplateID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^lct-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LifeCycle.AddedToServiceDateTime</property>

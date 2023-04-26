@@ -38,6 +38,13 @@ namespace Amazon.DataSync.Model
     /// how and when you want to transfer your data (such as bandwidth limits, scheduling,
     /// among other options).
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// If you're planning to transfer data to or from an Amazon S3 location, review <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">how
+    /// DataSync can affect your S3 request charges</a> and the <a href="http://aws.amazon.com/datasync/pricing/">DataSync
+    /// pricing page</a> before you begin.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateTaskRequest : AmazonDataSyncRequest
     {

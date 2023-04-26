@@ -113,6 +113,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "DPDTimeoutSeconds", StringUtils.FromInt(publicRequestOptionslistValue.DPDTimeoutSeconds));
                             }
+                            if(publicRequestOptionslistValue.IsSetEnableTunnelLifecycleControl())
+                            {
+                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "EnableTunnelLifecycleControl", StringUtils.FromBool(publicRequestOptionslistValue.EnableTunnelLifecycleControl));
+                            }
                             if(publicRequestOptionslistValue.IsSetIKEVersions())
                             {
                                 int publicRequestOptionslistValuelistValueIndex = 1;

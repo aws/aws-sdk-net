@@ -145,7 +145,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// A request ID for the run.
+        /// To ensure that requests don't run multiple times, specify a unique ID for each request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -221,7 +221,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// A storage capacity for the run.
+        /// A storage capacity for the run in gigabytes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]

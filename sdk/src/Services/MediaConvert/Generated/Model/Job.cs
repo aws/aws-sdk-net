@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         private AccelerationStatus _accelerationStatus;
         private string _arn;
         private BillingTagsSource _billingTagsSource;
+        private string _clientRequestToken;
         private DateTime? _createdAt;
         private JobPhase _currentPhase;
         private int? _errorCode;
@@ -59,6 +60,7 @@ namespace Amazon.MediaConvert.Model
         private StatusUpdateInterval _statusUpdateInterval;
         private Timing _timing;
         private Dictionary<string, string> _userMetadata = new Dictionary<string, string>();
+        private List<WarningGroup> _warnings = new List<WarningGroup>();
 
         /// <summary>
         /// Gets and sets the property AccelerationSettings. Accelerated transcoding can significantly
@@ -132,6 +134,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetBillingTagsSource()
         {
             return this._billingTagsSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientRequestToken. Prevent duplicate jobs from being created
+        /// and ensure idempotency for your requests. A client request token can be any string
+        /// that includes up to 64 ASCII characters. If you reuse a client request token within
+        /// one minute of a successful request, the API returns the job details of the original
+        /// request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
+        /// </summary>
+        public string ClientRequestToken
+        {
+            get { return this._clientRequestToken; }
+            set { this._clientRequestToken = value; }
+        }
+
+        // Check to see if ClientRequestToken property is set
+        internal bool IsSetClientRequestToken()
+        {
+            return this._clientRequestToken != null;
         }
 
         /// <summary>
@@ -478,6 +499,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetUserMetadata()
         {
             return this._userMetadata != null && this._userMetadata.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Warnings. Contains any warning messages for the job. Use
+        /// to help identify potential issues with your input, output, or job. For more information,
+        /// see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+        /// </summary>
+        public List<WarningGroup> Warnings
+        {
+            get { return this._warnings; }
+            set { this._warnings = value; }
+        }
+
+        // Check to see if Warnings property is set
+        internal bool IsSetWarnings()
+        {
+            return this._warnings != null && this._warnings.Count > 0; 
         }
 
     }

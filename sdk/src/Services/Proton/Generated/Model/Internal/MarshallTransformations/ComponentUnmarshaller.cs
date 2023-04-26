@@ -100,6 +100,12 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnvironmentName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lastClientRequestToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastClientRequestToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastDeploymentAttemptedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

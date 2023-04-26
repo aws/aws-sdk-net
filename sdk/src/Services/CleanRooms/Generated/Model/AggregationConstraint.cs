@@ -66,7 +66,7 @@ namespace Amazon.CleanRooms.Model
         /// output row for it to be in the query output.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2)]
+        [AWSProperty(Required=true, Min=2, Max=100000)]
         public int Minimum
         {
             get { return this._minimum.GetValueOrDefault(); }

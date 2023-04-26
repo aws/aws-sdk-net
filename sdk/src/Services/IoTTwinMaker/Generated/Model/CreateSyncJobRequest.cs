@@ -42,8 +42,8 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property SyncRole. 
         /// <para>
-        /// The SyncJob IAM role. This IAM role is used by the sync job to read from the syncSource,
-        /// and create, update or delete the corresponding resources.
+        /// The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource,
+        /// and create, update, or delete the corresponding resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -66,7 +66,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently the only supported syncSoucre is <code>SITEWISE </code>.
+        /// Currently the only supported syncSoource is <code>SITEWISE </code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -105,7 +105,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The workspace Id.
+        /// The workspace ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

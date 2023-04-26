@@ -69,6 +69,17 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DescriptiveText);
             }
 
+            if(requestObject.IsSetFileUploaderConfig())
+            {
+                context.Writer.WritePropertyName("fileUploaderConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FileUploaderFieldConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.FileUploaderConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetIsArray())
             {
                 context.Writer.WritePropertyName("isArray");

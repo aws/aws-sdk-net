@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// 
+    /// You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>,
+    /// or <code>REPLACE</code> a domain.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

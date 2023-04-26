@@ -30,12 +30,12 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAppVersionAppComponent operation.
-    /// Updates an existing Application Component in the AWS Resilience Hub application.
+    /// Updates an existing Application Component in the Resilience Hub application.
     /// 
     ///  <note> 
     /// <para>
-    /// This API updates the AWS Resilience Hub application draft version. To use this Application
-    /// Component for running assessments, you must publish the AWS Resilience Hub application
+    /// This API updates the Resilience Hub application draft version. To use this Application
+    /// Component for running assessments, you must publish the Resilience Hub application
     /// using the <code>PublishAppVersion</code> API.
     /// </para>
     ///  </note>
@@ -69,8 +69,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The format for
-        /// this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+        /// The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
+        /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>

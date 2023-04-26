@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The input structure representing Output Resolution for Stacking Operation.
     /// </summary>
     public partial class OutputResolutionStackInput
     {
@@ -37,7 +37,11 @@ namespace Amazon.SageMakerGeospatial.Model
         private UserDefined _userDefined;
 
         /// <summary>
-        /// Gets and sets the property Predefined.
+        /// Gets and sets the property Predefined. 
+        /// <para>
+        /// A string value representing Predefined Output Resolution for a stacking operation.
+        /// Allowed values are <code>HIGHEST</code>, <code>LOWEST</code>, and <code>AVERAGE</code>.
+        /// </para>
         /// </summary>
         public PredefinedResolution Predefined
         {
@@ -52,7 +56,11 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserDefined.
+        /// Gets and sets the property UserDefined. 
+        /// <para>
+        /// The structure representing User Output Resolution for a Stacking operation defined
+        /// as a value and unit.
+        /// </para>
         /// </summary>
         public UserDefined UserDefined
         {

@@ -1159,6 +1159,10 @@ namespace Amazon.ResilienceHub
         /// </summary>
         public static readonly ResourceMappingType CfnStack = new ResourceMappingType("CfnStack");
         /// <summary>
+        /// Constant EKS for ResourceMappingType
+        /// </summary>
+        public static readonly ResourceMappingType EKS = new ResourceMappingType("EKS");
+        /// <summary>
         /// Constant Resource for ResourceMappingType
         /// </summary>
         public static readonly ResourceMappingType Resource = new ResourceMappingType("Resource");

@@ -37,8 +37,8 @@ namespace Amazon.FSx.Model
     /// 
     ///  
     /// <para>
-    /// This <code>AutoExportPolicy</code> is supported only for Amazon FSx for Lustre file
-    /// systems with the <code>Persistent_2</code> deployment type.
+    /// The <code>AutoExportPolicy</code> is only supported on Amazon FSx for Lustre file
+    /// systems with a data repository association.
     /// </para>
     /// </summary>
     public partial class AutoExportPolicy

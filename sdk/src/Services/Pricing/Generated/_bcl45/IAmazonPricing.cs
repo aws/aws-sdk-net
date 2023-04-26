@@ -209,6 +209,80 @@ namespace Amazon.Pricing
 
         #endregion
         
+        #region  GetPriceListFileUrl
+
+
+        /// <summary>
+        /// <i> <b>This feature is in preview release and is subject to change. Your use of Amazon
+        /// Web Services Price List API is subject to the Beta Service Participation terms of
+        /// the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// 
+        ///  
+        /// <para>
+        /// This returns the URL that you can retrieve your Price List file from. This URL is
+        /// based on the <code>PriceListArn</code> and <code>FileFormat</code> that you retrieve
+        /// from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
+        /// <code>ListPriceLists</code> </a> response. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPriceListFileUrl service method.</param>
+        /// 
+        /// <returns>The response from the GetPriceListFileUrl service method, as returned by Pricing.</returns>
+        /// <exception cref="Amazon.Pricing.Model.AccessDeniedException">
+        /// General authentication failure. The request wasn't signed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.NotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetPriceListFileUrl">REST API Reference for GetPriceListFileUrl Operation</seealso>
+        GetPriceListFileUrlResponse GetPriceListFileUrl(GetPriceListFileUrlRequest request);
+
+
+
+        /// <summary>
+        /// <i> <b>This feature is in preview release and is subject to change. Your use of Amazon
+        /// Web Services Price List API is subject to the Beta Service Participation terms of
+        /// the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// 
+        ///  
+        /// <para>
+        /// This returns the URL that you can retrieve your Price List file from. This URL is
+        /// based on the <code>PriceListArn</code> and <code>FileFormat</code> that you retrieve
+        /// from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
+        /// <code>ListPriceLists</code> </a> response. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPriceListFileUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPriceListFileUrl service method, as returned by Pricing.</returns>
+        /// <exception cref="Amazon.Pricing.Model.AccessDeniedException">
+        /// General authentication failure. The request wasn't signed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.NotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetPriceListFileUrl">REST API Reference for GetPriceListFileUrl Operation</seealso>
+        Task<GetPriceListFileUrlResponse> GetPriceListFileUrlAsync(GetPriceListFileUrlRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetProducts
 
 
@@ -264,6 +338,100 @@ namespace Amazon.Pricing
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetProducts">REST API Reference for GetProducts Operation</seealso>
         Task<GetProductsResponse> GetProductsAsync(GetProductsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListPriceLists
+
+
+        /// <summary>
+        /// <i> <b>This feature is in preview release and is subject to change. Your use of Amazon
+        /// Web Services Price List API is subject to the Beta Service Participation terms of
+        /// the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// 
+        ///  
+        /// <para>
+        /// This returns a list of Price List references that the requester if authorized to view,
+        /// given a <code>ServiceCode</code>, <code>CurrencyCode</code>, and an <code>EffectiveDate</code>.
+        /// Use without a <code>RegionCode</code> filter to list Price List references from all
+        /// available Amazon Web Services Regions. Use with a <code>RegionCode</code> filter to
+        /// get the Price List reference that's specific to a specific Amazon Web Services Region.
+        /// You can use the <code>PriceListArn</code> from the response to get your preferred
+        /// Price List files through the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetPriceListFileUrl.html">
+        /// <code>GetPriceListFileUrl</code> </a> API.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPriceLists service method.</param>
+        /// 
+        /// <returns>The response from the ListPriceLists service method, as returned by Pricing.</returns>
+        /// <exception cref="Amazon.Pricing.Model.AccessDeniedException">
+        /// General authentication failure. The request wasn't signed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ExpiredNextTokenException">
+        /// The pagination token expired. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.NotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/ListPriceLists">REST API Reference for ListPriceLists Operation</seealso>
+        ListPriceListsResponse ListPriceLists(ListPriceListsRequest request);
+
+
+
+        /// <summary>
+        /// <i> <b>This feature is in preview release and is subject to change. Your use of Amazon
+        /// Web Services Price List API is subject to the Beta Service Participation terms of
+        /// the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// 
+        ///  
+        /// <para>
+        /// This returns a list of Price List references that the requester if authorized to view,
+        /// given a <code>ServiceCode</code>, <code>CurrencyCode</code>, and an <code>EffectiveDate</code>.
+        /// Use without a <code>RegionCode</code> filter to list Price List references from all
+        /// available Amazon Web Services Regions. Use with a <code>RegionCode</code> filter to
+        /// get the Price List reference that's specific to a specific Amazon Web Services Region.
+        /// You can use the <code>PriceListArn</code> from the response to get your preferred
+        /// Price List files through the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetPriceListFileUrl.html">
+        /// <code>GetPriceListFileUrl</code> </a> API.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPriceLists service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPriceLists service method, as returned by Pricing.</returns>
+        /// <exception cref="Amazon.Pricing.Model.AccessDeniedException">
+        /// General authentication failure. The request wasn't signed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ExpiredNextTokenException">
+        /// The pagination token expired. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.NotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/ListPriceLists">REST API Reference for ListPriceLists Operation</seealso>
+        Task<ListPriceListsResponse> ListPriceListsAsync(ListPriceListsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -34,8 +34,9 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// To create a model compilation job, use <a>CreateCompilationJob</a>. To get information
-    /// about a particular model compilation job you have created, use <a>DescribeCompilationJob</a>.
+    /// To create a model compilation job, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateCompilationJob.html">CreateCompilationJob</a>.
+    /// To get information about a particular model compilation job you have created, use
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeCompilationJob.html">DescribeCompilationJob</a>.
     /// </para>
     /// </summary>
     public partial class ListCompilationJobsRequest : AmazonSageMakerRequest
@@ -225,7 +226,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StatusEquals. 
         /// <para>
-        /// A filter that retrieves model compilation jobs with a specific <a>DescribeCompilationJobResponse$CompilationJobStatus</a>
+        /// A filter that retrieves model compilation jobs with a specific <code>CompilationJobStatus</code>
         /// status.
         /// </para>
         /// </summary>

@@ -33,11 +33,31 @@ namespace Amazon.GroundStation.Model
     /// </summary>
     public partial class AgentDetails
     {
+        private List<int> _agentCpuCores = new List<int>();
         private string _agentVersion;
         private List<ComponentVersion> _componentVersions = new List<ComponentVersion>();
         private string _instanceId;
         private string _instanceType;
         private List<int> _reservedCpuCores = new List<int>();
+
+        /// <summary>
+        /// Gets and sets the property AgentCpuCores. 
+        /// <para>
+        /// List of CPU cores reserved for the agent.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public List<int> AgentCpuCores
+        {
+            get { return this._agentCpuCores; }
+            set { this._agentCpuCores = value; }
+        }
+
+        // Check to see if AgentCpuCores property is set
+        internal bool IsSetAgentCpuCores()
+        {
+            return this._agentCpuCores != null && this._agentCpuCores.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AgentVersion. 
@@ -116,12 +136,16 @@ namespace Amazon.GroundStation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReservedCpuCores. 
+        /// Gets and sets the property ReservedCpuCores. <note> 
         /// <para>
-        /// Number of Cpu cores reserved for agent.
+        /// This field should not be used. Use agentCpuCores instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// List of CPU cores reserved for processes other than the agent running on the EC2 instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public List<int> ReservedCpuCores
         {
             get { return this._reservedCpuCores; }

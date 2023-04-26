@@ -67,6 +67,23 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetHealthReasons())
+            {
+                context.Writer.WritePropertyName("healthReasons");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectHealthReasonsListValue in requestObject.HealthReasons)
+                {
+                        context.Writer.Write(requestObjectHealthReasonsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetHealthStatus())
+            {
+                context.Writer.WritePropertyName("healthStatus");
+                context.Writer.Write(requestObject.HealthStatus);
+            }
+
             if(requestObject.IsSetSecurityDetails())
             {
                 context.Writer.WritePropertyName("securityDetails");

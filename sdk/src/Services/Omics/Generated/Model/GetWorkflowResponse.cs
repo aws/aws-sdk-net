@@ -278,7 +278,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// The workflow's storage capacity.
+        /// The workflow's storage capacity in gigabytes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]

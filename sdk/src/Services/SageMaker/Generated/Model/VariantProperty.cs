@@ -33,10 +33,11 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// If you are updating an endpoint with the <a>UpdateEndpointInput$RetainAllVariantProperties</a>
-    /// option set to <code>true</code>, the <code>VariantProperty</code> objects listed in
-    /// <a>UpdateEndpointInput$ExcludeRetainedVariantProperties</a> override the existing
-    /// variant properties of the endpoint.
+    /// If you are updating an endpoint with the <code>RetainAllVariantProperties</code> option
+    /// of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpointInput</a>
+    /// set to <code>true</code>, the <code>VariantProperty</code> objects listed in the <code>ExcludeRetainedVariantProperties</code>
+    /// parameter of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpointInput</a>
+    /// override the existing variant properties of the endpoint.
     /// </para>
     /// </summary>
     public partial class VariantProperty
@@ -51,12 +52,13 @@ namespace Amazon.SageMaker.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts
-        /// using the <a>ProductionVariant$InitialInstanceCount</a> values in the <a>CreateEndpointConfigInput$ProductionVariants</a>.
+        /// using the <code>InitialInstanceCount</code> values in the <code>ProductionVariants</code>
+        /// of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DesiredWeight</code>: Overrides the existing variant weights using the <a>ProductionVariant$InitialVariantWeight</a>
-        /// values in the <a>CreateEndpointConfigInput$ProductionVariants</a>.
+        ///  <code>DesiredWeight</code>: Overrides the existing variant weights using the <code>InitialVariantWeight</code>
+        /// values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>

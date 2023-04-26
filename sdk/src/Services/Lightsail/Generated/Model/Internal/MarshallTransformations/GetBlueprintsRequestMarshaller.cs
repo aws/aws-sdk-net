@@ -67,6 +67,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAppCategory())
+                {
+                    context.Writer.WritePropertyName("appCategory");
+                    context.Writer.Write(publicRequest.AppCategory);
+                }
+
                 if(publicRequest.IsSetIncludeInactive())
                 {
                     context.Writer.WritePropertyName("includeInactive");

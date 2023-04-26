@@ -30,7 +30,7 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRecommendationTemplate operation.
-    /// Creates a new recommendation template for the AWS Resilience Hub application.
+    /// Creates a new recommendation template for the Resilience Hub application.
     /// </summary>
     public partial class CreateRecommendationTemplateRequest : AmazonResilienceHubRequest
     {

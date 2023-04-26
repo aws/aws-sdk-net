@@ -46,8 +46,9 @@ namespace Amazon.Keyspaces
     /// <para>
     /// In addition to supporting Cassandra Query Language (CQL) requests via open-source
     /// Cassandra drivers, Amazon Keyspaces supports data definition language (DDL) operations
-    /// to manage keyspaces and tables using the Amazon Web Services SDK and CLI. This API
-    /// reference describes the supported DDL operations in detail.
+    /// to manage keyspaces and tables using the Amazon Web Services SDK and CLI, as well
+    /// as infrastructure as code (IaC) services and tools such as CloudFormation and Terraform.
+    /// This API reference describes the supported DDL operations in detail.
     /// </para>
     ///  
     /// <para>
@@ -1014,7 +1015,6 @@ namespace Amazon.Keyspaces
         /// and the current time. For more information about restore points, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window">
         /// Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer Guide</i>.
         /// 
-        /// 
         ///  
         /// <para>
         /// Any number of users can execute up to 4 concurrent restores (any type of restore)
@@ -1039,23 +1039,23 @@ namespace Amazon.Keyspaces
         /// <para>
         /// You can also overwrite these settings during restore:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • Read/write capacity mode
+        /// Read/write capacity mode
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • Provisioned throughput capacity settings
+        /// Provisioned throughput capacity settings
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • Point-in-time (PITR) settings
+        /// Point-in-time (PITR) settings
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • Tags
+        /// Tags
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_settings">PITR
         /// restore settings</a> in the <i>Amazon Keyspaces Developer Guide</i>.
@@ -1065,18 +1065,19 @@ namespace Amazon.Keyspaces
         /// Note that the following settings are not restored, and you must configure them manually
         /// for the new table:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • Automatic scaling policies (for tables that use provisioned capacity mode)
+        /// Automatic scaling policies (for tables that use provisioned capacity mode)
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • Identity and Access Management (IAM) policies
+        /// Identity and Access Management (IAM) policies
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • Amazon CloudWatch metrics and alarms
+        /// Amazon CloudWatch metrics and alarms
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreTable service method.</param>
         /// 

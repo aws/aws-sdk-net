@@ -39,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageBuildVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.
+        /// The ARN of the Image Builder image resource that this request deleted.
         /// </para>
         /// </summary>
         public string ImageBuildVersionArn

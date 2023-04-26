@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The output structure contains the Raster Data Collection Query input along with some
+    /// additional metadata.
     /// </summary>
     public partial class RasterDataCollectionQueryOutput
     {
@@ -37,10 +38,13 @@ namespace Amazon.SageMakerGeospatial.Model
         private PropertyFilters _propertyFilters;
         private string _rasterDataCollectionArn;
         private string _rasterDataCollectionName;
-        private TimeRangeFilterInput _timeRangeFilter;
+        private TimeRangeFilterOutput _timeRangeFilter;
 
         /// <summary>
-        /// Gets and sets the property AreaOfInterest.
+        /// Gets and sets the property AreaOfInterest. 
+        /// <para>
+        /// The Area of Interest used in the search.
+        /// </para>
         /// </summary>
         public AreaOfInterest AreaOfInterest
         {
@@ -55,7 +59,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PropertyFilters.
+        /// Gets and sets the property PropertyFilters. 
+        /// <para>
+        /// Property filters used in the search.
+        /// </para>
         /// </summary>
         public PropertyFilters PropertyFilters
         {
@@ -70,7 +77,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RasterDataCollectionArn.
+        /// Gets and sets the property RasterDataCollectionArn. 
+        /// <para>
+        /// The ARN of the Raster Data Collection against which the search is done.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RasterDataCollectionArn
@@ -105,10 +115,13 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimeRangeFilter.
+        /// Gets and sets the property TimeRangeFilter. 
+        /// <para>
+        /// The TimeRange filter used in the search.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
-        public TimeRangeFilterInput TimeRangeFilter
+        public TimeRangeFilterOutput TimeRangeFilter
         {
             get { return this._timeRangeFilter; }
             set { this._timeRangeFilter = value; }

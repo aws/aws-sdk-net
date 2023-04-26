@@ -36,8 +36,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -51,8 +51,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.ap-northeast-2.amazonaws.com", endpoint.URL);
         }
@@ -66,8 +66,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "ap-south-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.ap-south-1.amazonaws.com", endpoint.URL);
         }
@@ -81,8 +81,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -96,8 +96,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -111,8 +111,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "ca-central-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.ca-central-1.amazonaws.com", endpoint.URL);
         }
@@ -126,8 +126,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -141,8 +141,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "eu-north-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.eu-north-1.amazonaws.com", endpoint.URL);
         }
@@ -156,8 +156,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -171,8 +171,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.eu-west-2.amazonaws.com", endpoint.URL);
         }
@@ -186,8 +186,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "eu-west-3";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.eu-west-3.amazonaws.com", endpoint.URL);
         }
@@ -201,8 +201,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -216,8 +216,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "us-east-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -231,8 +231,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -246,8 +246,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -261,8 +261,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -276,8 +276,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.us-east-1.api.aws", endpoint.URL);
         }
@@ -291,8 +291,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -306,8 +306,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -321,8 +321,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -336,8 +336,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -351,8 +351,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail-fips.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -366,8 +366,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -381,8 +381,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -396,8 +396,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -411,8 +411,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
@@ -426,8 +426,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
@@ -441,8 +441,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "us-isob-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -456,8 +456,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "us-isob-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://lightsail.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -466,13 +466,28 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Lightsail")]
-        [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
+        [Description("For custom endpoint with region set and fips disabled and dualstack disabled")]
+        public void For_custom_endpoint_with_region_set_and_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://example.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Lightsail")]
+        [Description("For custom endpoint with region not set and fips disabled and dualstack disabled")]
+        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_and_dualstack_disabled_Test()
+        {
+            var parameters = new LightsailEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -488,8 +503,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -504,8 +519,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LightsailEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonLightsailEndpointProvider().ResolveEndpoint(parameters);
         }

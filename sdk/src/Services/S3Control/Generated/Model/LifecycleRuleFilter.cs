@@ -100,9 +100,10 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// Replacement must be made for object keys containing special characters (such as carriage
-        /// returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.
+        /// When you're using XML requests, you must replace special characters (such as carriage
+        /// returns) in object keys with their equivalent XML entity codes. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+        /// XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>

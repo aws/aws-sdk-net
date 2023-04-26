@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The geographic extent of the Earth Observation job.
     /// </summary>
     public partial class AreaOfInterest
     {
         private AreaOfInterestGeometry _areaOfInterestGeometry;
 
         /// <summary>
-        /// Gets and sets the property AreaOfInterestGeometry.
+        /// Gets and sets the property AreaOfInterestGeometry. 
+        /// <para>
+        /// A GeoJSON object representing the geographic extent in the coordinate space.
+        /// </para>
         /// </summary>
         public AreaOfInterestGeometry AreaOfInterestGeometry
         {

@@ -107,6 +107,12 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetPeriodAlignment())
+                {
+                    context.Writer.WritePropertyName("PeriodAlignment");
+                    context.Writer.Write(publicRequest.PeriodAlignment);
+                }
+
                 if(publicRequest.IsSetPeriodInSeconds())
                 {
                     context.Writer.WritePropertyName("PeriodInSeconds");

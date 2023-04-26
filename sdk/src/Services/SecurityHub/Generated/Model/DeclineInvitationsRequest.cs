@@ -34,8 +34,13 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
-    /// This operation is only used by accounts that are not part of an organization. Organization
-    /// accounts do not receive invitations.
+    /// A prospective member account uses this operation to decline an invitation to become
+    /// a member.
+    /// </para>
+    ///  
+    /// <para>
+    /// This operation is only called by member accounts that aren't part of an organization.
+    /// Organization accounts don't receive invitations.
     /// </para>
     /// </summary>
     public partial class DeclineInvitationsRequest : AmazonSecurityHubRequest
@@ -45,8 +50,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The list of account IDs for the accounts from which to decline the invitations to
-        /// Security Hub.
+        /// The list of prospective member account IDs for which to decline an invitation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

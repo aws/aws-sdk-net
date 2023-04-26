@@ -126,7 +126,7 @@ namespace Amazon.Account.Model
         /// Specifies an email address for the alternate contact. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=254)]
         public string EmailAddress
         {
             get { return this._emailAddress; }

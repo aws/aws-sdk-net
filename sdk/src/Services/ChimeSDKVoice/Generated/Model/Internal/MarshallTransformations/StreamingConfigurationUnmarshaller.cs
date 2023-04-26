@@ -76,6 +76,12 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                     unmarshalledObject.Disabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MediaInsightsConfiguration", targetDepth))
+                {
+                    var unmarshaller = MediaInsightsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.MediaInsightsConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StreamingNotificationTargets", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<StreamingNotificationTarget, StreamingNotificationTargetUnmarshaller>(StreamingNotificationTargetUnmarshaller.Instance);

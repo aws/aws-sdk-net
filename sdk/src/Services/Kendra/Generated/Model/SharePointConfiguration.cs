@@ -52,9 +52,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property AuthenticationType. 
         /// <para>
-        /// Whether you want to connect to SharePoint using basic authentication of user name
-        /// and password, or OAuth authentication of user name, password, client ID, and client
-        /// secret. You can use OAuth authentication for SharePoint Online.
+        /// Whether you want to connect to SharePoint Online using basic authentication of user
+        /// name and password, or OAuth authentication of user name, password, client ID, and
+        /// client secret, or AD App-only authentication of client secret.
         /// </para>
         /// </summary>
         public SharePointOnlineAuthenticationType AuthenticationType
@@ -246,16 +246,9 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property SecretArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user
-        /// name and password required to connect to the SharePoint instance. If you use SharePoint
-        /// Server, you also need to provide the sever domain name as part of the credentials.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-        /// a Microsoft SharePoint Data Source</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can also provide OAuth authentication credentials of user name, password, client
-        /// ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-        /// a SharePoint data source</a>.
+        /// name and password required to connect to the SharePoint instance. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Microsoft
+        /// SharePoint</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1284)]
@@ -298,8 +291,8 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// You can simply generate a self-signed X509 certificate on any computer using OpenSSL.
-        /// For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+        /// You can generate a self-signed X509 certificate on any computer using OpenSSL. For
+        /// an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
         /// and sign an X509 certificate</a>.
         /// </para>
         /// </summary>

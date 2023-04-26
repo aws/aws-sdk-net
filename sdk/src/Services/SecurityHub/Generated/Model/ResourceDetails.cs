@@ -71,6 +71,7 @@ namespace Amazon.SecurityHub.Model
         private AwsEc2LaunchTemplateDetails _awsEc2LaunchTemplate;
         private AwsEc2NetworkAclDetails _awsEc2NetworkAcl;
         private AwsEc2NetworkInterfaceDetails _awsEc2NetworkInterface;
+        private AwsEc2RouteTableDetails _awsEc2RouteTable;
         private AwsEc2SecurityGroupDetails _awsEc2SecurityGroup;
         private AwsEc2SubnetDetails _awsEc2Subnet;
         private AwsEc2TransitGatewayDetails _awsEc2TransitGateway;
@@ -509,6 +510,26 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsEc2NetworkInterface()
         {
             return this._awsEc2NetworkInterface != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsEc2RouteTable. 
+        /// <para>
+        ///  Provides details about a route table. A route table contains a set of rules, called
+        /// routes, that determine where to direct network traffic from your subnet or gateway.
+        /// 
+        /// </para>
+        /// </summary>
+        public AwsEc2RouteTableDetails AwsEc2RouteTable
+        {
+            get { return this._awsEc2RouteTable; }
+            set { this._awsEc2RouteTable = value; }
+        }
+
+        // Check to see if AwsEc2RouteTable property is set
+        internal bool IsSetAwsEc2RouteTable()
+        {
+            return this._awsEc2RouteTable != null;
         }
 
         /// <summary>

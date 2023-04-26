@@ -35,14 +35,25 @@ namespace Amazon.WellArchitected.Model
     ///  
     /// <para>
     /// The owner of a workload can share the workload with other Amazon Web Services accounts,
-    /// IAM users, an organization, and organizational units (OUs) in the same Amazon Web
-    /// Services Region. Only the owner of a workload can delete it.
+    /// users, an organization, and organizational units (OUs) in the same Amazon Web Services
+    /// Region. Only the owner of a workload can delete it.
     /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining
     /// a Workload</a> in the <i>Well-Architected Tool User Guide</i>.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// Either <code>AwsRegions</code>, <code>NonAwsRegions</code>, or both must be specified
+    /// when creating a workload.
+    /// </para>
+    ///  
+    /// <para>
+    /// You also must specify <code>ReviewOwner</code>, even though the parameter is listed
+    /// as not being required in the following section. 
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateWorkloadRequest : AmazonWellArchitectedRequest
     {

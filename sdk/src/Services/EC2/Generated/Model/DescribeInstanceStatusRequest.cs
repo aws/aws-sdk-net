@@ -210,10 +210,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items to return for this request. To retrieve the next page
-        /// of items, make another request with the token returned in the output. This value can
-        /// be between 5 and 1000. You cannot specify this parameter and the instance IDs parameter
-        /// in the same call. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+        /// The maximum number of items to return for this request. To get the next page of items,
+        /// make another request with the token returned in the output. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot specify this parameter and the instance IDs parameter in the same request.
         /// </para>
         /// </summary>
         public int MaxResults

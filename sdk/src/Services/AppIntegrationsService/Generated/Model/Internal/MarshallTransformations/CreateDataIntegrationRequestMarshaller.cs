@@ -82,6 +82,17 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetFileConfiguration())
+                {
+                    context.Writer.WritePropertyName("FileConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FileConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.FileConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetKmsKey())
                 {
                     context.Writer.WritePropertyName("KmsKey");
@@ -92,6 +103,33 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetObjectConfiguration())
+                {
+                    context.Writer.WritePropertyName("ObjectConfiguration");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestObjectConfigurationKvp in publicRequest.ObjectConfiguration)
+                    {
+                        context.Writer.WritePropertyName(publicRequestObjectConfigurationKvp.Key);
+                        var publicRequestObjectConfigurationValue = publicRequestObjectConfigurationKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestObjectConfigurationValueKvp in publicRequestObjectConfigurationValue)
+                        {
+                            context.Writer.WritePropertyName(publicRequestObjectConfigurationValueKvp.Key);
+                            var publicRequestObjectConfigurationValueValue = publicRequestObjectConfigurationValueKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestObjectConfigurationValueValueListValue in publicRequestObjectConfigurationValueValue)
+                            {
+                                    context.Writer.Write(publicRequestObjectConfigurationValueValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetScheduleConfig())

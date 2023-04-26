@@ -80,8 +80,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property SessionTimeout. 
         /// <para>
-        /// The session timeout, in minutes. Minimum is 15 minutes and maximum is 1440 minutes
-        /// (24 hours or 1 day). Default is 60 minutes.
+        /// The session timeout, in minutes. Default is 60 minutes (12 hours).
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=720)]

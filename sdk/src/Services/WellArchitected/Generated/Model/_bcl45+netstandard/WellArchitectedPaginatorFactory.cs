@@ -36,6 +36,14 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
+        /// Paginator for GetConsolidatedReport operation
+        ///</summary>
+        public IGetConsolidatedReportPaginator GetConsolidatedReport(GetConsolidatedReportRequest request) 
+        {
+            return new GetConsolidatedReportPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAnswers operation
         ///</summary>
         public IListAnswersPaginator ListAnswers(ListAnswersRequest request) 

@@ -602,6 +602,9 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.DuplicateResourceException">
         /// The specified resource is a duplicate.
         /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
         /// The current limits of the service would have been exceeded by this operation. Decrease
         /// your resource use or increase your service limits and retry the operation.
@@ -631,6 +634,9 @@ namespace Amazon.ServiceCatalog
         /// <returns>The response from the AssociateServiceActionWithProvisioningArtifact service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.DuplicateResourceException">
         /// The specified resource is a duplicate.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
         /// The current limits of the service would have been exceeded by this operation. Decrease
@@ -5015,6 +5021,165 @@ namespace Amazon.ServiceCatalog
             options.ResponseUnmarshaller = ListTagOptionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagOptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  NotifyProvisionProductEngineWorkflowResult
+
+
+        /// <summary>
+        /// Notifies the result of the provisioning engine execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NotifyProvisionProductEngineWorkflowResult service method.</param>
+        /// 
+        /// <returns>The response from the NotifyProvisionProductEngineWorkflowResult service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyProvisionProductEngineWorkflowResult">REST API Reference for NotifyProvisionProductEngineWorkflowResult Operation</seealso>
+        public virtual NotifyProvisionProductEngineWorkflowResultResponse NotifyProvisionProductEngineWorkflowResult(NotifyProvisionProductEngineWorkflowResultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyProvisionProductEngineWorkflowResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyProvisionProductEngineWorkflowResultResponseUnmarshaller.Instance;
+
+            return Invoke<NotifyProvisionProductEngineWorkflowResultResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Notifies the result of the provisioning engine execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NotifyProvisionProductEngineWorkflowResult service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the NotifyProvisionProductEngineWorkflowResult service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyProvisionProductEngineWorkflowResult">REST API Reference for NotifyProvisionProductEngineWorkflowResult Operation</seealso>
+        public virtual Task<NotifyProvisionProductEngineWorkflowResultResponse> NotifyProvisionProductEngineWorkflowResultAsync(NotifyProvisionProductEngineWorkflowResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyProvisionProductEngineWorkflowResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyProvisionProductEngineWorkflowResultResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<NotifyProvisionProductEngineWorkflowResultResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  NotifyTerminateProvisionedProductEngineWorkflowResult
+
+
+        /// <summary>
+        /// Notifies the result of the terminate engine execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NotifyTerminateProvisionedProductEngineWorkflowResult service method.</param>
+        /// 
+        /// <returns>The response from the NotifyTerminateProvisionedProductEngineWorkflowResult service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyTerminateProvisionedProductEngineWorkflowResult">REST API Reference for NotifyTerminateProvisionedProductEngineWorkflowResult Operation</seealso>
+        public virtual NotifyTerminateProvisionedProductEngineWorkflowResultResponse NotifyTerminateProvisionedProductEngineWorkflowResult(NotifyTerminateProvisionedProductEngineWorkflowResultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyTerminateProvisionedProductEngineWorkflowResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyTerminateProvisionedProductEngineWorkflowResultResponseUnmarshaller.Instance;
+
+            return Invoke<NotifyTerminateProvisionedProductEngineWorkflowResultResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Notifies the result of the terminate engine execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NotifyTerminateProvisionedProductEngineWorkflowResult service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the NotifyTerminateProvisionedProductEngineWorkflowResult service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyTerminateProvisionedProductEngineWorkflowResult">REST API Reference for NotifyTerminateProvisionedProductEngineWorkflowResult Operation</seealso>
+        public virtual Task<NotifyTerminateProvisionedProductEngineWorkflowResultResponse> NotifyTerminateProvisionedProductEngineWorkflowResultAsync(NotifyTerminateProvisionedProductEngineWorkflowResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyTerminateProvisionedProductEngineWorkflowResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyTerminateProvisionedProductEngineWorkflowResultResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<NotifyTerminateProvisionedProductEngineWorkflowResultResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  NotifyUpdateProvisionedProductEngineWorkflowResult
+
+
+        /// <summary>
+        /// Notifies the result of the update engine execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NotifyUpdateProvisionedProductEngineWorkflowResult service method.</param>
+        /// 
+        /// <returns>The response from the NotifyUpdateProvisionedProductEngineWorkflowResult service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyUpdateProvisionedProductEngineWorkflowResult">REST API Reference for NotifyUpdateProvisionedProductEngineWorkflowResult Operation</seealso>
+        public virtual NotifyUpdateProvisionedProductEngineWorkflowResultResponse NotifyUpdateProvisionedProductEngineWorkflowResult(NotifyUpdateProvisionedProductEngineWorkflowResultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyUpdateProvisionedProductEngineWorkflowResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyUpdateProvisionedProductEngineWorkflowResultResponseUnmarshaller.Instance;
+
+            return Invoke<NotifyUpdateProvisionedProductEngineWorkflowResultResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Notifies the result of the update engine execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NotifyUpdateProvisionedProductEngineWorkflowResult service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the NotifyUpdateProvisionedProductEngineWorkflowResult service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyUpdateProvisionedProductEngineWorkflowResult">REST API Reference for NotifyUpdateProvisionedProductEngineWorkflowResult Operation</seealso>
+        public virtual Task<NotifyUpdateProvisionedProductEngineWorkflowResultResponse> NotifyUpdateProvisionedProductEngineWorkflowResultAsync(NotifyUpdateProvisionedProductEngineWorkflowResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyUpdateProvisionedProductEngineWorkflowResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyUpdateProvisionedProductEngineWorkflowResultResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<NotifyUpdateProvisionedProductEngineWorkflowResultResponse>(request, options, cancellationToken);
         }
 
         #endregion

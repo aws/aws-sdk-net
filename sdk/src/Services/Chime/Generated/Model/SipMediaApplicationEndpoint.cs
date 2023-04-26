@@ -38,8 +38,8 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property LambdaArn. 
         /// <para>
-        /// Valid Amazon Resource Name (ARN) of the Lambda function. The function must be created
-        /// in the same AWS Region as the SIP media application.
+        /// Valid Amazon Resource Name (ARN) of the Lambda function, version, or alias. The function
+        /// must be created in the same AWS Region as the SIP media application.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=10000)]

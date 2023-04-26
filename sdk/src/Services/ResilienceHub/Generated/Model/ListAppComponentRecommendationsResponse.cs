@@ -39,9 +39,9 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ComponentRecommendations. 
         /// <para>
-        /// The recommendations for an AWS Resilience Hub Application Component, returned as an
-        /// object. This object contains the names of the Application Components, configuration
-        /// recommendations, and recommendation statuses.
+        /// The recommendations for an Resilience Hub Application Component, returned as an object.
+        /// This object contains the names of the Application Components, configuration recommendations,
+        /// and recommendation statuses.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

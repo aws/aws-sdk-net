@@ -614,9 +614,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRunner.Model.InstanceConfiguration.Cpu</property>
-    <min>4</min>
-    <max>6</max>
-    <pattern>1024|2048|(1|2) vCPU</pattern>
+    <min>3</min>
+    <max>9</max>
+    <pattern>256|512|1024|2048|4096|(0.25|0.5|1|2|4) vCPU</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRunner.Model.InstanceConfiguration.InstanceRoleArn</property>
@@ -626,9 +626,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRunner.Model.InstanceConfiguration.Memory</property>
-    <min>4</min>
-    <max>4</max>
-    <pattern>2048|3072|4096|(2|3|4) GB</pattern>
+    <min>3</min>
+    <max>6</max>
+    <pattern>512|1024|2048|3072|4096|6144|8192|10240|12288|(0.5|1|2|3|4|6|8|10|12) GB</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRunner.Model.ListVpcIngressConnectionsFilter.ServiceArn</property>

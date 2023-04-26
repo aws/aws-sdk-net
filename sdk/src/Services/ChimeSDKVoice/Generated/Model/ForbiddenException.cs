@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The client is permanently forbidden from making the request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

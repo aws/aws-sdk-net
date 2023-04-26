@@ -34,7 +34,6 @@ namespace Amazon.ChimeSDKMessaging.Model
     public partial class UpdateChannelReadMarkerResponse : AmazonWebServiceResponse
     {
         private string _channelArn;
-        private string _subChannelId;
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
@@ -53,25 +52,6 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetChannelArn()
         {
             return this._channelArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SubChannelId. 
-        /// <para>
-        /// The ID of the SubChannel in the response.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string SubChannelId
-        {
-            get { return this._subChannelId; }
-            set { this._subChannelId = value; }
-        }
-
-        // Check to see if SubChannelId property is set
-        internal bool IsSetSubChannelId()
-        {
-            return this._subChannelId != null;
         }
 
     }

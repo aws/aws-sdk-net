@@ -39,8 +39,8 @@ namespace Amazon.TranscribeService.Model
     ///  
     /// <para>
     /// To learn more about Call Analytics rules and categories, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating
-    /// categories for batch transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
-    /// categories for streaming transcriptions</a>.
+    /// categories for post-call transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
+    /// categories for real-time transcriptions</a>.
     /// </para>
     ///  
     /// <para>

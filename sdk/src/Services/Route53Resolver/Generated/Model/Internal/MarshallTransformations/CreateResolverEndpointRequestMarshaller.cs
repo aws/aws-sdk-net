@@ -101,6 +101,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetResolverEndpointType())
+                {
+                    context.Writer.WritePropertyName("ResolverEndpointType");
+                    context.Writer.Write(publicRequest.ResolverEndpointType);
+                }
+
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
                     context.Writer.WritePropertyName("SecurityGroupIds");

@@ -297,11 +297,11 @@ namespace Amazon.TranscribeService
         ///  
         /// <para>
         /// When creating a new category, you can use the <code>InputType</code> parameter to
-        /// label the category as a batch category (<code>POST_CALL</code>) or a streaming category
-        /// (<code>REAL_TIME</code>). Batch categories can only be applied to batch transcriptions
-        /// and streaming categories can only be applied to streaming transcriptions. If you do
-        /// not include <code>InputType</code>, your category is created as a batch category by
-        /// default.
+        /// label the category as a <code>POST_CALL</code> or a <code>REAL_TIME</code> category.
+        /// <code>POST_CALL</code> categories can only be applied to post-call transcriptions
+        /// and <code>REAL_TIME</code> categories can only be applied to real-time transcriptions.
+        /// If you do not include <code>InputType</code>, your category is created as a <code>POST_CALL</code>
+        /// category by default.
         /// </para>
         ///  
         /// <para>
@@ -315,8 +315,8 @@ namespace Amazon.TranscribeService
         ///  
         /// <para>
         /// To learn more about Call Analytics categories, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating
-        /// categories for batch transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
-        /// categories for streaming transcriptions</a>.
+        /// categories for post-call transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
+        /// categories for real-time transcriptions</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCallAnalyticsCategory service method.</param>
@@ -487,10 +487,10 @@ namespace Amazon.TranscribeService
         ///  
         /// <para>
         /// Before creating a new custom medical vocabulary, you must first upload a text file
-        /// that contains your new entries, phrases, and terms into an Amazon S3 bucket. Note
-        /// that this differs from , where you can include a list of terms within your request
-        /// using the <code>Phrases</code> flag; <code>CreateMedicalVocabulary</code> does not
-        /// support the <code>Phrases</code> flag.
+        /// that contains your vocabulary table into an Amazon S3 bucket. Note that this differs
+        /// from , where you can include a list of terms within your request using the <code>Phrases</code>
+        /// flag; <code>CreateMedicalVocabulary</code> does not support the <code>Phrases</code>
+        /// flag and only accepts vocabularies in table format.
         /// </para>
         ///  
         /// <para>
@@ -2669,14 +2669,18 @@ namespace Amazon.TranscribeService
         /// submitting your job request. Categories cannot be retroactively applied to a job.
         /// To create a new category, use the operation. To learn more about Call Analytics categories,
         /// see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating
-        /// categories for batch transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
-        /// categories for streaming transcriptions</a>.
+        /// categories for post-call transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
+        /// categories for real-time transcriptions</a>.
         /// </para>
         ///  
         /// <para>
         /// To make a <code>StartCallAnalyticsJob</code> request, you must first upload your media
         /// file into an Amazon S3 bucket; you can then specify the Amazon S3 location of the
         /// file using the <code>Media</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that job queuing is enabled by default for Call Analytics jobs.
         /// </para>
         ///  
         /// <para>

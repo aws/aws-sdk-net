@@ -31,8 +31,8 @@ namespace Amazon.VoiceID
     /// <summary>
     /// Interface for accessing VoiceID
     ///
-    /// Amazon Connect Voice ID provides real-time caller authentication and fraud screening.
-    /// This guide describes the APIs used for this service.
+    /// Amazon Connect Voice ID provides real-time caller authentication and fraud risk detection,
+    /// which make voice interactions in contact centers more secure and efficient.
     /// </summary>
     public partial interface IAmazonVoiceID : IAmazonService, IDisposable
     {
@@ -43,13 +43,59 @@ namespace Amazon.VoiceID
         IVoiceIDPaginatorFactory Paginators { get; }
 #endif
                 
+        #region  AssociateFraudster
+
+
+
+        /// <summary>
+        /// Associates the fraudsters with the watchlist specified in the same domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateFraudster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateFraudster service method, as returned by VoiceID.</returns>
+        /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Check the error message
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ConflictException">
+        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
+        /// The request failed due to an unknown error on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ServiceQuotaExceededException">
+        /// The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice
+        /// ID Service Quotas</a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please slow down your request rate.
+        /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
+        /// Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ValidationException">
+        /// The request failed one or more validations; check the error message for more details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/AssociateFraudster">REST API Reference for AssociateFraudster Operation</seealso>
+        Task<AssociateFraudsterResponse> AssociateFraudsterAsync(AssociateFraudsterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateDomain
 
 
 
         /// <summary>
         /// Creates a domain that contains all Amazon Connect Voice ID data, such as speakers,
-        /// fraudsters, customer audio, and voiceprints.
+        /// fraudsters, customer audio, and voiceprints. Every domain is created with a default
+        /// watchlist that fraudsters can be a part of.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
         /// <param name="cancellationToken">
@@ -86,6 +132,51 @@ namespace Amazon.VoiceID
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateWatchlist
+
+
+
+        /// <summary>
+        /// Creates a watchlist that fraudsters can be a part of.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWatchlist service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWatchlist service method, as returned by VoiceID.</returns>
+        /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Check the error message
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ConflictException">
+        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
+        /// The request failed due to an unknown error on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ServiceQuotaExceededException">
+        /// The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice
+        /// ID Service Quotas</a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please slow down your request rate.
+        /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
+        /// Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ValidationException">
+        /// The request failed one or more validations; check the error message for more details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/CreateWatchlist">REST API Reference for CreateWatchlist Operation</seealso>
+        Task<CreateWatchlistResponse> CreateWatchlistAsync(CreateWatchlistRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -135,7 +226,8 @@ namespace Amazon.VoiceID
 
 
         /// <summary>
-        /// Deletes the specified fraudster from Voice ID.
+        /// Deletes the specified fraudster from Voice ID. This action disassociates the fraudster
+        /// from any watchlists it is a part of.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFraudster service method.</param>
         /// <param name="cancellationToken">
@@ -209,6 +301,50 @@ namespace Amazon.VoiceID
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteSpeaker">REST API Reference for DeleteSpeaker Operation</seealso>
         Task<DeleteSpeakerResponse> DeleteSpeakerAsync(DeleteSpeakerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteWatchlist
+
+
+
+        /// <summary>
+        /// Deletes the specified watchlist from Voice ID. This API throws an exception when there
+        /// are fraudsters in the watchlist that you are trying to delete. You must delete the
+        /// fraudsters, and then delete the watchlist. Every domain has a default watchlist which
+        /// cannot be deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWatchlist service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWatchlist service method, as returned by VoiceID.</returns>
+        /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Check the error message
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ConflictException">
+        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
+        /// The request failed due to an unknown error on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please slow down your request rate.
+        /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
+        /// Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ValidationException">
+        /// The request failed one or more validations; check the error message for more details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteWatchlist">REST API Reference for DeleteWatchlist Operation</seealso>
+        Task<DeleteWatchlistResponse> DeleteWatchlistAsync(DeleteWatchlistRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -397,6 +533,86 @@ namespace Amazon.VoiceID
 
         #endregion
                 
+        #region  DescribeWatchlist
+
+
+
+        /// <summary>
+        /// Describes the specified watchlist.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWatchlist service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWatchlist service method, as returned by VoiceID.</returns>
+        /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Check the error message
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
+        /// The request failed due to an unknown error on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please slow down your request rate.
+        /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
+        /// Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ValidationException">
+        /// The request failed one or more validations; check the error message for more details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DescribeWatchlist">REST API Reference for DescribeWatchlist Operation</seealso>
+        Task<DescribeWatchlistResponse> DescribeWatchlistAsync(DescribeWatchlistRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DisassociateFraudster
+
+
+
+        /// <summary>
+        /// Disassociates the fraudsters from the watchlist specified. Voice ID always expects
+        /// a fraudster to be a part of at least one watchlist. If you try to disassociate a fraudster
+        /// from its only watchlist, a <code>ValidationException</code> is thrown.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFraudster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateFraudster service method, as returned by VoiceID.</returns>
+        /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Check the error message
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ConflictException">
+        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
+        /// The request failed due to an unknown error on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please slow down your request rate.
+        /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
+        /// Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ValidationException">
+        /// The request failed one or more validations; check the error message for more details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DisassociateFraudster">REST API Reference for DisassociateFraudster Operation</seealso>
+        Task<DisassociateFraudsterResponse> DisassociateFraudsterAsync(DisassociateFraudsterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  EvaluateSession
 
 
@@ -511,6 +727,43 @@ namespace Amazon.VoiceID
 
         #endregion
                 
+        #region  ListFraudsters
+
+
+
+        /// <summary>
+        /// Lists all fraudsters in a specified watchlist or domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFraudsters service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFraudsters service method, as returned by VoiceID.</returns>
+        /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Check the error message
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
+        /// The request failed due to an unknown error on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please slow down your request rate.
+        /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
+        /// Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ValidationException">
+        /// The request failed one or more validations; check the error message for more details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListFraudsters">REST API Reference for ListFraudsters Operation</seealso>
+        Task<ListFraudstersResponse> ListFraudstersAsync(ListFraudstersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListSpeakerEnrollmentJobs
 
 
@@ -621,6 +874,43 @@ namespace Amazon.VoiceID
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListWatchlists
+
+
+
+        /// <summary>
+        /// Lists all watchlists in a specified domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWatchlists service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWatchlists service method, as returned by VoiceID.</returns>
+        /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Check the error message
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
+        /// The request failed due to an unknown error on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please slow down your request rate.
+        /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
+        /// Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ValidationException">
+        /// The request failed one or more validations; check the error message for more details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListWatchlists">REST API Reference for ListWatchlists Operation</seealso>
+        Task<ListWatchlistsResponse> ListWatchlistsAsync(ListWatchlistsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -886,6 +1176,48 @@ namespace Amazon.VoiceID
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/UpdateDomain">REST API Reference for UpdateDomain Operation</seealso>
         Task<UpdateDomainResponse> UpdateDomainAsync(UpdateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateWatchlist
+
+
+
+        /// <summary>
+        /// Updates the specified watchlist. Every domain has a default watchlist which cannot
+        /// be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWatchlist service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWatchlist service method, as returned by VoiceID.</returns>
+        /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Check the error message
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ConflictException">
+        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
+        /// The request failed due to an unknown error on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
+        /// message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please slow down your request rate.
+        /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
+        /// Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ValidationException">
+        /// The request failed one or more validations; check the error message for more details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/UpdateWatchlist">REST API Reference for UpdateWatchlist Operation</seealso>
+        Task<UpdateWatchlistResponse> UpdateWatchlistAsync(UpdateWatchlistRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Options for a network-interface type Verified Access endpoint.
+    /// Describes the options when modifying a Verified Access endpoint with the <code>network-interface</code>
+    /// type.
     /// </summary>
     public partial class ModifyVerifiedAccessEndpointEniOptions
     {

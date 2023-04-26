@@ -40,7 +40,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ClickTime. 
         /// <para>
-        /// The Unix timestamp of the date and time that the result was clicked.
+        /// The Unix timestamp when the result was clicked.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

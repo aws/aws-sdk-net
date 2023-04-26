@@ -95,7 +95,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property AllowsUnencryptedObjectUploads. 
         /// <para>
         /// Specifies whether the bucket policy for the bucket requires server-side encryption
-        /// of objects when objects are uploaded to the bucket. Possible values are:
+        /// of objects when objects are added to the bucket. Possible values are:
         /// </para>
         ///  <ul><li>
         /// <para>
@@ -452,8 +452,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryption. 
         /// <para>
-        /// Specifies whether the bucket encrypts new objects by default and, if so, the type
-        /// of server-side encryption that's used.
+        /// The default server-side encryption settings for the bucket.
         /// </para>
         /// </summary>
         public BucketServerSideEncryption ServerSideEncryption
@@ -478,8 +477,8 @@ namespace Amazon.Macie2.Model
         ///  <ul><li>
         /// <para>
         /// EXTERNAL - The bucket is shared with one or more of the following or any combination
-        /// of the following: an Amazon Web Services account that isn't part of your Amazon Macie
-        /// organization, a CloudFront OAI, or a CloudFront OAC.
+        /// of the following: a CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account
+        /// that isn't part of your Amazon Macie organization.
         /// </para>
         /// </li> <li>
         /// <para>

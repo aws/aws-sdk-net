@@ -70,6 +70,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.CellStyle = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CollapsedRowDimensionsVisibility", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CollapsedRowDimensionsVisibility = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ColumnHeaderStyle", targetDepth))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;

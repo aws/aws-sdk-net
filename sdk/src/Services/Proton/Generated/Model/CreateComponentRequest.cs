@@ -41,6 +41,7 @@ namespace Amazon.Proton.Model
     /// </summary>
     public partial class CreateComponentRequest : AmazonProtonRequest
     {
+        private string _clientToken;
         private string _description;
         private string _environmentName;
         private string _manifest;
@@ -50,6 +51,25 @@ namespace Amazon.Proton.Model
         private string _serviceSpec;
         private List<Tag> _tags = new List<Tag>();
         private string _templateFile;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// The client token for the created component.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=64)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

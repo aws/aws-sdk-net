@@ -1363,6 +1363,10 @@ namespace Amazon.AutoScaling
         /// </summary>
         public static readonly ScalingActivityStatusCode Successful = new ScalingActivityStatusCode("Successful");
         /// <summary>
+        /// Constant WaitingForConnectionDraining for ScalingActivityStatusCode
+        /// </summary>
+        public static readonly ScalingActivityStatusCode WaitingForConnectionDraining = new ScalingActivityStatusCode("WaitingForConnectionDraining");
+        /// <summary>
         /// Constant WaitingForELBConnectionDraining for ScalingActivityStatusCode
         /// </summary>
         public static readonly ScalingActivityStatusCode WaitingForELBConnectionDraining = new ScalingActivityStatusCode("WaitingForELBConnectionDraining");

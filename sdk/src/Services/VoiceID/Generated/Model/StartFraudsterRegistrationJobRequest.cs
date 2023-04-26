@@ -45,8 +45,10 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The idempotency token for starting a new fraudster registration job. If not provided,
-        /// Amazon Web Services SDK populates this field.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -88,7 +90,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The identifier of the domain containing the fraudster registration job and in which
+        /// The identifier of the domain that contains the fraudster registration job and in which
         /// the fraudsters are registered.
         /// </para>
         /// </summary>

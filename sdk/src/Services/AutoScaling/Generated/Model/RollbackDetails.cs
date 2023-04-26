@@ -78,7 +78,12 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProgressDetailsOnRollback.
+        /// Gets and sets the property ProgressDetailsOnRollback. 
+        /// <para>
+        /// Reports progress on replacing instances in an Auto Scaling group that has a warm pool.
+        /// This includes separate details for instances in the warm pool and instances in the
+        /// Auto Scaling group (the live pool).
+        /// </para>
         /// </summary>
         public InstanceRefreshProgressDetails ProgressDetailsOnRollback
         {

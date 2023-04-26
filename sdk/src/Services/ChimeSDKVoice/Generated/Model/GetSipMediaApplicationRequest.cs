@@ -30,14 +30,18 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSipMediaApplication operation.
-    /// 
+    /// Retrieves the information for a SIP media application, including name, AWS Region,
+    /// and endpoints.
     /// </summary>
     public partial class GetSipMediaApplicationRequest : AmazonChimeSDKVoiceRequest
     {
         private string _sipMediaApplicationId;
 
         /// <summary>
-        /// Gets and sets the property SipMediaApplicationId.
+        /// Gets and sets the property SipMediaApplicationId. 
+        /// <para>
+        /// The SIP media application ID .
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SipMediaApplicationId

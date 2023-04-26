@@ -223,8 +223,20 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.EngineTranscribeSettings.VocabularyFilterNames</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>^[a-zA-Z0-9,-._]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.EngineTranscribeSettings.VocabularyName</property>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.EngineTranscribeSettings.VocabularyNames</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>^[a-zA-Z0-9,-._]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.ForbiddenException.Code</property>

@@ -99,6 +99,17 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetExpirationSettings())
+                {
+                    context.Writer.WritePropertyName("ExpirationSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExpirationSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExpirationSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMemberArns())
                 {
                     context.Writer.WritePropertyName("MemberArns");

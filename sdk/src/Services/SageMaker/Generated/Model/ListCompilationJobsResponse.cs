@@ -39,8 +39,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CompilationJobSummaries. 
         /// <para>
-        /// An array of <a>CompilationJobSummary</a> objects, each describing a model compilation
-        /// job. 
+        /// An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a>
+        /// objects, each describing a model compilation job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

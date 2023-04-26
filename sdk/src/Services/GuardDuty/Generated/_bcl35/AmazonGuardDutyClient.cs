@@ -553,7 +553,10 @@ namespace Amazon.GuardDuty
         #region  CreateFilter
 
         /// <summary>
-        /// Creates a filter using the specified finding criteria.
+        /// Creates a filter using the specified finding criteria. The maximum number of saved
+        /// filters per Amazon Web Services account per Region is 100. For more information, see
+        /// <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_limits.html">Quotas
+        /// for GuardDuty</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFilter service method.</param>
         /// 
@@ -1242,6 +1245,13 @@ namespace Amazon.GuardDuty
         /// <summary>
         /// Deletes GuardDuty member accounts (to the current GuardDuty administrator account)
         /// specified by the account IDs.
+        /// 
+        ///  
+        /// <para>
+        /// With <code>autoEnableOrganizationMembers</code> configuration for your organization
+        /// set to <code>ALL</code>, you'll receive an error if you attempt to disable GuardDuty
+        /// for a member account in your organization.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembers service method.</param>
         /// 
@@ -1682,6 +1692,13 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Disassociates the current GuardDuty member account from its administrator account.
+        /// 
+        ///  
+        /// <para>
+        /// With <code>autoEnableOrganizationMembers</code> configuration for your organization
+        /// set to <code>ALL</code>, you'll receive an error if you attempt to disable GuardDuty
+        /// in a member account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFromAdministratorAccount service method.</param>
         /// 
@@ -1806,6 +1823,13 @@ namespace Amazon.GuardDuty
         /// <summary>
         /// Disassociates GuardDuty member accounts (to the current administrator account) specified
         /// by the account IDs.
+        /// 
+        ///  
+        /// <para>
+        /// With <code>autoEnableOrganizationMembers</code> configuration for your organization
+        /// set to <code>ALL</code>, you'll receive an error if you attempt to disassociate a
+        /// member account before removing them from your Amazon Web Services organization.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers service method.</param>
         /// 
@@ -1980,6 +2004,69 @@ namespace Amazon.GuardDuty
         public virtual GetAdministratorAccountResponse EndGetAdministratorAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAdministratorAccountResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetCoverageStatistics
+
+        /// <summary>
+        /// Retrieves aggregated statistics for your account. If you are a GuardDuty administrator,
+        /// you can retrieve the statistics for all the resources associated with the active member
+        /// accounts in your organization who have enabled EKS Runtime Monitoring and have the
+        /// GuardDuty agent running on their EKS nodes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoverageStatistics service method.</param>
+        /// 
+        /// <returns>The response from the GetCoverageStatistics service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCoverageStatistics">REST API Reference for GetCoverageStatistics Operation</seealso>
+        public virtual GetCoverageStatisticsResponse GetCoverageStatistics(GetCoverageStatisticsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCoverageStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCoverageStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCoverageStatisticsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCoverageStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCoverageStatistics operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCoverageStatistics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCoverageStatistics">REST API Reference for GetCoverageStatistics Operation</seealso>
+        public virtual IAsyncResult BeginGetCoverageStatistics(GetCoverageStatisticsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCoverageStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCoverageStatisticsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCoverageStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCoverageStatistics.</param>
+        /// 
+        /// <returns>Returns a  GetCoverageStatisticsResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCoverageStatistics">REST API Reference for GetCoverageStatistics Operation</seealso>
+        public virtual GetCoverageStatisticsResponse EndGetCoverageStatistics(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCoverageStatisticsResponse>(asyncResult);
         }
 
         #endregion
@@ -2862,6 +2949,74 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  ListCoverage
+
+        /// <summary>
+        /// Lists coverage details for your GuardDuty account. If you're a GuardDuty administrator,
+        /// you can retrieve all resources associated with the active member accounts in your
+        /// organization.
+        /// 
+        ///  
+        /// <para>
+        /// Make sure the accounts have EKS Runtime Monitoring enabled and GuardDuty agent running
+        /// on their EKS nodes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoverage service method.</param>
+        /// 
+        /// <returns>The response from the ListCoverage service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCoverage">REST API Reference for ListCoverage Operation</seealso>
+        public virtual ListCoverageResponse ListCoverage(ListCoverageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCoverageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCoverageResponseUnmarshaller.Instance;
+
+            return Invoke<ListCoverageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCoverage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCoverage operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCoverage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCoverage">REST API Reference for ListCoverage Operation</seealso>
+        public virtual IAsyncResult BeginListCoverage(ListCoverageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCoverageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCoverageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCoverage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCoverage.</param>
+        /// 
+        /// <returns>Returns a  ListCoverageResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCoverage">REST API Reference for ListCoverage Operation</seealso>
+        public virtual ListCoverageResponse EndListCoverage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCoverageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDetectors
 
         /// <summary>
@@ -3473,7 +3628,7 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Turns on GuardDuty monitoring of the specified member accounts. Use this operation
-        /// to restart monitoring of accounts that you stopped monitoring with the <code>StopMonitoringMembers</code>
+        /// to restart monitoring of accounts that you stopped monitoring with the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_StopMonitoringMembers.html">StopMonitoringMembers</a>
         /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMonitoringMembers service method.</param>
@@ -3536,6 +3691,13 @@ namespace Amazon.GuardDuty
         /// <summary>
         /// Stops GuardDuty monitoring for the specified member accounts. Use the <code>StartMonitoringMembers</code>
         /// operation to restart monitoring for those accounts.
+        /// 
+        ///  
+        /// <para>
+        /// With <code>autoEnableOrganizationMembers</code> configuration for your organization
+        /// set to <code>ALL</code>, you'll receive an error if you attempt to stop monitoring
+        /// the member accounts in your organization.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopMonitoringMembers service method.</param>
         /// 
@@ -4159,7 +4321,9 @@ namespace Amazon.GuardDuty
         #region  UpdateOrganizationConfiguration
 
         /// <summary>
-        /// Updates the delegated administrator account with the values provided.
+        /// Configures the delegated administrator account with the provided values. You must
+        /// provide the value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.
+        /// 
         /// 
         ///  
         /// <para>

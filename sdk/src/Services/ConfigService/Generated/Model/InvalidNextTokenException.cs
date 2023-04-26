@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+    /// The specified next token is not valid. Specify the <code>nextToken</code> string that
     /// was returned in the previous response to get the next page of results.
     /// </summary>
     #if !NETSTANDARD

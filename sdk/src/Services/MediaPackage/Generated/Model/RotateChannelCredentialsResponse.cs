@@ -35,6 +35,7 @@ namespace Amazon.MediaPackage.Model
     public partial class RotateChannelCredentialsResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private string _createdAt;
         private string _description;
         private EgressAccessLogs _egressAccessLogs;
         private HlsIngest _hlsIngest;
@@ -55,6 +56,21 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. The date and time the Channel was created.
+        /// </summary>
+        public string CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt != null;
         }
 
         /// <summary>

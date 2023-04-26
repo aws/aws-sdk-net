@@ -94,11 +94,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// 5 MB total size for inline documents
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// 50 MB total size for files from an S3 bucket
+        /// 50 MB total size for any file
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -106,7 +102,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about file size and transaction per second quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
@@ -145,9 +141,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code>
-        /// API. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
-        /// Roles for Amazon Kendra</a>.
+        /// The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
+        /// access roles for Amazon Kendra</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]

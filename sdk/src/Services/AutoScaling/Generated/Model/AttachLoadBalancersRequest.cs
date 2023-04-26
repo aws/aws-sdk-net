@@ -32,8 +32,11 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the AttachLoadBalancers operation.
     /// <note> 
     /// <para>
-    /// To attach an Application Load Balancer, Network Load Balancer, or Gateway Load Balancer,
-    /// use the <a>AttachLoadBalancerTargetGroups</a> API operation instead.
+    /// This API operation is superseded by <a>AttachTrafficSources</a>, which can attach
+    /// multiple traffic sources types. We recommend using <code>AttachTrafficSources</code>
+    /// to simplify how you manage traffic sources. However, we continue to support <code>AttachLoadBalancers</code>.
+    /// You can use both the original <code>AttachLoadBalancers</code> API operation and <code>AttachTrafficSources</code>
+    /// on the same Auto Scaling group.
     /// </para>
     ///  </note> 
     /// <para>

@@ -65,6 +65,10 @@ namespace Amazon.Lambda.Model
         /// <para>
         ///  <b>Amazon MQ</b> – The ARN of the broker.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string EventSourceArn

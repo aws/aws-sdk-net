@@ -36,6 +36,7 @@ namespace Amazon.Snowball.Model
     {
         private EKSOnDeviceServiceConfiguration _eksOnDeviceService;
         private NFSOnDeviceServiceConfiguration _nfsOnDeviceService;
+        private S3OnDeviceServiceConfiguration _s3OnDeviceService;
         private TGWOnDeviceServiceConfiguration _tgwOnDeviceService;
 
         /// <summary>
@@ -72,6 +73,24 @@ namespace Amazon.Snowball.Model
         internal bool IsSetNFSOnDeviceService()
         {
             return this._nfsOnDeviceService != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3OnDeviceService. 
+        /// <para>
+        /// Configuration for Amazon S3 compatible storage on Snow family devices.
+        /// </para>
+        /// </summary>
+        public S3OnDeviceServiceConfiguration S3OnDeviceService
+        {
+            get { return this._s3OnDeviceService; }
+            set { this._s3OnDeviceService = value; }
+        }
+
+        // Check to see if S3OnDeviceService property is set
+        internal bool IsSetS3OnDeviceService()
+        {
+            return this._s3OnDeviceService != null;
         }
 
         /// <summary>

@@ -119,8 +119,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property VirtualMFADeviceName. 
         /// <para>
-        /// The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA
-        /// device.
+        /// The name of the virtual MFA device, which must be unique. Use with path to uniquely
+        /// identify a virtual MFA device.
         /// </para>
         ///  
         /// <para>

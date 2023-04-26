@@ -31,6 +31,13 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Container for the parameters to the DisassociateFromAdministratorAccount operation.
     /// Disassociates the current GuardDuty member account from its administrator account.
+    /// 
+    ///  
+    /// <para>
+    /// With <code>autoEnableOrganizationMembers</code> configuration for your organization
+    /// set to <code>ALL</code>, you'll receive an error if you attempt to disable GuardDuty
+    /// in a member account.
+    /// </para>
     /// </summary>
     public partial class DisassociateFromAdministratorAccountRequest : AmazonGuardDutyRequest
     {

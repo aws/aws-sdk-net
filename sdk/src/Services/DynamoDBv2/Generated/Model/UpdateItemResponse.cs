@@ -45,9 +45,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified
-        /// as something other than <code>NONE</code> in the request. Each element represents
-        /// one attribute.
+        /// The <code>Attributes</code> map is only present if the update was successful and <code>ReturnValues</code>
+        /// was specified as something other than <code>NONE</code> in the request. Each element
+        /// represents one attribute.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> Attributes
@@ -69,7 +69,7 @@ namespace Amazon.DynamoDBv2.Model
         /// includes the total provisioned throughput consumed, along with statistics for the
         /// table and any indexes involved in the operation. <code>ConsumedCapacity</code> is
         /// only returned if the <code>ReturnConsumedCapacity</code> parameter was specified.
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html#ItemSizeCalculations.Reads">Provisioned
         /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>

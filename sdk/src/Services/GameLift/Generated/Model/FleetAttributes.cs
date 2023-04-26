@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Describes a GameLift fleet of game hosting resources.
+    /// Describes a Amazon GameLift fleet of game hosting resources.
     /// 
     ///  
     /// <para>
@@ -83,8 +83,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property BuildArn. 
         /// <para>
         ///  The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// associated with the GameLift build resource that is deployed on instances in this
-        /// fleet. In a GameLift build ARN, the resource ID matches the <code>BuildId</code> value.
+        /// associated with the Amazon GameLift build resource that is deployed on instances in
+        /// this fleet. In a GameLift build ARN, the resource ID matches the <code>BuildId</code>
+        /// value.
         /// </para>
         /// </summary>
         public string BuildArn
@@ -136,8 +137,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ComputeType. 
         /// <para>
         /// The type of compute resource used to host your game servers. You can use your own
-        /// compute resources with GameLift Anywhere or use Amazon EC2 instances with managed
-        /// GameLift.
+        /// compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances with managed
+        /// Amazon GameLift.
         /// </para>
         /// </summary>
         public ComputeType ComputeType
@@ -194,8 +195,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FleetArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are
-        /// unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+        /// that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs
+        /// are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
         /// In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.
         /// </para>
         /// </summary>
@@ -301,8 +302,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property LogPaths. 
         /// <para>
         ///  <b>This parameter is no longer used.</b> Game session log paths are now defined using
-        /// the GameLift server API <code>ProcessReady()</code> <code>logParameters</code>. See
-        /// more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+        /// the Amazon GameLift server API <code>ProcessReady()</code> <code>logParameters</code>.
+        /// See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
         /// API Reference</a>. 
         /// </para>
         /// </summary>
@@ -515,8 +516,8 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the new
-        /// fleet, creating new instances with the game build or Realtime script and starting
+        ///  <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up
+        /// the new fleet, creating new instances with the game build or Realtime script and starting
         /// server processes.
         /// </para>
         ///  </li> <li> 

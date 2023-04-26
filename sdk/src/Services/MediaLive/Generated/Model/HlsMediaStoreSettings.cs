@@ -91,7 +91,8 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property NumRetries. Number of retry attempts that will be made
-        /// before the Live Event is put into an error state.
+        /// before the Live Event is put into an error state. Applies only if the CDN destination
+        /// URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
         /// </summary>
         [AWSProperty(Min=0)]
         public int NumRetries

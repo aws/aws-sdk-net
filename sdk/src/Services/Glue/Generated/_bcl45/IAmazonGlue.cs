@@ -657,6 +657,12 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
         /// </exception>
@@ -688,6 +694,12 @@ namespace Amazon.Glue
         /// <returns>The response from the BatchGetPartition service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -1514,6 +1526,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederatedResourceAlreadyExistsException">
+        /// A federated resource already exists.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
         /// </exception>
@@ -1548,6 +1563,9 @@ namespace Amazon.Glue
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
         /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederatedResourceAlreadyExistsException">
+        /// A federated resource already exists.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -4847,6 +4865,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
         /// </exception>
@@ -4875,6 +4896,9 @@ namespace Amazon.Glue
         /// <returns>The response from the GetDatabase service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -6001,6 +6025,12 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
         /// </exception>
@@ -6029,6 +6059,12 @@ namespace Amazon.Glue
         /// <returns>The response from the GetPartition service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -6117,6 +6153,12 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
         /// </exception>
@@ -6151,6 +6193,12 @@ namespace Amazon.Glue
         /// <returns>The response from the GetPartitions service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -6865,6 +6913,12 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
         /// </exception>
@@ -6896,6 +6950,12 @@ namespace Amazon.Glue
         /// <returns>The response from the GetTable service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -6929,6 +6989,12 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
         /// </exception>
@@ -6957,6 +7023,12 @@ namespace Amazon.Glue
         /// <returns>The response from the GetTables service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -7264,6 +7336,12 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
         /// </exception>
@@ -7277,7 +7355,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.PermissionTypeMismatchException">
-        /// 
+        /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUnfilteredPartitionMetadata">REST API Reference for GetUnfilteredPartitionMetadata Operation</seealso>
         GetUnfilteredPartitionMetadataResponse GetUnfilteredPartitionMetadata(GetUnfilteredPartitionMetadataRequest request);
@@ -7301,6 +7379,12 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
         /// </exception>
@@ -7314,7 +7398,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.PermissionTypeMismatchException">
-        /// 
+        /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUnfilteredPartitionMetadata">REST API Reference for GetUnfilteredPartitionMetadata Operation</seealso>
         Task<GetUnfilteredPartitionMetadataResponse> GetUnfilteredPartitionMetadataAsync(GetUnfilteredPartitionMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7338,6 +7422,12 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
         /// </exception>
@@ -7351,7 +7441,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.PermissionTypeMismatchException">
-        /// 
+        /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUnfilteredPartitionsMetadata">REST API Reference for GetUnfilteredPartitionsMetadata Operation</seealso>
         GetUnfilteredPartitionsMetadataResponse GetUnfilteredPartitionsMetadata(GetUnfilteredPartitionsMetadataRequest request);
@@ -7375,6 +7465,12 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
         /// </exception>
@@ -7388,7 +7484,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.PermissionTypeMismatchException">
-        /// 
+        /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUnfilteredPartitionsMetadata">REST API Reference for GetUnfilteredPartitionsMetadata Operation</seealso>
         Task<GetUnfilteredPartitionsMetadataResponse> GetUnfilteredPartitionsMetadataAsync(GetUnfilteredPartitionsMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7412,6 +7508,12 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
         /// </exception>
@@ -7425,7 +7527,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.PermissionTypeMismatchException">
-        /// 
+        /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUnfilteredTableMetadata">REST API Reference for GetUnfilteredTableMetadata Operation</seealso>
         GetUnfilteredTableMetadataResponse GetUnfilteredTableMetadata(GetUnfilteredTableMetadataRequest request);
@@ -7449,6 +7551,12 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
         /// </exception>
@@ -7462,7 +7570,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.PermissionTypeMismatchException">
-        /// 
+        /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUnfilteredTableMetadata">REST API Reference for GetUnfilteredTableMetadata Operation</seealso>
         Task<GetUnfilteredTableMetadataResponse> GetUnfilteredTableMetadataAsync(GetUnfilteredTableMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The properties of a trial as returned by the <a>Search</a> API.
+    /// The properties of a trial as returned by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+    /// API.
     /// </summary>
     public partial class Trial
     {
@@ -187,8 +188,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The list of tags that are associated with the trial. You can use <a>Search</a> API
-        /// to search on the tags.
+        /// The list of tags that are associated with the trial. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+        /// API to search on the tags.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

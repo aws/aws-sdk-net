@@ -107,6 +107,7 @@ namespace Amazon.DirectoryService.Model
         /// relationship.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string RemoteDomainName
         {
             get { return this._remoteDomainName; }

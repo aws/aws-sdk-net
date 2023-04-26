@@ -30,14 +30,18 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPhoneNumberOrder operation.
-    /// 
+    /// Retrieves details for the specified phone number order, such as the order creation
+    /// timestamp, phone numbers in E.164 format, product type, and order status.
     /// </summary>
     public partial class GetPhoneNumberOrderRequest : AmazonChimeSDKVoiceRequest
     {
         private string _phoneNumberOrderId;
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberOrderId.
+        /// Gets and sets the property PhoneNumberOrderId. 
+        /// <para>
+        /// The ID of the phone number order .
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string PhoneNumberOrderId

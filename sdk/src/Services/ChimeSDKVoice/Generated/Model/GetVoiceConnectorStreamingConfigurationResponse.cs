@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private StreamingConfiguration _streamingConfiguration;
 
         /// <summary>
-        /// Gets and sets the property StreamingConfiguration.
+        /// Gets and sets the property StreamingConfiguration. 
+        /// <para>
+        /// The details of the streaming configuration.
+        /// </para>
         /// </summary>
         public StreamingConfiguration StreamingConfiguration
         {

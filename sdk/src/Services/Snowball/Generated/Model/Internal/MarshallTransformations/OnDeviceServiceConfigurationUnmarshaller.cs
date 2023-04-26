@@ -76,6 +76,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     unmarshalledObject.NFSOnDeviceService = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("S3OnDeviceService", targetDepth))
+                {
+                    var unmarshaller = S3OnDeviceServiceConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.S3OnDeviceService = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TGWOnDeviceService", targetDepth))
                 {
                     var unmarshaller = TGWOnDeviceServiceConfigurationUnmarshaller.Instance;

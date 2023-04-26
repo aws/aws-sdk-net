@@ -712,12 +712,9 @@ namespace ServiceClientGenerator
 
             var generator = new DefaultConfigurationModeGenerator
             {
-                Session = new Dictionary<string, object>
-                {
-                    ["defaultConfigurationModel"] = generationManifest.DefaultConfiguration
-                }
+                DefaultConfigurationModel = generationManifest.DefaultConfiguration
             };
-            generator.Initialize();
+
             var text = generator.TransformText();
             WriteFile(defaultConfigurationModeFilesRoot, null, fileName, text);
         }
@@ -798,11 +795,9 @@ namespace ServiceClientGenerator
 
             var generator = new PartitionsTemplate
             {
-                Session = new Dictionary<string, object> {
-                    ["partitions"] = partitions
-                }
+                Partitions = partitions
             };
-            generator.Initialize();
+
             var text = generator.TransformText();
             WriteFile(writeToFolder, null, "Partition.generated.cs", text);
         }
@@ -1264,6 +1259,21 @@ namespace ServiceClientGenerator
                 var existingContent = File.ReadAllText(outputFilePath);
                 if (string.Equals(existingContent, cleanContent))
                     return false;
+
+                var outputFilePathFi = new FileInfo(outputFilePath);
+                // Handle Windows being case insensitive when a service makes a case change for shape name.
+                // Get a FileInfo that represents the casing of the file on disk
+                var fi = Directory.GetFiles(outputFilePathFi.DirectoryName)
+                                .Select(x => new FileInfo(x))
+                                .FirstOrDefault(x => string.Equals(x.Name, outputFilePathFi.Name, StringComparison.OrdinalIgnoreCase));
+
+                // Compare the casing on disk versus the computed value.
+                if(fi.FullName != new FileInfo(outputFilePath).FullName)
+                {
+                    // Casing is different so delete the on disk file so we can create a new file with the correct casing.
+                    File.Delete(outputFilePath);
+                    Console.WriteLine("...deleting existing file that is different by case from new file: {0}", filename);
+                }
             }
 
             File.WriteAllText(outputFilePath, cleanContent);
@@ -1478,15 +1488,11 @@ namespace ServiceClientGenerator
             const string fileName = "RegionEndpoint.generated.cs";
 
             var endpoints = ExtractEndpoints(options, ConstructEndpointName);
-
             var generator = new EndpointsGenerator
             {
-                Session = new Dictionary<string, object>
-                {
-                    ["endpoints"] = endpoints
-                }
+                Endpoints = endpoints
             };
-            generator.Initialize();
+
             var text = generator.TransformText();
             WriteFile(endpointsFilesRoot, null, fileName, text);
         }
@@ -1517,15 +1523,11 @@ namespace ServiceClientGenerator
             const string fileName = "S3Enumerations.cs";
 
             var endpoints = ExtractEndpoints(options, ConstructEndpointName, ConvertS3RegionCode);
-
             var generator = new S3EnumerationsGenerator()
             {
-                Session = new Dictionary<string, object>
-                {
-                    ["endpoints"] = endpoints
-                }
+                Endpoints = endpoints
             };
-            generator.Initialize();
+            
             var text = generator.TransformText();
             WriteFile(generatedFileRoot, null, fileName, text);
         }

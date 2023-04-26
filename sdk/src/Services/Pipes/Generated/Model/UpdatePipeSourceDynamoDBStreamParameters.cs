@@ -47,7 +47,7 @@ namespace Amazon.Pipes.Model
         /// The maximum number of records to include in each batch.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=10000)]
         public int BatchSize
         {
             get { return this._batchSize.GetValueOrDefault(); }

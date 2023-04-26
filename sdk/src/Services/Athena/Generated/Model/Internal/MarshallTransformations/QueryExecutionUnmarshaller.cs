@@ -124,6 +124,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SubstatementType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubstatementType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WorkGroup", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

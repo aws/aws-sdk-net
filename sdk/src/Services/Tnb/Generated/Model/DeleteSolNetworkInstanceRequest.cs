@@ -41,7 +41,7 @@ namespace Amazon.Tnb.Model
     ///  
     /// <para>
     /// To delete a network instance, the instance must be in a stopped or terminated state.
-    /// To terminate a network instance, see <a href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_TerminateSolNetworkInstance.html">TerminateSolNetworkInstance</a>.
+    /// To terminate a network instance, see <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_TerminateSolNetworkInstance.html">TerminateSolNetworkInstance</a>.
     /// </para>
     /// </summary>
     public partial class DeleteSolNetworkInstanceRequest : AmazonTnbRequest

@@ -60,7 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SettingId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the service setting to reset. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
+        /// The Amazon Resource Name (ARN) of the service setting to update. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
         /// The setting ID can be one of the following.
         /// </para>
         ///  <ul> <li> 
@@ -95,7 +95,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         ///  <code>/ssm/parameter-store/high-throughput-enabled</code> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+        /// setting should only be provided to administrators. Implement least privilege access
+        /// when allowing individuals to configure or modify the Default Host Management Configuration.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
         public string SettingId
@@ -118,12 +124,17 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an
+        /// IAM role</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon
+        ///  <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon
         /// CloudWatch Logs log group
         /// </para>
         ///  </li> <li> 

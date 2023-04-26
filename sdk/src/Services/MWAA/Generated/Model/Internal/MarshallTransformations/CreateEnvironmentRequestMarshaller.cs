@@ -182,6 +182,18 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SourceBucketArn);
                 }
 
+                if(publicRequest.IsSetStartupScriptS3ObjectVersion())
+                {
+                    context.Writer.WritePropertyName("StartupScriptS3ObjectVersion");
+                    context.Writer.Write(publicRequest.StartupScriptS3ObjectVersion);
+                }
+
+                if(publicRequest.IsSetStartupScriptS3Path())
+                {
+                    context.Writer.WritePropertyName("StartupScriptS3Path");
+                    context.Writer.Write(publicRequest.StartupScriptS3Path);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

@@ -228,6 +228,14 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Paginator for ListManagedJobTemplates operation
+        ///</summary>
+        public IListManagedJobTemplatesPaginator ListManagedJobTemplates(ListManagedJobTemplatesRequest request) 
+        {
+            return new ListManagedJobTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMetricValues operation
         ///</summary>
         public IListMetricValuesPaginator ListMetricValues(ListMetricValuesRequest request) 
@@ -297,6 +305,14 @@ namespace Amazon.IoT.Model
         public IListProvisioningTemplateVersionsPaginator ListProvisioningTemplateVersions(ListProvisioningTemplateVersionsRequest request) 
         {
             return new ListProvisioningTemplateVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRelatedResourcesForAuditFinding operation
+        ///</summary>
+        public IListRelatedResourcesForAuditFindingPaginator ListRelatedResourcesForAuditFinding(ListRelatedResourcesForAuditFindingRequest request) 
+        {
+            return new ListRelatedResourcesForAuditFindingPaginator(this.client, request);
         }
 
         /// <summary>

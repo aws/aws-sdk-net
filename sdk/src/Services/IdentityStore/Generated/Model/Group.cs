@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityStore.Model
 {
     /// <summary>
-    /// A group object that contains a specified group’s metadata and attributes.
+    /// A group object that contains the metadata and attributes for a specified group.
     /// </summary>
     public partial class Group
     {
@@ -61,11 +61,11 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The group’s display name value. The length limit is 1,024 characters. This value can
-        /// consist of letters, accented characters, symbols, numbers, punctuation, tab, new line,
-        /// carriage return, space, and nonbreaking space in this attribute. This value is specified
-        /// at the time the group is created and stored as an attribute of the group object in
-        /// the identity store.
+        /// The display name value for the group. The length limit is 1,024 characters. This value
+        /// can consist of letters, accented characters, symbols, numbers, punctuation, tab, new
+        /// line, carriage return, space, and nonbreaking space in this attribute. This value
+        /// is specified at the time the group is created and stored as an attribute of the group
+        /// object in the identity store.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]

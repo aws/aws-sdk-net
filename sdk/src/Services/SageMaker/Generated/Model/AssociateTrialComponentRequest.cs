@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the AssociateTrialComponent operation.
     /// Associates a trial component with a trial. A trial component can be associated with
-    /// multiple trials. To disassociate a trial component from a trial, call the <a>DisassociateTrialComponent</a>
+    /// multiple trials. To disassociate a trial component from a trial, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DisassociateTrialComponent.html">DisassociateTrialComponent</a>
     /// API.
     /// </summary>
     public partial class AssociateTrialComponentRequest : AmazonSageMakerRequest

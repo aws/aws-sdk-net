@@ -32,9 +32,10 @@ namespace Amazon.Athena.Model
     /// Container for the parameters to the GetQueryResults operation.
     /// Streams the results of a single query execution specified by <code>QueryExecutionId</code>
     /// from the Athena query results location in Amazon S3. For more information, see <a
-    /// href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>
-    /// in the <i>Amazon Athena User Guide</i>. This request does not execute the query but
-    /// returns results. Use <a>StartQueryExecution</a> to run a query.
+    /// href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query
+    /// results, recent queries, and output files</a> in the <i>Amazon Athena User Guide</i>.
+    /// This request does not execute the query but returns results. Use <a>StartQueryExecution</a>
+    /// to run a query.
     /// 
     ///  
     /// <para>

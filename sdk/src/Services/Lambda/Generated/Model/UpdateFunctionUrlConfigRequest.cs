@@ -37,6 +37,7 @@ namespace Amazon.Lambda.Model
         private FunctionUrlAuthType _authType;
         private Cors _cors;
         private string _functionName;
+        private InvokeMode _invokeMode;
         private string _qualifier;
 
         /// <summary>
@@ -116,6 +117,38 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFunctionName()
         {
             return this._functionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvokeMode. 
+        /// <para>
+        /// Use one of the following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>BUFFERED</code> – This is the default option. Lambda invokes your function
+        /// using the <code>Invoke</code> API operation. Invocation results are available when
+        /// the payload is complete. The maximum payload size is 6 MB.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RESPONSE_STREAM</code> – Your function streams payload results as they become
+        /// available. Lambda invokes your function using the <code>InvokeWithResponseStream</code>
+        /// API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request
+        /// a quota increase</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public InvokeMode InvokeMode
+        {
+            get { return this._invokeMode; }
+            set { this._invokeMode = value; }
+        }
+
+        // Check to see if InvokeMode property is set
+        internal bool IsSetInvokeMode()
+        {
+            return this._invokeMode != null;
         }
 
         /// <summary>

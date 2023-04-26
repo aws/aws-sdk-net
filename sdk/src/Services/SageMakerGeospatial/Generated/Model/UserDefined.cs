@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The output resolution (in target georeferenced units) of the result of the operation
     /// </summary>
     public partial class UserDefined
     {
@@ -37,7 +37,10 @@ namespace Amazon.SageMakerGeospatial.Model
         private float? _value;
 
         /// <summary>
-        /// Gets and sets the property Unit.
+        /// Gets and sets the property Unit. 
+        /// <para>
+        /// The units for output resolution of the result.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Unit Unit
@@ -53,7 +56,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The value for output resolution of the result.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public float Value

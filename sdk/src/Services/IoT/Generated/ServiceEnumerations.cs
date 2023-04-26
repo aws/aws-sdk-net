@@ -3024,6 +3024,14 @@ namespace Amazon.IoT
         /// Constant CREATE_PENDING for OTAUpdateStatus
         /// </summary>
         public static readonly OTAUpdateStatus CREATE_PENDING = new OTAUpdateStatus("CREATE_PENDING");
+        /// <summary>
+        /// Constant DELETE_FAILED for OTAUpdateStatus
+        /// </summary>
+        public static readonly OTAUpdateStatus DELETE_FAILED = new OTAUpdateStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for OTAUpdateStatus
+        /// </summary>
+        public static readonly OTAUpdateStatus DELETE_IN_PROGRESS = new OTAUpdateStatus("DELETE_IN_PROGRESS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

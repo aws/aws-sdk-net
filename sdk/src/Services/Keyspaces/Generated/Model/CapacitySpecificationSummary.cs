@@ -31,15 +31,15 @@ namespace Amazon.Keyspaces.Model
     /// <summary>
     /// The read/write throughput capacity mode for a table. The options are:
     /// 
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// • <code>throughputMode:PAY_PER_REQUEST</code> and 
+    ///  <code>throughputMode:PAY_PER_REQUEST</code> and 
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// • <code>throughputMode:PROVISIONED</code>.
+    ///  <code>throughputMode:PROVISIONED</code>.
     /// </para>
-    ///  
+    ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write
     /// capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.
@@ -96,16 +96,16 @@ namespace Amazon.Keyspaces.Model
         /// <para>
         /// The read/write throughput capacity mode for a table. The options are:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • <code>throughputMode:PAY_PER_REQUEST</code> and 
+        ///  <code>throughputMode:PAY_PER_REQUEST</code> and 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code>
+        ///  <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code>
         /// and <code>writeCapacityUnits</code> as input. 
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
         /// The default is <code>throughput_mode:PAY_PER_REQUEST</code>.
         /// </para>

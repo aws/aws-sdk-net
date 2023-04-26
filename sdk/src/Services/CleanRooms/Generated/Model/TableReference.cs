@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// A pointer to the data set that underlies this table. Currently, this can only be an
+    /// A pointer to the dataset that underlies this table. Currently, this can only be an
     /// AWS Glue table.
     /// </summary>
     public partial class TableReference

@@ -52,11 +52,11 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Queue</b> - The ARN of an SQS queue.
+        ///  <b>Queue</b> - The ARN of a standard SQS queue.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Topic</b> - The ARN of an SNS topic.
+        ///  <b>Topic</b> - The ARN of a standard SNS topic.
         /// </para>
         ///  </li> <li> 
         /// <para>

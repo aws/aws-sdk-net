@@ -36,6 +36,7 @@ namespace Amazon.SSMContacts.Model
     #endif
     public partial class ConflictException : AmazonSSMContactsException
     {
+        private List<DependentEntity> _dependentEntities = new List<DependentEntity>();
         private string _resourceId;
         private string _resourceType;
 
@@ -99,6 +100,7 @@ namespace Amazon.SSMContacts.Model
         protected ConflictException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.DependentEntities = (List<DependentEntity>)info.GetValue("DependentEntities", typeof(List<DependentEntity>));
             this.ResourceId = (string)info.GetValue("ResourceId", typeof(string));
             this.ResourceType = (string)info.GetValue("ResourceType", typeof(string));
         }
@@ -121,10 +123,27 @@ namespace Amazon.SSMContacts.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("DependentEntities", this.DependentEntities);
             info.AddValue("ResourceId", this.ResourceId);
             info.AddValue("ResourceType", this.ResourceType);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property DependentEntities. List of dependent entities containing
+        /// information on relation type and resourceArns linked to the resource in use
+        /// </summary>
+        public List<DependentEntity> DependentEntities
+        {
+            get { return this._dependentEntities; }
+            set { this._dependentEntities = value; }
+        }
+
+        // Check to see if DependentEntities property is set
+        internal bool IsSetDependentEntities()
+        {
+            return this._dependentEntities != null && this._dependentEntities.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceId. Identifier of the resource in use
@@ -143,7 +162,7 @@ namespace Amazon.SSMContacts.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceType. ype of the resource in use
+        /// Gets and sets the property ResourceType. Type of the resource in use
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceType

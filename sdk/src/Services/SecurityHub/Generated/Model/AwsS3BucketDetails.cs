@@ -40,6 +40,7 @@ namespace Amazon.SecurityHub.Model
         private AwsS3BucketBucketVersioningConfiguration _bucketVersioningConfiguration;
         private AwsS3BucketWebsiteConfiguration _bucketWebsiteConfiguration;
         private string _createdAt;
+        private AwsS3BucketObjectLockConfiguration _objectLockConfiguration;
         private string _ownerAccountId;
         private string _ownerId;
         private string _ownerName;
@@ -176,6 +177,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockConfiguration. 
+        /// <para>
+        ///  Specifies which rule Amazon S3 applies by default to every new object placed in the
+        /// specified bucket. 
+        /// </para>
+        /// </summary>
+        public AwsS3BucketObjectLockConfiguration ObjectLockConfiguration
+        {
+            get { return this._objectLockConfiguration; }
+            set { this._objectLockConfiguration = value; }
+        }
+
+        // Check to see if ObjectLockConfiguration property is set
+        internal bool IsSetObjectLockConfiguration()
+        {
+            return this._objectLockConfiguration != null;
         }
 
         /// <summary>

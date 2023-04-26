@@ -36,6 +36,8 @@ namespace Amazon.IoTWireless.Model
         private bool? _addGwMetadata;
         private int? _drMax;
         private int? _drMin;
+        private bool? _prAllowed;
+        private bool? _raAllowed;
 
         /// <summary>
         /// Gets and sets the property AddGwMetadata. 
@@ -91,6 +93,42 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetDrMin()
         {
             return this._drMin.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrAllowed. 
+        /// <para>
+        /// The PRAllowed value that describes whether passive roaming is allowed.
+        /// </para>
+        /// </summary>
+        public bool PrAllowed
+        {
+            get { return this._prAllowed.GetValueOrDefault(); }
+            set { this._prAllowed = value; }
+        }
+
+        // Check to see if PrAllowed property is set
+        internal bool IsSetPrAllowed()
+        {
+            return this._prAllowed.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RaAllowed. 
+        /// <para>
+        /// The RAAllowed value that describes whether roaming activation is allowed.
+        /// </para>
+        /// </summary>
+        public bool RaAllowed
+        {
+            get { return this._raAllowed.GetValueOrDefault(); }
+            set { this._raAllowed = value; }
+        }
+
+        // Check to see if RaAllowed property is set
+        internal bool IsSetRaAllowed()
+        {
+            return this._raAllowed.HasValue; 
         }
 
     }

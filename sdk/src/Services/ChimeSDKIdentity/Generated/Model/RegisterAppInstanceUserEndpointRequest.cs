@@ -86,10 +86,10 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The idempotency token for each client request. 
+        /// The unique ID assigned to the request. Use different tokens to register other endpoints.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=2, Max=64)]
+        [AWSProperty(Min=2, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -146,7 +146,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The ARN of the resource to which the endpoint belongs.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=5, Max=1600)]
+        [AWSProperty(Required=true, Min=5, Max=1600)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyVerifiedAccessEndpointPolicy operation.
-    /// Modifies the specified Verified Access endpoint policy.
+    /// Modifies the specified Amazon Web Services Verified Access endpoint policy.
     /// </summary>
     public partial class ModifyVerifiedAccessEndpointPolicyRequest : AmazonEC2Request
     {
@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PolicyDocument. 
         /// <para>
-        /// The Amazon Web Services Verified Access policy document.
+        /// The Verified Access policy document.
         /// </para>
         /// </summary>
         public string PolicyDocument
@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessEndpointId. 
         /// <para>
-        /// The ID of the Amazon Web Services Verified Access endpoint.
+        /// The ID of the Verified Access endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

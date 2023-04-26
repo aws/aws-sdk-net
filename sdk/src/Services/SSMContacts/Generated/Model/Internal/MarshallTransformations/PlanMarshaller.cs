@@ -45,6 +45,17 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Plan requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetRotationIds())
+            {
+                context.Writer.WritePropertyName("RotationIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRotationIdsListValue in requestObject.RotationIds)
+                {
+                        context.Writer.Write(requestObjectRotationIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetStages())
             {
                 context.Writer.WritePropertyName("Stages");

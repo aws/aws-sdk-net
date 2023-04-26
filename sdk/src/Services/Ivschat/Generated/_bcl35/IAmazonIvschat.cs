@@ -1122,6 +1122,9 @@ namespace Amazon.Ivschat
         /// <exception cref="Amazon.Ivschat.Model.AccessDeniedException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.Ivschat.Model.PendingVerificationException">
         /// 
         /// </exception>

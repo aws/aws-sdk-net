@@ -37,6 +37,7 @@ namespace Amazon.Lightsail.Model
         private string _arn;
         private string _attachedTo;
         private string _attachmentState;
+        private AutoMountStatus _autoMountStatus;
         private DateTime? _createdAt;
         private int? _gbInUse;
         private int? _iops;
@@ -129,6 +130,29 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetAttachmentState()
         {
             return this._attachmentState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoMountStatus. 
+        /// <para>
+        /// The status of automatically mounting a storage disk to a virtual computer.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This parameter only applies to Lightsail for Research resources.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public AutoMountStatus AutoMountStatus
+        {
+            get { return this._autoMountStatus; }
+            set { this._autoMountStatus = value; }
+        }
+
+        // Check to see if AutoMountStatus property is set
+        internal bool IsSetAutoMountStatus()
+        {
+            return this._autoMountStatus != null;
         }
 
         /// <summary>

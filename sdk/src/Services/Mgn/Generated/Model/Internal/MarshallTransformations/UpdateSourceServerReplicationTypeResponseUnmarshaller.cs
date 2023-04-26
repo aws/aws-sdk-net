@@ -69,6 +69,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     response.DataReplicationInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fqdnForActionFramework", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FqdnForActionFramework = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("isArchived", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -109,6 +115,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("userProvidedID", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.UserProvidedID = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("vcenterClientID", targetDepth))

@@ -30,7 +30,7 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCalculationExecutionCode operation.
-    /// Retrieves a pre-signed URL to a copy of the code that was executed for the calculation.
+    /// Retrieves the unencrypted code that was executed for the calculation.
     /// </summary>
     public partial class GetCalculationExecutionCodeRequest : AmazonAthenaRequest
     {

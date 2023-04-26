@@ -30,7 +30,7 @@ namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterScalableTarget operation.
-    /// Registers or updates a scalable target, the resource that you want to scale.
+    /// Registers or updates a scalable target, which is the resource that you want to scale.
     /// 
     ///  
     /// <para>
@@ -47,9 +47,9 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// If you choose to add a scaling policy, current capacity is adjustable within the specified
-    /// range when scaling starts. Application Auto Scaling scaling policies will not scale
-    /// capacity to values that are outside of the minimum and maximum range.
+    /// If you add a scaling policy, current capacity is adjustable within the specified range
+    /// when scaling starts. Application Auto Scaling scaling policies will not scale capacity
+    /// to values that are outside of the minimum and maximum range.
     /// </para>
     ///  
     /// <para>
@@ -68,12 +68,20 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// If you call the <code>RegisterScalableTarget</code> API to update an existing scalable
-    /// target, Application Auto Scaling retrieves the current capacity of the resource. If
-    /// it is below the minimum capacity or above the maximum capacity, Application Auto Scaling
-    /// adjusts the capacity of the scalable target to place it within these bounds, even
-    /// if you don't include the <code>MinCapacity</code> or <code>MaxCapacity</code> request
-    /// parameters.
+    /// If you call the <code>RegisterScalableTarget</code> API operation to create a scalable
+    /// target, there might be a brief delay until the operation achieves <a href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual
+    /// consistency</a>. You might become aware of this brief delay if you get unexpected
+    /// errors when performing sequential operations. The typical strategy is to retry the
+    /// request, and some Amazon Web Services SDKs include automatic backoff and retry logic.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you call the <code>RegisterScalableTarget</code> API operation to update an existing
+    /// scalable target, Application Auto Scaling retrieves the current capacity of the resource.
+    /// If it's below the minimum capacity or above the maximum capacity, Application Auto
+    /// Scaling adjusts the capacity of the scalable target to place it within these bounds,
+    /// even if you don't include the <code>MinCapacity</code> or <code>MaxCapacity</code>
+    /// request parameters.
     /// </para>
     ///  </note>
     /// </summary>
@@ -86,6 +94,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         private ScalableDimension _scalableDimension;
         private ServiceNamespace _serviceNamespace;
         private SuspendedState _suspendedState;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property MaxCapacity. 
@@ -97,9 +106,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Although you can specify a large maximum capacity, note that service quotas may impose
-        /// lower limits. Each service has its own default quotas for the maximum capacity of
-        /// the resource. If you want to specify a higher limit, you can request an increase.
+        /// Although you can specify a large maximum capacity, note that service quotas might
+        /// impose lower limits. Each service has its own default quotas for the maximum capacity
+        /// of the resource. If you want to specify a higher limit, you can request an increase.
         /// For more information, consult the documentation for that service. For information
         /// about the default quotas for each service, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service
         /// endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
@@ -505,6 +514,37 @@ namespace Amazon.ApplicationAutoScaling.Model
         internal bool IsSetSuspendedState()
         {
             return this._suspendedState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Assigns one or more tags to the scalable target. Use this parameter to tag the scalable
+        /// target when it is created. To tag an existing scalable target, use the <a>TagResource</a>
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each tag consists of a tag key and a tag value. Both the tag key and the tag value
+        /// are required. You cannot have more than one tag on a scalable target with the same
+        /// tag key.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use tags to control access to a scalable target. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
+        /// support for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

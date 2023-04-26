@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// The service could not respond to the request due to an internal problem.
+    /// The operation failed because the service could not respond to the request due to an
+    /// internal problem. Try again later.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

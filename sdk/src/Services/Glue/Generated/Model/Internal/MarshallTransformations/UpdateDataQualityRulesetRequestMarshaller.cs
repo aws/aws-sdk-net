@@ -85,12 +85,6 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Ruleset);
                 }
 
-                if(publicRequest.IsSetUpdatedName())
-                {
-                    context.Writer.WritePropertyName("UpdatedName");
-                    context.Writer.Write(publicRequest.UpdatedName);
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

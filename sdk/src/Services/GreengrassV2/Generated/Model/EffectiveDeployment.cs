@@ -51,6 +51,41 @@ namespace Amazon.GreengrassV2.Model
         /// <para>
         /// The status of the deployment job on the Greengrass core device.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>IN_PROGRESS</code> – The deployment job is running.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>QUEUED</code> – The deployment job is in the job queue and waiting to run.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED</code> – The deployment failed. For more information, see the <code>statusDetails</code>
+        /// field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>COMPLETED</code> – The deployment to an IoT thing was completed successfully.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TIMED_OUT</code> – The deployment didn't complete in the allotted time. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CANCELED</code> – The deployment was canceled by the user.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REJECTED</code> – The deployment was rejected. For more information, see the
+        /// <code>statusDetails</code> field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public EffectiveDeploymentExecutionStatus CoreDeviceExecutionStatus

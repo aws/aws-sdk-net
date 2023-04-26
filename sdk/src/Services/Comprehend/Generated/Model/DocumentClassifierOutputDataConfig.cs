@@ -29,19 +29,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Provides output results configuration parameters for custom classifier jobs.
+    /// Provide the location for output data from a custom classifier job. This field is mandatory
+    /// if you are training a native classifier model.
     /// </summary>
     public partial class DocumentClassifierOutputDataConfig
     {
+        private string _flywheelStatsS3Prefix;
         private string _kmsKeyId;
         private string _s3Uri;
 
         /// <summary>
+        /// Gets and sets the property FlywheelStatsS3Prefix. 
+        /// <para>
+        /// The Amazon S3 prefix for the data lake location of the flywheel statistics.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string FlywheelStatsS3Prefix
+        {
+            get { return this._flywheelStatsS3Prefix; }
+            set { this._flywheelStatsS3Prefix = value; }
+        }
+
+        // Check to see if FlywheelStatsS3Prefix property is set
+        internal bool IsSetFlywheelStatsS3Prefix()
+        {
+            return this._flywheelStatsS3Prefix != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// the output results from an analysis job. The KmsKeyId can be one of the following
-        /// formats:
+        /// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend
+        /// uses to encrypt the output results from an analysis job. The KmsKeyId can be one of
+        /// the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -80,9 +101,10 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property S3Uri. 
         /// <para>
         /// When you use the <code>OutputDataConfig</code> object while creating a custom classifier,
-        /// you specify the Amazon S3 location where you want to write the confusion matrix. The
-        /// URI must be in the same region as the API endpoint that you are calling. The location
-        /// is used as the prefix for the actual location of this output file.
+        /// you specify the Amazon S3 location where you want to write the confusion matrix and
+        /// other output files. The URI must be in the same Region as the API endpoint that you
+        /// are calling. The location is used as the prefix for the actual location of this output
+        /// file.
         /// </para>
         ///  
         /// <para>

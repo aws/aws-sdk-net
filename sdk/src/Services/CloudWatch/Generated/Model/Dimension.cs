@@ -50,6 +50,7 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// The name of the dimension. Dimension names must contain only ASCII characters, must
         /// include at least one non-whitespace character, and cannot start with a colon (<code>:</code>).
+        /// ASCII control characters are not supported as part of dimension names.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -69,7 +70,8 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The value of the dimension. Dimension values must contain only ASCII characters and
-        /// must include at least one non-whitespace character.
+        /// must include at least one non-whitespace character. ASCII control characters are not
+        /// supported as part of dimension values.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

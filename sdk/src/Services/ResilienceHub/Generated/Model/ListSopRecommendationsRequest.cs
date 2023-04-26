@@ -30,8 +30,8 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSopRecommendations operation.
-    /// Lists the standard operating procedure (SOP) recommendations for the AWS Resilience
-    /// Hub applications.
+    /// Lists the standard operating procedure (SOP) recommendations for the Resilience Hub
+    /// applications.
     /// </summary>
     public partial class ListSopRecommendationsRequest : AmazonResilienceHubRequest
     {

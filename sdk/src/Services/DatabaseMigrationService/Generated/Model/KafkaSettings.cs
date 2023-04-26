@@ -45,6 +45,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private int? _messageMaxBytes;
         private bool? _noHexPrefix;
         private bool? _partitionIncludeSchemaTable;
+        private KafkaSaslMechanism _saslMechanism;
         private string _saslPassword;
         private string _saslUsername;
         private KafkaSecurityProtocol _securityProtocol;
@@ -255,6 +256,27 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetPartitionIncludeSchemaTable()
         {
             return this._partitionIncludeSchemaTable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SaslMechanism. 
+        /// <para>
+        /// For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism
+        /// by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism.
+        /// To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code>
+        /// 
+        /// </para>
+        /// </summary>
+        public KafkaSaslMechanism SaslMechanism
+        {
+            get { return this._saslMechanism; }
+            set { this._saslMechanism = value; }
+        }
+
+        // Check to see if SaslMechanism property is set
+        internal bool IsSetSaslMechanism()
+        {
+            return this._saslMechanism != null;
         }
 
         /// <summary>

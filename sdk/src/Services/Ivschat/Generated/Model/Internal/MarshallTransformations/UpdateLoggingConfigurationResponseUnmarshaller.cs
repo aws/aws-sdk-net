@@ -126,6 +126,10 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("PendingVerification"))
                 {
                     return PendingVerificationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

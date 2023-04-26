@@ -49,6 +49,12 @@
     <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Neptune.Model.DBCluster.GlobalClusterIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Neptune.Model.GlobalCluster.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>

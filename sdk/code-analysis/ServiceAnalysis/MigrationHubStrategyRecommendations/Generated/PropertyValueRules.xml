@@ -247,6 +247,12 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.AntipatternReportResult.AntipatternReportStatusMessage</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.ApplicationComponentDetail.AntipatternReportStatusMessage</property>
     <min>0</min>
     <max>1024</max>
@@ -478,6 +484,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.RemoteSourceCodeAnalysisServerInfo.RemoteSourceCodeAnalysisServerConfigurationTimestamp</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.Result.StatusMessage</property>
     <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*</pattern>

@@ -36,6 +36,7 @@ namespace Amazon.IoTWireless.Model
         private Beaconing _beaconing;
         private string _gatewayEui;
         private List<List<string>> _joinEuiFilters = new List<List<string>>();
+        private float? _maxEirp;
         private List<string> _netIdFilters = new List<string>();
         private string _rfRegion;
         private List<int> _subBands = new List<int>();
@@ -90,6 +91,25 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetJoinEuiFilters()
         {
             return this._joinEuiFilters != null && this._joinEuiFilters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxEirp. 
+        /// <para>
+        /// The MaxEIRP value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=30)]
+        public float MaxEirp
+        {
+            get { return this._maxEirp.GetValueOrDefault(); }
+            set { this._maxEirp = value; }
+        }
+
+        // Check to see if MaxEirp property is set
+        internal bool IsSetMaxEirp()
+        {
+            return this._maxEirp.HasValue; 
         }
 
         /// <summary>

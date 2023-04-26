@@ -203,6 +203,12 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                         unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("GlobalClusterIdentifier", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GlobalClusterIdentifier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("HostedZoneId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -237,6 +243,12 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PendingModifiedValues", targetDepth))
+                    {
+                        var unmarshaller = ClusterPendingModifiedValuesUnmarshaller.Instance;
+                        unmarshalledObject.PendingModifiedValues = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PercentProgress", targetDepth))

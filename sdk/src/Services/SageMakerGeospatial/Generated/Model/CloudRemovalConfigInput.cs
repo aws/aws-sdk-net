@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// Input structure for Cloud Removal Operation type
     /// </summary>
     public partial class CloudRemovalConfigInput
     {
@@ -74,7 +74,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetBands.
+        /// Gets and sets the property TargetBands. 
+        /// <para>
+        /// TargetBands to be returned in the output of CloudRemoval operation.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> TargetBands

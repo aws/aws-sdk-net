@@ -30,14 +30,19 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePhoneNumberSettings operation.
-    /// 
+    /// Updates the phone number settings for the administrator's AWS account, such as the
+    /// default outbound calling name. You can update the default outbound calling name once
+    /// every seven days. Outbound calling names can take up to 72 hours to update.
     /// </summary>
     public partial class UpdatePhoneNumberSettingsRequest : AmazonChimeSDKVoiceRequest
     {
         private string _callingName;
 
         /// <summary>
-        /// Gets and sets the property CallingName.
+        /// Gets and sets the property CallingName. 
+        /// <para>
+        /// The default outbound calling name for the account.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
         public string CallingName

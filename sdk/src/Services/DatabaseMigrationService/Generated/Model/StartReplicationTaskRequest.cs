@@ -127,7 +127,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
+        /// Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“
         /// </para>
         /// </summary>
         public string CdcStopPosition
@@ -170,15 +170,24 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>,
         /// the only valid value for the first run of the task is <code>start-replication</code>.
-        /// You use <code>reload-target</code> to restart the task and <code>resume-processing</code>
-        /// to resume the task.
+        /// This option will start the migration.
         /// </para>
         ///  
         /// <para>
-        /// When the migration type is <code>cdc</code>, you use <code>start-replication</code>
-        /// to start or restart the task, and <code>resume-processing</code> to resume the task.
-        /// <code>reload-target</code> is not a valid value for a task with migration type of
-        /// <code>cdc</code>.
+        /// You can also use <a>ReloadTables</a> to reload specific tables that failed during
+        /// migration instead of restarting the task.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>resume-processing</code> option isn't applicable for a full-load task, because
+        /// you can't resume partially loaded tables during the full load phase.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies
+        /// data changes that occur on the source. To load all the tables again, and start capturing
+        /// source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>,
+        /// to replicate the changes from the last stop position.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

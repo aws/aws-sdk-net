@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     {
         private List<PrincipalPermissions> _createTableDefaultPermissions = new List<PrincipalPermissions>();
         private string _description;
+        private FederatedDatabase _federatedDatabase;
         private string _locationUri;
         private string _name;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
@@ -76,6 +77,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FederatedDatabase. 
+        /// <para>
+        /// A <code>FederatedDatabase</code> structure that references an entity outside the Glue
+        /// Data Catalog.
+        /// </para>
+        /// </summary>
+        public FederatedDatabase FederatedDatabase
+        {
+            get { return this._federatedDatabase; }
+            set { this._federatedDatabase = value; }
+        }
+
+        // Check to see if FederatedDatabase property is set
+        internal bool IsSetFederatedDatabase()
+        {
+            return this._federatedDatabase != null;
         }
 
         /// <summary>

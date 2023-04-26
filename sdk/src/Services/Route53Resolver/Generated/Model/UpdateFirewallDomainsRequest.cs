@@ -43,7 +43,11 @@ namespace Amazon.Route53Resolver.Model
         /// <para>
         /// A list of domains to use in the update operation.
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// There is a limit of 1000 domains per request.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Each domain specification in your domain list must satisfy the following requirements:
         /// 

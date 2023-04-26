@@ -46,8 +46,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property External. 
         /// <para>
         /// The total number of buckets that are shared with one or more of the following or any
-        /// combination of the following: an Amazon Web Services account that isn't in the same
-        /// Amazon Macie organization, an Amazon CloudFront OAI, or a CloudFront OAC.
+        /// combination of the following: an Amazon CloudFront OAI, a CloudFront OAC, or an Amazon
+        /// Web Services account that isn't in the same Amazon Macie organization.
         /// </para>
         /// </summary>
         public long External

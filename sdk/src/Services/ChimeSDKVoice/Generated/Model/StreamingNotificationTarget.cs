@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The target recipient for a streaming configuration notification.
     /// </summary>
     public partial class StreamingNotificationTarget
     {
         private NotificationTarget _notificationTarget;
 
         /// <summary>
-        /// Gets and sets the property NotificationTarget.
+        /// Gets and sets the property NotificationTarget. 
+        /// <para>
+        /// The streaming notification target.
+        /// </para>
         /// </summary>
         public NotificationTarget NotificationTarget
         {

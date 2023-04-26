@@ -40,7 +40,8 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property EnableMediaMetricLogs. 
         /// <para>
-        /// Boolean that enables the logging of Voice Connector metrics to Cloudwatch.
+        /// Boolean that enables logging of detailed media metrics for Voice Connectors to Amazon
+        /// CloudWatch logs.
         /// </para>
         /// </summary>
         public bool EnableMediaMetricLogs
@@ -58,7 +59,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property EnableSIPLogs. 
         /// <para>
-        /// When true, enables SIP message logs for sending to Amazon CloudWatch Logs.
+        /// Boolean that enables SIP message logs to Amazon CloudWatch logs.
         /// </para>
         /// </summary>
         public bool EnableSIPLogs

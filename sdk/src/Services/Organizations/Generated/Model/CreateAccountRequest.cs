@@ -306,8 +306,8 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If any one of the tags is invalid or if you exceed the maximum allowed number of tags
-        /// for an account, then the entire request fails and the account is not created.
+        /// If any one of the tags is not valid or if you exceed the maximum allowed number of
+        /// tags for an account, then the entire request fails and the account is not created.
         /// </para>
         ///  </note>
         /// </summary>

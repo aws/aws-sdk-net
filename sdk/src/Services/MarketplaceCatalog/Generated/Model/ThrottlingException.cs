@@ -30,6 +30,11 @@ namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
     /// Too many requests.
+    /// 
+    ///  
+    /// <para>
+    /// HTTP status code: 429
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

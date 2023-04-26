@@ -37,7 +37,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private List<VoiceConnector> _voiceConnectors = new List<VoiceConnector>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token used to return the next page of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -52,7 +55,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectors.
+        /// Gets and sets the property VoiceConnectors. 
+        /// <para>
+        /// The details of the Voice Connectors.
+        /// </para>
         /// </summary>
         public List<VoiceConnector> VoiceConnectors
         {

@@ -84,7 +84,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeviceOptions. 
         /// <para>
-        /// The options for device-identity type trust provider.
+        /// The options for device-identity trust provider.
         /// </para>
         /// </summary>
         public DeviceOptions DeviceOptions
@@ -138,8 +138,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OidcOptions. 
         /// <para>
-        /// The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust
-        /// provider.
+        /// The options for an OpenID Connect-compatible user-identity trust provider.
         /// </para>
         /// </summary>
         public OidcOptions OidcOptions

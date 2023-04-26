@@ -62,6 +62,21 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// The schema type of the resource configuration.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can find the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
+        /// type schema</a>, or <code>CFN_RESOURCE_SCHEMA</code>, in "<i>Amazon Web Services public
+        /// extensions</i>" within the CloudFormation registry or with the following CLI commmand:
+        /// <code>aws cloudformation describe-type --type-name "AWS::S3::Bucket" --type RESOURCE</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing
+        /// extensions through the CloudFormation registry</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+        /// Web Services resource and property types reference</a> in the CloudFormation User
+        /// Guide.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ResourceConfigurationSchemaType ResourceConfigurationSchemaType
         {

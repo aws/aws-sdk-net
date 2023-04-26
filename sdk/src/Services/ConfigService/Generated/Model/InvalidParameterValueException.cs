@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// One or more of the specified parameters are invalid. Verify that your parameters are
-    /// valid and try again.
+    /// One or more of the specified parameters are not valid. Verify that your parameters
+    /// are valid and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

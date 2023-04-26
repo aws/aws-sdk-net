@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// A phone number used to call an Amazon Chime SDK Voice Connector.
     /// </summary>
     public partial class PhoneNumber
     {
@@ -49,7 +49,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private DateTime? _updatedTimestamp;
 
         /// <summary>
-        /// Gets and sets the property Associations.
+        /// Gets and sets the property Associations. 
+        /// <para>
+        /// The phone number's associations.
+        /// </para>
         /// </summary>
         public List<PhoneNumberAssociation> Associations
         {
@@ -64,7 +67,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CallingName.
+        /// Gets and sets the property CallingName. 
+        /// <para>
+        /// The outbound calling name associated with the phone number.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string CallingName
@@ -80,7 +86,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CallingNameStatus.
+        /// Gets and sets the property CallingNameStatus. 
+        /// <para>
+        /// The outbound calling name status.
+        /// </para>
         /// </summary>
         public CallingNameStatus CallingNameStatus
         {
@@ -95,7 +104,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Capabilities.
+        /// Gets and sets the property Capabilities. 
+        /// <para>
+        /// The phone number's capabilities.
+        /// </para>
         /// </summary>
         public PhoneNumberCapabilities Capabilities
         {
@@ -110,7 +122,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Country.
+        /// Gets and sets the property Country. 
+        /// <para>
+        /// The phone number's country. Format: ISO 3166-1 alpha-2.
+        /// </para>
         /// </summary>
         public string Country
         {
@@ -125,7 +140,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedTimestamp.
+        /// Gets and sets the property CreatedTimestamp. 
+        /// <para>
+        /// The phone number creation timestamp, in ISO 8601 format.
+        /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
         {
@@ -140,7 +158,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeletionTimestamp.
+        /// Gets and sets the property DeletionTimestamp. 
+        /// <para>
+        /// The deleted phone number timestamp, in ISO 8601 format.
+        /// </para>
         /// </summary>
         public DateTime DeletionTimestamp
         {
@@ -155,7 +176,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property E164PhoneNumber.
+        /// Gets and sets the property E164PhoneNumber. 
+        /// <para>
+        /// The phone number, in E.164 format.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string E164PhoneNumber
@@ -171,7 +195,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrderId.
+        /// Gets and sets the property OrderId. 
+        /// <para>
+        /// The phone number's order ID.
+        /// </para>
         /// </summary>
         public string OrderId
         {
@@ -186,7 +213,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberId.
+        /// Gets and sets the property PhoneNumberId. 
+        /// <para>
+        /// The phone number's ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string PhoneNumberId
@@ -202,7 +232,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProductType.
+        /// Gets and sets the property ProductType. 
+        /// <para>
+        /// The phone number's product type.
+        /// </para>
         /// </summary>
         public PhoneNumberProductType ProductType
         {
@@ -217,7 +250,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The phone number's status.
+        /// </para>
         /// </summary>
         public PhoneNumberStatus Status
         {
@@ -232,7 +268,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The phone number's type.
+        /// </para>
         /// </summary>
         public PhoneNumberType Type
         {
@@ -247,7 +286,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedTimestamp.
+        /// Gets and sets the property UpdatedTimestamp. 
+        /// <para>
+        /// The updated phone number timestamp, in ISO 8601 format.
+        /// </para>
         /// </summary>
         public DateTime UpdatedTimestamp
         {

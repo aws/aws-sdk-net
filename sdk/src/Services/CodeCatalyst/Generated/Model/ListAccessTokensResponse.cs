@@ -39,7 +39,7 @@ namespace Amazon.CodeCatalyst.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// A list of personal access tokens (PATs) associated with the calling user.
+        /// A list of personal access tokens (PATs) associated with the calling user identity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

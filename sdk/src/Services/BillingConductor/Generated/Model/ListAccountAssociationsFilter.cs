@@ -48,6 +48,7 @@ namespace Amazon.BillingConductor.Model
     public partial class ListAccountAssociationsFilter
     {
         private string _accountId;
+        private List<string> _accountIds = new List<string>();
         private string _association;
 
         /// <summary>
@@ -66,6 +67,26 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AccountIds. 
+        /// <para>
+        ///  The list of Amazon Web Services IDs to retrieve their associated billing group for
+        /// a given time range. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=30)]
+        public List<string> AccountIds
+        {
+            get { return this._accountIds; }
+            set { this._accountIds = value; }
+        }
+
+        // Check to see if AccountIds property is set
+        internal bool IsSetAccountIds()
+        {
+            return this._accountIds != null && this._accountIds.Count > 0; 
         }
 
         /// <summary>

@@ -387,10 +387,11 @@ namespace Amazon.IdentityManagement
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
-        /// The request was rejected because only the service that depends on the service-linked
-        /// role can modify or delete the role on your behalf. The error message includes the
-        /// name of the service that depends on this service-linked role. You must request the
-        /// change through that service.
+        /// The request was rejected because service-linked roles are protected Amazon Web Services
+        /// resources. Only the service that depends on the service-linked role can modify or
+        /// delete the role on your behalf. The error message includes the name of the service
+        /// that depends on this service-linked role. You must request the change through that
+        /// service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddRoleToInstanceProfile">REST API Reference for AddRoleToInstanceProfile Operation</seealso>
         public virtual Task<AddRoleToInstanceProfileResponse> AddRoleToInstanceProfileAsync(AddRoleToInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -581,10 +582,11 @@ namespace Amazon.IdentityManagement
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
-        /// The request was rejected because only the service that depends on the service-linked
-        /// role can modify or delete the role on your behalf. The error message includes the
-        /// name of the service that depends on this service-linked role. You must request the
-        /// change through that service.
+        /// The request was rejected because service-linked roles are protected Amazon Web Services
+        /// resources. Only the service that depends on the service-linked role can modify or
+        /// delete the role on your behalf. The error message includes the name of the service
+        /// that depends on this service-linked role. You must request the change through that
+        /// service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachRolePolicy">REST API Reference for AttachRolePolicy Operation</seealso>
         public virtual Task<AttachRolePolicyResponse> AttachRolePolicyAsync(AttachRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1129,6 +1131,10 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// A list of client IDs (also known as audiences) that identify the application or applications
         /// allowed to authenticate using the OIDC provider
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A list of tags that are attached to the specified IAM OIDC provider
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2481,10 +2487,11 @@ namespace Amazon.IdentityManagement
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
-        /// The request was rejected because only the service that depends on the service-linked
-        /// role can modify or delete the role on your behalf. The error message includes the
-        /// name of the service that depends on this service-linked role. You must request the
-        /// change through that service.
+        /// The request was rejected because service-linked roles are protected Amazon Web Services
+        /// resources. Only the service that depends on the service-linked role can modify or
+        /// delete the role on your behalf. The error message includes the name of the service
+        /// that depends on this service-linked role. You must request the change through that
+        /// service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRole">REST API Reference for DeleteRole Operation</seealso>
         public virtual Task<DeleteRoleResponse> DeleteRoleAsync(DeleteRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2514,11 +2521,15 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Deletes the permissions boundary for the specified IAM role. 
         /// 
+        ///  
+        /// <para>
+        /// You cannot set the boundary for a service-linked role.
+        /// </para>
         ///  <important> 
         /// <para>
         /// Deleting the permissions boundary for a role might increase its permissions. For example,
         /// it might allow anyone who assumes the role to perform all the actions granted in its
-        /// permissions policies. 
+        /// permissions policies.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2536,10 +2547,11 @@ namespace Amazon.IdentityManagement
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
-        /// The request was rejected because only the service that depends on the service-linked
-        /// role can modify or delete the role on your behalf. The error message includes the
-        /// name of the service that depends on this service-linked role. You must request the
-        /// change through that service.
+        /// The request was rejected because service-linked roles are protected Amazon Web Services
+        /// resources. Only the service that depends on the service-linked role can modify or
+        /// delete the role on your behalf. The error message includes the name of the service
+        /// that depends on this service-linked role. You must request the change through that
+        /// service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePermissionsBoundary">REST API Reference for DeleteRolePermissionsBoundary Operation</seealso>
         public virtual Task<DeleteRolePermissionsBoundaryResponse> DeleteRolePermissionsBoundaryAsync(DeleteRolePermissionsBoundaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2595,10 +2607,11 @@ namespace Amazon.IdentityManagement
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
-        /// The request was rejected because only the service that depends on the service-linked
-        /// role can modify or delete the role on your behalf. The error message includes the
-        /// name of the service that depends on this service-linked role. You must request the
-        /// change through that service.
+        /// The request was rejected because service-linked roles are protected Amazon Web Services
+        /// resources. Only the service that depends on the service-linked role can modify or
+        /// delete the role on your behalf. The error message includes the name of the service
+        /// that depends on this service-linked role. You must request the change through that
+        /// service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePolicy">REST API Reference for DeleteRolePolicy Operation</seealso>
         public virtual Task<DeleteRolePolicyResponse> DeleteRolePolicyAsync(DeleteRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3300,10 +3313,11 @@ namespace Amazon.IdentityManagement
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
-        /// The request was rejected because only the service that depends on the service-linked
-        /// role can modify or delete the role on your behalf. The error message includes the
-        /// name of the service that depends on this service-linked role. You must request the
-        /// change through that service.
+        /// The request was rejected because service-linked roles are protected Amazon Web Services
+        /// resources. Only the service that depends on the service-linked role can modify or
+        /// delete the role on your behalf. The error message includes the name of the service
+        /// that depends on this service-linked role. You must request the change through that
+        /// service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachRolePolicy">REST API Reference for DetachRolePolicy Operation</seealso>
         public virtual Task<DetachRolePolicyResponse> DetachRolePolicyAsync(DetachRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4657,7 +4671,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// For each service that principals in an account (root users, IAM users, or IAM roles)
+        /// For each service that principals in an account (root user, IAM users, or IAM roles)
         /// could access using SCPs, the operation returns details about the most recent access
         /// attempt. If there was no attempt, the service is listed without details about the
         /// most recent attempt to access the service. If the operation fails, it returns the
@@ -7815,7 +7829,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// You cannot set the boundary for a service-linked role. 
+        /// You cannot set the boundary for a service-linked role.
         /// </para>
         ///  <important> 
         /// <para>
@@ -7848,10 +7862,11 @@ namespace Amazon.IdentityManagement
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
-        /// The request was rejected because only the service that depends on the service-linked
-        /// role can modify or delete the role on your behalf. The error message includes the
-        /// name of the service that depends on this service-linked role. You must request the
-        /// change through that service.
+        /// The request was rejected because service-linked roles are protected Amazon Web Services
+        /// resources. Only the service that depends on the service-linked role can modify or
+        /// delete the role on your behalf. The error message includes the name of the service
+        /// that depends on this service-linked role. You must request the change through that
+        /// service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePermissionsBoundary">REST API Reference for PutRolePermissionsBoundary Operation</seealso>
         public virtual Task<PutRolePermissionsBoundaryResponse> PutRolePermissionsBoundaryAsync(PutRolePermissionsBoundaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7933,10 +7948,11 @@ namespace Amazon.IdentityManagement
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
-        /// The request was rejected because only the service that depends on the service-linked
-        /// role can modify or delete the role on your behalf. The error message includes the
-        /// name of the service that depends on this service-linked role. You must request the
-        /// change through that service.
+        /// The request was rejected because service-linked roles are protected Amazon Web Services
+        /// resources. Only the service that depends on the service-linked role can modify or
+        /// delete the role on your behalf. The error message includes the name of the service
+        /// that depends on this service-linked role. You must request the change through that
+        /// service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePolicy">REST API Reference for PutRolePolicy Operation</seealso>
         public virtual Task<PutRolePolicyResponse> PutRolePolicyAsync(PutRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8183,10 +8199,11 @@ namespace Amazon.IdentityManagement
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
-        /// The request was rejected because only the service that depends on the service-linked
-        /// role can modify or delete the role on your behalf. The error message includes the
-        /// name of the service that depends on this service-linked role. You must request the
-        /// change through that service.
+        /// The request was rejected because service-linked roles are protected Amazon Web Services
+        /// resources. Only the service that depends on the service-linked role can modify or
+        /// delete the role on your behalf. The error message includes the name of the service
+        /// that depends on this service-linked role. You must request the change through that
+        /// service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveRoleFromInstanceProfile">REST API Reference for RemoveRoleFromInstanceProfile Operation</seealso>
         public virtual Task<RemoveRoleFromInstanceProfileResponse> RemoveRoleFromInstanceProfileAsync(RemoveRoleFromInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8854,7 +8871,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Access control</b> - Include tags in IAM user-based and resource-based policies.
+        ///  <b>Access control</b> - Include tags in IAM identity-based and resource-based policies.
         /// You can use tags to restrict access to only an OIDC provider that has a specified
         /// tag attached. For examples of policies that show how to use tags to control access,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
@@ -9324,7 +9341,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Access control</b> - Include tags in IAM user-based and resource-based policies.
+        ///  <b>Access control</b> - Include tags in IAM identity-based and resource-based policies.
         /// You can use tags to restrict access to only an IAM requesting user that has a specified
         /// tag attached. You can also restrict access to only those resources that have a certain
         /// tag attached. For examples of policies that show how to use tags to control access,
@@ -10020,10 +10037,11 @@ namespace Amazon.IdentityManagement
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
-        /// The request was rejected because only the service that depends on the service-linked
-        /// role can modify or delete the role on your behalf. The error message includes the
-        /// name of the service that depends on this service-linked role. You must request the
-        /// change through that service.
+        /// The request was rejected because service-linked roles are protected Amazon Web Services
+        /// resources. Only the service that depends on the service-linked role can modify or
+        /// delete the role on your behalf. The error message includes the name of the service
+        /// that depends on this service-linked role. You must request the change through that
+        /// service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAssumeRolePolicy">REST API Reference for UpdateAssumeRolePolicy Operation</seealso>
         public virtual Task<UpdateAssumeRolePolicyResponse> UpdateAssumeRolePolicyAsync(UpdateAssumeRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -10272,10 +10290,11 @@ namespace Amazon.IdentityManagement
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
-        /// The request was rejected because only the service that depends on the service-linked
-        /// role can modify or delete the role on your behalf. The error message includes the
-        /// name of the service that depends on this service-linked role. You must request the
-        /// change through that service.
+        /// The request was rejected because service-linked roles are protected Amazon Web Services
+        /// resources. Only the service that depends on the service-linked role can modify or
+        /// delete the role on your behalf. The error message includes the name of the service
+        /// that depends on this service-linked role. You must request the change through that
+        /// service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateRole">REST API Reference for UpdateRole Operation</seealso>
         public virtual Task<UpdateRoleResponse> UpdateRoleAsync(UpdateRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -10325,10 +10344,11 @@ namespace Amazon.IdentityManagement
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
-        /// The request was rejected because only the service that depends on the service-linked
-        /// role can modify or delete the role on your behalf. The error message includes the
-        /// name of the service that depends on this service-linked role. You must request the
-        /// change through that service.
+        /// The request was rejected because service-linked roles are protected Amazon Web Services
+        /// resources. Only the service that depends on the service-linked role can modify or
+        /// delete the role on your behalf. The error message includes the name of the service
+        /// that depends on this service-linked role. You must request the change through that
+        /// service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateRoleDescription">REST API Reference for UpdateRoleDescription Operation</seealso>
         public virtual Task<UpdateRoleDescriptionResponse> UpdateRoleDescriptionAsync(UpdateRoleDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

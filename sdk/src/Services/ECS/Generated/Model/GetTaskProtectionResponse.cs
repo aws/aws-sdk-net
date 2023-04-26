@@ -66,7 +66,7 @@ namespace Amazon.ECS.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>protectionEnabled</code>: The protection status of the task. If scale-in protection
-        /// is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.
+        /// is turned on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

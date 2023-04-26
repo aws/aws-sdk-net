@@ -100,6 +100,12 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScalableDimension = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ScalableTargetARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScalableTargetARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServiceNamespace", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

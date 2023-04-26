@@ -1640,6 +1640,10 @@ namespace Amazon.EC2
         /// Constant Uefi for BootModeValues
         /// </summary>
         public static readonly BootModeValues Uefi = new BootModeValues("uefi");
+        /// <summary>
+        /// Constant UefiPreferred for BootModeValues
+        /// </summary>
+        public static readonly BootModeValues UefiPreferred = new BootModeValues("uefi-preferred");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -6565,6 +6569,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type InstanceBootModeValues.
+    /// </summary>
+    public class InstanceBootModeValues : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LegacyBios for InstanceBootModeValues
+        /// </summary>
+        public static readonly InstanceBootModeValues LegacyBios = new InstanceBootModeValues("legacy-bios");
+        /// <summary>
+        /// Constant Uefi for InstanceBootModeValues
+        /// </summary>
+        public static readonly InstanceBootModeValues Uefi = new InstanceBootModeValues("uefi");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceBootModeValues(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceBootModeValues FindValue(string value)
+        {
+            return FindValue<InstanceBootModeValues>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceBootModeValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceEventWindowState.
     /// </summary>
     public class InstanceEventWindowState : ConstantClass
@@ -7741,6 +7795,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C6inLarge = new InstanceType("c6in.large");
         /// <summary>
+        /// Constant C6inMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6inMetal = new InstanceType("c6in.metal");
+        /// <summary>
         /// Constant C6inXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C6inXlarge = new InstanceType("c6in.xlarge");
@@ -7776,6 +7834,10 @@ namespace Amazon.EC2
         /// Constant C7gMedium for InstanceType
         /// </summary>
         public static readonly InstanceType C7gMedium = new InstanceType("c7g.medium");
+        /// <summary>
+        /// Constant C7gMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gMetal = new InstanceType("c7g.metal");
         /// <summary>
         /// Constant C7gXlarge for InstanceType
         /// </summary>
@@ -8717,6 +8779,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M6idnLarge = new InstanceType("m6idn.large");
         /// <summary>
+        /// Constant M6idnMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6idnMetal = new InstanceType("m6idn.metal");
+        /// <summary>
         /// Constant M6idnXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M6idnXlarge = new InstanceType("m6idn.xlarge");
@@ -8765,6 +8831,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M6inLarge = new InstanceType("m6in.large");
         /// <summary>
+        /// Constant M6inMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6inMetal = new InstanceType("m6in.metal");
+        /// <summary>
         /// Constant M6inXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M6inXlarge = new InstanceType("m6in.xlarge");
@@ -8772,6 +8842,42 @@ namespace Amazon.EC2
         /// Constant M6iXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M6iXlarge = new InstanceType("m6i.xlarge");
+        /// <summary>
+        /// Constant M7g12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7g12xlarge = new InstanceType("m7g.12xlarge");
+        /// <summary>
+        /// Constant M7g16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7g16xlarge = new InstanceType("m7g.16xlarge");
+        /// <summary>
+        /// Constant M7g2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7g2xlarge = new InstanceType("m7g.2xlarge");
+        /// <summary>
+        /// Constant M7g4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7g4xlarge = new InstanceType("m7g.4xlarge");
+        /// <summary>
+        /// Constant M7g8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7g8xlarge = new InstanceType("m7g.8xlarge");
+        /// <summary>
+        /// Constant M7gLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7gLarge = new InstanceType("m7g.large");
+        /// <summary>
+        /// Constant M7gMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7gMedium = new InstanceType("m7g.medium");
+        /// <summary>
+        /// Constant M7gMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7gMetal = new InstanceType("m7g.metal");
+        /// <summary>
+        /// Constant M7gXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7gXlarge = new InstanceType("m7g.xlarge");
         /// <summary>
         /// Constant Mac1Metal for InstanceType
         /// </summary>
@@ -9317,6 +9423,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R6idnLarge = new InstanceType("r6idn.large");
         /// <summary>
+        /// Constant R6idnMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6idnMetal = new InstanceType("r6idn.metal");
+        /// <summary>
         /// Constant R6idnXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R6idnXlarge = new InstanceType("r6idn.xlarge");
@@ -9365,6 +9475,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R6inLarge = new InstanceType("r6in.large");
         /// <summary>
+        /// Constant R6inMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6inMetal = new InstanceType("r6in.metal");
+        /// <summary>
         /// Constant R6inXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R6inXlarge = new InstanceType("r6in.xlarge");
@@ -9372,6 +9486,42 @@ namespace Amazon.EC2
         /// Constant R6iXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R6iXlarge = new InstanceType("r6i.xlarge");
+        /// <summary>
+        /// Constant R7g12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7g12xlarge = new InstanceType("r7g.12xlarge");
+        /// <summary>
+        /// Constant R7g16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7g16xlarge = new InstanceType("r7g.16xlarge");
+        /// <summary>
+        /// Constant R7g2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7g2xlarge = new InstanceType("r7g.2xlarge");
+        /// <summary>
+        /// Constant R7g4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7g4xlarge = new InstanceType("r7g.4xlarge");
+        /// <summary>
+        /// Constant R7g8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7g8xlarge = new InstanceType("r7g.8xlarge");
+        /// <summary>
+        /// Constant R7gLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7gLarge = new InstanceType("r7g.large");
+        /// <summary>
+        /// Constant R7gMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7gMedium = new InstanceType("r7g.medium");
+        /// <summary>
+        /// Constant R7gMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7gMetal = new InstanceType("r7g.metal");
+        /// <summary>
+        /// Constant R7gXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7gXlarge = new InstanceType("r7g.xlarge");
         /// <summary>
         /// Constant T1Micro for InstanceType
         /// </summary>

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// The time when journey allow to send messages. QuietTime should be configured first
-    /// and SendingSchedule should be set to true.
+    /// Specifies the times when message are allowed to be sent to endpoints.
     /// </summary>
     public partial class OpenHours
     {
@@ -43,7 +42,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property CUSTOM. 
         /// <para>
-        /// Rules for Custom Channel.
+        /// Specifies the schedule settings for the custom channel.
         /// </para>
         /// </summary>
         public Dictionary<string, List<OpenHoursRule>> CUSTOM
@@ -61,7 +60,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property EMAIL. 
         /// <para>
-        /// Rules for Email Channel.
+        /// Specifies the schedule settings for the email channel.
         /// </para>
         /// </summary>
         public Dictionary<string, List<OpenHoursRule>> EMAIL
@@ -79,7 +78,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property PUSH. 
         /// <para>
-        /// Rules for Push Channel.
+        /// Specifies the schedule settings for the push channel.
         /// </para>
         /// </summary>
         public Dictionary<string, List<OpenHoursRule>> PUSH
@@ -97,7 +96,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property SMS. 
         /// <para>
-        /// Rules for SMS Channel.
+        /// Specifies the schedule settings for the SMS channel.
         /// </para>
         /// </summary>
         public Dictionary<string, List<OpenHoursRule>> SMS
@@ -115,7 +114,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property VOICE. 
         /// <para>
-        /// Rules for Voice Channel.
+        /// Specifies the schedule settings for the voice channel.
         /// </para>
         /// </summary>
         public Dictionary<string, List<OpenHoursRule>> VOICE

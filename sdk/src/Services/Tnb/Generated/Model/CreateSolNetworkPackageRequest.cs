@@ -50,7 +50,7 @@ namespace Amazon.Tnb.Model
     ///  
     /// <para>
     /// This request creates an empty network package container with an ID. Once you create
-    /// a network package, you can upload the network package content using <a href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_PutSolNetworkPackageContent.html">PutSolNetworkPackageContent</a>.
+    /// a network package, you can upload the network package content using <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_PutSolNetworkPackageContent.html">PutSolNetworkPackageContent</a>.
     /// </para>
     /// </summary>
     public partial class CreateSolNetworkPackageRequest : AmazonTnbRequest

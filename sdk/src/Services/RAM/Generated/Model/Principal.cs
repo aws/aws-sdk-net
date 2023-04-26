@@ -60,9 +60,18 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property External. 
         /// <para>
-        /// Indicates whether the principal belongs to the same organization in Organizations
-        /// as the Amazon Web Services account that owns the resource share.
+        /// Indicates the relationship between the Amazon Web Services account the principal belongs
+        /// to and the account that owns the resource share:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>True</code> – The two accounts belong to same organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>False</code> – The two accounts do not belong to the same organization.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public bool External
         {
@@ -79,7 +88,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the principal.
+        /// The ID of the principal that can be associated with a resource share.
         /// </para>
         /// </summary>
         public string Id
@@ -97,7 +106,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The date and time when the association was last updated.
+        /// The date and time when the association between the resource share and the principal
+        /// was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
@@ -116,7 +126,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of a resource share the principal is associated with.
+        /// Resource Name (ARN)</a> of a resource share the principal is associated with.
         /// </para>
         /// </summary>
         public string ResourceShareArn

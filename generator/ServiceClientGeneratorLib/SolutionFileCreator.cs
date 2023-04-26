@@ -327,109 +327,6 @@ namespace ServiceClientGenerator
                 throw new Exception(string.Format("Unrecognized platform type in project name - '{0}'", projectType));
         }
 
-        private void GenerateCombinedSolution(string solutionFileName, bool includeTests, IEnumerable<ProjectFileConfiguration> projectFileConfigurations, ICollection<string> serviceProjectsForPartialBuild = null)
-        {
-            Console.WriteLine("Generating solution file {0}", solutionFileName);
-
-            var session = new Dictionary<string, object>();
-
-            var buildConfigurations = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-            var solutionProjects = new Dictionary<string, ProjectFileCreator.ProjectConfigurationData>();
-
-            var sdkSourceFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.SourceSubFoldername);
-
-            var coreProjects = new List<Project>();
-            var coreProjectsRoot = Path.Combine(sdkSourceFolder, GeneratorDriver.CoreSubFoldername);
-
-            foreach (var pfc in projectFileConfigurations)
-            {
-                var projectTypeWildCard = string.Format("AWSSDK.*.{0}.csproj", pfc.Name);
-                foreach (var projectFile in Directory.GetFiles(coreProjectsRoot, projectTypeWildCard, SearchOption.TopDirectoryOnly))
-                {
-                    coreProjects.Add(CoreProjectFromFile(projectFile));
-                    SelectProjectAndConfigurationsForSolution(projectFile, solutionProjects, buildConfigurations);
-                }
-            }
-
-            var serviceSolutionFolders = new List<ServiceSolutionFolder>();
-            var serviceProjectsRoot = Path.Combine(sdkSourceFolder, GeneratorDriver.ServicesSubFoldername);
-            foreach (var servicePath in Directory.GetDirectories(serviceProjectsRoot))
-            {
-                var di = new DirectoryInfo(servicePath);
-
-                // If we are generating a partial solution, and the service project has not changed, omit it from the partial solution.
-                if (serviceProjectsForPartialBuild != null && !serviceProjectsForPartialBuild.Contains(di.Name, StringComparer.InvariantCultureIgnoreCase))
-                {
-                    continue;
-                }
-
-                var folder = ServiceSolutionFolderFromPath(di.Name);
-                foreach (var pfc in projectFileConfigurations)
-                {
-                    var projectTypeWildCard = string.Format("AWSSDK.*.{0}.csproj", pfc.Name);
-                    foreach (var projectFile in Directory.GetFiles(servicePath, projectTypeWildCard, SearchOption.TopDirectoryOnly))
-                    {
-                        folder.Projects.Add(ServiceProjectFromFile(di.Name, projectFile));
-                        SelectProjectAndConfigurationsForSolution(projectFile, solutionProjects, buildConfigurations);
-                    }
-                }
-
-                if (folder.Projects.Count > 0)
-                    serviceSolutionFolders.Add(folder);
-            }
-
-            var testProjects = new List<Project>();
-            if (includeTests)
-            {
-                foreach (var pfc in projectFileConfigurations)
-                {
-                    var projectType = pfc.Name;
-                    var projectTypeWildCard = string.Format("AWSSDK.*.{0}.csproj", pfc.Name);
-
-                    var sdkTestsFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
-                    string[] testFolderNames = (serviceProjectsForPartialBuild == null)
-                        ? new string[] { GeneratorDriver.CommonTestSubFoldername, GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName }
-                        : new string[] { GeneratorDriver.CommonTestSubFoldername, GeneratorDriver.UnitTestsSubFoldername };
-
-                    foreach (var testFoldername in testFolderNames)
-                    {
-                        var testFolder = Path.Combine(sdkTestsFolder, testFoldername);
-                        foreach (var projectFile in Directory.GetFiles(testFolder, projectTypeWildCard, SearchOption.TopDirectoryOnly))
-                        {
-                            testProjects.Add(TestProjectFromFile(testFoldername, projectFile));
-
-                            var projectKey = Path.GetFileNameWithoutExtension(projectFile);
-                            solutionProjects.Add(projectKey, _allProjects[projectKey]);
-                            SelectBuildConfigurationsForProject(projectKey, buildConfigurations);
-                        }
-                    }
-
-                    if (projectType.Equals(ProjectTypes.Net35, StringComparison.Ordinal) || projectType.Equals(ProjectTypes.Net45, StringComparison.Ordinal) &&
-                        !solutionProjects.ContainsKey(GeneratorLibProjectName))
-                    {
-                        solutionProjects.Add(GeneratorLibProjectName, GeneratorLibProjectConfig);
-                        testProjects.Add(GeneratorLibProject);
-                        SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
-                    }
-
-                    AddExtraTestProjects(pfc, solutionProjects, testProjects);
-                }
-            }
-
-            var configurationsList = buildConfigurations.ToList();
-            configurationsList.Sort();
-
-            session["AllProjects"] = solutionProjects;
-            session["CoreProjects"] = coreProjects;
-            session["ServiceSolutionFolders"] = serviceSolutionFolders;
-            session["TestProjects"] = testProjects;
-            session["Configurations"] = configurationsList;
-
-            var generator = new SolutionFileGenerator { Session = session };
-            var content = generator.TransformText();
-            GeneratorDriver.WriteFile(Options.SdkRootFolder, null, solutionFileName, content, true, false);
-        }
-
         private static IDictionary<string, string> GetItemGuidDictionary(string solutionsFilePath)
         {
             IDictionary<string, string> itemGuidDictionary = new Dictionary<string, string>();
@@ -495,6 +392,13 @@ namespace ServiceClientGenerator
             {
                 var di = new DirectoryInfo(servicePath.Path);
                 var folder = ServiceSolutionFolderFromPath(di.Name);
+
+                // Previously, the project GUID was generated from a random array of bytes, but the output for that operation changed in netstandard.
+                // To prevent all solution files from being modified, we re-use the GUID for the current service (if there's one available).
+                if (projectGuidDictionary.ContainsKey(di.Name))
+                {
+                    folder.ProjectGuid = projectGuidDictionary[di.Name];
+                }
 
                 // If we are generating a partial solution, and the service project has not changed, omit it from the partial solution.
                 bool omitService = serviceProjectsForPartialBuild != null && !serviceProjectsForPartialBuild.Contains(di.Name, StringComparer.InvariantCultureIgnoreCase);
@@ -609,89 +513,6 @@ namespace ServiceClientGenerator
             return path2.Replace(path1, "").TrimStart(new char[] { ' ', '\\', '/' });
         }
 
-        private void GeneratePlatformSpecificSolution(ProjectFileConfiguration projectConfig, bool includeTests, bool travisSolution, string solutionFileName = null)
-        {
-            var projectType = projectConfig.Name;
-            Console.WriteLine("...generating platform-specific solution file AWSSDK.{0}.sln", projectType);
-
-            var buildConfigurations = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-            var solutionProjects = new Dictionary<string, ProjectFileCreator.ProjectConfigurationData>();
-
-            var projectTypeWildCard = string.Format("AWSSDK.*.{0}.csproj", projectType);
-
-            var sdkSourceFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.SourceSubFoldername);
-
-            var coreProjects = new List<Project>();
-            var coreProjectsRoot = Path.Combine(sdkSourceFolder, GeneratorDriver.CoreSubFoldername);
-            foreach (var projectFile in Directory.GetFiles(coreProjectsRoot, projectTypeWildCard, SearchOption.TopDirectoryOnly))
-            {
-                coreProjects.Add(CoreProjectFromFile(projectFile));
-                SelectProjectAndConfigurationsForSolution(projectFile, solutionProjects, buildConfigurations);
-            }
-
-            var serviceSolutionFolders = new List<ServiceSolutionFolder>();
-            var serviceProjectsRoot = Path.Combine(sdkSourceFolder, GeneratorDriver.ServicesSubFoldername);
-            foreach (var servicePath in Directory.GetDirectories(serviceProjectsRoot))
-            {
-                var di = new DirectoryInfo(servicePath);
-                var folder = ServiceSolutionFolderFromPath(di.Name);
-
-                foreach (var projectFile in Directory.GetFiles(servicePath, projectTypeWildCard, SearchOption.TopDirectoryOnly))
-                {
-                    if (travisSolution && projectFile.Contains("AWSSDK.MobileAnalytics"))
-                        continue;
-
-                    folder.Projects.Add(ServiceProjectFromFile(di.Name, projectFile));
-                    SelectProjectAndConfigurationsForSolution(projectFile, solutionProjects, buildConfigurations);
-                }
-
-                serviceSolutionFolders.Add(folder);
-            }
-
-            var testProjects = new List<Project>();
-            if (includeTests)
-            {
-                var sdkTestsFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
-                foreach (var testFoldername in new[] { GeneratorDriver.CommonTestSubFoldername, GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
-                {
-                    var testFolder = Path.Combine(sdkTestsFolder, testFoldername);
-                    foreach (var projectFile in Directory.GetFiles(testFolder, projectTypeWildCard, SearchOption.TopDirectoryOnly))
-                    {
-                        testProjects.Add(TestProjectFromFile(testFoldername, projectFile));
-
-                        var projectKey = Path.GetFileNameWithoutExtension(projectFile);
-                        solutionProjects.Add(projectKey, _allProjects[projectKey]);
-                        SelectBuildConfigurationsForProject(projectKey, buildConfigurations);
-                    }
-                }
-
-                if (projectType.Equals(ProjectTypes.Net35, StringComparison.Ordinal) || projectType.Equals(ProjectTypes.Net45, StringComparison.Ordinal))
-                {
-                    solutionProjects.Add(GeneratorLibProjectName, GeneratorLibProjectConfig);
-                    testProjects.Add(GeneratorLibProject);
-                    SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
-                }
-
-                AddExtraTestProjects(projectConfig, solutionProjects, testProjects);
-            }
-
-            var configurationsList = buildConfigurations.ToList();
-            configurationsList.Sort();
-
-            var session = new Dictionary<string, object>();
-            session["AllProjects"] = solutionProjects;
-            session["CoreProjects"] = coreProjects;
-            session["ServiceSolutionFolders"] = serviceSolutionFolders;
-            session["TestProjects"] = testProjects;
-            session["Configurations"] = configurationsList;
-
-            var generator = new SolutionFileGenerator { Session = session };
-            var content = generator.TransformText();
-            if (string.IsNullOrEmpty(solutionFileName))
-                solutionFileName = string.Format("AWSSDK.{0}.sln", projectType);
-            GeneratorDriver.WriteFile(Options.SdkRootFolder, null, solutionFileName, content, true, false);
-        }
-
         /// <summary>
         /// Service specific solution generator. A single sln file is created that contains csproj for net35,net45,netstandard and their corresponding integ and unit tests.
         /// </summary>
@@ -719,6 +540,13 @@ namespace ServiceClientGenerator
                 // Since vs2017 .csproj files are not identified by guid, see if we can scan and determine the guid ahead of time to reduce changes
                 // to .sln files if possible.
                 IDictionary<string, string> projectGuidDictionary = GetItemGuidDictionary(solutionPath);
+
+                // Previously, the project GUID was generated from a random array of bytes, but the output for that operation changed in netstandard.
+                // To prevent all solution files from being modified, we re-use the GUID for the current service (if there's one available).
+                if (projectGuidDictionary.ContainsKey(serviceDirectory.Name))
+                {
+                    folder.ProjectGuid = projectGuidDictionary[serviceDirectory.Name];
+                }
 
                 // Include only net35,net45,netstandard service csproj
                 // in the service specific solutions
@@ -1018,24 +846,13 @@ namespace ServiceClientGenerator
         {
             public string Name { get; private set; }
             public List<Project> Projects { get; private set; }
-            public string ProjectGuid { get; private set; }
+            public string ProjectGuid { get; set; }
 
             public ServiceSolutionFolder(string folderName)
             {
                 Name = folderName;
                 Projects = new List<Project>();
-                ProjectGuid = GetFolderGuid(folderName);
-            }
-
-            private static string GetFolderGuid(string folderName)
-            {
-                var hash = folderName.GetHashCode();
-                var random = new Random(hash);
-                var bytes = new byte[16];
-                random.NextBytes(bytes);
-                var guid = new Guid(bytes);
-                var text = guid.ToString("B").ToUpper();
-                return text;
+                ProjectGuid = Guid.NewGuid().ToString("B").ToUpper();
             }
         }
     }

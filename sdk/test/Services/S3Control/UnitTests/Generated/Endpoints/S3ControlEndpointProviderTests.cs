@@ -1903,5 +1903,108 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             Assert.AreEqual("https://s3-outposts.us-west-2.amazonaws.com", endpoint.URL);
         }
 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("S3 Snow Control with bucket")]
+        public void S3_Snow_Control_with_bucket_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["Region"] = "snow";
+            parameters["Bucket"] = "bucketName";
+            parameters["Endpoint"] = "https://10.0.1.12:433";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://10.0.1.12:433", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("S3 Snow Control without bucket")]
+        public void S3_Snow_Control_without_bucket_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["Region"] = "snow";
+            parameters["Endpoint"] = "https://10.0.1.12:433";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://10.0.1.12:433", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("S3 Snow Control with bucket and without port")]
+        public void S3_Snow_Control_with_bucket_and_without_port_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["Region"] = "snow";
+            parameters["Bucket"] = "bucketName";
+            parameters["Endpoint"] = "https://10.0.1.12";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://10.0.1.12", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("S3 Snow Control with bucket and with DNS")]
+        public void S3_Snow_Control_with_bucket_and_with_DNS_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["Region"] = "snow";
+            parameters["Bucket"] = "bucketName";
+            parameters["Endpoint"] = "http://s3snow.com";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://s3snow.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("S3 Snow Control with FIPS enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"S3 Snow does not support FIPS")]
+        public void S3_Snow_Control_with_FIPS_enabled_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["Region"] = "snow";
+            parameters["Bucket"] = "bucketName";
+            parameters["Endpoint"] = "https://10.0.1.12:433";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Accelerate"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("S3 Snow Control with Dual-stack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"S3 Snow does not support Dual-stack")]
+        public void S3_Snow_Control_with_Dualstack_enabled_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["Region"] = "snow";
+            parameters["Bucket"] = "bucketName";
+            parameters["Endpoint"] = "https://10.0.1.12:433";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["Accelerate"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+        }
+
     }
 }

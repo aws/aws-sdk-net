@@ -4035,6 +4035,15 @@
       "input":{"shape":"GetVpnConnectionDeviceTypesRequest"},
       "output":{"shape":"GetVpnConnectionDeviceTypesResult"}
     },
+    "GetVpnTunnelReplacementStatus":{
+      "name":"GetVpnTunnelReplacementStatus",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetVpnTunnelReplacementStatusRequest"},
+      "output":{"shape":"GetVpnTunnelReplacementStatusResult"}
+    },
     "ImportClientVpnClientCertificateRevocationList":{
       "name":"ImportClientVpnClientCertificateRevocationList",
       "http":{
@@ -4922,6 +4931,15 @@
       "input":{"shape":"ReplaceTransitGatewayRouteRequest"},
       "output":{"shape":"ReplaceTransitGatewayRouteResult"}
     },
+    "ReplaceVpnTunnel":{
+      "name":"ReplaceVpnTunnel",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ReplaceVpnTunnelRequest"},
+      "output":{"shape":"ReplaceVpnTunnelResult"}
+    },
     "ReportInstanceStatus":{
       "name":"ReportInstanceStatus",
       "http":{
@@ -5716,6 +5734,30 @@
         "Component":{
           "shape":"AnalysisComponent",
           "locationName":"component"
+        },
+        "VpcEndpointService":{
+          "shape":"AnalysisComponent",
+          "locationName":"vpcEndpointService"
+        },
+        "RuleOptions":{
+          "shape":"RuleOptionList",
+          "locationName":"ruleOptionSet"
+        },
+        "RuleGroupTypePairs":{
+          "shape":"RuleGroupTypePairList",
+          "locationName":"ruleGroupTypePairSet"
+        },
+        "RuleGroupRuleOptionsPairs":{
+          "shape":"RuleGroupRuleOptionsPairList",
+          "locationName":"ruleGroupRuleOptionsPairSet"
+        },
+        "ServiceName":{
+          "shape":"String",
+          "locationName":"serviceName"
+        },
+        "LoadBalancers":{
+          "shape":"AnalysisComponentList",
+          "locationName":"loadBalancerSet"
         }
       }
     },
@@ -6308,6 +6350,18 @@
         "State":{
           "shape":"String",
           "locationName":"state"
+        },
+        "CarrierGatewayId":{
+          "shape":"String",
+          "locationName":"carrierGatewayId"
+        },
+        "CoreNetworkArn":{
+          "shape":"ResourceArn",
+          "locationName":"coreNetworkArn"
+        },
+        "LocalGatewayId":{
+          "shape":"String",
+          "locationName":"localGatewayId"
         }
       }
     },
@@ -6555,7 +6609,7 @@
       "members":{
         "AllocationId":{"shape":"AllocationId"},
         "InstanceId":{"shape":"InstanceId"},
-        "PublicIp":{"shape":"String"},
+        "PublicIp":{"shape":"EipAllocationPublicIp"},
         "AllowReassociation":{
           "shape":"Boolean",
           "locationName":"allowReassociation"
@@ -7527,6 +7581,7 @@
         "locationName":"item"
       }
     },
+    "AvailabilityZoneName":{"type":"string"},
     "AvailabilityZoneOptInStatus":{
       "type":"string",
       "enum":[
@@ -7693,7 +7748,8 @@
       "type":"string",
       "enum":[
         "legacy-bios",
-        "uefi"
+        "uefi",
+        "uefi-preferred"
       ]
     },
     "BoxedDouble":{"type":"double"},
@@ -8767,6 +8823,10 @@
           "locationName":"bannerText"
         }
       }
+    },
+    "ClientSecretType":{
+      "type":"string",
+      "sensitive":true
     },
     "ClientVpnAssociationId":{"type":"string"},
     "ClientVpnAuthentication":{
@@ -9866,10 +9926,7 @@
     },
     "CreateCustomerGatewayRequest":{
       "type":"structure",
-      "required":[
-        "BgpAsn",
-        "Type"
-      ],
+      "required":["Type"],
       "members":{
         "BgpAsn":{"shape":"Integer"},
         "PublicIp":{"shape":"String"},
@@ -10780,7 +10837,6 @@
       "type":"structure",
       "required":[
         "Source",
-        "Destination",
         "Protocol",
         "ClientToken"
       ],
@@ -10799,7 +10855,9 @@
         "ClientToken":{
           "shape":"String",
           "idempotencyToken":true
-        }
+        },
+        "FilterAtSource":{"shape":"PathRequestFilter"},
+        "FilterAtDestination":{"shape":"PathRequestFilter"}
       }
     },
     "CreateNetworkInsightsPathResult":{
@@ -11910,7 +11968,7 @@
         "TokenEndpoint":{"shape":"String"},
         "UserInfoEndpoint":{"shape":"String"},
         "ClientId":{"shape":"String"},
-        "ClientSecret":{"shape":"String"},
+        "ClientSecret":{"shape":"ClientSecretType"},
         "Scope":{"shape":"String"}
       }
     },
@@ -11979,7 +12037,7 @@
       "type":"structure",
       "required":["AvailabilityZone"],
       "members":{
-        "AvailabilityZone":{"shape":"String"},
+        "AvailabilityZone":{"shape":"AvailabilityZoneName"},
         "Encrypted":{
           "shape":"Boolean",
           "locationName":"encrypted"
@@ -19236,7 +19294,7 @@
       "type":"structure",
       "members":{
         "AssociationId":{"shape":"ElasticIpAssociationId"},
-        "PublicIp":{"shape":"String"},
+        "PublicIp":{"shape":"EipAllocationPublicIp"},
         "DryRun":{
           "shape":"Boolean",
           "locationName":"dryRun"
@@ -19547,7 +19605,7 @@
           "locationName":"format"
         },
         "ImportManifestUrl":{
-          "shape":"String",
+          "shape":"ImportManifestUrl",
           "locationName":"importManifestUrl"
         },
         "Size":{
@@ -19573,7 +19631,7 @@
           "locationName":"format"
         },
         "ImportManifestUrl":{
-          "shape":"String",
+          "shape":"ImportManifestUrl",
           "locationName":"importManifestUrl"
         }
       }
@@ -19669,13 +19727,18 @@
         "DnsRecordIpType":{
           "shape":"DnsRecordIpType",
           "locationName":"dnsRecordIpType"
+        },
+        "PrivateDnsOnlyForInboundResolverEndpoint":{
+          "shape":"Boolean",
+          "locationName":"privateDnsOnlyForInboundResolverEndpoint"
         }
       }
     },
     "DnsOptionsSpecification":{
       "type":"structure",
       "members":{
-        "DnsRecordIpType":{"shape":"DnsRecordIpType"}
+        "DnsRecordIpType":{"shape":"DnsRecordIpType"},
+        "PrivateDnsOnlyForInboundResolverEndpoint":{"shape":"Boolean"}
       }
     },
     "DnsRecordIpType":{
@@ -19916,6 +19979,7 @@
         "locationName":"item"
       }
     },
+    "EipAllocationPublicIp":{"type":"string"},
     "EipAssociationIdList":{
       "type":"list",
       "member":{
@@ -20841,6 +20905,14 @@
         "ComponentRegion":{
           "shape":"ComponentRegion",
           "locationName":"componentRegion"
+        },
+        "FirewallStatelessRule":{
+          "shape":"FirewallStatelessRule",
+          "locationName":"firewallStatelessRule"
+        },
+        "FirewallStatefulRule":{
+          "shape":"FirewallStatefulRule",
+          "locationName":"firewallStatefulRule"
         }
       }
     },
@@ -21314,6 +21386,19 @@
         "locationName":"Filter"
       }
     },
+    "FilterPortRange":{
+      "type":"structure",
+      "members":{
+        "FromPort":{
+          "shape":"Port",
+          "locationName":"fromPort"
+        },
+        "ToPort":{
+          "shape":"Port",
+          "locationName":"toPort"
+        }
+      }
+    },
     "FindingsFound":{
       "type":"string",
       "enum":[
@@ -21321,6 +21406,80 @@
         "false",
         "unknown"
       ]
+    },
+    "FirewallStatefulRule":{
+      "type":"structure",
+      "members":{
+        "RuleGroupArn":{
+          "shape":"ResourceArn",
+          "locationName":"ruleGroupArn"
+        },
+        "Sources":{
+          "shape":"ValueStringList",
+          "locationName":"sourceSet"
+        },
+        "Destinations":{
+          "shape":"ValueStringList",
+          "locationName":"destinationSet"
+        },
+        "SourcePorts":{
+          "shape":"PortRangeList",
+          "locationName":"sourcePortSet"
+        },
+        "DestinationPorts":{
+          "shape":"PortRangeList",
+          "locationName":"destinationPortSet"
+        },
+        "Protocol":{
+          "shape":"String",
+          "locationName":"protocol"
+        },
+        "RuleAction":{
+          "shape":"String",
+          "locationName":"ruleAction"
+        },
+        "Direction":{
+          "shape":"String",
+          "locationName":"direction"
+        }
+      }
+    },
+    "FirewallStatelessRule":{
+      "type":"structure",
+      "members":{
+        "RuleGroupArn":{
+          "shape":"ResourceArn",
+          "locationName":"ruleGroupArn"
+        },
+        "Sources":{
+          "shape":"ValueStringList",
+          "locationName":"sourceSet"
+        },
+        "Destinations":{
+          "shape":"ValueStringList",
+          "locationName":"destinationSet"
+        },
+        "SourcePorts":{
+          "shape":"PortRangeList",
+          "locationName":"sourcePortSet"
+        },
+        "DestinationPorts":{
+          "shape":"PortRangeList",
+          "locationName":"destinationPortSet"
+        },
+        "Protocols":{
+          "shape":"ProtocolIntList",
+          "locationName":"protocolSet"
+        },
+        "RuleAction":{
+          "shape":"String",
+          "locationName":"ruleAction"
+        },
+        "Priority":{
+          "shape":"Priority",
+          "locationName":"priority"
+        }
+      }
     },
     "FleetActivityStatus":{
       "type":"string",
@@ -23155,6 +23314,47 @@
         }
       }
     },
+    "GetVpnTunnelReplacementStatusRequest":{
+      "type":"structure",
+      "required":[
+        "VpnConnectionId",
+        "VpnTunnelOutsideIpAddress"
+      ],
+      "members":{
+        "VpnConnectionId":{"shape":"VpnConnectionId"},
+        "VpnTunnelOutsideIpAddress":{"shape":"String"},
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "GetVpnTunnelReplacementStatusResult":{
+      "type":"structure",
+      "members":{
+        "VpnConnectionId":{
+          "shape":"VpnConnectionId",
+          "locationName":"vpnConnectionId"
+        },
+        "TransitGatewayId":{
+          "shape":"TransitGatewayId",
+          "locationName":"transitGatewayId"
+        },
+        "CustomerGatewayId":{
+          "shape":"CustomerGatewayId",
+          "locationName":"customerGatewayId"
+        },
+        "VpnGatewayId":{
+          "shape":"VpnGatewayId",
+          "locationName":"vpnGatewayId"
+        },
+        "VpnTunnelOutsideIpAddress":{
+          "shape":"String",
+          "locationName":"vpnTunnelOutsideIpAddress"
+        },
+        "MaintenanceDetails":{
+          "shape":"MaintenanceDetails",
+          "locationName":"maintenanceDetails"
+        }
+      }
+    },
     "GpuDeviceCount":{"type":"integer"},
     "GpuDeviceInfo":{
       "type":"structure",
@@ -24475,6 +24675,10 @@
         }
       }
     },
+    "ImportManifestUrl":{
+      "type":"string",
+      "sensitive":true
+    },
     "ImportSnapshotRequest":{
       "type":"structure",
       "members":{
@@ -24888,6 +25092,10 @@
         "MaintenanceOptions":{
           "shape":"InstanceMaintenanceOptions",
           "locationName":"maintenanceOptions"
+        },
+        "CurrentInstanceBootMode":{
+          "shape":"InstanceBootModeValues",
+          "locationName":"currentInstanceBootMode"
         }
       }
     },
@@ -25039,6 +25247,13 @@
         "shape":"InstanceBlockDeviceMappingSpecification",
         "locationName":"item"
       }
+    },
+    "InstanceBootModeValues":{
+      "type":"string",
+      "enum":[
+        "legacy-bios",
+        "uefi"
+      ]
     },
     "InstanceCapacity":{
       "type":"structure",
@@ -26811,7 +27026,31 @@
         "r6idn.12xlarge",
         "r6idn.16xlarge",
         "r6idn.24xlarge",
-        "r6idn.32xlarge"
+        "r6idn.32xlarge",
+        "c7g.metal",
+        "m7g.medium",
+        "m7g.large",
+        "m7g.xlarge",
+        "m7g.2xlarge",
+        "m7g.4xlarge",
+        "m7g.8xlarge",
+        "m7g.12xlarge",
+        "m7g.16xlarge",
+        "m7g.metal",
+        "r7g.medium",
+        "r7g.large",
+        "r7g.xlarge",
+        "r7g.2xlarge",
+        "r7g.4xlarge",
+        "r7g.8xlarge",
+        "r7g.12xlarge",
+        "r7g.16xlarge",
+        "r7g.metal",
+        "c6in.metal",
+        "m6in.metal",
+        "m6idn.metal",
+        "r6in.metal",
+        "r6idn.metal"
       ]
     },
     "InstanceTypeHypervisor":{
@@ -29960,6 +30199,23 @@
       ]
     },
     "Long":{"type":"long"},
+    "MaintenanceDetails":{
+      "type":"structure",
+      "members":{
+        "PendingMaintenance":{
+          "shape":"String",
+          "locationName":"pendingMaintenance"
+        },
+        "MaintenanceAutoAppliedAfter":{
+          "shape":"MillisecondDateTime",
+          "locationName":"maintenanceAutoAppliedAfter"
+        },
+        "LastMaintenanceApplied":{
+          "shape":"MillisecondDateTime",
+          "locationName":"lastMaintenanceApplied"
+        }
+      }
+    },
     "ManagedPrefixList":{
       "type":"structure",
       "members":{
@@ -30434,7 +30690,8 @@
         "OrganizationalUnitArns":{
           "shape":"OrganizationalUnitArnStringList",
           "locationName":"OrganizationalUnitArn"
-        }
+        },
+        "ImdsSupport":{"shape":"AttributeValue"}
       }
     },
     "ModifyInstanceAttributeRequest":{
@@ -31432,6 +31689,12 @@
     "ModifyVerifiedAccessTrustProviderOidcOptions":{
       "type":"structure",
       "members":{
+        "Issuer":{"shape":"String"},
+        "AuthorizationEndpoint":{"shape":"String"},
+        "TokenEndpoint":{"shape":"String"},
+        "UserInfoEndpoint":{"shape":"String"},
+        "ClientId":{"shape":"String"},
+        "ClientSecret":{"shape":"ClientSecretType"},
         "Scope":{"shape":"String"}
       }
     },
@@ -31775,7 +32038,8 @@
         "VpnConnectionId":{"shape":"VpnConnectionId"},
         "VpnTunnelOutsideIpAddress":{"shape":"String"},
         "TunnelOptions":{"shape":"ModifyVpnTunnelOptionsSpecification"},
-        "DryRun":{"shape":"Boolean"}
+        "DryRun":{"shape":"Boolean"},
+        "SkipTunnelReplacement":{"shape":"Boolean"}
       }
     },
     "ModifyVpnTunnelOptionsResult":{
@@ -31829,7 +32093,8 @@
           "locationName":"IKEVersion"
         },
         "StartupAction":{"shape":"String"},
-        "LogOptions":{"shape":"VpnTunnelLogOptionsSpecification"}
+        "LogOptions":{"shape":"VpnTunnelLogOptionsSpecification"},
+        "EnableTunnelLifecycleControl":{"shape":"Boolean"}
       }
     },
     "MonitorInstancesRequest":{
@@ -32570,6 +32835,14 @@
         "Tags":{
           "shape":"TagList",
           "locationName":"tagSet"
+        },
+        "FilterAtSource":{
+          "shape":"PathFilter",
+          "locationName":"filterAtSource"
+        },
+        "FilterAtDestination":{
+          "shape":"PathFilter",
+          "locationName":"filterAtDestination"
         }
       }
     },
@@ -33056,7 +33329,7 @@
           "locationName":"clientId"
         },
         "ClientSecret":{
-          "shape":"String",
+          "shape":"ClientSecretType",
           "locationName":"clientSecret"
         },
         "Scope":{
@@ -33289,6 +33562,18 @@
         "ElasticLoadBalancerListener":{
           "shape":"AnalysisComponent",
           "locationName":"elasticLoadBalancerListener"
+        },
+        "FirewallStatelessRule":{
+          "shape":"FirewallStatelessRule",
+          "locationName":"firewallStatelessRule"
+        },
+        "FirewallStatefulRule":{
+          "shape":"FirewallStatefulRule",
+          "locationName":"firewallStatefulRule"
+        },
+        "ServiceName":{
+          "shape":"String",
+          "locationName":"serviceName"
         }
       }
     },
@@ -33297,6 +33582,36 @@
       "member":{
         "shape":"PathComponent",
         "locationName":"item"
+      }
+    },
+    "PathFilter":{
+      "type":"structure",
+      "members":{
+        "SourceAddress":{
+          "shape":"IpAddress",
+          "locationName":"sourceAddress"
+        },
+        "SourcePortRange":{
+          "shape":"FilterPortRange",
+          "locationName":"sourcePortRange"
+        },
+        "DestinationAddress":{
+          "shape":"IpAddress",
+          "locationName":"destinationAddress"
+        },
+        "DestinationPortRange":{
+          "shape":"FilterPortRange",
+          "locationName":"destinationPortRange"
+        }
+      }
+    },
+    "PathRequestFilter":{
+      "type":"structure",
+      "members":{
+        "SourceAddress":{"shape":"IpAddress"},
+        "SourcePortRange":{"shape":"RequestFilterPortRange"},
+        "DestinationAddress":{"shape":"IpAddress"},
+        "DestinationPortRange":{"shape":"RequestFilterPortRange"}
       }
     },
     "PathStatement":{
@@ -34014,6 +34329,11 @@
         "Role"
       ]
     },
+    "Priority":{
+      "type":"integer",
+      "max":65535,
+      "min":-1
+    },
     "PrivateDnsDetails":{
       "type":"structure",
       "members":{
@@ -34206,6 +34526,18 @@
         "tcp",
         "udp"
       ]
+    },
+    "ProtocolInt":{
+      "type":"integer",
+      "max":255,
+      "min":0
+    },
+    "ProtocolIntList":{
+      "type":"list",
+      "member":{
+        "shape":"ProtocolInt",
+        "locationName":"item"
+      }
     },
     "ProtocolList":{
       "type":"list",
@@ -35301,6 +35633,28 @@
         }
       }
     },
+    "ReplaceVpnTunnelRequest":{
+      "type":"structure",
+      "required":[
+        "VpnConnectionId",
+        "VpnTunnelOutsideIpAddress"
+      ],
+      "members":{
+        "VpnConnectionId":{"shape":"VpnConnectionId"},
+        "VpnTunnelOutsideIpAddress":{"shape":"String"},
+        "ApplyPendingMaintenance":{"shape":"Boolean"},
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "ReplaceVpnTunnelResult":{
+      "type":"structure",
+      "members":{
+        "Return":{
+          "shape":"Boolean",
+          "locationName":"return"
+        }
+      }
+    },
     "ReplacementStrategy":{
       "type":"string",
       "enum":[
@@ -35366,6 +35720,13 @@
         "ok",
         "impaired"
       ]
+    },
+    "RequestFilterPortRange":{
+      "type":"structure",
+      "members":{
+        "FromPort":{"shape":"Port"},
+        "ToPort":{"shape":"Port"}
+      }
     },
     "RequestHostIdList":{
       "type":"list",
@@ -37018,6 +37379,66 @@
         "allow",
         "deny"
       ]
+    },
+    "RuleGroupRuleOptionsPair":{
+      "type":"structure",
+      "members":{
+        "RuleGroupArn":{
+          "shape":"ResourceArn",
+          "locationName":"ruleGroupArn"
+        },
+        "RuleOptions":{
+          "shape":"RuleOptionList",
+          "locationName":"ruleOptionSet"
+        }
+      }
+    },
+    "RuleGroupRuleOptionsPairList":{
+      "type":"list",
+      "member":{
+        "shape":"RuleGroupRuleOptionsPair",
+        "locationName":"item"
+      }
+    },
+    "RuleGroupTypePair":{
+      "type":"structure",
+      "members":{
+        "RuleGroupArn":{
+          "shape":"ResourceArn",
+          "locationName":"ruleGroupArn"
+        },
+        "RuleGroupType":{
+          "shape":"String",
+          "locationName":"ruleGroupType"
+        }
+      }
+    },
+    "RuleGroupTypePairList":{
+      "type":"list",
+      "member":{
+        "shape":"RuleGroupTypePair",
+        "locationName":"item"
+      }
+    },
+    "RuleOption":{
+      "type":"structure",
+      "members":{
+        "Keyword":{
+          "shape":"String",
+          "locationName":"keyword"
+        },
+        "Settings":{
+          "shape":"StringList",
+          "locationName":"settingSet"
+        }
+      }
+    },
+    "RuleOptionList":{
+      "type":"list",
+      "member":{
+        "shape":"RuleOption",
+        "locationName":"item"
+      }
     },
     "RunInstancesMonitoringEnabled":{
       "type":"structure",
@@ -41938,6 +42359,10 @@
         "LogOptions":{
           "shape":"VpnTunnelLogOptions",
           "locationName":"logOptions"
+        },
+        "EnableTunnelLifecycleControl":{
+          "shape":"Boolean",
+          "locationName":"enableTunnelLifecycleControl"
         }
       }
     },
@@ -44256,7 +44681,8 @@
           "locationName":"IKEVersion"
         },
         "StartupAction":{"shape":"String"},
-        "LogOptions":{"shape":"VpnTunnelLogOptionsSpecification"}
+        "LogOptions":{"shape":"VpnTunnelLogOptionsSpecification"},
+        "EnableTunnelLifecycleControl":{"shape":"Boolean"}
       }
     },
     "VpnTunnelOptionsSpecificationsList":{

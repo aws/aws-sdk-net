@@ -79,7 +79,13 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RasterDataCollectionQuery.
+        /// Gets and sets the property RasterDataCollectionQuery. 
+        /// <para>
+        /// RasterDataCollectionQuery consisting of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html">AreaOfInterest(AOI)</a>,
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html">PropertyFilters</a>
+        /// and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html">TimeRangeFilterInput</a>
+        /// used in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_SearchRasterDataCollection.html">SearchRasterDataCollection</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public RasterDataCollectionQueryWithBandFilterInput RasterDataCollectionQuery

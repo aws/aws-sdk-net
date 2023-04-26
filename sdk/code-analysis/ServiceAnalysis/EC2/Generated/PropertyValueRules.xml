@@ -728,6 +728,11 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.AnalysisRouteTableRoute.CoreNetworkArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.AssociatedRole.AssociatedRoleArn</property>
     <min>1</min>
     <max>1283</max>
@@ -792,6 +797,31 @@
     <property>Amazon.EC2.Model.Explanation.Port</property>
     <min>0</min>
     <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.FilterPortRange.FromPort</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.FilterPortRange.ToPort</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.FirewallStatefulRule.RuleGroupArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.FirewallStatelessRule.Priority</property>
+    <min>-1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.FirewallStatelessRule.RuleGroupArn</property>
+    <min>1</min>
+    <max>1283</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.FleetCapacityReservation.Priority</property>
@@ -978,8 +1008,52 @@
     <pattern>^([0-9]{1,3}.){3}[0-9]{1,3}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.PathFilter.DestinationAddress</property>
+    <min>0</min>
+    <max>15</max>
+    <pattern>^([0-9]{1,3}.){3}[0-9]{1,3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.PathFilter.SourceAddress</property>
+    <min>0</min>
+    <max>15</max>
+    <pattern>^([0-9]{1,3}.){3}[0-9]{1,3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.PathRequestFilter.DestinationAddress</property>
+    <min>0</min>
+    <max>15</max>
+    <pattern>^([0-9]{1,3}.){3}[0-9]{1,3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.PathRequestFilter.SourceAddress</property>
+    <min>0</min>
+    <max>15</max>
+    <pattern>^([0-9]{1,3}.){3}[0-9]{1,3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.RequestFilterPortRange.FromPort</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.RequestFilterPortRange.ToPort</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.ReservationFleetInstanceSpecification.Priority</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.RuleGroupRuleOptionsPair.RuleGroupArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.RuleGroupTypePair.RuleGroupArn</property>
+    <min>1</min>
+    <max>1283</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.VerifiedAccessEndpointEniOptions.Port</property>

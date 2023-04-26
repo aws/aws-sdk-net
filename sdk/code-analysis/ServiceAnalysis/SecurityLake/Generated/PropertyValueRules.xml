@@ -46,6 +46,10 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityLake.Model.CreateSubscriberResponse.ResourceShareName</property>
+    <pattern>^LakeFormation(?:-V[0-9]+)-([a-zA-Z0-9]+)-([\\\w\-_:/.@=+]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityLake.Model.CreateSubscriberResponse.RoleArn</property>
     <pattern>^arn:.*</pattern>
   </property-value-rule>
@@ -184,6 +188,10 @@
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.SubscriberResource.ExternalId</property>
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.SubscriberResource.ResourceShareName</property>
+    <pattern>^LakeFormation(?:-V[0-9]+)-([a-zA-Z0-9]+)-([\\\w\-_:/.@=+]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.SubscriberResource.RoleArn</property>

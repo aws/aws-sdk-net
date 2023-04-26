@@ -79,7 +79,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  
+        /// Status of the import request.
         /// </para>
         /// </summary>
         public FirewallDomainListStatus Status

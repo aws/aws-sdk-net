@@ -35,6 +35,7 @@ namespace Amazon.DirectoryService.Model
     {
         private string _allowedValues;
         private string _appliedValue;
+        private string _dataType;
         private DateTime? _lastRequestedDateTime;
         private DateTime? _lastUpdatedDateTime;
         private string _name;
@@ -47,7 +48,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property AllowedValues. 
         /// <para>
-        /// The valid range of values for the directory setting.
+        /// The valid range of values for the directory setting. These values depend on the <code>DataType</code>
+        /// of your directory.
         /// </para>
         /// </summary>
         public string AllowedValues
@@ -79,6 +81,26 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetAppliedValue()
         {
             return this._appliedValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataType. 
+        /// <para>
+        /// The data type of a directory setting. This is used to define the <code>AllowedValues</code>
+        /// of a setting. For example a data type can be <code>Boolean</code>, <code>DurationInSeconds</code>,
+        /// or <code>Enum</code>.
+        /// </para>
+        /// </summary>
+        public string DataType
+        {
+            get { return this._dataType; }
+            set { this._dataType = value; }
+        }
+
+        // Check to see if DataType property is set
+        internal bool IsSetDataType()
+        {
+            return this._dataType != null;
         }
 
         /// <summary>
@@ -220,7 +242,9 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of directory setting. For example, <code>Protocol</code> or <code>Cipher</code>.
+        /// The type, or category, of a directory setting. Similar settings have the same type.
+        /// For example, <code>Protocol</code>, <code>Cipher</code>, or <code>Certificate-Based
+        /// Authentication</code>.
         /// </para>
         /// </summary>
         public string Type

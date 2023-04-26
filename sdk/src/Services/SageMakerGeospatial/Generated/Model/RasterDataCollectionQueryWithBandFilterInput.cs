@@ -40,7 +40,10 @@ namespace Amazon.SageMakerGeospatial.Model
         private TimeRangeFilterInput _timeRangeFilter;
 
         /// <summary>
-        /// Gets and sets the property AreaOfInterest.
+        /// Gets and sets the property AreaOfInterest. 
+        /// <para>
+        /// The Area of interest to be used in the search query.
+        /// </para>
         /// </summary>
         public AreaOfInterest AreaOfInterest
         {
@@ -55,7 +58,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BandFilter.
+        /// Gets and sets the property BandFilter. 
+        /// <para>
+        /// The list of Bands to be displayed in the result for each item.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> BandFilter
@@ -71,7 +77,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PropertyFilters.
+        /// Gets and sets the property PropertyFilters. 
+        /// <para>
+        /// The Property Filters used in the search query.
+        /// </para>
         /// </summary>
         public PropertyFilters PropertyFilters
         {
@@ -86,7 +95,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimeRangeFilter.
+        /// Gets and sets the property TimeRangeFilter. 
+        /// <para>
+        /// The TimeRange Filter used in the search query.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
         public TimeRangeFilterInput TimeRangeFilter

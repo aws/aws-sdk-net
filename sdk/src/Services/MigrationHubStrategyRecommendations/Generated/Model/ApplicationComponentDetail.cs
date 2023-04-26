@@ -51,6 +51,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         private string _osVersion;
         private RecommendationSet _recommendationSet;
         private ResourceSubType _resourceSubType;
+        private List<Result> _resultList = new List<Result>();
         private RuntimeAnalysisStatus _runtimeStatus;
         private string _runtimeStatusMessage;
         private List<SourceCodeRepository> _sourceCodeRepositories = new List<SourceCodeRepository>();
@@ -386,6 +387,24 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         internal bool IsSetResourceSubType()
         {
             return this._resourceSubType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResultList. 
+        /// <para>
+        /// A list of the analysis results.
+        /// </para>
+        /// </summary>
+        public List<Result> ResultList
+        {
+            get { return this._resultList; }
+            set { this._resultList = value; }
+        }
+
+        // Check to see if ResultList property is set
+        internal bool IsSetResultList()
+        {
+            return this._resultList != null && this._resultList.Count > 0; 
         }
 
         /// <summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Tnb.Model
 {
     /// <summary>
-    /// Metadata related to a network operation occurence.
+    /// Metadata related to a network operation occurrence.
     /// 
     ///  
     /// <para>

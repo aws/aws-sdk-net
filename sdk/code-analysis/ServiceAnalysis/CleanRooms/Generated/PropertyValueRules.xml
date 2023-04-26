@@ -328,10 +328,28 @@
     <max>10240</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRooms.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>0</min>
+    <max>100</max>
+    <pattern>arn:aws:cleanrooms:[\w]{2}-[\w]{4,9}-[\d]:[\d]{12}:[\d\w/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRooms.Model.StartProtectedQueryRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
     <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRooms.Model.TagResourceRequest.ResourceArn</property>
+    <min>0</min>
+    <max>100</max>
+    <pattern>arn:aws:cleanrooms:[\w]{2}-[\w]{4,9}-[\d]:[\d]{12}:[\d\w/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRooms.Model.UntagResourceRequest.ResourceArn</property>
+    <min>0</min>
+    <max>100</max>
+    <pattern>arn:aws:cleanrooms:[\w]{2}-[\w]{4,9}-[\d]:[\d]{12}:[\d\w/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.UpdateCollaborationRequest.CollaborationIdentifier</property>
@@ -426,6 +444,7 @@
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.AggregationConstraint.Minimum</property>
     <min>2</min>
+    <max>100000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.AnalysisRule.CollaborationId</property>

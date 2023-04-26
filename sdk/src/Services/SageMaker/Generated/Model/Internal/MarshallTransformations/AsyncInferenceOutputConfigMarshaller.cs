@@ -62,6 +62,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetS3FailurePath())
+            {
+                context.Writer.WritePropertyName("S3FailurePath");
+                context.Writer.Write(requestObject.S3FailurePath);
+            }
+
             if(requestObject.IsSetS3OutputPath())
             {
                 context.Writer.WritePropertyName("S3OutputPath");

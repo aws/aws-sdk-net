@@ -280,7 +280,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
         /// The name of the DB cluster parameter group to associate with the restored DB cluster.
-        /// If this argument is omitted, <code>default.aurora5.6</code> is used.
+        /// If this argument is omitted, the default parameter group for the engine version is
+        /// used.
         /// </para>
         ///  
         /// <para>
@@ -411,14 +412,6 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Aurora PostgreSQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Possible value is <code>postgresql</code>.
-        /// </para>
-        ///  
-        /// <para>
         /// For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
         /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
@@ -466,8 +459,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and <code>aurora-mysql</code>
-        /// (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+        /// Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -490,18 +482,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible
-        /// Aurora), use the following command:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL
-        /// 5.7-compatible and MySQL 8.0-compatible Aurora), use the following command:
+        /// To list all of the available engine versions for <code>aurora-mysql</code> (Aurora
+        /// MySQL), use the following command:
         /// </para>
         ///  
         /// <para>
@@ -514,8 +496,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.mysql_aurora.2.07.1</code>,
-        /// <code>8.0.mysql_aurora.3.02.0</code> 
+        /// Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code>
+        /// 
         /// </para>
         /// </summary>
         public string EngineVersion

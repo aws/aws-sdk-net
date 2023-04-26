@@ -44,12 +44,12 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information on exporting DB snapshot data, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ExportSnapshot.html">Exporting
-    /// DB snapshot data to Amazon S3</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-export-snapshot.html">Exporting
+    /// DB snapshot data to Amazon S3</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-export-snapshot.html">Exporting
     /// DB cluster snapshot data to Amazon S3</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// For more information on exporting DB cluster data, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/export-cluster-data.html">Exporting
+    /// For more information on exporting DB cluster data, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/export-cluster-data.html">Exporting
     /// DB cluster data to Amazon S3</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     /// </summary>
@@ -129,6 +129,46 @@ namespace Amazon.RDS.Model
         /// The name of the IAM role to use for writing to the Amazon S3 bucket when exporting
         /// a snapshot or cluster.
         /// </para>
+        ///  
+        /// <para>
+        /// In the IAM policy attached to your IAM role, include the following required actions
+        /// to allow the transfer of files from Amazon RDS or Amazon Aurora to an S3 bucket:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// s3:PutObject*
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// s3:GetObject*
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// s3:ListBucket
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// s3:DeleteObject*
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// s3:GetBucketLocation 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// In the policy, include the resources to identify the S3 bucket and objects in the
+        /// bucket. The following list of resources shows the Amazon Resource Name (ARN) format
+        /// for accessing S3:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:aws:s3:::<i>your-s3-bucket</i> </code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:s3:::<i>your-s3-bucket</i>/*</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string IamRoleArn

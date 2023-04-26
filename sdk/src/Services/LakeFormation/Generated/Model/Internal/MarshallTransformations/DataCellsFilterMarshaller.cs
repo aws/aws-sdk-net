@@ -102,6 +102,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TableName);
             }
 
+            if(requestObject.IsSetVersionId())
+            {
+                context.Writer.WritePropertyName("VersionId");
+                context.Writer.Write(requestObject.VersionId);
+            }
+
         }
 
         /// <summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// List of OpenHours Rules.
+    /// Specifies the start and end time for OpenHours.
     /// </summary>
     public partial class OpenHoursRule
     {
@@ -39,7 +39,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// Local start time in ISO 8601 format.
+        /// The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.
         /// </para>
         /// </summary>
         public string EndTime
@@ -57,7 +57,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// Local start time in ISO 8601 format.
+        /// The start of the scheduled time, in ISO 8601 format, when the channel can send messages.
         /// </para>
         /// </summary>
         public string StartTime

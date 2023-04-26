@@ -86,7 +86,7 @@ namespace Amazon.WorkDocs.Model
         /// The name of the document.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Sensitive=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

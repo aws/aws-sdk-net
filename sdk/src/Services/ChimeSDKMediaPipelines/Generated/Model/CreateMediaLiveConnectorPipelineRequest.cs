@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMediaLiveConnectorPipeline operation.
-    /// Creates a streaming media pipeline in an Amazon Chime SDK meeting.
+    /// Creates a media live connector pipeline in an Amazon Chime SDK meeting.
     /// </summary>
     public partial class CreateMediaLiveConnectorPipelineRequest : AmazonChimeSDKMediaPipelinesRequest
     {
@@ -61,7 +61,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property Sinks. 
         /// <para>
-        /// The media pipeline's data sinks.
+        /// The media live connector pipeline's data sinks.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
@@ -80,7 +80,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property Sources. 
         /// <para>
-        /// The media pipeline's data sources.
+        /// The media live connector pipeline's data sources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
@@ -99,10 +99,10 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags associated with the media pipeline.
+        /// The tags associated with the media live connector pipeline.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

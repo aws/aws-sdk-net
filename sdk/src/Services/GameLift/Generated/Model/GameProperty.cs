@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model
     /// up the new game session. For example, a game property might specify a game mode, level,
     /// or map. Game properties are passed to the game server process when initiating a new
     /// game session. For more information, see the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create">
-    /// GameLift Developer Guide</a>.
+    /// Amazon GameLift Developer Guide</a>.
     /// </summary>
     public partial class GameProperty
     {

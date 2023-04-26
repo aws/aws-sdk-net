@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the PutVoiceConnectorStreamingConfiguration operation.
-    /// 
+    /// Updates a Voice Connector's streaming configuration settings.
     /// </summary>
     public partial class PutVoiceConnectorStreamingConfigurationRequest : AmazonChimeSDKVoiceRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property StreamingConfiguration.
+        /// Gets and sets the property StreamingConfiguration. 
+        /// <para>
+        /// The streaming settings being updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public StreamingConfiguration StreamingConfiguration
@@ -54,7 +57,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VoiceConnectorId

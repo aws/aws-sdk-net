@@ -30,7 +30,7 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResolverConfig operation.
-    /// Retrieves the behavior configuration of Route 53 Resolver behavior for a single VPC
+    /// Retrieves the behavior configuration of Route 53 Resolver behavior for a single VPC
     /// from Amazon Virtual Private Cloud.
     /// </summary>
     public partial class GetResolverConfigRequest : AmazonRoute53ResolverRequest

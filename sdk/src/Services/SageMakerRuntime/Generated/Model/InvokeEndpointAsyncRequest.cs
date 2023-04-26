@@ -205,7 +205,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// Gets and sets the property InvocationTimeoutSeconds. 
         /// <para>
         /// Maximum amount of time in seconds a request can be processed before it is marked as
-        /// expired.
+        /// expired. The default is 15 minutes, or 900 seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3600)]
@@ -225,6 +225,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// Gets and sets the property RequestTTLSeconds. 
         /// <para>
         /// Maximum age in seconds a request can be in the queue before it is marked as expired.
+        /// The default is 6 hours, or 21,600 seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=21600)]

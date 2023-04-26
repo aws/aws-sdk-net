@@ -30,9 +30,14 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteResourceShare operation.
-    /// Deletes the specified resource share. This doesn't delete any of the resources that
-    /// were associated with the resource share; it only stops the sharing of those resources
-    /// outside of the Amazon Web Services account that created them.
+    /// Deletes the specified resource share.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// This doesn't delete any of the resources that were associated with the resource share;
+    /// it only stops the sharing of those resources through this resource share.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteResourceShareRequest : AmazonRAMRequest
     {
@@ -54,6 +59,11 @@ namespace Amazon.RAM.Model
         /// If you don't provide this value, then Amazon Web Services generates a random one for
         /// you.
         /// </para>
+        ///  
+        /// <para>
+        /// If you retry the operation with the same <code>ClientToken</code>, but with different
+        /// parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.
+        /// </para>
         /// </summary>
         public string ClientToken
         {
@@ -71,7 +81,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
         /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the resource share to delete.
+        /// Resource Name (ARN)</a> of the resource share to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

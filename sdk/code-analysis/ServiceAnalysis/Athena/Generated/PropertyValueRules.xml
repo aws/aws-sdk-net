@@ -934,12 +934,12 @@
   <property-value-rule>
     <property>Amazon.Athena.Model.EngineConfiguration.CoordinatorDpuSize</property>
     <min>1</min>
-    <max>5000</max>
+    <max>1</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.EngineConfiguration.DefaultExecutorDpuSize</property>
     <min>1</min>
-    <max>5000</max>
+    <max>1</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.EngineConfiguration.MaxConcurrentDpus</property>

@@ -276,6 +276,67 @@ namespace Amazon.DataSync
         #endregion
 
 
+        #region  AddStorageSystem
+
+        /// <summary>
+        /// Creates an Amazon Web Services resource for an on-premises storage system that you
+        /// want DataSync Discovery to collect information about.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddStorageSystem service method.</param>
+        /// 
+        /// <returns>The response from the AddStorageSystem service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/AddStorageSystem">REST API Reference for AddStorageSystem Operation</seealso>
+        public virtual AddStorageSystemResponse AddStorageSystem(AddStorageSystemRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddStorageSystemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddStorageSystemResponseUnmarshaller.Instance;
+
+            return Invoke<AddStorageSystemResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddStorageSystem operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddStorageSystem operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddStorageSystem
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/AddStorageSystem">REST API Reference for AddStorageSystem Operation</seealso>
+        public virtual IAsyncResult BeginAddStorageSystem(AddStorageSystemRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddStorageSystemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddStorageSystemResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddStorageSystem operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddStorageSystem.</param>
+        /// 
+        /// <returns>Returns a  AddStorageSystemResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/AddStorageSystem">REST API Reference for AddStorageSystem Operation</seealso>
+        public virtual AddStorageSystemResponse EndAddStorageSystem(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AddStorageSystemResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelTaskExecution
 
         /// <summary>
@@ -928,9 +989,28 @@ namespace Amazon.DataSync
         #region  CreateLocationS3
 
         /// <summary>
-        /// Creates an endpoint for an Amazon S3 bucket that DataSync can access for a transfer.
-        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Create
+        /// A <i>location</i> is an endpoint for an Amazon S3 bucket. DataSync can use the location
+        /// as a source or destination for copying data.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Before you create your location, make sure that you read the following sections:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage
+        /// class considerations with Amazon S3 locations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">Evaluating
+        /// S3 request costs when using DataSync</a> 
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        ///  For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Creating
         /// an Amazon S3 location</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationS3 service method.</param>
         /// 
@@ -1060,6 +1140,13 @@ namespace Amazon.DataSync
         /// how and when you want to transfer your data (such as bandwidth limits, scheduling,
         /// among other options).
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you're planning to transfer data to or from an Amazon S3 location, review <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">how
+        /// DataSync can affect your S3 request charges</a> and the <a href="http://aws.amazon.com/datasync/pricing/">DataSync
+        /// pricing page</a> before you begin.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTask service method.</param>
         /// 
@@ -1355,6 +1442,66 @@ namespace Amazon.DataSync
         public virtual DescribeAgentResponse EndDescribeAgent(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAgentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeDiscoveryJob
+
+        /// <summary>
+        /// Returns information about a DataSync discovery job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDiscoveryJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDiscoveryJob service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeDiscoveryJob">REST API Reference for DescribeDiscoveryJob Operation</seealso>
+        public virtual DescribeDiscoveryJobResponse DescribeDiscoveryJob(DescribeDiscoveryJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDiscoveryJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDiscoveryJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDiscoveryJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDiscoveryJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDiscoveryJob operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDiscoveryJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeDiscoveryJob">REST API Reference for DescribeDiscoveryJob Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDiscoveryJob(DescribeDiscoveryJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDiscoveryJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDiscoveryJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDiscoveryJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDiscoveryJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeDiscoveryJobResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeDiscoveryJob">REST API Reference for DescribeDiscoveryJob Operation</seealso>
+        public virtual DescribeDiscoveryJobResponse EndDescribeDiscoveryJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDiscoveryJobResponse>(asyncResult);
         }
 
         #endregion
@@ -1978,6 +2125,189 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  DescribeStorageSystem
+
+        /// <summary>
+        /// Returns information about an on-premises storage system that you're using with DataSync
+        /// Discovery.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStorageSystem service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStorageSystem service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystem">REST API Reference for DescribeStorageSystem Operation</seealso>
+        public virtual DescribeStorageSystemResponse DescribeStorageSystem(DescribeStorageSystemRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStorageSystemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStorageSystemResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStorageSystemResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStorageSystem operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStorageSystem operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStorageSystem
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystem">REST API Reference for DescribeStorageSystem Operation</seealso>
+        public virtual IAsyncResult BeginDescribeStorageSystem(DescribeStorageSystemRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStorageSystemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStorageSystemResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeStorageSystem operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStorageSystem.</param>
+        /// 
+        /// <returns>Returns a  DescribeStorageSystemResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystem">REST API Reference for DescribeStorageSystem Operation</seealso>
+        public virtual DescribeStorageSystemResponse EndDescribeStorageSystem(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeStorageSystemResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeStorageSystemResourceMetrics
+
+        /// <summary>
+        /// Returns information, including performance data and capacity usage, which DataSync
+        /// Discovery collects about a specific resource in your-premises storage system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStorageSystemResourceMetrics service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStorageSystemResourceMetrics service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystemResourceMetrics">REST API Reference for DescribeStorageSystemResourceMetrics Operation</seealso>
+        public virtual DescribeStorageSystemResourceMetricsResponse DescribeStorageSystemResourceMetrics(DescribeStorageSystemResourceMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStorageSystemResourceMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStorageSystemResourceMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStorageSystemResourceMetricsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStorageSystemResourceMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStorageSystemResourceMetrics operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStorageSystemResourceMetrics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystemResourceMetrics">REST API Reference for DescribeStorageSystemResourceMetrics Operation</seealso>
+        public virtual IAsyncResult BeginDescribeStorageSystemResourceMetrics(DescribeStorageSystemResourceMetricsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStorageSystemResourceMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStorageSystemResourceMetricsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeStorageSystemResourceMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStorageSystemResourceMetrics.</param>
+        /// 
+        /// <returns>Returns a  DescribeStorageSystemResourceMetricsResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystemResourceMetrics">REST API Reference for DescribeStorageSystemResourceMetrics Operation</seealso>
+        public virtual DescribeStorageSystemResourceMetricsResponse EndDescribeStorageSystemResourceMetrics(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeStorageSystemResourceMetricsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeStorageSystemResources
+
+        /// <summary>
+        /// Returns information that DataSync Discovery collects about resources in your on-premises
+        /// storage system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStorageSystemResources service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStorageSystemResources service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystemResources">REST API Reference for DescribeStorageSystemResources Operation</seealso>
+        public virtual DescribeStorageSystemResourcesResponse DescribeStorageSystemResources(DescribeStorageSystemResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStorageSystemResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStorageSystemResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStorageSystemResourcesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStorageSystemResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStorageSystemResources operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStorageSystemResources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystemResources">REST API Reference for DescribeStorageSystemResources Operation</seealso>
+        public virtual IAsyncResult BeginDescribeStorageSystemResources(DescribeStorageSystemResourcesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStorageSystemResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStorageSystemResourcesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeStorageSystemResources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStorageSystemResources.</param>
+        /// 
+        /// <returns>Returns a  DescribeStorageSystemResourcesResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystemResources">REST API Reference for DescribeStorageSystemResources Operation</seealso>
+        public virtual DescribeStorageSystemResourcesResponse EndDescribeStorageSystemResources(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeStorageSystemResourcesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeTask
 
         /// <summary>
@@ -2098,6 +2428,82 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  GenerateRecommendations
+
+        /// <summary>
+        /// Creates recommendations about where to migrate your data to in Amazon Web Services.
+        /// Recommendations are generated based on information that DataSync Discovery collects
+        /// about your on-premises storage system's resources. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations
+        /// provided by DataSync Discovery</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Once generated, you can view your recommendations by using the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeStorageSystemResources.html">DescribeStorageSystemResources</a>
+        /// operation.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#discovery-job-statuses-table">discovery
+        /// job completes successfully</a>, you don't need to use this operation. DataSync Discovery
+        /// generates the recommendations for you automatically.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the GenerateRecommendations service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/GenerateRecommendations">REST API Reference for GenerateRecommendations Operation</seealso>
+        public virtual GenerateRecommendationsResponse GenerateRecommendations(GenerateRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<GenerateRecommendationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GenerateRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GenerateRecommendations operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGenerateRecommendations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/GenerateRecommendations">REST API Reference for GenerateRecommendations Operation</seealso>
+        public virtual IAsyncResult BeginGenerateRecommendations(GenerateRecommendationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateRecommendationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GenerateRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateRecommendations.</param>
+        /// 
+        /// <returns>Returns a  GenerateRecommendationsResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/GenerateRecommendations">REST API Reference for GenerateRecommendations Operation</seealso>
+        public virtual GenerateRecommendationsResponse EndGenerateRecommendations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GenerateRecommendationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAgents
 
         /// <summary>
@@ -2175,6 +2581,67 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  ListDiscoveryJobs
+
+        /// <summary>
+        /// Provides a list of the existing discovery jobs in the Amazon Web Services Region and
+        /// Amazon Web Services account where you're using DataSync Discovery.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDiscoveryJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListDiscoveryJobs service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListDiscoveryJobs">REST API Reference for ListDiscoveryJobs Operation</seealso>
+        public virtual ListDiscoveryJobsResponse ListDiscoveryJobs(ListDiscoveryJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDiscoveryJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDiscoveryJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDiscoveryJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDiscoveryJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDiscoveryJobs operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDiscoveryJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListDiscoveryJobs">REST API Reference for ListDiscoveryJobs Operation</seealso>
+        public virtual IAsyncResult BeginListDiscoveryJobs(ListDiscoveryJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDiscoveryJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDiscoveryJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDiscoveryJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDiscoveryJobs.</param>
+        /// 
+        /// <returns>Returns a  ListDiscoveryJobsResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListDiscoveryJobs">REST API Reference for ListDiscoveryJobs Operation</seealso>
+        public virtual ListDiscoveryJobsResponse EndListDiscoveryJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDiscoveryJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListLocations
 
         /// <summary>
@@ -2238,6 +2705,66 @@ namespace Amazon.DataSync
         public virtual ListLocationsResponse EndListLocations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListLocationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListStorageSystems
+
+        /// <summary>
+        /// Lists the on-premises storage systems that you're using with DataSync Discovery.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStorageSystems service method.</param>
+        /// 
+        /// <returns>The response from the ListStorageSystems service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListStorageSystems">REST API Reference for ListStorageSystems Operation</seealso>
+        public virtual ListStorageSystemsResponse ListStorageSystems(ListStorageSystemsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStorageSystemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStorageSystemsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStorageSystemsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStorageSystems operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStorageSystems operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStorageSystems
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListStorageSystems">REST API Reference for ListStorageSystems Operation</seealso>
+        public virtual IAsyncResult BeginListStorageSystems(ListStorageSystemsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStorageSystemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStorageSystemsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStorageSystems operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStorageSystems.</param>
+        /// 
+        /// <returns>Returns a  ListStorageSystemsResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListStorageSystems">REST API Reference for ListStorageSystems Operation</seealso>
+        public virtual ListStorageSystemsResponse EndListStorageSystems(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListStorageSystemsResponse>(asyncResult);
         }
 
         #endregion
@@ -2422,6 +2949,129 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  RemoveStorageSystem
+
+        /// <summary>
+        /// Permanently removes a storage system resource from DataSync Discovery, including the
+        /// associated discovery jobs, collected data, and recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveStorageSystem service method.</param>
+        /// 
+        /// <returns>The response from the RemoveStorageSystem service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/RemoveStorageSystem">REST API Reference for RemoveStorageSystem Operation</seealso>
+        public virtual RemoveStorageSystemResponse RemoveStorageSystem(RemoveStorageSystemRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveStorageSystemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveStorageSystemResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveStorageSystemResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveStorageSystem operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveStorageSystem operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveStorageSystem
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/RemoveStorageSystem">REST API Reference for RemoveStorageSystem Operation</seealso>
+        public virtual IAsyncResult BeginRemoveStorageSystem(RemoveStorageSystemRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveStorageSystemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveStorageSystemResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveStorageSystem operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveStorageSystem.</param>
+        /// 
+        /// <returns>Returns a  RemoveStorageSystemResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/RemoveStorageSystem">REST API Reference for RemoveStorageSystem Operation</seealso>
+        public virtual RemoveStorageSystemResponse EndRemoveStorageSystem(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RemoveStorageSystemResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartDiscoveryJob
+
+        /// <summary>
+        /// Runs a DataSync discovery job on your on-premises storage system. If you haven't added
+        /// the storage system to DataSync Discovery yet, do this first by using the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_AddStorageSystem.html">AddStorageSystem</a>
+        /// operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDiscoveryJob service method.</param>
+        /// 
+        /// <returns>The response from the StartDiscoveryJob service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartDiscoveryJob">REST API Reference for StartDiscoveryJob Operation</seealso>
+        public virtual StartDiscoveryJobResponse StartDiscoveryJob(StartDiscoveryJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDiscoveryJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDiscoveryJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartDiscoveryJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDiscoveryJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDiscoveryJob operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartDiscoveryJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartDiscoveryJob">REST API Reference for StartDiscoveryJob Operation</seealso>
+        public virtual IAsyncResult BeginStartDiscoveryJob(StartDiscoveryJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDiscoveryJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDiscoveryJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartDiscoveryJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartDiscoveryJob.</param>
+        /// 
+        /// <returns>Returns a  StartDiscoveryJobResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartDiscoveryJob">REST API Reference for StartDiscoveryJob Operation</seealso>
+        public virtual StartDiscoveryJobResponse EndStartDiscoveryJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartDiscoveryJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartTaskExecution
 
         /// <summary>
@@ -2432,6 +3082,13 @@ namespace Amazon.DataSync
         /// There are several phases to a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses">Task
         /// execution statuses</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you're planning to transfer data to or from an Amazon S3 location, review <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">how
+        /// DataSync can affect your S3 request charges</a> and the <a href="http://aws.amazon.com/datasync/pricing/">DataSync
+        /// pricing page</a> before you begin.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTaskExecution service method.</param>
         /// 
@@ -2484,6 +3141,74 @@ namespace Amazon.DataSync
         public virtual StartTaskExecutionResponse EndStartTaskExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<StartTaskExecutionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopDiscoveryJob
+
+        /// <summary>
+        /// Stops a running DataSync discovery job.
+        /// 
+        ///  
+        /// <para>
+        /// You can stop a discovery job anytime. A job that's stopped before it's scheduled to
+        /// end likely will provide you some information about your on-premises storage system
+        /// resources. To get recommendations for a stopped job, you must use the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_GenerateRecommendations.html">GenerateRecommendations</a>
+        /// operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopDiscoveryJob service method.</param>
+        /// 
+        /// <returns>The response from the StopDiscoveryJob service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StopDiscoveryJob">REST API Reference for StopDiscoveryJob Operation</seealso>
+        public virtual StopDiscoveryJobResponse StopDiscoveryJob(StopDiscoveryJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopDiscoveryJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopDiscoveryJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopDiscoveryJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopDiscoveryJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopDiscoveryJob operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopDiscoveryJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StopDiscoveryJob">REST API Reference for StopDiscoveryJob Operation</seealso>
+        public virtual IAsyncResult BeginStopDiscoveryJob(StopDiscoveryJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopDiscoveryJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopDiscoveryJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopDiscoveryJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopDiscoveryJob.</param>
+        /// 
+        /// <returns>Returns a  StopDiscoveryJobResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StopDiscoveryJob">REST API Reference for StopDiscoveryJob Operation</seealso>
+        public virtual StopDiscoveryJobResponse EndStopDiscoveryJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopDiscoveryJobResponse>(asyncResult);
         }
 
         #endregion
@@ -2670,6 +3395,66 @@ namespace Amazon.DataSync
         public virtual UpdateAgentResponse EndUpdateAgent(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAgentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateDiscoveryJob
+
+        /// <summary>
+        /// Edits a DataSync discovery job configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDiscoveryJob service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDiscoveryJob service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateDiscoveryJob">REST API Reference for UpdateDiscoveryJob Operation</seealso>
+        public virtual UpdateDiscoveryJobResponse UpdateDiscoveryJob(UpdateDiscoveryJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDiscoveryJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDiscoveryJobResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDiscoveryJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDiscoveryJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDiscoveryJob operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDiscoveryJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateDiscoveryJob">REST API Reference for UpdateDiscoveryJob Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDiscoveryJob(UpdateDiscoveryJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDiscoveryJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDiscoveryJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDiscoveryJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDiscoveryJob.</param>
+        /// 
+        /// <returns>Returns a  UpdateDiscoveryJobResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateDiscoveryJob">REST API Reference for UpdateDiscoveryJob Operation</seealso>
+        public virtual UpdateDiscoveryJobResponse EndUpdateDiscoveryJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDiscoveryJobResponse>(asyncResult);
         }
 
         #endregion
@@ -2923,6 +3708,67 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  UpdateStorageSystem
+
+        /// <summary>
+        /// Modifies some configurations of an on-premises storage system resource that you're
+        /// using with DataSync Discovery.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStorageSystem service method.</param>
+        /// 
+        /// <returns>The response from the UpdateStorageSystem service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateStorageSystem">REST API Reference for UpdateStorageSystem Operation</seealso>
+        public virtual UpdateStorageSystemResponse UpdateStorageSystem(UpdateStorageSystemRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStorageSystemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStorageSystemResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateStorageSystemResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateStorageSystem operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStorageSystem operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStorageSystem
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateStorageSystem">REST API Reference for UpdateStorageSystem Operation</seealso>
+        public virtual IAsyncResult BeginUpdateStorageSystem(UpdateStorageSystemRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStorageSystemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStorageSystemResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateStorageSystem operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStorageSystem.</param>
+        /// 
+        /// <returns>Returns a  UpdateStorageSystemResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateStorageSystem">REST API Reference for UpdateStorageSystem Operation</seealso>
+        public virtual UpdateStorageSystemResponse EndUpdateStorageSystem(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateStorageSystemResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateTask
 
         /// <summary>
@@ -2986,19 +3832,13 @@ namespace Amazon.DataSync
         #region  UpdateTaskExecution
 
         /// <summary>
-        /// Updates execution of a task.
+        /// Modifies a running DataSync task.
         /// 
-        ///  
-        /// <para>
-        /// You can modify bandwidth throttling for a task execution that is running or queued.
-        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
-        /// Bandwidth Throttling for a Task Execution</a>.
-        /// </para>
         ///  <note> 
         /// <para>
-        /// The only <code>Option</code> that can be modified by <code>UpdateTaskExecution</code>
+        /// Currently, the only <code>Option</code> that you can modify with <code>UpdateTaskExecution</code>
         /// is <code> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
-        /// </code>.
+        /// </code>, which throttles bandwidth for a running or queued task.
         /// </para>
         ///  </note>
         /// </summary>

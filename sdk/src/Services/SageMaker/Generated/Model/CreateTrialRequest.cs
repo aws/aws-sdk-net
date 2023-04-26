@@ -42,13 +42,15 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// You can add tags to a trial and then use the <a>Search</a> API to search for the tags.
+    /// You can add tags to a trial and then use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+    /// API to search for the tags.
     /// </para>
     ///  
     /// <para>
-    /// To get a list of all your trials, call the <a>ListTrials</a> API. To view a trial's
-    /// properties, call the <a>DescribeTrial</a> API. To create a trial component, call the
-    /// <a>CreateTrialComponent</a> API.
+    /// To get a list of all your trials, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrials.html">ListTrials</a>
+    /// API. To view a trial's properties, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrial.html">DescribeTrial</a>
+    /// API. To create a trial component, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrialComponent.html">CreateTrialComponent</a>
+    /// API.
     /// </para>
     /// </summary>
     public partial class CreateTrialRequest : AmazonSageMakerRequest
@@ -116,8 +118,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags to associate with the trial. You can use <a>Search</a> API to search
-        /// on the tags.
+        /// A list of tags to associate with the trial. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+        /// API to search on the tags.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

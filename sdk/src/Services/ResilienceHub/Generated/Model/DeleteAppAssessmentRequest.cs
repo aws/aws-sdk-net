@@ -30,8 +30,8 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAppAssessment operation.
-    /// Deletes an AWS Resilience Hub application assessment. This is a destructive action
-    /// that can't be undone.
+    /// Deletes an Resilience Hub application assessment. This is a destructive action that
+    /// can't be undone.
     /// </summary>
     public partial class DeleteAppAssessmentRequest : AmazonResilienceHubRequest
     {

@@ -83,6 +83,18 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Active);
                 }
 
+                if(publicRequest.IsSetCategory())
+                {
+                    context.Writer.WritePropertyName("category");
+                    context.Writer.Write(publicRequest.Category);
+                }
+
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
                 if(publicRequest.IsSetDocumentIdentifier())
                 {
                     context.Writer.WritePropertyName("documentIdentifier");
@@ -93,6 +105,25 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("documentVersion");
                     context.Writer.Write(publicRequest.DocumentVersion);
+                }
+
+                if(publicRequest.IsSetExternalParameters())
+                {
+                    context.Writer.WritePropertyName("externalParameters");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestExternalParametersKvp in publicRequest.ExternalParameters)
+                    {
+                        context.Writer.WritePropertyName(publicRequestExternalParametersKvp.Key);
+                        var publicRequestExternalParametersValue = publicRequestExternalParametersKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SsmExternalParameterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestExternalParametersValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetLaunchConfigurationTemplateID())

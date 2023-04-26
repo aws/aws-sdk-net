@@ -73,6 +73,10 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                 {
                     return DuplicateResourceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParametersException"))
+                {
+                    return InvalidParametersExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
                 {
                     return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

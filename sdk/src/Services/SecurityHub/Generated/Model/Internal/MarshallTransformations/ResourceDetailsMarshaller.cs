@@ -276,6 +276,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsEc2RouteTable())
+            {
+                context.Writer.WritePropertyName("AwsEc2RouteTable");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEc2RouteTableDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEc2RouteTable, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsEc2SecurityGroup())
             {
                 context.Writer.WritePropertyName("AwsEc2SecurityGroup");

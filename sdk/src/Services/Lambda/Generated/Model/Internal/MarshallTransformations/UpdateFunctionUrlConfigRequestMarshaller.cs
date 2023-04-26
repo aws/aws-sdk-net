@@ -88,6 +88,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetInvokeMode())
+                {
+                    context.Writer.WritePropertyName("InvokeMode");
+                    context.Writer.Write(publicRequest.InvokeMode);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The input structure for specifying ViewSunAzimuth property filter. ViewSunAzimuth
+    /// refers to the Sun azimuth angle. From the scene center point on the ground, this is
+    /// the angle between truth north and the sun. Measured clockwise in degrees (0-360).
     /// </summary>
     public partial class ViewSunAzimuthInput
     {
@@ -37,7 +39,11 @@ namespace Amazon.SageMakerGeospatial.Model
         private float? _upperBound;
 
         /// <summary>
-        /// Gets and sets the property LowerBound.
+        /// Gets and sets the property LowerBound. 
+        /// <para>
+        /// The minimum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth
+        /// greater than or equal to this value.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public float LowerBound
@@ -53,7 +59,11 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpperBound.
+        /// Gets and sets the property UpperBound. 
+        /// <para>
+        /// The maximum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth
+        /// lesser than or equal to this value.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public float UpperBound

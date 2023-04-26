@@ -226,7 +226,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The ARN of the resource to which the endpoint belongs.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=5, Max=1600)]
+        [AWSProperty(Min=5, Max=1600)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

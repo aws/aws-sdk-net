@@ -36,6 +36,7 @@ namespace Amazon.IVS.Model
         private string _arn;
         private bool? _authorized;
         private string _ingestEndpoint;
+        private bool? _insecureIngest;
         private ChannelLatencyMode _latencyMode;
         private string _name;
         private string _playbackUrl;
@@ -97,6 +98,24 @@ namespace Amazon.IVS.Model
         internal bool IsSetIngestEndpoint()
         {
             return this._ingestEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InsecureIngest. 
+        /// <para>
+        /// Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool InsecureIngest
+        {
+            get { return this._insecureIngest.GetValueOrDefault(); }
+            set { this._insecureIngest = value; }
+        }
+
+        // Check to see if InsecureIngest property is set
+        internal bool IsSetInsecureIngest()
+        {
+            return this._insecureIngest.HasValue; 
         }
 
         /// <summary>

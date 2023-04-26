@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     {
         private string _dpdTimeoutAction;
         private int? _dpdTimeoutSeconds;
+        private bool? _enableTunnelLifecycleControl;
         private List<IKEVersionsListValue> _ikeVersions = new List<IKEVersionsListValue>();
         private VpnTunnelLogOptions _logOptions;
         private string _outsideIpAddress;
@@ -88,6 +89,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDpdTimeoutSeconds()
         {
             return this._dpdTimeoutSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableTunnelLifecycleControl. 
+        /// <para>
+        /// Status of tunnel endpoint lifecycle control feature.
+        /// </para>
+        /// </summary>
+        public bool EnableTunnelLifecycleControl
+        {
+            get { return this._enableTunnelLifecycleControl.GetValueOrDefault(); }
+            set { this._enableTunnelLifecycleControl = value; }
+        }
+
+        // Check to see if EnableTunnelLifecycleControl property is set
+        internal bool IsSetEnableTunnelLifecycleControl()
+        {
+            return this._enableTunnelLifecycleControl.HasValue; 
         }
 
         /// <summary>

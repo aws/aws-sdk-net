@@ -115,12 +115,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property HostMaintenance. 
         /// <para>
         /// Indicates whether to enable or disable host maintenance for the Dedicated Host. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">
-        /// Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>on</code> 
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+        /// maintenance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public HostMaintenance HostMaintenance

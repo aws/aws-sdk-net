@@ -25,7 +25,7 @@ The [GitHub issues][sdk-issues] are intended for bug reports and feature request
 
 ## SDK Change Log
 
-The change log for the SDK can be found in the [SDK.CHANGELOG.md](https://github.com/aws/aws-sdk-net/blob/master/SDK.CHANGELOG.md) file.
+The change log for the SDK can be found in the [SDK.CHANGELOG.ALL.md](https://github.com/aws/aws-sdk-net/blob/master/SDK.CHANGELOG.ALL.md) file. Change logs divided up by year can be found in the [changelogs folder](https://github.com/aws/aws-sdk-net/tree/master/changelogs).
 
 ## Maintenance and support for SDK major versions
 
@@ -450,6 +450,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Introducing Amazon Interactive Video Service - a managed live streaming solution that is quick and easy to set up, and ideal for creating interactive video experiences.
 * [AWSSDK.Ivschat](https://www.nuget.org/packages/AWSSDK.Ivschat/)
 	* Adds new APIs for IVS Chat, a feature for building interactive chat experiences alongside an IVS broadcast.
+* [AWSSDK.IVSRealTime](https://www.nuget.org/packages/AWSSDK.IVSRealTime/)
+	* Initial release of the Amazon Interactive Video Service RealTime API.
 * [AWSSDK.Kafka](https://www.nuget.org/packages/AWSSDK.Kafka/)
 	* Amazon Managed Streaming for Kafka (Amazon MSK). Amazon MSK is a service that you can use to easily build, monitor, and manage Apache Kafka clusters in the cloud.
 * [AWSSDK.KafkaConnect](https://www.nuget.org/packages/AWSSDK.KafkaConnect/)
@@ -764,6 +766,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Public preview release of Amazon Translate and the Amazon Translate Developer Guide. For more information, see the Amazon Translate Developer Guide.
 * [AWSSDK.VoiceID](https://www.nuget.org/packages/AWSSDK.VoiceID/)
 	* Released the Amazon Voice ID SDK, for usage with the Amazon Connect Voice ID feature released for Amazon Connect.
+* [AWSSDK.VPCLattice](https://www.nuget.org/packages/AWSSDK.VPCLattice/)
+	* General Availability (GA) release of Amazon VPC Lattice
 * [AWSSDK.WAF](https://www.nuget.org/packages/AWSSDK.WAF/)
 	* AWS WAF (Web Application Firewall) protects web applications from attack by allowing customers to block bad actors and provides filters against common web exploits like SQL injection.
 * [AWSSDK.WAFRegional](https://www.nuget.org/packages/AWSSDK.WAFRegional/)

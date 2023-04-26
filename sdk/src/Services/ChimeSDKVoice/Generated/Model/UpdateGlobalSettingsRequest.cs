@@ -30,14 +30,17 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGlobalSettings operation.
-    /// 
+    /// Updates global settings for the Amazon Chime SDK Voice Connectors in an AWS account.
     /// </summary>
     public partial class UpdateGlobalSettingsRequest : AmazonChimeSDKVoiceRequest
     {
         private VoiceConnectorSettings _voiceConnector;
 
         /// <summary>
-        /// Gets and sets the property VoiceConnector.
+        /// Gets and sets the property VoiceConnector. 
+        /// <para>
+        /// The Voice Connector settings.
+        /// </para>
         /// </summary>
         public VoiceConnectorSettings VoiceConnector
         {

@@ -58,5 +58,13 @@ namespace Amazon.Pricing.Model
         {
             return new GetProductsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListPriceLists operation
+        ///</summary>
+        public IListPriceListsPaginator ListPriceLists(ListPriceListsRequest request) 
+        {
+            return new ListPriceListsPaginator(this.client, request);
+        }
     }
 }

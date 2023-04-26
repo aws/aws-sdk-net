@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.
+    /// Specifies the training algorithm to use in a <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
+    /// request.
     /// 
     ///  
     /// <para>
@@ -159,7 +160,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// You specify at least one <a>MetricDefinition</a> 
+        /// You specify at least one <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>

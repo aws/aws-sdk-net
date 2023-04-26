@@ -42,6 +42,38 @@ namespace Amazon.ConnectWisdomService.Model
         /// The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting
         /// content.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm">
+        /// Salesforce</a>, your AppIntegrations DataIntegration must have an ObjectConfiguration
+        /// if objectFields is not provided, including at least <code>Id</code>, <code>ArticleNumber</code>,
+        /// <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>
+        /// as source fields. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api">
+        /// ServiceNow</a>, your AppIntegrations DataIntegration must have an ObjectConfiguration
+        /// if objectFields is not provided, including at least <code>number</code>, <code>short_description</code>,
+        /// <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code> as
+        /// source fields. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  For <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/">
+        /// Zendesk</a>, your AppIntegrations DataIntegration must have an ObjectConfiguration
+        /// if <code>objectFields</code> is not provided, including at least <code>id</code>,
+        /// <code>title</code>, <code>updated_at</code>, and <code>draft</code> as source fields.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  For <a href="https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/sharepoint-net-server-csom-jsom-and-rest-api-index">
+        /// SharePoint</a>, your AppIntegrations DataIntegration must have a FileConfiguration,
+        /// including only file extensions that are among <code>docx</code>, <code>pdf</code>,
+        /// <code>html</code>, <code>htm</code>, and <code>txt</code>. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string AppIntegrationArn
@@ -59,7 +91,8 @@ namespace Amazon.ConnectWisdomService.Model
         /// <summary>
         /// Gets and sets the property ObjectFields. 
         /// <para>
-        /// The fields from the source that are made available to your agents in Wisdom. 
+        /// The fields from the source that are made available to your agents in Wisdom. Optional
+        /// if ObjectConfiguration is included in the provided DataIntegration. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -75,13 +108,19 @@ namespace Amazon.ConnectWisdomService.Model
         /// <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>.
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/">
+        /// Zendesk</a>, you must include at least <code>id</code>, <code>title</code>, <code>updated_at</code>,
+        /// and <code>draft</code>. 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Make sure to include additional fields. These fields are indexed and used to source
         /// recommendations. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public List<string> ObjectFields
         {
             get { return this._objectFields; }

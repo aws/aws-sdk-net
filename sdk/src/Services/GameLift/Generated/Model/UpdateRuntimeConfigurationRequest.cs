@@ -30,10 +30,10 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRuntimeConfiguration operation.
-    /// Updates the current runtime configuration for the specified fleet, which tells GameLift
-    /// how to launch server processes on all instances in the fleet. You can update a fleet's
-    /// runtime configuration at any time after the fleet is created; it does not need to
-    /// be in <code>ACTIVE</code> status.
+    /// Updates the current runtime configuration for the specified fleet, which tells Amazon
+    /// GameLift how to launch server processes on all instances in the fleet. You can update
+    /// a fleet's runtime configuration at any time after the fleet is created; it does not
+    /// need to be in <code>ACTIVE</code> status.
     /// 
     ///  
     /// <para>
@@ -55,7 +55,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-    /// up GameLift fleets</a> 
+    /// up Amazon GameLift fleets</a> 
     /// </para>
     /// </summary>
     public partial class UpdateRuntimeConfigurationRequest : AmazonGameLiftRequest
@@ -86,7 +86,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RuntimeConfiguration. 
         /// <para>
-        /// Instructions for alaunching server processes on each instance in the fleet. Server
+        /// Instructions for launching server processes on each instance in the fleet. Server
         /// processes run either a custom game build executable or a Realtime Servers script.
         /// The runtime configuration lists the types of server processes to run on an instance,
         /// how to launch them, and the number of processes to run concurrently.

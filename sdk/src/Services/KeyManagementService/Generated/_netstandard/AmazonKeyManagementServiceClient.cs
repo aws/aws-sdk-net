@@ -88,16 +88,15 @@ namespace Amazon.KeyManagementService
     /// </para>
     ///  
     /// <para>
-    /// Requests must be signed by using an access key ID and a secret access key. We strongly
-    /// recommend that you <i>do not</i> use your Amazon Web Services account (root) access
-    /// key ID and secret access key for everyday work with KMS. Instead, use the access key
-    /// ID and secret access key for an IAM user. You can also use the Amazon Web Services
-    /// Security Token Service to generate temporary security credentials that you can use
-    /// to sign requests.
+    /// Requests must be signed using an access key ID and a secret access key. We strongly
+    /// recommend that you do not use your Amazon Web Services account root access key ID
+    /// and secret access key for everyday work. You can use the access key ID and secret
+    /// access key for an IAM user or you can use the Security Token Service (STS) to generate
+    /// temporary security credentials and use those to sign requests. 
     /// </para>
     ///  
     /// <para>
-    /// All KMS operations require <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// All KMS requests must be signed with <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4</a>.
     /// </para>
     ///  
@@ -2119,12 +2118,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// Whenever possible, use key policies to give users permission to call the <code>Decrypt</code>
-        /// operation on a particular KMS key, instead of using IAM policies. Otherwise, you might
-        /// create an IAM user policy that gives the user <code>Decrypt</code> permission on all
-        /// KMS keys. This user could decrypt ciphertext that was encrypted by KMS keys in other
-        /// accounts if the key policy for the cross-account KMS key permits it. If you must use
-        /// an IAM policy for <code>Decrypt</code> permissions, limit the user to particular KMS
-        /// keys or particular trusted accounts. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html#iam-policies-best-practices">Best
+        /// operation on a particular KMS key, instead of using &amp;IAM; policies. Otherwise,
+        /// you might create an &amp;IAM; policy that gives the user <code>Decrypt</code> permission
+        /// on all KMS keys. This user could decrypt ciphertext that was encrypted by KMS keys
+        /// in other accounts if the key policy for the cross-account KMS key permits it. If you
+        /// must use an IAM policy for <code>Decrypt</code> permissions, limit the user to particular
+        /// KMS keys or particular trusted accounts. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html#iam-policies-best-practices">Best
         /// practices for IAM policies</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
@@ -2144,9 +2143,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different
-        /// Amazon Web Services account, specify the key ARN or alias ARN in the value of the
-        /// <code>KeyId</code> parameter. 
+        ///  <b>Cross-account use</b>: Yes. If you use the <code>KeyId</code> parameter to identify
+        /// a KMS key in a different Amazon Web Services account, specify the key ARN or the alias
+        /// ARN of the KMS key.
         /// </para>
         ///  
         /// <para>
@@ -4560,10 +4559,10 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// To generate an SM4 data key (China Regions only), specify a <code>KeySpec</code> value
-        /// of <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>128</code>. The
-        /// symmetric encryption key used in China Regions to encrypt your data key is an SM4
-        /// encryption key.
+        /// To generate a 128-bit SM4 data key (China Regions only), specify a <code>KeySpec</code>
+        /// value of <code>AES_128</code> or a <code>NumberOfBytes</code> value of <code>16</code>.
+        /// The symmetric encryption key used in China Regions to encrypt your data key is an
+        /// SM4 encryption key.
         /// </para>
         ///  
         /// <para>
@@ -7314,7 +7313,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="retiringPrincipal">The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account. To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, federated users, and assumed role users. For examples of the ARN syntax for specifying a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</param>
+        /// <param name="retiringPrincipal">The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account. To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -7560,7 +7559,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="keyId">Sets the key policy on the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="policy">The key policy to attach to the KMS key. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </li> </ul> A key policy document can include only the following characters: <ul> <li> Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range. </li> <li> Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>). </li> <li> The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters </li> </ul> For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
+        /// <param name="policy">The key policy to attach to the KMS key. The key policy must meet the following criteria: <ul> <li> The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this condition, set <code>BypassPolicyLockoutSafetyCheck</code> to true.) </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal, you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </li> </ul> A key policy document can include only the following characters: <ul> <li> Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range. </li> <li> Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>). </li> <li> The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters </li> </ul> For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
         /// <param name="policyName">The name of the key policy. The only valid value is <code>default</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -10591,9 +10590,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// To verify a digital signature, you can use the <code>Verify</code> operation. Specify
-        /// the same asymmetric KMS key, message, and signing algorithm that were used to produce
-        /// the signature.
+        /// To use the <code>Verify</code> operation, specify the same asymmetric KMS key, message,
+        /// and signing algorithm that were used to produce the signature. The message type does
+        /// not need to be the same as the one used for signing, but it must indicate whether
+        /// the value of the <code>Message</code> parameter should be hashed as part of the verification
+        /// process.
         /// </para>
         ///  
         /// <para>

@@ -40,6 +40,7 @@ namespace Amazon.IoTWireless.Model
         private LoRaWANDevice _loRaWAN;
         private string _name;
         private PositioningConfigStatus _positioning;
+        private SidewalkCreateWirelessDevice _sidewalk;
         private List<Tag> _tags = new List<Tag>();
         private WirelessDeviceType _type;
 
@@ -156,6 +157,24 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetPositioning()
         {
             return this._positioning != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sidewalk. 
+        /// <para>
+        /// The device configuration information to use to create the Sidewalk device.
+        /// </para>
+        /// </summary>
+        public SidewalkCreateWirelessDevice Sidewalk
+        {
+            get { return this._sidewalk; }
+            set { this._sidewalk = value; }
+        }
+
+        // Check to see if Sidewalk property is set
+        internal bool IsSetSidewalk()
+        {
+            return this._sidewalk != null;
         }
 
         /// <summary>

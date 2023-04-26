@@ -46,8 +46,8 @@ namespace Amazon.GameLift.Model
     /// If successful, a slot is reserved in the game session for the player and a new <code>PlayerSessions</code>
     /// object is returned with a player session ID. The player references the player session
     /// ID when sending a connection request to the game session, and the game server can
-    /// use it to validate the player reservation with the GameLift service. Player sessions
-    /// cannot be updated. 
+    /// use it to validate the player reservation with the Amazon GameLift service. Player
+    /// sessions cannot be updated. 
     /// </para>
     ///  
     /// <para>
@@ -91,8 +91,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerData. 
         /// <para>
-        /// Developer-defined information related to a player. GameLift does not use this data,
-        /// so it can be formatted as needed for use in the game.
+        /// Developer-defined information related to a player. Amazon GameLift does not use this
+        /// data, so it can be formatted as needed for use in the game.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

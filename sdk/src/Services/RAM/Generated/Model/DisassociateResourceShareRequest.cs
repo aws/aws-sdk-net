@@ -30,7 +30,8 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateResourceShare operation.
-    /// Disassociates the specified principals or resources from the specified resource share.
+    /// Removes the specified principals or resources from participating in the specified
+    /// resource share.
     /// </summary>
     public partial class DisassociateResourceShareRequest : AmazonRAMRequest
     {
@@ -53,6 +54,11 @@ namespace Amazon.RAM.Model
         /// <para>
         /// If you don't provide this value, then Amazon Web Services generates a random one for
         /// you.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you retry the operation with the same <code>ClientToken</code>, but with different
+        /// parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -84,7 +90,7 @@ namespace Amazon.RAM.Model
         ///  </li> <li> 
         /// <para>
         /// An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code>
+        /// Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -126,7 +132,7 @@ namespace Amazon.RAM.Model
         /// Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs)</a> for one or more resources that you want to remove from the
         /// resource share. After the operation runs, these resources are no longer shared with
-        /// principals outside of the Amazon Web Services account that created the resources.
+        /// principals associated with the resource share.
         /// </para>
         /// </summary>
         public List<string> ResourceArns
@@ -145,7 +151,8 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
         /// Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the resource share that you want to remove resources from.
+        /// Resource Name (ARN)</a> of the resource share that you want to remove resources or
+        /// principals from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

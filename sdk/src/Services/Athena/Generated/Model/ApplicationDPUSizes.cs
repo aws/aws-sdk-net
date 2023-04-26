@@ -39,7 +39,8 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property ApplicationRuntimeId. 
         /// <para>
-        /// The name of the supported application runtime (for example, <code>Jupyter 1.0</code>).
+        /// The name of the supported application runtime (for example, <code>Athena notebook
+        /// version 1</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

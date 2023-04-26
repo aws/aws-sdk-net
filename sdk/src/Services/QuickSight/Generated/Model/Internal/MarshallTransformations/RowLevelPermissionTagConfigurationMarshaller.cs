@@ -51,6 +51,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Status);
             }
 
+            if(requestObject.IsSetTagRuleConfigurations())
+            {
+                context.Writer.WritePropertyName("TagRuleConfigurations");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTagRuleConfigurationsListValue in requestObject.TagRuleConfigurations)
+                {
+                    context.Writer.WriteArrayStart();
+                    foreach(var requestObjectTagRuleConfigurationsListValueListValue in requestObjectTagRuleConfigurationsListValue)
+                    {
+                            context.Writer.Write(requestObjectTagRuleConfigurationsListValueListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetTagRules())
             {
                 context.Writer.WritePropertyName("TagRules");

@@ -10689,6 +10689,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void GetVpnTunnelReplacementStatusMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVpnTunnelReplacementStatus");
+
+            var request = InstantiateClassGenerator.Execute<GetVpnTunnelReplacementStatusRequest>();
+            var marshaller = new GetVpnTunnelReplacementStatusRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetVpnTunnelReplacementStatusResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetVpnTunnelReplacementStatusResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void ImportClientVpnClientCertificateRevocationListMarshallTest()
         {
             var operation = service_model.FindOperation("ImportClientVpnClientCertificateRevocationList");
@@ -13015,6 +13039,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = ReplaceTransitGatewayRouteResponseUnmarshaller.Instance.Unmarshall(context)
                 as ReplaceTransitGatewayRouteResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ReplaceVpnTunnelMarshallTest()
+        {
+            var operation = service_model.FindOperation("ReplaceVpnTunnel");
+
+            var request = InstantiateClassGenerator.Execute<ReplaceVpnTunnelRequest>();
+            var marshaller = new ReplaceVpnTunnelRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ReplaceVpnTunnelResponseUnmarshaller.Instance.Unmarshall(context)
+                as ReplaceVpnTunnelResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

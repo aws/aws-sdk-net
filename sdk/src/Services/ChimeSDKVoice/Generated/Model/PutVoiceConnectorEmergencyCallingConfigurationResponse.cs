@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private EmergencyCallingConfiguration _emergencyCallingConfiguration;
 
         /// <summary>
-        /// Gets and sets the property EmergencyCallingConfiguration.
+        /// Gets and sets the property EmergencyCallingConfiguration. 
+        /// <para>
+        /// The updated configuration.
+        /// </para>
         /// </summary>
         public EmergencyCallingConfiguration EmergencyCallingConfiguration
         {

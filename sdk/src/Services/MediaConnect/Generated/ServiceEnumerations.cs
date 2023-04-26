@@ -79,6 +79,146 @@ namespace Amazon.MediaConnect
 
 
     /// <summary>
+    /// Constants used for properties of type BridgePlacement.
+    /// </summary>
+    public class BridgePlacement : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for BridgePlacement
+        /// </summary>
+        public static readonly BridgePlacement AVAILABLE = new BridgePlacement("AVAILABLE");
+        /// <summary>
+        /// Constant LOCKED for BridgePlacement
+        /// </summary>
+        public static readonly BridgePlacement LOCKED = new BridgePlacement("LOCKED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BridgePlacement(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BridgePlacement FindValue(string value)
+        {
+            return FindValue<BridgePlacement>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BridgePlacement(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BridgeState.
+    /// </summary>
+    public class BridgeState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for BridgeState
+        /// </summary>
+        public static readonly BridgeState ACTIVE = new BridgeState("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for BridgeState
+        /// </summary>
+        public static readonly BridgeState CREATING = new BridgeState("CREATING");
+        /// <summary>
+        /// Constant DELETED for BridgeState
+        /// </summary>
+        public static readonly BridgeState DELETED = new BridgeState("DELETED");
+        /// <summary>
+        /// Constant DELETING for BridgeState
+        /// </summary>
+        public static readonly BridgeState DELETING = new BridgeState("DELETING");
+        /// <summary>
+        /// Constant DEPLOYING for BridgeState
+        /// </summary>
+        public static readonly BridgeState DEPLOYING = new BridgeState("DEPLOYING");
+        /// <summary>
+        /// Constant STANDBY for BridgeState
+        /// </summary>
+        public static readonly BridgeState STANDBY = new BridgeState("STANDBY");
+        /// <summary>
+        /// Constant START_FAILED for BridgeState
+        /// </summary>
+        public static readonly BridgeState START_FAILED = new BridgeState("START_FAILED");
+        /// <summary>
+        /// Constant START_PENDING for BridgeState
+        /// </summary>
+        public static readonly BridgeState START_PENDING = new BridgeState("START_PENDING");
+        /// <summary>
+        /// Constant STARTING for BridgeState
+        /// </summary>
+        public static readonly BridgeState STARTING = new BridgeState("STARTING");
+        /// <summary>
+        /// Constant STOP_FAILED for BridgeState
+        /// </summary>
+        public static readonly BridgeState STOP_FAILED = new BridgeState("STOP_FAILED");
+        /// <summary>
+        /// Constant STOPPING for BridgeState
+        /// </summary>
+        public static readonly BridgeState STOPPING = new BridgeState("STOPPING");
+        /// <summary>
+        /// Constant UPDATING for BridgeState
+        /// </summary>
+        public static readonly BridgeState UPDATING = new BridgeState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BridgeState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BridgeState FindValue(string value)
+        {
+            return FindValue<BridgeState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BridgeState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Colorimetry.
     /// </summary>
     public class Colorimetry : ConstantClass
@@ -142,6 +282,110 @@ namespace Amazon.MediaConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Colorimetry(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectionStatus.
+    /// </summary>
+    public class ConnectionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECTED for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus CONNECTED = new ConnectionStatus("CONNECTED");
+        /// <summary>
+        /// Constant DISCONNECTED for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus DISCONNECTED = new ConnectionStatus("DISCONNECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionStatus FindValue(string value)
+        {
+            return FindValue<ConnectionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DesiredState.
+    /// </summary>
+    public class DesiredState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for DesiredState
+        /// </summary>
+        public static readonly DesiredState ACTIVE = new DesiredState("ACTIVE");
+        /// <summary>
+        /// Constant DELETED for DesiredState
+        /// </summary>
+        public static readonly DesiredState DELETED = new DesiredState("DELETED");
+        /// <summary>
+        /// Constant STANDBY for DesiredState
+        /// </summary>
+        public static readonly DesiredState STANDBY = new DesiredState("STANDBY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DesiredState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DesiredState FindValue(string value)
+        {
+            return FindValue<DesiredState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DesiredState(string value)
         {
             return FindValue(value);
         }
@@ -396,6 +640,138 @@ namespace Amazon.MediaConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FailoverMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GatewayState.
+    /// </summary>
+    public class GatewayState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for GatewayState
+        /// </summary>
+        public static readonly GatewayState ACTIVE = new GatewayState("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for GatewayState
+        /// </summary>
+        public static readonly GatewayState CREATING = new GatewayState("CREATING");
+        /// <summary>
+        /// Constant DELETED for GatewayState
+        /// </summary>
+        public static readonly GatewayState DELETED = new GatewayState("DELETED");
+        /// <summary>
+        /// Constant DELETING for GatewayState
+        /// </summary>
+        public static readonly GatewayState DELETING = new GatewayState("DELETING");
+        /// <summary>
+        /// Constant ERROR for GatewayState
+        /// </summary>
+        public static readonly GatewayState ERROR = new GatewayState("ERROR");
+        /// <summary>
+        /// Constant UPDATING for GatewayState
+        /// </summary>
+        public static readonly GatewayState UPDATING = new GatewayState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GatewayState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GatewayState FindValue(string value)
+        {
+            return FindValue<GatewayState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GatewayState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceState.
+    /// </summary>
+    public class InstanceState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for InstanceState
+        /// </summary>
+        public static readonly InstanceState ACTIVE = new InstanceState("ACTIVE");
+        /// <summary>
+        /// Constant DEREGISTERED for InstanceState
+        /// </summary>
+        public static readonly InstanceState DEREGISTERED = new InstanceState("DEREGISTERED");
+        /// <summary>
+        /// Constant DEREGISTERING for InstanceState
+        /// </summary>
+        public static readonly InstanceState DEREGISTERING = new InstanceState("DEREGISTERING");
+        /// <summary>
+        /// Constant DEREGISTRATION_ERROR for InstanceState
+        /// </summary>
+        public static readonly InstanceState DEREGISTRATION_ERROR = new InstanceState("DEREGISTRATION_ERROR");
+        /// <summary>
+        /// Constant REGISTERING for InstanceState
+        /// </summary>
+        public static readonly InstanceState REGISTERING = new InstanceState("REGISTERING");
+        /// <summary>
+        /// Constant REGISTRATION_ERROR for InstanceState
+        /// </summary>
+        public static readonly InstanceState REGISTRATION_ERROR = new InstanceState("REGISTRATION_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceState FindValue(string value)
+        {
+            return FindValue<InstanceState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceState(string value)
         {
             return FindValue(value);
         }
@@ -714,6 +1090,10 @@ namespace Amazon.MediaConnect
         /// Constant St2110Jpegxs for Protocol
         /// </summary>
         public static readonly Protocol St2110Jpegxs = new Protocol("st2110-jpegxs");
+        /// <summary>
+        /// Constant Udp for Protocol
+        /// </summary>
+        public static readonly Protocol Udp = new Protocol("udp");
         /// <summary>
         /// Constant ZixiPull for Protocol
         /// </summary>

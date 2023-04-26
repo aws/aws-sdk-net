@@ -31,7 +31,13 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Container for the parameters to the StopProjectVersion operation.
     /// Stops a running model. The operation might take a while to complete. To check the
-    /// current status, call <a>DescribeProjectVersions</a>.
+    /// current status, call <a>DescribeProjectVersions</a>. 
+    /// 
+    ///  
+    /// <para>
+    /// This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class StopProjectVersionRequest : AmazonRekognitionRequest
     {

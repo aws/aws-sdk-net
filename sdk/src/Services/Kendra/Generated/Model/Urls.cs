@@ -41,7 +41,7 @@ namespace Amazon.Kendra.Model
     /// <para>
     ///  <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon
     /// Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only
-    /// use Amazon Kendra Web Crawler to index your own webpages, or webpages that you have
+    /// use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have
     /// authorization to index.</i> 
     /// </para>
     /// </summary>
@@ -58,8 +58,8 @@ namespace Amazon.Kendra.Model
         ///  
         /// <para>
         /// You can choose to crawl only the website host names, or the website host names with
-        /// subdomains, or the website host names with subdomains and other domains that the webpages
-        /// link to.
+        /// subdomains, or the website host names with subdomains and other domains that the web
+        /// pages link to.
         /// </para>
         ///  
         /// <para>

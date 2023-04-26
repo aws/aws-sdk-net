@@ -154,22 +154,36 @@ namespace Amazon.LocationService.Model
         ///  </note> 
         /// <para>
         /// Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
-        /// Data (Preview) map styles</a>:
+        /// Data map styles</a>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light (preview)
-        /// map style provides a detailed basemap for the world suitable for website and mobile
-        /// application use. The map includes highways major roads, minor roads, railways, water
-        /// features, cities, parks, landmarks, building footprints, and administrative boundaries.
+        ///  <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light map style
+        /// provides a detailed basemap for the world suitable for website and mobile application
+        /// use. The map includes highways major roads, minor roads, railways, water features,
+        /// cities, parks, landmarks, building footprints, and administrative boundaries.
         /// </para>
-        ///  <important> 
+        ///  </li> <li> 
         /// <para>
-        /// Open Data maps is in preview. We may add, change, or remove features before announcing
-        /// general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
-        /// Data is in preview release</a>.
+        ///  <code>VectorOpenDataStandardDark</code> – Open Data Standard Dark is a dark-themed
+        /// map style that provides a detailed basemap for the world suitable for website and
+        /// mobile application use. The map includes highways major roads, minor roads, railways,
+        /// water features, cities, parks, landmarks, building footprints, and administrative
+        /// boundaries.
         /// </para>
-        ///  </important> </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization Light
+        /// map style is a light-themed style with muted colors and fewer features that aids in
+        /// understanding overlaid data.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark map
+        /// style is a dark-themed style with muted colors and fewer features that aids in understanding
+        /// overlaid data.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string Style

@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the PutVoiceConnectorProxy operation.
-    /// 
+    /// Puts the specified proxy configuration to the specified Amazon Chime SDK Voice Connector.
     /// </summary>
     public partial class PutVoiceConnectorProxyRequest : AmazonChimeSDKVoiceRequest
     {
@@ -41,7 +41,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property DefaultSessionExpiryMinutes.
+        /// Gets and sets the property DefaultSessionExpiryMinutes. 
+        /// <para>
+        /// The default number of minutes allowed for proxy session.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int DefaultSessionExpiryMinutes
@@ -57,7 +60,11 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Disabled.
+        /// Gets and sets the property Disabled. 
+        /// <para>
+        /// When true, stops proxy sessions from being created on the specified Amazon Chime SDK
+        /// Voice Connector.
+        /// </para>
         /// </summary>
         public bool Disabled
         {
@@ -72,7 +79,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FallBackPhoneNumber.
+        /// Gets and sets the property FallBackPhoneNumber. 
+        /// <para>
+        /// The phone number to route calls to after a proxy session expires.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string FallBackPhoneNumber
@@ -88,7 +98,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberPoolCountries.
+        /// Gets and sets the property PhoneNumberPoolCountries. 
+        /// <para>
+        /// The countries for proxy phone numbers to be selected from.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public List<string> PhoneNumberPoolCountries
@@ -104,7 +117,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string VoiceConnectorId

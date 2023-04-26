@@ -48,6 +48,7 @@ namespace Amazon.PI.Model
         private int? _maxResults;
         private List<MetricQuery> _metricQueries = new List<MetricQuery>();
         private string _nextToken;
+        private PeriodAlignment _periodAlignment;
         private int? _periodInSeconds;
         private ServiceType _serviceType;
         private DateTime? _startTime;
@@ -164,6 +165,25 @@ namespace Amazon.PI.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PeriodAlignment. 
+        /// <para>
+        /// The returned timestamp which is the start or end time of the time periods. The default
+        /// value is <code>END_TIME</code>.
+        /// </para>
+        /// </summary>
+        public PeriodAlignment PeriodAlignment
+        {
+            get { return this._periodAlignment; }
+            set { this._periodAlignment = value; }
+        }
+
+        // Check to see if PeriodAlignment property is set
+        internal bool IsSetPeriodAlignment()
+        {
+            return this._periodAlignment != null;
         }
 
         /// <summary>

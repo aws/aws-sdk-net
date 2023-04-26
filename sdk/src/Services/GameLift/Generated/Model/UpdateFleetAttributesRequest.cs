@@ -49,7 +49,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-    /// up GameLift fleets</a> 
+    /// up Amazon GameLift fleets</a> 
     /// </para>
     /// </summary>
     public partial class UpdateFleetAttributesRequest : AmazonGameLiftRequest
@@ -65,7 +65,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AnywhereConfiguration. 
         /// <para>
-        /// GameLift Anywhere configuration options.
+        /// Amazon GameLift Anywhere configuration options.
         /// </para>
         /// </summary>
         public AnywhereConfiguration AnywhereConfiguration

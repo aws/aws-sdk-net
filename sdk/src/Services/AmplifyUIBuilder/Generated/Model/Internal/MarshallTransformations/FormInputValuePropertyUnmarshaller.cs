@@ -64,6 +64,18 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("bindingProperties", targetDepth))
+                {
+                    var unmarshaller = FormInputValuePropertyBindingPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.BindingProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("concat", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FormInputValueProperty, FormInputValuePropertyUnmarshaller>(FormInputValuePropertyUnmarshaller.Instance);
+                    unmarshalledObject.Concat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("value", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

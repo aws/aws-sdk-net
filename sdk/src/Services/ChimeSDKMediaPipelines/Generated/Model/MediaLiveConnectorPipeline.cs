@@ -44,7 +44,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
         /// <para>
-        /// Thetime at which the connector pipeline was created.
+        /// The time at which the connector pipeline was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTimestamp

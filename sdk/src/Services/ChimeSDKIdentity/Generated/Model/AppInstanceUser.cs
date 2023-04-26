@@ -35,6 +35,7 @@ namespace Amazon.ChimeSDKIdentity.Model
     {
         private string _appInstanceUserArn;
         private DateTime? _createdTimestamp;
+        private ExpirationSettings _expirationSettings;
         private DateTime? _lastUpdatedTimestamp;
         private string _metadata;
         private string _name;
@@ -74,6 +75,24 @@ namespace Amazon.ChimeSDKIdentity.Model
         internal bool IsSetCreatedTimestamp()
         {
             return this._createdTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpirationSettings. 
+        /// <para>
+        /// The interval after which an <code>AppInstanceUser</code> is automatically deleted.
+        /// </para>
+        /// </summary>
+        public ExpirationSettings ExpirationSettings
+        {
+            get { return this._expirationSettings; }
+            set { this._expirationSettings = value; }
+        }
+
+        // Check to see if ExpirationSettings property is set
+        internal bool IsSetExpirationSettings()
+        {
+            return this._expirationSettings != null;
         }
 
         /// <summary>

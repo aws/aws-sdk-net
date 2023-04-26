@@ -213,7 +213,7 @@ namespace Amazon.SecretsManager.Model
         /// You can't access this parameter in the Secrets Manager console.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=65536)]
+        [AWSProperty(Sensitive=true, Min=1, Max=65536)]
         public MemoryStream SecretBinary
         {
             get { return this._secretBinary; }
@@ -263,7 +263,7 @@ namespace Amazon.SecretsManager.Model
         /// not both. 
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=65536)]
+        [AWSProperty(Sensitive=true, Min=1, Max=65536)]
         public string SecretString
         {
             get { return this._secretString; }

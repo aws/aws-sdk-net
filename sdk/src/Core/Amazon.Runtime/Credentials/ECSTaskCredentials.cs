@@ -67,12 +67,13 @@ namespace Amazon.Runtime
 
         private IWebProxy Proxy;
 
-        public ECSTaskCredentials() : this(null) { }
+        public ECSTaskCredentials() : this(null) { PreemptExpiryTime = TimeSpan.FromMinutes(5); }
 
         public ECSTaskCredentials(IWebProxy proxy)
         {
             Server = EndpointAddress;
             Proxy = proxy;
+            PreemptExpiryTime = TimeSpan.FromMinutes(5);
         }
 
         protected override CredentialsRefreshState GenerateNewCredentials()

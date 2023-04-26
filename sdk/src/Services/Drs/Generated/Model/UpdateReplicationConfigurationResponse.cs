@@ -34,6 +34,7 @@ namespace Amazon.Drs.Model
     public partial class UpdateReplicationConfigurationResponse : AmazonWebServiceResponse
     {
         private bool? _associateDefaultSecurityGroup;
+        private bool? _autoReplicateNewDisks;
         private long? _bandwidthThrottling;
         private bool? _createPublicIP;
         private ReplicationConfigurationDataPlaneRouting _dataPlaneRouting;
@@ -67,6 +68,25 @@ namespace Amazon.Drs.Model
         internal bool IsSetAssociateDefaultSecurityGroup()
         {
             return this._associateDefaultSecurityGroup.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoReplicateNewDisks. 
+        /// <para>
+        /// Whether to allow the AWS replication agent to automatically replicate newly added
+        /// disks.
+        /// </para>
+        /// </summary>
+        public bool AutoReplicateNewDisks
+        {
+            get { return this._autoReplicateNewDisks.GetValueOrDefault(); }
+            set { this._autoReplicateNewDisks = value; }
+        }
+
+        // Check to see if AutoReplicateNewDisks property is set
+        internal bool IsSetAutoReplicateNewDisks()
+        {
+            return this._autoReplicateNewDisks.HasValue; 
         }
 
         /// <summary>

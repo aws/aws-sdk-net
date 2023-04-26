@@ -30,12 +30,16 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateResolverEndpoint operation.
-    /// Updates the name of an inbound or an outbound Resolver endpoint.
+    /// Updates the name, or enpoint type for an inbound or an outbound Resolver endpoint.
+    /// You can only update between IPV4 and DUALSTACK, IPV6 endpoint type can't be updated
+    /// to other type.
     /// </summary>
     public partial class UpdateResolverEndpointRequest : AmazonRoute53ResolverRequest
     {
         private string _name;
         private string _resolverEndpointId;
+        private ResolverEndpointType _resolverEndpointType;
+        private List<UpdateIpAddress> _updateIpAddresses = new List<UpdateIpAddress>();
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -73,6 +77,44 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetResolverEndpointId()
         {
             return this._resolverEndpointId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolverEndpointType. 
+        /// <para>
+        ///  Specifies the endpoint type for what type of IP address the endpoint uses to forward
+        /// DNS queries. 
+        /// </para>
+        /// </summary>
+        public ResolverEndpointType ResolverEndpointType
+        {
+            get { return this._resolverEndpointType; }
+            set { this._resolverEndpointType = value; }
+        }
+
+        // Check to see if ResolverEndpointType property is set
+        internal bool IsSetResolverEndpointType()
+        {
+            return this._resolverEndpointType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateIpAddresses. 
+        /// <para>
+        ///  Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<UpdateIpAddress> UpdateIpAddresses
+        {
+            get { return this._updateIpAddresses; }
+            set { this._updateIpAddresses = value; }
+        }
+
+        // Check to see if UpdateIpAddresses property is set
+        internal bool IsSetUpdateIpAddresses()
+        {
+            return this._updateIpAddresses != null && this._updateIpAddresses.Count > 0; 
         }
 
     }

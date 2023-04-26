@@ -45,6 +45,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RegisteredUserQuickSightConsoleEmbeddingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFeatureConfigurations())
+            {
+                context.Writer.WritePropertyName("FeatureConfigurations");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RegisteredUserConsoleFeatureConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.FeatureConfigurations, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInitialPath())
             {
                 context.Writer.WritePropertyName("InitialPath");

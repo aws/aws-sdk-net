@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The request references a resource which does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -124,9 +124,11 @@ namespace Amazon.SageMakerGeospatial.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property ResourceId.
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        /// Identifier of the resource that was not found.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }

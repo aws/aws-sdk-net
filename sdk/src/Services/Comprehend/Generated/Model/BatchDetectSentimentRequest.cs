@@ -65,12 +65,6 @@ namespace Amazon.Comprehend.Model
         /// A list containing the UTF-8 encoded text of the input documents. The list can contain
         /// a maximum of 25 documents. The maximum size of each document is 5 KB. 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Amazon Comprehend performs real-time sentiment analysis on the first 500 characters
-        /// of the input text and ignores any additional text in the input.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public List<string> TextList

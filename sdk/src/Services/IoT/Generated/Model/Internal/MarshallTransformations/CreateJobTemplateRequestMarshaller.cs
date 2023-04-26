@@ -125,6 +125,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetMaintenanceWindows())
+                {
+                    context.Writer.WritePropertyName("maintenanceWindows");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMaintenanceWindowsListValue in publicRequest.MaintenanceWindows)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MaintenanceWindowMarshaller.Instance;
+                        marshaller.Marshall(publicRequestMaintenanceWindowsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetPresignedUrlConfig())
                 {
                     context.Writer.WritePropertyName("presignedUrlConfig");

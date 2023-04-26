@@ -16,6 +16,17 @@ Function Copy-Dependencies
         $DependencyNames = @("microsoft.bcl.asyncinterfaces", "system.runtime.compilerservices.unsafe", "system.threading.tasks.extensions", 
                              "awscrt", "awscrt-auth", "awscrt-http", "awscrt-checksums"),
 
+        # The list of dependencies with additional targets
+        # Each entry should contain the dependency name as a key, source and target as value
+        [Parameter()]
+        [hashtable]
+        $DependenciesWithAditionalTargets = @{
+            "awscrt" = @{Source = "netstandard2.0"; Target = "netcoreapp3.1"}
+            "awscrt-auth" = @{Source = "netstandard2.0"; Target = "netcoreapp3.1"}
+            "awscrt-http" = @{Source = "netstandard2.0"; Target = "netcoreapp3.1"}
+            "awscrt-checksums" = @{Source = "netstandard2.0"; Target = "netcoreapp3.1"}
+        },
+
         # The location to copy the built dlls to
         [Parameter(Mandatory=$true, Position=1)]
         [string]
@@ -87,6 +98,13 @@ Function Copy-Dependencies
                             {
                                 Write-Debug "Copying $dllFile to $Destination for $target"
                                 Copy-Dependency -SourceFile $dllFile -Destination $Destination -Platform $target.Name
+
+                                if ($DependenciesWithAditionalTargets.ContainsKey($dependency) -And 
+                                        $target.Name -eq $DependenciesWithAditionalTargets.$dependency.Source) 
+                                {
+                                    Copy-Dependency -SourceFile $dllFile -Destination $Destination -Platform $DependenciesWithAditionalTargets.$dependency.Target
+                                }
+
                             } 
                             else 
                             {

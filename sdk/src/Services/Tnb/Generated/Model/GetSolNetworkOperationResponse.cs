@@ -65,7 +65,7 @@ namespace Amazon.Tnb.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// Error related to this specific network operation occurence.
+        /// Error related to this specific network operation occurrence.
         /// </para>
         /// </summary>
         public ProblemDetails Error

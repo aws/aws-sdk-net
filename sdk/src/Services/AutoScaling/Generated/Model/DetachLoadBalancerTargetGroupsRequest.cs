@@ -30,8 +30,18 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachLoadBalancerTargetGroups operation.
+    /// <note> 
+    /// <para>
+    /// This API operation is superseded by <a>DetachTrafficSources</a>, which can detach
+    /// multiple traffic sources types. We recommend using <code>DetachTrafficSources</code>
+    /// to simplify how you manage traffic sources. However, we continue to support <code>DetachLoadBalancerTargetGroups</code>.
+    /// You can use both the original <code>DetachLoadBalancerTargetGroups</code> API operation
+    /// and <code>DetachTrafficSources</code> on the same Auto Scaling group.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Detaches one or more target groups from the specified Auto Scaling group.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// When you detach a target group, it enters the <code>Removing</code> state while deregistering

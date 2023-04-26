@@ -90,7 +90,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The Amazon S3 URI for the input data. The URI must be in same region as the API endpoint
+        /// The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint
         /// that you are calling. The URI can point to a single input file or it can provide the
         /// prefix for a collection of data files. 
         /// </para>

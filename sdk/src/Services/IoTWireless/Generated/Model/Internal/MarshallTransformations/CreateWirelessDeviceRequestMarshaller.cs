@@ -111,6 +111,17 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Positioning);
                 }
 
+                if(publicRequest.IsSetSidewalk())
+                {
+                    context.Writer.WritePropertyName("Sidewalk");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SidewalkCreateWirelessDeviceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Sidewalk, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

@@ -58,6 +58,7 @@ namespace Amazon.DynamoDBv2.Model
     {
         private List<AttributeDefinition> _attributeDefinitions = new List<AttributeDefinition>();
         private BillingMode _billingMode;
+        private bool? _deletionProtectionEnabled;
         private List<GlobalSecondaryIndex> _globalSecondaryIndexes = new List<GlobalSecondaryIndex>();
         private List<KeySchemaElement> _keySchema = new List<KeySchemaElement>();
         private List<LocalSecondaryIndex> _localSecondaryIndexes = new List<LocalSecondaryIndex>();
@@ -149,6 +150,25 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetBillingMode()
         {
             return this._billingMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtectionEnabled. 
+        /// <para>
+        /// Indicates whether deletion protection is to be enabled (true) or disabled (false)
+        /// on the table.
+        /// </para>
+        /// </summary>
+        public bool DeletionProtectionEnabled
+        {
+            get { return this._deletionProtectionEnabled.GetValueOrDefault(); }
+            set { this._deletionProtectionEnabled = value; }
+        }
+
+        // Check to see if DeletionProtectionEnabled property is set
+        internal bool IsSetDeletionProtectionEnabled()
+        {
+            return this._deletionProtectionEnabled.HasValue; 
         }
 
         /// <summary>

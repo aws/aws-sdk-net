@@ -70,6 +70,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ImageId", StringUtils.FromString(publicRequest.ImageId));
                 }
+                if(publicRequest.IsSetImdsSupport())
+                {
+                    request.Parameters.Add("ImdsSupport.Value", StringUtils.FromString(publicRequest.ImdsSupport));
+                }
                 if(publicRequest.IsSetLaunchPermission())
                 {
                     if(publicRequest.LaunchPermission.IsSetAdd())

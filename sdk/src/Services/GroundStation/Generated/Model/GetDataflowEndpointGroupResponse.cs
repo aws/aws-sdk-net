@@ -43,9 +43,10 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ContactPostPassDurationSeconds. 
         /// <para>
-        /// Amount of time, in seconds, after a contact ends for the contact to remain in a <code>POSTPASS</code>
-        /// state. A CloudWatch event is emitted when the contact enters and exits the <code>POSTPASS</code>
-        /// state.
+        /// Amount of time, in seconds, after a contact ends that the Ground Station Dataflow
+        /// Endpoint Group will be in a <code>POSTPASS</code> state. A Ground Station Dataflow
+        /// Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group
+        /// enters and exits the <code>POSTPASS</code> state.
         /// </para>
         /// </summary>
         [AWSProperty(Min=120, Max=480)]
@@ -64,9 +65,10 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ContactPrePassDurationSeconds. 
         /// <para>
-        /// Amount of time, in seconds, prior to contact start for the contact to remain in a
-        /// <code>PREPASS</code> state. A CloudWatch event is emitted when the contact enters
-        /// and exits the <code>PREPASS</code> state.
+        /// Amount of time, in seconds, before a contact starts that the Ground Station Dataflow
+        /// Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow
+        /// Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group
+        /// enters and exits the <code>PREPASS</code> state.
         /// </para>
         /// </summary>
         [AWSProperty(Min=120, Max=480)]

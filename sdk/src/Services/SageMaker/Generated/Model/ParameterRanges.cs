@@ -53,8 +53,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CategoricalParameterRanges. 
         /// <para>
-        /// The array of <a>CategoricalParameterRange</a> objects that specify ranges of categorical
-        /// hyperparameters that a hyperparameter tuning job searches.
+        /// The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CategoricalParameterRange.html">CategoricalParameterRange</a>
+        /// objects that specify ranges of categorical hyperparameters that a hyperparameter tuning
+        /// job searches.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
@@ -73,8 +74,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ContinuousParameterRanges. 
         /// <para>
-        /// The array of <a>ContinuousParameterRange</a> objects that specify ranges of continuous
-        /// hyperparameters that a hyperparameter tuning job searches.
+        /// The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContinuousParameterRange.html">ContinuousParameterRange</a>
+        /// objects that specify ranges of continuous hyperparameters that a hyperparameter tuning
+        /// job searches.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
@@ -93,8 +95,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property IntegerParameterRanges. 
         /// <para>
-        /// The array of <a>IntegerParameterRange</a> objects that specify ranges of integer hyperparameters
-        /// that a hyperparameter tuning job searches.
+        /// The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_IntegerParameterRange.html">IntegerParameterRange</a>
+        /// objects that specify ranges of integer hyperparameters that a hyperparameter tuning
+        /// job searches.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=30)]

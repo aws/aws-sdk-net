@@ -318,8 +318,15 @@ namespace Amazon.S3Outposts
         /// <exception cref="Amazon.S3Outposts.Model.InternalServerException">
         /// There was an exception with the internal server.
         /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.OutpostOfflineException">
+        /// The service link connection to your Outposts home Region is down. Check your connection
+        /// and try again.
+        /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ResourceNotFoundException">
         /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ValidationException">
         /// There was an exception validating this data.
@@ -384,8 +391,15 @@ namespace Amazon.S3Outposts
         /// <exception cref="Amazon.S3Outposts.Model.InternalServerException">
         /// There was an exception with the internal server.
         /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.OutpostOfflineException">
+        /// The service link connection to your Outposts home Region is down. Check your connection
+        /// and try again.
+        /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ResourceNotFoundException">
         /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ValidationException">
         /// There was an exception validating this data.
@@ -449,6 +463,9 @@ namespace Amazon.S3Outposts
         /// <exception cref="Amazon.S3Outposts.Model.ResourceNotFoundException">
         /// The requested resource was not found.
         /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ValidationException">
         /// There was an exception validating this data.
         /// </exception>
@@ -460,6 +477,54 @@ namespace Amazon.S3Outposts
             options.ResponseUnmarshaller = ListEndpointsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListEndpointsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListOutpostsWithS3
+
+        internal virtual ListOutpostsWithS3Response ListOutpostsWithS3(ListOutpostsWithS3Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOutpostsWithS3RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOutpostsWithS3ResponseUnmarshaller.Instance;
+
+            return Invoke<ListOutpostsWithS3Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the Outposts with S3 on Outposts capacity for your Amazon Web Services account.
+        /// Includes S3 on Outposts that you have access to as the Outposts owner, or as a shared
+        /// user from Resource Access Manager (RAM).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOutpostsWithS3 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOutpostsWithS3 service method, as returned by S3Outposts.</returns>
+        /// <exception cref="Amazon.S3Outposts.Model.AccessDeniedException">
+        /// Access was denied for this action.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.InternalServerException">
+        /// There was an exception with the internal server.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ValidationException">
+        /// There was an exception validating this data.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListOutpostsWithS3">REST API Reference for ListOutpostsWithS3 Operation</seealso>
+        public virtual Task<ListOutpostsWithS3Response> ListOutpostsWithS3Async(ListOutpostsWithS3Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOutpostsWithS3RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOutpostsWithS3ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOutpostsWithS3Response>(request, options, cancellationToken);
         }
 
         #endregion
@@ -511,6 +576,9 @@ namespace Amazon.S3Outposts
         /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ResourceNotFoundException">
         /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ValidationException">
         /// There was an exception validating this data.

@@ -45,6 +45,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LogicalResourceId requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEksSourceName())
+            {
+                context.Writer.WritePropertyName("eksSourceName");
+                context.Writer.Write(requestObject.EksSourceName);
+            }
+
             if(requestObject.IsSetIdentifier())
             {
                 context.Writer.WritePropertyName("identifier");

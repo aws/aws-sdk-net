@@ -30,7 +30,7 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Defines a physical resource. A physical resource is a resource that exists in your
-    /// account. It can be identified using an Amazon Resource Name (ARN) or an AWS Resilience
+    /// account. It can be identified using an Amazon Resource Name (ARN) or an Resilience
     /// Hub-native identifier.
     /// </summary>
     public partial class PhysicalResource
@@ -46,7 +46,10 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AdditionalInfo. 
         /// <para>
-        /// Additional configuration parameters for an AWS Resilience Hub application.
+        /// Additional configuration parameters for an Resilience Hub application. If you want
+        /// to implement <code>additionalInfo</code> through the Resilience Hub console rather
+        /// than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure
+        /// the application configuration parameters</a>.
         /// </para>
         ///  <note> 
         /// <para>

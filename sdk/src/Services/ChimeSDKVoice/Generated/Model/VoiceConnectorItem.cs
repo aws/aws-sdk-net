@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// For Amazon Chime SDK Voice Connector groups, the Amazon Chime SDK Voice Connectors
+    /// to which you route inbound calls. Includes priority configuration settings. Limit:
+    /// 3 VoiceConnectorItems per Voice Connector group.
     /// </summary>
     public partial class VoiceConnectorItem
     {
@@ -37,7 +39,12 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property Priority.
+        /// Gets and sets the property Priority. 
+        /// <para>
+        /// The priority setting of a Voice Connector item. Calls are routed to hosts in priority
+        /// order, with 1 as the highest priority. When hosts have equal priority, the system
+        /// distributes calls among them based on their relative weight.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=99)]
         public int Priority
@@ -53,7 +60,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VoiceConnectorId

@@ -154,11 +154,11 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// <summary>
         /// Gets and sets the property WorkgroupName. 
         /// <para>
-        /// The serverless workgroup name. This element is not returned when connecting to a provisioned
-        /// cluster.
+        /// The serverless workgroup name or Amazon Resource Name (ARN). This element is not returned
+        /// when connecting to a provisioned cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=64)]
+        [AWSProperty(Min=3, Max=128)]
         public string WorkgroupName
         {
             get { return this._workgroupName; }

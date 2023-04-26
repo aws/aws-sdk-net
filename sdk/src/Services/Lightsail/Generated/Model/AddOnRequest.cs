@@ -43,6 +43,7 @@ namespace Amazon.Lightsail.Model
     {
         private AddOnType _addOnType;
         private AutoSnapshotAddOnRequest _autoSnapshotAddOnRequest;
+        private StopInstanceOnIdleRequest _stopInstanceOnIdleRequest;
 
         /// <summary>
         /// Gets and sets the property AddOnType. 
@@ -80,6 +81,30 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetAutoSnapshotAddOnRequest()
         {
             return this._autoSnapshotAddOnRequest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StopInstanceOnIdleRequest. 
+        /// <para>
+        /// An object that represents additional parameters when enabling or modifying the <code>StopInstanceOnIdle</code>
+        /// add-on.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This object only applies to Lightsail for Research resources.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public StopInstanceOnIdleRequest StopInstanceOnIdleRequest
+        {
+            get { return this._stopInstanceOnIdleRequest; }
+            set { this._stopInstanceOnIdleRequest = value; }
+        }
+
+        // Check to see if StopInstanceOnIdleRequest property is set
+        internal bool IsSetStopInstanceOnIdleRequest()
+        {
+            return this._stopInstanceOnIdleRequest != null;
         }
 
     }

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Describes the entity recognizer submitted with an entity recognizer.
+    /// Describes the entity list submitted with an entity recognizer.
     /// </summary>
     public partial class EntityRecognizerEntityList
     {
@@ -39,7 +39,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property S3Uri. 
         /// <para>
         /// Specifies the Amazon S3 location where the entity list is located. The URI must be
-        /// in the same region as the API endpoint that you are calling.
+        /// in the same Region as the API endpoint that you are calling.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

@@ -31,8 +31,8 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Container for the parameters to the PutResourcePolicy operation.
     /// Attaches a resource-based policy to a custom model. You can use this policy to authorize
-    /// an entity in another AWS account to import the custom model, which replicates it in
-    /// Amazon Comprehend in their account.
+    /// an entity in another Amazon Web Services account to import the custom model, which
+    /// replicates it in Amazon Comprehend in their account.
     /// </summary>
     public partial class PutResourcePolicyRequest : AmazonComprehendRequest
     {

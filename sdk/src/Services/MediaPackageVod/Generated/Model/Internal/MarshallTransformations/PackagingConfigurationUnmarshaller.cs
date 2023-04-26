@@ -76,6 +76,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                     unmarshalledObject.CmafPackage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("createdAt", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dashPackage", targetDepth))
                 {
                     var unmarshaller = DashPackageUnmarshaller.Instance;

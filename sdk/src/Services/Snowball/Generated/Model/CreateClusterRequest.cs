@@ -38,15 +38,19 @@ namespace Amazon.Snowball.Model
     {
         private string _addressId;
         private string _description;
+        private bool? _forceCreateJobs;
         private string _forwardingAddressId;
+        private int? _initialClusterSize;
         private JobType _jobType;
         private string _kmsKeyARN;
+        private List<string> _longTermPricingIds = new List<string>();
         private Notification _notification;
         private OnDeviceServiceConfiguration _onDeviceServiceConfiguration;
         private RemoteManagement _remoteManagement;
         private JobResource _resources;
         private string _roleARN;
         private ShippingOption _shippingOption;
+        private SnowballCapacity _snowballCapacityPreference;
         private SnowballType _snowballType;
         private TaxDocuments _taxDocuments;
 
@@ -90,6 +94,27 @@ namespace Amazon.Snowball.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ForceCreateJobs. 
+        /// <para>
+        /// Force to create cluster when user attempts to overprovision or underprovision a cluster.
+        /// A cluster is overprovisioned or underprovisioned if the initial size of the cluster
+        /// is more (overprovisioned) or less (underprovisioned) than what needed to meet capacity
+        /// requirement specified with <code>OnDeviceServiceConfiguration</code>.
+        /// </para>
+        /// </summary>
+        public bool ForceCreateJobs
+        {
+            get { return this._forceCreateJobs.GetValueOrDefault(); }
+            set { this._forceCreateJobs = value; }
+        }
+
+        // Check to see if ForceCreateJobs property is set
+        internal bool IsSetForceCreateJobs()
+        {
+            return this._forceCreateJobs.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ForwardingAddressId. 
         /// <para>
         /// The forwarding address ID for a cluster. This field is not supported in most regions.
@@ -106,6 +131,26 @@ namespace Amazon.Snowball.Model
         internal bool IsSetForwardingAddressId()
         {
             return this._forwardingAddressId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InitialClusterSize. 
+        /// <para>
+        /// If provided, each job will be automatically created and associated with the new cluster.
+        /// If not provided, will be treated as 0.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=16)]
+        public int InitialClusterSize
+        {
+            get { return this._initialClusterSize.GetValueOrDefault(); }
+            set { this._initialClusterSize = value; }
+        }
+
+        // Check to see if InitialClusterSize property is set
+        internal bool IsSetInitialClusterSize()
+        {
+            return this._initialClusterSize.HasValue; 
         }
 
         /// <summary>
@@ -153,6 +198,25 @@ namespace Amazon.Snowball.Model
         internal bool IsSetKmsKeyARN()
         {
             return this._kmsKeyARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LongTermPricingIds. 
+        /// <para>
+        /// Lists long-term pricing id that will be used to associate with jobs automatically
+        /// created for the new cluster.
+        /// </para>
+        /// </summary>
+        public List<string> LongTermPricingIds
+        {
+            get { return this._longTermPricingIds; }
+            set { this._longTermPricingIds = value; }
+        }
+
+        // Check to see if LongTermPricingIds property is set
+        internal bool IsSetLongTermPricingIds()
+        {
+            return this._longTermPricingIds != null && this._longTermPricingIds.Count > 0; 
         }
 
         /// <summary>
@@ -222,7 +286,6 @@ namespace Amazon.Snowball.Model
         /// and optional Lambda functions written in the Python language. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public JobResource Resources
         {
             get { return this._resources; }
@@ -243,7 +306,7 @@ namespace Amazon.Snowball.Model
         /// API action in Identity and Access Management (IAM).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Max=255)]
         public string RoleARN
         {
             get { return this._roleARN; }
@@ -316,6 +379,32 @@ namespace Amazon.Snowball.Model
         internal bool IsSetShippingOption()
         {
             return this._shippingOption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnowballCapacityPreference. 
+        /// <para>
+        /// If your job is being created in one of the US regions, you have the option of specifying
+        /// what size Snow device you'd like for this job. In all other regions, Snowballs come
+        /// with 80 TB in storage capacity.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+        /// (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+        /// (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.
+        /// </para>
+        /// </summary>
+        public SnowballCapacity SnowballCapacityPreference
+        {
+            get { return this._snowballCapacityPreference; }
+            set { this._snowballCapacityPreference = value; }
+        }
+
+        // Check to see if SnowballCapacityPreference property is set
+        internal bool IsSetSnowballCapacityPreference()
+        {
+            return this._snowballCapacityPreference != null;
         }
 
         /// <summary>

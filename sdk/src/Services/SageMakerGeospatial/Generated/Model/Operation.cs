@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// Represents an arithmetic operation to compute spectral index.
     /// </summary>
     public partial class Operation
     {
@@ -38,7 +38,11 @@ namespace Amazon.SageMakerGeospatial.Model
         private OutputType _outputType;
 
         /// <summary>
-        /// Gets and sets the property Equation.
+        /// Gets and sets the property Equation. 
+        /// <para>
+        /// Textual representation of the math operation; Equation used to compute the spectral
+        /// index.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Equation

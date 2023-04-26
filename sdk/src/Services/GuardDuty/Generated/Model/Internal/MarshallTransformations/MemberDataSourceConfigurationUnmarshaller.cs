@@ -76,6 +76,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataSources = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("features", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MemberFeaturesConfigurationResult, MemberFeaturesConfigurationResultUnmarshaller>(MemberFeaturesConfigurationResultUnmarshaller.Instance);
+                    unmarshalledObject.Features = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

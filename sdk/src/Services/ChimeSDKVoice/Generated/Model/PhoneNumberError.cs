@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// If a phone number action fails for one or more of the phone numbers in a request,
+    /// a list of the failed phone numbers is returned, along with error codes and error messages.
     /// </summary>
     public partial class PhoneNumberError
     {
@@ -38,7 +39,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _phoneNumberId;
 
         /// <summary>
-        /// Gets and sets the property ErrorCode.
+        /// Gets and sets the property ErrorCode. 
+        /// <para>
+        /// The error code.
+        /// </para>
         /// </summary>
         public ErrorCode ErrorCode
         {
@@ -53,7 +57,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ErrorMessage.
+        /// Gets and sets the property ErrorMessage. 
+        /// <para>
+        /// The error message.
+        /// </para>
         /// </summary>
         public string ErrorMessage
         {
@@ -68,7 +75,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberId.
+        /// Gets and sets the property PhoneNumberId. 
+        /// <para>
+        /// The phone number ID for which the action failed.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string PhoneNumberId

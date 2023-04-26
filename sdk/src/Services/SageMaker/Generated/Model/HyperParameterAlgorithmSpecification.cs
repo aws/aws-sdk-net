@@ -62,8 +62,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MetricDefinitions. 
         /// <para>
-        /// An array of <a>MetricDefinition</a> objects that specify the metrics that the algorithm
-        /// emits.
+        /// An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a>
+        /// objects that specify the metrics that the algorithm emits.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=40)]

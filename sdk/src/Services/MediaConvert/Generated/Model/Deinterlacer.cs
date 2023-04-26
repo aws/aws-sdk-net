@@ -38,11 +38,12 @@ namespace Amazon.MediaConvert.Model
         private DeinterlacerMode _mode;
 
         /// <summary>
-        /// Gets and sets the property Algorithm. Only applies when you set Deinterlacer (DeinterlaceMode)
-        /// to Deinterlace (DEINTERLACE) or Adaptive (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE)
-        /// produces sharper pictures, while blend (BLEND) produces smoother motion. Use (INTERPOLATE_TICKER)
-        /// OR (BLEND_TICKER) if your source file includes a ticker, such as a scrolling headline
-        /// at the bottom of the frame.
+        /// Gets and sets the property Algorithm. Only applies when you set Deinterlace mode to
+        /// Deinterlace or Adaptive. Interpolate produces sharper pictures, while blend produces
+        /// smoother motion. If your source file includes a ticker, such as a scrolling headline
+        /// at the bottom of the frame: Choose Interpolate ticker or Blend ticker. To apply field
+        /// doubling: Choose Linear interpolation. Note that Linear interpolation may introduce
+        /// video artifacts into your output.
         /// </summary>
         public DeinterlaceAlgorithm Algorithm
         {

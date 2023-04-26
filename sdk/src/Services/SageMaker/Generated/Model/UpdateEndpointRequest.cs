@@ -38,7 +38,8 @@ namespace Amazon.SageMaker.Model
     /// <para>
     /// When SageMaker receives the request, it sets the endpoint status to <code>Updating</code>.
     /// After updating the endpoint, it sets the status to <code>InService</code>. To check
-    /// the status of an endpoint, use the <a>DescribeEndpoint</a> API. 
+    /// the status of an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a>
+    /// API. 
     /// </para>
     ///  <note> 
     /// <para>
@@ -124,11 +125,12 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ExcludeRetainedVariantProperties. 
         /// <para>
-        /// When you are updating endpoint resources with <a>UpdateEndpointInput$RetainAllVariantProperties</a>,
+        /// When you are updating endpoint resources with <code>RetainAllVariantProperties</code>,
         /// whose value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code>
-        /// specifies the list of type <a>VariantProperty</a> to override with the values provided
-        /// by <code>EndpointConfig</code>. If you don't specify a value for <code>ExcludeRetainedVariantProperties</code>,
-        /// no variant properties are overridden. 
+        /// specifies the list of type <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">VariantProperty</a>
+        /// to override with the values provided by <code>EndpointConfig</code>. If you don't
+        /// specify a value for <code>ExcludeRetainedVariantProperties</code>, no variant properties
+        /// are overridden. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]

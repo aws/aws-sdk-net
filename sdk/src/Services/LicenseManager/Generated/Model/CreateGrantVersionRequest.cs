@@ -30,7 +30,8 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGrantVersion operation.
-    /// Creates a new version of the specified grant.
+    /// Creates a new version of the specified grant. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html">Granted
+    /// licenses in License Manager</a> in the <i>License Manager User Guide</i>.
     /// </summary>
     public partial class CreateGrantVersionRequest : AmazonLicenseManagerRequest
     {
@@ -38,6 +39,7 @@ namespace Amazon.LicenseManager.Model
         private string _clientToken;
         private string _grantArn;
         private string _grantName;
+        private Options _options;
         private string _sourceVersion;
         private GrantStatus _status;
         private string _statusReason;
@@ -116,6 +118,24 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetGrantName()
         {
             return this._grantName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Options. 
+        /// <para>
+        /// The options specified for the grant.
+        /// </para>
+        /// </summary>
+        public Options Options
+        {
+            get { return this._options; }
+            set { this._options = value; }
+        }
+
+        // Check to see if Options property is set
+        internal bool IsSetOptions()
+        {
+            return this._options != null;
         }
 
         /// <summary>

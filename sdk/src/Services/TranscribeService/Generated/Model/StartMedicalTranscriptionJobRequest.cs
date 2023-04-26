@@ -352,7 +352,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Note that the user making the request must have permission to use the specified KMS
+        /// Note that the role making the request must have permission to use the specified KMS
         /// key.
         /// </para>
         /// </summary>

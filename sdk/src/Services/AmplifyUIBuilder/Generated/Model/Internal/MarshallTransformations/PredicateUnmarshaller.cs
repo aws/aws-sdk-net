@@ -82,6 +82,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Operand = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("operandType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OperandType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("operator", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

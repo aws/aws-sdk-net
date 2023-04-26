@@ -2322,11 +2322,6 @@
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.UpdateDataQualityRulesetRequest.UpdatedName</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Glue.Model.UpdateDataQualityRulesetResponse.Description</property>
     <min>0</min>
     <max>2048</max>
@@ -3413,6 +3408,37 @@
     <property>Amazon.Glue.Model.EventBatchingCondition.BatchWindow</property>
     <min>1</min>
     <max>900</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.FederatedDatabase.ConnectionName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.FederatedDatabase.Identifier</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.FederatedResourceAlreadyExistsException.AssociatedGlueResource</property>
+    <min>1</min>
+    <max>10240</max>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.FederatedTable.ConnectionName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.FederatedTable.DatabaseIdentifier</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.FederatedTable.Identifier</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.FillMissingValues.FilledPath</property>

@@ -89,7 +89,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
         /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the resource share for which you want to retrieve the associated
+        /// Resource Name (ARN)</a> of the resource share for which you want to retrieve the associated
         /// permissions.
         /// </para>
         /// </summary>

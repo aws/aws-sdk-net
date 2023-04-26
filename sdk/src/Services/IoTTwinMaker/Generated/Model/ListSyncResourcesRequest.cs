@@ -45,6 +45,23 @@ namespace Amazon.IoTTwinMaker.Model
         /// <para>
         /// A list of objects that filter the request.
         /// </para>
+        ///  
+        /// <para>
+        /// The following filter combinations are supported:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Filter with state
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Filter with ResourceType and ResourceId
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Filter with ResourceType and ExternalId
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<SyncResourceFilter> Filters
         {
@@ -103,11 +120,11 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property SyncSource. 
         /// <para>
-        /// The sync soucre.
+        /// The sync source.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently the only supported syncSoucre is <code>SITEWISE </code>.
+        /// Currently the only supported syncSource is <code>SITEWISE </code>.
         /// </para>
         ///  </note>
         /// </summary>

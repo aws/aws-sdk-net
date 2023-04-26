@@ -80,8 +80,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxRuntimeInSeconds. 
         /// <para>
-        /// The maximum time in seconds that a training job launched by a hyperparameter tuning
-        /// job can run.
+        /// The maximum time in seconds that a hyperparameter tuning job can run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=120, Max=15768000)]

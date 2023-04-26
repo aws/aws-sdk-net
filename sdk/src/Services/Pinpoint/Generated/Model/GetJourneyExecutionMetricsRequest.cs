@@ -82,7 +82,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The  string that specifies which page of results to return in a paginated response.
+        /// The <code/> string that specifies which page of results to return in a paginated response.
         /// This parameter is not supported for application, campaign, and journey metrics.
         /// </para>
         /// </summary>

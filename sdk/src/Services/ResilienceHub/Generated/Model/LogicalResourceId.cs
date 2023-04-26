@@ -33,10 +33,36 @@ namespace Amazon.ResilienceHub.Model
     /// </summary>
     public partial class LogicalResourceId
     {
+        private string _eksSourceName;
         private string _identifier;
         private string _logicalStackName;
         private string _resourceGroupName;
         private string _terraformSourceName;
+
+        /// <summary>
+        /// Gets and sets the property EksSourceName. 
+        /// <para>
+        /// The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource
+        /// belongs to.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter accepts values in "eks-cluster/namespace" format.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string EksSourceName
+        {
+            get { return this._eksSourceName; }
+            set { this._eksSourceName = value; }
+        }
+
+        // Check to see if EksSourceName property is set
+        internal bool IsSetEksSourceName()
+        {
+            return this._eksSourceName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Identifier. 

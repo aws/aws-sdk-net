@@ -68,6 +68,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEnableSSMAccess())
+            {
+                context.Writer.WritePropertyName("EnableSSMAccess");
+                context.Writer.Write(requestObject.EnableSSMAccess);
+            }
+
             if(requestObject.IsSetInitialInstanceCount())
             {
                 context.Writer.WritePropertyName("InitialInstanceCount");

@@ -1304,6 +1304,78 @@
     <pattern>[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.NotifyProvisionProductEngineWorkflowResultRequest.FailureReason</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.NotifyProvisionProductEngineWorkflowResultRequest.IdempotencyToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.NotifyProvisionProductEngineWorkflowResultRequest.RecordId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.NotifyProvisionProductEngineWorkflowResultRequest.WorkflowToken</property>
+    <min>1</min>
+    <max>20000</max>
+    <pattern>[0-9A-Za-z+\/=]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.NotifyTerminateProvisionedProductEngineWorkflowResultRequest.FailureReason</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.NotifyTerminateProvisionedProductEngineWorkflowResultRequest.IdempotencyToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.NotifyTerminateProvisionedProductEngineWorkflowResultRequest.RecordId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.NotifyTerminateProvisionedProductEngineWorkflowResultRequest.WorkflowToken</property>
+    <min>1</min>
+    <max>20000</max>
+    <pattern>[0-9A-Za-z+\/=]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.NotifyUpdateProvisionedProductEngineWorkflowResultRequest.FailureReason</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.NotifyUpdateProvisionedProductEngineWorkflowResultRequest.IdempotencyToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.NotifyUpdateProvisionedProductEngineWorkflowResultRequest.RecordId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.NotifyUpdateProvisionedProductEngineWorkflowResultRequest.WorkflowToken</property>
+    <min>1</min>
+    <max>20000</max>
+    <pattern>[0-9A-Za-z+\/=]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ProvisionProductRequest.AcceptLanguage</property>
     <max>100</max>
   </property-value-rule>
@@ -2312,6 +2384,18 @@
     <min>1</min>
     <max>128</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UniqueTagResourceIdentifier.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:\/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UniqueTagResourceIdentifier.Value</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:\/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.UpdateProvisioningParameter.Key</property>

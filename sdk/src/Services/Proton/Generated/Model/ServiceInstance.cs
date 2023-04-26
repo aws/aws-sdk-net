@@ -38,6 +38,7 @@ namespace Amazon.Proton.Model
         private DeploymentStatus _deploymentStatus;
         private string _deploymentStatusMessage;
         private string _environmentName;
+        private string _lastClientRequestToken;
         private DateTime? _lastDeploymentAttemptedAt;
         private DateTime? _lastDeploymentSucceededAt;
         private string _name;
@@ -140,6 +141,24 @@ namespace Amazon.Proton.Model
         internal bool IsSetEnvironmentName()
         {
             return this._environmentName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastClientRequestToken. 
+        /// <para>
+        /// The last client request token received.
+        /// </para>
+        /// </summary>
+        public string LastClientRequestToken
+        {
+            get { return this._lastClientRequestToken; }
+            set { this._lastClientRequestToken = value; }
+        }
+
+        // Check to see if LastClientRequestToken property is set
+        internal bool IsSetLastClientRequestToken()
+        {
+            return this._lastClientRequestToken != null;
         }
 
         /// <summary>

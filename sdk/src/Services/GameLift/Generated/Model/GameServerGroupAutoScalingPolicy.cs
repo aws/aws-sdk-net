@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type is used with the GameLift FleetIQ and game server groups.</b> 
+    /// <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b>
+    /// 
     /// 
     ///  
     /// <para>
@@ -49,9 +50,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property EstimatedInstanceWarmup. 
         /// <para>
         /// Length of time, in seconds, it takes for a new instance to start new game server processes
-        /// and register with GameLift FleetIQ. Specifying a warm-up time can be useful, particularly
-        /// with game servers that take a long time to start up, because it avoids prematurely
-        /// starting new instances. 
+        /// and register with Amazon GameLift FleetIQ. Specifying a warm-up time can be useful,
+        /// particularly with game servers that take a long time to start up, because it avoids
+        /// prematurely starting new instances. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -71,10 +72,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property TargetTrackingConfiguration. 
         /// <para>
         /// Settings for a target-based scaling policy applied to Auto Scaling group. These settings
-        /// are used to create a target-based policy that tracks the GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code>
-        /// and specifies a target value for the metric. As player usage changes, the policy triggers
-        /// to adjust the game server group capacity so that the metric returns to the target
-        /// value. 
+        /// are used to create a target-based policy that tracks the Amazon GameLift FleetIQ metric
+        /// <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric.
+        /// As player usage changes, the policy triggers to adjust the game server group capacity
+        /// so that the metric returns to the target value. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

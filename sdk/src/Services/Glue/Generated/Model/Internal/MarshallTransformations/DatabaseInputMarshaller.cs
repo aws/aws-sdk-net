@@ -67,6 +67,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Description);
             }
 
+            if(requestObject.IsSetFederatedDatabase())
+            {
+                context.Writer.WritePropertyName("FederatedDatabase");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FederatedDatabaseMarshaller.Instance;
+                marshaller.Marshall(requestObject.FederatedDatabase, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLocationUri())
             {
                 context.Writer.WritePropertyName("LocationUri");

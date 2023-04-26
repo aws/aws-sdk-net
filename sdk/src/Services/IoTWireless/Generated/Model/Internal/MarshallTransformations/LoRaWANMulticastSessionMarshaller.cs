@@ -57,6 +57,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DlFreq);
             }
 
+            if(requestObject.IsSetPingSlotPeriod())
+            {
+                context.Writer.WritePropertyName("PingSlotPeriod");
+                context.Writer.Write(requestObject.PingSlotPeriod);
+            }
+
             if(requestObject.IsSetSessionStartTime())
             {
                 context.Writer.WritePropertyName("SessionStartTime");

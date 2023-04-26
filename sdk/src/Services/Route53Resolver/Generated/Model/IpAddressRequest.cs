@@ -37,12 +37,13 @@ namespace Amazon.Route53Resolver.Model
     public partial class IpAddressRequest
     {
         private string _ip;
+        private string _ipv6;
         private string _subnetId;
 
         /// <summary>
         /// Gets and sets the property Ip. 
         /// <para>
-        /// The IP address that you want to use for DNS queries.
+        /// The IPv4 address that you want to use for DNS queries.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=36)]
@@ -56,6 +57,25 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetIp()
         {
             return this._ip != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6. 
+        /// <para>
+        ///  The IPv6 address that you want to use for DNS queries. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=7, Max=39)]
+        public string Ipv6
+        {
+            get { return this._ipv6; }
+            set { this._ipv6 = value; }
+        }
+
+        // Check to see if Ipv6 property is set
+        internal bool IsSetIpv6()
+        {
+            return this._ipv6 != null;
         }
 
         /// <summary>

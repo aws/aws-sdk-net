@@ -30,16 +30,22 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSipMediaApplication operation.
-    /// 
+    /// Creates a SIP media application. For more information about SIP media applications,
+    /// see <a href="https://docs.aws.amazon.com/chime-sdk/latest/ag/manage-sip-applications.html">Managing
+    /// SIP media applications and rules</a> in the <i>Amazon Chime SDK Administrator Guide</i>.
     /// </summary>
     public partial class CreateSipMediaApplicationRequest : AmazonChimeSDKVoiceRequest
     {
         private string _awsRegion;
         private List<SipMediaApplicationEndpoint> _endpoints = new List<SipMediaApplicationEndpoint>();
         private string _name;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property AwsRegion.
+        /// Gets and sets the property AwsRegion. 
+        /// <para>
+        /// The AWS Region assigned to the SIP media application.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AwsRegion
@@ -55,7 +61,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Endpoints.
+        /// Gets and sets the property Endpoints. 
+        /// <para>
+        /// List of endpoints (Lambda ARNs) specified for the SIP media application.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
         public List<SipMediaApplicationEndpoint> Endpoints
@@ -71,7 +80,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The SIP media application's name.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
@@ -84,6 +96,25 @@ namespace Amazon.ChimeSDKVoice.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags assigned to the SIP media application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

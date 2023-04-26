@@ -43,6 +43,7 @@ namespace Amazon.Athena.Model
         private StatementType _statementType;
         private QueryExecutionStatistics _statistics;
         private QueryExecutionStatus _status;
+        private string _substatementType;
         private string _workGroup;
 
         /// <summary>
@@ -142,10 +143,11 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property ResultConfiguration. 
         /// <para>
-        /// The location in Amazon S3 where query results were stored and the encryption option,
-        /// if any, used for query results. These are known as "client-side settings". If workgroup
-        /// settings override client-side settings, then the query uses the location for the query
-        /// results and the encryption configuration that are specified for the workgroup.
+        /// The location in Amazon S3 where query and calculation results are stored and the encryption
+        /// option, if any, used for query results. These are known as "client-side settings".
+        /// If workgroup settings override client-side settings, then the query uses the location
+        /// for the query results and the encryption configuration that are specified for the
+        /// workgroup.
         /// </para>
         /// </summary>
         public ResultConfiguration ResultConfiguration
@@ -236,6 +238,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubstatementType. 
+        /// <para>
+        /// The kind of query statement that was run.
+        /// </para>
+        /// </summary>
+        public string SubstatementType
+        {
+            get { return this._substatementType; }
+            set { this._substatementType = value; }
+        }
+
+        // Check to see if SubstatementType property is set
+        internal bool IsSetSubstatementType()
+        {
+            return this._substatementType != null;
         }
 
         /// <summary>

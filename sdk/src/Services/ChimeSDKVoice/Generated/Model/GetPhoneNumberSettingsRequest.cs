@@ -30,7 +30,8 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPhoneNumberSettings operation.
-    /// 
+    /// Retrieves the phone number settings for the administrator's AWS account, such as the
+    /// default outbound calling name.
     /// </summary>
     public partial class GetPhoneNumberSettingsRequest : AmazonChimeSDKVoiceRequest
     {

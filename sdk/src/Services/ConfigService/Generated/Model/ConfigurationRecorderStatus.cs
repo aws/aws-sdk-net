@@ -30,6 +30,13 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// The current status of the configuration recorder.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// For a detailed status of recording events over time, add your Config events to CloudWatch
+    /// metrics and use CloudWatch metrics.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ConfigurationRecorderStatus
     {
@@ -45,7 +52,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property LastErrorCode. 
         /// <para>
-        /// The error code indicating that the recording failed.
+        /// The latest error code from when the recorder last failed.
         /// </para>
         /// </summary>
         public string LastErrorCode
@@ -63,7 +70,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property LastErrorMessage. 
         /// <para>
-        /// The message indicating that the recording failed due to an error.
+        /// The latest error message from when the recorder last failed.
         /// </para>
         /// </summary>
         public string LastErrorMessage
@@ -99,7 +106,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property LastStatus. 
         /// <para>
-        /// The last (previous) status of the recorder.
+        /// The status of the latest recording event processed by the recorder.
         /// </para>
         /// </summary>
         public RecorderStatus LastStatus
@@ -117,7 +124,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property LastStatusChangeTime. 
         /// <para>
-        /// The time when the status was last changed.
+        /// The time of the latest change in status of an recording event processed by the recorder.
         /// </para>
         /// </summary>
         public DateTime LastStatusChangeTime

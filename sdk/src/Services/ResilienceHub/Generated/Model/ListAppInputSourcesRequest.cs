@@ -30,8 +30,8 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAppInputSources operation.
-    /// Lists all the input sources of the AWS Resilience Hub application. For more information
-    /// about the input sources supported by AWS Resilience Hub, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
+    /// Lists all the input sources of the Resilience Hub application. For more information
+    /// about the input sources supported by Resilience Hub, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
     /// the structure and describe your Resilience Hub application</a>.
     /// </summary>
     public partial class ListAppInputSourcesRequest : AmazonResilienceHubRequest
@@ -44,8 +44,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The format for
-        /// this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+        /// The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
+        /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>
@@ -66,7 +66,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppVersion. 
         /// <para>
-        /// The AWS Resilience Hub application version.
+        /// The Resilience Hub application version.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,7 +85,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of input sources to be displayed per AWS Resilience Hub application.
+        /// Maximum number of input sources to be displayed per Resilience Hub application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

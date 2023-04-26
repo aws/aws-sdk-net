@@ -41,7 +41,7 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property RecursiveDeleteOption. 
         /// <para>
         /// The option to delete the workgroup and its contents even if the workgroup contains
-        /// any named queries or query executions.
+        /// any named queries, query executions, or notebooks.
         /// </para>
         /// </summary>
         public bool RecursiveDeleteOption

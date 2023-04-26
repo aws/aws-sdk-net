@@ -105,6 +105,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     response.JobTemplateId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("maintenanceWindows", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MaintenanceWindow, MaintenanceWindowUnmarshaller>(MaintenanceWindowUnmarshaller.Instance);
+                    response.MaintenanceWindows = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("presignedUrlConfig", targetDepth))
                 {
                     var unmarshaller = PresignedUrlConfigUnmarshaller.Instance;

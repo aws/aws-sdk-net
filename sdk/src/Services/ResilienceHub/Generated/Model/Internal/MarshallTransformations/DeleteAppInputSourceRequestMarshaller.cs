@@ -82,6 +82,17 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetEksSourceClusterNamespace())
+                {
+                    context.Writer.WritePropertyName("eksSourceClusterNamespace");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EksSourceClusterNamespaceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EksSourceClusterNamespace, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSourceArn())
                 {
                     context.Writer.WritePropertyName("sourceArn");

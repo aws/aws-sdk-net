@@ -30,7 +30,7 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRecommendationTemplates operation.
-    /// Lists the recommendation templates for the AWS Resilience Hub applications.
+    /// Lists the recommendation templates for the Resilience Hub applications.
     /// </summary>
     public partial class ListRecommendationTemplatesRequest : AmazonResilienceHubRequest
     {

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// A target SIP media application and other details, such as priority and AWS Region,
+    /// to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.
     /// </summary>
     public partial class SipRuleTargetApplication
     {
@@ -38,7 +39,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _sipMediaApplicationId;
 
         /// <summary>
-        /// Gets and sets the property AwsRegion.
+        /// Gets and sets the property AwsRegion. 
+        /// <para>
+        /// The AWS Region of a rule's target SIP media application.
+        /// </para>
         /// </summary>
         public string AwsRegion
         {
@@ -53,7 +57,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Priority.
+        /// Gets and sets the property Priority. 
+        /// <para>
+        /// The priority setting of a rule's target SIP media application.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public int Priority
@@ -69,7 +76,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SipMediaApplicationId.
+        /// Gets and sets the property SipMediaApplicationId. 
+        /// <para>
+        /// The ID of a rule's target SIP media application.
+        /// </para>
         /// </summary>
         public string SipMediaApplicationId
         {

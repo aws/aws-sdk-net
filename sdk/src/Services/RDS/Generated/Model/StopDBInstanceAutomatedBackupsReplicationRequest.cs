@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SourceDBInstanceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating
-        /// automated backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.
+        /// automate backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

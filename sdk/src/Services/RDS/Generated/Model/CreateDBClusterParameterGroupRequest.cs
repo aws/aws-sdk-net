@@ -133,8 +133,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
-        /// 
+        /// Example: <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code> 
         /// </para>
         ///  
         /// <para>
@@ -142,7 +141,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>aurora-postgresql9.6</code> 
+        /// Example: <code>aurora-postgresql14</code> 
         /// </para>
         ///  
         /// <para>
@@ -190,11 +189,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+        ///  <code>aurora-mysql</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -36,11 +36,12 @@ namespace Amazon.VoiceID.Model
         private DateTime? _createdAt;
         private string _domainId;
         private string _generatedFraudsterId;
+        private List<string> _watchlistIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp when Voice ID identified the fraudster.
+        /// The timestamp of when Voice ID identified the fraudster.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -58,7 +59,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The identifier for the domain containing the fraudster.
+        /// The identifier of the domain that contains the fraudster.
         /// </para>
         /// </summary>
         [AWSProperty(Min=22, Max=22)]
@@ -91,6 +92,24 @@ namespace Amazon.VoiceID.Model
         internal bool IsSetGeneratedFraudsterId()
         {
             return this._generatedFraudsterId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WatchlistIds. 
+        /// <para>
+        /// The identifier of the watchlists the fraudster is a part of.
+        /// </para>
+        /// </summary>
+        public List<string> WatchlistIds
+        {
+            get { return this._watchlistIds; }
+            set { this._watchlistIds = value; }
+        }
+
+        // Check to see if WatchlistIds property is set
+        internal bool IsSetWatchlistIds()
+        {
+            return this._watchlistIds != null && this._watchlistIds.Count > 0; 
         }
 
     }

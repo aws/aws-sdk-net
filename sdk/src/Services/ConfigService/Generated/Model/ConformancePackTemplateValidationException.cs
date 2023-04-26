@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// You have specified a template that is invalid or supported.
+    /// You have specified a template that is not valid or supported.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

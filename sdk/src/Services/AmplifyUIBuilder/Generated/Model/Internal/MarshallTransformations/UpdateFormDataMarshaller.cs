@@ -92,6 +92,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FormActionType);
             }
 
+            if(requestObject.IsSetLabelDecorator())
+            {
+                context.Writer.WritePropertyName("labelDecorator");
+                context.Writer.Write(requestObject.LabelDecorator);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// The service is not available.
+    /// The operation failed because the service isn't available. Try again later.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
