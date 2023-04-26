@@ -19,6 +19,7 @@ namespace TestWrapper
         public ITaskItem TestContainer { get; set; }
         public ITaskItem Configuration { get; set; }
         public ITaskItem TestExecutionProfile { get; set; }
+        public ITaskItem KeepTestResults { get; set; }
 
         protected FileInfo TestContainerFileInfo { get { return new FileInfo(TestContainer.ItemSpec); } }
         protected string TestSuiteRunnerFileInfo { get { return TestSuiteRunner.ItemSpec; } }
@@ -38,6 +39,19 @@ namespace TestWrapper
                 return array;
             }
         }
+        protected bool KeepTestResultsFile
+        {
+            get
+            {
+                if (KeepTestResults == null || !bool.TryParse(KeepTestResults.ItemSpec, out var result))
+                {
+                    return false;
+                }
+
+                return result;
+            }
+        }
+
         protected TestRunner Runner { get; set; }
 
         public TestWrapperTask()

@@ -649,4 +649,28 @@
              NameSpace.ClassNamePrefix* -->
         <Exec Command='$(InternalBuildTools)\AssemblyComparer\AssemblyComparer\bin\Release\net46\AssemblyComparer.exe package-comparer --package-name AWSSDK.Core --download-folder ..\NuGetDownloads\ --nuspec ..\sdk\src\Core\AWSSDK.Core.nuspec -cf BinaryIncompatibility,SourceIncompatibility,Warning -ig "$(BackwardIncompatibilitiesToIgnore)"'/>
     </Target>
+
+    <Target Name="build-unit-tests">
+        <Exec Command="dotnet restore -f $(UnitTestsProjectFile)" WorkingDirectory="$(UnitTestsWorkingDirectory)" />
+        <Exec Command="dotnet clean -c $(Configuration) $(UnitTestsProjectFile)" WorkingDirectory="$(UnitTestsWorkingDirectory)" />
+        <Exec Command="dotnet build -c $(Configuration) $(UnitTestsProjectFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="$(UnitTestsWorkingDirectory)" />
+    </Target>
+
+    <Target Name="run-unit-tests-mstest" DependsOnTargets="build-test-wrapper;build-unit-tests">
+        <MsTestWrapperTask
+            TestSuiteRunner="dotnet"
+            TestContainer="$(UnitTestsWorkingDirectory)\$(UnitTestsProjectFile)"
+            Configuration="$(Configuration)"
+            TestExecutionProfile="$(UnitTestsRunnerProfile)"
+            KeepTestResults="true" />
+    </Target>
+
+    <Target Name="run-unit-tests-xunit" DependsOnTargets="build-test-wrapper;build-unit-tests">
+        <XUnitWrapperTask
+            TestSuiteRunner="dotnet"
+            TestContainer="$(UnitTestsWorkingDirectory)\$(UnitTestsProjectFile)"
+            Configuration="$(Configuration)"
+            TestExecutionProfile="$(UnitTestsRunnerProfile)"
+            KeepTestResults="true" />
+    </Target>
 </Project>
