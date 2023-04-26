@@ -69,7 +69,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             using (var client = new AmazonS3Client(region))
             {
-                var bucketName = S3TestUtils.CreateBucketWithWait(client);
+                var bucketName = S3TestUtils.CreateBucketWithWait(client, true);
 
                 client.PutACL(new PutACLRequest
                 {

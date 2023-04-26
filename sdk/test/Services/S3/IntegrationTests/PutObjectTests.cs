@@ -41,7 +41,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             writer.Write("This is some sample text.!!");
             writer.Close();
 
-            bucketName = S3TestUtils.CreateBucketWithWait(Client);
+            bucketName = S3TestUtils.CreateBucketWithWait(Client, true);
         }
 
 
