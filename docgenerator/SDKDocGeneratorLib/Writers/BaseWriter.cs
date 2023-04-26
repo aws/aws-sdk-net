@@ -205,9 +205,9 @@ namespace SDKDocGenerator.Writers
                     writer.WriteLine("<form action=\"/search/doc-search.html\" target=\"_blank\" onsubmit=\"return AWSHelpObj.searchFormSubmit(this);\" method=\"get\">");
                         writer.WriteLine("<div id=\"sfrm\">");
                             writer.WriteLine("<span id=\"lbl\">");
-                                writer.WriteLine("<label>Search: </label>");
+                                writer.WriteLine("<label for=\"sel\">Search: </label>");
                             writer.WriteLine("</span>");
-                            writer.WriteLine("<select name=\"searchPath\" id=\"sel\">");
+                            writer.WriteLine("<select aria-label=\"Search From\" name=\"searchPath\" id=\"sel\">");
                                 writer.WriteLine("<option value=\"all\">Entire Site</option>");
                                 writer.WriteLine("<option value=\"articles\">Articles &amp; Tutorials</option>");
                                 writer.WriteLine("<option value=\"documentation\">Documentation</option>");
@@ -217,7 +217,7 @@ namespace SDKDocGenerator.Writers
                                 writer.WriteLine("<option value=\"code\">Sample Code &amp; Libraries</option>");
                             writer.WriteLine("</select>");
                             writer.WriteLine("<div id=\"searchInputContainer\">");
-                                writer.WriteLine("<input type=\"text\" name=\"searchQuery\" id=\"sq\">");
+                                writer.WriteLine("<input aria-label=\"Search\" type=\"text\" name=\"searchQuery\" id=\"sq\">");
                                 writer.WriteLine("<input type=\"image\" alt=\"Go\" src=\"{0}/resources/search-button.png\" id=\"sb\">", RootRelativePath);
                             writer.WriteLine("</div>");
                         writer.WriteLine("</div>");
