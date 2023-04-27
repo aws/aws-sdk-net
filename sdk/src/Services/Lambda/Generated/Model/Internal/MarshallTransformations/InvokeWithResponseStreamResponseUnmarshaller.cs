@@ -47,8 +47,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         {
             InvokeWithResponseStreamResponse response = new InvokeWithResponseStreamResponse();
 
-            var unmarshaller = InvokeWithResponseStreamResponseEventUnmarshaller.Instance;
-            response.EventStream = unmarshaller.Unmarshall(context);
+            response.EventStream = new InvokeWithResponseStreamResponseEvent(context.Stream);
             if (context.ResponseData.IsHeaderPresent("X-Amz-Executed-Version"))
                 response.ExecutedVersion = context.ResponseData.GetHeaderValue("X-Amz-Executed-Version");
             if (context.ResponseData.IsHeaderPresent("Content-Type"))
@@ -214,5 +213,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             }
         }
 
+        protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse)
+        {
+            return false;
+        }
+        /// <summary>
+        /// Specifies that the response should be streamed
+        /// </summary>
+        public override bool HasStreamingProperty => true;
     }
 }

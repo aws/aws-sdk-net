@@ -225,7 +225,7 @@ export const handler = awslambda.streamifyResponse(async (event, responseStream,
                 // Get the function's configuration only
                 var getFunctionConfiguration = await Client.GetFunctionConfigurationAsync(functionName);
                 Assert.AreEqual(handlerName, getFunctionConfiguration.Handler);
-
+                createdFunctionNames.Add(functionName);
                 var endWaitHandle = new AutoResetEvent(false);
                 InvokeWithResponseStreamResponse response;
                 try

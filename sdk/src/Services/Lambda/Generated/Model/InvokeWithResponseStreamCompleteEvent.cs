@@ -25,6 +25,8 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.EventStreams;
+using Amazon.Runtime.EventStreams.Internal;
 
 namespace Amazon.Lambda.Model
 {
@@ -32,7 +34,16 @@ namespace Amazon.Lambda.Model
     /// A response confirming that the event stream is complete.
     /// </summary>
     public partial class InvokeWithResponseStreamCompleteEvent
+        : IEventStreamEvent
+        ,IEventStreamTerminalEvent
     {
+    public InvokeWithResponseStreamCompleteEvent()
+    {
+    }
+
+    public InvokeWithResponseStreamCompleteEvent(IEventStreamMessage message)
+    {
+    }
         private string _errorCode;
         private string _errorDetails;
         private string _logResult;

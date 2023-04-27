@@ -25,6 +25,8 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.EventStreams;
+using Amazon.Runtime.EventStreams.Internal;
 
 namespace Amazon.Lambda.Model
 {
@@ -32,46 +34,89 @@ namespace Amazon.Lambda.Model
     /// An object that includes a chunk of the response payload. When the stream has ended,
     /// Lambda includes a <code>InvokeComplete</code> object.
     /// </summary>
-    public partial class InvokeWithResponseStreamResponseEvent
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "<Pending>")]
+    public sealed class InvokeWithResponseStreamResponseEvent : EnumerableEventStream<IEventStreamEvent, LambdaEventStreamException>
     {
-        private InvokeWithResponseStreamCompleteEvent _invokeComplete;
-        private InvokeResponseStreamUpdate _payloadChunk;
+        ///summary>
+        ///The mapping of event message to a generator function to construct the matching EventStream event
+        ///</summary>
+        protected override IDictionary<string,Func<IEventStreamMessage, IEventStreamEvent>> EventMapping {get;} =
+        new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>
+        {
+            {"InvokeComplete", payload => new InvokeWithResponseStreamCompleteEvent(payload)},
+            {"PayloadChunk", payload => new InvokeResponseStreamUpdate(payload)},
+        };
+        /// <summary>
+        /// The mapping of event message to a generator function to construct the matching EventStream Exception
+        /// </summary>
+        protected override IDictionary<string,Func<IEventStreamMessage,LambdaEventStreamException>> ExceptionMapping {get;} =
+        new Dictionary<string,Func<IEventStreamMessage,LambdaEventStreamException>>
+        {
+        };
+        // Backing by a volatile bool. The flag only changes one way, so no need for a lock.
+        // This is located in the subclass to be CLS compliant.
+        private volatile bool _isProcessing;
 
         /// <summary>
-        /// Gets and sets the property InvokeComplete. 
-        /// <para>
-        /// An object that's returned when the stream has ended and all the payload chunks have
-        /// been returned.
-        /// </para>
+        /// Whether the backround processing loop is running.
         /// </summary>
-        public InvokeWithResponseStreamCompleteEvent InvokeComplete
+        protected override bool IsProcessing
         {
-            get { return this._invokeComplete; }
-            set { this._invokeComplete = value; }
+            get { return _isProcessing; }
+            set { _isProcessing = value; }
         }
-
-        // Check to see if InvokeComplete property is set
-        internal bool IsSetInvokeComplete()
-        {
-            return this._invokeComplete != null;
-        }
-
+        public override event EventHandler<EventStreamEventReceivedArgs<IEventStreamEvent>> EventReceived;
+        public override event EventHandler<EventStreamExceptionReceivedArgs<LambdaEventStreamException>> ExceptionReceived;
         /// <summary>
-        /// Gets and sets the property PayloadChunk. 
-        /// <para>
-        /// A chunk of the streamed response payload.
-        /// </para>
+        /// Raised when an InvokeComplete event is received
         /// </summary>
-        public InvokeResponseStreamUpdate PayloadChunk
+        ///<summary>
+        ///Raised when an InvokeComplete event is received
+        public event EventHandler<EventStreamEventReceivedArgs<InvokeWithResponseStreamCompleteEvent>> InvokeCompleteReceived;
+        ///<summary>
+        ///Raised when an PayloadChunk event is received
+        public event EventHandler<EventStreamEventReceivedArgs<InvokeResponseStreamUpdate>> PayloadChunkReceived;
+        public InvokeWithResponseStreamResponseEvent(Stream stream) : this (stream, null)
         {
-            get { return this._payloadChunk; }
-            set { this._payloadChunk = value; }
         }
-
-        // Check to see if PayloadChunk property is set
-        internal bool IsSetPayloadChunk()
+        public InvokeWithResponseStreamResponseEvent(Stream stream, IEventStreamDecoder eventStreamDecoder) : base(stream, eventStreamDecoder)
         {
-            return this._payloadChunk != null;
+            base.EventReceived += (sender,args) => EventReceived?.Invoke(this, args);
+            base.ExceptionReceived += (sender,args) => ExceptionReceived?.Invoke(this, args);
+
+            //Mapping the generic Event to more specific Events
+            Decoder.MessageReceived += (sender, args) =>
+            {
+                IEventStreamEvent ev;
+                try
+                {
+                    ev = ConvertMessageToEvent(args.Message);
+                }
+                catch(UnknownEventStreamException)
+                {
+                    //Silence to ensure backwards compatability with future EventStream specification
+                    return;
+                }
+                EventReceived?.Invoke(this, new EventStreamEventReceivedArgs<IEventStreamEvent>(ev));
+
+                //Call RaiseEvent until it returns true or all calls complete. This way only a subset of casts is perfromed
+                // and we can avoid a cascade of nested if else statements. The result is thrown away
+                var _ =
+                    RaiseEvent(InvokeCompleteReceived,ev) ||
+                    RaiseEvent(PayloadChunkReceived,ev);
+            };       
+        }
+        private bool RaiseEvent<T>(EventHandler<EventStreamEventReceivedArgs<T>> eventHandler, IEventStreamEvent ev) where T : class, IEventStreamEvent
+        {
+            var convertedEvent = ev as T;
+            if (convertedEvent != null)
+            {
+                eventHandler?.Invoke(this, new EventStreamEventReceivedArgs<T>(convertedEvent));
+                return true;
+            }
+
+            return false;
         }
 
     }
