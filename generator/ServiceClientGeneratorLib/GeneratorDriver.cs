@@ -14,6 +14,7 @@ using Json.LitJson;
 using System.Collections.Concurrent;
 using ServiceClientGenerator.Generators.Endpoints;
 using ServiceClientGenerator.Endpoints.Partitions;
+using ServiceClientGenerator.Generators.SourceFiles.Exceptions;
 namespace ServiceClientGenerator
 {
     public class GeneratorDriver
@@ -760,7 +761,7 @@ namespace ServiceClientGenerator
             //We need a parameterless constructor to use it in EnumerableEventStream. Only once per service
             if (operation.IsEventStreamOutput && !Configuration.GeneratedEventStreamException)
             {
-                var eventStreamExceptionGenerator = new Generators.SourceFiles.Exceptions.EventStreamExceptions();
+                var eventStreamExceptionGenerator = new EventStreamExceptions();
                 this.ExecuteGenerator(eventStreamExceptionGenerator, this.Configuration.ClassName + "EventStreamException.cs","Model");
                 Configuration.GeneratedEventStreamException = true;
             }
