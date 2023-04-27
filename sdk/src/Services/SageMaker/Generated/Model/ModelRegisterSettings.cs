@@ -40,8 +40,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property CrossAccountModelRegisterRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the SageMaker model registry account. Required only
-        /// to register model versions created by a different SageMaker Canvas AWS account than
-        /// the AWS account in which SageMaker model registry is set up.
+        /// to register model versions created by a different SageMaker Canvas Amazon Web Services
+        /// account than the Amazon Web Services account in which SageMaker model registry is
+        /// set up.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
