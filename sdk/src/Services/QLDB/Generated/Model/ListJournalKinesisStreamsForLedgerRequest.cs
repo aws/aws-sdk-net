@@ -30,9 +30,7 @@ namespace Amazon.QLDB.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJournalKinesisStreamsForLedger operation.
-    /// Returns an array of all Amazon QLDB journal stream descriptors for a given ledger.
-    /// The output of each stream descriptor includes the same details that are returned by
-    /// <code>DescribeJournalKinesisStream</code>.
+    /// Returns all Amazon QLDB journal streams for a given ledger.
     /// 
     ///  
     /// <para>
