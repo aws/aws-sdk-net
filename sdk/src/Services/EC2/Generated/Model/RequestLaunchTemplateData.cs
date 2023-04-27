@@ -336,11 +336,21 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>resolve:ssm:parameter-name:label</code> 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html#using-systems-manager-parameter-to-find-AMI">Use
-        /// a Systems Manager parameter to find an AMI</a> in the <i>Amazon Elastic Compute Cloud
-        /// User Guide</i>.
+        ///  <code>resolve:ssm:public-parameter</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Currently, EC2 Fleet and Spot Fleet do not support specifying a Systems Manager parameter.
+        /// If the launch template will be used by an EC2 Fleet or Spot Fleet, you must specify
+        /// the AMI ID.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+        /// a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public string ImageId

@@ -39,25 +39,13 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// [EC2-VPC] If you don't specify a subnet ID, we choose a default subnet from your default
-    /// VPC for you. If you don't have a default VPC, you must specify a subnet ID in the
-    /// request.
+    /// If you don't specify a subnet ID, we choose a default subnet from your default VPC
+    /// for you. If you don't have a default VPC, you must specify a subnet ID in the request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// [EC2-Classic] If don't specify an Availability Zone, we choose one for you.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Some instance types must be launched into a VPC. If you do not have a default VPC,
-    /// or if you do not specify a subnet ID, the request fails. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
-    /// types available only in a VPC</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// [EC2-VPC] All instances have a network interface with a primary private IPv4 address.
-    /// If you don't specify this address, we choose one from the IPv4 range of your subnet.
+    /// All instances have a network interface with a primary private IPv4 address. If you
+    /// don't specify this address, we choose one from the IPv4 range of your subnet.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -109,13 +97,6 @@ namespace Amazon.EC2.Model
     /// to do if an instance immediately terminates</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
     /// connecting to your instance</a>.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-    /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class RunInstancesRequest : AmazonEC2Request
     {
@@ -600,10 +581,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6AddressCount. 
         /// <para>
-        /// [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface.
-        /// Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify
-        /// this option and the option to assign specific IPv6 addresses in the same request.
-        /// You can specify this option if you've specified a minimum number of instances to launch.
+        /// The number of IPv6 addresses to associate with the primary network interface. Amazon
+        /// EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify this
+        /// option and the option to assign specific IPv6 addresses in the same request. You can
+        /// specify this option if you've specified a minimum number of instances to launch.
         /// </para>
         ///  
         /// <para>
@@ -625,9 +606,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Addresses. 
         /// <para>
-        /// [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary
-        /// network interface. You cannot specify this option and the option to assign a number
-        /// of IPv6 addresses in the same request. You cannot specify this option if you've specified
+        /// The IPv6 addresses from the range of the subnet to associate with the primary network
+        /// interface. You cannot specify this option and the option to assign a number of IPv6
+        /// addresses in the same request. You cannot specify this option if you've specified
         /// a minimum number of instances to launch.
         /// </para>
         ///  
@@ -904,8 +885,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
-        /// [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address
-        /// range of the subnet.
+        /// The primary IPv4 address. You must specify a value from the IPv4 address range of
+        /// the subnet.
         /// </para>
         ///  
         /// <para>
@@ -985,7 +966,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// [EC2-Classic, default VPC] The names of the security groups.
+        /// [Default VPC] The names of the security groups.
         /// </para>
         ///  
         /// <para>
@@ -1012,7 +993,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// [EC2-VPC] The ID of the subnet to launch the instance into.
+        /// The ID of the subnet to launch the instance into.
         /// </para>
         ///  
         /// <para>

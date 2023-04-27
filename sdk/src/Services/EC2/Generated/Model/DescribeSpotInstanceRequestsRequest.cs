@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -306,7 +306,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotInstanceRequestIds. 
         /// <para>
-        /// One or more Spot Instance request IDs.
+        /// The IDs of the Spot Instance requests.
         /// </para>
         /// </summary>
         public List<string> SpotInstanceRequestIds

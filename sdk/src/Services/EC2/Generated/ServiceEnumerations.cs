@@ -747,6 +747,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type AmdSevSnpSpecification.
+    /// </summary>
+    public class AmdSevSnpSpecification : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for AmdSevSnpSpecification
+        /// </summary>
+        public static readonly AmdSevSnpSpecification Disabled = new AmdSevSnpSpecification("disabled");
+        /// <summary>
+        /// Constant Enabled for AmdSevSnpSpecification
+        /// </summary>
+        public static readonly AmdSevSnpSpecification Enabled = new AmdSevSnpSpecification("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AmdSevSnpSpecification(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AmdSevSnpSpecification FindValue(string value)
+        {
+            return FindValue<AmdSevSnpSpecification>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AmdSevSnpSpecification(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AnalysisStatus.
     /// </summary>
     public class AnalysisStatus : ConstantClass
@@ -16618,6 +16668,52 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SummaryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SupportedAdditionalProcessorFeature.
+    /// </summary>
+    public class SupportedAdditionalProcessorFeature : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AmdSevSnp for SupportedAdditionalProcessorFeature
+        /// </summary>
+        public static readonly SupportedAdditionalProcessorFeature AmdSevSnp = new SupportedAdditionalProcessorFeature("amd-sev-snp");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SupportedAdditionalProcessorFeature(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SupportedAdditionalProcessorFeature FindValue(string value)
+        {
+            return FindValue<SupportedAdditionalProcessorFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SupportedAdditionalProcessorFeature(string value)
         {
             return FindValue(value);
         }

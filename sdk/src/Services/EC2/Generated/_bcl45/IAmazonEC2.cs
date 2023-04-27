@@ -22196,10 +22196,10 @@ namespace Amazon.EC2
         ///  
         /// <para>
         ///  <b>Note: </b>Using this action to change the security groups associated with an elastic
-        /// network interface (ENI) attached to an instance in a VPC can result in an error if
-        /// the instance has more than one ENI. To change the security groups associated with
-        /// an ENI attached to an instance that has multiple ENIs, we recommend that you use the
-        /// <a>ModifyNetworkInterfaceAttribute</a> action.
+        /// network interface (ENI) attached to an instance can result in an error if the instance
+        /// has more than one ENI. To change the security groups associated with an ENI attached
+        /// to an instance that has multiple ENIs, we recommend that you use the <a>ModifyNetworkInterfaceAttribute</a>
+        /// action.
         /// </para>
         ///  
         /// <para>
@@ -22223,10 +22223,10 @@ namespace Amazon.EC2
         ///  
         /// <para>
         ///  <b>Note: </b>Using this action to change the security groups associated with an elastic
-        /// network interface (ENI) attached to an instance in a VPC can result in an error if
-        /// the instance has more than one ENI. To change the security groups associated with
-        /// an ENI attached to an instance that has multiple ENIs, we recommend that you use the
-        /// <a>ModifyNetworkInterfaceAttribute</a> action.
+        /// network interface (ENI) attached to an instance can result in an error if the instance
+        /// has more than one ENI. To change the security groups associated with an ENI attached
+        /// to an instance that has multiple ENIs, we recommend that you use the <a>ModifyNetworkInterfaceAttribute</a>
+        /// action.
         /// </para>
         ///  
         /// <para>
@@ -22943,13 +22943,6 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
         /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReservedInstances service method.</param>
         /// 
@@ -22969,13 +22962,6 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
         /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReservedInstances service method.</param>
         /// <param name="cancellationToken">
@@ -24852,13 +24838,6 @@ namespace Amazon.EC2
         /// Instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedInstancesOffering service method.</param>
         /// 
@@ -24889,13 +24868,6 @@ namespace Amazon.EC2
         /// Instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedInstancesOffering service method.</param>
         /// <param name="cancellationToken">
@@ -26172,13 +26144,7 @@ namespace Amazon.EC2
         /// is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux
         /// Instances</i>.
         /// </para>
-        ///  </important> <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
-        /// </para>
-        ///  </note>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances service method.</param>
         /// 
@@ -26203,13 +26169,7 @@ namespace Amazon.EC2
         /// is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux
         /// Instances</i>.
         /// </para>
-        ///  </important> <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
-        /// </para>
-        ///  </note>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances service method.</param>
         /// <param name="cancellationToken">
@@ -26883,25 +26843,13 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// [EC2-VPC] If you don't specify a subnet ID, we choose a default subnet from your default
-        /// VPC for you. If you don't have a default VPC, you must specify a subnet ID in the
-        /// request.
+        /// If you don't specify a subnet ID, we choose a default subnet from your default VPC
+        /// for you. If you don't have a default VPC, you must specify a subnet ID in the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// [EC2-Classic] If don't specify an Availability Zone, we choose one for you.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Some instance types must be launched into a VPC. If you do not have a default VPC,
-        /// or if you do not specify a subnet ID, the request fails. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
-        /// types available only in a VPC</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// [EC2-VPC] All instances have a network interface with a primary private IPv4 address.
-        /// If you don't specify this address, we choose one from the IPv4 range of your subnet.
+        /// All instances have a network interface with a primary private IPv4 address. If you
+        /// don't specify this address, we choose one from the IPv4 range of your subnet.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26953,13 +26901,6 @@ namespace Amazon.EC2
         /// to do if an instance immediately terminates</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
         /// connecting to your instance</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunInstances service method.</param>
         /// 
@@ -26979,25 +26920,13 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// [EC2-VPC] If you don't specify a subnet ID, we choose a default subnet from your default
-        /// VPC for you. If you don't have a default VPC, you must specify a subnet ID in the
-        /// request.
+        /// If you don't specify a subnet ID, we choose a default subnet from your default VPC
+        /// for you. If you don't have a default VPC, you must specify a subnet ID in the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// [EC2-Classic] If don't specify an Availability Zone, we choose one for you.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Some instance types must be launched into a VPC. If you do not have a default VPC,
-        /// or if you do not specify a subnet ID, the request fails. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
-        /// types available only in a VPC</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// [EC2-VPC] All instances have a network interface with a primary private IPv4 address.
-        /// If you don't specify this address, we choose one from the IPv4 range of your subnet.
+        /// All instances have a network interface with a primary private IPv4 address. If you
+        /// don't specify this address, we choose one from the IPv4 range of your subnet.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27049,13 +26978,6 @@ namespace Amazon.EC2
         /// to do if an instance immediately terminates</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
         /// connecting to your instance</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunInstances service method.</param>
         /// <param name="cancellationToken">

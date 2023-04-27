@@ -36,10 +36,10 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     ///  <b>Note: </b>Using this action to change the security groups associated with an elastic
-    /// network interface (ENI) attached to an instance in a VPC can result in an error if
-    /// the instance has more than one ENI. To change the security groups associated with
-    /// an ENI attached to an instance that has multiple ENIs, we recommend that you use the
-    /// <a>ModifyNetworkInterfaceAttribute</a> action.
+    /// network interface (ENI) attached to an instance can result in an error if the instance
+    /// has more than one ENI. To change the security groups associated with an ENI attached
+    /// to an instance that has multiple ENIs, we recommend that you use the <a>ModifyNetworkInterfaceAttribute</a>
+    /// action.
     /// </para>
     ///  
     /// <para>
@@ -225,10 +225,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        /// [EC2-VPC] Replaces the security groups of the instance with the specified security
-        /// groups. You must specify at least one security group, even if it's just the default
-        /// security group for the VPC. You must specify the security group ID, not the security
-        /// group name.
+        /// Replaces the security groups of the instance with the specified security groups. You
+        /// must specify the ID of at least one security group, even if it's just the default
+        /// security group for the VPC.
         /// </para>
         /// </summary>
         public List<string> Groups
