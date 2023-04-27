@@ -70,6 +70,12 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
                     unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deviceRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeviceRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("thingArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

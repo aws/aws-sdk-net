@@ -25,6 +25,56 @@ namespace Amazon.IoTDeviceAdvisor
 {
 
     /// <summary>
+    /// Constants used for properties of type AuthenticationMethod.
+    /// </summary>
+    public class AuthenticationMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SignatureVersion4 for AuthenticationMethod
+        /// </summary>
+        public static readonly AuthenticationMethod SignatureVersion4 = new AuthenticationMethod("SignatureVersion4");
+        /// <summary>
+        /// Constant X509ClientCertificate for AuthenticationMethod
+        /// </summary>
+        public static readonly AuthenticationMethod X509ClientCertificate = new AuthenticationMethod("X509ClientCertificate");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthenticationMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthenticationMethod FindValue(string value)
+        {
+            return FindValue<AuthenticationMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthenticationMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Protocol.
     /// </summary>
     public class Protocol : ConstantClass
@@ -35,9 +85,17 @@ namespace Amazon.IoTDeviceAdvisor
         /// </summary>
         public static readonly Protocol MqttV3_1_1 = new Protocol("MqttV3_1_1");
         /// <summary>
+        /// Constant MqttV3_1_1_OverWebSocket for Protocol
+        /// </summary>
+        public static readonly Protocol MqttV3_1_1_OverWebSocket = new Protocol("MqttV3_1_1_OverWebSocket");
+        /// <summary>
         /// Constant MqttV5 for Protocol
         /// </summary>
         public static readonly Protocol MqttV5 = new Protocol("MqttV5");
+        /// <summary>
+        /// Constant MqttV5_OverWebSocket for Protocol
+        /// </summary>
+        public static readonly Protocol MqttV5_OverWebSocket = new Protocol("MqttV5_OverWebSocket");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
