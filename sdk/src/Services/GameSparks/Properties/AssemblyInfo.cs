@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - GameSparks. Released the preview of Amazon GameSparks, a fully managed AWS service that provides a multi-service backend for game developers.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - GameSparks. Released the preview of Amazon GameSparks, a fully managed AWS service that provides a multi-service backend for game developers.")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 6.0) - GameSparks. Released the preview of Amazon GameSparks, a fully managed AWS service that provides a multi-service backend for game developers.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
