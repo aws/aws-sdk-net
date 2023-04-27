@@ -30,8 +30,8 @@ namespace Amazon.OSIS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePipeline operation.
-    /// Deletes an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html#delete-pipeline">Deleting
-    /// pipelines</a>.
+    /// Deletes an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/delete-pipeline.html">Deleting
+    /// Amazon OpenSearch Ingestion pipelines</a>.
     /// </summary>
     public partial class DeletePipelineRequest : AmazonOSISRequest
     {

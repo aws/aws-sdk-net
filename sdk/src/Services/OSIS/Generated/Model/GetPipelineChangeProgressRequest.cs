@@ -36,8 +36,8 @@ namespace Amazon.OSIS.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html">Creating
-    /// and managing OpenSearch Ingestion pipelines</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html#get-pipeline-progress">Tracking
+    /// the status of pipeline creation</a>.
     /// </para>
     /// </summary>
     public partial class GetPipelineChangeProgressRequest : AmazonOSISRequest

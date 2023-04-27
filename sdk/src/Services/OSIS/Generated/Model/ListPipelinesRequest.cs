@@ -31,8 +31,8 @@ namespace Amazon.OSIS.Model
     /// <summary>
     /// Container for the parameters to the ListPipelines operation.
     /// Lists all OpenSearch Ingestion pipelines in the current Amazon Web Services account
-    /// and Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html">Creating
-    /// and managing OpenSearch Ingestion pipelines</a>.
+    /// and Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/list-pipeline.html">Viewing
+    /// Amazon OpenSearch Ingestion pipelines</a>.
     /// </summary>
     public partial class ListPipelinesRequest : AmazonOSISRequest
     {

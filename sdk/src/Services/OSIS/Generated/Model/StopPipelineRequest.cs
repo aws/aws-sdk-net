@@ -30,8 +30,8 @@ namespace Amazon.OSIS.Model
 {
     /// <summary>
     /// Container for the parameters to the StopPipeline operation.
-    /// Stops an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html#stop-pipeline">Stopping
-    /// pipelines</a>.
+    /// Stops an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline--stop-start.html#pipeline--stop">Stopping
+    /// an OpenSearch Ingestion pipeline</a>.
     /// </summary>
     public partial class StopPipelineRequest : AmazonOSISRequest
     {

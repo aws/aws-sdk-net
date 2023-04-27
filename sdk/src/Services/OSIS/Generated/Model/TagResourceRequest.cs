@@ -31,7 +31,7 @@ namespace Amazon.OSIS.Model
     /// <summary>
     /// Container for the parameters to the TagResource operation.
     /// Tags an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-pipeline.html">Tagging
-    /// OpenSearch Ingestion pipelines</a>.
+    /// Amazon OpenSearch Ingestion pipelines</a>.
     /// </summary>
     public partial class TagResourceRequest : AmazonOSISRequest
     {

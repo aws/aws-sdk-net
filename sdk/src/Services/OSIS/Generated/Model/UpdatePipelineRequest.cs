@@ -30,8 +30,8 @@ namespace Amazon.OSIS.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePipeline operation.
-    /// Updates an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html">Creating
-    /// and managing OpenSearch Ingestion pipelines</a>.
+    /// Updates an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/update-pipeline.html">Updating
+    /// Amazon OpenSearch Ingestion pipelines</a>.
     /// </summary>
     public partial class UpdatePipelineRequest : AmazonOSISRequest
     {

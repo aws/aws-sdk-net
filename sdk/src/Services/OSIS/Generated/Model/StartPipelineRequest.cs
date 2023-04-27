@@ -30,8 +30,8 @@ namespace Amazon.OSIS.Model
 {
     /// <summary>
     /// Container for the parameters to the StartPipeline operation.
-    /// Starts an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html#start-pipeline">Starting
-    /// pipelines</a>.
+    /// Starts an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline--stop-start.html#pipeline--start">Starting
+    /// an OpenSearch Ingestion pipeline</a>.
     /// </summary>
     public partial class StartPipelineRequest : AmazonOSISRequest
     {

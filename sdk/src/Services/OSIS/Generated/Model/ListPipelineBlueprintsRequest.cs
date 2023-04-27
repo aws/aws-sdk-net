@@ -30,7 +30,9 @@ namespace Amazon.OSIS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPipelineBlueprints operation.
-    /// Retrieves a list of all available blueprints for Data Prepper.
+    /// Retrieves a list of all available blueprints for Data Prepper. For more information,
+    /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html#pipeline-blueprint">Using
+    /// blueprints to create a pipeline</a>.
     /// </summary>
     public partial class ListPipelineBlueprintsRequest : AmazonOSISRequest
     {

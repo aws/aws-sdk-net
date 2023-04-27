@@ -32,7 +32,7 @@ namespace Amazon.OSIS.Model
     /// Container for the parameters to the ListTagsForResource operation.
     /// Lists all resource tags associated with an OpenSearch Ingestion pipeline. For more
     /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-pipeline.html">Tagging
-    /// OpenSearch Ingestion pipelines</a>.
+    /// Amazon OpenSearch Ingestion pipelines</a>.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonOSISRequest
     {

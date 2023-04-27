@@ -35,8 +35,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-gov-east-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://osis-fips.us-gov-east-1.api.aws", endpoint.URL);
@@ -50,8 +50,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-gov-east-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://osis-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
@@ -65,8 +65,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-gov-east-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://osis.us-gov-east-1.api.aws", endpoint.URL);
@@ -80,8 +80,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-gov-east-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://osis.us-gov-east-1.amazonaws.com", endpoint.URL);
@@ -95,8 +95,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "cn-north-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://osis-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
@@ -110,8 +110,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "cn-north-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://osis-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
@@ -125,8 +125,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "cn-north-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://osis.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
@@ -140,8 +140,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "cn-north-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://osis.cn-north-1.amazonaws.com.cn", endpoint.URL);
@@ -156,8 +156,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-iso-east-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -170,8 +170,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-iso-east-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://osis-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
@@ -186,8 +186,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-iso-east-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -200,8 +200,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-iso-east-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://osis.us-iso-east-1.c2s.ic.gov", endpoint.URL);
@@ -215,8 +215,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://osis-fips.us-east-1.api.aws", endpoint.URL);
@@ -230,8 +230,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://osis-fips.us-east-1.amazonaws.com", endpoint.URL);
@@ -245,8 +245,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://osis.us-east-1.api.aws", endpoint.URL);
@@ -260,8 +260,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://osis.us-east-1.amazonaws.com", endpoint.URL);
@@ -276,8 +276,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-isob-east-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -290,8 +290,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-isob-east-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://osis-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
@@ -306,8 +306,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-isob-east-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -320,8 +320,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-isob-east-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://osis.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
@@ -335,8 +335,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
@@ -352,8 +352,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = true;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);
@@ -368,8 +368,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new OSISEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonOSISEndpointProvider().ResolveEndpoint(parameters);

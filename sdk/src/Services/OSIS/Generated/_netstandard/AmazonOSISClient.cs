@@ -284,8 +284,8 @@ namespace Amazon.OSIS
 
 
         /// <summary>
-        /// Creates an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html">Creating
-        /// and managing OpenSearch Ingestion pipelines</a>.
+        /// Creates an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html">Creating
+        /// Amazon OpenSearch Ingestion pipelines</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePipeline service method.</param>
         /// <param name="cancellationToken">
@@ -335,8 +335,8 @@ namespace Amazon.OSIS
 
 
         /// <summary>
-        /// Deletes an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html#delete-pipeline">Deleting
-        /// pipelines</a>.
+        /// Deletes an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/delete-pipeline.html">Deleting
+        /// Amazon OpenSearch Ingestion pipelines</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePipeline service method.</param>
         /// <param name="cancellationToken">
@@ -435,6 +435,8 @@ namespace Amazon.OSIS
         /// <summary>
         /// Retrieves information about a specific blueprint for OpenSearch Ingestion. Blueprints
         /// are templates for the configuration needed for a <code>CreatePipeline</code> request.
+        /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html#pipeline-blueprint">Using
+        /// blueprints to create a pipeline</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPipelineBlueprint service method.</param>
         /// <param name="cancellationToken">
@@ -487,8 +489,8 @@ namespace Amazon.OSIS
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html">Creating
-        /// and managing OpenSearch Ingestion pipelines</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html#get-pipeline-progress">Tracking
+        /// the status of pipeline creation</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPipelineChangeProgress service method.</param>
@@ -536,7 +538,9 @@ namespace Amazon.OSIS
 
 
         /// <summary>
-        /// Retrieves a list of all available blueprints for Data Prepper.
+        /// Retrieves a list of all available blueprints for Data Prepper. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html#pipeline-blueprint">Using
+        /// blueprints to create a pipeline</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPipelineBlueprints service method.</param>
         /// <param name="cancellationToken">
@@ -584,8 +588,8 @@ namespace Amazon.OSIS
 
         /// <summary>
         /// Lists all OpenSearch Ingestion pipelines in the current Amazon Web Services account
-        /// and Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html">Creating
-        /// and managing OpenSearch Ingestion pipelines</a>.
+        /// and Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/list-pipeline.html">Viewing
+        /// Amazon OpenSearch Ingestion pipelines</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPipelines service method.</param>
         /// <param name="cancellationToken">
@@ -634,7 +638,7 @@ namespace Amazon.OSIS
         /// <summary>
         /// Lists all resource tags associated with an OpenSearch Ingestion pipeline. For more
         /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-pipeline.html">Tagging
-        /// OpenSearch Ingestion pipelines</a>.
+        /// Amazon OpenSearch Ingestion pipelines</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -681,8 +685,8 @@ namespace Amazon.OSIS
 
 
         /// <summary>
-        /// Starts an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html#start-pipeline">Starting
-        /// pipelines</a>.
+        /// Starts an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline--stop-start.html#pipeline--start">Starting
+        /// an OpenSearch Ingestion pipeline</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartPipeline service method.</param>
         /// <param name="cancellationToken">
@@ -732,8 +736,8 @@ namespace Amazon.OSIS
 
 
         /// <summary>
-        /// Stops an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html#stop-pipeline">Stopping
-        /// pipelines</a>.
+        /// Stops an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline--stop-start.html#pipeline--stop">Stopping
+        /// an OpenSearch Ingestion pipeline</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopPipeline service method.</param>
         /// <param name="cancellationToken">
@@ -784,7 +788,7 @@ namespace Amazon.OSIS
 
         /// <summary>
         /// Tags an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-pipeline.html">Tagging
-        /// OpenSearch Ingestion pipelines</a>.
+        /// Amazon OpenSearch Ingestion pipelines</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -836,7 +840,7 @@ namespace Amazon.OSIS
         /// <summary>
         /// Removes one or more tags from an OpenSearch Ingestion pipeline. For more information,
         /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-pipeline.html">Tagging
-        /// OpenSearch Ingestion pipelines</a>.
+        /// Amazon OpenSearch Ingestion pipelines</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -883,8 +887,8 @@ namespace Amazon.OSIS
 
 
         /// <summary>
-        /// Updates an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html">Creating
-        /// and managing OpenSearch Ingestion pipelines</a>.
+        /// Updates an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/update-pipeline.html">Updating
+        /// Amazon OpenSearch Ingestion pipelines</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePipeline service method.</param>
         /// <param name="cancellationToken">
@@ -935,8 +939,8 @@ namespace Amazon.OSIS
 
         /// <summary>
         /// Checks whether an OpenSearch Ingestion pipeline configuration is valid prior to creation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html">Creating
-        /// and managing OpenSearch Ingestion pipelines</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html">Creating
+        /// Amazon OpenSearch Ingestion pipelines</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ValidatePipeline service method.</param>
         /// <param name="cancellationToken">
