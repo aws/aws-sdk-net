@@ -40,19 +40,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             return bucketName;
         }
 
-        public static string CreateBucketWithWait(IAmazonS3 s3Client)
+        public static string CreateBucketWithWait(IAmazonS3 s3Client, bool setPublicACLs = false)
         {
             string bucketName = CreateBucket(s3Client);
             WaitForBucket(s3Client, bucketName);
-            SetPublicBucketACLs(s3Client, bucketName);
+            if (setPublicACLs)
+            {
+                SetPublicBucketACLs(s3Client, bucketName);
+            }
             return bucketName;
         }
 
-        public static string CreateBucketWithWait(IAmazonS3 s3Client, PutBucketRequest bucketRequest)
+        public static string CreateBucketWithWait(IAmazonS3 s3Client, PutBucketRequest bucketRequest, bool setPublicACLs = false)
         {
             string bucketName = CreateBucket(s3Client, bucketRequest);
             WaitForBucket(s3Client, bucketName);
-            SetPublicBucketACLs(s3Client, bucketName);
+            if (setPublicACLs)
+            {
+                SetPublicBucketACLs(s3Client, bucketName);
+            }
             return bucketName;
         }
 

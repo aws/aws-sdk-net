@@ -34,7 +34,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestInitialize]
         public void Init()
         {
-            bucketName = S3TestUtils.CreateBucketWithWait(Client);
+            bucketName = S3TestUtils.CreateBucketWithWait(Client, true);
         }
 
         [TestCleanup]
