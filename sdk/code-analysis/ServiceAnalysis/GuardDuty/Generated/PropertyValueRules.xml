@@ -450,6 +450,15 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.StartMalwareScanRequest.ResourceArn</property>
+    <pattern>^arn:[A-Za-z-]+:[A-Za-z0-9]+:[A-Za-z0-9-]+:\d+:(([A-Za-z0-9-]+)[:\/])?[A-Za-z0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.StartMalwareScanResponse.ScanId</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.StartMonitoringMembersRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>

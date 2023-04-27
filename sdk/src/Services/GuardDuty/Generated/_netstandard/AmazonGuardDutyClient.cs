@@ -2564,6 +2564,50 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  StartMalwareScan
+
+        internal virtual StartMalwareScanResponse StartMalwareScan(StartMalwareScanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMalwareScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMalwareScanResponseUnmarshaller.Instance;
+
+            return Invoke<StartMalwareScanResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Initiates the malware scan. Invoking this API will automatically create the <a href="https://docs.aws.amazon.com/guardduty/latest/ug/slr-permissions-malware-protection.html">Service-linked
+        /// role </a> in the corresponding account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMalwareScan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMalwareScan service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ConflictException">
+        /// A request conflict exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StartMalwareScan">REST API Reference for StartMalwareScan Operation</seealso>
+        public virtual Task<StartMalwareScanResponse> StartMalwareScanAsync(StartMalwareScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMalwareScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMalwareScanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartMalwareScanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartMonitoringMembers
 
         internal virtual StartMonitoringMembersResponse StartMonitoringMembers(StartMonitoringMembersRequest request)
