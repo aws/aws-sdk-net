@@ -100,6 +100,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.StorageInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("zoneIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ZoneIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
