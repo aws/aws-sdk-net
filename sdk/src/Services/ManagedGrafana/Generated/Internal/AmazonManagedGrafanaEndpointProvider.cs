@@ -92,46 +92,6 @@ namespace Amazon.ManagedGrafana.Internal
                         }
                         throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
                     }
-                    if (Equals(refs["Region"], "ap-northeast-1"))
-                    {
-                        return new Endpoint("https://grafana.ap-northeast-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "ap-northeast-2"))
-                    {
-                        return new Endpoint("https://grafana.ap-northeast-2.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "ap-southeast-1"))
-                    {
-                        return new Endpoint("https://grafana.ap-southeast-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "ap-southeast-2"))
-                    {
-                        return new Endpoint("https://grafana.ap-southeast-2.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "eu-central-1"))
-                    {
-                        return new Endpoint("https://grafana.eu-central-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "eu-west-1"))
-                    {
-                        return new Endpoint("https://grafana.eu-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "eu-west-2"))
-                    {
-                        return new Endpoint("https://grafana.eu-west-2.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "us-east-1"))
-                    {
-                        return new Endpoint("https://grafana.us-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "us-east-2"))
-                    {
-                        return new Endpoint("https://grafana.us-east-2.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "us-west-2"))
-                    {
-                        return new Endpoint("https://grafana.us-west-2.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
                     return new Endpoint(Interpolate(@"https://grafana.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                 }
             }
