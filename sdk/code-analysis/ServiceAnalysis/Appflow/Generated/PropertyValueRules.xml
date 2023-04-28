@@ -1076,6 +1076,11 @@
     <pattern>arn:aws:secretsmanager:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Appflow.Model.SalesforceConnectorProfileCredentials.JwtToken</property>
+    <max>8000</max>
+    <pattern>^([a-zA-Z0-9_=]+)\.([a-zA-Z0-9_=]+)\.([a-zA-Z0-9_\-\+\/=]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Appflow.Model.SalesforceConnectorProfileCredentials.RefreshToken</property>
     <max>4096</max>
     <pattern>\S+</pattern>

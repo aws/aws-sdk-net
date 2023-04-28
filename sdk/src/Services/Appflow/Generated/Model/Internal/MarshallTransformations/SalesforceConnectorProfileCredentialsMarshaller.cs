@@ -57,6 +57,18 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ClientCredentialsArn);
             }
 
+            if(requestObject.IsSetJwtToken())
+            {
+                context.Writer.WritePropertyName("jwtToken");
+                context.Writer.Write(requestObject.JwtToken);
+            }
+
+            if(requestObject.IsSetOAuth2GrantType())
+            {
+                context.Writer.WritePropertyName("oAuth2GrantType");
+                context.Writer.Write(requestObject.OAuth2GrantType);
+            }
+
             if(requestObject.IsSetOAuthRequest())
             {
                 context.Writer.WritePropertyName("oAuthRequest");
