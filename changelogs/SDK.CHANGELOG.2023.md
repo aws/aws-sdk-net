@@ -1,3 +1,28 @@
+### 3.7.536.0 (2023-04-28 21:17 UTC)
+* Appflow (3.7.109.0)
+	* Adds Jwt Support for Salesforce Credentials.
+* Athena (3.7.107.0)
+	* You can now use capacity reservations on Amazon Athena to run SQL queries on fully-managed compute capacity.
+* DirectConnect (3.7.100.122)
+	* This release corrects the jumbo frames MTU from 9100 to 8500.
+* ElasticFileSystem (3.7.102.0)
+	* This release adds PAUSED and PAUSING state as a returned value for DescribeReplicationConfigurations response.
+* IoT (3.7.108.0)
+	* This release allows AWS IoT Core users to specify a TLS security policy when creating and updating AWS IoT Domain Configurations.
+* ManagedGrafana (3.7.103.0)
+	* This release adds support for the grafanaVersion parameter in CreateWorkspace.
+* Rekognition (3.7.105.0)
+	* Added support for aggregating moderation labels by video segment timestamps for Stored Video Content Moderation APIs and added additional information about the job to all Stored Video Get API responses.
+* SimSpaceWeaver (3.7.101.0)
+	* Added a new CreateSnapshot API. For the StartSimulation API, SchemaS3Location is now optional, added a new SnapshotS3Location parameter. For the DescribeSimulation API, added SNAPSHOT_IN_PROGRESS simulation state, deprecated SchemaError, added new fields: StartError and SnapshotS3Location.
+* WAFV2 (3.7.108.0)
+	* You can now associate a web ACL with a Verified Access instance.
+* WorkSpaces (3.7.104.102)
+	* Added Windows 11 to support Microsoft_Office_2019
+* Core 3.7.106.29
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.535.0 (2023-04-27 18:29 UTC)
 * EC2 (3.7.132.0)
 	* This release adds support for AMD SEV-SNP on EC2 instances.
