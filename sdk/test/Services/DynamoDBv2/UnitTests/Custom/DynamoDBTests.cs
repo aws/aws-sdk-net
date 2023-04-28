@@ -8,6 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Amazon.Auth.AccessControlPolicy;
 using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
+using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.Model;
@@ -17,8 +18,6 @@ using Moq;
 
 namespace AWSSDK_DotNet35.UnitTests
 {
-    using Amazon.DynamoDBv2;
-
     [TestClass]
     public class DynamoDBEntryTests
     {
