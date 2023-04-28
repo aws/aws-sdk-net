@@ -316,6 +316,18 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetCelebrityRecognitionResponse.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetCelebrityRecognitionResponse.JobTag</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.GetCelebrityRecognitionResponse.NextToken</property>
     <max>255</max>
   </property-value-rule>
@@ -334,6 +346,18 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetContentModerationResponse.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetContentModerationResponse.JobTag</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.GetContentModerationResponse.NextToken</property>
     <max>255</max>
   </property-value-rule>
@@ -350,6 +374,18 @@
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetFaceDetectionRequest.NextToken</property>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetFaceDetectionResponse.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetFaceDetectionResponse.JobTag</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetFaceDetectionResponse.NextToken</property>
@@ -387,6 +423,18 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetFaceSearchResponse.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetFaceSearchResponse.JobTag</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.GetFaceSearchResponse.NextToken</property>
     <max>255</max>
   </property-value-rule>
@@ -403,6 +451,18 @@
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetLabelDetectionRequest.NextToken</property>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetLabelDetectionResponse.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetLabelDetectionResponse.JobTag</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetLabelDetectionResponse.NextToken</property>
@@ -423,6 +483,18 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetPersonTrackingResponse.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetPersonTrackingResponse.JobTag</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.GetPersonTrackingResponse.NextToken</property>
     <max>255</max>
   </property-value-rule>
@@ -441,6 +513,18 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetSegmentDetectionResponse.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetSegmentDetectionResponse.JobTag</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.GetSegmentDetectionResponse.NextToken</property>
     <max>255</max>
   </property-value-rule>
@@ -457,6 +541,18 @@
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetTextDetectionRequest.NextToken</property>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetTextDetectionResponse.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetTextDetectionResponse.JobTag</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetTextDetectionResponse.NextToken</property>
@@ -668,8 +764,8 @@
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartCelebrityRecognitionRequest.JobTag</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartCelebrityRecognitionResponse.JobId</property>
@@ -686,8 +782,8 @@
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartContentModerationRequest.JobTag</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartContentModerationRequest.MinConfidence</property>
@@ -709,8 +805,8 @@
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartFaceDetectionRequest.JobTag</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartFaceDetectionResponse.JobId</property>
@@ -738,8 +834,8 @@
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartFaceSearchRequest.JobTag</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartFaceSearchResponse.JobId</property>
@@ -756,8 +852,8 @@
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartLabelDetectionRequest.JobTag</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartLabelDetectionRequest.MinConfidence</property>
@@ -779,8 +875,8 @@
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartPersonTrackingRequest.JobTag</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartPersonTrackingResponse.JobId</property>
@@ -811,8 +907,8 @@
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartSegmentDetectionRequest.JobTag</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartSegmentDetectionResponse.JobId</property>
@@ -835,8 +931,8 @@
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartTextDetectionRequest.JobTag</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartTextDetectionResponse.JobId</property>
@@ -960,6 +1056,18 @@
     <property>Amazon.Rekognition.Model.ConnectedHomeSettingsForUpdate.MinConfidence</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.ContentModerationDetection.DurationMillis</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.ContentModerationDetection.EndTimestampMillis</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.ContentModerationDetection.StartTimestampMillis</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CoversBodyPart.Confidence</property>

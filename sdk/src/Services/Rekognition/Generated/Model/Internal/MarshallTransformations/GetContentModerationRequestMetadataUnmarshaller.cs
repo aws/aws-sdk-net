@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ContentModerationDetection Object
+    /// Response Unmarshaller for GetContentModerationRequestMetadata Object
     /// </summary>  
-    public class ContentModerationDetectionUnmarshaller : IUnmarshaller<ContentModerationDetection, XmlUnmarshallerContext>, IUnmarshaller<ContentModerationDetection, JsonUnmarshallerContext>
+    public class GetContentModerationRequestMetadataUnmarshaller : IUnmarshaller<GetContentModerationRequestMetadata, XmlUnmarshallerContext>, IUnmarshaller<GetContentModerationRequestMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ContentModerationDetection IUnmarshaller<ContentModerationDetection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GetContentModerationRequestMetadata IUnmarshaller<GetContentModerationRequestMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ContentModerationDetection Unmarshall(JsonUnmarshallerContext context)
+        public GetContentModerationRequestMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ContentModerationDetection unmarshalledObject = new ContentModerationDetection();
+            GetContentModerationRequestMetadata unmarshalledObject = new GetContentModerationRequestMetadata();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DurationMillis", targetDepth))
+                if (context.TestExpression("AggregateBy", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.DurationMillis = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AggregateBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EndTimestampMillis", targetDepth))
+                if (context.TestExpression("SortBy", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.EndTimestampMillis = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ModerationLabel", targetDepth))
-                {
-                    var unmarshaller = ModerationLabelUnmarshaller.Instance;
-                    unmarshalledObject.ModerationLabel = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StartTimestampMillis", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.StartTimestampMillis = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Timestamp", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SortBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         }
 
 
-        private static ContentModerationDetectionUnmarshaller _instance = new ContentModerationDetectionUnmarshaller();        
+        private static GetContentModerationRequestMetadataUnmarshaller _instance = new GetContentModerationRequestMetadataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ContentModerationDetectionUnmarshaller Instance
+        public static GetContentModerationRequestMetadataUnmarshaller Instance
         {
             get
             {

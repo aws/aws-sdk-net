@@ -81,10 +81,30 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class GetContentModerationRequest : AmazonRekognitionRequest
     {
+        private ContentModerationAggregateBy _aggregateBy;
         private string _jobId;
         private int? _maxResults;
         private string _nextToken;
         private ContentModerationSortBy _sortBy;
+
+        /// <summary>
+        /// Gets and sets the property AggregateBy. 
+        /// <para>
+        /// Defines how to aggregate results of the StartContentModeration request. Default aggregation
+        /// option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.
+        /// </para>
+        /// </summary>
+        public ContentModerationAggregateBy AggregateBy
+        {
+            get { return this._aggregateBy; }
+            set { this._aggregateBy = value; }
+        }
+
+        // Check to see if AggregateBy property is set
+        internal bool IsSetAggregateBy()
+        {
+            return this._aggregateBy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JobId. 
