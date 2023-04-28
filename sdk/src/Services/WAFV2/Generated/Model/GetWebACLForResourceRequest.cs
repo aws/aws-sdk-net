@@ -71,6 +71,11 @@ namespace Amazon.WAFV2.Model
         /// For an App Runner service: <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i>
         /// </code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For an Amazon Web Services Verified Access instance: <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i>
+        /// </code> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

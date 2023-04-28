@@ -2420,6 +2420,10 @@ namespace Amazon.WAFV2
         /// Constant COGNITO_USER_POOL for ResourceType
         /// </summary>
         public static readonly ResourceType COGNITO_USER_POOL = new ResourceType("COGNITO_USER_POOL");
+        /// <summary>
+        /// Constant VERIFIED_ACCESS_INSTANCE for ResourceType
+        /// </summary>
+        public static readonly ResourceType VERIFIED_ACCESS_INSTANCE = new ResourceType("VERIFIED_ACCESS_INSTANCE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -88,7 +88,7 @@ namespace Amazon.WAFV2.Model
         /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
         /// application. A regional application can be an Application Load Balancer (ALB), an
         /// Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
-        /// or an App Runner service. 
+        /// an App Runner service, or an Amazon Web Services Verified Access instance. 
         /// </para>
         ///  
         /// <para>

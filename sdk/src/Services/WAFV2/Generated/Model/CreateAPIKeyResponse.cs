@@ -41,12 +41,6 @@ namespace Amazon.WAFV2.Model
         /// The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA
         /// integration. 
         /// </para>
-        ///  
-        /// <para>
-        /// For information about how to use this in your CAPTCHA JavaScript integration, see
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-        /// client application integration</a> in the <i>WAF Developer Guide</i>.
-        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string APIKey
