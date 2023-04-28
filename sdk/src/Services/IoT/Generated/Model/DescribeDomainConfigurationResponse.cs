@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         private DateTime? _lastStatusChangeDate;
         private List<ServerCertificateSummary> _serverCertificates = new List<ServerCertificateSummary>();
         private ServiceType _serviceType;
+        private TlsConfig _tlsConfig;
 
         /// <summary>
         /// Gets and sets the property AuthorizerConfig. 
@@ -206,6 +207,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetServiceType()
         {
             return this._serviceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TlsConfig. 
+        /// <para>
+        /// An object that specifies the TLS configuration for a domain.
+        /// </para>
+        /// </summary>
+        public TlsConfig TlsConfig
+        {
+            get { return this._tlsConfig; }
+            set { this._tlsConfig = value; }
+        }
+
+        // Check to see if TlsConfig property is set
+        internal bool IsSetTlsConfig()
+        {
+            return this._tlsConfig != null;
         }
 
     }

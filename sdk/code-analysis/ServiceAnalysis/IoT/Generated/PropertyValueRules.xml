@@ -3789,6 +3789,11 @@
     <max>2028</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.TlsConfig.SecurityPolicy</property>
+    <max>128</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.TlsContext.ServerName</property>
     <min>1</min>
     <max>253</max>

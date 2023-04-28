@@ -118,6 +118,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetTlsConfig())
+                {
+                    context.Writer.WritePropertyName("tlsConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TlsConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TlsConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetValidationCertificateArn())
                 {
                     context.Writer.WritePropertyName("validationCertificateArn");

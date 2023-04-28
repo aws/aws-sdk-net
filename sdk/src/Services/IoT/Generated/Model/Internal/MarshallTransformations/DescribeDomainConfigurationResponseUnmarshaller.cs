@@ -105,6 +105,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     response.ServiceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("tlsConfig", targetDepth))
+                {
+                    var unmarshaller = TlsConfigUnmarshaller.Instance;
+                    response.TlsConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
