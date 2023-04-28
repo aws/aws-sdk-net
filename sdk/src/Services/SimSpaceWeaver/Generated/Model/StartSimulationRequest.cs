@@ -30,7 +30,12 @@ namespace Amazon.SimSpaceWeaver.Model
 {
     /// <summary>
     /// Container for the parameters to the StartSimulation operation.
-    /// Starts a simulation with the given name and schema.
+    /// Starts a simulation with the given name. You must choose to start your simulation
+    /// from a schema or from a snapshot. For more information about the schema, see the <a
+    /// href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/schema-reference.html">schema
+    /// reference</a> in the <i>SimSpace Weaver User Guide</i>. For more information about
+    /// snapshots, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/working-with_snapshots.html">Snapshots</a>
+    /// in the <i>SimSpace Weaver User Guide</i>.
     /// </summary>
     public partial class StartSimulationRequest : AmazonSimSpaceWeaverRequest
     {
@@ -40,6 +45,7 @@ namespace Amazon.SimSpaceWeaver.Model
         private string _name;
         private string _roleArn;
         private S3Location _schemaS3Location;
+        private S3Location _snapshotS3Location;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -85,8 +91,11 @@ namespace Amazon.SimSpaceWeaver.Model
         /// <summary>
         /// Gets and sets the property MaximumDuration. 
         /// <para>
-        /// The maximum running time of the simulation, specified as a number of months (m or
+        /// The maximum running time of the simulation, specified as a number of minutes (m or
         /// M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.
+        /// The maximum value is <code>14D</code>, or its equivalent in the other units. The default
+        /// value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation
+        /// immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=6)]
@@ -152,8 +161,15 @@ namespace Amazon.SimSpaceWeaver.Model
         /// For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
         /// <i>Amazon Simple Storage Service User Guide</i> </a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Provide a <code>SchemaS3Location</code> to start your simulation from a schema.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide a <code>SchemaS3Location</code> then you can't provide a <code>SnapshotS3Location</code>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public S3Location SchemaS3Location
         {
             get { return this._schemaS3Location; }
@@ -164,6 +180,34 @@ namespace Amazon.SimSpaceWeaver.Model
         internal bool IsSetSchemaS3Location()
         {
             return this._schemaS3Location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotS3Location. 
+        /// <para>
+        /// The location of the snapshot .zip file in Amazon Simple Storage Service (Amazon S3).
+        /// For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
+        /// <i>Amazon Simple Storage Service User Guide</i> </a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.
+        /// </para>
+        /// </summary>
+        public S3Location SnapshotS3Location
+        {
+            get { return this._snapshotS3Location; }
+            set { this._snapshotS3Location = value; }
+        }
+
+        // Check to see if SnapshotS3Location property is set
+        internal bool IsSetSnapshotS3Location()
+        {
+            return this._snapshotS3Location != null;
         }
 
         /// <summary>

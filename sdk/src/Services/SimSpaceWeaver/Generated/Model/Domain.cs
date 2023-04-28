@@ -34,8 +34,8 @@ namespace Amazon.SimSpaceWeaver.Model
     /// 
     ///  
     /// <para>
-    /// For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-    /// concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+    /// For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+    /// concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
     /// </para>
     /// </summary>
     public partial class Domain
@@ -46,32 +46,27 @@ namespace Amazon.SimSpaceWeaver.Model
         /// <summary>
         /// Gets and sets the property Lifecycle. 
         /// <para>
-        /// The type of lifecycle management for apps in the domain. This value indicates whether
-        /// apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps)
-        /// or <i>unmanaged</i> (you must start and stop the apps).
+        /// The type of lifecycle management for apps in the domain. Indicates whether apps in
+        /// this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i>
+        /// (you must start and stop the apps).
         /// </para>
         ///  <p class="title"> <b>Lifecycle types</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PerWorker</code> – Managed: SimSpace Weaver starts 1 app on each worker
+        ///  <code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for each
-        /// spatial partition
+        ///  <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each
+        /// spatial partition.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ByRequest</code> – Unmanaged: You use the <b>StartApp</b> API to start the
-        /// apps and use the <b>StopApp</b> API to stop the apps.
+        ///  <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start
+        /// the apps and use the <code>StopApp</code> API to stop the apps.
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// The lifecycle types will change when the service is released for general availability
-        /// (GA).
-        /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         public LifecycleManagementStrategy Lifecycle
         {

@@ -29,15 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimSpaceWeaver.Model
 {
     /// <summary>
-    /// A location in Amazon Simple Storage Service (Amazon S3) where SimSpace Weaver stores
-    /// simulation data, such as your app .zip files and schema file. For more information
-    /// about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
-    /// <i>Amazon Simple Storage Service User Guide</i> </a>.
+    /// An Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver
+    /// creates a file.
     /// </summary>
-    public partial class S3Location
+    public partial class S3Destination
     {
         private string _bucketName;
-        private string _objectKey;
+        private string _objectKeyPrefix;
 
         /// <summary>
         /// Gets and sets the property BucketName. 
@@ -61,25 +59,25 @@ namespace Amazon.SimSpaceWeaver.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ObjectKey. 
+        /// Gets and sets the property ObjectKeyPrefix. 
         /// <para>
-        /// The key name of an object in Amazon S3. For more information about Amazon S3 objects
-        /// and object keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/uploading-downloading-objects.html">Uploading,
-        /// downloading, and working with objects in Amazon S3</a> in the <i>Amazon Simple Storage
+        /// A string prefix for an Amazon S3 object key. It's usually a folder name. For more
+        /// information about folders in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html">Organizing
+        /// objects in the Amazon S3 console using folders</a> in the <i>Amazon Simple Storage
         /// Service User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string ObjectKey
+        [AWSProperty(Min=0, Max=1024)]
+        public string ObjectKeyPrefix
         {
-            get { return this._objectKey; }
-            set { this._objectKey = value; }
+            get { return this._objectKeyPrefix; }
+            set { this._objectKeyPrefix = value; }
         }
 
-        // Check to see if ObjectKey property is set
-        internal bool IsSetObjectKey()
+        // Check to see if ObjectKeyPrefix property is set
+        internal bool IsSetObjectKeyPrefix()
         {
-            return this._objectKey != null;
+            return this._objectKeyPrefix != null;
         }
 
     }

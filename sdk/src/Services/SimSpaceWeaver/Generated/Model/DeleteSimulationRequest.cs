@@ -34,8 +34,8 @@ namespace Amazon.SimSpaceWeaver.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Your simulation uses resources in other Amazon Web Services services. This API operation
-    /// doesn't delete resources in other Amazon Web Services services.
+    /// Your simulation uses resources in other Amazon Web Services. This API operation doesn't
+    /// delete resources in other Amazon Web Services.
     /// </para>
     ///  </note>
     /// </summary>

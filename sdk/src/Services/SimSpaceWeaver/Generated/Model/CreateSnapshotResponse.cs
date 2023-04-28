@@ -29,30 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimSpaceWeaver.Model
 {
     /// <summary>
-    /// Options that apply when the app starts. These options override default behavior.
+    /// This is the response object from the CreateSnapshot operation.
     /// </summary>
-    public partial class LaunchOverrides
+    public partial class CreateSnapshotResponse : AmazonWebServiceResponse
     {
-        private List<string> _launchCommands = new List<string>();
-
-        /// <summary>
-        /// Gets and sets the property LaunchCommands. 
-        /// <para>
-        /// App launch commands and command line parameters that override the launch command configured
-        /// in the simulation schema.
-        /// </para>
-        /// </summary>
-        public List<string> LaunchCommands
-        {
-            get { return this._launchCommands; }
-            set { this._launchCommands = value; }
-        }
-
-        // Check to see if LaunchCommands property is set
-        internal bool IsSetLaunchCommands()
-        {
-            return this._launchCommands != null && this._launchCommands.Count > 0; 
-        }
 
     }
 }
