@@ -13,15 +13,12 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Globalization;
 
 using Amazon.Runtime.Internal.Util;
 using System.Collections.Generic;
-using Amazon.Util;
 #if BCL || NETSTANDARD
 using Amazon.Runtime.CredentialManagement;
 #endif
-using System.ComponentModel;
 
 namespace Amazon.Runtime.Internal
 {
@@ -130,17 +127,31 @@ namespace Amazon.Runtime.Internal
                 return null;
             }
 
-            var converter = TypeDescriptor.GetConverter(typeof(T?));
-            if (converter == null)
-            {
-                throw new InvalidOperationException($"Unable to obtain type converter for type {typeof(T?)} " +
-                    $"to convert environment variable {name}.");
-            }
-
-
             try
             {
-                return (T?)converter.ConvertFromString(value);
+                object convertedValue;
+                if(typeof(T) == typeof(bool))
+                {
+                    convertedValue = bool.Parse(value);
+                }
+                else if (typeof(T) == typeof(int))
+                {
+                    convertedValue = int.Parse(value);
+                }
+                else if (typeof(T).IsEnum)
+                {
+                    convertedValue = Enum.Parse(typeof(T), value);
+                }
+                else
+                {
+                    throw new InvalidOperationException($"Unable to convert type {typeof(T?)} for environment variable {name}.");
+                }
+
+                return (T?)convertedValue;
+            }
+            catch(InvalidOperationException)
+            {
+                throw;
             }
             catch (Exception e)
             {
