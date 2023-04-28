@@ -218,6 +218,101 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  CancelCapacityReservation
+
+
+        /// <summary>
+        /// Cancels the capacity reservation with the specified name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelCapacityReservation service method.</param>
+        /// 
+        /// <returns>The response from the CancelCapacityReservation service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CancelCapacityReservation">REST API Reference for CancelCapacityReservation Operation</seealso>
+        CancelCapacityReservationResponse CancelCapacityReservation(CancelCapacityReservationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelCapacityReservation operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelCapacityReservation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CancelCapacityReservation">REST API Reference for CancelCapacityReservation Operation</seealso>
+        IAsyncResult BeginCancelCapacityReservation(CancelCapacityReservationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelCapacityReservation.</param>
+        /// 
+        /// <returns>Returns a  CancelCapacityReservationResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CancelCapacityReservation">REST API Reference for CancelCapacityReservation Operation</seealso>
+        CancelCapacityReservationResponse EndCancelCapacityReservation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateCapacityReservation
+
+
+        /// <summary>
+        /// Creates a capacity reservation with the specified name and number of requested data
+        /// processing units.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservation service method.</param>
+        /// 
+        /// <returns>The response from the CreateCapacityReservation service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateCapacityReservation">REST API Reference for CreateCapacityReservation Operation</seealso>
+        CreateCapacityReservationResponse CreateCapacityReservation(CreateCapacityReservationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservation operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCapacityReservation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateCapacityReservation">REST API Reference for CreateCapacityReservation Operation</seealso>
+        IAsyncResult BeginCreateCapacityReservation(CreateCapacityReservationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCapacityReservation.</param>
+        /// 
+        /// <returns>Returns a  CreateCapacityReservationResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateCapacityReservation">REST API Reference for CreateCapacityReservation Operation</seealso>
+        CreateCapacityReservationResponse EndCreateCapacityReservation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateDataCatalog
 
 
@@ -965,6 +1060,100 @@ namespace Amazon.Athena
         /// <returns>Returns a  GetCalculationExecutionStatusResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionStatus">REST API Reference for GetCalculationExecutionStatus Operation</seealso>
         GetCalculationExecutionStatusResponse EndGetCalculationExecutionStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetCapacityAssignmentConfiguration
+
+
+        /// <summary>
+        /// Gets the capacity assignment configuration for a capacity reservation, if one exists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityAssignmentConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetCapacityAssignmentConfiguration service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityAssignmentConfiguration">REST API Reference for GetCapacityAssignmentConfiguration Operation</seealso>
+        GetCapacityAssignmentConfigurationResponse GetCapacityAssignmentConfiguration(GetCapacityAssignmentConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCapacityAssignmentConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityAssignmentConfiguration operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCapacityAssignmentConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityAssignmentConfiguration">REST API Reference for GetCapacityAssignmentConfiguration Operation</seealso>
+        IAsyncResult BeginGetCapacityAssignmentConfiguration(GetCapacityAssignmentConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCapacityAssignmentConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCapacityAssignmentConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetCapacityAssignmentConfigurationResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityAssignmentConfiguration">REST API Reference for GetCapacityAssignmentConfiguration Operation</seealso>
+        GetCapacityAssignmentConfigurationResponse EndGetCapacityAssignmentConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetCapacityReservation
+
+
+        /// <summary>
+        /// Returns information about the capacity reservation with the specified name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityReservation service method.</param>
+        /// 
+        /// <returns>The response from the GetCapacityReservation service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityReservation">REST API Reference for GetCapacityReservation Operation</seealso>
+        GetCapacityReservationResponse GetCapacityReservation(GetCapacityReservationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityReservation operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCapacityReservation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityReservation">REST API Reference for GetCapacityReservation Operation</seealso>
+        IAsyncResult BeginGetCapacityReservation(GetCapacityReservationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCapacityReservation.</param>
+        /// 
+        /// <returns>Returns a  GetCapacityReservationResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityReservation">REST API Reference for GetCapacityReservation Operation</seealso>
+        GetCapacityReservationResponse EndGetCapacityReservation(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1744,6 +1933,53 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  ListCapacityReservations
+
+
+        /// <summary>
+        /// Lists the capacity reservations for the current account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCapacityReservations service method.</param>
+        /// 
+        /// <returns>The response from the ListCapacityReservations service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCapacityReservations">REST API Reference for ListCapacityReservations Operation</seealso>
+        ListCapacityReservationsResponse ListCapacityReservations(ListCapacityReservationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCapacityReservations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCapacityReservations operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCapacityReservations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCapacityReservations">REST API Reference for ListCapacityReservations Operation</seealso>
+        IAsyncResult BeginListCapacityReservations(ListCapacityReservationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCapacityReservations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCapacityReservations.</param>
+        /// 
+        /// <returns>Returns a  ListCapacityReservationsResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCapacityReservations">REST API Reference for ListCapacityReservations Operation</seealso>
+        ListCapacityReservationsResponse EndListCapacityReservations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListDatabases
 
 
@@ -2322,7 +2558,7 @@ namespace Amazon.Athena
 
 
         /// <summary>
-        /// Lists the tags associated with an Athena workgroup or data catalog resource.
+        /// Lists the tags associated with an Athena resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -2412,6 +2648,55 @@ namespace Amazon.Athena
         /// <returns>Returns a  ListWorkGroupsResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListWorkGroups">REST API Reference for ListWorkGroups Operation</seealso>
         ListWorkGroupsResponse EndListWorkGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutCapacityAssignmentConfiguration
+
+
+        /// <summary>
+        /// Puts a new capacity assignment configuration for a specified capacity reservation.
+        /// If a capacity assignment configuration already exists for the capacity reservation,
+        /// replaces the existing capacity assignment configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutCapacityAssignmentConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutCapacityAssignmentConfiguration service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/PutCapacityAssignmentConfiguration">REST API Reference for PutCapacityAssignmentConfiguration Operation</seealso>
+        PutCapacityAssignmentConfigurationResponse PutCapacityAssignmentConfiguration(PutCapacityAssignmentConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutCapacityAssignmentConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutCapacityAssignmentConfiguration operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutCapacityAssignmentConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/PutCapacityAssignmentConfiguration">REST API Reference for PutCapacityAssignmentConfiguration Operation</seealso>
+        IAsyncResult BeginPutCapacityAssignmentConfiguration(PutCapacityAssignmentConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutCapacityAssignmentConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutCapacityAssignmentConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutCapacityAssignmentConfigurationResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/PutCapacityAssignmentConfiguration">REST API Reference for PutCapacityAssignmentConfiguration Operation</seealso>
+        PutCapacityAssignmentConfigurationResponse EndPutCapacityAssignmentConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2697,11 +2982,11 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Adds one or more tags to an Athena resource. A tag is a label that you assign to a
-        /// resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists
-        /// of a key and an optional value, both of which you define. For example, you can use
-        /// tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment.
-        /// Use a consistent set of tag keys to make it easier to search and filter workgroups
-        /// or data catalogs in your account. For best practices, see <a href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
+        /// resource. Each tag consists of a key and an optional value, both of which you define.
+        /// For example, you can use tags to categorize Athena workgroups, data catalogs, or capacity
+        /// reservations by purpose, owner, or environment. Use a consistent set of tag keys to
+        /// make it easier to search and filter the resources in your account. For best practices,
+        /// see <a href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
         /// Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag
         /// values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers
         /// representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and
@@ -2810,7 +3095,7 @@ namespace Amazon.Athena
 
 
         /// <summary>
-        /// Removes one or more tags from a data catalog or workgroup resource.
+        /// Removes one or more tags from an Athena resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -2853,6 +3138,54 @@ namespace Amazon.Athena
         /// <returns>Returns a  UntagResourceResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateCapacityReservation
+
+
+        /// <summary>
+        /// Updates the number of requested data processing units for the capacity reservation
+        /// with the specified name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityReservation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCapacityReservation service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateCapacityReservation">REST API Reference for UpdateCapacityReservation Operation</seealso>
+        UpdateCapacityReservationResponse UpdateCapacityReservation(UpdateCapacityReservationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityReservation operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCapacityReservation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateCapacityReservation">REST API Reference for UpdateCapacityReservation Operation</seealso>
+        IAsyncResult BeginUpdateCapacityReservation(UpdateCapacityReservationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCapacityReservation.</param>
+        /// 
+        /// <returns>Returns a  UpdateCapacityReservationResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateCapacityReservation">REST API Reference for UpdateCapacityReservation Operation</seealso>
+        UpdateCapacityReservationResponse EndUpdateCapacityReservation(IAsyncResult asyncResult);
 
         #endregion
         

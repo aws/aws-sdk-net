@@ -60,6 +60,14 @@ namespace Amazon.Athena.Model
         }
 
         /// <summary>
+        /// Paginator for ListCapacityReservations operation
+        ///</summary>
+        public IListCapacityReservationsPaginator ListCapacityReservations(ListCapacityReservationsRequest request) 
+        {
+            return new ListCapacityReservationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDatabases operation
         ///</summary>
         public IListDatabasesPaginator ListDatabases(ListDatabasesRequest request) 

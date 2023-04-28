@@ -66,6 +66,7 @@ namespace Amazon.Athena.Model
         /// <para>
         /// The number of DPUs to use for the coordinator. A coordinator is a special executor
         /// that orchestrates processing work and manages other executors in a notebook session.
+        /// The default is 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -85,7 +86,7 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property DefaultExecutorDpuSize. 
         /// <para>
         /// The default number of DPUs to use for executors. An executor is the smallest unit
-        /// of compute that a notebook session can request from Athena.
+        /// of compute that a notebook session can request from Athena. The default is 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

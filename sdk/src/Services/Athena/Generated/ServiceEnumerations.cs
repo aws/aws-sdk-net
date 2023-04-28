@@ -99,6 +99,126 @@ namespace Amazon.Athena
 
 
     /// <summary>
+    /// Constants used for properties of type CapacityAllocationStatus.
+    /// </summary>
+    public class CapacityAllocationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for CapacityAllocationStatus
+        /// </summary>
+        public static readonly CapacityAllocationStatus FAILED = new CapacityAllocationStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for CapacityAllocationStatus
+        /// </summary>
+        public static readonly CapacityAllocationStatus PENDING = new CapacityAllocationStatus("PENDING");
+        /// <summary>
+        /// Constant SUCCEEDED for CapacityAllocationStatus
+        /// </summary>
+        public static readonly CapacityAllocationStatus SUCCEEDED = new CapacityAllocationStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityAllocationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityAllocationStatus FindValue(string value)
+        {
+            return FindValue<CapacityAllocationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityAllocationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityReservationStatus.
+    /// </summary>
+    public class CapacityReservationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for CapacityReservationStatus
+        /// </summary>
+        public static readonly CapacityReservationStatus ACTIVE = new CapacityReservationStatus("ACTIVE");
+        /// <summary>
+        /// Constant CANCELLED for CapacityReservationStatus
+        /// </summary>
+        public static readonly CapacityReservationStatus CANCELLED = new CapacityReservationStatus("CANCELLED");
+        /// <summary>
+        /// Constant CANCELLING for CapacityReservationStatus
+        /// </summary>
+        public static readonly CapacityReservationStatus CANCELLING = new CapacityReservationStatus("CANCELLING");
+        /// <summary>
+        /// Constant FAILED for CapacityReservationStatus
+        /// </summary>
+        public static readonly CapacityReservationStatus FAILED = new CapacityReservationStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for CapacityReservationStatus
+        /// </summary>
+        public static readonly CapacityReservationStatus PENDING = new CapacityReservationStatus("PENDING");
+        /// <summary>
+        /// Constant UPDATE_PENDING for CapacityReservationStatus
+        /// </summary>
+        public static readonly CapacityReservationStatus UPDATE_PENDING = new CapacityReservationStatus("UPDATE_PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityReservationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationStatus FindValue(string value)
+        {
+            return FindValue<CapacityReservationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ColumnNullable.
     /// </summary>
     public class ColumnNullable : ConstantClass
