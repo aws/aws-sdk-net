@@ -27,7 +27,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Public methods
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Execute operation.
+        /// Executes a server call to get the items requested in a transaction.
         /// <seealso cref="Amazon.DynamoDBv2.DataModel.TransactGet.Execute"/>
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
@@ -49,8 +49,8 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Public methods
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.MultiTableTransactGet.Execute"/>
+        /// Executes a multi-table transaction request against all configured TransactGet objects.
+        /// Results are stored in the respective TransactGet objects.
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         ///

@@ -27,8 +27,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Public methods
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.TransactWrite.Execute"/>
+        /// Executes a server call to write/delete/version-check the items requested in a transaction.
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
@@ -49,8 +48,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Public methods
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.MultiTableTransactWrite.Execute"/>
+        /// Executes a multi-table transaction request against all configured TransactWrite objects.
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         ///

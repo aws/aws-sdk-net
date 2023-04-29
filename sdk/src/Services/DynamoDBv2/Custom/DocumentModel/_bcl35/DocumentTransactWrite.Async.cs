@@ -26,8 +26,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region Public methods
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.DocumentTransactWrite.Execute"/>
+        /// Executes a server call to condition-check/put/update/delete the items specified in a transaction.
         /// </summary>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">
@@ -65,8 +64,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region Public methods
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.MultiTableDocumentTransactWrite.Execute"/>
+        /// Executes a multi-table transactional condition-check/put/update/delete against all configured DocumentTransactWrite objects.
         /// </summary>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">
